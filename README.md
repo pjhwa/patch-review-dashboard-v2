@@ -25,6 +25,7 @@ Global 벤더들의 보안 패치 데이터를 수집, 지능적으로 분류하
 
 - [🏗️ 시스템 아키텍처](docs/architecture.md)
 - [🌊 데이터 파이프라인 흐름도](docs/pipeline_flow.md)
+- [🧠 OpenClaw AI 패치 리뷰 프로세스](docs/openclaw_ai_review.md)
 - [🚀 기술 스택](docs/tech_stack.md)
 
 ---
