@@ -1,0 +1,79 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model RawPatch {
+  id            String   @id @default(uuid())
+  vendor        String
+  originalId    String
+  data          String   // JSON string of the raw fetched data
+  collectedAt   DateTime @default(now())
+  pipelineRunId String?
+  preprocessed  Boolean  @default(false)
+
+  @@index([vendor, originalId])
+  @@index([pipelineRunId])
+}
+
+model PreprocessedPatch {
+  id            String   @id @default(uuid())
+  vendor        String
+  issueId       String
+  osVersion     String?
+  component     String
+  version       String
+  severity      String?
+  releaseDate   String?
+  description   String?
+  collectedAt   DateTime @default(now())
+  pipelineRunId String?
+  isReviewed    Boolean  @default(false)
+  url           String?
+  
+  @@index([vendor, issueId])
+  @@index([pipelineRunId])
+}
+
+model ReviewedPatch {
+  id                String   @id @default(uuid())
+  vendor            String
+  issueId           String
+  osVersion         String?
+  component         String
+  version           String
+  criticality       String
+  description       String
+  koreanDescription String
+  decision          String   // E.g., Approve, Exclude
+  reason            String?
+  reviewedAt        DateTime @default(now())
+  pipelineRunId     String?
+
+  @@index([vendor, issueId])
+  @@index([decision])
+  @@index([pipelineRunId])
+}
+
+model UserFeedback {
+  id              String   @id @default(uuid())
+  issueId         String
+  vendor          String
+  component       String
+  version         String
+  userReason      String
+  createdAt       DateTime @default(now())
+}
+
+model PipelineRun {
+  id          String    @id @default(uuid())
+  status      String    // running, completed, error
+  message     String
+  startedAt   DateTime  @default(now())
+  completedAt DateTime?
+  logs        String?
+}
