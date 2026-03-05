@@ -11,25 +11,25 @@ Global 벤더들의 보안 패치 데이터를 수집, 지능적으로 분류하
 
 ---
 
-## ✨ Features
+## ✨ 주요 기능 (Features)
 
-- **Automated Data Pipeline**: Red Hat, Ubuntu, Oracle OS의 패치 권고문 및 Vulnerability 리포트를 동시 수집
-- **Intelligent Pruning**: 수많은 데스크톱/비핵심 패키지들을 덜어내고 `kernel`, `glibc`, `shim` 등 인프라 크리티컬한 정보만 선별 정제
-- **AI-Powered Code Review**: 단순 요약이 아닌 diff 비교 기반의 변경 영향도 분석 및 한국어 번역 리포팅
-- **Premium User Experience**: Framer Motion/shadcn 등 최신 컴포넌트를 베이스로한 관리자 매니징 시스템
+- **자동화된 데이터 파이프라인**: Red Hat, Ubuntu, Oracle OS의 패치 권고문 및 취약점 (Vulnerability) 리포트를 동시 수집
+- **지능형 필터링 (Pruning)**: 수많은 데스크톱/비핵심 패키지들을 덜어내고 `kernel`, `glibc`, `shim` 등 인프라 크리티컬한 정보만 선별 정제
+- **AI 기반 코드 리뷰**: 단순 요약이 아닌 diff 비교 기반의 변경 영향도 분석 및 한국어 번역 리포팅
+- **프리미엄 사용자 경험 (UX)**: Framer Motion 및 shadcn 등 최신 컴포넌트를 베이스로한 관리자 매니징 시스템
 
 ---
 
-## 📚 Documentation
+## 📚 문서 (Documentation)
 시스템 아키텍처와 상세 파이프라인 개발 스펙을 `docs/` 폴더에서 확인하실 수 있습니다.
 
-- [🏗️ System Architecture](docs/architecture.md)
-- [🌊 Data Pipeline Flow](docs/pipeline_flow.md)
-- [🚀 Technology Stack](docs/tech_stack.md)
+- [🏗️ 시스템 아키텍처](docs/architecture.md)
+- [🌊 데이터 파이프라인 흐름도](docs/pipeline_flow.md)
+- [🚀 기술 스택](docs/tech_stack.md)
 
 ---
 
-## 🛠️ Quick Start
+## 🛠️ 빠른 시작 (Quick Start)
 
 ### 1. Dashboard UI 시작하기
 ```bash
@@ -44,9 +44,9 @@ npm run dev
 ```
 웹 브라우저에서 `http://localhost:3001`을 열어주세요.
 
-### 2. Pipeline 동작 (수동)
+### 2. 파이프라인 동작 (수동)
 ```bash
-# 필요한 패키지
+# 관련 패키지 설치
 cd pipeline_scripts
 npm install playwright
 
@@ -59,4 +59,4 @@ python patch_preprocessing.py
 
 ---
 
-> _This software was built meticulously focusing on UI/UX elegance and robust automated pipelines as per standard guidelines._
+> _이 소프트웨어는 표준 지침(GEMINI.md)에 따라 우아한 UI/UX와 견고하고 자동화된 파이프라인에 집중하여 세심하게 구축되었습니다._
