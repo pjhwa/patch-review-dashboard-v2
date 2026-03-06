@@ -121,11 +121,24 @@
 
 ```text
 [임무 하달: 안티그라비티 V2 보완 개발]
-당신은 지금부터 Patch-Review-Dashboard V2의 핵심 누락 기능들을 보완하는 스태프(Staff) 엔지니어 역할을 수행합니다.
+당신은 지금부터 Patch-Review-Dashboard V2의 핵심 누락 기능들을 보완하는 스태프(Staff) 엔지니어 역할을 수행합니다. 한 치의 오차도 없도록 아래의 지시를 하달받은 순서대로 정확히 이행하십시오.
 
-1. 가장 먼저, 현재 작업 디렉토리의 `docs/post_deployment_enhancement_plan.md` 파일을 `view_file` 도구를 이용해 끝까지 정독하십시오.
-2. 문서 내의 [1. RAG 시스템 구축], [2. Zod 스키마 검증], [3. Prisma WAL 및 수동 UI 연결]이라는 3가지 핵심 목표와 '📝 Action Plan(실행 절차)'를 완벽히 숙지하십시오.
-3. 특히 문서 하단의 **[💡 특별 지침: 안티그라비티 운영 및 오류 방지 가이드]**는 절대적인 법률(Constraint)입니다. PowerShell 인라인 SSH 스크립트 전송을 금지하고, 로컬 스크립트 생성 후 scp 전송 방식을 반드시 따르십시오.
-4. 모든 코딩과 명령어 실행 전 생각(Thought) 프로세스에서 "안티그라비티 4대 금지 규칙을 위반하지 않았는가?" 자문하는 사전 점검(Pre-Flight Check)을 수행하십시오.
-5. 숙지를 완료했다면, 즉시 계획서(Action Plan)의 1번 단계부터 Step-by-Step으로 타겟 파일(`route.ts`, `schema.prisma` 등)을 찾아 코딩(Execution) 모드로 돌입하십시오. 하나의 스텝이 완벽히 검증되기 전에는 다음 스텝으로 넘어가지 마십시오. 작업이 완료되면 `walkthrough.md`를 작성하고 나에게 보고하십시오.
+1. **[맥락 파악 (Context Sync)]**: 코어 시스템을 100% 이해한 채로 투입되기 위해, 가장 먼저 다음 4개의 문서를 `view_file` 도구로 반드시 정독하십시오.
+   - `docs/architecture.md` (전체 시스템 구조 및 설계 사상 파악)
+   - `docs/pipeline_flow.md` (데이터 수집부터 AI 리뷰까지의 파이프라인 흐름 파악)
+   - `docs/tech_stack.md` (도입된 기술 스택 및 버전 의존성 파악)
+   - `docs/post_deployment_enhancement_plan.md` (본 작업의 3대 보완 목표 및 Action Plan 완벽 숙지)
+
+2. **[안전 무결성 규칙 (Absolute Constraints)]**: `enhancement_plan.md` 문서 하단의 **[💡 특별 지침: 안티그라비티 운영 및 오류 방지 가이드]**는 이번 개발의 절대적인 법률입니다.
+   - ⚠️ **PowerShell 인라인 SSH 스크립트 전송 절대 금지**: 복잡한 명령어는 반드시 시스템 내 로컬 파일 생성 후 `scp` 전송 방식을 준수하십시오.
+   - 명령어 실행 및 코딩 전 `Thought` 프로세스에서 "안티그라비티 특별 지침을 위반하고 있지 않은가?" 스스로 자문(Pre-Flight Check)하는 과정을 최우선으로 배치하십시오.
+
+3. **[실행 및 3중 교차 검증 (Execution & 3-Tier Validation)]**:
+   - 계획서(Action Plan)의 1번 단계부터 Step-by-Step으로 타겟 파일(`route.ts`, `schema.prisma` 등)을 수정합니다.
+   - 하나의 스텝을 적용할 때마다 무작정 다음으로 넘어가지 말고, 다음 **3번의 교차 검증**을 강제 수행하십시오.
+     ① **문법/빌드 검증**: `node --check` 또는 Typescript(`tsc`) 컴파일 에러가 없는지 터미널 명령어 수준에서 증명할 것.
+     ② **로직/설계 검증**: 계획서에 명시된 예외 대책(Edge Cases/Troubleshooting)을 내 코드에 완벽히 방어 로직으로 반영했는지 되묻기.
+     ③ **의존성 검증**: 이 파일의 수정으로 인해 파이프라인의 다음 단계(JSON 포맷, API 응답 등)가 깨지지 않는지 E2E 관점에서 검토할 것.
+
+4. 3개의 보완 개발 파트가 위 3중 검증을 모두 통과하면 작업을 최종 커밋하고, `walkthrough.md`에 결과를 상세히 작성한 후 나에게 보고하십시오.
 ```
