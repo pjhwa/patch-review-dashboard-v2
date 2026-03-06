@@ -93,3 +93,20 @@
 ### 🛡️ 예외 대책 (Troubleshooting)
 - **WAL 파일 비대화 (Disk Full)**: WAL 모드는 시스템 충돌과 비동기 처리에 강하지만, 오래동안 `sqlite-wal` 파일 크기가 커질 수 있습니다. 이를 방지하기 위해 매일 자정에 `PRAGMA wal_checkpoint(TRUNCATE);` 를 스크립트로 날리거나 Node 서버 로직 내 Cron Job으로 비워냅니다. 
 - **버튼 연타 방어 (Debouncing)**: 관리자가 수동 리뷰 버튼을 마우스로 여러 번 연타(Click Spam)할 경우 BullMQ에 동일한 Job이 수십 개 중복 적재됩니다. React 단에서 클릭 후 즉시 UI 버튼을 `disabled: isLoading` 상태로 3초간 잠그고 API 응답을 대기합니다.
+
+---
+
+## 💡 특별 지침: 안티그라비티(Antigravity) 운영 및 오류 방지 가이드 (LEARNED.md 기반)
+
+이 보완 개발을 수행하는 에이전트 또는 개발자는 `GEMINI.md` 마스터 가이드라인과 과거 수많은 오류를 기록해 둔 `LEARNED.md` 의 전철을 밟지 않기 위해 다음 규칙을 **절대적으로 준수**해야 합니다.
+
+1. **PowerShell 인라인 SSH 스크립트 전송 절대 금지 (Error Type 17, 6)**
+   - Windows 터미널에서 `ssh user@host "python3 -c \"...\""` 처럼 복잡한 Python/Node 스크립트나 다중 인용부호가 들어가는 명령을 절대 전송하지 마세요. PowerShell의 이중 탈출(Escape) 파서가 파일 형태를 파괴합니다.
+   - **올바른 방법**: 로컬에 완전한 스크립트 파일(`.py`, `.ts`)을 만들고 `scp`로 넘긴 뒤, `ssh`로는 대상 파일을 순수하게 "호출(Call)"만 하십시오.
+2. **명령어 체이닝 호환성 (Error Type 18)**
+   - 로컬 구버전 PowerShell 환경을 고려하여, 명령어 여러 개를 이을 때 `&&` 사용을 금지하고 무조건 **세미콜론(`;`)** 을 사용하세요.
+3. **원격 Node 생태계(pm2, npm) 환경변수 확보 (Error Type 19)**
+   - 원격으로 `npm run build` 나 `pm2` 관련 작업을 시킬 때는 비대화형 쉘 환경 특성 상 경로를 못 찾습니다. 반드시 명령어 제일 앞에 `source ~/.nvm/nvm.sh ; `를 명시하거나 바이너리의 절대 경로를 기입하세요.
+4. **파괴적 명령어 지양 и 단일 진실 진단 (Master Principle)**
+   - 문제가 있더라도 임시방편 수정은 금지됩니다. 테스트 실패나 버그 발견 즉시 스스로 로그를 파악하고 자율 수정하되, `LEARNED.md`를 단일 진실 공급원(Single Source of Truth)으로 삼아 에지 케이스를 기록하여 두 번 다시 겪지 않게 대비하십시오.
+   - Prisma DB Push 및 스키마(`schema.prisma`) 버전 충돌(P1012 등)에 유의하여 환경 내 엔진 버전을 사전에 `grep_search` 점검하십시오.
