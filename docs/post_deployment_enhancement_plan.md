@@ -110,3 +110,22 @@
 4. **파괴적 명령어 지양 и 단일 진실 진단 (Master Principle)**
    - 문제가 있더라도 임시방편 수정은 금지됩니다. 테스트 실패나 버그 발견 즉시 스스로 로그를 파악하고 자율 수정하되, `LEARNED.md`를 단일 진실 공급원(Single Source of Truth)으로 삼아 에지 케이스를 기록하여 두 번 다시 겪지 않게 대비하십시오.
    - Prisma DB Push 및 스키마(`schema.prisma`) 버전 충돌(P1012 등)에 유의하여 환경 내 엔진 버전을 사전에 `grep_search` 점검하십시오.
+
+---
+
+## 🤖 AI 서브 에이전트 인수인계 가이드 (Sub-Agent Handover Guide)
+
+맥락(Context)이 초기화된 완전히 새로운 AI 에이전트 (또는 서브 에이전트)에게 작업을 인계할 때, **한 치의 오차나 환각(Hallucination) 없이 완벽하게 이 계획서를 따르게 하려면 아래의 프롬프트를 복사하여 그대로 주입(Injection) 하십시오.**
+
+### 📋 프롬프트 복사 블록 (Copy & Paste to New Agent)
+
+```text
+[임무 하달: 안티그라비티 V2 보완 개발]
+당신은 지금부터 Patch-Review-Dashboard V2의 핵심 누락 기능들을 보완하는 스태프(Staff) 엔지니어 역할을 수행합니다.
+
+1. 가장 먼저, 현재 작업 디렉토리의 `docs/post_deployment_enhancement_plan.md` 파일을 `view_file` 도구를 이용해 끝까지 정독하십시오.
+2. 문서 내의 [1. RAG 시스템 구축], [2. Zod 스키마 검증], [3. Prisma WAL 및 수동 UI 연결]이라는 3가지 핵심 목표와 '📝 Action Plan(실행 절차)'를 완벽히 숙지하십시오.
+3. 특히 문서 하단의 **[💡 특별 지침: 안티그라비티 운영 및 오류 방지 가이드]**는 절대적인 법률(Constraint)입니다. PowerShell 인라인 SSH 스크립트 전송을 금지하고, 로컬 스크립트 생성 후 scp 전송 방식을 반드시 따르십시오.
+4. 모든 코딩과 명령어 실행 전 생각(Thought) 프로세스에서 "안티그라비티 4대 금지 규칙을 위반하지 않았는가?" 자문하는 사전 점검(Pre-Flight Check)을 수행하십시오.
+5. 숙지를 완료했다면, 즉시 계획서(Action Plan)의 1번 단계부터 Step-by-Step으로 타겟 파일(`route.ts`, `schema.prisma` 등)을 찾아 코딩(Execution) 모드로 돌입하십시오. 하나의 스텝이 완벽히 검증되기 전에는 다음 스텝으로 넘어가지 마십시오. 작업이 완료되면 `walkthrough.md`를 작성하고 나에게 보고하십시오.
+```
