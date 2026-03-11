@@ -13,7 +13,96 @@ export function ProductGrid({ categoryId, products, dict }: { categoryId: string
     const [confirmDialog, setConfirmDialog] = useState<{ isOpen: boolean, productId: string | null, isRetry: boolean, isAiOnly: boolean }>({ isOpen: false, productId: null, isRetry: false, isAiOnly: false });
     const [isDownloading, setIsDownloading] = useState(false);
     const [isQueueing, setIsQueueing] = useState(false);
+    const [activeEventSource, setActiveEventSource] = useState<EventSource | null>(null);
     const router = useRouter();
+
+    useEffect(() => {
+        return () => {
+            if (activeEventSource) {
+                activeEventSource.close();
+            }
+        };
+    }, [activeEventSource]);
+
+    useEffect(() => {
+        const checkActiveJob = async () => {
+            try {
+                const res = await fetch('/api/pipeline');
+                const data = await res.json();
+                if (data.hasActiveJob && data.jobId) {
+                    setIsRunning(true);
+                    setResultMsg(`Pipeline active (Progress: ${data.progress || 0}%)`);
+                    connectToStream(data.jobId);
+                }
+            } catch (e) {
+                console.error("Failed to check active job", e);
+            }
+        };
+        checkActiveJob();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
+
+    const connectToStream = (jobId: string) => {
+        const source = new EventSource(`/api/pipeline/stream?jobId=${jobId}`);
+        setActiveEventSource(source);
+
+        source.onmessage = (event) => {
+            const streamData = JSON.parse(event.data);
+
+            if (streamData.log) {
+                if (streamData.log.includes('[PREPROCESS_DONE]')) {
+                    const match = streamData.log.match(/count=(\d+)/);
+                    const cnt = match ? match[1] : '?';
+                    setResultMsg(`✅ 전처리 완료 (${cnt}개 패치). AI 리뷰 진행 중...`);
+                    router.refresh();
+                } else if (streamData.log.includes('[AI Analysis]') || streamData.log.includes('[SKIP]')) {
+                    setResultMsg(`🤖 ${streamData.log}`);
+                }
+                setLogTail(prev => {
+                    const newLogs = prev.split('\n');
+                    newLogs.push(streamData.log);
+                    if (newLogs.length > 30) newLogs.shift();
+                    return newLogs.join('\n');
+                });
+            }
+
+            if (streamData.status === 'completed') {
+                setResultMsg("Pipeline successfully finished!");
+                setIsRunning(false);
+                setIsQueueing(false);
+                source.close();
+                setActiveEventSource(null);
+                router.refresh();
+            } else if (streamData.status === 'failed' || streamData.status === 'error') {
+                const errMsg = streamData.message || streamData.log || "Unknown error";
+                setResultMsg(`❌ Pipeline Failed: ${errMsg}`);
+                if (streamData.message) setLogTail(prev => prev + "\n" + streamData.message);
+                setIsRunning(false);
+                setIsQueueing(false);
+                source.close();
+                setActiveEventSource(null);
+            } else {
+                if (streamData.message && !streamData.log?.includes('[PREPROCESS_DONE]')) {
+                    setResultMsg(streamData.message);
+                } else if (!streamData.log) {
+                    if (streamData.status === 'active') {
+                        setResultMsg(`Pipeline active (Progress: ${streamData.progress || 0}%)`);
+                    } else if (streamData.status === 'waiting') {
+                        setResultMsg(`Job queued... Waiting for worker...`);
+                    }
+                }
+            }
+        };
+
+        source.onerror = (error) => {
+            console.error("SSE Error:", error);
+            setResultMsg("Lost connection to pipeline stream.");
+            setIsRunning(false);
+            setIsQueueing(false);
+            source.close();
+            setActiveEventSource(null);
+        };
+    };
 
     const requestRunPipeline = (productId: string, isRetry: boolean = false, isAiOnly: boolean = false) => {
         setConfirmDialog({ isOpen: true, productId, isRetry, isAiOnly });
@@ -47,63 +136,7 @@ export function ProductGrid({ categoryId, products, dict }: { categoryId: string
                 return;
             }
 
-            // Open Server-Sent Events stream to the job
-            const eventSource = new EventSource(`/api/pipeline/stream?jobId=${data.jobId}`);
-
-            eventSource.onmessage = (event) => {
-                const streamData = JSON.parse(event.data);
-
-                if (streamData.log) {
-                    // Detect preprocessing completion → refresh stats immediately
-                    if (streamData.log.includes('[PREPROCESS_DONE]')) {
-                        const match = streamData.log.match(/count=(\d+)/);
-                        const cnt = match ? match[1] : '?';
-                        setResultMsg(`✅ 전처리 완료 (${cnt}개 패치). AI 리뷰 진행 중...`);
-                        router.refresh(); // updates the preprocessed count on cards
-                    } else if (streamData.log.includes('[AI Analysis]') || streamData.log.includes('[SKIP]')) {
-                        setResultMsg(`🤖 ${streamData.log}`);
-                    }
-                    setLogTail(prev => {
-                        const newLogs = prev.split('\n');
-                        newLogs.push(streamData.log);
-                        if (newLogs.length > 30) newLogs.shift();
-                        return newLogs.join('\n');
-                    });
-                }
-
-                if (streamData.status === 'completed') {
-                    setResultMsg("Pipeline successfully finished!");
-                    setIsRunning(false);
-                    setIsQueueing(false);
-                    eventSource.close();
-                    router.refresh();
-                } else if (streamData.status === 'failed' || streamData.status === 'error') {
-                    const errMsg = streamData.message || streamData.log || "Unknown error";
-                    setResultMsg(`❌ Pipeline Failed: ${errMsg}`);
-                    if (streamData.message) setLogTail(prev => prev + "\n" + streamData.message);
-                    setIsRunning(false);
-                    setIsQueueing(false);
-                    eventSource.close();
-                } else {
-                    if (streamData.message && !streamData.log?.includes('[PREPROCESS_DONE]')) {
-                        setResultMsg(streamData.message);
-                    } else if (!streamData.log) {
-                        if (streamData.status === 'active') {
-                            setResultMsg(`Pipeline active (Progress: ${streamData.progress || 0}%)`);
-                        } else if (streamData.status === 'waiting') {
-                            setResultMsg(`Job queued... Waiting for worker...`);
-                        }
-                    }
-                }
-            };
-
-            eventSource.onerror = (error) => {
-                console.error("SSE Error:", error);
-                setResultMsg("Lost connection to pipeline stream.");
-                setIsRunning(false);
-                setIsQueueing(false);
-                eventSource.close();
-            };
+            connectToStream(data.jobId);
 
         } catch (error) {
             setResultMsg("Failed to connect to execution queue.");
