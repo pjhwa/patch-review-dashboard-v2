@@ -12,6 +12,7 @@ export function ProductGrid({ categoryId, products, dict }: { categoryId: string
     const [failureCount, setFailureCount] = useState<number>(0);
     const [confirmDialog, setConfirmDialog] = useState<{ isOpen: boolean, productId: string | null, isRetry: boolean, isAiOnly: boolean }>({ isOpen: false, productId: null, isRetry: false, isAiOnly: false });
     const [isDownloading, setIsDownloading] = useState(false);
+    const [isQueueing, setIsQueueing] = useState(false);
     const router = useRouter();
 
     const requestRunPipeline = (productId: string, isRetry: boolean = false, isAiOnly: boolean = false) => {
@@ -26,6 +27,8 @@ export function ProductGrid({ categoryId, products, dict }: { categoryId: string
     };
 
     const handleRunSharedPipeline = async (productId: string, isRetry: boolean = false, isAiOnly: boolean = false) => {
+        if (isQueueing) return;
+        setIsQueueing(true);
         setIsRunning(true);
         setResultMsg(dict?.dashboard?.productGrid?.initiatingPipeline || "Initiating Pipeline Queue...");
         setLogTail("");
@@ -53,28 +56,40 @@ export function ProductGrid({ categoryId, products, dict }: { categoryId: string
                 if (streamData.status === 'completed') {
                     setResultMsg("Pipeline successfully finished!");
                     setIsRunning(false);
+                    setIsQueueing(false);
                     eventSource.close();
                     router.refresh();
                 } else if (streamData.status === 'failed' || streamData.status === 'error') {
-                    setResultMsg("Pipeline Failed.");
+                    const errMsg = streamData.message || streamData.log || "Unknown error";
+                    setResultMsg(`❌ Pipeline Failed: ${errMsg}`);
                     if (streamData.message) setLogTail(prev => prev + "\n" + streamData.message);
                     setIsRunning(false);
+                    setIsQueueing(false);
                     eventSource.close();
                 } else {
                     if (streamData.log) {
+                        // Detect preprocessing completion → refresh stats immediately
+                        if (streamData.log.includes('[PREPROCESS_DONE]')) {
+                            const match = streamData.log.match(/count=(\d+)/);
+                            const cnt = match ? match[1] : '?';
+                            setResultMsg(`✅ 전처리 완료 (${cnt}개 패치). AI 리뷰 진행 중...`);
+                            router.refresh(); // updates the preprocessed count on cards
+                        }
                         setLogTail(prev => {
                             const newLogs = prev.split('\n');
                             newLogs.push(streamData.log);
-                            if (newLogs.length > 30) newLogs.shift(); // Keep last 30 lines
+                            if (newLogs.length > 30) newLogs.shift();
                             return newLogs.join('\n');
                         });
                     }
-                    if (streamData.message) {
+                    if (streamData.message && !streamData.log?.includes('[PREPROCESS_DONE]')) {
                         setResultMsg(streamData.message);
-                    } else if (streamData.status === 'active') {
-                        setResultMsg(`Pipeline active (Progress: ${streamData.progress || 0}%)`);
-                    } else if (streamData.status === 'waiting') {
-                        setResultMsg(`Job queued... Waiting for worker...`);
+                    } else if (!streamData.log?.includes('[PREPROCESS_DONE]')) {
+                        if (streamData.status === 'active') {
+                            setResultMsg(`Pipeline active (Progress: ${streamData.progress || 0}%)`);
+                        } else if (streamData.status === 'waiting') {
+                            setResultMsg(`Job queued... Waiting for worker...`);
+                        }
                     }
                 }
             };
@@ -83,12 +98,14 @@ export function ProductGrid({ categoryId, products, dict }: { categoryId: string
                 console.error("SSE Error:", error);
                 setResultMsg("Lost connection to pipeline stream.");
                 setIsRunning(false);
+                setIsQueueing(false);
                 eventSource.close();
             };
 
         } catch (error) {
             setResultMsg("Failed to connect to execution queue.");
             setIsRunning(false);
+            setIsQueueing(false);
         }
     };
 
@@ -185,33 +202,35 @@ export function ProductGrid({ categoryId, products, dict }: { categoryId: string
                         <div className="text-sm text-white/60 space-y-4 mb-6">
                             {!confirmDialog.isRetry && !confirmDialog.isAiOnly && lastCompletedAt && (
                                 <div className="p-3 bg-red-500/10 border border-red-500/20 rounded text-red-400">
-                                    <strong className="block mb-1">{dict?.dashboard?.productGrid?.recentExecutionDetected || "Recent Execution Detected"}</strong>
-                                    {dict?.dashboard?.productGrid?.recentExecutionDesc || "The pipeline was run recently at: "}{new Date(lastCompletedAt).toLocaleString()}. {dict?.dashboard?.productGrid?.recentExecutionAsk || "A fresh run will reset current progress."}
+                                    <strong className="block mb-1">{dict?.dashboard?.productGrid?.recentExecutionDetected || "최근 실행 기록이 존재합니다."}</strong>
+                                    마지막 실행 시간: {new Date(lastCompletedAt).toLocaleString()}. 새로 실행하면 현재의 진행 상태(Preprocessed, AI Reviewed 카운트)가 `0`으로 초기화됩니다.
                                 </div>
                             )}
 
                             {confirmDialog.isAiOnly ? (
-                                <p>{dict?.dashboard?.productGrid?.aiOnlyDesc || "AI Only Execution."}</p>
+                                <p>이미 전처리된 패치 목록을 바탕으로 AI 리뷰만 단독으로 재수행합니다.</p>
                             ) : (!confirmDialog.isRetry ? (
-                                <p>{dict?.dashboard?.productGrid?.freshStartDesc || "Executing full pipeline via BullMQ Queue..."}</p>
+                                <p>데이터 수집(Data Collection)은 이제 백그라운드 리눅스 Cron 작업으로 별도 수행됩니다.<br />파이프라인을 실행하면 **수집되어 있는 파일들을 바탕으로 전처리 작업부터 AI 리뷰까지 새로 진행**합니다.</p>
                             ) : (
-                                <p>{dict?.dashboard?.productGrid?.retryDesc || "Retrying."}</p>
+                                <p>과거 실패했던 파이프라인 단계를 다시 재시도합니다.</p>
                             ))}
-                            <p className="font-medium text-white/80">{dict?.dashboard?.productGrid?.proceedAsk || "Proceed?"}</p>
+                            <p className="font-medium text-white/80">정말로 파이프라인 진행을 시작하시겠습니까?</p>
                         </div>
 
                         <div className="flex justify-end gap-3">
                             <button
-                                onClick={() => setConfirmDialog({ isOpen: false, productId: null, isRetry: false, isAiOnly: false })}
-                                className="px-4 py-2 rounded bg-white/5 hover:bg-white/10 text-white transition-colors text-sm"
+                                onClick={() => !isQueueing && setConfirmDialog({ isOpen: false, productId: null, isRetry: false, isAiOnly: false })}
+                                disabled={isQueueing}
+                                className="px-4 py-2 rounded bg-white/5 hover:bg-white/10 text-white transition-colors text-sm disabled:opacity-50"
                             >
                                 {dict?.dashboard?.productGrid?.cancelBtn || "Cancel"}
                             </button>
                             <button
                                 onClick={confirmRun}
-                                className="px-4 py-2 rounded bg-emerald-500/20 text-emerald-400 hover:bg-emerald-500/30 border border-emerald-500/30 transition-colors text-sm font-medium"
+                                disabled={isQueueing}
+                                className="px-4 py-2 rounded bg-emerald-500/20 text-emerald-400 hover:bg-emerald-500/30 border border-emerald-500/30 transition-colors text-sm font-medium disabled:opacity-50"
                             >
-                                {confirmDialog.isAiOnly ? (dict?.dashboard?.productGrid?.yesAiOnlyBtn || "Yes, AI Only") : (confirmDialog.isRetry ? (dict?.dashboard?.productGrid?.yesRetryBtn || "Retry") : (dict?.dashboard?.productGrid?.yesStartFreshBtn || "Yes, Queue Job"))}
+                                {isQueueing ? "Queueing..." : confirmDialog.isAiOnly ? (dict?.dashboard?.productGrid?.yesAiOnlyBtn || "Yes, AI Only") : (confirmDialog.isRetry ? (dict?.dashboard?.productGrid?.yesRetryBtn || "Retry") : (dict?.dashboard?.productGrid?.yesStartFreshBtn || "Yes, Queue Job"))}
                             </button>
                         </div>
                     </div>

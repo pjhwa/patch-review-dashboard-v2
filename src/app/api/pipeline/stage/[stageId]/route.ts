@@ -32,9 +32,45 @@ export async function GET(request: Request, props: { params: Promise<{ stageId: 
             const whereClause = targetVendor ? {
                 vendor: { contains: targetVendor }
             } : {};
-            patches = await prisma.reviewedPatch.findMany({
+
+            // Fetch Reviewed Patches
+            const rows = await prisma.reviewedPatch.findMany({
                 where: whereClause,
                 orderBy: { reviewedAt: 'desc' }
+            });
+
+            // Fetch corresponding Preprocessed Patches to extract URL and Release Date
+            const issueIds = rows.map((r: any) => r.issueId);
+            const preProcessedData = await prisma.preprocessedPatch.findMany({
+                where: { issueId: { in: issueIds } },
+                select: { issueId: true, url: true, releaseDate: true }
+            });
+            const preProcessedMap = new Map();
+            preProcessedData.forEach((p: any) => preProcessedMap.set(p.issueId, p));
+
+            // Map DB camelCase fields → PascalCase so the UI can read IssueID, Component, Vendor etc.
+            // Without this mapping the UI falls back to '미확인-이슈-N' for missing IssueID.
+            patches = rows.map((r: any) => {
+                const meta = preProcessedMap.get(r.issueId) || {};
+                return {
+                    IssueID: r.issueId,
+                    Component: r.component,
+                    Version: r.version,
+                    Vendor: r.vendor,
+                    OsVersion: r.osVersion,
+                    Criticality: r.criticality,
+                    Description: r.description,
+                    KoreanDescription: r.koreanDescription,
+                    Decision: r.decision,
+                    Reason: r.reason,
+                    ReviewedAt: r.reviewedAt,
+                    Date: meta.releaseDate || 'Unknown',
+                    Url: meta.url || null,
+                    // Keep camelCase originals for backward compatibility
+                    issueId: r.issueId,
+                    component: r.component,
+                    vendor: r.vendor,
+                };
             });
             message = "These are the final patches reviewed by the AI.";
         }

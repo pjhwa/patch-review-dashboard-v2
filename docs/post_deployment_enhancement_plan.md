@@ -2,143 +2,113 @@
 
 본 문서는 `deep_implementation_plan.md.resolved`의 초기 설계안 중, V2 릴리즈 버전에 누락되었거나 레거시 방식으로 구현된 **3대 핵심 누락 기능**을 완벽하게 구현하기 위한 **심층 보완 개발 가이드**입니다. 
 
-이 문서의 절차(Action Plan)를 그대로 복사-붙여넣기(Copy-Paste) 하거나 순서대로 실행만 해도 오류 없이 즉시 프로덕션 수준의 기술 스택을 완성할 수 있도록, 3단계 교차 검증 및 예외 상황(Edge Cases)에 대한 회피 기동 전략을 포함하여 작성되었습니다.
+이 문서의 절차(Action Plan)를 그대로 복사-붙여넣기(Copy-Paste) 하거나 순서대로 실행만 해도 오류 없이 즉시 프로덕션 수준의 기술 스택을 완성할 수 있도록, **전체 아키텍처 분석 결과를 바탕으로 3단계 교차 검증 및 예외 상황(Edge Cases)에 대한 회피 기동 전략을 모두 포함**하여 작성되었습니다.
 
 ---
 
-## 🎯 1. 완전한 형태의 RAG(검색 증강 생성) 시스템 구축 (Local Vector Store)
+## 🎯 1. 완전한 형태의 RAG(검색 증강 생성) 시스템 최적화 기반 구축
 
-**현재 상태 (AS-IS)**: 관리자가 피드백한 `user_exclusion_feedback.json`의 전체 데이터를 단순 텍스트(`aiPrompt += ... \n${exclusionRules}`)로 결합하여 LLM에 전송(Stuffing) 중. 데이터가 쌓이면 토큰 한계(Context Window) 초과 확률 100%.
-**목표 상태 (TO-BE)**: 가벼운 로컬 Vector DB (`ChromaDB`)를 내장하여, 새로 들어온 패치 설명과 코사인 유사도(Cosine Similarity)가 높은 과거 피드백 상위 3건만 동적 추출(Retrieval)하여 프롬프트에 주입.
+**현재 상태 (AS-IS)**: 관리자가 피드백한 `user_exclusion_feedback.json`의 전체 데이터를 단순히 프롬프트(`aiPrompt += \n${exclusionRules}`)로 결합하여 전달 (Stuffing 방식). 시간이 지남에 따라 토큰 한계(Context Window 초과) 및 메모리 누수 발생 위험 100%.
+**목표 상태 (TO-BE)**: 초경량 로컬 Vector DB (`ChromaDB`)를 내장하여 새로 들어온 설명과 코사인 유사도(Cosine Similarity)가 높은 과거 피드백 상위 3건만 동적으로 추출(Retrieval)하여 프롬프트에 주입하는 **증분 임베딩(Incremental Embedding)** 파이프라인.
 
 ### 📝 Action Plan (실행 절차)
 
 1. **의존성 설치 (Python 환경)**
-   파이프라인 서버(`openclaw_scripts` 구동 환경)에 Python 의존성을 추가합니다.
    ```bash
    pip install chromadb sentence-transformers
    ```
-2. **Vector DB 초기화 스크립트 작성 (`pipeline_scripts/init_rag.py`)**
-   - `user_exclusion_feedback.json`을 읽어 로컬 디렉터리(`./chroma_db`)에 `all-MiniLM-L6-v2` 임베딩을 구성합니다.
-   - *검증 전략*: DB가 생성되지 않거나 JSON 형식이 깨진 경우 `try/except` 블록으로 로깅 후 Graceful Degradation(기존 Stuffing 방식으로 전환) 하도록 Fallback 설계.
+2. **증분 임베딩 동기화 스크립트 작성 (`pipeline_scripts/sync_rag.py`)**
+   - `user_exclusion_feedback.json`을 읽어 `./chroma_db` 경로에 `all-MiniLM-L6-v2` 모델로 임베딩 컬렉션 구축.
+   - 처음엔 풀 로드, 이후부터는 변경된 JSON 요소만 새로 DB에 삽입/업데이트(UPSERT) 하도록 고도화.
 3. **OpenClaw `route.ts` 호출부 수정**
-   - 기존의 `execute/route.ts` 내 프롬프트 결합 로직을 삭제합니다.
-   - 대신 Node.js 단에서 `python3 query_rag.py <현재 패치 설명 텍스트>` 와 같은 로컬 스크립트를 `spawnSync` 로 호출해, 리턴된 "유사도 높은 Top 3 사유" 문자열만 `aiPrompt` 변수에 주입합니다.
+   - 기존의 무식한 텍스트 덩어리 결합 로직 폐기.
+   - Node.js 단에서 `python3 query_rag.py <텍스트>`를 `spawnSync` 호출해, 리턴된 "유사도 높은 상위 3개 항목" 만 프롬프트 `Context:` 영역에 주입.
 
-### 🛡️ 예외 대책 (Troubleshooting)
-- **차원 및 메모리 에러 (Memory Overflow)**: 임베딩 모델 `all-MiniLM-L6-v2`는 약 80MB로 가볍지만, 만약 서버 RAM 부족으로 다운되는 경우 HuggingFace 서버리스 API를 타는 구조로 네트워크 통신 코드로 스왑합니다.
-- **빈 검색 결과 (Zero Hits)**: Vector DB에 데이터가 0건일 때도 프롬프트는 "빈 참조(Empty Context)"를 허용하고 정상 진행하도록 안전 코딩합니다.
+### 🛡️ 3중 교차 검증 및 예외 대책 (Troubleshooting / Validation)
+- **메모리 부족(OOM) 오류 (Logic/Architecture Validation)**: `tom26` 서버에서 모델 로드시 RAM 부족 현상이 감지될 시(예외 처리 블록), `ChromaDB` 사용을 중지하고 기존의 텍스트 기반 일치(단순 키워드 찾기) 형태의 가벼운 Fallback 함수로 자동 전환되도록 로직 구성.
+- **빈 데이터베이스 탐색 (E2E Validation)**: `user_exclusion_feedback.json`이 비어있어 ChromaDB에 0건의 문서가 들어있을 때 쿼리를 날릴 경우, `similarity_search` 함수가 Crash 나지 않고 묵시형 빈 문자열을 리턴하도록 예외(try-except) 처리를 철저히 캡슐화.
 
 ---
 
-## 🎯 2. LLM JSON 모드 강제 및 Zod/Pydantic 스키마 검증 (Validation)
+## 🎯 2. LLM JSON 모드 강제, Zod 스키마 검증 및 자체 치유(Self-Healing) 루프
 
-**현재 상태 (AS-IS)**: "반드시 JSON 배열로만 응답하라"고 자연어 프롬프트로만 경고. LLM이 마크다운(```json)이나 불필요한 서술어를 섞을 여지 높음.
-**목표 상태 (TO-BE)**: TypeScript 서버에서 `Zod` 스키마(또는 JSON.parse 후 강형 검사) 기반으로 검증하며, 실패 시 2회 자가 수정을 지시하는 메타-루프(Meta-Loop) 가동.
+**현재 상태 (AS-IS)**: 프롬프트에서 "무조건 JSON 배열로 응답할 것"이라고 구두 경고만 함. 어긋나는 순간 파이프라인 시스템 Crash.
+**목표 상태 (TO-BE)**: TypeScript 백엔드에서 `Zod`를 통해 형식을 강력히 검증하며, 실패 시 에러 사유를 LLM에게 돌려보내 자체 수정하도록 하는 **메타-루프(Meta-Loop)** 아키텍처 도입.
 
 ### 📝 Action Plan (실행 절차)
 
-1. **Zod 설치 및 Schema 스펙 정의**
+1. **Zod 설치 및 Schema 스펙 정의 강화**
    ```bash
    npm install zod
    ```
-   - `src/lib/schema.ts` 파일 생성:
-     ```typescript
-     import { z } from 'zod';
-     export const ReviewSchema = z.array(z.object({
-         issueId: z.string(),
-         component: z.string(),
-         version: z.string(),
-         // ...
-     }));
-     ```
-2. **OpenClaw (LLM) 호출 시 플래그 강제**
-   - `execute/route.ts` 내의 OpenClaw 스크립트 호출 인자에 `--json-mode` 또는 모델의 강제 JSON 생성 포맷 인자를 리터럴로 명시하여 LLM 환각(Hallucination) 원천 차단.
-3. **Retry-Validation Loop 로직 작성 (3-Tier)**
-   - 1차 파싱: `fs.readFileSync(patch_review_ai_report.json)` 결과에 대해 `ReviewSchema.parse()` 실행.
-   - 2차 자가수정 (Self-Correction): 에러 발생 시 Catch 블록이 가동되어, Zod가 리턴한 `e.errors` (어떤 key가 어떻게 틀렸는지) 메시지 그대로를 "다음 구조 에러를 수정해 다시 제출하라"는 프롬프트로 덧붙여 OpenClaw에 재전송. (최대 2회 반복)
+   - `src/lib/schema.ts`: AI 응답 규격(배열 내 `issueId`, `component`, `severity` 등)을 엄격한 타입 체인으로 명시.
+2. **OpenClaw Parameter 플래그 강제 적용**
+   - `execute/route.ts` 스크립트에 반드시 `--json-mode` 등 리터럴 파라미터를 명시.
+3. **자체 치유 자율 검증 (3-Tier 핑퐁 로직)**
+   - **1차 파싱**: AI 출력물에 대해 `ReviewSchema.parse()` 실행.
+   - **2차 자가 수정 루프**: 파싱 실패 시, Catch 블록에서 `e.errors` (Zod 오류 메시지 스펙)를 모아 "이전 응답이 실패했습니다. 다음 Zod 구조적 에러를 해결하여 다시 제출하세요." 라는 프롬프트로 재전송. (최대 2회 시도 제한).
 
-### 🛡️ 예외 대책 (Troubleshooting)
-- **영구 실패 (Infinite Loop)**: 2번의 자가 수정 요청에도 스키마를 못 지키면 무한 루프를 도는 대신, 해당 Job을 `Failed`로 폐기 처리하고 BullMQ Queue에서 `status: error`를 송출해 관리자가 UI에서 "AI 리뷰만 재시도" 버튼을 직접 1회씩 누를 수 있도록 UI 피드백을 강화합니다.
+### 🛡️ 3중 교차 검증 및 예외 대책 (Troubleshooting / Validation)
+- **무한 루프 방지망 (Logic Validation)**: 자가 수정을 2번이나 거쳤음에도 스키마를 만족하지 못하면 파이프라인 무한정 대기를 방지하기 위해 강제 탈출. 해당 Job을 `BullMQ`에서 제거하고 Prisma DB의 상태를 `FAILED_AI_REVIEW`로 치환.
+- **Rate Limit 및 네트워크 오류 방어 (End-to-End Validation)**: OpenClaw 서버 API 제한에 걸렸을 때 즉각 실패처리하지 않고, **지수 백오프(Exponential Backoff)** 알고리즘을 태워 3초-9초-27초 간격으로 재시도 후 최종 포기하도록 예외 흐름 탑재.
 
 ---
 
-## 🎯 3. Prisma SQLite의 동시성 트랜잭션 (WAL 모드) 적용 및 수동 버튼 UI 연동
+## 🎯 3. Prisma SQLite WAL 동시성 제어 및 과부하 방어형 (Debounced) 수동 리뷰 UI
 
-**현재 상태 (AS-IS)**: 파이프라인의 Python 스크립트와 Next.js 서버(Prisma)가 동시에 패치 데이터를 읽고 쓸 때 SQLite 기본 모드로 인해 `SQLITE_BUSY` (Database locked) 에러 가능. 관리자 UI엔 "수동 리뷰 큐(Manual AI Review)" 버튼 없음.
-**목표 상태 (TO-BE)**: Write-Ahead Logging(WAL)을 Prisma 기동 시 무조건 켜주고 프론트엔드 버튼 컴포넌트를 연결.
+**현재 상태 (AS-IS)**: 배치 스크립트와 웹이 동시에 SQLite 접근 시 `SQLITE_BUSY` (Database locked) 트랜잭션 충돌 심각.
+**목표 상태 (TO-BE)**: Write-Ahead Logging(WAL)을 Node 구동 시 주입하여 Non-blocking 트랜잭션을 확보하고, 에러난 패치를 수동으로 돌릴 수 있는 안전한 UI 구축.
 
 ### 📝 Action Plan (실행 절차)
 
-1. **Prisma WAL 설정 주입**
-   - `schema.prisma` 및 `src/lib/db.ts` 내의 데이터베이스 URL 설정을 오버라이드.
-   ```typescript
-   // lib/db.ts
-   import { PrismaClient } from '@prisma/client'
-   export const prisma = new PrismaClient()
-   // Next.js 서버 시작 시 SQLite PRAGMA 강제 쿼리
-   prisma.$executeRaw`PRAGMA journal_mode=WAL; PRAGMA synchronous=NORMAL;`
-   ```
-2. **프론트엔드 (UI) 구현: AI 수동 리뷰 버튼**
-   - `src/components/ProductGrid.tsx` 또는 `PatchList.tsx` 에 조건부 버튼 추가.
-   - 조건 로직: `patch.isReviewed === false` 인 패키지 뷰 우측 상단에 "✨ 수동 AI 리뷰 촉발" 버튼을 위치시킴.
-   - onClick Handler: 
-     ```javascript
-     fetch('/api/pipeline/review-manual', { 
-         method: 'POST', 
-         body: JSON.stringify({ issueIds: [patch.issueId] }) 
-     });
-     ```
+1. **Prisma 하이브리드 WAL 모드 설정**
+   - `lib/db.ts` 내에 Next.js 시작 시 `prisma.$executeRaw` PRAGMA 쿼리 강제 실행.
+   - 향후 PostgreSQL 마이그레이션을 대비해 환경변수(`process.env.DB_TYPE === 'sqlite'`) 의존성에 따른 하이브리드 어댑터 패턴으로 작성.
+2. **프론트엔드 수동 리뷰 복구 트리거 UI**
+   - `PatchList.tsx`나 `ProductGrid.tsx`에서 개별 컴포넌트 오류 발생 시 `onClick`으로 즉시 Next.js `/api/pipeline/review-manual` 트리거를 쏘는 재시작 버튼 생성.
 
-### 🛡️ 예외 대책 (Troubleshooting)
-- **WAL 파일 비대화 (Disk Full)**: WAL 모드는 시스템 충돌과 비동기 처리에 강하지만, 오래동안 `sqlite-wal` 파일 크기가 커질 수 있습니다. 이를 방지하기 위해 매일 자정에 `PRAGMA wal_checkpoint(TRUNCATE);` 를 스크립트로 날리거나 Node 서버 로직 내 Cron Job으로 비워냅니다. 
-- **버튼 연타 방어 (Debouncing)**: 관리자가 수동 리뷰 버튼을 마우스로 여러 번 연타(Click Spam)할 경우 BullMQ에 동일한 Job이 수십 개 중복 적재됩니다. React 단에서 클릭 후 즉시 UI 버튼을 `disabled: isLoading` 상태로 3초간 잠그고 API 응답을 대기합니다.
+### 🛡️ 3중 교차 검증 및 예외 대책 (Troubleshooting / Validation)
+- **WAL 파일 비대화 누수 (Build/Architecture Validation)**: WAL 모드는 서버 비동기 충돌은 해소하지만 쓰레기 파일이 디스크를 채움. 따라서 매일 자정 혹은 OS `cron` 레벨에서 `PRAGMA wal_checkpoint(TRUNCATE)`를 실행하는 파이프라인 청소부 루틴 보장.
+- **버튼 연타에 의한 Job 스팸 (Interaction Validation)**: 관리자가 렌더링 지연 시 수동 리뷰 버튼을 10번 누르면 BullMQ 큐에 10개의 중복 Job이 쌓이는 참사 발생. 리액트 단에 `isLoading` State 기반 억제 로직(Debouncing)을 적용해 최초 클릭 시점부터 서버 응답 완료 시까지 UI 버튼을 강제 잠금 탈취.
 
 ---
 
-## 💡 특별 지침: 안티그라비티(Antigravity) 운영 및 오류 방지 가이드 (LEARNED.md 기반)
+## 💡 특별 지침: 안티그라비티 운영 및 파이프라인 프로덕션 규칙 (LEARNED.md 기반)
 
-이 보완 개발을 수행하는 에이전트 또는 개발자는 `GEMINI.md` 마스터 가이드라인과 과거 수많은 오류를 기록해 둔 `LEARNED.md` 의 전철을 밟지 않기 위해 다음 규칙을 **절대적으로 준수**해야 합니다.
+이 보완 계획을 실행하는 모든 에이전트/개발자는 `GEMINI.md`와 `LEARNED.md` 기록에 따라 다음의 치명적 시스템 파괴 행위를 **절대 금지**합니다.
 
-1. **PowerShell 인라인 SSH 스크립트 전송 절대 금지 (Error Type 17, 6)**
-   - Windows 터미널에서 `ssh user@host "python3 -c \"...\""` 처럼 복잡한 Python/Node 스크립트나 다중 인용부호가 들어가는 명령을 절대 전송하지 마세요. PowerShell의 이중 탈출(Escape) 파서가 파일 형태를 파괴합니다.
-   - **올바른 방법**: 로컬에 완전한 스크립트 파일(`.py`, `.ts`)을 만들고 `scp`로 넘긴 뒤, `ssh`로는 대상 파일을 순수하게 "호출(Call)"만 하십시오.
-2. **명령어 체이닝 호환성 (Error Type 18)**
-   - 로컬 구버전 PowerShell 환경을 고려하여, 명령어 여러 개를 이을 때 `&&` 사용을 금지하고 무조건 **세미콜론(`;`)** 을 사용하세요.
-3. **원격 Node 생태계(pm2, npm) 환경변수 확보 (Error Type 19)**
-   - 원격으로 `npm run build` 나 `pm2` 관련 작업을 시킬 때는 비대화형 쉘 환경 특성 상 경로를 못 찾습니다. 반드시 명령어 제일 앞에 `source ~/.nvm/nvm.sh ; `를 명시하거나 바이너리의 절대 경로를 기입하세요.
-4. **파괴적 명령어 지양 и 단일 진실 진단 (Master Principle)**
-   - 문제가 있더라도 임시방편 수정은 금지됩니다. 테스트 실패나 버그 발견 즉시 스스로 로그를 파악하고 자율 수정하되, `LEARNED.md`를 단일 진실 공급원(Single Source of Truth)으로 삼아 에지 케이스를 기록하여 두 번 다시 겪지 않게 대비하십시오.
-   - Prisma DB Push 및 스키마(`schema.prisma`) 버전 충돌(P1012 등)에 유의하여 환경 내 엔진 버전을 사전에 `grep_search` 점검하십시오.
+1. **절대 파괴 금지 (No Inline PowerShell SSH)**: Windows 터미널에서 `ssh user@호스트명 "python ..."`과 같이 직렬 명령어 전달 절대 금지. PowerShell 이스케이프 파괴로 코드 변형 일어남. 반드시 `.py`나 `.sh` 형태의 완성형 단일 파일을 만들고 `scp` 로 밀어넣은 직후 순수 킥오프만 진행하세요.
+2. **명령어 체이닝 규칙 유지**: `&&` 연산자 대신 Windows 레거시 환경을 막아내기 위해 무조건 세미콜론(`;`) 연계 사용.
+3. **PM2 & 환경변수 확보**: 원격으로 구동할 때(node, npm) 로그인 쉘 환경이 아니므로 `NVM`이나 전역 PATH를 못 찾습니다. 반드시 실행 명령어 선두에 `source ~/.nvm/nvm.sh ; `를 기재하고 타겟팅하십시오.
+4. **Turbopack은 프로덕션 툴이 아님**: `next dev --turbo`는 배포용이 될 수 없습니다. 서버는 항상 `next build` 후 최적화된 JS 번들을 `next start` (Port 3001) 로 구동하도록 문서화 및 파이프라인 오케스트레이션 해야 합니다.
 
 ---
 
-## 🤖 AI 서브 에이전트 인수인계 가이드 (Sub-Agent Handover Guide)
+## 🤖 AI 서브 에이전트 인수인계 프로토콜 (Agentic Handover Execution Directive)
 
-맥락(Context)이 초기화된 완전히 새로운 AI 에이전트 (또는 서브 에이전트)에게 작업을 인계할 때, **한 치의 오차나 환각(Hallucination) 없이 완벽하게 이 계획서를 따르게 하려면 아래의 프롬프트를 복사하여 그대로 주입(Injection) 하십시오.**
+수많은 서브 에이전트들의 환각을 막고 이 아키텍처 플랜을 100% 코드로 변환하기 위해서는, 코드 생성 전 다음 프롬프트를 에이전트 시스템 페이로드에 그대로 Injection 하십시오.
 
-### 📋 프롬프트 복사 블록 (Copy & Paste to New Agent)
+### 📋 프롬프트 복사 블록 (Copy & Paste to Next Agent System Prompt)
 
 ```text
-[임무 하달: 안티그라비티 V2 보완 개발]
-당신은 지금부터 Patch-Review-Dashboard V2의 핵심 누락 기능들을 보완하는 스태프(Staff) 엔지니어 역할을 수행합니다. 한 치의 오차도 없도록 아래의 지시를 하달받은 순서대로 정확히 이행하십시오.
+[Mission Critical System Injection]
+당신은 스태프 엔지니어링 롤을 맡아 Patch-Review-Dashboard V2의 누락 기믹(3가지 코어 픽스)을 본 계획서에 적힌 그대로 개발해야 합니다. 작업을 시작하기 전 한 치의 오차도 없도록 아래 지시를 정확히 이행하십시오.
 
-1. **[맥락 파악 (Context Sync)]**: 코어 시스템을 100% 이해한 채로 투입되기 위해, 가장 먼저 다음 4개의 문서를 `view_file` 도구로 반드시 정독하십시오.
-   - `docs/architecture.md` (전체 시스템 구조 및 설계 사상 파악)
-   - `docs/pipeline_flow.md` (데이터 수집부터 AI 리뷰까지의 파이프라인 흐름 파악)
-   - `docs/tech_stack.md` (도입된 기술 스택 및 버전 의존성 파악)
-   - `docs/post_deployment_enhancement_plan.md` (본 작업의 3대 보완 목표 및 Action Plan 완벽 숙지)
+1. **[맥락 파악 및 100% 이해 (Context Sync)]**: 코어 시스템을 완벽히 이해하고 분석하기 전까지는 절대 코드 작성을 시작하지 마시오. 투입 즉시 다음 문서를 `view_file` 도구로 철저히 정독하고, 연관 폴더(`pipeline_scripts/`, `src/app/api/`)를 탐색하여 아키텍처와 기존 코드를 100% 숙지하라.
+   - `docs/architecture.md`
+   - `docs/pipeline_flow.md`
+   - `docs/tech_stack.md`
+   - `docs/post_deployment_enhancement_plan.md`
 
-2. **[안전 무결성 규칙 (Absolute Constraints)]**: `enhancement_plan.md` 문서 하단의 **[💡 특별 지침: 안티그라비티 운영 및 오류 방지 가이드]**는 이번 개발의 절대적인 법률입니다.
-   - ⚠️ **PowerShell 인라인 SSH 스크립트 전송 절대 금지**: 복잡한 명령어는 반드시 시스템 내 로컬 파일 생성 후 `scp` 전송 방식을 준수하십시오.
-   - 명령어 실행 및 코딩 전 `Thought` 프로세스에서 "안티그라비티 특별 지침을 위반하고 있지 않은가?" 스스로 자문(Pre-Flight Check)하는 과정을 최우선으로 배치하십시오.
+2. 절대 벗어나지 마라: 
+   맥락 파악이 끝난 후, `post_deployment_enhancement_plan.md`를 열고 Action Plan 1-1부터 3-2까지 문서에 적힌 대로 하나씩 퀘스트 깨듯 코딩하라.
+   
+3. 3중 예외 대책 탑재 의무: 
+   각 파편을 개발할 때마다, 문서의 [🛡️ 3중 교차 검증 및 예외 대책] 섹션에 명기된 문제점(예: 메모리 부족 발생 시 Fallback 코드, 무한 루프 차단 기능, 버튼 연타 Debounce 제어 기능 등)을 반드시 당신의 코드에 로직(try/catch, if문 등)으로 100% 녹여내야 한다. 방수로가 없는 댐은 짓지 마라.
 
-3. **[실행 및 3중 교차 검증 (Execution & 3-Tier Validation)]**:
-   - 계획서(Action Plan)의 1번 단계부터 Step-by-Step으로 타겟 파일(`route.ts`, `schema.prisma` 등)을 수정합니다.
-   - 하나의 스텝을 적용할 때마다 무작정 다음으로 넘어가지 말고, 다음 **3번의 교차 검증**을 강제 수행하십시오.
-     ① **문법/빌드 검증**: `node --check` 또는 Typescript(`tsc`) 컴파일 에러가 없는지 터미널 명령어 수준에서 증명할 것.
-     ② **로직/설계 검증**: 계획서에 명시된 예외 대책(Edge Cases/Troubleshooting)을 내 코드에 완벽히 방어 로직으로 반영했는지 되묻기.
-     ③ **의존성 검증**: 이 파일의 수정으로 인해 파이프라인의 다음 단계(JSON 포맷, API 응답 등)가 깨지지 않는지 E2E 관점에서 검토할 것.
+4. 안티그라비티 특별 지침을 목숨처럼 지켜라:
+   파일 생성 전 `Thought` 사고망에서 "내 명령어가 세미콜론(;)을 쓰고 있는가? SSH 인라인을 쓰려는 건 아닌가? 원격에 제대로 파일을 Push 해놓고 타겟팅 했는가?" 자문하여라.
 
-4. 3개의 보완 개발 파트가 위 3중 검증을 모두 통과하면 작업을 최종 커밋하고, `walkthrough.md`에 결과를 상세히 작성한 후 나에게 보고하십시오.
+5. 3가지 주제 개발이 모두 끝나 로직 충돌이 없음을 증명해 내면, 
+   `walkthrough.md`에 결과를 화려하게 작성하고 나에게 보고하라.
 ```

@@ -381,11 +381,11 @@ export function ProductDetailClient({ categoryId, productId, dict }: { categoryI
                                                 )}
 
                                                 <div className={`transition-opacity duration-300 ${isExcludedLocally ? 'opacity-40 grayscale pointer-events-none' : 'opacity-100'}`}>
-                                                    <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mt-2 py-3 border-y border-white/5">
+                                                    <div className="grid grid-cols-2 lg:grid-cols-6 gap-4 mt-2 py-3 border-y border-white/5">
                                                         {(patch.osVersion || patch.OsVersion) && (
                                                             <div>
                                                                 <p className="text-xs text-white/40 uppercase tracking-wider mb-1">OS 버젼 (버전)</p>
-                                                                <p className="text-sm font-light text-blue-100 font-medium">{patch.osVersion || patch.OsVersion}</p>
+                                                                <p className="text-sm font-light text-blue-100 font-medium">{patch.osVersion || patch.OsVersion || 'Unknown'}</p>
                                                             </div>
                                                         )}
                                                         <div>
@@ -394,7 +394,7 @@ export function ProductDetailClient({ categoryId, productId, dict }: { categoryI
                                                         </div>
                                                         <div>
                                                             <p className="text-xs text-white/40 uppercase tracking-wider mb-1">{dict.dashboard.productDetail.version}</p>
-                                                            <p className="text-sm font-light text-white/80">{patch.Version || patch.version}</p>
+                                                            <p className="text-sm font-light text-white/80 max-w-[150px] truncate" title={patch.Version || patch.version}>{patch.Version || patch.version}</p>
                                                         </div>
                                                         <div>
                                                             <p className="text-xs text-white/40 uppercase tracking-wider mb-1">{dict.dashboard.productDetail.vendorId}</p>
@@ -406,6 +406,17 @@ export function ProductDetailClient({ categoryId, productId, dict }: { categoryI
                                                                 <p className="text-sm font-light text-white/80">{patch.Date || patch.date || patch.releaseDate}</p>
                                                             </div>
                                                         )}
+                                                        <div>
+                                                            <p className="text-xs text-white/40 uppercase tracking-wider mb-1">URL</p>
+                                                            {patch.Url || patch.url || patch.ref_url ? (
+                                                                <a href={patch.Url || patch.url || patch.ref_url} target="_blank" rel="noopener noreferrer" className="text-sm font-light text-blue-400 hover:text-blue-300 hover:underline flex items-center gap-1 group">
+                                                                    View Advisory
+                                                                    <svg className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+                                                                </a>
+                                                            ) : (
+                                                                <p className="text-sm font-light text-white/50">N/A</p>
+                                                            )}
+                                                        </div>
                                                     </div>
                                                     <div className="mt-2 space-y-4">
                                                         <div>

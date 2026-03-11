@@ -8,4 +8,8 @@ export const prisma =
         log: ['query'],
     });
 
+if (process.env.DB_TYPE === 'sqlite' || !process.env.DB_TYPE) {
+    prisma.$queryRawUnsafe('PRAGMA journal_mode = WAL;').catch((e: any) => console.error("WAL error:", e));
+}
+
 if (process.env.NODE_ENV !== 'production') globalForPrisma.prisma = prisma;
