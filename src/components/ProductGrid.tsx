@@ -50,13 +50,22 @@ export function ProductGrid({ categoryId, products, dict }: { categoryId: string
             const streamData = JSON.parse(event.data);
 
             if (streamData.log) {
+                // OS pipeline keywords
                 if (streamData.log.includes('[PREPROCESS_DONE]')) {
                     const match = streamData.log.match(/count=(\d+)/);
                     const cnt = match ? match[1] : '?';
                     setResultMsg(`✅ 전처리 완료 (${cnt}개 패치). AI 리뷰 진행 중...`);
                     router.refresh();
+                // Ceph pipeline keywords
+                } else if (streamData.log.includes('[CEPH-PREPROCESS_DONE]')) {
+                    setResultMsg(`✅ Ceph 전처리 완료. AI 리뷰 진행 중...`);
+                    router.refresh();
+                } else if (streamData.log.includes('[CEPH-PIPELINE]') || streamData.log.includes('[CEPH-AI Analysis]')) {
+                    setResultMsg(`🤖 ${streamData.log}`);
                 } else if (streamData.log.includes('[AI Analysis]') || streamData.log.includes('[SKIP]')) {
                     setResultMsg(`🤖 ${streamData.log}`);
+                } else if (streamData.log.includes('[CEPH-PIPELINE] All tasks completed')) {
+                    setResultMsg('✅ Ceph 파이프라인 완료!');
                 }
                 setLogTail(prev => {
                     const newLogs = prev.split('\n');
@@ -122,11 +131,20 @@ export function ProductGrid({ categoryId, products, dict }: { categoryId: string
         setResultMsg(dict?.dashboard?.productGrid?.initiatingPipeline || "Initiating Pipeline Queue...");
         setLogTail("");
 
+        // Determine the correct pipeline run endpoint based on category
+        const pipelineRunUrl = categoryId === 'storage'
+            ? '/api/pipeline/ceph/run'
+            : '/api/pipeline/run';
+
         try {
-            const res = await fetch('/api/pipeline/run', {
+            const res = await fetch(pipelineRunUrl, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ providers: [productId === 'windows' || productId === 'solaris' ? 'rhel' : productId], isRetry, isAiOnly })
+                body: JSON.stringify(
+                    categoryId === 'storage'
+                        ? { isRetry, isAiOnly }
+                        : { providers: [productId === 'windows' || productId === 'solaris' ? 'rhel' : productId], isRetry, isAiOnly }
+                )
             });
 
             const data = await res.json();

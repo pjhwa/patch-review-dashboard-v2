@@ -24,8 +24,9 @@ export function startWorker() {
 
     new Worker('patch-pipeline', async (job: Job) => {
         return new Promise((resolve, reject) => {
-            console.log(`Starting pipeline job ${job.id}`);
+            console.log(`Starting pipeline job ${job.id} (name: ${job.name})`);
             const linuxV2Dir = path.join(process.env.HOME || '/home/citec', '.openclaw/workspace/skills/patch-review/os/linux-v2');
+            const cephSkillDir = path.join(process.env.HOME || '/home/citec', '.openclaw/workspace/skills/patch-review/storage/ceph');
 
             const linuxSkillDir = linuxV2Dir;
             const outputReportFilename = job.name === 'manual-review' ? `manual_ai_report_${job.id}.json` : 'patch_review_ai_report.json';
@@ -76,6 +77,186 @@ export function startWorker() {
                 try {
                     const isAiOnly = job.data?.isAiOnly || false;
                     const isRetry = job.data?.isRetry || false;
+
+                    // ============================================================
+                    // CEPH PIPELINE BRANCH
+                    // ============================================================
+                    if (job.name === 'run-ceph-pipeline') {
+                        const cephOutputReport = path.join(cephSkillDir, 'patch_review_ai_report_ceph.json');
+                        const cephPatchesPath = path.join(cephSkillDir, 'patches_for_llm_review_ceph.json');
+
+                        const runCephStream = async (command: string, args: string[], progressMap: any = {}, overrideOpts: any = {}, suppressLog: boolean = false): Promise<any> => {
+                            return new Promise((res, rej) => {
+                                let fullStdout = '';
+                                let isRej = false;
+                                const p = spawn(command, args, { cwd: cephSkillDir, shell: false, ...overrideOpts });
+                                p.stdout.on('data', async (data: any) => {
+                                    const chunk = data.toString();
+                                    fullStdout += chunk;
+                                    const lines = chunk.split('\n');
+                                    for (const line of lines) {
+                                        if (line.trim()) {
+                                            if (!suppressLog) job.log(line).catch(() => { });
+                                            for (const [keyword, prog] of Object.entries(progressMap)) {
+                                                if (line.includes(keyword)) job.updateProgress(prog as number).catch(() => { });
+                                            }
+                                        }
+                                    }
+                                });
+                                p.stderr.on('data', (data: any) => {
+                                    const errText = data.toString();
+                                    job.log(`ERROR: ${errText}`).catch(() => { });
+                                    if (errText.includes('rate limit')) { isRej = true; rej(new Error('AI_REVIEW_FAILED: API Rate Limit Error')); }
+                                    else if (errText.includes('timeout') || errText.includes('gateway closed')) { isRej = true; rej(new Error('AI_REVIEW_FAILED: OpenClaw timed out.')); }
+                                });
+                                p.on('close', (code: number | null) => {
+                                    if (!isRej) { code === 0 ? res(fullStdout) : rej(new Error(`Command ${command} failed with code ${code}`)); }
+                                });
+                            });
+                        };
+
+                        // Step 1: Preprocessing
+                        await job.updateProgress(10);
+                        await job.log('[CEPH-PIPELINE] Starting Ceph patch preprocessing...');
+                        await runCephStream('python3', ['ceph_preprocessing.py', '--days', '180'], {
+                            '전처리 완료': 40,
+                            'Ceph Patch Preprocessor 시작': 15,
+                        });
+                        await job.updateProgress(40);
+                        await job.log('[CEPH-PREPROCESS_DONE] Preprocessing complete.');
+
+                        // Step 2: AI Review Loop
+                        const { ReviewSchema } = require('@/lib/schema');
+                        const MAX_AI_RETRIES = 2;
+                        let finalReviewedPatches: any[] = [];
+                        let cephPatchesRaw: any[] = [];
+                        try { cephPatchesRaw = JSON.parse(fs.readFileSync(cephPatchesPath, 'utf-8')); } catch (e) { }
+
+                        await job.updateProgress(50);
+                        await job.log(`[CEPH-AI] Sequentially evaluating ${cephPatchesRaw.length} patches...`);
+
+                        const prunePatchCeph = (obj: any): any => {
+                            if (!obj) return obj;
+                            const copy = JSON.parse(JSON.stringify(obj));
+                            const pruneText = (text: string, maxLen: number) => {
+                                if (typeof text !== 'string') return text;
+                                let pruned = text.replace(/https?:\/\/[^\s"'<>\\]+/g, '[URL]');
+                                return pruned.length > maxLen ? pruned.slice(0, maxLen) + '...[TRUNCATED]' : pruned;
+                            };
+                            const traverse = (o: any) => {
+                                if (Array.isArray(o)) { for (let i = 0; i < o.length; i++) { if (typeof o[i] === 'object') traverse(o[i]); else if (typeof o[i] === 'string') o[i] = pruneText(o[i], 3000); } }
+                                else if (typeof o === 'object' && o !== null) { for (const key of Object.keys(o)) { if (typeof o[key] === 'string') o[key] = pruneText(o[key], 5000); else if (typeof o[key] === 'object') traverse(o[key]); } }
+                            };
+                            traverse(copy);
+                            return copy;
+                        };
+
+                        for (let i = 0; i < cephPatchesRaw.length; i++) {
+                            const patch = cephPatchesRaw[i];
+                            const pName = patch.patch_id || patch.id || `ceph-patch-${i}`;
+                            await job.log(`[CEPH-AI Analysis] Processing patch ${i + 1}/${cephPatchesRaw.length}: ${pName}`);
+
+                            const prunedPatch = prunePatchCeph(patch);
+                            let prompt = `Read SKILL.md. Evaluate the following SINGLE Ceph storage patch according to the strict LLM evaluation rules in SKILL.md section 4. Return ONLY a pure JSON array with EXACTLY ONE object containing: 'IssueID', 'Component', 'Version', 'Vendor', 'Date', 'Criticality', 'Description', 'KoreanDescription', and optionally 'Decision' and 'Reason'. For Vendor use 'Ceph'. For Component use the specific Ceph component (e.g. 'ceph-radosgw', 'ceph-osd', 'ceph-mon', 'ceph-mds', 'ceph-mgr', 'ceph'). Do NOT skip evaluation steps.\n\n[PATCH DATA]:\n${JSON.stringify(prunedPatch)}`;
+
+                            let parsedJson: any = null;
+                            for (let attempt = 1; attempt <= MAX_AI_RETRIES + 1; attempt++) {
+                                try {
+                                    try {
+                                        const sessionsDir = path.join(process.env.HOME || '/home/citec', '.openclaw/agents/main/sessions');
+                                        if (fs.existsSync(sessionsDir)) {
+                                            const lockFiles = fs.readdirSync(sessionsDir).filter((f: string) => f.endsWith('.lock'));
+                                            for (const lf of lockFiles) fs.rmSync(path.join(sessionsDir, lf), { force: true });
+                                        }
+                                    } catch (cleanErr) { }
+
+                                    const rawAiOutput = await runCephStream('/home/citec/.nvm/versions/node/v22.22.0/bin/openclaw',
+                                        ['agent', '--agent', 'main', '--json', '-m', prompt],
+                                        {}, { shell: false, cwd: cephSkillDir }, true
+                                    );
+
+                                    const extractJsonArray = (text: string): any => {
+                                        const stripped = text.replace(/```(?:json)?\s*/g, '').replace(/```/g, '');
+                                        const match = stripped.match(/\[\s*\{[\s\S]*?\}\s*\]/);
+                                        if (!match) return null;
+                                        return JSON.parse(match[0]);
+                                    };
+
+                                    const openclawWrapper = JSON.parse(rawAiOutput);
+                                    const payloads = openclawWrapper?.result?.payloads || [];
+                                    const textContents = payloads.map((p: any) => p.text).join('\n');
+
+                                    if (textContents.toLowerCase().includes('rate limit')) throw new Error('AI_REVIEW_FAILED: Rate Limit');
+                                    parsedJson = extractJsonArray(textContents);
+                                    if (!parsedJson) throw new Error('No JSON array in AI output');
+
+                                    const validation = ReviewSchema.safeParse(parsedJson);
+                                    if (!validation.success) {
+                                        const errorDetails = validation.error.errors.map((err: any) => `${err.path.join('.')}: ${err.message}`).join(', ');
+                                        throw new Error(`Zod Validation Failed: ${errorDetails}`);
+                                    }
+
+                                    finalReviewedPatches.push(parsedJson[0]);
+                                    break;
+                                } catch (err: any) {
+                                    if (err.message.includes('AI_REVIEW_FAILED')) throw err;
+                                    if (attempt <= MAX_AI_RETRIES) {
+                                        prompt += `\n\nPrevious attempt failed. Fix this error and resubmit: ${err.message}\nReturn ONLY a JSON array.`;
+                                        await job.log(`  -> Attempt ${attempt} failed for ${pName}, retrying...`);
+                                    } else {
+                                        await job.log(`[SKIP] ${pName} permanently failed after ${MAX_AI_RETRIES} retries.`);
+                                    }
+                                }
+                            }
+                            await job.updateProgress(50 + Math.floor(((i + 1) / cephPatchesRaw.length) * 40));
+                        }
+
+                        // Save AI report
+                        fs.writeFileSync(cephOutputReport, JSON.stringify(finalReviewedPatches, null, 2));
+                        await job.log(`[CEPH-AI] AI review complete. ${finalReviewedPatches.length} patches reviewed.`);
+
+                        // Step 3: DB Ingestion
+                        try {
+                            await prisma.preprocessedPatch.deleteMany({ where: { vendor: 'Ceph' } });
+                            if (cephPatchesRaw.length > 0) {
+                                await prisma.preprocessedPatch.createMany({
+                                    data: cephPatchesRaw.map((p: any) => ({
+                                        issueId: p.patch_id,
+                                        vendor: 'Ceph',
+                                        component: p.component || 'ceph',
+                                        version: p.version || '',
+                                        osVersion: p.os_version || null,
+                                        description: (p.description || '').slice(0, 4000),
+                                        releaseDate: p.issued_date || null,
+                                    })),
+                                });
+                            }
+                            await job.log(`[CEPH-DB] Preprocessed ${cephPatchesRaw.length} patches ingested.`);
+
+                            await prisma.reviewedPatch.deleteMany({ where: { vendor: 'Ceph' } });
+                            for (const item of finalReviewedPatches) {
+                                const issueId = item.IssueID || item.id || 'Unknown';
+                                try {
+                                    await prisma.reviewedPatch.upsert({
+                                        where: { issueId },
+                                        update: { vendor: 'Ceph', component: item.Component || 'ceph', version: item.Version || '', criticality: item.Criticality || 'Unknown', description: item.Description || '', koreanDescription: item.KoreanDescription || item.Description || '', decision: item.Decision || 'Done', pipelineRunId: String(job.id) },
+                                        create: { issueId, vendor: 'Ceph', component: item.Component || 'ceph', version: item.Version || '', criticality: item.Criticality || 'Unknown', description: item.Description || '', koreanDescription: item.KoreanDescription || item.Description || '', decision: item.Decision || 'Done', pipelineRunId: String(job.id) },
+                                    });
+                                } catch (e) { await job.log(`[CEPH-DB WARN] Upsert failed for ${issueId}`); }
+                            }
+                            await job.log(`[CEPH-DB] Reviewed patches ingested: ${finalReviewedPatches.length}`);
+                        } catch (dbErr: any) {
+                            await job.log(`[CEPH-DB WARNING] DB ingestion error: ${dbErr.message}`);
+                        }
+
+                        await job.updateProgress(100);
+                        await job.log('[CEPH-PIPELINE] All tasks completed successfully.');
+                        resolve('Ceph pipeline success');
+                        return;
+                    }
+                    // ============================================================
+                    // END CEPH PIPELINE BRANCH
+                    // ============================================================
 
                     if (job.name === 'manual-review') {
                         await job.updateProgress(5);
