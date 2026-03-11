@@ -60,6 +60,8 @@ export function ProductGrid({ categoryId, products, dict }: { categoryId: string
                         const cnt = match ? match[1] : '?';
                         setResultMsg(`✅ 전처리 완료 (${cnt}개 패치). AI 리뷰 진행 중...`);
                         router.refresh(); // updates the preprocessed count on cards
+                    } else if (streamData.log.includes('[AI Analysis]') || streamData.log.includes('[SKIP]')) {
+                        setResultMsg(`🤖 ${streamData.log}`);
                     }
                     setLogTail(prev => {
                         const newLogs = prev.split('\n');
@@ -85,7 +87,7 @@ export function ProductGrid({ categoryId, products, dict }: { categoryId: string
                 } else {
                     if (streamData.message && !streamData.log?.includes('[PREPROCESS_DONE]')) {
                         setResultMsg(streamData.message);
-                    } else if (!streamData.log?.includes('[PREPROCESS_DONE]')) {
+                    } else if (!streamData.log) {
                         if (streamData.status === 'active') {
                             setResultMsg(`Pipeline active (Progress: ${streamData.progress || 0}%)`);
                         } else if (streamData.status === 'waiting') {
