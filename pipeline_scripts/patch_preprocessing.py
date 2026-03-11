@@ -222,7 +222,7 @@ def extract_base_component(pkgs):
     if not names:
         return None
         
-    names = list(set(names))
+    names = sorted(list(set(names)))
     names.sort(key=len)
     
     for pkg in pkgs:
@@ -380,7 +380,7 @@ def preprocess_patches():
     json_files = []
     for d in JSON_DIRS:
         if os.path.isdir(d):
-            json_files.extend(glob.glob(os.path.join(d, "*.json")))
+            json_files.extend(sorted(glob.glob(os.path.join(d, "*.json"))))
     print(f"Found {len(json_files)} JSON files.")
 
     for json_path in json_files:
