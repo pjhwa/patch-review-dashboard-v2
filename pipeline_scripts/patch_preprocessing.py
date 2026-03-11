@@ -12,14 +12,14 @@ import argparse
 # It does NOT perform the review. It performs the mechanical PRE-PROCESSING 
 # (Collection, Pruning, Aggregation) to prepare a clean dataset for the AI Agent (LLM) to review.
 
-JSON_DIR = r"batch_data"
+JSON_DIRS = [os.path.join("redhat", "redhat_data"), os.path.join("oracle", "oracle_data"), os.path.join("ubuntu", "ubuntu_data")]
 OUTPUT_FILE = "patches_for_llm_review.json"
 
 # --- CONFIGURATION: PRUNING RULES ---
 # STRICT WHITELIST: ONLY components capable of causing "System Critical" failures.
 SYSTEM_CORE_COMPONENTS = [
     # 1. Kernel & Hardware Interaction
-    "kernel", "linux-image", "microcode", "linux-firmware", 
+    "kernel", "linux-image", "microcode", "microcode_ctl", "linux-firmware", 
     "shim", "grub", "grub2", "efibootmgr", "mokutil",
     
     # 2. Storage & Filesystem
@@ -137,7 +137,7 @@ def format_redhat_os_versions(affected_products):
         
         if 'SAP' in prod or 'E4S' in prod:
             sap_versions.add(ver)
-        elif 'EUS' in prod or 'Extended Update Support' in prod or ' AUS ' in prod or '- AUS' in prod or 'Advanced Mission Critical' in prod or 'TUS ' in prod or 'Telco' in prod:
+        elif 'EUS' in prod or 'Extended Update Support' in prod or ' AUS ' in prod or '- AUS' in prod or 'Advanced Mission Critical' in prod or 'TUS ' in prod or 'Telco' in prod or 'Advanced Update Support' in prod:
             sap_versions.add(f"EUS {ver}")
         else:
             versions.add(ver.split('.')[0])
@@ -201,7 +201,54 @@ def extract_diff_content(text, vendor):
     # Default: Return cleanedsummary/synopsis
     return text[:500] + "..." if len(text) > 500 else text
 
-def get_component_name(vendor, title, summary, full_text):
+def extract_base_component(pkgs):
+    arch_exts = ['.x86_64', '.aarch64', '.src', '.noarch', '.i686', '.s390x', '.ppc64le']
+    names = []
+    for pkg in pkgs:
+        stripped = str(pkg)
+        for ext in arch_exts:
+            if stripped.endswith(ext):
+                stripped = stripped[:-len(ext)]
+                break
+        
+        m = re.match(r'^([a-zA-Z0-9_+-]+?)-([\d][a-zA-Z0-9_+.:-]+)$', stripped)
+        if m:
+            names.append(m.group(1))
+        else:
+            m2 = re.match(r'^([a-zA-Z0-9_+-]+?)[-_]([\d][a-zA-Z0-9_+.:~-]+)$', stripped)
+            if m2:
+                names.append(m2.group(1))
+    
+    if not names:
+        return None
+        
+    names = list(set(names))
+    names.sort(key=len)
+    
+    for pkg in pkgs:
+        if str(pkg).endswith('.src'):
+            stripped = str(pkg)[:-4]
+            m = re.match(r'^([a-zA-Z0-9_+-]+?)-([\d][a-zA-Z0-9_+.:-]+)$', stripped)
+            if m:
+                return m.group(1)
+                
+    return names[0]
+
+def get_component_name(vendor, title, summary, full_text, pkgs=None):
+    if pkgs and isinstance(pkgs, list) and len(pkgs) > 0:
+        base_comp = extract_base_component(pkgs)
+        if base_comp:
+            if vendor == "Oracle" and "uek" in base_comp:
+                version_match = re.search(r'(\d+\.\d+)\.\d+', title + " " + summary)
+                if not version_match:
+                    version_match = re.search(r'(\d+\.\d+)\.\d+', full_text)
+                kern_series = f"-v{version_match.group(1)}" if version_match else ""
+                return f"kernel-uek{kern_series}"
+            
+            for core in SYSTEM_CORE_COMPONENTS:
+                if core == base_comp or base_comp.startswith(core + "-"):
+                    return core
+            return base_comp
     text = (title + " " + summary + " " + full_text).lower()
     text_primary = (title + " " + summary).lower()
     
@@ -256,66 +303,54 @@ def get_component_name(vendor, title, summary, full_text):
         
     return "other"
 
-def extract_specific_version(text, component, patch_id=None):
-    """Extracts exact version number. Supports RHEL RPM, Oracle el9, Ubuntu ubuntu-build formats."""
-    # User Overrides & Manual Lookups
-    overrides = {
-        "RHSA-2026:1815": "openssh-8.7p1-30.el9_2.9",
-        "RHSA-2026:2594": "kernel-5.14.0-427.110.1.el9_4",
-        "RHSA-2026:2486": "fence-agents-4.2.1-89.el8_6.21",
-        "RHSA-2026:1733": "openssl-3.0.1-46.el9_0.7",
-        "RHSA-2026:2484": "pcs-0.10.11",
-        "RHSA-2026:2572": "rhacm-2.14-images",
-        "RHSA-2026:2520": "toolbox-0.0.99.5.1-2.el9_4",
-        "RHSA-2026:3291": "runc-1.4.0-2.el9_7",
-        "RHSA-2026:2819": "pcs-0.11.4-7.el9_2.7",
-        "ELBA-2026-2413": "microcode_ctl-20251111-1.0.1.el8_10",
-        "ELBA-2026-1352": "device-mapper-multipath-0.8.7-39.el9_7.1",
-        "ELBA-2026-50127": "oracle-database-preinstall-19c-1.0-2.el9",
-        "ELSA-2026-3361": "firefox-140.8.0-2.0.1.el10_1",
-        "ELSA-2026-50112": "kernel-uek-6.12.0-108.64.6.3",
-        "USN-7958-1": "1.8.3-1ubuntu0.24.04.1",
-        "USN-7944-1": "5.9.4+dfsg-1.1ubuntu3.2"
-    }
-    if patch_id in overrides:
-        return overrides[patch_id]
-
-    safe_component = re.escape(component.split('-')[0])  # e.g. 'runc', 'pcs', 'glibc'
-
-    # --- Strategy 1: Match {component}-{version}.el{N} (RHEL/Oracle RPM format) ---
-    # Matches: runc-1.4.0-2.el9_7  pcs-0.11.4-7.el9_2.7  glibc-2.34-231.0.1.el9_7.10
-    m = re.search(fr'{safe_component}-([\d][\d.]+[^\s]*?\.el\d[^\s.]*)', text, re.IGNORECASE)
-    if m:
-        return f"{component}-{m.group(1)}"
-
-    # --- Strategy 2: Match Ubuntu build version {component} – {version}ubuntu{N} ---
-    # Matches: curl – 8.5.0-2ubuntu10.7  openssh-server – 9.6p1-3ubuntu13.11
-    m = re.search(fr'{safe_component}[^\n]*?[–-]\s*([\d][\d.+-]*ubuntu[\d.]+)', text, re.IGNORECASE)
-    if m:
-        return m.group(1)
-
-    # --- Strategy 3: Bare Ubuntu version if no component prefix found first ---
-    # e.g. a version-only line: "8.5.0-2ubuntu10.7"
-    m = re.search(r'\b(\d+\.\d+[\d.]*-\d+ubuntu[\d.]+)\b', text)
-    if m:
-        return m.group(1)
-
-    # --- Strategy 4: Oracle/RHEL RPM filename in Updated Packages block ---
-    # Matches: glibc-2.34-231.0.1.el9_7.10.x86_64.rpm
-    m = re.search(fr'{safe_component}-([\d][\d.+-]+?\.el\d[^\s]*)\.(?:x86_64|aarch64|src|noarch|ppc64le|s390x)\.rpm', text, re.IGNORECASE)
-    if m:
-        return f"{component}-{m.group(1)}"
-
-    # --- Strategy 5: Classic kernel version (keeps backward compat) ---
-    if "kernel" in component:
-        m = re.search(r'(\d+\.\d+\.\d+-\d+(?:\.\d+)*(?:\.el\d+uek)?)', text)
+def get_best_rpm_match(pkgs, comp):
+    arch_exts = ['.x86_64', '.aarch64', '.src', '.noarch', '.i686', '.s390x', '.ppc64le']
+    best_ver = ""
+    # pass 1: exact match
+    for pkg in pkgs:
+        stripped = pkg
+        for ext in arch_exts:
+            if stripped.endswith(ext):
+                stripped = stripped[:-len(ext)]
+                break
+        
+        m = re.match(r'^([a-zA-Z0-9_+-]+?)-([\d][a-zA-Z0-9_+.:-]+)$', stripped)
         if m:
-            return m.group(1)
-
-    return ""
+            name, ver = m.group(1), m.group(2)
+            if name == comp or (comp == "kernel-uek" and name == "kernel-uek"):
+                return f"{name}-{ver}"
+    
+    # pass 2: prefix match
+    for pkg in pkgs:
+        stripped = pkg
+        for ext in arch_exts:
+            if stripped.endswith(ext):
+                stripped = stripped[:-len(ext)]
+                break
+                
+        m = re.match(r'^([a-zA-Z0-9_+-]+?)-([\d][a-zA-Z0-9_+.:-]+)$', stripped)
+        if m:
+            name, ver = m.group(1), m.group(2)
+            if name.startswith(comp) or comp in name:
+                return f"{name}-{ver}"
+                
+    # pass 3: just return the first one stripped
+    if pkgs:
+        stripped = str(pkgs[0])
+        for ext in arch_exts:
+            if stripped.endswith(ext):
+                stripped = stripped[:-len(ext)]
+                break
+        m = re.match(r'^([a-zA-Z0-9_+-]+?)-([\d][a-zA-Z0-9_+.:-]+)$', stripped)
+        if m:
+            return f"{m.group(1)}-{m.group(2)}"
+        return stripped
+    return best_ver
 
 def is_system_critical(vendor, component, text):
     comp = component.lower()
+    
+    if "ovirt 4.5" in text.lower(): return False
     
     # Rule 2: Strict Whitelist (RHEL/Ubuntu/Oracle)
     for bad in EXCLUDED_PACKAGES_EXPLICIT:
@@ -324,7 +359,6 @@ def is_system_critical(vendor, component, text):
     for core in SYSTEM_CORE_COMPONENTS:
         if core == comp: return True
         if comp.startswith(f"{core}-"): return True
-        if f"package {core}" in text.lower(): return True
 
     if "kernel" in comp and "texlive" not in comp: return True
     return False
@@ -337,12 +371,15 @@ def preprocess_patches():
     cutoff_date = datetime.now() - timedelta(days=args.days)
     print(f"[PREPROCESS] Filter cutoff: Processing patches strictly newer than {cutoff_date.strftime('%Y-%m-%d')} ({args.days} days)")
     
-    print(f"Loading data from {JSON_DIR}...")
+    print("Loading data from directories...")
     
     raw_list = []
     
     # --- Step 1: Ingest JSONs directly ---
-    json_files = glob.glob(os.path.join(JSON_DIR, "*.json"))
+    json_files = []
+    for d in JSON_DIRS:
+        if os.path.isdir(d):
+            json_files.extend(glob.glob(os.path.join(d, "*.json")))
     print(f"Found {len(json_files)} JSON files.")
 
     for json_path in json_files:
@@ -355,6 +392,8 @@ def preprocess_patches():
                 continue
                 
             vendor = data.get('vendor', 'Unknown')
+            if 'Ubuntu' in vendor:
+                vendor = 'Ubuntu'
             patch_id = data.get('id', os.path.basename(json_path).replace('.json', ''))
             
             # Normalization
@@ -414,7 +453,7 @@ def preprocess_patches():
                 continue
             if "rhel 7" in title.lower() and vendor == "Red Hat":
                 continue
-            if (len(full_text) < 50 and vendor == "Red Hat") or patch_id == "RHSA-2026:2664":
+            if (len(full_text) < 50 and vendor == "Red Hat") or patch_id in ["RHSA-2026:2664", "RHSA-2025:23032", "RHSA-2025:23030"]:
                 continue
             
             # 2. Granular Severity Rule (Keep Critical/Important/None, Drop Moderate/Low)
@@ -424,17 +463,62 @@ def preprocess_patches():
                     continue
 
             # 3. Red Hat Specific Product Validation
-            if vendor == "Red Hat" and isinstance(affected_products, list) and len(affected_products) > 0:
+            if vendor == "Red Hat":
+                if not isinstance(affected_products, list) or len(affected_products) == 0:
+                    continue
+                is_rhba = "RHBA" in patch_id
+                is_rhsa = "RHSA" in patch_id
                 has_valid_product = False
+                
+                rhba_patterns = [
+                    r'Red Hat Enterprise Linux for x86_64 (?:8|9|10)(?:\.\d+)? x86_64',
+                    r'Red Hat Enterprise Linux High Availability for x86_64 (?:8|9|10)(?:\.\d+)? x86_64',
+                    r'Red Hat Enterprise Linux for x86_64 - Update Services for SAP Solutions (?:8|9|10)(?:\.\d+)? x86_64'
+                ]
+                
+                rhsa_patterns = [
+                    r'Red Hat Enterprise Linux BaseOS \(v\.\s?(?:8|9|10)(?:\.\d+)?\)',
+                    r'Red Hat Enterprise Linux AppStream \(v\.\s?(?:8|9|10)(?:\.\d+)?\)',
+                    r'Red Hat Enterprise Linux High\s?Availability \(v\.\s?(?:8|9|10)(?:\.\d+)?\)'
+                ]
+                
                 for prod in affected_products:
-                    # Drop EUS, AUS, TUS, and Telco specifically from acting as base validation
-                    if re.search(r'Extended Update Support| EUS | AUS |- AUS|Advanced Mission Critical|TUS |Telco', prod, re.IGNORECASE):
-                        continue
-                    # Require base OS version (8/9/10) OR SAP Solutions
-                    if re.search(r'Red Hat Enterprise Linux.*?(?:[89]|10)\b', prod) or "Update Services for SAP Solutions" in prod:
+                    matched = False
+                    if is_rhba:
+                        for pat in rhba_patterns:
+                            if re.search(pat, prod):
+                                matched = True
+                                break
+                    elif is_rhsa:
+                        for pat in rhsa_patterns:
+                            if re.search(pat, prod):
+                                matched = True
+                                break
+                    else:
+                        for pat in rhba_patterns + rhsa_patterns:
+                            if re.search(pat, prod):
+                                matched = True
+                                break
+                    
+                    if matched:
                         has_valid_product = True
                         break
+                        
                 if not has_valid_product:
+                    continue
+                
+            # 3.1. Oracle Architecture Filtering
+            if vendor == "Oracle":
+                arch_valid = False
+                if isinstance(affected_products, list):
+                    for prod in affected_products:
+                        if "x86_64" in prod.lower():
+                            arch_valid = True
+                            break
+                if not arch_valid and "x86_64" in full_text.lower():
+                    arch_valid = True
+                    
+                if not arch_valid:
                     continue
                 
             # 4. Ubuntu Variant Exclusions
@@ -446,8 +530,32 @@ def preprocess_patches():
             if "real time" in title.lower() or "kernel-rt" in title.lower() or "kernel-rt" in summary.lower():
                 continue
             
-            component = get_component_name(vendor, title, summary, full_text)
-            specific_ver = extract_specific_version(full_text, component, patch_id)
+            component = get_component_name(vendor, title, summary, full_text, data.get("packages", []))
+            
+            specific_ver = ""
+            if vendor == "Ubuntu" and isinstance(data.get("packages"), list) and data["packages"]:
+                for pkg in data["packages"]:
+                    pkg_str = str(pkg)
+                    if pkg_str.startswith(component):
+                        m = re.match(fr'{re.escape(component)}[-_](.+)', pkg_str)
+                        if m:
+                            specific_ver = m.group(1)
+                            break
+                if not specific_ver:
+                    specific_ver = str(data["packages"][0])
+
+            if not specific_ver and vendor == "Red Hat":
+                m_title = re.search(r'([\d]+\.[\d]+\.[\d]+)', title)
+                if m_title and "Update" in title:
+                    specific_ver = f"{component}-{m_title.group(1)}"
+                if not specific_ver and "packages" in data and isinstance(data["packages"], list):
+                    best = get_best_rpm_match(data["packages"], component)
+                    if best: specific_ver = best
+                
+                
+            if not specific_ver and vendor == "Oracle" and "packages" in data and isinstance(data["packages"], list):
+                best = get_best_rpm_match(data["packages"], component)
+                if best: specific_ver = best
             
             # Extract diff content for history/summary
             diff_content = extract_diff_content(full_text, vendor)
@@ -457,31 +565,28 @@ def preprocess_patches():
             dist_versions = []
             os_version_val = "Unknown"
             
+            search_text = ""
+            if isinstance(affected_products, list):
+                search_text = " ".join([str(p) for p in affected_products])
+            elif isinstance(affected_products, str):
+                search_text = affected_products
+
             if vendor == "Ubuntu":
-                # Find all "XX.XX LTS" patterns and filter out EOL versions
-                lts_matches = re.findall(r"(\d{2}\.\d{2} LTS)", full_text + " " + title)
+                # Find all "XX.XX LTS" patterns strictly from affected_products
+                lts_matches = re.findall(r"(\d{2}\.\d{2} LTS)", search_text)
                 if lts_matches:
                     active_lts = [v for v in sorted(set(lts_matches)) if v not in UBUNTU_EOL_LTS_VERSIONS]
                     dist_versions = active_lts
                     os_version_val = ", ".join(active_lts)
             
             elif vendor == "Oracle":
-                ol_matches = re.findall(r'Oracle Linux (\d+)', title + " " + summary, re.IGNORECASE)
+                ol_matches = re.findall(r'Oracle Linux (\d+)', search_text, re.IGNORECASE)
                 if ol_matches:
                     ol_vers = sorted(set(ol_matches))
                     os_version_val = ", ".join([f"OL{v}" for v in ol_vers])
-                else:
-                    ol_ver = extract_oracle_version(full_text + " " + title) # fallback
-                    if ol_ver:
-                        os_version_val = ol_ver.upper()
             
             elif vendor == "Red Hat":
                 os_version_val = format_redhat_os_versions(data.get('affected_products', []))
-                if not os_version_val:
-                    rhel_matches = re.findall(r"Red Hat Enterprise Linux (\d+)", full_text)
-                    if rhel_matches:
-                        dist_versions = sorted(list(set(rhel_matches)))
-                        os_version_val = ", ".join([f"RHEL {v}" for v in dist_versions])
 
             raw_list.append({
                 'id': patch_id,
@@ -559,7 +664,7 @@ def preprocess_patches():
     print(f"Saved review packet to {OUTPUT_FILE}")
 
     # --- Step 4: Save to SQLite Database (Incremental: skip already-existing issueIds) ---
-    db_path = os.path.expanduser("~/patch-review-dashboard-v2/patch-review.db")
+    db_path = os.path.expanduser("~/patch-review-dashboard-v2/prisma/patch-review.db")
     if os.path.exists(db_path):
         try:
             conn = sqlite3.connect(db_path, timeout=20.0)
@@ -569,14 +674,10 @@ def preprocess_patches():
             skipped = 0
 
             # Fetch the set of already-stored issueIds to avoid duplicates
-            cursor.execute('SELECT issueId FROM PreprocessedPatch')
-            existing_ids = {row[0] for row in cursor.fetchall()}
-
+            cursor.execute("DELETE FROM PreprocessedPatch")
+            
             for p in final_candidates:
                 issue_id = p.get('id', 'Unknown')
-                if issue_id in existing_ids:
-                    skipped += 1
-                    continue
 
                 version_str = p.get('specific_version', '') or 'Unknown'
                 os_version_str = p.get('os_version', '') or 'Unknown'
