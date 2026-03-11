@@ -226,7 +226,8 @@ export function ProductDetailClient({ categoryId, productId, dict }: { categoryI
                                         if (reviewedData?.data && Array.isArray(reviewedData.data)) {
                                             isApproved = reviewedData.data.some((rPatch: any) => {
                                                 const rId = rPatch.IssueID || rPatch['Issue ID'] || rPatch.Issue_ID;
-                                                return rId === patch.issueId || rId === patch.id || rId === patch.original_id || rId === patch.Name;
+                                                const isCrit = rPatch.Criticality?.toLowerCase() === 'critical';
+                                                return (rId === patch.issueId || rId === patch.id || rId === patch.original_id || rId === patch.Name) && isCrit;
                                             });
                                         }
 

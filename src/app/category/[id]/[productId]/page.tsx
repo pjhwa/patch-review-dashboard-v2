@@ -189,14 +189,15 @@ export default function ProductDetailPage() {
                             {preprocessedData && (preprocessedData.data || preprocessedData).length > 0 ? (
                                 <div className="space-y-4">
                                     {(preprocessedData.data || preprocessedData).map((patch: any, idx: number) => {
-                                        const patchId = patch.id || patch.original_id || patch.Name || `Patch Element #${idx + 1}`;
+                                        const patchId = patch.issueId || patch.id || patch.original_id || patch.Name || `Patch Element #${idx + 1}`;
 
                                         // Check if this patch made it into the final recommended list (reviewedData)
                                         let isApproved = false;
                                         if (reviewedData?.data && Array.isArray(reviewedData.data)) {
                                             isApproved = reviewedData.data.some((rPatch: any) => {
                                                 const rId = rPatch['Issue ID'] || rPatch.IssueID || rPatch.Issue_ID;
-                                                return rId === patch.id || rId === patch.original_id || rId === patch.Name;
+                                                const isCrit = rPatch.Criticality?.toLowerCase() === 'critical';
+                                                return (rId === patch.issueId || rId === patch.id || rId === patch.original_id || rId === patch.Name) && isCrit;
                                             });
                                         }
 
