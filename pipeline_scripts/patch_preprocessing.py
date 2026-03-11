@@ -374,6 +374,7 @@ def preprocess_patches():
     print("Loading data from directories...")
     
     raw_list = []
+    dropped_audit_log = []
     
     # --- Step 1: Ingest JSONs directly ---
     json_files = []
@@ -438,33 +439,41 @@ def preprocess_patches():
                 
                 # Check timeframe
                 if pub_dt < cutoff_date:
+                    dropped_audit_log.append({ 'Patch ID': patch_id, 'Vendor': vendor, 'Drop Reason': 'Outside Target Window', 'Details': f"Date: {date_str} (Cutoff: {cutoff_date.strftime('%Y-%m-%d')})" })
                     continue
-            except Exception:
+            except Exception as e:
                 # If we absolutely can't parse it, we give it the benefit of the doubt
                 pass
                 
             # --- EXCLUSION FILTERS ---
             # 1. Garbage Data (Empty Content or Known Bad ID)
             if "openshift" in title.lower() or "openshift" in summary.lower():
+                dropped_audit_log.append({ 'Patch ID': patch_id, 'Vendor': vendor, 'Drop Reason': 'Garbage Data', 'Details': 'Contains "openshift"' })
                 continue
             if "kubernetes" in title.lower() or "kubernetes" in summary.lower():
+                dropped_audit_log.append({ 'Patch ID': patch_id, 'Vendor': vendor, 'Drop Reason': 'Garbage Data', 'Details': 'Contains "kubernetes"' })
                 continue
             if "extended lifecycle" in title.lower() or "extended lifecycle" in summary.lower() or "extended lifecycle" in full_text.lower()[:500]:
+                dropped_audit_log.append({ 'Patch ID': patch_id, 'Vendor': vendor, 'Drop Reason': 'Garbage Data', 'Details': 'Contains "extended lifecycle"' })
                 continue
             if "rhel 7" in title.lower() and vendor == "Red Hat":
+                dropped_audit_log.append({ 'Patch ID': patch_id, 'Vendor': vendor, 'Drop Reason': 'Garbage Data', 'Details': 'Matches "rhel 7" for Red Hat' })
                 continue
             if (len(full_text) < 50 and vendor == "Red Hat") or patch_id in ["RHSA-2026:2664", "RHSA-2025:23032", "RHSA-2025:23030"]:
+                dropped_audit_log.append({ 'Patch ID': patch_id, 'Vendor': vendor, 'Drop Reason': 'Garbage Data', 'Details': 'Text len < 50 or Blacklisted ID' })
                 continue
             
             # 2. Granular Severity Rule (Keep Critical/Important/None, Drop Moderate/Low)
             if severity:
                 sev_lower = severity.lower()
                 if "moderate" in sev_lower or "low" in sev_lower:
+                    dropped_audit_log.append({ 'Patch ID': patch_id, 'Vendor': vendor, 'Drop Reason': 'Severity Under Threshold', 'Details': f"Severity: {severity}" })
                     continue
 
             # 3. Red Hat Specific Product Validation
             if vendor == "Red Hat":
                 if not isinstance(affected_products, list) or len(affected_products) == 0:
+                    dropped_audit_log.append({ 'Patch ID': patch_id, 'Vendor': vendor, 'Drop Reason': 'Missing Affected Products', 'Details': 'Empty or missing list' })
                     continue
                 is_rhba = "RHBA" in patch_id
                 is_rhsa = "RHSA" in patch_id
@@ -505,6 +514,7 @@ def preprocess_patches():
                         break
                         
                 if not has_valid_product:
+                    dropped_audit_log.append({ 'Patch ID': patch_id, 'Vendor': vendor, 'Drop Reason': 'Invalid Product Variant', 'Details': f"Did not match target RHEL streams. Products: {affected_products}" })
                     continue
                 
             # 3.1. Oracle Architecture Filtering
@@ -519,15 +529,18 @@ def preprocess_patches():
                     arch_valid = True
                     
                 if not arch_valid:
+                    dropped_audit_log.append({ 'Patch ID': patch_id, 'Vendor': vendor, 'Drop Reason': 'Architecture Mismatch', 'Details': 'Not x86_64' })
                     continue
                 
             # 4. Ubuntu Variant Exclusions
             if vendor == "Ubuntu" and "kernel" in title.lower():
                 if "linux - linux kernel" not in full_text.lower():
+                    dropped_audit_log.append({ 'Patch ID': patch_id, 'Vendor': vendor, 'Drop Reason': 'Ubuntu Variant Exclusion', 'Details': 'Not standard linux-kernel (likely raspi, aws, oem, etc.)' })
                     continue
                 
             # 5. User Blacklist (kernel-rt)
             if "real time" in title.lower() or "kernel-rt" in title.lower() or "kernel-rt" in summary.lower():
+                dropped_audit_log.append({ 'Patch ID': patch_id, 'Vendor': vendor, 'Drop Reason': 'User Blacklist', 'Details': 'kernel-rt / Real Time' })
                 continue
             
             component = get_component_name(vendor, title, summary, full_text, data.get("packages", []))
@@ -613,6 +626,7 @@ def preprocess_patches():
     pruned_list = []
     for p in raw_list:
         if not is_system_critical(p['vendor'], p['component'], p['full_text']):
+            dropped_audit_log.append({ 'Patch ID': p['id'], 'Vendor': p['vendor'], 'Drop Reason': 'Not System Critical', 'Details': f"Component '{p['component']}' is not in the whitelist or matches an explicit blacklist" })
             continue
         pruned_list.append(p)
         
@@ -662,6 +676,21 @@ def preprocess_patches():
         json.dump(final_candidates, f, indent=2, ensure_ascii=False)
         
     print(f"Saved review packet to {OUTPUT_FILE}")
+
+    # --- Step 3.5: Save Audit Log of Dropped Patches ---
+    audit_file = "dropped_patches_audit.csv"
+    try:
+        if dropped_audit_log:
+            keys = dropped_audit_log[0].keys()
+            with open(audit_file, 'w', newline='', encoding='utf-8-sig') as output_file:
+                dict_writer = csv.DictWriter(output_file, fieldnames=keys)
+                dict_writer.writeheader()
+                dict_writer.writerows(dropped_audit_log)
+            print(f"[AUDIT] Saved {len(dropped_audit_log)} dropped patches reasons to {audit_file}")
+        else:
+            print("[AUDIT] No patches were dropped.")
+    except Exception as e:
+        print(f"[AUDIT ERROR] Failed to write audit log: {e}")
 
     # --- Step 4: Save to SQLite Database (Incremental: skip already-existing issueIds) ---
     db_path = os.path.expanduser("~/patch-review-dashboard-v2/prisma/patch-review.db")
