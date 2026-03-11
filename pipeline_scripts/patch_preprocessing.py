@@ -681,12 +681,21 @@ def preprocess_patches():
     audit_file = "dropped_patches_audit.csv"
     try:
         if dropped_audit_log:
+            # Breakdown by reason
+            from collections import Counter
+            reasons_count = Counter([log['Drop Reason'] for log in dropped_audit_log])
+            
+            print(f"\n[AUDIT SUMMARY] Total Dropped Patches: {len(dropped_audit_log)}")
+            for reason, count in reasons_count.most_common():
+                print(f"  - {reason}: {count}")
+            print()
+            
             keys = dropped_audit_log[0].keys()
             with open(audit_file, 'w', newline='', encoding='utf-8-sig') as output_file:
                 dict_writer = csv.DictWriter(output_file, fieldnames=keys)
                 dict_writer.writeheader()
                 dict_writer.writerows(dropped_audit_log)
-            print(f"[AUDIT] Saved {len(dropped_audit_log)} dropped patches reasons to {audit_file}")
+            print(f"[AUDIT] Saved full dropped patches reasons to {audit_file}")
         else:
             print("[AUDIT] No patches were dropped.")
     except Exception as e:
