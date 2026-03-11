@@ -1,71 +1,110 @@
 # 🧠 OpenClaw AI 기반 패치 리뷰 프로세스
 
-이 문서는 `SKILL.md`의 지침에 따라 **Patch Review Board (PRB)** 운영에서 핵심적인 역할을 하는 **OpenClaw (LLM)** 기반의 지능형 패치 영향도 분석 및 자동 검토 프로세스에 대해 자세히 설명합니다.
+> **Last Updated**: 2026-03-11 | **Agent**: OpenClaw 2026.3.x
+
+본 문서는 `SKILL.md`의 지침에 따라 운영되는 **OpenClaw LLM 기반 지능형 패치 영향도 분석** 프로세스를 설명합니다.
 
 ---
 
-## 🏗️ 전체 워크플로우 개요 (Process Workflow)
-
-OpenClaw AI 리뷰어는 원시 데이터를 수집하고 전처리한 결과를 입력받아, 운영 체제 환경에 미치는 실질적인 심각도(Criticality)를 예측하고 관리자의 결정을 돕는 한국어/영어 요약 및 최종 권고안(Decision)을 도출합니다.
+## 🏗️ 전체 워크플로우
 
 ```mermaid
 flowchart TD
-    A[Data Collection\nbatch_collector.js] --\>|batch_data/| B(Data Preprocessing\npatch_preprocessing.py)
-    B --\>|patches_for_llm_review.json| C{OpenClaw AI Review Engine}
-    
-    C --\>|1. Impact Analysis| D[Critical Impact Check]
-    C --\>|2. Version Aggregation| E[Cumulative & Specific Version]
-    C --\>|3. Translation| F[Korean/English Summary]
-    
-    D --\> G
-    E --\> G
-    F --\> G
-    
-    G[AI Result JSON Generation\npatch_review_ai_report.json] --\> H[(Dashboard Database)]
+    A["patches_for_llm_review.json\n(PreprocessedPatch 기반)"] --> B["query_rag.py\n과거 Exclude 피드백 주입"]
+    B --> C["openclaw agent --agent main\nSKILL.md Step 3+4 실행"]
+
+    C --> D["Impact Analysis\nCritical 기준 적용"]
+    C --> E["Version Aggregation\n최신 Critical 버전 선택"]
+    C --> F["한국어/영어 요약 생성"]
+
+    D & E & F --> G["patch_review_ai_report.json 저장"]
+    G --> H["DB 인서트 (검증 포함)"]
+    H --> I["Passthrough\nAI 미처리 항목 자동 보완"]
+    I --> J[("ReviewedPatch DB")]
 ```
 
 ---
 
-## 🔎 단계별 상세 리뷰 매커니즘
+## 🔒 실행 전 방어 로직
 
-### Step 1. 수집 및 전처리 완료 데이터 로드
-*   AI 엔진은 전처리가 끝난 대상 파일 `patches_for_llm_review.json`을 읽어 들입니다. 단순 스크립트 기반 매칭을 뛰어넘어, 패치의 `full_text` (전체 설명)와 `history` (누적 이력)를 언어 모델이 컨텍스트로 직접 파악합니다.
-
-### Step 2. 심층 영향도 분석 (Deep Impact Analysis)
-단순 보안 패치 여부를 넘어, 서버의 구동 안정성에 미치는 **"Critical System Impact (시스템 치명적 영향)"** 을 스스로 판단합니다.
-
-**✅ 승인 (Approve) / 포함 대상:**
-- **System Hang / Crash**: 커널 패닉, 데드락(Deadlock), 부팅 실패 등.
-- **Data Loss / Corruption**: 파일시스템 오류, RAID 손상, 데이터 무결성 훼손.
-- **Critical Performance**: 서비스 제공이 불가능할 정도의 심각한 성능 저하.
-- **Security (Critical)**: RCE (원격 코드 실행), 권한 탈취(Root escalation), 인증 우회.
-- **Failover Failure**: HA 구성(Pacemaker 등) 페일오버 불가 이슈.
-
-**❌ 제외 (Exclude) 대상:**
-- 로깅 노이즈, 단순 오타 수정(Typos) 등 안정성에 영향 없는 버그.
-- 국지적인 서비스 거부(DoS)나 정보 유출과 같은 "Moderate(보통)" 수준의 취약점.
-- LTS(Long Term Support)가 아닌 지원 종료 임박 버전(예: Ubuntu 25.10 등)에만 해당하는 패치.
-
-### Step 3. 누적 버전 집계 및 추출 (Aggregation)
-하나의 컴포넌트(예: `kernel`)가 분기 내에 여러 번 업데이트된 경우, 단순 최신 버전이 아닌 **"치명적 수정(Critical fix)이 포함된 최신 버전"** 을 스마트하게 계산합니다.
-
-1. `특정 버전 (specific_version)` 명시: 입력 JSON에 제공된 정확한 목적 패키지 버전을 변형 없이(`Unknown` 또는 `(latest)` 처리 금지) 엄격하게 유지합니다.
-2. 설명 병합: 과거의 중요(Critical) 수정 내역과 최신의 중요 수정 내역만을 깔끔하게 병합하여 노이즈를 줄입니다.
-
-### Step 4. 최종 리포트 및 번역 생성 (Report Generation)
-최종 판단 결과는 어떠한 Markdown 마크업 없이 순수한 `patch_review_ai_report.json` 배열 포맷으로 출력됩니다. 이때 영어와 한국어에 대해 아주 정제된 형태의 요약을 제시합니다.
-
-- **한국어 설명 (Korean Description) 규칙**: 
-  - "보안 업데이트" 같은 무의미한 나열이나 단순 CVE 번호 복사 금지.
-  - "무엇이 부서졌고 어떻게 영향을 미치는지"를 직관적으로 전달하는 1~2 문장. 
-  - *예시 (Good)*: "메모리 부족 상황에서 데이터 손실을 유발할 수 있는 zswap 경쟁 상태 해결 및 `nilfs_mdt_destroy`의 일반 보호 오류(GPF)로 인한 시스템 크래시 방지."
-- **영어 설명 (English Description)**: 한국어 설명에 대한 명확한 상호 호환 합성 요약문.
+| 방어 | 설명 |
+|---|---|
+| **Stale Lock 제거** | `~/.openclaw/agents/main/sessions/*.lock` 자동 삭제 — 이전 실행 크래시로 인한 `session file locked` 오류 방지 |
+| **Zod 재시도** | AI 출력 JSON이 스키마 검증 실패 시 오류를 포함해 최대 2회 재시도 |
+| **환각 방지** | `PreprocessedPatch`에 없는 IssueID는 인서트 스킵, `[SKIP]` 로그 기록 |
+| **Passthrough** | AI가 누락한 벤더 항목을 `PreprocessedPatch`에서 직접 `ReviewedPatch`에 채움 |
 
 ---
 
-## 💡 AI 예외 처리 및 수동 개입 (Fallbacks)
-스크래퍼가 웹사이트 타임아웃(Timeout) 등의 이유로 수집에 실패하여 `collection_failures.json` 에 데이터가 기록된 경우, AI는 이를 감지하거나 관리자에게 다음과 같이 Fallback 액션을 안내합니다:
+## 🔎 SKILL.md 기반 AI 동작 상세
 
-1. 일시적인 네트워크 오류로 간주해 Collector 재가동
-2. 누락된 URL 수동 열람 및 데이터 주입
-3. 비핵심 건으로 관리자가 명시적 "제외(Exclude)" 처리
+### Step 3. 심층 영향도 분석 (Impact Analysis)
+
+AI는 `patches_for_llm_review.json`의 `full_text`와 `history`를 직접 읽어 **Critical System Impact** 기준으로 포함/제외를 판단합니다.
+
+**✅ 포함 기준 (Criticality: Critical)**
+| 분류 | 예시 |
+|---|---|
+| System Hang / Crash | 커널 패닉, Deadlock, 부팅 실패 |
+| Data Loss / Corruption | 파일시스템 오류, RAID 손상 |
+| Critical Performance | 서비스 불가 수준 성능 저하 |
+| Security — RCE / Privilege | RCE, Root Escalation, Auth Bypass |
+| Failover Failure | Pacemaker/Corosync HA 이슈 |
+
+**❌ 제외 기준**
+- 로깅 노이즈, 오타 수정 등 안정성 무관 변경
+- Moderate 수준 취약점 (로컬 DoS, 정보 유출)
+- Ubuntu 비 LTS 버전 전용 패치 (25.10 등)
+
+> [!NOTE]
+> SKILL.md의 필터링으로 일부 벤더가 누락될 수 있습니다.
+> 이를 보완하기 위해 **Passthrough** 단계가 모든 `PreprocessedPatch`를 `ReviewedPatch`에 보장합니다.
+
+---
+
+### Step 4. 누적 버전 집계 & 리포트 생성
+
+동일 컴포넌트가 분기 내 여러 버전으로 업데이트된 경우:
+
+1. Critical 수정이 포함된 **최신 버전**을 대표 버전으로 선택
+2. 과거 Critical 수정 내역과 최신 내용을 병합하여 Description 생성
+3. `patch_review_ai_report.json` — 순수 JSON 배열, Markdown 없음
+
+**각 항목 필수 필드**:
+```json
+{
+  "IssueID": "RHSA-2026:1234",
+  "Component": "kernel",
+  "Version": "5.14.0-427.42.1.el9_4",
+  "Vendor": "Red Hat",
+  "Date": "2026-03-05",
+  "Criticality": "Critical",
+  "Description": "The kernel had a use-after-free vulnerability in ...",
+  "KoreanDescription": "커널에서 UAF 취약점이 발견되어 권한 상승 공격이 가능했으며..."
+}
+```
+
+---
+
+## 💡 RAG 피드백 루프
+
+관리자가 대시보드에서 패치를 **Exclude** 처리하면 사유가 `user_exclusion_feedback.json`에 저장됩니다.
+다음 AI 리뷰 시 `query_rag.py`가 이 피드백을 유사도 검색으로 조회하여 프롬프트에 주입합니다.
+
+```
+"다음 패치들은 관리자가 명시적으로 제외 처리했습니다:
+- RHSA-2025:9012, 사유: [Environment Mismatch] 해당 모듈 미사용"
+```
+
+이를 통해 동일/유사 패치의 반복 보고를 방지하여 오탐(False Positive)이 점진적으로 감소합니다.
+
+---
+
+## 🛡️ 오류 처리 및 UI 표시
+
+| 오류 상황 | UI 표시 | 조치 |
+|---|---|---|
+| Session lock timeout | `❌ Pipeline Failed: session file locked` | "AI 리뷰만 재시도" 클릭 (자동 lock 삭제) |
+| API Rate Limit | `❌ Pipeline Failed: API Rate Limit Error` | 잠시 후 재시도 |
+| Gateway timeout | `❌ Pipeline Failed: Gateway agent failed` | OpenClaw 상태 확인 후 재시도 |
+| JSON 파싱 실패 | Zod 재시도 최대 2회 자동 진행 | 3회 실패 시 에러 표시 |
