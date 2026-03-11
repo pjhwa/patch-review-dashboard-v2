@@ -56,7 +56,7 @@
 cd C:\Users\jooksan.park\Patch-Review\patch-review-dashboard-v2
 git add .
 git commit -m "feat: [변경 내용 요약]"
-git push origin master
+git push origin main
 ```
 
 ### 규칙 3: 수집기 스크립트 동기화 위치
