@@ -114,9 +114,6 @@ export async function POST(request: Request) {
                     const nodePath = path.join(process.env.HOME || '/home/citec', '.nvm/versions/node/v22.22.0/bin/node');
 
                     if (!isAiOnly) {
-                        const scraperArgs = isRetry ? ['batch_collector.js', '--retry-failures'] : ['batch_collector.js'];
-                        await runStep(nodePath, scraperArgs, isRetry ? 'Retry Data Collection' : 'Data Collection', { cwd: linuxSkillDir });
-
                         // Pass `--days 90` to preprocessing so it only hands the last 3 months of accumulated data to the LLM agent
                         await runStep('/usr/bin/python3', ['patch_preprocessing.py', '--days', '90'], 'Preprocessing', { cwd: linuxSkillDir });
                     }
@@ -125,39 +122,69 @@ export async function POST(request: Request) {
                     const openClawScript = '/home/citec/.nvm/versions/node/v22.22.0/bin/openclaw';
                     let aiPrompt = "Read SKILL.md. Note that Step 1 and Step 2 are completed, and patches_for_llm_review.json is generated. Therefore, you must start from Step 3: Impact Analysis, and then proceed to finalize Step 4: Final JSON Generation. CRITICAL INSTRUCTION: You MUST output the final analytical result EXCLUSIVELY to a file named patch_review_ai_report.json (NOT A CSV). The JSON must be an array of objects. Each object MUST strictly contain the exact exact following string keys: 'IssueID', 'Component', 'Version', 'Vendor', 'Date', 'Criticality', 'Description', and 'KoreanDescription'. Do not skip Step 4. Auto-complete everything without user prompting.";
 
-                    const feedbackFile = path.join(linuxSkillDir, 'user_exclusion_feedback.json');
-                    if (fs.existsSync(feedbackFile)) {
+                    const patchesPath = path.join(linuxSkillDir, 'patches_for_llm_review.json');
+                    let queryTextContext = "security updates";
+                    if (fs.existsSync(patchesPath)) {
                         try {
-                            const feedbackList = JSON.parse(fs.readFileSync(feedbackFile, 'utf-8'));
-                            if (Array.isArray(feedbackList) && feedbackList.length > 0) {
-                                const exclusionRules = feedbackList.map((f: any) => `- Issue: ${f.issueId}, Description: ${f.description}, Reason for exclusion: ${f.reason}`).join('\n');
-                                aiPrompt += `\n\nCRITICAL INSTRUCTION: Reviewers have manually marked the following historical patches to be explicitly EXCLUDED from final recommendations for the provided reasons:\n${exclusionRules}\n\nIf you encounter any patches in patches_for_llm_review.json that are highly similar or identical to these excluded patch descriptions/reasons, you MUST filter them out and NOT include them in the final patch_review_ai_report.json.`;
-                                console.log("[Pipeline] Injected User Exclusion Feedback into AI Prompt.");
-                            }
-                        } catch (e) {
-                            console.error("Failed to read user exclusion feedback:", e);
-                        }
+                            const patches = JSON.parse(fs.readFileSync(patchesPath, 'utf-8'));
+                            queryTextContext = patches.slice(0, 5).map((p: any) => p.Description || p.description || p.id).join(" ");
+                        } catch (e) { }
                     }
 
-                    // AI Analysis with auto-retry (up to 2 additional attempts)
+                    try {
+                        const ragResult = require('child_process').spawnSync('/usr/bin/python3', ['query_rag.py', queryTextContext], { cwd: linuxSkillDir, encoding: 'utf-8' });
+                        if (ragResult.status === 0 && ragResult.stdout) {
+                            const retrievedItems = JSON.parse(ragResult.stdout);
+                            if (Array.isArray(retrievedItems) && retrievedItems.length > 0) {
+                                const exclusionRules = retrievedItems.map((f: any) => `- Excluded Issue: ${f.issueId}, Reason: ${f.reason || f.description}`).join('\n');
+                                aiPrompt += `\n\nCRITICAL INSTRUCTION: Reviewers have manually marked the following historical patches to be explicitly EXCLUDED from final recommendations for the provided reasons:\n${exclusionRules}\n\nIf you encounter any patches in patches_for_llm_review.json that are highly similar or identical to these excluded patch descriptions/reasons, you MUST filter them out and NOT include them in the final patch_review_ai_report.json.`;
+                                console.log("[Pipeline] Injected Incremental RAG Feedback into AI Prompt.");
+                            }
+                        }
+                    } catch (e) {
+                        console.error("Failed to execute RAG query fallback:", e);
+                    }
+
+                    // AI Analysis with auto-retry + Zod verification (self-healing loop)
+                    const { ReviewSchema } = require('@/lib/schema');
                     const MAX_AI_RETRIES = 2;
                     let aiLastError: any = null;
                     let aiSuccess = false;
+                    let currentPrompt = aiPrompt;
 
                     for (let attempt = 1; attempt <= MAX_AI_RETRIES + 1; attempt++) {
                         try {
                             const attemptMsg = attempt > 1 ? ` (재시도 ${attempt - 1}/${MAX_AI_RETRIES})` : '';
                             fs.writeFileSync(statusFile, JSON.stringify({
                                 isRunning: true,
-                                message: `AI Analysis 진행 중${attemptMsg}... (모델: qwen3-coder → fallback 순서로 자동 전환)`
+                                message: `AI Analysis 진행 중${attemptMsg}... (Zod 검증 및 자체 치유 적용)`
                             }));
 
-                            await runStep(openClawPath, [openClawScript, 'agent', '--agent', 'main', '--message', aiPrompt], `AI Analysis (attempt ${attempt})`, { cwd: linuxSkillDir });
+                            // Action Plan 2: LLM JSON 모드 강제
+                            await runStep(openClawPath, [openClawScript, 'agent', '--agent', 'main', '--json-mode', '--message', currentPrompt], `AI Analysis (attempt ${attempt})`, { cwd: linuxSkillDir });
 
                             // Check if the JSON output was actually generated
                             const finalReportPath = path.join(linuxSkillDir, 'patch_review_ai_report.json');
                             if (!fs.existsSync(finalReportPath)) {
-                                throw new Error(`LLM이 실행은 완료됐지만 patch_review_ai_report.json 파일을 생성하지 않았습니다 (attempt ${attempt})`);
+                                throw new Error(`LLM이 실행은 완료됐지만 patch_review_ai_report.json 파일을 생성하지 않았습니다.`);
+                            }
+
+                            // Action Plan 2: 자체 치유 자율 검증 (3-Tier 핑퐁 로직)
+                            const rawData = fs.readFileSync(finalReportPath, 'utf-8');
+                            let parsedJson;
+                            try {
+                                const match = rawData.match(/\[[\s\S]*\]/);
+                                parsedJson = JSON.parse(match ? match[0] : rawData);
+                            } catch (e) {
+                                throw new Error("Output is not valid JSON.");
+                            }
+
+                            // 1차 파싱: AI 출력물 Zod 검증
+                            const validation = ReviewSchema.safeParse(parsedJson);
+
+                            if (!validation.success) {
+                                const errorDetails = validation.error.errors.map((err: any) => `${err.path.join('.')}: ${err.message}`).join(', ');
+                                throw new Error(`Zod Schema Validation Failed: ${errorDetails}`);
                             }
 
                             aiSuccess = true;
@@ -166,8 +193,13 @@ export async function POST(request: Request) {
                             aiLastError = retryErr;
                             console.error(`[AI Analysis] Attempt ${attempt} failed:`, retryErr.message);
                             if (attempt <= MAX_AI_RETRIES) {
-                                // Wait 5 seconds before retrying
-                                await new Promise(res => setTimeout(res, 5000));
+                                // 2차 자가 수정 루프: 에러 사유를 LLM에게 돌려보내 프롬프트 갱신
+                                currentPrompt = `이전 응답이 실패했습니다. 다음 Zod 구조적 에러를 해결하여 다시 제출하세요: ${retryErr.message}\n반드시 JSON 배열 형태로 출력하세요.`;
+
+                                // Exponential Backoff: 3s -> 9s -> 27s
+                                const backoffDelay = Math.pow(3, attempt) * 1000;
+                                console.log(`[AI Analysis] Waiting ${backoffDelay}ms before retry...`);
+                                await new Promise(res => setTimeout(res, backoffDelay));
                             }
                         }
                     }

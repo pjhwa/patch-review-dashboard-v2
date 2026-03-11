@@ -23,16 +23,22 @@ export async function GET(request: Request) {
     };
 
     try {
-        // 1. Count Collected from DB (via RawPatch)
-        const rawCounts = await prisma.rawPatch.groupBy({
-            by: ['vendor'],
-            _count: true,
-        });
-        for (const row of rawCounts) {
-            if (row.vendor === 'Red Hat') counts.redhat.collected = row._count;
-            if (row.vendor === 'Oracle') counts.oracle.collected = row._count;
-            if (row.vendor === 'Ubuntu') counts.ubuntu.collected = row._count;
-        }
+        // 1. Count Collected from Filesystem (JSON directories) instead of RawPatch DB
+        const getFileCount = (subDir: string) => {
+            const dirPath = path.join(linuxSkillDir, subDir);
+            if (fs.existsSync(dirPath)) {
+                try {
+                    return fs.readdirSync(dirPath).filter((file: string) => file.endsWith('.json')).length;
+                } catch (e) {
+                    return 0;
+                }
+            }
+            return 0;
+        };
+
+        counts.redhat.collected = getFileCount('redhat/redhat_data');
+        counts.oracle.collected = getFileCount('oracle/oracle_data');
+        counts.ubuntu.collected = getFileCount('ubuntu/ubuntu_data');
 
         // 2. Count Preprocessed from DB
         const preCounts = await prisma.preprocessedPatch.groupBy({

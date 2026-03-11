@@ -1,15 +1,22 @@
 import { NextResponse } from 'next/server';
 import { pipelineQueue } from '@/lib/queue';
+import { prisma } from '@/lib/db';
 
 export async function POST(request: Request) {
     try {
         const body = await request.json();
-        const { providers } = body; // e.g., { providers: ['rhel', 'ubuntu', 'oracle'] }
+        const { providers, isRetry, isAiOnly } = body;
 
-        console.log(`Enqueueing OpenClaw pipeline for: ${providers?.join(', ')}`);
+        console.log(`Enqueueing OpenClaw pipeline for: ${providers?.join(', ')} (Retry: ${isRetry}, AI Only: ${isAiOnly})`);
+
+        if (!isAiOnly && !isRetry) {
+            // Instantly clear the DB so the Dashboard counters drop to 0.
+            await prisma.preprocessedPatch.deleteMany({});
+            await prisma.reviewedPatch.deleteMany({});
+        }
 
         // Enqueue to BullMQ
-        const job = await pipelineQueue.add('run-pipeline', { providers });
+        const job = await pipelineQueue.add('run-pipeline', { providers, isRetry, isAiOnly });
 
         return NextResponse.json({
             success: true,
