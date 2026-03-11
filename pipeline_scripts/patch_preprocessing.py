@@ -366,7 +366,6 @@ def is_system_critical(vendor, component, text):
 def preprocess_patches():
     parser = argparse.ArgumentParser(description="Pre-process collected patches for AI review.")
     parser.add_argument('--days', type=int, default=90, help="Number of days to look back for analysis.")
-    parser.add_argument('--no-db', action='store_true', help="Skip SQLite database insertion (useful for UI preview).")
     args = parser.parse_args()
     
     cutoff_date = datetime.now() - timedelta(days=args.days)
@@ -665,10 +664,6 @@ def preprocess_patches():
     print(f"Saved review packet to {OUTPUT_FILE}")
 
     # --- Step 4: Save to SQLite Database (Incremental: skip already-existing issueIds) ---
-    if args.no_db:
-        print("[PREPROCESS] --no-db flag provided. Skipping database insertion and exiting.")
-        return
-
     db_path = os.path.expanduser("~/patch-review-dashboard-v2/prisma/patch-review.db")
     if os.path.exists(db_path):
         try:
