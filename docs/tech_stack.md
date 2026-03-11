@@ -1,59 +1,90 @@
 # 🚀 Technology Stack
 
-**Patch Review Dashboard v2** 프로젝트는 대규모 데이터를 빠르고 견고하게 처리하는 Data Pipeline 기술과, 미려한 인터페이스를 자랑하는 Modern Frontend 기술의 절묘한 결합으로 이루어져 있습니다.
+> **Last Updated**: 2026-03-11 | **Version**: v2
 
 ---
 
-## 💻 Frontend Dashboard (V2)
+## 💻 Frontend Dashboard
 
-사용자 대상을 위한 시각적 요소와 API 상호작용은 프런트엔드 애플리케이션에서 담당합니다.
+| 기술 | 버전 | 용도 |
+|---|---|---|
+| **Next.js** | 16.1.6 | App Router, RSC, API Routes |
+| **React** | 19.x | UI 컴포넌트 |
+| **TypeScript** | strict mode | 전체 코드베이스 |
+| **Tailwind CSS** | v4 | 유틸리티 CSS |
+| **shadcn/ui** | (Radix UI 기반) | 헤드리스 UI 컴포넌트 |
+| **Lucide React** | latest | 아이콘 |
+| **Turbopack** | Next.js 16 내장 | 프로덕션 빌드 (`npm run build`) |
 
-### 1. Framework: **Next.js 15.x / React 19** 
-- **App Router**: 디렉터리 기반 라우팅을 이용한 직관적인 모듈 구조 (`app/api`, `app/category`)
-- **React Server Components (RSC)**: 서버에서 Prisma ORM을 통해 데이터를 직사입하여 페이지 로드 퍼포먼스를 극대화
-- **Turbopack (`--turbo`)**: 로컬 개발 시 압도적인 번들링 속도 지원
-
-### 2. Styling \u0026 UI Aesthetics: **Tailwind CSS v4 + Framer Motion**
-- **Tailwind v4**: 최신 유틸리티 CSS를 활용하여 마진, 패딩, Color Token들을 모듈화
-- **shadcn/ui (Radix UI)**: Headless 컴포넌트를 이용해 완벽한 웹 접근성(A11y) 확보 및 프리미엄 퀄리티 달성
-- **Lucide Icons**: 일관되고 미려한 벡터 아이콘 사용
-- **Dynamic Animations**: `framer-motion`과 `tw-animate-css`를 결합하여 호버(hover), 페이지 트랜지션, 마이크로 인터랙션 구현
+### 주요 컴포넌트
+- **`ProductGrid.tsx`**: 대시보드 메인 — 파이프라인 실행, SSE 수신, 상태 표시
+- **`PremiumCard.tsx`**: 벤더별 통계 카드 (수집/전처리/AI리뷰/승인 카운트)
+- **`ClientPage.tsx`**: 제품 상세 페이지 — 전처리 데이터 탭 + AI 리뷰 결과 탭
 
 ---
 
-## ⚙️ Backend Services \u0026 Database
+## ⚙️ Backend Services
 
-### 1. ORM \u0026 Database: **Prisma + SQLite/PostgreSQL**
-- **Prisma Client**: 타입 세이프(Type-Safe) 방식의 DB 쿼리를 지원하여 런타임 에러 방지. `schema.prisma` 한 곳에서 데이터베이스 진실의 구조(Single Source of Truth) 관리
-- 개발 시에는 관리가 쉬운 `SQLite`를, 운영(Production) 환경에서는 확장이 용이한 `PostgreSQL`로 스왑 가능
+| 기술 | 버전 | 용도 |
+|---|---|---|
+| **Prisma ORM** | latest | SQLite 타입세이프 쿼리 |
+| **SQLite** | — | 운영 DB (`prisma/patch-review.db`) |
+| **BullMQ** | latest | 비동기 파이프라인 작업 큐 |
+| **Redis** | — | BullMQ 브로커 |
+| **Server-Sent Events** | Next.js 내장 | 실시간 파이프라인 로그 스트리밍 |
 
-### 2. API \u0026 실시간 통신 (Next.js Route Handlers)
-- RESTful 철학을 따르는 API 엔드포인트 구성 (`app/api/pipeline/route.ts` 등)
-- **SSE (Server-Sent Events)**: `/api/pipeline/stream` 엔드포인트를 통해 클라이언트와 지속적인 연결(Keep-Alive)을 맺고 실시간 파이프라인 로그를 푸시합니다.
-- **BullMQ**: 내부 작업 큐 매니저로, 비동기 파이프라인 테스크의 상태와 진행률(Progress)을 안전하게 관리합니다.
+### 주요 API 엔드포인트
+
+| 경로 | 기능 |
+|---|---|
+| `POST /api/pipeline/run` | 파이프라인 실행 — DB 초기화 후 BullMQ Job 등록 |
+| `GET /api/pipeline/stream` | SSE — Job 진행 상태 및 로그 실시간 Push |
+| `GET /api/pipeline/stage/preprocessed?product=X` | 전처리 패치 목록 조회 |
+| `GET /api/pipeline/stage/reviewed?product=X` | AI 리뷰 패치 목록 조회 (PreprocessedPatch join) |
+| `GET /api/products?category=os` | 벤더별 수집/전처리/AI리뷰/승인 카운트 |
+| `POST /api/pipeline/feedback` | 관리자 Exclude 피드백 저장 |
 
 ---
 
 ## 🐍 Data Pipeline Scripts
 
-백그라운드로 실행되는 크롤링 및 데이터 전처리 스크립트 영역입니다.
+### 데이터 수집 (CRON — 분기별)
 
-### 1. Automation \u0026 Scraping: **Node.js + Playwright**
-- 동적인 DOM 환경(Pagination, Anti-Bot)을 렌더링하기 위한 `Playwright` 브라우저 자동화
-- `https` 내장 모듈을 통해 API (Red Hat CSAF) 고속 Fetching
-- Concurrency 설정을 통해 다중 CPU 코어로 스크래핑 분산 처리
+| 스크립트 | 언어 | 대상 |
+|---|---|---|
+| `redhat/rhsa_collector.js` | Node.js | Red Hat CSAF API — RHSA |
+| `redhat/rhba_collector.js` | Node.js | Red Hat CSAF API — RHBA |
+| `oracle/oracle_collector.sh` | Bash | Oracle Linux Errata 웹 스크래핑 |
+| `oracle/oracle_parser.py` | Python 3 | Oracle HTML 파싱 → JSON |
+| `ubuntu/ubuntu_collector.sh` | Bash | Ubuntu Security Notices git 동기화 |
+| `run_collectors_cron.sh` | Bash | 전체 수집기 순차 실행 CRON 래퍼 |
 
-### 2. Processing \u0026 Filtering: **Python 3**
-- 텍스트 정규화, 정규표현식 매칭, 데이터 Pruning에 압도적으로 강력한 파이썬 사용
-- `test_db.py`, `debug_logic.py` 형태의 수많은 Mock 테스트 스크립트 작성으로 높은 신뢰성 구축
+### 전처리 & 필터링 (Dashboard 트리거)
 
-### 3. AI Interruption \u0026 RAG (Local LLM)
-- `OpenClaw`와 같은 로컬 기반 언어 모델 API 호출 구조 채택 (`openclaw_scripts` 내장)
-- **RAG (Retrieval-Augmented Generation)**: 사용자 피드백(`user_exclusion_feedback.json`)을 컨텍스트로 주입받아, 과거 관리자가 제외(Exclude) 시킨 유사 패키지의 사유를 학습하고 동일한 실수를 방지하는 지능형 피드백 루프를 갖추고 있습니다. JSON의 Context를 주입받아 Markdown/Korean 형태로 렌더링 된 최종 Result 반환.
+- **`patch_preprocessing.py`** (Python 3): 날짜 필터링, Core Component 화이트리스트, CVE 중복 제거, PreprocessedPatch DB 저장
+- **`query_rag.py`** (Python 3): 사용자 피드백 유사도 검색 후 AI 프롬프트 주입
+- **`sync_rag.py`** (Python 3): RAG 벡터 인덱스 동기화
+
+### AI 리뷰 (Dashboard 트리거)
+
+- **OpenClaw** (`openclaw agent --agent main`): SKILL.md 기반 Impact Analysis → JSON 리포트 생성
+- **작업 큐**: BullMQ + Redis로 Job 상태 관리 (`src/lib/queue.ts`)
 
 ---
 
-> [!NOTE]  
-> **개발 표준 (GEMINI.md Guidelines)**  
-> 1. 모든 코드는 `TypeScript strict mode`로 동작해야 합니다.  
-> 2. `console.log` 및 에러 핸들링을 명확히 하고, 장애 발생 시 원인을 `LEARNED.md`에 단일 진실로 기록하여 미래 트러블슈팅을 최적화하고 있습니다.
+## 🖥️ Infrastructure
+
+| 항목 | 상세 |
+|---|---|
+| **서버** | `tom26` / `172.16.10.237` |
+| **Node.js** | v22.22.0 (nvm) |
+| **Process Manager** | PM2 (`npx pm2 start`) |
+| **AI Agent** | OpenClaw 2026.3.x |
+| **DB** | SQLite (`prisma/patch-review.db`) |
+| **Queue** | BullMQ + Redis |
+
+---
+
+> [!NOTE]
+> **개발 표준**: TypeScript strict mode 적용. 모든 함수에 JSDoc + 타입 명시.
+> API 키 등 민감 정보는 `.env` 파일로 관리 (하드코딩 금지).

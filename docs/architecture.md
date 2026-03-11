@@ -1,121 +1,149 @@
-# 🏗️ Patch Review Dashboard Architecture
+# 🏗️ Patch Review Dashboard — System Architecture
 
-본 문서는 **Patch Review Dashboard v2**의 전체 아키텍처와 통합 시스템 구조를 설명합니다. 시스템은 크게 **데이터 수집 파이프라인(Data Pipeline)**과 **웹 대시보드(Web Dashboard)**의 두 축으로 구성되며, 이를 통해 전 세계 주요 OS 벤더의 패치 정보를 실시간으로 수집, 필터링, AI 분석, 그리고 관리자 검증까지 원스톱으로 처리합니다.
+> **Last Updated**: 2026-03-11 | **Version**: v2 (CRON-based Collection)
+
+본 문서는 **Patch Review Dashboard v2**의 전체 아키텍처를 설명합니다.
+시스템은 **독립 실행 데이터 수집 (CRON)** 과 **AI 리뷰 파이프라인 (Dashboard-triggered)** 의 두 축으로 분리 운영됩니다.
 
 ---
 
-## 🧭 System Overview (시스템 총괄도)
-
-전체 시스템은 다음과 같은 주요 라이프사이클을 갖습니다.
+## 🧭 System Overview
 
 ```mermaid
 graph TD
-    %% 외부 데이터 소스
-    subgraph External Sources
-        RH[Red Hat CSAF API]
-        UB[Ubuntu Web/OVAL]
-        OR[Oracle Mailing List]
+    subgraph "External Sources"
+        RH["Red Hat CSAF API"]
+        OR["Oracle Linux Website"]
+        UB["Ubuntu Security Notices (launchpad.io)"]
     end
 
-    %% 데이터 수집 및 전처리 (Pipeline Scripts)
-    subgraph Data Pipeline
-        Collector[Data Collector\nNode.js/Playwright]
-        Preprocessor[Data Preprocessor\nPython]
-        AI[AI Reviewer\nLLM Prompting]
+    subgraph "Data Collection — Linux CRON (Quarterly)"
+        CRON["run_collectors_cron.sh"]
+        RHSA["rhsa_collector.js\nrhba_collector.js"]
+        ORAC["oracle_collector.sh\noracle_parser.py"]
+        UBUN["ubuntu_collector.sh\n(ubuntu-security-notices git)"]
+        RAWDIR["redhat_data/ oracle_data/ ubuntu_data/\n(JSON files on disk)"]
     end
 
-    %% 백엔드 및 DB (Next.js + Prisma)
-    subgraph Backend Services
-        API[Next.js API Routes]
-        Prisma[Prisma ORM]
-        DB[(SQL Database)]
+    subgraph "AI Review Pipeline — Manual Trigger via Dashboard"
+        PREPROCESS["patch_preprocessing.py\n--days 90"]
+        RAG["query_rag.py\n(User Feedback Injection)"]
+        OPENCLAW["OpenClaw LLM Agent\n(SKILL.md guided)"]
+        INGEST["DB Ingestion\n(with Passthrough)"]
     end
 
-    %% 프론트엔드 (Next.js App Router)
-    subgraph Frontend Dashboard
-        UI[Next.js React UI]
-        Dash(Dashboard Client View)
+    subgraph "Backend — Next.js + Prisma"
+        BULLMQ["BullMQ Worker\nqueue.ts"]
+        DB[("SQLite DB\nvia Prisma ORM")]
+        API["Next.js API Routes\n/api/pipeline/*\n/api/products/*"]
+        SSE["/api/pipeline/stream\n(Server-Sent Events)"]
     end
 
-    %% Flow 연결
-    RH -.-\>|JSON/Scraping| Collector
-    UB -.-\>|Scraping| Collector
-    OR -.-\>|Scraping| Collector
+    subgraph "Frontend Dashboard"
+        UI["ProductGrid.tsx\nPremiumCard.tsx"]
+        DETAIL["ClientPage.tsx\nPreprocessed + AI Review tabs"]
+    end
 
-    Collector --\>|Raw JSON Data| Preprocessor
-    Preprocessor --\>|Filtered Data| AI
-    AI --\>|AI Assessment Result| API
+    RH -->|CSAF JSON| RHSA
+    OR -->|HTML scrape| ORAC
+    UB -->|USN git feed| UBUN
+    RHSA & ORAC & UBUN --> CRON --> RAWDIR
 
-    API --\>|CRUD Operations| Prisma
-    Prisma \<--\> DB
+    RAWDIR --> PREPROCESS
+    PREPROCESS -->|PreprocessedPatch| DB
+    PREPROCESS -->|patches_for_llm_review.json| RAG
+    RAG -->|Augmented Prompt| OPENCLAW
+    OPENCLAW -->|patch_review_ai_report.json| INGEST
+    INGEST -->|ReviewedPatch| DB
 
-    UI \<--\>|REST API / Server Actions| API
-    UI --\> Dash
+    BULLMQ --> PREPROCESS
+    BULLMQ --> OPENCLAW
+    BULLMQ --> SSE
 
-    %% 스타일링
-    classDef source fill:#f9f2f4,stroke:#d1a3a4,stroke-width:2px;
-    classDef pipe fill:#eef2fa,stroke:#a3b8d1,stroke-width:2px;
-    classDef back fill:#f2faee,stroke:#b1d1a3,stroke-width:2px;
-    classDef front fill:#faf8ee,stroke:#d1c8a3,stroke-width:2px;
-
-    class RH,UB,OR source;
-    class Collector,Preprocessor,AI pipe;
-    class API,Prisma,DB back;
-    class UI,Dash front;
+    API --> BULLMQ
+    API <--> DB
+    SSE --> UI
+    UI <--> API
+    DETAIL <--> API
 ```
 
 ---
 
-## 🧱 Component Breakdown (주요 구성 요소)
+## 🗂️ Component Breakdown
 
-### 1. Data Pipeline (`pipeline_scripts/`)
-파이프라인은 주로 스크립트 형태로 주기적(또는 수동 트리거)으로 동작하며 가장 무겁고 복잡한 데이터를 처리합니다.
+### 1. Data Collection — CRON (`pipeline_scripts/`)
 
-- **Collector (`batch_collector.js`)**:
-  - `Playwright` 기반의 브라우저 자동화 및 `https` 모듈을 통한 REST/CSAF API 호출
-  - Red Hat, Ubuntu, Oracle 데이터 병렬 수집 및 로컬 파일(`batch_data/`) 형태(또는 DB)로 원시 데이터 확보
-  - **Error Handling**: 비정상 종료를 방지하기 위한 Anti-Hang, Retry Queue, 재시도 모드 내장
+> **수집은 파이프라인 실행과 완전히 분리**됩니다. Linux crontab이 분기별로 자동 실행하며, 대시보드에서 수동 트리거 불가.
 
-- **Preprocessor (`patch_preprocessing.py`)**:
-  - 수집된 거대한 원시 데이터를 정제합니다. 
-  - 정규표현식을 활용한 OS 버전/소프트웨어 컴포넌트 정보 추출
-  - **Pruning Rules**: 시스템 핵심 컴포넌트(System Core Components - Kernel, Bootloader 등) 화이트리스트 필터링 및 EOL(수명 종료) 버전 제외 로직 적용
-  - 최종적으로 AI에게 질의할 알짜배기 JSON(`patches_for_llm_review.json`) 생성
+| 스크립트 | 대상 | 방식 | 출력 |
+|---|---|---|---|
+| `redhat/rhsa_collector.js` | Red Hat Security Advisory | CSAF REST API | `redhat_data/*.json` |
+| `redhat/rhba_collector.js` | Red Hat Bug Advisory | CSAF REST API | `redhat_data/*.json` |
+| `oracle/oracle_collector.sh` | Oracle Linux Errata | Web Scraping (curl) | `oracle/raw_html/` |
+| `oracle/oracle_parser.py` | Oracle HTML 정제 | BeautifulSoup 파싱 | `oracle_data/*.json` |
+| `ubuntu/ubuntu_collector.sh` | Ubuntu Security Notices | `ubuntu-security-notices` git repo | `ubuntu_data/*.json` |
 
-- **AI Reviewer**:
-  - (추후 확장) 로컬 스크립트 또는 Next.js API 단에서 LLM과 통신하여 CESA/DSA/RHSA 정보 및 변경된 `diff` 텍스트를 분석해 심각도 및 영향도를 결정
-  - **RAG 기반 피드백 루프 (V2 개선점)**: 관리자가 대시보드에서 `Exclude(제외)` 처리하며 입력한 사유(User Feedback)가 `user_exclusion_feedback.json` 파일에 저장되며, 향후 OpenClaw AI가 동일한 컴포넌트 리뷰 시 해당 문서를 RAG(검색 증강 생성) 패턴으로 참조하여 오탐률(False Positive)을 줄입니다.
-
-### 2. Database \u0026 ORM (`prisma/`)
-Prisma 스키마를 통해 데이터의 정확성과 일관성을 체계적으로 관리합니다.
-
-- **`RawPatch`**: 수집된 JSON 원본 데이터 보관 (이력 추적 목적)
-- **`PreprocessedPatch`**: 전처리를 거쳐 정제된 패치 항목들 (AI Review 대상)
-- **`ReviewedPatch`**: AI 및 관리자(Manager) 검증을 마친 최종 패치 상세 데이터 (국문 번역 결과, 결정 상태 포함)
-- **`PipelineRun`**: 각 배치 파이프라인의 실행 상태(Started, Completed, Error)와 로그 추적 테이블
-
-### 3. Web Dashboard (`src/app/`, `src/components/`)
-사용자 및 릴리즈 매니저가 결과를 확인, 승인하거나 파이프라인 진행 상태를 관제하는 곳입니다.
-
-- **Framework**: `Next.js 15+`의 최신 App Router 설계
-- **Styling UI**: `Tailwind CSS v4` 적용 및 `shadcn/ui` 기반 하이퀄리티 컴포넌트 파편화 (Framer Motion 다이내믹 애니메이션)
-- **Features**:
-  - **분석 대시보드**: 제조사별, 인프라 플랫폼별 취약점/업데이트 패치 현황 (ProductGrid 등)
-  - **Server-Sent Events (SSE) 실시간 스트리밍 (V2 개선점)**: 기존의 Polling 방식을 탈피하여, `BullMQ` 작업 큐의 진행 상태(Progress)와 파이프라인 로그를 `text/event-stream`을 통해 브라우저로 실시간 푸시합니다. 끊김 없는 모니터링(`StageJSONViewer`)을 제공합니다.
-  - **관리자 검증(Manager Review)**: AI가 도출한 최종 결과를 검증하고 결재(Approve/Exclude)하여 운영 반영 여부 결정. 이 과정에서 입력된 피드백은 다시 RAG 파이프라인으로 순환됩니다.
+**CRON 스케줄 (`run_collectors_cron.sh`)**:
+```
+0 6 * * * [매 분기 3번째 일요일] → 3월, 6월, 9월, 12월
+```
 
 ---
 
-## 🛠️ Infrastructure \u0026 Network
-이 시스템은 단순한 웹 어플리케이션이 아닌 **서버 인프라 파이프라인**을 내장한 형태입니다.
+### 2. AI Review Pipeline — Dashboard-triggered (`src/lib/queue.ts`)
 
-1. **Host Server (`tom26` / `192.168.xxx.xxx`)**:
-  - 백그라운드 스케줄러(cron 등)를 통한 `batch_collector`, `patch_preprocessing` 실행
-  - 로컬 AI 모델 API (`OpenClaw` 등) 연동
-2. **Web Server**:
-  - 터보팩(Turbopack)을 통한 로컬 Next.js 서버 구동 (포트 3001 기본 타게팅)
-  - Prisma 기반 백엔드 API 서비스
+대시보드에서 **"파이프라인 실행"** 버튼을 클릭하면 BullMQ 큐에 Job이 등록되고 순서대로 실행됩니다.
+
+```
+① DB 초기화 (PreprocessedPatch + ReviewedPatch 전체 삭제)
+② patch_preprocessing.py --days 90 실행
+   → 벤더별 JSON 파일 읽기 → 필터링 → PreprocessedPatch DB 저장
+   → patches_for_llm_review.json 생성
+③ query_rag.py 실행 — 사용자 피드백 RAG 주입
+④ openclaw agent 실행 — SKILL.md 가이드 기반 AI 리뷰
+   → stale .lock 파일 자동 제거 (재시도 방어)
+⑤ AI 리포트 검증 및 DB 인서트
+   → PreprocessedPatch 미포함 IssueID 스킵 (환각 방지)
+   → osVersion / url / releaseDate 를 PreprocessedPatch에서 복사
+⑥ Passthrough: AI가 누락한 벤더 항목을 PreprocessedPatch에서 직접 ReviewedPatch에 채움
+```
+
+---
+
+### 3. Database & ORM (`prisma/schema.prisma`)
+
+| 테이블 | 설명 |
+|---|---|
+| `RawPatch` | 과거 수집 원시 데이터 (현재 미사용, 이력 보존용) |
+| `PreprocessedPatch` | 전처리 후 AI 검토 대상 패치 (issueId, vendor, url, releaseDate, osVersion 포함) |
+| `ReviewedPatch` | AI 및 Passthrough 처리 완료 최종 패치 (한국어 설명, criticality, decision 포함) |
+| `UserFeedback` | 관리자 제외(Exclude) 사유 — RAG 파이프라인으로 순환 |
+| `PipelineRun` | 파이프라인 실행 이력 (status, logs) |
+
+---
+
+### 4. Web Dashboard (`src/app/`, `src/components/`)
+
+- **Framework**: Next.js App Router (React Server Components)
+- **실시간 스트리밍**: BullMQ Job 로그를 `/api/pipeline/stream` (SSE)로 브라우저 실시간 Push
+  - `[PREPROCESS_DONE] count=N` 로그 감지 시 대시보드 카운터 즉시 갱신
+  - `[PASSTHROUGH]` 로그로 AI 누락 패치 자동 보완 현황 표시
+- **관리자 리뷰**: AI 리뷰 결과를 탭으로 분리하여 Approve/Exclude 처리 및 피드백 제출
+
+---
+
+## 🛠️ Infrastructure
+
+| 항목 | 상세 |
+|---|---|
+| **서버** | `tom26` / `172.16.10.237` |
+| **OS** | Linux (Ubuntu) |
+| **Node.js** | v22.22.0 (nvm 관리) |
+| **Process Manager** | PM2 (`patch-dashboard`) |
+| **Queue Broker** | Redis (BullMQ) |
+| **AI Agent** | OpenClaw 2026.3.x (`openclaw agent --agent main`) |
+| **Dashboard Port** | 3000 (PM2 fork mode) |
+| **DB** | SQLite (`prisma/patch-review.db`) |
 
 > [!TIP]
-> **모던 아키텍처 권장 사항**:
-> 향후 파이프라인 확장을 고려하여 Data Pipeline 부분을 Event-Driven 아키텍처 형태(RabbitMQ 또는 AWS SQS 등)로 마이크로서비스화 하면 서버리스 환경에서도 무한한 확장이 가능합니다.
+> **분리 설계 원칙**: 데이터 수집(CRON)과 AI 리뷰(Dashboard)를 분리함으로써 수집 실패가 AI 리뷰에 영향 주지 않으며, 수집 없이도 AI 리뷰를 재실행할 수 있습니다.
