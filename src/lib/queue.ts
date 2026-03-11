@@ -89,7 +89,7 @@ export function startWorker() {
                         // 2. Preprocessing
                         await job.updateProgress(10);
                         await job.log("[PIPELINE] Starting patch preprocessing & pruning...");
-                        await runStream('python3', ['patch_preprocessing.py', '--start-days', '180', '--end-days', '90']);
+                        await runStream('python3', ['patch_preprocessing.py', '--days', '180']);
                         // Count how many preprocessed patches were just inserted
                         const ppCount = await prisma.preprocessedPatch.count();
                         await job.updateProgress(50);
@@ -122,7 +122,7 @@ export function startWorker() {
                     let ragExclusions = '';
                     try {
                         const escapedQuery = queryTextContext.replace(/"/g, '\\"').replace(/\n/g, ' ');
-                        const ragResult = await runStepSync(`python3 ../../../../pipeline_scripts/query_rag.py "${escapedQuery}"`, { cwd: linuxSkillDir });
+                        const ragResult = await runStepSync(`python3 query_rag.py "${escapedQuery}"`, { cwd: linuxSkillDir });
                         if (ragResult.stdout) {
                             const retrievedItems = JSON.parse(ragResult.stdout);
                             if (Array.isArray(retrievedItems) && retrievedItems.length > 0) {
