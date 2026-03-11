@@ -119,10 +119,7 @@ export function startWorker() {
                         } catch (e) { }
                     }
 
-                    let aiPrompt = job.name === 'manual-review'
-                        ? `Read manual_review_input_${job.id}.json and evaluate these patches exactly according to the strict LLM evaluation rules detailed in SKILL.md section 4. Do NOT perform any web scraping, do NOT run batch_collector.js or patch_preprocessing.py. Save your final review array EXCLUSIVELY to the exact absolute path: ${absoluteReportPath}. Ensure it is strict generic JSON array without any markdown fences.`
-                        : `Read SKILL.md. Note that Step 1 and Step 2 are completed, and patches_for_llm_review.json is generated. It contains EXACTLY ${totalPatchCount} patches across vendors: ${patchVendorSummary}. You MUST evaluate ALL ${totalPatchCount} patches across ALL vendors (Red Hat, Oracle, Ubuntu). Therefore, start from Step 3: Impact Analysis, then proceed to Step 4: Final JSON Generation. CRITICAL INSTRUCTIONS: (1) Your output MUST include ALL ${totalPatchCount} patches - do NOT summarize or select only a subset. (2) Write the final JSON output EXCLUSIVELY to the EXACT ABSOLUTE FILE PATH: ${absoluteReportPath} (NOT a CSV, NOT to any other path). (3) The JSON must be an array of objects where each object MUST contain exactly: 'IssueID', 'Component', 'Version', 'Vendor', 'Date', 'Criticality', 'Description', 'KoreanDescription'. (4) Do not skip Step 4. Auto-complete everything without user prompting.`;
-
+                    let ragExclusions = '';
                     try {
                         const escapedQuery = queryTextContext.replace(/"/g, '\\"').replace(/\n/g, ' ');
                         const ragResult = await runStepSync(`python3 ../../../../pipeline_scripts/query_rag.py "${escapedQuery}"`, { cwd: linuxSkillDir });
@@ -130,134 +127,100 @@ export function startWorker() {
                             const retrievedItems = JSON.parse(ragResult.stdout);
                             if (Array.isArray(retrievedItems) && retrievedItems.length > 0) {
                                 const exclusionRules = retrievedItems.map((f: any) => `- Excluded Issue: ${f.issueId}, Reason: ${f.reason || f.description}`).join('\\n');
-                                aiPrompt += `\\n\\nCRITICAL INSTRUCTION: Reviewers have manually marked the following historical patches to be explicitly EXCLUDED from final recommendations for the provided reasons:\\n${exclusionRules}\\n\\nIf you encounter any patches that are highly similar or identical to these excluded patch descriptions/reasons, you MUST filter them out and NOT include them in the final ${outputReportFilename}.`;
-                                await job.log("Injected Incremental RAG Feedback into AI Prompt.");
+                                ragExclusions = `\\n\\nCRITICAL INSTRUCTION: Reviewers have manually marked the following historical patches to be explicitly EXCLUDED from final recommendations for the provided reasons:\\n${exclusionRules}\\n\\nIf you encounter any patches that are highly similar or identical to these excluded patch descriptions/reasons, you MUST filter them out. Output the JSON object but set 'Decision' to 'Exclude' and 'Reason' to the matching exclusion reason.`;
+                                await job.log("Loaded RAG Feedback for exclusion rules.");
                             }
                         }
                     } catch (e) {
                         await job.log("RAG query fallback failed or returned empty.");
                     }
 
-                    // 4. Zod Loop + AI
+                    // 4. Sequential AI Loop + Zod
                     const { ReviewSchema } = require('@/lib/schema');
                     const MAX_AI_RETRIES = 2;
-                    let currentPrompt = aiPrompt;
-                    let success = false;
-                    let parsedJson: any = null;
+                    let finalReviewedPatches: any[] = [];
+                    let patchesRaw: any[] = [];
+                    try { patchesRaw = JSON.parse(fs.readFileSync(patchesPath, 'utf-8')); } catch (e) { }
 
                     await job.updateProgress(60);
-                    await job.log("AI Review in progress (with Zod Self-Healing)...");
+                    await job.log(`AI Review in progress... Sequentially evaluating ${patchesRaw.length} patches (Zod Self-Healing enabled)`);
 
-                    for (let attempt = 1; attempt <= MAX_AI_RETRIES + 1; attempt++) {
-                        try {
-                            await job.log(`[AI Analysis] Attempt ${attempt} started...`);
+                    for (let i = 0; i < patchesRaw.length; i++) {
+                        const patch = patchesRaw[i];
+                        const pName = patch.id || patch.issueId || patch.IssueID || `Unknown-${i}`;
+                        await job.log(`[AI Analysis] Processing patch ${i + 1}/${patchesRaw.length}: ${pName}`);
 
-                            // Clean up any stale session lock files from previous crashed runs
+                        let basePrompt = `Read SKILL.md. Evaluate the following SINGLE PATCH exactly according to the strict LLM evaluation rules detailed in SKILL.md section 4. Do NOT perform any web scraping. Do NOT use tools to write to files, simply output the text directly. Return ONLY a pure JSON array containing EXACTLY ONE object. The object MUST contain exactly: 'IssueID', 'Component', 'Version', 'Vendor', 'Date', 'Criticality', 'Description', 'KoreanDescription', and optionally 'Decision' and 'Reason'. Do not skip Step 4.\\n\\n[PATCH DATA TO EVALUATE]:\\n${JSON.stringify(patch)}`;
+                        basePrompt += ragExclusions;
+
+                        let currentPrompt = basePrompt;
+                        let parsedJson: any = null;
+
+                        for (let attempt = 1; attempt <= MAX_AI_RETRIES + 1; attempt++) {
                             try {
-                                const sessionsDir = path.join(process.env.HOME || '/home/citec', '.openclaw/agents/main/sessions');
-                                if (fs.existsSync(sessionsDir)) {
-                                    const lockFiles = fs.readdirSync(sessionsDir).filter((f: string) => f.endsWith('.lock'));
-                                    for (const lf of lockFiles) {
-                                        fs.rmSync(path.join(sessionsDir, lf), { force: true });
-                                        await job.log(`[AI Cleanup] Removed stale lock: ${lf}`);
+                                try {
+                                    const sessionsDir = path.join(process.env.HOME || '/home/citec', '.openclaw/agents/main/sessions');
+                                    if (fs.existsSync(sessionsDir)) {
+                                        const lockFiles = fs.readdirSync(sessionsDir).filter((f: string) => f.endsWith('.lock'));
+                                        for (const lf of lockFiles) fs.rmSync(path.join(sessionsDir, lf), { force: true });
                                     }
-                                }
-                            } catch (cleanErr) {
-                                await job.log(`[AI Cleanup] Warning: ${cleanErr}`);
-                            }
+                                } catch (cleanErr) { }
 
-                            const rawAiOutput = await runStream('/home/citec/.nvm/versions/node/v22.22.0/bin/openclaw',
-                                ['agent', '--agent', 'main', '--json', '-m', currentPrompt],
-                                {
-                                    'generating response': 70,
-                                    'call:': 75
-                                },
-                                { shell: false },
-                                true // suppressLog
-                            );
+                                const rawAiOutput = await runStream('/home/citec/.nvm/versions/node/v22.22.0/bin/openclaw',
+                                    ['agent', '--agent', 'main', '--json', '-m', currentPrompt],
+                                    {}, { shell: false }, true
+                                );
 
-                            const finalReportPath = path.join(linuxV2Dir, outputReportFilename);
-                            try {
-                                if (rawAiOutput.toLowerCase().includes('rate limit')) {
-                                    throw new Error("AI_REVIEW_FAILED: API Rate Limit Error");
-                                }
-                                if (rawAiOutput.toLowerCase().includes('gateway closed') || rawAiOutput.toLowerCase().includes('gateway timeout')) {
-                                    throw new Error("AI_REVIEW_FAILED: OpenClaw execution timed out or gateway closed.");
-                                }
-
-                                // Helper: strip markdown code fences and extract first JSON array
                                 const extractJsonArray = (text: string): any => {
-                                    // Remove markdown code fences (```json...``` or ```...```)
                                     const stripped = text.replace(/```(?:json)?\s*/g, '').replace(/```/g, '');
                                     const match = stripped.match(/\[\s*\{[\s\S]*?\}\s*\]/);
                                     if (!match) return null;
                                     return JSON.parse(match[0]);
                                 };
 
-                                // Primary: try recently modified file
-                                if (fs.existsSync(finalReportPath)) {
-                                    const stat = fs.statSync(finalReportPath);
-                                    if (Date.now() - stat.mtimeMs < 180000) {
-                                        const fileText = fs.readFileSync(finalReportPath, 'utf-8');
-                                        parsedJson = extractJsonArray(fileText);
-                                    }
+                                const openclawWrapper = JSON.parse(rawAiOutput);
+                                const payloads = openclawWrapper?.result?.payloads || [];
+                                const textContents = payloads.map((p: any) => p.text).join('\n');
+
+                                if (textContents.toLowerCase().includes('rate limit')) throw new Error("AI_REVIEW_FAILED: API Rate Limit Error");
+                                if (textContents.toLowerCase().includes('gateway closed') || textContents.toLowerCase().includes('gateway timeout')) throw new Error("AI_REVIEW_FAILED: OpenClaw execution timed out or gateway closed.");
+
+                                parsedJson = extractJsonArray(textContents);
+                                if (!parsedJson) throw new Error('No JSON array found in AI output even after code fence stripping.');
+
+                                const validation = ReviewSchema.safeParse(parsedJson);
+                                if (!validation.success) {
+                                    const errorDetails = validation.error.errors.map((err: any) => `${err.path.join('.')}: ${err.message}`).join(', ');
+                                    throw new Error(`Zod Schema Validation Failed: ${errorDetails}`);
                                 }
 
-                                // Fallback: parse from OpenClaw stdout wrapper
-                                if (!parsedJson) {
-                                    const openclawWrapper = JSON.parse(rawAiOutput);
-                                    const payloads = openclawWrapper?.result?.payloads || [];
-                                    const textContents = payloads.map((p: any) => p.text).join('\n');
+                                // Success
+                                finalReviewedPatches.push(parsedJson[0]);
+                                break;
+                            } catch (err: any) {
+                                if (err.message.includes('AI_REVIEW_FAILED')) throw err;
 
-                                    if (textContents.toLowerCase().includes('rate limit')) {
-                                        throw new Error("AI_REVIEW_FAILED: API Rate Limit Error");
-                                    }
-
-                                    parsedJson = extractJsonArray(textContents);
-                                    if (!parsedJson) {
-                                        fs.writeFileSync(path.join(linuxV2Dir, 'failed_ai_text.txt'), textContents);
-                                        throw new Error('No JSON array found in AI output even after code fence stripping.');
-                                    }
+                                if (attempt <= MAX_AI_RETRIES) {
+                                    currentPrompt += `\\n\\n이전 응답이 실패했습니다. 다음 Zod 구조적 에러를 해결하여 다시 제출하세요: ${err.message}\\n반드시 JSON 배열 형태로 출력하세요.`;
+                                    await job.log(`  -> Attempt ${attempt} failed for ${pName}, retrying...`);
+                                } else {
+                                    await job.log(`[SKIP] Patch ${pName} permanently failed AI review after ${MAX_AI_RETRIES} retries. Error: ${err.message}`);
                                 }
-                            } catch (e: any) {
-                                if (e.message.includes('AI_REVIEW_FAILED')) throw e;
-                                throw new Error(`Output is not valid JSON array: ${e.message}`);
-                            }
-
-                            const validation = ReviewSchema.safeParse(parsedJson);
-                            if (!validation.success) {
-                                const errorDetails = validation.error.errors.map((err: any) => `${err.path.join('.')}: ${err.message}`).join(', ');
-                                throw new Error(`Zod Schema Validation Failed: ${errorDetails}`);
-                            }
-
-                            await job.updateProgress(90);
-                            await job.log(`[AI Analysis] Attempt ${attempt} successful! Zod Schema verified.`);
-                            success = true;
-                            break;
-                        } catch (err: any) {
-                            await job.log(`[AI Analysis] Attempt ${attempt} failed: ${err.message}`);
-
-                            // If it's a critical API limit or execution failure, do not retry Zod validation.
-                            if (err.message.includes('AI_REVIEW_FAILED')) {
-                                throw err;
-                            }
-
-                            if (attempt <= MAX_AI_RETRIES) {
-                                currentPrompt += `\\n\\n이전 응답이 실패했습니다. 다음 Zod 구조적 에러를 해결하여 다시 제출하세요: ${err.message}\\n반드시 JSON 배열 형태로 출력하세요.`;
-                            } else {
-                                throw new Error(`AI Analysis permanently failed after ${MAX_AI_RETRIES} retries. Last error: ${err.message}`);
                             }
                         }
+                        await job.updateProgress(60 + Math.floor(((i + 1) / patchesRaw.length) * 30));
                     }
 
-                    if (!success) throw new Error("AI Analysis completely failed.");
+                    fs.writeFileSync(absoluteReportPath, JSON.stringify(finalReviewedPatches, null, 2));
 
                     // 5. Database Ingestion - validate against preprocessed data first
-                    console.log(`Job ${job.id} finished. Ingesting AI results to SQLite DB...`);
-                    await job.log("OpenClaw finished. Merging with PreprocessedPatch metadata and ingesting...");
+                    console.log(`Job ${job.id} finished AI loop. Ingesting AI results to SQLite DB...`);
+                    await job.log("OpenClaw sequential loop finished. Merging with PreprocessedPatch metadata and ingesting...");
 
-                    const data = Array.isArray(parsedJson) ? parsedJson : [];
-                    if (data.length === 0) throw new Error("parsedJson is empty, cannot ingest.");
+                    const data = finalReviewedPatches;
+                    if (data.length === 0) {
+                        await job.log("Warning: 0 patches successfully evaluated by AI (all failed Zod). Proceeding to passthrough.");
+                    }
 
                     // Build a lookup map from PreprocessedPatch (all vendors, current run)
                     const allPreprocessed = await prisma.preprocessedPatch.findMany({
