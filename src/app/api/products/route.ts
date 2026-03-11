@@ -10,9 +10,61 @@ export async function GET(request: Request) {
     const { searchParams } = new URL(request.url);
     const category = searchParams.get('category');
 
-    if (category !== 'os') {
+    if (category !== 'os' && category !== 'storage') {
         return NextResponse.json({ products: [] });
     }
+
+    // ==================== STORAGE / CEPH CATEGORY ====================
+    if (category === 'storage') {
+        const cephSkillDir = path.join(process.env.HOME || '/home/citec', '.openclaw/workspace/skills/patch-review/storage/ceph');
+        const cephDataDir = path.join(cephSkillDir, 'ceph_data');
+
+        const countJsonFiles = (dirPath: string): number => {
+            if (fs.existsSync(dirPath)) {
+                try { return fs.readdirSync(dirPath).filter((f: string) => f.endsWith('.json')).length; } catch { return 0; }
+            }
+            return 0;
+        };
+
+        // Collected = releases + security JSON files combined
+        const releasesCount = countJsonFiles(path.join(cephDataDir, 'releases'));
+        const securityCount = countJsonFiles(path.join(cephDataDir, 'security'));
+        const collected = releasesCount + securityCount;
+
+        let preprocessed = 0;
+        let reviewed = 0;
+        try {
+            const prePatch = await prisma.preprocessedPatch.count({ where: { vendor: 'Ceph' } });
+            preprocessed = prePatch;
+            const revPatch = await prisma.reviewedPatch.count({ where: { vendor: 'Ceph' } });
+            reviewed = revPatch;
+        } catch (e) { /* DB not ready yet */ }
+
+        const cephFinalCsv = path.join(cephSkillDir, 'final_approved_patches_ceph.csv');
+        let approved = 0;
+        let isReviewCompleted = false;
+        if (fs.existsSync(cephFinalCsv)) {
+            try {
+                const content = fs.readFileSync(cephFinalCsv, 'utf-8');
+                const parsed = Papa.parse(content, { header: true, skipEmptyLines: true });
+                approved = parsed.data ? parsed.data.length : 0;
+                isReviewCompleted = true;
+            } catch { isReviewCompleted = true; }
+        }
+
+        const storageProducts = [
+            {
+                id: 'ceph',
+                name: 'Ceph',
+                stages: { collected, preprocessed, reviewed, approved },
+                active: true,
+                isReviewCompleted,
+            },
+        ];
+
+        return NextResponse.json({ products: storageProducts });
+    }
+    // ==================== END STORAGE ====================
 
     const linuxSkillDir = path.join(process.env.HOME || '/home/citec', '.openclaw/workspace/skills/patch-review/os/linux-v2');
 

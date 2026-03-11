@@ -27,7 +27,7 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
         console.error("Failed to fetch products:", error);
     }
 
-    const isLinux = products.length > 0;
+    const isActive = products.length > 0;
 
     return (
         <div className="space-y-8">
@@ -37,17 +37,17 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
                         {categoryId === 'os' ? `${dict.dashboard.categoryTitlePrefix}OS${dict.dashboard.categoryTitleSuffix}` : <span className="capitalize">{categoryId}{dict.dashboard.categoryTitleSuffix}</span>}
                     </h1>
                     <p className="text-white/50 text-sm md:text-base mt-2">
-                        {categoryId === 'os' ? dict.dashboard.categorySubtitleActive : dict.dashboard.categorySubtitleInactive}
+                        {isActive ? dict.dashboard.categorySubtitleActive : dict.dashboard.categorySubtitleInactive}
                     </p>
                 </div>
-                {isLinux && (
+                {isActive && (
                     <Link href={`/category/${categoryId}/archive`} className="px-4 py-2 bg-white/5 hover:bg-white/10 border border-white/10 rounded-lg text-white/60 hover:text-white/90 text-sm font-medium transition-colors flex items-center gap-2">
                         {dict.dashboard.archiveHistory}
                     </Link>
                 )}
             </div>
 
-            {isLinux ? (
+            {isActive ? (
                 <ProductGrid categoryId={categoryId} products={products} dict={dict} />
             ) : (
                 <div className="col-span-full py-12 text-center border border-dashed border-white/10 rounded-xl bg-white/[0.01]">
