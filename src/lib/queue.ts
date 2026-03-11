@@ -89,7 +89,7 @@ export function startWorker() {
                         // 2. Preprocessing
                         await job.updateProgress(10);
                         await job.log("[PIPELINE] Starting patch preprocessing & pruning...");
-                        await runStream('python3', ['patch_preprocessing.py', '--days', '90']);
+                        await runStream('python3', ['patch_preprocessing.py', '--start-days', '180', '--end-days', '90']);
                         // Count how many preprocessed patches were just inserted
                         const ppCount = await prisma.preprocessedPatch.count();
                         await job.updateProgress(50);
@@ -142,6 +142,54 @@ export function startWorker() {
                     let patchesRaw: any[] = [];
                     try { patchesRaw = JSON.parse(fs.readFileSync(patchesPath, 'utf-8')); } catch (e) { }
 
+                    const prunePatchData = (obj: any): any => {
+                        if (!obj) return obj;
+                        const copy = JSON.parse(JSON.stringify(obj));
+
+                        const truncateArray = (arr: any[], max: number) => {
+                            if (Array.isArray(arr) && arr.length > max) {
+                                return [...arr.slice(0, max), `... and ${arr.length - max} more items`];
+                            }
+                            return arr;
+                        };
+
+                        const pruneText = (text: string, maxLen: number) => {
+                            if (typeof text !== 'string') return text;
+                            // Remove URLs to save token and payload size
+                            let pruned = text.replace(/https?:\/\/[^\s"'<>\\]+/g, '[URL REMOVED]');
+                            if (pruned.length > maxLen) {
+                                pruned = pruned.slice(0, maxLen) + '... [TRUNCATED]';
+                            }
+                            return pruned;
+                        };
+
+                        const keysToTruncateArray = ['packages', 'cves', 'affected_products', 'references', 'issues', 'bugzilla'];
+                        const keysToPruneText = ['description', 'details', 'synopsis'];
+
+                        const traverse = (o: any) => {
+                            if (Array.isArray(o)) {
+                                for (let i = 0; i < o.length; i++) {
+                                    if (typeof o[i] === 'object' && o[i] !== null) traverse(o[i]);
+                                    else if (typeof o[i] === 'string') o[i] = pruneText(o[i], 3000);
+                                }
+                            } else if (typeof o === 'object' && o !== null) {
+                                for (const key of Object.keys(o)) {
+                                    const lKey = key.toLowerCase();
+                                    if (keysToTruncateArray.includes(lKey) && Array.isArray(o[key])) {
+                                        o[key] = truncateArray(o[key], 15);
+                                    }
+                                    if (typeof o[key] === 'string') {
+                                        o[key] = pruneText(o[key], keysToPruneText.includes(lKey) ? 3000 : 5000);
+                                    } else if (typeof o[key] === 'object' && o[key] !== null) {
+                                        traverse(o[key]);
+                                    }
+                                }
+                            }
+                        };
+                        traverse(copy);
+                        return copy;
+                    };
+
                     await job.updateProgress(60);
                     await job.log(`AI Review in progress... Sequentially evaluating ${patchesRaw.length} patches (Zod Self-Healing enabled)`);
 
@@ -150,7 +198,8 @@ export function startWorker() {
                         const pName = patch.id || patch.issueId || patch.IssueID || `Unknown-${i}`;
                         await job.log(`[AI Analysis] Processing patch ${i + 1}/${patchesRaw.length}: ${pName}`);
 
-                        let basePrompt = `Read SKILL.md. Evaluate the following SINGLE PATCH exactly according to the strict LLM evaluation rules detailed in SKILL.md section 4. Do NOT perform any web scraping. Do NOT use tools to write to files, simply output the text directly. Return ONLY a pure JSON array containing EXACTLY ONE object. The object MUST contain exactly: 'IssueID', 'Component', 'Version', 'Vendor', 'Date', 'Criticality', 'Description', 'KoreanDescription', and optionally 'Decision' and 'Reason'. Do not skip Step 4.\\n\\n[PATCH DATA TO EVALUATE]:\\n${JSON.stringify(patch)}`;
+                        const prunedPatch = prunePatchData(patch);
+                        let basePrompt = `Read SKILL.md. Evaluate the following SINGLE PATCH exactly according to the strict LLM evaluation rules detailed in SKILL.md section 4. Do NOT perform any web scraping. Do NOT use tools to write to files, simply output the text directly. Return ONLY a pure JSON array containing EXACTLY ONE object. The object MUST contain exactly: 'IssueID', 'Component', 'Version', 'Vendor', 'Date', 'Criticality', 'Description', 'KoreanDescription', and optionally 'Decision' and 'Reason'. Do not skip Step 4.\\n\\n[PATCH DATA TO EVALUATE]:\\n${JSON.stringify(prunedPatch)}`;
                         basePrompt += ragExclusions;
 
                         let currentPrompt = basePrompt;
