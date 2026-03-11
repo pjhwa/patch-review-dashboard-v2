@@ -3,7 +3,6 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { LanguageToggle } from "@/components/LanguageToggle";
 import { cookies } from "next/headers";
-import Link from "next/link";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -33,11 +32,6 @@ export default async function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background text-foreground min-h-screen selection:bg-primary selection:text-primary-foreground`}
       >
-        <nav className="space-y-2 mt-4">
-          <Link href="/" className="block px-4 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 transition">Dashboard</Link>
-          <Link href="/preprocessing" className="block px-4 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 transition text-amber-600 dark:text-amber-400 font-medium">Preprocessing</Link>
-          <Link href="/pipeline" className="block px-4 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 transition">Pipeline / BullMQ</Link>
-        </nav>
         <LanguageToggle currentLocale={locale} />
         {children}
       </body>
