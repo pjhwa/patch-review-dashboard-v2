@@ -1,8 +1,8 @@
 "use client"
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { Loader2, ArrowLeft, CheckCircle2, AlertTriangle, Info, BrainCircuit } from "lucide-react";
+import { Loader2, ArrowLeft, CheckCircle2, AlertTriangle, Info, BrainCircuit, Search } from "lucide-react";
 import Link from 'next/link';
 
 export function ProductDetailClient({ categoryId, productId, dict }: { categoryId: string, productId: string, dict: any }) {
@@ -15,6 +15,7 @@ export function ProductDetailClient({ categoryId, productId, dict }: { categoryI
     const [isFinalizing, setIsFinalizing] = useState(false);
     const [finalizeSuccess, setFinalizeSuccess] = useState(false);
     const [isDone, setIsDone] = useState(false);
+    const [preprocessedSearchQuery, setPreprocessedSearchQuery] = useState("");
 
     useEffect(() => {
         const fetchData = async () => {
@@ -139,6 +140,23 @@ export function ProductDetailClient({ categoryId, productId, dict }: { categoryI
             : productId === 'ubuntu' ? "Ubuntu Linux"
                 : productId;
 
+    const filteredPreprocessedData = useMemo(() => {
+        if (!preprocessedData) return [];
+        const rawData = preprocessedData.data || preprocessedData;
+        if (!Array.isArray(rawData)) return [];
+
+        if (!preprocessedSearchQuery.trim()) return rawData;
+
+        const query = preprocessedSearchQuery.toLowerCase();
+        return rawData.filter((patch: any) => {
+            const patchId = (patch.issueId || patch.id || patch.original_id || patch.Name || "").toLowerCase();
+            const component = (patch.component || patch.Component || "").toLowerCase();
+            const summary = (patch.summary || patch.description || patch.Description || patch.diff_content || "").toLowerCase();
+
+            return patchId.includes(query) || component.includes(query) || summary.includes(query);
+        });
+    }, [preprocessedData, preprocessedSearchQuery]);
+
     return (
         <div className="space-y-6 animate-in fade-in duration-500">
             <div className="flex items-center gap-4">
@@ -178,12 +196,28 @@ export function ProductDetailClient({ categoryId, productId, dict }: { categoryI
 
                     <TabsContent value="preprocessed" className="mt-0">
                         <div className="bg-[#0a0a0a] border border-white/10 rounded-xl p-6 shadow-xl">
-                            <h3 className="text-xl font-light text-white mb-2">{dict.dashboard.productDetail.preprocessedTitle}</h3>
-                            <p className="text-white/40 text-sm mb-6">{dict.dashboard.productDetail.preprocessedDesc}</p>
+                            <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
+                                <div>
+                                    <h3 className="text-xl font-light text-white mb-2">{dict.dashboard.productDetail.preprocessedTitle}</h3>
+                                    <p className="text-white/40 text-sm mb-0">{dict.dashboard.productDetail.preprocessedDesc}</p>
+                                </div>
+                                <div className="relative w-full md:w-72">
+                                    <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                        <Search className="h-4 w-4 text-emerald-500/70" />
+                                    </div>
+                                    <input
+                                        type="text"
+                                        className="block w-full pl-10 pr-3 py-2 border border-white/10 rounded-lg bg-black/50 text-white placeholder-white/30 focus:outline-none focus:ring-1 focus:ring-emerald-500 focus:border-emerald-500 sm:text-sm transition-colors"
+                                        placeholder={dict.dashboard.productDetail.searchPlaceholder}
+                                        value={preprocessedSearchQuery}
+                                        onChange={(e) => setPreprocessedSearchQuery(e.target.value)}
+                                    />
+                                </div>
+                            </div>
 
-                            {preprocessedData && (preprocessedData.data || preprocessedData).length > 0 ? (
+                            {filteredPreprocessedData.length > 0 ? (
                                 <div className="space-y-4">
-                                    {(preprocessedData.data || preprocessedData).map((patch: any, idx: number) => {
+                                    {filteredPreprocessedData.map((patch: any, idx: number) => {
                                         const patchId = patch.issueId || patch.id || patch.original_id || patch.Name || `${dict.dashboard.productDetail.patchElement}${idx + 1}`;
 
                                         // Check if this patch made it into the final recommended list (reviewedData)

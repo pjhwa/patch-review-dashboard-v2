@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import fs from 'fs';
 import path from 'path';
+import { exec } from 'child_process';
 
 export async function GET(request: Request) {
     const linuxSkillDir = path.join(process.env.HOME || '/home/citec', '.openclaw/workspace/skills/patch-review/os/linux-v2');
@@ -57,6 +58,19 @@ export async function POST(request: Request) {
 
         fs.writeFileSync(feedbackFile, JSON.stringify(feedbackList, null, 2));
 
+        // Background Sync RAG
+        const syncScript = path.join(linuxSkillDir, 'sync_rag.py');
+        exec(`python3 ${syncScript}`, { cwd: linuxSkillDir }, (error: any, stdout: any, stderr: any) => {
+            if (error) {
+                console.error(`[RAG Sync Error] ${error.message}`);
+                return;
+            }
+            if (stderr) {
+                console.error(`[RAG Sync Stderr] ${stderr}`);
+            }
+            console.log(`[RAG Sync] ${stdout}`);
+        });
+
         return NextResponse.json({ success: true, message: `Feedback saved for ${issueId}` });
     } catch (e: any) {
         console.error("Failed to save feedback:", e);
@@ -84,6 +98,20 @@ export async function DELETE(request: Request) {
             feedbackList = feedbackList.filter((item: any) => item.issueId !== issueId);
 
             fs.writeFileSync(feedbackFile, JSON.stringify(feedbackList, null, 2));
+
+            // Background Sync RAG
+            const syncScript = path.join(linuxSkillDir, 'sync_rag.py');
+            exec(`python3 ${syncScript}`, { cwd: linuxSkillDir }, (error: any, stdout: any, stderr: any) => {
+                if (error) {
+                    console.error(`[RAG Sync Error] ${error.message}`);
+                    return;
+                }
+                if (stderr) {
+                    console.error(`[RAG Sync Stderr] ${stderr}`);
+                }
+                console.log(`[RAG Sync] ${stdout}`);
+            });
+
             return NextResponse.json({ success: true, message: `Feedback removed for ${issueId}` });
         }
 
