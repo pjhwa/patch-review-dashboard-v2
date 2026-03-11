@@ -151,9 +151,10 @@ export function ProductDetailClient({ categoryId, productId, dict }: { categoryI
         return rawData.filter((patch: any) => {
             const patchId = (patch.issueId || patch.id || patch.original_id || patch.Name || "").toLowerCase();
             const component = (patch.component || patch.Component || "").toLowerCase();
-            const summary = (patch.summary || patch.description || patch.Description || patch.diff_content || "").toLowerCase();
+            const osVersion = (patch.osVersion || patch.os_version || "").toLowerCase();
+            const version = (patch.version || patch.specific_version || "").toLowerCase();
 
-            return patchId.includes(query) || component.includes(query) || summary.includes(query);
+            return patchId.includes(query) || component.includes(query) || osVersion.includes(query) || version.includes(query);
         });
     }, [preprocessedData, preprocessedSearchQuery]);
 
