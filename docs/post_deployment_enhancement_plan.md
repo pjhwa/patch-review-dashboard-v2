@@ -54,7 +54,7 @@
 
 ### P3 — Low Priority
 
-- [ ] **RAG 벡터 인덱스 자동 갱신**: 현재 수동으로 `sync_rag.py` 실행 필요
+- [x] **RAG 벡터 인덱스 자동 갱신**: 현재 수동으로 `sync_rag.py` 실행 필요
 - [ ] **멀티 카테고리 지원**: middleware, database, network 등 현재 OS만 구현
 - [ ] **아카이브 뷰어**: 지난 분기 AI 리뷰 결과 아카이브 탐색 UI
 
