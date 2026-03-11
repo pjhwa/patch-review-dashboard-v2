@@ -30,7 +30,7 @@ export function startWorker() {
             const linuxSkillDir = linuxV2Dir;
             const outputReportFilename = job.name === 'manual-review' ? `manual_ai_report_${job.id}.json` : 'patch_review_ai_report.json';
 
-            const runStream = async (command: string, args: string[], progressMap: any = {}, overrideOpts: any = {}): Promise<any> => {
+            const runStream = async (command: string, args: string[], progressMap: any = {}, overrideOpts: any = {}, suppressLog: boolean = false): Promise<any> => {
                 return new Promise((res, rej) => {
                     let fullStdout = "";
                     let isRej = false;
@@ -41,8 +41,8 @@ export function startWorker() {
                         const lines = chunk.split('\\n');
                         for (const line of lines) {
                             if (line.trim()) {
-                                console.log(`[JOB ${job.id}] ${line}`);
-                                job.log(line).catch(() => { });
+                                if (!suppressLog) console.log(`[JOB ${job.id}] ${line}`);
+                                if (!suppressLog) job.log(line).catch(() => { });
                                 for (const [keyword, prog] of Object.entries(progressMap)) {
                                     if (line.includes(keyword)) job.updateProgress(prog as number).catch(() => { });
                                 }
@@ -172,7 +172,8 @@ export function startWorker() {
                                     'generating response': 70,
                                     'call:': 75
                                 },
-                                { shell: false }
+                                { shell: false },
+                                true // suppressLog
                             );
 
                             const finalReportPath = path.join(linuxV2Dir, outputReportFilename);
@@ -358,6 +359,7 @@ export function startWorker() {
                         await job.log(`[PASSTHROUGH WARNING] ${ptErr.message}`);
                     }
 
+                    await job.log(`[PIPELINE] All tasks completed successfully. Done.`);
                     resolve("Success");
 
                 } catch (e: any) {

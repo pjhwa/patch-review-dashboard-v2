@@ -9,8 +9,9 @@ export async function POST(request: Request) {
 
         console.log(`Enqueueing OpenClaw pipeline for: ${providers?.join(', ')} (Retry: ${isRetry}, AI Only: ${isAiOnly})`);
 
-        if (!isAiOnly && !isRetry) {
+        if (!isAiOnly) {
             // Instantly clear the DB so the Dashboard counters drop to 0.
+            // Even on retries, we must clear the DB to prevent orphaned records in ReviewedPatch
             await prisma.preprocessedPatch.deleteMany({});
             await prisma.reviewedPatch.deleteMany({});
         }
