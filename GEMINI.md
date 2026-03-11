@@ -31,6 +31,42 @@
 
 ---
 
+## 🔴 [최우선 강제 규칙] 서버 우선 작업 + GitHub 자동 업데이트
+
+> **이 규칙은 모든 세션에서 0순위로 적용되는 코어 명령이다. 예외 없음.**
+
+### 규칙 1: 서버 우선 수정 워크플로우
+
+모든 코드 수정·검증·테스트는 **반드시 서버(`tom26`, `172.16.10.237`)에서 수행**한다.
+로컬 파일을 직접 수정한 뒤 서버에 올리는 방식은 **금지**. 순서는 다음과 같다:
+
+```
+① 서버에서 코드 수정  (ssh + 에디터 또는 scp로 스크립트 전송 후 실행)
+② 서버에서 검증       (node test.js, npm run build, pm2 restart 등)
+③ 검증 완료 후 로컬 동기화 (scp 서버→로컬)
+④ GitHub 즉시 반영   (git add ; git commit ; git push)
+```
+
+### 규칙 2: 코드 변경 시 GitHub 자동 업데이트 의무화
+
+코드가 수정·검증된 직후, **사용자의 별도 요청 없이** 즉시 GitHub에 푸시한다:
+
+```bash
+# 로컬에서 실행 (PowerShell이므로 ; 로 분리)
+cd C:\Users\jooksan.park\Patch-Review\patch-review-dashboard-v2
+git add .
+git commit -m "feat: [변경 내용 요약]"
+git push origin master
+```
+
+### 규칙 3: 수집기 스크립트 동기화 위치
+
+수집기 스크립트(`rhba_collector.js`, `rhsa_collector.js` 등)는 서버의 다음 경로가 **원본(Source of Truth)**:
+- 서버: `/home/citec/.openclaw/workspace/skills/patch-review/os/linux-v2/redhat/`
+- 로컬 동기화 경로: `C:\Users\jooksan.park\Patch-Review\patch-review-dashboard-v2\scripts\`
+
+---
+
 ## 🏗️ 핵심 아키텍처 (2가지 실행 축)
 
 ### 축 1: 데이터 수집 (Linux CRON — 파이프라인과 완전 분리)
