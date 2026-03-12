@@ -156,7 +156,7 @@ export function startWorker() {
                         }
 
                         // Step 2: AI Review Loop
-                        const { ReviewSchema } = require('@/lib/schema');
+                        const { ReviewSchema, ReviewItemSchema } = require('@/lib/schema');
                         const MAX_AI_RETRIES = 2;
                         let finalReviewedPatches: any[] = [];
                         let cephPatchesRaw: any[] = [];
@@ -265,7 +265,7 @@ Return ONLY a pure JSON array with EXACTLY ${actualBatchSize} objects. Each obje
                                     for(const item of parsedJson) {
                                         // Forcibly override hallucinated IDs from the AI if needed:
                                         // But since it's an array, we trust the object matching if valid. (Zod will catch missing IDs)
-                                        const validation = ReviewSchema.safeParse(item);
+                                        const validation = ReviewItemSchema.safeParse(item);
                                         if (!validation.success) {
                                             const errorDetails = validation.error.errors.map((err: any) => `${err.path.join('.')}: ${err.message}`).join(', ');
                                             throw new Error(`Zod Validation Failed for an item: ${errorDetails}`);
@@ -413,7 +413,7 @@ Return ONLY a pure JSON array with EXACTLY ${actualBatchSize} objects. Each obje
                         }
 
                         // Step 2: AI Review Loop
-                        const { ReviewSchema } = require('@/lib/schema');
+                        const { ReviewSchema, ReviewItemSchema } = require('@/lib/schema');
                         const MAX_AI_RETRIES = 2;
                         let finalReviewedPatches: any[] = [];
                         let mariadbPatchesRaw: any[] = [];
@@ -674,7 +674,7 @@ Return ONLY a pure JSON array with EXACTLY ${actualBatchSize} objects. Each obje
                     }
 
                     // 4. Sequential AI Loop + Zod
-                    const { ReviewSchema } = require('@/lib/schema');
+                    const { ReviewSchema, ReviewItemSchema } = require('@/lib/schema');
                     const MAX_AI_RETRIES = 2;
                     let finalReviewedPatches: any[] = [];
                     let patchesRaw: any[] = [];
@@ -811,7 +811,7 @@ Do NOT perform any web scraping. Do NOT use tools to write to files, simply outp
                                 }
                                 
                                 for (const item of parsedJson) {
-                                    const validation = ReviewSchema.safeParse(item);
+                                    const validation = ReviewItemSchema.safeParse(item);
                                     if (!validation.success) {
                                         const errorDetails = validation.error.errors.map((err: any) => `${err.path.join('.')}: ${err.message}`).join(', ');
                                         throw new Error(`Zod Schema Validation Failed: ${errorDetails}`);
