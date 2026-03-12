@@ -11,7 +11,7 @@ const CATEGORIES: { id: string, count: string | number, active: boolean, icon: a
   { id: 'middleware', count: 0, active: false, icon: Component },
   { id: 'database', count: 0, active: false, icon: DatabaseZap },
   { id: 'network', count: 0, active: false, icon: Network },
-  { id: 'storage', count: 0, active: false, icon: HardDrive },
+  { id: 'storage', count: 0, active: true, icon: HardDrive },
   { id: 'virtualization', count: 0, active: false, icon: Cpu },
 ];
 
