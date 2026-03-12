@@ -2,7 +2,9 @@ import fs from 'fs';
 import path from 'path';
 import { PrismaClient } from '@prisma/client';
 
-const prisma = new PrismaClient();
+const prisma = new PrismaClient({
+    datasourceUrl: process.env.DATABASE_URL || "file:./patch-review.db"
+});
 
 async function main() {
     const linuxSkillDir = path.join(process.env.HOME || '/home/citec', '.openclaw/workspace/skills/patch-review/os/linux-v2');
