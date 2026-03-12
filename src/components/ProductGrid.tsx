@@ -51,7 +51,7 @@ export function ProductGrid({ categoryId, products, dict }: { categoryId: string
 
             if (streamData.log) {
                 // OS pipeline keywords
-                } else if (streamData.log.includes('[PREPROCESS_DONE]')) {
+                if (streamData.log.includes('[PREPROCESS_DONE]')) {
                     const match = streamData.log.match(/count=(\d+)/);
                     const cnt = match ? match[1] : '?';
                     setResultMsg(`✅ 전처리 완료 (${cnt}개 패치). AI 리뷰 진행 중...`);
