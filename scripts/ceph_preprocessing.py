@@ -263,6 +263,7 @@ def try_write_prisma_db(patches: list) -> int:
     """
     # Common Prisma DB paths
     candidate_paths = [
+        os.path.expanduser("~/patch-review-dashboard-v2/prisma/patch-review.db"),
         os.path.expanduser("~/patch-review-dashboard-v2/prisma/dev.db"),
         os.path.expanduser("~/patch-review-dashboard-v2/prisma/prod.db"),
     ]
@@ -295,8 +296,8 @@ def try_write_prisma_db(patches: list) -> int:
             try:
                 cursor.execute("""
                     INSERT OR REPLACE INTO PreprocessedPatch
-                    (id, patchId, vendor, component, version, osVersion, severity, category, title, description, issuedDate, createdAt, updatedAt)
-                    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                    (id, issueId, vendor, component, version, osVersion, severity, releaseDate, description, url, collectedAt, isReviewed, isAiReviewRequested)
+                    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 0, 0)
                 """, (
                     p["id"],
                     p["patch_id"],
@@ -305,11 +306,9 @@ def try_write_prisma_db(patches: list) -> int:
                     p.get("version", ""),
                     p.get("os_version", ""),
                     p.get("severity", ""),
-                    p.get("category", ""),
-                    p.get("title", ""),
-                    p.get("description", "")[:4000] if p.get("description") else "",
                     p.get("issued_date", ""),
-                    datetime.now().isoformat(),
+                    (p.get("description") or p.get("title") or "")[:4000],
+                    p.get("url", ""),
                     datetime.now().isoformat(),
                 ))
                 count += 1

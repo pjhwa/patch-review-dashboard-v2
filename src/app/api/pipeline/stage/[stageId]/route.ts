@@ -21,6 +21,7 @@ export async function GET(request: Request, props: { params: Promise<{ stageId: 
         else if (productId === 'oracle') targetVendor = 'Oracle';
         else if (productId === 'ubuntu') targetVendor = 'Ubuntu';
         else if (productId === 'ceph') targetVendor = 'Ceph';
+        else if (productId === 'mariadb') targetVendor = 'MariaDB';
 
         if (stageId === 'preprocessed') {
             const whereClause = targetVendor ? { vendor: targetVendor } : {};
