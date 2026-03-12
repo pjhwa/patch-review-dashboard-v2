@@ -14,6 +14,27 @@ The system is separated into three primary tiers:
 
 This decoupled approach ensures that heavy data parsing, RAG filtering, and AI evaluations do not block the Web UI, which simply triggers and observes the progress of the underlying OS pipelines using Server-Sent Events (SSE).
 
+```mermaid
+graph TD
+    UI["Web Dashboard (Client)"] -- "Triggers Pipeline & SSE Status" --> API["Next.js Backend API"]
+    
+    API -- "Reads / Writes" --> DB[("SQLite DB (Prisma)")]
+    API -- "Spawns Detached Process" --> PL["Pipeline Executor"]
+    
+    subgraph Pipeline Execution
+        PL --> C1["Data Collectors (Bash/Node)"]
+        C1 --> C2["Preprocessor (Python)"]
+        C2 -- "Checks duplicates" --> DB
+        C2 --> C3["RAG (query_rag.py)"]
+        C3 --> AI["AI Agent (openclaw:main)"]
+        AI -- "Zod Schema Auto-Healing" --> AI
+    end
+    
+    AI -- "Outputs Validated JSON" --> JSON["patch_review_ai_report.json"]
+    JSON -- "Finalized by User" --> API
+```
+
+
 ---
 
 ## 2. Component Details

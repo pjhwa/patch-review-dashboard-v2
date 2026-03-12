@@ -14,6 +14,26 @@
 
 이러한 모듈식 접근 방식을 통해 무거운 데이터 파싱, RAG 필터링 및 AI 평가 과정이 Web UI를 차단하지 않도록 보장합니다. 대시보드는 단순히 Server-Sent Events(SSE)나 폴링을 통해 백그라운드 OS 파이프라인을 트리거하고 진행률을 모니터링합니다.
 
+```mermaid
+graph TD
+    UI["Web Dashboard (Client)"] -- "파이프라인 실행 및 SSE 스트리밍" --> API["Next.js Backend API"]
+    
+    API -- "데이터 읽기 / 쓰기" --> DB[("SQLite DB (Prisma)")]
+    API -- "독립된 자식 프로세스 스폰" --> PL["파이프라인 실행 엔진"]
+    
+    subgraph 파이프라인 프로세스 (Pipeline Execution)
+        PL --> C1["데이터 수집기 (Bash/Node)"]
+        C1 --> C2["전처리 및 정제 (Python)"]
+        C2 -- "DB와 대조하여 중복 제거" --> DB
+        C2 --> C3["RAG 배제 사유 검색 (query_rag.py)"]
+        C3 --> AI["AI 에이전트 (openclaw:main)"]
+        AI -- "Zod 스키마 검증 및 자가 치유" --> AI
+    end
+    
+    AI -- "100% 검증된 JSON 산출" --> JSON["patch_review_ai_report.json"]
+    JSON -- "사용자 최종 승인 (Finalize)" --> API
+```
+
 ---
 
 ## 2. 상세 구성요소
