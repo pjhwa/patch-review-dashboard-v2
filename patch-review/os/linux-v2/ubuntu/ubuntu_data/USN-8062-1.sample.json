@@ -1,0 +1,34 @@
+{
+  "id": "USN-8062-1",
+  "vendor": "Canonical / Ubuntu",
+  "type": "Ubuntu Security Notice (USN)",
+  "title": "curl vulnerabilities",
+  "issuedDate": "2026-02-25T00:34:27Z",
+  "updatedDate": "2026-02-27T09:22:11Z",
+  "pubDate": "2026-02-25T00:34:27Z",
+  "dateStr": "2026-02-25",
+  "url": "https://ubuntu.com/security/notices/USN-8062-1",
+  "severity": "None",
+  "overview": "curl vulnerabilities",
+  "description": "It was discovered that curl incorrectly handled cookies when redirected\nfrom secure to insecure connections. An attacker could possibly use this\nissue to cause a denial of service, or obtain sensitive information.\nThis issue only affected Ubuntu 25.10. (CVE-2025-9086)\n\nCalvin Ruocco discovered that curl did not properly handle WebSocket\ncommunications under certain circumstances. A malicious server could\npossibly use this issue to poison proxy caches with malicious content.\nThis issue only affected Ubuntu 24.04 LTS and Ubuntu 25.10.\n(CVE-2025-10148)\n\nStanislav Fort discovered that wcurl did not properly handle URLs with\ncertain encoded characters. If a user were tricked into processing\na specially crafted URL, an attacker could possibly use this issue to\nwrite files outside the intended directory. This issue only affected\nUbuntu 25.10. (CVE-2025-11563)\n\nStanislav Fort discovered that curl did not properly validate pinned\npublic keys under certain circumstances. A remote attacker could\npossibly use this issue to perform a machine-in-the-middle attack. This\nissue only affected Ubuntu 25.10.(CVE-2025-13034)\n\nStanislav Fort discovered that curl did not properly manage TLS options\nwhen performing LDAP over TLS transfers in multi-threaded environments.\nUnder certain circumstances, certificate verification could be\nunintentionally and unknowingly disabled. (CVE-2025-14017)\n\nIt was discovered that curl incorrectly handled Oauth2 bearer tokens\nwhen following redirects. A remote attacker could possibly use this\nissue to obtain authentication credentials. (CVE-2025-14524)\n\nStanislav Fort discovered that curl did not properly validate TLS\ncertificates when reusing connections. A remote attacker could possibly\nuse this issue to bypass expected certificate verification. This issue\nonly affected Ubuntu 24.04 LTS and Ubuntu 25.10. (CVE-2025-14819)\n\nHarry Sintonen discovered that curl did not properly validate SSH host\nkeys when performing SSH-based file transfers. This issue could lead to\nunintended bypass of custom known_hosts file. This issue only\naffected Ubuntu 22.04 LTS and Ubuntu 24.04 LTS. (CVE-2025-15079)\n\nHarry Sintonen discovered that curl built with libssh did not properly\nhandle authentication when performing SSH-based file transfers. This\ncould result in unintended authentication operations. This issue only\naffected Ubuntu 22.04 LTS and Ubuntu 24.04 LTS. (CVE-2025-15224)",
+  "affected_products": [
+    "Ubuntu 22.04 LTS",
+    "Ubuntu 24.04 LTS"
+  ],
+  "cves": [],
+  "packages": [
+    "curl-7.81.0-1ubuntu1.22",
+    "curl-8.5.0-2ubuntu10.7",
+    "libcurl3-gnutls-7.81.0-1ubuntu1.22",
+    "libcurl3-nss-7.81.0-1ubuntu1.22",
+    "libcurl3t64-gnutls-8.5.0-2ubuntu10.7",
+    "libcurl4-7.81.0-1ubuntu1.22",
+    "libcurl4-gnutls-dev-7.81.0-1ubuntu1.22",
+    "libcurl4-gnutls-dev-8.5.0-2ubuntu10.7",
+    "libcurl4-nss-dev-7.81.0-1ubuntu1.22",
+    "libcurl4-openssl-dev-7.81.0-1ubuntu1.22",
+    "libcurl4-openssl-dev-8.5.0-2ubuntu10.7",
+    "libcurl4t64-8.5.0-2ubuntu10.7"
+  ],
+  "full_text": "It was discovered that curl incorrectly handled cookies when redirected\nfrom secure to insecure connections. An attacker could possibly use this\nissue to cause a denial of service, or obtain sensitive information.\nThis issue only affected Ubuntu 25.10. (CVE-2025-9086)\n\nCalvin Ruocco discovered that curl did not properly handle WebSocket\ncommunications under certain circumstances. A malicious server could\npossibly use this issue to poison proxy caches with malicious content.\nThis issue only affected Ubuntu 24.04 LTS and Ubuntu 25.10.\n(CVE-2025-10148)\n\nStanislav Fort discovered that wcurl did not properly handle URLs with\ncertain encoded characters. If a user were tricked into processing\na specially crafted URL, an attacker could possibly use this issue to\nwrite files outside the intended directory. This issue only affected\nUbuntu 25.10. (CVE-2025-11563)\n\nStanislav Fort discovered that curl did not properly validate pinned\npublic keys under certain circumstances. A remote attacker could\npossibly use this issue to perform a machine-in-the-middle attack. This\nissue only affected Ubuntu 25.10.(CVE-2025-13034)\n\nStanislav Fort discovered that curl did not properly manage TLS options\nwhen performing LDAP over TLS transfers in multi-threaded environments.\nUnder certain circumstances, certificate verification could be\nunintentionally and unknowingly disabled. (CVE-2025-14017)\n\nIt was discovered that curl incorrectly handled Oauth2 bearer tokens\nwhen following redirects. A remote attacker could possibly use this\nissue to obtain authentication credentials. (CVE-2025-14524)\n\nStanislav Fort discovered that curl did not properly validate TLS\ncertificates when reusing connections. A remote attacker could possibly\nuse this issue to bypass expected certificate verification. This issue\nonly affected Ubuntu 24.04 LTS and Ubuntu 25.10. (CVE-2025-14819)\n\nHarry Sintonen discovered that curl did not properly validate SSH host\nkeys when performing SSH-based file transfers. This issue could lead to\nunintended bypass of custom known_hosts file. This issue only\naffected Ubuntu 22.04 LTS and Ubuntu 24.04 LTS. (CVE-2025-15079)\n\nHarry Sintonen discovered that curl built with libssh did not properly\nhandle authentication when performing SSH-based file transfers. This\ncould result in unintended authentication operations. This issue only\naffected Ubuntu 22.04 LTS and Ubuntu 24.04 LTS. (CVE-2025-15224)"
+}

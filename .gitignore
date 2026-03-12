@@ -54,3 +54,6 @@ server.log
 **/__pycache__
 **/archive
 
+# Patch Data (Prevent massive JSON pushes, allow only samples)
+*_data/*
+!*_data/*.sample.json
