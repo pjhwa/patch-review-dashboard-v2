@@ -85,5 +85,5 @@ It ensures that the entire stack kicks off automatically on the **third Sunday o
 ---
 
 <div align="center">
-  <sub>Built with ❤️ by the Cyber Intelligence Technology Center (CITEC) </sub>
+  <sub>Built with ❤️ by the Cloud & Infrastructure - Technical Expert Center (CI-TEC) </sub>
 </div>
