@@ -1,63 +1,89 @@
-# 🌌 Patch Review Dashboard (v2)
+<div align="center">
+  <br />
+  <h1>🛡️ Patch Review Dashboard V2</h1>
+  <p>
+    An intelligent, autonomous compliance operation platform powered by Server-Sent Events, Prisma, and the <strong>OpenClaw AI</strong>. Effortlessly orchestrates enterprise security patches across Linux and major application stacks.
+  </p>
+  <br />
 
-![Project Status](https://img.shields.io/badge/status-Active-brightgreen.svg?style=for-the-badge) 
-![Next.js](https://img.shields.io/badge/Next.js-15+-black?style=for-the-badge\u0026logo=next.js\u0026logoColor=white) 
-![Prisma](https://img.shields.io/badge/Prisma-ORM-2D3748?style=for-the-badge\u0026logo=prisma\u0026logoColor=white)
-![Playwright](https://img.shields.io/badge/Playwright-Scraper-45ba4b?style=for-the-badge\u0026logo=playwright\u0026logoColor=white) 
-![Python](https://img.shields.io/badge/Python-Pipeline-3776AB?style=for-the-badge\u0026logo=python\u0026logoColor=white)
+  [![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)](#)
+  [![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)](#)
+  [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](#)
+  [![Prisma](https://img.shields.io/badge/Prisma-3982CE?style=for-the-badge&logo=Prisma&logoColor=white)](#)
+  [![Node.js](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)](#)
+  [![OpenClaw AI](https://img.shields.io/badge/OpenClaw_AI-FF6B6B?style=for-the-badge&logo=robot&logoColor=white)](#)
 
-Global 벤더들의 보안 패치 데이터를 수집, 지능적으로 분류하고, AI 리뷰를 넘어 담당자 승인까지 체계적으로 관리하는 **End-to-End Modern Dashboard System** 입니다. 
-레거시 코드를 탈피하여 Next.js App Router와 다이내믹한 Tailwind UI 컴포넌트로 재탄생했습니다.
-
----
-
-## ✨ 주요 기능 (Features)
-
-- **자동화된 데이터 파이프라인**: Red Hat, Ubuntu, Oracle OS의 패치 권고문 및 취약점 (Vulnerability) 리포트를 동시 수집
-- **지능형 필터링 (Pruning)**: 수많은 데스크톱/비핵심 패키지들을 덜어내고 `kernel`, `glibc`, `shim` 등 인프라 크리티컬한 정보만 선별 정제
-- **AI 기반 코드 리뷰**: 단순 요약이 아닌 diff 비교 기반의 변경 영향도 분석 및 한국어 번역 리포팅
-- **프리미엄 사용자 경험 (UX)**: Framer Motion 및 shadcn 등 최신 컴포넌트를 베이스로한 관리자 매니징 시스템
+</div>
 
 ---
 
-## 📚 문서 (Documentation)
-시스템 아키텍처와 상세 파이프라인 개발 스펙을 `docs/` 폴더에서 확인하실 수 있습니다.
+## ✨ Features
 
-- [🏗️ 시스템 아키텍처](docs/architecture.md)
-- [🌊 데이터 파이프라인 흐름도](docs/pipeline_flow.md)
-- [🧠 OpenClaw AI 패치 리뷰 프로세스](docs/openclaw_ai_review.md)
-- [🚀 기술 스택](docs/tech_stack.md)
+- **🚀 Autonomous Pipeline Executions:** Spawns detached shell collectors sequentially without blocking your UI workflow. Features built-in distributed locking and data integrity mechanisms.
+- **🤖 OpenClaw RAG-Powered AI Review:** Utilizes Gemini models locally orchestrated via `openclaw agent:main`. Checks past user exclusions to intelligently drop redundant patches from the final queue.
+- **🛡️ Self-Healing Zod Validation:** The AI output is rigorously enforced against deterministic JSON Schemas. Erroneous outputs are auto-redirected back to the LLM agent using an exponential backoff loop for self-repair.
+- **📊 Real-Time Server-Sent Events (SSE):** Deep integration with background child processes to stream actual execution logs live to the dashboard without page reloading.
+- **📦 Multi-Vendor Support:** Native integration scripts extending beyond raw OS platforms (RedHat, Oracle, Ubuntu) to complex applications like Ceph and MariaDB.
 
 ---
 
-## 🛠️ 빠른 시작 (Quick Start)
+## 🏗️ Architecture Stack
 
-### 1. Dashboard UI 시작하기
+For detailed internal documentation generated from operational facts, refer to the `/docs` directory:
+- [Architecture (EN/KR)](docs/architecture.md)
+- [Pipeline Flow (EN/KR)](docs/pipeline_flow.md)
+- [Tech Stack (EN/KR)](docs/tech_stack.md)
+- [AI Review Flow (EN/KR)](docs/ai_review.md)
+
+---
+
+## ⚡ Quick Start
+
+### 1. Requirements
+Ensure you have the following installed to run the backend processors and Web UI:
+- `Node.js` v22+
+- `pnpm`
+- `Python` 3.x
+- `openclaw` globally installed.
+
+### 2. Installation
+Clone the active repository onto your control server.
+
 ```bash
-# 의존성 패키지 설치
-npm install
-
-# Prisma 데이터베이스 전개
-npx prisma db push
-
-# 로컬 개발 서버 시작 (Turbopack 활성화)
-npm run dev
-```
-웹 브라우저에서 `http://localhost:3001`을 열어주세요.
-
-### 2. 파이프라인 동작 (수동)
-```bash
-# 관련 패키지 설치
-cd pipeline_scripts
-npm install playwright
-
-# 1. 벤더별 패치 스크래핑
-node batch_collector.js --days 90
-
-# 2. 취약 패치 필터링 및 전처리
-python patch_preprocessing.py
+git clone https://github.com/my-org/patch-review-dashboard-v2.git
+cd patch-review-dashboard-v2
 ```
 
+### 3. Deploy the Pipeline Logic
+The server expects the heavy lifting skill logic to reside in the global workspace. Ensure the `patch-review` folder is moved to the OpenClaw directory prior to execution:
+
+```bash
+mkdir -p ~/.openclaw/workspace/skills/
+cp -r ./patch-review ~/.openclaw/workspace/skills/
+```
+
+### 4. Setup Prisma Database
+```bash
+pnpm install
+pnpm prisma generate
+pnpm prisma db push
+```
+
+### 5. Launch Application
+```bash
+pnpm run dev
+# The application will listen on http://localhost:3000
+```
+Navigate to your Dashboard. Try manually running a pipeline to test the SSE log streaming!
+
 ---
 
-> _이 소프트웨어는 표준 지침(GEMINI.md)에 따라 우아한 UI/UX와 견고하고 자동화된 파이프라인에 집중하여 세심하게 구축되었습니다._
+## ⏰ Autonomous CRON Scheduling
+To deploy the fully zero-touch operational model, set up the CRON schedule natively using the `update_cron.sh` inside your repository.
+It ensures that the entire stack kicks off automatically on the **third Sunday of March, June, September, and December at 06:00** to align with quarterly evaluations.
+
+---
+
+<div align="center">
+  <sub>Built with ❤️ by the Cyber Intelligence Technology Center (CITEC) </sub>
+</div>

@@ -39,3 +39,18 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+/src/generated/prisma
+
+# Database files
+*.db
+*.db-*
+
+# Logs
+server.log
+
+# Pipeline ignores
+**/node_modules
+**/__pycache__
+**/archive
+
