@@ -58,13 +58,15 @@ The system uses SQLite, managed via Prisma ORM (`prisma/patch-review.db`), opera
 
 ### 2.3 Execution Pipeline (`patch-review` Skill)
 The backend delegates all heavy lifting to the `~/.openclaw/workspace/skills/patch-review` directory.
-When `/api/pipeline/execute` is called:
-1. A Node child process starts running within the `os/linux-v2` environment.
+When `/api/pipeline/run` is called via BullMQ:
+1. A Node child process starts running within the `os/linux-v2` or `storage/ceph` environment.
 2. It executes vendor-specific scripts (e.g., `rhsa_collector.js`, `oracle_collector.sh`).
 3. It consolidates outputs using `patch_preprocessing.py`.
 4. It calls `query_rag.py` to retrieve `UserFeedback` exclusion contexts based on similarity searches to prevent repetitive patch approvals for known exceptions.
-5. It invokes `openclaw agent:main` to run LLM Impact Analysis based on `SKILL.md` instructions.
-6. The exact output is rigorously validated using Zod schemas (`ReviewSchema`). If invalid, a self-healing ping-pong mechanism loops the AI up to 2 retry attempts.
+5. **[Optimized Batch AI Loop]**: It groups the preprocessed patches into batches of 5 (Batch Size = 5). For each batch:
+   - A completely new, isolated OpenClaw session is created (e.g., `--session-id os_123_batch_1_1`) to prevent context window explosion and hallucination from previous batches.
+   - It invokes `openclaw agent:main` to run LLM Impact Analysis on all 5 patches simultaneously, significantly reducing system prompt token usage.
+6. The exact output is rigorously validated using Zod schemas (`ReviewSchema`). If invalid (e.g., returning 4 objects instead of 5, or missing keys), a self-healing ping-pong mechanism loops the AI up to 2 retry attempts for that specific batch.
 
 ---
 
