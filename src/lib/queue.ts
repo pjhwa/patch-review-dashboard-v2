@@ -132,8 +132,15 @@ export function startWorker() {
                         let cephPatchesRaw: any[] = [];
                         try { cephPatchesRaw = JSON.parse(fs.readFileSync(cephPatchesPath, 'utf-8')); } catch (e) { }
 
+                        // Hide the normalized datasets from the AI so its autonomous workspace RAG doesn't fetch them and get confused!
+                        const normalizedDir = path.join(cephSkillDir, 'ceph_data', 'normalized');
+                        const hiddenNormalizedDir = normalizedDir + '_hidden';
+                        const hiddenCephPatchesPath = cephPatchesPath + '.hidden';
+                        try { if (fs.existsSync(normalizedDir)) fs.renameSync(normalizedDir, hiddenNormalizedDir); } catch (e) {}
+                        try { if (fs.existsSync(cephPatchesPath)) fs.renameSync(cephPatchesPath, hiddenCephPatchesPath); } catch (e) {}
+
                         await job.updateProgress(50);
-                        await job.log(`[CEPH-AI] Sequentially evaluating ${cephPatchesRaw.length} patches...`);
+                        await job.log(`[CEPH-AI] Sequentially evaluating ${cephPatchesRaw.length} patches (RAG-blinded)...`);
 
                         const prunePatchCeph = (obj: any): any => {
                             if (!obj) return obj;
@@ -157,7 +164,10 @@ export function startWorker() {
                             await job.log(`[CEPH-AI Analysis] Processing patch ${i + 1}/${cephPatchesRaw.length}: ${pName}`);
 
                             const prunedPatch = prunePatchCeph(patch);
-                            let prompt = `Read SKILL.md. Evaluate the following SINGLE Ceph storage patch according to the strict LLM evaluation rules in SKILL.md section 4. Return ONLY a pure JSON array with EXACTLY ONE object containing: 'IssueID', 'Component', 'Version', 'Vendor', 'Date', 'Criticality', 'Description', 'KoreanDescription', and optionally 'Decision' and 'Reason'. For Vendor use 'Ceph'. For Component use the specific Ceph component (e.g. 'ceph-radosgw', 'ceph-osd', 'ceph-mon', 'ceph-mds', 'ceph-mgr', 'ceph'). Do NOT skip evaluation steps.\n\n[PATCH DATA]:\n${JSON.stringify(prunedPatch)}`;
+                            let prompt = `Read SKILL.md. Evaluate the following SINGLE Ceph storage patch according to the strict LLM evaluation rules in SKILL.md section 4.
+CRITICAL MANDATE: DO NOT USE ANY TOOLS TO READ OR SEARCH THE WORKSPACE JSON FILES. Do not parse patches_for_llm_review_ceph.json. IGNORE ANY PREVIOUS EXAMPLES or RAG retrievals regarding Ceph patches (e.g. diff-ceph-config, etc). You must ONLY base your summary on the literal text provided below in [PATCH DATA].
+Return ONLY a pure JSON array with EXACTLY ONE object containing: 'IssueID', 'Component', 'Version', 'Vendor', 'Date', 'Criticality', 'Description', 'KoreanDescription', and optionally 'Decision' and 'Reason'. For Vendor use 'Ceph'. For Component use the specific Ceph component (e.g. 'ceph-radosgw', 'ceph-osd', 'ceph-mon', 'ceph-mds', 'ceph-mgr', 'ceph'). Do NOT skip evaluation steps.\n\n[PATCH DATA]:\n${JSON.stringify(prunedPatch)}`;
+                            fs.writeFileSync(path.join(cephSkillDir, `debug_prompt_${i}.txt`), prompt);
 
                             let parsedJson: any = null;
                             for (let attempt = 1; attempt <= MAX_AI_RETRIES + 1; attempt++) {
@@ -171,7 +181,7 @@ export function startWorker() {
                                     } catch (cleanErr) { }
 
                                     const rawAiOutput = await runCephStream('/home/citec/.nvm/versions/node/v22.22.0/bin/openclaw',
-                                        ['agent', '--agent', 'main', '--json', '-m', prompt],
+                                        ['agent', '--agent', 'main', '--json', '--session-id', `ceph_${job.id}_${i}_${attempt}`, '-m', prompt],
                                         {}, { shell: false, cwd: cephSkillDir }, true
                                     );
 
@@ -189,6 +199,9 @@ export function startWorker() {
                                     if (textContents.toLowerCase().includes('rate limit')) throw new Error('AI_REVIEW_FAILED: Rate Limit');
                                     parsedJson = extractJsonArray(textContents);
                                     if (!parsedJson) throw new Error('No JSON array in AI output');
+                                    
+                                    // Forcibly override hallucinated IDs from the AI
+                                    parsedJson[0].IssueID = pName;
 
                                     const validation = ReviewSchema.safeParse(parsedJson);
                                     if (!validation.success) {
@@ -210,6 +223,10 @@ export function startWorker() {
                             }
                             await job.updateProgress(50 + Math.floor(((i + 1) / cephPatchesRaw.length) * 40));
                         }
+
+                        // Restore the hidden files
+                        try { if (fs.existsSync(hiddenNormalizedDir)) fs.renameSync(hiddenNormalizedDir, normalizedDir); } catch (e) {}
+                        try { if (fs.existsSync(hiddenCephPatchesPath)) fs.renameSync(hiddenCephPatchesPath, cephPatchesPath); } catch (e) {}
 
                         // Save AI report
                         fs.writeFileSync(cephOutputReport, JSON.stringify(finalReviewedPatches, null, 2));
@@ -380,7 +397,9 @@ export function startWorker() {
                         await job.log(`[AI Analysis] Processing patch ${i + 1}/${patchesRaw.length}: ${pName}`);
 
                         const prunedPatch = prunePatchData(patch);
-                        let basePrompt = `Read SKILL.md. Evaluate the following SINGLE PATCH exactly according to the strict LLM evaluation rules detailed in SKILL.md section 4. Do NOT perform any web scraping. Do NOT use tools to write to files, simply output the text directly. Return ONLY a pure JSON array containing EXACTLY ONE object. The object MUST contain exactly: 'IssueID', 'Component', 'Version', 'Vendor', 'Date', 'Criticality', 'Description', 'KoreanDescription', and optionally 'Decision' and 'Reason'. Do not skip Step 4.\\n\\n[PATCH DATA TO EVALUATE]:\\n${JSON.stringify(prunedPatch)}`;
+                        let basePrompt = `Read SKILL.md. Evaluate the following SINGLE PATCH exactly according to the strict LLM evaluation rules detailed in SKILL.md section 4.
+CRITICAL MANDATE: IGNORE ANY PAST RETRIEVED MEMORIES OR PREVIOUS SUMMARIES. BASE ASSESSMENTS SOLELY ON THE [PATCH DATA] BELOW.
+Do NOT perform any web scraping. Do NOT use tools to write to files, simply output the text directly. Return ONLY a pure JSON array containing EXACTLY ONE object. The object MUST contain exactly: 'IssueID', 'Component', 'Version', 'Vendor', 'Date', 'Criticality', 'Description', 'KoreanDescription', and optionally 'Decision' and 'Reason'. Do not skip Step 4.\\n\\n[PATCH DATA TO EVALUATE]:\\n${JSON.stringify(prunedPatch)}`;
                         basePrompt += ragExclusions;
 
                         let currentPrompt = basePrompt;
@@ -397,7 +416,7 @@ export function startWorker() {
                                 } catch (cleanErr) { }
 
                                 const rawAiOutput = await runStream('/home/citec/.nvm/versions/node/v22.22.0/bin/openclaw',
-                                    ['agent', '--agent', 'main', '--json', '-m', currentPrompt],
+                                    ['agent', '--agent', 'main', '--json', '--session-id', `os_${job.id}_${i}_${attempt}`, '-m', currentPrompt],
                                     {}, { shell: false }, true
                                 );
 
@@ -417,6 +436,9 @@ export function startWorker() {
 
                                 parsedJson = extractJsonArray(textContents);
                                 if (!parsedJson) throw new Error('No JSON array found in AI output even after code fence stripping.');
+                                
+                                // Forcibly override hallucinated IDs from the AI
+                                parsedJson[0].IssueID = pName;
 
                                 const validation = ReviewSchema.safeParse(parsedJson);
                                 if (!validation.success) {
