@@ -201,23 +201,33 @@ export function startWorker() {
                             return copy;
                         };
 
-                        for (let i = 0; i < cephPatchesRaw.length; i++) {
-                            const patch = cephPatchesRaw[i];
-                            const pName = patch.patch_id || patch.id || `ceph-patch-${i}`;
+                        const BATCH_SIZE = 5;
+                        for (let i = 0; i < cephPatchesRaw.length; i += BATCH_SIZE) {
+                            const batch = cephPatchesRaw.slice(i, i + BATCH_SIZE);
+                            const actualBatchSize = batch.length;
+                            const batchNames = batch.map((p: any) => p.patch_id || p.id || 'Unknown').join(', ');
+                            const batchIndex = Math.floor(i / BATCH_SIZE) + 1;
+                            const totalBatches = Math.ceil(cephPatchesRaw.length / BATCH_SIZE);
 
-                            if (isResumeMode && alreadyReviewed.has(pName)) {
-                                await job.log(`[SKIP-RESUME] 이미 리뷰가 완료된 패치입니다: ${pName}`);
-                                await job.updateProgress(50 + Math.floor(((i + 1) / cephPatchesRaw.length) * 40));
+                            // check if entire batch is already reviewed
+                            let allReviewed = true;
+                            for (const p of batch) {
+                                const pName = p.patch_id || p.id || 'Unknown';
+                                if (!alreadyReviewed.has(pName)) allReviewed = false;
+                            }
+                            if (isResumeMode && allReviewed) {
+                                await job.log(`[SKIP-RESUME] 이미 리뷰가 완료된 배치입니다: ${batchNames}`);
+                                await job.updateProgress(50 + Math.floor(((i + actualBatchSize) / cephPatchesRaw.length) * 40));
                                 continue;
                             }
 
-                            await job.log(`[CEPH-AI Analysis] Processing patch ${i + 1}/${cephPatchesRaw.length}: ${pName}`);
+                            await job.log(`[CEPH-AI Analysis] Processing batch ${batchIndex}/${totalBatches} (${actualBatchSize} patches): ${batchNames}`);
 
-                            const prunedPatch = prunePatchCeph(patch);
-                            let prompt = `Read SKILL.md. Evaluate the following SINGLE Ceph storage patch according to the strict LLM evaluation rules in SKILL.md section 4.
-CRITICAL MANDATE: DO NOT USE ANY TOOLS TO READ OR SEARCH THE WORKSPACE JSON FILES. Do not parse patches_for_llm_review_ceph.json. IGNORE ANY PREVIOUS EXAMPLES or RAG retrievals regarding Ceph patches (e.g. diff-ceph-config, etc). You must ONLY base your summary on the literal text provided below in [PATCH DATA].
-Return ONLY a pure JSON array with EXACTLY ONE object containing: 'IssueID', 'Component', 'Version', 'Vendor', 'Date', 'Criticality', 'Description', 'KoreanDescription', and optionally 'Decision' and 'Reason'. For Vendor use 'Ceph'. For Component use the specific Ceph component (e.g. 'ceph-radosgw', 'ceph-osd', 'ceph-mon', 'ceph-mds', 'ceph-mgr', 'ceph'). Do NOT skip evaluation steps.\n\n[PATCH DATA]:\n${JSON.stringify(prunedPatch)}`;
-                            fs.writeFileSync(path.join(cephSkillDir, `debug_prompt_${i}.txt`), prompt);
+                            const prunedBatch = batch.map((p: any) => prunePatchCeph(p));
+                            let prompt = `Read SKILL.md. Evaluate the following ${actualBatchSize} Ceph storage patches according to the strict LLM evaluation rules in SKILL.md section 4.
+CRITICAL MANDATE: DO NOT USE ANY TOOLS TO READ OR SEARCH THE WORKSPACE JSON FILES. Do not parse patches_for_llm_review_ceph.json. IGNORE ANY PREVIOUS EXAMPLES or RAG retrievals regarding Ceph patches (e.g. diff-ceph-config, etc). You must ONLY base your summary on the literal text provided below in [BATCH DATA].
+Return ONLY a pure JSON array with EXACTLY ${actualBatchSize} objects. Each object MUST contain exactly: 'IssueID', 'Component', 'Version', 'Vendor', 'Date', 'Criticality', 'Description', 'KoreanDescription', and optionally 'Decision' and 'Reason'. For Vendor use 'Ceph'. For Component use the specific Ceph component (e.g. 'ceph-radosgw', 'ceph-osd', 'ceph-mon', 'ceph-mds', 'ceph-mgr', 'ceph'). Do NOT skip evaluation steps.\n\n[BATCH DATA]:\n${JSON.stringify(prunedBatch)}`;
+                            fs.writeFileSync(path.join(cephSkillDir, `debug_prompt_${batchIndex}.txt`), prompt);
 
                             let parsedJson: any = null;
                             for (let attempt = 1; attempt <= MAX_AI_RETRIES + 1; attempt++) {
@@ -229,7 +239,7 @@ Return ONLY a pure JSON array with EXACTLY ONE object containing: 'IssueID', 'Co
                                             for (const lf of oldFiles) fs.rmSync(path.join(sessionsDir, lf), { force: true });
                                         }
                                         return await runCephStream('/home/citec/.nvm/versions/node/v22.22.0/bin/openclaw',
-                                            ['agent', '--agent', 'main', '--json', '--session-id', `ceph_${job.id}_${i}_${attempt}`, '-m', prompt],
+                                            ['agent', '--agent', 'main', '--json', '--session-id', `ceph_${job.id}_batch_${batchIndex}_${attempt}`, '-m', prompt],
                                             {}, { shell: false, cwd: cephSkillDir }, true
                                         );
                                     });
@@ -248,29 +258,33 @@ Return ONLY a pure JSON array with EXACTLY ONE object containing: 'IssueID', 'Co
                                     if (textContents.toLowerCase().includes('rate limit')) throw new Error('AI_REVIEW_FAILED: Rate Limit');
                                     parsedJson = extractJsonArray(textContents);
                                     if (!parsedJson) throw new Error('No JSON array in AI output');
-                                    
-                                    // Forcibly override hallucinated IDs from the AI
-                                    parsedJson[0].IssueID = pName;
-
-                                    const validation = ReviewSchema.safeParse(parsedJson);
-                                    if (!validation.success) {
-                                        const errorDetails = validation.error.errors.map((err: any) => `${err.path.join('.')}: ${err.message}`).join(', ');
-                                        throw new Error(`Zod Validation Failed: ${errorDetails}`);
+                                    if (!Array.isArray(parsedJson) || parsedJson.length !== actualBatchSize) {
+                                        throw new Error(`Expected array of length ${actualBatchSize}, but got ${Array.isArray(parsedJson) ? parsedJson.length : 'non-array'}`);
                                     }
 
-                                    const rItem = parsedJson[0];
-                                    finalReviewedPatches.push(rItem);
-                                    alreadyReviewed.add(pName);
+                                    for(const item of parsedJson) {
+                                        // Forcibly override hallucinated IDs from the AI if needed:
+                                        // But since it's an array, we trust the object matching if valid. (Zod will catch missing IDs)
+                                        const validation = ReviewSchema.safeParse(item);
+                                        if (!validation.success) {
+                                            const errorDetails = validation.error.errors.map((err: any) => `${err.path.join('.')}: ${err.message}`).join(', ');
+                                            throw new Error(`Zod Validation Failed for an item: ${errorDetails}`);
+                                        }
+                                        finalReviewedPatches.push(item);
+                                        alreadyReviewed.add(item.IssueID || item.id);
+                                    }
                                     fs.writeFileSync(cephOutputReport, JSON.stringify(finalReviewedPatches, null, 2));
 
-                                    try {
-                                        const rIssueId = rItem.IssueID || rItem.id || 'Unknown';
-                                        await prisma.reviewedPatch.upsert({
-                                            where: { issueId: rIssueId },
-                                            update: { vendor: 'Ceph', component: rItem.Component || 'ceph', version: rItem.Version || '', criticality: rItem.Criticality || 'Unknown', description: rItem.Description || '', koreanDescription: rItem.KoreanDescription || rItem.Description || '', decision: rItem.Decision || 'Done', pipelineRunId: String(job.id) },
-                                            create: { issueId: rIssueId, vendor: 'Ceph', component: rItem.Component || 'ceph', version: rItem.Version || '', criticality: rItem.Criticality || 'Unknown', description: rItem.Description || '', koreanDescription: rItem.KoreanDescription || rItem.Description || '', decision: rItem.Decision || 'Done', pipelineRunId: String(job.id) },
-                                        });
-                                    } catch (dbUpsertErr) {}
+                                    for(const rItem of parsedJson) {
+                                        try {
+                                            const rIssueId = rItem.IssueID || rItem.id || 'Unknown';
+                                            await prisma.reviewedPatch.upsert({
+                                                where: { issueId: rIssueId },
+                                                update: { vendor: 'Ceph', component: rItem.Component || 'ceph', version: rItem.Version || '', criticality: rItem.Criticality || 'Unknown', description: rItem.Description || '', koreanDescription: rItem.KoreanDescription || rItem.Description || '', decision: rItem.Decision || 'Done', pipelineRunId: String(job.id) },
+                                                create: { issueId: rIssueId, vendor: 'Ceph', component: rItem.Component || 'ceph', version: rItem.Version || '', criticality: rItem.Criticality || 'Unknown', description: rItem.Description || '', koreanDescription: rItem.KoreanDescription || rItem.Description || '', decision: rItem.Decision || 'Done', pipelineRunId: String(job.id) },
+                                            });
+                                        } catch (dbUpsertErr) {}
+                                    }
 
                                     break;
                                 } catch (err: any) {
@@ -279,14 +293,14 @@ Return ONLY a pure JSON array with EXACTLY ONE object containing: 'IssueID', 'Co
                                         throw err;
                                     }
                                     if (attempt <= MAX_AI_RETRIES) {
-                                        prompt += `\n\nPrevious attempt failed. Fix this error and resubmit: ${err.message}\nReturn ONLY a JSON array.`;
-                                        await job.log(`  -> Attempt ${attempt} failed for ${pName}, retrying...`);
+                                        prompt += `\n\nPrevious attempt failed. Fix this error and resubmit: ${err.message}\nReturn ONLY a JSON array with EXACTLY ${actualBatchSize} objects.`;
+                                        await job.log(`  -> Attempt ${attempt} failed for batch ${batchIndex}, retrying...`);
                                     } else {
-                                        await job.log(`[SKIP] ${pName} permanently failed after ${MAX_AI_RETRIES} retries.`);
+                                        await job.log(`[SKIP] Batch ${batchIndex} permanently failed after ${MAX_AI_RETRIES} retries.`);
                                     }
                                 }
                             }
-                            await job.updateProgress(50 + Math.floor(((i + 1) / cephPatchesRaw.length) * 40));
+                            await job.updateProgress(50 + Math.floor(((i + actualBatchSize) / cephPatchesRaw.length) * 40));
                         }
 
                         // Restore the hidden files
@@ -444,24 +458,34 @@ Return ONLY a pure JSON array with EXACTLY ONE object containing: 'IssueID', 'Co
                             return copy;
                         };
 
-                        for (let i = 0; i < mariadbPatchesRaw.length; i++) {
-                            const patch = mariadbPatchesRaw[i];
-                            const pName = patch.patch_id || patch.id || `mariadb-patch-${i}`;
+                        const BATCH_SIZE = 5;
+                        for (let i = 0; i < mariadbPatchesRaw.length; i += BATCH_SIZE) {
+                            const batch = mariadbPatchesRaw.slice(i, i + BATCH_SIZE);
+                            const actualBatchSize = batch.length;
+                            const batchNames = batch.map((p: any) => p.patch_id || p.id || 'Unknown').join(', ');
+                            const batchIndex = Math.floor(i / BATCH_SIZE) + 1;
+                            const totalBatches = Math.ceil(mariadbPatchesRaw.length / BATCH_SIZE);
 
-                            if (isResumeMode && alreadyReviewed.has(pName)) {
-                                await job.log(`[SKIP-RESUME] 이미 리뷰가 완료된 패치입니다: ${pName}`);
-                                await job.updateProgress(50 + Math.floor(((i + 1) / mariadbPatchesRaw.length) * 40));
+                            // check if entire batch is already reviewed
+                            let allReviewed = true;
+                            for (const p of batch) {
+                                const pName = p.patch_id || p.id || 'Unknown';
+                                if (!alreadyReviewed.has(pName)) allReviewed = false;
+                            }
+                            if (isResumeMode && allReviewed) {
+                                await job.log(`[SKIP-RESUME] 이미 리뷰가 완료된 배치입니다: ${batchNames}`);
+                                await job.updateProgress(50 + Math.floor(((i + actualBatchSize) / mariadbPatchesRaw.length) * 40));
                                 continue;
                             }
 
-                            await job.log(`[MARIADB-AI Analysis] Processing patch ${i + 1}/${mariadbPatchesRaw.length}: ${pName}`);
+                            await job.log(`[MARIADB-AI Analysis] Processing batch ${batchIndex}/${totalBatches} (${actualBatchSize} patches): ${batchNames}`);
 
-                            const prunedPatch = prunePatchMariadb(patch);
-                            let prompt = `Read SKILL.md. Evaluate the following SINGLE MariaDB database patch according to the strict LLM evaluation rules in SKILL.md section 4.
-CRITICAL MANDATE: DO NOT USE ANY TOOLS TO READ OR SEARCH THE WORKSPACE JSON FILES. Do not parse patches_for_llm_review_mariadb.json. IGNORE ANY PREVIOUS EXAMPLES or RAG retrievals. You must ONLY base your summary on the literal text provided below in [PATCH DATA].
+                            const prunedBatch = batch.map((p: any) => prunePatchMariadb(p));
+                            let prompt = `Read SKILL.md. Evaluate the following ${actualBatchSize} MariaDB database patches according to the strict LLM evaluation rules in SKILL.md section 4.
+CRITICAL MANDATE: DO NOT USE ANY TOOLS TO READ OR SEARCH THE WORKSPACE JSON FILES. Do not parse patches_for_llm_review_mariadb.json. IGNORE ANY PREVIOUS EXAMPLES or RAG retrievals. You must ONLY base your summary on the literal text provided below in [BATCH DATA].
 CRITICAL RULE FOR DESCRIPTIONS: The 'Description' and 'KoreanDescription' fields MUST be a concise, executive summary of the bug fixes and features. DO NOT include verbatim '.patch' filenames, raw code snippets, or raw changelog copy-pastes. Describe WHAT was fixed and WHY, not HOW the file was named.
-Return ONLY a pure JSON array with EXACTLY ONE object containing: 'IssueID', 'Component', 'Version', 'Vendor', 'Date', 'Criticality', 'Description', 'KoreanDescription', and optionally 'Decision' and 'Reason'. For Vendor use 'MariaDB'. For Component use the specific MariaDB component (e.g. 'mariadb', 'mariadb-galera'). Do NOT skip evaluation steps.\n\n[PATCH DATA]:\n${JSON.stringify(prunedPatch)}`;
-                            fs.writeFileSync(path.join(mariadbSkillDir, `debug_prompt_${i}.txt`), prompt);
+Return ONLY a pure JSON array with EXACTLY ${actualBatchSize} objects. Each object MUST contain exactly: 'IssueID', 'Component', 'Version', 'Vendor', 'Date', 'Criticality', 'Description', 'KoreanDescription', and optionally 'Decision' and 'Reason'. For Vendor use 'MariaDB'. For Component use the specific MariaDB component (e.g. 'mariadb', 'mariadb-galera'). Do NOT skip evaluation steps.\n\n[BATCH DATA]:\n${JSON.stringify(prunedBatch)}`;
+                            fs.writeFileSync(path.join(mariadbSkillDir, `debug_prompt_${batchIndex}.txt`), prompt);
 
                             let parsedJson: any = null;
                             for (let attempt = 1; attempt <= MAX_AI_RETRIES + 1; attempt++) {
@@ -473,7 +497,7 @@ Return ONLY a pure JSON array with EXACTLY ONE object containing: 'IssueID', 'Co
                                             for (const lf of oldFiles) fs.rmSync(path.join(sessionsDir, lf), { force: true });
                                         }
                                         return await runMariadbStream('/home/citec/.nvm/versions/node/v22.22.0/bin/openclaw',
-                                            ['agent', '--agent', 'main', '--json', '--session-id', `mariadb_${job.id}_${i}_${attempt}`, '-m', prompt],
+                                            ['agent', '--agent', 'main', '--json', '--session-id', `mariadb_${job.id}_batch_${batchIndex}_${attempt}`, '-m', prompt],
                                             {}, { shell: false, cwd: mariadbSkillDir }, true
                                         );
                                     });
@@ -492,29 +516,31 @@ Return ONLY a pure JSON array with EXACTLY ONE object containing: 'IssueID', 'Co
                                     if (textContents.toLowerCase().includes('rate limit')) throw new Error('AI_REVIEW_FAILED: Rate Limit');
                                     parsedJson = extractJsonArray(textContents);
                                     if (!parsedJson) throw new Error('No JSON array in AI output');
-                                    
-                                    // Forcibly override hallucinated IDs from the AI
-                                    parsedJson[0].IssueID = pName;
-
-                                    const validation = ReviewSchema.safeParse(parsedJson);
-                                    if (!validation.success) {
-                                        const errorDetails = validation.error.errors.map((err: any) => `${err.path.join('.')}: ${err.message}`).join(', ');
-                                        throw new Error(`Zod Validation Failed: ${errorDetails}`);
+                                    if (!Array.isArray(parsedJson) || parsedJson.length !== actualBatchSize) {
+                                        throw new Error(`Expected array of length ${actualBatchSize}, but got ${Array.isArray(parsedJson) ? parsedJson.length : 'non-array'}`);
                                     }
 
-                                    const rItem = parsedJson[0];
-                                    finalReviewedPatches.push(rItem);
-                                    alreadyReviewed.add(pName);
+                                    for(const item of parsedJson) {
+                                        const validation = ReviewSchema.safeParse(item);
+                                        if (!validation.success) {
+                                            const errorDetails = validation.error.errors.map((err: any) => `${err.path.join('.')}: ${err.message}`).join(', ');
+                                            throw new Error(`Zod Validation Failed for an item: ${errorDetails}`);
+                                        }
+                                        finalReviewedPatches.push(item);
+                                        alreadyReviewed.add(item.IssueID || item.id);
+                                    }
                                     fs.writeFileSync(mariadbOutputReport, JSON.stringify(finalReviewedPatches, null, 2));
 
-                                    try {
-                                        const rIssueId = rItem.IssueID || rItem.id || 'Unknown';
-                                        await prisma.reviewedPatch.upsert({
-                                            where: { issueId: rIssueId },
-                                            update: { vendor: 'MariaDB', component: rItem.Component || 'mariadb', version: rItem.Version || '', criticality: rItem.Criticality || 'Unknown', description: rItem.Description || '', koreanDescription: rItem.KoreanDescription || rItem.Description || '', decision: rItem.Decision || 'Done', pipelineRunId: String(job.id) },
-                                            create: { issueId: rIssueId, vendor: 'MariaDB', component: rItem.Component || 'mariadb', version: rItem.Version || '', criticality: rItem.Criticality || 'Unknown', description: rItem.Description || '', koreanDescription: rItem.KoreanDescription || rItem.Description || '', decision: rItem.Decision || 'Done', pipelineRunId: String(job.id) },
-                                        });
-                                    } catch (dbUpsertErr) {}
+                                    for(const rItem of parsedJson) {
+                                        try {
+                                            const rIssueId = rItem.IssueID || rItem.id || 'Unknown';
+                                            await prisma.reviewedPatch.upsert({
+                                                where: { issueId: rIssueId },
+                                                update: { vendor: 'MariaDB', component: rItem.Component || 'mariadb', version: rItem.Version || '', criticality: rItem.Criticality || 'Unknown', description: rItem.Description || '', koreanDescription: rItem.KoreanDescription || rItem.Description || '', decision: rItem.Decision || 'Done', pipelineRunId: String(job.id) },
+                                                create: { issueId: rIssueId, vendor: 'MariaDB', component: rItem.Component || 'mariadb', version: rItem.Version || '', criticality: rItem.Criticality || 'Unknown', description: rItem.Description || '', koreanDescription: rItem.KoreanDescription || rItem.Description || '', decision: rItem.Decision || 'Done', pipelineRunId: String(job.id) },
+                                            });
+                                        } catch (dbUpsertErr) {}
+                                    }
 
                                     break;
                                 } catch (err: any) {
@@ -523,14 +549,14 @@ Return ONLY a pure JSON array with EXACTLY ONE object containing: 'IssueID', 'Co
                                         throw err;
                                     }
                                     if (attempt <= MAX_AI_RETRIES) {
-                                        prompt += `\n\nPrevious attempt failed. Fix this error and resubmit: ${err.message}\nReturn ONLY a JSON array.`;
-                                        await job.log(`  -> Attempt ${attempt} failed for ${pName}, retrying...`);
+                                        prompt += `\n\nPrevious attempt failed. Fix this error and resubmit: ${err.message}\nReturn ONLY a JSON array with EXACTLY ${actualBatchSize} objects.`;
+                                        await job.log(`  -> Attempt ${attempt} failed for batch ${batchIndex}, retrying...`);
                                     } else {
-                                        await job.log(`[SKIP] ${pName} permanently failed after ${MAX_AI_RETRIES} retries.`);
+                                        await job.log(`[SKIP] Batch ${batchIndex} permanently failed after ${MAX_AI_RETRIES} retries.`);
                                     }
                                 }
                             }
-                            await job.updateProgress(50 + Math.floor(((i + 1) / mariadbPatchesRaw.length) * 40));
+                            await job.updateProgress(50 + Math.floor(((i + actualBatchSize) / mariadbPatchesRaw.length) * 40));
                         }
 
                         // Restore the hidden files
@@ -718,22 +744,33 @@ Return ONLY a pure JSON array with EXACTLY ONE object containing: 'IssueID', 'Co
                     await job.updateProgress(60);
                     await job.log(`AI Review in progress... Sequentially evaluating ${patchesRaw.length} patches (Zod Self-Healing enabled)`);
 
-                    for (let i = 0; i < patchesRaw.length; i++) {
-                        const patch = patchesRaw[i];
-                        const pName = patch.id || patch.issueId || patch.IssueID || `Unknown-${i}`;
+                    const BATCH_SIZE = 5;
+                    for (let i = 0; i < patchesRaw.length; i += BATCH_SIZE) {
+                        const batch = patchesRaw.slice(i, i + BATCH_SIZE);
+                        const actualBatchSize = batch.length;
+                        const batchNames = batch.map((p: any) => p.id || p.issueId || p.IssueID || 'Unknown').join(', ');
+                        const batchIndex = Math.floor(i / BATCH_SIZE) + 1;
+                        const totalBatches = Math.ceil(patchesRaw.length / BATCH_SIZE);
 
-                        if (isResumeMode && alreadyReviewed.has(pName)) {
-                            await job.log(`[SKIP-RESUME] 이미 리뷰가 완료된 패치입니다: ${pName}`);
-                            await job.updateProgress(60 + Math.floor(((i + 1) / patchesRaw.length) * 30));
+                        // check if entire batch is already reviewed
+                        let allReviewed = true;
+                        for (const p of batch) {
+                            const pName = p.id || p.issueId || p.IssueID || 'Unknown';
+                            if (!alreadyReviewed.has(pName)) allReviewed = false;
+                        }
+
+                        if (isResumeMode && allReviewed) {
+                            await job.log(`[SKIP-RESUME] 이미 리뷰가 완료된 배치입니다: ${batchNames}`);
+                            await job.updateProgress(60 + Math.floor(((i + actualBatchSize) / patchesRaw.length) * 30));
                             continue;
                         }
 
-                        await job.log(`[AI Analysis] Processing patch ${i + 1}/${patchesRaw.length}: ${pName}`);
+                        await job.log(`[AI Analysis] Processing batch ${batchIndex}/${totalBatches} (${actualBatchSize} patches): ${batchNames}`);
 
-                        const prunedPatch = prunePatchData(patch);
-                        let basePrompt = `Read SKILL.md. Evaluate the following SINGLE PATCH exactly according to the strict LLM evaluation rules detailed in SKILL.md section 4.
+                        const prunedBatch = batch.map((p: any) => prunePatchData(p));
+                        let basePrompt = `Read SKILL.md. Evaluate the following ${actualBatchSize} PATCHES exactly according to the strict LLM evaluation rules detailed in SKILL.md section 4.
 CRITICAL MANDATE: IGNORE ANY PAST RETRIEVED MEMORIES OR PREVIOUS SUMMARIES. BASE ASSESSMENTS SOLELY ON THE [PATCH DATA] BELOW.
-Do NOT perform any web scraping. Do NOT use tools to write to files, simply output the text directly. Return ONLY a pure JSON array containing EXACTLY ONE object. The object MUST contain exactly: 'IssueID', 'Component', 'Version', 'Vendor', 'Date', 'Criticality', 'Description', 'KoreanDescription', and optionally 'Decision' and 'Reason'. Do not skip Step 4.\\n\\n[PATCH DATA TO EVALUATE]:\\n${JSON.stringify(prunedPatch)}`;
+Do NOT perform any web scraping. Do NOT use tools to write to files, simply output the text directly. Return ONLY a pure JSON array containing EXACTLY ${actualBatchSize} objects. The object MUST contain exactly: 'IssueID', 'Component', 'Version', 'Vendor', 'Date', 'Criticality', 'Description', 'KoreanDescription', and optionally 'Decision' and 'Reason'. Do not skip Step 4.\\n\\n[BATCH DATA TO EVALUATE]:\\n${JSON.stringify(prunedBatch)}`;
                         basePrompt += ragExclusions;
 
                         let currentPrompt = basePrompt;
@@ -744,11 +781,11 @@ Do NOT perform any web scraping. Do NOT use tools to write to files, simply outp
                                 const rawAiOutput = await withOpenClawLock(async (msg) => await job.log(msg), async () => {
                                     const sessionsDir = path.join(process.env.HOME || '/home/citec', '.openclaw/agents/main/sessions');
                                     if (fs.existsSync(sessionsDir)) {
-                                        const lockFiles = fs.readdirSync(sessionsDir).filter((f: string) => f.endsWith('.lock'));
+                                        const lockFiles = fs.readdirSync(sessionsDir).filter((f: string) => f.endsWith('.lock') || f.includes('.jsonl'));
                                         for (const lf of lockFiles) fs.rmSync(path.join(sessionsDir, lf), { force: true });
                                     }
                                     return await runStream('/home/citec/.nvm/versions/node/v22.22.0/bin/openclaw',
-                                        ['agent', '--agent', 'main', '--json', '--session-id', `os_${job.id}_${i}_${attempt}`, '-m', currentPrompt],
+                                        ['agent', '--agent', 'main', '--json', '--session-id', `os_${job.id}_batch_${batchIndex}_${attempt}`, '-m', currentPrompt],
                                         {}, { shell: false }, true
                                     );
                                 });
@@ -769,19 +806,20 @@ Do NOT perform any web scraping. Do NOT use tools to write to files, simply outp
 
                                 parsedJson = extractJsonArray(textContents);
                                 if (!parsedJson) throw new Error('No JSON array found in AI output even after code fence stripping.');
+                                if (!Array.isArray(parsedJson) || parsedJson.length !== actualBatchSize) {
+                                    throw new Error(`Expected array of length ${actualBatchSize}, but got ${Array.isArray(parsedJson) ? parsedJson.length : 'non-array'}`);
+                                }
                                 
-                                // Forcibly override hallucinated IDs from the AI
-                                parsedJson[0].IssueID = pName;
-
-                                const validation = ReviewSchema.safeParse(parsedJson);
-                                if (!validation.success) {
-                                    const errorDetails = validation.error.errors.map((err: any) => `${err.path.join('.')}: ${err.message}`).join(', ');
-                                    throw new Error(`Zod Schema Validation Failed: ${errorDetails}`);
+                                for (const item of parsedJson) {
+                                    const validation = ReviewSchema.safeParse(item);
+                                    if (!validation.success) {
+                                        const errorDetails = validation.error.errors.map((err: any) => `${err.path.join('.')}: ${err.message}`).join(', ');
+                                        throw new Error(`Zod Schema Validation Failed: ${errorDetails}`);
+                                    }
+                                    finalReviewedPatches.push(item);
+                                    alreadyReviewed.add(item.IssueID || item.id);
                                 }
 
-                                const rItem = parsedJson[0];
-                                finalReviewedPatches.push(rItem);
-                                alreadyReviewed.add(pName);
                                 fs.writeFileSync(absoluteReportPath, JSON.stringify(finalReviewedPatches, null, 2));
 
                                 break;
@@ -792,14 +830,14 @@ Do NOT perform any web scraping. Do NOT use tools to write to files, simply outp
                                 }
 
                                 if (attempt <= MAX_AI_RETRIES) {
-                                    currentPrompt += `\\n\\n이전 응답이 실패했습니다. 다음 Zod 구조적 에러를 해결하여 다시 제출하세요: ${err.message}\\n반드시 JSON 배열 형태로 출력하세요.`;
-                                    await job.log(`  -> Attempt ${attempt} failed for ${pName}, retrying...`);
+                                    currentPrompt += `\\n\\n이전 응답이 실패했습니다. 다음 Zod 구조적 에러를 해결하여 다시 제출하세요: ${err.message}\\n반드시 JSON 배열 형태로 EXACTLY ${actualBatchSize} objects를 출력하세요.`;
+                                    await job.log(`  -> Attempt ${attempt} failed for batch ${batchIndex}, retrying...`);
                                 } else {
-                                    await job.log(`[SKIP] Patch ${pName} permanently failed AI review after ${MAX_AI_RETRIES} retries. Error: ${err.message}`);
+                                    await job.log(`[SKIP] Batch ${batchIndex} permanently failed AI review after ${MAX_AI_RETRIES} retries. Error: ${err.message}`);
                                 }
                             }
                         }
-                        await job.updateProgress(60 + Math.floor(((i + 1) / patchesRaw.length) * 30));
+                        await job.updateProgress(60 + Math.floor(((i + actualBatchSize) / patchesRaw.length) * 30));
                     }
 
                     if (isResumeMode && fs.existsSync(rateLimitFlagFile)) fs.unlinkSync(rateLimitFlagFile);
