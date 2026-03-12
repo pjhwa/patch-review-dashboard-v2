@@ -132,9 +132,9 @@ export function ProductGrid({ categoryId, products, dict }: { categoryId: string
         setLogTail("");
 
         // Determine the correct pipeline run endpoint based on category
-        const pipelineRunUrl = categoryId === 'storage'
-            ? '/api/pipeline/ceph/run'
-            : '/api/pipeline/run';
+        let pipelineRunUrl = '/api/pipeline/run';
+        if (categoryId === 'storage') pipelineRunUrl = '/api/pipeline/ceph/run';
+        else if (categoryId === 'database') pipelineRunUrl = '/api/pipeline/mariadb/run';
 
         try {
             const res = await fetch(pipelineRunUrl, {

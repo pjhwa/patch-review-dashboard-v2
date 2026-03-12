@@ -494,7 +494,9 @@ export function ProductDetailClient({ categoryId, productId, dict }: { categoryI
                                                     })
                                                     .map((patch: any) => patch.IssueID || patch['Issue ID'] || patch.Issue_ID);
 
-                                                const finalizeEndpoint = categoryId === 'storage' ? '/api/pipeline/ceph/finalize' : '/api/pipeline/finalize';
+                                                let finalizeEndpoint = '/api/pipeline/finalize';
+                                                if (categoryId === 'storage') finalizeEndpoint = '/api/pipeline/ceph/finalize';
+                                                else if (categoryId === 'database') finalizeEndpoint = '/api/pipeline/mariadb/finalize';
                                                 const res = await fetch(finalizeEndpoint, {
                                                     method: 'POST',
                                                     headers: { 'Content-Type': 'application/json' },

@@ -296,6 +296,203 @@ Return ONLY a pure JSON array with EXACTLY ONE object containing: 'IssueID', 'Co
                     // END CEPH PIPELINE BRANCH
                     // ============================================================
 
+                    // ============================================================
+                    // MARIADB PIPELINE BRANCH
+                    // ============================================================
+                    if (job.name === 'run-mariadb-pipeline') {
+                        const mariadbSkillDir = path.join(process.env.HOME || '/home/citec', '.openclaw/workspace/skills/patch-review/database/mariadb');
+                        const mariadbOutputReport = path.join(mariadbSkillDir, 'patch_review_ai_report_mariadb.json');
+                        const mariadbPatchesPath = path.join(mariadbSkillDir, 'patches_for_llm_review_mariadb.json');
+
+                        const runMariadbStream = async (command: string, args: string[], progressMap: any = {}, overrideOpts: any = {}, suppressLog: boolean = false): Promise<any> => {
+                            return new Promise((res, rej) => {
+                                let fullStdout = '';
+                                let isRej = false;
+                                const p = spawn(command, args, { cwd: mariadbSkillDir, shell: false, ...overrideOpts });
+                                p.stdout.on('data', async (data: any) => {
+                                    const chunk = data.toString();
+                                    fullStdout += chunk;
+                                    const lines = chunk.split('\n');
+                                    for (const line of lines) {
+                                        if (line.trim()) {
+                                            if (!suppressLog) job.log(line).catch(() => { });
+                                            for (const [keyword, prog] of Object.entries(progressMap)) {
+                                                if (line.includes(keyword)) job.updateProgress(prog as number).catch(() => { });
+                                            }
+                                        }
+                                    }
+                                });
+                                p.stderr.on('data', (data: any) => {
+                                    const errText = data.toString();
+                                    job.log(`ERROR: ${errText}`).catch(() => { });
+                                    if (errText.includes('rate limit')) { isRej = true; rej(new Error('AI_REVIEW_FAILED: API Rate Limit Error')); }
+                                    else if (errText.includes('timeout') || errText.includes('gateway closed')) { isRej = true; rej(new Error('AI_REVIEW_FAILED: OpenClaw timed out.')); }
+                                });
+                                p.on('close', (code: number | null) => {
+                                    if (!isRej) { code === 0 ? res(fullStdout) : rej(new Error(`Command ${command} failed with code ${code}`)); }
+                                });
+                            });
+                        };
+
+                        // Step 1: Preprocessing
+                        await job.updateProgress(10);
+                        await job.log('[MARIADB-PIPELINE] Starting MariaDB patch preprocessing...');
+                        await runMariadbStream('python3', ['mariadb_preprocessing.py', '--days', '180'], {
+                            'Saved review packet': 40,
+                            'Found': 15,
+                        });
+                        await job.updateProgress(40);
+                        await job.log('[MARIADB-PREPROCESS_DONE] Preprocessing complete.');
+
+                        // Step 2: AI Review Loop
+                        const { ReviewSchema } = require('@/lib/schema');
+                        const MAX_AI_RETRIES = 2;
+                        let finalReviewedPatches: any[] = [];
+                        let mariadbPatchesRaw: any[] = [];
+                        try { mariadbPatchesRaw = JSON.parse(fs.readFileSync(mariadbPatchesPath, 'utf-8')); } catch (e) { }
+
+                        // Hide the normalized datasets from the AI so its autonomous workspace RAG doesn't fetch them and get confused!
+                        const normalizedDir = path.join(mariadbSkillDir, 'mariadb_data', 'normalized');
+                        const hiddenNormalizedDir = normalizedDir + '_hidden';
+                        const hiddenMariadbPatchesPath = mariadbPatchesPath + '.hidden';
+                        try { if (fs.existsSync(normalizedDir)) fs.renameSync(normalizedDir, hiddenNormalizedDir); } catch (e) {}
+                        try { if (fs.existsSync(mariadbPatchesPath)) fs.renameSync(mariadbPatchesPath, hiddenMariadbPatchesPath); } catch (e) {}
+
+                        await job.updateProgress(50);
+                        await job.log(`[MARIADB-AI] Sequentially evaluating ${mariadbPatchesRaw.length} patches (RAG-blinded)...`);
+
+                        const prunePatchMariadb = (obj: any): any => {
+                            if (!obj) return obj;
+                            const copy = JSON.parse(JSON.stringify(obj));
+                            const pruneText = (text: string, maxLen: number) => {
+                                if (typeof text !== 'string') return text;
+                                let pruned = text.replace(/https?:\/\/[^\s"'<>\\]+/g, '[URL]');
+                                return pruned.length > maxLen ? pruned.slice(0, maxLen) + '...[TRUNCATED]' : pruned;
+                            };
+                            const traverse = (o: any) => {
+                                if (Array.isArray(o)) { for (let i = 0; i < o.length; i++) { if (typeof o[i] === 'object') traverse(o[i]); else if (typeof o[i] === 'string') o[i] = pruneText(o[i], 3000); } }
+                                else if (typeof o === 'object' && o !== null) { for (const key of Object.keys(o)) { if (typeof o[key] === 'string') o[key] = pruneText(o[key], 5000); else if (typeof o[key] === 'object') traverse(o[key]); } }
+                            };
+                            traverse(copy);
+                            return copy;
+                        };
+
+                        for (let i = 0; i < mariadbPatchesRaw.length; i++) {
+                            const patch = mariadbPatchesRaw[i];
+                            const pName = patch.patch_id || patch.id || `mariadb-patch-${i}`;
+                            await job.log(`[MARIADB-AI Analysis] Processing patch ${i + 1}/${mariadbPatchesRaw.length}: ${pName}`);
+
+                            const prunedPatch = prunePatchMariadb(patch);
+                            let prompt = `Read SKILL.md. Evaluate the following SINGLE MariaDB database patch according to the strict LLM evaluation rules in SKILL.md section 4.
+CRITICAL MANDATE: DO NOT USE ANY TOOLS TO READ OR SEARCH THE WORKSPACE JSON FILES. Do not parse patches_for_llm_review_mariadb.json. IGNORE ANY PREVIOUS EXAMPLES or RAG retrievals. You must ONLY base your summary on the literal text provided below in [PATCH DATA].
+Return ONLY a pure JSON array with EXACTLY ONE object containing: 'IssueID', 'Component', 'Version', 'Vendor', 'Date', 'Criticality', 'Description', 'KoreanDescription', and optionally 'Decision' and 'Reason'. For Vendor use 'MariaDB'. For Component use the specific MariaDB component (e.g. 'mariadb', 'mariadb-galera'). Do NOT skip evaluation steps.\n\n[PATCH DATA]:\n${JSON.stringify(prunedPatch)}`;
+                            fs.writeFileSync(path.join(mariadbSkillDir, `debug_prompt_${i}.txt`), prompt);
+
+                            let parsedJson: any = null;
+                            for (let attempt = 1; attempt <= MAX_AI_RETRIES + 1; attempt++) {
+                                try {
+                                    const rawAiOutput = await withOpenClawLock(async (msg) => await job.log(msg), async () => {
+                                        const sessionsDir = path.join(process.env.HOME || '/home/citec', '.openclaw/agents/main/sessions');
+                                        if (fs.existsSync(sessionsDir)) {
+                                            const oldFiles = fs.readdirSync(sessionsDir).filter((f: string) => f.endsWith('.lock') || f.includes('.jsonl'));
+                                            for (const lf of oldFiles) fs.rmSync(path.join(sessionsDir, lf), { force: true });
+                                        }
+                                        return await runMariadbStream('/home/citec/.nvm/versions/node/v22.22.0/bin/openclaw',
+                                            ['agent', '--agent', 'main', '--json', '--session-id', `mariadb_${job.id}_${i}_${attempt}`, '-m', prompt],
+                                            {}, { shell: false, cwd: mariadbSkillDir }, true
+                                        );
+                                    });
+
+                                    const extractJsonArray = (text: string): any => {
+                                        const stripped = text.replace(/```(?:json)?\s*/g, '').replace(/```/g, '');
+                                        const match = stripped.match(/\[\s*\{[\s\S]*?\}\s*\]/);
+                                        if (!match) return null;
+                                        return JSON.parse(match[0]);
+                                    };
+
+                                    const openclawWrapper = JSON.parse(rawAiOutput);
+                                    const payloads = openclawWrapper?.result?.payloads || [];
+                                    const textContents = payloads.map((p: any) => p.text).join('\n');
+
+                                    if (textContents.toLowerCase().includes('rate limit')) throw new Error('AI_REVIEW_FAILED: Rate Limit');
+                                    parsedJson = extractJsonArray(textContents);
+                                    if (!parsedJson) throw new Error('No JSON array in AI output');
+                                    
+                                    // Forcibly override hallucinated IDs from the AI
+                                    parsedJson[0].IssueID = pName;
+
+                                    const validation = ReviewSchema.safeParse(parsedJson);
+                                    if (!validation.success) {
+                                        const errorDetails = validation.error.errors.map((err: any) => `${err.path.join('.')}: ${err.message}`).join(', ');
+                                        throw new Error(`Zod Validation Failed: ${errorDetails}`);
+                                    }
+
+                                    finalReviewedPatches.push(parsedJson[0]);
+                                    break;
+                                } catch (err: any) {
+                                    if (err.message.includes('AI_REVIEW_FAILED')) throw err;
+                                    if (attempt <= MAX_AI_RETRIES) {
+                                        prompt += `\n\nPrevious attempt failed. Fix this error and resubmit: ${err.message}\nReturn ONLY a JSON array.`;
+                                        await job.log(`  -> Attempt ${attempt} failed for ${pName}, retrying...`);
+                                    } else {
+                                        await job.log(`[SKIP] ${pName} permanently failed after ${MAX_AI_RETRIES} retries.`);
+                                    }
+                                }
+                            }
+                            await job.updateProgress(50 + Math.floor(((i + 1) / mariadbPatchesRaw.length) * 40));
+                        }
+
+                        // Restore the hidden files
+                        try { if (fs.existsSync(hiddenNormalizedDir)) fs.renameSync(hiddenNormalizedDir, normalizedDir); } catch (e) {}
+                        try { if (fs.existsSync(hiddenMariadbPatchesPath)) fs.renameSync(hiddenMariadbPatchesPath, mariadbPatchesPath); } catch (e) {}
+
+                        // Save AI report
+                        fs.writeFileSync(mariadbOutputReport, JSON.stringify(finalReviewedPatches, null, 2));
+                        await job.log(`[MARIADB-AI] AI review complete. ${finalReviewedPatches.length} patches reviewed.`);
+
+                        // Step 3: DB Ingestion
+                        try {
+                            await prisma.preprocessedPatch.deleteMany({ where: { vendor: 'MariaDB' } });
+                            if (mariadbPatchesRaw.length > 0) {
+                                await prisma.preprocessedPatch.createMany({
+                                    data: mariadbPatchesRaw.map((p: any) => ({
+                                        issueId: p.patch_id,
+                                        vendor: 'MariaDB',
+                                        component: p.component || 'mariadb',
+                                        version: p.version || '',
+                                        osVersion: p.os_version || null,
+                                        description: (p.description || '').slice(0, 4000),
+                                        releaseDate: p.issued_date || null,
+                                    })),
+                                });
+                            }
+                            await job.log(`[MARIADB-DB] Preprocessed ${mariadbPatchesRaw.length} patches ingested.`);
+
+                            await prisma.reviewedPatch.deleteMany({ where: { vendor: 'MariaDB' } });
+                            for (const item of finalReviewedPatches) {
+                                const issueId = item.IssueID || item.id || 'Unknown';
+                                try {
+                                    await prisma.reviewedPatch.upsert({
+                                        where: { issueId },
+                                        update: { vendor: 'MariaDB', component: item.Component || 'mariadb', version: item.Version || '', criticality: item.Criticality || 'Unknown', description: item.Description || '', koreanDescription: item.KoreanDescription || item.Description || '', decision: item.Decision || 'Done', pipelineRunId: String(job.id) },
+                                        create: { issueId, vendor: 'MariaDB', component: item.Component || 'mariadb', version: item.Version || '', criticality: item.Criticality || 'Unknown', description: item.Description || '', koreanDescription: item.KoreanDescription || item.Description || '', decision: item.Decision || 'Done', pipelineRunId: String(job.id) },
+                                    });
+                                } catch (e) { await job.log(`[MARIADB-DB WARN] Upsert failed for ${issueId}`); }
+                            }
+                            await job.log(`[MARIADB-DB] Reviewed patches ingested: ${finalReviewedPatches.length}`);
+                        } catch (dbErr: any) {
+                            await job.log(`[MARIADB-DB WARNING] DB ingestion error: ${dbErr.message}`);
+                        }
+
+                        await job.updateProgress(100);
+                        await job.log('[MARIADB-PIPELINE] All tasks completed successfully.');
+                        resolve('MariaDB pipeline success');
+                        return;
+                    }
+                    // ============================================================
+                    // END MARIADB PIPELINE BRANCH
+                    // ============================================================
+
                     if (job.name === 'manual-review') {
                         await job.updateProgress(5);
                         await job.log("Manual AI Review queued. Preparing input patches...");

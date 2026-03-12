@@ -9,7 +9,7 @@ import { cookies } from "next/headers";
 const CATEGORIES: { id: string, count: string | number, active: boolean, icon: any }[] = [
   { id: 'os', count: 124, active: true, icon: Server },
   { id: 'middleware', count: 0, active: false, icon: Component },
-  { id: 'database', count: 0, active: false, icon: DatabaseZap },
+  { id: 'database', count: 0, active: true, icon: DatabaseZap },
   { id: 'network', count: 0, active: false, icon: Network },
   { id: 'storage', count: 0, active: true, icon: HardDrive },
   { id: 'virtualization', count: 0, active: false, icon: Cpu },
@@ -26,8 +26,10 @@ export default async function Home() {
   let pipeline: any = null;
   let osReviewCountSum: string | number = "0/7"; // Default fallback
   let storageReviewCountSum: string | number = "0/1"; // Default fallback
+  let databaseReviewCountSum: string | number = "0/4"; // Default fallback
   let osCustomDesc = '';
   let storageCustomDesc = '';
+  let databaseCustomDesc = '';
 
   // Statistics Aggregation Variables
   let totalCollected = 0;
@@ -83,6 +85,20 @@ export default async function Home() {
       storageCustomDesc = `${dict.dashboard.productsReviewed}${patchRatioStr}`;
     }
 
+    // Fetch Database Products Data
+    const databaseRes = await fetch(`${baseUrl}/api/products?category=database`, { cache: 'no-store' });
+    if (databaseRes.ok) {
+      const prodData = await databaseRes.json();
+      const products = prodData.products || [];
+      const activeProducts = products.filter((p: any) => p.active);
+      const completedProducts = activeProducts.filter((p: any) => p.isReviewCompleted);
+      
+      const catApproved = aggregateStats(products);
+      databaseReviewCountSum = `${completedProducts.length}/${products.length}`;
+      const patchRatioStr = catApproved > 0 ? ` | ${catApproved} ${dict.dashboard.patchesReviewed}` : '';
+      databaseCustomDesc = `${dict.dashboard.productsReviewed}${patchRatioStr}`;
+    }
+
     // Fetch Archives Data for Stats
     const arcRes = await fetch(`${baseUrl}/api/pipeline/archive`, { cache: 'no-store' });
     if (arcRes.ok) {
@@ -110,6 +126,8 @@ export default async function Home() {
       return { ...cat, name, count: osReviewCountSum, customDesc: osCustomDesc };
     } else if (cat.id === 'storage') {
       return { ...cat, name, count: storageReviewCountSum, customDesc: storageCustomDesc };
+    } else if (cat.id === 'database') {
+      return { ...cat, name, count: databaseReviewCountSum, customDesc: databaseCustomDesc };
     }
     return { ...cat, name };
   });
