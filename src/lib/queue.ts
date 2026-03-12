@@ -559,7 +559,6 @@ Return ONLY a pure JSON array with EXACTLY ONE object containing: 'IssueID', 'Co
                                     })),
                                 });
                             }
-                            }
                             if (!isResumeMode && !isAiOnly) await job.log(`[MARIADB-DB] Preprocessed ${mariadbPatchesRaw.length} patches ingested.`);
 
                             if (!isResumeMode && !isAiOnly) await prisma.reviewedPatch.deleteMany({ where: { vendor: 'MariaDB' } });
@@ -588,6 +587,8 @@ Return ONLY a pure JSON array with EXACTLY ONE object containing: 'IssueID', 'Co
                     // ============================================================
 
                     const rateLimitFlagFile = path.join('/tmp', '.rate_limit_os');
+                    const isAiOnly = job.data.isAiOnly === true;
+                    const isRetry = job.data.isRetry === true;
                     const isResumeMode = (isAiOnly || isRetry) && fs.existsSync(rateLimitFlagFile);
 
                     if (job.name === 'manual-review') {
