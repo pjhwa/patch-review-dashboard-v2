@@ -4,7 +4,7 @@
 Patch Review Board Dashboard는 분기별 권고 패치 검토 작업을 중앙에서 관제하고 자동화하는 프리미엄 통합 커맨드 센터입니다.
 
 ## 2. 배포 환경 (Deployment Environment)
-- **실제 구동 서버**: `tom26` 리눅스 서버 (`citec@172.16.10.237`, `~/.openclaw/workspace/patch-review-dashboard/`)
+- **실제 구동 서버**: `tom26` 리눅스 서버 (`citec@<SERVER_IP>`, `~/.openclaw/workspace/patch-review-dashboard/`)
 - **버전 관리 및 로컬 연동**: `Patch-Review/patch-review-dashboard/`
 
 ## 3. 주요 기능 (Features)
