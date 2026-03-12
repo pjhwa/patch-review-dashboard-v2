@@ -494,7 +494,8 @@ export function ProductDetailClient({ categoryId, productId, dict }: { categoryI
                                                     })
                                                     .map((patch: any) => patch.IssueID || patch['Issue ID'] || patch.Issue_ID);
 
-                                                const res = await fetch('/api/pipeline/finalize', {
+                                                const finalizeEndpoint = categoryId === 'storage' ? '/api/pipeline/ceph/finalize' : '/api/pipeline/finalize';
+                                                const res = await fetch(finalizeEndpoint, {
                                                     method: 'POST',
                                                     headers: { 'Content-Type': 'application/json' },
                                                     body: JSON.stringify({

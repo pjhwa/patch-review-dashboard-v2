@@ -24,8 +24,10 @@ export default async function Home() {
   const dict = getDictionary(locale);
 
   let pipeline: any = null;
-  let osReviewCountSum: string | number = 0; // Default fallback
+  let osReviewCountSum: string | number = "0/7"; // Default fallback
+  let storageReviewCountSum: string | number = "0/1"; // Default fallback
   let osCustomDesc = '';
+  let storageCustomDesc = '';
 
   // Statistics Aggregation Variables
   let totalCollected = 0;
@@ -39,26 +41,46 @@ export default async function Home() {
       pipeline = await res.json();
     }
 
-    // Fetch Products Data for Stats
-    const prodRes = await fetch(`${baseUrl}/api/products?category=os`, { cache: 'no-store' });
-    if (prodRes.ok) {
-      const prodData = await prodRes.json();
-      const products = prodData.products || [];
-
-      const activeProducts = products.filter((p: any) => p.active);
-      const completedProducts = activeProducts.filter((p: any) => p.isReviewCompleted);
-
+    // Helper to aggregate global stats
+    const aggregateStats = (products: any[]) => {
+      let catApproved = 0;
       products.forEach((p: any) => {
         if (p.stages) {
           totalCollected += p.stages.collected || 0;
           totalReviewed += p.stages.reviewed || 0;
           totalApproved += p.stages.approved || 0;
+          catApproved += p.stages.approved || 0;
         }
       });
+      return catApproved;
+    };
 
-      osReviewCountSum = `${completedProducts.length} / ${products.length}`;
-      const patchRatioStr = totalApproved > 0 ? ` | ${totalApproved} ${dict.dashboard.patchesReviewed}` : '';
+    // Fetch OS Products Data
+    const prodRes = await fetch(`${baseUrl}/api/products?category=os`, { cache: 'no-store' });
+    if (prodRes.ok) {
+      const prodData = await prodRes.json();
+      const products = prodData.products || [];
+      const activeProducts = products.filter((p: any) => p.active);
+      const completedProducts = activeProducts.filter((p: any) => p.isReviewCompleted);
+      
+      const catApproved = aggregateStats(products);
+      osReviewCountSum = `${completedProducts.length}/${products.length}`;
+      const patchRatioStr = catApproved > 0 ? ` | ${catApproved} ${dict.dashboard.patchesReviewed}` : '';
       osCustomDesc = `${dict.dashboard.productsReviewed}${patchRatioStr}`;
+    }
+
+    // Fetch Storage Products Data
+    const storageRes = await fetch(`${baseUrl}/api/products?category=storage`, { cache: 'no-store' });
+    if (storageRes.ok) {
+      const prodData = await storageRes.json();
+      const products = prodData.products || [];
+      const activeProducts = products.filter((p: any) => p.active);
+      const completedProducts = activeProducts.filter((p: any) => p.isReviewCompleted);
+      
+      const catApproved = aggregateStats(products);
+      storageReviewCountSum = `${completedProducts.length}/${products.length}`;
+      const patchRatioStr = catApproved > 0 ? ` | ${catApproved} ${dict.dashboard.patchesReviewed}` : '';
+      storageCustomDesc = `${dict.dashboard.productsReviewed}${patchRatioStr}`;
     }
 
     // Fetch Archives Data for Stats
@@ -84,9 +106,12 @@ export default async function Home() {
       case 'virtualization': name = dict.dashboard.categoryTitlePrefix + 'Virtualization' + dict.dashboard.categoryTitleSuffix; break;
     }
 
-    return cat.id === 'os'
-      ? { ...cat, name, count: osReviewCountSum, customDesc: osCustomDesc }
-      : { ...cat, name };
+    if (cat.id === 'os') {
+      return { ...cat, name, count: osReviewCountSum, customDesc: osCustomDesc };
+    } else if (cat.id === 'storage') {
+      return { ...cat, name, count: storageReviewCountSum, customDesc: storageCustomDesc };
+    }
+    return { ...cat, name };
   });
 
   return (
