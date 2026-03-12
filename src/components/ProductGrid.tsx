@@ -51,21 +51,30 @@ export function ProductGrid({ categoryId, products, dict }: { categoryId: string
 
             if (streamData.log) {
                 // OS pipeline keywords
-                if (streamData.log.includes('[PREPROCESS_DONE]')) {
+                } else if (streamData.log.includes('[PREPROCESS_DONE]')) {
                     const match = streamData.log.match(/count=(\d+)/);
                     const cnt = match ? match[1] : '?';
                     setResultMsg(`✅ 전처리 완료 (${cnt}개 패치). AI 리뷰 진행 중...`);
                     router.refresh();
+                } else if (streamData.log.includes('[RESUME]')) {
+                    setResultMsg(`🔁 ${streamData.log.replace(/\[\w+-RESUME\]|\[RESUME\]/, '').trim()}`);
+                } else if (streamData.log.includes('[SKIP-RESUME]')) {
+                    setResultMsg(`⏭️ ${streamData.log.replace(/\[\w+-SKIP-RESUME\]|\[SKIP-RESUME\]/, '').trim()}`);
                 // Ceph pipeline keywords
                 } else if (streamData.log.includes('[CEPH-PREPROCESS_DONE]')) {
                     setResultMsg(`✅ Ceph 전처리 완료. AI 리뷰 진행 중...`);
                     router.refresh();
+                } else if (streamData.log.includes('[MARIADB-PREPROCESS_DONE]')) {
+                    setResultMsg(`✅ MariaDB 전처리 완료. AI 리뷰 진행 중...`);
+                    router.refresh();
                 } else if (streamData.log.includes('[CEPH-PIPELINE]') || streamData.log.includes('[CEPH-AI Analysis]')) {
+                    setResultMsg(`🤖 ${streamData.log}`);
+                } else if (streamData.log.includes('[MARIADB-PIPELINE]') || streamData.log.includes('[MARIADB-AI Analysis]')) {
                     setResultMsg(`🤖 ${streamData.log}`);
                 } else if (streamData.log.includes('[AI Analysis]') || streamData.log.includes('[SKIP]')) {
                     setResultMsg(`🤖 ${streamData.log}`);
-                } else if (streamData.log.includes('[CEPH-PIPELINE] All tasks completed')) {
-                    setResultMsg('✅ Ceph 파이프라인 완료!');
+                } else if (streamData.log.includes('All tasks completed successfully')) {
+                    setResultMsg('✅ 파이프라인 전체 완료!');
                 }
                 setLogTail(prev => {
                     const newLogs = prev.split('\n');

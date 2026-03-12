@@ -137,15 +137,23 @@ export function startWorker() {
                             });
                         };
 
+                        const rateLimitFlagFile = path.join('/tmp', '.rate_limit_ceph');
+                        const isResumeMode = (isAiOnly || isRetry) && fs.existsSync(rateLimitFlagFile);
+
                         // Step 1: Preprocessing
-                        await job.updateProgress(10);
-                        await job.log('[CEPH-PIPELINE] Starting Ceph patch preprocessing...');
-                        await runCephStream('python3', ['ceph_preprocessing.py', '--days', '180'], {
-                            '전처리 완료': 40,
-                            'Ceph Patch Preprocessor 시작': 15,
-                        });
-                        await job.updateProgress(40);
-                        await job.log('[CEPH-PREPROCESS_DONE] Preprocessing complete.');
+                        if (!isResumeMode && !isAiOnly) {
+                            await job.updateProgress(10);
+                            await job.log('[CEPH-PIPELINE] Starting Ceph patch preprocessing...');
+                            await runCephStream('python3', ['ceph_preprocessing.py', '--days', '180'], {
+                                '전처리 완료': 40,
+                                'Ceph Patch Preprocessor 시작': 15,
+                            });
+                            await job.updateProgress(40);
+                            await job.log('[CEPH-PREPROCESS_DONE] Preprocessing complete.');
+                        } else {
+                            await job.updateProgress(40);
+                            await job.log('[CEPH-PIPELINE] Skipping preprocessing (AI-Only/Resume mode).');
+                        }
 
                         // Step 2: AI Review Loop
                         const { ReviewSchema } = require('@/lib/schema');
@@ -153,6 +161,19 @@ export function startWorker() {
                         let finalReviewedPatches: any[] = [];
                         let cephPatchesRaw: any[] = [];
                         try { cephPatchesRaw = JSON.parse(fs.readFileSync(cephPatchesPath, 'utf-8')); } catch (e) { }
+
+                        const alreadyReviewed = new Set<string>();
+                        if (isResumeMode) {
+                            try {
+                                finalReviewedPatches = JSON.parse(fs.readFileSync(cephOutputReport, 'utf-8'));
+                                for (const p of finalReviewedPatches) alreadyReviewed.add(p.IssueID || p.id);
+                                await job.log(`[RESUME] 이전에 API Rate Limit으로 중단된 리뷰를 이어서 진행합니다. (완료: ${alreadyReviewed.size}건, 남은 패치: ${cephPatchesRaw.length - alreadyReviewed.size}건)`);
+                            } catch (e) {
+                                finalReviewedPatches = [];
+                            }
+                        } else {
+                            if (fs.existsSync(rateLimitFlagFile)) fs.unlinkSync(rateLimitFlagFile);
+                        }
 
                         // Hide the normalized datasets from the AI so its autonomous workspace RAG doesn't fetch them and get confused!
                         const normalizedDir = path.join(cephSkillDir, 'ceph_data', 'normalized');
@@ -183,6 +204,13 @@ export function startWorker() {
                         for (let i = 0; i < cephPatchesRaw.length; i++) {
                             const patch = cephPatchesRaw[i];
                             const pName = patch.patch_id || patch.id || `ceph-patch-${i}`;
+
+                            if (isResumeMode && alreadyReviewed.has(pName)) {
+                                await job.log(`[SKIP-RESUME] 이미 리뷰가 완료된 패치입니다: ${pName}`);
+                                await job.updateProgress(50 + Math.floor(((i + 1) / cephPatchesRaw.length) * 40));
+                                continue;
+                            }
+
                             await job.log(`[CEPH-AI Analysis] Processing patch ${i + 1}/${cephPatchesRaw.length}: ${pName}`);
 
                             const prunedPatch = prunePatchCeph(patch);
@@ -230,10 +258,26 @@ Return ONLY a pure JSON array with EXACTLY ONE object containing: 'IssueID', 'Co
                                         throw new Error(`Zod Validation Failed: ${errorDetails}`);
                                     }
 
-                                    finalReviewedPatches.push(parsedJson[0]);
+                                    const rItem = parsedJson[0];
+                                    finalReviewedPatches.push(rItem);
+                                    alreadyReviewed.add(pName);
+                                    fs.writeFileSync(cephOutputReport, JSON.stringify(finalReviewedPatches, null, 2));
+
+                                    try {
+                                        const rIssueId = rItem.IssueID || rItem.id || 'Unknown';
+                                        await prisma.reviewedPatch.upsert({
+                                            where: { issueId: rIssueId },
+                                            update: { vendor: 'Ceph', component: rItem.Component || 'ceph', version: rItem.Version || '', criticality: rItem.Criticality || 'Unknown', description: rItem.Description || '', koreanDescription: rItem.KoreanDescription || rItem.Description || '', decision: rItem.Decision || 'Done', pipelineRunId: String(job.id) },
+                                            create: { issueId: rIssueId, vendor: 'Ceph', component: rItem.Component || 'ceph', version: rItem.Version || '', criticality: rItem.Criticality || 'Unknown', description: rItem.Description || '', koreanDescription: rItem.KoreanDescription || rItem.Description || '', decision: rItem.Decision || 'Done', pipelineRunId: String(job.id) },
+                                        });
+                                    } catch (dbUpsertErr) {}
+
                                     break;
                                 } catch (err: any) {
-                                    if (err.message.includes('AI_REVIEW_FAILED')) throw err;
+                                    if (err.message.includes('AI_REVIEW_FAILED')) {
+                                        if (err.message.includes('Rate Limit')) fs.writeFileSync(rateLimitFlagFile, 'true');
+                                        throw err;
+                                    }
                                     if (attempt <= MAX_AI_RETRIES) {
                                         prompt += `\n\nPrevious attempt failed. Fix this error and resubmit: ${err.message}\nReturn ONLY a JSON array.`;
                                         await job.log(`  -> Attempt ${attempt} failed for ${pName}, retrying...`);
@@ -249,14 +293,16 @@ Return ONLY a pure JSON array with EXACTLY ONE object containing: 'IssueID', 'Co
                         try { if (fs.existsSync(hiddenNormalizedDir)) fs.renameSync(hiddenNormalizedDir, normalizedDir); } catch (e) {}
                         try { if (fs.existsSync(hiddenCephPatchesPath)) fs.renameSync(hiddenCephPatchesPath, cephPatchesPath); } catch (e) {}
 
+                        if (isResumeMode && fs.existsSync(rateLimitFlagFile)) fs.unlinkSync(rateLimitFlagFile);
+
                         // Save AI report
                         fs.writeFileSync(cephOutputReport, JSON.stringify(finalReviewedPatches, null, 2));
                         await job.log(`[CEPH-AI] AI review complete. ${finalReviewedPatches.length} patches reviewed.`);
 
                         // Step 3: DB Ingestion
                         try {
-                            await prisma.preprocessedPatch.deleteMany({ where: { vendor: 'Ceph' } });
-                            if (cephPatchesRaw.length > 0) {
+                            if (!isResumeMode && !isAiOnly) await prisma.preprocessedPatch.deleteMany({ where: { vendor: 'Ceph' } });
+                            if (!isResumeMode && !isAiOnly && cephPatchesRaw.length > 0) {
                                 await prisma.preprocessedPatch.createMany({
                                     data: cephPatchesRaw.map((p: any) => ({
                                         issueId: p.patch_id,
@@ -269,9 +315,9 @@ Return ONLY a pure JSON array with EXACTLY ONE object containing: 'IssueID', 'Co
                                     })),
                                 });
                             }
-                            await job.log(`[CEPH-DB] Preprocessed ${cephPatchesRaw.length} patches ingested.`);
+                            if (!isResumeMode && !isAiOnly) await job.log(`[CEPH-DB] Preprocessed ${cephPatchesRaw.length} patches ingested.`);
 
-                            await prisma.reviewedPatch.deleteMany({ where: { vendor: 'Ceph' } });
+                            if (!isResumeMode && !isAiOnly) await prisma.reviewedPatch.deleteMany({ where: { vendor: 'Ceph' } });
                             for (const item of finalReviewedPatches) {
                                 const issueId = item.IssueID || item.id || 'Unknown';
                                 try {
@@ -334,15 +380,23 @@ Return ONLY a pure JSON array with EXACTLY ONE object containing: 'IssueID', 'Co
                             });
                         };
 
+                        const rateLimitFlagFile = path.join('/tmp', '.rate_limit_mariadb');
+                        const isResumeMode = (isAiOnly || isRetry) && fs.existsSync(rateLimitFlagFile);
+
                         // Step 1: Preprocessing
-                        await job.updateProgress(10);
-                        await job.log('[MARIADB-PIPELINE] Starting MariaDB patch preprocessing...');
-                        await runMariadbStream('python3', ['mariadb_preprocessing.py', '--days', '180'], {
-                            'Saved review packet': 40,
-                            'Found': 15,
-                        });
-                        await job.updateProgress(40);
-                        await job.log('[MARIADB-PREPROCESS_DONE] Preprocessing complete.');
+                        if (!isResumeMode && !isAiOnly) {
+                            await job.updateProgress(10);
+                            await job.log('[MARIADB-PIPELINE] Starting MariaDB patch preprocessing...');
+                            await runMariadbStream('python3', ['mariadb_preprocessing.py', '--days', '180'], {
+                                'Saved review packet': 40,
+                                'Found': 15,
+                            });
+                            await job.updateProgress(40);
+                            await job.log('[MARIADB-PREPROCESS_DONE] Preprocessing complete.');
+                        } else {
+                            await job.updateProgress(40);
+                            await job.log('[MARIADB-PIPELINE] Skipping preprocessing (AI-Only/Resume mode).');
+                        }
 
                         // Step 2: AI Review Loop
                         const { ReviewSchema } = require('@/lib/schema');
@@ -350,6 +404,19 @@ Return ONLY a pure JSON array with EXACTLY ONE object containing: 'IssueID', 'Co
                         let finalReviewedPatches: any[] = [];
                         let mariadbPatchesRaw: any[] = [];
                         try { mariadbPatchesRaw = JSON.parse(fs.readFileSync(mariadbPatchesPath, 'utf-8')); } catch (e) { }
+
+                        const alreadyReviewed = new Set<string>();
+                        if (isResumeMode) {
+                            try {
+                                finalReviewedPatches = JSON.parse(fs.readFileSync(mariadbOutputReport, 'utf-8'));
+                                for (const p of finalReviewedPatches) alreadyReviewed.add(p.IssueID || p.id);
+                                await job.log(`[RESUME] 이전에 API Rate Limit으로 중단된 리뷰를 이어서 진행합니다. (완료: ${alreadyReviewed.size}건, 남은 패치: ${mariadbPatchesRaw.length - alreadyReviewed.size}건)`);
+                            } catch (e) {
+                                finalReviewedPatches = [];
+                            }
+                        } else {
+                            if (fs.existsSync(rateLimitFlagFile)) fs.unlinkSync(rateLimitFlagFile);
+                        }
 
                         // Hide the normalized datasets from the AI so its autonomous workspace RAG doesn't fetch them and get confused!
                         const normalizedDir = path.join(mariadbSkillDir, 'mariadb_data', 'normalized');
@@ -380,11 +447,19 @@ Return ONLY a pure JSON array with EXACTLY ONE object containing: 'IssueID', 'Co
                         for (let i = 0; i < mariadbPatchesRaw.length; i++) {
                             const patch = mariadbPatchesRaw[i];
                             const pName = patch.patch_id || patch.id || `mariadb-patch-${i}`;
+
+                            if (isResumeMode && alreadyReviewed.has(pName)) {
+                                await job.log(`[SKIP-RESUME] 이미 리뷰가 완료된 패치입니다: ${pName}`);
+                                await job.updateProgress(50 + Math.floor(((i + 1) / mariadbPatchesRaw.length) * 40));
+                                continue;
+                            }
+
                             await job.log(`[MARIADB-AI Analysis] Processing patch ${i + 1}/${mariadbPatchesRaw.length}: ${pName}`);
 
                             const prunedPatch = prunePatchMariadb(patch);
                             let prompt = `Read SKILL.md. Evaluate the following SINGLE MariaDB database patch according to the strict LLM evaluation rules in SKILL.md section 4.
 CRITICAL MANDATE: DO NOT USE ANY TOOLS TO READ OR SEARCH THE WORKSPACE JSON FILES. Do not parse patches_for_llm_review_mariadb.json. IGNORE ANY PREVIOUS EXAMPLES or RAG retrievals. You must ONLY base your summary on the literal text provided below in [PATCH DATA].
+CRITICAL RULE FOR DESCRIPTIONS: The 'Description' and 'KoreanDescription' fields MUST be a concise, executive summary of the bug fixes and features. DO NOT include verbatim '.patch' filenames, raw code snippets, or raw changelog copy-pastes. Describe WHAT was fixed and WHY, not HOW the file was named.
 Return ONLY a pure JSON array with EXACTLY ONE object containing: 'IssueID', 'Component', 'Version', 'Vendor', 'Date', 'Criticality', 'Description', 'KoreanDescription', and optionally 'Decision' and 'Reason'. For Vendor use 'MariaDB'. For Component use the specific MariaDB component (e.g. 'mariadb', 'mariadb-galera'). Do NOT skip evaluation steps.\n\n[PATCH DATA]:\n${JSON.stringify(prunedPatch)}`;
                             fs.writeFileSync(path.join(mariadbSkillDir, `debug_prompt_${i}.txt`), prompt);
 
@@ -427,10 +502,26 @@ Return ONLY a pure JSON array with EXACTLY ONE object containing: 'IssueID', 'Co
                                         throw new Error(`Zod Validation Failed: ${errorDetails}`);
                                     }
 
-                                    finalReviewedPatches.push(parsedJson[0]);
+                                    const rItem = parsedJson[0];
+                                    finalReviewedPatches.push(rItem);
+                                    alreadyReviewed.add(pName);
+                                    fs.writeFileSync(mariadbOutputReport, JSON.stringify(finalReviewedPatches, null, 2));
+
+                                    try {
+                                        const rIssueId = rItem.IssueID || rItem.id || 'Unknown';
+                                        await prisma.reviewedPatch.upsert({
+                                            where: { issueId: rIssueId },
+                                            update: { vendor: 'MariaDB', component: rItem.Component || 'mariadb', version: rItem.Version || '', criticality: rItem.Criticality || 'Unknown', description: rItem.Description || '', koreanDescription: rItem.KoreanDescription || rItem.Description || '', decision: rItem.Decision || 'Done', pipelineRunId: String(job.id) },
+                                            create: { issueId: rIssueId, vendor: 'MariaDB', component: rItem.Component || 'mariadb', version: rItem.Version || '', criticality: rItem.Criticality || 'Unknown', description: rItem.Description || '', koreanDescription: rItem.KoreanDescription || rItem.Description || '', decision: rItem.Decision || 'Done', pipelineRunId: String(job.id) },
+                                        });
+                                    } catch (dbUpsertErr) {}
+
                                     break;
                                 } catch (err: any) {
-                                    if (err.message.includes('AI_REVIEW_FAILED')) throw err;
+                                    if (err.message.includes('AI_REVIEW_FAILED')) {
+                                        if (err.message.includes('Rate Limit')) fs.writeFileSync(rateLimitFlagFile, 'true');
+                                        throw err;
+                                    }
                                     if (attempt <= MAX_AI_RETRIES) {
                                         prompt += `\n\nPrevious attempt failed. Fix this error and resubmit: ${err.message}\nReturn ONLY a JSON array.`;
                                         await job.log(`  -> Attempt ${attempt} failed for ${pName}, retrying...`);
@@ -446,14 +537,16 @@ Return ONLY a pure JSON array with EXACTLY ONE object containing: 'IssueID', 'Co
                         try { if (fs.existsSync(hiddenNormalizedDir)) fs.renameSync(hiddenNormalizedDir, normalizedDir); } catch (e) {}
                         try { if (fs.existsSync(hiddenMariadbPatchesPath)) fs.renameSync(hiddenMariadbPatchesPath, mariadbPatchesPath); } catch (e) {}
 
+                        if (isResumeMode && fs.existsSync(rateLimitFlagFile)) fs.unlinkSync(rateLimitFlagFile);
+
                         // Save AI report
                         fs.writeFileSync(mariadbOutputReport, JSON.stringify(finalReviewedPatches, null, 2));
                         await job.log(`[MARIADB-AI] AI review complete. ${finalReviewedPatches.length} patches reviewed.`);
 
                         // Step 3: DB Ingestion
                         try {
-                            await prisma.preprocessedPatch.deleteMany({ where: { vendor: 'MariaDB' } });
-                            if (mariadbPatchesRaw.length > 0) {
+                            if (!isResumeMode && !isAiOnly) await prisma.preprocessedPatch.deleteMany({ where: { vendor: 'MariaDB' } });
+                            if (!isResumeMode && !isAiOnly && mariadbPatchesRaw.length > 0) {
                                 await prisma.preprocessedPatch.createMany({
                                     data: mariadbPatchesRaw.map((p: any) => ({
                                         issueId: p.patch_id,
@@ -466,9 +559,10 @@ Return ONLY a pure JSON array with EXACTLY ONE object containing: 'IssueID', 'Co
                                     })),
                                 });
                             }
-                            await job.log(`[MARIADB-DB] Preprocessed ${mariadbPatchesRaw.length} patches ingested.`);
+                            }
+                            if (!isResumeMode && !isAiOnly) await job.log(`[MARIADB-DB] Preprocessed ${mariadbPatchesRaw.length} patches ingested.`);
 
-                            await prisma.reviewedPatch.deleteMany({ where: { vendor: 'MariaDB' } });
+                            if (!isResumeMode && !isAiOnly) await prisma.reviewedPatch.deleteMany({ where: { vendor: 'MariaDB' } });
                             for (const item of finalReviewedPatches) {
                                 const issueId = item.IssueID || item.id || 'Unknown';
                                 try {
@@ -493,14 +587,17 @@ Return ONLY a pure JSON array with EXACTLY ONE object containing: 'IssueID', 'Co
                     // END MARIADB PIPELINE BRANCH
                     // ============================================================
 
+                    const rateLimitFlagFile = path.join('/tmp', '.rate_limit_os');
+                    const isResumeMode = (isAiOnly || isRetry) && fs.existsSync(rateLimitFlagFile);
+
                     if (job.name === 'manual-review') {
                         await job.updateProgress(5);
                         await job.log("Manual AI Review queued. Preparing input patches...");
                         const inputPath = path.join(linuxV2Dir, `manual_review_input_${job.id}.json`);
                         fs.writeFileSync(inputPath, JSON.stringify(job.data.patches, null, 2));
-                    } else if (isAiOnly) {
+                    } else if (isAiOnly || isResumeMode) {
                         await job.updateProgress(5);
-                        await job.log("AI-Only pipeline queued. Bypassing collection...");
+                        await job.log("Skipping collection and preprocessing (AI-Only/Resume mode).");
                     } else {
                         // 2. Preprocessing
                         await job.updateProgress(10);
@@ -558,6 +655,19 @@ Return ONLY a pure JSON array with EXACTLY ONE object containing: 'IssueID', 'Co
                     let patchesRaw: any[] = [];
                     try { patchesRaw = JSON.parse(fs.readFileSync(patchesPath, 'utf-8')); } catch (e) { }
 
+                    const alreadyReviewed = new Set<string>();
+                    if (isResumeMode) {
+                        try {
+                            finalReviewedPatches = JSON.parse(fs.readFileSync(absoluteReportPath, 'utf-8'));
+                            for (const p of finalReviewedPatches) alreadyReviewed.add(p.IssueID || p.id);
+                            await job.log(`[RESUME] 이전에 API Rate Limit으로 중단된 리뷰를 이어서 진행합니다. (완료: ${alreadyReviewed.size}건, 남은 패치: ${patchesRaw.length - alreadyReviewed.size}건)`);
+                        } catch (e) {
+                            finalReviewedPatches = [];
+                        }
+                    } else {
+                        if (fs.existsSync(rateLimitFlagFile)) fs.unlinkSync(rateLimitFlagFile);
+                    }
+
                     const prunePatchData = (obj: any): any => {
                         if (!obj) return obj;
                         const copy = JSON.parse(JSON.stringify(obj));
@@ -612,6 +722,13 @@ Return ONLY a pure JSON array with EXACTLY ONE object containing: 'IssueID', 'Co
                     for (let i = 0; i < patchesRaw.length; i++) {
                         const patch = patchesRaw[i];
                         const pName = patch.id || patch.issueId || patch.IssueID || `Unknown-${i}`;
+
+                        if (isResumeMode && alreadyReviewed.has(pName)) {
+                            await job.log(`[SKIP-RESUME] 이미 리뷰가 완료된 패치입니다: ${pName}`);
+                            await job.updateProgress(60 + Math.floor(((i + 1) / patchesRaw.length) * 30));
+                            continue;
+                        }
+
                         await job.log(`[AI Analysis] Processing patch ${i + 1}/${patchesRaw.length}: ${pName}`);
 
                         const prunedPatch = prunePatchData(patch);
@@ -663,11 +780,17 @@ Do NOT perform any web scraping. Do NOT use tools to write to files, simply outp
                                     throw new Error(`Zod Schema Validation Failed: ${errorDetails}`);
                                 }
 
-                                // Success
-                                finalReviewedPatches.push(parsedJson[0]);
+                                const rItem = parsedJson[0];
+                                finalReviewedPatches.push(rItem);
+                                alreadyReviewed.add(pName);
+                                fs.writeFileSync(absoluteReportPath, JSON.stringify(finalReviewedPatches, null, 2));
+
                                 break;
                             } catch (err: any) {
-                                if (err.message.includes('AI_REVIEW_FAILED')) throw err;
+                                if (err.message.includes('AI_REVIEW_FAILED')) {
+                                    if (err.message.includes('Rate Limit')) fs.writeFileSync(rateLimitFlagFile, 'true');
+                                    throw err;
+                                }
 
                                 if (attempt <= MAX_AI_RETRIES) {
                                     currentPrompt += `\\n\\n이전 응답이 실패했습니다. 다음 Zod 구조적 에러를 해결하여 다시 제출하세요: ${err.message}\\n반드시 JSON 배열 형태로 출력하세요.`;
@@ -680,6 +803,7 @@ Do NOT perform any web scraping. Do NOT use tools to write to files, simply outp
                         await job.updateProgress(60 + Math.floor(((i + 1) / patchesRaw.length) * 30));
                     }
 
+                    if (isResumeMode && fs.existsSync(rateLimitFlagFile)) fs.unlinkSync(rateLimitFlagFile);
                     fs.writeFileSync(absoluteReportPath, JSON.stringify(finalReviewedPatches, null, 2));
 
                     // 5. Database Ingestion - validate against preprocessed data first
