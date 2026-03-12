@@ -588,7 +588,6 @@ Return ONLY a pure JSON array with EXACTLY ONE object containing: 'IssueID', 'Co
 
                     const rateLimitFlagFile = path.join('/tmp', '.rate_limit_os');
                     const isResumeMode = (isAiOnly || isRetry) && fs.existsSync(rateLimitFlagFile);
-                    const isResumeMode = (isAiOnly || isRetry) && fs.existsSync(rateLimitFlagFile);
 
                     if (job.name === 'manual-review') {
                         await job.updateProgress(5);
