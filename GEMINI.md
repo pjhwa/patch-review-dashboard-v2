@@ -12,7 +12,7 @@
 | **SSH** | `citec@<SERVER_IP>` |
 | **서버 앱 경로** | `/home/citec/patch-review-dashboard-v2/` |
 | **스크립트 경로 (서버)** | `/home/citec/.openclaw/workspace/skills/patch-review/os/linux-v2/` |
-| **로컬 경로** | `C:\Users\jooksan.park\Patch-Review\patch-review-dashboard-v2\` |
+| **로컬 경로** | `C:\Users\<USER>\Patch-Review\patch-review-dashboard-v2\` |
 | **GitHub** | `https://github.com/pjhwa/patch-review-dashboard-v2` |
 | **대시보드 URL** | `http://<SERVER_IP>:3000` |
 | **Node.js** | v22.22.0 (nvm) |
@@ -53,7 +53,7 @@
 
 ```bash
 # 로컬에서 실행 (PowerShell이므로 ; 로 분리)
-cd C:\Users\jooksan.park\Patch-Review\patch-review-dashboard-v2
+cd C:\Users\<USER>\Patch-Review\patch-review-dashboard-v2
 git add .
 git commit -m "feat: [변경 내용 요약]"
 git push origin master
@@ -67,7 +67,7 @@ git push origin master
 
 수집기 스크립트(`rhba_collector.js`, `rhsa_collector.js` 등)는 서버의 다음 경로가 **원본(Source of Truth)**:
 - 서버: `/home/citec/.openclaw/workspace/skills/patch-review/os/linux-v2/redhat/`
-- 로컬 동기화 경로: `C:\Users\jooksan.park\Patch-Review\patch-review-dashboard-v2\scripts\`
+- 로컬 동기화 경로: `C:\Users\<USER>\Patch-Review\patch-review-dashboard-v2\scripts\`
 
 ---
 
