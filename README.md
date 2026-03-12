@@ -72,7 +72,7 @@ pnpm prisma db push
 ### 5. Launch Application
 ```bash
 pnpm run dev
-# The application will listen on http://localhost:3000
+# The application will listen on http://localhost:3001
 ```
 Navigate to your Dashboard. Try manually running a pipeline to test the SSE log streaming!
 
