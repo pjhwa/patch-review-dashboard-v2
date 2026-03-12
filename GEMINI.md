@@ -8,13 +8,13 @@
 
 | 항목 | 값 |
 |---|---|
-| **서버** | `tom26` / `172.16.10.237` |
-| **SSH** | `citec@172.16.10.237` |
+| **서버** | `tom26` / `<SERVER_IP>` |
+| **SSH** | `citec@<SERVER_IP>` |
 | **서버 앱 경로** | `/home/citec/patch-review-dashboard-v2/` |
 | **스크립트 경로 (서버)** | `/home/citec/.openclaw/workspace/skills/patch-review/os/linux-v2/` |
 | **로컬 경로** | `C:\Users\jooksan.park\Patch-Review\patch-review-dashboard-v2\` |
 | **GitHub** | `https://github.com/pjhwa/patch-review-dashboard-v2` |
-| **대시보드 URL** | `http://172.16.10.237:3000` |
+| **대시보드 URL** | `http://<SERVER_IP>:3000` |
 | **Node.js** | v22.22.0 (nvm) |
 | **Next.js** | 16.1.6 (App Router, React 19, TypeScript strict) |
 | **PM2** | `patch-dashboard` (fork mode, port 3000) |
@@ -37,7 +37,7 @@
 
 ### 규칙 1: 서버 우선 수정 워크플로우
 
-모든 코드 수정·검증·테스트는 **반드시 서버(`tom26`, `172.16.10.237`)에서 수행**한다.
+모든 코드 수정·검증·테스트는 **반드시 서버(`tom26`, `<SERVER_IP>`)에서 수행**한다.
 로컬 파일을 직접 수정한 뒤 서버에 올리는 방식은 **금지**. 순서는 다음과 같다:
 
 ```
@@ -58,6 +58,10 @@ git add .
 git commit -m "feat: [변경 내용 요약]"
 git push origin master
 ```
+
+### 규칙 2.5: 보안 - 코드 푸시 전 민감정보 마스킹 필수 (IP 등)
+**매우 중요**: GitHub 등 외부에 코드를 푸시하거나 문서를 업데이트할 때, **절대 실제 운영 서버의 IP 주소(예: `<SERVER_IP>`), 패스워드, API 키**를 있는 그대로 올리지 않는다. 
+모든 IP 주소와 민감한 정보는 `tom26` 혹은 `<SERVER_IP>` 등으로 **반드시 마스킹(Masking)** 처리한 후 커밋해야 한다.
 
 ### 규칙 3: 수집기 스크립트 동기화 위치
 
@@ -220,23 +224,23 @@ const preProcessedData = await prisma.preprocessedPatch.findMany({
 
 ```bash
 # 서버 로그 확인
-ssh citec@172.16.10.237 "cat ~/.pm2/logs/patch-dashboard-out.log | tail -50"
+ssh citec@<SERVER_IP> "cat ~/.pm2/logs/patch-dashboard-out.log | tail -50"
 
 # PM2 재시작 (서버에서)
 cd /home/citec/patch-review-dashboard-v2 && npm run build && npx pm2 restart all
 
 # 로컬 → 서버 배포 (로컬에서)
-scp src\lib\queue.ts citec@172.16.10.237:/home/citec/patch-review-dashboard-v2/src/lib/
-ssh citec@172.16.10.237 "source ~/.nvm/nvm.sh && cd /home/citec/patch-review-dashboard-v2 && npm run build && npx pm2 restart all"
+scp src\lib\queue.ts citec@<SERVER_IP>:/home/citec/patch-review-dashboard-v2/src/lib/
+ssh citec@<SERVER_IP> "source ~/.nvm/nvm.sh && cd /home/citec/patch-review-dashboard-v2 && npm run build && npx pm2 restart all"
 
 # OpenClaw lock 제거
-ssh citec@172.16.10.237 "rm -f ~/.openclaw/agents/main/sessions/*.lock"
+ssh citec@<SERVER_IP> "rm -f ~/.openclaw/agents/main/sessions/*.lock"
 
 # CRON 확인
-ssh citec@172.16.10.237 "crontab -l"
+ssh citec@<SERVER_IP> "crontab -l"
 
 # DB 직접 확인
-ssh citec@172.16.10.237 "cd /home/citec/patch-review-dashboard-v2 && npx prisma studio"
+ssh citec@<SERVER_IP> "cd /home/citec/patch-review-dashboard-v2 && npx prisma studio"
 
 # 수집기 수동 실행 (서버에서)
 cd /home/citec/.openclaw/workspace/skills/patch-review/os/linux-v2

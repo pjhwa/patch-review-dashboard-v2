@@ -9,7 +9,7 @@
 ## Execution
 - [ ] Modify Oracle Linux patch review script/files.
 - [ ] Push changes to GitHub.
-- [ ] Deploy to `tom26` (`citec@172.16.10.237`) in `~/.openclaw/workspace/skills/patch-review`.
+- [ ] Deploy to `tom26` (`citec@<SERVER_IP>`) in `~/.openclaw/workspace/skills/patch-review`.
 
 ## Verification
 - [ ] Verify the modified script locally and on `tom26`.
