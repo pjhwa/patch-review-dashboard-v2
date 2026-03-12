@@ -13,7 +13,7 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
     const dict = getDictionary(locale);
 
     // For SSR fetching local API routes, default to localhost to avoid tunnel host resolution issues
-    const port = process.env.PORT || 3000;
+    const port = process.env.PORT || 3001;
     const baseUrl = `http://localhost:${port}`;
 
     let products = [];

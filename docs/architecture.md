@@ -71,7 +71,7 @@ When `/api/pipeline/execute` is called:
 ## 3. Automation and Triggers
 
 - **Dashboard UI:** Manual trigger execution.
-- **REST APIs:** The `trigger.sh` script invokes `http://localhost:3000/api/pipeline/execute`.
+- **REST APIs:** The `trigger.sh` script invokes `http://localhost:3001/api/pipeline/execute`.
 - **CRON Schedules:** The server operates `run_collectors_cron.sh` autonomously on the third Sunday of March, June, September, and December (`0 6 15-21 3,6,9,12 * test $(date +\%w) -eq 0`) to maintain a zero-touch operational lifecycle.
 
 ---

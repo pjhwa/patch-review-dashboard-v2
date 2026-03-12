@@ -14,10 +14,10 @@
 | **스크립트 경로 (서버)** | `/home/citec/.openclaw/workspace/skills/patch-review/os/linux-v2/` |
 | **로컬 경로** | `C:\Users\<USER>\Patch-Review\patch-review-dashboard-v2\` |
 | **GitHub** | `https://github.com/pjhwa/patch-review-dashboard-v2` |
-| **대시보드 URL** | `http://<SERVER_IP>:3000` |
+| **대시보드 URL** | `http://<SERVER_IP>:3001` |
 | **Node.js** | v22.22.0 (nvm) |
 | **Next.js** | 16.1.6 (App Router, React 19, TypeScript strict) |
-| **PM2** | `patch-dashboard` (fork mode, port 3000) |
+| **PM2** | `patch-dashboard` (fork mode, port 3001) |
 | **DB** | SQLite `prisma/patch-review.db` (Prisma ORM) |
 | **Queue** | BullMQ + Redis |
 | **AI** | OpenClaw 2026.3.x |

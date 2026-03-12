@@ -16,7 +16,7 @@ const CATEGORIES: { id: string, count: string | number, active: boolean, icon: a
 ];
 
 export default async function Home() {
-  const port = process.env.PORT || 3000;
+  const port = process.env.PORT || 3001;
   const baseUrl = `http://localhost:${port}`;
 
   const cookieStore = await cookies();

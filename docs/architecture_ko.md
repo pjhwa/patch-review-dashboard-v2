@@ -70,7 +70,7 @@ graph TD
 ## 3. 자동화 및 트리거 로직
 
 - **대시보드 UI:** 수동 실행 및 재시도.
-- **REST APIs:** 내부의 `trigger.sh` 스크립트를 통한 `http://localhost:3000/api/pipeline/execute` 직접 호출.
+- **REST APIs:** 내부의 `trigger.sh` 스크립트를 통한 `http://localhost:3001/api/pipeline/execute` 직접 호출.
 - **CRON 스케줄:** 사용자 개입 없는 완전 무인 운영을 위해 시스템 CRON(`run_collectors_cron.sh`)이 **매년 3, 6, 9, 12월의 세번째 일요일 오전 6시**(`0 6 15-21 3,6,9,12 * test $(date +\%w) -eq 0`)에 자율 실행되도록 구성되어 있습니다.
 
 ---
