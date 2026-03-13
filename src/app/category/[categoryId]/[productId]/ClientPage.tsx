@@ -138,7 +138,8 @@ export function ProductDetailClient({ categoryId, productId, dict }: { categoryI
     const title = productId === 'redhat' ? "Red Hat Enterprise Linux"
         : productId === 'oracle' ? "Oracle Linux"
             : productId === 'ubuntu' ? "Ubuntu Linux"
-                : productId;
+                : productId === 'windows' ? "Windows Server"
+                    : productId;
 
     const filteredPreprocessedData = useMemo(() => {
         if (!preprocessedData) return [];
@@ -227,7 +228,7 @@ export function ProductDetailClient({ categoryId, productId, dict }: { categoryI
                                             isApproved = reviewedData.data.some((rPatch: any) => {
                                                 const rId = rPatch.IssueID || rPatch['Issue ID'] || rPatch.Issue_ID;
                                                 const isCrit = rPatch.Criticality?.toLowerCase() === 'critical';
-                                                return (rId === patch.issueId || rId === patch.id || rId === patch.original_id || rId === patch.Name) && isCrit;
+                                                return (rId === patch.issueId || rId === patch.id || rId === patch.original_id || rId === patch.Name);
                                             });
                                         }
 
@@ -497,6 +498,7 @@ export function ProductDetailClient({ categoryId, productId, dict }: { categoryI
                                                 let finalizeEndpoint = '/api/pipeline/finalize';
                                                 if (categoryId === 'storage') finalizeEndpoint = '/api/pipeline/ceph/finalize';
                                                 else if (categoryId === 'database') finalizeEndpoint = '/api/pipeline/mariadb/finalize';
+                                                else if (productId === 'windows') finalizeEndpoint = '/api/pipeline/windows/finalize';
                                                 const res = await fetch(finalizeEndpoint, {
                                                     method: 'POST',
                                                     headers: { 'Content-Type': 'application/json' },

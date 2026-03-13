@@ -224,7 +224,7 @@ export function startWorker() {
                             await job.log(`[CEPH-AI Analysis] Processing batch ${batchIndex}/${totalBatches} (${actualBatchSize} patches): ${batchNames}`);
 
                             const prunedBatch = batch.map((p: any) => prunePatchCeph(p));
-                            let prompt = `Read SKILL.md. Evaluate the following ${actualBatchSize} Ceph storage patches according to the strict LLM evaluation rules in SKILL.md section 4.
+                            let prompt = `Read the rules explicitly from ${path.join(cephSkillDir, 'SKILL.md')}. Evaluate the following ${actualBatchSize} Ceph storage patches according to the strict LLM evaluation rules in section 4 of that file.
 CRITICAL MANDATE: DO NOT USE ANY TOOLS TO READ OR SEARCH THE WORKSPACE JSON FILES. Do not parse patches_for_llm_review_ceph.json. IGNORE ANY PREVIOUS EXAMPLES or RAG retrievals regarding Ceph patches (e.g. diff-ceph-config, etc). You must ONLY base your summary on the literal text provided below in [BATCH DATA].
 Return ONLY a pure JSON array with EXACTLY ${actualBatchSize} objects. Each object MUST contain exactly: 'IssueID', 'Component', 'Version', 'Vendor', 'Date', 'Criticality', 'Description', 'KoreanDescription', and optionally 'Decision' and 'Reason'. For Vendor use 'Ceph'. For Component use the specific Ceph component (e.g. 'ceph-radosgw', 'ceph-osd', 'ceph-mon', 'ceph-mds', 'ceph-mgr', 'ceph'). Do NOT skip evaluation steps.\n\n[BATCH DATA]:\n${JSON.stringify(prunedBatch)}`;
                             fs.writeFileSync(path.join(cephSkillDir, `debug_prompt_${batchIndex}.txt`), prompt);
@@ -334,6 +334,13 @@ Return ONLY a pure JSON array with EXACTLY ${actualBatchSize} objects. Each obje
                             if (!isResumeMode && !isAiOnly) await prisma.reviewedPatch.deleteMany({ where: { vendor: 'Ceph' } });
                             for (const item of finalReviewedPatches) {
                                 const issueId = item.IssueID || item.id || 'Unknown';
+                                
+                                const isExcluded = (item.Decision || item.decision || '').toLowerCase() === 'exclude';
+                                const isLowCriticality = ['moderate', 'medium', 'low'].includes((item.Criticality || item.criticality || '').toLowerCase());
+                                if (isExcluded || isLowCriticality) {
+                                    continue;
+                                }
+                                
                                 try {
                                     await prisma.reviewedPatch.upsert({
                                         where: { issueId },
@@ -481,7 +488,7 @@ Return ONLY a pure JSON array with EXACTLY ${actualBatchSize} objects. Each obje
                             await job.log(`[MARIADB-AI Analysis] Processing batch ${batchIndex}/${totalBatches} (${actualBatchSize} patches): ${batchNames}`);
 
                             const prunedBatch = batch.map((p: any) => prunePatchMariadb(p));
-                            let prompt = `Read SKILL.md. Evaluate the following ${actualBatchSize} MariaDB database patches according to the strict LLM evaluation rules in SKILL.md section 4.
+                            let prompt = `Read the rules explicitly from ${path.join(mariadbSkillDir, 'SKILL.md')}. Evaluate the following ${actualBatchSize} MariaDB database patches according to the strict LLM evaluation rules in section 4 of that file.
 CRITICAL MANDATE: DO NOT USE ANY TOOLS TO READ OR SEARCH THE WORKSPACE JSON FILES. Do not parse patches_for_llm_review_mariadb.json. IGNORE ANY PREVIOUS EXAMPLES or RAG retrievals. You must ONLY base your summary on the literal text provided below in [BATCH DATA].
 CRITICAL RULE FOR DESCRIPTIONS: The 'Description' and 'KoreanDescription' fields MUST be a concise, executive summary of the bug fixes and features. DO NOT include verbatim '.patch' filenames, raw code snippets, or raw changelog copy-pastes. Describe WHAT was fixed and WHY, not HOW the file was named.
 Return ONLY a pure JSON array with EXACTLY ${actualBatchSize} objects. Each object MUST contain exactly: 'IssueID', 'Component', 'Version', 'Vendor', 'Date', 'Criticality', 'Description', 'KoreanDescription', and optionally 'Decision' and 'Reason'. For Vendor use 'MariaDB'. For Component use the specific MariaDB component (e.g. 'mariadb', 'mariadb-galera'). Do NOT skip evaluation steps.\n\n[BATCH DATA]:\n${JSON.stringify(prunedBatch)}`;
@@ -521,7 +528,7 @@ Return ONLY a pure JSON array with EXACTLY ${actualBatchSize} objects. Each obje
                                     }
 
                                     for(const item of parsedJson) {
-                                        const validation = ReviewSchema.safeParse(item);
+                                        const validation = ReviewItemSchema.safeParse(item);
                                         if (!validation.success) {
                                             const errorDetails = validation.error.errors.map((err: any) => `${err.path.join('.')}: ${err.message}`).join(', ');
                                             throw new Error(`Zod Validation Failed for an item: ${errorDetails}`);
@@ -590,6 +597,13 @@ Return ONLY a pure JSON array with EXACTLY ${actualBatchSize} objects. Each obje
                             if (!isResumeMode && !isAiOnly) await prisma.reviewedPatch.deleteMany({ where: { vendor: 'MariaDB' } });
                             for (const item of finalReviewedPatches) {
                                 const issueId = item.IssueID || item.id || 'Unknown';
+                                
+                                const isExcluded = (item.Decision || item.decision || '').toLowerCase() === 'exclude';
+                                const isLowCriticality = ['moderate', 'medium', 'low'].includes((item.Criticality || item.criticality || '').toLowerCase());
+                                if (isExcluded || isLowCriticality) {
+                                    continue;
+                                }
+                                
                                 try {
                                     await prisma.reviewedPatch.upsert({
                                         where: { issueId },
@@ -610,6 +624,269 @@ Return ONLY a pure JSON array with EXACTLY ${actualBatchSize} objects. Each obje
                     }
                     // ============================================================
                     // END MARIADB PIPELINE BRANCH
+                    // ============================================================
+
+                    // ============================================================
+                    // WINDOWS PIPELINE BRANCH
+                    // ============================================================
+                    if (job.name === 'run-windows-pipeline') {
+                        const windowsSkillDir = path.join(process.env.HOME || '/home/citec', '.openclaw/workspace/skills/patch-review/os/windows');
+                        const windowsOutputReport = path.join(windowsSkillDir, 'patch_review_ai_report_windows.json');
+                        const windowsPatchesPath = path.join(windowsSkillDir, 'patches_for_llm_review_windows.json');
+
+                        const runWindowsStream = async (command: string, args: string[], progressMap: any = {}, overrideOpts: any = {}, suppressLog: boolean = false): Promise<any> => {
+                            return new Promise((res, rej) => {
+                                let fullStdout = '';
+                                let isRej = false;
+                                const p = spawn(command, args, { cwd: windowsSkillDir, shell: false, ...overrideOpts });
+                                p.stdout.on('data', async (data: any) => {
+                                    const chunk = data.toString();
+                                    fullStdout += chunk;
+                                    const lines = chunk.split('\n');
+                                    for (const line of lines) {
+                                        if (line.trim()) {
+                                            if (!suppressLog) job.log(line).catch(() => { });
+                                            for (const [keyword, prog] of Object.entries(progressMap)) {
+                                                if (line.includes(keyword)) job.updateProgress(prog as number).catch(() => { });
+                                            }
+                                        }
+                                    }
+                                });
+                                p.stderr.on('data', (data: any) => {
+                                    const errText = data.toString();
+                                    job.log(`ERROR: ${errText}`).catch(() => { });
+                                    if (errText.includes('rate limit')) { isRej = true; rej(new Error('AI_REVIEW_FAILED: API Rate Limit Error')); }
+                                    else if (errText.includes('timeout') || errText.includes('gateway closed')) { isRej = true; rej(new Error('AI_REVIEW_FAILED: OpenClaw timed out.')); }
+                                });
+                                p.on('close', (code: number | null) => {
+                                    if (!isRej) { code === 0 ? res(fullStdout) : rej(new Error(`Command ${command} failed with code ${code}`)); }
+                                });
+                            });
+                        };
+
+                        const rateLimitFlagFile = path.join('/tmp', '.rate_limit_windows');
+                        const isResumeMode = (isAiOnly || isRetry) && fs.existsSync(rateLimitFlagFile);
+
+                        // Step 1: Preprocessing
+                        if (!isResumeMode && !isAiOnly) {
+                            await job.updateProgress(10);
+                            await job.log('[WINDOWS-PIPELINE] Starting Windows Server patch preprocessing...');
+                            await runWindowsStream('python3', ['windows_preprocessing.py', '--days', '180'], {
+                                'LLM 리뷰용 JSON 저장': 40,
+                                'Windows Server Patch Preprocessor 시작': 15,
+                            });
+                            await job.updateProgress(40);
+                            await job.log('[WINDOWS-PREPROCESS_DONE] Preprocessing complete.');
+                        } else {
+                            await job.updateProgress(40);
+                            await job.log('[WINDOWS-PIPELINE] Skipping preprocessing (AI-Only/Resume mode).');
+                        }
+
+                        // Step 2: AI Review Loop
+                        const { ReviewSchema, ReviewItemSchema } = require('@/lib/schema');
+                        const MAX_AI_RETRIES = 2;
+                        let finalReviewedPatches: any[] = [];
+                        let windowsPatchesRaw: any[] = [];
+                        try { windowsPatchesRaw = JSON.parse(fs.readFileSync(windowsPatchesPath, 'utf-8')); } catch (e) { }
+
+                        const alreadyReviewed = new Set<string>();
+                        if (isResumeMode) {
+                            try {
+                                finalReviewedPatches = JSON.parse(fs.readFileSync(windowsOutputReport, 'utf-8'));
+                                for (const p of finalReviewedPatches) alreadyReviewed.add(p.IssueID || p.id);
+                                await job.log(`[RESUME] 이전에 API Rate Limit으로 중단된 리뷰를 이어서 진행합니다. (완료: ${alreadyReviewed.size}건, 남은 패치: ${windowsPatchesRaw.length - alreadyReviewed.size}건)`);
+                            } catch (e) {
+                                finalReviewedPatches = [];
+                            }
+                        } else {
+                            if (fs.existsSync(rateLimitFlagFile)) fs.unlinkSync(rateLimitFlagFile);
+                        }
+
+                        // Hide the normalized datasets from the AI so its autonomous workspace RAG doesn't fetch them and get confused!
+                        const normalizedDir = path.join(windowsSkillDir, 'windows_data', 'normalized');
+                        const hiddenNormalizedDir = normalizedDir + '_hidden';
+                        const hiddenWindowsPatchesPath = windowsPatchesPath + '.hidden';
+                        try { if (fs.existsSync(normalizedDir)) fs.renameSync(normalizedDir, hiddenNormalizedDir); } catch (e) {}
+                        try { if (fs.existsSync(windowsPatchesPath)) fs.renameSync(windowsPatchesPath, hiddenWindowsPatchesPath); } catch (e) {}
+
+                        await job.updateProgress(50);
+                        await job.log(`[WINDOWS-AI] Sequentially evaluating ${windowsPatchesRaw.length} patches (RAG-blinded)...`);
+
+                        const prunePatchWindows = (obj: any): any => {
+                            if (!obj) return obj;
+                            const copy = JSON.parse(JSON.stringify(obj));
+                            const pruneText = (text: string, maxLen: number) => {
+                                if (typeof text !== 'string') return text;
+                                let pruned = text.replace(/https?:\/\/[^\s"'<>\\]+/g, '[URL]');
+                                return pruned.length > maxLen ? pruned.slice(0, maxLen) + '...[TRUNCATED]' : pruned;
+                            };
+                            const traverse = (o: any) => {
+                                if (Array.isArray(o)) { for (let i = 0; i < o.length; i++) { if (typeof o[i] === 'object') traverse(o[i]); else if (typeof o[i] === 'string') o[i] = pruneText(o[i], 3000); } }
+                                else if (typeof o === 'object' && o !== null) { for (const key of Object.keys(o)) { if (typeof o[key] === 'string') o[key] = pruneText(o[key], 5000); else if (typeof o[key] === 'object') traverse(o[key]); } }
+                            };
+                            traverse(copy);
+                            return copy;
+                        };
+
+                        const BATCH_SIZE = 5;
+                        for (let i = 0; i < windowsPatchesRaw.length; i += BATCH_SIZE) {
+                            const batch = windowsPatchesRaw.slice(i, i + BATCH_SIZE);
+                            const actualBatchSize = batch.length;
+                            const batchNames = batch.map((p: any) => p.patch_id || p.id || 'Unknown').join(', ');
+                            const batchIndex = Math.floor(i / BATCH_SIZE) + 1;
+                            const totalBatches = Math.ceil(windowsPatchesRaw.length / BATCH_SIZE);
+
+                            // check if entire batch is already reviewed
+                            let allReviewed = true;
+                            for (const p of batch) {
+                                const pName = p.patch_id || p.id || 'Unknown';
+                                if (!alreadyReviewed.has(pName)) allReviewed = false;
+                            }
+                            if (isResumeMode && allReviewed) {
+                                await job.log(`[SKIP-RESUME] 이미 리뷰가 완료된 배치입니다: ${batchNames}`);
+                                await job.updateProgress(50 + Math.floor(((i + actualBatchSize) / windowsPatchesRaw.length) * 40));
+                                continue;
+                            }
+
+                            await job.log(`[WINDOWS-AI Analysis] Processing batch ${batchIndex}/${totalBatches} (${actualBatchSize} patches): ${batchNames}`);
+
+                            const prunedBatch = batch.map((p: any) => prunePatchWindows(p));
+                            let prompt = `Read the rules explicitly from ${path.join(windowsSkillDir, 'SKILL.md')}. Evaluate the following ${actualBatchSize} Windows Server patches according to the strict LLM evaluation rules in section 4 of that file.
+CRITICAL MANDATE: DO NOT USE ANY TOOLS TO READ OR SEARCH THE WORKSPACE JSON FILES. Do not parse patches_for_llm_review_windows.json. IGNORE ANY PREVIOUS EXAMPLES or RAG retrievals. You must ONLY base your summary on the literal text provided below in [BATCH DATA].
+CRITICAL RULE FOR DESCRIPTIONS: The 'Description' and 'KoreanDescription' fields MUST be a concise, executive summary of the update. DO NOT list all CVEs or copy raw changelogs.
+Return ONLY a pure JSON array with EXACTLY ${actualBatchSize} objects. Each object MUST contain exactly: 'IssueID', 'Component', 'Version', 'Vendor', 'Date', 'Criticality', 'Description', 'KoreanDescription', and optionally 'Decision' and 'Reason'. For Vendor use 'Windows Server'. Do NOT skip evaluation steps.\\n\\n[BATCH DATA]:\\n${JSON.stringify(prunedBatch)}`;
+                            fs.writeFileSync(path.join(windowsSkillDir, `debug_prompt_${batchIndex}.txt`), prompt);
+
+                            let parsedJson: any = null;
+                            for (let attempt = 1; attempt <= MAX_AI_RETRIES + 1; attempt++) {
+                                try {
+                                    const rawAiOutput = await withOpenClawLock(async (msg) => await job.log(msg), async () => {
+                                        const sessionsDir = path.join(process.env.HOME || '/home/citec', '.openclaw/agents/main/sessions');
+                                        if (fs.existsSync(sessionsDir)) {
+                                            const oldFiles = fs.readdirSync(sessionsDir).filter((f: string) => f.endsWith('.lock') || f.includes('.jsonl'));
+                                            for (const lf of oldFiles) fs.rmSync(path.join(sessionsDir, lf), { force: true });
+                                        }
+                                        return await runWindowsStream('/home/citec/.nvm/versions/node/v22.22.0/bin/openclaw',
+                                            ['agent', '--agent', 'main', '--json', '--session-id', `windows_${job.id}_batch_${batchIndex}_${attempt}`, '-m', prompt],
+                                            {}, { shell: false, cwd: windowsSkillDir }, true
+                                        );
+                                    });
+
+                                    const extractJsonArray = (text: string): any => {
+                                        const stripped = text.replace(/```(?:json)?\s*/g, '').replace(/```/g, '');
+                                        const match = stripped.match(/\[\s*\{[\s\S]*?\}\s*\]/);
+                                        if (!match) return null;
+                                        return JSON.parse(match[0]);
+                                    };
+
+                                    const openclawWrapper = JSON.parse(rawAiOutput);
+                                    const payloads = openclawWrapper?.result?.payloads || [];
+                                    const textContents = payloads.map((p: any) => p.text).join('\n');
+
+                                    if (textContents.toLowerCase().includes('rate limit')) throw new Error('AI_REVIEW_FAILED: Rate Limit');
+                                    parsedJson = extractJsonArray(textContents);
+                                    if (!parsedJson) throw new Error('No JSON array in AI output');
+                                    if (!Array.isArray(parsedJson) || parsedJson.length !== actualBatchSize) {
+                                        throw new Error(`Expected array of length ${actualBatchSize}, but got ${Array.isArray(parsedJson) ? parsedJson.length : 'non-array'}`);
+                                    }
+
+                                    for(const item of parsedJson) {
+                                        const validation = ReviewItemSchema.safeParse(item);
+                                        if (!validation.success) {
+                                            const errorDetails = validation.error.errors.map((err: any) => `${err.path.join('.')}: ${err.message}`).join(', ');
+                                            throw new Error(`Zod Validation Failed for an item: ${errorDetails}`);
+                                        }
+                                        finalReviewedPatches.push(item);
+                                        alreadyReviewed.add(item.IssueID || item.id);
+                                    }
+                                    fs.writeFileSync(windowsOutputReport, JSON.stringify(finalReviewedPatches, null, 2));
+
+                                    for(const rItem of parsedJson) {
+                                        try {
+                                            const rIssueId = rItem.IssueID || rItem.id || 'Unknown';
+                                            await prisma.reviewedPatch.upsert({
+                                                where: { issueId: rIssueId },
+                                                update: { vendor: 'Windows Server', component: rItem.Component || 'cumulative-update', version: rItem.Version || '', criticality: rItem.Criticality || 'Unknown', description: rItem.Description || '', koreanDescription: rItem.KoreanDescription || rItem.Description || '', decision: rItem.Decision || 'Done', pipelineRunId: String(job.id) },
+                                                create: { issueId: rIssueId, vendor: 'Windows Server', component: rItem.Component || 'cumulative-update', version: rItem.Version || '', criticality: rItem.Criticality || 'Unknown', description: rItem.Description || '', koreanDescription: rItem.KoreanDescription || rItem.Description || '', decision: rItem.Decision || 'Done', pipelineRunId: String(job.id) },
+                                            });
+                                        } catch (dbUpsertErr) {}
+                                    }
+
+                                    break;
+                                } catch (err: any) {
+                                    if (err.message.includes('AI_REVIEW_FAILED')) {
+                                        if (err.message.includes('Rate Limit')) fs.writeFileSync(rateLimitFlagFile, 'true');
+                                        throw err;
+                                    }
+                                    if (attempt <= MAX_AI_RETRIES) {
+                                        prompt += `\n\nPrevious attempt failed. Fix this error and resubmit: ${err.message}\nReturn ONLY a JSON array with EXACTLY ${actualBatchSize} objects.`;
+                                        await job.log(`  -> Attempt ${attempt} failed for batch ${batchIndex}, retrying...`);
+                                    } else {
+                                        await job.log(`[SKIP] Batch ${batchIndex} permanently failed after ${MAX_AI_RETRIES} retries.`);
+                                    }
+                                }
+                            }
+                            await job.updateProgress(50 + Math.floor(((i + actualBatchSize) / windowsPatchesRaw.length) * 40));
+                        }
+
+                        // Restore the hidden files
+                        try { if (fs.existsSync(hiddenNormalizedDir)) fs.renameSync(hiddenNormalizedDir, normalizedDir); } catch (e) {}
+                        try { if (fs.existsSync(hiddenWindowsPatchesPath)) fs.renameSync(hiddenWindowsPatchesPath, windowsPatchesPath); } catch (e) {}
+
+                        if (isResumeMode && fs.existsSync(rateLimitFlagFile)) fs.unlinkSync(rateLimitFlagFile);
+
+                        // Save AI report
+                        fs.writeFileSync(windowsOutputReport, JSON.stringify(finalReviewedPatches, null, 2));
+                        await job.log(`[WINDOWS-AI] AI review complete. ${finalReviewedPatches.length} patches reviewed.`);
+
+                        // Step 3: DB Ingestion
+                        try {
+                            if (!isResumeMode && !isAiOnly) await prisma.preprocessedPatch.deleteMany({ where: { vendor: 'Windows Server' } });
+                            if (!isResumeMode && !isAiOnly && windowsPatchesRaw.length > 0) {
+                                await prisma.preprocessedPatch.createMany({
+                                    data: windowsPatchesRaw.map((p: any) => ({
+                                        issueId: p.patch_id,
+                                        vendor: 'Windows Server',
+                                        component: p.component || 'cumulative-update',
+                                        version: p.version || '',
+                                        osVersion: p.os_version || null,
+                                        description: (p.description || '').slice(0, 4000),
+                                        releaseDate: p.issued_date || null,
+                                    })),
+                                });
+                            }
+                            if (!isResumeMode && !isAiOnly) await job.log(`[WINDOWS-DB] Preprocessed ${windowsPatchesRaw.length} patches ingested.`);
+
+                            if (!isResumeMode && !isAiOnly) await prisma.reviewedPatch.deleteMany({ where: { vendor: 'Windows Server' } });
+                            for (const item of finalReviewedPatches) {
+                                const issueId = item.IssueID || item.id || 'Unknown';
+                                
+                                const isExcluded = (item.Decision || item.decision || '').toLowerCase() === 'exclude';
+                                const isLowCriticality = ['moderate', 'medium', 'low'].includes((item.Criticality || item.criticality || '').toLowerCase());
+                                if (isExcluded || isLowCriticality) {
+                                    continue;
+                                }
+                                
+                                try {
+                                    await prisma.reviewedPatch.upsert({
+                                        where: { issueId },
+                                        update: { vendor: 'Windows Server', component: item.Component || 'cumulative-update', version: item.Version || '', criticality: item.Criticality || 'Unknown', description: item.Description || '', koreanDescription: item.KoreanDescription || item.Description || '', decision: item.Decision || 'Done', pipelineRunId: String(job.id) },
+                                        create: { issueId, vendor: 'Windows Server', component: item.Component || 'cumulative-update', version: item.Version || '', criticality: item.Criticality || 'Unknown', description: item.Description || '', koreanDescription: item.KoreanDescription || item.Description || '', decision: item.Decision || 'Done', pipelineRunId: String(job.id) },
+                                    });
+                                } catch (e) { await job.log(`[WINDOWS-DB WARN] Upsert failed for ${issueId}`); }
+                            }
+                            await job.log(`[WINDOWS-DB] Reviewed patches ingested: ${finalReviewedPatches.length}`);
+                        } catch (dbErr: any) {
+                            await job.log(`[WINDOWS-DB WARNING] DB ingestion error: ${dbErr.message}`);
+                        }
+
+                        await job.updateProgress(100);
+                        await job.log('[WINDOWS-PIPELINE] All tasks completed successfully.');
+                        resolve('Windows Server pipeline success');
+                        return;
+                    }
+                    // ============================================================
+                    // END WINDOWS PIPELINE BRANCH
                     // ============================================================
 
                     const rateLimitFlagFile = path.join('/tmp', '.rate_limit_os');
@@ -768,7 +1045,7 @@ Return ONLY a pure JSON array with EXACTLY ${actualBatchSize} objects. Each obje
                         await job.log(`[AI Analysis] Processing batch ${batchIndex}/${totalBatches} (${actualBatchSize} patches): ${batchNames}`);
 
                         const prunedBatch = batch.map((p: any) => prunePatchData(p));
-                        let basePrompt = `Read SKILL.md. Evaluate the following ${actualBatchSize} PATCHES exactly according to the strict LLM evaluation rules detailed in SKILL.md section 4.
+                        let basePrompt = `Read the rules explicitly from ${path.join(linuxSkillDir, 'SKILL.md')}. Evaluate the following ${actualBatchSize} PATCHES exactly according to the strict LLM evaluation rules detailed in section 4 of that file.
 CRITICAL MANDATE: IGNORE ANY PAST RETRIEVED MEMORIES OR PREVIOUS SUMMARIES. BASE ASSESSMENTS SOLELY ON THE [PATCH DATA] BELOW.
 Do NOT perform any web scraping. Do NOT use tools to write to files, simply output the text directly. Return ONLY a pure JSON array containing EXACTLY ${actualBatchSize} objects. The object MUST contain exactly: 'IssueID', 'Component', 'Version', 'Vendor', 'Date', 'Criticality', 'Description', 'KoreanDescription', and optionally 'Decision' and 'Reason'. Do not skip Step 4.\\n\\n[BATCH DATA TO EVALUATE]:\\n${JSON.stringify(prunedBatch)}`;
                         basePrompt += ragExclusions;
@@ -865,6 +1142,14 @@ Do NOT perform any web scraping. Do NOT use tools to write to files, simply outp
                     let skippedCount = 0;
                     for (const item of data) {
                         const issueId = item.IssueID || item.id || 'Unknown';
+
+                        const isExcluded = (item.Decision || item.decision || '').toLowerCase() === 'exclude';
+                        const isLowCriticality = ['moderate', 'medium', 'low'].includes((item.Criticality || item.criticality || '').toLowerCase());
+                        if (isExcluded || isLowCriticality) {
+                            skippedCount++;
+                            continue;
+                        }
+
                         // Skip AI-hallucinated entries: only insert if issueId exists in PreprocessedPatch
                         if (!preprocessedMap.has(issueId)) {
                             skippedCount++;
