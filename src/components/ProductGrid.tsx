@@ -67,9 +67,14 @@ export function ProductGrid({ categoryId, products, dict }: { categoryId: string
                 } else if (streamData.log.includes('[MARIADB-PREPROCESS_DONE]')) {
                     setResultMsg(`✅ MariaDB 전처리 완료. AI 리뷰 진행 중...`);
                     router.refresh();
+                } else if (streamData.log.includes('[WINDOWS-PREPROCESS_DONE]')) {
+                    setResultMsg(`✅ Windows Server 전처리 완료. AI 리뷰 진행 중...`);
+                    router.refresh();
                 } else if (streamData.log.includes('[CEPH-PIPELINE]') || streamData.log.includes('[CEPH-AI Analysis]')) {
                     setResultMsg(`🤖 ${streamData.log}`);
                 } else if (streamData.log.includes('[MARIADB-PIPELINE]') || streamData.log.includes('[MARIADB-AI Analysis]')) {
+                    setResultMsg(`🤖 ${streamData.log}`);
+                } else if (streamData.log.includes('[WINDOWS-PIPELINE]') || streamData.log.includes('[WINDOWS-AI]')) {
                     setResultMsg(`🤖 ${streamData.log}`);
                 } else if (streamData.log.includes('[AI Analysis]') || streamData.log.includes('[SKIP]')) {
                     setResultMsg(`🤖 ${streamData.log}`);
@@ -144,6 +149,7 @@ export function ProductGrid({ categoryId, products, dict }: { categoryId: string
         let pipelineRunUrl = '/api/pipeline/run';
         if (categoryId === 'storage') pipelineRunUrl = '/api/pipeline/ceph/run';
         else if (categoryId === 'database') pipelineRunUrl = '/api/pipeline/mariadb/run';
+        else if (productId === 'windows') pipelineRunUrl = '/api/pipeline/windows/run';
 
         try {
             const res = await fetch(pipelineRunUrl, {

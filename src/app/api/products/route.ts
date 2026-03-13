@@ -130,7 +130,8 @@ export async function GET(request: Request) {
     const counts = {
         redhat: { collected: 0, preprocessed: 0, reviewed: 0 },
         oracle: { collected: 0, preprocessed: 0, reviewed: 0 },
-        ubuntu: { collected: 0, preprocessed: 0, reviewed: 0 }
+        ubuntu: { collected: 0, preprocessed: 0, reviewed: 0 },
+        windows: { collected: 0, preprocessed: 0, reviewed: 0 }
     };
 
     try {
@@ -150,6 +151,7 @@ export async function GET(request: Request) {
         counts.redhat.collected = getFileCount('redhat/redhat_data');
         counts.oracle.collected = getFileCount('oracle/oracle_data');
         counts.ubuntu.collected = getFileCount('ubuntu/ubuntu_data');
+        counts.windows.collected = getFileCount('../windows/windows_data');
 
         // 2. Count Preprocessed from DB
         const preCounts = await prisma.preprocessedPatch.groupBy({
@@ -160,6 +162,7 @@ export async function GET(request: Request) {
             if (row.vendor === 'Red Hat') counts.redhat.preprocessed = row._count;
             if (row.vendor === 'Oracle') counts.oracle.preprocessed = row._count;
             if (row.vendor === 'Ubuntu') counts.ubuntu.preprocessed = row._count;
+            if (row.vendor === 'Windows Server') counts.windows.preprocessed = row._count;
         }
 
         // 3. Count Reviewed from DB
@@ -172,13 +175,16 @@ export async function GET(request: Request) {
             if (v.includes('red hat')) counts.redhat.reviewed = row._count;
             if (v.includes('oracle')) counts.oracle.reviewed = row._count;
             if (v.includes('ubuntu')) counts.ubuntu.reviewed = row._count;
+            if (v.includes('windows')) counts.windows.reviewed = row._count;
         }
     } catch (dbError) {
         console.error("Database query error:", dbError);
     }
 
     const checkFinalized = (prodId: string) => {
-        const filePath = path.join(linuxSkillDir, `final_approved_patches_${prodId}.csv`);
+        const filePath = prodId === 'windows' 
+            ? path.join(linuxSkillDir, '../windows', `final_approved_patches_${prodId}.csv`) 
+            : path.join(linuxSkillDir, `final_approved_patches_${prodId}.csv`);
         if (fs.existsSync(filePath)) {
             try {
                 const content = fs.readFileSync(filePath, 'utf-8');
@@ -195,7 +201,7 @@ export async function GET(request: Request) {
         { id: 'redhat', name: 'Red Hat Enterprise Linux', stages: { ...counts.redhat, approved: checkFinalized('redhat').approvedCount }, active: true, isReviewCompleted: checkFinalized('redhat').isCompleted },
         { id: 'oracle', name: 'Oracle Linux', stages: { ...counts.oracle, approved: checkFinalized('oracle').approvedCount }, active: true, isReviewCompleted: checkFinalized('oracle').isCompleted },
         { id: 'ubuntu', name: 'Ubuntu Linux', stages: { ...counts.ubuntu, approved: checkFinalized('ubuntu').approvedCount }, active: true, isReviewCompleted: checkFinalized('ubuntu').isCompleted },
-        { id: 'windows', name: 'Windows Server', stages: null, active: false, isReviewCompleted: false },
+        { id: 'windows', name: 'Windows Server', stages: { ...counts.windows, approved: checkFinalized('windows').approvedCount }, active: true, isReviewCompleted: checkFinalized('windows').isCompleted },
         { id: 'hpux', name: 'HP-UX', stages: null, active: false, isReviewCompleted: false },
         { id: 'aix', name: 'IBM AIX', stages: null, active: false, isReviewCompleted: false },
         { id: 'solaris', name: 'Oracle Solaris', stages: null, active: false, isReviewCompleted: false },
