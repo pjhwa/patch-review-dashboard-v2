@@ -1164,6 +1164,267 @@ Return ONLY a pure JSON array with EXACTLY ${actualBatchSize} objects. Each obje
                     // ============================================================
 
                     // ============================================================
+                    // VSPHERE PIPELINE BRANCH
+                    // ============================================================
+                    if (job.name === 'run-vsphere-pipeline') {
+                        const vsphereSkillDir = path.join(process.env.HOME || '/home/citec', '.openclaw/workspace/skills/patch-review/virtualization/vsphere');
+                        const vsphereOutputReport = path.join(vsphereSkillDir, 'patch_review_ai_report_vsphere.json');
+                        const vspherePatchesPath = path.join(vsphereSkillDir, 'patches_for_llm_review_vsphere.json');
+
+                        const runVsphereStream = async (command: string, args: string[], progressMap: any = {}, overrideOpts: any = {}, suppressLog: boolean = false): Promise<any> => {
+                            return new Promise((res, rej) => {
+                                let fullStdout = '';
+                                let isRej = false;
+                                const p = spawn(command, args, { cwd: vsphereSkillDir, shell: false, ...overrideOpts });
+                                p.stdout.setEncoding('utf8');
+                                p.stderr.setEncoding('utf8');
+                                p.stdout.on('data', async (data: any) => {
+                                    const chunk = data.toString();
+                                    fullStdout += chunk;
+                                    const lines = chunk.split('\n');
+                                    for (const line of lines) {
+                                        if (line.trim()) {
+                                            if (!suppressLog) job.log(line).catch(() => { });
+                                            for (const [keyword, prog] of Object.entries(progressMap)) {
+                                                if (line.includes(keyword)) job.updateProgress(prog as number).catch(() => { });
+                                            }
+                                        }
+                                    }
+                                });
+                                p.stderr.on('data', (data: any) => {
+                                    const errText = data.toString();
+                                    job.log(`ERROR: ${errText}`).catch(() => { });
+                                    if (errText.includes('rate limit')) { isRej = true; rej(new Error('AI_REVIEW_FAILED: API Rate Limit Error')); }
+                                    else if (errText.includes('timeout') || errText.includes('gateway closed') || errText.includes('gateway not connected') || errText.includes('gateway connect failed')) { isRej = true; rej(new Error('OpenClaw timed out or gateway connection failed.')); }
+                                });
+                                p.on('close', (code: number | null) => {
+                                    if (!isRej) { code === 0 ? res(fullStdout) : rej(new Error(`Command ${command} failed with code ${code}`)); }
+                                });
+                            });
+                        };
+
+                        const rateLimitFlagFile = path.join('/tmp', '.rate_limit_vsphere');
+                        const isResumeMode = (isAiOnly || isRetry) && fs.existsSync(rateLimitFlagFile);
+
+                        // Step 1: Preprocessing
+                        if (!isResumeMode && !isAiOnly) {
+                            await job.updateProgress(10);
+                            await job.log('[VSPHERE-PIPELINE] Starting VMware vSphere patch preprocessing...');
+                            await runVsphereStream('python3', ['vsphere_preprocessing.py', '--days', '180'], {
+                                'Found': 15,
+                                'PREPROCESS_DONE': 40,
+                            });
+                            await job.updateProgress(40);
+                            await job.log('[VSPHERE-PREPROCESS_DONE] Preprocessing complete.');
+                        } else {
+                            await job.updateProgress(40);
+                            await job.log('[VSPHERE-PIPELINE] Skipping preprocessing (AI-Only/Resume mode).');
+                        }
+
+                        // Step 2: AI Review Loop
+                        const { ReviewSchema, ReviewItemSchema } = require('@/lib/schema');
+                        const MAX_AI_RETRIES = 2;
+                        let finalReviewedPatches: any[] = [];
+                        let vspherePatchesRaw: any[] = [];
+                        try { vspherePatchesRaw = JSON.parse(fs.readFileSync(vspherePatchesPath, 'utf-8')); } catch (e) { }
+
+                        const alreadyReviewed = new Set<string>();
+                        if (isResumeMode) {
+                            try {
+                                finalReviewedPatches = JSON.parse(fs.readFileSync(vsphereOutputReport, 'utf-8'));
+                                for (const p of finalReviewedPatches) alreadyReviewed.add(p.IssueID || p.id);
+                                await job.log(`[RESUME] 이전에 API Rate Limit으로 중단된 리뷰를 이어서 진행합니다. (완료: ${alreadyReviewed.size}건, 남은 패치: ${vspherePatchesRaw.length - alreadyReviewed.size}건)`);
+                            } catch (e) {
+                                finalReviewedPatches = [];
+                            }
+                        } else {
+                            if (fs.existsSync(rateLimitFlagFile)) fs.unlinkSync(rateLimitFlagFile);
+                        }
+
+                        const hiddenVspherePatchesPath = vspherePatchesPath + '.hidden';
+                        try { if (fs.existsSync(vspherePatchesPath)) fs.renameSync(vspherePatchesPath, hiddenVspherePatchesPath); } catch (e) {}
+
+                        await job.updateProgress(50);
+                        await job.log(`[VSPHERE-AI] Sequentially evaluating ${vspherePatchesRaw.length} patches (RAG-blinded)...`);
+
+                        const prunePatchVsphere = (obj: any): any => {
+                            if (!obj) return obj;
+                            const copy = JSON.parse(JSON.stringify(obj));
+                            const pruneText = (text: string, maxLen: number) => {
+                                if (typeof text !== 'string') return text;
+                                let pruned = text.replace(/https?:\/\/[^\s"'<>\\]+/g, '[URL]');
+                                return pruned.length > maxLen ? pruned.slice(0, maxLen) + '...[TRUNCATED]' : pruned;
+                            };
+                            const traverse = (o: any) => {
+                                if (Array.isArray(o)) { for (let i = 0; i < o.length; i++) { if (typeof o[i] === 'object') traverse(o[i]); else if (typeof o[i] === 'string') o[i] = pruneText(o[i], 3000); } }
+                                else if (typeof o === 'object' && o !== null) { for (const key of Object.keys(o)) { if (typeof o[key] === 'string') o[key] = pruneText(o[key], 5000); else if (typeof o[key] === 'object') traverse(o[key]); } }
+                            };
+                            traverse(copy);
+                            return copy;
+                        };
+
+                        const BATCH_SIZE = 5;
+                        for (let i = 0; i < vspherePatchesRaw.length; i += BATCH_SIZE) {
+                            const batch = vspherePatchesRaw.slice(i, i + BATCH_SIZE);
+                            const actualBatchSize = batch.length;
+                            const batchNames = batch.map((p: any) => p.patch_id || p.id || 'Unknown').join(', ');
+                            const batchIndex = Math.floor(i / BATCH_SIZE) + 1;
+                            const totalBatches = Math.ceil(vspherePatchesRaw.length / BATCH_SIZE);
+
+                            let allReviewed = true;
+                            for (const p of batch) {
+                                const pName = p.patch_id || p.id || 'Unknown';
+                                if (!alreadyReviewed.has(pName)) allReviewed = false;
+                            }
+                            if (isResumeMode && allReviewed) {
+                                await job.log(`[SKIP-RESUME] 이미 리뷰가 완료된 배치입니다: ${batchNames}`);
+                                await job.updateProgress(50 + Math.floor(((i + actualBatchSize) / vspherePatchesRaw.length) * 40));
+                                continue;
+                            }
+
+                            await job.log(`[VSPHERE-AI Analysis] Processing batch ${batchIndex}/${totalBatches} (${actualBatchSize} patches): ${batchNames}`);
+
+                            const prunedBatch = batch.map((p: any) => prunePatchVsphere(p));
+                            let prompt = `Read the rules explicitly from ${path.join(vsphereSkillDir, 'SKILL.md')}. Evaluate the following ${actualBatchSize} VMware vSphere patches according to the strict LLM evaluation rules in section 4 of that file.
+CRITICAL MANDATE: DO NOT USE ANY TOOLS TO READ OR SEARCH THE WORKSPACE JSON FILES. Do not parse patches_for_llm_review_vsphere.json. IGNORE ANY PREVIOUS EXAMPLES or RAG retrievals. You must ONLY base your summary on the literal text provided below in [BATCH DATA].
+CRITICAL RULE FOR DESCRIPTIONS: The 'Description' and 'KoreanDescription' fields MUST be a concise, executive summary of the security advisories and bug fixes. DO NOT include verbatim file names or raw changelog copy-pastes. Describe WHAT was fixed and WHY it matters.
+Return ONLY a pure JSON array with EXACTLY ${actualBatchSize} objects. Each object MUST contain exactly: 'IssueID', 'Component', 'Version', 'Vendor', 'Date', 'Criticality', 'Description', 'KoreanDescription', and optionally 'Decision' and 'Reason'. For Vendor use 'VMware vSphere'. For Component use the specific product (e.g. 'ESXi', 'vCenter Server'). Do NOT skip evaluation steps.\n\n[BATCH DATA]:\n${JSON.stringify(prunedBatch)}`;
+                            fs.writeFileSync(path.join(vsphereSkillDir, `debug_prompt_${batchIndex}.txt`), prompt);
+
+                            let parsedJson: any = null;
+                            for (let attempt = 1; attempt <= MAX_AI_RETRIES + 1; attempt++) {
+                                try {
+                                    const rawAiOutput = await withOpenClawLock(async (msg) => { await job.log(msg); }, async () => {
+                                        const sessionsDir = path.join(process.env.HOME || '/home/citec', '.openclaw/agents/main/sessions');
+                                        if (fs.existsSync(sessionsDir)) {
+                                            const oldFiles = fs.readdirSync(sessionsDir).filter((f: string) => f.endsWith('.lock') || f.includes('.jsonl'));
+                                            for (const lf of oldFiles) fs.rmSync(path.join(sessionsDir, lf), { force: true });
+                                        }
+                                        return await runVsphereStream('/home/citec/.nvm/versions/node/v22.22.0/bin/openclaw',
+                                            ['agent', '--agent', 'main', '--json', '--timeout', '1800', '--session-id', `vsphere_${job.id}_batch_${batchIndex}_${attempt}`, '-m', prompt],
+                                            {}, { shell: false, cwd: vsphereSkillDir }, true
+                                        );
+                                    });
+
+                                    const extractJsonArray = (text: string): any => {
+                                        const stripped = text.replace(/```(?:json)?\s*/g, '').replace(/```/g, '');
+                                        const match = stripped.match(/\[\s*\{[\s\S]*?\}\s*\]/);
+                                        if (!match) return null;
+                                        return JSON.parse(match[0]);
+                                    };
+
+                                    const openclawWrapper = JSON.parse(rawAiOutput);
+                                    const payloads = openclawWrapper?.result?.payloads || [];
+                                    const textContents = payloads.map((p: any) => p.text).join('\n');
+
+                                    if (textContents.toLowerCase().includes('rate limit')) throw new Error('AI_REVIEW_FAILED: Rate Limit');
+                                    parsedJson = extractJsonArray(textContents);
+                                    if (!parsedJson) throw new Error('No JSON array in AI output');
+                                    if (!Array.isArray(parsedJson) || parsedJson.length !== actualBatchSize) {
+                                        throw new Error(`Expected array of length ${actualBatchSize}, but got ${Array.isArray(parsedJson) ? parsedJson.length : 'non-array'}`);
+                                    }
+
+                                    for(const item of parsedJson) {
+                                        const validation = ReviewItemSchema.safeParse(item);
+                                        if (!validation.success) {
+                                            const errorDetails = validation.error.errors.map((err: any) => `${err.path.join('.')}: ${err.message}`).join(', ');
+                                            throw new Error(`Zod Validation Failed for an item: ${errorDetails}`);
+                                        }
+                                        finalReviewedPatches.push(item);
+                                        alreadyReviewed.add(item.IssueID || item.id);
+                                    }
+                                    fs.writeFileSync(vsphereOutputReport, JSON.stringify(finalReviewedPatches, null, 2));
+
+                                    for(const rItem of parsedJson) {
+                                        try {
+                                            const rIssueId = rItem.IssueID || rItem.id || 'Unknown';
+                                            await prisma.reviewedPatch.upsert({
+                                                where: { issueId: rIssueId },
+                                                update: { vendor: 'VMware vSphere', component: rItem.Component || 'vsphere', version: rItem.Version || '', criticality: rItem.Criticality || 'Unknown', description: rItem.Description || '', koreanDescription: rItem.KoreanDescription || rItem.Description || '', decision: rItem.Decision || 'Done', pipelineRunId: String(job.id) },
+                                                create: { issueId: rIssueId, vendor: 'VMware vSphere', component: rItem.Component || 'vsphere', version: rItem.Version || '', criticality: rItem.Criticality || 'Unknown', description: rItem.Description || '', koreanDescription: rItem.KoreanDescription || rItem.Description || '', decision: rItem.Decision || 'Done', pipelineRunId: String(job.id) },
+                                            });
+                                        } catch (dbUpsertErr) {}
+                                    }
+
+                                    break;
+                                } catch (err: any) {
+                                    if (err.message.includes('AI_REVIEW_FAILED')) {
+                                        if (err.message.includes('Rate Limit')) fs.writeFileSync(rateLimitFlagFile, 'true');
+                                        throw err;
+                                    }
+                                    if (attempt <= MAX_AI_RETRIES) {
+                                        prompt += `\n\nPrevious attempt failed. Fix this error and resubmit: ${err.message}\nReturn ONLY a JSON array with EXACTLY ${actualBatchSize} objects.`;
+                                        await job.log(`  -> Attempt ${attempt} failed for batch ${batchIndex}, retrying...`);
+                                    } else {
+                                        await job.log(`[SKIP] Batch ${batchIndex} permanently failed after ${MAX_AI_RETRIES} retries.`);
+                                    }
+                                }
+                            }
+                            await job.updateProgress(50 + Math.floor(((i + actualBatchSize) / vspherePatchesRaw.length) * 40));
+                        }
+
+                        // Restore hidden file
+                        try { if (fs.existsSync(hiddenVspherePatchesPath)) fs.renameSync(hiddenVspherePatchesPath, vspherePatchesPath); } catch (e) {}
+
+                        if (isResumeMode && fs.existsSync(rateLimitFlagFile)) fs.unlinkSync(rateLimitFlagFile);
+
+                        // Save AI report
+                        fs.writeFileSync(vsphereOutputReport, JSON.stringify(finalReviewedPatches, null, 2));
+                        await job.log(`[VSPHERE-AI] AI review complete. ${finalReviewedPatches.length} patches reviewed.`);
+
+                        // Step 3: DB Ingestion
+                        try {
+                            if (!isResumeMode && !isAiOnly) await prisma.preprocessedPatch.deleteMany({ where: { vendor: 'VMware vSphere' } });
+                            if (!isResumeMode && !isAiOnly && vspherePatchesRaw.length > 0) {
+                                for (const p of vspherePatchesRaw) {
+                                    await prisma.preprocessedPatch.create({
+                                        data: {
+                                            issueId: p.patch_id,
+                                            vendor: 'VMware vSphere',
+                                            component: p.product || 'vsphere',
+                                            version: p.product || '',
+                                            osVersion: null,
+                                            description: (p.description || '').slice(0, 4000),
+                                            releaseDate: p.published || null,
+                                        },
+                                    });
+                                }
+                            }
+                            if (!isResumeMode && !isAiOnly) await job.log(`[VSPHERE-DB] Preprocessed ${vspherePatchesRaw.length} patches ingested.`);
+
+                            if (!isResumeMode && !isAiOnly) await prisma.reviewedPatch.deleteMany({ where: { vendor: 'VMware vSphere' } });
+                            for (const item of finalReviewedPatches) {
+                                const issueId = item.IssueID || item.id || 'Unknown';
+
+                                const isExcluded = (item.Decision || item.decision || '').toLowerCase() === 'exclude';
+                                const isLowCriticality = ['moderate', 'medium', 'low'].includes((item.Criticality || item.criticality || '').toLowerCase());
+                                if (isExcluded || isLowCriticality) {
+                                    continue;
+                                }
+
+                                try {
+                                    await prisma.reviewedPatch.upsert({
+                                        where: { issueId },
+                                        update: { vendor: 'VMware vSphere', component: item.Component || 'vsphere', version: item.Version || '', criticality: item.Criticality || 'Unknown', description: item.Description || '', koreanDescription: item.KoreanDescription || item.Description || '', decision: item.Decision || 'Done', pipelineRunId: String(job.id) },
+                                        create: { issueId, vendor: 'VMware vSphere', component: item.Component || 'vsphere', version: item.Version || '', criticality: item.Criticality || 'Unknown', description: item.Description || '', koreanDescription: item.KoreanDescription || item.Description || '', decision: item.Decision || 'Done', pipelineRunId: String(job.id) },
+                                    });
+                                } catch (e) { await job.log(`[VSPHERE-DB WARN] Upsert failed for ${issueId}`); }
+                            }
+                            await job.log(`[VSPHERE-DB] Reviewed patches ingested: ${finalReviewedPatches.length}`);
+                        } catch (dbErr: any) {
+                            await job.log(`[VSPHERE-DB WARNING] DB ingestion error: ${dbErr.message}`);
+                        }
+
+                        await job.updateProgress(100);
+                        await job.log('[VSPHERE-PIPELINE] All tasks completed successfully.');
+                        resolve('VMware vSphere pipeline success');
+                        return;
+                    }
+                    // ============================================================
+                    // END VSPHERE PIPELINE BRANCH
+                    // ============================================================
+
+                    // ============================================================
                     // WINDOWS PIPELINE BRANCH
                     // ============================================================
                     if (job.name === 'run-windows-pipeline') {
