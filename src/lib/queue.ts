@@ -58,6 +58,8 @@ export function startWorker() {
                     let fullStdout = "";
                     let isRej = false;
                     const p = spawn(command, args, { cwd: linuxV2Dir, shell: false, ...overrideOpts });
+                    p.stdout.setEncoding('utf8');
+                    p.stderr.setEncoding('utf8');
                     p.stdout.on('data', async (data: any) => {
                         const chunk = data.toString();
                         fullStdout += chunk;
@@ -80,9 +82,9 @@ export function startWorker() {
                         if (errText.includes('rate limit')) {
                             isRej = true;
                             rej(new Error('AI_REVIEW_FAILED: API Rate Limit Error'));
-                        } else if (errText.includes('timeout') || errText.includes('gateway closed')) {
+                        } else if (errText.includes('timeout') || errText.includes('gateway closed') || errText.includes('gateway not connected') || errText.includes('gateway connect failed')) {
                             isRej = true;
-                            rej(new Error('AI_REVIEW_FAILED: OpenClaw execution timed out or gateway closed.'));
+                            rej(new Error('OpenClaw execution timed out or gateway connection failed.'));
                         }
                     });
                     p.on('close', (code: number | null) => {
@@ -112,6 +114,8 @@ export function startWorker() {
                                 let fullStdout = '';
                                 let isRej = false;
                                 const p = spawn(command, args, { cwd: cephSkillDir, shell: false, ...overrideOpts });
+                                p.stdout.setEncoding('utf8');
+                                p.stderr.setEncoding('utf8');
                                 p.stdout.on('data', async (data: any) => {
                                     const chunk = data.toString();
                                     fullStdout += chunk;
@@ -129,7 +133,7 @@ export function startWorker() {
                                     const errText = data.toString();
                                     job.log(`ERROR: ${errText}`).catch(() => { });
                                     if (errText.includes('rate limit')) { isRej = true; rej(new Error('AI_REVIEW_FAILED: API Rate Limit Error')); }
-                                    else if (errText.includes('timeout') || errText.includes('gateway closed')) { isRej = true; rej(new Error('AI_REVIEW_FAILED: OpenClaw timed out.')); }
+                                    else if (errText.includes('timeout') || errText.includes('gateway closed') || errText.includes('gateway not connected') || errText.includes('gateway connect failed')) { isRej = true; rej(new Error('OpenClaw timed out or gateway connection failed.')); }
                                 });
                                 p.on('close', (code: number | null) => {
                                     if (!isRej) { code === 0 ? res(fullStdout) : rej(new Error(`Command ${command} failed with code ${code}`)); }
@@ -239,7 +243,7 @@ Return ONLY a pure JSON array with EXACTLY ${actualBatchSize} objects. Each obje
                                             for (const lf of oldFiles) fs.rmSync(path.join(sessionsDir, lf), { force: true });
                                         }
                                         return await runCephStream('/home/citec/.nvm/versions/node/v22.22.0/bin/openclaw',
-                                            ['agent', '--agent', 'main', '--json', '--session-id', `ceph_${job.id}_batch_${batchIndex}_${attempt}`, '-m', prompt],
+                                            ['agent', '--agent', 'main', '--json', '--timeout', '1800', '--session-id', `ceph_${job.id}_batch_${batchIndex}_${attempt}`, '-m', prompt],
                                             {}, { shell: false, cwd: cephSkillDir }, true
                                         );
                                     });
@@ -364,18 +368,20 @@ Return ONLY a pure JSON array with EXACTLY ${actualBatchSize} objects. Each obje
                     // ============================================================
 
                     // ============================================================
-                    // MARIADB PIPELINE BRANCH
+                    // SQL SERVER PIPELINE BRANCH
                     // ============================================================
-                    if (job.name === 'run-mariadb-pipeline') {
-                        const mariadbSkillDir = path.join(process.env.HOME || '/home/citec', '.openclaw/workspace/skills/patch-review/database/mariadb');
-                        const mariadbOutputReport = path.join(mariadbSkillDir, 'patch_review_ai_report_mariadb.json');
-                        const mariadbPatchesPath = path.join(mariadbSkillDir, 'patches_for_llm_review_mariadb.json');
+                    if (job.name === 'run-sqlserver-pipeline') {
+                        const sqlserverSkillDir = path.join(process.env.HOME || '/home/citec', '.openclaw/workspace/skills/patch-review/database/sqlserver');
+                        const sqlserverOutputReport = path.join(sqlserverSkillDir, 'patch_review_ai_report_sqlserver.json');
+                        const sqlserverPatchesPath = path.join(sqlserverSkillDir, 'patches_for_llm_review_sqlserver.json');
 
-                        const runMariadbStream = async (command: string, args: string[], progressMap: any = {}, overrideOpts: any = {}, suppressLog: boolean = false): Promise<any> => {
+                        const runSqlserverStream = async (command: string, args: string[], progressMap: any = {}, overrideOpts: any = {}, suppressLog: boolean = false): Promise<any> => {
                             return new Promise((res, rej) => {
                                 let fullStdout = '';
                                 let isRej = false;
-                                const p = spawn(command, args, { cwd: mariadbSkillDir, shell: false, ...overrideOpts });
+                                const p = spawn(command, args, { cwd: sqlserverSkillDir, shell: false, ...overrideOpts });
+                                p.stdout.setEncoding('utf8');
+                                p.stderr.setEncoding('utf8');
                                 p.stdout.on('data', async (data: any) => {
                                     const chunk = data.toString();
                                     fullStdout += chunk;
@@ -393,7 +399,272 @@ Return ONLY a pure JSON array with EXACTLY ${actualBatchSize} objects. Each obje
                                     const errText = data.toString();
                                     job.log(`ERROR: ${errText}`).catch(() => { });
                                     if (errText.includes('rate limit')) { isRej = true; rej(new Error('AI_REVIEW_FAILED: API Rate Limit Error')); }
-                                    else if (errText.includes('timeout') || errText.includes('gateway closed')) { isRej = true; rej(new Error('AI_REVIEW_FAILED: OpenClaw timed out.')); }
+                                    else if (errText.includes('timeout') || errText.includes('gateway closed') || errText.includes('gateway not connected') || errText.includes('gateway connect failed')) { isRej = true; rej(new Error('OpenClaw timed out or gateway connection failed.')); }
+                                });
+                                p.on('close', (code: number | null) => {
+                                    if (!isRej) { code === 0 ? res(fullStdout) : rej(new Error(`Command ${command} failed with code ${code}`)); }
+                                });
+                            });
+                        };
+
+                        const rateLimitFlagFile = path.join('/tmp', '.rate_limit_sqlserver');
+                        const isResumeMode = (isAiOnly || isRetry) && fs.existsSync(rateLimitFlagFile);
+
+                        // Step 1: Preprocessing
+                        if (!isResumeMode && !isAiOnly) {
+                            await job.updateProgress(10);
+                            await job.log('[SQLSERVER-PIPELINE] Starting SQL Server patch preprocessing...');
+                            await runSqlserverStream('python3', ['sqlserver_preprocessing.py', '--days', '180'], {
+                                'Final SQL Server Candidates': 40,
+                                '[SQL-PREPROCESS]': 15,
+                            });
+                            await job.updateProgress(40);
+                            await job.log('[SQLSERVER-PREPROCESS_DONE] Preprocessing complete.');
+                        } else {
+                            await job.updateProgress(40);
+                            await job.log('[SQLSERVER-PIPELINE] Skipping preprocessing (AI-Only/Resume mode).');
+                        }
+
+                        // Step 2: AI Review Loop
+                        const { ReviewSchema, ReviewItemSchema } = require('@/lib/schema');
+                        const MAX_AI_RETRIES = 2;
+                        let finalReviewedPatches: any[] = [];
+                        let sqlserverPatchesRaw: any[] = [];
+                        try { sqlserverPatchesRaw = JSON.parse(fs.readFileSync(sqlserverPatchesPath, 'utf-8')); } catch (e) { }
+
+                        const alreadyReviewed = new Set<string>();
+                        if (isResumeMode) {
+                            try {
+                                finalReviewedPatches = JSON.parse(fs.readFileSync(sqlserverOutputReport, 'utf-8'));
+                                for (const p of finalReviewedPatches) alreadyReviewed.add(p.IssueID || p.id);
+                                await job.log(`[RESUME] 이전에 API Rate Limit으로 중단된 리뷰를 이어서 진행합니다. (완료: ${alreadyReviewed.size}건, 남은 패치: ${sqlserverPatchesRaw.length - alreadyReviewed.size}건)`);
+                            } catch (e) {
+                                finalReviewedPatches = [];
+                            }
+                        } else {
+                            if (fs.existsSync(rateLimitFlagFile)) fs.unlinkSync(rateLimitFlagFile);
+                        }
+
+                        // Hide the normalized datasets from the AI so its autonomous workspace RAG doesn't fetch them and get confused!
+                        const normalizedDir = path.join(sqlserverSkillDir, 'sql_data', 'normalized');
+                        const hiddenNormalizedDir = normalizedDir + '_hidden';
+                        const hiddenSqlserverPatchesPath = sqlserverPatchesPath + '.hidden';
+                        try { if (fs.existsSync(normalizedDir)) fs.renameSync(normalizedDir, hiddenNormalizedDir); } catch (e) {}
+                        try { if (fs.existsSync(sqlserverPatchesPath)) fs.renameSync(sqlserverPatchesPath, hiddenSqlserverPatchesPath); } catch (e) {}
+
+                        await job.updateProgress(50);
+                        await job.log(`[SQLSERVER-AI] Sequentially evaluating ${sqlserverPatchesRaw.length} patches (RAG-blinded)...`);
+
+                        const prunePatchSqlserver = (obj: any): any => {
+                            if (!obj) return obj;
+                            const copy = JSON.parse(JSON.stringify(obj));
+                            const pruneText = (text: string, maxLen: number) => {
+                                if (typeof text !== 'string') return text;
+                                let pruned = text.replace(/https?:\/\/[^\s"'<>\\]+/g, '[URL]');
+                                return pruned.length > maxLen ? pruned.slice(0, maxLen) + '...[TRUNCATED]' : pruned;
+                            };
+                            const traverse = (o: any) => {
+                                if (Array.isArray(o)) { for (let i = 0; i < o.length; i++) { if (typeof o[i] === 'object') traverse(o[i]); else if (typeof o[i] === 'string') o[i] = pruneText(o[i], 3000); } }
+                                else if (typeof o === 'object' && o !== null) { for (const key of Object.keys(o)) { if (typeof o[key] === 'string') o[key] = pruneText(o[key], 5000); else if (typeof o[key] === 'object') traverse(o[key]); } }
+                            };
+                            traverse(copy);
+                            return copy;
+                        };
+
+                        const BATCH_SIZE = 5;
+                        for (let i = 0; i < sqlserverPatchesRaw.length; i += BATCH_SIZE) {
+                            const batch = sqlserverPatchesRaw.slice(i, i + BATCH_SIZE);
+                            const actualBatchSize = batch.length;
+                            const batchNames = batch.map((p: any) => p.patch_id || p.id || 'Unknown').join(', ');
+                            const batchIndex = Math.floor(i / BATCH_SIZE) + 1;
+                            const totalBatches = Math.ceil(sqlserverPatchesRaw.length / BATCH_SIZE);
+
+                            // check if entire batch is already reviewed
+                            let allReviewed = true;
+                            for (const p of batch) {
+                                const pName = p.patch_id || p.id || 'Unknown';
+                                if (!alreadyReviewed.has(pName)) allReviewed = false;
+                            }
+                            if (isResumeMode && allReviewed) {
+                                await job.log(`[SKIP-RESUME] 이미 리뷰가 완료된 배치입니다: ${batchNames}`);
+                                await job.updateProgress(50 + Math.floor(((i + actualBatchSize) / sqlserverPatchesRaw.length) * 40));
+                                continue;
+                            }
+
+                            await job.log(`[SQLSERVER-AI Analysis] Processing batch ${batchIndex}/${totalBatches} (${actualBatchSize} patches): ${batchNames}`);
+
+                            const prunedBatch = batch.map((p: any) => prunePatchSqlserver(p));
+                            let prompt = `Read the rules explicitly from ${path.join(sqlserverSkillDir, 'SKILL.md')}. Evaluate the following ${actualBatchSize} Microsoft SQL Server cumulative patches according to the strict LLM evaluation rules in section 4 of that file.
+CRITICAL MANDATE: DO NOT USE ANY TOOLS TO READ OR SEARCH THE WORKSPACE JSON FILES. Do not parse patches_for_llm_review_sqlserver.json. IGNORE ANY PREVIOUS EXAMPLES or RAG retrievals. You must ONLY base your summary on the literal text provided below in [BATCH DATA].
+CRITICAL RULE FOR DESCRIPTIONS: The 'Description' and 'KoreanDescription' fields MUST be a concise, executive summary of the cumulative update. Focus on the most critical security vulnerabilities (top 10 CVEs) and bug fixes (top 5 fixes) included.
+Return ONLY a pure JSON array with EXACTLY ${actualBatchSize} objects. Each object MUST contain exactly: 'IssueID', 'Component', 'Version', 'Vendor', 'Date', 'Criticality', 'Description', 'KoreanDescription', and optionally 'Decision' and 'Reason'. For Vendor use 'Microsoft'. For Component use 'SQL Server'. Do NOT skip evaluation steps.\n\n[BATCH DATA]:\n${JSON.stringify(prunedBatch)}`;
+                            fs.writeFileSync(path.join(sqlserverSkillDir, `debug_prompt_${batchIndex}.txt`), prompt);
+
+                            let parsedJson: any = null;
+                            for (let attempt = 1; attempt <= MAX_AI_RETRIES + 1; attempt++) {
+                                try {
+                                    const rawAiOutput = await withOpenClawLock(async (msg) => await job.log(msg), async () => {
+                                        const sessionsDir = path.join(process.env.HOME || '/home/citec', '.openclaw/agents/main/sessions');
+                                        if (fs.existsSync(sessionsDir)) {
+                                            const oldFiles = fs.readdirSync(sessionsDir).filter((f: string) => f.endsWith('.lock') || f.includes('.jsonl'));
+                                            for (const lf of oldFiles) fs.rmSync(path.join(sessionsDir, lf), { force: true });
+                                        }
+                                        return await runSqlserverStream('/home/citec/.nvm/versions/node/v22.22.0/bin/openclaw',
+                                            ['agent', '--agent', 'main', '--json', '--timeout', '1800', '--session-id', `sqlserver_${job.id}_batch_${batchIndex}_${attempt}`, '-m', prompt],
+                                            {}, { shell: false, cwd: sqlserverSkillDir }, true
+                                        );
+                                    });
+
+                                    const extractJsonArray = (text: string): any => {
+                                        const stripped = text.replace(/```(?:json)?\s*/g, '').replace(/```/g, '');
+                                        const match = stripped.match(/\[\s*\{[\s\S]*?\}\s*\]/);
+                                        if (!match) return null;
+                                        return JSON.parse(match[0]);
+                                    };
+
+                                    const openclawWrapper = JSON.parse(rawAiOutput);
+                                    const payloads = openclawWrapper?.result?.payloads || [];
+                                    const textContents = payloads.map((p: any) => p.text).join('\n');
+
+                                    if (textContents.toLowerCase().includes('rate limit')) throw new Error('AI_REVIEW_FAILED: Rate Limit');
+                                    parsedJson = extractJsonArray(textContents);
+                                    if (!parsedJson) throw new Error('No JSON array in AI output');
+                                    if (!Array.isArray(parsedJson) || parsedJson.length !== actualBatchSize) {
+                                        throw new Error(`Expected array of length ${actualBatchSize}, but got ${Array.isArray(parsedJson) ? parsedJson.length : 'non-array'}`);
+                                    }
+
+                                    for(const item of parsedJson) {
+                                        const validation = ReviewItemSchema.safeParse(item);
+                                        if (!validation.success) {
+                                            const errorDetails = validation.error.errors.map((err: any) => `${err.path.join('.')}: ${err.message}`).join(', ');
+                                            throw new Error(`Zod Validation Failed for an item: ${errorDetails}`);
+                                        }
+                                        finalReviewedPatches.push(item);
+                                        alreadyReviewed.add(item.IssueID || item.id);
+                                    }
+                                    fs.writeFileSync(sqlserverOutputReport, JSON.stringify(finalReviewedPatches, null, 2));
+
+                                    for(const rItem of parsedJson) {
+                                        try {
+                                            const rIssueId = rItem.IssueID || rItem.id || 'Unknown';
+                                            await prisma.reviewedPatch.upsert({
+                                                where: { issueId: rIssueId },
+                                                update: { vendor: 'SQL Server', component: rItem.Component || 'SQL Server', version: rItem.Version || '', criticality: rItem.Criticality || 'Unknown', description: rItem.Description || '', koreanDescription: rItem.KoreanDescription || rItem.Description || '', decision: rItem.Decision || 'Done', pipelineRunId: String(job.id) },
+                                                create: { issueId: rIssueId, vendor: 'SQL Server', component: rItem.Component || 'SQL Server', version: rItem.Version || '', criticality: rItem.Criticality || 'Unknown', description: rItem.Description || '', koreanDescription: rItem.KoreanDescription || rItem.Description || '', decision: rItem.Decision || 'Done', pipelineRunId: String(job.id) },
+                                            });
+                                        } catch (dbUpsertErr) {}
+                                    }
+
+                                    break;
+                                } catch (err: any) {
+                                    if (err.message.includes('AI_REVIEW_FAILED')) {
+                                        if (err.message.includes('Rate Limit')) fs.writeFileSync(rateLimitFlagFile, 'true');
+                                        throw err;
+                                    }
+                                    if (attempt <= MAX_AI_RETRIES) {
+                                        prompt += `\n\nPrevious attempt failed. Fix this error and resubmit: ${err.message}\nReturn ONLY a JSON array with EXACTLY ${actualBatchSize} objects.`;
+                                        await job.log(`  -> Attempt ${attempt} failed for batch ${batchIndex}, retrying...`);
+                                    } else {
+                                        await job.log(`[SKIP] Batch ${batchIndex} permanently failed after ${MAX_AI_RETRIES} retries.`);
+                                    }
+                                }
+                            }
+                            await job.updateProgress(50 + Math.floor(((i + actualBatchSize) / sqlserverPatchesRaw.length) * 40));
+                        }
+
+                        // Restore the hidden files
+                        try { if (fs.existsSync(hiddenNormalizedDir)) fs.renameSync(hiddenNormalizedDir, normalizedDir); } catch (e) {}
+                        try { if (fs.existsSync(hiddenSqlserverPatchesPath)) fs.renameSync(hiddenSqlserverPatchesPath, sqlserverPatchesPath); } catch (e) {}
+
+                        if (isResumeMode && fs.existsSync(rateLimitFlagFile)) fs.unlinkSync(rateLimitFlagFile);
+
+                        // Save AI report
+                        fs.writeFileSync(sqlserverOutputReport, JSON.stringify(finalReviewedPatches, null, 2));
+                        await job.log(`[SQLSERVER-AI] AI review complete. ${finalReviewedPatches.length} patches reviewed.`);
+
+                        // Step 3: DB Ingestion
+                        try {
+                            if (!isResumeMode && !isAiOnly) await prisma.preprocessedPatch.deleteMany({ where: { vendor: 'SQL Server' } });
+                            if (!isResumeMode && !isAiOnly && sqlserverPatchesRaw.length > 0) {
+                                await prisma.preprocessedPatch.createMany({
+                                    data: sqlserverPatchesRaw.map((p: any) => ({
+                                        issueId: p.id,
+                                        vendor: 'SQL Server',
+                                        component: p.component || 'SQL Server',
+                                        version: p.version || '',
+                                        osVersion: p.os_version || null,
+                                        description: (p.summary || '').slice(0, 4000),
+                                        releaseDate: p.date || null,
+                                    })),
+                                });
+                            }
+                            if (!isResumeMode && !isAiOnly) await job.log(`[SQLSERVER-DB] Preprocessed ${sqlserverPatchesRaw.length} patches ingested.`);
+
+                            if (!isResumeMode && !isAiOnly) await prisma.reviewedPatch.deleteMany({ where: { vendor: 'SQL Server' } });
+                            for (const item of finalReviewedPatches) {
+                                const issueId = item.IssueID || item.id || 'Unknown';
+                                
+                                const isExcluded = (item.Decision || item.decision || '').toLowerCase() === 'exclude';
+                                const isLowCriticality = ['moderate', 'medium', 'low'].includes((item.Criticality || item.criticality || '').toLowerCase());
+                                if (isExcluded || isLowCriticality) {
+                                    continue;
+                                }
+                                
+                                try {
+                                    await prisma.reviewedPatch.upsert({
+                                        where: { issueId },
+                                        update: { vendor: 'SQL Server', component: item.Component || 'SQL Server', version: item.Version || '', criticality: item.Criticality || 'Unknown', description: item.Description || '', koreanDescription: item.KoreanDescription || item.Description || '', decision: item.Decision || 'Done', pipelineRunId: String(job.id) },
+                                        create: { issueId, vendor: 'SQL Server', component: item.Component || 'SQL Server', version: item.Version || '', criticality: item.Criticality || 'Unknown', description: item.Description || '', koreanDescription: item.KoreanDescription || item.Description || '', decision: item.Decision || 'Done', pipelineRunId: String(job.id) },
+                                    });
+                                } catch (e) { await job.log(`[SQLSERVER-DB WARN] Upsert failed for ${issueId}`); }
+                            }
+                            await job.log(`[SQLSERVER-DB] Reviewed patches ingested: ${finalReviewedPatches.length}`);
+                        } catch (dbErr: any) {
+                            await job.log(`[SQLSERVER-DB WARNING] DB ingestion error: ${dbErr.message}`);
+                        }
+
+                        await job.updateProgress(100);
+                        await job.log('[SQLSERVER-PIPELINE] All tasks completed successfully.');
+                        resolve('SQL Server pipeline success');
+                        return;
+                    }
+                    // ============================================================
+                    // END SQL SERVER PIPELINE BRANCH
+                    // ============================================================
+
+                    // ============================================================
+                    // MARIADB PIPELINE BRANCH
+                    // ============================================================
+                    if (job.name === 'run-mariadb-pipeline') {
+                        const mariadbSkillDir = path.join(process.env.HOME || '/home/citec', '.openclaw/workspace/skills/patch-review/database/mariadb');
+                        const mariadbOutputReport = path.join(mariadbSkillDir, 'patch_review_ai_report_mariadb.json');
+                        const mariadbPatchesPath = path.join(mariadbSkillDir, 'patches_for_llm_review_mariadb.json');
+
+                        const runMariadbStream = async (command: string, args: string[], progressMap: any = {}, overrideOpts: any = {}, suppressLog: boolean = false): Promise<any> => {
+                            return new Promise((res, rej) => {
+                                let fullStdout = '';
+                                let isRej = false;
+                                const p = spawn(command, args, { cwd: mariadbSkillDir, shell: false, ...overrideOpts });
+                                p.stdout.setEncoding('utf8');
+                                p.stderr.setEncoding('utf8');
+                                p.stdout.on('data', async (data: any) => {
+                                    const chunk = data.toString();
+                                    fullStdout += chunk;
+                                    const lines = chunk.split('\n');
+                                    for (const line of lines) {
+                                        if (line.trim()) {
+                                            if (!suppressLog) job.log(line).catch(() => { });
+                                            for (const [keyword, prog] of Object.entries(progressMap)) {
+                                                if (line.includes(keyword)) job.updateProgress(prog as number).catch(() => { });
+                                            }
+                                        }
+                                    }
+                                });
+                                p.stderr.on('data', (data: any) => {
+                                    const errText = data.toString();
+                                    job.log(`ERROR: ${errText}`).catch(() => { });
+                                    if (errText.includes('rate limit')) { isRej = true; rej(new Error('AI_REVIEW_FAILED: API Rate Limit Error')); }
+                                    else if (errText.includes('timeout') || errText.includes('gateway closed') || errText.includes('gateway not connected') || errText.includes('gateway connect failed')) { isRej = true; rej(new Error('OpenClaw timed out or gateway connection failed.')); }
                                 });
                                 p.on('close', (code: number | null) => {
                                     if (!isRej) { code === 0 ? res(fullStdout) : rej(new Error(`Command ${command} failed with code ${code}`)); }
@@ -504,7 +775,7 @@ Return ONLY a pure JSON array with EXACTLY ${actualBatchSize} objects. Each obje
                                             for (const lf of oldFiles) fs.rmSync(path.join(sessionsDir, lf), { force: true });
                                         }
                                         return await runMariadbStream('/home/citec/.nvm/versions/node/v22.22.0/bin/openclaw',
-                                            ['agent', '--agent', 'main', '--json', '--session-id', `mariadb_${job.id}_batch_${batchIndex}_${attempt}`, '-m', prompt],
+                                            ['agent', '--agent', 'main', '--json', '--timeout', '1800', '--session-id', `mariadb_${job.id}_batch_${batchIndex}_${attempt}`, '-m', prompt],
                                             {}, { shell: false, cwd: mariadbSkillDir }, true
                                         );
                                     });
@@ -639,6 +910,8 @@ Return ONLY a pure JSON array with EXACTLY ${actualBatchSize} objects. Each obje
                                 let fullStdout = '';
                                 let isRej = false;
                                 const p = spawn(command, args, { cwd: windowsSkillDir, shell: false, ...overrideOpts });
+                                p.stdout.setEncoding('utf8');
+                                p.stderr.setEncoding('utf8');
                                 p.stdout.on('data', async (data: any) => {
                                     const chunk = data.toString();
                                     fullStdout += chunk;
@@ -656,7 +929,7 @@ Return ONLY a pure JSON array with EXACTLY ${actualBatchSize} objects. Each obje
                                     const errText = data.toString();
                                     job.log(`ERROR: ${errText}`).catch(() => { });
                                     if (errText.includes('rate limit')) { isRej = true; rej(new Error('AI_REVIEW_FAILED: API Rate Limit Error')); }
-                                    else if (errText.includes('timeout') || errText.includes('gateway closed')) { isRej = true; rej(new Error('AI_REVIEW_FAILED: OpenClaw timed out.')); }
+                                    else if (errText.includes('timeout') || errText.includes('gateway closed') || errText.includes('gateway not connected') || errText.includes('gateway connect failed')) { isRej = true; rej(new Error('OpenClaw timed out or gateway connection failed.')); }
                                 });
                                 p.on('close', (code: number | null) => {
                                     if (!isRej) { code === 0 ? res(fullStdout) : rej(new Error(`Command ${command} failed with code ${code}`)); }
@@ -767,7 +1040,7 @@ Return ONLY a pure JSON array with EXACTLY ${actualBatchSize} objects. Each obje
                                             for (const lf of oldFiles) fs.rmSync(path.join(sessionsDir, lf), { force: true });
                                         }
                                         return await runWindowsStream('/home/citec/.nvm/versions/node/v22.22.0/bin/openclaw',
-                                            ['agent', '--agent', 'main', '--json', '--session-id', `windows_${job.id}_batch_${batchIndex}_${attempt}`, '-m', prompt],
+                                            ['agent', '--agent', 'main', '--json', '--timeout', '1800', '--session-id', `windows_${job.id}_batch_${batchIndex}_${attempt}`, '-m', prompt],
                                             {}, { shell: false, cwd: windowsSkillDir }, true
                                         );
                                     });
@@ -1062,7 +1335,7 @@ Do NOT perform any web scraping. Do NOT use tools to write to files, simply outp
                                         for (const lf of lockFiles) fs.rmSync(path.join(sessionsDir, lf), { force: true });
                                     }
                                     return await runStream('/home/citec/.nvm/versions/node/v22.22.0/bin/openclaw',
-                                        ['agent', '--agent', 'main', '--json', '--session-id', `os_${job.id}_batch_${batchIndex}_${attempt}`, '-m', currentPrompt],
+                                        ['agent', '--agent', 'main', '--json', '--timeout', '1800', '--session-id', `os_${job.id}_batch_${batchIndex}_${attempt}`, '-m', currentPrompt],
                                         {}, { shell: false }, true
                                     );
                                 });
@@ -1079,7 +1352,7 @@ Do NOT perform any web scraping. Do NOT use tools to write to files, simply outp
                                 const textContents = payloads.map((p: any) => p.text).join('\n');
 
                                 if (textContents.toLowerCase().includes('rate limit')) throw new Error("AI_REVIEW_FAILED: API Rate Limit Error");
-                                if (textContents.toLowerCase().includes('gateway closed') || textContents.toLowerCase().includes('gateway timeout')) throw new Error("AI_REVIEW_FAILED: OpenClaw execution timed out or gateway closed.");
+                                if (textContents.toLowerCase().includes('gateway closed') || textContents.toLowerCase().includes('gateway timeout') || textContents.toLowerCase().includes('gateway not connected')) throw new Error("OpenClaw execution timed out or gateway closed.");
 
                                 parsedJson = extractJsonArray(textContents);
                                 if (!parsedJson) throw new Error('No JSON array found in AI output even after code fence stripping.');

@@ -34,7 +34,7 @@ export async function POST(req: Request) {
             approvedPatches = allPatches;
         }
 
-        const finalCsvContent = Papa.unparse(approvedPatches);
+        const finalCsvContent = '\uFEFF' + Papa.unparse(approvedPatches);
         await fs.writeFile(outputCsvPath, finalCsvContent, 'utf8');
 
         return NextResponse.json({

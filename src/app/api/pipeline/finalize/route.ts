@@ -43,7 +43,7 @@ export async function POST(req: Request) {
         }
 
         // Generate final CSV content retaining all rich AI fields (한글 설명, Criticality etc.)
-        const finalCsvContent = Papa.unparse(approvedPatches);
+        const finalCsvContent = '\uFEFF' + Papa.unparse(approvedPatches);
 
         // Save the CSV to the shared linux folder
         await fs.writeFile(outputCsvPath, finalCsvContent, 'utf8');

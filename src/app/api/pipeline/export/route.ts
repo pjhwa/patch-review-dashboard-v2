@@ -1,7 +1,8 @@
 import { NextResponse } from 'next/server';
-import { promises as fs } from 'fs';
-import path from 'path';
+import { prisma } from '@/lib/db';
 import Papa from 'papaparse';
+
+export const dynamic = 'force-dynamic';
 
 export async function GET(req: Request) {
     try {
@@ -13,54 +14,70 @@ export async function GET(req: Request) {
             return new NextResponse('Missing categoryId', { status: 400 });
         }
 
-        const workspacePath = process.env.OPENCLAW_WORKSPACE || path.join(require('os').homedir(), '.openclaw/workspace');
-        // Currently, pipelines are shared under os/linux
-        const basePath = path.join(workspacePath, 'skills/patch-review', categoryId, 'linux');
+        let filename = `Final_Approved_Patches_${categoryId}_${new Date().toISOString().split('T')[0]}.csv`;
 
-        let csvContent = "";
-        let filename = `Final_Approved_Patches_${categoryId}_Linux_${new Date().toISOString().split('T')[0]}.csv`;
-
+        let vendorFilters: string[] = [];
         if (productId && productId !== 'all') {
-            const csvPath = path.join(basePath, `final_approved_patches_${productId}.csv`);
-            try {
-                csvContent = await fs.readFile(csvPath, 'utf8');
-                filename = `Final_Approved_Patches_${categoryId}_${productId}.csv`;
-            } catch (e) {
-                return new NextResponse(`Final CSV not found for ${productId}.`, { status: 404 });
-            }
+            filename = `Final_Approved_Patches_${categoryId}_${productId}.csv`;
+            if (productId === 'redhat') vendorFilters.push('Red Hat');
+            else if (productId === 'oracle') vendorFilters.push('Oracle');
+            else if (productId === 'ubuntu') vendorFilters.push('Ubuntu');
+            else if (productId === 'windows') vendorFilters.push('Windows Server');
+            else if (productId === 'ceph') vendorFilters.push('Ceph');
+            else if (productId === 'mariadb') vendorFilters.push('MariaDB');
         } else {
-            // Merge all final_approved_patches_*.csv
-            try {
-                const files = await fs.readdir(basePath);
-                const approvedFiles = files.filter(f => f.startsWith('final_approved_patches_') && f.endsWith('.csv'));
-
-                if (approvedFiles.length === 0) {
-                    return new NextResponse('No finalized CSVs available. Ensure reviews are marked as complete.', { status: 404 });
-                }
-
-                let allRows: any[] = [];
-                let headers: string[] = [];
-
-                for (const file of approvedFiles) {
-                    const content = await fs.readFile(path.join(basePath, file), 'utf8');
-                    const parsed = Papa.parse(content, { header: true, skipEmptyLines: true });
-                    if (headers.length === 0 && parsed.meta.fields) {
-                        headers = parsed.meta.fields;
-                    }
-                    if (parsed.data && parsed.data.length > 0) {
-                        allRows = allRows.concat(parsed.data);
-                    }
-                }
-
-                if (allRows.length === 0) {
-                    csvContent = Papa.unparse([], { columns: headers });
-                } else {
-                    csvContent = Papa.unparse(allRows);
-                }
-            } catch (e) {
-                return new NextResponse('Error reading or merging CSV files.', { status: 500 });
+            // "all" meaning all vendors in the category
+            if (categoryId === 'os') {
+                vendorFilters.push('Red Hat', 'Oracle', 'Ubuntu', 'Windows Server');
+            } else if (categoryId === 'storage') {
+                vendorFilters.push('Ceph');
+            } else if (categoryId === 'database') {
+                vendorFilters.push('MariaDB');
             }
         }
+
+        const whereClause = vendorFilters.length > 0 ? {
+            vendor: {
+                in: vendorFilters
+            }
+        } : {};
+
+        const approvedPatches = await prisma.reviewedPatch.findMany({
+            where: whereClause,
+            orderBy: { reviewedAt: 'desc' },
+            select: {
+                issueId: true,
+                component: true,
+                version: true,
+                vendor: true,
+                reviewedAt: true,
+                criticality: true,
+                description: true,
+                koreanDescription: true,
+                decision: true,
+                reason: true
+            }
+        });
+
+        if (approvedPatches.length === 0) {
+            return new NextResponse('No finalized CSVs available. Ensure reviews are marked as complete or records exist.', { status: 404 });
+        }
+
+        const mappedPatches = approvedPatches.map((p: any) => ({
+            IssueID: p.issueId,
+            Component: p.component,
+            Version: p.version,
+            Vendor: p.vendor,
+            Date: p.reviewedAt.toISOString().split('T')[0],
+            Criticality: p.criticality,
+            Description: p.description,
+            KoreanDescription: p.koreanDescription,
+            Decision: p.decision,
+            Reason: p.reason
+        }));
+
+        // \uFEFF is the UTF-8 BOM which tells Excel to read as UTF-8 strictly, preserving Korean characters
+        const csvContent = '\uFEFF' + Papa.unparse(mappedPatches);
 
         // Return the file as a downloadable response
         return new NextResponse(csvContent, {

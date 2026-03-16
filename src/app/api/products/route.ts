@@ -68,8 +68,9 @@ export async function GET(request: Request) {
     }
     // ==================== END STORAGE ====================
 
-    // ==================== DATABASE / MARIADB CATEGORY ====================
+    // ==================== DATABASE / MARIADB & SQL SERVER CATEGORY ====================
     if (category === 'database') {
+        // --- MariaDB ---
         const mariadbSkillDir = path.join(process.env.HOME || '/home/citec', '.openclaw/workspace/skills/patch-review/database/mariadb');
         const mariadbDataDir = path.join(mariadbSkillDir, 'mariadb_data');
 
@@ -84,37 +85,77 @@ export async function GET(request: Request) {
             return 0;
         };
 
-        // Collected = RHSA-* and RHBA-* JSON files in mariadb_data/
-        const collected = countJsonFiles(mariadbDataDir);
+        const mariadbCollected = countJsonFiles(mariadbDataDir);
 
-        let preprocessed = 0;
-        let reviewed = 0;
+        let mariadbPreprocessed = 0;
+        let mariadbReviewed = 0;
         try {
-            const prePatch = await prisma.preprocessedPatch.count({ where: { vendor: 'MariaDB' } });
-            preprocessed = prePatch;
-            const revPatch = await prisma.reviewedPatch.count({ where: { vendor: 'MariaDB' } });
-            reviewed = revPatch;
-        } catch (e) { /* DB not ready yet */ }
+            mariadbPreprocessed = await prisma.preprocessedPatch.count({ where: { vendor: 'MariaDB' } });
+            mariadbReviewed = await prisma.reviewedPatch.count({ where: { vendor: 'MariaDB' } });
+        } catch (e) { }
 
         const mariadbFinalCsv = path.join(mariadbSkillDir, 'final_approved_patches_mariadb.csv');
-        let approved = 0;
-        let isReviewCompleted = false;
+        let mariadbApproved = 0;
+        let mariadbIsReviewCompleted = false;
         if (fs.existsSync(mariadbFinalCsv)) {
             try {
                 const content = fs.readFileSync(mariadbFinalCsv, 'utf-8');
                 const parsed = Papa.parse(content, { header: true, skipEmptyLines: true });
-                approved = parsed.data ? parsed.data.length : 0;
-                isReviewCompleted = true;
-            } catch { isReviewCompleted = true; }
+                mariadbApproved = parsed.data ? parsed.data.length : 0;
+                mariadbIsReviewCompleted = true;
+            } catch { mariadbIsReviewCompleted = true; }
+        }
+
+        // --- SQL Server ---
+        const sqlserverSkillDir = path.join(process.env.HOME || '/home/citec', '.openclaw/workspace/skills/patch-review/database/sqlserver');
+        const sqlserverDataDir = path.join(sqlserverSkillDir, 'sql_data');
+
+        const countSqlJsonFiles = (dirPath: string): number => {
+            if (fs.existsSync(dirPath)) {
+                try {
+                    return fs.readdirSync(dirPath).filter((f: string) => 
+                        f.startsWith('SQLU-') && f.endsWith('.json')
+                    ).length;
+                } catch { return 0; }
+            }
+            return 0;
+        };
+
+        const sqlserverCollected = countSqlJsonFiles(sqlserverDataDir);
+
+        let sqlserverPreprocessed = 0;
+        let sqlserverReviewed = 0;
+        try {
+            sqlserverPreprocessed = await prisma.preprocessedPatch.count({ where: { vendor: 'SQL Server' } });
+            sqlserverReviewed = await prisma.reviewedPatch.count({ where: { vendor: 'SQL Server' } });
+        } catch (e) { }
+
+        const sqlserverFinalCsv = path.join(sqlserverSkillDir, 'final_approved_patches_sqlserver.csv');
+        let sqlserverApproved = 0;
+        let sqlserverIsReviewCompleted = false;
+        if (fs.existsSync(sqlserverFinalCsv)) {
+            try {
+                const content = fs.readFileSync(sqlserverFinalCsv, 'utf-8');
+                const parsed = Papa.parse(content, { header: true, skipEmptyLines: true });
+                sqlserverApproved = parsed.data ? parsed.data.length : 0;
+                sqlserverIsReviewCompleted = true;
+            } catch { sqlserverIsReviewCompleted = true; }
         }
 
         const databaseProducts = [
             {
                 id: 'mariadb',
                 name: 'MariaDB',
-                stages: { collected, preprocessed, reviewed, approved },
+                stages: { collected: mariadbCollected, preprocessed: mariadbPreprocessed, reviewed: mariadbReviewed, approved: mariadbApproved },
                 active: true,
-                isReviewCompleted,
+                isReviewCompleted: mariadbIsReviewCompleted,
+            },
+            {
+                id: 'sqlserver',
+                name: 'SQL Server',
+                stages: { collected: sqlserverCollected, preprocessed: sqlserverPreprocessed, reviewed: sqlserverReviewed, approved: sqlserverApproved },
+                active: true,
+                isReviewCompleted: sqlserverIsReviewCompleted,
             },
             { id: 'postgresql', name: 'PostgreSQL', stages: null, active: false, isReviewCompleted: false },
             { id: 'mysql', name: 'MySQL', stages: null, active: false, isReviewCompleted: false },

@@ -259,7 +259,7 @@ export function ProductDetailClient({ categoryId, productId, dict }: { categoryI
                                                                 className="w-4 h-4 rounded border-white/20 bg-black/50 text-emerald-500 focus:ring-emerald-500/50 focus:ring-offset-0 disabled:opacity-50"
                                                             />
                                                             <label htmlFor={`request-review-${patchId}`} className="text-sm font-medium text-white/80 cursor-pointer">
-                                                                {dict.dashboard.productDetail.requestReview || 'AI 리뷰 요청'}
+                                                                {dict.dashboard.productDetail.requestReview || 'AI ë¦¬ë·° ìš”ì²­'}
                                                             </label>
                                                         </div>
                                                     </div>
@@ -268,7 +268,7 @@ export function ProductDetailClient({ categoryId, productId, dict }: { categoryI
                                                 <div className="grid grid-cols-2 lg:grid-cols-5 gap-4 py-3 border-t border-white/5 mt-1">
                                                     {(patch.osVersion || patch.os_version) && (
                                                         <div>
-                                                            <p className="text-xs text-white/40 uppercase tracking-wider mb-1">OS 버젼 (버전)</p>
+                                                            <p className="text-xs text-white/40 uppercase tracking-wider mb-1">OS ë²„ì „ (ë²„ì „)</p>
                                                             <p className="text-sm font-light text-emerald-100 font-medium">{patch.osVersion || patch.os_version}</p>
                                                         </div>
                                                     )}
@@ -300,7 +300,7 @@ export function ProductDetailClient({ categoryId, productId, dict }: { categoryI
 
                                                 {(patch.description || patch.Description || patch.diff_content) && (
                                                     <div className="mt-1 space-y-2">
-                                                        <p className="text-xs text-white/40 uppercase tracking-wider mb-0">{dict.dashboard.productDetail.description || '상세 설명'}</p>
+                                                        <p className="text-xs text-white/40 uppercase tracking-wider mb-0">{dict.dashboard.productDetail.description || 'Ã¬Æ’ÂÃ¬â€žÂ¸ Ã¬â€žÂ¤Ã«Âªâ€¦'}</p>
                                                         <p className="text-sm text-white/70 font-light leading-relaxed whitespace-pre-line line-clamp-3 hover:line-clamp-none transition-all cursor-pointer">
                                                             {patch.description || patch.Description || patch.diff_content}
                                                         </p>
@@ -541,3 +541,4 @@ export function ProductDetailClient({ categoryId, productId, dict }: { categoryI
         </div >
     );
 }
+
