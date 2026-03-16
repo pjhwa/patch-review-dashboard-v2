@@ -12,7 +12,7 @@ const CATEGORIES: { id: string, count: string | number, active: boolean, icon: a
   { id: 'database', count: 0, active: true, icon: DatabaseZap },
   { id: 'network', count: 0, active: false, icon: Network },
   { id: 'storage', count: 0, active: true, icon: HardDrive },
-  { id: 'virtualization', count: 0, active: false, icon: Cpu },
+  { id: 'virtualization', count: 0, active: true, icon: Cpu },
 ];
 
 export default async function Home() {
@@ -27,9 +27,11 @@ export default async function Home() {
   let osReviewCountSum: string | number = "0/7"; // Default fallback
   let storageReviewCountSum: string | number = "0/1"; // Default fallback
   let databaseReviewCountSum: string | number = "0/4"; // Default fallback
+  let virtualizationReviewCountSum: string | number = "0/1"; // Default fallback
   let osCustomDesc = '';
   let storageCustomDesc = '';
   let databaseCustomDesc = '';
+  let virtualizationCustomDesc = '';
 
   // Statistics Aggregation Variables
   let totalCollected = 0;
@@ -99,6 +101,20 @@ export default async function Home() {
       databaseCustomDesc = `${dict.dashboard.productsReviewed}${patchRatioStr}`;
     }
 
+    // Fetch Virtualization Products Data
+    const virtualizationRes = await fetch(`${baseUrl}/api/products?category=virtualization`, { cache: 'no-store' });
+    if (virtualizationRes.ok) {
+      const prodData = await virtualizationRes.json();
+      const products = prodData.products || [];
+      const activeProducts = products.filter((p: any) => p.active);
+      const completedProducts = activeProducts.filter((p: any) => p.isReviewCompleted);
+
+      const catApproved = aggregateStats(products);
+      virtualizationReviewCountSum = `${completedProducts.length}/${products.length}`;
+      const patchRatioStr = catApproved > 0 ? ` | ${catApproved} ${dict.dashboard.patchesReviewed}` : '';
+      virtualizationCustomDesc = `${dict.dashboard.productsReviewed}${patchRatioStr}`;
+    }
+
     // Fetch Archives Data for Stats
     const arcRes = await fetch(`${baseUrl}/api/pipeline/archive`, { cache: 'no-store' });
     if (arcRes.ok) {
@@ -128,6 +144,8 @@ export default async function Home() {
       return { ...cat, name, count: storageReviewCountSum, customDesc: storageCustomDesc };
     } else if (cat.id === 'database') {
       return { ...cat, name, count: databaseReviewCountSum, customDesc: databaseCustomDesc };
+    } else if (cat.id === 'virtualization') {
+      return { ...cat, name, count: virtualizationReviewCountSum, customDesc: virtualizationCustomDesc };
     }
     return { ...cat, name };
   });

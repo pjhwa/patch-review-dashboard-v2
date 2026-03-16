@@ -24,6 +24,7 @@ export async function GET(request: Request, props: { params: Promise<{ stageId: 
         else if (productId === 'mariadb') targetVendor = 'MariaDB';
         else if (productId === 'windows') targetVendor = 'Windows Server';
         else if (productId === 'sqlserver') targetVendor = 'SQL Server';
+        else if (productId === 'vsphere') targetVendor = 'VMware vSphere';
 
         if (stageId === 'preprocessed') {
             const whereClause = targetVendor ? { vendor: targetVendor } : {};

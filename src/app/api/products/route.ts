@@ -10,9 +10,58 @@ export async function GET(request: Request) {
     const { searchParams } = new URL(request.url);
     const category = searchParams.get('category');
 
-    if (category !== 'os' && category !== 'storage' && category !== 'database') {
+    if (category !== 'os' && category !== 'storage' && category !== 'database' && category !== 'virtualization') {
         return NextResponse.json({ products: [] });
     }
+
+    // ==================== VIRTUALIZATION / VSPHERE CATEGORY ====================
+    if (category === 'virtualization') {
+        const vsphereSkillDir = path.join(process.env.HOME || '/home/citec', '.openclaw/workspace/skills/patch-review/virtualization/vsphere');
+        const vsphereDataDir = path.join(vsphereSkillDir, 'vsphere_data');
+
+        const countVsphereJsonFiles = (dirPath: string): number => {
+            if (fs.existsSync(dirPath)) {
+                try {
+                    return fs.readdirSync(dirPath).filter((f: string) => f.endsWith('.json')).length;
+                } catch { return 0; }
+            }
+            return 0;
+        };
+
+        const vsphereCollected = countVsphereJsonFiles(vsphereDataDir);
+
+        let vspherePreprocessed = 0;
+        let vsphereReviewed = 0;
+        try {
+            vspherePreprocessed = await prisma.preprocessedPatch.count({ where: { vendor: 'VMware vSphere' } });
+            vsphereReviewed = await prisma.reviewedPatch.count({ where: { vendor: 'VMware vSphere' } });
+        } catch (e) { }
+
+        const vsphereFinalCsv = path.join(vsphereSkillDir, 'final_approved_patches_vsphere.csv');
+        let vsphereApproved = 0;
+        let vsphereIsReviewCompleted = false;
+        if (fs.existsSync(vsphereFinalCsv)) {
+            try {
+                const content = fs.readFileSync(vsphereFinalCsv, 'utf-8');
+                const parsed = Papa.parse(content, { header: true, skipEmptyLines: true });
+                vsphereApproved = parsed.data ? parsed.data.length : 0;
+                vsphereIsReviewCompleted = true;
+            } catch { vsphereIsReviewCompleted = true; }
+        }
+
+        const virtualizationProducts = [
+            {
+                id: 'vsphere',
+                name: 'VMware vSphere',
+                stages: { collected: vsphereCollected, preprocessed: vspherePreprocessed, reviewed: vsphereReviewed, approved: vsphereApproved },
+                active: true,
+                isReviewCompleted: vsphereIsReviewCompleted,
+            },
+        ];
+
+        return NextResponse.json({ products: virtualizationProducts });
+    }
+    // ==================== END VIRTUALIZATION ====================
 
     // ==================== STORAGE / CEPH CATEGORY ====================
     if (category === 'storage') {

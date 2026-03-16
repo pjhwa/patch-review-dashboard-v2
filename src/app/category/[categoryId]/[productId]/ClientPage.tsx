@@ -139,7 +139,8 @@ export function ProductDetailClient({ categoryId, productId, dict }: { categoryI
         : productId === 'oracle' ? "Oracle Linux"
             : productId === 'ubuntu' ? "Ubuntu Linux"
                 : productId === 'windows' ? "Windows Server"
-                    : productId;
+                    : productId === 'vsphere' ? "VMware vSphere"
+                        : productId;
 
     const filteredPreprocessedData = useMemo(() => {
         if (!preprocessedData) return [];
@@ -499,6 +500,7 @@ export function ProductDetailClient({ categoryId, productId, dict }: { categoryI
                                                 if (categoryId === 'storage') finalizeEndpoint = '/api/pipeline/ceph/finalize';
                                                 else if (categoryId === 'database') finalizeEndpoint = '/api/pipeline/mariadb/finalize';
                                                 else if (productId === 'windows') finalizeEndpoint = '/api/pipeline/windows/finalize';
+                                                else if (categoryId === 'virtualization') finalizeEndpoint = '/api/pipeline/vsphere/finalize';
                                                 const res = await fetch(finalizeEndpoint, {
                                                     method: 'POST',
                                                     headers: { 'Content-Type': 'application/json' },
