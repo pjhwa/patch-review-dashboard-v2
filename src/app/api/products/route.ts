@@ -191,6 +191,42 @@ export async function GET(request: Request) {
             } catch { sqlserverIsReviewCompleted = true; }
         }
 
+        // --- PostgreSQL ---
+        const pgsqlSkillDir = path.join(process.env.HOME || '/home/citec', '.openclaw/workspace/skills/patch-review/database/pgsql');
+        const pgsqlDataDir = path.join(pgsqlSkillDir, 'pgsql_data');
+
+        const countPgsqlJsonFiles = (dirPath: string): number => {
+            if (fs.existsSync(dirPath)) {
+                try {
+                    return fs.readdirSync(dirPath).filter((f: string) =>
+                        (f.startsWith('RHSA-') || f.startsWith('RHBA-') || f.startsWith('PGDG-')) && f.endsWith('.json')
+                    ).length;
+                } catch { return 0; }
+            }
+            return 0;
+        };
+
+        const pgsqlCollected = countPgsqlJsonFiles(pgsqlDataDir);
+
+        let pgsqlPreprocessed = 0;
+        let pgsqlReviewed = 0;
+        try {
+            pgsqlPreprocessed = await prisma.preprocessedPatch.count({ where: { vendor: 'PostgreSQL' } });
+            pgsqlReviewed = await prisma.reviewedPatch.count({ where: { vendor: 'PostgreSQL' } });
+        } catch (e) { }
+
+        const pgsqlFinalCsv = path.join(pgsqlSkillDir, 'final_approved_patches_pgsql.csv');
+        let pgsqlApproved = 0;
+        let pgsqlIsReviewCompleted = false;
+        if (fs.existsSync(pgsqlFinalCsv)) {
+            try {
+                const content = fs.readFileSync(pgsqlFinalCsv, 'utf-8');
+                const parsed = Papa.parse(content, { header: true, skipEmptyLines: true });
+                pgsqlApproved = parsed.data ? parsed.data.length : 0;
+                pgsqlIsReviewCompleted = true;
+            } catch { pgsqlIsReviewCompleted = true; }
+        }
+
         const databaseProducts = [
             {
                 id: 'mariadb',
@@ -206,7 +242,13 @@ export async function GET(request: Request) {
                 active: true,
                 isReviewCompleted: sqlserverIsReviewCompleted,
             },
-            { id: 'postgresql', name: 'PostgreSQL', stages: null, active: false, isReviewCompleted: false },
+            {
+                id: 'pgsql',
+                name: 'PostgreSQL',
+                stages: { collected: pgsqlCollected, preprocessed: pgsqlPreprocessed, reviewed: pgsqlReviewed, approved: pgsqlApproved },
+                active: true,
+                isReviewCompleted: pgsqlIsReviewCompleted,
+            },
             { id: 'mysql', name: 'MySQL', stages: null, active: false, isReviewCompleted: false },
             { id: 'mongodb', name: 'MongoDB', stages: null, active: false, isReviewCompleted: false },
         ];

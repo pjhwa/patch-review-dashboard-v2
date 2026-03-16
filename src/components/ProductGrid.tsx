@@ -76,6 +76,9 @@ export function ProductGrid({ categoryId, products, dict }: { categoryId: string
                 } else if (streamData.log.includes('[VSPHERE-PREPROCESS_DONE]')) {
                     setResultMsg(`✅ VMware vSphere 전처리 완료. AI 리뷰 진행 중...`);
                     router.refresh();
+                } else if (streamData.log.includes('[PGSQL-PREPROCESS_DONE]')) {
+                    setResultMsg(`✅ PostgreSQL 전처리 완료. AI 리뷰 진행 중...`);
+                    router.refresh();
                 } else if (streamData.log.includes('[CEPH-PIPELINE]') || streamData.log.includes('[CEPH-AI Analysis]')) {
                     setResultMsg(`🤖 ${streamData.log}`);
                 } else if (streamData.log.includes('[MARIADB-PIPELINE]') || streamData.log.includes('[MARIADB-AI Analysis]')) {
@@ -85,6 +88,8 @@ export function ProductGrid({ categoryId, products, dict }: { categoryId: string
                 } else if (streamData.log.includes('[SQLSERVER-PIPELINE]') || streamData.log.includes('[SQLSERVER-AI Analysis]')) {
                     setResultMsg(`🤖 ${streamData.log}`);
                 } else if (streamData.log.includes('[VSPHERE-PIPELINE]') || streamData.log.includes('[VSPHERE-AI Analysis]')) {
+                    setResultMsg(`🤖 ${streamData.log}`);
+                } else if (streamData.log.includes('[PGSQL-PIPELINE]') || streamData.log.includes('[PGSQL-AI Analysis]')) {
                     setResultMsg(`🤖 ${streamData.log}`);
                 } else if (streamData.log.includes('[AI Analysis]') || streamData.log.includes('[SKIP]')) {
                     setResultMsg(`🤖 ${streamData.log}`);
@@ -160,6 +165,7 @@ export function ProductGrid({ categoryId, products, dict }: { categoryId: string
         if (categoryId === 'storage') pipelineRunUrl = '/api/pipeline/ceph/run';
         else if (categoryId === 'database') {
             if (productId === 'sqlserver') pipelineRunUrl = '/api/pipeline/sqlserver/run';
+            else if (productId === 'pgsql') pipelineRunUrl = '/api/pipeline/pgsql/run';
             else pipelineRunUrl = '/api/pipeline/mariadb/run';
         }
         else if (productId === 'windows') pipelineRunUrl = '/api/pipeline/windows/run';

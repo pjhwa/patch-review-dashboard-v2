@@ -140,7 +140,8 @@ export function ProductDetailClient({ categoryId, productId, dict }: { categoryI
             : productId === 'ubuntu' ? "Ubuntu Linux"
                 : productId === 'windows' ? "Windows Server"
                     : productId === 'vsphere' ? "VMware vSphere"
-                        : productId;
+                        : productId === 'pgsql' ? "PostgreSQL"
+                            : productId;
 
     const filteredPreprocessedData = useMemo(() => {
         if (!preprocessedData) return [];
@@ -498,6 +499,8 @@ export function ProductDetailClient({ categoryId, productId, dict }: { categoryI
 
                                                 let finalizeEndpoint = '/api/pipeline/finalize';
                                                 if (categoryId === 'storage') finalizeEndpoint = '/api/pipeline/ceph/finalize';
+                                                else if (categoryId === 'database' && productId === 'pgsql') finalizeEndpoint = '/api/pipeline/pgsql/finalize';
+                                                else if (categoryId === 'database' && productId === 'sqlserver') finalizeEndpoint = '/api/pipeline/mariadb/finalize';
                                                 else if (categoryId === 'database') finalizeEndpoint = '/api/pipeline/mariadb/finalize';
                                                 else if (productId === 'windows') finalizeEndpoint = '/api/pipeline/windows/finalize';
                                                 else if (categoryId === 'virtualization') finalizeEndpoint = '/api/pipeline/vsphere/finalize';

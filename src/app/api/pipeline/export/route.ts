@@ -26,6 +26,7 @@ export async function GET(req: Request) {
             else if (productId === 'ceph') vendorFilters.push('Ceph');
             else if (productId === 'mariadb') vendorFilters.push('MariaDB');
             else if (productId === 'vsphere') vendorFilters.push('VMware vSphere');
+            else if (productId === 'pgsql') vendorFilters.push('PostgreSQL');
         } else {
             // "all" meaning all vendors in the category
             if (categoryId === 'os') {
@@ -33,7 +34,7 @@ export async function GET(req: Request) {
             } else if (categoryId === 'storage') {
                 vendorFilters.push('Ceph');
             } else if (categoryId === 'database') {
-                vendorFilters.push('MariaDB');
+                vendorFilters.push('MariaDB', 'SQL Server', 'PostgreSQL');
             } else if (categoryId === 'virtualization') {
                 vendorFilters.push('VMware vSphere');
             }
