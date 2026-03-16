@@ -199,7 +199,7 @@ export async function GET(request: Request) {
             if (fs.existsSync(dirPath)) {
                 try {
                     return fs.readdirSync(dirPath).filter((f: string) =>
-                        (f.startsWith('RHSA-') || f.startsWith('RHBA-') || f.startsWith('PGDG-')) && f.endsWith('.json')
+                        f.startsWith('PGSL-') && f.endsWith('.json')
                     ).length;
                 } catch { return 0; }
             }
