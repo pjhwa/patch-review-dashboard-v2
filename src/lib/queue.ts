@@ -414,7 +414,7 @@ Return ONLY a pure JSON array with EXACTLY ${actualBatchSize} objects. Each obje
                         if (!isResumeMode && !isAiOnly) {
                             await job.updateProgress(10);
                             await job.log('[SQLSERVER-PIPELINE] Starting SQL Server patch preprocessing...');
-                            await runSqlserverStream('python3', ['sqlserver_preprocessing.py', '--days', '180'], {
+                            await runSqlserverStream('python3', ['sqlserver_preprocessing.py', '--days', '180', '--days_end', '90'], {
                                 'Final SQL Server Candidates': 40,
                                 '[SQL-PREPROCESS]': 15,
                             });
@@ -494,10 +494,13 @@ Return ONLY a pure JSON array with EXACTLY ${actualBatchSize} objects. Each obje
                             await job.log(`[SQLSERVER-AI Analysis] Processing batch ${batchIndex}/${totalBatches} (${actualBatchSize} patches): ${batchNames}`);
 
                             const prunedBatch = batch.map((p: any) => prunePatchSqlserver(p));
-                            let prompt = `Read the rules explicitly from ${path.join(sqlserverSkillDir, 'SKILL.md')}. Evaluate the following ${actualBatchSize} Microsoft SQL Server cumulative patches according to the strict LLM evaluation rules in section 4 of that file.
+                            let prompt = `Read the rules explicitly from ${path.join(sqlserverSkillDir, 'SKILL.md')}. Evaluate the following ${actualBatchSize} Microsoft SQL Server VERSION GROUPS according to the strict LLM evaluation rules in section 4 of that file.
 CRITICAL MANDATE: DO NOT USE ANY TOOLS TO READ OR SEARCH THE WORKSPACE JSON FILES. Do not parse patches_for_llm_review_sqlserver.json. IGNORE ANY PREVIOUS EXAMPLES or RAG retrievals. You must ONLY base your summary on the literal text provided below in [BATCH DATA].
-CRITICAL RULE FOR DESCRIPTIONS: The 'Description' and 'KoreanDescription' fields MUST be a concise, executive summary of the cumulative update. Focus on the most critical security vulnerabilities (top 10 CVEs) and bug fixes (top 5 fixes) included.
-Return ONLY a pure JSON array with EXACTLY ${actualBatchSize} objects. Each object MUST contain exactly: 'IssueID', 'Component', 'Version', 'Vendor', 'Date', 'Criticality', 'Description', 'KoreanDescription', and optionally 'Decision' and 'Reason'. For Vendor use 'Microsoft'. For Component use 'SQL Server'. Do NOT skip evaluation steps.\n\n[BATCH DATA]:\n${JSON.stringify(prunedBatch)}`;
+INPUT FORMAT: Each entry in [BATCH DATA] is a VERSION GROUP containing a 'patches' array of monthly cumulative updates for that SQL Server version. The group's patch_id is in the format 'SQLS-GROUP-<version>'.
+SELECTION RULE: For each VERSION GROUP, select the SINGLE MOST RECENT monthly patch (from the 'patches' array) that contains a fix for a critical security vulnerability or critical system stability issue. If no patch in the group meets critical criteria, EXCLUDE the entire group (set Decision to 'Exclude').
+OUTPUT RULE: Return EXACTLY ${actualBatchSize} objects (one per input VERSION GROUP). IssueID = the GROUP's patch_id (e.g. 'SQLS-GROUP-SQL_Server_2022'). Version = the CU number/KB of the SELECTED monthly patch. OsVersion = the SQL Server version string.
+CRITICAL RULE FOR DESCRIPTIONS: The 'Description' and 'KoreanDescription' fields MUST be a concise 1-2 sentence executive summary of WHY the selected patch is critical. Focus on the specific critical vulnerability or stability issue fixed.
+Each object MUST contain exactly: 'IssueID', 'Component', 'Version', 'Vendor', 'OsVersion', 'Date', 'Criticality', 'Description', 'KoreanDescription', 'Decision', 'Reason'. For Vendor use 'Microsoft'. For Component use 'SQL Server'.\n\n[BATCH DATA]:\n${JSON.stringify(prunedBatch)}`;
                             fs.writeFileSync(path.join(sqlserverSkillDir, `debug_prompt_${batchIndex}.txt`), prompt);
 
                             let parsedJson: any = null;
@@ -529,8 +532,8 @@ Return ONLY a pure JSON array with EXACTLY ${actualBatchSize} objects. Each obje
                                     if (textContents.toLowerCase().includes('rate limit')) throw new Error('AI_REVIEW_FAILED: Rate Limit');
                                     parsedJson = extractJsonArray(textContents);
                                     if (!parsedJson) throw new Error('No JSON array in AI output');
-                                    if (!Array.isArray(parsedJson) || parsedJson.length !== actualBatchSize) {
-                                        throw new Error(`Expected array of length ${actualBatchSize}, but got ${Array.isArray(parsedJson) ? parsedJson.length : 'non-array'}`);
+                                    if (!Array.isArray(parsedJson) || parsedJson.length === 0) {
+                                        throw new Error(`Expected non-empty array, but got ${Array.isArray(parsedJson) ? 'empty array' : 'non-array'}`);
                                     }
 
                                     for(const item of parsedJson) {
@@ -562,7 +565,7 @@ Return ONLY a pure JSON array with EXACTLY ${actualBatchSize} objects. Each obje
                                         throw err;
                                     }
                                     if (attempt <= MAX_AI_RETRIES) {
-                                        prompt += `\n\nPrevious attempt failed. Fix this error and resubmit: ${err.message}\nReturn ONLY a JSON array with EXACTLY ${actualBatchSize} objects.`;
+                                        prompt += `\n\nPrevious attempt failed. Fix this error and resubmit: ${err.message}\nReturn ONLY a JSON array with ONE object per input VERSION GROUP.`;
                                         await job.log(`  -> Attempt ${attempt} failed for batch ${batchIndex}, retrying...`);
                                     } else {
                                         await job.log(`[SKIP] Batch ${batchIndex} permanently failed after ${MAX_AI_RETRIES} retries.`);
@@ -944,7 +947,7 @@ Return ONLY a pure JSON array with EXACTLY ${actualBatchSize} objects. Each obje
                         if (!isResumeMode && !isAiOnly) {
                             await job.updateProgress(10);
                             await job.log('[WINDOWS-PIPELINE] Starting Windows Server patch preprocessing...');
-                            await runWindowsStream('python3', ['windows_preprocessing.py', '--days', '180'], {
+                            await runWindowsStream('python3', ['windows_preprocessing.py', '--days', '180', '--days_end', '90'], {
                                 'LLM 리뷰용 JSON 저장': 40,
                                 'Windows Server Patch Preprocessor 시작': 15,
                             });
@@ -1024,10 +1027,13 @@ Return ONLY a pure JSON array with EXACTLY ${actualBatchSize} objects. Each obje
                             await job.log(`[WINDOWS-AI Analysis] Processing batch ${batchIndex}/${totalBatches} (${actualBatchSize} patches): ${batchNames}`);
 
                             const prunedBatch = batch.map((p: any) => prunePatchWindows(p));
-                            let prompt = `Read the rules explicitly from ${path.join(windowsSkillDir, 'SKILL.md')}. Evaluate the following ${actualBatchSize} Windows Server patches according to the strict LLM evaluation rules in section 4 of that file.
+                            let prompt = `Read the rules explicitly from ${path.join(windowsSkillDir, 'SKILL.md')}. Evaluate the following ${actualBatchSize} Windows Server VERSION GROUPS according to the strict LLM evaluation rules in section 4 of that file.
 CRITICAL MANDATE: DO NOT USE ANY TOOLS TO READ OR SEARCH THE WORKSPACE JSON FILES. Do not parse patches_for_llm_review_windows.json. IGNORE ANY PREVIOUS EXAMPLES or RAG retrievals. You must ONLY base your summary on the literal text provided below in [BATCH DATA].
-CRITICAL RULE FOR DESCRIPTIONS: The 'Description' and 'KoreanDescription' fields MUST be a concise, executive summary of the update. DO NOT list all CVEs or copy raw changelogs.
-Return ONLY a pure JSON array with EXACTLY ${actualBatchSize} objects. Each object MUST contain exactly: 'IssueID', 'Component', 'Version', 'Vendor', 'Date', 'Criticality', 'Description', 'KoreanDescription', and optionally 'Decision' and 'Reason'. For Vendor use 'Windows Server'. Do NOT skip evaluation steps.\\n\\n[BATCH DATA]:\\n${JSON.stringify(prunedBatch)}`;
+INPUT FORMAT: Each entry in [BATCH DATA] is a VERSION GROUP containing a 'patches' array of monthly cumulative updates for that Windows Server version. The group's patch_id is in the format 'WINDOWS-GROUP-<version>'.
+SELECTION RULE: For each VERSION GROUP, select the SINGLE MOST RECENT monthly patch (from the 'patches' array) that contains a fix for a critical security vulnerability or critical system stability issue. If no patch in the group meets critical criteria, EXCLUDE the entire group (set Decision to 'Exclude').
+OUTPUT RULE: Return EXACTLY ${actualBatchSize} objects (one per input VERSION GROUP). IssueID = the GROUP's patch_id (e.g. 'WINDOWS-GROUP-Windows_Server_2025'). Version = the KB number of the SELECTED monthly patch (e.g. 'KB5058385'). OsVersion = the Windows Server version string.
+CRITICAL RULE FOR DESCRIPTIONS: The 'Description' and 'KoreanDescription' fields MUST be a concise 1-2 sentence executive summary of WHY the selected patch is critical. Focus on the specific critical vulnerability or stability issue fixed.
+Each object MUST contain exactly: 'IssueID', 'Component', 'Version', 'Vendor', 'OsVersion', 'Date', 'Criticality', 'Description', 'KoreanDescription', 'Decision', 'Reason'. For Vendor use 'Windows Server'. For Component use 'cumulative-update'.\n\n[BATCH DATA]:\n${JSON.stringify(prunedBatch)}`;
                             fs.writeFileSync(path.join(windowsSkillDir, `debug_prompt_${batchIndex}.txt`), prompt);
 
                             let parsedJson: any = null;
@@ -1059,8 +1065,8 @@ Return ONLY a pure JSON array with EXACTLY ${actualBatchSize} objects. Each obje
                                     if (textContents.toLowerCase().includes('rate limit')) throw new Error('AI_REVIEW_FAILED: Rate Limit');
                                     parsedJson = extractJsonArray(textContents);
                                     if (!parsedJson) throw new Error('No JSON array in AI output');
-                                    if (!Array.isArray(parsedJson) || parsedJson.length !== actualBatchSize) {
-                                        throw new Error(`Expected array of length ${actualBatchSize}, but got ${Array.isArray(parsedJson) ? parsedJson.length : 'non-array'}`);
+                                    if (!Array.isArray(parsedJson) || parsedJson.length === 0) {
+                                        throw new Error(`Expected non-empty array, but got ${Array.isArray(parsedJson) ? 'empty array' : 'non-array'}`);
                                     }
 
                                     for(const item of parsedJson) {
@@ -1092,7 +1098,7 @@ Return ONLY a pure JSON array with EXACTLY ${actualBatchSize} objects. Each obje
                                         throw err;
                                     }
                                     if (attempt <= MAX_AI_RETRIES) {
-                                        prompt += `\n\nPrevious attempt failed. Fix this error and resubmit: ${err.message}\nReturn ONLY a JSON array with EXACTLY ${actualBatchSize} objects.`;
+                                        prompt += `\n\nPrevious attempt failed. Fix this error and resubmit: ${err.message}\nReturn ONLY a JSON array with ONE object per input VERSION GROUP.`;
                                         await job.log(`  -> Attempt ${attempt} failed for batch ${batchIndex}, retrying...`);
                                     } else {
                                         await job.log(`[SKIP] Batch ${batchIndex} permanently failed after ${MAX_AI_RETRIES} retries.`);

@@ -1,6 +1,6 @@
 ---
 name: Patch Review Board (PRB) Operation
-description: Instructions for AI Agents to perform the quarterly OS Patch Review process for Red Hat, Oracle Linux, and Ubuntu.
+description: Instructions for AI Agents to perform the quarterly OS Patch Review process for Red Hat, Oracle Linux, Ubuntu, and Windows Server.
 ---
 
 # Patch Review Board (PRB) Operation
@@ -9,54 +9,70 @@ This skill guides the AI Agent through the end-to-end process of generating a va
 
 ## 1. Prerequisites & Setup
 
-Ensure the following scripts are available in your workspace (or download them from the internal repository `github.com/my-org/patch-review-automation`):
+Ensure the following scripts are available in your workspace (GitHub: `https://github.com/pjhwa/patch-review-dashboard-v2`, under `patch-review/os/linux-v2/`):
 
-- `batch_collector.js` (Data Collection)
-- `patch_preprocessing.py` (Pruning & Aggregation)
+**Linux OS Collectors (per-vendor, run via CRON):**
+- `redhat/rhsa_collector.js` — Red Hat Security Advisories (CSAF API)
+- `redhat/rhba_collector.js` — Red Hat Bug Fix Advisories (Hydra API)
+- `oracle/oracle_collector.sh` + `oracle/oracle_parser.py` — Oracle Linux (yum updateinfo.xml)
+- `ubuntu/ubuntu_collector.sh` — Ubuntu (Canonical GitHub clone + jq)
+
+**Preprocessing:**
+- `patch_preprocessing.py` (Pruning & Aggregation — triggered by Dashboard pipeline)
+
+> [!NOTE]
+> **Orchestration:** All Linux collectors are invoked by `run_collectors_cron.sh` and scheduled via Linux CRON on the server. Data collection runs **independently** from the AI review pipeline and cannot be manually triggered from the Dashboard.
 
 ## 2. Process Workflow
 
 ### Step 1: Data Collection & Ingestion
-Execute the collection scripts to gather the latest advisory data from vendor sources (RSS/Web).
+Data collection is fully automated via **Linux CRON** (3rd Sunday of Mar/Jun/Sep/Dec at 06:00). Each vendor has a dedicated collector script that writes normalized advisory JSON files to its own data directory.
 
+| Vendor | Collector | Output Directory |
+|--------|-----------|-----------------|
+| Red Hat | `redhat/rhsa_collector.js` (CSAF API) + `redhat/rhba_collector.js` (Hydra API) | `redhat/redhat_data/` |
+| Oracle Linux | `oracle/oracle_collector.sh` + `oracle/oracle_parser.py` (yum updateinfo.xml) | `oracle/oracle_data/` |
+| Ubuntu | `ubuntu/ubuntu_collector.sh` (Canonical GitHub + jq) | `ubuntu/ubuntu_data/` |
+
+**Key collection behaviors:**
+- **Lookback period**: 180 days (6 months) per collector
+- **Incremental mode**: Already-collected advisory IDs are skipped automatically
+- **Retry logic**: Each collector retries failed requests with backoff before skipping
+
+**To manually trigger collection (server only):**
 ```bash
-# Option A: Collect by quarter (recommended for scheduled PRB)
-node batch_collector.js --quarter 2026-Q1
-
-# Option B: Collect last N days (default: 90 days from today)
-node batch_collector.js --days 90
-
-# Option C: Default mode (no args = last 90 days)
-node batch_collector.js
+cd /home/citec/.openclaw/workspace/skills/patch-review/os/linux-v2
+bash run_collectors_cron.sh
 ```
-*Goal: Ensure `batch_data/` is populated with advisory JSON files.*
 
-> [!NOTE]
-> **Date Range Logic:** `--quarter 2026-Q1` collects from **December 1, 2025** (1-month buffer before Q1) through **March 31, 2026**. `--days 90` collects from 90 days before today, snapped to the first of that month.
+*Goal: Ensure `redhat/redhat_data/`, `oracle/oracle_data/`, `ubuntu/ubuntu_data/` are populated with advisory JSON files before running the preprocessing step.*
 
 > [!IMPORTANT]
-> **Timeout Failure Handling (v9+):**
-> The collector automatically retries failed advisories once with a 3-second backoff. If an advisory still fails (e.g., website timeout), it is **skipped** and recorded in `batch_data/collection_failures.json`.
->
-> **After collection completes:**
-> 1. Check the console output for `[REPORT] ⚠ N advisory(ies) failed to collect`.
-> 2. If failures exist, open `batch_data/collection_failures.json` and review each entry.
-> 3. For each failed advisory, either:
->    - Re-run the collector later (transient network issue), or
->    - Manually visit the `url` field and save the advisory data, or
->    - Mark as "manually reviewed — not critical" and proceed.
-> 4. Document any unrecoverable failures in the final report notes.
+> **Collection is CRON-only.** Do NOT invoke collector scripts from within `queue.ts` or the Dashboard pipeline. The Dashboard pipeline (Step 2 onward) assumes collection has already been completed by CRON.
 
 ### Step 2: Pruning & Aggregation (Automated)
-Run the preprocessing script to filter out non-critical components and aggregate multiple patches. **Use the same date arguments as Step 1** to ensure consistency.
+The preprocessing script is triggered automatically by the Dashboard pipeline (`POST /api/pipeline/run` → BullMQ → `queue.ts`). It reads all vendor data directories, applies the Core Component whitelist filter, and writes results to both the database and a JSON file for LLM review.
 
 ```bash
-# Must match the date range used in Step 1:
-python3 patch_preprocessing.py --quarter 2026-Q1
-# or: python3 patch_preprocessing.py --days 90
-# or: python3 patch_preprocessing.py  (default: 90 days)
+# Triggered by queue.ts (Dashboard pipeline) — default 90-day window:
+python3 patch_preprocessing.py --days 90
+
+# Manual execution (server only):
+cd /home/citec/.openclaw/workspace/skills/patch-review/os/linux-v2
+python3 patch_preprocessing.py --days 90
+# or: python3 patch_preprocessing.py --quarter 2026-Q1
 ```
-*Goal: Generate `patches_for_llm_review.json`. This file contains the filtered, consolidated list of candidates within the target date range.*
+
+**What this step does:**
+1. Reads JSON files from `redhat/redhat_data/`, `oracle/oracle_data/`, `ubuntu/ubuntu_data/`
+2. Applies 90-day date filter (pipeline window; collectors use 180-day window)
+3. Filters against **SYSTEM_CORE_COMPONENTS whitelist** (kernel, filesystem, cluster, systemd, libvirt, etc.)
+4. Aggregates multiple updates for the same component into unified history
+5. Writes results to `PreprocessedPatch` DB table (Prisma upsert)
+6. Generates `patches_for_llm_review.json` for LLM review (Step 3)
+7. Emits `[PREPROCESS_DONE] count=N` log → Dashboard counter updates in real time
+
+*Goal: Generate `patches_for_llm_review.json` and populate `PreprocessedPatch` DB table. This file contains the filtered, consolidated list of candidates within the target date range.*
 
 ### Step 3: Impact Analysis (Actual Agent Review)
 **Action Required:** Read the `patches_for_llm_review.json` file. The Agent must **manually analyze** each candidate's `full_text` and `history` to determine if it meets the **Critical System Impact** criteria. **Do not rely on simple scripts for this step.**
@@ -152,12 +168,14 @@ Do NOT wrap the output in any markdown code blocks, just output the raw JSON arr
 **User Request:** "Run the PRB for Q1 2026."
 
 **Agent Actions:**
-1.  Run `node batch_collector.js --quarter 2026-Q1`
-2.  Run `python3 patch_preprocessing.py --quarter 2026-Q1`
+1.  *(Pre-condition)* Confirm CRON has already run `run_collectors_cron.sh` and `redhat/redhat_data/`, `oracle/oracle_data/`, `ubuntu/ubuntu_data/` contain current advisory JSON files.
+    - Manual check: `ls -lh redhat/redhat_data/ oracle/oracle_data/ ubuntu/ubuntu_data/`
+    - If collection has not run yet, manually trigger: `bash run_collectors_cron.sh`
+2.  Run preprocessing via Dashboard pipeline (`POST /api/pipeline/run`) **or** manually:
+    `python3 patch_preprocessing.py --quarter 2026-Q1`
 3.  Read `patches_for_llm_review.json`.
-4.  Check `batch_data/collection_failures.json` if any advisories failed.
-5.  *Thinking Process*:
+4.  *Thinking Process*:
     *   "Candidate: kernel-uek... Impacts: Data Loss. -> **INCLUDE**."
     *   "Candidate: python-libs... Impacts: Minor fix. -> **EXCLUDE**."
-6.  Create `patch_review_ai_report.json` with the approved JSON array list.
-7.  Notify User: "Report generated at [path]."
+5.  Create `patch_review_ai_report.json` with the approved JSON array list.
+6.  Notify User: "Report generated at [path]."

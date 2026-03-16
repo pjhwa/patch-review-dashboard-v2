@@ -23,6 +23,7 @@ export async function GET(request: Request, props: { params: Promise<{ stageId: 
         else if (productId === 'ceph') targetVendor = 'Ceph';
         else if (productId === 'mariadb') targetVendor = 'MariaDB';
         else if (productId === 'windows') targetVendor = 'Windows Server';
+        else if (productId === 'sqlserver') targetVendor = 'SQL Server';
 
         if (stageId === 'preprocessed') {
             const whereClause = targetVendor ? { vendor: targetVendor } : {};
