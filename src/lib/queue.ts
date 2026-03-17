@@ -241,6 +241,8 @@ Return ONLY a pure JSON array with EXACTLY ${actualBatchSize} objects. Each obje
                                         if (fs.existsSync(sessionsDir)) {
                                             const oldFiles = fs.readdirSync(sessionsDir).filter((f: string) => f.endsWith('.lock') || f.includes('.jsonl'));
                                             for (const lf of oldFiles) fs.rmSync(path.join(sessionsDir, lf), { force: true });
+                                            const sessionsJsonPath = path.join(sessionsDir, 'sessions.json');
+                                            if (fs.existsSync(sessionsJsonPath)) fs.rmSync(sessionsJsonPath, { force: true });
                                         }
                                         return await runCephStream('/home/citec/.nvm/versions/node/v22.22.0/bin/openclaw',
                                             ['agent', '--agent', 'main', '--json', '--timeout', '1800', '--session-id', `ceph_${job.id}_batch_${batchIndex}_${attempt}`, '-m', prompt],
@@ -511,6 +513,8 @@ Each object MUST contain exactly: 'IssueID', 'Component', 'Version', 'Vendor', '
                                         if (fs.existsSync(sessionsDir)) {
                                             const oldFiles = fs.readdirSync(sessionsDir).filter((f: string) => f.endsWith('.lock') || f.includes('.jsonl'));
                                             for (const lf of oldFiles) fs.rmSync(path.join(sessionsDir, lf), { force: true });
+                                            const sessionsJsonPath = path.join(sessionsDir, 'sessions.json');
+                                            if (fs.existsSync(sessionsJsonPath)) fs.rmSync(sessionsJsonPath, { force: true });
                                         }
                                         return await runSqlserverStream('/home/citec/.nvm/versions/node/v22.22.0/bin/openclaw',
                                             ['agent', '--agent', 'main', '--json', '--timeout', '1800', '--session-id', `sqlserver_${job.id}_batch_${batchIndex}_${attempt}`, '-m', prompt],
@@ -776,6 +780,8 @@ Return ONLY a pure JSON array with EXACTLY ${actualBatchSize} objects. Each obje
                                         if (fs.existsSync(sessionsDir)) {
                                             const oldFiles = fs.readdirSync(sessionsDir).filter((f: string) => f.endsWith('.lock') || f.includes('.jsonl'));
                                             for (const lf of oldFiles) fs.rmSync(path.join(sessionsDir, lf), { force: true });
+                                            const sessionsJsonPath = path.join(sessionsDir, 'sessions.json');
+                                            if (fs.existsSync(sessionsJsonPath)) fs.rmSync(sessionsJsonPath, { force: true });
                                         }
                                         return await runMariadbStream('/home/citec/.nvm/versions/node/v22.22.0/bin/openclaw',
                                             ['agent', '--agent', 'main', '--json', '--timeout', '1800', '--session-id', `mariadb_${job.id}_batch_${batchIndex}_${attempt}`, '-m', prompt],
@@ -1039,6 +1045,8 @@ Return ONLY a pure JSON array with EXACTLY ${actualBatchSize} objects. Each obje
                                         if (fs.existsSync(sessionsDir)) {
                                             const oldFiles = fs.readdirSync(sessionsDir).filter((f: string) => f.endsWith('.lock') || f.includes('.jsonl'));
                                             for (const lf of oldFiles) fs.rmSync(path.join(sessionsDir, lf), { force: true });
+                                            const sessionsJsonPath = path.join(sessionsDir, 'sessions.json');
+                                            if (fs.existsSync(sessionsJsonPath)) fs.rmSync(sessionsJsonPath, { force: true });
                                         }
                                         return await runPgsqlStream('/home/citec/.nvm/versions/node/v22.22.0/bin/openclaw',
                                             ['agent', '--agent', 'main', '--json', '--timeout', '1800', '--session-id', `pgsql_${job.id}_batch_${batchIndex}_${attempt}`, '-m', prompt],
@@ -1299,6 +1307,8 @@ Return ONLY a pure JSON array with EXACTLY ${actualBatchSize} objects. Each obje
                                         if (fs.existsSync(sessionsDir)) {
                                             const oldFiles = fs.readdirSync(sessionsDir).filter((f: string) => f.endsWith('.lock') || f.includes('.jsonl'));
                                             for (const lf of oldFiles) fs.rmSync(path.join(sessionsDir, lf), { force: true });
+                                            const sessionsJsonPath = path.join(sessionsDir, 'sessions.json');
+                                            if (fs.existsSync(sessionsJsonPath)) fs.rmSync(sessionsJsonPath, { force: true });
                                         }
                                         return await runVsphereStream('/home/citec/.nvm/versions/node/v22.22.0/bin/openclaw',
                                             ['agent', '--agent', 'main', '--json', '--timeout', '1800', '--session-id', `vsphere_${job.id}_batch_${batchIndex}_${attempt}`, '-m', prompt],
@@ -1568,6 +1578,8 @@ Each object MUST contain exactly: 'IssueID', 'Component', 'Version', 'Vendor', '
                                         if (fs.existsSync(sessionsDir)) {
                                             const oldFiles = fs.readdirSync(sessionsDir).filter((f: string) => f.endsWith('.lock') || f.includes('.jsonl'));
                                             for (const lf of oldFiles) fs.rmSync(path.join(sessionsDir, lf), { force: true });
+                                            const sessionsJsonPath = path.join(sessionsDir, 'sessions.json');
+                                            if (fs.existsSync(sessionsJsonPath)) fs.rmSync(sessionsJsonPath, { force: true });
                                         }
                                         return await runWindowsStream('/home/citec/.nvm/versions/node/v22.22.0/bin/openclaw',
                                             ['agent', '--agent', 'main', '--json', '--timeout', '1800', '--session-id', `windows_${job.id}_batch_${batchIndex}_${attempt}`, '-m', prompt],
