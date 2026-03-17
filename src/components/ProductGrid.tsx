@@ -51,45 +51,27 @@ export function ProductGrid({ categoryId, products, dict }: { categoryId: string
 
             if (streamData.log) {
                 // OS pipeline keywords
-                if (streamData.log.includes('[PREPROCESS_DONE]')) {
+                // Generic PREPROCESS_DONE handler — matches [REDHAT-PREPROCESS_DONE], [ORACLE-PREPROCESS_DONE], [UBUNTU-PREPROCESS_DONE], [CEPH-PREPROCESS_DONE] etc.
+                if (streamData.log.includes('PREPROCESS_DONE')) {
                     const match = streamData.log.match(/count=(\d+)/);
-                    const cnt = match ? match[1] : '?';
-                    setResultMsg(`✅ 전처리 완료 (${cnt}개 패치). AI 리뷰 진행 중...`);
+                    const cnt = match ? match[1] : null;
+                    // Derive product name from log tag (e.g. [REDHAT-PREPROCESS_DONE] → "REDHAT")
+                    const tagMatch = streamData.log.match(/\[(\w+)-PREPROCESS_DONE\]/);
+                    const tagName = tagMatch ? tagMatch[1] : null;
+                    const productLabel: Record<string, string> = {
+                        REDHAT: 'Red Hat', ORACLE: 'Oracle Linux', UBUNTU: 'Ubuntu',
+                        CEPH: 'Ceph', MARIADB: 'MariaDB', WINDOWS: 'Windows Server',
+                        SQLSERVER: 'SQL Server', VSPHERE: 'VMware vSphere', PGSQL: 'PostgreSQL',
+                    };
+                    const label = (tagName && productLabel[tagName]) ? productLabel[tagName] : '전처리';
+                    setResultMsg(cnt ? `✅ ${label} 전처리 완료 (${cnt}개 패치). AI 리뷰 진행 중...` : `✅ ${label} 전처리 완료. AI 리뷰 진행 중...`);
                     router.refresh();
                 } else if (streamData.log.includes('[RESUME]')) {
                     setResultMsg(`🔁 ${streamData.log.replace(/\[\w+-RESUME\]|\[RESUME\]/, '').trim()}`);
                 } else if (streamData.log.includes('[SKIP-RESUME]')) {
                     setResultMsg(`⏭️ ${streamData.log.replace(/\[\w+-SKIP-RESUME\]|\[SKIP-RESUME\]/, '').trim()}`);
-                // Ceph pipeline keywords
-                } else if (streamData.log.includes('[CEPH-PREPROCESS_DONE]')) {
-                    setResultMsg(`✅ Ceph 전처리 완료. AI 리뷰 진행 중...`);
-                    router.refresh();
-                } else if (streamData.log.includes('[MARIADB-PREPROCESS_DONE]')) {
-                    setResultMsg(`✅ MariaDB 전처리 완료. AI 리뷰 진행 중...`);
-                    router.refresh();
-                } else if (streamData.log.includes('[WINDOWS-PREPROCESS_DONE]')) {
-                    setResultMsg(`✅ Windows Server 전처리 완료. AI 리뷰 진행 중...`);
-                    router.refresh();
-                } else if (streamData.log.includes('[SQLSERVER-PREPROCESS_DONE]')) {
-                    setResultMsg(`✅ SQL Server 전처리 완료. AI 리뷰 진행 중...`);
-                    router.refresh();
-                } else if (streamData.log.includes('[VSPHERE-PREPROCESS_DONE]')) {
-                    setResultMsg(`✅ VMware vSphere 전처리 완료. AI 리뷰 진행 중...`);
-                    router.refresh();
-                } else if (streamData.log.includes('[PGSQL-PREPROCESS_DONE]')) {
-                    setResultMsg(`✅ PostgreSQL 전처리 완료. AI 리뷰 진행 중...`);
-                    router.refresh();
-                } else if (streamData.log.includes('[CEPH-PIPELINE]') || streamData.log.includes('[CEPH-AI Analysis]')) {
-                    setResultMsg(`🤖 ${streamData.log}`);
-                } else if (streamData.log.includes('[MARIADB-PIPELINE]') || streamData.log.includes('[MARIADB-AI Analysis]')) {
-                    setResultMsg(`🤖 ${streamData.log}`);
-                } else if (streamData.log.includes('[WINDOWS-PIPELINE]') || streamData.log.includes('[WINDOWS-AI]')) {
-                    setResultMsg(`🤖 ${streamData.log}`);
-                } else if (streamData.log.includes('[SQLSERVER-PIPELINE]') || streamData.log.includes('[SQLSERVER-AI Analysis]')) {
-                    setResultMsg(`🤖 ${streamData.log}`);
-                } else if (streamData.log.includes('[VSPHERE-PIPELINE]') || streamData.log.includes('[VSPHERE-AI Analysis]')) {
-                    setResultMsg(`🤖 ${streamData.log}`);
-                } else if (streamData.log.includes('[PGSQL-PIPELINE]') || streamData.log.includes('[PGSQL-AI Analysis]')) {
+                // Generic pipeline progress — matches [REDHAT-PIPELINE], [REDHAT-AI Analysis], [CEPH-PIPELINE] etc.
+                } else if (streamData.log.match(/\[\w+-PIPELINE\]|\[\w+-AI Analysis\]|\[\w+-AI\]/)) {
                     setResultMsg(`🤖 ${streamData.log}`);
                 } else if (streamData.log.includes('[AI Analysis]') || streamData.log.includes('[SKIP]')) {
                     setResultMsg(`🤖 ${streamData.log}`);
@@ -120,7 +102,7 @@ export function ProductGrid({ categoryId, products, dict }: { categoryId: string
                 source.close();
                 setActiveEventSource(null);
             } else {
-                if (streamData.message && !streamData.log?.includes('[PREPROCESS_DONE]')) {
+                if (streamData.message && !streamData.log?.includes('PREPROCESS_DONE')) {
                     setResultMsg(streamData.message);
                 } else if (!streamData.log) {
                     if (streamData.status === 'active') {
@@ -178,7 +160,7 @@ export function ProductGrid({ categoryId, products, dict }: { categoryId: string
                 body: JSON.stringify(
                     (categoryId === 'storage' || categoryId === 'virtualization')
                         ? { isRetry, isAiOnly }
-                        : { providers: [productId === 'windows' || productId === 'solaris' ? 'rhel' : productId], isRetry, isAiOnly }
+                        : { providers: [productId], isRetry, isAiOnly }
                 )
             });
 

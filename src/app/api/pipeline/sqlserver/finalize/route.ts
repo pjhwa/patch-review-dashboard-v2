@@ -9,9 +9,9 @@ export async function POST(req: Request) {
         const body = await req.json();
         const { approvedIssueIds } = body;
 
-        const vsphereSkillDir = path.join(os.homedir(), '.openclaw/workspace/skills/patch-review/virtualization/vsphere');
-        const sourceJsonPath = path.join(vsphereSkillDir, 'patch_review_ai_report_vsphere.json');
-        const outputCsvPath = path.join(vsphereSkillDir, 'final_approved_patches_vsphere.csv');
+        const sqlserverSkillDir = path.join(os.homedir(), '.openclaw/workspace/skills/patch-review/database/sqlserver');
+        const sourceJsonPath = path.join(sqlserverSkillDir, 'patch_review_ai_report_sqlserver.json');
+        const outputCsvPath = path.join(sqlserverSkillDir, 'final_approved_patches_sqlserver.csv');
 
         // Verify AI reviewed data exists
         try {
@@ -39,7 +39,7 @@ export async function POST(req: Request) {
 
         return NextResponse.json({
             success: true,
-            message: `Finalized ${approvedPatches.length} VMware vSphere patches.`,
+            message: `Finalized ${approvedPatches.length} SQL Server patches.`,
             count: approvedPatches.length,
             outputPath: outputCsvPath,
         });

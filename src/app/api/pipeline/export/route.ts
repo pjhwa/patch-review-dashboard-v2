@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/db';
 import Papa from 'papaparse';
+import { PRODUCT_REGISTRY } from '@/lib/products-registry';
 
 export const dynamic = 'force-dynamic';
 
@@ -19,25 +20,17 @@ export async function GET(req: Request) {
         let vendorFilters: string[] = [];
         if (productId && productId !== 'all') {
             filename = `Final_Approved_Patches_${categoryId}_${productId}.csv`;
-            if (productId === 'redhat') vendorFilters.push('Red Hat');
-            else if (productId === 'oracle') vendorFilters.push('Oracle');
-            else if (productId === 'ubuntu') vendorFilters.push('Ubuntu');
-            else if (productId === 'windows') vendorFilters.push('Windows Server');
-            else if (productId === 'ceph') vendorFilters.push('Ceph');
-            else if (productId === 'mariadb') vendorFilters.push('MariaDB');
-            else if (productId === 'vsphere') vendorFilters.push('VMware vSphere');
-            else if (productId === 'pgsql') vendorFilters.push('PostgreSQL');
-        } else {
-            // "all" meaning all vendors in the category
-            if (categoryId === 'os') {
-                vendorFilters.push('Red Hat', 'Oracle', 'Ubuntu', 'Windows Server');
-            } else if (categoryId === 'storage') {
-                vendorFilters.push('Ceph');
-            } else if (categoryId === 'database') {
-                vendorFilters.push('MariaDB', 'SQL Server', 'PostgreSQL');
-            } else if (categoryId === 'virtualization') {
-                vendorFilters.push('VMware vSphere');
+            // Look up vendor string from registry
+            const productCfg = PRODUCT_REGISTRY.find(p => p.id === productId);
+            if (productCfg) {
+                vendorFilters.push(productCfg.vendorString);
             }
+        } else {
+            // "all" meaning all active vendors in the category
+            const categoryProducts = PRODUCT_REGISTRY.filter(
+                p => p.active && p.category === categoryId
+            );
+            vendorFilters = categoryProducts.map(p => p.vendorString);
         }
 
         const whereClause = vendorFilters.length > 0 ? {

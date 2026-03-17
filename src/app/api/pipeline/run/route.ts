@@ -6,6 +6,14 @@ import util from 'util';
 
 const execPromise = util.promisify(exec);
 
+// Map provider names to their job names
+const PROVIDER_TO_JOB: Record<string, string> = {
+    redhat: 'run-redhat-pipeline',
+    oracle: 'run-oracle-pipeline',
+    ubuntu: 'run-ubuntu-pipeline',
+    // windows has its own run route at /api/pipeline/windows/run
+};
+
 export async function POST(request: Request) {
     try {
         const body = await request.json();
@@ -43,13 +51,33 @@ export async function POST(request: Request) {
             await prisma.reviewedPatch.deleteMany({});
         }
 
-        // Enqueue to BullMQ
-        const job = await pipelineQueue.add('run-pipeline', { providers, isRetry, isAiOnly });
+        // Determine which providers to enqueue
+        const providerList: string[] = Array.isArray(providers) && providers.length > 0
+            ? providers
+            : ['redhat', 'oracle', 'ubuntu'];
+
+        // Enqueue one job per provider (redhat/oracle/ubuntu each get separate jobs)
+        const linuxProviders = providerList.filter(p => PROVIDER_TO_JOB[p]);
+        const jobs = [];
+
+        for (const provider of linuxProviders) {
+            const jobName = PROVIDER_TO_JOB[provider];
+            const job = await pipelineQueue.add(jobName, { providers: [provider], isRetry, isAiOnly, category: 'os' });
+            jobs.push({ provider, jobId: job.id });
+            console.log(`Enqueued ${jobName} (jobId: ${job.id})`);
+        }
+
+        // Fallback: if no known providers, fall back to legacy run-pipeline for manual-review compatibility
+        if (jobs.length === 0) {
+            const job = await pipelineQueue.add('run-pipeline', { providers, isRetry, isAiOnly });
+            jobs.push({ provider: 'legacy', jobId: job.id });
+        }
 
         return NextResponse.json({
             success: true,
             message: "Pipeline added to queue",
-            jobId: job.id
+            jobId: jobs[0]?.jobId,
+            jobs,
         });
     } catch (e: any) {
         return NextResponse.json({ success: false, error: e.message }, { status: 500 });

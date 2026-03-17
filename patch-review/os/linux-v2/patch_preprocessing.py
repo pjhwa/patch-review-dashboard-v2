@@ -12,6 +12,11 @@ import argparse
 # It does NOT perform the review. It performs the mechanical PRE-PROCESSING 
 # (Collection, Pruning, Aggregation) to prepare a clean dataset for the AI Agent (LLM) to review.
 
+JSON_DIRS_ALL = {
+    "redhat": [os.path.join("redhat", "redhat_data")],
+    "oracle": [os.path.join("oracle", "oracle_data")],
+    "ubuntu": [os.path.join("ubuntu", "ubuntu_data")],
+}
 JSON_DIRS = [os.path.join("redhat", "redhat_data"), os.path.join("oracle", "oracle_data"), os.path.join("ubuntu", "ubuntu_data")]
 OUTPUT_FILE = "patches_for_llm_review.json"
 
@@ -366,19 +371,31 @@ def is_system_critical(vendor, component, text):
 def preprocess_patches():
     parser = argparse.ArgumentParser(description="Pre-process collected patches for AI review.")
     parser.add_argument('--days', type=int, default=90, help="Number of days to look back for analysis.")
+    parser.add_argument('--vendor', type=str, default=None,
+                        help="Vendor to process: 'redhat', 'oracle', or 'ubuntu'. If not set, processes all vendors.")
     args = parser.parse_args()
-    
+
+    # Determine which directories and output file to use based on vendor argument
+    vendor_arg = args.vendor.lower() if args.vendor else None
+    if vendor_arg and vendor_arg in JSON_DIRS_ALL:
+        active_dirs = JSON_DIRS_ALL[vendor_arg]
+        output_file = f"patches_for_llm_review_{vendor_arg}.json"
+        print(f"[PREPROCESS] Vendor filter: {vendor_arg} -> dirs: {active_dirs}, output: {output_file}")
+    else:
+        active_dirs = JSON_DIRS
+        output_file = OUTPUT_FILE
+
     cutoff_date = datetime.now() - timedelta(days=args.days)
     print(f"[PREPROCESS] Filter cutoff: Processing patches strictly newer than {cutoff_date.strftime('%Y-%m-%d')} ({args.days} days)")
-    
+
     print("Loading data from directories...")
-    
+
     raw_list = []
     dropped_audit_log = []
-    
+
     # --- Step 1: Ingest JSONs directly ---
     json_files = []
-    for d in JSON_DIRS:
+    for d in active_dirs:
         if os.path.isdir(d):
             json_files.extend(sorted(glob.glob(os.path.join(d, "*.json"))))
     print(f"Found {len(json_files)} JSON files.")
@@ -672,10 +689,10 @@ def preprocess_patches():
         
     print(f"Final Candidates for LLM: {len(final_candidates)}")
     
-    with open(OUTPUT_FILE, 'w', encoding='utf-8') as f:
+    with open(output_file, 'w', encoding='utf-8') as f:
         json.dump(final_candidates, f, indent=2, ensure_ascii=False)
-        
-    print(f"Saved review packet to {OUTPUT_FILE}")
+
+    print(f"Saved review packet to {output_file}")
 
     # --- Step 3.5: Save Audit Log of Dropped Patches ---
     audit_file = "dropped_patches_audit.csv"

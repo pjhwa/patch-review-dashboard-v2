@@ -179,3 +179,102 @@ Do NOT wrap the output in any markdown code blocks, just output the raw JSON arr
     *   "Candidate: python-libs... Impacts: Minor fix. -> **EXCLUDE**."
 5.  Create `patch_review_ai_report.json` with the approved JSON array list.
 6.  Notify User: "Report generated at [path]."
+
+## 4. Strict LLM Evaluation Rules
+
+These rules apply to all Linux vendor pipelines (Red Hat, Oracle Linux, Ubuntu). The AI must evaluate each patch according to this section.
+
+### 4.1 Inclusion Criteria
+
+Include a patch ONLY if it meets at least one of the following:
+- **System Hang/Crash**: Kernel panics, deadlocks, OOM kills, boot failures.
+- **Data Loss/Corruption**: Filesystem errors, RAID failures, write barriers, data integrity.
+- **Critical Performance**: Severe memory leak or CPU regression affecting service capability.
+- **Security (Critical)**: RCE (Remote Code Execution), Privilege Escalation (Root), Authentication Bypass.
+- **Failover Failure**: Issues affecting HA clusters (Pacemaker, Corosync, keepalived).
+- **Hardware Compatibility**: Firmware or driver issues causing hardware failure or data loss.
+
+### 4.2 Exclusion Criteria
+
+Exclude a patch if:
+- It is a minor bug fix (typos, log messages, edge cases not affecting stability).
+- It is a "Moderate" security issue (local DoS, info disclosure) with limited impact.
+- **Ubuntu**: Only affects non-LTS versions (e.g., 25.10, 24.10). Must support LTS (24.04, 22.04, 20.04).
+- The patch is already superseded by a newer critical patch for the same component.
+
+### 4.3 Output Format (JSON Schema)
+
+Return ONLY a pure JSON array. Each object must have exactly these fields:
+```json
+{
+  "IssueID": "RHSA-2026-1234 or USN-7851-2 or ELSA-2026-0001",
+  "Component": "kernel (or specific component name)",
+  "Version": "exact version from specific_version field",
+  "Vendor": "Red Hat | Oracle | Ubuntu",
+  "Date": "YYYY-MM-DD",
+  "Criticality": "Critical | High | Moderate | Low",
+  "Description": "1-2 sentence English executive summary",
+  "KoreanDescription": "1-2 sentence Korean executive summary",
+  "Decision": "Approve | Exclude",
+  "Reason": "Brief justification"
+}
+```
+
+### 4.4 General Rules
+
+- Return EXACTLY the same number of objects as input patches in the batch.
+- For `Vendor` field: use exactly `"Red Hat"`, `"Oracle"`, or `"Ubuntu"` (no abbreviations).
+- For `Version` field: ALWAYS use the exact value from `specific_version` field in source data. NEVER output "Unknown" or placeholder strings.
+- For `OsVersion` field: preserve the `os_version` field from source JSON as-is.
+- Do NOT include raw `.patch` filenames, CVE IDs list, or changelog copy-pastes in descriptions.
+- Do NOT make up CVE numbers or version numbers.
+
+### 4.5 Hallucination Prevention Rules
+
+- NEVER invent CVE numbers not present in the source data.
+- NEVER guess version numbers — use `specific_version` or `patch_name_suggestion` exactly.
+- NEVER say "See the following advisory" — write actual content.
+- NEVER output generic descriptions like "Security update for kernel".
+- If `specific_version` is empty, use the latest version from `history` array.
+- For multi-distribution patches, combine OS versions as a single comma-separated string.
+
+## 5. Output Validation Rules
+
+Before submitting your JSON response, verify:
+1. Array length exactly matches the batch size.
+2. Every object has all required fields (IssueID, Component, Version, Vendor, Date, Criticality, Description, KoreanDescription).
+3. `IssueID` matches the source advisory ID (not made up).
+4. `Version` is not "Unknown", not empty, not a placeholder string.
+5. `Vendor` is exactly "Red Hat", "Oracle", or "Ubuntu" (case-sensitive).
+6. Descriptions are 1-2 sentences maximum and contain no raw changelog snippets.
+
+## 6. Vendor-Specific Rules
+
+### 6.1 Red Hat (RHSA-*/RHBA-*)
+
+- **Advisories**: RHSA (Security), RHBA (Bug Fix) from CSAF API and Hydra API.
+- **Data location**: `redhat/redhat_data/` — files prefixed `RHSA-` or `RHBA-`.
+- **Core whitelist**: kernel, kernel-uek, filesystem (xfs, ext4, btrfs), cluster tools (pacemaker, corosync), systemd, libvirt, glibc.
+- **Vendor value**: `"Red Hat"` (not "RHEL" or "Red Hat Enterprise Linux").
+- **Version**: Use `specific_version` from source. Format: `"kernel-5.14.0-503.26.2.el9_5"`.
+- **IssueID format**: `"RHSA-2026:1234"` or `"RHBA-2026:1234"`.
+- **Exclusion**: RHBA advisories for cosmetic/documentation changes only.
+
+### 6.2 Oracle Linux (ELSA-*)
+
+- **Advisories**: ELSA (Oracle Linux Security Advisories) from yum updateinfo.xml.
+- **Data location**: `oracle/oracle_data/` — files prefixed `ELSA-`.
+- **Vendor value**: `"Oracle"` (not "Oracle Linux").
+- **Version**: Use `specific_version` from source. Oracle mirrors RHEL package versions closely.
+- **IssueID format**: `"ELSA-2026-1234"`.
+- **Note**: Oracle Linux uses UEK (Unbreakable Enterprise Kernel) alongside RHCK. Both are valid.
+
+### 6.3 Ubuntu (USN-*)
+
+- **Advisories**: USN (Ubuntu Security Notices) from Canonical GitHub.
+- **Data location**: `ubuntu/ubuntu_data/` — files prefixed `USN-`.
+- **Vendor value**: `"Ubuntu"` (not "Canonical").
+- **LTS ONLY**: Only include patches affecting LTS versions (24.04, 22.04, 20.04). Skip 25.10, 24.10.
+- **Variant USNs**: Some USNs cover FIPS, GCP, NVIDIA, or Tegra kernels only. Include if relevant to server environments.
+- **IssueID format**: `"USN-7851-2"`.
+- **Version**: Use `specific_version` or the version from the `packages` array for the target LTS release.

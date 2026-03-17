@@ -53,7 +53,9 @@ server.log
 **/node_modules
 **/__pycache__
 **/archive
+**/venv
 
 # Patch Data (Prevent massive JSON pushes, allow only samples)
 *_data/*
 !*_data/*.sample.json
+ubuntu-security-notices/

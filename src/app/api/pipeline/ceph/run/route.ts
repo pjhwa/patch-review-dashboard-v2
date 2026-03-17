@@ -40,7 +40,7 @@ export async function POST(request: Request) {
             }
         }
 
-        const job = await pipelineQueue.add('run-ceph-pipeline', { isRetry, isAiOnly, category: 'ceph' });
+        const job = await pipelineQueue.add('run-ceph-pipeline', { isRetry, isAiOnly, category: 'storage' });
 
         return NextResponse.json({
             success: true,
