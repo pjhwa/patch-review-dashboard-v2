@@ -123,12 +123,24 @@ def preprocess():
         # Build patches array
         patches_array = []
         for p in patches_sorted:
+            # Strip verbose/boilerplate fields from CVEs to keep prompt size manageable
+            trimmed_cves = []
+            for cve in p.get('top_10_cves', []):
+                trimmed_cves.append({
+                    'cve': cve.get('cve', ''),
+                    'title': cve.get('title', ''),
+                    'description': cve.get('description', ''),
+                    'impact': cve.get('impact', ''),
+                    'severity': cve.get('severity', ''),
+                    'cvss_base_score': cve.get('cvss_base_score', 0),
+                    'is_actively_exploited': cve.get('is_actively_exploited', False),
+                })
             patches_array.append({
                 'patch_id': p['patch_id'],
                 'kb': p.get('kb', ''),
                 'date': p.get('date', ''),
                 'severity': p.get('severity', 'Moderate'),
-                'top_10_cves': p.get('top_10_cves', []),
+                'top_10_cves': trimmed_cves,
                 'top_5_bug_fixes': p.get('top_5_bug_fixes', []),
                 'known_issues': p.get('known_issues', []),
             })

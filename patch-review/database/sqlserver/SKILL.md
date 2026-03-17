@@ -81,3 +81,45 @@ Output the final review decision strictly as a JSON Data file named `patch_revie
 
 - **Decision Logic**:
     - For SQL Server, since it is a cumulative patch, the decision is almost always **Approve** unless the patch is known to be retracted or extremely unstable. However, the `criticality` should reflect the highest severity of included fixes.
+
+## 3. Output Validation Rules
+
+- Output must be valid JSON only — no markdown fences, no commentary.
+- Array length must equal the number of input VERSION GROUPs.
+- All required fields must be present in each object.
+- `IssueID` must match the input `patch_id` exactly.
+
+## 4. LLM Evaluation Rules (Strict)
+
+These rules govern how the AI agent evaluates and selects SQL Server patches.
+
+### 4.1 Scope Constraint
+- Base your evaluation **ONLY** on the literal `[BATCH DATA]` provided in the prompt.
+- Do NOT use RAG retrieval, workspace files, or any external knowledge to supplement the data.
+- Do NOT read or reference any JSON files in the workspace directory.
+
+### 4.2 Selection Criteria per Version Group
+For each VERSION GROUP, identify if any monthly CU in the `patches` array addresses:
+1. **Critical/High Security**: RCE, Privilege Escalation, Auth Bypass (CVSS ≥ 7.5 preferred)
+2. **Data Integrity Risk**: Corruption, data loss, log file damage
+3. **Availability Risk**: Engine crash, deadlock, Always On / FCI failure
+4. **Critical Performance**: Severe degradation blocking production workloads
+
+If ANY of the above criteria are met by any CU in the group → **Decision: Done**, select most recent qualifying CU.
+If NONE of the criteria are met → **Decision: Exclude**, `criticality: Low`.
+
+### 4.3 Criticality Mapping
+| Condition | Criticality |
+|-----------|-------------|
+| RCE, Auth Bypass, Data Loss | Critical |
+| Privilege Escalation (CVSS ≥ 8.0), HA Failure | High |
+| Important severity CVE (CVSS 7.0–8.0) | Important |
+| Only low-severity fixes | Low |
+
+### 4.4 Output Format Enforcement
+- Return a JSON **array** (even for a single item).
+- `Version` field = KB number of the selected monthly patch (e.g., `KB5046862`).
+- `OsVersion` field = SQL Server version string (e.g., `SQL Server 2022`).
+- `Vendor` = `"Microsoft"`, `Component` = `"SQL Server"` always.
+- `KoreanDescription` must be in Korean (한국어).
+- `Description` must be in English.

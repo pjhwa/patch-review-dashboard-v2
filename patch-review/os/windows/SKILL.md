@@ -75,3 +75,31 @@ YOUR FINAL RESPONSE MUST BE A STRICT JSON ARRAY OF OBJECTS. NO MARKDOWN SHIELDIN
 ```
 
 CRITICAL RULE FOR DESCRIPTIONS: The 'Description' and 'KoreanDescription' fields MUST be a concise, executive summary of the update. DO NOT copy-paste the raw descriptions or include long lists of CVE numbers. Describe WHAT the worst impact was and WHY we need to patch it.
+
+## 5. Strict LLM Evaluation Rules
+
+### 5.1 Scope Constraint
+- Base your evaluation **ONLY** on the literal `[BATCH DATA]` provided in the prompt
+- Do NOT use RAG retrieval, workspace files, or external knowledge to supplement the data
+- Do NOT read or reference any JSON files in the workspace directory
+
+### 5.2 Selection Logic per Version Group
+For each Windows Server VERSION GROUP, scan all monthly patches in the `patches` array:
+1. If ANY patch contains Critical severity CVEs (CVSS ≥ 8.5) → **Decision: Done**, select most recent
+2. If ANY patch fixes RCE / Privilege Escalation to SYSTEM → **Decision: Done**
+3. If ANY patch contains a known actively exploited vulnerability → **Decision: Done**
+4. If all patches are Low/Moderate with CVSS < 7.0 and no HA/data loss risk → **Decision: Exclude**
+
+### 5.3 Known Issues Handling
+- If the selected patch has a **Critical Known Issue** (e.g., domain controller restart, boot failure), explicitly note it in `Reason`
+- Known issues do NOT automatically trigger `Exclude` — weigh security risk vs. stability risk
+- If a known issue is severe enough to exclude, state the known issue clearly in `Reason`
+
+### 5.4 Output Validation
+| Field | Valid Values |
+|-------|-------------|
+| `Decision` | `Done` or `Exclude` only |
+| `Criticality` | `Critical`, `High`, `Medium`, or `Low` only |
+| `Vendor` | Must be exactly `Windows Server` |
+| `IssueID` | Must match the GROUP's `patch_id` (e.g., `WINDOWS-GROUP-Windows_Server_2025`) |
+| `Version` | KB number of the selected monthly patch (e.g., `KB5046617`) |

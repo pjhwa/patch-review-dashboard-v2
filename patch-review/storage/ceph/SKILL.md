@@ -82,3 +82,33 @@ Each object MUST contain:
 - For `Vendor` always use `Ceph`
 - For `Component` use the specific Ceph component (e.g., `ceph-osd`, `ceph-rgw`, `ceph-mon`, `ceph`)
 - Descriptions must be concise executive summaries, not raw changelogs
+
+## 5. Output Validation Rules
+
+### 5.1 JSON Structure
+- Output must be a valid JSON array — no markdown fences, no explanatory text outside the array
+- Array length must equal the number of input patches exactly
+- All required fields must be present in every object
+
+### 5.2 Field Validation
+| Field | Valid Values |
+|-------|-------------|
+| `Decision` | `Include` or `Exclude` only |
+| `Criticality` | `Critical`, `High`, `Medium`, or `Low` only |
+| `Vendor` | Must be exactly `Ceph` |
+| `Date` | Format: `YYYY-MM-DD` |
+| `IssueID` | Must match the input `patch_id` exactly |
+
+### 5.3 Description Quality
+- `Description`: 1–2 sentences in English, written for a storage administrator audience
+- `KoreanDescription`: Korean translation with equivalent technical terminology
+- Both fields must identify the affected Ceph component and the risk type (data loss, DoS, RCE, etc.)
+
+### 5.4 Criticality Mapping
+| Severity Condition | Criticality |
+|-------------------|-------------|
+| Data loss, cluster crash, RCE | Critical |
+| DoS on major daemon, Auth Bypass, CVSS ≥ 8.0 | High |
+| Replication inconsistency, CVSS 7.0–8.0 | High |
+| Minor service degradation, CVSS 4.0–7.0 | Medium |
+| CVSS < 4.0, documentation only | Low |

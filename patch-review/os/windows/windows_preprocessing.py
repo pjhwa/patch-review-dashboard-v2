@@ -65,7 +65,7 @@ def synthesize_description(patch_data):
             cve = v.get("cve", "Unknown CVE")
             severity = v.get("severity", "Unknown")
             cvss = v.get("cvss_base_score", "N/A")
-            desc = v.get("description", "")
+            desc = v.get("description", "")[:300]
             parts.append(f"- **{cve}** (Severity: {severity}, CVSS: {cvss}): {desc}")
     else:
         parts.append("### Top CVEs: None reported in MSRC data.")

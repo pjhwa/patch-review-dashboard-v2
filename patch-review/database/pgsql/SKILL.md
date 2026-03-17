@@ -79,3 +79,37 @@ Each object MUST contain:
 - For `Vendor` always use `PostgreSQL`
 - For `Component` use the specific package name (e.g., `postgresql`, `postgresql-server`)
 - Descriptions must be concise executive summaries, not raw changelogs
+
+## 5. Output Validation Rules
+
+### 5.1 JSON Structure
+- Output must be a valid JSON array — no markdown fences, no explanatory text outside the array
+- Array length must equal the number of input patches exactly
+- All required fields must be present in every object
+
+### 5.2 Field Validation
+| Field | Valid Values |
+|-------|-------------|
+| `Decision` | `Include` or `Exclude` only |
+| `Criticality` | `Critical`, `High`, `Medium`, or `Low` only |
+| `Vendor` | Must be exactly `PostgreSQL` |
+| `Date` | Format: `YYYY-MM-DD` |
+| `IssueID` | Must match the input `patch_id` exactly |
+
+### 5.3 Description Quality
+- `Description`: 1–2 sentences in English, written for a database administrator audience
+- `KoreanDescription`: Korean translation with equivalent technical terminology
+- Both fields must mention the specific CVE ID (if applicable) or the fix area
+
+### 5.4 Criticality Mapping
+| Severity Condition | Criticality |
+|-------------------|-------------|
+| RCE, Auth Bypass, WAL corruption | Critical |
+| Privilege Escalation, CVSS ≥ 8.0 | High |
+| SQL Injection, index corruption, CVSS 7.0–8.0 | High |
+| Replication failure, CVSS 4.0–7.0 | Medium |
+| CVSS < 4.0, minor fixes only | Low |
+
+### 5.5 Version Field Rule
+- `Version` field must be the PostgreSQL version string (e.g., `14.14`, `16.6`)
+- If the input `patch_id` is `PGSL-2025-Nov-PostgreSQL_14`, Version should be `14.x` where x is the patch release number

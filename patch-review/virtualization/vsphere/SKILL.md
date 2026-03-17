@@ -1,82 +1,105 @@
 ---
-name: VMware vSphere Patch Review Operation
-description: Instructions for AI Agents to review and evaluate VMware vSphere security advisories and update releases for ESXi and vCenter Server.
+name: Virtualization Patch Review Helper (VMware vSphere)
+description: A set of guidelines for determining if VMware vSphere patches apply to our production systems according to defined thresholds.
 ---
 
-# VMware vSphere Patch Review Operation
+# VMware vSphere Patch Review Guidelines
 
-This skill guides the AI Agent through the process of evaluating VMware vSphere patches (security advisories and update releases) for ESXi and vCenter Server.
+This document provides strict evaluation criteria for OpenClaw agents reviewing VMware vSphere security advisories and bug fixes.
 
-## 1. Process Workflow
+## 1. Objective
+Our system automatically ingests VMware vSphere security advisories and bug fixes. Because these can contain multiple CVEs and fixes, evaluating an entire advisory could be overwhelming. The preprocessing script distills the advisory into the most critical CVEs, key bug fixes, and known issues. Your job is to decide whether this advisory is **Critical/High priority** requiring immediate deployment, or if it can be deployed in the standard patch cycle.
 
-### Step 1: Preprocessing (Automated)
-Run `vsphere_preprocessing.py` to extract key information from collected JSON files.
-```bash
-python3 vsphere_preprocessing.py --days 180
-```
-*Goal: Generate `patches_for_llm_review_vsphere.json` with normalized patch records.*
+## Review Window
+The preprocessing script covers patches released **6 to 3 months ago** (e.g., for a Q1 March review: September through December of the previous year). This quarterly lookback window ensures the most recent stable release is evaluated rather than unreleased or very recent patches.
 
-### Step 2: Impact Analysis (AI Review)
-Read `patches_for_llm_review_vsphere.json` and evaluate each patch.
+## Selection Rule (ONE per Component)
+For each vSphere component (ESXi, vCenter Server, vSAN, NSX), the AI receives ALL advisories in the review window. The AI must select the **single most recent** advisory that addresses any Critical/High criteria. Output contains **exactly ONE entry per component**.
 
-**Fields available:**
-- `patch_id`: Unique identifier (e.g., `VSPH-VMSA-2025-0016_vCenter_Server_8.0`)
-- `vendor`: `VMware (Broadcom)`
-- `product`: Product name and version (e.g., `ESXi 8.0`, `vCenter Server 7.0`)
-- `type`: `security_advisory` (VMSA CVE advisories) or `update_release` (Build/Update releases)
-- `published`: Release date
-- `severity`: Overall severity (`Critical`, `High`, `Medium`, `Low`)
-- `total_cves`: Number of CVEs addressed
-- `max_cvss`: Maximum CVSS base score
-- `description`: Detailed description of fixes and vulnerabilities
-- `url`: Link to release notes or security advisory
+## 2. Review Criteria
 
-## 3. Evaluation Context
+We must deploy out-of-band and elevate priority if the advisory fixes any of the following constraints.
 
-**Infrastructure Criticality**: ESXi and vCenter Server are foundational hypervisor infrastructure. Vulnerabilities can affect all hosted virtual machines and the entire virtualized environment.
+### Criteria for Inclusion (Critical Urgency)
+If the advisory addresses *any* of the following critical issues, it MUST be highlighted:
 
-## 4. Strict LLM Evaluation Rules
+1. **System Hang/Crash**: ESXi kernel panics, deadlocks, boot failures, unrecoverable hypervisor hangs.
+2. **Data Loss/Corruption**: vSAN datastore corruption, VM filesystem corruption, data integrity loss.
+3. **Critical Performance**: Severe CPU/Memory leak degradation affecting enterprise service capability.
+4. **Security (Critical)**: Remote Code Execution (RCE) with CVSS >= 8.5, Privilege Escalation (to root/admin) actively exploited, or severe Authentication bypass.
+5. **Failover Failure**: Issues affecting vSphere HA, vMotion, Storage vMotion, or active-active storage availability.
 
-### 4.1 Inclusion Criteria (Recommend patching if ANY of the following apply)
-- **Security Advisory (VMSA)**: Any VMSA with `advisory_severity` of Critical or High, or CVSS ≥ 7.0
-- **Actively Exploited**: Any CVE marked `is_actively_exploited: true` — ALWAYS include regardless of severity
-- **RCE / Privilege Escalation**: Any CVE enabling Remote Code Execution or Privilege Escalation on hypervisor
-- **Authentication Bypass**: Any CVE enabling unauthorized access to vCenter or ESXi
-- **Host Crash (PSOD)**: Update releases with High-severity Purple Screen of Death (PSOD) fixes
-- **Data Loss Risk**: Fixes for VM disk corruption, vSAN data loss, snapshot corruption
+### Criteria for Exclusion / Downgrade
+- If an advisory contains a **Critical Known Issue** (e.g., "After installing this update, ESXi hosts might experience network connectivity loss"), you must explicitly note this and evaluate the risk.
+- Simple feature updates or low-severity/CVSS < 7.0 CVEs do not merit out-of-band emergency patching.
 
-### 4.2 Exclusion Criteria (Exclude if ALL of the following apply)
-- No CVEs, or only CVEs with CVSS < 7.0
-- No actively exploited vulnerabilities
-- All non-CVE fixes are severity Medium or Low
-- No host crash or data loss risk
+## 3. Input Data Format
+You will receive JSON batches containing preprocessed advisories. The `Description` field will be a synthesized text block containing the "Top Critical CVEs", "Known Issues", and "Key Bug Fixes". Do not attempt to read the raw files yourself.
 
-### 4.3 Output Format (CRITICAL)
-Return a **pure JSON array** with EXACTLY the same number of objects as patches provided.
+## 4. Output Constraints
+YOUR FINAL RESPONSE MUST BE A STRICT JSON ARRAY OF OBJECTS. NO MARKDOWN SHIELDING. EACH OBJECT MUST MATCH THIS ZOD SCHEMA EXACTLY:
 
-Each object MUST contain:
 ```json
-{
-  "IssueID": "VSPH-VMSA-2025-0016_vCenter_Server_8.0",
-  "Component": "vCenter Server",
-  "Version": "8.0 U3g",
-  "Vendor": "VMware vSphere",
-  "Date": "2025-09-29",
-  "Criticality": "High",
-  "Description": "Concise English executive summary of what was fixed and why it matters.",
-  "KoreanDescription": "한국어 요약: 무엇이 수정되었고 왜 중요한지 간결하게.",
-  "Decision": "Include",
-  "Reason": "High-severity VMSA with CVSS 8.5 RCE vulnerability in vCenter"
-}
+[
+  {
+    "IssueID": "String (use the GROUP's patch_id from input, e.g. VSPH-VMSA-2025-0016_vCenter_Server_7.0)",
+    "Component": "String (e.g., vCenter Server, ESXi, vSAN, NSX)",
+    "Version": "String (version of the affected product, e.g., 7.0 U3w)",
+    "Vendor": "VMware vSphere",
+    "Date": "YYYY-MM-DD (publication date of the advisory)",
+    "Criticality": "Critical | High | Medium | Low",
+    "Description": "A highly concise summary focusing ONLY on the most severe RCEs, crashes, or data loss prevented by the selected patch. DO NOT list all CVEs. Say what the worst threats are.",
+    "KoreanDescription": "Description translated into enterprise-grade Korean.",
+    "Decision": "Done | Exclude (Exclude only if strictly irrelevant or breaks the environment based on known issues)",
+    "Reason": "Why you made this decision based on the criteria above."
+  }
+]
 ```
 
-**Decision values**: `Include` (meets criteria) or `Exclude` (does not meet criteria)
+### Response Example:
+```json
+[
+  {
+    "IssueID": "VSPH-VMSA-2025-0016_ESXi_7.0",
+    "Component": "ESXi",
+    "Version": "7.0 U3w",
+    "Vendor": "VMware vSphere",
+    "Date": "2025-09-29",
+    "Criticality": "Critical",
+    "Description": "Addresses critical RCE in ESXi management interface and privilege escalation. No blocking known issues.",
+    "KoreanDescription": "ESXi 관리 인터페이스의 원격 코드 실행 및 권한 상승 취약점을 해결합니다. 현재 확인된 심각한 알려진 문제는 없습니다.",
+    "Decision": "Done",
+    "Reason": "Includes fixes for highly critical RCE and privilege escalation in hypervisor."
+  }
+]
+```
 
-**Criticality values**: `Critical`, `High`, `Medium`, `Low`
+CRITICAL RULE FOR DESCRIPTIONS: The 'Description' and 'KoreanDescription' fields MUST be a concise, executive summary of the security advisory. DO NOT copy-paste the raw descriptions or include long lists of CVE numbers. Describe WHAT the worst impact was and WHY we need to patch it.
 
-### 4.4 General Rules
-- DO NOT read or search workspace JSON files — use only the [BATCH DATA] provided
-- DO NOT skip any patch — output exactly one object per input patch
-- For `Vendor` always use `VMware vSphere`
-- For `Component` use the specific product: `ESXi`, `vCenter Server`, or `vSphere`
-- Descriptions must be concise executive summaries, not raw changelogs
+## 5. Strict LLM Evaluation Rules
+
+### 5.1 Scope Constraint
+- Base your evaluation **ONLY** on the literal `[BATCH DATA]` provided in the prompt
+- Do NOT use RAG retrieval, workspace files, or external knowledge to supplement the data
+- Do NOT read or reference any JSON files in the workspace directory
+
+### 5.2 Patch Type Handling
+The input contains two types of advisories:
+- `security_advisory` (VMSA-*): Always evaluate for CVE severity and impact
+- `update_release` (Build/Update): Evaluate only if it addresses HA failure, data corruption, or critical performance degradation
+
+### 5.3 Selection Logic per Component Group
+For each vSphere component group:
+1. If ANY advisory contains Critical CVEs (CVSS ≥ 8.5) → **Decision: Done**, select most recent
+2. If ANY advisory fixes actively exploited RCE or privilege escalation → **Decision: Done**
+3. If ALL advisories are Low/Moderate with no HA or data loss risk → **Decision: Exclude**
+4. For `update_release` type only: include if it resolves a documented HA/vMotion/storage failure
+
+### 5.4 Output Validation
+| Field | Valid Values |
+|-------|-------------|
+| `Decision` | `Done` or `Exclude` only |
+| `Criticality` | `Critical`, `High`, `Medium`, or `Low` only |
+| `Vendor` | Must be exactly `VMware vSphere` |
+| `IssueID` | Must match the GROUP's `patch_id` from input exactly |
+| `Component` | e.g., `ESXi`, `vCenter Server`, `vSAN`, `NSX` |
