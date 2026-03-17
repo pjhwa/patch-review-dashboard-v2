@@ -82,9 +82,9 @@ export function startWorker() {
                         if (errText.includes('rate limit')) {
                             isRej = true;
                             rej(new Error('AI_REVIEW_FAILED: API Rate Limit Error'));
-                        } else if (errText.includes('timeout') || errText.includes('gateway closed') || errText.includes('gateway not connected') || errText.includes('gateway connect failed')) {
+                        } else if (errText.includes('timeout')) {
                             isRej = true;
-                            rej(new Error('OpenClaw execution timed out or gateway connection failed.'));
+                            rej(new Error('OpenClaw execution timed out.'));
                         }
                     });
                     p.on('close', (code: number | null) => {
@@ -133,7 +133,7 @@ export function startWorker() {
                                     const errText = data.toString();
                                     job.log(`ERROR: ${errText}`).catch(() => { });
                                     if (errText.includes('rate limit')) { isRej = true; rej(new Error('AI_REVIEW_FAILED: API Rate Limit Error')); }
-                                    else if (errText.includes('timeout') || errText.includes('gateway closed') || errText.includes('gateway not connected') || errText.includes('gateway connect failed')) { isRej = true; rej(new Error('OpenClaw timed out or gateway connection failed.')); }
+                                    else if (errText.includes('timeout')) { isRej = true; rej(new Error('OpenClaw timed out.')); }
                                 });
                                 p.on('close', (code: number | null) => {
                                     if (!isRej) { code === 0 ? res(fullStdout) : rej(new Error(`Command ${command} failed with code ${code}`)); }
@@ -399,7 +399,7 @@ Return ONLY a pure JSON array with EXACTLY ${actualBatchSize} objects. Each obje
                                     const errText = data.toString();
                                     job.log(`ERROR: ${errText}`).catch(() => { });
                                     if (errText.includes('rate limit')) { isRej = true; rej(new Error('AI_REVIEW_FAILED: API Rate Limit Error')); }
-                                    else if (errText.includes('timeout') || errText.includes('gateway closed') || errText.includes('gateway not connected') || errText.includes('gateway connect failed')) { isRej = true; rej(new Error('OpenClaw timed out or gateway connection failed.')); }
+                                    else if (errText.includes('timeout')) { isRej = true; rej(new Error('OpenClaw timed out.')); }
                                 });
                                 p.on('close', (code: number | null) => {
                                     if (!isRej) { code === 0 ? res(fullStdout) : rej(new Error(`Command ${command} failed with code ${code}`)); }
@@ -667,7 +667,7 @@ Each object MUST contain exactly: 'IssueID', 'Component', 'Version', 'Vendor', '
                                     const errText = data.toString();
                                     job.log(`ERROR: ${errText}`).catch(() => { });
                                     if (errText.includes('rate limit')) { isRej = true; rej(new Error('AI_REVIEW_FAILED: API Rate Limit Error')); }
-                                    else if (errText.includes('timeout') || errText.includes('gateway closed') || errText.includes('gateway not connected') || errText.includes('gateway connect failed')) { isRej = true; rej(new Error('OpenClaw timed out or gateway connection failed.')); }
+                                    else if (errText.includes('timeout')) { isRej = true; rej(new Error('OpenClaw timed out.')); }
                                 });
                                 p.on('close', (code: number | null) => {
                                     if (!isRej) { code === 0 ? res(fullStdout) : rej(new Error(`Command ${command} failed with code ${code}`)); }
@@ -932,7 +932,7 @@ Return ONLY a pure JSON array with EXACTLY ${actualBatchSize} objects. Each obje
                                     const errText = data.toString();
                                     job.log(`ERROR: ${errText}`).catch(() => { });
                                     if (errText.includes('rate limit')) { isRej = true; rej(new Error('AI_REVIEW_FAILED: API Rate Limit Error')); }
-                                    else if (errText.includes('timeout') || errText.includes('gateway closed') || errText.includes('gateway not connected') || errText.includes('gateway connect failed')) { isRej = true; rej(new Error('OpenClaw timed out or gateway connection failed.')); }
+                                    else if (errText.includes('timeout')) { isRej = true; rej(new Error('OpenClaw timed out.')); }
                                 });
                                 p.on('close', (code: number | null) => {
                                     if (!isRej) { code === 0 ? res(fullStdout) : rej(new Error(`Command ${command} failed with code ${code}`)); }
@@ -1195,7 +1195,7 @@ Return ONLY a pure JSON array with EXACTLY ${actualBatchSize} objects. Each obje
                                     const errText = data.toString();
                                     job.log(`ERROR: ${errText}`).catch(() => { });
                                     if (errText.includes('rate limit')) { isRej = true; rej(new Error('AI_REVIEW_FAILED: API Rate Limit Error')); }
-                                    else if (errText.includes('timeout') || errText.includes('gateway closed') || errText.includes('gateway not connected') || errText.includes('gateway connect failed')) { isRej = true; rej(new Error('OpenClaw timed out or gateway connection failed.')); }
+                                    else if (errText.includes('timeout')) { isRej = true; rej(new Error('OpenClaw timed out.')); }
                                 });
                                 p.on('close', (code: number | null) => {
                                     if (!isRej) { code === 0 ? res(fullStdout) : rej(new Error(`Command ${command} failed with code ${code}`)); }
@@ -1456,7 +1456,7 @@ Return ONLY a pure JSON array with EXACTLY ${actualBatchSize} objects. Each obje
                                     const errText = data.toString();
                                     job.log(`ERROR: ${errText}`).catch(() => { });
                                     if (errText.includes('rate limit')) { isRej = true; rej(new Error('AI_REVIEW_FAILED: API Rate Limit Error')); }
-                                    else if (errText.includes('timeout') || errText.includes('gateway closed') || errText.includes('gateway not connected') || errText.includes('gateway connect failed')) { isRej = true; rej(new Error('OpenClaw timed out or gateway connection failed.')); }
+                                    else if (errText.includes('timeout')) { isRej = true; rej(new Error('OpenClaw timed out.')); }
                                 });
                                 p.on('close', (code: number | null) => {
                                     if (!isRej) { code === 0 ? res(fullStdout) : rej(new Error(`Command ${command} failed with code ${code}`)); }
