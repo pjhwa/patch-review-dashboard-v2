@@ -1,17 +1,62 @@
-# Patch Review Board Dashboard - 기술 문서
+# Patch Review Board Dashboard - 기술 문서 인덱스
 
-## 1. 개요 (Overview)
-Patch Review Board Dashboard는 분기별 권고 패치 검토 작업을 중앙에서 관제하고 자동화하는 프리미엄 통합 커맨드 센터입니다.
+## 개요
 
-## 2. 배포 환경 (Deployment Environment)
-- **실제 구동 서버**: `tom26` 리눅스 서버 (`citec@<SERVER_IP>`, `~/.openclaw/workspace/patch-review-dashboard/`)
-- **버전 관리 및 로컬 연동**: `Patch-Review/patch-review-dashboard/`
+Patch Review Board Dashboard는 분기별 권고 패치 검토 작업을 중앙에서 관제하고 자동화하는 컴플라이언스 운영 플랫폼입니다. BullMQ 작업 큐, 중앙 제품 레지스트리, OpenClaw AI 에이전트를 기반으로 9개 제품군의 패치를 자동 수집·분석·검토합니다.
 
-## 3. 주요 기능 (Features)
-- **분류 체계(Taxonomy) UI**: OS, Middleware, Database, Network, Storage, Virtualization
-- **제한적 실행 (Execution Scope)**: 모든 카테고리가 뷰에 표시되나, 실제 동작 스크립트는 **Linux (OS)** 카테고리에 한정하여 작동됩니다.
-- **스테이지 드릴다운 (Drill-down)**: 수집, 전처리, AI 분석 각 단계의 `raw JSON` 데이터를 모달로 디버깅 및 확인 가능.
-- **CSV 내보내기 (Export)**: 최종 검토 대상인 패치의 요약 내역을 CSV로 즉시 다운로드 가능.
+---
 
-## 4. 로컬/원격 동기화 (Sync)
-- 주요 컴포넌트 스냅샷 및 설정 정보 메타데이터는 이곳 로컬 저장소에 연동하여 기록됩니다.
+## 문서 목록
+
+### 아키텍처 & 설계
+| 문서 | 설명 |
+|------|------|
+| [Architecture (EN)](docs/architecture.md) | 시스템 설계, 컴포넌트, BullMQ 큐 구조 |
+| [Architecture (KO)](docs/architecture_ko.md) | 아키텍처 한국어 버전 |
+| [Product Registry](docs/product_registry.md) | 중앙 제품 레지스트리 설계 및 ProductConfig 인터페이스 상세 |
+
+### 파이프라인 & AI
+| 문서 | 설명 |
+|------|------|
+| [Pipeline Flow (EN)](docs/pipeline_flow.md) | 0~7단계 파이프라인 전체 실행 흐름 |
+| [Pipeline Flow (KO)](docs/pipeline_flow_ko.md) | 파이프라인 흐름 한국어 버전 |
+| [AI Review (EN)](docs/ai_review.md) | AI 리뷰 루프, RAG 전략, Zod 자가 치유, 패스스루 |
+| [AI Review (KO)](docs/ai_review_ko.md) | AI 리뷰 한국어 버전 |
+
+### 기술 & 배포
+| 문서 | 설명 |
+|------|------|
+| [Tech Stack (EN)](docs/tech_stack.md) | 기술 선택 및 버전 정보 |
+| [Tech Stack (KO)](docs/tech_stack_ko.md) | 기술 스택 한국어 버전 |
+| [Deployment Guide](docs/deployment.md) | 신규 환경 전체 구축 가이드 (Redis, Node, pm2 포함) |
+
+### 제품 추가
+| 문서 | 설명 |
+|------|------|
+| [Product Spec Template](docs/PRODUCT_SPEC_TEMPLATE.md) | 신규 제품 온보딩을 위한 스펙 작성 템플릿 |
+| [Adding New Product](~/ADDING_NEW_PRODUCT.md) | 신규 제품 추가 7단계 체크리스트 |
+
+---
+
+## 배포 환경
+
+- **운영 서버**: `tom26` 리눅스 서버 (`citec@<SERVER_IP>`)
+- **애플리케이션 경로**: `~/patch-review-dashboard-v2/`
+- **스킬 경로**: `~/.openclaw/workspace/skills/patch-review/`
+- **포트**: 3001
+- **프로세스 매니저**: pm2 (`patch-dashboard` 프로세스)
+- **자동 시작**: `pm2-citec.service` (systemd)
+
+## 지원 제품 (9개 활성)
+
+| 제품 | 카테고리 | 작업 이름 |
+|------|----------|----------|
+| Red Hat Enterprise Linux | OS | `run-redhat-pipeline` |
+| Oracle Linux | OS | `run-oracle-pipeline` |
+| Ubuntu Linux | OS | `run-ubuntu-pipeline` |
+| Windows Server | OS | `run-windows-pipeline` |
+| Ceph | Storage | `run-ceph-pipeline` |
+| MariaDB | Database | `run-mariadb-pipeline` |
+| SQL Server | Database | `run-sqlserver-pipeline` |
+| PostgreSQL | Database | `run-pgsql-pipeline` |
+| VMware vSphere | Virtualization | `run-vsphere-pipeline` |

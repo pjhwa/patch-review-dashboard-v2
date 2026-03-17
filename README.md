@@ -2,15 +2,16 @@
   <br />
   <h1>🛡️ Patch Review Dashboard V2</h1>
   <p>
-    An intelligent, autonomous compliance operation platform powered by Server-Sent Events, Prisma, and the <strong>OpenClaw AI</strong>. Effortlessly orchestrates enterprise security patches across Linux and major application stacks.
+    An intelligent, autonomous compliance operations platform for enterprise patch management.<br />
+    Powered by <strong>BullMQ</strong>, <strong>OpenClaw AI</strong>, and a <strong>Central Product Registry</strong>.
   </p>
   <br />
 
   [![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)](#)
-  [![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)](#)
+  [![Next.js](https://img.shields.io/badge/Next.js_16-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)](#)
   [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](#)
   [![Prisma](https://img.shields.io/badge/Prisma-3982CE?style=for-the-badge&logo=Prisma&logoColor=white)](#)
-  [![Node.js](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)](#)
+  [![BullMQ](https://img.shields.io/badge/BullMQ-FF6B6B?style=for-the-badge&logo=redis&logoColor=white)](#)
   [![OpenClaw AI](https://img.shields.io/badge/OpenClaw_AI-FF6B6B?style=for-the-badge&logo=robot&logoColor=white)](#)
 
 </div>
@@ -19,71 +20,165 @@
 
 ## ✨ Features
 
-- **🚀 Autonomous Pipeline Executions:** Spawns detached shell collectors sequentially without blocking your UI workflow. Features built-in distributed locking and data integrity mechanisms.
-- **🤖 OpenClaw RAG-Powered AI Review:** Utilizes Gemini models locally orchestrated via `openclaw agent:main`. Checks past user exclusions to intelligently drop redundant patches from the final queue.
-- **🛡️ Self-Healing Zod Validation:** The AI output is rigorously enforced against deterministic JSON Schemas. Erroneous outputs are auto-redirected back to the LLM agent using an exponential backoff loop for self-repair.
-- **📊 Real-Time Server-Sent Events (SSE):** Deep integration with background child processes to stream actual execution logs live to the dashboard without page reloading.
-- **📦 Multi-Vendor Support:** Native integration scripts extending beyond raw OS platforms (RedHat, Oracle, Ubuntu) to complex applications like Ceph and MariaDB.
+- **🗂️ Central Product Registry** — One `products-registry.ts` file defines all 9 supported products. Adding a new product requires editing exactly one file, eliminating the scattered multi-file synchronization that caused errors in earlier versions.
+- **⚡ BullMQ Job Queue** — All pipeline executions are dispatched as named BullMQ jobs (`run-redhat-pipeline`, `run-ceph-pipeline`, etc.) backed by Redis. A single persistent worker picks up jobs, preventing concurrent race conditions without file-system locks.
+- **🤖 OpenClaw RAG-Powered AI Review** — Uses Gemini models locally orchestrated via `openclaw agent:main`. Each product supports one of two RAG exclusion strategies: `prompt-injection` (Linux) or `file-hiding` (Windows, Ceph, MariaDB, etc.).
+- **🛡️ Self-Healing Zod Validation** — AI JSON output is validated against deterministic schemas. Invalid batches are retried with the specific Zod error injected back into the prompt (up to 2 retries with exponential backoff).
+- **🔁 Passthrough Safety Net** — Patches that the AI skips (e.g., due to rate limits or context overflows) are automatically inserted into `ReviewedPatch` with `criticality: 'Important', decision: 'Pending'` — ensuring zero data loss.
+- **📊 Real-Time SSE Streaming** — Live pipeline log streaming to the dashboard via Server-Sent Events without page reloads.
+- **🌐 9 Supported Products** — Red Hat, Oracle Linux, Ubuntu, Windows Server, Ceph, MariaDB, SQL Server, PostgreSQL, VMware vSphere.
 
 ---
 
-## 🏗️ Architecture Stack
+## 🏗️ Architecture Overview
 
-For detailed internal documentation generated from operational facts, refer to the `/docs` directory:
-- [Architecture (EN/KR)](docs/architecture.md)
-- [Pipeline Flow (EN/KR)](docs/pipeline_flow.md)
-- [Tech Stack (EN/KR)](docs/tech_stack.md)
-- [AI Review Flow (EN/KR)](docs/ai_review.md)
+```
+┌─────────────────────────────────────────────────────────┐
+│                  Web Dashboard (Next.js)                │
+│   ProductGrid → [Run Pipeline] → POST /api/pipeline/run │
+└──────────────────────┬──────────────────────────────────┘
+                       │ enqueue BullMQ job
+                       ▼
+┌──────────────────────────────────────────────────────────┐
+│              BullMQ Queue  (Redis-backed)                │
+│   job.name = "run-redhat-pipeline"  (or any of 9)        │
+└──────────────────────┬───────────────────────────────────┘
+                       │ Worker picks up job
+                       ▼
+┌──────────────────────────────────────────────────────────┐
+│           queue.ts  Generic Worker                       │
+│   1. Lookup: PRODUCT_MAP[jobName] → ProductConfig        │
+│   2. runProductPipeline(job, productCfg)                 │
+│      ├─ runPreprocessing (Python --vendor flag)          │
+│      ├─ runAiReviewLoop (batch AI, Zod, retries)         │
+│      ├─ ingestToDb (Prisma upsert)                       │
+│      └─ runPassthrough (safety net for skipped patches)  │
+└──────────────────────┬───────────────────────────────────┘
+                       │
+           ┌───────────┴────────────┐
+           ▼                        ▼
+    SQLite (Prisma)         OpenClaw AI Agent
+    PreprocessedPatch       (Gemini via openclaw)
+    ReviewedPatch
+```
+
+For detailed documentation, see the [`/docs`](docs/) directory:
+| Document | Description |
+|----------|-------------|
+| [Architecture](docs/architecture.md) / [한국어](docs/architecture_ko.md) | System design & component overview |
+| [Pipeline Flow](docs/pipeline_flow.md) / [한국어](docs/pipeline_flow_ko.md) | Step-by-step pipeline execution flow |
+| [Product Registry](docs/product_registry.md) | Central registry design & how to add products |
+| [Tech Stack](docs/tech_stack.md) / [한국어](docs/tech_stack_ko.md) | Technology choices and versions |
+| [AI Review](docs/ai_review.md) / [한국어](docs/ai_review_ko.md) | AI review loop, RAG, and self-healing |
+| [Deployment Guide](docs/deployment.md) | Full environment setup from scratch |
+| [Product Spec Template](docs/PRODUCT_SPEC_TEMPLATE.md) | Template for onboarding new products |
 
 ---
 
-## ⚡ Quick Start
+## 🚀 Quick Start
 
-### 1. Requirements
-Ensure you have the following installed to run the backend processors and Web UI:
-- `Node.js` v22+
-- `pnpm`
-- `Python` 3.x
-- `openclaw` globally installed.
+### Requirements
 
-### 2. Installation
-Clone the active repository onto your control server.
+| Tool | Version | Purpose |
+|------|---------|---------|
+| Node.js | v22+ | Runtime for Next.js and workers |
+| pnpm | latest | Package manager |
+| Python | 3.x | Preprocessing scripts |
+| Redis | 6+ | BullMQ job queue backend |
+| openclaw | latest | AI agent CLI |
+
+### 1. Clone the repository
 
 ```bash
-git clone https://github.com/my-org/patch-review-dashboard-v2.git
+git clone https://github.com/your-org/patch-review-dashboard-v2.git
 cd patch-review-dashboard-v2
 ```
 
-### 3. Deploy the Pipeline Logic
-The server expects the heavy lifting skill logic to reside in the global workspace. Ensure the `patch-review` folder is moved to the OpenClaw directory prior to execution:
+### 2. Install dependencies
+
+```bash
+pnpm install
+```
+
+### 3. Deploy the pipeline skills
+
+The AI pipeline skill logic lives in `~/.openclaw/workspace/skills/patch-review`. Copy it from the repository:
 
 ```bash
 mkdir -p ~/.openclaw/workspace/skills/
 cp -r ./patch-review ~/.openclaw/workspace/skills/
 ```
 
-### 4. Setup Prisma Database
+### 4. Configure environment
+
 ```bash
-pnpm install
+cp .env.example .env
+# Edit .env:
+#   DATABASE_URL="file:./prisma/patch-review.db"
+#   REDIS_URL="redis://localhost:6379"
+```
+
+### 5. Setup the database
+
+```bash
 pnpm prisma generate
 pnpm prisma db push
 ```
 
-### 5. Launch Application
+### 6. Start Redis
+
+```bash
+# Ubuntu/Debian
+sudo systemctl start redis-server
+
+# macOS (Homebrew)
+brew services start redis
+```
+
+### 7. Launch the application
+
 ```bash
 pnpm run dev
-# The application will listen on http://localhost:3001
+# Dashboard available at http://localhost:3001
 ```
-Navigate to your Dashboard. Try manually running a pipeline to test the SSE log streaming!
+
+> **Production deployment**: Use `build.sh` and `restart.sh` with pm2. See [Deployment Guide](docs/deployment.md).
+
+---
+
+## 📦 Supported Products
+
+| Product | Category | Job Name | RAG Exclusion |
+|---------|----------|----------|---------------|
+| Red Hat Enterprise Linux | OS | `run-redhat-pipeline` | prompt-injection |
+| Oracle Linux | OS | `run-oracle-pipeline` | prompt-injection |
+| Ubuntu Linux | OS | `run-ubuntu-pipeline` | prompt-injection |
+| Windows Server | OS | `run-windows-pipeline` | file-hiding |
+| Ceph | Storage | `run-ceph-pipeline` | file-hiding |
+| MariaDB | Database | `run-mariadb-pipeline` | file-hiding |
+| SQL Server | Database | `run-sqlserver-pipeline` | file-hiding |
+| PostgreSQL | Database | `run-pgsql-pipeline` | file-hiding |
+| VMware vSphere | Virtualization | `run-vsphere-pipeline` | none |
 
 ---
 
 ## ⏰ Autonomous CRON Scheduling
-To deploy the fully zero-touch operational model, set up the CRON schedule natively using the `update_cron.sh` inside your repository.
-It ensures that the entire stack kicks off automatically on the **third Sunday of March, June, September, and December at 06:00** to align with quarterly evaluations.
+
+Data collection runs automatically on the **third Sunday of March, June, September, and December at 06:00** via `update_cron.sh`. The quarterly cadence aligns with enterprise patch review cycles.
+
+---
+
+## 🛠️ Development Scripts
+
+```bash
+node scripts/validate-registry.js    # Validate all 9 products in the registry
+pnpm prisma studio                   # Open Prisma database GUI
+bash build.sh                        # Production build
+bash restart.sh                      # Restart pm2 process
+```
 
 ---
 
 <div align="center">
-  <sub>Built with ❤️ by the Cloud & Infrastructure - Technical Expert Center (CI-TEC) </sub>
+  <sub>Built with ❤️ by the Cloud & Infrastructure - Technical Expert Center (CI-TEC)</sub>
 </div>

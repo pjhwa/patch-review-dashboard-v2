@@ -1,32 +1,239 @@
-# AI Implementation: OpenClaw Patch Review Board
+# AI Review System
 
-The Patch Review Dashboard V2 operates an autonomous AI review process embedded deep within its pipeline. The system utilizes the `openclaw` Internal AI Orchestration CLI to connect directly with Google Gemini, simulating a cybersecurity Patch Review Board (PRB).
+The Patch Review Dashboard V2 uses an autonomous AI review loop to evaluate security patches. This document describes how the AI is invoked, how past exclusions are injected, and how output validity is enforced.
 
 ---
 
-## 1. Agent Configuration
-The AI review is kicked off by the backend Node.js executing the following command natively:
-```bash
-openclaw agent --agent main --json-mode --message "{currentPrompt}"
+## 1. Overview
+
 ```
-This forces the AI into structured `JSON` generation mode. 
+patches_for_llm_review_<vendor>.json
+          │
+          ▼
+  RAG Exclusion Setup (product-dependent)
+          │
+          ▼
+  Batch Loop (5 patches per batch)
+    │
+    ├─ cleanupSessions()        ← delete sessions.json
+    ├─ buildPrompt()            ← per-product prompt template
+    ├─ openclaw agent:main      ← Gemini via openclaw CLI
+    ├─ extractJsonArray()       ← parse AI output
+    ├─ Zod validation           ← enforce schema
+    └─ retry (up to 2x)        ← inject Zod error into prompt
+          │
+          ▼
+  aiReviewedPatches[]  +  aiReviewedIds (Set)
+          │
+          ▼
+  ingestToDb() + runPassthrough()
+```
 
-The contextual instructions that mold the AI's behavior are maintained inside the `~/.openclaw/workspace/skills/patch-review` framework under the `SKILL.md` file. It implicitly tells the `main` agent to evaluate items inside `patches_for_llm_review.json` based on OS standards.
+---
 
-## 2. Dynamic RAG Prompt Injection
-Instead of static prompts, the Next.js execution engine calls `query_rag.py`. It pulls recent patching histories and operator logic from Prisma's `UserFeedback` table. 
-If historical operators have explicitly stated: 
-> "Excluded Issue: CVE-2025-XXXX, Reason: Internal DB doesn't use this module."
-The RAG system appends this constraint into the AI's prompt at runtime. The AI will cross-reference new incoming CVEs, and automatically drop matching cases from the recommendation list, dramatically reducing redundant manual work.
+## 2. Session Isolation
 
-## 3. The 3-Tier Self-Healing Loop
+**Problem in v1**: OpenClaw sessions accumulated context across batches. By batch 10, the AI was influenced by summaries of batches 1–9, causing hallucination and incorrect carry-over decisions.
 
-LLM systems are inherently non-deterministic. However, the dashboard requires deterministic database schemas. 
-To bridge this gap, the V2 dashboard implements a strict programmatic "Self-Healing" validation loop:
+**Solution in v2**: Before every batch, `cleanupSessions()` deletes:
+```
+~/.openclaw/agents/main/sessions/sessions.json
+```
 
-1. **Attempt Execution:** The AI attempts to format `patch_review_ai_report.json`.
-2. **Schema Verification:** The Next.js API parses the output against a `zod` object (`ReviewSchema`) expecting exact string keys: `'IssueID', 'Component', 'Version', 'Vendor', 'Date', 'Criticality', 'Description', and 'KoreanDescription'`.
-3. **Healing Ping-Pong:** If Zod catches a missing key or broken format, it throws a TypeScript error indicating the exact JSON path that failed. 
-4. **Autonomous Retry:** The system catches the Zod error, injects it back to the AI using exponential backoff (3s -> 9s -> 27s), and commands: 
-   *"이전 응답이 실패했습니다. 다음 Zod 구조적 에러를 해결하여 다시 제출하세요: [Zod Error Message]"*
-5. **Final Fallback:** If it fails 3 consecutive times, the process halts safely asking the user to manually trigger the `AI Only Retry` via the UX.
+This forces OpenClaw to start each batch with a completely clean context. The only context the AI receives is:
+1. The `SKILL.md` file (via `--json-mode` which reads it from the skill directory)
+2. The current batch prompt (including RAG injection if applicable)
+
+---
+
+## 3. RAG Exclusion
+
+### Strategy 1: Prompt-Injection (Red Hat, Oracle, Ubuntu)
+
+Before the first batch:
+
+1. `query_rag.py` is called with the current session's patch summaries as input
+2. It queries the `UserFeedback` table for similar past exclusion decisions
+3. Returns an exclusion context block: a list of patch IDs and admin reasoning
+
+This block is appended to every batch prompt:
+```
+CRITICAL INSTRUCTION: The following patches have been EXCLUDED by the security administrator
+based on prior review cycles. Do NOT include them in your review output:
+- RHSA-2024:1234 | Component: openssl | Reason: Internal systems don't use TLS 1.0
+- ELSA-2024:5678 | Component: dbus | Reason: Not applicable to containerized workloads
+```
+
+**Why not file-hiding for Linux?** Linux preprocessed data uses a `prompt-injection` strategy because the `query_rag.py` script provides similarity-based exclusion that is more nuanced than simply hiding files.
+
+### Strategy 2: File-Hiding (Windows, Ceph, MariaDB, SQL Server, PostgreSQL)
+
+Before AI runs:
+```python
+os.rename(normalized_dir, normalized_dir + "_hidden")
+os.rename(patches_file, patches_file + ".hidden")
+```
+
+After AI runs:
+```python
+os.rename(normalized_dir + "_hidden", normalized_dir)
+os.rename(patches_file + ".hidden", patches_file)
+```
+
+**Why?** OpenClaw's `agent:main` has access to the workspace file system via tools. Without hiding the normalized data directory, the agent might read previously processed files and include or exclude patches based on stale data.
+
+### No RAG (VMware vSphere)
+
+vSphere has no `ragExclusion` configured. The AI reviews all preprocessed patches fresh each pipeline run.
+
+---
+
+## 4. Batch Prompt Construction
+
+Each product defines its own `buildPrompt()` function in `products-registry.ts`. The prompt template includes:
+
+1. **Instruction to read SKILL.md** — `Read the rules explicitly from <skillDir>/SKILL.md`
+2. **Mandate to ignore past memories** — `CRITICAL MANDATE: IGNORE ANY PAST RETRIEVED MEMORIES`
+3. **Output format contract** — exact JSON array structure with required fields
+4. **Batch data** — `JSON.stringify(prunedBatch)` of the current 5 patches
+
+**Standard products** (Linux, Ceph, MariaDB, PostgreSQL):
+```
+Return ONLY a pure JSON array containing EXACTLY {batchSize} objects.
+Each object MUST contain: 'IssueID', 'Component', 'Version', 'Vendor', 'Date',
+'Criticality', 'Description', 'KoreanDescription', and optionally 'Decision' and 'Reason'.
+```
+
+**Version-grouped products** (Windows Server, SQL Server):
+```
+INPUT FORMAT: Each entry is a VERSION GROUP containing a 'patches' array.
+SELECTION RULE: Select the SINGLE MOST RECENT critical monthly patch per group.
+OUTPUT RULE: Return EXACTLY {batchSize} objects, one per input VERSION GROUP.
+IssueID = the GROUP's patch_id (e.g. 'WINDOWS-GROUP-Windows_Server_2025').
+Version = the KB number of the selected monthly patch.
+```
+
+---
+
+## 5. OpenClaw Invocation
+
+```bash
+openclaw agent:main --json-mode --message "<prompt>"
+```
+
+- `--json-mode`: Instructs the agent to produce structured JSON output
+- `--message`: The complete prompt including SKILL.md path and batch data
+- The agent reads `SKILL.md` from the skill directory to understand evaluation criteria
+- Output is captured from stdout
+
+---
+
+## 6. Zod Validation & Self-Healing
+
+### Schema
+```typescript
+const ReviewSchema = z.array(z.object({
+  IssueID:            z.string(),
+  Component:          z.string(),
+  Version:            z.string(),
+  Vendor:             z.string(),
+  Date:               z.string(),
+  Criticality:        z.string(),
+  Description:        z.string(),
+  KoreanDescription:  z.string(),
+  Decision:           z.string().optional(),
+  Reason:             z.string().optional(),
+  OsVersion:          z.string().optional(),
+}));
+```
+
+### Output Extraction
+
+`extractJsonArray()` handles common AI output formatting issues:
+1. Strips markdown code fences (` ```json ... ``` `)
+2. Extracts the first `[...]` JSON array from the response
+3. Parses and returns the array, or throws if no valid JSON found
+
+### Batch Count Validation
+
+After Zod validation:
+- `aiBatchValidation: 'exact'` → output array length must equal input batch size
+- `aiBatchValidation: 'nonEmpty'` → output array must have at least 1 item (version-grouped)
+
+### Self-Healing Loop
+
+```
+Attempt 1:  buildPrompt(skillDir, batchSize, prunedBatch)
+              → AI output
+              → Zod fails: "Required at [2].IssueID"
+              → wait 3s
+
+Attempt 2:  same prompt + "\n\n이전 응답이 실패했습니다. 다음 Zod 구조적 에러를 해결하여
+              다시 제출하세요: [exact Zod error message]"
+              → AI output
+              → Zod fails: malformed JSON
+              → wait 9s
+
+Attempt 3:  same prompt + updated error
+              → PASS or batch is skipped (passthrough handles skipped patches)
+```
+
+---
+
+## 7. Gateway Closed Handling
+
+**Problem**: `openclaw agent:main` can return a "gateway closed" response when the network connection to the Gemini endpoint drops mid-response. In v1, this caused an immediate batch failure and retry.
+
+**Solution in v2**: Gateway closed errors are NOT immediately rejected. The worker:
+1. Detects the "gateway closed" status in the stream output
+2. Waits for the full response to arrive (the connection may self-heal)
+3. Only triggers the Zod retry loop if the complete response is invalid
+
+This prevents unnecessary retries on transient network issues.
+
+---
+
+## 8. Rate Limiting
+
+When the Gemini API returns a 429 rate limit response:
+
+1. The rate limit flag file is created: `/tmp/.rate_limit_<productId>`
+2. The worker waits with exponential backoff before retrying
+3. The flag file is checked at the start of each batch — if it exists and is recent, the worker introduces additional delay
+
+---
+
+## 9. Passthrough (Skipped Patch Recovery)
+
+After the AI loop completes, `runPassthrough()` ensures no patches are lost.
+
+**Who gets passthrough**: All products except Windows Server and SQL Server (which use version-grouping — auto-insertion of incomplete groups would be misleading).
+
+**What it does**:
+1. Compares `PreprocessedPatch` (all preprocessed patches for this vendor) against `aiReviewedIds` (patches the AI actually reviewed this run)
+2. For each patch that was preprocessed but NOT reviewed:
+   ```
+   ReviewedPatch.upsert({
+     issueId: patch.issueId,
+     criticality: 'Important',
+     decision: 'Pending'
+   })
+   ```
+3. These show up in the dashboard as "Pending" — flagged for human review
+
+**Why 'Important' + 'Pending'**: Conservatively assumes skipped patches may be important. The human reviewer can downgrade or exclude them.
+
+---
+
+## 10. SKILL.md Standards
+
+Each product's skill directory must contain a `SKILL.md` with:
+- **≥100 lines** of content
+- **`## 4.` section** titled "Strict LLM Evaluation Rules" containing:
+  - `### 4.1` Inclusion Criteria
+  - `### 4.2` Exclusion Criteria
+  - `### 4.3` Output Format (JSON schema)
+  - `### 4.4` General Rules
+  - `### 4.5` Hallucination Prevention Rules
+
+The validator (`scripts/validate-registry.js`) enforces these requirements.
