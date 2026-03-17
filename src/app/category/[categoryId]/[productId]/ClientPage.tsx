@@ -520,6 +520,11 @@ export function ProductDetailClient({ categoryId, productId, dict }: { categoryI
                                                     setFinalizeSuccess(true);
                                                     setIsDone(true);
                                                     setTimeout(() => setFinalizeSuccess(false), 8000);
+                                                    // Auto-archive: if all products are done, create quarterly archive
+                                                    fetch('/api/archive/quarterly/auto-check', { method: 'POST' })
+                                                        .then(r => r.json())
+                                                        .then(d => { if (d.triggered) console.log(`[Auto-Archive] Created: ${d.quarter} (${d.totalPatches} patches)`); })
+                                                        .catch(e => console.warn('[Auto-Archive] check failed:', e));
                                                 } else {
                                                     alert("Failed to finalize. See console.");
                                                     console.error(await res.text());

@@ -115,11 +115,11 @@ export default async function Home() {
       virtualizationCustomDesc = `${dict.dashboard.productsReviewed}${patchRatioStr}`;
     }
 
-    // Fetch Archives Data for Stats
-    const arcRes = await fetch(`${baseUrl}/api/pipeline/archive`, { cache: 'no-store' });
+    // Fetch Archives Data for Stats (quarterly archives)
+    const arcRes = await fetch(`${baseUrl}/api/archive/quarterly`, { cache: 'no-store' });
     if (arcRes.ok) {
       const arcData = await arcRes.json();
-      archiveCount = (arcData.archives || []).length;
+      archiveCount = (arcData.quarters || []).length;
     }
 
   } catch (error) {

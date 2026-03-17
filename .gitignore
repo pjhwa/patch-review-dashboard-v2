@@ -53,6 +53,8 @@ server.log
 **/node_modules
 **/__pycache__
 **/archive
+!src/app/api/archive
+!src/app/category/*/archive
 **/venv
 
 # Patch Data (Prevent massive JSON pushes, allow only samples)
