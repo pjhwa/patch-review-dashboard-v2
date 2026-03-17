@@ -22,7 +22,7 @@
 
 - **🗂️ Central Product Registry** — One `products-registry.ts` file defines all 9 supported products. Adding a new product requires editing exactly one file, eliminating the scattered multi-file synchronization that caused errors in earlier versions.
 - **⚡ BullMQ Job Queue** — All pipeline executions are dispatched as named BullMQ jobs (`run-redhat-pipeline`, `run-ceph-pipeline`, etc.) backed by Redis. A single persistent worker picks up jobs, preventing concurrent race conditions without file-system locks.
-- **🤖 OpenClaw RAG-Powered AI Review** — Uses Gemini models locally orchestrated via `openclaw agent:main`. Each product supports one of two RAG exclusion strategies: `prompt-injection` (Linux) or `file-hiding` (Windows, Ceph, MariaDB, etc.).
+- **🤖 OpenClaw RAG-Powered AI Review** — Uses external AI models orchestrated via `openclaw agent:main`. Each product supports one of two RAG exclusion strategies: `prompt-injection` (Linux) or `file-hiding` (Windows, Ceph, MariaDB, etc.).
 - **🛡️ Self-Healing Zod Validation** — AI JSON output is validated against deterministic schemas. Invalid batches are retried with the specific Zod error injected back into the prompt (up to 2 retries with exponential backoff).
 - **🔁 Passthrough Safety Net** — Patches that the AI skips (e.g., due to rate limits or context overflows) are automatically inserted into `ReviewedPatch` with `criticality: 'Important', decision: 'Pending'` — ensuring zero data loss.
 - **📊 Real-Time SSE Streaming** — Live pipeline log streaming to the dashboard via Server-Sent Events without page reloads.
@@ -58,7 +58,7 @@
            ┌───────────┴────────────┐
            ▼                        ▼
     SQLite (Prisma)         OpenClaw AI Agent
-    PreprocessedPatch       (Gemini via openclaw)
+    PreprocessedPatch       (AI model via openclaw)
     ReviewedPatch
 ```
 

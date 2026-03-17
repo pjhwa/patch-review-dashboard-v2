@@ -81,7 +81,7 @@ Patch Review Dashboard V2는 현대적이고 분리된 아키텍처를 기반으
 - 각 제품 스킬 디렉터리의 벤더별 수집 스크립트
 
 ### OpenClaw CLI (AI 에이전트)
-- Google Gemini를 래핑한 내부 AI 오케스트레이션 도구
+- 외부 AI 모델을 활용하는 내부 AI 오케스트레이션 도구
 - 실행 방법: `openclaw agent:main --json-mode --message "<prompt>"`
 - `--json-mode`: 구조화된 JSON 출력 강제
 - 컨텍스트 지침: 스킬 디렉터리의 `SKILL.md`에서 읽음
@@ -91,7 +91,7 @@ Patch Review Dashboard V2는 현대적이고 분리된 아키텍처를 기반으
 
 ## 5. AI & 검증 계층
 
-### Google Gemini (openclaw를 통해)
+### 외부 AI 모델 (openclaw를 통해)
 - 내부 openclaw 라우터 네트워크를 통해 접근
 - `ProductConfig.buildPrompt()`로 제품별 구성 — 각 제품이 고유한 프롬프트 템플릿 보유
 

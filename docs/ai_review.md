@@ -17,7 +17,7 @@ patches_for_llm_review_<vendor>.json
     │
     ├─ cleanupSessions()        ← delete sessions.json
     ├─ buildPrompt()            ← per-product prompt template
-    ├─ openclaw agent:main      ← Gemini via openclaw CLI
+    ├─ openclaw agent:main      ← external AI model via openclaw CLI
     ├─ extractJsonArray()       ← parse AI output
     ├─ Zod validation           ← enforce schema
     └─ retry (up to 2x)        ← inject Zod error into prompt
@@ -182,7 +182,7 @@ Attempt 3:  same prompt + updated error
 
 ## 7. Gateway Closed Handling
 
-**Problem**: `openclaw agent:main` can return a "gateway closed" response when the network connection to the Gemini endpoint drops mid-response. In v1, this caused an immediate batch failure and retry.
+**Problem**: `openclaw agent:main` can return a "gateway closed" response when the network connection to the AI endpoint drops mid-response. In v1, this caused an immediate batch failure and retry.
 
 **Solution in v2**: Gateway closed errors are NOT immediately rejected. The worker:
 1. Detects the "gateway closed" status in the stream output
@@ -195,7 +195,7 @@ This prevents unnecessary retries on transient network issues.
 
 ## 8. Rate Limiting
 
-When the Gemini API returns a 429 rate limit response:
+When the AI API returns a 429 rate limit response:
 
 1. The rate limit flag file is created: `/tmp/.rate_limit_<productId>`
 2. The worker waits with exponential backoff before retrying

@@ -32,7 +32,7 @@ graph TD
     PIPE -- "job.log() → SSE 스트림" --> SSE["Server-Sent Events"]
     SSE --> UI
     INGEST -- "읽기/쓰기" --> DB[("SQLite\nprisma/patch-review.db")]
-    AI_LOOP -- "openclaw agent:main" --> OPENCLAW["OpenClaw AI\n(Gemini 모델)"]
+    AI_LOOP -- "openclaw agent:main" --> OPENCLAW["OpenClaw AI\n(외부 AI 모델)"]
 ```
 
 ---

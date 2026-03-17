@@ -81,7 +81,7 @@ The Patch Review Dashboard V2 is built on a modern, decoupled stack. This docume
 - Other vendor-specific collection scripts in each product's skill directory.
 
 ### OpenClaw CLI (AI Agent)
-- Internal AI orchestration tool that wraps Google Gemini.
+- Internal AI orchestration tool that invokes external AI models.
 - Invoked as: `openclaw agent:main --json-mode --message "<prompt>"`
 - The `--json-mode` flag enforces structured JSON output.
 - Context instructions come from `SKILL.md` in the skill directory.
@@ -91,7 +91,7 @@ The Patch Review Dashboard V2 is built on a modern, decoupled stack. This docume
 
 ## 5. AI & Validation Layer
 
-### Google Gemini (via openclaw)
+### External AI Model (via openclaw)
 - Accessed through the internal openclaw router network.
 - Configured per product via `ProductConfig.buildPrompt()` — each product has its own prompt template.
 

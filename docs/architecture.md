@@ -32,7 +32,7 @@ graph TD
     PIPE -- "job.log() → SSE stream" --> SSE["Server-Sent Events"]
     SSE --> UI
     INGEST -- "read/write" --> DB[("SQLite\nprisma/patch-review.db")]
-    AI_LOOP -- "openclaw agent:main" --> OPENCLAW["OpenClaw AI\n(Gemini model)"]
+    AI_LOOP -- "openclaw agent:main" --> OPENCLAW["OpenClaw AI\n(external AI model)"]
 ```
 
 ---

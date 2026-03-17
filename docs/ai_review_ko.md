@@ -17,7 +17,7 @@ patches_for_llm_review_<vendor>.json
     │
     ├─ cleanupSessions()        ← sessions.json 삭제
     ├─ buildPrompt()            ← 제품별 프롬프트 템플릿
-    ├─ openclaw agent:main      ← openclaw CLI로 Gemini 호출
+    ├─ openclaw agent:main      ← openclaw CLI로 외부 AI 모델 호출
     ├─ extractJsonArray()       ← AI 출력 파싱
     ├─ Zod 검증                 ← 스키마 강제
     └─ 재시도 (최대 2회)        ← Zod 에러를 프롬프트에 주입
@@ -182,7 +182,7 @@ Zod 검증 후:
 
 ## 7. Gateway Closed 처리
 
-**문제**: `openclaw agent:main`이 Gemini 엔드포인트로의 네트워크 연결이 응답 중에 끊길 때 "gateway closed" 응답을 반환할 수 있습니다. v1에서는 이것이 즉각적인 배치 실패와 재시도를 유발했습니다.
+**문제**: `openclaw agent:main`이 AI 엔드포인트로의 네트워크 연결이 응답 중에 끊길 때 "gateway closed" 응답을 반환할 수 있습니다. v1에서는 이것이 즉각적인 배치 실패와 재시도를 유발했습니다.
 
 **v2 해결책**: Gateway closed 오류는 즉각 거부되지 않습니다. 워커가:
 1. 스트림 출력에서 "gateway closed" 상태 감지
@@ -195,7 +195,7 @@ Zod 검증 후:
 
 ## 8. 속도 제한 처리
 
-Gemini API가 429 속도 제한 응답을 반환할 때:
+AI API가 429 속도 제한 응답을 반환할 때:
 
 1. 속도 제한 플래그 파일 생성: `/tmp/.rate_limit_<productId>`
 2. 워커가 재시도 전 지수 백오프로 대기
