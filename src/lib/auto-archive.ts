@@ -16,6 +16,30 @@ export function getCurrentQuarter(): string {
     return `Q${q} ${year}`; // e.g., "Q1 2026"
 }
 
+// 이전 분기 문자열을 반환한다. 예: 현재가 Q2 2026이면 "Q1 2026" 반환.
+// 1월 1일에 실행 시 이전 해의 Q4를 반환한다.
+export function getPreviousQuarter(): string {
+    const now = new Date();
+    const month = now.getMonth() + 1; // 1-12
+    const year = now.getFullYear();
+    const q = Math.ceil(month / 3);
+    if (q === 1) {
+        return `Q4 ${year - 1}`;
+    }
+    return `Q${q - 1} ${year}`;
+}
+
+// 해당 분기의 아카이브가 이미 존재하는지 확인한다.
+export function isQuarterArchiveExists(quarter: string): boolean {
+    const QUARTERLY_ARCHIVE_BASE = path.join(
+        process.env.HOME || '/home/citec',
+        '.openclaw/workspace/skills/patch-review/quarterly-archive'
+    );
+    const dirName = quarter.replace(' ', '-');
+    const metadataPath = path.join(QUARTERLY_ARCHIVE_BASE, dirName, 'metadata.json');
+    return fs.existsSync(metadataPath);
+}
+
 // 아직 finalCsvFile이 생성되지 않은 활성 제품 목록을 반환한다.
 // 이 목록이 비어있어야 분기 아카이브를 생성할 수 있다.
 export function getIncompleteProducts(): string[] {
