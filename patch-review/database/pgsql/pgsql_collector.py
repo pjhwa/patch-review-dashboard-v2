@@ -46,7 +46,7 @@ NVD_BASE_URL = "https://services.nvd.nist.gov/rest/json/cves/2.0"
 NVD_API_KEY = os.environ.get("NVD_API_KEY", "")
 _NVD_DELAY = 0.6 if NVD_API_KEY else 6.5  # 초 단위
 
-OUT_DIR = Path("pg_data")
+OUT_DIR = Path("pgsql_data")
 MANIFEST_FILE = OUT_DIR / "manifest.json"
 
 _nvd_last_call_ts = 0.0  # 마지막 NVD API 호출 시각

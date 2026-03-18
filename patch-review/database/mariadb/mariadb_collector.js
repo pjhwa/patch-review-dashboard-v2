@@ -39,7 +39,7 @@ const MARIADB_PKG_PREFIXES = [
 ];
 
 // Path to existing redhat_data (for PHASE 3 supplement scan)
-const REDHAT_DATA_DIR = path.join(__dirname, '..', '..', 'os', 'linux', 'redhat', 'redhat_data');
+const REDHAT_DATA_DIR = path.join(__dirname, '..', '..', 'os', 'linux-v2', 'redhat', 'redhat_data');
 const METADATA_PATH = path.join(OUTPUT_DIR, 'metadata.json');
 
 if (!fs.existsSync(OUTPUT_DIR)) fs.mkdirSync(OUTPUT_DIR, { recursive: true });
