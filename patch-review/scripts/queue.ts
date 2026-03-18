@@ -28,7 +28,7 @@ export function startWorker() {
             const linuxV2Dir = path.join(process.env.HOME || '/home/citec', '.openclaw/workspace/skills/patch-review/os/linux-v2');
             const cephSkillDir = path.join(process.env.HOME || '/home/citec', '.openclaw/workspace/skills/patch-review/storage/ceph');
 
-            async function withOpenClawLock(jobLog: (msg: string) => Promise<any>, fn: () => Promise<any>): Promise<any> {
+            async function withOpenClawLock(jobLog: (msg: string) => Promise<void>, fn: () => Promise<any>): Promise<any> {
                 const lockDir = '/tmp/openclaw_execution.lock';
                 let loggedWaiting = false;
                 while (true) {
@@ -250,8 +250,10 @@ export function startWorker() {
                         try {
                             await prisma.preprocessedPatch.deleteMany({ where: { vendor: 'Ceph' } });
                             for (const p of cephPatchesRaw) {
-                                await prisma.preprocessedPatch.create({
-                                    data: { issueId: p.patch_id, vendor: 'Ceph', component: p.component || 'ceph', version: p.version || '', osVersion: p.os_version || null, description: (p.description || '').slice(0, 4000), releaseDate: p.issued_date || null },
+                                await prisma.preprocessedPatch.upsert({
+                                    where: { issueId: p.patch_id },
+                                    update: { vendor: 'Ceph', component: p.component || 'ceph', version: p.version || '', osVersion: p.os_version || null, description: (p.description || '').slice(0, 4000), releaseDate: p.issued_date || null },
+                                    create: { issueId: p.patch_id, vendor: 'Ceph', component: p.component || 'ceph', version: p.version || '', osVersion: p.os_version || null, description: (p.description || '').slice(0, 4000), releaseDate: p.issued_date || null },
                                 });
                             }
                             await job.log(`[CEPH-DB] Preprocessed ${cephPatchesRaw.length} patches ingested.`);
