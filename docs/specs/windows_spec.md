@@ -18,25 +18,45 @@
 ## 2. Raw Data Format
 
 - **Source system**: Microsoft Update Catalog / MSRC API (windows_collector.py)
-- **File prefix(es)**: `WIN-`
+- **File prefix(es)**: `MSU-`
 - **Sample JSON** (실제 원본 데이터 구조 예시):
 
 ```json
 {
-  "patch_id": "WIN-Windows_Server_2025-KB5058385",
-  "vendor": "Windows Server",
-  "os_version": "Windows Server 2025",
-  "version": "KB5058385",
-  "component": "cumulative-update",
-  "issued_date": "2025-12-10",
-  "description": "Top 10 Critical CVEs: [...]. Known Issues: [...]. Top 5 Bug Fixes: [...]",
-  "top_10_cves": [
-    {"cve_id": "CVE-2025-21420", "severity": "Critical", "cvss": 9.8, "title": "Print Spooler RCE"}
-  ],
+  "id": "MSU-2025-Dec-Windows_Server_2022",
+  "vendor": "Microsoft",
+  "os": "Windows Server 2022",
+  "month": "2025-Dec",
+  "type": "Security Update",
+  "title": "December 2025 Security Updates",
+  "initial_release_date": "2025-12-09T08:00:00",
+  "current_release_date": "2025-12-09T08:00:00",
+  "revision": "1.0",
+  "url": "https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2025-Dec",
+  "summary": "",
   "known_issues": ["After installing, domain controllers might restart unexpectedly"],
-  "top_5_bug_fixes": [
-    {"area": "Storage", "component": "NTFS", "description": "Fixes NTFS corruption under high load"}
-  ]
+  "cumulative_update_kb": "KB5048654",
+  "cumulative_update_url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5048654",
+  "vulnerabilities": [
+    {
+      "cve": "CVE-2025-21420",
+      "title": "Windows Print Spooler Remote Code Execution Vulnerability",
+      "description": "...",
+      "impact": "Remote Code Execution",
+      "severity": "Critical",
+      "cvss_base_score": 9.8,
+      "cvss_temporal_score": 8.6,
+      "kb_number": "KB5048654",
+      "is_actively_exploited": false
+    }
+  ],
+  "stats": {
+    "total_cves": 72,
+    "critical_count": 1,
+    "important_count": 71,
+    "actively_exploited_count": 0,
+    "max_cvss_base": 9.8
+  }
 }
 ```
 
@@ -44,15 +64,15 @@
 
 | Raw Field | 의미 | 비고 |
 |-----------|------|------|
-| `patch_id` | 패치 식별자 | IssueID에 사용 (WIN- prefix) |
-| `os_version` | Windows Server 버전 | "Windows Server 2022" 등 |
-| `version` | KB 번호 | 선택된 월별 CU의 KB 번호 |
-| `component` | 컴포넌트 | 항상 `cumulative-update` |
-| `issued_date` | 발표일 | YYYY-MM-DD |
-| `description` | 합성된 설명 | Top CVEs + Known Issues + Bug Fixes 포함 |
-| `top_10_cves` | 상위 10개 CVE 목록 | CVE ID, severity, CVSS, title |
-| `known_issues` | 알려진 문제 | 설치 후 부작용 |
-| `top_5_bug_fixes` | 상위 5개 버그픽스 | 비-CVE 수정사항 |
+| `id` | 패치 식별자 (MSU- prefix) | 전처리 후 `patch_id`로 전달 |
+| `vendor` | 벤더 | raw 파일에서 항상 `Microsoft` |
+| `os` | Windows Server 버전 | "Windows Server 2022" 등 (`os_version`으로 전처리됨) |
+| `month` | 패치 발표 월 | "2025-Dec" 형식 |
+| `initial_release_date` | 최초 발표일 | ISO 8601 형식 (전처리에서 `issued_date`로 변환) |
+| `cumulative_update_kb` | CU KB 번호 | e.g., "KB5048654" (전처리에서 `version`으로 사용) |
+| `vulnerabilities` | CVE 목록 배열 | cve, title, impact, severity, cvss_base_score 등 포함 |
+| `stats` | 통계 요약 | total_cves, critical_count, max_cvss_base 등 |
+| `known_issues` | 알려진 문제 배열 | 설치 후 부작용 |
 
 ---
 
@@ -148,7 +168,7 @@
     active: true,
     skillDirRelative: 'os/windows',
     dataSubDir: 'windows_data',
-    rawDataFilePrefix: ['WIN-'],
+    rawDataFilePrefix: ['MSU-'],
     preprocessingScript: 'windows_preprocessing.py',
     preprocessingArgs: ['--days', '180', '--days_end', '90'],
     patchesForReviewFile: 'patches_for_llm_review_windows.json',
@@ -172,7 +192,7 @@
         fallbackDecision: 'Pending',
     },
     collectedFileFilter: (filename: string) =>
-        filename.startsWith('WIN-') && filename.endsWith('.json'),
+        filename.startsWith('MSU-') && filename.endsWith('.json'),
     preprocessedPatchMapper: (p: any) => ({
         issueId: p.patch_id,
         vendor: 'Windows Server',

@@ -23,15 +23,24 @@
 
 ```json
 {
-  "patch_id": "RHSA-2026:0333",
-  "vendor": "MariaDB",
-  "product": "mariadb",
-  "component": "mariadb",
-  "version": "10.5.27",
-  "severity": "High",
-  "description": "Updated MariaDB packages that fix several security issues and bugs.",
-  "issued_date": "2026-01-15",
-  "os_version": "RHEL 8"
+  "id": "RHSA-2025:19572",
+  "vendor": "Red Hat",
+  "type": "Security Advisory (RHSA)",
+  "title": "Important: mariadb:10.5 security update",
+  "mariadbVersion": "10.5.27",
+  "issuedDate": "2025-11-12T00:00:00Z",
+  "updatedDate": "2025-11-12T00:00:00Z",
+  "pubDate": "2025-11-12T00:00:00Z",
+  "dateStr": "2025-11-12",
+  "url": "https://access.redhat.com/errata/RHSA-2025:19572",
+  "severity": "Important",
+  "overview": "Updated mariadb packages that fix several security issues.",
+  "description": "...",
+  "affected_products": ["Red Hat Enterprise Linux AppStream (v. 8)"],
+  "cves": ["CVE-2025-12345"],
+  "packages": ["mariadb-10.5.27-1.module+el8.10.0+21234+abc.x86_64"],
+  "all_packages_count": 12,
+  "full_text": "..."
 }
 ```
 
@@ -39,15 +48,14 @@
 
 | Raw Field | 의미 | 비고 |
 |-----------|------|------|
-| `patch_id` | 패치 식별자 (RHSA-/RHBA- prefix 유지) | IssueID에 사용 |
-| `vendor` | 벤더 | 항상 `MariaDB` |
-| `product` | 패키지명 | mariadb, mariadb-server 등 |
-| `component` | 컴포넌트 | mariadb, mariadb-galera 등 |
-| `version` | 패키지 버전 | e.g., "10.5.27" |
-| `severity` | 심각도 | Critical/High/Moderate/Low |
+| `id` | 패치 식별자 (RHSA-/RHBA- prefix) | 전처리 후 `id`/`patch_id` 동시 사용 |
+| `vendor` | 벤더 | raw 파일에서 `Red Hat` (전처리에서 `MariaDB`로 변환) |
+| `type` | Advisory 유형 | Security Advisory (RHSA) / Bug Fix Advisory (RHBA) |
+| `mariadbVersion` | MariaDB 버전 | 전처리에서 `version` 필드로 사용 |
+| `severity` | 심각도 | Critical/Important/Moderate/Low |
 | `description` | 상세 설명 | 4000자 이내로 잘라내기 |
-| `issued_date` | 발표일 | YYYY-MM-DD |
-| `os_version` | 영향받는 RHEL 버전 | e.g., "RHEL 8" |
+| `dateStr` | 발표일 | YYYY-MM-DD (전처리에서 `issued_date`로 변환) |
+| `affected_products` | 영향받는 RHEL 버전 | 전처리에서 `os_version` 추출에 사용 |
 
 ---
 

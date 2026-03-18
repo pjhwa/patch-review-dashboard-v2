@@ -23,14 +23,33 @@
 
 ```json
 {
-  "patch_id": "VSPH-VMSA-2025-0016_ESXi_7.0",
-  "vendor": "VMware vSphere",
-  "product": "ESXi 7.0 U3w",
-  "published": "2025-09-29",
-  "severity": "Critical",
-  "description": "Top Critical CVEs: [CVE-2025-22234 (CVSS 9.8) - ESXi heap overflow RCE]. Known Issues: None. Key Bug Fixes: [vMotion stability improvement]",
-  "component": "ESXi",
-  "version": "7.0 U3w"
+  "type": "update_release",
+  "id": "VSPH-Build-24927011_vCenter_Server_7.0",
+  "vendor": "VMware (Broadcom)",
+  "product": "vCenter Server",
+  "major_version": "7.0",
+  "month": "2025-Sep",
+  "version": "VMware vCenter Server 7.0 Update 3w Release Notes",
+  "build": "24927011",
+  "release_date": "2025-09-29",
+  "release_notes_url": "https://techdocs.broadcom.com/...",
+  "included_vmsa_fixes": [
+    {
+      "vmsa": "VMSA-2025-0016",
+      "cve": "CVE-2025-22234",
+      "severity": "Critical",
+      "cvss_base_score": 9.8
+    }
+  ],
+  "non_cve_fixes": [
+    "vMotion stability improvement under high memory pressure"
+  ],
+  "known_issues": [],
+  "stats": {
+    "total_cves": 3,
+    "critical_count": 1,
+    "max_cvss_base": 9.8
+  }
 }
 ```
 
@@ -38,14 +57,17 @@
 
 | Raw Field | 의미 | 비고 |
 |-----------|------|------|
-| `patch_id` | 패치 식별자 (VSPH- prefix) | IssueID에 사용 |
-| `vendor` | 벤더 | 항상 `VMware vSphere` |
-| `product` | 컴포넌트 + 버전 | "ESXi 7.0 U3w", "vCenter Server 8.0 U3d" 등 |
-| `published` | 발표일 | YYYY-MM-DD |
-| `severity` | 심각도 | Critical/High/Medium/Low |
-| `description` | 합성된 설명 | Top CVEs + Known Issues + Key Bug Fixes 포함 |
-| `component` | vSphere 컴포넌트 | ESXi, vCenter Server, vSAN, NSX 등 |
-| `version` | 패치 버전 | e.g., "7.0 U3w" |
+| `id` | 패치 식별자 (VSPH- prefix) | 전처리 후 `patch_id`로 전달 |
+| `vendor` | 벤더 | raw 파일에서 `VMware (Broadcom)` |
+| `product` | vSphere 컴포넌트 | "ESXi", "vCenter Server" 등 (전처리에서 `component`로 사용) |
+| `major_version` | 제품 메이저 버전 | "7.0", "8.0" 등 |
+| `month` | 패치 발표 월 | "2025-Sep" 형식 |
+| `build` | 빌드 번호 | 고유 빌드 식별자 |
+| `release_date` | 발표일 | YYYY-MM-DD (전처리에서 `issued_date`로 변환) |
+| `included_vmsa_fixes` | 포함된 VMSA CVE 목록 | vmsa, cve, severity, cvss_base_score |
+| `non_cve_fixes` | 비-CVE 버그픽스 목록 | 전처리에서 description에 포함 |
+| `known_issues` | 알려진 문제 배열 | 설치 후 부작용 |
+| `stats` | 통계 요약 | total_cves, critical_count, max_cvss_base 등 |
 
 ---
 

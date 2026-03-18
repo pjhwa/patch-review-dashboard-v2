@@ -23,27 +23,37 @@
 
 ```json
 {
-  "patch_id": "SQLS-GROUP-SQL_Server_2022",
-  "vendor": "SQL Server",
-  "os_version": "SQL Server 2022",
-  "component": "SQL Server",
-  "issued_date": "2025-11-13",
-  "review_window": "2025-09-16 ~ 2025-12-16",
-  "candidate_count": 3,
-  "patches": [
+  "id": "SQLU-2025-Nov-SQL_Server_2022",
+  "vendor": "Microsoft",
+  "product": "SQL Server 2022",
+  "month": "2025-Nov",
+  "type": "Security Update",
+  "title": "November 2025 Security Updates",
+  "initial_release_date": "2025-11-11T00:00:00",
+  "current_release_date": "2025-11-11T00:00:00",
+  "revision": "1.0",
+  "url": "https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2025-Nov",
+  "summary": "",
+  "cumulative_update_kb": "KB5046862",
+  "cumulative_update_url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5046862",
+  "known_issues": [],
+  "vulnerabilities": [
     {
-      "patch_id": "SQLU-SQL_Server_2022-KB5046862",
-      "version": "KB5046862",
-      "issued_date": "2025-11-13",
-      "top_10_cves": [
-        {"cve_id": "CVE-2025-21262", "severity": "Critical", "cvss": 9.0, "title": "SQL Server RCE"}
-      ],
-      "top_5_bug_fixes": [
-        {"area": "Always On", "component": "AG", "description": "Fixes sync issue causing data inconsistency"}
-      ],
-      "known_issues": []
+      "cve": "CVE-2025-21262",
+      "title": "SQL Server Remote Code Execution Vulnerability",
+      "impact": "Remote Code Execution",
+      "severity": "Critical",
+      "cvss_base_score": 9.0,
+      "kb_number": "KB5046862",
+      "is_actively_exploited": false
     }
-  ]
+  ],
+  "stats": {
+    "total_cves": 8,
+    "critical_count": 1,
+    "important_count": 7,
+    "max_cvss_base": 9.0
+  }
 }
 ```
 
@@ -51,14 +61,15 @@
 
 | Raw Field | 의미 | 비고 |
 |-----------|------|------|
-| `patch_id` | 그룹 식별자 (SQLS-GROUP-) | IssueID에 사용 |
-| `os_version` | SQL Server 버전 | "SQL Server 2022" 등 |
-| `patches` | 월별 CU 목록 | 최신 → 오래된 순 정렬 |
-| `patches[].version` | KB 번호 | 선택된 CU의 KB 번호 |
-| `patches[].top_10_cves` | 상위 10개 CVE | CVE ID, severity, CVSS, title |
-| `patches[].top_5_bug_fixes` | 상위 5개 버그픽스 | area, component, description |
-| `patches[].known_issues` | 알려진 문제 | 설치 후 부작용 |
-| `issued_date` | 그룹 내 최신 CU 발표일 | YYYY-MM-DD |
+| `id` | 패치 식별자 (SQLU- prefix) | 전처리 후 `patch_id`로 전달; 그룹화 시 `SQLS-GROUP-` prefix 사용 |
+| `vendor` | 벤더 | raw 파일에서 항상 `Microsoft` |
+| `product` | SQL Server 버전 | "SQL Server 2022" 등 (전처리에서 `os_version`으로 사용) |
+| `month` | 패치 발표 월 | "2025-Nov" 형식 |
+| `initial_release_date` | 최초 발표일 | ISO 8601 형식 (전처리에서 `issued_date`로 변환) |
+| `cumulative_update_kb` | CU KB 번호 | e.g., "KB5046862" (전처리에서 `version`으로 사용) |
+| `vulnerabilities` | CVE 목록 배열 | cve, title, impact, severity, cvss_base_score 등 |
+| `stats` | 통계 요약 | total_cves, critical_count, max_cvss_base 등 |
+| `known_issues` | 알려진 문제 배열 | 설치 후 부작용 |
 
 ---
 

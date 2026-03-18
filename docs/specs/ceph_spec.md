@@ -23,17 +23,23 @@
 
 ```json
 {
-  "patch_id": "GHSA-mgrm-g92q-f8h8",
-  "vendor": "Ceph",
-  "component": "ceph-rgw",
-  "version": "18.2.x",
-  "severity": "High",
-  "cvss_score": 8.1,
-  "cve_id": "CVE-2025-23456",
-  "category": "Security (Critical)",
+  "id": "GHSA-mgrm-g92q-f8h8",
+  "vendor": "Ceph Community",
+  "type": "Security Advisory (GHSA)",
   "title": "RGW object storage unauthorized access via crafted request",
+  "issuedDate": "2025-11-11T00:00:00Z",
+  "updatedDate": "2025-11-11T00:00:00Z",
+  "pubDate": "2025-11-11T00:00:00Z",
+  "dateStr": "2025-11-11",
+  "url": "https://github.com/ceph/ceph/security/advisories/GHSA-mgrm-g92q-f8h8",
+  "severity": "high",
+  "overview": "RGW object storage unauthorized access via crafted request",
   "description": "An attacker can exploit this vulnerability to access objects without proper authentication.",
-  "issued_date": "2025-11-11"
+  "cves": ["CVE-2025-23456"],
+  "packages": ["ceph-18.2.x"],
+  "full_text": "...",
+  "applied_releases": ["18.2.x"],
+  "source": "github"
 }
 ```
 
@@ -41,17 +47,17 @@
 
 | Raw Field | 의미 | 비고 |
 |-----------|------|------|
-| `patch_id` | 패치 식별자 (GHSA-/REDMINE-) | IssueID에 사용 |
-| `vendor` | 벤더 | 항상 `Ceph` |
-| `component` | Ceph 컴포넌트 | ceph-rgw, ceph-osd, ceph-mon 등 |
-| `version` | 영향받는 버전 | e.g., "18.2.x" |
-| `severity` | 심각도 | Critical/High/Medium/Low |
-| `cvss_score` | CVSS 점수 | 숫자 |
-| `cve_id` | CVE 번호 | 선택적 |
-| `category` | 이슈 카테고리 | Security/Data Integrity/Performance 등 |
+| `id` | 패치 식별자 (GHSA-/REDMINE-) | 전처리 후 `patch_id`로 전달 |
+| `vendor` | 벤더 | raw 파일에서 `Ceph Community` (전처리에서 `Ceph`로 변환 가능) |
+| `type` | Advisory 유형 | Security Advisory (GHSA) 등 |
 | `title` | 제목 | 짧은 설명 |
+| `dateStr` | 발표일 | YYYY-MM-DD (전처리에서 `issued_date`로 변환) |
+| `severity` | 심각도 | high/medium/low (소문자) |
+| `overview` | 요약 | summary로 사용 |
 | `description` | 상세 설명 | 4000자 이내로 잘라내기 |
-| `issued_date` | 발표일 | YYYY-MM-DD |
+| `cves` | CVE 번호 배열 | 선택적 |
+| `packages` | 영향 패키지 | 전처리에서 component/version 추출에 사용 |
+| `applied_releases` | 영향받는 Ceph 버전 | e.g., ["18.2.x"] |
 
 ---
 

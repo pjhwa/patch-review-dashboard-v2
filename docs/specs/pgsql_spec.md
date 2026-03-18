@@ -23,17 +23,31 @@
 
 ```json
 {
-  "patch_id": "PGSL-2025-Nov-PostgreSQL_14",
-  "vendor": "PostgreSQL",
-  "product": "postgresql 14",
-  "published": "2025-11-21",
-  "severity": "High",
-  "total_cves": 3,
-  "max_cvss": 8.8,
-  "description": "PostgreSQL 14.14 released. Fixes CVE-2025-24455 (privilege escalation via ...). [further CVE details]",
-  "component": "postgresql",
-  "version": "14.14",
-  "os_version": null
+  "id": "PGSL-2025-Nov-PostgreSQL_14",
+  "vendor": "PostgreSQL Global Development Group",
+  "product": "PostgreSQL 14",
+  "month": "2025-Nov",
+  "type": "Security Update",
+  "release_version": "14.14",
+  "release_date": "2025-11-21",
+  "release_url": "https://www.postgresql.org/about/news/postgresql-1414-released/",
+  "vulnerabilities": [
+    {
+      "cve": "CVE-2025-24455",
+      "severity": "High",
+      "cvss_base_score": 8.8,
+      "description": "Privilege escalation via ..."
+    }
+  ],
+  "non_cve_fixes": [
+    "Fix bug in query plan cache invalidation"
+  ],
+  "stats": {
+    "total_cves": 3,
+    "critical_count": 0,
+    "high_count": 3,
+    "max_cvss_base": 8.8
+  }
 }
 ```
 
@@ -41,16 +55,15 @@
 
 | Raw Field | 의미 | 비고 |
 |-----------|------|------|
-| `patch_id` | 패치 식별자 (PGSL- prefix) | IssueID에 사용 |
-| `vendor` | 벤더 | 항상 `PostgreSQL` |
-| `product` | 제품명 + 메이저 버전 | "postgresql 14" 등 |
-| `published` | 발표일 | YYYY-MM-DD |
-| `severity` | 심각도 | Critical/High/Medium/Low |
-| `total_cves` | CVE 수 | 숫자 |
-| `max_cvss` | 최대 CVSS 점수 | 숫자 |
-| `description` | 설명 | CVE 정보 및 버그픽스 포함, 4000자 truncate |
-| `component` | 컴포넌트 | postgresql, postgresql-server 등 |
-| `version` | 패치 버전 | e.g., "14.14" |
+| `id` | 패치 식별자 (PGSL- prefix) | 전처리 후 `id`/`patch_id` 동시 사용 |
+| `vendor` | 벤더 | raw 파일에서 `PostgreSQL Global Development Group` (전처리에서 `PostgreSQL`로 변환) |
+| `product` | 제품명 + 메이저 버전 | "PostgreSQL 14" 등 |
+| `month` | 패치 발표 월 | "2025-Nov" 형식 |
+| `release_version` | 패치 버전 | e.g., "14.14" (전처리에서 `version`으로 사용) |
+| `release_date` | 발표일 | YYYY-MM-DD (전처리에서 `issued_date`/`date`로 변환) |
+| `vulnerabilities` | CVE 목록 배열 | cve, severity, cvss_base_score, description 포함 |
+| `non_cve_fixes` | 비-CVE 버그픽스 목록 | 전처리에서 description에 포함 |
+| `stats` | 통계 요약 | total_cves, high_count, max_cvss_base 등 |
 
 ---
 

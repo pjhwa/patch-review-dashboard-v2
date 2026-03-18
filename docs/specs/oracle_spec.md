@@ -18,7 +18,10 @@
 ## 2. Raw Data Format
 
 - **Source system**: Oracle Linux yum updateinfo.xml (oracle_collector.sh + oracle_parser.py)
-- **File prefix(es)**: `ELSA-`
+- **File prefix(es)**: `ELSA-`, `ELBA-`, `ELEA-`
+  - `ELSA-` : Oracle Linux Security Advisory (보안 취약점 수정)
+  - `ELBA-` : Oracle Linux Bug Fix Advisory (버그 수정)
+  - `ELEA-` : Oracle Linux Enhancement Advisory (기능 개선)
 - **Sample JSON** (실제 원본 데이터 구조 예시):
 
 ```json
@@ -26,15 +29,20 @@
   "id": "ELSA-2025-15875",
   "vendor": "Oracle",
   "type": "Oracle Linux Security Advisory (ELSA)",
+  "kernel_type": "RHCK",
   "title": "Oracle Linux Security Advisory: kernel update",
   "issuedDate": "2025-12-10T00:00:00Z",
+  "updatedDate": "2025-12-10T00:00:00Z",
+  "pubDate": "2025-12-10T00:00:00Z",
   "dateStr": "2025-12-10",
+  "url": "https://linux.oracle.com/errata/ELSA-2025-15875.html",
   "severity": "Important",
   "overview": "An update for kernel is now available for Oracle Linux 8.",
   "description": "...",
-  "affected_products": ["Oracle Linux 8"],
+  "affected_products": ["Oracle Linux 8 for x86_64"],
   "cves": ["CVE-2025-12345"],
-  "packages": ["kernel-5.15.0-210.157.7.el8uek.x86_64"]
+  "packages": ["kernel-5.15.0-210.157.7.el8uek.x86_64"],
+  "full_text": "..."
 }
 ```
 
@@ -42,7 +50,7 @@
 
 | Raw Field | 의미 | 비고 |
 |-----------|------|------|
-| `id` | 패치 식별자 (ELSA-) | IssueID에 사용 |
+| `id` | 패치 식별자 (ELSA-/ELBA-/ELEA-) | IssueID에 사용 |
 | `severity` | 심각도 | Critical/Important/Moderate/Low |
 | `dateStr` | 발표일 | YYYY-MM-DD |
 | `description` | 설명 | 4000자 이내로 잘라내기 |
@@ -63,7 +71,8 @@
   - 90일 이상 된 항목
   - whitelist에 없는 비핵심 패키지
 - **데이터 전처리 특이사항**:
-  - ELSA 번호 체계는 RHSA와 유사하나 ELSA- prefix 사용
+  - ELSA/ELBA/ELEA 번호 체계는 RHSA/RHBA/RHEA와 유사하나 EL- prefix 사용
+  - ELBA(버그픽스)/ELEA(개선) 파일도 oracle_data/에 수집되나, 전처리 시 severity=None/Low로 대부분 드롭됨
   - Oracle Unbreakable Enterprise Kernel (UEK) 별도 추적 가능
   - Red Hat과 동일한 `patch_preprocessing.py` 사용 (`--vendor oracle`)
 
@@ -72,7 +81,7 @@
 ## 4. Grouping / Output Structure
 
 - **방식**: Individual (개별)
-- 버전그룹 없음. 각 ELSA Advisory가 개별 패치 레코드로 처리됨
+- 버전그룹 없음. 각 ELSA/ELBA/ELEA Advisory가 개별 패치 레코드로 처리됨 (ELBA/ELEA는 severity 기준으로 대부분 드롭)
 - `os/linux/oracle/SKILL.md` — Oracle Linux 전용 SKILL.md 파일 사용
 
 ---
@@ -142,7 +151,7 @@
     active: true,
     skillDirRelative: 'os/linux',
     dataSubDir: 'oracle_data',
-    rawDataFilePrefix: ['ELSA-'],
+    rawDataFilePrefix: ['ELSA-', 'ELBA-', 'ELEA-'],
     preprocessingScript: 'patch_preprocessing.py',
     preprocessingArgs: ['--vendor', 'oracle', '--days', '90'],
     patchesForReviewFile: 'patches_for_llm_review_oracle.json',
@@ -167,7 +176,7 @@
         fallbackDecision: 'Pending',
     },
     collectedFileFilter: (filename: string) =>
-        filename.startsWith('ELSA-') && filename.endsWith('.json'),
+        (filename.startsWith('ELSA-') || filename.startsWith('ELBA-') || filename.startsWith('ELEA-')) && filename.endsWith('.json'),
     preprocessedPatchMapper: (p: any) => ({
         issueId: p.id || p.issueId,
         vendor: 'Oracle',
