@@ -3,7 +3,8 @@
 windows_preprocessing.py
 Windows Server cumulative patch preprocessing script.
 Reads JSON files from windows_data/, filters by review window (6 to 3 months ago),
-groups by OS version, and outputs patches_for_llm_review_windows.json for AI review.
+and outputs patches_for_llm_review_windows.json with individual patch records for AI review.
+The AI review stage selects the single best patch per OS version based on criticality and known issues.
 """
 import re
 import csv
@@ -215,76 +216,23 @@ def main():
         included_patches.append(record)
         print(f"  OK 포함: [{patch_id}] {patch.get('title', '')[:40]}... (os={os_version}, severity={overall_severity})")
 
-    # 4. Group by OS version
-    version_groups = {}
-    for patch in included_patches:
-        os_version = patch.get("os_version", "Windows Server")
-        if os_version not in version_groups:
-            version_groups[os_version] = []
-        version_groups[os_version].append(patch)
-
-    # 5. Build one group record per OS version
-    severity_order = {"Critical": 4, "Important": 3, "Moderate": 2, "Low": 1, "Unknown": 0}
-
-    group_records = []
-    for os_version, patches in version_groups.items():
-        # Sort patches by issued_date descending (most recent first)
-        def sort_key(p):
-            d = p.get("issued_date", "")
-            return d if d != "Unknown" else ""
-        patches_sorted = sorted(patches, key=sort_key, reverse=True)
-
-        most_recent = patches_sorted[0]
-        most_recent_kb = most_recent.get("version", "")
-        most_recent_date = most_recent.get("issued_date", "")
-        most_recent_url = most_recent.get("url", "")
-
-        # Highest severity in group
-        highest_severity = "Unknown"
-        for p in patches_sorted:
-            sev = p.get("severity", "Unknown")
-            if severity_order.get(sev, 0) > severity_order.get(highest_severity, 0):
-                highest_severity = sev
-
-        # Build patches array for the group
-        patches_array = []
-        for p in patches_sorted:
-            patches_array.append({
-                "patch_id": p["patch_id"],
-                "kb": p.get("version", ""),
-                "date": p.get("issued_date", ""),
-                "severity": p.get("severity", "Unknown"),
-                "description": p.get("description", ""),
-            })
-
-        kb_list = ", ".join(p["kb"] for p in patches_array if p["kb"])
-        group_record = {
-            "patch_id": f"WINDOWS-GROUP-{os_version.replace(' ', '_')}",
-            "vendor": "Windows Server",
-            "component": "cumulative-update",
-            "os_version": os_version,
-            "version": most_recent_kb,
-            "issued_date": most_recent_date,
-            "severity": highest_severity,
-            "url": most_recent_url,
-            "review_window": f"{cutoff_start.strftime('%Y-%m-%d')} ~ {cutoff_end.strftime('%Y-%m-%d')}",
-            "candidate_count": len(patches_sorted),
-            "description": f"[Review Window: {len(patches_sorted)} monthly patches for {os_version}] KBs: {kb_list}",
-            "patches": patches_array,
-        }
-        group_records.append(group_record)
-        print(f"  GROUP: {group_record['patch_id']} ({len(patches_sorted)} patches, highest severity={highest_severity})")
+    # 4. Sort individual patches by os_version then issued_date descending
+    #    so same-version patches are consecutive and AI can compare them together
+    def patch_sort_key(p):
+        os_v = p.get("os_version", "")
+        date = p.get("issued_date", "")
+        return (os_v, date if date != "Unknown" else "")
+    included_patches.sort(key=patch_sort_key)
 
     # ---- Output ----
     print(f"\n 처리 결과:")
-    print(f"   * 버전 그룹: {len(group_records)}개")
-    print(f"   * 포함 패치: {len(included_patches)}개")
+    print(f"   * 포함 패치: {len(included_patches)}개 (개별 레코드, AI가 OS버전별 1개 선택)")
     print(f"   * 탈락 패치: {len(audit_rows)}개")
 
-    # Write LLM review JSON (group records)
+    # Write LLM review JSON (individual records)
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
-        json.dump(group_records, f, ensure_ascii=False, indent=2)
-    print(f"OK LLM 리뷰용 JSON 저장 (그룹): {OUTPUT_FILE}")
+        json.dump(included_patches, f, ensure_ascii=False, indent=2)
+    print(f"OK LLM 리뷰용 JSON 저장 (개별): {OUTPUT_FILE}")
 
     # Write Audit CSV
     audit_fieldnames = ["patch_id", "vendor", "drop_reason", "title"]

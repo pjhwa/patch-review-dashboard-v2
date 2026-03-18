@@ -252,7 +252,7 @@ async function runAiReviewLoop(
 ): Promise<any[]> {
     const { ReviewItemSchema } = require('@/lib/schema');
     const MAX_AI_RETRIES = 2;
-    const BATCH_SIZE = 5;
+    const BATCH_SIZE = productCfg.aiBatchSize ?? 5;
 
     let finalReviewedPatches: any[] = [];
     const alreadyReviewed = new Set<string>();

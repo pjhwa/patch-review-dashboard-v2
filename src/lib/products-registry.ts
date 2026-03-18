@@ -30,11 +30,13 @@ export interface ProductConfig {
     aiVendorFieldValue: string;   // AI 출력의 Vendor 필드에 기대하는 값
     aiComponentDefault: string;   // AI가 Component를 비울 때 사용하는 기본값
 
-    // true이면 개별 패치가 아닌 버전 그룹 단위로 평가 (Windows Server, SQL Server에 사용)
+    // true이면 개별 패치가 아닌 버전 그룹 단위로 평가 (현재 미사용, 하위 호환용)
     aiVersionGrouped: boolean;
     // 'exact': AI가 배치 크기와 정확히 같은 수의 항목을 반환해야 함
-    // 'nonEmpty': 버전 그룹 방식에서 1개 이상만 반환해도 허용
+    // 'nonEmpty': 1개 이상만 반환해도 허용
     aiBatchValidation: 'exact' | 'nonEmpty';
+    // 제품별 AI 배치 크기 (미설정 시 기본값 5 사용). OS버전 간 비교가 필요한 제품에 사용.
+    aiBatchSize?: number;
 
     ragExclusion?: {
         // 'file-hiding': AI 호출 전 normalized/ 디렉토리와 패치 파일을 임시로 숨김 (Ceph, Windows 등)
@@ -226,16 +228,18 @@ export const PRODUCT_REGISTRY: ProductConfig[] = [
         jobName: 'run-windows-pipeline',
         rateLimitFlag: '/tmp/.rate_limit_windows',
         logTag: 'WINDOWS',
-        aiEntityName: 'Windows Server VERSION GROUPS',
+        aiEntityName: 'Windows Server cumulative update patches',
         aiVendorFieldValue: 'Windows Server',
         aiComponentDefault: 'cumulative-update',
-        aiVersionGrouped: true,
-        aiBatchValidation: 'nonEmpty',
+        aiVersionGrouped: false,
+        aiBatchValidation: 'exact',
+        aiBatchSize: 15,
         ragExclusion: {
             type: 'file-hiding',
             normalizedDirName: 'windows_data/normalized',
         },
         passthrough: {
+            // AI가 모든 개별 패치를 검토하고 Exclude 결정을 내리므로 passthrough 불필요
             enabled: false,
             fallbackCriticality: 'Important',
             fallbackDecision: 'Pending',
@@ -253,7 +257,7 @@ export const PRODUCT_REGISTRY: ProductConfig[] = [
         }),
         csvBOM: true,
         buildPrompt: (skillDir: string, batchSize: number, prunedBatch: any[]) =>
-            `Read the rules explicitly from ${path.join(skillDir, 'SKILL.md')}. Evaluate the following ${batchSize} Windows Server VERSION GROUPS according to the strict LLM evaluation rules in section 4 of that file.\nCRITICAL MANDATE: DO NOT USE ANY TOOLS TO READ OR SEARCH THE WORKSPACE JSON FILES. Do not parse patches_for_llm_review_windows.json. IGNORE ANY PREVIOUS EXAMPLES or RAG retrievals. You must ONLY base your summary on the literal text provided below in [BATCH DATA].\nINPUT FORMAT: Each entry in [BATCH DATA] is a VERSION GROUP containing a 'patches' array of monthly cumulative updates for that Windows Server version. The group's patch_id is in the format 'WINDOWS-GROUP-<version>'.\nSELECTION RULE: For each VERSION GROUP, select the SINGLE MOST RECENT monthly patch (from the 'patches' array) that contains a fix for a critical security vulnerability or critical system stability issue. If no patch in the group meets critical criteria, EXCLUDE the entire group (set Decision to 'Exclude').\nOUTPUT RULE: Return EXACTLY ${batchSize} objects (one per input VERSION GROUP). IssueID = the GROUP's patch_id (e.g. 'WINDOWS-GROUP-Windows_Server_2025'). Version = the KB number of the SELECTED monthly patch (e.g. 'KB5058385'). OsVersion = the Windows Server version string.\nCRITICAL RULE FOR DESCRIPTIONS: The 'Description' and 'KoreanDescription' fields MUST be a concise 1-2 sentence executive summary of WHY the selected patch is critical. Focus on the specific critical vulnerability or stability issue fixed.\nEach object MUST contain exactly: 'IssueID', 'Component', 'Version', 'Vendor', 'OsVersion', 'Date', 'Criticality', 'Description', 'KoreanDescription', 'Decision', 'Reason'. For Vendor use 'Windows Server'. For Component use 'cumulative-update'.\n\n[BATCH DATA]:\n${JSON.stringify(prunedBatch)}`,
+            `Read the rules explicitly from ${path.join(skillDir, 'SKILL.md')}. Evaluate the following ${batchSize} Windows Server cumulative update patches according to the strict LLM evaluation rules in section 4 of that file.\nCRITICAL MANDATE: DO NOT USE ANY TOOLS TO READ OR SEARCH THE WORKSPACE JSON FILES. IGNORE ANY PREVIOUS EXAMPLES or RAG retrievals. You must ONLY base your evaluation on the literal text provided below in [BATCH DATA].\nINPUT FORMAT: Each entry in [BATCH DATA] is an individual monthly cumulative update patch with fields: patch_id, os_version, version (KB number), severity, description, issued_date.\nSELECTION RULE: The patches in [BATCH DATA] are sorted by os_version. For each os_version, you will find multiple monthly patches. Compare all patches with the same os_version and select EXACTLY ONE that: (1) fixes the most critical security vulnerabilities or system stability issues, AND (2) has no blocking known issues. Mark the selected patch Decision='Done', all others of the same os_version Decision='Exclude'.\nOUTPUT RULE: Return EXACTLY ${batchSize} objects (one per input patch). IssueID = the patch's patch_id field exactly. Version = the KB number from the version field. OsVersion = the os_version field value.\nCRITICAL RULE FOR DESCRIPTIONS: The 'Description' and 'KoreanDescription' fields MUST be a concise 1-2 sentence executive summary of the most critical security/stability issue fixed. For Exclude patches, summarize why they were not selected.\nEach object MUST contain exactly: 'IssueID', 'Component', 'Version', 'Vendor', 'OsVersion', 'Date', 'Criticality', 'Description', 'KoreanDescription', 'Decision', 'Reason'. For Vendor use 'Windows Server'. For Component use 'cumulative-update'.\n\n[BATCH DATA]:\n${JSON.stringify(prunedBatch)}`,
     },
     {
         id: 'ceph',
