@@ -7,18 +7,26 @@ import util from 'util';
 import { prisma } from '@/lib/db';
 import { ProductConfig, PRODUCT_MAP, getSkillDir } from '@/lib/products-registry';
 
+// Redis 연결: BullMQ 큐와 워커가 공유하는 단일 연결.
+// maxRetriesPerRequest: null 은 BullMQ Worker에 필수 옵션으로, 연결 재시도를 무한히 허용한다.
 const connection = new IORedis({
     host: '127.0.0.1',
     port: 6379,
     maxRetriesPerRequest: null,
 }) as any;
 
+// 'patch-pipeline' 큐에 작업을 추가하는 Queue 인스턴스. API 라우트에서 이 객체를 통해 파이프라인 작업을 등록한다.
 export const pipelineQueue = new Queue('patch-pipeline', { connection });
 
 // Define the worker on the Next.js server side.
 // Note: In a production app, this might run in a separate Node process, but for this dashboard it's spawned here.
 let workerStarted = false;
 
+// OpenClaw AI 프로세스에 대한 글로벌 뮤텍스 (디렉토리 기반 락).
+// 여러 제품 파이프라인이 동시에 AI를 호출하면 세션 충돌이 발생하므로,
+// 한 번에 하나의 AI 호출만 실행되도록 보장한다.
+// 파일이 아닌 디렉토리로 락을 구현하는 이유: mkdir은 OS 레벨에서 원자적(atomic)으로 동작해
+// 파일 생성보다 경쟁 조건(race condition)이 발생할 가능성이 없다.
 async function withOpenClawLock(jobLog: (msg: string) => Promise<any>, fn: () => Promise<any>): Promise<any> {
     const lockDir = '/tmp/openclaw_execution.lock';
     let loggedWaiting = false;
@@ -41,7 +49,9 @@ async function withOpenClawLock(jobLog: (msg: string) => Promise<any>, fn: () =>
     try { return await fn(); } finally { try { fs.rmdirSync(lockDir, { recursive: true }); } catch(e) {} }
 }
 
-// Single shared text-pruning function (all products use same logic)
+// AI 컨텍스트 토큰 한도를 초과하지 않도록 패치 데이터를 정리하는 범용 pruner.
+// URL을 [URL] 플레이스홀더로 대체하고 텍스트를 잘라낸다.
+// Linux 제품을 제외한 모든 제품(Ceph, MariaDB, PostgreSQL 등)에서 사용된다.
 function prunePatch(obj: any): any {
     if (!obj) return obj;
     const copy = JSON.parse(JSON.stringify(obj));
@@ -67,7 +77,9 @@ function prunePatch(obj: any): any {
     return copy;
 }
 
-// Linux-specific pruner preserves extra array truncation logic
+// Linux(RHEL/Oracle/Ubuntu) 패치 전용 pruner.
+// Linux 패치는 packages, cves, affected_products 같은 배열이 매우 길어
+// 범용 pruner보다 강력한 배열 잘라내기(최대 15개)를 추가로 적용한다.
 function prunePatchLinux(obj: any): any {
     if (!obj) return obj;
     const copy = JSON.parse(JSON.stringify(obj));
@@ -115,7 +127,10 @@ function prunePatchLinux(obj: any): any {
     return copy;
 }
 
-// Factory: creates a runStream function bound to a specific cwd
+// 특정 skillDir에 바인딩된 runStream 함수를 반환하는 팩토리.
+// 각 제품의 파이프라인은 자신의 skillDir(작업 디렉토리)에서 Python 스크립트와 openclaw를 실행하므로,
+// cwd를 미리 고정한 함수를 만들어 각 호출 시 반복 지정하는 번거로움을 제거한다.
+// stdout/stderr 스트리밍으로 BullMQ job 로그에 실시간으로 기록한다.
 function makeStreamRunner(skillDir: string, job: Job) {
     return async (command: string, args: string[], progressMap: any = {}, overrideOpts: any = {}, suppressLog: boolean = false): Promise<any> => {
         return new Promise((res, rej) => {
@@ -150,7 +165,9 @@ function makeStreamRunner(skillDir: string, job: Job) {
     };
 }
 
-// Clean up openclaw session files before each AI call
+// AI 호출 전 세션 파일을 정리한다.
+// openclaw는 이전 세션의 .lock / .jsonl 파일이 남아있으면 재사용해서 오염된 컨텍스트로 응답할 수 있다.
+// sessions.json도 반드시 삭제해야 한다 — 남아있으면 이전 대화 상태가 복원되는 버그 발생 가능.
 function cleanupSessions(): void {
     const sessionsDir = path.join(process.env.HOME || '/home/citec', '.openclaw/agents/main/sessions');
     if (fs.existsSync(sessionsDir)) {
@@ -161,7 +178,10 @@ function cleanupSessions(): void {
     }
 }
 
-// Passthrough: ensure all preprocessed patches appear in ReviewedPatch (for products that have it enabled)
+// 패스스루(Passthrough) 안전망: AI가 평가하지 않은 패치를 직접 DB에 삽입한다.
+// AI는 SKILL.md 기준에 따라 일부 패치를 의도적으로 건너뛸 수 있다.
+// passthrough가 활성화된 제품은 AI에서 누락된 패치를 fallbackCriticality/fallbackDecision으로
+// ReviewedPatch에 강제 삽입해 전처리 기록과 리뷰 기록 사이에 괴리가 생기지 않도록 한다.
 async function runPassthrough(job: Job, productCfg: ProductConfig, aiReviewedIds: Set<string>): Promise<void> {
     if (!productCfg.passthrough.enabled) return;
     try {
@@ -208,7 +228,8 @@ async function runPassthrough(job: Job, productCfg: ProductConfig, aiReviewedIds
     }
 }
 
-// Extract JSON array from AI text output
+// AI 출력 텍스트에서 JSON 배열을 추출한다.
+// openclaw는 종종 응답을 ```json ... ``` 코드 펜스로 감싸므로, 코드 펜스를 제거한 후 파싱한다.
 function extractJsonArray(text: string): any {
     const stripped = text.replace(/```(?:json)?\s*/g, '').replace(/```/g, '');
     const match = stripped.match(/\[\s*\{[\s\S]*?\}\s*\]/);
@@ -216,7 +237,10 @@ function extractJsonArray(text: string): any {
     return JSON.parse(match[0]);
 }
 
-// Main AI review loop for any product
+// 모든 제품에서 공통으로 사용하는 AI 리뷰 루프.
+// 패치를 BATCH_SIZE(5)개 단위로 나눠 순차적으로 openclaw AI에 전달하고,
+// 결과를 Zod 스키마로 검증한다. 검증 실패 시 최대 MAX_AI_RETRIES(2)번 재시도한다.
+// Rate Limit 오류가 발생하면 rateLimitFlag 파일을 생성하고 예외를 throw해 재개 모드(resume)를 가능하게 한다.
 async function runAiReviewLoop(
     job: Job,
     productCfg: ProductConfig,
@@ -247,7 +271,9 @@ async function runAiReviewLoop(
         if (fs.existsSync(productCfg.rateLimitFlag)) fs.unlinkSync(productCfg.rateLimitFlag);
     }
 
-    // RAG injection for Linux (prompt-injection type)
+    // RAG 제외 규칙 주입 (Linux: prompt-injection 방식).
+    // 사용자가 수동 피드백으로 등록한 '제외 패치' 목록을 RAG DB에서 조회해
+    // 프롬프트에 직접 포함시켜 AI가 유사 패치를 자동으로 Exclude 처리하도록 유도한다.
     let ragExclusions = '';
     if (isLinux && productCfg.ragExclusion?.type === 'prompt-injection' && productCfg.ragExclusion.queryScript) {
         const runStepSync = util.promisify(require('child_process').exec);
@@ -272,7 +298,11 @@ async function runAiReviewLoop(
         }
     }
 
-    // File-hiding RAG exclusion: hide normalized dir and patches file before AI calls
+    // RAG 제외 규칙 적용 (file-hiding 방식).
+    // Ceph, MariaDB, Windows 등은 normalized/ 디렉토리와 patches_for_llm_review_*.json을
+    // AI 호출 전에 임시로 이름을 바꿔 숨긴다. openclaw의 RAG 검색이 이 파일들을 읽어
+    // 오래된 컨텍스트를 기반으로 잘못된 응답을 생성하는 문제를 방지한다.
+    // AI 루프 종료 후 반드시 원래 이름으로 복원한다.
     let normalizedDir: string | null = null;
     let hiddenNormalizedDir: string | null = null;
     let patchesFilePath: string | null = null;
@@ -367,7 +397,8 @@ async function runAiReviewLoop(
 
                 fs.writeFileSync(outputReportPath, JSON.stringify(finalReviewedPatches, null, 2));
 
-                // Upsert reviewed items to DB during batch (mid-pipeline persistence)
+                // 배치 완료 시마다 중간 저장: 파이프라인이 중간에 실패하더라도
+        // 이미 검토된 배치는 DB에 보존되어 재개 모드(resume)에서 재처리하지 않아도 된다.
                 for (const rItem of parsedJson) {
                     try {
                         const rIssueId = rItem.IssueID || rItem.id || 'Unknown';
@@ -429,7 +460,10 @@ async function runAiReviewLoop(
     return finalReviewedPatches;
 }
 
-// DB ingestion for any product
+// AI 리뷰 결과를 DB에 최종 반영한다.
+// isResumeMode / isAiOnly 가 아닐 때만 기존 데이터를 삭제하고 새로 삽입한다.
+// 'Exclude' 결정이거나 criticality가 moderate/medium/low인 패치는 DB에 넣지 않는다.
+// vsphere는 createMany 대신 개별 create를 사용한다 (배치 삽입 시 스키마 호환 문제).
 async function ingestToDb(
     job: Job,
     productCfg: ProductConfig,
@@ -496,7 +530,12 @@ async function ingestToDb(
     }
 }
 
-// Generic product pipeline runner
+// 단일 제품에 대한 5단계 파이프라인을 실행한다.
+// 1단계: Python 전처리 스크립트 실행 (isAiOnly/Resume 모드에서는 건너뜀)
+// 2단계: 전처리 결과 JSON 파일 읽기
+// 3단계: AI 리뷰 루프 실행 (runAiReviewLoop)
+// 4단계: DB 반영 (ingestToDb)
+// 5단계: 패스스루 — AI가 빠뜨린 패치를 기본값으로 채워 넣음 (runPassthrough)
 async function runProductPipeline(job: Job, productCfg: ProductConfig, isAiOnly: boolean, isRetry: boolean): Promise<string> {
     const skillDir = getSkillDir(productCfg);
     const isResumeMode = (isAiOnly || isRetry) && fs.existsSync(productCfg.rateLimitFlag);
@@ -552,6 +591,9 @@ async function runProductPipeline(job: Job, productCfg: ProductConfig, isAiOnly:
     return `${productCfg.name} pipeline success`;
 }
 
+// BullMQ Worker를 등록한다. Next.js 서버 프로세스 내에서 실행되며,
+// 큐에서 작업이 들어오면 job.name으로 제품을 식별해 파이프라인을 실행한다.
+// workerStarted 플래그로 중복 등록을 방지한다.
 export function startWorker() {
     if (workerStarted) return;
     workerStarted = true;
@@ -559,6 +601,7 @@ export function startWorker() {
     new Worker('patch-pipeline', async (job: Job) => {
         return new Promise((resolve, reject) => {
             console.log(`Starting pipeline job ${job.id} (name: ${job.name})`);
+            // 레거시 Linux OS 파이프라인과 manual-review에서 사용하는 기본 skillDir.
             const linuxV2Dir = path.join(process.env.HOME || '/home/citec', '.openclaw/workspace/skills/patch-review/os/linux');
             const linuxSkillDir = linuxV2Dir;
 
@@ -616,6 +659,8 @@ export function startWorker() {
 
                     // ============================================================
                     // PRODUCT PIPELINE BRANCHES (via registry)
+                    // job.name으로 PRODUCT_MAP에서 ProductConfig를 찾아 runProductPipeline으로 위임한다.
+                    // 새 제품을 추가하면 products-registry.ts에 등록하고 여기에 job.name → id 매핑만 추가하면 된다.
                     // ============================================================
                     const productCfg = PRODUCT_MAP[
                         job.name === 'run-ceph-pipeline' ? 'ceph' :
@@ -811,7 +856,9 @@ Do NOT perform any web scraping. Do NOT use tools to write to files, simply outp
                     if (isResumeMode && fs.existsSync(rateLimitFlagFile)) fs.unlinkSync(rateLimitFlagFile);
                     fs.writeFileSync(absoluteReportPath, JSON.stringify(finalReviewedPatches, null, 2));
 
-                    // 5. Database Ingestion - validate against preprocessed data first
+                    // 5. 레거시 run-pipeline / manual-review 경로의 DB 반영.
+                    // preprocessedMap을 통해 AI가 만들어낸 가짜(환각) issueId를 필터링한다.
+                    // PreprocessedPatch에 존재하지 않는 issueId는 AI 환각으로 간주해 삽입하지 않는다.
                     console.log(`Job ${job.id} finished AI loop. Ingesting AI results to SQLite DB...`);
                     await job.log("OpenClaw sequential loop finished. Merging with PreprocessedPatch metadata and ingesting...");
 
@@ -947,6 +994,8 @@ Do NOT perform any web scraping. Do NOT use tools to write to files, simply outp
     console.log("BullMQ Worker for 'patch-pipeline' initialized.");
 }
 
+// 모듈이 로드되는 순간 워커를 자동으로 시작한다.
+// Next.js HMR 환경에서 모듈이 여러 번 로드될 수 있으므로 globalForQueue로 중복 실행을 방지한다.
 const globalForQueue = global as unknown as { workerStarted: boolean };
 if (!globalForQueue.workerStarted) {
     globalForQueue.workerStarted = true;

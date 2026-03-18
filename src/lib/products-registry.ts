@@ -1,44 +1,72 @@
 import path from 'path';
 
+/**
+ * 제품(Product) 파이프라인 전체 설정을 담는 중앙 레지스트리 인터페이스.
+ * 새 제품을 추가할 때 이 인터페이스를 구현한 객체를 PRODUCT_REGISTRY 배열에 추가하면 된다.
+ */
 export interface ProductConfig {
-    id: string;
-    name: string;
-    vendorString: string;
+    id: string;                  // 내부 식별자 (라우팅, DB 조회에 사용)
+    name: string;                // UI 표시 이름
+    vendorString: string;        // DB의 vendor 필드 값 (preprocessedPatchMapper와 반드시 일치)
     category: 'os' | 'storage' | 'database' | 'virtualization';
-    active: boolean;
-    skillDirRelative: string;
-    dataSubDir: string;
-    rawDataFilePrefix: string[];
-    preprocessingScript: string;
-    preprocessingArgs: string[];
-    patchesForReviewFile: string;
-    aiReportFile: string;
-    finalCsvFile: string;
-    jobName: string;
-    rateLimitFlag: string;
-    logTag: string;
-    aiEntityName: string;
-    aiVendorFieldValue: string;
-    aiComponentDefault: string;
+    active: boolean;             // false면 파이프라인 실행 대상에서 제외되고 PRODUCT_MAP에도 없음
+
+    skillDirRelative: string;    // ~/.openclaw/workspace/skills/patch-review/ 기준 상대 경로
+    dataSubDir: string;          // skillDir 아래 원시 수집 데이터 디렉토리
+    rawDataFilePrefix: string[]; // 수집 파일 식별용 prefix (예: ['RHSA-', 'RHBA-'])
+
+    preprocessingScript: string; // Python 전처리 스크립트 파일명
+    preprocessingArgs: string[]; // 전처리 스크립트에 전달할 CLI 인수
+
+    patchesForReviewFile: string; // 전처리 결과: AI 리뷰용 패치 목록 JSON
+    aiReportFile: string;         // AI 리뷰 결과 저장 JSON
+    finalCsvFile: string;         // 최종 승인 패치 CSV (관리자 finalize 시 생성)
+
+    jobName: string;              // BullMQ 작업 이름 (워커에서 분기 식별에 사용)
+    rateLimitFlag: string;        // Rate Limit 발생 시 생성되는 flag 파일 경로 (재개 모드 감지용)
+    logTag: string;               // 로그 접두어 (예: '[REDHAT-PIPELINE]')
+
+    aiEntityName: string;         // AI 프롬프트에서 대상을 설명하는 레이블
+    aiVendorFieldValue: string;   // AI 출력의 Vendor 필드에 기대하는 값
+    aiComponentDefault: string;   // AI가 Component를 비울 때 사용하는 기본값
+
+    // true이면 개별 패치가 아닌 버전 그룹 단위로 평가 (Windows Server, SQL Server에 사용)
     aiVersionGrouped: boolean;
+    // 'exact': AI가 배치 크기와 정확히 같은 수의 항목을 반환해야 함
+    // 'nonEmpty': 버전 그룹 방식에서 1개 이상만 반환해도 허용
     aiBatchValidation: 'exact' | 'nonEmpty';
+
     ragExclusion?: {
+        // 'file-hiding': AI 호출 전 normalized/ 디렉토리와 패치 파일을 임시로 숨김 (Ceph, Windows 등)
+        // 'prompt-injection': query_rag.py로 제외 규칙을 조회해 프롬프트에 직접 삽입 (Linux)
         type: 'file-hiding' | 'prompt-injection';
-        normalizedDirName?: string;
-        queryScript?: string;
-        queryTextSampleSize?: number;
+        normalizedDirName?: string;      // file-hiding 시 숨길 디렉토리 (skillDir 기준 상대 경로)
+        queryScript?: string;            // prompt-injection 시 실행할 RAG 조회 스크립트
+        queryTextSampleSize?: number;    // RAG 쿼리에 사용할 샘플 패치 수
     };
+
     passthrough: {
+        // enabled: AI가 건너뛴 패치를 fallback 값으로 ReviewedPatch에 자동 삽입할지 여부
+        // 버전 그룹 방식(Windows, SQL Server)은 false로 설정해 불필요한 중간 항목이 생기지 않도록 함
         enabled: boolean;
         fallbackCriticality: string;
         fallbackDecision: string;
     };
+
+    // rawDataFilePrefix 기준으로 수집 파일을 필터링하는 함수
     collectedFileFilter: (filename: string) => boolean;
+    // 원시 수집 데이터(Python 출력)를 PreprocessedPatch DB 스키마 형태로 변환
     preprocessedPatchMapper: (raw: any) => object;
-    csvBOM: boolean;
+    csvBOM: boolean;             // true이면 BOM(UTF-8 BOM) 포함 CSV 생성 (Excel 한글 깨짐 방지)
+
+    // 제품별 AI 프롬프트 생성 함수. skillDir 경로, 배치 크기, pruning된 패치 배열을 받아 문자열 반환
     buildPrompt: (skillDir: string, batchSize: number, prunedBatch: any[]) => string;
 }
 
+/**
+ * 전체 제품 목록. active: false인 항목은 파이프라인 실행 대상에서 제외되지만
+ * 레지스트리에는 남겨두어 향후 활성화를 위한 설정 템플릿으로 보존한다.
+ */
 export const PRODUCT_REGISTRY: ProductConfig[] = [
     {
         id: 'redhat',
@@ -453,7 +481,7 @@ export const PRODUCT_REGISTRY: ProductConfig[] = [
         buildPrompt: (skillDir: string, batchSize: number, prunedBatch: any[]) =>
             `Read the rules explicitly from ${path.join(skillDir, 'SKILL.md')}. Evaluate the following ${batchSize} VMware vSphere patches according to the strict LLM evaluation rules in section 4 of that file.\nCRITICAL MANDATE: DO NOT USE ANY TOOLS TO READ OR SEARCH THE WORKSPACE JSON FILES. Do not parse patches_for_llm_review_vsphere.json. IGNORE ANY PREVIOUS EXAMPLES or RAG retrievals. You must ONLY base your summary on the literal text provided below in [BATCH DATA].\nCRITICAL RULE FOR DESCRIPTIONS: The 'Description' and 'KoreanDescription' fields MUST be a concise, executive summary of the security advisories and bug fixes. DO NOT include verbatim file names or raw changelog copy-pastes. Describe WHAT was fixed and WHY it matters.\nReturn ONLY a pure JSON array with EXACTLY ${batchSize} objects. Each object MUST contain exactly: 'IssueID', 'Component', 'Version', 'Vendor', 'Date', 'Criticality', 'Description', 'KoreanDescription', and optionally 'Decision' and 'Reason'. For Vendor use 'VMware vSphere'. For Component use the specific product (e.g. 'ESXi', 'vCenter Server'). Do NOT skip evaluation steps.\n\n[BATCH DATA]:\n${JSON.stringify(prunedBatch)}`,
     },
-    // Inactive placeholder products
+    // ── 비활성 제품 (미래 확장용 설정 템플릿) ──────────────────────────────────
     {
         id: 'mysql',
         name: 'MySQL',
@@ -497,12 +525,16 @@ export const PRODUCT_REGISTRY: ProductConfig[] = [
     },
 ];
 
+// 활성 제품만 포함한 id → ProductConfig 맵. 워커에서 job.name으로 제품 설정을 빠르게 조회할 때 사용한다.
 export const PRODUCT_MAP: Record<string, ProductConfig> = Object.fromEntries(
     PRODUCT_REGISTRY.filter(p => p.active).map(p => [p.id, p])
 );
 
+// 비활성 제품을 포함한 전체 레지스트리. 관리 UI나 검증 스크립트에서 전체 목록을 참조할 때 사용한다.
 export const PRODUCT_REGISTRY_ALL = PRODUCT_REGISTRY;
 
+// 제품 설정에서 절대 skillDir 경로를 계산한다.
+// 서버의 HOME 디렉토리 아래 ~/.openclaw/workspace/skills/patch-review/{skillDirRelative} 형태.
 export function getSkillDir(productCfg: ProductConfig): string {
     const baseDir = path.join(process.env.HOME || '/home/citec', '.openclaw/workspace/skills/patch-review');
     return path.join(baseDir, productCfg.skillDirRelative);

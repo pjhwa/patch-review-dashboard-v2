@@ -1,5 +1,8 @@
 import { z } from 'zod';
 
+// AI(OpenClaw)가 반환하는 JSON 배열의 단일 항목에 대한 Zod 검증 스키마.
+// AI 응답에서 필드가 누락되거나 다른 케이싱으로 반환될 경우 default 값으로 대체한다.
+// passthrough()를 사용해 스키마에 없는 추가 필드(예: OsVersion)도 허용한다.
 export const ReviewItemSchema = z.object({
     IssueID: z.string().default("Unknown"),
     Component: z.string().default("Unknown"),

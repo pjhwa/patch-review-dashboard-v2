@@ -7,6 +7,7 @@ import path from 'path';
 import { prisma } from '@/lib/db';
 import { PRODUCT_REGISTRY, getSkillDir } from '@/lib/products-registry';
 
+// 현재 날짜를 기반으로 분기 문자열을 반환한다. 예: "Q1 2026"
 export function getCurrentQuarter(): string {
     const now = new Date();
     const month = now.getMonth() + 1; // 1-12
@@ -15,6 +16,8 @@ export function getCurrentQuarter(): string {
     return `Q${q} ${year}`; // e.g., "Q1 2026"
 }
 
+// 아직 finalCsvFile이 생성되지 않은 활성 제품 목록을 반환한다.
+// 이 목록이 비어있어야 분기 아카이브를 생성할 수 있다.
 export function getIncompleteProducts(): string[] {
     return PRODUCT_REGISTRY
         .filter(p => p.active)
@@ -26,6 +29,9 @@ export function getIncompleteProducts(): string[] {
         .map(p => p.name);
 }
 
+// 현재 ReviewedPatch 전체를 스냅샷으로 저장하는 분기 아카이브를 생성한다.
+// ~/.openclaw/workspace/skills/patch-review/quarterly-archive/{quarter}/ 아래에
+// metadata.json(통계 및 제품 목록)과 patches.json(전체 패치 데이터)을 저장한다.
 export async function createQuarterlyArchive(quarter: string): Promise<{ totalPatches: number }> {
     const QUARTERLY_ARCHIVE_BASE = path.join(
         process.env.HOME || '/home/citec',
@@ -36,6 +42,7 @@ export async function createQuarterlyArchive(quarter: string): Promise<{ totalPa
         orderBy: { reviewedAt: 'desc' }
     });
 
+    // vendor 문자열 → 제품 정보 역방향 맵을 구성해 DB의 vendor 필드로 제품을 조회할 수 있게 한다.
     const vendorToProduct = new Map<string, { productId: string; categoryId: string; productName: string }>();
     for (const product of PRODUCT_REGISTRY) {
         if (product.active) {

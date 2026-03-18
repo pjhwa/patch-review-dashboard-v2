@@ -5,7 +5,8 @@ import { Database, Bot, CheckCircle, Archive, Server, Component, DatabaseZap, Ne
 import { getDictionary, Locale } from "@/lib/i18n";
 import { cookies } from "next/headers";
 
-// Mock taxonomy data
+// 카테고리 정적 메타데이터. count는 서버 렌더링 시 API 응답으로 덮어쓰여지므로 초기값은 의미 없음.
+// active: false인 카테고리는 클릭 불가 상태로 표시된다.
 const CATEGORIES: { id: string, count: string | number, active: boolean, icon: any }[] = [
   { id: 'os', count: 124, active: true, icon: Server },
   { id: 'middleware', count: 0, active: false, icon: Component },
@@ -15,6 +16,9 @@ const CATEGORIES: { id: string, count: string | number, active: boolean, icon: a
   { id: 'virtualization', count: 0, active: true, icon: Cpu },
 ];
 
+// SSR(Server-Side Rendering) 대시보드 홈 페이지.
+// 매 요청마다 pipeline 상태, 카테고리별 제품 수, 아카이브 수를 API로 조회해 렌더링한다.
+// cache: 'no-store'로 항상 최신 데이터를 사용한다.
 export default async function Home() {
   const port = process.env.PORT || 3001;
   const baseUrl = `http://localhost:${port}`;
@@ -45,7 +49,8 @@ export default async function Home() {
       pipeline = await res.json();
     }
 
-    // Helper to aggregate global stats
+    // 카테고리별 제품 목록에서 전체 통계(수집/리뷰/승인 수)를 누적한다.
+    // 각 카테고리 API를 순차적으로 호출하며 공통 카운터에 합산한다.
     const aggregateStats = (products: any[]) => {
       let catApproved = 0;
       products.forEach((p: any) => {
@@ -126,7 +131,7 @@ export default async function Home() {
     console.error("Failed to fetch dashboard data:", error);
   }
 
-  // Map categories and inject i18n
+  // 정적 카테고리 메타데이터에 API에서 조회한 동적 count와 i18n 이름을 합쳐 렌더링용 배열을 만든다.
   const dynamicCategories = CATEGORIES.map(cat => {
     let name = cat.id; // Fallback
     switch (cat.id) {

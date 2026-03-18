@@ -1,5 +1,8 @@
 "use client"
 
+// 카테고리 페이지의 제품 목록 및 파이프라인 실행 컨트롤 컴포넌트.
+// SSE(Server-Sent Events)로 파이프라인 로그를 실시간 스트리밍하며,
+// 실행 확인 다이얼로그를 통해 Fresh Start / AI Only / Retry 3가지 모드를 지원한다.
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { PremiumCard } from "@/components/PremiumCard";
@@ -16,6 +19,7 @@ export function ProductGrid({ categoryId, products, dict }: { categoryId: string
     const [activeEventSource, setActiveEventSource] = useState<EventSource | null>(null);
     const router = useRouter();
 
+    // 컴포넌트 언마운트 시 열려있는 SSE 연결을 닫아 메모리 누수를 방지한다.
     useEffect(() => {
         return () => {
             if (activeEventSource) {
@@ -24,6 +28,8 @@ export function ProductGrid({ categoryId, products, dict }: { categoryId: string
         };
     }, [activeEventSource]);
 
+    // 페이지 최초 로드 시 이미 실행 중인 파이프라인 잡이 있으면 SSE 스트림에 자동으로 재연결한다.
+    // 사용자가 페이지를 새로고침해도 진행 상황을 계속 볼 수 있다.
     useEffect(() => {
         const checkActiveJob = async () => {
             try {
@@ -42,6 +48,9 @@ export function ProductGrid({ categoryId, products, dict }: { categoryId: string
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
+    // SSE(Server-Sent Events) 스트림에 연결하고, 수신한 로그를 파싱해 UI 상태를 갱신한다.
+    // 로그 태그(PREPROCESS_DONE, RESUME, SKIP-RESUME 등)를 감지해 사용자 친화적인 메시지로 변환한다.
+    // 로그 버퍼(logTail)는 최근 30줄로 제한해 화면이 너무 길어지는 것을 방지한다.
     const connectToStream = (jobId: string) => {
         const source = new EventSource(`/api/pipeline/stream?jobId=${jobId}`);
         setActiveEventSource(source);
@@ -142,7 +151,8 @@ export function ProductGrid({ categoryId, products, dict }: { categoryId: string
         setResultMsg(dict?.dashboard?.productGrid?.initiatingPipeline || "Initiating Pipeline Queue...");
         setLogTail("");
 
-        // Determine the correct pipeline run endpoint based on category
+        // 카테고리 및 제품 ID에 따라 파이프라인 실행 엔드포인트를 결정한다.
+        // 각 제품은 독립적인 API 라우트를 가지며, 전달하는 body 구조도 다를 수 있다.
         let pipelineRunUrl = '/api/pipeline/run';
         if (categoryId === 'storage') pipelineRunUrl = '/api/pipeline/ceph/run';
         else if (categoryId === 'database') {
@@ -180,6 +190,8 @@ export function ProductGrid({ categoryId, products, dict }: { categoryId: string
         }
     };
 
+    // 카테고리 내 모든 제품의 최종 승인 CSV를 병합해 다운로드한다.
+    // Blob URL을 동적으로 생성해 링크 클릭으로 즉시 다운로드를 트리거한다.
     const handleDownloadCSV = async () => {
         setIsDownloading(true);
         try {
