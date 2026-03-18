@@ -48,7 +48,7 @@ next-env.d.ts
 *.db-*
 
 # Logs
-server.log
+*.log
 
 # Pipeline ignores
 **/node_modules
