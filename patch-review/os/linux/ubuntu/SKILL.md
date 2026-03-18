@@ -47,25 +47,34 @@ cd ubuntu && bash ubuntu_collector.sh && cd ..
 The preprocessing script is triggered automatically by the Dashboard pipeline (`POST /api/pipeline/run` → BullMQ → `queue.ts`).
 
 ```bash
-# Triggered by queue.ts (Dashboard pipeline) — default 90-day window:
-python3 patch_preprocessing.py --vendor ubuntu --days 90
+# Triggered by queue.ts (Dashboard pipeline) — full 180-day collection window:
+python3 patch_preprocessing.py --vendor ubuntu --days 180
 
 # Manual execution (server only):
 cd /home/citec/.openclaw/workspace/skills/patch-review/os/linux
-python3 patch_preprocessing.py --vendor ubuntu --days 90
+python3 patch_preprocessing.py --vendor ubuntu --days 180
 ```
 
 **What this step does:**
 1. Reads JSON files from `ubuntu/ubuntu_data/` (files prefixed `USN-`)
-2. Applies 90-day date filter
+2. Applies 180-day date filter to capture the full collection window
 3. **LTS filter**: Discards USNs that only affect non-LTS versions (25.10, 24.10, etc.)
-4. Filters against **SYSTEM_CORE_COMPONENTS whitelist** (kernel, filesystem, cluster, systemd, etc.)
+4. Filters against **SYSTEM_CORE_COMPONENTS whitelist** (kernel, linux-hwe, filesystem, cluster, systemd, etc.)
 5. Aggregates multiple updates for the same component into unified history
 6. Writes results to `PreprocessedPatch` DB table (Prisma upsert)
 7. Generates `patches_for_llm_review_ubuntu.json` for LLM review
 
 ### Step 3: Impact Analysis (Actual Agent Review)
 **Action Required:** Read the `patches_for_llm_review_ubuntu.json` file. The Agent must **manually analyze** each candidate's `full_text` and `history` to determine if it meets the **Critical System Impact** criteria.
+
+**Review Date Window (CRITICAL):**
+The preprocessing dataset covers the full 180-day collection window. Apply the following date-based filtering rules during review:
+- **Non-kernel USNs** (openssl, systemd, runc, containerd, openssh, etc.): Include ONLY USNs issued between **180 days ago and 90 days ago**. USNs issued within the most recent 90 days are not yet mature for this review cycle — **exclude them**.
+- **Kernel USNs** (`linux`, `linux-hwe`, `linux-image-*`, and kernel variant packages): Include USNs across the **full 0–180 day window**, including the most recent. Kernel security fixes require immediate attention regardless of age.
+
+> Example: Today is 2026-03-18.
+> - Non-kernel review window: 2025-09-19 ~ 2025-12-18 (180→90 days ago)
+> - Kernel review window: 2025-09-19 ~ 2026-03-18 (full 180 days)
 
 **Cumulative Recommendation Logic (CRITICAL):**
 If a component has multiple updates within the quarter:
@@ -117,6 +126,8 @@ Exclude a patch if:
 - **LTS ONLY**: Only affects non-LTS versions (e.g., Ubuntu 25.10, 24.10). MUST support LTS (24.04, 22.04, 20.04).
   - *Example:* "USN-7906-1 affects only Ubuntu 25.10 → **EXCLUDE**."
 - The patch is already superseded by a newer critical patch for the same component.
+- **Date Window (non-kernel)**: The USN was issued within the last 90 days AND the component is NOT a kernel package (`linux`, `linux-hwe`, `linux-image-*`). These are excluded from the current review cycle.
+- **Exception**: Kernel USNs (`linux`, `linux-hwe`, `linux-azure`, `linux-aws`, `linux-gcp`, `linux-fips`, etc.) issued within the last 90 days are **NOT** excluded — they must be reviewed regardless of age.
 
 ### 3.3 Output Format (JSON Schema)
 Return ONLY a pure JSON array. Each object must have exactly these fields:
@@ -126,6 +137,7 @@ Return ONLY a pure JSON array. Each object must have exactly these fields:
   "Component": "runc (or specific component name)",
   "Version": "exact version from specific_version field",
   "Vendor": "Ubuntu",
+  "OsVersion": "22.04 LTS, 24.04 LTS",
   "Date": "YYYY-MM-DD",
   "Criticality": "Critical | High | Moderate | Low",
   "Description": "1-2 sentence English executive summary",
@@ -152,6 +164,7 @@ Return ONLY a pure JSON array. Each object must have exactly these fields:
 - NEVER say "See the following advisory" — write actual content.
 - NEVER output generic descriptions like "Security update for kernel".
 - If `specific_version` is empty, use the version from the `packages` array for the target LTS release.
+- NEVER include non-kernel USNs issued within the last 90 days — these are outside the current review window.
 
 ## 4. Ubuntu Specific Rules
 
@@ -186,10 +199,12 @@ Return ONLY a pure JSON array. Each object must have exactly these fields:
 ## 6. Output Validation Rules
 Before submitting your JSON response, verify:
 1. Array length exactly matches the batch size.
-2. Every object has all required fields (IssueID, Component, Version, Vendor, Date, Criticality, Description, KoreanDescription).
+2. Every object has all required fields (IssueID, Component, Version, Vendor, OsVersion, Date, Criticality, Description, KoreanDescription).
 3. `IssueID` matches the source USN ID exactly (e.g., `USN-7851-2`).
 4. `Version` is not "Unknown", not empty, not a placeholder string.
 5. `Vendor` is exactly `"Ubuntu"` (case-sensitive, not "Canonical").
 6. NO USN is included that only affects non-LTS Ubuntu versions.
 7. Each USN produces exactly ONE output object (not one per LTS version).
 8. Descriptions are 1-2 sentences maximum and contain no raw package filenames.
+9. Non-kernel USNs issued within the last 90 days are excluded (date window rule).
+10. Kernel USNs (`linux`, `linux-hwe`, `linux-*` variants) issued within the last 90 days are included (kernel exception).

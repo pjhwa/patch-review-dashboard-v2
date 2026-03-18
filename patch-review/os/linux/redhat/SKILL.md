@@ -48,17 +48,17 @@ cd redhat && node rhsa_collector.js && node rhba_collector.js && cd ..
 The preprocessing script is triggered automatically by the Dashboard pipeline (`POST /api/pipeline/run` → BullMQ → `queue.ts`).
 
 ```bash
-# Triggered by queue.ts (Dashboard pipeline) — default 90-day window:
-python3 patch_preprocessing.py --vendor redhat --days 90
+# Triggered by queue.ts (Dashboard pipeline) — full 180-day collection window:
+python3 patch_preprocessing.py --vendor redhat --days 180
 
 # Manual execution (server only):
 cd /home/citec/.openclaw/workspace/skills/patch-review/os/linux
-python3 patch_preprocessing.py --vendor redhat --days 90
+python3 patch_preprocessing.py --vendor redhat --days 180
 ```
 
 **What this step does:**
 1. Reads JSON files from `redhat/redhat_data/` (files prefixed `RHSA-` or `RHBA-`)
-2. Applies 90-day date filter (pipeline window; collectors use 180-day window)
+2. Applies 180-day date filter to capture the full collection window
 3. Filters against **SYSTEM_CORE_COMPONENTS whitelist** (kernel, filesystem, cluster, systemd, libvirt, etc.)
 4. Aggregates multiple updates for the same component into unified history
 5. Writes results to `PreprocessedPatch` DB table (Prisma upsert)
@@ -66,6 +66,15 @@ python3 patch_preprocessing.py --vendor redhat --days 90
 
 ### Step 3: Impact Analysis (Actual Agent Review)
 **Action Required:** Read the `patches_for_llm_review_redhat.json` file. The Agent must **manually analyze** each candidate's `full_text` and `history` to determine if it meets the **Critical System Impact** criteria.
+
+**Review Date Window (CRITICAL):**
+The preprocessing dataset covers the full 180-day collection window. Apply the following date-based filtering rules during review:
+- **Non-kernel components** (glibc, systemd, openssl, libvirt, pacemaker, etc.): Include ONLY patches issued between **180 days ago and 90 days ago**. Patches issued within the most recent 90 days are not yet mature for this review cycle — **exclude them**.
+- **Kernel patches** (`kernel`, `kernel-uek`, and related kernel components): Include patches across the **full 0–180 day window**, including the most recent. Kernel stability fixes require immediate attention regardless of age.
+
+> Example: Today is 2026-03-18.
+> - Non-kernel review window: 2025-09-19 ~ 2025-12-18 (180→90 days ago)
+> - Kernel review window: 2025-09-19 ~ 2026-03-18 (full 180 days)
 
 **Cumulative Recommendation Logic (CRITICAL):**
 If a component has multiple updates within the quarter (e.g., kernel-5, kernel-4, kernel-3, kernel-2, kernel-1):
@@ -84,6 +93,7 @@ Output your final review decision for ALL candidates strictly as a JSON array na
     "Component": "kernel",
     "Version": "5.14.0-503.26.2.el9_5",
     "Vendor": "Red Hat",
+    "OsVersion": "RHEL 8, RHEL 9",
     "Date": "2026-01-15",
     "Criticality": "Critical",
     "Description": "Resolves use-after-free in kernel network stack allowing privilege escalation.",
@@ -111,6 +121,8 @@ Exclude a patch if:
 - It is a "Moderate" security issue (local DoS, info disclosure) with limited impact.
 - The patch is already superseded by a newer critical patch for the same component.
 - It is an RHBA advisory for cosmetic or documentation changes only.
+- **Date Window (non-kernel)**: The patch was issued within the last 90 days AND the component is NOT a kernel-related package. These patches are excluded from the current review cycle.
+- **Exception**: `kernel` and kernel-related packages (`kernel-devel`, `kernel-headers`, etc.) issued within the last 90 days are **NOT** excluded — they must be reviewed regardless of age.
 
 ### 3.3 Output Format (JSON Schema)
 Return ONLY a pure JSON array. Each object must have exactly these fields:
@@ -120,6 +132,7 @@ Return ONLY a pure JSON array. Each object must have exactly these fields:
   "Component": "kernel",
   "Version": "exact value from specific_version field",
   "Vendor": "Red Hat",
+  "OsVersion": "RHEL 8, RHEL 9",
   "Date": "YYYY-MM-DD",
   "Criticality": "Critical | High | Moderate | Low",
   "Description": "1-2 sentence English executive summary",
@@ -172,8 +185,10 @@ Return ONLY a pure JSON array. Each object must have exactly these fields:
 ## 6. Output Validation Rules
 Before submitting your JSON response, verify:
 1. Array length exactly matches the batch size.
-2. Every object has all required fields (IssueID, Component, Version, Vendor, Date, Criticality, Description, KoreanDescription).
+2. Every object has all required fields (IssueID, Component, Version, Vendor, OsVersion, Date, Criticality, Description, KoreanDescription).
 3. `IssueID` matches the source advisory ID exactly (e.g., `RHSA-2026:1234` with colon).
 4. `Version` is not "Unknown", not empty, not a placeholder string.
 5. `Vendor` is exactly `"Red Hat"` (case-sensitive).
 6. Descriptions are 1-2 sentences maximum and contain no raw changelog snippets.
+7. Non-kernel patches issued within the last 90 days are excluded (date window rule).
+8. `kernel` and kernel-related patches issued within the last 90 days are included (kernel exception).
