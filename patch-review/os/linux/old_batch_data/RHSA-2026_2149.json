@@ -1,0 +1,23 @@
+{
+  "id": "RHSA-2026:2149",
+  "vendor": "Red Hat",
+  "url": "https://access.redhat.com/errata/RHSA-2026:2149",
+  "pubDate": "2026-02-05T16:16:04.000Z",
+  "dateStr": "2026-02-05",
+  "severity": "Important",
+  "title": "Red Hat Security Advisory: Kiali 2.17.3 for Red Hat OpenShift Service Mesh 3.2",
+  "overview": "Kiali 2.17.3 for Red Hat OpenShift Service Mesh 3.2\n\nThis update has a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "description": "Kiali 2.17.3 for Red Hat OpenShift Service Mesh 3.2\n\nThis update has a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "affected_products": [
+    "Red Hat OpenShift Service Mesh 3.2"
+  ],
+  "cves": [
+    "CVE-2025-13465",
+    "CVE-2025-15284",
+    "CVE-2025-61729",
+    "CVE-2026-22029"
+  ],
+  "packages": [],
+  "fixes": "",
+  "full_text": "Red Hat Security Advisory: Kiali 2.17.3 for Red Hat OpenShift Service Mesh 3.2\n\nKiali 2.17.3 for Red Hat OpenShift Service Mesh 3.2\n\nThis update has a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nKiali 2.17.3 for Red Hat OpenShift Service Mesh 3.2\n\nThis update has a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\n\n\nCVE-2025-13465: A flaw was found in Lodash. A prototype pollution vulnerability in the _.unset and _.omit functions allows an attacker able to control property paths to delete methods from global prototypes. By removing essential functionalities, this can result in a denial of service.\n\nCVE-2025-15284: A flaw was found in qs, a module used for parsing query strings. A remote attacker can exploit an improper input validation vulnerability by sending specially crafted HTTP requests that use bracket notation (e.g., `a[]=value`). This bypasses the `arrayLimit` option, which is designed to limit the size of parsed arrays and prevent resource exhaustion. Successful exploitation can lead to memory exhaustion, causing a Denial of Service (DoS) where the application crashes or becomes unresponsive, making the service unavailable to users.\n\nCVE-2025-61729: Within HostnameError.Error(), when constructing an error string, there is no limit to the number of hosts that will be printed out. Furthermore, the error string is constructed by repeated string concatenation, leading to quadratic runtime. Therefore, a certificate provided by a malicious actor can result in excessive resource consumption.\n\nCVE-2026-22029: React Router is a router for React. In @remix-run/router version prior to 1.23.2. and react-router 7.0.0 through 7.11.0, React Router (and Remix v1/v2) SPA open navigation redirects originating from loaders or actions in Framework Mode, Data Mode, or the unstable RSC modes can result in unsafe URLs causing unintended javascript execution on the client. This is only an issue if you are creating redirect paths from untrusted content or via an open redirect. There is no impact if Declarative Mode (<BrowserRouter>) is being used. This issue has been patched in @remix-run/router version 1.23.2 and react-router version 7.12.0."
+}

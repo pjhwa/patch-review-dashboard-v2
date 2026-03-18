@@ -1,0 +1,35 @@
+{
+  "id": "USN-7873-1",
+  "url": "https://ubuntu.com/security/notices/USN-7873-1",
+  "synopsis": "USN-7873-1: MySQL vulnerabilities",
+  "dateStr": "19 November 2025",
+  "overview": "Several security issues were fixed in MySQL.",
+  "description": "Multiple security issues were discovered in MySQL and this update includes\nnew upstream MySQL versions to fix these issues.\n\nMySQL has been updated to 8.0.44 in Ubuntu 22.04 LTS and Ubuntu 24.04 LTS.\nUbuntu 25.04 and Ubuntu 25.10 have been updated to MySQL 8.4.7.\n\nIn addition to security fixes, the updated packages contain bug fixes, new\nfeatures, and possibly incompatible changes.\n\nPlease see the following for more information:\n\nhttps://dev.mysql.com/doc/relnotes/mysql/8.0/en/news-8-0-44.html\nhttps://dev.mysql.com/doc/relnotes/mysql/8.4/en/news-8-4-7.html\nhttps://www.oracle.com/security-alerts/cpuoct2025.html\n\n \n\n \n\n \n\nMultiple security issues were discovered in MySQL and this update includes\nnew upstream MySQL versions to fix these issues.\n\nMySQL has been updated to 8.0.44 in Ubuntu 22.04 LTS and Ubuntu 24.04 LTS.\nUbuntu 25.04 and Ubuntu 25.10 have been updated to MySQL 8.4.7.\n\nIn addition to security fixes, the updated packages contain bug fixes, new\nfeatures, and possibly incompatible changes.\n\nPlease see the following for more information:\n\nhttps://dev.mysql.com/doc/relnotes/mysql/8.0/en/news-8-0-44.html\nhttps://dev.mysql.com/doc/relnotes/mysql/8.4/en/news-8-4-7.html\nhttps://www.oracle.com/security-alerts/cpuoct2025.html",
+  "packages": [
+    "mysql",
+    "mysql"
+  ],
+  "cves": [
+    "CVE-2025-53069",
+    "CVE-2025-53062",
+    "CVE-2025-53054",
+    "CVE-2025-53053",
+    "CVE-2025-53045",
+    "CVE-2025-53044",
+    "CVE-2025-53042",
+    "CVE-2025-53040"
+  ],
+  "affected_products": [
+    "25.10",
+    "25.04",
+    "24.04 LTS",
+    "22.04 LTS",
+    "Open side navigation"
+  ],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Ubuntu Security Notices\n\nUSN-7873-1\n\n \n\n \n\n \n\n \n\n \n\n \nUSN-7873-1: MySQL vulnerabilities\n\n \n\n \n\n \n\n \nPublication date\n\n \n\n \n\n \n19 November 2025\n\n \n\n \n\n \n\n \n\n \nOverview\n\n \n\n \n\n \nSeveral security issues were fixed in MySQL.\n\n \n\n \n\n \n\n \n\n \nReleases\n\n \n\n \n\n \n\n 25.10\n\n 25.04\n\n 24.04 LTS\n\n22.04 LTS\n\n \n\n \n\n \n\n \n\n \n\n \n\n Open side navigation\n \n\n \n\n \nPackages\n\n \n\n mysql-8.0 - MySQL database\n \n\n mysql-8.4 - MySQL database\n \n\n \n\n \nDetails\n\n \n\n \n\nMultiple security issues were discovered in MySQL and this update includes\nnew upstream MySQL versions to fix these issues.\n\nMySQL has been updated to 8.0.44 in Ubuntu 22.04 LTS and Ubuntu 24.04 LTS.\nUbuntu 25.04 and Ubuntu 25.10 have been updated to MySQL 8.4.7.\n\nIn addition to security fixes, the updated packages contain bug fixes, new\nfeatures, and possibly incompatible changes.\n\nPlease see the following for more information:\n\nhttps://dev.mysql.com/doc/relnotes/mysql/8.0/en/news-8-0-44.html\nhttps://dev.mysql.com/doc/relnotes/mysql/8.4/en/news-8-4-7.html\nhttps://www.oracle.com/security-alerts/cpuoct2025.html\n\n \n\n \n\n \n\nMultiple security issues were discovered in MySQL and this update includes\nnew upstream MySQL versions to fix these issues.\n\nMySQL has been updated to 8.0.44 in Ubuntu 22.04 LTS and Ubuntu 24.04 LTS.\nUbuntu 25.04 and Ubuntu 25.10 have been updated to MySQL 8.4.7.\n\nIn addition to security fixes, the updated packages contain bug fixes, new\nfeatures, and possibly incompatible changes.\n\nPlease see the following for more information:\n\nhttps://dev.mysql.com/doc/relnotes/mysql/8.0/en/news-8-0-44.html\nhttps://dev.mysql.com/doc/relnotes/mysql/8.4/en/news-8-4-7.html\nhttps://www.oracle.com/security-alerts/cpuoct2025.html\n\n \n\n \n\n \n\n \nUpdate instructions\n\n \n\n \n\n \n\n \n\nThis update uses a new upstream release, which includes additional bug\nfixes. In general, a standard system update will make all the necessary\nchanges.\n\n Learn more about how to get the fixes.\n \n\n \n\n \n\n \n\n \nThe problem can be corrected by updating your system to the following package versions:\n\n \n\n \n\n \n\n \n\n Ubuntu Release\n Package Version\n \n\n 25.10\n\nquesting\n\n mysql-server – \n\n8.4.7-0ubuntu0.25.10.2\n\n \n\n 25.04\n\nplucky\n\n mysql-server – \n\n8.4.7-0ubuntu0.25.04.1\n\n \n\n 24.04\n\nLTS noble\n\n mysql-server-8.0 – \n\n8.0.44-0ubuntu0.24.04.1\n\n \n\n 22.04\n\nLTS jammy\n\n mysql-server-8.0 – \n\n8.0.44-0ubuntu0.22.04.1\n\n \n\nReduce your security exposure\n\n \n\n Ubuntu Pro provides ten-year security coverage to 25,000+ packages in Main and Universe repositories, and it is free for up to five machines.\n \n\n \n\n Get Ubuntu Pro\n \n\n \n\nReferences\n\n \n\n \n\n CVE-2025-53069\n \n\n \n\n CVE-2025-53062\n \n\n \n\n CVE-2025-53054\n \n\n \n\n CVE-2025-53053\n \n\n \n\n CVE-2025-53045\n \n\n \n\n CVE-2025-53044\n \n\n \n\n CVE-2025-53042\n \n\n \n\n CVE-2025-53040\n \n\n \n\n \n\n CVE-2025-53069\n \n\n CVE-2025-53062\n \n\n CVE-2025-53054\n \n\n CVE-2025-53053\n \n\n CVE-2025-53045\n \n\n CVE-2025-53044\n \n\n CVE-2025-53042\n \n\n CVE-2025-53040\n \n\n \n\n \nRelated notices\n\n \n\n \n\n USN-8006-1\n \n\n \n\n USN-8006-1",
+  "title": "USN-7873-1: MySQL vulnerabilities | Ubuntu security notices | Ubuntu",
+  "pubDate": "2025-11-18T15:00:00.000Z",
+  "vendor": "Ubuntu"
+}

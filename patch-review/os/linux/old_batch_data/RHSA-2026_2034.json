@@ -1,0 +1,20 @@
+{
+  "id": "RHSA-2026:2034",
+  "vendor": "Red Hat",
+  "url": "https://access.redhat.com/errata/RHSA-2026:2034",
+  "pubDate": "2026-02-05T06:37:04.000Z",
+  "dateStr": "2026-02-05",
+  "severity": "Important",
+  "title": "Red Hat Security Advisory: Red Hat OpenShift Data Foundation 4.20 security, enhancement & bug fix update",
+  "overview": "Red Hat OpenShift Data Foundation 4.20 security, enhancement & bug fix update",
+  "description": "Red Hat OpenShift Data Foundation 4.20 security, enhancement & bug fix update",
+  "affected_products": [
+    "Red Hat Openshift Data Foundation 4.2"
+  ],
+  "cves": [
+    "CVE-2025-52881"
+  ],
+  "packages": [],
+  "fixes": "",
+  "full_text": "Red Hat Security Advisory: Red Hat OpenShift Data Foundation 4.20 security, enhancement & bug fix update\n\nRed Hat OpenShift Data Foundation 4.20 security, enhancement & bug fix update\n\nRed Hat OpenShift Data Foundation 4.20 security, enhancement & bug fix update\n\n\n\nCVE-2025-52881: A flaw was found in runc. This attack is a more sophisticated variant of CVE-2019-16884, which was a flaw that allowed an attacker to trick runc into writing the LSM process labels for a container process into a dummy tmpfs file and thus not apply the correct LSM labels to the container process. The mitigation applied for CVE-2019-16884 was fairly limited and effectively only caused runc to verify that when we write LSM labels that those labels are actual procfs files."
+}

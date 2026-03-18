@@ -1,0 +1,33 @@
+{
+  "id": "RHSA-2026:0125",
+  "vendor": "Red Hat",
+  "type": "Security Advisory (RHSA)",
+  "title": "Red Hat Security Advisory: mingw-libpng security update",
+  "issuedDate": "2026-01-06T11:25:54+00:00",
+  "updatedDate": "2026-01-06T11:25:54+00:00",
+  "pubDate": "2026-01-06T11:25:54+00:00",
+  "dateStr": "2026-01-06",
+  "url": "https://access.redhat.com/errata/RHSA-2026:0125",
+  "severity": "Important",
+  "overview": "An update for mingw-libpng is now available for Red Hat Enterprise Linux 8.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "description": "MinGW Windows Libpng library.\n\nSecurity Fix(es):\n\n* libpng: LIBPNG buffer overflow (CVE-2025-64720)\n\n* libpng: LIBPNG heap buffer overflow (CVE-2025-65018)\n\n* libpng: LIBPNG out-of-bounds read in png_image_read_composite (CVE-2025-66293)\n\nFor more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux",
+    "Red Hat Enterprise Linux CRB (v. 8)"
+  ],
+  "cves": [
+    "CVE-2025-64720",
+    "CVE-2025-65018",
+    "CVE-2025-66293"
+  ],
+  "packages": [
+    "mingw-libpng-0:1.6.34-1.el8_10.src",
+    "mingw32-libpng-0:1.6.34-1.el8_10.noarch",
+    "mingw32-libpng-static-0:1.6.34-1.el8_10.noarch",
+    "mingw64-libpng-0:1.6.34-1.el8_10.noarch",
+    "mingw64-libpng-static-0:1.6.34-1.el8_10.noarch",
+    "mingw32-libpng-debuginfo-0:1.6.34-1.el8_10.noarch",
+    "mingw64-libpng-debuginfo-0:1.6.34-1.el8_10.noarch"
+  ],
+  "full_text": "An update for mingw-libpng is now available for Red Hat Enterprise Linux 8.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nMinGW Windows Libpng library.\n\nSecurity Fix(es):\n\n* libpng: LIBPNG buffer overflow (CVE-2025-64720)\n\n* libpng: LIBPNG heap buffer overflow (CVE-2025-65018)\n\n* libpng: LIBPNG out-of-bounds read in png_image_read_composite (CVE-2025-66293)\n\nFor more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section."
+}

@@ -1,0 +1,55 @@
+{
+  "id": "RHBA-2025:16442",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: firewalld bug fix and enhancement update",
+  "issuedDate": "2025-09-23T07:44:06Z",
+  "updatedDate": "2025-09-23T07:44:06Z",
+  "pubDate": "2025-09-23T07:44:06Z",
+  "dateStr": "2025-09-23",
+  "url": "https://access.redhat.com/errata/RHBA-2025:16442",
+  "severity": "None",
+  "overview": "An update for firewalld is now available for Red Hat Enterprise Linux 10.",
+  "description": "firewalld is a firewall service daemon that provides a dynamic customizable firewall with a D-Bus interface.Bug Fix(es) and Enhancement(s): prevent rules from getting flushed when a rich rule with an invalid ipset is added (JIRA:RHEL-67103)  Firewalld loads ipset which logs an \"Unmaintained driver\" warning [rhel-10] (JIRA:RHEL-92450)  CI: omit \"scale\" tests from parallel run, run separately and serially [rhel-10] (JIRA:RHEL-92451)  Reloading firewalld immediately after restarting it terminates it [rhel-10] (JIRA:RHEL-92452)  firewall-config: Rich Rule creation is broken (JIRA:RHEL-94646)  firewalld: rebase to latest 2.3.z (JIRA:RHEL-96068)",
+  "affected_products": [
+    "Red Hat Enterprise Linux for Power, little endian - Extended Update Support",
+    "Red Hat Enterprise Linux for Power, little endian",
+    "Red Hat Enterprise Linux for IBM z Systems - Extended Update Support",
+    "Red Hat Enterprise Linux for ARM 64 - 4 years of updates",
+    "Red Hat Enterprise Linux for Power, little endian - 4 years of support",
+    "Red Hat Enterprise Linux for x86_64 10 x86_64",
+    "Red Hat Enterprise Linux for IBM z Systems",
+    "Red Hat Enterprise Linux for x86_64 - 4 years of updates 10 x86_64",
+    "Red Hat Enterprise Linux for x86_64 - Extended Update Support 10 x86_64",
+    "Red Hat Enterprise Linux for ARM 64 - Extended Update Support",
+    "Red Hat Enterprise Linux for IBM z Systems - 4 years of updates",
+    "Red Hat Enterprise Linux for ARM 64"
+  ],
+  "cves": [],
+  "packages": [
+    "firewalld-2.3.1-1.el10_0.src",
+    "firewall-applet-2.3.1-1.el10_0.noarch",
+    "firewall-config-2.3.1-1.el10_0.noarch",
+    "firewalld-2.3.1-1.el10_0.noarch",
+    "firewalld-filesystem-2.3.1-1.el10_0.noarch",
+    "python3-firewall-2.3.1-1.el10_0.noarch"
+  ],
+  "fixes": [
+    {
+      "id": "RHEL-67103",
+      "url": "https://issues.redhat.com/browse/RHEL-67103",
+      "description": "prevent rules from getting flushed when a rich rule with an invalid ipset is added"
+    },
+    {
+      "id": "RHEL-94646",
+      "url": "https://issues.redhat.com/browse/RHEL-94646",
+      "description": "firewall-config: Rich Rule creation is broken"
+    },
+    {
+      "id": "RHEL-96068",
+      "url": "https://issues.redhat.com/browse/RHEL-96068",
+      "description": "firewalld: rebase to latest 2.3.z"
+    }
+  ],
+  "full_text": "An update for firewalld is now available for Red Hat Enterprise Linux 10.\n\nfirewalld is a firewall service daemon that provides a dynamic customizable firewall with a D-Bus interface.Bug Fix(es) and Enhancement(s): prevent rules from getting flushed when a rich rule with an invalid ipset is added (JIRA:RHEL-67103)  Firewalld loads ipset which logs an \"Unmaintained driver\" warning [rhel-10] (JIRA:RHEL-92450)  CI: omit \"scale\" tests from parallel run, run separately and serially [rhel-10] (JIRA:RHEL-92451)  Reloading firewalld immediately after restarting it terminates it [rhel-10] (JIRA:RHEL-92452)  firewall-config: Rich Rule creation is broken (JIRA:RHEL-94646)  firewalld: rebase to latest 2.3.z (JIRA:RHEL-96068)"
+}

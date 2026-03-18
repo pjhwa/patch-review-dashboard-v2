@@ -7,7 +7,7 @@ const prisma = new PrismaClient({
 });
 
 async function main() {
-    const linuxSkillDir = path.join(process.env.HOME || '/home/citec', '.openclaw/workspace/skills/patch-review/os/linux-v2');
+    const linuxSkillDir = path.join(process.env.HOME || '/home/citec', '.openclaw/workspace/skills/patch-review/os/linux');
     const batchDataDir = path.join(linuxSkillDir, 'batch_data');
     const preprocessedFile = path.join(linuxSkillDir, 'patches_for_llm_review.json');
     const finalReportFile = path.join(linuxSkillDir, 'patch_review_ai_report.json');

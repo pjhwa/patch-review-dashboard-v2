@@ -1,0 +1,34 @@
+{
+  "id": "USN-8084-1",
+  "vendor": "Canonical / Ubuntu",
+  "type": "Ubuntu Security Notice (USN)",
+  "title": "curl vulnerabilities",
+  "issuedDate": "2026-03-11T12:11:15Z",
+  "updatedDate": "2026-03-11T12:11:15Z",
+  "pubDate": "2026-03-11T12:11:15Z",
+  "dateStr": "2026-03-11",
+  "url": "https://ubuntu.com/security/notices/USN-8084-1",
+  "severity": "None",
+  "overview": "curl vulnerabilities",
+  "description": "Zhicheng Chen discovered that curl could incorrectly reuse the wrong\nconnection for Negotiate-authenticated HTTP or HTTPS requests. This could\nresult in the use of credentials from a different connection, contrary to\nexpectations. (CVE-2026-1965)\n\nIt was discovered that curl incorrectly leaked OAuth2 bearer tokens when\nfollowing a redirect. This could result in tokens being sent to the wrong\nhost, contrary to expectations. (CVE-2026-3783)\n\nMuhamad Arga Reksapati discovered that curl incorrectly reused existing\nHTTP proxy connections even if the request used different credentials. This\ncould result in the use of incorrect credentials, contrary to expectations.\n(CVE-2026-3784)\n\nDaniel Wade discovered that curl incorrectly handled certain memory\noperations when doing a second SMB request to the same host. An attacker\ncould use this issue to cause curl to crash, resulting in a denial of\nservice, or possibly execute arbitrary code. This issue only affected\nUbuntu 25.10. (CVE-2026-3805)\n\nYihang Zhou discovered that curl incorrectly reused .netrc file credentials\nwhen following redirects. This could result in the use of credentials for\na different host, contrary to expectations. This issue only affected Ubuntu\n22.04 LTS and Ubuntu 24.04 LTS. (CVE-2025-0167)",
+  "affected_products": [
+    "Ubuntu 22.04 LTS",
+    "Ubuntu 24.04 LTS"
+  ],
+  "cves": [],
+  "packages": [
+    "curl-7.81.0-1ubuntu1.23",
+    "curl-8.5.0-2ubuntu10.8",
+    "libcurl3-gnutls-7.81.0-1ubuntu1.23",
+    "libcurl3-nss-7.81.0-1ubuntu1.23",
+    "libcurl3t64-gnutls-8.5.0-2ubuntu10.8",
+    "libcurl4-7.81.0-1ubuntu1.23",
+    "libcurl4-gnutls-dev-7.81.0-1ubuntu1.23",
+    "libcurl4-gnutls-dev-8.5.0-2ubuntu10.8",
+    "libcurl4-nss-dev-7.81.0-1ubuntu1.23",
+    "libcurl4-openssl-dev-7.81.0-1ubuntu1.23",
+    "libcurl4-openssl-dev-8.5.0-2ubuntu10.8",
+    "libcurl4t64-8.5.0-2ubuntu10.8"
+  ],
+  "full_text": "Zhicheng Chen discovered that curl could incorrectly reuse the wrong\nconnection for Negotiate-authenticated HTTP or HTTPS requests. This could\nresult in the use of credentials from a different connection, contrary to\nexpectations. (CVE-2026-1965)\n\nIt was discovered that curl incorrectly leaked OAuth2 bearer tokens when\nfollowing a redirect. This could result in tokens being sent to the wrong\nhost, contrary to expectations. (CVE-2026-3783)\n\nMuhamad Arga Reksapati discovered that curl incorrectly reused existing\nHTTP proxy connections even if the request used different credentials. This\ncould result in the use of incorrect credentials, contrary to expectations.\n(CVE-2026-3784)\n\nDaniel Wade discovered that curl incorrectly handled certain memory\noperations when doing a second SMB request to the same host. An attacker\ncould use this issue to cause curl to crash, resulting in a denial of\nservice, or possibly execute arbitrary code. This issue only affected\nUbuntu 25.10. (CVE-2026-3805)\n\nYihang Zhou discovered that curl incorrectly reused .netrc file credentials\nwhen following redirects. This could result in the use of credentials for\na different host, contrary to expectations. This issue only affected Ubuntu\n22.04 LTS and Ubuntu 24.04 LTS. (CVE-2025-0167)"
+}

@@ -1,0 +1,30 @@
+{
+  "id": "ELBA-2025-20524-0",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "RHCK",
+  "title": "opencryptoki bug fix and enhancement update",
+  "issuedDate": "2025-11-17T00:00:00Z",
+  "updatedDate": "2025-11-17T00:00:00Z",
+  "pubDate": "2025-11-17T00:00:00Z",
+  "dateStr": "2025-11-17",
+  "url": "https://linux.oracle.com/errata/ELBA-2025-20524-0.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 9.",
+  "description": "[3.25.0-4]\n- Fix pkcsslotd fails to start in FIPS\n- Drop tier1 test as it mostly provides duplicate results\n- Enable ci test for FIPS mode\n  Resolves: RHEL-109050\n\n[3.25.0-3]\n- Fix incorrect effective group id of pkcsslotd daemon\n- Fix covscan findings\n  Resolves: RHEL-104602\n\n[3.25.0-2]\n- Related: RHEL-73344, Fix detection of EC curve not supported by OpenSSL-3.5.x\n- Related: RHEL-77147, Fix the image mode issue again as bootc expects to use /run/lock\n\n[3.25.0-1]\n- Resolves: RHEL-73344, upgrade openCryptoki\n- Resolves: RHEL-90590, basic support of AES-GCM\n- Resolves: RHEL-72965, cca token support cipher keys\n- Resolves: RHEL-72969, support for CKM_RSA_AES_KEY_WRAP for cca, ica and soft tokens\n- Resolves: RHEL-75141, add a tool to import/export PKCS #11 keys from to a KMIP server\n- Resolves: RHEL-75762, ep11 token: import and export of secure key objects\n- Resolves: RHEL-85375, cca token: Support ECDH to derive AES keys\n- Resolves: RHEL-85377, ep11 token: PKCS #11 3.0 - support SHA3",
+  "affected_products": [
+    "Oracle Linux 9 for x86_64",
+    "Oracle Linux 9 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "opencryptoki-3.25.0-4.el9.x86_64",
+    "opencryptoki-libs-3.25.0-4.el9.x86_64",
+    "opencryptoki-libs-3.25.0-4.el9.i686",
+    "opencryptoki-icsftok-3.25.0-4.el9.x86_64",
+    "opencryptoki-ccatok-3.25.0-4.el9.x86_64",
+    "opencryptoki-3.25.0-4.el9.src",
+    "opencryptoki-swtok-3.25.0-4.el9.x86_64"
+  ],
+  "full_text": "[3.25.0-4]\n- Fix pkcsslotd fails to start in FIPS\n- Drop tier1 test as it mostly provides duplicate results\n- Enable ci test for FIPS mode\n  Resolves: RHEL-109050\n\n[3.25.0-3]\n- Fix incorrect effective group id of pkcsslotd daemon\n- Fix covscan findings\n  Resolves: RHEL-104602\n\n[3.25.0-2]\n- Related: RHEL-73344, Fix detection of EC curve not supported by OpenSSL-3.5.x\n- Related: RHEL-77147, Fix the image mode issue again as bootc expects to use /run/lock\n\n[3.25.0-1]\n- Resolves: RHEL-73344, upgrade openCryptoki\n- Resolves: RHEL-90590, basic support of AES-GCM\n- Resolves: RHEL-72965, cca token support cipher keys\n- Resolves: RHEL-72969, support for CKM_RSA_AES_KEY_WRAP for cca, ica and soft tokens\n- Resolves: RHEL-75141, add a tool to import/export PKCS #11 keys from to a KMIP server\n- Resolves: RHEL-75762, ep11 token: import and export of secure key objects\n- Resolves: RHEL-85375, cca token: Support ECDH to derive AES keys\n- Resolves: RHEL-85377, ep11 token: PKCS #11 3.0 - support SHA3\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2025-20524-0.html"
+}

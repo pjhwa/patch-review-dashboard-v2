@@ -1,0 +1,28 @@
+{
+  "id": "ELSA-2026-0237",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2026-January/019450.html",
+  "synopsis": "[El-errata] ELSA-2026-0237 Important: Oracle Linux 10 libpng security update",
+  "dateStr": "2026-January",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Security Advisory ELSA-2026-0237",
+  "description": "[2:1.6.40-8.1]\n- CVE-2025-64720: buffer overflow (RHEL-131422)\n- CVE-2025-65018: heap buffer overflow (RHEL-131435)\n- CVE-2025-66293: out-of-bounds read in png_image_read_composite (RHEL-133212)",
+  "affected_products": [
+    "Oracle Linux 10"
+  ],
+  "packages": [
+    "libpng-1.6.40-8.el10_1.1.x86_64.rpm",
+    "libpng-devel-1.6.40-8.el10_1.1.x86_64.rpm",
+    "libpng-1.6.40-8.el10_1.1.aarch64.rpm",
+    "libpng-devel-1.6.40-8.el10_1.1.aarch64.rpm"
+  ],
+  "cves": [
+    "CVE-2025-64720",
+    "CVE-2025-65018",
+    "CVE-2025-66293"
+  ],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Security Advisory ELSA-2026-0237\n\nhttp://linux.oracle.com/errata/ELSA-2026-0237.html\n\nThe following updated rpms for Oracle Linux 10 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\nlibpng-1.6.40-8.el10_1.1.x86_64.rpm\nlibpng-devel-1.6.40-8.el10_1.1.x86_64.rpm\n\naarch64:\nlibpng-1.6.40-8.el10_1.1.aarch64.rpm\nlibpng-devel-1.6.40-8.el10_1.1.aarch64.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol10/SRPMS-updates/libpng-1.6.40-8.el10_1.1.src.rpm\n\nRelated CVEs:\n\nCVE-2025-64720\nCVE-2025-65018\nCVE-2025-66293\n\n\n\n\nDescription of changes:\n\n[2:1.6.40-8.1]\n- CVE-2025-64720: buffer overflow (RHEL-131422)\n- CVE-2025-65018: heap buffer overflow (RHEL-131435)\n- CVE-2025-66293: out-of-bounds read in png_image_read_composite (RHEL-133212)",
+  "vendor": "Oracle"
+}

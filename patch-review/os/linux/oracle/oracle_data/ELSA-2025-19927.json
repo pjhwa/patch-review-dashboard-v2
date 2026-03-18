@@ -1,0 +1,29 @@
+{
+  "id": "ELSA-2025-19927",
+  "vendor": "Oracle",
+  "type": "Security Advisory (ELSA)",
+  "kernel_type": "AppStream",
+  "title": " runc security update",
+  "issuedDate": "2025-11-07T00:00:00Z",
+  "updatedDate": "2025-11-07T00:00:00Z",
+  "pubDate": "2025-11-07T00:00:00Z",
+  "dateStr": "2025-11-07",
+  "url": "https://linux.oracle.com/errata/ELSA-2025-19927.html",
+  "severity": "Important",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 9.",
+  "description": "[4:1.2.5-3]\n- Add relevant patches to CVEs\n- Resolves: RHEL-122402\n\n[4:1.2.5-2]\n- fix CVE-2025-31133 CVE-2025-52565 CVE-2025-52881\n- Resolves: RHEL-122402\n- Resolves: RHEL-122404\n- Resolves: RHEL-122415\n\n[4:1.2.5-1]\n- update to https://github.com/opencontainers/runc/releases/tag/v1.2.5\n- Related: RHEL-60277",
+  "affected_products": [
+    "Oracle Linux 9 for x86_64",
+    "Oracle Linux 9 for aarch64"
+  ],
+  "cves": [
+    "CVE-2025-31133",
+    "CVE-2025-52565",
+    "CVE-2025-52881"
+  ],
+  "packages": [
+    "runc-1.2.5-3.el9_6.x86_64",
+    "runc-1.2.5-3.el9_6.src"
+  ],
+  "full_text": "[4:1.2.5-3]\n- Add relevant patches to CVEs\n- Resolves: RHEL-122402\n\n[4:1.2.5-2]\n- fix CVE-2025-31133 CVE-2025-52565 CVE-2025-52881\n- Resolves: RHEL-122402\n- Resolves: RHEL-122404\n- Resolves: RHEL-122415\n\n[4:1.2.5-1]\n- update to https://github.com/opencontainers/runc/releases/tag/v1.2.5\n- Related: RHEL-60277\n\nReferences:\nhttps://linux.oracle.com/errata/ELSA-2025-19927.html\nhttps://linux.oracle.com/cve/CVE-2025-31133.html\nhttps://linux.oracle.com/cve/CVE-2025-52565.html\nhttps://linux.oracle.com/cve/CVE-2025-52881.html"
+}

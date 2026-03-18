@@ -1,0 +1,38 @@
+{
+  "id": "ELBA-2025-20984",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "AppStream",
+  "title": "postgresql16 bug fix and enhancement update",
+  "issuedDate": "2025-12-02T00:00:00Z",
+  "updatedDate": "2025-12-02T00:00:00Z",
+  "pubDate": "2025-12-02T00:00:00Z",
+  "dateStr": "2025-12-02",
+  "url": "https://linux.oracle.com/errata/ELBA-2025-20984.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 10.",
+  "description": "[16.10-1.0.1]\n- Replace upstream reference [Orabug: 37044148]",
+  "affected_products": [
+    "Oracle Linux 10 for x86_64",
+    "Oracle Linux 10 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "postgresql16-16.10-1.0.1.el10_1.src",
+    "postgresql-server-devel-16.10-1.0.1.el10_1.x86_64",
+    "postgresql-test-16.10-1.0.1.el10_1.x86_64",
+    "postgresql-private-libs-16.10-1.0.1.el10_1.x86_64",
+    "postgresql-pltcl-16.10-1.0.1.el10_1.x86_64",
+    "postgresql-docs-16.10-1.0.1.el10_1.x86_64",
+    "postgresql-plpython3-16.10-1.0.1.el10_1.x86_64",
+    "postgresql-upgrade-devel-16.10-1.0.1.el10_1.x86_64",
+    "postgresql-upgrade-16.10-1.0.1.el10_1.x86_64",
+    "postgresql-server-16.10-1.0.1.el10_1.x86_64",
+    "postgresql-16.10-1.0.1.el10_1.x86_64",
+    "postgresql-contrib-16.10-1.0.1.el10_1.x86_64",
+    "postgresql-plperl-16.10-1.0.1.el10_1.x86_64",
+    "postgresql-static-16.10-1.0.1.el10_1.x86_64",
+    "postgresql-private-devel-16.10-1.0.1.el10_1.x86_64"
+  ],
+  "full_text": "[16.10-1.0.1]\n- Replace upstream reference [Orabug: 37044148]\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2025-20984.html"
+}

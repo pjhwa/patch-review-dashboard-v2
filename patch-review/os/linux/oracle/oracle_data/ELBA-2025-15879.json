@@ -1,0 +1,36 @@
+{
+  "id": "ELBA-2025-15879",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "RHCK",
+  "title": "NetworkManager bug fix and enhancement update",
+  "issuedDate": "2025-09-16T00:00:00Z",
+  "updatedDate": "2025-09-16T00:00:00Z",
+  "pubDate": "2025-09-16T00:00:00Z",
+  "dateStr": "2025-09-16",
+  "url": "https://linux.oracle.com/errata/ELBA-2025-15879.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 9.",
+  "description": "[1.52.0-7.0.1]\n- disable MPTCP handling by default [Orabug: 34801142]\n- add connectivity check via Oracle servers [Orabug: 32051972]\n- Add a dropin file to make Networkmanager-dispatcher persistent [Orabug: 36989910]\n- Drop 777 permissions from the NetworkManager-dispatcher drop-in directory [Orabug: 37581907]\n\n[1:1.52.0-7]\n- ovs: only keep bridges and ports with NM interfaces attached #2 (RHEL-87167)\n\n[1:1.52.0-6]\n- ovs: only keep bridges and ports with NM interfaces attached (RHEL-87167)\n- device: update the external-down unmanaged flag on port attach/release (RHEL-93183)\n- ovs: set the tun interface up before stage3 (RHEL-98550)\n- bridge: fix reapplying port VLANs (RHEL-102742)\n- device: don't disable IPv6 in stage3 on reapply (RHEL-102771)",
+  "affected_products": [
+    "Oracle Linux 9 for x86_64",
+    "Oracle Linux 9 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "NetworkManager-config-connectivity-oracle-1.52.0-7.0.1.el9_6.noarch",
+    "NetworkManager-wwan-1.52.0-7.0.1.el9_6.x86_64",
+    "NetworkManager-adsl-1.52.0-7.0.1.el9_6.x86_64",
+    "NetworkManager-tui-1.52.0-7.0.1.el9_6.x86_64",
+    "NetworkManager-team-1.52.0-7.0.1.el9_6.x86_64",
+    "NetworkManager-config-server-1.52.0-7.0.1.el9_6.noarch",
+    "NetworkManager-1.52.0-7.0.1.el9_6.x86_64",
+    "NetworkManager-initscripts-updown-1.52.0-7.0.1.el9_6.noarch",
+    "NetworkManager-libnm-1.52.0-7.0.1.el9_6.i686",
+    "NetworkManager-wifi-1.52.0-7.0.1.el9_6.x86_64",
+    "NetworkManager-libnm-1.52.0-7.0.1.el9_6.x86_64",
+    "NetworkManager-bluetooth-1.52.0-7.0.1.el9_6.x86_64",
+    "NetworkManager-1.52.0-7.0.1.el9_6.src"
+  ],
+  "full_text": "[1.52.0-7.0.1]\n- disable MPTCP handling by default [Orabug: 34801142]\n- add connectivity check via Oracle servers [Orabug: 32051972]\n- Add a dropin file to make Networkmanager-dispatcher persistent [Orabug: 36989910]\n- Drop 777 permissions from the NetworkManager-dispatcher drop-in directory [Orabug: 37581907]\n\n[1:1.52.0-7]\n- ovs: only keep bridges and ports with NM interfaces attached #2 (RHEL-87167)\n\n[1:1.52.0-6]\n- ovs: only keep bridges and ports with NM interfaces attached (RHEL-87167)\n- device: update the external-down unmanaged flag on port attach/release (RHEL-93183)\n- ovs: set the tun interface up before stage3 (RHEL-98550)\n- bridge: fix reapplying port VLANs (RHEL-102742)\n- device: don't disable IPv6 in stage3 on reapply (RHEL-102771)\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2025-15879.html"
+}

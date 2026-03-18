@@ -1,0 +1,32 @@
+{
+  "id": "ELSA-2025-20955",
+  "vendor": "Oracle",
+  "type": "Security Advisory (ELSA)",
+  "kernel_type": "AppStream",
+  "title": " redis:7 security update",
+  "issuedDate": "2025-11-25T00:00:00Z",
+  "updatedDate": "2025-11-25T00:00:00Z",
+  "pubDate": "2025-11-25T00:00:00Z",
+  "dateStr": "2025-11-25",
+  "url": "https://linux.oracle.com/errata/ELSA-2025-20955.html",
+  "severity": "Important",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 9.",
+  "description": "[7.2.11-1.0.1]\n- Build with 64k pages to support redis on UEK on aarch64\n\n[7.2.11-1]\n- rebase to 7.2.11 for CVE-2025-49844 CVE-2025-46817 CVE-2025-46818 CVE-2025-46819\n\n[7.2.10-1]\n- rebase to 7.2.10 for CVE-2025-27151 CVE-2025-32023 and CVE-2025-48367\n\n[7.2.8-1]\n- rebase to 7.2.8 for CVE-2025-21605\n\n[7.2.7-1]\n- rebase to 7.2.7 for CVE-2024-46981 and CVE-2024-51741\n\n[7.2.6-1]\n- rebase to 7.2.6  RHEL-26628",
+  "affected_products": [
+    "Oracle Linux 9 for x86_64",
+    "Oracle Linux 9 for aarch64"
+  ],
+  "cves": [
+    "CVE-2025-46817",
+    "CVE-2025-46818",
+    "CVE-2025-46819",
+    "CVE-2025-49844"
+  ],
+  "packages": [
+    "redis-7.2.11-1.0.1.module+el9.7.0+90709+dc2ec98a.x86_64",
+    "redis-devel-7.2.11-1.0.1.module+el9.7.0+90709+dc2ec98a.x86_64",
+    "redis-doc-7.2.11-1.0.1.module+el9.7.0+90709+dc2ec98a.noarch",
+    "redis-7.2.11-1.0.1.module+el9.7.0+90709+dc2ec98a.src"
+  ],
+  "full_text": "[7.2.11-1.0.1]\n- Build with 64k pages to support redis on UEK on aarch64\n\n[7.2.11-1]\n- rebase to 7.2.11 for CVE-2025-49844 CVE-2025-46817 CVE-2025-46818 CVE-2025-46819\n\n[7.2.10-1]\n- rebase to 7.2.10 for CVE-2025-27151 CVE-2025-32023 and CVE-2025-48367\n\n[7.2.8-1]\n- rebase to 7.2.8 for CVE-2025-21605\n\n[7.2.7-1]\n- rebase to 7.2.7 for CVE-2024-46981 and CVE-2024-51741\n\n[7.2.6-1]\n- rebase to 7.2.6  RHEL-26628\n\nReferences:\nhttps://linux.oracle.com/errata/ELSA-2025-20955.html\nhttps://linux.oracle.com/cve/CVE-2025-46817.html\nhttps://linux.oracle.com/cve/CVE-2025-46818.html\nhttps://linux.oracle.com/cve/CVE-2025-46819.html\nhttps://linux.oracle.com/cve/CVE-2025-49844.html"
+}

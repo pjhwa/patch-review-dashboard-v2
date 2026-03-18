@@ -1,0 +1,29 @@
+{
+  "id": "USN-8054-1",
+  "url": "https://ubuntu.com/security/notices/USN-8054-1",
+  "synopsis": "USN-8054-1: DjVuLibre vulnerabilities",
+  "dateStr": "23 February 2026",
+  "overview": "Several security issues were fixed in DjVuLibre.",
+  "description": "It was discovered that DjVuLibre could be forced to execute a division\nby zero in certain instances. A remote attacker could possibly use\nthis issue to cause applications to stop responding or crash, resulting\nin a denial of service. (CVE-2021-46312)\n\nIt was discovered that DjVuLibre incorrectly handled certain memory\noperations. If a user or automated system were tricked into processing a\nspecially crafted DjVu file, a remote attacker could cause applications\nto stop responding or crash, resulting in a denial of service, or possibly\nexecute arbitrary code. This issue only affected Ubuntu 16.04 LTS, Ubuntu\n18.04 LTS, and Ubuntu 20.04 LTS. (CVE-2025-53367)\n\n \n\n \n\n \n\nIt was discovered that DjVuLibre could be forced to execute a division\nby zero in certain instances. A remote attacker could possibly use\nthis issue to cause applications to stop responding or crash, resulting\nin a denial of service. (CVE-2021-46312)\n\nIt was discovered that DjVuLibre incorrectly handled certain memory\noperations. If a user or automated system were tricked into processing a\nspecially crafted DjVu file, a remote attacker could cause applications\nto stop responding or crash, resulting in a denial of service, or possibly\nexecute arbitrary code. This issue only affected Ubuntu 16.04 LTS, Ubuntu\n18.04 LTS, and Ubuntu 20.04 LTS. (CVE-2025-53367)",
+  "packages": [
+    "djvulibre"
+  ],
+  "cves": [
+    "CVE-2025-53367",
+    "CVE-2021-46312"
+  ],
+  "affected_products": [
+    "24.04 LTS",
+    "22.04 LTS",
+    "20.04 LTS",
+    "18.04 LTS",
+    "16.04 LTS",
+    "Open side navigation"
+  ],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Ubuntu Security Notices\n\nUSN-8054-1\n\n \n\n \n\n \n\n \n\n \n\n \nUSN-8054-1: DjVuLibre vulnerabilities\n\n \n\n \n\n \n\n \nPublication date\n\n \n\n \n\n \n23 February 2026\n\n \n\n \n\n \n\n \n\n \nOverview\n\n \n\n \n\n \nSeveral security issues were fixed in DjVuLibre.\n\n \n\n \n\n \n\n \n\n \nReleases\n\n \n\n \n\n \n\n 24.04 LTS\n\n22.04 LTS\n\n20.04 LTS\n\n18.04 LTS\n\n16.04 LTS\n\n \n\n \n\n \n\n \n\n \n\n \n\n Open side navigation\n \n\n \n\n \nPackages\n\n \n\n djvulibre - DjVu image format library and tools\n \n\n \n\n \nDetails\n\n \n\n \n\nIt was discovered that DjVuLibre could be forced to execute a division\nby zero in certain instances. A remote attacker could possibly use\nthis issue to cause applications to stop responding or crash, resulting\nin a denial of service. (CVE-2021-46312)\n\nIt was discovered that DjVuLibre incorrectly handled certain memory\noperations. If a user or automated system were tricked into processing a\nspecially crafted DjVu file, a remote attacker could cause applications\nto stop responding or crash, resulting in a denial of service, or possibly\nexecute arbitrary code. This issue only affected Ubuntu 16.04 LTS, Ubuntu\n18.04 LTS, and Ubuntu 20.04 LTS. (CVE-2025-53367)\n\n \n\n \n\n \n\nIt was discovered that DjVuLibre could be forced to execute a division\nby zero in certain instances. A remote attacker could possibly use\nthis issue to cause applications to stop responding or crash, resulting\nin a denial of service. (CVE-2021-46312)\n\nIt was discovered that DjVuLibre incorrectly handled certain memory\noperations. If a user or automated system were tricked into processing a\nspecially crafted DjVu file, a remote attacker could cause applications\nto stop responding or crash, resulting in a denial of service, or possibly\nexecute arbitrary code. This issue only affected Ubuntu 16.04 LTS, Ubuntu\n18.04 LTS, and Ubuntu 20.04 LTS. (CVE-2025-53367)\n\n \n\n \n\n \n\n \nUpdate instructions\n\n \n\n \n\n \n\n \n\nIn general, a standard system update will make all the necessary changes.\n\n Learn more about how to get the fixes.\n \n\n \n\n \n\n \n\n \nThe problem can be corrected by updating your system to the following package versions:\n\n \n\n \n\n \n\n \n\n Ubuntu Release\n Package Version\n \n\n 24.04\n\nLTS noble\n\n libdjvulibre21 – \n\n3.5.28-2ubuntu0.24.04.2\n\n \n\n 22.04\n\nLTS jammy\n\n libdjvulibre21 – \n\n3.5.28-2ubuntu0.22.04.2\n\n \n\n 20.04\n\nLTS focal\n\n libdjvulibre21 – \n\n3.5.27.1-14ubuntu0.1+esm1\n\n  \n\nUbuntu Pro\n Fix available with Ubuntu Pro.\n\n \n\n 18.04\n\nLTS bionic\n\n libdjvulibre21 – \n\n3.5.27.1-8ubuntu0.4+esm1\n\n  \n\nUbuntu Pro\n Fix available with Ubuntu Pro.\n\n \n\n 16.04\n\nLTS xenial\n\n libdjvulibre21 – \n\n3.5.27.1-5ubuntu0.1+esm3\n\n  \n\nUbuntu Pro\n Fix available with Ubuntu Pro.\n\n \n\nReduce your security exposure\n\n \n\n Ubuntu Pro provides ten-year security coverage to 25,000+ packages in Main and Universe repositories, and it is free for up to five machines.\n \n\n \n\n Get Ubuntu Pro\n \n\n \n\nReferences\n\n \n\n \n\n CVE-2025-53367\n \n\n \n\n CVE-2021-46312\n \n\n \n\n \n\n CVE-2025-53367\n \n\n CVE-2021-46312\n \n\n \n\n \nRelated notices\n\n \n\n \n\n USN-7631-1\n \n\n \n\n USN-7631-1",
+  "title": "USN-8054-1: DjVuLibre vulnerabilities | Ubuntu security notices | Ubuntu",
+  "pubDate": "2026-02-22T15:00:00.000Z",
+  "vendor": "Ubuntu"
+}

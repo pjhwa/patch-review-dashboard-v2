@@ -1,0 +1,20 @@
+{
+  "id": "RHSA-2025:22090",
+  "vendor": "Red Hat",
+  "url": "https://access.redhat.com/errata/RHSA-2025:22090",
+  "pubDate": "2025-11-25T16:24:09.000Z",
+  "dateStr": "2025-11-25",
+  "severity": "Moderate",
+  "title": "Red Hat Security Advisory: Red Hat build of Keycloak 26.4.6 Images Security Update",
+  "overview": "New images are available for Red Hat build of Keycloak 26.4.6 and Red Hat build of Keycloak 26.4.6 Operator, running on OpenShift Container Platform",
+  "description": "New images are available for Red Hat build of Keycloak 26.4.6 and Red Hat build of Keycloak 26.4.6 Operator, running on OpenShift Container Platform",
+  "affected_products": [
+    "Red Hat build of Keycloak 26.4"
+  ],
+  "cves": [
+    "CVE-2025-13467"
+  ],
+  "packages": [],
+  "fixes": "",
+  "full_text": "Red Hat Security Advisory: Red Hat build of Keycloak 26.4.6 Images Security Update\n\nNew images are available for Red Hat build of Keycloak 26.4.6 and Red Hat build of Keycloak 26.4.6 Operator, running on OpenShift Container Platform\n\nNew images are available for Red Hat build of Keycloak 26.4.6 and Red Hat build of Keycloak 26.4.6 Operator, running on OpenShift Container Platform\n\n\n\nCVE-2025-13467: A flaw was found in the Keycloak LDAP User Federation provider. This vulnerability allows an authenticated realm administrator to trigger deserialization of untrusted Java objects via a malicious LDAP server configuration."
+}

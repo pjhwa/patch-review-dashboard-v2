@@ -1,0 +1,26 @@
+{
+  "id": "ELSA-2026-0002",
+  "vendor": "Oracle",
+  "type": "Security Advisory (ELSA)",
+  "title": " tar security update",
+  "issuedDate": "2026-01-05T00:00:00Z",
+  "updatedDate": "2026-01-05T00:00:00Z",
+  "pubDate": "2026-01-05T00:00:00Z",
+  "dateStr": "2026-01-05",
+  "url": "https://linux.oracle.com/errata/ELSA-2026-0002.html",
+  "severity": "Moderate",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 10.",
+  "description": "[2:1.35-9]\n- Fix a tiny mistake in the last patch affecting hardling extraction\n  (w/o visible consequences)\n\n[2:1.35-8]\n- Backport upstream changes to jailify extraction directory\n  Includes related gnulib changes to add openat2\n  Fixes CVE-2025-45582",
+  "affected_products": [
+    "Oracle Linux 10 for x86_64",
+    "Oracle Linux 10 for aarch64"
+  ],
+  "cves": [
+    "CVE-2025-45582"
+  ],
+  "packages": [
+    "tar-1.35-9.el10_1.x86_64",
+    "tar-1.35-9.el10_1.src"
+  ],
+  "full_text": "[2:1.35-9]\n- Fix a tiny mistake in the last patch affecting hardling extraction\n  (w/o visible consequences)\n\n[2:1.35-8]\n- Backport upstream changes to jailify extraction directory\n  Includes related gnulib changes to add openat2\n  Fixes CVE-2025-45582\n\nReferences:\nhttps://linux.oracle.com/errata/ELSA-2026-0002.html\nhttps://linux.oracle.com/cve/CVE-2025-45582.html"
+}

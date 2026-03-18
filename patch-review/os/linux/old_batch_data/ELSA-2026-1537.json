@@ -1,0 +1,30 @@
+{
+  "id": "ELSA-2026-1537",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2026-February/019714.html",
+  "synopsis": "[El-errata] ELSA-2026-1537 Moderate: Oracle Linux 7 python security update",
+  "dateStr": "2026-February",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Security Advisory ELSA-2026-1537",
+  "description": "[2.7.5-94.0.3]\n- Fix for CVE-2025-12084 [Orabug: 38902314]",
+  "affected_products": [
+    "Oracle Linux 7"
+  ],
+  "packages": [
+    "python-2.7.5-94.0.3.el7_9.x86_64.rpm",
+    "python-debug-2.7.5-94.0.3.el7_9.x86_64.rpm",
+    "python-devel-2.7.5-94.0.3.el7_9.x86_64.rpm",
+    "python-libs-2.7.5-94.0.3.el7_9.i686.rpm",
+    "python-libs-2.7.5-94.0.3.el7_9.x86_64.rpm",
+    "python-test-2.7.5-94.0.3.el7_9.x86_64.rpm",
+    "python-tools-2.7.5-94.0.3.el7_9.x86_64.rpm",
+    "tkinter-2.7.5-94.0.3.el7_9.x86_64.rpm"
+  ],
+  "cves": [
+    "CVE-2025-12084"
+  ],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Security Advisory ELSA-2026-1537\n\nhttp://linux.oracle.com/errata/ELSA-2026-1537.html\n\nThe following updated rpms for Oracle Linux 7 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\npython-2.7.5-94.0.3.el7_9.x86_64.rpm\npython-debug-2.7.5-94.0.3.el7_9.x86_64.rpm\npython-devel-2.7.5-94.0.3.el7_9.x86_64.rpm\npython-libs-2.7.5-94.0.3.el7_9.i686.rpm\npython-libs-2.7.5-94.0.3.el7_9.x86_64.rpm\npython-test-2.7.5-94.0.3.el7_9.x86_64.rpm\npython-tools-2.7.5-94.0.3.el7_9.x86_64.rpm\ntkinter-2.7.5-94.0.3.el7_9.x86_64.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol7/SRPMS-updates/python-2.7.5-94.0.3.el7_9.src.rpm\n\nRelated CVEs:\n\nCVE-2025-12084\n\n\n\n\nDescription of changes:\n\n[2.7.5-94.0.3]\n- Fix for CVE-2025-12084 [Orabug: 38902314]",
+  "vendor": "Oracle"
+}

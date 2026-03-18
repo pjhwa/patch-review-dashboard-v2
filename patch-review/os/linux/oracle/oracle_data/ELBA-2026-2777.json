@@ -1,0 +1,43 @@
+{
+  "id": "ELBA-2026-2777",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "AppStream",
+  "title": "qemu-kvm bug fix and enhancement update",
+  "issuedDate": "2026-02-17T00:00:00Z",
+  "updatedDate": "2026-02-17T00:00:00Z",
+  "pubDate": "2026-02-17T00:00:00Z",
+  "dateStr": "2026-02-17",
+  "url": "https://linux.oracle.com/errata/ELBA-2026-2777.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 9.",
+  "description": "[9.1.0-29.el9_7.6]\n- kvm-Revert-i386-cpu-Move-adjustment-of-CPUID_EXT_PDCM-be.patch [RHEL-135451]\n- Resolves: RHEL-135451\n  (Live migration after workload update fails with operation failed: guest CPU doesn't match specification: missing features: pdcm [rhel-9])\n\n[9.1.0-29.el9_7.5]\n- kvm-file-posix-Handle-suspended-dm-multipath-better-for-.patch [RHEL-133302]\n- Resolves: RHEL-133302\n  (The VM hit io error when do S3-PR integration on the pass-through  failover multipath device [rhel-9.7.z])\n\n[9.1.0-29.el9_7.4]\n- kvm-accel-kvm-check-for-KVM_CAP_READONLY_MEM-on-VM.patch [RHEL-129551]\n- kvm-ram-block-attributes-fix-interaction-with-hugetlb-me.patch [RHEL-129551]\n- kvm-ram-block-attributes-Unify-the-retrieval-of-the-bloc.patch [RHEL-129551]\n- kvm-scsi-disk-Apply-error-policy-for-host_status-errors-.patch [RHEL-130209]\n- Resolves: RHEL-129551\n  ([RHEL 9]snp guest fail to boot with hugepage [rhel-9.7.z])\n- Resolves: RHEL-130209\n  (scsi-block: Error policy is ignored for host_status errors [rhel-9.7.z])",
+  "affected_products": [
+    "Oracle Linux 9 for x86_64",
+    "Oracle Linux 9 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "qemu-kvm-core-9.1.0-29.el9_7.6.x86_64",
+    "qemu-kvm-9.1.0-29.el9_7.6.src",
+    "qemu-kvm-device-usb-host-9.1.0-29.el9_7.6.x86_64",
+    "qemu-kvm-tools-9.1.0-29.el9_7.6.x86_64",
+    "qemu-kvm-device-display-virtio-vga-9.1.0-29.el9_7.6.x86_64",
+    "qemu-pr-helper-9.1.0-29.el9_7.6.x86_64",
+    "qemu-kvm-device-display-virtio-gpu-pci-9.1.0-29.el9_7.6.x86_64",
+    "qemu-img-9.1.0-29.el9_7.6.x86_64",
+    "qemu-kvm-block-rbd-9.1.0-29.el9_7.6.x86_64",
+    "qemu-kvm-ui-egl-headless-9.1.0-29.el9_7.6.x86_64",
+    "qemu-kvm-block-curl-9.1.0-29.el9_7.6.x86_64",
+    "qemu-kvm-common-9.1.0-29.el9_7.6.x86_64",
+    "qemu-guest-agent-9.1.0-29.el9_7.6.x86_64",
+    "qemu-kvm-docs-9.1.0-29.el9_7.6.x86_64",
+    "qemu-kvm-9.1.0-29.el9_7.6.x86_64",
+    "qemu-kvm-audio-pa-9.1.0-29.el9_7.6.x86_64",
+    "qemu-kvm-device-display-virtio-gpu-9.1.0-29.el9_7.6.x86_64",
+    "qemu-kvm-ui-opengl-9.1.0-29.el9_7.6.x86_64",
+    "qemu-kvm-device-usb-redirect-9.1.0-29.el9_7.6.x86_64",
+    "qemu-kvm-block-blkio-9.1.0-29.el9_7.6.x86_64"
+  ],
+  "full_text": "[9.1.0-29.el9_7.6]\n- kvm-Revert-i386-cpu-Move-adjustment-of-CPUID_EXT_PDCM-be.patch [RHEL-135451]\n- Resolves: RHEL-135451\n  (Live migration after workload update fails with operation failed: guest CPU doesn't match specification: missing features: pdcm [rhel-9])\n\n[9.1.0-29.el9_7.5]\n- kvm-file-posix-Handle-suspended-dm-multipath-better-for-.patch [RHEL-133302]\n- Resolves: RHEL-133302\n  (The VM hit io error when do S3-PR integration on the pass-through  failover multipath device [rhel-9.7.z])\n\n[9.1.0-29.el9_7.4]\n- kvm-accel-kvm-check-for-KVM_CAP_READONLY_MEM-on-VM.patch [RHEL-129551]\n- kvm-ram-block-attributes-fix-interaction-with-hugetlb-me.patch [RHEL-129551]\n- kvm-ram-block-attributes-Unify-the-retrieval-of-the-bloc.patch [RHEL-129551]\n- kvm-scsi-disk-Apply-error-policy-for-host_status-errors-.patch [RHEL-130209]\n- Resolves: RHEL-129551\n  ([RHEL 9]snp guest fail to boot with hugepage [rhel-9.7.z])\n- Resolves: RHEL-130209\n  (scsi-block: Error policy is ignored for host_status errors [rhel-9.7.z])\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2026-2777.html"
+}

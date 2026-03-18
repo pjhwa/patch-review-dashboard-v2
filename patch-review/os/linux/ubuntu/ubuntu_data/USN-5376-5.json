@@ -1,0 +1,33 @@
+{
+  "id": "USN-5376-5",
+  "vendor": "Canonical / Ubuntu",
+  "type": "Ubuntu Security Notice (USN)",
+  "title": "git regression",
+  "issuedDate": "2026-02-27T14:42:38Z",
+  "updatedDate": "2026-02-27T14:42:38Z",
+  "pubDate": "2026-02-27T14:42:38Z",
+  "dateStr": "2026-02-27",
+  "url": "https://ubuntu.com/security/notices/USN-5376-5",
+  "severity": "None",
+  "overview": "git regression",
+  "description": "USN-5376-4 fixed a regression in Git. The update introduced a regression\nwhen specifying configuration includes due to additional restrictions. This\nupdate fixes the problem.\n\nWe apologize for the inconvenience.\n\nOriginal advisory details:\n\n 俞晨东 discovered that Git incorrectly handled certain repository paths\n in platforms with multiple users support. An attacker could possibly use\n this issue to run arbitrary commands.\n",
+  "affected_products": [
+    "Ubuntu 22.04 LTS"
+  ],
+  "cves": [],
+  "packages": [
+    "git-1:2.34.1-1ubuntu1.17",
+    "git-all-1:2.34.1-1ubuntu1.17",
+    "git-cvs-1:2.34.1-1ubuntu1.17",
+    "git-daemon-run-1:2.34.1-1ubuntu1.17",
+    "git-daemon-sysvinit-1:2.34.1-1ubuntu1.17",
+    "git-email-1:2.34.1-1ubuntu1.17",
+    "git-gui-1:2.34.1-1ubuntu1.17",
+    "git-man-1:2.34.1-1ubuntu1.17",
+    "git-mediawiki-1:2.34.1-1ubuntu1.17",
+    "git-svn-1:2.34.1-1ubuntu1.17",
+    "gitk-1:2.34.1-1ubuntu1.17",
+    "gitweb-1:2.34.1-1ubuntu1.17"
+  ],
+  "full_text": "USN-5376-4 fixed a regression in Git. The update introduced a regression\nwhen specifying configuration includes due to additional restrictions. This\nupdate fixes the problem.\n\nWe apologize for the inconvenience.\n\nOriginal advisory details:\n\n 俞晨东 discovered that Git incorrectly handled certain repository paths\n in platforms with multiple users support. An attacker could possibly use\n this issue to run arbitrary commands.\n"
+}

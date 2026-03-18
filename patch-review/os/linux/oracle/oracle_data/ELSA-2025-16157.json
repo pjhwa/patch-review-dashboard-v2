@@ -1,0 +1,33 @@
+{
+  "id": "ELSA-2025-16157",
+  "vendor": "Oracle",
+  "type": "Security Advisory (ELSA)",
+  "kernel_type": "AppStream",
+  "title": " thunderbird security update",
+  "issuedDate": "2025-09-18T00:00:00Z",
+  "updatedDate": "2025-09-18T00:00:00Z",
+  "pubDate": "2025-09-18T00:00:00Z",
+  "dateStr": "2025-09-18",
+  "url": "https://linux.oracle.com/errata/ELSA-2025-16157.html",
+  "severity": "Important",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 10.",
+  "description": "[140.3.0-1.0.1]\n- Add Oracle prefs\n\n[140.3.0]\n- Add OpenELA debranding\n\n[140.3.0-1]\n- Update to 140.3.0 ESR",
+  "affected_products": [
+    "Oracle Linux 10 for x86_64",
+    "Oracle Linux 10 for aarch64"
+  ],
+  "cves": [
+    "CVE-2025-10527",
+    "CVE-2025-10528",
+    "CVE-2025-10529",
+    "CVE-2025-10532",
+    "CVE-2025-10533",
+    "CVE-2025-10536",
+    "CVE-2025-10537"
+  ],
+  "packages": [
+    "thunderbird-140.3.0-1.0.1.el10_0.src",
+    "thunderbird-140.3.0-1.0.1.el10_0.x86_64"
+  ],
+  "full_text": "[140.3.0-1.0.1]\n- Add Oracle prefs\n\n[140.3.0]\n- Add OpenELA debranding\n\n[140.3.0-1]\n- Update to 140.3.0 ESR\n\nReferences:\nhttps://linux.oracle.com/errata/ELSA-2025-16157.html\nhttps://linux.oracle.com/cve/CVE-2025-10527.html\nhttps://linux.oracle.com/cve/CVE-2025-10528.html\nhttps://linux.oracle.com/cve/CVE-2025-10529.html\nhttps://linux.oracle.com/cve/CVE-2025-10532.html\nhttps://linux.oracle.com/cve/CVE-2025-10533.html\nhttps://linux.oracle.com/cve/CVE-2025-10536.html\nhttps://linux.oracle.com/cve/CVE-2025-10537.html"
+}

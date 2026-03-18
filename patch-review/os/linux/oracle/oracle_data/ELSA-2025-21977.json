@@ -1,0 +1,29 @@
+{
+  "id": "ELSA-2025-21977",
+  "vendor": "Oracle",
+  "type": "Security Advisory (ELSA)",
+  "kernel_type": "RHCK",
+  "title": " libssh security update",
+  "issuedDate": "2025-11-24T00:00:00Z",
+  "updatedDate": "2025-11-24T00:00:00Z",
+  "pubDate": "2025-11-24T00:00:00Z",
+  "dateStr": "2025-11-24",
+  "url": "https://linux.oracle.com/errata/ELSA-2025-21977.html",
+  "severity": "Moderate",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 8.",
+  "description": "[0.9.6-16]\n- Fix CVE-2025-5372\n  Resolves: RHEL-121232",
+  "affected_products": [
+    "Oracle Linux 8 for x86_64",
+    "Oracle Linux 8 for aarch64"
+  ],
+  "cves": [
+    "CVE-2025-5372"
+  ],
+  "packages": [
+    "libssh-config-0.9.6-16.el8_10.noarch",
+    "libssh-0.9.6-16.el8_10.src",
+    "libssh-0.9.6-16.el8_10.i686",
+    "libssh-0.9.6-16.el8_10.x86_64"
+  ],
+  "full_text": "[0.9.6-16]\n- Fix CVE-2025-5372\n  Resolves: RHEL-121232\n\nReferences:\nhttps://linux.oracle.com/errata/ELSA-2025-21977.html\nhttps://linux.oracle.com/cve/CVE-2025-5372.html"
+}

@@ -1,0 +1,22 @@
+{
+  "id": "ELBA-2026-2417",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2026-February/019740.html",
+  "synopsis": "[El-errata] ELBA-2026-2417 Oracle Linux 8 gnome-settings-daemon bug fix and enhancement update",
+  "dateStr": "2026-February",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Bug Fix Advisory ELBA-2026-2417",
+  "description": "[3.32.0-22]\n- Debounce mount checks in Low Disk Space monitoring\n  Resolves: RHEL-127805",
+  "affected_products": [
+    "Oracle Linux 8"
+  ],
+  "packages": [
+    "gnome-settings-daemon-3.32.0-22.el8_10.x86_64.rpm",
+    "gnome-settings-daemon-3.32.0-22.el8_10.aarch64.rpm"
+  ],
+  "cves": [],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Bug Fix Advisory ELBA-2026-2417\n\nhttp://linux.oracle.com/errata/ELBA-2026-2417.html\n\nThe following updated rpms for Oracle Linux 8 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\ngnome-settings-daemon-3.32.0-22.el8_10.x86_64.rpm\n\naarch64:\ngnome-settings-daemon-3.32.0-22.el8_10.aarch64.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol8/SRPMS-updates/gnome-settings-daemon-3.32.0-22.el8_10.src.rpm\n\n\n\nDescription of changes:\n\n[3.32.0-22]\n- Debounce mount checks in Low Disk Space monitoring\n  Resolves: RHEL-127805",
+  "vendor": "Oracle"
+}

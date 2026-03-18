@@ -1,0 +1,37 @@
+{
+  "id": "RHSA-2026:3053",
+  "vendor": "Red Hat",
+  "type": "Security Advisory (RHSA)",
+  "title": "Red Hat Security Advisory: butane security update",
+  "issuedDate": "2026-02-23T06:47:46+00:00",
+  "updatedDate": "2026-02-23T06:47:46+00:00",
+  "pubDate": "2026-02-23T06:47:46+00:00",
+  "dateStr": "2026-02-23",
+  "url": "https://access.redhat.com/errata/RHSA-2026:3053",
+  "severity": "Important",
+  "overview": "An update for butane is now available for Red Hat Enterprise Linux 9.4 Extended Update Support.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "description": "Butane translates human-readable Butane Configs into machine-readable Ignition configs for provisioning operating systems that use Ignition.\n\nSecurity Fix(es):\n\n* crypto/x509: golang: Denial of Service due to excessive resource consumption via crafted certificate (CVE-2025-61729)\n\nFor more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux",
+    "Red Hat Enterprise Linux AppStream EUS (v.9.4)"
+  ],
+  "cves": [
+    "CVE-2025-61729"
+  ],
+  "packages": [
+    "butane-0:0.20.0-1.el9_4.1.src",
+    "butane-0:0.20.0-1.el9_4.1.aarch64",
+    "butane-debugsource-0:0.20.0-1.el9_4.1.aarch64",
+    "butane-debuginfo-0:0.20.0-1.el9_4.1.aarch64",
+    "butane-0:0.20.0-1.el9_4.1.ppc64le",
+    "butane-debugsource-0:0.20.0-1.el9_4.1.ppc64le",
+    "butane-debuginfo-0:0.20.0-1.el9_4.1.ppc64le",
+    "butane-0:0.20.0-1.el9_4.1.x86_64",
+    "butane-debugsource-0:0.20.0-1.el9_4.1.x86_64",
+    "butane-debuginfo-0:0.20.0-1.el9_4.1.x86_64",
+    "butane-0:0.20.0-1.el9_4.1.s390x",
+    "butane-debugsource-0:0.20.0-1.el9_4.1.s390x",
+    "butane-debuginfo-0:0.20.0-1.el9_4.1.s390x"
+  ],
+  "full_text": "An update for butane is now available for Red Hat Enterprise Linux 9.4 Extended Update Support.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nButane translates human-readable Butane Configs into machine-readable Ignition configs for provisioning operating systems that use Ignition.\n\nSecurity Fix(es):\n\n* crypto/x509: golang: Denial of Service due to excessive resource consumption via crafted certificate (CVE-2025-61729)\n\nFor more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section."
+}

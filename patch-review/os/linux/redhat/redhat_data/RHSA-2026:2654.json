@@ -1,0 +1,28 @@
+{
+  "id": "RHSA-2026:2654",
+  "vendor": "Red Hat",
+  "type": "Security Advisory (RHSA)",
+  "title": "Red Hat Security Advisory: Release of components for Service Telemetry Framework 1.5.7",
+  "issuedDate": "2026-02-12T13:46:10+00:00",
+  "updatedDate": "2026-02-13T11:17:53+00:00",
+  "pubDate": "2026-02-12T13:46:10+00:00",
+  "dateStr": "2026-02-12",
+  "url": "https://access.redhat.com/errata/RHSA-2026:2654",
+  "severity": "Important",
+  "overview": "Release of components for the Service Telemetry Framework",
+  "description": "Service Telemetry Framework (STF) provides automated collection of measurements and data from remote clients, such as Red Hat OpenStack Platform or third-party nodes. STF then transmits the information to a centralized, receiving Red Hat OpenShift Container Platform deployment for storage, retrieval, and monitoring.\n\nSecurity Fix:\n  * Excessive resource consumption when printing error string for host certificate validation in crypto/x509 (CVE-2025-61729)",
+  "affected_products": [],
+  "cves": [
+    "CVE-2025-61729"
+  ],
+  "packages": [
+    "registry.redhat.io/stf/prometheus-webhook-snmp-rhel9@sha256:17f2037309f59212739ab5594d9493cd50f7530c5fd9447ce14a8230bf234c23_amd64",
+    "registry.redhat.io/stf/service-telemetry-operator-bundle@sha256:a5e1a4b1e99e37c79f66dbc3cb47b4da122d286dfbf68810ef302fce1a0a85dd_amd64",
+    "registry.redhat.io/stf/service-telemetry-rhel9-operator@sha256:5f4fa94bcf80d8d324dad745914b31345021156f9d5491bf5441b1158f6ff486_amd64",
+    "registry.redhat.io/stf/sg-bridge-rhel9@sha256:adbab70b99404ac31e80888af2f7742f78f03235eff0719c95bff21048d0f05c_amd64",
+    "registry.redhat.io/stf/sg-core-rhel9@sha256:c8e3a280152562a735e38f09612e59954728549ec7238240aaf8750f68dc8ed8_amd64",
+    "registry.redhat.io/stf/smart-gateway-operator-bundle@sha256:03a0cb40992e36a33327cf6851d1bb92177f5a7425e103121734874fd71ea55d_amd64",
+    "registry.redhat.io/stf/smart-gateway-rhel9-operator@sha256:5b79414c3a506cb562242d926404790bfb94e953fe1b051db0ecc3892117d34f_amd64"
+  ],
+  "full_text": "Release of components for the Service Telemetry Framework\n\nService Telemetry Framework (STF) provides automated collection of measurements and data from remote clients, such as Red Hat OpenStack Platform or third-party nodes. STF then transmits the information to a centralized, receiving Red Hat OpenShift Container Platform deployment for storage, retrieval, and monitoring.\n\nSecurity Fix:\n  * Excessive resource consumption when printing error string for host certificate validation in crypto/x509 (CVE-2025-61729)"
+}

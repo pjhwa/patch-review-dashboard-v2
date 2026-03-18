@@ -1,0 +1,35 @@
+{
+  "id": "ELBA-2026-50072",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "title": " gcc  bug fix update",
+  "issuedDate": "2026-01-26T00:00:00Z",
+  "updatedDate": "2026-01-26T00:00:00Z",
+  "pubDate": "2026-01-26T00:00:00Z",
+  "dateStr": "2026-01-26",
+  "url": "https://linux.oracle.com/errata/ELBA-2026-50072.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 9.",
+  "description": "[11.5.0-11.0.2]\n- Fix Orabug 38784882.\n  Add gcc12-x86-Remove-MAX_BITSIZE_MODE_ANY_INT.patch\n  Oracle history:\n  September-4-2025 Qing Zhao <qing.zhao@oracle.com> 11.5.0-11.0.1\n  - Merge Oracle patches on 11.5.0-11.\n  August-5-2025 Qing Zhao <qing.zhao@oracle.com> 11.5.0-9.0.1\n  - Merge Oracle patches on 11.5.0-9.\n  March-6-2025 Qing Zhao <qing.zhao@oracle.com> 11.5.0-5.0.1\n  - Merge Oracle patches on 11.5.0-5.\n  February-18-2025 Qing Zhao <qing.zhao@oracle.com> 11.5.0-4.0.1\n  - Merge Oracle patches on 11.5.0-4.\n  July-23-2024 Qing Zhao <qing.zhao@oracle.com> 11.5.0-2.0.1\n  - Merge Oracle patches to 11.5.0-2.\n  July-22-2024 Qing Zhao <qing.zhao@oracle.com> 11.5.0-1.0.1\n  - Merge Oracle patches to 11.5.0-1.\n  March-27-2024 Qing Zhao <qing.zhao@oracle.com> 11.4.1-3.0.1\n  - Merge Oracle patches to 11.4.1-3.\n  - Delete all the Oracle patches for CVE-2023-4039 and CVE-2022-40982\n    since the new gcc includes these patches already.\n  October-9-2023 David Faust <david.faust@oracle.com> 11.4.1-2.1.0.1\n  - Forward-port Oracle patches to 11.4.1-2.1.\n    Reviewed-by: Jose E. Marchesi <jose.marchesi@oracle.com>\n  August-31-2023 Qing Zhao <qing.zhao@oracle.com> 11.3.1-4.3.0.4\n  - CVE-2023-4039 GCC mitigation.\n    Orabug 35751837.\n  - CVE-2022-40982 'Intel Downfall' mitigation.\n    Orabug 35751842.\n    Add two patches originally from GCC upstream releases/gcc-11 branch.\n    gcc11-downfall-disable-gather-in-vec.patch\n    gcc11-downfall-support-mno-gather.patch\n    Reviewed-by: Jose E. Marchesi <jose.marchesi@oracle.com>\n  March-28-2023 Qing Zhao <qing.zhao@oracle.com> 11.3.1-4.3.0.1\n  - Merge all Oracle patches:\n  - Add complex divide improvement (11.2.1-2.2.0.1)\n    backport of upstream commit 54f0224d55a1b56dde092460ddf76913670e6efc\n  - Add CTF/BTF support (11.2.1-2.2.0.1)\n  - Add -ftrivial-auto-var-init support from GCC12 (11.2.1-2.2.0.1)\n  - Add more fixes for -ftrivial-auto-var-init support from GCC12 (11.2.1-2.2.0.2)\n  - Add two more fixes for -ftrivial-auto-var-init bogus warnings from GCC12\n    PR104550 and PR102276. (11.2.1-2.2.0.3)\n  - NOTE: adjust gcc12-ctf-pre-1-write_symbols-to-support-bitmasks.patch\n    for c-family/c-pch.c for 11.2.1-9.4\n  - Fix Orabug - 35137216 Backport fix for upstream PR debug/105089 to OL9 GCC\n    (11.3.1-2.1.0.2)\n    - Backport PR debug/105089 CTF for a defined extern variable is ambiguous\n      using the following upstream commits:\n      613a6fca75156aadc2e79d78a23e547d39762c1e,\n      d0b00e74bf59c73b79471bbe9de19373b8661e20, and\n      d634c5d7c78c6ec0fa39d96984460475564519c8\n    Reviewed-by: Jose E. Marchesi <jose.marchesi@oracle.com>",
+  "affected_products": [
+    "Oracle Linux 9 for x86_64",
+    "Oracle Linux 9 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "libgfortran-11.5.0-11.0.2.el9.x86_64",
+    "libatomic-11.5.0-11.0.2.el9.i686",
+    "libquadmath-11.5.0-11.0.2.el9.x86_64",
+    "libgomp-11.5.0-11.0.2.el9.i686",
+    "libgomp-11.5.0-11.0.2.el9.x86_64",
+    "gcc-11.5.0-11.0.2.el9.src",
+    "libgcc-11.5.0-11.0.2.el9.i686",
+    "libgcc-11.5.0-11.0.2.el9.x86_64",
+    "libstdc++-11.5.0-11.0.2.el9.x86_64",
+    "libatomic-11.5.0-11.0.2.el9.x86_64",
+    "libgfortran-11.5.0-11.0.2.el9.i686",
+    "libstdc++-11.5.0-11.0.2.el9.i686",
+    "libquadmath-11.5.0-11.0.2.el9.i686"
+  ],
+  "full_text": "[11.5.0-11.0.2]\n- Fix Orabug 38784882.\n  Add gcc12-x86-Remove-MAX_BITSIZE_MODE_ANY_INT.patch\n  Oracle history:\n  September-4-2025 Qing Zhao <qing.zhao@oracle.com> 11.5.0-11.0.1\n  - Merge Oracle patches on 11.5.0-11.\n  August-5-2025 Qing Zhao <qing.zhao@oracle.com> 11.5.0-9.0.1\n  - Merge Oracle patches on 11.5.0-9.\n  March-6-2025 Qing Zhao <qing.zhao@oracle.com> 11.5.0-5.0.1\n  - Merge Oracle patches on 11.5.0-5.\n  February-18-2025 Qing Zhao <qing.zhao@oracle.com> 11.5.0-4.0.1\n  - Merge Oracle patches on 11.5.0-4.\n  July-23-2024 Qing Zhao <qing.zhao@oracle.com> 11.5.0-2.0.1\n  - Merge Oracle patches to 11.5.0-2.\n  July-22-2024 Qing Zhao <qing.zhao@oracle.com> 11.5.0-1.0.1\n  - Merge Oracle patches to 11.5.0-1.\n  March-27-2024 Qing Zhao <qing.zhao@oracle.com> 11.4.1-3.0.1\n  - Merge Oracle patches to 11.4.1-3.\n  - Delete all the Oracle patches for CVE-2023-4039 and CVE-2022-40982\n    since the new gcc includes these patches already.\n  October-9-2023 David Faust <david.faust@oracle.com> 11.4.1-2.1.0.1\n  - Forward-port Oracle patches to 11.4.1-2.1.\n    Reviewed-by: Jose E. Marchesi <jose.marchesi@oracle.com>\n  August-31-2023 Qing Zhao <qing.zhao@oracle.com> 11.3.1-4.3.0.4\n  - CVE-2023-4039 GCC mitigation.\n    Orabug 35751837.\n  - CVE-2022-40982 'Intel Downfall' mitigation.\n    Orabug 35751842.\n    Add two patches originally from GCC upstream releases/gcc-11 branch.\n    gcc11-downfall-disable-gather-in-vec.patch\n    gcc11-downfall-support-mno-gather.patch\n    Reviewed-by: Jose E. Marchesi <jose.marchesi@oracle.com>\n  March-28-2023 Qing Zhao <qing.zhao@oracle.com> 11.3.1-4.3.0.1\n  - Merge all Oracle patches:\n  - Add complex divide improvement (11.2.1-2.2.0.1)\n    backport of upstream commit 54f0224d55a1b56dde092460ddf76913670e6efc\n  - Add CTF/BTF support (11.2.1-2.2.0.1)\n  - Add -ftrivial-auto-var-init support from GCC12 (11.2.1-2.2.0.1)\n  - Add more fixes for -ftrivial-auto-var-init support from GCC12 (11.2.1-2.2.0.2)\n  - Add two more fixes for -ftrivial-auto-var-init bogus warnings from GCC12\n    PR104550 and PR102276. (11.2.1-2.2.0.3)\n  - NOTE: adjust gcc12-ctf-pre-1-write_symbols-to-support-bitmasks.patch\n    for c-family/c-pch.c for 11.2.1-9.4\n  - Fix Orabug - 35137216 Backport fix for upstream PR debug/105089 to OL9 GCC\n    (11.3.1-2.1.0.2)\n    - Backport PR debug/105089 CTF for a defined extern variable is ambiguous\n      using the following upstream commits:\n      613a6fca75156aadc2e79d78a23e547d39762c1e,\n      d0b00e74bf59c73b79471bbe9de19373b8661e20, and\n      d634c5d7c78c6ec0fa39d96984460475564519c8\n    Reviewed-by: Jose E. Marchesi <jose.marchesi@oracle.com>\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2026-50072.html"
+}

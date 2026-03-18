@@ -1,0 +1,34 @@
+{
+  "id": "USN-8044-1",
+  "vendor": "Canonical / Ubuntu",
+  "type": "Ubuntu Security Notice (USN)",
+  "title": "alsa-lib vulnerability",
+  "issuedDate": "2026-02-16T14:01:32Z",
+  "updatedDate": "2026-02-16T14:01:32Z",
+  "pubDate": "2026-02-16T14:01:32Z",
+  "dateStr": "2026-02-16",
+  "url": "https://ubuntu.com/security/notices/USN-8044-1",
+  "severity": "None",
+  "overview": "alsa-lib vulnerability",
+  "description": "It was discovered that alsa-lib incorrectly handled the topology mixer\ncontrol decoder. A local attacker could use a specially crafted topology\nfile to cause alsa-lib to crash, resulting in a denial of service, or\npossibly execute arbitrary code.",
+  "affected_products": [
+    "Ubuntu 22.04 LTS",
+    "Ubuntu 24.04 LTS"
+  ],
+  "cves": [],
+  "packages": [
+    "libasound2-1.2.6.1-1ubuntu1.1",
+    "libasound2-data-1.2.11-1ubuntu0.2",
+    "libasound2-data-1.2.6.1-1ubuntu1.1",
+    "libasound2-dev-1.2.11-1ubuntu0.2",
+    "libasound2-dev-1.2.6.1-1ubuntu1.1",
+    "libasound2-plugin-smixer-1.2.11-1ubuntu0.2",
+    "libasound2-plugin-smixer-1.2.6.1-1ubuntu1.1",
+    "libasound2t64-1.2.11-1ubuntu0.2",
+    "libatopology-dev-1.2.11-1ubuntu0.2",
+    "libatopology-dev-1.2.6.1-1ubuntu1.1",
+    "libatopology2-1.2.6.1-1ubuntu1.1",
+    "libatopology2t64-1.2.11-1ubuntu0.2"
+  ],
+  "full_text": "It was discovered that alsa-lib incorrectly handled the topology mixer\ncontrol decoder. A local attacker could use a specially crafted topology\nfile to cause alsa-lib to crash, resulting in a denial of service, or\npossibly execute arbitrary code."
+}

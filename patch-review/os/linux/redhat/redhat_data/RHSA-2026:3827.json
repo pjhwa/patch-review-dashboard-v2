@@ -1,0 +1,38 @@
+{
+  "id": "RHSA-2026:3827",
+  "vendor": "Red Hat",
+  "type": "Security Advisory (RHSA)",
+  "title": "Red Hat Security Advisory: Red Hat OpenShift Pipelines Release 1.20.3",
+  "issuedDate": "2026-03-05T07:31:32+00:00",
+  "updatedDate": "2026-03-05T07:31:41+00:00",
+  "pubDate": "2026-03-05T07:31:32+00:00",
+  "dateStr": "2026-03-05",
+  "url": "https://access.redhat.com/errata/RHSA-2026:3827",
+  "severity": "Important",
+  "overview": "The 1.20.3 GA release of Red Hat OpenShift Pipelines Operator..\nFor more details see [product documentation](https://docs.redhat.com/en/documentation/red_hat_openshift_pipelines).",
+  "description": "The 1.20. release of Red Hat OpenShift Pipelines Operator.",
+  "affected_products": [],
+  "cves": [
+    "CVE-2025-11621",
+    "CVE-2025-12044",
+    "CVE-2025-47913",
+    "CVE-2025-61729",
+    "CVE-2025-66506",
+    "CVE-2025-66564"
+  ],
+  "packages": [
+    "registry.redhat.io/openshift-pipelines/pipelines-opc-rhel9@sha256:cd4d671c485fe1ffc4fb45734890cb258fddc1658b7e161bee72e1787fd861e6_arm64",
+    "registry.redhat.io/openshift-pipelines/pipelines-serve-tkn-cli-rhel9@sha256:838a518d67dabba6dc212c88c69d8897422f35a5047e82c10fe3830869d98041_arm64",
+    "registry.redhat.io/openshift-pipelines/pipelines-cli-tkn-rhel9@sha256:9f4bdd415c1e06da1e37e872228e31f4b6ff4890aab7efca0b835ff92ec740cf_arm64",
+    "registry.redhat.io/openshift-pipelines/pipelines-opc-rhel9@sha256:a088a44bb4d11ecf877dc035f351a3500353ec3c8c6a6955d5eb1d6908bf40e3_ppc64le",
+    "registry.redhat.io/openshift-pipelines/pipelines-serve-tkn-cli-rhel9@sha256:d17123e7d12d05e7c56cb8cf8c70a0ea2f477b33e529b8db43e3df8b112d353a_ppc64le",
+    "registry.redhat.io/openshift-pipelines/pipelines-cli-tkn-rhel9@sha256:05d553e2c0d86956b32281aa6ae7ffa1948073f753889007f041eb2a72cbfa91_ppc64le",
+    "registry.redhat.io/openshift-pipelines/pipelines-opc-rhel9@sha256:67e5fd28f10c59bfb6be12fcd3702561b8dc4e6c237a77a38839370d59749154_s390x",
+    "registry.redhat.io/openshift-pipelines/pipelines-serve-tkn-cli-rhel9@sha256:6c868d7ba256b73c66abfb5cbaea0a6d09107c9e90f0deea471d689d1d7bca95_s390x",
+    "registry.redhat.io/openshift-pipelines/pipelines-cli-tkn-rhel9@sha256:66be750a2e2abe15579892d3f8d77058d79f165bd60b867a5d37716a277a6b59_s390x",
+    "registry.redhat.io/openshift-pipelines/pipelines-opc-rhel9@sha256:1f07ea20761776124173a9aab05b072b7ff1de84844a1e9b58cdcbf343ab99e6_amd64",
+    "registry.redhat.io/openshift-pipelines/pipelines-serve-tkn-cli-rhel9@sha256:a5ce1906f4466a88cc0228ab798462120b938622f5ddd89e6826ae3bff968e5b_amd64",
+    "registry.redhat.io/openshift-pipelines/pipelines-cli-tkn-rhel9@sha256:1953e97a47dc441f2cd7a2f450aeb5c1792d180539c4756673d0f76679f29da9_amd64"
+  ],
+  "full_text": "The 1.20.3 GA release of Red Hat OpenShift Pipelines Operator..\nFor more details see [product documentation](https://docs.redhat.com/en/documentation/red_hat_openshift_pipelines).\n\nThe 1.20. release of Red Hat OpenShift Pipelines Operator."
+}

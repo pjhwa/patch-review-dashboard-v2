@@ -1,0 +1,29 @@
+{
+  "id": "ELSA-2026-0771",
+  "vendor": "Oracle",
+  "type": "Security Advisory (ELSA)",
+  "kernel_type": "AppStream",
+  "title": " gpsd-minimal security update",
+  "issuedDate": "2026-01-19T00:00:00Z",
+  "updatedDate": "2026-01-19T00:00:00Z",
+  "pubDate": "2026-01-19T00:00:00Z",
+  "dateStr": "2026-01-19",
+  "url": "https://linux.oracle.com/errata/ELSA-2026-0771.html",
+  "severity": "Important",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 9.",
+  "description": "[1:3.26.1-1.0.1.el9_7.1]\n- Replaced upstream reference [Orabug: 35865525]",
+  "affected_products": [
+    "Oracle Linux 9 for x86_64",
+    "Oracle Linux 9 for aarch64"
+  ],
+  "cves": [
+    "CVE-2025-67268",
+    "CVE-2025-67269"
+  ],
+  "packages": [
+    "gpsd-minimal-clients-3.26.1-1.0.1.el9_7.1.x86_64",
+    "gpsd-minimal-3.26.1-1.0.1.el9_7.1.x86_64",
+    "gpsd-minimal-3.26.1-1.0.1.el9_7.1.src"
+  ],
+  "full_text": "[1:3.26.1-1.0.1.el9_7.1]\n- Replaced upstream reference [Orabug: 35865525]\n\nReferences:\nhttps://linux.oracle.com/errata/ELSA-2026-0771.html\nhttps://linux.oracle.com/cve/CVE-2025-67268.html\nhttps://linux.oracle.com/cve/CVE-2025-67269.html"
+}

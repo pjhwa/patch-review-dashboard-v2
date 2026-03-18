@@ -1,0 +1,24 @@
+{
+  "id": "USN-7750-1",
+  "vendor": "Canonical / Ubuntu",
+  "type": "Ubuntu Security Notice (USN)",
+  "title": "libjson-xs-perl vulnerability",
+  "issuedDate": "2025-09-15T14:30:37Z",
+  "updatedDate": "2026-02-10T04:49:48Z",
+  "pubDate": "2025-09-15T14:30:37Z",
+  "dateStr": "2025-09-15",
+  "url": "https://ubuntu.com/security/notices/USN-7750-1",
+  "severity": "None",
+  "overview": "libjson-xs-perl vulnerability",
+  "description": "It was discovered that JSON-XS incorrectly handled parsing certain JSON\ndata. An attacker could possibly use this issue to cause JSON-XS to crash,\nresulting in a denial of service.",
+  "affected_products": [
+    "Ubuntu 22.04 LTS",
+    "Ubuntu 24.04 LTS"
+  ],
+  "cves": [],
+  "packages": [
+    "libjson-xs-perl-4.040-0ubuntu0.22.04.1",
+    "libjson-xs-perl-4.040-0ubuntu0.24.04.1"
+  ],
+  "full_text": "It was discovered that JSON-XS incorrectly handled parsing certain JSON\ndata. An attacker could possibly use this issue to cause JSON-XS to crash,\nresulting in a denial of service."
+}

@@ -1,0 +1,38 @@
+{
+  "id": "RHBA-2025:23291",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: fuse-overlayfs bug fix and enhancement update",
+  "issuedDate": "2025-12-18T09:19:12Z",
+  "updatedDate": "2025-12-18T09:19:12Z",
+  "pubDate": "2025-12-18T09:19:12Z",
+  "dateStr": "2025-12-18",
+  "url": "https://access.redhat.com/errata/RHBA-2025:23291",
+  "severity": "None",
+  "overview": "An update for fuse-overlayfs is now available for Red Hat Enterprise Linux 10.",
+  "description": "FUSE overlay+shiftfs implementation for rootless containers.Bug Fix(es) and Enhancement(s): Update fuse-overlayfs to 1.16 [rhel-10.1.z] (JIRA:RHEL-128522)",
+  "affected_products": [
+    "Red Hat Enterprise Linux for ARM 64",
+    "Red Hat Enterprise Linux for IBM z Systems",
+    "Red Hat Enterprise Linux for x86_64 10 x86_64",
+    "Red Hat Enterprise Linux for Power, little endian"
+  ],
+  "cves": [],
+  "packages": [
+    "fuse-overlayfs-1.16-1.el10_1.src",
+    "fuse-overlayfs-1.16-1.el10_1.x86_64",
+    "fuse-overlayfs-debuginfo-1.16-1.el10_1.x86_64",
+    "fuse-overlayfs-debugsource-1.16-1.el10_1.x86_64",
+    "fuse-overlayfs-1.16-1.el10_1.s390x",
+    "fuse-overlayfs-debuginfo-1.16-1.el10_1.s390x",
+    "fuse-overlayfs-debugsource-1.16-1.el10_1.s390x",
+    "fuse-overlayfs-1.16-1.el10_1.ppc64le",
+    "fuse-overlayfs-debuginfo-1.16-1.el10_1.ppc64le",
+    "fuse-overlayfs-debugsource-1.16-1.el10_1.ppc64le",
+    "fuse-overlayfs-1.16-1.el10_1.aarch64",
+    "fuse-overlayfs-debuginfo-1.16-1.el10_1.aarch64",
+    "fuse-overlayfs-debugsource-1.16-1.el10_1.aarch64"
+  ],
+  "fixes": [],
+  "full_text": "An update for fuse-overlayfs is now available for Red Hat Enterprise Linux 10.\n\nFUSE overlay+shiftfs implementation for rootless containers.Bug Fix(es) and Enhancement(s): Update fuse-overlayfs to 1.16 [rhel-10.1.z] (JIRA:RHEL-128522)"
+}

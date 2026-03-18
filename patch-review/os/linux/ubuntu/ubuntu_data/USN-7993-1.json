@@ -1,0 +1,24 @@
+{
+  "id": "USN-7993-1",
+  "vendor": "Canonical / Ubuntu",
+  "type": "Ubuntu Security Notice (USN)",
+  "title": "libpng1.6 vulnerabilities",
+  "issuedDate": "2026-02-02T14:48:00Z",
+  "updatedDate": "2026-02-10T04:50:48Z",
+  "pubDate": "2026-02-02T14:48:00Z",
+  "dateStr": "2026-02-02",
+  "url": "https://ubuntu.com/security/notices/USN-7993-1",
+  "severity": "None",
+  "overview": "libpng1.6 vulnerabilities",
+  "description": "It was discovered that libpng incorrectly handled memory when processing\ncertain malformed PNG files. If a user or automated system were tricked\ninto opening a specially crafted PNG file, an attacker could use this issue\nto cause libpng to crash, resulting in a denial of service. ",
+  "affected_products": [
+    "Ubuntu 24.04 LTS"
+  ],
+  "cves": [],
+  "packages": [
+    "libpng-dev-1.6.43-5ubuntu0.4",
+    "libpng-tools-1.6.43-5ubuntu0.4",
+    "libpng16-16t64-1.6.43-5ubuntu0.4"
+  ],
+  "full_text": "It was discovered that libpng incorrectly handled memory when processing\ncertain malformed PNG files. If a user or automated system were tricked\ninto opening a specially crafted PNG file, an attacker could use this issue\nto cause libpng to crash, resulting in a denial of service. "
+}

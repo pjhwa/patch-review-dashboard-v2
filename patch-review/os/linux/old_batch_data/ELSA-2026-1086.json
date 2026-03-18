@@ -1,0 +1,26 @@
+{
+  "id": "ELSA-2026-1086",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2026-January/019610.html",
+  "synopsis": "[El-errata] ELSA-2026-1086 Important: Oracle Linux 10 python-urllib3 security update",
+  "dateStr": "2026-January",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Security Advisory ELSA-2026-1086",
+  "description": "[1.26.19-2.1]\n- Security fix for CVE-2025-66471\n- Security fix for CVE-2025-66418\n- Security fix for CVE-2026-21441\nResolves: RHEL-139387",
+  "affected_products": [
+    "Oracle Linux 10"
+  ],
+  "packages": [
+    "python3-urllib3-1.26.19-2.el10_1.1.noarch.rpm",
+    "python3-urllib3-1.26.19-2.el10_1.1.noarch.rpm"
+  ],
+  "cves": [
+    "CVE-2025-66418",
+    "CVE-2025-66471",
+    "CVE-2026-21441"
+  ],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Security Advisory ELSA-2026-1086\n\nhttp://linux.oracle.com/errata/ELSA-2026-1086.html\n\nThe following updated rpms for Oracle Linux 10 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\npython3-urllib3-1.26.19-2.el10_1.1.noarch.rpm\n\naarch64:\npython3-urllib3-1.26.19-2.el10_1.1.noarch.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol10/SRPMS-updates/python-urllib3-1.26.19-2.el10_1.1.src.rpm\n\nRelated CVEs:\n\nCVE-2025-66418\nCVE-2025-66471\nCVE-2026-21441\n\n\n\n\nDescription of changes:\n\n[1.26.19-2.1]\n- Security fix for CVE-2025-66471\n- Security fix for CVE-2025-66418\n- Security fix for CVE-2026-21441\nResolves: RHEL-139387",
+  "vendor": "Oracle"
+}

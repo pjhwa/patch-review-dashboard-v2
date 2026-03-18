@@ -1,0 +1,47 @@
+{
+  "id": "ELSA-2026-2420",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2026-February/019748.html",
+  "synopsis": "[El-errata] ELSA-2026-2420 Important: Oracle Linux 8 nodejs:24 security update",
+  "dateStr": "2026-February",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Security Advisory ELSA-2026-2420",
+  "description": "nodejs\n[1:24.13.0-1]\n- Update to 24.13.0\n  Resolves: RHEL-135257\n\n[1:24.4.1-1]\n- Initial import of nodejs:24\n\nnodejs-nodemon\n[3.0.3-1]\n- Initial import into nodejs:24 module\n\nnodejs-packaging\n[2021.06-6]\n- Properly handle @group/package deps in nodejs-symlink-deps\n  Resolves: RHEL-121576\n\n[2021.06-5]\n- nodejs.req to properly detect bundled deps\n\n[2021.06-4]\n- NPM bundler: also find namespaced bundled dependencies\n\n[2021.06-3]\n- Rebuilt for https://fedoraproject.org/wiki/Fedora_35_Mass_Rebuild\n\n[2021.06-2]\n- Fix hard-coded output directory in the bundler\n\n[2021.06-1]\n- Update to 2021.06-1\n- bundler: Handle archaic license metadata\n- bundler: Warn about bundled dependencies with no license metadata\n\n[2021.01-3]\n- Rebuilt for https://fedoraproject.org/wiki/Fedora_34_Mass_Rebuild\n\n[2021.01-2]\n- nodejs-packaging-bundler improvements to handle uncommon characters\n\n[2021.01]\n- Add nodejs-packaging-bundler and update README.md\n\n[2020.09-1]\n- Move to dist-git as the upstream",
+  "affected_products": [
+    "Oracle Linux 8"
+  ],
+  "packages": [
+    "nodejs-24.13.0-0.module+el8.10.0+90779+0cc618fe.x86_64.rpm",
+    "nodejs-devel-24.13.0-0.module+el8.10.0+90779+0cc618fe.x86_64.rpm",
+    "nodejs-docs-24.13.0-0.module+el8.10.0+90779+0cc618fe.noarch.rpm",
+    "nodejs-full-i18n-24.13.0-0.module+el8.10.0+90779+0cc618fe.x86_64.rpm",
+    "nodejs-libs-24.13.0-0.module+el8.10.0+90779+0cc618fe.x86_64.rpm",
+    "nodejs-nodemon-3.0.3-1.module+el8.10.0+90779+0cc618fe.noarch.rpm",
+    "nodejs-packaging-2021.06-6.module+el8.10.0+90779+0cc618fe.noarch.rpm",
+    "nodejs-packaging-bundler-2021.06-6.module+el8.10.0+90779+0cc618fe.noarch.rpm",
+    "npm-11.6.2-1.24.13.0.0.module+el8.10.0+90779+0cc618fe.noarch.rpm",
+    "v8-13.6-devel-13.6.233.17-1.24.13.0.0.module+el8.10.0+90779+0cc618fe.x86_64.rpm",
+    "nodejs-24.13.0-0.module+el8.10.0+90779+0cc618fe.aarch64.rpm",
+    "nodejs-devel-24.13.0-0.module+el8.10.0+90779+0cc618fe.aarch64.rpm",
+    "nodejs-docs-24.13.0-0.module+el8.10.0+90779+0cc618fe.noarch.rpm",
+    "nodejs-full-i18n-24.13.0-0.module+el8.10.0+90779+0cc618fe.aarch64.rpm",
+    "nodejs-libs-24.13.0-0.module+el8.10.0+90779+0cc618fe.aarch64.rpm",
+    "nodejs-nodemon-3.0.3-1.module+el8.10.0+90779+0cc618fe.noarch.rpm",
+    "nodejs-packaging-2021.06-6.module+el8.10.0+90779+0cc618fe.noarch.rpm",
+    "nodejs-packaging-bundler-2021.06-6.module+el8.10.0+90779+0cc618fe.noarch.rpm",
+    "npm-11.6.2-1.24.13.0.0.module+el8.10.0+90779+0cc618fe.noarch.rpm",
+    "v8-13.6-devel-13.6.233.17-1.24.13.0.0.module+el8.10.0+90779+0cc618fe.aarch64.rpm"
+  ],
+  "cves": [
+    "CVE-2025-55130",
+    "CVE-2025-55131",
+    "CVE-2025-55132",
+    "CVE-2025-59465",
+    "CVE-2025-59466",
+    "CVE-2026-21637"
+  ],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Security Advisory ELSA-2026-2420\n\nhttp://linux.oracle.com/errata/ELSA-2026-2420.html\n\nThe following updated rpms for Oracle Linux 8 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\nnodejs-24.13.0-0.module+el8.10.0+90779+0cc618fe.x86_64.rpm\nnodejs-devel-24.13.0-0.module+el8.10.0+90779+0cc618fe.x86_64.rpm\nnodejs-docs-24.13.0-0.module+el8.10.0+90779+0cc618fe.noarch.rpm\nnodejs-full-i18n-24.13.0-0.module+el8.10.0+90779+0cc618fe.x86_64.rpm\nnodejs-libs-24.13.0-0.module+el8.10.0+90779+0cc618fe.x86_64.rpm\nnodejs-nodemon-3.0.3-1.module+el8.10.0+90779+0cc618fe.noarch.rpm\nnodejs-packaging-2021.06-6.module+el8.10.0+90779+0cc618fe.noarch.rpm\nnodejs-packaging-bundler-2021.06-6.module+el8.10.0+90779+0cc618fe.noarch.rpm\nnpm-11.6.2-1.24.13.0.0.module+el8.10.0+90779+0cc618fe.noarch.rpm\nv8-13.6-devel-13.6.233.17-1.24.13.0.0.module+el8.10.0+90779+0cc618fe.x86_64.rpm\n\naarch64:\nnodejs-24.13.0-0.module+el8.10.0+90779+0cc618fe.aarch64.rpm\nnodejs-devel-24.13.0-0.module+el8.10.0+90779+0cc618fe.aarch64.rpm\nnodejs-docs-24.13.0-0.module+el8.10.0+90779+0cc618fe.noarch.rpm\nnodejs-full-i18n-24.13.0-0.module+el8.10.0+90779+0cc618fe.aarch64.rpm\nnodejs-libs-24.13.0-0.module+el8.10.0+90779+0cc618fe.aarch64.rpm\nnodejs-nodemon-3.0.3-1.module+el8.10.0+90779+0cc618fe.noarch.rpm\nnodejs-packaging-2021.06-6.module+el8.10.0+90779+0cc618fe.noarch.rpm\nnodejs-packaging-bundler-2021.06-6.module+el8.10.0+90779+0cc618fe.noarch.rpm\nnpm-11.6.2-1.24.13.0.0.module+el8.10.0+90779+0cc618fe.noarch.rpm\nv8-13.6-devel-13.6.233.17-1.24.13.0.0.module+el8.10.0+90779+0cc618fe.aarch64.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol8/SRPMS-updates/nodejs-24.13.0-0.module+el8.10.0+90779+0cc618fe.src.rpm\nhttp://oss.oracle.com/ol8/SRPMS-updates/nodejs-nodemon-3.0.3-1.module+el8.10.0+90779+0cc618fe.src.rpm\nhttp://oss.oracle.com/ol8/SRPMS-updates/nodejs-packaging-2021.06-6.module+el8.10.0+90779+0cc618fe.src.rpm\n\nRelated CVEs:\n\nCVE-2025-55130\nCVE-2025-55131\nCVE-2025-55132\nCVE-2025-59465\nCVE-2025-59466\nCVE-2026-21637\n\n\n\n\nDescription of changes:\n\nnodejs\n[1:24.13.0-1]\n- Update to 24.13.0\n  Resolves: RHEL-135257\n\n[1:24.4.1-1]\n- Initial import of nodejs:24\n\nnodejs-nodemon\n[3.0.3-1]\n- Initial import into nodejs:24 module\n\nnodejs-packaging\n[2021.06-6]\n- Properly handle @group/package deps in nodejs-symlink-deps\n  Resolves: RHEL-121576\n\n[2021.06-5]\n- nodejs.req to properly detect bundled deps\n\n[2021.06-4]\n- NPM bundler: also find namespaced bundled dependencies\n\n[2021.06-3]\n- Rebuilt for https://fedoraproject.org/wiki/Fedora_35_Mass_Rebuild\n\n[2021.06-2]\n- Fix hard-coded output directory in the bundler\n\n[2021.06-1]\n- Update to 2021.06-1\n- bundler: Handle archaic license metadata\n- bundler: Warn about bundled dependencies with no license metadata\n\n[2021.01-3]\n- Rebuilt for https://fedoraproject.org/wiki/Fedora_34_Mass_Rebuild\n\n[2021.01-2]\n- nodejs-packaging-bundler improvements to handle uncommon characters\n\n[2021.01]\n- Add nodejs-packaging-bundler and update README.md\n\n[2020.09-1]\n- Move to dist-git as the upstream",
+  "vendor": "Oracle"
+}

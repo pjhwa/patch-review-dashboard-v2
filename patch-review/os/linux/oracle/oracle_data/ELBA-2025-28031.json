@@ -1,0 +1,25 @@
+{
+  "id": "ELBA-2025-28031",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "RHCK",
+  "title": " rust-rpm-sequoia  bug fix update",
+  "issuedDate": "2025-12-03T00:00:00Z",
+  "updatedDate": "2025-12-03T00:00:00Z",
+  "pubDate": "2025-12-03T00:00:00Z",
+  "dateStr": "2025-12-03",
+  "url": "https://linux.oracle.com/errata/ELBA-2025-28031.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 10.",
+  "description": "[1.9.0.3-1.0.1]\n- Hard require needed openssl-libs [Orabug: 38716915]",
+  "affected_products": [
+    "Oracle Linux 10 for x86_64",
+    "Oracle Linux 10 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "rpm-sequoia-1.9.0.3-1.0.1.el10_1.x86_64",
+    "rust-rpm-sequoia-1.9.0.3-1.0.1.el10_1.src"
+  ],
+  "full_text": "[1.9.0.3-1.0.1]\n- Hard require needed openssl-libs [Orabug: 38716915]\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2025-28031.html"
+}

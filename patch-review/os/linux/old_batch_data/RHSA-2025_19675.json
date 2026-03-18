@@ -1,0 +1,23 @@
+{
+  "id": "RHSA-2025:19675",
+  "vendor": "Red Hat",
+  "url": "https://access.redhat.com/errata/RHSA-2025:19675",
+  "pubDate": "2025-11-04T14:45:57.000Z",
+  "dateStr": "2025-11-04",
+  "severity": "Important",
+  "title": "Red Hat Security Advisory: valkey security update",
+  "overview": "An update for valkey is now available for Red Hat Enterprise Linux 10.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "description": "An update for valkey is now available for Red Hat Enterprise Linux 10.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux AppStream (v. 10)"
+  ],
+  "cves": [
+    "CVE-2025-46817",
+    "CVE-2025-46818",
+    "CVE-2025-46819",
+    "CVE-2025-49844"
+  ],
+  "packages": [],
+  "fixes": "",
+  "full_text": "Red Hat Security Advisory: valkey security update\n\nAn update for valkey is now available for Red Hat Enterprise Linux 10.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nAn update for valkey is now available for Red Hat Enterprise Linux 10.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nUpdated Packages:\nvalkey-8.0.6-1.el10_0.src.rpm\nvalkey-8.0.6-1.el10_0.x86_64.rpm\nvalkey-debuginfo-8.0.6-1.el10_0.x86_64.rpm\nvalkey-debugsource-8.0.6-1.el10_0.x86_64.rpm\nvalkey-devel-8.0.6-1.el10_0.x86_64.rpm\nvalkey-8.0.6-1.el10_0.s390x.rpm\nvalkey-debuginfo-8.0.6-1.el10_0.s390x.rpm\nvalkey-debugsource-8.0.6-1.el10_0.s390x.rpm\nvalkey-devel-8.0.6-1.el10_0.s390x.rpm\nvalkey-8.0.6-1.el10_0.ppc64le.rpm\nvalkey-debuginfo-8.0.6-1.el10_0.ppc64le.rpm\nvalkey-debugsource-8.0.6-1.el10_0.ppc64le.rpm\nvalkey-devel-8.0.6-1.el10_0.ppc64le.rpm\nvalkey-8.0.6-1.el10_0.aarch64.rpm\nvalkey-debuginfo-8.0.6-1.el10_0.aarch64.rpm\nvalkey-debugsource-8.0.6-1.el10_0.aarch64.rpm\nvalkey-devel-8.0.6-1.el10_0.aarch64.rpm\n\nCVE-2025-46817: An integer overflow present in the Redis Lua scripting engine that allows an authenticated client to submit a specially crafted Lua script (for example via EVAL/EVALSHA) that can trigger memory corruption and potentially lead to remote code execution within the Redis server process.\n\nCVE-2025-46818: A code injection vulnerability in Redis Lua scripting where an authenticated user can craft a Lua script to manipulate objects and potentially execute code in another user’s context.\n\nCVE-2025-46819: A vulnerability was found in Redis where an authenticated user to run a crafted Lua script that can read out‑of‑bounds memory or crash the server, leading to information disclosure and denial of service.\n\nCVE-2025-49844: A vulnerability found in Redis where a flaw in the Lua scripting engine can trigger a use-after-free condition. An authenticated attacker can exploit this by running a specially crafted Lua script, potentially resulting in remote code execution (RCE) within the Redis process."
+}

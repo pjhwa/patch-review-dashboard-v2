@@ -4,7 +4,7 @@ import path from 'path';
 import { exec } from 'child_process';
 
 export async function GET(request: Request) {
-    const linuxSkillDir = path.join(process.env.HOME || '/home/citec', '.openclaw/workspace/skills/patch-review/os/linux-v2');
+    const linuxSkillDir = path.join(process.env.HOME || '/home/citec', '.openclaw/workspace/skills/patch-review/os/linux');
     const feedbackFile = path.join(linuxSkillDir, 'user_exclusion_feedback.json');
 
     if (!fs.existsSync(feedbackFile)) {
@@ -29,7 +29,7 @@ export async function POST(request: Request) {
             return NextResponse.json({ error: 'Issue ID and Reason are required.' }, { status: 400 });
         }
 
-        const linuxSkillDir = path.join(process.env.HOME || '/home/citec', '.openclaw/workspace/skills/patch-review/os/linux-v2');
+        const linuxSkillDir = path.join(process.env.HOME || '/home/citec', '.openclaw/workspace/skills/patch-review/os/linux');
         const feedbackFile = path.join(linuxSkillDir, 'user_exclusion_feedback.json');
 
         let feedbackList = [];
@@ -87,7 +87,7 @@ export async function DELETE(request: Request) {
             return NextResponse.json({ error: 'Issue ID is required.' }, { status: 400 });
         }
 
-        const linuxSkillDir = path.join(process.env.HOME || '/home/citec', '.openclaw/workspace/skills/patch-review/os/linux-v2');
+        const linuxSkillDir = path.join(process.env.HOME || '/home/citec', '.openclaw/workspace/skills/patch-review/os/linux');
         const feedbackFile = path.join(linuxSkillDir, 'user_exclusion_feedback.json');
 
         if (fs.existsSync(feedbackFile)) {

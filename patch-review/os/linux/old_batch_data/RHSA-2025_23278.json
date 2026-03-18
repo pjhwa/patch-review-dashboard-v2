@@ -1,0 +1,18 @@
+{
+  "id": "RHSA-2025:23278",
+  "vendor": "Red Hat",
+  "url": "https://access.redhat.com/errata/RHSA-2025:23278",
+  "pubDate": "2025-12-16T14:14:03.000Z",
+  "dateStr": "2025-12-16",
+  "severity": "Moderate",
+  "title": "Red Hat Security Advisory: Red Hat Ceph Storage",
+  "overview": "A new version of Red Hat build of Ceph Storage has been released",
+  "description": "A new version of Red Hat build of Ceph Storage has been released",
+  "affected_products": [
+    "Red Hat Ceph Storage 7"
+  ],
+  "cves": [],
+  "packages": [],
+  "fixes": "",
+  "full_text": "Red Hat Security Advisory: Red Hat Ceph Storage\n\nA new version of Red Hat build of Ceph Storage has been released\n\nA new version of Red Hat build of Ceph Storage has been released\n\n"
+}

@@ -1,0 +1,25 @@
+{
+  "id": "ELBA-2025-23291",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "AppStream",
+  "title": "fuse-overlayfs bug fix and enhancement update",
+  "issuedDate": "2025-12-18T00:00:00Z",
+  "updatedDate": "2025-12-18T00:00:00Z",
+  "pubDate": "2025-12-18T00:00:00Z",
+  "dateStr": "2025-12-18",
+  "url": "https://linux.oracle.com/errata/ELBA-2025-23291.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 10.",
+  "description": "[1.16-1]\n- update to https://github.com/containers/fuse-overlayfs/releases/tag/v1.16\n- fixes 'Update fuse-overlayfs to 1.16 [rhel-10.1.z]'\n- Resolves: RHEL-128522",
+  "affected_products": [
+    "Oracle Linux 10 for x86_64",
+    "Oracle Linux 10 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "fuse-overlayfs-1.16-1.el10_1.src",
+    "fuse-overlayfs-1.16-1.el10_1.x86_64"
+  ],
+  "full_text": "[1.16-1]\n- update to https://github.com/containers/fuse-overlayfs/releases/tag/v1.16\n- fixes 'Update fuse-overlayfs to 1.16 [rhel-10.1.z]'\n- Resolves: RHEL-128522\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2025-23291.html"
+}

@@ -265,7 +265,7 @@ Or change the port in `package.json`:
         └── skills/
             └── patch-review/           # Deployed from repo's patch-review/
                 ├── os/
-                │   ├── linux-v2/       # Red Hat, Oracle, Ubuntu
+                │   ├── linux/       # Red Hat, Oracle, Ubuntu
                 │   │   ├── patch_preprocessing.py
                 │   │   ├── SKILL.md
                 │   │   ├── query_rag.py
@@ -325,7 +325,7 @@ pnpm build 2>&1 | head -50   # See first errors
 ```bash
 openclaw agent:main --help   # Verify openclaw is working
 # Ensure the SKILL.md is in place:
-ls ~/.openclaw/workspace/skills/patch-review/os/linux-v2/SKILL.md
+ls ~/.openclaw/workspace/skills/patch-review/os/linux/SKILL.md
 ```
 
 ### Prisma "table does not exist"

@@ -1,0 +1,53 @@
+{
+  "id": "RHBA-2025:20556",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: grubby bug fix and enhancement update",
+  "issuedDate": "2025-11-11T07:49:55Z",
+  "updatedDate": "2025-11-11T07:49:55Z",
+  "pubDate": "2025-11-11T07:49:55Z",
+  "dateStr": "2025-11-11",
+  "url": "https://access.redhat.com/errata/RHBA-2025:20556",
+  "severity": "None",
+  "overview": "An update for grubby is now available for Red Hat Enterprise Linux 10.",
+  "description": "For detailed information on changes in this release, see the Red Hat Enterprise Linux 9 Release Notes linked from the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux for x86_64 10 x86_64",
+    "Red Hat Enterprise Linux for ARM 64",
+    "Red Hat Enterprise Linux for Power, little endian",
+    "Red Hat Enterprise Linux for IBM z Systems"
+  ],
+  "cves": [],
+  "packages": [
+    "grubby-8.40-68.el9.src",
+    "grubby-8.40-68.el9.x86_64",
+    "grubby-debuginfo-8.40-68.el9.x86_64",
+    "grubby-debugsource-8.40-68.el9.x86_64",
+    "grubby-deprecated-debuginfo-8.40-68.el9.x86_64",
+    "grubby-8.40-68.el9.s390x",
+    "grubby-debuginfo-8.40-68.el9.s390x",
+    "grubby-debugsource-8.40-68.el9.s390x",
+    "grubby-deprecated-debuginfo-8.40-68.el9.s390x",
+    "grubby-8.40-68.el9.ppc64le",
+    "grubby-debuginfo-8.40-68.el9.ppc64le",
+    "grubby-debugsource-8.40-68.el9.ppc64le",
+    "grubby-deprecated-debuginfo-8.40-68.el9.ppc64le",
+    "grubby-8.40-68.el9.aarch64",
+    "grubby-debuginfo-8.40-68.el9.aarch64",
+    "grubby-debugsource-8.40-68.el9.aarch64",
+    "grubby-deprecated-debuginfo-8.40-68.el9.aarch64"
+  ],
+  "fixes": [
+    {
+      "id": "RHEL-50691",
+      "url": "https://issues.redhat.com/browse/RHEL-50691",
+      "description": "RHEL 9 grubby Unable to Update kernel commandline arguments for non-BLS xen systems"
+    },
+    {
+      "id": "RHEL-61421",
+      "url": "https://issues.redhat.com/browse/RHEL-61421",
+      "description": "grubby works on newer OPAL firmware by mistake"
+    }
+  ],
+  "full_text": "An update for grubby is now available for Red Hat Enterprise Linux 10.\n\nFor detailed information on changes in this release, see the Red Hat Enterprise Linux 9 Release Notes linked from the References section."
+}

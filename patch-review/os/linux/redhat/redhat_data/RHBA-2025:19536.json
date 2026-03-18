@@ -1,0 +1,33 @@
+{
+  "id": "RHBA-2025:19536",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: microcode_ctl bug fix and enhancement update",
+  "issuedDate": "2025-11-04T00:02:01Z",
+  "updatedDate": "2025-11-04T00:02:01Z",
+  "pubDate": "2025-11-04T00:02:01Z",
+  "dateStr": "2025-11-04",
+  "url": "https://access.redhat.com/errata/RHBA-2025:19536",
+  "severity": "None",
+  "overview": "An update for microcode_ctl is now available for Red Hat Enterprise Linux 10.",
+  "description": "The microcode_ctl packages provide microcode updates for Intel and AMD processors.Bug Fix(es) and Enhancement(s): [RHEL 9.6.z] Update Intel CPU microcode to the latest version (JIRA:RHEL-111081)",
+  "affected_products": [
+    "Red Hat Enterprise Linux for x86_64 10 x86_64",
+    "Red Hat Enterprise Linux for x86_64 - Extended Update Support 10 x86_64",
+    "Red Hat Enterprise Linux for x86_64 - Update Services for SAP Solutions 10 x86_64",
+    "Red Hat Enterprise Linux Server - AUS"
+  ],
+  "cves": [],
+  "packages": [
+    "microcode_ctl-20250211-1.20250812.1.el9_6.src",
+    "microcode_ctl-20250211-1.20250812.1.el9_6.noarch"
+  ],
+  "fixes": [
+    {
+      "id": "RHEL-111081",
+      "url": "https://issues.redhat.com/browse/RHEL-111081",
+      "description": "[RHEL 9.6.z] Update Intel CPU microcode to the latest version"
+    }
+  ],
+  "full_text": "An update for microcode_ctl is now available for Red Hat Enterprise Linux 10.\n\nThe microcode_ctl packages provide microcode updates for Intel and AMD processors.Bug Fix(es) and Enhancement(s): [RHEL 9.6.z] Update Intel CPU microcode to the latest version (JIRA:RHEL-111081)"
+}

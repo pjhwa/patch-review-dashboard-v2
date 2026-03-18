@@ -1,0 +1,26 @@
+{
+  "id": "ELBA-2026-50068",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2026-January/019559.html",
+  "synopsis": "[El-errata] ELBA-2026-50068 Oracle Linux 10 bootc bug fix update",
+  "dateStr": "2026-January",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Bug Fix Advisory ELBA-2026-50068",
+  "description": "[1.8.0-2.0.2]\n- Also add image-builder helper scripts and configs\n\n[1.8.0-2.0.1]\n- Add bootc-oraclelinux-configs",
+  "affected_products": [
+    "Oracle Linux 10"
+  ],
+  "packages": [
+    "bootc-1.8.0-2.0.2.el10_1.x86_64.rpm",
+    "bootc-oraclelinux-configs-1.8.0-2.0.2.el10_1.x86_64.rpm",
+    "system-reinstall-bootc-1.8.0-2.0.2.el10_1.x86_64.rpm",
+    "bootc-1.8.0-2.0.2.el10_1.aarch64.rpm",
+    "bootc-oraclelinux-configs-1.8.0-2.0.2.el10_1.aarch64.rpm",
+    "system-reinstall-bootc-1.8.0-2.0.2.el10_1.aarch64.rpm"
+  ],
+  "cves": [],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Bug Fix Advisory ELBA-2026-50068\n\nhttp://linux.oracle.com/errata/ELBA-2026-50068.html\n\nThe following updated rpms for Oracle Linux 10 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\nbootc-1.8.0-2.0.2.el10_1.x86_64.rpm\nbootc-oraclelinux-configs-1.8.0-2.0.2.el10_1.x86_64.rpm\nsystem-reinstall-bootc-1.8.0-2.0.2.el10_1.x86_64.rpm\n\naarch64:\nbootc-1.8.0-2.0.2.el10_1.aarch64.rpm\nbootc-oraclelinux-configs-1.8.0-2.0.2.el10_1.aarch64.rpm\nsystem-reinstall-bootc-1.8.0-2.0.2.el10_1.aarch64.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol10/SRPMS-updates/bootc-1.8.0-2.0.2.el10_1.src.rpm\n\n\n\nDescription of changes:\n\n[1.8.0-2.0.2]\n- Also add image-builder helper scripts and configs\n\n[1.8.0-2.0.1]\n- Add bootc-oraclelinux-configs",
+  "vendor": "Oracle"
+}

@@ -1,0 +1,57 @@
+{
+  "id": "RHBA-2025:20189",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: rust-rpm-sequoia bug fix and enhancement update",
+  "issuedDate": "2025-11-11T07:25:22Z",
+  "updatedDate": "2025-11-11T07:25:22Z",
+  "pubDate": "2025-11-11T07:25:22Z",
+  "dateStr": "2025-11-11",
+  "url": "https://access.redhat.com/errata/RHBA-2025:20189",
+  "severity": "None",
+  "overview": "An update for rust-rpm-sequoia is now available for Red Hat Enterprise Linux 10.",
+  "description": "For detailed information on changes in this release, see the Red Hat Enterprise Linux 10 Release Notes linked from the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux for ARM 64",
+    "Red Hat Enterprise Linux for x86_64 10 x86_64",
+    "Red Hat CodeReady Linux Builder for Power, little endian",
+    "Red Hat Enterprise Linux for Power, little endian",
+    "Red Hat Enterprise Linux for IBM z Systems",
+    "Red Hat CodeReady Linux Builder for IBM z Systems",
+    "Red Hat CodeReady Linux Builder for ARM 64",
+    "Red Hat CodeReady Linux Builder for x86_64 10 x86_64"
+  ],
+  "cves": [],
+  "packages": [
+    "rust-rpm-sequoia-1.9.0.3-1.el10_1.src",
+    "rpm-sequoia-1.9.0.3-1.el10_1.x86_64",
+    "rpm-sequoia-debuginfo-1.9.0.3-1.el10_1.x86_64",
+    "rust-rpm-sequoia-debugsource-1.9.0.3-1.el10_1.x86_64",
+    "rpm-sequoia-1.9.0.3-1.el10_1.s390x",
+    "rpm-sequoia-debuginfo-1.9.0.3-1.el10_1.s390x",
+    "rust-rpm-sequoia-debugsource-1.9.0.3-1.el10_1.s390x",
+    "rpm-sequoia-1.9.0.3-1.el10_1.ppc64le",
+    "rpm-sequoia-debuginfo-1.9.0.3-1.el10_1.ppc64le",
+    "rust-rpm-sequoia-debugsource-1.9.0.3-1.el10_1.ppc64le",
+    "rpm-sequoia-1.9.0.3-1.el10_1.aarch64",
+    "rpm-sequoia-debuginfo-1.9.0.3-1.el10_1.aarch64",
+    "rust-rpm-sequoia-debugsource-1.9.0.3-1.el10_1.aarch64",
+    "rpm-sequoia-devel-1.9.0.3-1.el10_1.x86_64",
+    "rpm-sequoia-devel-1.9.0.3-1.el10_1.ppc64le",
+    "rpm-sequoia-devel-1.9.0.3-1.el10_1.aarch64",
+    "rpm-sequoia-devel-1.9.0.3-1.el10_1.s390x"
+  ],
+  "fixes": [
+    {
+      "id": "RHEL-101952",
+      "url": "https://issues.redhat.com/browse/RHEL-101952",
+      "description": "Rebase rpm-sequoia to include PQC and support for OpenPGP v6"
+    },
+    {
+      "id": "RHEL-110994",
+      "url": "https://issues.redhat.com/browse/RHEL-110994",
+      "description": "rpm --import mldsa87.pub fails in FIPS"
+    }
+  ],
+  "full_text": "An update for rust-rpm-sequoia is now available for Red Hat Enterprise Linux 10.\n\nFor detailed information on changes in this release, see the Red Hat Enterprise Linux 10 Release Notes linked from the References section."
+}

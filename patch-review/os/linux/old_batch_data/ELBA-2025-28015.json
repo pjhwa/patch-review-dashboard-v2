@@ -1,0 +1,24 @@
+{
+  "id": "ELBA-2025-28015",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2025-December/019139.html",
+  "synopsis": "[El-errata] ELBA-2025-28015 Oracle Linux 9 leapp-repository bug fix update",
+  "dateStr": "2025-December",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Bug Fix Advisory ELBA-2025-28015",
+  "description": "[0.22.0-1.0.7]\n- Correctly process drgn package [Orabug: 38698236]\n- Correctly process ipa-server update [Orabug: 38096687]\n- Correctly process python3.12-typing-extensions [Orabug: 38671893]\n- Restore and fix ISO upgrade inhibitor for special cases [Orabug: 38489510]\n- Support additional migrations [Orabug: 38665636], [Orabug: 38662946]\n- Support 9.7 and 10.1 [Orabug: 38544272], [Orabug: 38640771], [Orabug: 38452658]\n- Remove unified-monitoring-agent on upgrade [Orabug: 38603872]\n- Drop redundant firmware inhibitor [Orabug: 38636586]",
+  "affected_products": [
+    "Oracle Linux 9"
+  ],
+  "packages": [
+    "leapp-upgrade-el9toel10-0.22.0-1.0.7.el9.noarch.rpm",
+    "leapp-upgrade-el9toel10-deps-0.22.0-1.0.7.el9.noarch.rpm",
+    "leapp-upgrade-el9toel10-0.22.0-1.0.7.el9.noarch.rpm",
+    "leapp-upgrade-el9toel10-deps-0.22.0-1.0.7.el9.noarch.rpm"
+  ],
+  "cves": [],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Bug Fix Advisory ELBA-2025-28015\n\nhttp://linux.oracle.com/errata/ELBA-2025-28015.html\n\nThe following updated rpms for Oracle Linux 9 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\nleapp-upgrade-el9toel10-0.22.0-1.0.7.el9.noarch.rpm\nleapp-upgrade-el9toel10-deps-0.22.0-1.0.7.el9.noarch.rpm\n\naarch64:\nleapp-upgrade-el9toel10-0.22.0-1.0.7.el9.noarch.rpm\nleapp-upgrade-el9toel10-deps-0.22.0-1.0.7.el9.noarch.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol9/SRPMS-updates/leapp-repository-0.22.0-1.0.7.el9.src.rpm\n\n\n\nDescription of changes:\n\n[0.22.0-1.0.7]\n- Correctly process drgn package [Orabug: 38698236]\n- Correctly process ipa-server update [Orabug: 38096687]\n- Correctly process python3.12-typing-extensions [Orabug: 38671893]\n- Restore and fix ISO upgrade inhibitor for special cases [Orabug: 38489510]\n- Support additional migrations [Orabug: 38665636], [Orabug: 38662946]\n- Support 9.7 and 10.1 [Orabug: 38544272], [Orabug: 38640771], [Orabug: 38452658]\n- Remove unified-monitoring-agent on upgrade [Orabug: 38603872]\n- Drop redundant firmware inhibitor [Orabug: 38636586]",
+  "vendor": "Oracle"
+}

@@ -1,0 +1,28 @@
+{
+  "id": "ELSA-2025-22175",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2025-November/019091.html",
+  "synopsis": "[El-errata] ELSA-2025-22175 Important: Oracle Linux 9 expat security update",
+  "dateStr": "2025-November",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Security Advisory ELSA-2025-22175",
+  "description": "[2.5.0-5.1]\n- Fix CVE-2025-59375\n- Resolves: RHEL-114644",
+  "affected_products": [
+    "Oracle Linux 9"
+  ],
+  "packages": [
+    "expat-2.5.0-5.el9_7.1.i686.rpm",
+    "expat-2.5.0-5.el9_7.1.x86_64.rpm",
+    "expat-devel-2.5.0-5.el9_7.1.i686.rpm",
+    "expat-devel-2.5.0-5.el9_7.1.x86_64.rpm",
+    "expat-2.5.0-5.el9_7.1.aarch64.rpm",
+    "expat-devel-2.5.0-5.el9_7.1.aarch64.rpm"
+  ],
+  "cves": [
+    "CVE-2025-59375"
+  ],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Security Advisory ELSA-2025-22175\n\nhttp://linux.oracle.com/errata/ELSA-2025-22175.html\n\nThe following updated rpms for Oracle Linux 9 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\nexpat-2.5.0-5.el9_7.1.i686.rpm\nexpat-2.5.0-5.el9_7.1.x86_64.rpm\nexpat-devel-2.5.0-5.el9_7.1.i686.rpm\nexpat-devel-2.5.0-5.el9_7.1.x86_64.rpm\n\naarch64:\nexpat-2.5.0-5.el9_7.1.aarch64.rpm\nexpat-devel-2.5.0-5.el9_7.1.aarch64.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol9/SRPMS-updates/expat-2.5.0-5.el9_7.1.src.rpm\n\nRelated CVEs:\n\nCVE-2025-59375\n\n\n\n\nDescription of changes:\n\n[2.5.0-5.1]\n- Fix CVE-2025-59375\n- Resolves: RHEL-114644",
+  "vendor": "Oracle"
+}

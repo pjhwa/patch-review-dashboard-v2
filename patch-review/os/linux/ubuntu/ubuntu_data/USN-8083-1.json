@@ -1,0 +1,24 @@
+{
+  "id": "USN-8083-1",
+  "vendor": "Canonical / Ubuntu",
+  "type": "Ubuntu Security Notice (USN)",
+  "title": "python-geopandas vulnerability",
+  "issuedDate": "2026-03-11T09:05:26Z",
+  "updatedDate": "2026-03-11T09:05:26Z",
+  "pubDate": "2026-03-11T09:05:26Z",
+  "dateStr": "2026-03-11",
+  "url": "https://ubuntu.com/security/notices/USN-8083-1",
+  "severity": "None",
+  "overview": "python-geopandas vulnerability",
+  "description": "It was discovered that GeoPandas incorrectly handled certain input. An\nattacker could possibly use this issue to perform SQL injection attacks.",
+  "affected_products": [
+    "Ubuntu 22.04 LTS",
+    "Ubuntu 24.04 LTS"
+  ],
+  "cves": [],
+  "packages": [
+    "python3-geopandas-0.10.2-1ubuntu0.1",
+    "python3-geopandas-0.14.3-2ubuntu0.1"
+  ],
+  "full_text": "It was discovered that GeoPandas incorrectly handled certain input. An\nattacker could possibly use this issue to perform SQL injection attacks."
+}

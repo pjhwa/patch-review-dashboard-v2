@@ -1,0 +1,20 @@
+{
+  "id": "RHSA-2025:23140",
+  "vendor": "Red Hat",
+  "url": "https://access.redhat.com/errata/RHSA-2025:23140",
+  "pubDate": "2025-12-11T18:53:07.000Z",
+  "dateStr": "2025-12-11",
+  "severity": "Moderate",
+  "title": "Red Hat Security Advisory: ruby:3.3 security update",
+  "overview": "An update for the ruby:3.3 module is now available for Red Hat Enterprise Linux 9.4 Extended Update Support.\n\nRed Hat Product Security has rated this update as having a security impact of Moderate. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "description": "An update for the ruby:3.3 module is now available for Red Hat Enterprise Linux 9.4 Extended Update Support.\n\nRed Hat Product Security has rated this update as having a security impact of Moderate. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux AppStream EUS (v.9.4)"
+  ],
+  "cves": [
+    "CVE-2025-58767"
+  ],
+  "packages": [],
+  "fixes": "",
+  "full_text": "Red Hat Security Advisory: ruby:3.3 security update\n\nAn update for the ruby:3.3 module is now available for Red Hat Enterprise Linux 9.4 Extended Update Support.\n\nRed Hat Product Security has rated this update as having a security impact of Moderate. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nAn update for the ruby:3.3 module is now available for Red Hat Enterprise Linux 9.4 Extended Update Support.\n\nRed Hat Product Security has rated this update as having a security impact of Moderate. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nUpdated Packages:\nab06e946.src.rpm\nfaeeed2f.src.rpm\nab06e946.noarch.rpm\nfaeeed2f.noarch.rpm\nab06e946.i686.rpm\nab06e946.x86_64.rpm\nfaeeed2f.x86_64.rpm\nab06e946.s390x.rpm\nfaeeed2f.s390x.rpm\nab06e946.ppc64le.rpm\nfaeeed2f.ppc64le.rpm\nab06e946.aarch64.rpm\nfaeeed2f.aarch64.rpm\n\nCVE-2025-58767: A denial of service flaw has been discovered in the rubygem REXML. Certain input can cause excess cpu usage and given sufficiently large input this can affect program performance."
+}

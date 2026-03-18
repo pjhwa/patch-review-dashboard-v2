@@ -1,0 +1,21 @@
+{
+  "id": "RHSA-2026:0523",
+  "vendor": "Red Hat",
+  "url": "https://access.redhat.com/errata/RHSA-2026:0523",
+  "pubDate": "2026-01-13T16:54:58.000Z",
+  "dateStr": "2026-01-13",
+  "severity": "Moderate",
+  "title": "Red Hat Security Advisory: postgresql:13 security update",
+  "overview": "An update for the postgresql:13 module is now available for Red Hat Enterprise Linux 8.\n\nRed Hat Product Security has rated this update as having a security impact of Moderate. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "description": "An update for the postgresql:13 module is now available for Red Hat Enterprise Linux 8.\n\nRed Hat Product Security has rated this update as having a security impact of Moderate. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux AppStream (v. 8)"
+  ],
+  "cves": [
+    "CVE-2025-12817",
+    "CVE-2025-12818"
+  ],
+  "packages": [],
+  "fixes": "",
+  "full_text": "Red Hat Security Advisory: postgresql:13 security update\n\nAn update for the postgresql:13 module is now available for Red Hat Enterprise Linux 8.\n\nRed Hat Product Security has rated this update as having a security impact of Moderate. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nAn update for the postgresql:13 module is now available for Red Hat Enterprise Linux 8.\n\nRed Hat Product Security has rated this update as having a security impact of Moderate. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nUpdated Packages:\n9c30cf7f.src.rpm\nc6a61bc8.src.rpm\nc6a61bc8.noarch.rpm\n9c30cf7f.x86_64.rpm\nc6a61bc8.x86_64.rpm\n9c30cf7f.s390x.rpm\nc6a61bc8.s390x.rpm\n9c30cf7f.ppc64le.rpm\nc6a61bc8.ppc64le.rpm\n9c30cf7f.aarch64.rpm\nc6a61bc8.aarch64.rpm\n\nCVE-2025-12817: A vulnerability has been identified in PostgreSQL’s CREATE STATISTICS command where the database does not check that the user has the required schema CREATE privilege. A table owner user could create a statistics object in any schema, blocking other users who legitimately hold CREATE STATISTICS permissions from creating objects with the same name. This results in a denial-of-service of the statistics creation functionality.\n\nCVE-2025-12818: A vulnerability has been identified in PostgreSQL’s libpq client library, where integer wraparound in several allocation-size calculations allows a peer or input provider to cause an undersized buffer and then write out-of-bounds by hundreds of megabytes. This can lead to a client application segmentation fault or crash when using libpq to connect to a PostgreSQL server."
+}

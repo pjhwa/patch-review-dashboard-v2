@@ -1,0 +1,28 @@
+{
+  "id": "ELBA-2025-20950",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2025-November/019063.html",
+  "synopsis": "[El-errata] ELBA-2025-20950 Oracle Linux 9 nftables bug fix and enhancement update",
+  "dateStr": "2025-November",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Bug Fix Advisory ELBA-2025-20950",
+  "description": "[[1.0.9-5.el9]]\n- tests: py: missing json output in never merge across non-expression statements (Phil Sutter) [RHEL-114095]\n- tests: py: add missing json.output data (Phil Sutter) [RHEL-114095]\n- tests: py: remove huge-limit test cases (Phil Sutter) [RHEL-114095]\n- datatype: rt_symbol_table_init() to search for iproute2 configs (Phil Sutter) [RHEL-114095]\n- tests: shell: connect chains to hook point (Phil Sutter) [RHEL-114095]\n- tests: shell: Fix sets/reset_command_0 for current kernels (Phil Sutter) [RHEL-114095]",
+  "affected_products": [
+    "Oracle Linux 9"
+  ],
+  "packages": [
+    "nftables-1.0.9-5.el9_7.i686.rpm",
+    "nftables-1.0.9-5.el9_7.x86_64.rpm",
+    "nftables-devel-1.0.9-5.el9_7.i686.rpm",
+    "nftables-devel-1.0.9-5.el9_7.x86_64.rpm",
+    "python3-nftables-1.0.9-5.el9_7.x86_64.rpm",
+    "nftables-1.0.9-5.el9_7.aarch64.rpm",
+    "nftables-devel-1.0.9-5.el9_7.aarch64.rpm",
+    "python3-nftables-1.0.9-5.el9_7.aarch64.rpm"
+  ],
+  "cves": [],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Bug Fix Advisory ELBA-2025-20950\n\nhttp://linux.oracle.com/errata/ELBA-2025-20950.html\n\nThe following updated rpms for Oracle Linux 9 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\nnftables-1.0.9-5.el9_7.i686.rpm\nnftables-1.0.9-5.el9_7.x86_64.rpm\nnftables-devel-1.0.9-5.el9_7.i686.rpm\nnftables-devel-1.0.9-5.el9_7.x86_64.rpm\npython3-nftables-1.0.9-5.el9_7.x86_64.rpm\n\naarch64:\nnftables-1.0.9-5.el9_7.aarch64.rpm\nnftables-devel-1.0.9-5.el9_7.aarch64.rpm\npython3-nftables-1.0.9-5.el9_7.aarch64.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol9/SRPMS-updates/nftables-1.0.9-5.el9_7.src.rpm\n\n\n\nDescription of changes:\n\n[[1.0.9-5.el9]]\n- tests: py: missing json output in never merge across non-expression statements (Phil Sutter) [RHEL-114095]\n- tests: py: add missing json.output data (Phil Sutter) [RHEL-114095]\n- tests: py: remove huge-limit test cases (Phil Sutter) [RHEL-114095]\n- datatype: rt_symbol_table_init() to search for iproute2 configs (Phil Sutter) [RHEL-114095]\n- tests: shell: connect chains to hook point (Phil Sutter) [RHEL-114095]\n- tests: shell: Fix sets/reset_command_0 for current kernels (Phil Sutter) [RHEL-114095]",
+  "vendor": "Oracle"
+}

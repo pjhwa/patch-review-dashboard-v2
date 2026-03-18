@@ -1,0 +1,57 @@
+{
+  "id": "RHBA-2025:20275",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: xdg-desktop-portal bug fix and enhancement update",
+  "issuedDate": "2025-11-11T07:25:55Z",
+  "updatedDate": "2025-11-11T07:25:55Z",
+  "pubDate": "2025-11-11T07:25:55Z",
+  "dateStr": "2025-11-11",
+  "url": "https://access.redhat.com/errata/RHBA-2025:20275",
+  "severity": "None",
+  "overview": "An update for xdg-desktop-portal is now available for Red Hat Enterprise Linux 10.",
+  "description": "For detailed information on changes in this release, see the Red Hat Enterprise Linux 10.1 Release Notes linked from the References section.",
+  "affected_products": [
+    "Red Hat CodeReady Linux Builder for ARM 64",
+    "Red Hat CodeReady Linux Builder for IBM z Systems",
+    "Red Hat CodeReady Linux Builder for x86_64 10 x86_64",
+    "Red Hat Enterprise Linux for x86_64 10 x86_64",
+    "Red Hat Enterprise Linux for Power, little endian",
+    "Red Hat Enterprise Linux for IBM z Systems",
+    "Red Hat Enterprise Linux for ARM 64",
+    "Red Hat CodeReady Linux Builder for Power, little endian"
+  ],
+  "cves": [],
+  "packages": [
+    "xdg-desktop-portal-1.20.0-2.el10.src",
+    "xdg-desktop-portal-1.20.0-2.el10.x86_64",
+    "xdg-desktop-portal-debuginfo-1.20.0-2.el10.x86_64",
+    "xdg-desktop-portal-debugsource-1.20.0-2.el10.x86_64",
+    "xdg-desktop-portal-1.20.0-2.el10.s390x",
+    "xdg-desktop-portal-debuginfo-1.20.0-2.el10.s390x",
+    "xdg-desktop-portal-debugsource-1.20.0-2.el10.s390x",
+    "xdg-desktop-portal-1.20.0-2.el10.ppc64le",
+    "xdg-desktop-portal-debuginfo-1.20.0-2.el10.ppc64le",
+    "xdg-desktop-portal-debugsource-1.20.0-2.el10.ppc64le",
+    "xdg-desktop-portal-1.20.0-2.el10.aarch64",
+    "xdg-desktop-portal-debuginfo-1.20.0-2.el10.aarch64",
+    "xdg-desktop-portal-debugsource-1.20.0-2.el10.aarch64",
+    "xdg-desktop-portal-devel-1.20.0-2.el10.x86_64",
+    "xdg-desktop-portal-devel-1.20.0-2.el10.ppc64le",
+    "xdg-desktop-portal-devel-1.20.0-2.el10.aarch64",
+    "xdg-desktop-portal-devel-1.20.0-2.el10.s390x"
+  ],
+  "fixes": [
+    {
+      "id": "RHEL-78623",
+      "url": "https://issues.redhat.com/browse/RHEL-78623",
+      "description": "Rebase xdg-desktop-portal to 1.20.x"
+    },
+    {
+      "id": "RHEL-85238",
+      "url": "https://issues.redhat.com/browse/RHEL-85238",
+      "description": "Add/update support for native messaging portal"
+    }
+  ],
+  "full_text": "An update for xdg-desktop-portal is now available for Red Hat Enterprise Linux 10.\n\nFor detailed information on changes in this release, see the Red Hat Enterprise Linux 10.1 Release Notes linked from the References section."
+}

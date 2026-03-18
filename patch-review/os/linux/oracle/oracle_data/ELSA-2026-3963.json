@@ -1,0 +1,45 @@
+{
+  "id": "ELSA-2026-3963",
+  "vendor": "Oracle",
+  "type": "Security Advisory (ELSA)",
+  "title": " kernel security update",
+  "issuedDate": "2026-03-09T00:00:00Z",
+  "updatedDate": "2026-03-09T00:00:00Z",
+  "pubDate": "2026-03-09T00:00:00Z",
+  "dateStr": "2026-03-09",
+  "url": "https://linux.oracle.com/errata/ELSA-2026-3963.html",
+  "severity": "Important",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 8.",
+  "description": "[4.18.0-553.111.1]\n- Update Oracle Linux certificates (Kevin Lyons)\n- Disable signing for aarch64 (Ilya Okomin)\n- Oracle Linux RHCK Module Signing Key was added to the kernel trusted keys list (olkmod_signing_key.pem) [Orabug: 29539237]\n- Update x509.genkey [Orabug: 24817676]\n- Conflict with shim-ia32 and shim-x64 <= 15.3-1.0.3\n- Remove upstream reference during boot (Kevin Lyons) [Orabug: 34750652]\n- Add new Oracle Linux Driver Signing (key 1) certificate [Orabug: 37985772]\n\n[4.18.0-553.111.1]\n- macvlan: fix possible UAF in macvlan_forward_source() (Hangbin Liu) [RHEL-144120] {CVE-2026-23001}\n\n[4.18.0-553.110.1]\n- pNFS: fix a missing wake up while waiting on NFS_LAYOUT_DRAIN (Olga Kornievskaia) [RHEL-131922]\n- fbcon: Avoid using FNTCHARCNT() and hard-coded built-in font charcount (Jocelyn Falempe) [RHEL-148636]\n- audit: Use the new {get,put}_fs_pwd_pool() APIs to get/put pwd references (Waiman Long) [RHEL-146026]\n- fs: Add a pool of extra fs->pwd references to fs_struct (Waiman Long) [RHEL-146026]\n- ipv6: BUG() in pskb_expand_head() as part of calipso_skbuff_setattr() (CKI Backport Bot) [RHEL-143535] {CVE-2025-71085}",
+  "affected_products": [
+    "Oracle Linux 8 for x86_64",
+    "Oracle Linux 8 for aarch64"
+  ],
+  "cves": [
+    "CVE-2025-71085",
+    "CVE-2026-23001"
+  ],
+  "packages": [
+    "kernel-doc-4.18.0-553.111.1.el8_10.noarch",
+    "bpftool-4.18.0-553.111.1.el8_10.x86_64",
+    "kernel-modules-extra-4.18.0-553.111.1.el8_10.x86_64",
+    "kernel-4.18.0-553.111.1.el8_10.src",
+    "kernel-debug-core-4.18.0-553.111.1.el8_10.x86_64",
+    "kernel-modules-4.18.0-553.111.1.el8_10.x86_64",
+    "kernel-core-4.18.0-553.111.1.el8_10.x86_64",
+    "kernel-tools-libs-4.18.0-553.111.1.el8_10.x86_64",
+    "perf-4.18.0-553.111.1.el8_10.x86_64",
+    "kernel-abi-stablelists-4.18.0-553.111.1.el8_10.noarch",
+    "kernel-debug-devel-4.18.0-553.111.1.el8_10.x86_64",
+    "kernel-devel-4.18.0-553.111.1.el8_10.x86_64",
+    "kernel-debug-modules-4.18.0-553.111.1.el8_10.x86_64",
+    "kernel-tools-4.18.0-553.111.1.el8_10.x86_64",
+    "kernel-headers-4.18.0-553.111.1.el8_10.x86_64",
+    "kernel-cross-headers-4.18.0-553.111.1.el8_10.x86_64",
+    "kernel-4.18.0-553.111.1.el8_10.x86_64",
+    "kernel-debug-modules-extra-4.18.0-553.111.1.el8_10.x86_64",
+    "python3-perf-4.18.0-553.111.1.el8_10.x86_64",
+    "kernel-debug-4.18.0-553.111.1.el8_10.x86_64"
+  ],
+  "full_text": "[4.18.0-553.111.1]\n- Update Oracle Linux certificates (Kevin Lyons)\n- Disable signing for aarch64 (Ilya Okomin)\n- Oracle Linux RHCK Module Signing Key was added to the kernel trusted keys list (olkmod_signing_key.pem) [Orabug: 29539237]\n- Update x509.genkey [Orabug: 24817676]\n- Conflict with shim-ia32 and shim-x64 <= 15.3-1.0.3\n- Remove upstream reference during boot (Kevin Lyons) [Orabug: 34750652]\n- Add new Oracle Linux Driver Signing (key 1) certificate [Orabug: 37985772]\n\n[4.18.0-553.111.1]\n- macvlan: fix possible UAF in macvlan_forward_source() (Hangbin Liu) [RHEL-144120] {CVE-2026-23001}\n\n[4.18.0-553.110.1]\n- pNFS: fix a missing wake up while waiting on NFS_LAYOUT_DRAIN (Olga Kornievskaia) [RHEL-131922]\n- fbcon: Avoid using FNTCHARCNT() and hard-coded built-in font charcount (Jocelyn Falempe) [RHEL-148636]\n- audit: Use the new {get,put}_fs_pwd_pool() APIs to get/put pwd references (Waiman Long) [RHEL-146026]\n- fs: Add a pool of extra fs->pwd references to fs_struct (Waiman Long) [RHEL-146026]\n- ipv6: BUG() in pskb_expand_head() as part of calipso_skbuff_setattr() (CKI Backport Bot) [RHEL-143535] {CVE-2025-71085}\n\nReferences:\nhttps://linux.oracle.com/errata/ELSA-2026-3963.html\nhttps://linux.oracle.com/cve/CVE-2025-71085.html\nhttps://linux.oracle.com/cve/CVE-2026-23001.html"
+}

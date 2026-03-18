@@ -1,0 +1,27 @@
+{
+  "id": "ELBA-2025-20621-0",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "RHCK",
+  "title": "kmod bug fix and enhancement update",
+  "issuedDate": "2025-11-17T00:00:00Z",
+  "updatedDate": "2025-11-17T00:00:00Z",
+  "pubDate": "2025-11-17T00:00:00Z",
+  "dateStr": "2025-11-17",
+  "url": "https://linux.oracle.com/errata/ELBA-2025-20621-0.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 9.",
+  "description": "[28-11.0.1]\n- Add improvement to modprobe to handle UEK8 packaging better [Orabug: 37689559] (Harshit Mogalapalli)\n- weak-modules: Fix add_kernel to handle suffix [Orabug: 34623248] (Todd Vierling)\n- add weak-modules patch for [Orabug: 26672773]\n\n[28-11]\n- check weak-updates directory exists before using it\n- Resolves: RHEL-106279",
+  "affected_products": [
+    "Oracle Linux 9 for x86_64",
+    "Oracle Linux 9 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "kmod-28-11.0.1.el9.src",
+    "kmod-28-11.0.1.el9.x86_64",
+    "kmod-libs-28-11.0.1.el9.x86_64",
+    "kmod-libs-28-11.0.1.el9.i686"
+  ],
+  "full_text": "[28-11.0.1]\n- Add improvement to modprobe to handle UEK8 packaging better [Orabug: 37689559] (Harshit Mogalapalli)\n- weak-modules: Fix add_kernel to handle suffix [Orabug: 34623248] (Todd Vierling)\n- add weak-modules patch for [Orabug: 26672773]\n\n[28-11]\n- check weak-updates directory exists before using it\n- Resolves: RHEL-106279\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2025-20621-0.html"
+}

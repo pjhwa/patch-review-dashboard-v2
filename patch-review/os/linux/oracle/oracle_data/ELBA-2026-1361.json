@@ -1,0 +1,26 @@
+{
+  "id": "ELBA-2026-1361",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "AppStream",
+  "title": "v4l-utils bug fix and enhancement update",
+  "issuedDate": "2026-02-02T00:00:00Z",
+  "updatedDate": "2026-02-02T00:00:00Z",
+  "pubDate": "2026-02-02T00:00:00Z",
+  "dateStr": "2026-02-02",
+  "url": "https://linux.oracle.com/errata/ELBA-2026-1361.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 9.",
+  "description": "[1.20.0-5.0.1_1]\n- Rebuilt to correct changelog\n\n[1.20.0-5_1]\n- Rebuilt for CRB inclusion\n  Resolves: RHEL-135533",
+  "affected_products": [
+    "Oracle Linux 9 for x86_64",
+    "Oracle Linux 9 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "v4l-utils-1.20.0-5.0.1.el9_7_1.src",
+    "libv4l-1.20.0-5.0.1.el9_7_1.i686",
+    "libv4l-1.20.0-5.0.1.el9_7_1.x86_64"
+  ],
+  "full_text": "[1.20.0-5.0.1_1]\n- Rebuilt to correct changelog\n\n[1.20.0-5_1]\n- Rebuilt for CRB inclusion\n  Resolves: RHEL-135533\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2026-1361.html"
+}

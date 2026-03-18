@@ -1,0 +1,50 @@
+{
+  "id": "RHSA-2025:23733",
+  "vendor": "Red Hat",
+  "type": "Security Advisory (RHSA)",
+  "title": "Red Hat Security Advisory: go-toolset:rhel8 security update",
+  "issuedDate": "2025-12-22T01:38:52+00:00",
+  "updatedDate": "2025-12-22T01:38:52+00:00",
+  "pubDate": "2025-12-22T01:38:52+00:00",
+  "dateStr": "2025-12-22",
+  "url": "https://access.redhat.com/errata/RHSA-2025:23733",
+  "severity": "Moderate",
+  "overview": "An update for the go-toolset:rhel8 module is now available for Red Hat Enterprise Linux 8.6 Advanced Mission Critical Update Support, Red Hat Enterprise Linux 8.6 Update Services for SAP Solutions, and Red Hat Enterprise Linux 8.6 Telecommunications Update Service.\n\nRed Hat Product Security has rated this update as having a security impact of Moderate. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "description": "Go Toolset provides the Go programming language tools and libraries. Go is alternatively known as golang. \n\nSecurity Fix(es):\n\n* os/exec: Unexpected paths returned from LookPath in os/exec (CVE-2025-47906)\n\n* golang: archive/tar: Unbounded allocation when parsing GNU sparse map (CVE-2025-58183)\n\nFor more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux",
+    "Red Hat Enterprise Linux AppStream AUS (v.8.6)",
+    "Red Hat Enterprise Linux AppStream E4S (v.8.6)",
+    "Red Hat Enterprise Linux AppStream TUS (v.8.6)"
+  ],
+  "cves": [
+    "CVE-2025-47906",
+    "CVE-2025-58183"
+  ],
+  "packages": [
+    "delve-0:1.7.2-1.module+el8.6.0+12972+ebab5911.src::go-toolset:rhel8",
+    "go-toolset-0:1.17.13-2.module+el8.6.0+22782+bd95fb4c.src::go-toolset:rhel8",
+    "golang-0:1.17.13-11.module+el8.6.0+23831+7077efd1.src::go-toolset:rhel8",
+    "delve-0:1.7.2-1.module+el8.6.0+12972+ebab5911.x86_64::go-toolset:rhel8",
+    "delve-debuginfo-0:1.7.2-1.module+el8.6.0+12972+ebab5911.x86_64::go-toolset:rhel8",
+    "delve-debugsource-0:1.7.2-1.module+el8.6.0+12972+ebab5911.x86_64::go-toolset:rhel8",
+    "go-toolset-0:1.17.13-2.module+el8.6.0+22782+bd95fb4c.x86_64::go-toolset:rhel8",
+    "golang-0:1.17.13-11.module+el8.6.0+23831+7077efd1.x86_64::go-toolset:rhel8",
+    "golang-bin-0:1.17.13-11.module+el8.6.0+23831+7077efd1.x86_64::go-toolset:rhel8",
+    "golang-race-0:1.17.13-11.module+el8.6.0+23831+7077efd1.x86_64::go-toolset:rhel8",
+    "golang-docs-0:1.17.13-11.module+el8.6.0+23831+7077efd1.noarch::go-toolset:rhel8",
+    "golang-misc-0:1.17.13-11.module+el8.6.0+23831+7077efd1.noarch::go-toolset:rhel8",
+    "golang-src-0:1.17.13-11.module+el8.6.0+23831+7077efd1.noarch::go-toolset:rhel8",
+    "golang-tests-0:1.17.13-11.module+el8.6.0+23831+7077efd1.noarch::go-toolset:rhel8",
+    "go-toolset-0:1.17.13-2.module+el8.6.0+22782+bd95fb4c.aarch64::go-toolset:rhel8",
+    "golang-0:1.17.13-11.module+el8.6.0+23831+7077efd1.aarch64::go-toolset:rhel8",
+    "golang-bin-0:1.17.13-11.module+el8.6.0+23831+7077efd1.aarch64::go-toolset:rhel8",
+    "go-toolset-0:1.17.13-2.module+el8.6.0+22782+bd95fb4c.ppc64le::go-toolset:rhel8",
+    "golang-0:1.17.13-11.module+el8.6.0+23831+7077efd1.ppc64le::go-toolset:rhel8",
+    "golang-bin-0:1.17.13-11.module+el8.6.0+23831+7077efd1.ppc64le::go-toolset:rhel8",
+    "go-toolset-0:1.17.13-2.module+el8.6.0+22782+bd95fb4c.s390x::go-toolset:rhel8",
+    "golang-0:1.17.13-11.module+el8.6.0+23831+7077efd1.s390x::go-toolset:rhel8",
+    "golang-bin-0:1.17.13-11.module+el8.6.0+23831+7077efd1.s390x::go-toolset:rhel8"
+  ],
+  "full_text": "An update for the go-toolset:rhel8 module is now available for Red Hat Enterprise Linux 8.6 Advanced Mission Critical Update Support, Red Hat Enterprise Linux 8.6 Update Services for SAP Solutions, and Red Hat Enterprise Linux 8.6 Telecommunications Update Service.\n\nRed Hat Product Security has rated this update as having a security impact of Moderate. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nGo Toolset provides the Go programming language tools and libraries. Go is alternatively known as golang. \n\nSecurity Fix(es):\n\n* os/exec: Unexpected paths returned from LookPath in os/exec (CVE-2025-47906)\n\n* golang: archive/tar: Unbounded allocation when parsing GNU sparse map (CVE-2025-58183)\n\nFor more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section."
+}

@@ -1,0 +1,47 @@
+{
+  "id": "ELBA-2025-22388",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2025-December/019145.html",
+  "synopsis": "[El-errata] ELBA-2025-22388-1 Oracle Linux 8 kernel bug fix update",
+  "dateStr": "2025-December",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Bug Fix Advisory ELBA-2025-22388-1",
+  "description": "[4.18.0-553.87.1.0.1]\n- scsi: core: Restrict legal sdev_state transitions via sysfs (Uday Shankar) [Orabug: 37778230]\n\n[4.18.0-553.87.1]\n- Update Oracle Linux certificates (Kevin Lyons)\n- Disable signing for aarch64 (Ilya Okomin)\n- Oracle Linux RHCK Module Signing Key was added to the kernel trusted keys list (olkmod_signing_key.pem) [Orabug: 29539237]\n- Update x509.genkey [Orabug: 24817676]\n- Conflict with shim-ia32 and shim-x64 <= 15.3-1.0.3\n- Remove upstream reference during boot (Kevin Lyons) [Orabug: 34750652]\n- Add new Oracle Linux Driver Signing (key 1) certificate [Orabug: 37985772]\n\n[4.18.0-553.87.1]\n- tcp: Don't call reqsk_fastopen_remove() in tcp_conn_request(). (Antoine Tenart) [RHEL-120664]\n- tcp: Clear tcp_sk(sk)->fastopen_rsk in tcp_disconnect(). (Antoine Tenart) [RHEL-120664] {CVE-2025-39955}\n- mm/memory-failure: fix VM_BUG_ON_PAGE(PagePoisoned(page)) when unpoison memory (Audra Mitchell) [RHEL-117059] {CVE-2025-39883}\n\n[4.18.0-553.86.1]\n- smb: client: fix race with concurrent opens in rename(2) (Paulo Alcantara) [RHEL-118237] {CVE-2025-39825}\n- smb: client: fix race with concurrent opens in unlink(2) (Paulo Alcantara) [RHEL-118237]\n- e1000e: fix heap overflow in e1000_set_eeprom (Corinna Vinschen) [RHEL-123105] {CVE-2025-39898}\n- nfsd: handle get_client_locked() failure in nfsd4_setclientid_confirm() (CKI Backport Bot) [RHEL-125595] {CVE-2025-38724}\n- nbd: fix incomplete validation of ioctl arg (CKI Backport Bot) [RHEL-122965] {CVE-2023-53513}\n- arch/powerpc: commandline option to enable P11 support (Mamatha Inamdar) [RHEL-107921]\n- perf/pmu-events/powerpc: Update json mapfile with Power11 PVR (Mamatha Inamdar) [RHEL-107921]\n- perf vendor events powerpc: Add PVN for HX-C2000 CPU with Power8 Architecture (Mamatha Inamdar) [RHEL-107921]\n- tools/perf/arch/powerpc: Fix the CPU ID const char* value by adding 0x prefix (Mamatha Inamdar) [RHEL-107921]\n- powerpc/perf: Power11 Performance Monitoring support (Mamatha Inamdar) [RHEL-107921]\n- powerpc/perf: Add __init attribute to eligible functions (Mamatha Inamdar) [RHEL-107921]\n- powerpc: Add Power11 architected and raw mode (Mamatha Inamdar) [RHEL-107921]",
+  "affected_products": [
+    "Oracle Linux 8"
+  ],
+  "packages": [
+    "bpftool-4.18.0-553.87.1.0.1.el8_10.x86_64.rpm",
+    "kernel-4.18.0-553.87.1.0.1.el8_10.x86_64.rpm",
+    "kernel-abi-stablelists-4.18.0-553.87.1.0.1.el8_10.noarch.rpm",
+    "kernel-core-4.18.0-553.87.1.0.1.el8_10.x86_64.rpm",
+    "kernel-cross-headers-4.18.0-553.87.1.0.1.el8_10.x86_64.rpm",
+    "kernel-debug-4.18.0-553.87.1.0.1.el8_10.x86_64.rpm",
+    "kernel-debug-core-4.18.0-553.87.1.0.1.el8_10.x86_64.rpm",
+    "kernel-debug-devel-4.18.0-553.87.1.0.1.el8_10.x86_64.rpm",
+    "kernel-debug-modules-4.18.0-553.87.1.0.1.el8_10.x86_64.rpm",
+    "kernel-debug-modules-extra-4.18.0-553.87.1.0.1.el8_10.x86_64.rpm",
+    "kernel-devel-4.18.0-553.87.1.0.1.el8_10.x86_64.rpm",
+    "kernel-doc-4.18.0-553.87.1.0.1.el8_10.noarch.rpm",
+    "kernel-headers-4.18.0-553.87.1.0.1.el8_10.x86_64.rpm",
+    "kernel-modules-4.18.0-553.87.1.0.1.el8_10.x86_64.rpm",
+    "kernel-modules-extra-4.18.0-553.87.1.0.1.el8_10.x86_64.rpm",
+    "kernel-tools-4.18.0-553.87.1.0.1.el8_10.x86_64.rpm",
+    "kernel-tools-libs-4.18.0-553.87.1.0.1.el8_10.x86_64.rpm",
+    "kernel-tools-libs-devel-4.18.0-553.87.1.0.1.el8_10.x86_64.rpm",
+    "perf-4.18.0-553.87.1.0.1.el8_10.x86_64.rpm",
+    "python3-perf-4.18.0-553.87.1.0.1.el8_10.x86_64.rpm"
+  ],
+  "cves": [
+    "CVE-2025-39955",
+    "CVE-2025-39883",
+    "CVE-2025-39825",
+    "CVE-2025-39898",
+    "CVE-2025-38724",
+    "CVE-2023-53513"
+  ],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Bug Fix Advisory ELBA-2025-22388-1\n\nhttp://linux.oracle.com/errata/ELBA-2025-22388-1.html\n\nThe following updated rpms for Oracle Linux 8 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\nbpftool-4.18.0-553.87.1.0.1.el8_10.x86_64.rpm\nkernel-4.18.0-553.87.1.0.1.el8_10.x86_64.rpm\nkernel-abi-stablelists-4.18.0-553.87.1.0.1.el8_10.noarch.rpm\nkernel-core-4.18.0-553.87.1.0.1.el8_10.x86_64.rpm\nkernel-cross-headers-4.18.0-553.87.1.0.1.el8_10.x86_64.rpm\nkernel-debug-4.18.0-553.87.1.0.1.el8_10.x86_64.rpm\nkernel-debug-core-4.18.0-553.87.1.0.1.el8_10.x86_64.rpm\nkernel-debug-devel-4.18.0-553.87.1.0.1.el8_10.x86_64.rpm\nkernel-debug-modules-4.18.0-553.87.1.0.1.el8_10.x86_64.rpm\nkernel-debug-modules-extra-4.18.0-553.87.1.0.1.el8_10.x86_64.rpm\nkernel-devel-4.18.0-553.87.1.0.1.el8_10.x86_64.rpm\nkernel-doc-4.18.0-553.87.1.0.1.el8_10.noarch.rpm\nkernel-headers-4.18.0-553.87.1.0.1.el8_10.x86_64.rpm\nkernel-modules-4.18.0-553.87.1.0.1.el8_10.x86_64.rpm\nkernel-modules-extra-4.18.0-553.87.1.0.1.el8_10.x86_64.rpm\nkernel-tools-4.18.0-553.87.1.0.1.el8_10.x86_64.rpm\nkernel-tools-libs-4.18.0-553.87.1.0.1.el8_10.x86_64.rpm\nkernel-tools-libs-devel-4.18.0-553.87.1.0.1.el8_10.x86_64.rpm\nperf-4.18.0-553.87.1.0.1.el8_10.x86_64.rpm\npython3-perf-4.18.0-553.87.1.0.1.el8_10.x86_64.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol8/SRPMS-updates/kernel-4.18.0-553.87.1.0.1.el8_10.src.rpm\n\n\n\nDescription of changes:\n\n[4.18.0-553.87.1.0.1]\n- scsi: core: Restrict legal sdev_state transitions via sysfs (Uday Shankar) [Orabug: 37778230]\n\n[4.18.0-553.87.1]\n- Update Oracle Linux certificates (Kevin Lyons)\n- Disable signing for aarch64 (Ilya Okomin)\n- Oracle Linux RHCK Module Signing Key was added to the kernel trusted keys list (olkmod_signing_key.pem) [Orabug: 29539237]\n- Update x509.genkey [Orabug: 24817676]\n- Conflict with shim-ia32 and shim-x64 <= 15.3-1.0.3\n- Remove upstream reference during boot (Kevin Lyons) [Orabug: 34750652]\n- Add new Oracle Linux Driver Signing (key 1) certificate [Orabug: 37985772]\n\n[4.18.0-553.87.1]\n- tcp: Don't call reqsk_fastopen_remove() in tcp_conn_request(). (Antoine Tenart) [RHEL-120664]\n- tcp: Clear tcp_sk(sk)->fastopen_rsk in tcp_disconnect(). (Antoine Tenart) [RHEL-120664] {CVE-2025-39955}\n- mm/memory-failure: fix VM_BUG_ON_PAGE(PagePoisoned(page)) when unpoison memory (Audra Mitchell) [RHEL-117059] {CVE-2025-39883}\n\n[4.18.0-553.86.1]\n- smb: client: fix race with concurrent opens in rename(2) (Paulo Alcantara) [RHEL-118237] {CVE-2025-39825}\n- smb: client: fix race with concurrent opens in unlink(2) (Paulo Alcantara) [RHEL-118237]\n- e1000e: fix heap overflow in e1000_set_eeprom (Corinna Vinschen) [RHEL-123105] {CVE-2025-39898}\n- nfsd: handle get_client_locked() failure in nfsd4_setclientid_confirm() (CKI Backport Bot) [RHEL-125595] {CVE-2025-38724}\n- nbd: fix incomplete validation of ioctl arg (CKI Backport Bot) [RHEL-122965] {CVE-2023-53513}\n- arch/powerpc: commandline option to enable P11 support (Mamatha Inamdar) [RHEL-107921]\n- perf/pmu-events/powerpc: Update json mapfile with Power11 PVR (Mamatha Inamdar) [RHEL-107921]\n- perf vendor events powerpc: Add PVN for HX-C2000 CPU with Power8 Architecture (Mamatha Inamdar) [RHEL-107921]\n- tools/perf/arch/powerpc: Fix the CPU ID const char* value by adding 0x prefix (Mamatha Inamdar) [RHEL-107921]\n- powerpc/perf: Power11 Performance Monitoring support (Mamatha Inamdar) [RHEL-107921]\n- powerpc/perf: Add __init attribute to eligible functions (Mamatha Inamdar) [RHEL-107921]\n- powerpc: Add Power11 architected and raw mode (Mamatha Inamdar) [RHEL-107921]",
+  "vendor": "Oracle"
+}

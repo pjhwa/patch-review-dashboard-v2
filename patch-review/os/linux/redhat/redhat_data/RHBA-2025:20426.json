@@ -1,0 +1,74 @@
+{
+  "id": "RHBA-2025:20426",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: hplip bug fix and enhancement update",
+  "issuedDate": "2025-11-11T07:26:30Z",
+  "updatedDate": "2025-11-11T07:26:30Z",
+  "pubDate": "2025-11-11T07:26:30Z",
+  "dateStr": "2025-11-11",
+  "url": "https://access.redhat.com/errata/RHBA-2025:20426",
+  "severity": "None",
+  "overview": "An update for hplip is now available for Red Hat Enterprise Linux 10.",
+  "description": "For detailed information on changes in this release, see the Red Hat Enterprise Linux 10 Release Notes linked from the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux for IBM z Systems",
+    "Red Hat Enterprise Linux for x86_64 10 x86_64",
+    "Red Hat Enterprise Linux for ARM 64",
+    "Red Hat Enterprise Linux for Power, little endian"
+  ],
+  "cves": [],
+  "packages": [
+    "hplip-3.23.12-10.el10.src",
+    "hplip-3.23.12-10.el10.x86_64",
+    "hplip-common-3.23.12-10.el10.x86_64",
+    "hplip-debuginfo-3.23.12-10.el10.x86_64",
+    "hplip-debugsource-3.23.12-10.el10.x86_64",
+    "hplip-libs-3.23.12-10.el10.x86_64",
+    "hplip-libs-debuginfo-3.23.12-10.el10.x86_64",
+    "libsane-hpaio-3.23.12-10.el10.x86_64",
+    "libsane-hpaio-debuginfo-3.23.12-10.el10.x86_64",
+    "hplip-3.23.12-10.el10.s390x",
+    "hplip-common-3.23.12-10.el10.s390x",
+    "hplip-debuginfo-3.23.12-10.el10.s390x",
+    "hplip-debugsource-3.23.12-10.el10.s390x",
+    "hplip-libs-3.23.12-10.el10.s390x",
+    "hplip-libs-debuginfo-3.23.12-10.el10.s390x",
+    "libsane-hpaio-3.23.12-10.el10.s390x",
+    "libsane-hpaio-debuginfo-3.23.12-10.el10.s390x",
+    "hplip-3.23.12-10.el10.ppc64le",
+    "hplip-common-3.23.12-10.el10.ppc64le",
+    "hplip-debuginfo-3.23.12-10.el10.ppc64le",
+    "hplip-debugsource-3.23.12-10.el10.ppc64le",
+    "hplip-libs-3.23.12-10.el10.ppc64le",
+    "hplip-libs-debuginfo-3.23.12-10.el10.ppc64le",
+    "libsane-hpaio-3.23.12-10.el10.ppc64le",
+    "libsane-hpaio-debuginfo-3.23.12-10.el10.ppc64le",
+    "hplip-3.23.12-10.el10.aarch64",
+    "hplip-common-3.23.12-10.el10.aarch64",
+    "hplip-debuginfo-3.23.12-10.el10.aarch64",
+    "hplip-debugsource-3.23.12-10.el10.aarch64",
+    "hplip-libs-3.23.12-10.el10.aarch64",
+    "hplip-libs-debuginfo-3.23.12-10.el10.aarch64",
+    "libsane-hpaio-3.23.12-10.el10.aarch64",
+    "libsane-hpaio-debuginfo-3.23.12-10.el10.aarch64"
+  ],
+  "fixes": [
+    {
+      "id": "RHEL-84817",
+      "url": "https://issues.redhat.com/browse/RHEL-84817",
+      "description": "Add --location to curl calls for possible redirections"
+    },
+    {
+      "id": "RHEL-97437",
+      "url": "https://issues.redhat.com/browse/RHEL-97437",
+      "description": "hp-plugin-download wrongly parsed file type"
+    },
+    {
+      "id": "RHEL-102977",
+      "url": "https://issues.redhat.com/browse/RHEL-102977",
+      "description": "rpm -q --changelog hplip no longer lists changelog"
+    }
+  ],
+  "full_text": "An update for hplip is now available for Red Hat Enterprise Linux 10.\n\nFor detailed information on changes in this release, see the Red Hat Enterprise Linux 10 Release Notes linked from the References section."
+}

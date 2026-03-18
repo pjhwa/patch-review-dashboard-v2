@@ -1,0 +1,25 @@
+{
+  "id": "ELBA-2025-21019",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "RHCK",
+  "title": "realmd bug fix and enhancement update",
+  "issuedDate": "2025-12-02T00:00:00Z",
+  "updatedDate": "2025-12-02T00:00:00Z",
+  "pubDate": "2025-12-02T00:00:00Z",
+  "dateStr": "2025-12-02",
+  "url": "https://linux.oracle.com/errata/ELBA-2025-21019.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 10.",
+  "description": "[0.17.1-13]\n- add renew command\n  Resolves: RHEL-117645",
+  "affected_products": [
+    "Oracle Linux 10 for x86_64",
+    "Oracle Linux 10 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "realmd-0.17.1-13.el10_1.x86_64",
+    "realmd-0.17.1-13.el10_1.src"
+  ],
+  "full_text": "[0.17.1-13]\n- add renew command\n  Resolves: RHEL-117645\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2025-21019.html"
+}

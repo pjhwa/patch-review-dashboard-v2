@@ -1,0 +1,33 @@
+{
+  "id": "RHBA-2025:20156",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: rootfiles bug fix and enhancement update",
+  "issuedDate": "2025-11-11T07:25:16Z",
+  "updatedDate": "2025-11-11T07:25:16Z",
+  "pubDate": "2025-11-11T07:25:16Z",
+  "dateStr": "2025-11-11",
+  "url": "https://access.redhat.com/errata/RHBA-2025:20156",
+  "severity": "None",
+  "overview": "An update for rootfiles is now available for Red Hat Enterprise Linux 10.",
+  "description": "For detailed information on changes in this release, see the Red Hat Enterprise Linux 10.1 Release Notes linked from the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux for x86_64 10 x86_64",
+    "Red Hat Enterprise Linux for Power, little endian",
+    "Red Hat Enterprise Linux for IBM z Systems",
+    "Red Hat Enterprise Linux for ARM 64"
+  ],
+  "cves": [],
+  "packages": [
+    "rootfiles-8.1-54.el10.src",
+    "rootfiles-8.1-54.el10.noarch"
+  ],
+  "fixes": [
+    {
+      "id": "RHEL-82850",
+      "url": "https://issues.redhat.com/browse/RHEL-82850",
+      "description": "rootfiles: rpm -Vaq complains about wrong mode"
+    }
+  ],
+  "full_text": "An update for rootfiles is now available for Red Hat Enterprise Linux 10.\n\nFor detailed information on changes in this release, see the Red Hat Enterprise Linux 10.1 Release Notes linked from the References section."
+}

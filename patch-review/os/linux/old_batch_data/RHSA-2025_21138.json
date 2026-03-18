@@ -1,0 +1,21 @@
+{
+  "id": "RHSA-2025:21138",
+  "vendor": "Red Hat",
+  "url": "https://access.redhat.com/errata/RHSA-2025:21138",
+  "pubDate": "2025-11-12T16:32:24.000Z",
+  "dateStr": "2025-11-12",
+  "severity": "Important",
+  "title": "Red Hat Security Advisory: python-kdcproxy security update",
+  "overview": "An update for python-kdcproxy is now available for Red Hat Enterprise Linux 9.6 Extended Update Support.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "description": "An update for python-kdcproxy is now available for Red Hat Enterprise Linux 9.6 Extended Update Support.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux AppStream EUS (v.9.6)"
+  ],
+  "cves": [
+    "CVE-2025-59088",
+    "CVE-2025-59089"
+  ],
+  "packages": [],
+  "fixes": "",
+  "full_text": "Red Hat Security Advisory: python-kdcproxy security update\n\nAn update for python-kdcproxy is now available for Red Hat Enterprise Linux 9.6 Extended Update Support.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nAn update for python-kdcproxy is now available for Red Hat Enterprise Linux 9.6 Extended Update Support.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nUpdated Packages:\npython-kdcproxy-1.0.0-9.el9_6.src.rpm\npython3-kdcproxy-1.0.0-9.el9_6.noarch.rpm\n\nCVE-2025-59088: If kdcproxy receives a request for a realm which does not have server addresses defined in its configuration, by default, it will query SRV records in the DNS zone matching the requested realm name. This creates a server-side request forgery vulnerability, since an attacker could send a request for a realm matching a DNS zone where they created SRV records pointing to arbitrary ports and hostnames (which may resolve to loopback or internal IP addresses). This vulnerability can be exploited to probe internal network topology and firewall rules, perform port scanning, and exfiltrate data. Deployments where\nthe \"use_dns\" setting is explicitly set to false are not affected.\n\nCVE-2025-59089: If an attacker causes kdcproxy to connect to an attacker-controlled KDC server (e.g. through server-side request forgery), they can exploit the fact that kdcproxy does not enforce bounds on TCP response length to conduct a denial-of-service attack. While receiving the KDC's response, kdcproxy copies the entire buffered stream into a new\nbuffer on each recv() call, even when the transfer is incomplete, causing excessive memory allocation and CPU usage. Additionally, kdcproxy accepts incoming response chunks as long as the received data length is not exactly equal to the length indicated in the response\nheader, even when individual chunks or the total buffer exceed the maximum length of a Kerberos message. This allows an attacker to send unbounded data until the connection timeout is reached (approximately 12 seconds), exhausting server memory or CPU resources. Multiple concurrent requests can cause accept queue overflow, denying service to legitimate clients."
+}

@@ -1,0 +1,27 @@
+{
+  "id": "ELSA-2025-15874",
+  "vendor": "Oracle",
+  "type": "Security Advisory (ELSA)",
+  "kernel_type": "AppStream",
+  "title": " python-cryptography security update",
+  "issuedDate": "2025-09-16T00:00:00Z",
+  "updatedDate": "2025-09-16T00:00:00Z",
+  "pubDate": "2025-09-16T00:00:00Z",
+  "dateStr": "2025-09-16",
+  "url": "https://linux.oracle.com/errata/ELSA-2025-15874.html",
+  "severity": "Moderate",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 9.",
+  "description": "[36.0.1-5]\n- Fix CVE-2023-49083: NULL-dereference when loading PKCS7 certificates,\n  resolves RHEL-97450",
+  "affected_products": [
+    "Oracle Linux 9 for x86_64",
+    "Oracle Linux 9 for aarch64"
+  ],
+  "cves": [
+    "CVE-2023-49083"
+  ],
+  "packages": [
+    "python-cryptography-36.0.1-5.el9_6.src",
+    "python3-cryptography-36.0.1-5.el9_6.x86_64"
+  ],
+  "full_text": "[36.0.1-5]\n- Fix CVE-2023-49083: NULL-dereference when loading PKCS7 certificates,\n  resolves RHEL-97450\n\nReferences:\nhttps://linux.oracle.com/errata/ELSA-2025-15874.html\nhttps://linux.oracle.com/cve/CVE-2023-49083.html"
+}

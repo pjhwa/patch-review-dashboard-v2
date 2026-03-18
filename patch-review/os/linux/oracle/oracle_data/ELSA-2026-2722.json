@@ -1,0 +1,47 @@
+{
+  "id": "ELSA-2026-2722",
+  "vendor": "Oracle",
+  "type": "Security Advisory (ELSA)",
+  "title": " kernel security update",
+  "issuedDate": "2026-02-16T00:00:00Z",
+  "updatedDate": "2026-02-16T00:00:00Z",
+  "pubDate": "2026-02-16T00:00:00Z",
+  "dateStr": "2026-02-16",
+  "url": "https://linux.oracle.com/errata/ELSA-2026-2722.html",
+  "severity": "Moderate",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 9.",
+  "description": "[5.14.0-611.34.1]\n- Disable UKI signing [Orabug: 36571828]\n- Update Oracle Linux certificates (Kevin Lyons)\n- Disable signing for aarch64 (Ilya Okomin)\n- Oracle Linux RHCK Module Signing Key was added to the kernel trusted keys list (olkmod_signing_key.pem) [Orabug: 29539237]\n- Update x509.genkey [Orabug: 24817676]\n- Conflict with shim-ia32 and shim-x64 <= 15.3-1.0.5]\n- Remove upstream reference during boot (Kevin Lyons) [Orabug: 34729535]\n- Add Oracle Linux IMA certificates\n- Add new Oracle Linux Driver Signing (key 1) certificate [Orabug: 37985764]\n\n[5.14.0-611.34.1]\n- scsi: storvsc: Process unsupported MODE_SENSE_10 (Li Tian) [RHEL-145183]\n- smb: client: Add tracepoint for krb5 auth (Paulo Alcantara) [RHEL-127498]\n- smb: client: improve error message when creating SMB session (Paulo Alcantara) [RHEL-127498]\n- smb: client: relax session and tcon reconnect attempts (Paulo Alcantara) [RHEL-127498]\n- cifs: #include cifsglob.h before trace.h to allow structs in tracepoints (Paulo Alcantara) [RHEL-127498]\n- smc: Fix use-after-free in __pnet_find_base_ndev(). (Mete Durlu) [RHEL-126890] {CVE-2025-40064}\n\n[5.14.0-611.33.1]\n- i40e: avoid redundant VF link state updates (CKI Backport Bot) [RHEL-141877]\n- x86/sev: Guard sev_evict_cache() with CONFIG_AMD_MEM_ENCRYPT (Paolo Bonzini) [RHEL-128030]\n- x86/sev: Evict cache lines during SNP memory validation (Paolo Bonzini) [RHEL-128030]\n- ntb_hw_switchtec: Fix shift-out-of-bounds in switchtec_ntb_mw_set_trans (Myron Stowe) [RHEL-132891] {CVE-2023-53034}\n- fbdev: Add bounds checking in bit_putcs to fix vmalloc-out-of-bounds (CKI Backport Bot) [RHEL-137683] {CVE-2025-40304}\n- crypto: iaa - Optimize rebalance_wq_table() (Jay Shin) [RHEL-137272]\n- fbdev: bitblit: bound-check glyph index in bit_putcs* (CKI Backport Bot) [RHEL-136942] {CVE-2025-40322}\n- bpf: Do not audit capability check in do_jit() (Jay Shin) [RHEL-135137]\n\n[5.14.0-611.32.1]\n- svcrdma: use rc_pageoff for memcpy byte offset (CKI Backport Bot) [RHEL-142790] {CVE-2025-68811}\n- NFSv4/pNFS: Clear NFS_INO_LAYOUTCOMMIT in pnfs_mark_layout_stateid_invalid (CKI Backport Bot) [RHEL-140260] {CVE-2025-68349}\n\n[5.14.0-611.31.1]\n- nvme-tcp: fix NULL pointer dereferences in nvmet_tcp_build_pdu_iovec (CKI Backport Bot) [RHEL-144332] {CVE-2026-22998}",
+  "affected_products": [
+    "Oracle Linux 9 for x86_64",
+    "Oracle Linux 9 for aarch64"
+  ],
+  "cves": [
+    "CVE-2023-53034",
+    "CVE-2025-40064",
+    "CVE-2025-40304",
+    "CVE-2025-40322",
+    "CVE-2025-68349",
+    "CVE-2025-68811",
+    "CVE-2026-22998"
+  ],
+  "packages": [
+    "kernel-debug-5.14.0-611.34.1.el9_7.x86_64",
+    "kernel-modules-extra-5.14.0-611.34.1.el9_7.x86_64",
+    "kernel-tools-libs-5.14.0-611.34.1.el9_7.x86_64",
+    "kernel-modules-5.14.0-611.34.1.el9_7.x86_64",
+    "kernel-abi-stablelists-5.14.0-611.34.1.el9_7.noarch",
+    "kernel-tools-5.14.0-611.34.1.el9_7.x86_64",
+    "kernel-debug-modules-core-5.14.0-611.34.1.el9_7.x86_64",
+    "kernel-debug-uki-virt-5.14.0-611.34.1.el9_7.x86_64",
+    "kernel-debug-core-5.14.0-611.34.1.el9_7.x86_64",
+    "kernel-debug-modules-5.14.0-611.34.1.el9_7.x86_64",
+    "kernel-uki-virt-5.14.0-611.34.1.el9_7.x86_64",
+    "kernel-5.14.0-611.34.1.el9_7.x86_64",
+    "kernel-5.14.0-611.34.1.el9_7.src",
+    "kernel-modules-core-5.14.0-611.34.1.el9_7.x86_64",
+    "kernel-uki-virt-addons-5.14.0-611.34.1.el9_7.x86_64",
+    "kernel-debug-modules-extra-5.14.0-611.34.1.el9_7.x86_64",
+    "kernel-core-5.14.0-611.34.1.el9_7.x86_64"
+  ],
+  "full_text": "[5.14.0-611.34.1]\n- Disable UKI signing [Orabug: 36571828]\n- Update Oracle Linux certificates (Kevin Lyons)\n- Disable signing for aarch64 (Ilya Okomin)\n- Oracle Linux RHCK Module Signing Key was added to the kernel trusted keys list (olkmod_signing_key.pem) [Orabug: 29539237]\n- Update x509.genkey [Orabug: 24817676]\n- Conflict with shim-ia32 and shim-x64 <= 15.3-1.0.5]\n- Remove upstream reference during boot (Kevin Lyons) [Orabug: 34729535]\n- Add Oracle Linux IMA certificates\n- Add new Oracle Linux Driver Signing (key 1) certificate [Orabug: 37985764]\n\n[5.14.0-611.34.1]\n- scsi: storvsc: Process unsupported MODE_SENSE_10 (Li Tian) [RHEL-145183]\n- smb: client: Add tracepoint for krb5 auth (Paulo Alcantara) [RHEL-127498]\n- smb: client: improve error message when creating SMB session (Paulo Alcantara) [RHEL-127498]\n- smb: client: relax session and tcon reconnect attempts (Paulo Alcantara) [RHEL-127498]\n- cifs: #include cifsglob.h before trace.h to allow structs in tracepoints (Paulo Alcantara) [RHEL-127498]\n- smc: Fix use-after-free in __pnet_find_base_ndev(). (Mete Durlu) [RHEL-126890] {CVE-2025-40064}\n\n[5.14.0-611.33.1]\n- i40e: avoid redundant VF link state updates (CKI Backport Bot) [RHEL-141877]\n- x86/sev: Guard sev_evict_cache() with CONFIG_AMD_MEM_ENCRYPT (Paolo Bonzini) [RHEL-128030]\n- x86/sev: Evict cache lines during SNP memory validation (Paolo Bonzini) [RHEL-128030]\n- ntb_hw_switchtec: Fix shift-out-of-bounds in switchtec_ntb_mw_set_trans (Myron Stowe) [RHEL-132891] {CVE-2023-53034}\n- fbdev: Add bounds checking in bit_putcs to fix vmalloc-out-of-bounds (CKI Backport Bot) [RHEL-137683] {CVE-2025-40304}\n- crypto: iaa - Optimize rebalance_wq_table() (Jay Shin) [RHEL-137272]\n- fbdev: bitblit: bound-check glyph index in bit_putcs* (CKI Backport Bot) [RHEL-136942] {CVE-2025-40322}\n- bpf: Do not audit capability check in do_jit() (Jay Shin) [RHEL-135137]\n\n[5.14.0-611.32.1]\n- svcrdma: use rc_pageoff for memcpy byte offset (CKI Backport Bot) [RHEL-142790] {CVE-2025-68811}\n- NFSv4/pNFS: Clear NFS_INO_LAYOUTCOMMIT in pnfs_mark_layout_stateid_invalid (CKI Backport Bot) [RHEL-140260] {CVE-2025-68349}\n\n[5.14.0-611.31.1]\n- nvme-tcp: fix NULL pointer dereferences in nvmet_tcp_build_pdu_iovec (CKI Backport Bot) [RHEL-144332] {CVE-2026-22998}\n\nReferences:\nhttps://linux.oracle.com/errata/ELSA-2026-2722.html\nhttps://linux.oracle.com/cve/CVE-2023-53034.html\nhttps://linux.oracle.com/cve/CVE-2025-40064.html\nhttps://linux.oracle.com/cve/CVE-2025-40304.html\nhttps://linux.oracle.com/cve/CVE-2025-40322.html\nhttps://linux.oracle.com/cve/CVE-2025-68349.html\nhttps://linux.oracle.com/cve/CVE-2025-68811.html\nhttps://linux.oracle.com/cve/CVE-2026-22998.html"
+}

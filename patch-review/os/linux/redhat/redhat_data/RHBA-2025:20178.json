@@ -1,0 +1,60 @@
+{
+  "id": "RHBA-2025:20178",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: librepo bug fix and enhancement update",
+  "issuedDate": "2025-11-11T07:25:20Z",
+  "updatedDate": "2025-11-11T07:25:20Z",
+  "pubDate": "2025-11-11T07:25:20Z",
+  "dateStr": "2025-11-11",
+  "url": "https://access.redhat.com/errata/RHBA-2025:20178",
+  "severity": "None",
+  "overview": "An update for librepo is now available for Red Hat Enterprise Linux 10.",
+  "description": "For detailed information on changes in this release, see the Red Hat Enterprise Linux 10 Release Notes linked from the References section.",
+  "affected_products": [
+    "Red Hat CodeReady Linux Builder for ARM 64",
+    "Red Hat Enterprise Linux for ARM 64",
+    "Red Hat Enterprise Linux for x86_64 10 x86_64",
+    "Red Hat CodeReady Linux Builder for Power, little endian",
+    "Red Hat Enterprise Linux for Power, little endian",
+    "Red Hat Enterprise Linux for IBM z Systems",
+    "Red Hat CodeReady Linux Builder for IBM z Systems",
+    "Red Hat CodeReady Linux Builder for x86_64 10 x86_64"
+  ],
+  "cves": [],
+  "packages": [
+    "librepo-1.18.0-5.el10.src",
+    "librepo-1.18.0-5.el10.x86_64",
+    "librepo-debuginfo-1.18.0-5.el10.x86_64",
+    "librepo-debugsource-1.18.0-5.el10.x86_64",
+    "python3-librepo-1.18.0-5.el10.x86_64",
+    "python3-librepo-debuginfo-1.18.0-5.el10.x86_64",
+    "librepo-1.18.0-5.el10.s390x",
+    "librepo-debuginfo-1.18.0-5.el10.s390x",
+    "librepo-debugsource-1.18.0-5.el10.s390x",
+    "python3-librepo-1.18.0-5.el10.s390x",
+    "python3-librepo-debuginfo-1.18.0-5.el10.s390x",
+    "librepo-1.18.0-5.el10.ppc64le",
+    "librepo-debuginfo-1.18.0-5.el10.ppc64le",
+    "librepo-debugsource-1.18.0-5.el10.ppc64le",
+    "python3-librepo-1.18.0-5.el10.ppc64le",
+    "python3-librepo-debuginfo-1.18.0-5.el10.ppc64le",
+    "librepo-1.18.0-5.el10.aarch64",
+    "librepo-debuginfo-1.18.0-5.el10.aarch64",
+    "librepo-debugsource-1.18.0-5.el10.aarch64",
+    "python3-librepo-1.18.0-5.el10.aarch64",
+    "python3-librepo-debuginfo-1.18.0-5.el10.aarch64",
+    "librepo-devel-1.18.0-5.el10.x86_64",
+    "librepo-devel-1.18.0-5.el10.ppc64le",
+    "librepo-devel-1.18.0-5.el10.aarch64",
+    "librepo-devel-1.18.0-5.el10.s390x"
+  ],
+  "fixes": [
+    {
+      "id": "RHEL-61730",
+      "url": "https://issues.redhat.com/browse/RHEL-61730",
+      "description": "Intermittent issues when parsing armored PGP key data"
+    }
+  ],
+  "full_text": "An update for librepo is now available for Red Hat Enterprise Linux 10.\n\nFor detailed information on changes in this release, see the Red Hat Enterprise Linux 10 Release Notes linked from the References section."
+}

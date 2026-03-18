@@ -1,0 +1,48 @@
+{
+  "id": "RHBA-2025:20384",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: lorax-templates-rhel bug fix and enhancement update",
+  "issuedDate": "2025-11-11T07:26:18Z",
+  "updatedDate": "2025-11-11T07:26:18Z",
+  "pubDate": "2025-11-11T07:26:18Z",
+  "dateStr": "2025-11-11",
+  "url": "https://access.redhat.com/errata/RHBA-2025:20384",
+  "severity": "None",
+  "overview": "An update for lorax-templates-rhel is now available for Red Hat Enterprise Linux 10.",
+  "description": "For detailed information on changes in this release, see the Red Hat Enterprise Linux 10 Release Notes linked from the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux for IBM z Systems",
+    "Red Hat Enterprise Linux for x86_64 10 x86_64",
+    "Red Hat Enterprise Linux for ARM 64",
+    "Red Hat Enterprise Linux for Power, little endian"
+  ],
+  "cves": [],
+  "packages": [
+    "lorax-templates-rhel-10.1-3.el10.src",
+    "lorax-templates-rhel-10.1-3.el10.noarch"
+  ],
+  "fixes": [
+    {
+      "id": "RHEL-91929",
+      "url": "https://issues.redhat.com/browse/RHEL-91929",
+      "description": "[RHEL-10] Add a menu entry to the boot.iso to boot with fips=1"
+    },
+    {
+      "id": "RHEL-93171",
+      "url": "https://issues.redhat.com/browse/RHEL-93171",
+      "description": "[rhel-10] \"Test this media & install...\" is not the default boot option on ppc64le media"
+    },
+    {
+      "id": "RHEL-102419",
+      "url": "https://issues.redhat.com/browse/RHEL-102419",
+      "description": "Connecting to an installation in RDP mode makes Anaconda crash"
+    },
+    {
+      "id": "RHEL-102872",
+      "url": "https://issues.redhat.com/browse/RHEL-102872",
+      "description": "Anaconda and bootc use chcon, stop removing it from the boot.iso"
+    }
+  ],
+  "full_text": "An update for lorax-templates-rhel is now available for Red Hat Enterprise Linux 10.\n\nFor detailed information on changes in this release, see the Red Hat Enterprise Linux 10 Release Notes linked from the References section."
+}

@@ -1,0 +1,24 @@
+{
+  "id": "ELBA-2026-2411",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "title": "kexec-tools bug fix and enhancement update",
+  "issuedDate": "2026-02-11T00:00:00Z",
+  "updatedDate": "2026-02-11T00:00:00Z",
+  "pubDate": "2026-02-11T00:00:00Z",
+  "dateStr": "2026-02-11",
+  "url": "https://linux.oracle.com/errata/ELBA-2026-2411.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 8.",
+  "description": "[2.0.31-1.0.4]\n- Fix secure boot after updating to 2.0.31 [Orabug: 38576014]",
+  "affected_products": [
+    "Oracle Linux 8 for x86_64",
+    "Oracle Linux 8 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "kexec-tools-2.0.31-1.0.4.el8_10.x86_64",
+    "kexec-tools-2.0.31-1.0.4.el8_10.src"
+  ],
+  "full_text": "[2.0.31-1.0.4]\n- Fix secure boot after updating to 2.0.31 [Orabug: 38576014]\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2026-2411.html"
+}

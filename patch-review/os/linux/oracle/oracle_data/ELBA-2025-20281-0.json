@@ -1,0 +1,26 @@
+{
+  "id": "ELBA-2025-20281-0",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "AppStream",
+  "title": "wireplumber bug fix and enhancement update",
+  "issuedDate": "2025-11-25T00:00:00Z",
+  "updatedDate": "2025-11-25T00:00:00Z",
+  "pubDate": "2025-11-25T00:00:00Z",
+  "dateStr": "2025-11-25",
+  "url": "https://linux.oracle.com/errata/ELBA-2025-20281-0.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 10.",
+  "description": "[0.5.10-1]\n- wireplumber 0.5.10\n  Resolves: DESKTOP-1859\n\n[0.5.8-1]\n- wireplumber 0.5.8\n  Resolves: RHEL-72787",
+  "affected_products": [
+    "Oracle Linux 10 for x86_64",
+    "Oracle Linux 10 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "wireplumber-0.5.10-1.el10.x86_64",
+    "wireplumber-libs-0.5.10-1.el10.x86_64",
+    "wireplumber-0.5.10-1.el10.src"
+  ],
+  "full_text": "[0.5.10-1]\n- wireplumber 0.5.10\n  Resolves: DESKTOP-1859\n\n[0.5.8-1]\n- wireplumber 0.5.8\n  Resolves: RHEL-72787\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2025-20281-0.html"
+}

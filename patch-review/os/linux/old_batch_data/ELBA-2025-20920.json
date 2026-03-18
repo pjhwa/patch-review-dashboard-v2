@@ -1,0 +1,33 @@
+{
+  "id": "ELBA-2025-20920",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2025-November/019132.html",
+  "synopsis": "[El-errata] ELBA-2025-20920 Oracle Linux 9 nmstate bug fix and enhancement update",
+  "dateStr": "2025-November",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Bug Fix Advisory ELBA-2025-20920",
+  "description": "[2.2.52-1]\n- Upgrade to 2.2.52\n- Support interface alternative names. RHEL-110777\n- Support IPv4 forwarding. RHEL-110786\n- Support IPSec `leftsendcert` option. RHEL-110633",
+  "affected_products": [
+    "Oracle Linux 9"
+  ],
+  "packages": [
+    "nmstate-2.2.52-1.el9_7.x86_64.rpm",
+    "nmstate-devel-2.2.52-1.el9_7.i686.rpm",
+    "nmstate-devel-2.2.52-1.el9_7.x86_64.rpm",
+    "nmstate-libs-2.2.52-1.el9_7.i686.rpm",
+    "nmstate-libs-2.2.52-1.el9_7.x86_64.rpm",
+    "nmstate-static-2.2.52-1.el9_7.i686.rpm",
+    "nmstate-static-2.2.52-1.el9_7.x86_64.rpm",
+    "python3-libnmstate-2.2.52-1.el9_7.x86_64.rpm",
+    "nmstate-2.2.52-1.el9_7.aarch64.rpm",
+    "nmstate-devel-2.2.52-1.el9_7.aarch64.rpm",
+    "nmstate-libs-2.2.52-1.el9_7.aarch64.rpm",
+    "nmstate-static-2.2.52-1.el9_7.aarch64.rpm",
+    "python3-libnmstate-2.2.52-1.el9_7.aarch64.rpm"
+  ],
+  "cves": [],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Bug Fix Advisory ELBA-2025-20920\n\nhttp://linux.oracle.com/errata/ELBA-2025-20920.html\n\nThe following updated rpms for Oracle Linux 9 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\nnmstate-2.2.52-1.el9_7.x86_64.rpm\nnmstate-devel-2.2.52-1.el9_7.i686.rpm\nnmstate-devel-2.2.52-1.el9_7.x86_64.rpm\nnmstate-libs-2.2.52-1.el9_7.i686.rpm\nnmstate-libs-2.2.52-1.el9_7.x86_64.rpm\nnmstate-static-2.2.52-1.el9_7.i686.rpm\nnmstate-static-2.2.52-1.el9_7.x86_64.rpm\npython3-libnmstate-2.2.52-1.el9_7.x86_64.rpm\n\naarch64:\nnmstate-2.2.52-1.el9_7.aarch64.rpm\nnmstate-devel-2.2.52-1.el9_7.aarch64.rpm\nnmstate-libs-2.2.52-1.el9_7.aarch64.rpm\nnmstate-static-2.2.52-1.el9_7.aarch64.rpm\npython3-libnmstate-2.2.52-1.el9_7.aarch64.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol9/SRPMS-updates/nmstate-2.2.52-1.el9_7.src.rpm\n\n\n\nDescription of changes:\n[2.2.52-1]\n- Upgrade to 2.2.52\n- Support interface alternative names. RHEL-110777\n- Support IPv4 forwarding. RHEL-110786\n- Support IPSec `leftsendcert` option. RHEL-110633",
+  "vendor": "Oracle"
+}

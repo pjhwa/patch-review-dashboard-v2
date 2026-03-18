@@ -1,0 +1,25 @@
+{
+  "id": "ELBA-2025-16954",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "AppStream",
+  "title": "linuxptp bug fix and enhancement update",
+  "issuedDate": "2025-09-29T00:00:00Z",
+  "updatedDate": "2025-09-29T00:00:00Z",
+  "pubDate": "2025-09-29T00:00:00Z",
+  "dateStr": "2025-09-29",
+  "url": "https://linux.oracle.com/errata/ELBA-2025-16954.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 9.",
+  "description": "[4.4-1.el9_6.4]\n- rebuild\n\n[4.4-1.el9_6.3]\n- handle missing pulses in ts2phc (RHEL-112342)",
+  "affected_products": [
+    "Oracle Linux 9 for x86_64",
+    "Oracle Linux 9 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "linuxptp-4.4-1.el9_6.4.x86_64",
+    "linuxptp-4.4-1.el9_6.4.src"
+  ],
+  "full_text": "[4.4-1.el9_6.4]\n- rebuild\n\n[4.4-1.el9_6.3]\n- handle missing pulses in ts2phc (RHEL-112342)\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2025-16954.html"
+}

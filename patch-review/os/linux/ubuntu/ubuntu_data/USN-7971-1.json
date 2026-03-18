@@ -1,0 +1,40 @@
+{
+  "id": "USN-7971-1",
+  "vendor": "Canonical / Ubuntu",
+  "type": "Ubuntu Security Notice (USN)",
+  "title": "glib2.0 vulnerability",
+  "issuedDate": "2026-01-21T17:13:35Z",
+  "updatedDate": "2026-02-10T04:50:48Z",
+  "pubDate": "2026-01-21T17:13:35Z",
+  "dateStr": "2026-01-21",
+  "url": "https://ubuntu.com/security/notices/USN-7971-1",
+  "severity": "None",
+  "overview": "glib2.0 vulnerability",
+  "description": "It was discovered that GLib incorrectly handled the buffered input stream\nAPI. An attacker could use this issue to cause GLib to crash, resulting in\na denial of service, or possibly execute arbitrary code.",
+  "affected_products": [
+    "Ubuntu 22.04 LTS",
+    "Ubuntu 24.04 LTS"
+  ],
+  "cves": [],
+  "packages": [
+    "gir1.2-girepository-3.0-2.80.0-6ubuntu3.7",
+    "gir1.2-girepository-3.0-dev-2.80.0-6ubuntu3.7",
+    "gir1.2-glib-2.0-2.80.0-6ubuntu3.7",
+    "gir1.2-glib-2.0-dev-2.80.0-6ubuntu3.7",
+    "libgirepository-2.0-0-2.80.0-6ubuntu3.7",
+    "libgirepository-2.0-dev-2.80.0-6ubuntu3.7",
+    "libglib2.0-0-2.72.4-0ubuntu2.8",
+    "libglib2.0-0t64-2.80.0-6ubuntu3.7",
+    "libglib2.0-bin-2.72.4-0ubuntu2.8",
+    "libglib2.0-bin-2.80.0-6ubuntu3.7",
+    "libglib2.0-data-2.72.4-0ubuntu2.8",
+    "libglib2.0-data-2.80.0-6ubuntu3.7",
+    "libglib2.0-dev-2.72.4-0ubuntu2.8",
+    "libglib2.0-dev-2.80.0-6ubuntu3.7",
+    "libglib2.0-dev-bin-2.72.4-0ubuntu2.8",
+    "libglib2.0-dev-bin-2.80.0-6ubuntu3.7",
+    "libglib2.0-tests-2.72.4-0ubuntu2.8",
+    "libglib2.0-tests-2.80.0-6ubuntu3.7"
+  ],
+  "full_text": "It was discovered that GLib incorrectly handled the buffered input stream\nAPI. An attacker could use this issue to cause GLib to crash, resulting in\na denial of service, or possibly execute arbitrary code."
+}

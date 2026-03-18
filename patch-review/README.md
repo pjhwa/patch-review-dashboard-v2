@@ -11,7 +11,7 @@ This directory contains the AI pipeline skill files for the Patch Review Dashboa
 ```
 patch-review/
 ├── os/
-│   ├── linux-v2/              ← Red Hat, Oracle Linux, Ubuntu (shared preprocessing)
+│   ├── linux/              ← Red Hat, Oracle Linux, Ubuntu (shared preprocessing)
 │   │   ├── SKILL.md           ← AI evaluation rules (280+ lines, §4 Strict Rules)
 │   │   ├── patch_preprocessing.py   ← --vendor redhat/oracle/ubuntu
 │   │   ├── query_rag.py       ← RAG exclusion (prompt-injection strategy)
@@ -75,9 +75,9 @@ patch-review/
 
 | Product | Directory | BullMQ Job | RAG Strategy |
 |---------|-----------|------------|--------------|
-| Red Hat Enterprise Linux | `os/linux-v2` | `run-redhat-pipeline` | prompt-injection |
-| Oracle Linux | `os/linux-v2` | `run-oracle-pipeline` | prompt-injection |
-| Ubuntu Linux | `os/linux-v2` | `run-ubuntu-pipeline` | prompt-injection |
+| Red Hat Enterprise Linux | `os/linux` | `run-redhat-pipeline` | prompt-injection |
+| Oracle Linux | `os/linux` | `run-oracle-pipeline` | prompt-injection |
+| Ubuntu Linux | `os/linux` | `run-ubuntu-pipeline` | prompt-injection |
 | Windows Server | `os/windows` | `run-windows-pipeline` | file-hiding |
 | Ceph | `storage/ceph` | `run-ceph-pipeline` | file-hiding |
 | MariaDB | `database/mariadb` | `run-mariadb-pipeline` | file-hiding |

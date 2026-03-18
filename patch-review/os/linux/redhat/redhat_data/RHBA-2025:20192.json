@@ -1,0 +1,52 @@
+{
+  "id": "RHBA-2025:20192",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: libseccomp bug fix and enhancement update",
+  "issuedDate": "2025-11-11T07:25:23Z",
+  "updatedDate": "2025-11-11T07:25:23Z",
+  "pubDate": "2025-11-11T07:25:23Z",
+  "dateStr": "2025-11-11",
+  "url": "https://access.redhat.com/errata/RHBA-2025:20192",
+  "severity": "None",
+  "overview": "An update for libseccomp is now available for Red Hat Enterprise Linux 10.",
+  "description": "For detailed information on changes in this release, see the Red Hat Enterprise Linux 10 Release Notes linked from the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux for Power, little endian",
+    "Red Hat Enterprise Linux for x86_64 10 x86_64",
+    "Red Hat Enterprise Linux for ARM 64",
+    "Red Hat Enterprise Linux for IBM z Systems"
+  ],
+  "cves": [],
+  "packages": [
+    "libseccomp-2.5.6-1.el10.src",
+    "libseccomp-2.5.6-1.el10.x86_64",
+    "libseccomp-debuginfo-2.5.6-1.el10.x86_64",
+    "libseccomp-debugsource-2.5.6-1.el10.x86_64",
+    "libseccomp-devel-2.5.6-1.el10.x86_64",
+    "libseccomp-devel-debuginfo-2.5.6-1.el10.x86_64",
+    "libseccomp-2.5.6-1.el10.s390x",
+    "libseccomp-debuginfo-2.5.6-1.el10.s390x",
+    "libseccomp-debugsource-2.5.6-1.el10.s390x",
+    "libseccomp-devel-2.5.6-1.el10.s390x",
+    "libseccomp-devel-debuginfo-2.5.6-1.el10.s390x",
+    "libseccomp-2.5.6-1.el10.ppc64le",
+    "libseccomp-debuginfo-2.5.6-1.el10.ppc64le",
+    "libseccomp-debugsource-2.5.6-1.el10.ppc64le",
+    "libseccomp-devel-2.5.6-1.el10.ppc64le",
+    "libseccomp-devel-debuginfo-2.5.6-1.el10.ppc64le",
+    "libseccomp-2.5.6-1.el10.aarch64",
+    "libseccomp-debuginfo-2.5.6-1.el10.aarch64",
+    "libseccomp-debugsource-2.5.6-1.el10.aarch64",
+    "libseccomp-devel-2.5.6-1.el10.aarch64",
+    "libseccomp-devel-debuginfo-2.5.6-1.el10.aarch64"
+  ],
+  "fixes": [
+    {
+      "id": "RHEL-80090",
+      "url": "https://issues.redhat.com/browse/RHEL-80090",
+      "description": "Upgrade libseccomp on both CentOS 9 & 10"
+    }
+  ],
+  "full_text": "An update for libseccomp is now available for Red Hat Enterprise Linux 10.\n\nFor detailed information on changes in this release, see the Red Hat Enterprise Linux 10 Release Notes linked from the References section."
+}

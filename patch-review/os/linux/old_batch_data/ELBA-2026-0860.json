@@ -1,0 +1,27 @@
+{
+  "id": "ELBA-2026-0860",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2026-January/019551.html",
+  "synopsis": "[El-errata] ELBA-2026-0860 Oracle Linux 8 open-vm-tools bug fix and enhancement update",
+  "dateStr": "2026-January",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Bug Fix Advisory ELBA-2026-0860",
+  "description": "[12.3.5-2.0.1.el8_10.2]\n- Fix spaces in vmware udev rule for scsi devices [Orabug: 24461968]\n- Fix vmware udev rule in 99-vmware-scsi-timeout.rules file. [Orabug: 22815019]\n- Increase timeout for scsi devices on VMWare guests by adding a udev rule. [Orabug: 21819156]\n\n[12.3.5-2.el8_10.2]\n- ovt-Validate-user-names-and-file-paths.patch [RHEL-129361]\n- Resolves: RHEL-129361\n  (Backport of CVE-2025-22247 to 8.10)\n\n[12.3.5-2.el8.1]\n- ovt-SDMP-Service-Discovery-Plugin.patch [RHEL-117388]\n- Resolves: RHEL-117388\n  ([CISA Major Incident] CVE-2025-41244 open-vm-tools: Local privilege escalation in open-vm-tools [rhel-8.10.z])",
+  "affected_products": [
+    "Oracle Linux 8"
+  ],
+  "packages": [
+    "open-vm-tools-12.3.5-2.0.1.el8_10.2.x86_64.rpm",
+    "open-vm-tools-desktop-12.3.5-2.0.1.el8_10.2.x86_64.rpm",
+    "open-vm-tools-salt-minion-12.3.5-2.0.1.el8_10.2.x86_64.rpm",
+    "open-vm-tools-sdmp-12.3.5-2.0.1.el8_10.2.x86_64.rpm"
+  ],
+  "cves": [
+    "CVE-2025-22247",
+    "CVE-2025-41244"
+  ],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Bug Fix Advisory ELBA-2026-0860\n\nhttp://linux.oracle.com/errata/ELBA-2026-0860.html\n\nThe following updated rpms for Oracle Linux 8 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\nopen-vm-tools-12.3.5-2.0.1.el8_10.2.x86_64.rpm\nopen-vm-tools-desktop-12.3.5-2.0.1.el8_10.2.x86_64.rpm\nopen-vm-tools-salt-minion-12.3.5-2.0.1.el8_10.2.x86_64.rpm\nopen-vm-tools-sdmp-12.3.5-2.0.1.el8_10.2.x86_64.rpm\n\n\n\nSRPMS:\nhttp://oss.oracle.com/ol8/SRPMS-updates/open-vm-tools-12.3.5-2.0.1.el8_10.2.src.rpm\n\n\n\nDescription of changes:\n\n[12.3.5-2.0.1.el8_10.2]\n- Fix spaces in vmware udev rule for scsi devices [Orabug: 24461968]\n- Fix vmware udev rule in 99-vmware-scsi-timeout.rules file. [Orabug: 22815019]\n- Increase timeout for scsi devices on VMWare guests by adding a udev rule. [Orabug: 21819156]\n\n[12.3.5-2.el8_10.2]\n- ovt-Validate-user-names-and-file-paths.patch [RHEL-129361]\n- Resolves: RHEL-129361\n  (Backport of CVE-2025-22247 to 8.10)\n\n[12.3.5-2.el8.1]\n- ovt-SDMP-Service-Discovery-Plugin.patch [RHEL-117388]\n- Resolves: RHEL-117388\n  ([CISA Major Incident] CVE-2025-41244 open-vm-tools: Local privilege escalation in open-vm-tools [rhel-8.10.z])",
+  "vendor": "Oracle"
+}

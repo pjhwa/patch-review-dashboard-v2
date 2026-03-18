@@ -1,0 +1,24 @@
+{
+  "id": "USN-7772-1",
+  "vendor": "Canonical / Ubuntu",
+  "type": "Ubuntu Security Notice (USN)",
+  "title": "python-eventlet vulnerability",
+  "issuedDate": "2025-09-24T16:42:50Z",
+  "updatedDate": "2026-02-10T04:50:01Z",
+  "pubDate": "2025-09-24T16:42:50Z",
+  "dateStr": "2025-09-24",
+  "url": "https://ubuntu.com/security/notices/USN-7772-1",
+  "severity": "None",
+  "overview": "python-eventlet vulnerability",
+  "description": "It was discovered that Eventlet incorrectly handled certain requests.\nAn attacker could possibly use this issue to bypass front-end security\ncontrols, launch targeted attacks against active site users, and poison web\ncaches.\n",
+  "affected_products": [
+    "Ubuntu 22.04 LTS",
+    "Ubuntu 24.04 LTS"
+  ],
+  "cves": [],
+  "packages": [
+    "python3-eventlet-0.30.2-5ubuntu2.2",
+    "python3-eventlet-0.35.2-0ubuntu1.1"
+  ],
+  "full_text": "It was discovered that Eventlet incorrectly handled certain requests.\nAn attacker could possibly use this issue to bypass front-end security\ncontrols, launch targeted attacks against active site users, and poison web\ncaches.\n"
+}

@@ -1,0 +1,30 @@
+{
+  "id": "ELSA-2026-2914",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2026-February/019823.html",
+  "synopsis": "[El-errata] ELSA-2026-2914 Important: Oracle Linux 10 grafana security update",
+  "dateStr": "2026-February",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Security Advisory ELSA-2026-2914",
+  "description": "[10.2.6-22]\n- Resolves RHEL-144948: CVE-2026-21721\n- Resolves RHEL-146721: CVE-2025-61726\n- Resolves RHEL-146926: CVE-2025-61729\n- Resolves RHEL-147351: CVE-2025-61728\n- Resolves RHEL-149227: CVE-2025-68121",
+  "affected_products": [
+    "Oracle Linux 10"
+  ],
+  "packages": [
+    "grafana-10.2.6-22.el10_1.x86_64.rpm",
+    "grafana-selinux-10.2.6-22.el10_1.x86_64.rpm",
+    "grafana-10.2.6-22.el10_1.aarch64.rpm",
+    "grafana-selinux-10.2.6-22.el10_1.aarch64.rpm"
+  ],
+  "cves": [
+    "CVE-2025-61726",
+    "CVE-2025-61728",
+    "CVE-2025-61729",
+    "CVE-2025-68121",
+    "CVE-2026-21721"
+  ],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Security Advisory ELSA-2026-2914\n\nhttp://linux.oracle.com/errata/ELSA-2026-2914.html\n\nThe following updated rpms for Oracle Linux 10 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\ngrafana-10.2.6-22.el10_1.x86_64.rpm\ngrafana-selinux-10.2.6-22.el10_1.x86_64.rpm\n\naarch64:\ngrafana-10.2.6-22.el10_1.aarch64.rpm\ngrafana-selinux-10.2.6-22.el10_1.aarch64.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol10/SRPMS-updates/grafana-10.2.6-22.el10_1.src.rpm\n\nRelated CVEs:\n\nCVE-2025-61726\nCVE-2025-61728\nCVE-2025-61729\nCVE-2025-68121\nCVE-2026-21721\n\n\n\n\nDescription of changes:\n\n[10.2.6-22]\n- Resolves RHEL-144948: CVE-2026-21721\n- Resolves RHEL-146721: CVE-2025-61726\n- Resolves RHEL-146926: CVE-2025-61729\n- Resolves RHEL-147351: CVE-2025-61728\n- Resolves RHEL-149227: CVE-2025-68121",
+  "vendor": "Oracle"
+}

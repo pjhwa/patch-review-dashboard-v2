@@ -1,0 +1,45 @@
+{
+  "id": "RHSA-2025:19238",
+  "vendor": "Red Hat",
+  "type": "Security Advisory (RHSA)",
+  "title": "Red Hat Security Advisory: redis:6 security update",
+  "issuedDate": "2025-10-29T09:38:04+00:00",
+  "updatedDate": "2025-10-29T09:38:04+00:00",
+  "pubDate": "2025-10-29T09:38:04+00:00",
+  "dateStr": "2025-10-29",
+  "url": "https://access.redhat.com/errata/RHSA-2025:19238",
+  "severity": "Important",
+  "overview": "An update for the redis:6 module is now available for Red Hat Enterprise Linux 8.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "description": "Redis is an advanced key-value store. It is often referred to as a data-structure server since keys can contain strings, hashes, lists, sets, and sorted sets. For performance, Redis works with an in-memory data set. You can persist it either by dumping the data set to disk every once in a while, or by appending each command to a log.\n\nSecurity Fix(es):\n\n* redis: Lua library commands may lead to integer overflow and potential RCE (CVE-2025-46817)\n\n* Redis: Redis: Authenticated users can execute LUA scripts as a different user (CVE-2025-46818)\n\n* Redis: Redis is vulnerable to DoS via specially crafted LUA scripts (CVE-2025-46819)\n\n* Redis: Redis Lua Use-After-Free may lead to remote code execution (CVE-2025-49844)\n\nFor more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux",
+    "Red Hat Enterprise Linux AppStream (v. 8)"
+  ],
+  "cves": [
+    "CVE-2025-46817",
+    "CVE-2025-46818",
+    "CVE-2025-46819",
+    "CVE-2025-49844"
+  ],
+  "packages": [
+    "redis-0:6.2.20-1.module+el8.10.0+23551+d4cd15d7.src::redis:6",
+    "redis-doc-0:6.2.20-1.module+el8.10.0+23551+d4cd15d7.noarch::redis:6",
+    "redis-0:6.2.20-1.module+el8.10.0+23551+d4cd15d7.aarch64::redis:6",
+    "redis-debuginfo-0:6.2.20-1.module+el8.10.0+23551+d4cd15d7.aarch64::redis:6",
+    "redis-debugsource-0:6.2.20-1.module+el8.10.0+23551+d4cd15d7.aarch64::redis:6",
+    "redis-devel-0:6.2.20-1.module+el8.10.0+23551+d4cd15d7.aarch64::redis:6",
+    "redis-0:6.2.20-1.module+el8.10.0+23551+d4cd15d7.ppc64le::redis:6",
+    "redis-debuginfo-0:6.2.20-1.module+el8.10.0+23551+d4cd15d7.ppc64le::redis:6",
+    "redis-debugsource-0:6.2.20-1.module+el8.10.0+23551+d4cd15d7.ppc64le::redis:6",
+    "redis-devel-0:6.2.20-1.module+el8.10.0+23551+d4cd15d7.ppc64le::redis:6",
+    "redis-0:6.2.20-1.module+el8.10.0+23551+d4cd15d7.s390x::redis:6",
+    "redis-debuginfo-0:6.2.20-1.module+el8.10.0+23551+d4cd15d7.s390x::redis:6",
+    "redis-debugsource-0:6.2.20-1.module+el8.10.0+23551+d4cd15d7.s390x::redis:6",
+    "redis-devel-0:6.2.20-1.module+el8.10.0+23551+d4cd15d7.s390x::redis:6",
+    "redis-0:6.2.20-1.module+el8.10.0+23551+d4cd15d7.x86_64::redis:6",
+    "redis-debuginfo-0:6.2.20-1.module+el8.10.0+23551+d4cd15d7.x86_64::redis:6",
+    "redis-debugsource-0:6.2.20-1.module+el8.10.0+23551+d4cd15d7.x86_64::redis:6",
+    "redis-devel-0:6.2.20-1.module+el8.10.0+23551+d4cd15d7.x86_64::redis:6"
+  ],
+  "full_text": "An update for the redis:6 module is now available for Red Hat Enterprise Linux 8.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nRedis is an advanced key-value store. It is often referred to as a data-structure server since keys can contain strings, hashes, lists, sets, and sorted sets. For performance, Redis works with an in-memory data set. You can persist it either by dumping the data set to disk every once in a while, or by appending each command to a log.\n\nSecurity Fix(es):\n\n* redis: Lua library commands may lead to integer overflow and potential RCE (CVE-2025-46817)\n\n* Redis: Redis: Authenticated users can execute LUA scripts as a different user (CVE-2025-46818)\n\n* Redis: Redis is vulnerable to DoS via specially crafted LUA scripts (CVE-2025-46819)\n\n* Redis: Redis Lua Use-After-Free may lead to remote code execution (CVE-2025-49844)\n\nFor more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section."
+}

@@ -1,0 +1,48 @@
+{
+  "id": "RHSA-2025:21776",
+  "vendor": "Red Hat",
+  "type": "Security Advisory (RHSA)",
+  "title": "Red Hat Security Advisory: expat security update",
+  "issuedDate": "2025-11-19T22:11:45+00:00",
+  "updatedDate": "2025-11-19T22:11:45+00:00",
+  "pubDate": "2025-11-19T22:11:45+00:00",
+  "dateStr": "2025-11-19",
+  "url": "https://access.redhat.com/errata/RHSA-2025:21776",
+  "severity": "Important",
+  "overview": "An update for expat is now available for Red Hat Enterprise Linux 8.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "description": "Expat is a C library for parsing XML documents.\n\nSecurity Fix(es):\n\n* expat: libexpat in Expat allows attackers to trigger large dynamic memory allocations via a small document that is submitted for parsing (CVE-2025-59375)\n\nFor more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux",
+    "Red Hat Enterprise Linux BaseOS (v. 8)"
+  ],
+  "cves": [
+    "CVE-2013-0340",
+    "CVE-2022-23990",
+    "CVE-2024-28757",
+    "CVE-2025-59375"
+  ],
+  "packages": [
+    "expat-0:2.5.0-1.el8_10.src",
+    "expat-0:2.5.0-1.el8_10.aarch64",
+    "expat-devel-0:2.5.0-1.el8_10.aarch64",
+    "expat-debugsource-0:2.5.0-1.el8_10.aarch64",
+    "expat-debuginfo-0:2.5.0-1.el8_10.aarch64",
+    "expat-0:2.5.0-1.el8_10.ppc64le",
+    "expat-devel-0:2.5.0-1.el8_10.ppc64le",
+    "expat-debugsource-0:2.5.0-1.el8_10.ppc64le",
+    "expat-debuginfo-0:2.5.0-1.el8_10.ppc64le",
+    "expat-0:2.5.0-1.el8_10.i686",
+    "expat-devel-0:2.5.0-1.el8_10.i686",
+    "expat-debugsource-0:2.5.0-1.el8_10.i686",
+    "expat-debuginfo-0:2.5.0-1.el8_10.i686",
+    "expat-0:2.5.0-1.el8_10.x86_64",
+    "expat-devel-0:2.5.0-1.el8_10.x86_64",
+    "expat-debugsource-0:2.5.0-1.el8_10.x86_64",
+    "expat-debuginfo-0:2.5.0-1.el8_10.x86_64",
+    "expat-0:2.5.0-1.el8_10.s390x",
+    "expat-devel-0:2.5.0-1.el8_10.s390x",
+    "expat-debugsource-0:2.5.0-1.el8_10.s390x",
+    "expat-debuginfo-0:2.5.0-1.el8_10.s390x"
+  ],
+  "full_text": "An update for expat is now available for Red Hat Enterprise Linux 8.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nExpat is a C library for parsing XML documents.\n\nSecurity Fix(es):\n\n* expat: libexpat in Expat allows attackers to trigger large dynamic memory allocations via a small document that is submitted for parsing (CVE-2025-59375)\n\nFor more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section."
+}

@@ -1,0 +1,35 @@
+{
+  "id": "RHBA-2025:20574",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: microcode_ctl bug fix and enhancement update",
+  "issuedDate": "2025-11-11T07:49:58Z",
+  "updatedDate": "2025-11-11T07:49:58Z",
+  "pubDate": "2025-11-11T07:49:58Z",
+  "dateStr": "2025-11-11",
+  "url": "https://access.redhat.com/errata/RHBA-2025:20574",
+  "severity": "None",
+  "overview": "An update for microcode_ctl is now available for Red Hat Enterprise Linux 10.",
+  "description": "For detailed information on changes in this release, see the Red Hat Enterprise Linux 9 Release Notes linked from the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux for x86_64 10 x86_64"
+  ],
+  "cves": [],
+  "packages": [
+    "microcode_ctl-20250812-1.el9.src",
+    "microcode_ctl-20250812-1.el9.noarch"
+  ],
+  "fixes": [
+    {
+      "id": "RHEL-94294",
+      "url": "https://issues.redhat.com/browse/RHEL-94294",
+      "description": "Update microcode_ctl to latest upstream [rhel-9]"
+    },
+    {
+      "id": "RHEL-110661",
+      "url": "https://issues.redhat.com/browse/RHEL-110661",
+      "description": "[RHEL 9] Update Intel CPU microcode to the latest version"
+    }
+  ],
+  "full_text": "An update for microcode_ctl is now available for Red Hat Enterprise Linux 10.\n\nFor detailed information on changes in this release, see the Red Hat Enterprise Linux 9 Release Notes linked from the References section."
+}

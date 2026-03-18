@@ -1,0 +1,29 @@
+{
+  "id": "USN-7973-1",
+  "url": "https://ubuntu.com/security/notices/USN-7973-1",
+  "synopsis": "USN-7973-1: cJSON vulnerabilities",
+  "dateStr": "23 January 2026",
+  "overview": "Several security issues were fixed in cJSON.",
+  "description": "It was discovered that cJSON incorrectly handled parsing large numbers. An\nattacker could possibly use this issue to cause a denial of service.\n(CVE-2023-26819)\n\nIt was discovered that cJSON may perform out-of-bounds read when processing\nspecially crafted JSON files using parse_object. An attacker could possibly\nuse this issue to expose sensitive information or crash the program.\n(CVE-2023-53154)\n\nIt was discovered that cJSON incorrectly validated array indices in JSON\npointers, which could result in an out-of-bounds memory access. An attacker\ncould possibly use this issue to cause a denial of service, or execute\narbitrary code. (CVE-2025-57052)\n\n \n\n \n\n \n\nIt was discovered that cJSON incorrectly handled parsing large numbers. An\nattacker could possibly use this issue to cause a denial of service.\n(CVE-2023-26819)\n\nIt was discovered that cJSON may perform out-of-bounds read when processing\nspecially crafted JSON files using parse_object. An attacker could possibly\nuse this issue to expose sensitive information or crash the program.\n(CVE-2023-53154)\n\nIt was discovered that cJSON incorrectly validated array indices in JSON\npointers, which could result in an out-of-bounds memory access. An attacker\ncould possibly use this issue to cause a denial of service, or execute\narbitrary code. (CVE-2025-57052)",
+  "packages": [
+    "cjson"
+  ],
+  "cves": [
+    "CVE-2025-57052",
+    "CVE-2023-53154",
+    "CVE-2023-26819"
+  ],
+  "affected_products": [
+    "25.10",
+    "24.04 LTS",
+    "22.04 LTS",
+    "20.04 LTS",
+    "Open side navigation"
+  ],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Ubuntu Security Notices\n\nUSN-7973-1\n\n \n\n \n\n \n\n \n\n \n\n \nUSN-7973-1: cJSON vulnerabilities\n\n \n\n \n\n \n\n \nPublication date\n\n \n\n \n\n \n23 January 2026\n\n \n\n \n\n \n\n \n\n \nOverview\n\n \n\n \n\n \nSeveral security issues were fixed in cJSON.\n\n \n\n \n\n \n\n \n\n \nReleases\n\n \n\n \n\n \n\n 25.10\n\n 24.04 LTS\n\n22.04 LTS\n\n20.04 LTS\n\n \n\n \n\n \n\n \n\n \n\n \n\n Open side navigation\n \n\n \n\n \nPackages\n\n \n\n cjson - Ultralightweight JSON parser in ANSI C\n \n\n \n\n \nDetails\n\n \n\n \n\nIt was discovered that cJSON incorrectly handled parsing large numbers. An\nattacker could possibly use this issue to cause a denial of service.\n(CVE-2023-26819)\n\nIt was discovered that cJSON may perform out-of-bounds read when processing\nspecially crafted JSON files using parse_object. An attacker could possibly\nuse this issue to expose sensitive information or crash the program.\n(CVE-2023-53154)\n\nIt was discovered that cJSON incorrectly validated array indices in JSON\npointers, which could result in an out-of-bounds memory access. An attacker\ncould possibly use this issue to cause a denial of service, or execute\narbitrary code. (CVE-2025-57052)\n\n \n\n \n\n \n\nIt was discovered that cJSON incorrectly handled parsing large numbers. An\nattacker could possibly use this issue to cause a denial of service.\n(CVE-2023-26819)\n\nIt was discovered that cJSON may perform out-of-bounds read when processing\nspecially crafted JSON files using parse_object. An attacker could possibly\nuse this issue to expose sensitive information or crash the program.\n(CVE-2023-53154)\n\nIt was discovered that cJSON incorrectly validated array indices in JSON\npointers, which could result in an out-of-bounds memory access. An attacker\ncould possibly use this issue to cause a denial of service, or execute\narbitrary code. (CVE-2025-57052)\n\n \n\n \n\n \n\n \nUpdate instructions\n\n \n\n \n\n \n\n \n\nIn general, a standard system update will make all the necessary changes.\n\n Learn more about how to get the fixes.\n \n\n \n\n \n\n \n\n \nThe problem can be corrected by updating your system to the following package versions:\n\n \n\n \n\n \n\n \n\n Ubuntu Release\n Package Version\n \n\n 25.10\n\nquesting\n\n libcjson1 – \n\n1.7.18-3.1ubuntu0.1\n\n \n\n 24.04\n\nLTS noble\n\n libcjson1 – \n\n1.7.17-1ubuntu0.1~esm3\n\n  \n\nUbuntu Pro\n Fix available with Ubuntu Pro via ESM Apps. A community fix might become publicly available in the future.\n\n \n\n \n\n 22.04\n\nLTS jammy\n\n libcjson1 – \n\n1.7.15-1ubuntu0.1\n\n \n\n 20.04\n\nLTS focal\n\n libcjson1 – \n\n1.7.10-1.1ubuntu0.1~esm1\n\n  \n\nUbuntu Pro\n Fix available with Ubuntu Pro via ESM Apps. A community fix might become publicly available in the future.\n\n \n\n \n\nReduce your security exposure\n\n \n\n Ubuntu Pro provides ten-year security coverage to 25,000+ packages in Main and Universe repositories, and it is free for up to five machines.\n \n\n \n\n Get Ubuntu Pro\n \n\n \n\nReferences\n\n \n\n \n\n CVE-2025-57052\n \n\n \n\n CVE-2023-53154\n \n\n \n\n CVE-2023-26819\n \n\n \n\n \n\n CVE-2025-57052\n \n\n CVE-2023-53154\n \n\n CVE-2023-26819",
+  "title": "USN-7973-1: cJSON vulnerabilities | Ubuntu security notices | Ubuntu",
+  "pubDate": "2026-01-22T15:00:00.000Z",
+  "vendor": "Ubuntu"
+}

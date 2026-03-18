@@ -1,0 +1,27 @@
+{
+  "id": "ELBA-2025-19573",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "AppStream",
+  "title": "lftp bug fix and enhancement update",
+  "issuedDate": "2025-11-04T00:00:00Z",
+  "updatedDate": "2025-11-04T00:00:00Z",
+  "pubDate": "2025-11-04T00:00:00Z",
+  "dateStr": "2025-11-04",
+  "url": "https://linux.oracle.com/errata/ELBA-2025-19573.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 8.",
+  "description": "[4.8.4-7]\n- Adding a timeout for TLS close\n- Resolves: RHEL-108115 - 'cannot seek on data source' in TLS lftp sessions",
+  "affected_products": [
+    "Oracle Linux 8 for x86_64",
+    "Oracle Linux 8 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "lftp-scripts-4.8.4-7.el8_10.noarch",
+    "lftp-4.8.4-7.el8_10.src",
+    "lftp-4.8.4-7.el8_10.x86_64",
+    "lftp-4.8.4-7.el8_10.i686"
+  ],
+  "full_text": "[4.8.4-7]\n- Adding a timeout for TLS close\n- Resolves: RHEL-108115 - 'cannot seek on data source' in TLS lftp sessions\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2025-19573.html"
+}

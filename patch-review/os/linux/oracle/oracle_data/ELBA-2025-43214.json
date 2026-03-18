@@ -1,0 +1,26 @@
+{
+  "id": "ELBA-2025-43214",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "UEK",
+  "title": " bpftune  bug fix update",
+  "issuedDate": "2025-12-17T00:00:00Z",
+  "updatedDate": "2025-12-17T00:00:00Z",
+  "pubDate": "2025-12-17T00:00:00Z",
+  "dateStr": "2025-12-17",
+  "url": "https://linux.oracle.com/errata/ELBA-2025-43214.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 9.",
+  "description": "bpftune\n[0.4-2.el9]\n- Merge pull request #225 from oracle/0.4\n\n[0.4-2]\n- Minimize overheads, cleanups, test reliability. [Orabug: 38757036]\n\n[0.3-2]\n- Add udp tuner, query support\n\n[0.2-1]\n- Add support for PCP PMDA package\n\nlibbpf\n[2:1.5.0-2.0.2]\n- Build for i386 also\n\n[2:1.5.0-2.0.1]\n- Modify specific kernel-headers dependency, tarball naming [Orabug: 36062915]\n\n[2:1.5.0-2]\n- Rebase to released RHEL 10 Beta kernel\n- Resolves: RHEL-36077\n\n[2:1.5.0-1]\n- Rebase to upstream kernel 6.10\n- keep FD_CLOEXEC flag when dup()'ing FD\n- Resolves: RHEL-37631\n\n[2:1.4.0-3]\n- Bump release for June 2024 mass rebuild\n\n[2:1.4.0-1]\n- Rebuild from latest RHEL 10.0 Beta source tree\n- Resolves: RHEL-30627\n\n[2:1.2.0-3]\n- Rebuilt for https://fedoraproject.org/wiki/Fedora_40_Mass_Rebuild\n\n[2:1.2.0-2]\n- Rebuilt for https://fedoraproject.org/wiki/Fedora_40_Mass_Rebuild\n\n[2:1.2.0-1]\n- release 1.2.0-1\n\n[2:1.1.0-4]\n- Rebuilt for https://fedoraproject.org/wiki/Fedora_39_Mass_Rebuild",
+  "affected_products": [
+    "Oracle Linux 9 for x86_64",
+    "Oracle Linux 9 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "libbpf-devel-1.5.0-2.0.2.el9.i686",
+    "libbpf-1.5.0-2.0.2.el9.src",
+    "libbpf-devel-1.5.0-2.0.2.el9.x86_64"
+  ],
+  "full_text": "bpftune\n[0.4-2.el9]\n- Merge pull request #225 from oracle/0.4\n\n[0.4-2]\n- Minimize overheads, cleanups, test reliability. [Orabug: 38757036]\n\n[0.3-2]\n- Add udp tuner, query support\n\n[0.2-1]\n- Add support for PCP PMDA package\n\nlibbpf\n[2:1.5.0-2.0.2]\n- Build for i386 also\n\n[2:1.5.0-2.0.1]\n- Modify specific kernel-headers dependency, tarball naming [Orabug: 36062915]\n\n[2:1.5.0-2]\n- Rebase to released RHEL 10 Beta kernel\n- Resolves: RHEL-36077\n\n[2:1.5.0-1]\n- Rebase to upstream kernel 6.10\n- keep FD_CLOEXEC flag when dup()'ing FD\n- Resolves: RHEL-37631\n\n[2:1.4.0-3]\n- Bump release for June 2024 mass rebuild\n\n[2:1.4.0-1]\n- Rebuild from latest RHEL 10.0 Beta source tree\n- Resolves: RHEL-30627\n\n[2:1.2.0-3]\n- Rebuilt for https://fedoraproject.org/wiki/Fedora_40_Mass_Rebuild\n\n[2:1.2.0-2]\n- Rebuilt for https://fedoraproject.org/wiki/Fedora_40_Mass_Rebuild\n\n[2:1.2.0-1]\n- release 1.2.0-1\n\n[2:1.1.0-4]\n- Rebuilt for https://fedoraproject.org/wiki/Fedora_39_Mass_Rebuild\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2025-43214.html"
+}

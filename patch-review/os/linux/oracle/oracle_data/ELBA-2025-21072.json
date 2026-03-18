@@ -1,0 +1,38 @@
+{
+  "id": "ELBA-2025-21072",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "AppStream",
+  "title": "rust-toolset:ol8 bug fix and enhancement update",
+  "issuedDate": "2025-11-20T00:00:00Z",
+  "updatedDate": "2025-11-20T00:00:00Z",
+  "pubDate": "2025-11-20T00:00:00Z",
+  "dateStr": "2025-11-20",
+  "url": "https://linux.oracle.com/errata/ELBA-2025-21072.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 8.",
+  "description": "[1.88.0-1]\n- Update to 1.88.0\n\n[1.87.0-1]\n- Update to 1.87.0\n\n[1.86.0-1]\n- Update to 1.86.0\n\n[1.85.0-1]\n- Update to 1.85.0",
+  "affected_products": [
+    "Oracle Linux 8 for x86_64",
+    "Oracle Linux 8 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "cargo-1.88.0-1.module+el8.10.0+90707+7ba0d5c0.x86_64",
+    "rustfmt-1.88.0-1.module+el8.10.0+90707+7ba0d5c0.x86_64",
+    "rust-analyzer-1.88.0-1.module+el8.10.0+90707+7ba0d5c0.x86_64",
+    "rust-1.88.0-1.module+el8.10.0+90707+7ba0d5c0.x86_64",
+    "rust-doc-1.88.0-1.module+el8.10.0+90707+7ba0d5c0.x86_64",
+    "clippy-1.88.0-1.module+el8.10.0+90707+7ba0d5c0.x86_64",
+    "rust-std-static-1.88.0-1.module+el8.10.0+90707+7ba0d5c0.x86_64",
+    "rust-1.88.0-1.module+el8.10.0+90707+7ba0d5c0.src",
+    "rust-gdb-1.88.0-1.module+el8.10.0+90707+7ba0d5c0.noarch",
+    "rust-toolset-1.88.0-1.module+el8.10.0+90707+7ba0d5c0.noarch",
+    "rust-lldb-1.88.0-1.module+el8.10.0+90707+7ba0d5c0.noarch",
+    "rust-src-1.88.0-1.module+el8.10.0+90707+7ba0d5c0.noarch",
+    "rust-std-static-wasm32-unknown-unknown-1.88.0-1.module+el8.10.0+90707+7ba0d5c0.noarch",
+    "rust-debugger-common-1.88.0-1.module+el8.10.0+90707+7ba0d5c0.noarch",
+    "rust-std-static-wasm32-wasip1-1.88.0-1.module+el8.10.0+90707+7ba0d5c0.noarch"
+  ],
+  "full_text": "[1.88.0-1]\n- Update to 1.88.0\n\n[1.87.0-1]\n- Update to 1.87.0\n\n[1.86.0-1]\n- Update to 1.86.0\n\n[1.85.0-1]\n- Update to 1.85.0\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2025-21072.html"
+}

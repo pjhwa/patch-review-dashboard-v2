@@ -1,0 +1,30 @@
+{
+  "id": "ELBA-2025-28051",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "AppStream",
+  "title": " bind  bug fix update",
+  "issuedDate": "2025-12-15T00:00:00Z",
+  "updatedDate": "2025-12-15T00:00:00Z",
+  "pubDate": "2025-12-15T00:00:00Z",
+  "dateStr": "2025-12-15",
+  "url": "https://linux.oracle.com/errata/ELBA-2025-28051.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 10.",
+  "description": "[9.18.33-10.0.2]\n- Hard require needed openssl-libs [Orabug: 38742109]",
+  "affected_products": [
+    "Oracle Linux 10 for x86_64",
+    "Oracle Linux 10 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "bind-9.18.33-10.0.2.el10_1.2.x86_64",
+    "bind-chroot-9.18.33-10.0.2.el10_1.2.x86_64",
+    "bind-libs-9.18.33-10.0.2.el10_1.2.x86_64",
+    "bind-license-9.18.33-10.0.2.el10_1.2.noarch",
+    "bind-dnssec-utils-9.18.33-10.0.2.el10_1.2.x86_64",
+    "bind-utils-9.18.33-10.0.2.el10_1.2.x86_64",
+    "bind-9.18.33-10.0.2.el10_1.2.src"
+  ],
+  "full_text": "[9.18.33-10.0.2]\n- Hard require needed openssl-libs [Orabug: 38742109]\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2025-28051.html"
+}

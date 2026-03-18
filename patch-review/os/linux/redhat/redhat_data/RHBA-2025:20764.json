@@ -1,0 +1,62 @@
+{
+  "id": "RHBA-2025:20764",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: libkdumpfile bug fix and enhancement update",
+  "issuedDate": "2025-11-11T07:51:02Z",
+  "updatedDate": "2025-11-11T07:51:02Z",
+  "pubDate": "2025-11-11T07:51:02Z",
+  "dateStr": "2025-11-11",
+  "url": "https://access.redhat.com/errata/RHBA-2025:20764",
+  "severity": "None",
+  "overview": "An update for libkdumpfile is now available for Red Hat Enterprise Linux 10.",
+  "description": "For detailed information on changes in this release, see the Red Hat Enterprise Linux 9.7 Release Notes linked from the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux for x86_64 10 x86_64",
+    "Red Hat Enterprise Linux for ARM 64",
+    "Red Hat Enterprise Linux for Power, little endian",
+    "Red Hat Enterprise Linux for IBM z Systems"
+  ],
+  "cves": [],
+  "packages": [
+    "libkdumpfile-0.5.5-1.el9.src",
+    "libkdumpfile-0.5.5-1.el9.i686",
+    "libkdumpfile-0.5.5-1.el9.x86_64",
+    "libkdumpfile-debuginfo-0.5.5-1.el9.i686",
+    "libkdumpfile-debuginfo-0.5.5-1.el9.x86_64",
+    "libkdumpfile-debugsource-0.5.5-1.el9.i686",
+    "libkdumpfile-debugsource-0.5.5-1.el9.x86_64",
+    "libkdumpfile-devel-0.5.5-1.el9.i686",
+    "libkdumpfile-devel-0.5.5-1.el9.x86_64",
+    "libkdumpfile-util-debuginfo-0.5.5-1.el9.i686",
+    "libkdumpfile-util-debuginfo-0.5.5-1.el9.x86_64",
+    "python3-libkdumpfile-debuginfo-0.5.5-1.el9.i686",
+    "python3-libkdumpfile-debuginfo-0.5.5-1.el9.x86_64",
+    "libkdumpfile-0.5.5-1.el9.s390x",
+    "libkdumpfile-debuginfo-0.5.5-1.el9.s390x",
+    "libkdumpfile-debugsource-0.5.5-1.el9.s390x",
+    "libkdumpfile-devel-0.5.5-1.el9.s390x",
+    "libkdumpfile-util-debuginfo-0.5.5-1.el9.s390x",
+    "python3-libkdumpfile-debuginfo-0.5.5-1.el9.s390x",
+    "libkdumpfile-0.5.5-1.el9.ppc64le",
+    "libkdumpfile-debuginfo-0.5.5-1.el9.ppc64le",
+    "libkdumpfile-debugsource-0.5.5-1.el9.ppc64le",
+    "libkdumpfile-devel-0.5.5-1.el9.ppc64le",
+    "libkdumpfile-util-debuginfo-0.5.5-1.el9.ppc64le",
+    "python3-libkdumpfile-debuginfo-0.5.5-1.el9.ppc64le",
+    "libkdumpfile-0.5.5-1.el9.aarch64",
+    "libkdumpfile-debuginfo-0.5.5-1.el9.aarch64",
+    "libkdumpfile-debugsource-0.5.5-1.el9.aarch64",
+    "libkdumpfile-devel-0.5.5-1.el9.aarch64",
+    "libkdumpfile-util-debuginfo-0.5.5-1.el9.aarch64",
+    "python3-libkdumpfile-debuginfo-0.5.5-1.el9.aarch64"
+  ],
+  "fixes": [
+    {
+      "id": "RHEL-86262",
+      "url": "https://issues.redhat.com/browse/RHEL-86262",
+      "description": "[RHEL 9.7] Rebase libkdumpfile"
+    }
+  ],
+  "full_text": "An update for libkdumpfile is now available for Red Hat Enterprise Linux 10.\n\nFor detailed information on changes in this release, see the Red Hat Enterprise Linux 9.7 Release Notes linked from the References section."
+}

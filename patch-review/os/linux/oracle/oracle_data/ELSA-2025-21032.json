@@ -1,0 +1,29 @@
+{
+  "id": "ELSA-2025-21032",
+  "vendor": "Oracle",
+  "type": "Security Advisory (ELSA)",
+  "kernel_type": "AppStream",
+  "title": " libsoup3 security update",
+  "issuedDate": "2025-12-02T00:00:00Z",
+  "updatedDate": "2025-12-02T00:00:00Z",
+  "pubDate": "2025-12-02T00:00:00Z",
+  "dateStr": "2025-12-02",
+  "url": "https://linux.oracle.com/errata/ELSA-2025-21032.html",
+  "severity": "Important",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 10.",
+  "description": "[3.6.5-6]\n- Fix integer overflow in date/time parsing\n\n[3.6.5-5]\n- Bump revision number\n\n[3.6.5-4]\n- Fix several CVEs",
+  "affected_products": [
+    "Oracle Linux 10 for x86_64",
+    "Oracle Linux 10 for aarch64"
+  ],
+  "cves": [
+    "CVE-2025-11021",
+    "CVE-2025-4945"
+  ],
+  "packages": [
+    "libsoup3-devel-3.6.5-3.el10_1.6.x86_64",
+    "libsoup3-3.6.5-3.el10_1.6.x86_64",
+    "libsoup3-3.6.5-3.el10_1.6.src"
+  ],
+  "full_text": "[3.6.5-6]\n- Fix integer overflow in date/time parsing\n\n[3.6.5-5]\n- Bump revision number\n\n[3.6.5-4]\n- Fix several CVEs\n\nReferences:\nhttps://linux.oracle.com/errata/ELSA-2025-21032.html\nhttps://linux.oracle.com/cve/CVE-2025-11021.html\nhttps://linux.oracle.com/cve/CVE-2025-4945.html"
+}

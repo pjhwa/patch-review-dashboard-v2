@@ -1,0 +1,22 @@
+{
+  "id": "USN-7813-1",
+  "vendor": "Canonical / Ubuntu",
+  "type": "Ubuntu Security Notice (USN)",
+  "title": "fort-validator vulnerabilities",
+  "issuedDate": "2025-10-08T13:47:06Z",
+  "updatedDate": "2026-02-10T04:50:11Z",
+  "pubDate": "2025-10-08T13:47:06Z",
+  "dateStr": "2025-10-08",
+  "url": "https://ubuntu.com/security/notices/USN-7813-1",
+  "severity": "None",
+  "overview": "fort-validator vulnerabilities",
+  "description": "Niklas Vogel and Haya Schulmann discovered that FORT Validator did not\nperform proper input validation when parsing certain RPKI repository data.\nA remote attacker could possibly use this issue to cause FORT Validator to\ncrash, resulting in a denial of service. (CVE-2024-45234, CVE-2024-45235,\nCVE-2024-45236, CVE-2024-45238, CVE-2024-45239)\n\nNiklas Vogel and Haya Schulmann discovered that FORT Validator did not\nperform proper input validation when parsing resource certificates. A\nremote attacker could possibly use this issue to cause a denial of service\nor execute arbitrary code. (CVE-2024-45237)\n\nKoen van Hove discovered that FORT Validator did not limit the duration of\ndata transfers when fetching RPKI repository data. A remote attacker could\npossibly use this issue to cause FORT Validator to consume excessive\nresources, resulting in a denial of service. (CVE-2024-48943)",
+  "affected_products": [
+    "Ubuntu 22.04 LTS"
+  ],
+  "cves": [],
+  "packages": [
+    "fort-validator-1.5.3-1ubuntu0.1"
+  ],
+  "full_text": "Niklas Vogel and Haya Schulmann discovered that FORT Validator did not\nperform proper input validation when parsing certain RPKI repository data.\nA remote attacker could possibly use this issue to cause FORT Validator to\ncrash, resulting in a denial of service. (CVE-2024-45234, CVE-2024-45235,\nCVE-2024-45236, CVE-2024-45238, CVE-2024-45239)\n\nNiklas Vogel and Haya Schulmann discovered that FORT Validator did not\nperform proper input validation when parsing resource certificates. A\nremote attacker could possibly use this issue to cause a denial of service\nor execute arbitrary code. (CVE-2024-45237)\n\nKoen van Hove discovered that FORT Validator did not limit the duration of\ndata transfers when fetching RPKI repository data. A remote attacker could\npossibly use this issue to cause FORT Validator to consume excessive\nresources, resulting in a denial of service. (CVE-2024-48943)"
+}

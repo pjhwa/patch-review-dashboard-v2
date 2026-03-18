@@ -1,0 +1,23 @@
+{
+  "id": "RHSA-2025:21920",
+  "vendor": "Red Hat",
+  "url": "https://access.redhat.com/errata/RHSA-2025:21920",
+  "pubDate": "2025-11-24T06:25:11.000Z",
+  "dateStr": "2025-11-24",
+  "severity": "Moderate",
+  "title": "Red Hat Security Advisory: kernel-rt security update",
+  "overview": "An update for kernel-rt is now available for Red Hat Enterprise Linux 8.\n\nRed Hat Product Security has rated this update as having a security impact of Moderate. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "description": "An update for kernel-rt is now available for Red Hat Enterprise Linux 8.\n\nRed Hat Product Security has rated this update as having a security impact of Moderate. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux NFV (v. 8)",
+    "Red Hat Enterprise Linux RT (v. 8)"
+  ],
+  "cves": [
+    "CVE-2025-39697",
+    "CVE-2025-39971",
+    "CVE-2025-39973"
+  ],
+  "packages": [],
+  "fixes": "",
+  "full_text": "Red Hat Security Advisory: kernel-rt security update\n\nAn update for kernel-rt is now available for Red Hat Enterprise Linux 8.\n\nRed Hat Product Security has rated this update as having a security impact of Moderate. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nAn update for kernel-rt is now available for Red Hat Enterprise Linux 8.\n\nRed Hat Product Security has rated this update as having a security impact of Moderate. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nUpdated Packages:\nkernel-rt-4.18.0-553.85.1.rt7.426.el8_10.src.rpm\nkernel-rt-4.18.0-553.85.1.rt7.426.el8_10.x86_64.rpm\nkernel-rt-core-4.18.0-553.85.1.rt7.426.el8_10.x86_64.rpm\nkernel-rt-debug-4.18.0-553.85.1.rt7.426.el8_10.x86_64.rpm\nkernel-rt-debug-core-4.18.0-553.85.1.rt7.426.el8_10.x86_64.rpm\nkernel-rt-debug-debuginfo-4.18.0-553.85.1.rt7.426.el8_10.x86_64.rpm\nkernel-rt-debug-devel-4.18.0-553.85.1.rt7.426.el8_10.x86_64.rpm\nkernel-rt-debug-modules-4.18.0-553.85.1.rt7.426.el8_10.x86_64.rpm\nkernel-rt-debug-modules-extra-4.18.0-553.85.1.rt7.426.el8_10.x86_64.rpm\nkernel-rt-debuginfo-4.18.0-553.85.1.rt7.426.el8_10.x86_64.rpm\nkernel-rt-debuginfo-common-x86_64-4.18.0-553.85.1.rt7.426.el8_10.x86_64.rpm\nkernel-rt-devel-4.18.0-553.85.1.rt7.426.el8_10.x86_64.rpm\nkernel-rt-modules-4.18.0-553.85.1.rt7.426.el8_10.x86_64.rpm\nkernel-rt-modules-extra-4.18.0-553.85.1.rt7.426.el8_10.x86_64.rpm\nkernel-rt-debug-kvm-4.18.0-553.85.1.rt7.426.el8_10.x86_64.rpm\nkernel-rt-kvm-4.18.0-553.85.1.rt7.426.el8_10.x86_64.rpm\n\nCVE-2025-39697: A flaw use after free in the Linux kernel NFS functionality was found in the way connected user sends malicious data to the server. A remote user could use this flaw to crash the system.\n\nCVE-2025-39971: In the Linux kernel, the following vulnerability has been resolved:\n\ni40e: fix idx validation in config queues msg\n\nEnsure idx is within range of active/initialized TCs when iterating over\nvf->ch[idx] in i40e_vc_config_queues_msg().\n\nCVE-2025-39973: In the Linux kernel, the following vulnerability has been resolved:\n\ni40e: add validation for ring_len param\n\nThe `ring_len` parameter provided by the virtual function (VF)\nis assigned directly to the hardware memory context (HMC) without\nany validation.\n\nTo address this, introduce an upper boundary check for both Tx and Rx\nqueue lengths. The maximum number of descriptors supported by the\nhardware is 8k-32.\nAdditionally, enforce alignment constraints: Tx rings must be a multiple\nof 8, and Rx rings must be a multiple of 32."
+}

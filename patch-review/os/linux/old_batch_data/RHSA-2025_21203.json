@@ -1,0 +1,21 @@
+{
+  "id": "RHSA-2025:21203",
+  "vendor": "Red Hat",
+  "url": "https://access.redhat.com/errata/RHSA-2025:21203",
+  "pubDate": "2025-11-12T21:27:55.000Z",
+  "dateStr": "2025-11-12",
+  "severity": "Important",
+  "title": "Red Hat Security Advisory: Red Hat Ceph Storage",
+  "overview": "A new version of Red Hat build of Ceph Storage has been released",
+  "description": "A new version of Red Hat build of Ceph Storage has been released",
+  "affected_products": [
+    "Red Hat Ceph Storage 8"
+  ],
+  "cves": [
+    "CVE-2024-11831",
+    "CVE-2024-47866"
+  ],
+  "packages": [],
+  "fixes": "",
+  "full_text": "Red Hat Security Advisory: Red Hat Ceph Storage\n\nA new version of Red Hat build of Ceph Storage has been released\n\nA new version of Red Hat build of Ceph Storage has been released\n\n\n\nCVE-2024-11831: A flaw was found in npm-serialize-javascript. The vulnerability occurs because the serialize-javascript module does not properly sanitize certain inputs, such as regex or other JavaScript object types, allowing an attacker to inject malicious code. This code could be executed when deserialized by a web browser, causing Cross-site scripting (XSS) attacks. This issue is critical in environments where serialized data is sent to web clients, potentially compromising the security of the website or web application using this package.\n\nCVE-2024-47866: A flaw was found in Ceph RGW. Using the x-amz-copy-source header to upload an empty object will cause Ceph RGW to crash, leading to availability issues."
+}

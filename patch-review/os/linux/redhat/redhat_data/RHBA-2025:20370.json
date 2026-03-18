@@ -1,0 +1,33 @@
+{
+  "id": "RHBA-2025:20370",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: autoconf bug fix and enhancement update",
+  "issuedDate": "2025-11-11T07:26:15Z",
+  "updatedDate": "2025-11-11T07:26:15Z",
+  "pubDate": "2025-11-11T07:26:15Z",
+  "dateStr": "2025-11-11",
+  "url": "https://access.redhat.com/errata/RHBA-2025:20370",
+  "severity": "None",
+  "overview": "An update for autoconf is now available for Red Hat Enterprise Linux 10.",
+  "description": "For detailed information on changes in this release, see the Red Hat Enterprise Linux 10 Release Notes linked from the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux for IBM z Systems",
+    "Red Hat Enterprise Linux for x86_64 10 x86_64",
+    "Red Hat Enterprise Linux for ARM 64",
+    "Red Hat Enterprise Linux for Power, little endian"
+  ],
+  "cves": [],
+  "packages": [
+    "autoconf-2.71-13.el10.src",
+    "autoconf-2.71-13.el10.noarch"
+  ],
+  "fixes": [
+    {
+      "id": "RHEL-33538",
+      "url": "https://issues.redhat.com/browse/RHEL-33538",
+      "description": "autoconf-latest package isn't available when migrating from RHEL9 to RHEL10"
+    }
+  ],
+  "full_text": "An update for autoconf is now available for Red Hat Enterprise Linux 10.\n\nFor detailed information on changes in this release, see the Red Hat Enterprise Linux 10 Release Notes linked from the References section."
+}

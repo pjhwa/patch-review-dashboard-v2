@@ -1,0 +1,27 @@
+{
+  "id": "ELBA-2026-4187",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "RHCK",
+  "title": "firewalld bug fix and enhancement update",
+  "issuedDate": "2026-03-11T00:00:00Z",
+  "updatedDate": "2026-03-11T00:00:00Z",
+  "pubDate": "2026-03-11T00:00:00Z",
+  "dateStr": "2026-03-11",
+  "url": "https://linux.oracle.com/errata/ELBA-2026-4187.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 9.",
+  "description": "[1.3.4-18.0.1]\n- Red Hat Satellite and Red Hat high availaibility reference found in cockpit UI\n  [Orabug: 30257573]\n- discard empty RH-Satellite-6.xml [Orabug: 30328734]\n- Remove capsule file as well, since it references removed config [Orabug: 33513329]\n\n[1.3.4-18]\n- fix(policy): allow-host-ipv6: allow MLD packets\n\n[1.3.4-17]\n- fix(server): load firewall rules before claiming dbus\n- fix(nftables): ipset: add entries from GLib loop when idle\n- fix(systemd): Requires dbus\n\n[1.3.4-16]\n- feat: add iperf{2,3} services",
+  "affected_products": [
+    "Oracle Linux 9 for x86_64",
+    "Oracle Linux 9 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "firewalld-1.3.4-18.0.1.el9_7.src",
+    "firewalld-filesystem-1.3.4-18.0.1.el9_7.noarch",
+    "python3-firewall-1.3.4-18.0.1.el9_7.noarch",
+    "firewalld-1.3.4-18.0.1.el9_7.noarch"
+  ],
+  "full_text": "[1.3.4-18.0.1]\n- Red Hat Satellite and Red Hat high availaibility reference found in cockpit UI\n  [Orabug: 30257573]\n- discard empty RH-Satellite-6.xml [Orabug: 30328734]\n- Remove capsule file as well, since it references removed config [Orabug: 33513329]\n\n[1.3.4-18]\n- fix(policy): allow-host-ipv6: allow MLD packets\n\n[1.3.4-17]\n- fix(server): load firewall rules before claiming dbus\n- fix(nftables): ipset: add entries from GLib loop when idle\n- fix(systemd): Requires dbus\n\n[1.3.4-16]\n- feat: add iperf{2,3} services\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2026-4187.html"
+}

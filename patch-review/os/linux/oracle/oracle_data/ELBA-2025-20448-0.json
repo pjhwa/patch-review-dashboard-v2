@@ -1,0 +1,42 @@
+{
+  "id": "ELBA-2025-20448-0",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "AppStream",
+  "title": "glslang, shaderc, spirv-tools, vulkan-headers, vulkan-loader, vulkan-tools, vulkan-utility-libraries, vulkan-validation-layers, and vulkan-volk bug fix and enhancement update",
+  "issuedDate": "2025-11-25T00:00:00Z",
+  "updatedDate": "2025-11-25T00:00:00Z",
+  "pubDate": "2025-11-25T00:00:00Z",
+  "dateStr": "2025-11-25",
+  "url": "https://linux.oracle.com/errata/ELBA-2025-20448-0.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 10.",
+  "description": "glslang\n[15.3.0-1]\n- Update to SDK v1.4.313\n\nshaderc\n[2025.2-1]\n- Update to SDK v1.4.313.0\n\nspirv-tools\n[2025.2-1]\n- Update to SDK v1.4.313 SDK\n\nvulkan-headers\n[1.4.313.0-1]\n- Update to v1.4.313\n\nvulkan-loader\n[1.4.313.0-1]\n- CI test\n\nvulkan-tools\n[1.4.313.0-1]\n- Update to SDK v1.4.313\n\nvulkan-utility-libraries\n[1.4.313.0-1]\n- Update to 1.4.313 SDK\n\nvulkan-validation-layers\n[1.4.313.0-1]\n- Update to SDK v1.4.313.0\n\nvulkan-volk\n[1.4.313.0-1]\n- Update to SDK v1.4.313",
+  "affected_products": [
+    "Oracle Linux 10 for x86_64",
+    "Oracle Linux 10 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "spirv-tools-libs-2025.2-1.el10.x86_64",
+    "vulkan-loader-1.4.313.0-1.el10.src",
+    "vulkan-validation-layers-1.4.313.0-1.el10.src",
+    "vulkan-tools-1.4.313.0-1.el10.src",
+    "vulkan-loader-1.4.313.0-1.el10.x86_64",
+    "vulkan-tools-1.4.313.0-1.el10.x86_64",
+    "glslang-15.3.0-1.el10.x86_64",
+    "vulkan-volk-devel-1.4.313.0-1.el10.x86_64",
+    "vulkan-loader-devel-1.4.313.0-1.el10.x86_64",
+    "glslc-2025.2-1.el10.x86_64",
+    "shaderc-2025.2-1.el10.src",
+    "glslang-15.3.0-1.el10.src",
+    "libshaderc-2025.2-1.el10.x86_64",
+    "vulkan-volk-1.4.313.0-1.el10.src",
+    "spirv-tools-2025.2-1.el10.x86_64",
+    "vulkan-headers-1.4.313.0-1.el10.src",
+    "spirv-tools-2025.2-1.el10.src",
+    "vulkan-headers-1.4.313.0-1.el10.noarch",
+    "vulkan-validation-layers-1.4.313.0-1.el10.x86_64"
+  ],
+  "full_text": "glslang\n[15.3.0-1]\n- Update to SDK v1.4.313\n\nshaderc\n[2025.2-1]\n- Update to SDK v1.4.313.0\n\nspirv-tools\n[2025.2-1]\n- Update to SDK v1.4.313 SDK\n\nvulkan-headers\n[1.4.313.0-1]\n- Update to v1.4.313\n\nvulkan-loader\n[1.4.313.0-1]\n- CI test\n\nvulkan-tools\n[1.4.313.0-1]\n- Update to SDK v1.4.313\n\nvulkan-utility-libraries\n[1.4.313.0-1]\n- Update to 1.4.313 SDK\n\nvulkan-validation-layers\n[1.4.313.0-1]\n- Update to SDK v1.4.313.0\n\nvulkan-volk\n[1.4.313.0-1]\n- Update to SDK v1.4.313\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2025-20448-0.html"
+}

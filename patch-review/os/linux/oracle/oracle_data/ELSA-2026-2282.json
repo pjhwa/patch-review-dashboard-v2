@@ -1,0 +1,49 @@
+{
+  "id": "ELSA-2026-2282",
+  "vendor": "Oracle",
+  "type": "Security Advisory (ELSA)",
+  "title": " kernel security update",
+  "issuedDate": "2026-02-09T00:00:00Z",
+  "updatedDate": "2026-02-09T00:00:00Z",
+  "pubDate": "2026-02-09T00:00:00Z",
+  "dateStr": "2026-02-09",
+  "url": "https://linux.oracle.com/errata/ELSA-2026-2282.html",
+  "severity": "Moderate",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 10.",
+  "description": "[6.12.0-124.35.1]\n- Add new Oracle Linux Driver Signing (key 1) certificate [Orabug: 37985782]\n- Disable UKI signing [Orabug: 36571828]\n- Update Oracle Linux certificates (Kevin Lyons)\n- Disable signing for aarch64 (Ilya Okomin)\n- Oracle Linux RHCK Module Signing Key was added to the kernel trusted keys list (olkmod_signing_key.pem) [Orabug: 29539237]\n- Update x509.genkey [Orabug: 24817676]\n- Conflict with shim-ia32 and shim-x64 <= 15.3-1.0.5]\n- Remove upstream reference during boot (Kevin Lyons) [Orabug: 34729535]\n- Add Oracle Linux IMA certificates\n- Update module name for cryptographic module [Orabug: 37400433]\n- Clean git history at setup stage\n\n[6.12.0-124.35.1]\n- ice: Fix kernel panic due to page refcount underflow (CKI Backport Bot) [RHEL-139734]\n- mptcp: Use __sk_dst_get() and dst_dev_rcu() in mptcp_active_enable(). (Davide Caratti) [RHEL-129044] {CVE-2025-40133}\n- mptcp: Call dst_release() in mptcp_active_enable(). (Davide Caratti) [RHEL-129044]\n- vsock/vmci: Clear the vmci transport packet properly when initializing it (CKI Backport Bot) [RHEL-137703] {CVE-2025-38403}\n\n[6.12.0-124.34.1]\n- ice: prevent NULL deref in ice_lag_move_new_vf_nodes() (Michal Schmidt) [RHEL-143255]\n- svcrdma: use rc_pageoff for memcpy byte offset (CKI Backport Bot) [RHEL-142793] {CVE-2025-68811}\n- exec: Make sure task->comm is always NUL-terminated (Luiz Capitulino) [RHEL-141711]\n- lib/buildid: use __kernel_read() for sleepable context (Waiman Long) [RHEL-141229]\n- net: bonding: update the slave array for broadcast mode (Hangbin Liu) [RHEL-138325]\n- net: bonding: add broadcast_neighbor netlink option (Hangbin Liu) [RHEL-138325]\n- net: bonding: add broadcast_neighbor option for 802.3ad (Hangbin Liu) [RHEL-138325]\n\n[6.12.0-124.33.1]\n- io_uring/net: commit partial buffers on retry (Jeff Moyer) [RHEL-137333] {CVE-2025-38730}\n- smb: client: let recv_done verify data_offset, data_length and remaining_data_length (Paulo Alcantara) [RHEL-131394] {CVE-2025-39933}\n\n[6.12.0-124.32.1]\n- squashfs: fix memory leak in squashfs_fill_super (Abhi Das) [RHEL-138024] {CVE-2025-38415}\n- Squashfs: check return result of sb_min_blocksize (CKI Backport Bot) [RHEL-138024] {CVE-2025-38415}\n- fbdev: Add bounds checking in bit_putcs to fix vmalloc-out-of-bounds (CKI Backport Bot) [RHEL-137686] {CVE-2025-40304}\n- fbdev: bitblit: bound-check glyph index in bit_putcs* (CKI Backport Bot) [RHEL-136945] {CVE-2025-40322}",
+  "affected_products": [
+    "Oracle Linux 10 for x86_64",
+    "Oracle Linux 10 for aarch64"
+  ],
+  "cves": [
+    "CVE-2025-38403",
+    "CVE-2025-38415",
+    "CVE-2025-38730",
+    "CVE-2025-39933",
+    "CVE-2025-40133",
+    "CVE-2025-40304",
+    "CVE-2025-40322",
+    "CVE-2025-68811"
+  ],
+  "packages": [
+    "kernel-6.12.0-124.35.1.el10_1.x86_64",
+    "kernel-modules-extra-6.12.0-124.35.1.el10_1.x86_64",
+    "kernel-abi-stablelists-6.12.0-124.35.1.el10_1.noarch",
+    "kernel-modules-core-6.12.0-124.35.1.el10_1.x86_64",
+    "kernel-debug-modules-6.12.0-124.35.1.el10_1.x86_64",
+    "kernel-tools-libs-6.12.0-124.35.1.el10_1.x86_64",
+    "kernel-debug-core-6.12.0-124.35.1.el10_1.x86_64",
+    "kernel-uki-virt-6.12.0-124.35.1.el10_1.x86_64",
+    "kernel-tools-6.12.0-124.35.1.el10_1.x86_64",
+    "kernel-debug-6.12.0-124.35.1.el10_1.x86_64",
+    "kernel-debug-modules-extra-6.12.0-124.35.1.el10_1.x86_64",
+    "kernel-uki-virt-addons-6.12.0-124.35.1.el10_1.x86_64",
+    "kernel-core-6.12.0-124.35.1.el10_1.x86_64",
+    "kernel-debug-modules-core-6.12.0-124.35.1.el10_1.x86_64",
+    "kernel-modules-6.12.0-124.35.1.el10_1.x86_64",
+    "kernel-modules-extra-matched-6.12.0-124.35.1.el10_1.x86_64",
+    "kernel-debug-uki-virt-6.12.0-124.35.1.el10_1.x86_64",
+    "kernel-6.12.0-124.35.1.el10_1.src"
+  ],
+  "full_text": "[6.12.0-124.35.1]\n- Add new Oracle Linux Driver Signing (key 1) certificate [Orabug: 37985782]\n- Disable UKI signing [Orabug: 36571828]\n- Update Oracle Linux certificates (Kevin Lyons)\n- Disable signing for aarch64 (Ilya Okomin)\n- Oracle Linux RHCK Module Signing Key was added to the kernel trusted keys list (olkmod_signing_key.pem) [Orabug: 29539237]\n- Update x509.genkey [Orabug: 24817676]\n- Conflict with shim-ia32 and shim-x64 <= 15.3-1.0.5]\n- Remove upstream reference during boot (Kevin Lyons) [Orabug: 34729535]\n- Add Oracle Linux IMA certificates\n- Update module name for cryptographic module [Orabug: 37400433]\n- Clean git history at setup stage\n\n[6.12.0-124.35.1]\n- ice: Fix kernel panic due to page refcount underflow (CKI Backport Bot) [RHEL-139734]\n- mptcp: Use __sk_dst_get() and dst_dev_rcu() in mptcp_active_enable(). (Davide Caratti) [RHEL-129044] {CVE-2025-40133}\n- mptcp: Call dst_release() in mptcp_active_enable(). (Davide Caratti) [RHEL-129044]\n- vsock/vmci: Clear the vmci transport packet properly when initializing it (CKI Backport Bot) [RHEL-137703] {CVE-2025-38403}\n\n[6.12.0-124.34.1]\n- ice: prevent NULL deref in ice_lag_move_new_vf_nodes() (Michal Schmidt) [RHEL-143255]\n- svcrdma: use rc_pageoff for memcpy byte offset (CKI Backport Bot) [RHEL-142793] {CVE-2025-68811}\n- exec: Make sure task->comm is always NUL-terminated (Luiz Capitulino) [RHEL-141711]\n- lib/buildid: use __kernel_read() for sleepable context (Waiman Long) [RHEL-141229]\n- net: bonding: update the slave array for broadcast mode (Hangbin Liu) [RHEL-138325]\n- net: bonding: add broadcast_neighbor netlink option (Hangbin Liu) [RHEL-138325]\n- net: bonding: add broadcast_neighbor option for 802.3ad (Hangbin Liu) [RHEL-138325]\n\n[6.12.0-124.33.1]\n- io_uring/net: commit partial buffers on retry (Jeff Moyer) [RHEL-137333] {CVE-2025-38730}\n- smb: client: let recv_done verify data_offset, data_length and remaining_data_length (Paulo Alcantara) [RHEL-131394] {CVE-2025-39933}\n\n[6.12.0-124.32.1]\n- squashfs: fix memory leak in squashfs_fill_super (Abhi Das) [RHEL-138024] {CVE-2025-38415}\n- Squashfs: check return result of sb_min_blocksize (CKI Backport Bot) [RHEL-138024] {CVE-2025-38415}\n- fbdev: Add bounds checking in bit_putcs to fix vmalloc-out-of-bounds (CKI Backport Bot) [RHEL-137686] {CVE-2025-40304}\n- fbdev: bitblit: bound-check glyph index in bit_putcs* (CKI Backport Bot) [RHEL-136945] {CVE-2025-40322}\n\nReferences:\nhttps://linux.oracle.com/errata/ELSA-2026-2282.html\nhttps://linux.oracle.com/cve/CVE-2025-38403.html\nhttps://linux.oracle.com/cve/CVE-2025-38415.html\nhttps://linux.oracle.com/cve/CVE-2025-38730.html\nhttps://linux.oracle.com/cve/CVE-2025-39933.html\nhttps://linux.oracle.com/cve/CVE-2025-40133.html\nhttps://linux.oracle.com/cve/CVE-2025-40304.html\nhttps://linux.oracle.com/cve/CVE-2025-40322.html\nhttps://linux.oracle.com/cve/CVE-2025-68811.html"
+}

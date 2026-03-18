@@ -1,0 +1,22 @@
+{
+  "id": "RHSA-2026:2182",
+  "vendor": "Red Hat",
+  "url": "https://access.redhat.com/errata/RHSA-2026:2182",
+  "pubDate": "2026-02-05T19:29:47.000Z",
+  "dateStr": "2026-02-05",
+  "severity": "Important",
+  "title": "Red Hat Security Advisory: libsoup3 security update",
+  "overview": "An update for libsoup3 is now available for Red Hat Enterprise Linux 10.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "description": "An update for libsoup3 is now available for Red Hat Enterprise Linux 10.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux AppStream (v. 10)",
+    "Red Hat Enterprise Linux CodeReady Linux Builder (v. 10)"
+  ],
+  "cves": [
+    "CVE-2026-0719",
+    "CVE-2026-1761"
+  ],
+  "packages": [],
+  "fixes": "",
+  "full_text": "Red Hat Security Advisory: libsoup3 security update\n\nAn update for libsoup3 is now available for Red Hat Enterprise Linux 10.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nAn update for libsoup3 is now available for Red Hat Enterprise Linux 10.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nUpdated Packages:\nlibsoup3-3.6.5-3.el10_1.9.src.rpm\nlibsoup3-3.6.5-3.el10_1.9.x86_64.rpm\nlibsoup3-debuginfo-3.6.5-3.el10_1.9.x86_64.rpm\nlibsoup3-debugsource-3.6.5-3.el10_1.9.x86_64.rpm\nlibsoup3-devel-3.6.5-3.el10_1.9.x86_64.rpm\nlibsoup3-3.6.5-3.el10_1.9.s390x.rpm\nlibsoup3-debuginfo-3.6.5-3.el10_1.9.s390x.rpm\nlibsoup3-debugsource-3.6.5-3.el10_1.9.s390x.rpm\nlibsoup3-devel-3.6.5-3.el10_1.9.s390x.rpm\nlibsoup3-3.6.5-3.el10_1.9.ppc64le.rpm\nlibsoup3-debuginfo-3.6.5-3.el10_1.9.ppc64le.rpm\nlibsoup3-debugsource-3.6.5-3.el10_1.9.ppc64le.rpm\nlibsoup3-devel-3.6.5-3.el10_1.9.ppc64le.rpm\nlibsoup3-3.6.5-3.el10_1.9.aarch64.rpm\nlibsoup3-debuginfo-3.6.5-3.el10_1.9.aarch64.rpm\nlibsoup3-debugsource-3.6.5-3.el10_1.9.aarch64.rpm\nlibsoup3-devel-3.6.5-3.el10_1.9.aarch64.rpm\nlibsoup3-doc-3.6.5-3.el10_1.9.noarch.rpm\n\nCVE-2026-0719: A flaw was identified in the NTLM authentication handling of the libsoup HTTP library, used by GNOME and other applications for network communication. When processing extremely long passwords, an internal size calculation can overflow due to improper use of signed integers. This results in incorrect memory allocation on the stack, followed by unsafe memory copying. As a result, applications using libsoup may crash unexpectedly, creating a denial-of-service risk.\n\nCVE-2026-1761: A flaw was found in libsoup. This stack-based buffer overflow vulnerability occurs during the parsing of multipart HTTP responses due to an incorrect length calculation. A remote attacker can exploit this by sending a specially crafted multipart HTTP response, which can lead to memory corruption. This issue may result in application crashes or arbitrary code execution in applications that process untrusted server responses, and it does not require authentication or user interaction."
+}

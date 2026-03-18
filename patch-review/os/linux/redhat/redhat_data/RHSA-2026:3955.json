@@ -1,0 +1,20 @@
+{
+  "id": "RHSA-2026:3955",
+  "vendor": "Red Hat",
+  "type": "Security Advisory (RHSA)",
+  "title": "Red Hat Security Advisory: Red Hat AMQ Broker 7.12.6 release and security update",
+  "issuedDate": "2026-03-05T21:59:31+00:00",
+  "updatedDate": "2026-03-05T21:59:31+00:00",
+  "pubDate": "2026-03-05T21:59:31+00:00",
+  "dateStr": "2026-03-05",
+  "url": "https://access.redhat.com/errata/RHSA-2026:3955",
+  "severity": "Important",
+  "overview": "Red Hat AMQ Broker 7.12.6 is now available from the Red Hat Customer Portal.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "description": "AMQ Broker is a high-performance messaging implementation based on ActiveMQ Artemis. It uses an asynchronous journal for fast message persistence, and supports multiple languages, protocols, and platforms.\n\nThis release of Red Hat AMQ Broker 7.12.6 includes security and bug fixes, and enhancements. For further information, refer to the release notes linked to in the References section.\n\nSecurity Fix(es):\n\n* (CVE-2026-27446) artemis-server: Apache Artemis, Apache ActiveMQ Artemis: Message injection and exfiltration due to missing authentication\n\nFor more details about the security issue(s), including the impact, a CVSS score, and other related information, refer to the CVE page(s) listed in the References section.",
+  "affected_products": [],
+  "cves": [
+    "CVE-2026-27446"
+  ],
+  "packages": [],
+  "full_text": "Red Hat AMQ Broker 7.12.6 is now available from the Red Hat Customer Portal.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nAMQ Broker is a high-performance messaging implementation based on ActiveMQ Artemis. It uses an asynchronous journal for fast message persistence, and supports multiple languages, protocols, and platforms.\n\nThis release of Red Hat AMQ Broker 7.12.6 includes security and bug fixes, and enhancements. For further information, refer to the release notes linked to in the References section.\n\nSecurity Fix(es):\n\n* (CVE-2026-27446) artemis-server: Apache Artemis, Apache ActiveMQ Artemis: Message injection and exfiltration due to missing authentication\n\nFor more details about the security issue(s), including the impact, a CVSS score, and other related information, refer to the CVE page(s) listed in the References section."
+}

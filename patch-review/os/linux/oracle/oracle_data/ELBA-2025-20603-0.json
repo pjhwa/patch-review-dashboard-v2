@@ -1,0 +1,31 @@
+{
+  "id": "ELBA-2025-20603-0",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "RHCK",
+  "title": "e2fsprogs bug fix and enhancement update",
+  "issuedDate": "2025-11-17T00:00:00Z",
+  "updatedDate": "2025-11-17T00:00:00Z",
+  "pubDate": "2025-11-17T00:00:00Z",
+  "dateStr": "2025-11-17",
+  "url": "https://linux.oracle.com/errata/ELBA-2025-20603-0.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 9.",
+  "description": "* Fri Jul 04 2025 Pavel Reichl <preichl@redhat.com>\n- ext2fs: make sure we have at least EXT2_FIRST_INO + 1 inodes",
+  "affected_products": [
+    "Oracle Linux 9 for x86_64",
+    "Oracle Linux 9 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "libss-1.46.5-8.el9.i686",
+    "libcom_err-1.46.5-8.el9.x86_64",
+    "e2fsprogs-libs-1.46.5-8.el9.i686",
+    "libcom_err-1.46.5-8.el9.i686",
+    "e2fsprogs-1.46.5-8.el9.x86_64",
+    "libss-1.46.5-8.el9.x86_64",
+    "e2fsprogs-libs-1.46.5-8.el9.x86_64",
+    "e2fsprogs-1.46.5-8.el9.src"
+  ],
+  "full_text": "* Fri Jul 04 2025 Pavel Reichl <preichl@redhat.com>\n- ext2fs: make sure we have at least EXT2_FIRST_INO + 1 inodes\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2025-20603-0.html"
+}

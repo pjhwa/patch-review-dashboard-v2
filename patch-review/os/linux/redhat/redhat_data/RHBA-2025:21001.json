@@ -1,0 +1,27 @@
+{
+  "id": "RHBA-2025:21001",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: nodejs-packaging bug fix and enhancement update",
+  "issuedDate": "2025-11-11T18:27:46Z",
+  "updatedDate": "2025-11-11T18:27:46Z",
+  "pubDate": "2025-11-11T18:27:46Z",
+  "dateStr": "2025-11-11",
+  "url": "https://access.redhat.com/errata/RHBA-2025:21001",
+  "severity": "None",
+  "overview": "An update for nodejs-packaging is now available for Red Hat Enterprise Linux 10.",
+  "description": "This package contains RPM macros and other utilities useful for packaging Node.js modules and applications in RPM-based distributions.Bug Fix(es) and Enhancement(s): nodejs-packaging: nodejs.req doesn't properly detect if a package has bundled dependencies [rhel-10.1.z] (JIRA:RHEL-121843)",
+  "affected_products": [
+    "Red Hat Enterprise Linux for Power, little endian",
+    "Red Hat Enterprise Linux for IBM z Systems",
+    "Red Hat Enterprise Linux for ARM 64",
+    "Red Hat Enterprise Linux for x86_64 10 x86_64"
+  ],
+  "cves": [],
+  "packages": [
+    "nodejs-packaging-2023.10-11.el10_1.src",
+    "nodejs-packaging-2023.10-11.el10_1.noarch"
+  ],
+  "fixes": [],
+  "full_text": "An update for nodejs-packaging is now available for Red Hat Enterprise Linux 10.\n\nThis package contains RPM macros and other utilities useful for packaging Node.js modules and applications in RPM-based distributions.Bug Fix(es) and Enhancement(s): nodejs-packaging: nodejs.req doesn't properly detect if a package has bundled dependencies [rhel-10.1.z] (JIRA:RHEL-121843)"
+}

@@ -1,0 +1,28 @@
+{
+  "id": "ELBA-2026-3474",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "title": "selinux-policy bug fix and enhancement update",
+  "issuedDate": "2026-03-04T00:00:00Z",
+  "updatedDate": "2026-03-04T00:00:00Z",
+  "pubDate": "2026-03-04T00:00:00Z",
+  "dateStr": "2026-03-04",
+  "url": "https://linux.oracle.com/errata/ELBA-2026-3474.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 9.",
+  "description": "[38.1.65-1.0.1.el9_7.1]\n- Fixed avc for agetty checkpoint restore denied [Orabug: 36893425]\n- Change reference in /etc/selinux/config to point to Oracle doc [Orabug: 36899915]\n- Allow user_mail_domain to manage exim_log_t and exim_spool_t link files [Orabug: 36617121]\n- Allow exim read network sysctls [Orabug: 36606051]\n- Allow exim_t to read exim_log_t and manage exim_spool_t link files [Orabug: 36430005]\n- Allow cgred_t to get attributes of cgroup filesystems [Orabug: 36176655]\n- Allow kdumpctl_t to execmem [Orabug: 35381156]\n- Allow NetworkManager_dispatcher_dhclient_t to execute shells without a domain transition [Orabug: 35091334]\n- Allow NetworkManager_dispatcher_dhclient_t to read the DHCP configuration files [Orabug: 35122619]\n- Label /var/log/kdump.log with kdump_log_t [Orabug: 33810371]\n- Allow rpm_t sys_admin capability [Orabug: 34250651]\n- Make systemd_tmpfiles_t MLS trusted for lowering the level of files [Orabug: 33841245]\n- Allow nfsd_t to list exports_t dirs [Orabug: 33844301]\n- Allow fsadm_t to get attributes of cgroup filesystems [Orabug: 33841268]\n- Make import-state work with mls policy [Orabug: 32636699]\n- Add map permission to lvm_t on lvm_metadata_t. [Orabug: 31405325]\n- Add comment for map on lvm_metadata_t. [Orabug: 31405325]\n- Make iscsiadm work with mls policy [Orabug: 32725411]\n- Make cloud-init work with mls policy [Orabug: 32430460]\n- Allow systemd-pstore to transfer files from /sys/fs/pstore [Orabug: 31594666]\n- Make smartd work with mls policy [Orabug: 32430379]\n- Allow sysadm_t to mmap modules_object_t files [Orabug: 32411855]\n- Make udev work with mls policy [Orabug: 31405299]\n- Make lsmd, rngd, and kdumpctl work with mls policy [Orabug: 31405378]\n- Allow virt_domain to mmap virt_content_t files [Orabug: 30932671]\n- Enable NetworkManager and dhclient to use initramfs-configured DHCP connection [Orabug: 30537515]\n- Allow udev_t to load modules [Orabug: 28260775]\n- Add vhost-scsi to be vhost_device_t type [Orabug: 27774921]\n- Fix container selinux policy [Orabug: 26427364]\n- Allow ocfs2_dlmfs to be mounted with ocfs2_dlmfs_t type. [Orabug: 13333429]\n\n[38.1.65-1.1]\n- Allow nfsd_t domain setuid and setgid capability for rpc.mountd\nResolves: RHEL-148246",
+  "affected_products": [
+    "Oracle Linux 9 for x86_64",
+    "Oracle Linux 9 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "selinux-policy-sandbox-38.1.65-1.0.1.el9_7.1.noarch",
+    "selinux-policy-mls-38.1.65-1.0.1.el9_7.1.noarch",
+    "selinux-policy-38.1.65-1.0.1.el9_7.1.src",
+    "selinux-policy-38.1.65-1.0.1.el9_7.1.noarch",
+    "selinux-policy-doc-38.1.65-1.0.1.el9_7.1.noarch",
+    "selinux-policy-targeted-38.1.65-1.0.1.el9_7.1.noarch"
+  ],
+  "full_text": "[38.1.65-1.0.1.el9_7.1]\n- Fixed avc for agetty checkpoint restore denied [Orabug: 36893425]\n- Change reference in /etc/selinux/config to point to Oracle doc [Orabug: 36899915]\n- Allow user_mail_domain to manage exim_log_t and exim_spool_t link files [Orabug: 36617121]\n- Allow exim read network sysctls [Orabug: 36606051]\n- Allow exim_t to read exim_log_t and manage exim_spool_t link files [Orabug: 36430005]\n- Allow cgred_t to get attributes of cgroup filesystems [Orabug: 36176655]\n- Allow kdumpctl_t to execmem [Orabug: 35381156]\n- Allow NetworkManager_dispatcher_dhclient_t to execute shells without a domain transition [Orabug: 35091334]\n- Allow NetworkManager_dispatcher_dhclient_t to read the DHCP configuration files [Orabug: 35122619]\n- Label /var/log/kdump.log with kdump_log_t [Orabug: 33810371]\n- Allow rpm_t sys_admin capability [Orabug: 34250651]\n- Make systemd_tmpfiles_t MLS trusted for lowering the level of files [Orabug: 33841245]\n- Allow nfsd_t to list exports_t dirs [Orabug: 33844301]\n- Allow fsadm_t to get attributes of cgroup filesystems [Orabug: 33841268]\n- Make import-state work with mls policy [Orabug: 32636699]\n- Add map permission to lvm_t on lvm_metadata_t. [Orabug: 31405325]\n- Add comment for map on lvm_metadata_t. [Orabug: 31405325]\n- Make iscsiadm work with mls policy [Orabug: 32725411]\n- Make cloud-init work with mls policy [Orabug: 32430460]\n- Allow systemd-pstore to transfer files from /sys/fs/pstore [Orabug: 31594666]\n- Make smartd work with mls policy [Orabug: 32430379]\n- Allow sysadm_t to mmap modules_object_t files [Orabug: 32411855]\n- Make udev work with mls policy [Orabug: 31405299]\n- Make lsmd, rngd, and kdumpctl work with mls policy [Orabug: 31405378]\n- Allow virt_domain to mmap virt_content_t files [Orabug: 30932671]\n- Enable NetworkManager and dhclient to use initramfs-configured DHCP connection [Orabug: 30537515]\n- Allow udev_t to load modules [Orabug: 28260775]\n- Add vhost-scsi to be vhost_device_t type [Orabug: 27774921]\n- Fix container selinux policy [Orabug: 26427364]\n- Allow ocfs2_dlmfs to be mounted with ocfs2_dlmfs_t type. [Orabug: 13333429]\n\n[38.1.65-1.1]\n- Allow nfsd_t domain setuid and setgid capability for rpc.mountd\nResolves: RHEL-148246\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2026-3474.html"
+}

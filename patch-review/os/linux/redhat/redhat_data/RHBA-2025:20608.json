@@ -1,0 +1,52 @@
+{
+  "id": "RHBA-2025:20608",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: usermode bug fix and enhancement update",
+  "issuedDate": "2025-11-11T07:50:04Z",
+  "updatedDate": "2025-11-11T07:50:04Z",
+  "pubDate": "2025-11-11T07:50:04Z",
+  "dateStr": "2025-11-11",
+  "url": "https://access.redhat.com/errata/RHBA-2025:20608",
+  "severity": "None",
+  "overview": "An update for usermode is now available for Red Hat Enterprise Linux 10.",
+  "description": "For detailed information on changes in this release, see the Red Hat Enterprise Linux 9 Release Notes linked from the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux for IBM z Systems",
+    "Red Hat Enterprise Linux for Power, little endian",
+    "Red Hat Enterprise Linux for x86_64 10 x86_64",
+    "Red Hat Enterprise Linux for ARM 64"
+  ],
+  "cves": [],
+  "packages": [
+    "usermode-1.114-7.el9.src",
+    "usermode-1.114-7.el9.x86_64",
+    "usermode-debuginfo-1.114-7.el9.x86_64",
+    "usermode-debugsource-1.114-7.el9.x86_64",
+    "usermode-gtk-1.114-7.el9.x86_64",
+    "usermode-gtk-debuginfo-1.114-7.el9.x86_64",
+    "usermode-1.114-7.el9.s390x",
+    "usermode-debuginfo-1.114-7.el9.s390x",
+    "usermode-debugsource-1.114-7.el9.s390x",
+    "usermode-gtk-1.114-7.el9.s390x",
+    "usermode-gtk-debuginfo-1.114-7.el9.s390x",
+    "usermode-1.114-7.el9.ppc64le",
+    "usermode-debuginfo-1.114-7.el9.ppc64le",
+    "usermode-debugsource-1.114-7.el9.ppc64le",
+    "usermode-gtk-1.114-7.el9.ppc64le",
+    "usermode-gtk-debuginfo-1.114-7.el9.ppc64le",
+    "usermode-1.114-7.el9.aarch64",
+    "usermode-debuginfo-1.114-7.el9.aarch64",
+    "usermode-debugsource-1.114-7.el9.aarch64",
+    "usermode-gtk-1.114-7.el9.aarch64",
+    "usermode-gtk-debuginfo-1.114-7.el9.aarch64"
+  ],
+  "fixes": [
+    {
+      "id": "RHEL-90414",
+      "url": "https://issues.redhat.com/browse/RHEL-90414",
+      "description": "Executing \"userhelper -t\" produces a core dump"
+    }
+  ],
+  "full_text": "An update for usermode is now available for Red Hat Enterprise Linux 10.\n\nFor detailed information on changes in this release, see the Red Hat Enterprise Linux 9 Release Notes linked from the References section."
+}

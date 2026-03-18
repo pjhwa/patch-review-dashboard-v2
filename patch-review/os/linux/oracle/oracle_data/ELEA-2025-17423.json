@@ -1,0 +1,36 @@
+{
+  "id": "ELEA-2025-17423",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "AppStream",
+  "title": "nodejs:22 bug fix and enhancement update",
+  "issuedDate": "2025-10-07T00:00:00Z",
+  "updatedDate": "2025-10-07T00:00:00Z",
+  "pubDate": "2025-10-07T00:00:00Z",
+  "dateStr": "2025-10-07",
+  "url": "https://linux.oracle.com/errata/ELEA-2025-17423.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 8.",
+  "description": "nodejs\n[1:22.19.0-1]\n- Update to 22.19.0\n  Resolves: RHEL-100424\n\nnodejs-nodemon\nnodejs-packaging",
+  "affected_products": [
+    "Oracle Linux 8 for x86_64",
+    "Oracle Linux 8 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "nodejs-nodemon-3.0.1-1.module+el8.10.0+90677+9c05a177.noarch",
+    "nodejs-22.19.0-2.module+el8.10.0+90677+9c05a177.src",
+    "nodejs-packaging-2021.06-4.module+el8.10.0+90677+9c05a177.src",
+    "nodejs-nodemon-3.0.1-1.module+el8.10.0+90677+9c05a177.src",
+    "nodejs-full-i18n-22.19.0-2.module+el8.10.0+90677+9c05a177.x86_64",
+    "nodejs-devel-22.19.0-2.module+el8.10.0+90677+9c05a177.x86_64",
+    "npm-10.9.3-1.22.19.0.2.module+el8.10.0+90677+9c05a177.x86_64",
+    "nodejs-22.19.0-2.module+el8.10.0+90677+9c05a177.x86_64",
+    "nodejs-libs-22.19.0-2.module+el8.10.0+90677+9c05a177.x86_64",
+    "v8-12.4-devel-12.4.254.21-1.22.19.0.2.module+el8.10.0+90677+9c05a177.x86_64",
+    "nodejs-docs-22.19.0-2.module+el8.10.0+90677+9c05a177.noarch",
+    "nodejs-packaging-2021.06-4.module+el8.10.0+90677+9c05a177.noarch",
+    "nodejs-packaging-bundler-2021.06-4.module+el8.10.0+90677+9c05a177.noarch"
+  ],
+  "full_text": "nodejs\n[1:22.19.0-1]\n- Update to 22.19.0\n  Resolves: RHEL-100424\n\nnodejs-nodemon\nnodejs-packaging\n\nReferences:\nhttps://linux.oracle.com/errata/ELEA-2025-17423.html"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "USN-7944-1",
+  "url": "https://ubuntu.com/security/notices/USN-7944-1",
+  "synopsis": "USN-7944-1: Net-SNMP vulnerability",
+  "dateStr": "7 January 2026",
+  "overview": "Net-SNMP could be made to crash if it received specially crafted\ninput.",
+  "description": "Bahae Bahrini discovered that Net-SNMP could be made to write out of\nbounds. If a user or an automated system were tricked into opening a\nspecially crafted input file, a remote attacker could possibly use\nthis issue to cause a denial of service.\n\n \n\n \n\n \n\nBahae Bahrini discovered that Net-SNMP could be made to write out of\nbounds. If a user or an automated system were tricked into opening a\nspecially crafted input file, a remote attacker could possibly use\nthis issue to cause a denial of service.",
+  "packages": [
+    "net"
+  ],
+  "cves": [
+    "CVE-2025-68615"
+  ],
+  "affected_products": [
+    "25.10",
+    "25.04",
+    "24.04 LTS",
+    "22.04 LTS",
+    "20.04 LTS",
+    "18.04 LTS",
+    "16.04 LTS",
+    "14.04 LTS",
+    "Open side navigation"
+  ],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Ubuntu Security Notices\n\nUSN-7944-1\n\n \n\n \n\n \n\n \n\n \n\n \nUSN-7944-1: Net-SNMP vulnerability\n\n \n\n \n\n \n\n \nPublication date\n\n \n\n \n\n \n7 January 2026\n\n \n\n \n\n \n\n \n\n \nOverview\n\n \n\n \n\n \nNet-SNMP could be made to crash if it received specially crafted\ninput.\n\n \n\n \n\n \n\n \n\n \nReleases\n\n \n\n \n\n \n\n 25.10\n\n 25.04\n\n 24.04 LTS\n\n22.04 LTS\n\n20.04 LTS\n\n18.04 LTS\n\n16.04 LTS\n\n14.04 LTS\n\n \n\n \n\n \n\n \n\n \n\n \n\n Open side navigation\n \n\n \n\n \nPackages\n\n \n\n net-snmp - SNMP (Simple Network Management Protocol) server and applications\n \n\n \n\n \nDetails\n\n \n\n \n\nBahae Bahrini discovered that Net-SNMP could be made to write out of\nbounds. If a user or an automated system were tricked into opening a\nspecially crafted input file, a remote attacker could possibly use\nthis issue to cause a denial of service.\n\n \n\n \n\n \n\nBahae Bahrini discovered that Net-SNMP could be made to write out of\nbounds. If a user or an automated system were tricked into opening a\nspecially crafted input file, a remote attacker could possibly use\nthis issue to cause a denial of service.\n\n \n\n \n\n \n\n \nUpdate instructions\n\n \n\n \n\n \n\n \n\nIn general, a standard system update will make all the necessary changes.\n\n Learn more about how to get the fixes.\n \n\n \n\n \n\n \n\n \nThe problem can be corrected by updating your system to the following package versions:\n\n \n\n \n\n \n\n \n\n Ubuntu Release\n Package Version\n \n\n 25.10\n\nquesting\n\n libsnmp40t64 – \n\n5.9.4+dfsg-2ubuntu2.1\n\n snmp – \n\n5.9.4+dfsg-2ubuntu2.1\n\n snmpd – \n\n5.9.4+dfsg-2ubuntu2.1\n\n \n\n 25.04\n\nplucky\n\n libsnmp40t64 – \n\n5.9.4+dfsg-1.1ubuntu7.1\n\n snmp – \n\n5.9.4+dfsg-1.1ubuntu7.1\n\n snmpd – \n\n5.9.4+dfsg-1.1ubuntu7.1\n\n \n\n 24.04\n\nLTS noble\n\n libsnmp40t64 – \n\n5.9.4+dfsg-1.1ubuntu3.2\n\n snmp – \n\n5.9.4+dfsg-1.1ubuntu3.2\n\n snmpd – \n\n5.9.4+dfsg-1.1ubuntu3.2\n\n \n\n 22.04\n\nLTS jammy\n\n libsnmp40 – \n\n5.9.1+dfsg-1ubuntu2.9\n\n snmp – \n\n5.9.1+dfsg-1ubuntu2.9\n\n snmpd – \n\n5.9.1+dfsg-1ubuntu2.9\n\n \n\n 20.04\n\nLTS focal\n\n libsnmp35 – \n\n5.8+dfsg-2ubuntu2.9+esm2\n\n  \n\nUbuntu Pro\n Fix available with Ubuntu Pro.\n\n snmp – \n\n5.8+dfsg-2ubuntu2.9+esm2\n\n  \n\nUbuntu Pro\n Fix available with Ubuntu Pro.\n\n snmpd – \n\n5.8+dfsg-2ubuntu2.9+esm2\n\n  \n\nUbuntu Pro\n Fix available with Ubuntu Pro.\n\n \n\n 18.04\n\nLTS bionic\n\n libsnmp30 – \n\n5.7.3+dfsg-1.8ubuntu3.8+esm1\n\n  \n\nUbuntu Pro\n Fix available with Ubuntu Pro.\n\n snmp – \n\n5.7.3+dfsg-1.8ubuntu3.8+esm1\n\n  \n\nUbuntu Pro\n Fix available with Ubuntu Pro.\n\n snmpd – \n\n5.7.3+dfsg-1.8ubuntu3.8+esm1\n\n  \n\nUbuntu Pro\n Fix available with Ubuntu Pro.\n\n \n\n 16.04\n\nLTS xenial\n\n libsnmp30 – \n\n5.7.3+dfsg-1ubuntu4.6+esm2\n\n  \n\nUbuntu Pro\n Fix available with Ubuntu Pro.\n\n snmp – \n\n5.7.3+dfsg-1ubuntu4.6+esm2\n\n  \n\nUbuntu Pro\n Fix available with Ubuntu Pro.\n\n snmpd – \n\n5.7.3+dfsg-1ubuntu4.6+esm2\n\n  \n\nUbuntu Pro\n Fix available with Ubuntu Pro.\n\n \n\n 14.04\n\nLTS trusty\n\n libsnmp30 – \n\n5.7.2~dfsg-8.1ubuntu3.3+esm4\n\n  \n\nUbuntu Pro\n Fix available with Ubuntu Pro via Legacy Support add-on.\n\n snmp – \n\n5.7.2~dfsg-8.1ubuntu3.3+esm4\n\n  \n\nUbuntu Pro\n Fix available with Ubuntu Pro via Legacy Support add-on.\n\n snmpd – \n\n5.7.2~dfsg-8.1ubuntu3.3+esm4\n\n  \n\nUbuntu Pro\n Fix available with Ubuntu Pro via Legacy Support add-on.\n\n \n\nReduce your security exposure\n\n \n\n Ubuntu Pro provides ten-year security coverage to 25,000+ packages in Main and Universe repositories, and it is free for up to five machines.\n \n\n \n\n Get Ubuntu Pro\n \n\n \n\nReferences\n\n \n\n \n\n CVE-2025-68615\n \n\n \n\n \n\n CVE-2025-68615",
+  "title": "USN-7944-1: Net-SNMP vulnerability | Ubuntu security notices | Ubuntu",
+  "pubDate": "2026-01-06T15:00:00.000Z",
+  "vendor": "Ubuntu"
+}

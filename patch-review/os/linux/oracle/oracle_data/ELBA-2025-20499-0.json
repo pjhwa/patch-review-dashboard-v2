@@ -1,0 +1,26 @@
+{
+  "id": "ELBA-2025-20499-0",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "AppStream",
+  "title": "varnish bug fix and enhancement update",
+  "issuedDate": "2025-11-25T00:00:00Z",
+  "updatedDate": "2025-11-25T00:00:00Z",
+  "pubDate": "2025-11-25T00:00:00Z",
+  "dateStr": "2025-11-25",
+  "url": "https://linux.oracle.com/errata/ELBA-2025-20499-0.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 10.",
+  "description": "[7.6.1-4]\n- Resolves: RHEL-45756 - Varnish consumes significantly more memory\n  under RHEL8/9\n\n[7.6.1-3]\n- Resolves: RHEL-89691 - varnish: request smuggling attacks (CVE-2025-47905)",
+  "affected_products": [
+    "Oracle Linux 10 for x86_64",
+    "Oracle Linux 10 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "varnish-docs-7.6.1-4.el10.x86_64",
+    "varnish-7.6.1-4.el10.x86_64",
+    "varnish-7.6.1-4.el10.src"
+  ],
+  "full_text": "[7.6.1-4]\n- Resolves: RHEL-45756 - Varnish consumes significantly more memory\n  under RHEL8/9\n\n[7.6.1-3]\n- Resolves: RHEL-89691 - varnish: request smuggling attacks (CVE-2025-47905)\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2025-20499-0.html"
+}

@@ -1,0 +1,25 @@
+{
+  "id": "ELEA-2025-20165-0",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "RHCK",
+  "title": "iniparser bug fix and enhancement update",
+  "issuedDate": "2025-11-25T00:00:00Z",
+  "updatedDate": "2025-11-25T00:00:00Z",
+  "pubDate": "2025-11-25T00:00:00Z",
+  "dateStr": "2025-11-25",
+  "url": "https://linux.oracle.com/errata/ELEA-2025-20165-0.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 10.",
+  "description": "[4.1-21]\n- Bump for rebuild now that gating tests are enabled.\n- Resolves: RHEL-62928\n\n[4.1-20]\n- Bump release for rebuild.\n- Resolves: RHEL-62928\n\n[4.1-19]\n- Bump release for rebuild.\n- Resolves: RHEL-62928",
+  "affected_products": [
+    "Oracle Linux 10 for x86_64",
+    "Oracle Linux 10 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "iniparser-4.1-21.el10.src",
+    "iniparser-4.1-21.el10.x86_64"
+  ],
+  "full_text": "[4.1-21]\n- Bump for rebuild now that gating tests are enabled.\n- Resolves: RHEL-62928\n\n[4.1-20]\n- Bump release for rebuild.\n- Resolves: RHEL-62928\n\n[4.1-19]\n- Bump release for rebuild.\n- Resolves: RHEL-62928\n\nReferences:\nhttps://linux.oracle.com/errata/ELEA-2025-20165-0.html"
+}

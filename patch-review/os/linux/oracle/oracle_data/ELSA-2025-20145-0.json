@@ -1,0 +1,28 @@
+{
+  "id": "ELSA-2025-20145-0",
+  "vendor": "Oracle",
+  "type": "Security Advisory (ELSA)",
+  "kernel_type": "RHCK",
+  "title": " shadow-utils security update",
+  "issuedDate": "2025-11-25T00:00:00Z",
+  "updatedDate": "2025-11-25T00:00:00Z",
+  "pubDate": "2025-11-25T00:00:00Z",
+  "dateStr": "2025-11-25",
+  "url": "https://linux.oracle.com/errata/ELSA-2025-20145-0.html",
+  "severity": "Low",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 10.",
+  "description": "[2:4.15.0-8]\n- vipw: restore the original terminal pgrp after editing. Resolves: RHEL-93172",
+  "affected_products": [
+    "Oracle Linux 10 for x86_64",
+    "Oracle Linux 10 for aarch64"
+  ],
+  "cves": [
+    "CVE-2024-56433"
+  ],
+  "packages": [
+    "shadow-utils-subid-4.15.0-8.el10.x86_64",
+    "shadow-utils-4.15.0-8.el10.src",
+    "shadow-utils-4.15.0-8.el10.x86_64"
+  ],
+  "full_text": "[2:4.15.0-8]\n- vipw: restore the original terminal pgrp after editing. Resolves: RHEL-93172\n\nReferences:\nhttps://linux.oracle.com/errata/ELSA-2025-20145-0.html\nhttps://linux.oracle.com/cve/CVE-2024-56433.html"
+}

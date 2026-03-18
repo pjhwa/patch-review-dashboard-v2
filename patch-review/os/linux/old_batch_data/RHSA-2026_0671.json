@@ -1,0 +1,20 @@
+{
+  "id": "RHSA-2026:0671",
+  "vendor": "Red Hat",
+  "url": "https://access.redhat.com/errata/RHSA-2026:0671",
+  "pubDate": "2026-01-15T08:34:14.000Z",
+  "dateStr": "2026-01-15",
+  "severity": "Moderate",
+  "title": "Red Hat Security Advisory: Assisted Installer RHEL 9 components for Multicluster Engine for Kubernetes 2.8.4",
+  "overview": "Assisted installer RHEL 9 components for the multicluster engine for Kubernetes 2.8.4 General Availability release, with updates to container images.",
+  "description": "Assisted installer RHEL 9 components for the multicluster engine for Kubernetes 2.8.4 General Availability release, with updates to container images.",
+  "affected_products": [
+    "multicluster engine for Kubernetes 2.8"
+  ],
+  "cves": [
+    "CVE-2025-58183"
+  ],
+  "packages": [],
+  "fixes": "",
+  "full_text": "Red Hat Security Advisory: Assisted Installer RHEL 9 components for Multicluster Engine for Kubernetes 2.8.4\n\nAssisted installer RHEL 9 components for the multicluster engine for Kubernetes 2.8.4 General Availability release, with updates to container images.\n\nAssisted installer RHEL 9 components for the multicluster engine for Kubernetes 2.8.4 General Availability release, with updates to container images.\n\n\n\nCVE-2025-58183: A flaw was found in the archive/tar package in the Go standard library. tar.Reader does not set a maximum size on the number of sparse region data blocks in GNU tar pax 1.0 sparse files. A specially crafted tar archive with a pax header indicating a big number of sparse regions can cause a Go program to try to allocate a large amount of memory, causing an out-of-memory condition and resulting in a denial of service."
+}

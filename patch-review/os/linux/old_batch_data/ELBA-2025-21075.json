@@ -1,0 +1,29 @@
+{
+  "id": "ELBA-2025-21075",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2025-December/019269.html",
+  "synopsis": "[El-errata] ELBA-2025-21075 Oracle Linux 8 gcc-toolset-15-binutils bug fix and enhancement update",
+  "dateStr": "2025-December",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Bug Fix Advisory ELBA-2025-21075",
+  "description": "[2.44-3.0.1]\n- Disable three libctf tests that spuriously fail with old system GCCs\n  with backported CTF support.\n  Reviewed-by: Bruce McCulloch <bruce.mcculloch at oracle.com>\n  Reviewed-by: Jose E. Marchesi <jose.marchesi at oracle.com>\n\n[2.44-3]\n- Avoid using SCL for c10s.\n\n[2.44-2]\n- Use system alternatives even for bootstrap.\n\n[2.44-1]\n- Initial commit: Import Fedora 42 binutils to GTS-15.  (RHEL-81744)",
+  "affected_products": [
+    "Oracle Linux 8"
+  ],
+  "packages": [
+    "gcc-toolset-15-binutils-2.44-3.0.1.el8_10.x86_64.rpm",
+    "gcc-toolset-15-binutils-devel-2.44-3.0.1.el8_10.i686.rpm",
+    "gcc-toolset-15-binutils-devel-2.44-3.0.1.el8_10.x86_64.rpm",
+    "gcc-toolset-15-binutils-gold-2.44-3.0.1.el8_10.x86_64.rpm",
+    "gcc-toolset-15-binutils-gprofng-2.44-3.0.1.el8_10.x86_64.rpm",
+    "gcc-toolset-15-binutils-2.44-3.0.1.el8_10.aarch64.rpm",
+    "gcc-toolset-15-binutils-devel-2.44-3.0.1.el8_10.aarch64.rpm",
+    "gcc-toolset-15-binutils-gold-2.44-3.0.1.el8_10.aarch64.rpm",
+    "gcc-toolset-15-binutils-gprofng-2.44-3.0.1.el8_10.aarch64.rpm"
+  ],
+  "cves": [],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Bug Fix Advisory ELBA-2025-21075\n\nhttp://linux.oracle.com/errata/ELBA-2025-21075.html\n\nThe following updated rpms for Oracle Linux 8 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\ngcc-toolset-15-binutils-2.44-3.0.1.el8_10.x86_64.rpm\ngcc-toolset-15-binutils-devel-2.44-3.0.1.el8_10.i686.rpm\ngcc-toolset-15-binutils-devel-2.44-3.0.1.el8_10.x86_64.rpm\ngcc-toolset-15-binutils-gold-2.44-3.0.1.el8_10.x86_64.rpm\ngcc-toolset-15-binutils-gprofng-2.44-3.0.1.el8_10.x86_64.rpm\n\naarch64:\ngcc-toolset-15-binutils-2.44-3.0.1.el8_10.aarch64.rpm\ngcc-toolset-15-binutils-devel-2.44-3.0.1.el8_10.aarch64.rpm\ngcc-toolset-15-binutils-gold-2.44-3.0.1.el8_10.aarch64.rpm\ngcc-toolset-15-binutils-gprofng-2.44-3.0.1.el8_10.aarch64.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol8/SRPMS-updates/gcc-toolset-15-binutils-2.44-3.0.1.el8_10.src.rpm\n\n\n\nDescription of changes:\n\n[2.44-3.0.1]\n- Disable three libctf tests that spuriously fail with old system GCCs\n  with backported CTF support.\n  Reviewed-by: Bruce McCulloch <bruce.mcculloch at oracle.com>\n  Reviewed-by: Jose E. Marchesi <jose.marchesi at oracle.com>\n\n[2.44-3]\n- Avoid using SCL for c10s.\n\n[2.44-2]\n- Use system alternatives even for bootstrap.\n\n[2.44-1]\n- Initial commit: Import Fedora 42 binutils to GTS-15.  (RHEL-81744)",
+  "vendor": "Oracle"
+}

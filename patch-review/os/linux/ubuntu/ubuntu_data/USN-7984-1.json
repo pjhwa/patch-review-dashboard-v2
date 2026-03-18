@@ -1,0 +1,38 @@
+{
+  "id": "USN-7984-1",
+  "vendor": "Canonical / Ubuntu",
+  "type": "Ubuntu Security Notice (USN)",
+  "title": "pagure vulnerabilities",
+  "issuedDate": "2026-01-29T08:33:07Z",
+  "updatedDate": "2026-02-10T04:50:48Z",
+  "pubDate": "2026-01-29T08:33:07Z",
+  "dateStr": "2026-01-29",
+  "url": "https://ubuntu.com/security/notices/USN-7984-1",
+  "severity": "None",
+  "overview": "pagure vulnerabilities",
+  "description": "Thomas Chauchefoin discovered that Pagure incorrectly handled symbolic\nlinks in Git repositories. A remote attacker could possibly use this\nissue to cause Pagure to expose files outside the intended repository\nboundaries. (CVE-2024-4981)\n\nThomas Chauchefoin discovered that Pagure did not properly sanitize path\ninputs. A remote attacker could possibly use this issue to read arbitrary\nfiles. (CVE-2024-4982)\n\nThomas Chauchefoin discovered that Pagure incorrectly handled symbolic\nlinks during repository archiving. A remote attacker could possibly use\nthis issue to disclose local files on the server. (CVE-2024-47515)\n\nThomas Chauchefoin discovered that Pagure incorrectly handled certain\ninputs. A remote attacker could possibly use this issue to execute\narbitrary code on the server. (CVE-2024-47516)",
+  "affected_products": [
+    "Ubuntu 22.04 LTS",
+    "Ubuntu 24.04 LTS"
+  ],
+  "cves": [],
+  "packages": [
+    "pagure-5.11.3+dfsg-1ubuntu0.1",
+    "pagure-5.11.3+dfsg-2.1ubuntu0.2",
+    "pagure-ci-5.11.3+dfsg-1ubuntu0.1",
+    "pagure-ci-5.11.3+dfsg-2.1ubuntu0.2",
+    "pagure-ev-server-5.11.3+dfsg-1ubuntu0.1",
+    "pagure-ev-server-5.11.3+dfsg-2.1ubuntu0.2",
+    "pagure-loadjson-5.11.3+dfsg-1ubuntu0.1",
+    "pagure-loadjson-5.11.3+dfsg-2.1ubuntu0.2",
+    "pagure-logcom-5.11.3+dfsg-1ubuntu0.1",
+    "pagure-logcom-5.11.3+dfsg-2.1ubuntu0.2",
+    "pagure-milters-5.11.3+dfsg-1ubuntu0.1",
+    "pagure-milters-5.11.3+dfsg-2.1ubuntu0.2",
+    "pagure-mirror-5.11.3+dfsg-1ubuntu0.1",
+    "pagure-mirror-5.11.3+dfsg-2.1ubuntu0.2",
+    "pagure-webhook-5.11.3+dfsg-1ubuntu0.1",
+    "pagure-webhook-5.11.3+dfsg-2.1ubuntu0.2"
+  ],
+  "full_text": "Thomas Chauchefoin discovered that Pagure incorrectly handled symbolic\nlinks in Git repositories. A remote attacker could possibly use this\nissue to cause Pagure to expose files outside the intended repository\nboundaries. (CVE-2024-4981)\n\nThomas Chauchefoin discovered that Pagure did not properly sanitize path\ninputs. A remote attacker could possibly use this issue to read arbitrary\nfiles. (CVE-2024-4982)\n\nThomas Chauchefoin discovered that Pagure incorrectly handled symbolic\nlinks during repository archiving. A remote attacker could possibly use\nthis issue to disclose local files on the server. (CVE-2024-47515)\n\nThomas Chauchefoin discovered that Pagure incorrectly handled certain\ninputs. A remote attacker could possibly use this issue to execute\narbitrary code on the server. (CVE-2024-47516)"
+}

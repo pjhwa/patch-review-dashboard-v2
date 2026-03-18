@@ -1,0 +1,25 @@
+{
+  "id": "ELBA-2025-20763",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "AppStream",
+  "title": "netavark bug fix and enhancement update",
+  "issuedDate": "2025-11-17T00:00:00Z",
+  "updatedDate": "2025-11-17T00:00:00Z",
+  "pubDate": "2025-11-17T00:00:00Z",
+  "dateStr": "2025-11-17",
+  "url": "https://linux.oracle.com/errata/ELBA-2025-20763.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 9.",
+  "description": "[2:1.16.0-1]\n- update to https://github.com/containers/netavark/releases/tag/v1.16.0\n- Related: RHEL-80816\n\n[2:1.15.2-1]\n- update to https://github.com/containers/netavark/releases/tag/v1.15.2\n- Related: RHEL-80816\n\n[2:1.15.1-1]\n- update to https://github.com/containers/netavark/releases/tag/v1.15.1\n- Related: RHEL-80816\n\n[2:1.15.0-1]\n- update to https://github.com/containers/netavark/releases/tag/v1.15.0\n- Related: RHEL-80816",
+  "affected_products": [
+    "Oracle Linux 9 for x86_64",
+    "Oracle Linux 9 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "netavark-1.16.0-1.el9.x86_64",
+    "netavark-1.16.0-1.el9.src"
+  ],
+  "full_text": "[2:1.16.0-1]\n- update to https://github.com/containers/netavark/releases/tag/v1.16.0\n- Related: RHEL-80816\n\n[2:1.15.2-1]\n- update to https://github.com/containers/netavark/releases/tag/v1.15.2\n- Related: RHEL-80816\n\n[2:1.15.1-1]\n- update to https://github.com/containers/netavark/releases/tag/v1.15.1\n- Related: RHEL-80816\n\n[2:1.15.0-1]\n- update to https://github.com/containers/netavark/releases/tag/v1.15.0\n- Related: RHEL-80816\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2025-20763.html"
+}

@@ -1,0 +1,32 @@
+{
+  "id": "ELBA-2025-20863",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "AppStream",
+  "title": "bacula bug fix and enhancement update",
+  "issuedDate": "2025-11-17T00:00:00Z",
+  "updatedDate": "2025-11-17T00:00:00Z",
+  "pubDate": "2025-11-17T00:00:00Z",
+  "dateStr": "2025-11-17",
+  "url": "https://linux.oracle.com/errata/ELBA-2025-20863.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 9.",
+  "description": "[11.0.1-6]\n- fix bacula compatibility with Image Mode (RHEL-6862)",
+  "affected_products": [
+    "Oracle Linux 9 for x86_64",
+    "Oracle Linux 9 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "bacula-director-11.0.1-6.el9.x86_64",
+    "bacula-libs-11.0.1-6.el9.x86_64",
+    "bacula-11.0.1-6.el9.src",
+    "bacula-common-11.0.1-6.el9.x86_64",
+    "bacula-console-11.0.1-6.el9.x86_64",
+    "bacula-client-11.0.1-6.el9.x86_64",
+    "bacula-storage-11.0.1-6.el9.x86_64",
+    "bacula-libs-sql-11.0.1-6.el9.x86_64",
+    "bacula-logwatch-11.0.1-6.el9.noarch"
+  ],
+  "full_text": "[11.0.1-6]\n- fix bacula compatibility with Image Mode (RHEL-6862)\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2025-20863.html"
+}

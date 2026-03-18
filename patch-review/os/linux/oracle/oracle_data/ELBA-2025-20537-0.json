@@ -1,0 +1,31 @@
+{
+  "id": "ELBA-2025-20537-0",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "RHCK",
+  "title": "openssl and openssl-fips-provider bug fix and enhancement update",
+  "issuedDate": "2025-11-17T00:00:00Z",
+  "updatedDate": "2025-11-17T00:00:00Z",
+  "pubDate": "2025-11-17T00:00:00Z",
+  "dateStr": "2025-11-17",
+  "url": "https://linux.oracle.com/errata/ELBA-2025-20537-0.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 9.",
+  "description": "openssl\n[3.5.1-3.0.1]\n- Enable openssl-fips-provider dependency [Orabug: 36504822]\n- Temporary disable openssl-fips-provider dependency [Orabug: 36504822]\n- Replace upstream references [Orabug: 34340177]\n\n[1:3.5.1-3]\n- Add custom define to disable symbol versioning in downstream patched code\n  Also add stricter Suggests for openssl-fips-provider\n  Resolves: RHEL-104236\n- Fix Requires/Provider to fix default install of fips providers\n  Resolves: RHEL-104856\n\n[1:3.5.1-2]\n- Move fips.so to a seprate subpackage\n  Reverts FIPS self test for SLH-DSA\n  Add Suggests to try to prefer the openssl-fips-provider package\n  over the fips-provider-next package by default\n  Revolves: RHEL-102408\n  Related: RHEL-80854\n\n[1:3.5.1-1]\n- Rebasing to OpenSSL 3.5.1\n  Resolves: RHEL-97797\n  Resolves: RHEL-98723\n  Resolves: RHEL-99352\n\n[1:3.5.0-4]\n- Compact patches for better maintainability\n  Related: RHEL-80854\n- Make hybrid MLKEM work with our FIPS provider (3.0.7)\n  Resolves: RHEL-95239\n\n[1:3.5.0-3]\n- Fix regressions caused by rebase to OpenSSL 3.5\n  Related: RHEL-80854\n\n[1:3.5.0-2]\n- OpenSSL ignores 'rh-allow-sha1-signatures = yes' option on RHEL-9\n  Resolves: RHEL-88910\n- PKCS#12 should not default to pbmac1 in FIPS mode in RHEL-9\n  Resolves: RHEL-88912\n- Fix openssl speed running in FIPS mode\n  Resolves: RHEL-89860\n- pkeyutl ecdsa signature with sha1 shouldn't work by default\n  Resolves: RHEL-89861\n- Expose settable params for EVP_SKEY\n  Resolves: RHEL-89862\n- Restore RHEL9-style indicators defines\n  Resolves: RHEL-89859\n- Enable sslkeylog support\n  Resolves: RHEL-90854\n\n[1:3.5.0-1]\n- Rebasing OpenSSL to 3.5\n  Resolves: RHEL-80854\n  Resolves: RHEL-50208\n  Resolves: RHEL-50210\n  Resolves: RHEL-50211\n  Resolves: RHEL-85954\n\n[1:3.2.2-7]\n- RFC7250 handshakes with unauthenticated servers don't abort as expected (CVE-2024-12797)\n  Resolves: RHEL-76756\n\nopenssl-fips-provider\n[3.0.7-8.0.1]\n- Drop OpenELA branding [Orabug: 37274593]\n- Add bundle with Oracle Linux 9 OpenSSL FIPS Provider module files [Orabug: 37274593]\n- Update extract-src.sh script to support non-hobbled openssl tarball [Orabug: 37274593]\n\n[3.0.7-8]\n- Add missing Conficts\n  Related: RHEL-105007\n\n[3.0.7-7]\n- Fix Requires/Provides to fix default install of fips providers\n  Resolves: RHEL-105007",
+  "affected_products": [
+    "Oracle Linux 9 for x86_64",
+    "Oracle Linux 9 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "openssl-fips-provider-so-3.0.7-8.0.1.el9.x86_64",
+    "openssl-fips-provider-3.0.7-8.0.1.el9.x86_64",
+    "openssl-fips-provider-3.0.7-8.0.1.el9.i686",
+    "openssl-3.5.1-3.0.1.el9.x86_64",
+    "openssl-fips-provider-3.0.7-8.0.1.el9.src",
+    "openssl-3.5.1-3.0.1.el9.src",
+    "openssl-libs-3.5.1-3.0.1.el9.x86_64",
+    "openssl-libs-3.5.1-3.0.1.el9.i686"
+  ],
+  "full_text": "openssl\n[3.5.1-3.0.1]\n- Enable openssl-fips-provider dependency [Orabug: 36504822]\n- Temporary disable openssl-fips-provider dependency [Orabug: 36504822]\n- Replace upstream references [Orabug: 34340177]\n\n[1:3.5.1-3]\n- Add custom define to disable symbol versioning in downstream patched code\n  Also add stricter Suggests for openssl-fips-provider\n  Resolves: RHEL-104236\n- Fix Requires/Provider to fix default install of fips providers\n  Resolves: RHEL-104856\n\n[1:3.5.1-2]\n- Move fips.so to a seprate subpackage\n  Reverts FIPS self test for SLH-DSA\n  Add Suggests to try to prefer the openssl-fips-provider package\n  over the fips-provider-next package by default\n  Revolves: RHEL-102408\n  Related: RHEL-80854\n\n[1:3.5.1-1]\n- Rebasing to OpenSSL 3.5.1\n  Resolves: RHEL-97797\n  Resolves: RHEL-98723\n  Resolves: RHEL-99352\n\n[1:3.5.0-4]\n- Compact patches for better maintainability\n  Related: RHEL-80854\n- Make hybrid MLKEM work with our FIPS provider (3.0.7)\n  Resolves: RHEL-95239\n\n[1:3.5.0-3]\n- Fix regressions caused by rebase to OpenSSL 3.5\n  Related: RHEL-80854\n\n[1:3.5.0-2]\n- OpenSSL ignores 'rh-allow-sha1-signatures = yes' option on RHEL-9\n  Resolves: RHEL-88910\n- PKCS#12 should not default to pbmac1 in FIPS mode in RHEL-9\n  Resolves: RHEL-88912\n- Fix openssl speed running in FIPS mode\n  Resolves: RHEL-89860\n- pkeyutl ecdsa signature with sha1 shouldn't work by default\n  Resolves: RHEL-89861\n- Expose settable params for EVP_SKEY\n  Resolves: RHEL-89862\n- Restore RHEL9-style indicators defines\n  Resolves: RHEL-89859\n- Enable sslkeylog support\n  Resolves: RHEL-90854\n\n[1:3.5.0-1]\n- Rebasing OpenSSL to 3.5\n  Resolves: RHEL-80854\n  Resolves: RHEL-50208\n  Resolves: RHEL-50210\n  Resolves: RHEL-50211\n  Resolves: RHEL-85954\n\n[1:3.2.2-7]\n- RFC7250 handshakes with unauthenticated servers don't abort as expected (CVE-2024-12797)\n  Resolves: RHEL-76756\n\nopenssl-fips-provider\n[3.0.7-8.0.1]\n- Drop OpenELA branding [Orabug: 37274593]\n- Add bundle with Oracle Linux 9 OpenSSL FIPS Provider module files [Orabug: 37274593]\n- Update extract-src.sh script to support non-hobbled openssl tarball [Orabug: 37274593]\n\n[3.0.7-8]\n- Add missing Conficts\n  Related: RHEL-105007\n\n[3.0.7-7]\n- Fix Requires/Provides to fix default install of fips providers\n  Resolves: RHEL-105007\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2025-20537-0.html"
+}

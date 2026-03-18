@@ -1,0 +1,39 @@
+{
+  "id": "RHBA-2025:20687",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: redhat-logos bug fix and enhancement update",
+  "issuedDate": "2025-11-11T07:50:49Z",
+  "updatedDate": "2025-11-11T07:50:49Z",
+  "pubDate": "2025-11-11T07:50:49Z",
+  "dateStr": "2025-11-11",
+  "url": "https://access.redhat.com/errata/RHBA-2025:20687",
+  "severity": "None",
+  "overview": "An update for redhat-logos is now available for Red Hat Enterprise Linux 10.",
+  "description": "For detailed information on changes in this release, see the Red Hat Enterprise Linux 9.7 Release Notes linked from the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux for IBM z Systems",
+    "Red Hat Enterprise Linux for ARM 64",
+    "Red Hat Enterprise Linux for Power, little endian",
+    "Red Hat Enterprise Linux for x86_64 10 x86_64"
+  ],
+  "cves": [],
+  "packages": [
+    "redhat-logos-90.5-1.el9.src",
+    "redhat-backgrounds-90.5-1.el9.noarch",
+    "redhat-logos-90.5-1.el9.x86_64",
+    "redhat-logos-httpd-90.5-1.el9.noarch",
+    "redhat-logos-ipa-90.5-1.el9.noarch",
+    "redhat-logos-90.5-1.el9.s390x",
+    "redhat-logos-90.5-1.el9.ppc64le",
+    "redhat-logos-90.5-1.el9.aarch64"
+  ],
+  "fixes": [
+    {
+      "id": "RHEL-87281",
+      "url": "https://issues.redhat.com/browse/RHEL-87281",
+      "description": "redhat-logos missing watermark.png for plymouth spinner theme [rhel-9]"
+    }
+  ],
+  "full_text": "An update for redhat-logos is now available for Red Hat Enterprise Linux 10.\n\nFor detailed information on changes in this release, see the Red Hat Enterprise Linux 9.7 Release Notes linked from the References section."
+}

@@ -1,0 +1,88 @@
+{
+  "id": "RHBA-2025:20299",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: ostree bug fix and enhancement update",
+  "issuedDate": "2025-11-11T07:26:00Z",
+  "updatedDate": "2025-11-11T07:26:00Z",
+  "pubDate": "2025-11-11T07:26:00Z",
+  "dateStr": "2025-11-11",
+  "url": "https://access.redhat.com/errata/RHBA-2025:20299",
+  "severity": "None",
+  "overview": "An update for ostree is now available for Red Hat Enterprise Linux 10.",
+  "description": "For detailed information on changes in this release, see the Red Hat Enterprise Linux 10 Release Notes linked from the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux for Power, little endian",
+    "Red Hat Enterprise Linux for x86_64 10 x86_64",
+    "Red Hat CodeReady Linux Builder for Power, little endian",
+    "Red Hat CodeReady Linux Builder for IBM z Systems",
+    "Red Hat CodeReady Linux Builder for ARM 64",
+    "Red Hat Enterprise Linux for IBM z Systems",
+    "Red Hat CodeReady Linux Builder for x86_64 10 x86_64",
+    "Red Hat Enterprise Linux for ARM 64"
+  ],
+  "cves": [],
+  "packages": [
+    "ostree-2025.5-1.el10.src",
+    "ostree-2025.5-1.el10.x86_64",
+    "ostree-debuginfo-2025.5-1.el10.x86_64",
+    "ostree-debugsource-2025.5-1.el10.x86_64",
+    "ostree-grub2-2025.5-1.el10.x86_64",
+    "ostree-libs-2025.5-1.el10.x86_64",
+    "ostree-libs-debuginfo-2025.5-1.el10.x86_64",
+    "ostree-2025.5-1.el10.s390x",
+    "ostree-debuginfo-2025.5-1.el10.s390x",
+    "ostree-debugsource-2025.5-1.el10.s390x",
+    "ostree-libs-2025.5-1.el10.s390x",
+    "ostree-libs-debuginfo-2025.5-1.el10.s390x",
+    "ostree-2025.5-1.el10.ppc64le",
+    "ostree-debuginfo-2025.5-1.el10.ppc64le",
+    "ostree-debugsource-2025.5-1.el10.ppc64le",
+    "ostree-grub2-2025.5-1.el10.ppc64le",
+    "ostree-libs-2025.5-1.el10.ppc64le",
+    "ostree-libs-debuginfo-2025.5-1.el10.ppc64le",
+    "ostree-2025.5-1.el10.aarch64",
+    "ostree-debuginfo-2025.5-1.el10.aarch64",
+    "ostree-debugsource-2025.5-1.el10.aarch64",
+    "ostree-grub2-2025.5-1.el10.aarch64",
+    "ostree-libs-2025.5-1.el10.aarch64",
+    "ostree-libs-debuginfo-2025.5-1.el10.aarch64",
+    "ostree-devel-2025.5-1.el10.x86_64",
+    "ostree-devel-2025.5-1.el10.ppc64le",
+    "ostree-devel-2025.5-1.el10.aarch64",
+    "ostree-devel-2025.5-1.el10.s390x"
+  ],
+  "fixes": [
+    {
+      "id": "RHEL-84764",
+      "url": "https://issues.redhat.com/browse/RHEL-84764",
+      "description": "[c10s] Rebase ostree to 2025.2"
+    },
+    {
+      "id": "RHEL-103126",
+      "url": "https://issues.redhat.com/browse/RHEL-103126",
+      "description": "Update ostree to 2025.3"
+    },
+    {
+      "id": "RHEL-104887",
+      "url": "https://issues.redhat.com/browse/RHEL-104887",
+      "description": "Update to 2025.4"
+    },
+    {
+      "id": "RHEL-106716",
+      "url": "https://issues.redhat.com/browse/RHEL-106716",
+      "description": "ostree: Backport /boot patch for soft-reboots"
+    },
+    {
+      "id": "RHEL-107853",
+      "url": "https://issues.redhat.com/browse/RHEL-107853",
+      "description": "Backport https://github.com/ostreedev/ostree/pull/3493"
+    },
+    {
+      "id": "RHEL-110962",
+      "url": "https://issues.redhat.com/browse/RHEL-110962",
+      "description": "Incorrect syncfs in composefs mode"
+    }
+  ],
+  "full_text": "An update for ostree is now available for Red Hat Enterprise Linux 10.\n\nFor detailed information on changes in this release, see the Red Hat Enterprise Linux 10 Release Notes linked from the References section."
+}

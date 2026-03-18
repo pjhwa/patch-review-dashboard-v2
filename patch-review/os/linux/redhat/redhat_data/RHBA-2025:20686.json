@@ -1,0 +1,38 @@
+{
+  "id": "RHBA-2025:20686",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: haproxy bug fix and enhancement update",
+  "issuedDate": "2025-11-11T07:50:49Z",
+  "updatedDate": "2025-11-11T07:50:49Z",
+  "pubDate": "2025-11-11T07:50:49Z",
+  "dateStr": "2025-11-11",
+  "url": "https://access.redhat.com/errata/RHBA-2025:20686",
+  "severity": "None",
+  "overview": "An update for haproxy is now available for Red Hat Enterprise Linux 10.",
+  "description": "For detailed information on changes in this release, see the Red Hat Enterprise Linux 9.7 Release Notes linked from the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux for x86_64 10 x86_64",
+    "Red Hat Enterprise Linux for ARM 64",
+    "Red Hat Enterprise Linux for Power, little endian",
+    "Red Hat Enterprise Linux for IBM z Systems"
+  ],
+  "cves": [],
+  "packages": [
+    "haproxy-2.8.14-1.el9.src",
+    "haproxy-2.8.14-1.el9.x86_64",
+    "haproxy-debuginfo-2.8.14-1.el9.x86_64",
+    "haproxy-debugsource-2.8.14-1.el9.x86_64",
+    "haproxy-2.8.14-1.el9.s390x",
+    "haproxy-debuginfo-2.8.14-1.el9.s390x",
+    "haproxy-debugsource-2.8.14-1.el9.s390x",
+    "haproxy-2.8.14-1.el9.ppc64le",
+    "haproxy-debuginfo-2.8.14-1.el9.ppc64le",
+    "haproxy-debugsource-2.8.14-1.el9.ppc64le",
+    "haproxy-2.8.14-1.el9.aarch64",
+    "haproxy-debuginfo-2.8.14-1.el9.aarch64",
+    "haproxy-debugsource-2.8.14-1.el9.aarch64"
+  ],
+  "fixes": [],
+  "full_text": "An update for haproxy is now available for Red Hat Enterprise Linux 10.\n\nFor detailed information on changes in this release, see the Red Hat Enterprise Linux 9.7 Release Notes linked from the References section."
+}

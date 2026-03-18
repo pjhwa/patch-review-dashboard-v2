@@ -1,0 +1,21 @@
+{
+  "id": "RHSA-2026:0050",
+  "vendor": "Red Hat",
+  "url": "https://access.redhat.com/errata/RHSA-2026:0050",
+  "pubDate": "2026-01-05T08:04:03.000Z",
+  "dateStr": "2026-01-05",
+  "severity": "Important",
+  "title": "Red Hat Security Advisory: Red Hat OpenShift Builds 1.6.2",
+  "overview": "Red Hat OpenShift Builds 1.6.2",
+  "description": "Red Hat OpenShift Builds 1.6.2",
+  "affected_products": [
+    "Builds for Red Hat OpenShift 1.6.3"
+  ],
+  "cves": [
+    "CVE-2025-52881",
+    "CVE-2025-66418"
+  ],
+  "packages": [],
+  "fixes": "",
+  "full_text": "Red Hat Security Advisory: Red Hat OpenShift Builds 1.6.2\n\nRed Hat OpenShift Builds 1.6.2\n\nRed Hat OpenShift Builds 1.6.2\n\n\n\nCVE-2025-52881: A flaw was found in runc. This attack is a more sophisticated variant of CVE-2019-16884, which was a flaw that allowed an attacker to trick runc into writing the LSM process labels for a container process into a dummy tmpfs file and thus not apply the correct LSM labels to the container process. The mitigation applied for CVE-2019-16884 was fairly limited and effectively only caused runc to verify that when we write LSM labels that those labels are actual procfs files.\n\nCVE-2025-66418: urllib3 is a user-friendly HTTP client library for Python. Starting in version 1.24 and prior to 2.6.0, the number of links in the decompression chain was unbounded allowing a malicious server to insert a virtually unlimited number of compression steps leading to high CPU usage and massive memory allocation for the decompressed data. This vulnerability is fixed in 2.6.0."
+}

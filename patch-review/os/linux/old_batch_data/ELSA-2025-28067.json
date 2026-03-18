@@ -1,0 +1,21 @@
+{
+  "id": "ELSA-2025-28067",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2026-January/019435.html",
+  "synopsis": "[El-errata] New Ksplice updates for UEKR7 5.15.0 on OL8 and OL9 (ELSA-2025-28067)",
+  "dateStr": "2026-January",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Synopsis: ELSA-2025-28067 can now be patched using Ksplice",
+  "description": "",
+  "affected_products": [],
+  "packages": [],
+  "cves": [
+    "CVE-2025-40248",
+    "CVE-2025-40271",
+    "CVE-2025-40280"
+  ],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Synopsis: ELSA-2025-28067 can now be patched using Ksplice\nCVEs: CVE-2025-40248 CVE-2025-40271 CVE-2025-40280\n\nUsers with Oracle Linux Premier Support can now use Ksplice to patch\nagainst the latest Oracle Linux Security Advisory, ELSA-2025-28067.\nMore information about this errata can be found at\nhttps://linux.oracle.com/errata/ELSA-2025-28067.html\n\nINSTALLING THE UPDATES\n\nWe recommend that all users of Ksplice Uptrack running UEKR7 5.15.0 on\nOL8 and OL9 install these updates.\n\nOn systems that have \"autoinstall = yes\" in /etc/uptrack/uptrack.conf,\nthese updates will be installed automatically and you do not need to\ntake any action.\n\nAlternatively, you can install these updates by running:\n\n# /usr/sbin/uptrack-upgrade -y\n\n\nDESCRIPTION\n\n* CVE-2025-40248: Use-after-free in Virtual Socket protocol driver.\n\nOrabug: 38786193\n\n\n* CVE-2025-40271: Use-after-free in /proc filesystem driver.\n\nOrabug: 38786194\n\n\n* CVE-2025-40280: Use-after-free in TIPC Protocol driver.\n\nOrabug: 38786195\n\n\nSUPPORT\n\nKsplice support is available at ksplice-support_ww at oracle.com.",
+  "vendor": "Oracle"
+}

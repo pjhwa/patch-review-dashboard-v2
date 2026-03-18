@@ -1,0 +1,51 @@
+{
+  "id": "ELSA-2025-23141",
+  "vendor": "Oracle",
+  "type": "Security Advisory (ELSA)",
+  "kernel_type": "AppStream",
+  "title": " ruby security update",
+  "issuedDate": "2025-12-11T00:00:00Z",
+  "updatedDate": "2025-12-11T00:00:00Z",
+  "pubDate": "2025-12-11T00:00:00Z",
+  "dateStr": "2025-12-11",
+  "url": "https://linux.oracle.com/errata/ELSA-2025-23141.html",
+  "severity": "Moderate",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 10.",
+  "description": "[3.3.10-11]\n- Upgrade to Ruby 3.3.10.\n  Resolves: RHEL-130160\n- Fix possible denial of service in resolv gem (CVE-2025-24294)\n- Fix URI Credential Leakage Bypass previous fixes. (CVE-2025-61594)\n- Fix REXML denial of service. (CVE-2025-58767)\n  Resolves: RHEL-122028",
+  "affected_products": [
+    "Oracle Linux 10 for x86_64",
+    "Oracle Linux 10 for aarch64"
+  ],
+  "cves": [
+    "CVE-2025-24294",
+    "CVE-2025-58767",
+    "CVE-2025-61594"
+  ],
+  "packages": [
+    "rubygems-devel-3.5.22-11.el10_1.noarch",
+    "rubygem-psych-5.1.2-11.el10_1.x86_64",
+    "ruby-default-gems-3.3.10-11.el10_1.noarch",
+    "ruby-libs-3.3.10-11.el10_1.x86_64",
+    "rubygem-power_assert-2.0.3-11.el10_1.noarch",
+    "rubygem-bundler-2.5.22-11.el10_1.noarch",
+    "rubygem-bigdecimal-3.1.5-11.el10_1.x86_64",
+    "rubygem-rss-0.3.1-11.el10_1.noarch",
+    "rubygem-test-unit-3.6.1-11.el10_1.noarch",
+    "rubygem-json-2.7.2-11.el10_1.x86_64",
+    "ruby-devel-3.3.10-11.el10_1.x86_64",
+    "rubygem-rake-13.1.0-11.el10_1.noarch",
+    "rubygem-rexml-3.4.4-11.el10_1.noarch",
+    "rubygems-3.5.22-11.el10_1.noarch",
+    "ruby-3.3.10-11.el10_1.x86_64",
+    "rubygem-minitest-5.20.0-11.el10_1.noarch",
+    "ruby-bundled-gems-3.3.10-11.el10_1.x86_64",
+    "rubygem-rbs-3.4.0-11.el10_1.x86_64",
+    "rubygem-typeprof-0.21.9-11.el10_1.noarch",
+    "rubygem-io-console-0.7.1-11.el10_1.x86_64",
+    "rubygem-racc-1.7.3-11.el10_1.x86_64",
+    "rubygem-rdoc-6.6.3.1-11.el10_1.noarch",
+    "ruby-3.3.10-11.el10_1.src",
+    "rubygem-irb-1.13.1-11.el10_1.noarch"
+  ],
+  "full_text": "[3.3.10-11]\n- Upgrade to Ruby 3.3.10.\n  Resolves: RHEL-130160\n- Fix possible denial of service in resolv gem (CVE-2025-24294)\n- Fix URI Credential Leakage Bypass previous fixes. (CVE-2025-61594)\n- Fix REXML denial of service. (CVE-2025-58767)\n  Resolves: RHEL-122028\n\nReferences:\nhttps://linux.oracle.com/errata/ELSA-2025-23141.html\nhttps://linux.oracle.com/cve/CVE-2025-24294.html\nhttps://linux.oracle.com/cve/CVE-2025-58767.html\nhttps://linux.oracle.com/cve/CVE-2025-61594.html"
+}

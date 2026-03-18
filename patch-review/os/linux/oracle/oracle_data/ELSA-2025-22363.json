@@ -1,0 +1,35 @@
+{
+  "id": "ELSA-2025-22363",
+  "vendor": "Oracle",
+  "type": "Security Advisory (ELSA)",
+  "kernel_type": "AppStream",
+  "title": " firefox security update",
+  "issuedDate": "2025-12-01T00:00:00Z",
+  "updatedDate": "2025-12-01T00:00:00Z",
+  "pubDate": "2025-12-01T00:00:00Z",
+  "dateStr": "2025-12-01",
+  "url": "https://linux.oracle.com/errata/ELSA-2025-22363.html",
+  "severity": "Important",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 8.",
+  "description": "[140.5.0-1.0.1]\n- Fix firefox-oracle-default-prefs.js for new nss [Orabug: 37079789]\n\n[140.5.0]\n- Add debranding patches (Mustafa Gezen)\n- Add OpenELA default preferences (Louis Abel)\n\n[140.5.0-1]\n- Update to 140.5.0 ESR",
+  "affected_products": [
+    "Oracle Linux 8 for x86_64",
+    "Oracle Linux 8 for aarch64"
+  ],
+  "cves": [
+    "CVE-2025-13012",
+    "CVE-2025-13013",
+    "CVE-2025-13014",
+    "CVE-2025-13015",
+    "CVE-2025-13016",
+    "CVE-2025-13017",
+    "CVE-2025-13018",
+    "CVE-2025-13019",
+    "CVE-2025-13020"
+  ],
+  "packages": [
+    "firefox-140.5.0-1.0.1.el8_10.x86_64",
+    "firefox-140.5.0-1.0.1.el8_10.src"
+  ],
+  "full_text": "[140.5.0-1.0.1]\n- Fix firefox-oracle-default-prefs.js for new nss [Orabug: 37079789]\n\n[140.5.0]\n- Add debranding patches (Mustafa Gezen)\n- Add OpenELA default preferences (Louis Abel)\n\n[140.5.0-1]\n- Update to 140.5.0 ESR\n\nReferences:\nhttps://linux.oracle.com/errata/ELSA-2025-22363.html\nhttps://linux.oracle.com/cve/CVE-2025-13012.html\nhttps://linux.oracle.com/cve/CVE-2025-13013.html\nhttps://linux.oracle.com/cve/CVE-2025-13014.html\nhttps://linux.oracle.com/cve/CVE-2025-13015.html\nhttps://linux.oracle.com/cve/CVE-2025-13016.html\nhttps://linux.oracle.com/cve/CVE-2025-13017.html\nhttps://linux.oracle.com/cve/CVE-2025-13018.html\nhttps://linux.oracle.com/cve/CVE-2025-13019.html\nhttps://linux.oracle.com/cve/CVE-2025-13020.html"
+}

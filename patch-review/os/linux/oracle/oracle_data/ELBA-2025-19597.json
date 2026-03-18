@@ -1,0 +1,26 @@
+{
+  "id": "ELBA-2025-19597",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "AppStream",
+  "title": "passt bug fix and enhancement update",
+  "issuedDate": "2025-11-04T00:00:00Z",
+  "updatedDate": "2025-11-04T00:00:00Z",
+  "pubDate": "2025-11-04T00:00:00Z",
+  "dateStr": "2025-11-04",
+  "url": "https://linux.oracle.com/errata/ELBA-2025-19597.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 9.",
+  "description": "[0^20250217.ga1e48a0-13]\n- Resolves: RHEL-123412 RHEL-123418\n\n[0^20250217.ga1e48a0-10]\n- Resolves: RHEL-106424\n\n[0^20250217.ga1e48a0-9]\n- Resolves: RHEL-86759\n\n[0^20250217.ga1e48a0-8]\n- Resolves: RHEL-83978\n\n[0^20250217.ga1e48a0-7]\n- Original fix for RHEL-84156 still leaves inbound connections broken.  Bring in\n  another fix.\n- Last fix for RHEL-83978 introduced a different off-by-one error, fix again.\n- Resolves: RHEL-84156\n- Resolves: RHEL-83978\n\n[0^20250217.ga1e48a0-6]\n- Original fix for RHEL-83978 wasn't sufficient, we need the fix for upstream bug 119 as well.\n- Resolves: RHEL-83978\n\n[0^20250217.ga1e48a0-5]\n- Resolves: RHEL-84247\n\n[0^20250217.ga1e48a0-4]\n- Resolves: RHEL-84156\n\n[0^20250217.ga1e48a0-3]\n- Resolves: RHEL-83978\n\n[0^20250217.ga1e48a0-2]\n- Resolves: RHEL-82211",
+  "affected_products": [
+    "Oracle Linux 9 for x86_64",
+    "Oracle Linux 9 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "passt-0^20250217.ga1e48a0-13.el9_6.x86_64",
+    "passt-selinux-0^20250217.ga1e48a0-13.el9_6.noarch",
+    "passt-0^20250217.ga1e48a0-13.el9_6.src"
+  ],
+  "full_text": "[0^20250217.ga1e48a0-13]\n- Resolves: RHEL-123412 RHEL-123418\n\n[0^20250217.ga1e48a0-10]\n- Resolves: RHEL-106424\n\n[0^20250217.ga1e48a0-9]\n- Resolves: RHEL-86759\n\n[0^20250217.ga1e48a0-8]\n- Resolves: RHEL-83978\n\n[0^20250217.ga1e48a0-7]\n- Original fix for RHEL-84156 still leaves inbound connections broken.  Bring in\n  another fix.\n- Last fix for RHEL-83978 introduced a different off-by-one error, fix again.\n- Resolves: RHEL-84156\n- Resolves: RHEL-83978\n\n[0^20250217.ga1e48a0-6]\n- Original fix for RHEL-83978 wasn't sufficient, we need the fix for upstream bug 119 as well.\n- Resolves: RHEL-83978\n\n[0^20250217.ga1e48a0-5]\n- Resolves: RHEL-84247\n\n[0^20250217.ga1e48a0-4]\n- Resolves: RHEL-84156\n\n[0^20250217.ga1e48a0-3]\n- Resolves: RHEL-83978\n\n[0^20250217.ga1e48a0-2]\n- Resolves: RHEL-82211\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2025-19597.html"
+}

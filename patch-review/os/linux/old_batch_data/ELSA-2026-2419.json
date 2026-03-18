@@ -1,0 +1,45 @@
+{
+  "id": "ELSA-2026-2419",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2026-February/019747.html",
+  "synopsis": "[El-errata] ELSA-2026-2419 Moderate: Oracle Linux 8 python3.12 security update",
+  "dateStr": "2026-February",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Security Advisory ELSA-2026-2419",
+  "description": "[3.12.12-2]\n- Security fix for CVE-2025-13836\nResolves: RHEL-140993",
+  "affected_products": [
+    "Oracle Linux 8"
+  ],
+  "packages": [
+    "python3.12-3.12.12-2.el8_10.i686.rpm",
+    "python3.12-3.12.12-2.el8_10.x86_64.rpm",
+    "python3.12-debug-3.12.12-2.el8_10.i686.rpm",
+    "python3.12-debug-3.12.12-2.el8_10.x86_64.rpm",
+    "python3.12-devel-3.12.12-2.el8_10.i686.rpm",
+    "python3.12-devel-3.12.12-2.el8_10.x86_64.rpm",
+    "python3.12-idle-3.12.12-2.el8_10.i686.rpm",
+    "python3.12-idle-3.12.12-2.el8_10.x86_64.rpm",
+    "python3.12-libs-3.12.12-2.el8_10.i686.rpm",
+    "python3.12-libs-3.12.12-2.el8_10.x86_64.rpm",
+    "python3.12-rpm-macros-3.12.12-2.el8_10.noarch.rpm",
+    "python3.12-test-3.12.12-2.el8_10.i686.rpm",
+    "python3.12-test-3.12.12-2.el8_10.x86_64.rpm",
+    "python3.12-tkinter-3.12.12-2.el8_10.i686.rpm",
+    "python3.12-tkinter-3.12.12-2.el8_10.x86_64.rpm",
+    "python3.12-3.12.12-2.el8_10.aarch64.rpm",
+    "python3.12-debug-3.12.12-2.el8_10.aarch64.rpm",
+    "python3.12-devel-3.12.12-2.el8_10.aarch64.rpm",
+    "python3.12-idle-3.12.12-2.el8_10.aarch64.rpm",
+    "python3.12-libs-3.12.12-2.el8_10.aarch64.rpm",
+    "python3.12-rpm-macros-3.12.12-2.el8_10.noarch.rpm",
+    "python3.12-test-3.12.12-2.el8_10.aarch64.rpm",
+    "python3.12-tkinter-3.12.12-2.el8_10.aarch64.rpm"
+  ],
+  "cves": [
+    "CVE-2025-13836"
+  ],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Security Advisory ELSA-2026-2419\n\nhttp://linux.oracle.com/errata/ELSA-2026-2419.html\n\nThe following updated rpms for Oracle Linux 8 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\npython3.12-3.12.12-2.el8_10.i686.rpm\npython3.12-3.12.12-2.el8_10.x86_64.rpm\npython3.12-debug-3.12.12-2.el8_10.i686.rpm\npython3.12-debug-3.12.12-2.el8_10.x86_64.rpm\npython3.12-devel-3.12.12-2.el8_10.i686.rpm\npython3.12-devel-3.12.12-2.el8_10.x86_64.rpm\npython3.12-idle-3.12.12-2.el8_10.i686.rpm\npython3.12-idle-3.12.12-2.el8_10.x86_64.rpm\npython3.12-libs-3.12.12-2.el8_10.i686.rpm\npython3.12-libs-3.12.12-2.el8_10.x86_64.rpm\npython3.12-rpm-macros-3.12.12-2.el8_10.noarch.rpm\npython3.12-test-3.12.12-2.el8_10.i686.rpm\npython3.12-test-3.12.12-2.el8_10.x86_64.rpm\npython3.12-tkinter-3.12.12-2.el8_10.i686.rpm\npython3.12-tkinter-3.12.12-2.el8_10.x86_64.rpm\n\naarch64:\npython3.12-3.12.12-2.el8_10.aarch64.rpm\npython3.12-debug-3.12.12-2.el8_10.aarch64.rpm\npython3.12-devel-3.12.12-2.el8_10.aarch64.rpm\npython3.12-idle-3.12.12-2.el8_10.aarch64.rpm\npython3.12-libs-3.12.12-2.el8_10.aarch64.rpm\npython3.12-rpm-macros-3.12.12-2.el8_10.noarch.rpm\npython3.12-test-3.12.12-2.el8_10.aarch64.rpm\npython3.12-tkinter-3.12.12-2.el8_10.aarch64.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol8/SRPMS-updates/python3.12-3.12.12-2.el8_10.src.rpm\n\nRelated CVEs:\n\nCVE-2025-13836\n\n\n\n\nDescription of changes:\n\n[3.12.12-2]\n- Security fix for CVE-2025-13836\nResolves: RHEL-140993",
+  "vendor": "Oracle"
+}

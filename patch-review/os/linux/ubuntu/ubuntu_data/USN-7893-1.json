@@ -1,0 +1,25 @@
+{
+  "id": "USN-7893-1",
+  "vendor": "Canonical / Ubuntu",
+  "type": "Ubuntu Security Notice (USN)",
+  "title": "valkey vulnerabilities",
+  "issuedDate": "2025-11-26T13:51:48Z",
+  "updatedDate": "2026-02-10T04:50:36Z",
+  "pubDate": "2025-11-26T13:51:48Z",
+  "dateStr": "2025-11-26",
+  "url": "https://ubuntu.com/security/notices/USN-7893-1",
+  "severity": "None",
+  "overview": "valkey vulnerabilities",
+  "description": "Benny Isaacs, Nir Brakha, and Sagi Tzadik discovered that Valkey incorrectly\nhandled memory when running Lua scripts. An authenticated attacker could\nuse this vulnerability to trigger a use-after-free condition, and\npotentially achieve remote code execution on the Valkey server.\n(CVE-2025-49844)\n\nIt was discovered that Valkey incorrectly handled memory when running Lua\nscripts. An authenticated attacker could use this vulnerability to trigger\na integer overflow condition, and potentially achieve remote code execution\non the Valkey server. (CVE-2025-46817)\n\nIt was discovered that Valkey incorrectly handled Lua objects. An\nauthenticated attacker could possibly use this issue to escalate their\nprivileges. (CVE-2025-46818)\n\nIt was discovered that Valkey incorrectly handled memory when running Lua\nscripts. An authenticated attacker could use this vulnerability to read\nout-of-bounds memory, causing a denial of service or possibly obtaining\nsensitive information. (CVE-2025-46819)\n\nIt was discovered that Valkey incorrectly handled memory in some\ncalculations. An attacker could possibly use this issue to cause a denial\nof service. (CVE-2025-49112)",
+  "affected_products": [
+    "Ubuntu 24.04 LTS"
+  ],
+  "cves": [],
+  "packages": [
+    "valkey-redis-compat-7.2.11+dfsg1-0ubuntu0.2",
+    "valkey-sentinel-7.2.11+dfsg1-0ubuntu0.2",
+    "valkey-server-7.2.11+dfsg1-0ubuntu0.2",
+    "valkey-tools-7.2.11+dfsg1-0ubuntu0.2"
+  ],
+  "full_text": "Benny Isaacs, Nir Brakha, and Sagi Tzadik discovered that Valkey incorrectly\nhandled memory when running Lua scripts. An authenticated attacker could\nuse this vulnerability to trigger a use-after-free condition, and\npotentially achieve remote code execution on the Valkey server.\n(CVE-2025-49844)\n\nIt was discovered that Valkey incorrectly handled memory when running Lua\nscripts. An authenticated attacker could use this vulnerability to trigger\na integer overflow condition, and potentially achieve remote code execution\non the Valkey server. (CVE-2025-46817)\n\nIt was discovered that Valkey incorrectly handled Lua objects. An\nauthenticated attacker could possibly use this issue to escalate their\nprivileges. (CVE-2025-46818)\n\nIt was discovered that Valkey incorrectly handled memory when running Lua\nscripts. An authenticated attacker could use this vulnerability to read\nout-of-bounds memory, causing a denial of service or possibly obtaining\nsensitive information. (CVE-2025-46819)\n\nIt was discovered that Valkey incorrectly handled memory in some\ncalculations. An attacker could possibly use this issue to cause a denial\nof service. (CVE-2025-49112)"
+}

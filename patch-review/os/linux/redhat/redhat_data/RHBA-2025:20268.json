@@ -1,0 +1,75 @@
+{
+  "id": "RHBA-2025:20268",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: augeas bug fix and enhancement update",
+  "issuedDate": "2025-11-11T07:25:54Z",
+  "updatedDate": "2025-11-11T07:25:54Z",
+  "pubDate": "2025-11-11T07:25:54Z",
+  "dateStr": "2025-11-11",
+  "url": "https://access.redhat.com/errata/RHBA-2025:20268",
+  "severity": "None",
+  "overview": "An update for augeas is now available for Red Hat Enterprise Linux 10.",
+  "description": "For detailed information on changes in this release, see the Red Hat Enterprise Linux 10 Release Notes linked from the References section.",
+  "affected_products": [
+    "Red Hat CodeReady Linux Builder for ARM 64",
+    "Red Hat CodeReady Linux Builder for IBM z Systems",
+    "Red Hat CodeReady Linux Builder for x86_64 10 x86_64",
+    "Red Hat Enterprise Linux for x86_64 10 x86_64",
+    "Red Hat Enterprise Linux for Power, little endian",
+    "Red Hat Enterprise Linux for IBM z Systems",
+    "Red Hat CodeReady Linux Builder for Power, little endian",
+    "Red Hat Enterprise Linux for ARM 64"
+  ],
+  "cves": [],
+  "packages": [
+    "augeas-1.14.2-0.3.20250224git6ee1282.el10.src",
+    "augeas-1.14.2-0.3.20250224git6ee1282.el10.x86_64",
+    "augeas-debuginfo-1.14.2-0.3.20250224git6ee1282.el10.x86_64",
+    "augeas-debugsource-1.14.2-0.3.20250224git6ee1282.el10.x86_64",
+    "augeas-libs-1.14.2-0.3.20250224git6ee1282.el10.x86_64",
+    "augeas-libs-debuginfo-1.14.2-0.3.20250224git6ee1282.el10.x86_64",
+    "augeas-1.14.2-0.3.20250224git6ee1282.el10.s390x",
+    "augeas-debuginfo-1.14.2-0.3.20250224git6ee1282.el10.s390x",
+    "augeas-debugsource-1.14.2-0.3.20250224git6ee1282.el10.s390x",
+    "augeas-libs-1.14.2-0.3.20250224git6ee1282.el10.s390x",
+    "augeas-libs-debuginfo-1.14.2-0.3.20250224git6ee1282.el10.s390x",
+    "augeas-1.14.2-0.3.20250224git6ee1282.el10.ppc64le",
+    "augeas-debuginfo-1.14.2-0.3.20250224git6ee1282.el10.ppc64le",
+    "augeas-debugsource-1.14.2-0.3.20250224git6ee1282.el10.ppc64le",
+    "augeas-libs-1.14.2-0.3.20250224git6ee1282.el10.ppc64le",
+    "augeas-libs-debuginfo-1.14.2-0.3.20250224git6ee1282.el10.ppc64le",
+    "augeas-1.14.2-0.3.20250224git6ee1282.el10.aarch64",
+    "augeas-debuginfo-1.14.2-0.3.20250224git6ee1282.el10.aarch64",
+    "augeas-debugsource-1.14.2-0.3.20250224git6ee1282.el10.aarch64",
+    "augeas-libs-1.14.2-0.3.20250224git6ee1282.el10.aarch64",
+    "augeas-libs-debuginfo-1.14.2-0.3.20250224git6ee1282.el10.aarch64",
+    "augeas-devel-1.14.2-0.3.20250224git6ee1282.el10.x86_64",
+    "augeas-devel-1.14.2-0.3.20250224git6ee1282.el10.ppc64le",
+    "augeas-devel-1.14.2-0.3.20250224git6ee1282.el10.aarch64",
+    "augeas-devel-1.14.2-0.3.20250224git6ee1282.el10.s390x"
+  ],
+  "fixes": [
+    {
+      "id": "RHEL-39080",
+      "url": "https://issues.redhat.com/browse/RHEL-39080",
+      "description": "[RHEL10] Could not update multipath.conf with augtool"
+    },
+    {
+      "id": "RHEL-50778",
+      "url": "https://issues.redhat.com/browse/RHEL-50778",
+      "description": "augeas fails to parse /lib/systemd/system/sssd.service file"
+    },
+    {
+      "id": "RHEL-76283",
+      "url": "https://issues.redhat.com/browse/RHEL-76283",
+      "description": "[augeas][RHEL-10] augeas fails to parse /usr/lib/tmpfiles.d/systemd.conf file"
+    },
+    {
+      "id": "RHEL-81736",
+      "url": "https://issues.redhat.com/browse/RHEL-81736",
+      "description": "Rebase augeas in RHEL 10.1"
+    }
+  ],
+  "full_text": "An update for augeas is now available for Red Hat Enterprise Linux 10.\n\nFor detailed information on changes in this release, see the Red Hat Enterprise Linux 10 Release Notes linked from the References section."
+}

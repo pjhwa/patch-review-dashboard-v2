@@ -1,0 +1,44 @@
+{
+  "id": "RHBA-2025:20874",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: python-awscrt bug fix and enhancement update",
+  "issuedDate": "2025-11-11T07:51:24Z",
+  "updatedDate": "2025-11-11T07:51:24Z",
+  "pubDate": "2025-11-11T07:51:24Z",
+  "dateStr": "2025-11-11",
+  "url": "https://access.redhat.com/errata/RHBA-2025:20874",
+  "severity": "None",
+  "overview": "An update for python-awscrt is now available for Red Hat Enterprise Linux 10.",
+  "description": "For detailed information on changes in this release, see the Red Hat Enterprise Linux 9 Release Notes linked from the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux for Power, little endian",
+    "Red Hat Enterprise Linux for x86_64 10 x86_64",
+    "Red Hat Enterprise Linux for ARM 64",
+    "Red Hat Enterprise Linux for IBM z Systems"
+  ],
+  "cves": [],
+  "packages": [
+    "python-awscrt-0.27.2-1.el9_7.src",
+    "python-awscrt-debugsource-0.27.2-1.el9_7.x86_64",
+    "python3-awscrt-0.27.2-1.el9_7.x86_64",
+    "python3-awscrt-debuginfo-0.27.2-1.el9_7.x86_64",
+    "python-awscrt-debugsource-0.27.2-1.el9_7.s390x",
+    "python3-awscrt-0.27.2-1.el9_7.s390x",
+    "python3-awscrt-debuginfo-0.27.2-1.el9_7.s390x",
+    "python-awscrt-debugsource-0.27.2-1.el9_7.ppc64le",
+    "python3-awscrt-0.27.2-1.el9_7.ppc64le",
+    "python3-awscrt-debuginfo-0.27.2-1.el9_7.ppc64le",
+    "python-awscrt-debugsource-0.27.2-1.el9_7.aarch64",
+    "python3-awscrt-0.27.2-1.el9_7.aarch64",
+    "python3-awscrt-debuginfo-0.27.2-1.el9_7.aarch64"
+  ],
+  "fixes": [
+    {
+      "id": "RHEL-113230",
+      "url": "https://issues.redhat.com/browse/RHEL-113230",
+      "description": "[RFE] Update python-awscrt package to the newest upstream version"
+    }
+  ],
+  "full_text": "An update for python-awscrt is now available for Red Hat Enterprise Linux 10.\n\nFor detailed information on changes in this release, see the Red Hat Enterprise Linux 9 Release Notes linked from the References section."
+}

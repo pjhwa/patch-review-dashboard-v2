@@ -1,0 +1,26 @@
+{
+  "id": "ELBA-2025-20923",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "AppStream",
+  "title": "mutter bug fix and enhancement update",
+  "issuedDate": "2025-11-25T00:00:00Z",
+  "updatedDate": "2025-11-25T00:00:00Z",
+  "pubDate": "2025-11-25T00:00:00Z",
+  "dateStr": "2025-11-25",
+  "url": "https://linux.oracle.com/errata/ELBA-2025-20923.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 9.",
+  "description": "[40.9-29]\n- Fix input latency regression\n  Resolves: RHEL-117098",
+  "affected_products": [
+    "Oracle Linux 9 for x86_64",
+    "Oracle Linux 9 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "mutter-40.9-29.el9_7.src",
+    "mutter-40.9-29.el9_7.x86_64",
+    "mutter-40.9-29.el9_7.i686"
+  ],
+  "full_text": "[40.9-29]\n- Fix input latency regression\n  Resolves: RHEL-117098\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2025-20923.html"
+}

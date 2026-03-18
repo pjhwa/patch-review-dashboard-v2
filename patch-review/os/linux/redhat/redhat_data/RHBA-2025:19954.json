@@ -1,0 +1,67 @@
+{
+  "id": "RHBA-2025:19954",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: redhat-release bug fix and enhancement update",
+  "issuedDate": "2025-11-10T01:03:42Z",
+  "updatedDate": "2025-11-10T01:03:42Z",
+  "pubDate": "2025-11-10T01:03:42Z",
+  "dateStr": "2025-11-10",
+  "url": "https://access.redhat.com/errata/RHBA-2025:19954",
+  "severity": "None",
+  "overview": "An update for redhat-release is now available for Red Hat Enterprise Linux 10.",
+  "description": "The redhat-release package contains licensing information regarding, and identifies the installed version of, Red Hat Enterprise Linux.Bug Fix(es) and Enhancement(s): [RHEL10][redhat-release] CPE_NAME use full release version (JIRA:RHELBLD-16693)  [RHEL10][redhat-release] Re-disable rpcbind.service and rpcbind.socket (JIRA:RHELBLD-17240)  [RHEL10][redhat-release] Enable greenboot services (JIRA:RHELBLD-17329)",
+  "affected_products": [
+    "Red Hat Enterprise Linux for ARM 64 - 4 years of updates",
+    "Red Hat Enterprise Linux for Power, little endian - Extended Update Support",
+    "Red Hat CodeReady Linux Builder for ARM 64 - Extended Update Support",
+    "Red Hat Enterprise Linux for Power, little endian",
+    "Red Hat Enterprise Linux for Power, little endian - 4 years of support",
+    "Red Hat CodeReady Linux Builder for x86_64 10 x86_64",
+    "Red Hat Enterprise Linux for ARM 64",
+    "Red Hat CodeReady Linux Builder for IBM z Systems - Extended Update Support",
+    "Red Hat Enterprise Linux for x86_64 - 4 years of updates 10 x86_64",
+    "Red Hat Enterprise Linux for x86_64 - Extended Update Support 10 x86_64",
+    "Red Hat CodeReady Linux Builder for Power, little endian",
+    "Red Hat Enterprise Linux for IBM z Systems - Extended Update Support",
+    "Red Hat Enterprise Linux for IBM z Systems",
+    "Red Hat Enterprise Linux for IBM z Systems - 4 years of updates",
+    "Red Hat Enterprise Linux for x86_64 10 x86_64",
+    "Red Hat CodeReady Linux Builder for x86_64 - Extended Update Support 10 x86_64",
+    "Red Hat Enterprise Linux for ARM 64 - Extended Update Support",
+    "Red Hat CodeReady Linux Builder for ARM 64",
+    "Red Hat CodeReady Linux Builder for Power, little endian - Extended Update Support",
+    "Red Hat CodeReady Linux Builder for IBM z Systems"
+  ],
+  "cves": [],
+  "packages": [
+    "redhat-release-10.0-35.el10.src",
+    "redhat-release-10.0-35.el10.x86_64",
+    "redhat-release-eula-10.0-35.el10.x86_64",
+    "redhat-release-10.0-35.el10.s390x",
+    "redhat-release-eula-10.0-35.el10.s390x",
+    "redhat-release-10.0-35.el10.ppc64le",
+    "redhat-release-eula-10.0-35.el10.ppc64le",
+    "redhat-release-10.0-35.el10.aarch64",
+    "redhat-release-eula-10.0-35.el10.aarch64",
+    "redhat-sb-certs-10.0-35.el10.noarch"
+  ],
+  "fixes": [
+    {
+      "id": "RHELBLD-16693",
+      "url": "https://issues.redhat.com/browse/RHELBLD-16693",
+      "description": "[RHEL10][redhat-release] CPE_NAME use full release version"
+    },
+    {
+      "id": "RHELBLD-17240",
+      "url": "https://issues.redhat.com/browse/RHELBLD-17240",
+      "description": "[RHEL10][redhat-release] Re-disable rpcbind.service and rpcbind.socket"
+    },
+    {
+      "id": "RHELBLD-17329",
+      "url": "https://issues.redhat.com/browse/RHELBLD-17329",
+      "description": "[RHEL10][redhat-release] Enable greenboot services"
+    }
+  ],
+  "full_text": "An update for redhat-release is now available for Red Hat Enterprise Linux 10.\n\nThe redhat-release package contains licensing information regarding, and identifies the installed version of, Red Hat Enterprise Linux.Bug Fix(es) and Enhancement(s): [RHEL10][redhat-release] CPE_NAME use full release version (JIRA:RHELBLD-16693)  [RHEL10][redhat-release] Re-disable rpcbind.service and rpcbind.socket (JIRA:RHELBLD-17240)  [RHEL10][redhat-release] Enable greenboot services (JIRA:RHELBLD-17329)"
+}

@@ -35,7 +35,7 @@ export async function POST(req: NextRequest) {
         results.preprocessedPatchesDeleted = deletedPreprocessed.count;
 
         // --- 2. Wipe raw batch_data files ---
-        const linuxV2Dir = path.join(process.env.HOME || '/home/citec', '.openclaw/workspace/skills/patch-review/os/linux-v2');
+        const linuxV2Dir = path.join(process.env.HOME || '/home/citec', '.openclaw/workspace/skills/patch-review/os/linux');
         const batchDataDir = path.join(linuxV2Dir, 'batch_data');
 
         let filesDeleted = 0;

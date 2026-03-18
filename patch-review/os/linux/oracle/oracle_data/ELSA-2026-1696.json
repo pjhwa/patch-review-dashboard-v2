@@ -1,0 +1,32 @@
+{
+  "id": "ELSA-2026-1696",
+  "vendor": "Oracle",
+  "type": "Security Advisory (ELSA)",
+  "title": " util-linux security update",
+  "issuedDate": "2026-02-02T00:00:00Z",
+  "updatedDate": "2026-02-02T00:00:00Z",
+  "pubDate": "2026-02-02T00:00:00Z",
+  "dateStr": "2026-02-02",
+  "url": "https://linux.oracle.com/errata/ELSA-2026-1696.html",
+  "severity": "Moderate",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 10.",
+  "description": "[2.40.2-15]\n- libblkid: use snprintf() instead of sprintf()\n\n[2.40.2-14]\n- Fix setpwnam() buffer use [CVE-2025-14104]",
+  "affected_products": [
+    "Oracle Linux 10 for x86_64",
+    "Oracle Linux 10 for aarch64"
+  ],
+  "cves": [
+    "CVE-2025-14104"
+  ],
+  "packages": [
+    "util-linux-core-2.40.2-15.el10_1.x86_64",
+    "libblkid-2.40.2-15.el10_1.x86_64",
+    "libmount-2.40.2-15.el10_1.x86_64",
+    "libuuid-2.40.2-15.el10_1.x86_64",
+    "libfdisk-2.40.2-15.el10_1.x86_64",
+    "libsmartcols-2.40.2-15.el10_1.x86_64",
+    "util-linux-2.40.2-15.el10_1.x86_64",
+    "util-linux-2.40.2-15.el10_1.src"
+  ],
+  "full_text": "[2.40.2-15]\n- libblkid: use snprintf() instead of sprintf()\n\n[2.40.2-14]\n- Fix setpwnam() buffer use [CVE-2025-14104]\n\nReferences:\nhttps://linux.oracle.com/errata/ELSA-2026-1696.html\nhttps://linux.oracle.com/cve/CVE-2025-14104.html"
+}

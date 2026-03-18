@@ -1,0 +1,52 @@
+{
+  "id": "RHBA-2025:20573",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: iputils bug fix and enhancement update",
+  "issuedDate": "2025-11-11T07:49:58Z",
+  "updatedDate": "2025-11-11T07:49:58Z",
+  "pubDate": "2025-11-11T07:49:58Z",
+  "dateStr": "2025-11-11",
+  "url": "https://access.redhat.com/errata/RHBA-2025:20573",
+  "severity": "None",
+  "overview": "An update for iputils is now available for Red Hat Enterprise Linux 10.",
+  "description": "For detailed information on changes in this release, see the Red Hat Enterprise Linux 9 Release Notes linked from the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux for Power, little endian",
+    "Red Hat Enterprise Linux for x86_64 10 x86_64",
+    "Red Hat Enterprise Linux for IBM z Systems",
+    "Red Hat Enterprise Linux for ARM 64"
+  ],
+  "cves": [],
+  "packages": [
+    "iputils-20210202-15.el9_7.src",
+    "iputils-20210202-15.el9_7.x86_64",
+    "iputils-debuginfo-20210202-15.el9_7.x86_64",
+    "iputils-debugsource-20210202-15.el9_7.x86_64",
+    "iputils-ninfod-20210202-15.el9_7.x86_64",
+    "iputils-ninfod-debuginfo-20210202-15.el9_7.x86_64",
+    "iputils-20210202-15.el9_7.s390x",
+    "iputils-debuginfo-20210202-15.el9_7.s390x",
+    "iputils-debugsource-20210202-15.el9_7.s390x",
+    "iputils-ninfod-20210202-15.el9_7.s390x",
+    "iputils-ninfod-debuginfo-20210202-15.el9_7.s390x",
+    "iputils-20210202-15.el9_7.ppc64le",
+    "iputils-debuginfo-20210202-15.el9_7.ppc64le",
+    "iputils-debugsource-20210202-15.el9_7.ppc64le",
+    "iputils-ninfod-20210202-15.el9_7.ppc64le",
+    "iputils-ninfod-debuginfo-20210202-15.el9_7.ppc64le",
+    "iputils-20210202-15.el9_7.aarch64",
+    "iputils-debuginfo-20210202-15.el9_7.aarch64",
+    "iputils-debugsource-20210202-15.el9_7.aarch64",
+    "iputils-ninfod-20210202-15.el9_7.aarch64",
+    "iputils-ninfod-debuginfo-20210202-15.el9_7.aarch64"
+  ],
+  "fixes": [
+    {
+      "id": "RHEL-98281",
+      "url": "https://issues.redhat.com/browse/RHEL-98281",
+      "description": "In RHEL 9.6 arping returns 1 (error) in place of 0(OK) if number of replies are more than packet sent"
+    }
+  ],
+  "full_text": "An update for iputils is now available for Red Hat Enterprise Linux 10.\n\nFor detailed information on changes in this release, see the Red Hat Enterprise Linux 9 Release Notes linked from the References section."
+}

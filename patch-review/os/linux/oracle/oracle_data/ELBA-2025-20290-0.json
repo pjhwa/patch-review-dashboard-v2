@@ -1,0 +1,25 @@
+{
+  "id": "ELBA-2025-20290-0",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "AppStream",
+  "title": "mingw-qemu-ga-win bug fix and enhancement update",
+  "issuedDate": "2025-11-25T00:00:00Z",
+  "updatedDate": "2025-11-25T00:00:00Z",
+  "pubDate": "2025-11-25T00:00:00Z",
+  "dateStr": "2025-11-25",
+  "url": "https://linux.oracle.com/errata/ELBA-2025-20290-0.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 10.",
+  "description": "[110.0.2-1]\n- RHEL-107174 QGA can't be installed before vioserial driver or without serial port configured\n\n[110.0.1-1]\n- RHEL-104252 QAPI error desc does not contain Windows error\n\n[110.0.0-1]\n- RHEL-83547 - Rebase mingw-qemu-ga-win to QEMU 10.0.0\n- RHEL-96980 - mingw-qga: Drop mingw-pixman build deps\n- RHEL-98947 - [mingw-qemu-ga-win] MSI installer ignore VSS installation result\n- RHEL-11824 - [QGA] VSS installation retry, if previously VSS service was not un-registered correctly\n\n[109.1.0-8]\n- RHEL-71884 - [qemu-guest-agent][RFE] Report CPU load average for Windows VMs",
+  "affected_products": [
+    "Oracle Linux 10 for x86_64",
+    "Oracle Linux 10 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "mingw-qemu-ga-win-110.0.2-1.el10.src",
+    "mingw-qemu-ga-win-110.0.2-1.el10.noarch"
+  ],
+  "full_text": "[110.0.2-1]\n- RHEL-107174 QGA can't be installed before vioserial driver or without serial port configured\n\n[110.0.1-1]\n- RHEL-104252 QAPI error desc does not contain Windows error\n\n[110.0.0-1]\n- RHEL-83547 - Rebase mingw-qemu-ga-win to QEMU 10.0.0\n- RHEL-96980 - mingw-qga: Drop mingw-pixman build deps\n- RHEL-98947 - [mingw-qemu-ga-win] MSI installer ignore VSS installation result\n- RHEL-11824 - [QGA] VSS installation retry, if previously VSS service was not un-registered correctly\n\n[109.1.0-8]\n- RHEL-71884 - [qemu-guest-agent][RFE] Report CPU load average for Windows VMs\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2025-20290-0.html"
+}

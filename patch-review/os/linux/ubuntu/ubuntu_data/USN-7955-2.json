@@ -1,0 +1,22 @@
+{
+  "id": "USN-7955-2",
+  "vendor": "Canonical / Ubuntu",
+  "type": "Ubuntu Security Notice (USN)",
+  "title": "python-urllib3 regression",
+  "issuedDate": "2026-01-19T11:57:37Z",
+  "updatedDate": "2026-02-10T04:50:47Z",
+  "pubDate": "2026-01-19T11:57:37Z",
+  "dateStr": "2026-01-19",
+  "url": "https://ubuntu.com/security/notices/USN-7955-2",
+  "severity": "None",
+  "overview": "python-urllib3 regression",
+  "description": "USN-7955-1 fixed vulnerabilities in urllib3. The update introduced a\nregression in response streaming on Ubuntu 20.04 LTS and Ubuntu 22.04 LTS.\nThis update fixes the problem.\n\nWe apologize for the inconvenience.\n\nOriginal advisory details:\n\n It was discovered that urllib3 incorrectly handled decompression during\n HTTP redirects. An attacker could possibly use this issue to cause urllib3\n to use excessive resources, causing a denial of service.",
+  "affected_products": [
+    "Ubuntu 22.04 LTS"
+  ],
+  "cves": [],
+  "packages": [
+    "python3-urllib3-1.26.5-1~exp1ubuntu0.6"
+  ],
+  "full_text": "USN-7955-1 fixed vulnerabilities in urllib3. The update introduced a\nregression in response streaming on Ubuntu 20.04 LTS and Ubuntu 22.04 LTS.\nThis update fixes the problem.\n\nWe apologize for the inconvenience.\n\nOriginal advisory details:\n\n It was discovered that urllib3 incorrectly handled decompression during\n HTTP redirects. An attacker could possibly use this issue to cause urllib3\n to use excessive resources, causing a denial of service."
+}

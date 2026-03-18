@@ -1,0 +1,34 @@
+{
+  "id": "USN-8043-1",
+  "vendor": "Canonical / Ubuntu",
+  "type": "Ubuntu Security Notice (USN)",
+  "title": "gnutls28 vulnerabilities",
+  "issuedDate": "2026-02-16T13:53:33Z",
+  "updatedDate": "2026-02-16T13:53:33Z",
+  "pubDate": "2026-02-16T13:53:33Z",
+  "dateStr": "2026-02-16",
+  "url": "https://ubuntu.com/security/notices/USN-8043-1",
+  "severity": "None",
+  "overview": "gnutls28 vulnerabilities",
+  "description": "Tim Scheckenbach discovered that GnuTLS incorrectly handled malicious\ncertificates containing a large number of name constraints and subject\nalternative names. A remote attacker could possibly use this issue to\ncause GnuTLS to consume resources, resulting in a denial of service.\n(CVE-2025-14831)\n\nLuigino Camastra discovered that GnuTLS incorrectly handled certain PKCS11\ntoken labels. A remote attacker could use this issue to cause GnuTLS to\ncrash, resulting in a denial of service, or possibly execute arbitrary\ncode. The default compiler options for affected releases should reduce the\nvulnerability to a denial of service. (CVE-2025-9820)",
+  "affected_products": [
+    "Ubuntu 22.04 LTS",
+    "Ubuntu 24.04 LTS"
+  ],
+  "cves": [],
+  "packages": [
+    "gnutls-bin-3.7.3-4ubuntu1.8",
+    "gnutls-bin-3.8.3-1.1ubuntu3.5",
+    "guile-gnutls-3.7.3-4ubuntu1.8",
+    "libgnutls-dane0-3.7.3-4ubuntu1.8",
+    "libgnutls-dane0t64-3.8.3-1.1ubuntu3.5",
+    "libgnutls-openssl27-3.7.3-4ubuntu1.8",
+    "libgnutls-openssl27t64-3.8.3-1.1ubuntu3.5",
+    "libgnutls28-dev-3.7.3-4ubuntu1.8",
+    "libgnutls28-dev-3.8.3-1.1ubuntu3.5",
+    "libgnutls30-3.7.3-4ubuntu1.8",
+    "libgnutls30t64-3.8.3-1.1ubuntu3.5",
+    "libgnutlsxx28-3.7.3-4ubuntu1.8"
+  ],
+  "full_text": "Tim Scheckenbach discovered that GnuTLS incorrectly handled malicious\ncertificates containing a large number of name constraints and subject\nalternative names. A remote attacker could possibly use this issue to\ncause GnuTLS to consume resources, resulting in a denial of service.\n(CVE-2025-14831)\n\nLuigino Camastra discovered that GnuTLS incorrectly handled certain PKCS11\ntoken labels. A remote attacker could use this issue to cause GnuTLS to\ncrash, resulting in a denial of service, or possibly execute arbitrary\ncode. The default compiler options for affected releases should reduce the\nvulnerability to a denial of service. (CVE-2025-9820)"
+}

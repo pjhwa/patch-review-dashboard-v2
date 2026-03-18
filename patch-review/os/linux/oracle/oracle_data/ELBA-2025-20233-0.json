@@ -1,0 +1,31 @@
+{
+  "id": "ELBA-2025-20233-0",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "RHCK",
+  "title": "util-linux bug fix and enhancement update",
+  "issuedDate": "2025-11-25T00:00:00Z",
+  "updatedDate": "2025-11-25T00:00:00Z",
+  "pubDate": "2025-11-25T00:00:00Z",
+  "dateStr": "2025-11-25",
+  "url": "https://linux.oracle.com/errata/ELBA-2025-20233-0.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 10.",
+  "description": "[2.40.2-13]\n- lscpu: update table with ARM IDs\n\n[2.40.2-12]\n- coresched: backport new tool to RHEL-10\n\n[2.40.2-11]\n- agetty: fix stdin conversion to tty name",
+  "affected_products": [
+    "Oracle Linux 10 for x86_64",
+    "Oracle Linux 10 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "libmount-2.40.2-13.el10.x86_64",
+    "libfdisk-2.40.2-13.el10.x86_64",
+    "util-linux-2.40.2-13.el10.x86_64",
+    "libuuid-2.40.2-13.el10.x86_64",
+    "libsmartcols-2.40.2-13.el10.x86_64",
+    "util-linux-core-2.40.2-13.el10.x86_64",
+    "util-linux-2.40.2-13.el10.src",
+    "libblkid-2.40.2-13.el10.x86_64"
+  ],
+  "full_text": "[2.40.2-13]\n- lscpu: update table with ARM IDs\n\n[2.40.2-12]\n- coresched: backport new tool to RHEL-10\n\n[2.40.2-11]\n- agetty: fix stdin conversion to tty name\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2025-20233-0.html"
+}

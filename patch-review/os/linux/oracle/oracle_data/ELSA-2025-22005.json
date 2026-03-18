@@ -1,0 +1,30 @@
+{
+  "id": "ELSA-2025-22005",
+  "vendor": "Oracle",
+  "type": "Security Advisory (ELSA)",
+  "kernel_type": "AppStream",
+  "title": " go-rpm-macros security update",
+  "issuedDate": "2025-11-25T00:00:00Z",
+  "updatedDate": "2025-11-25T00:00:00Z",
+  "pubDate": "2025-11-25T00:00:00Z",
+  "dateStr": "2025-11-25",
+  "url": "https://linux.oracle.com/errata/ELSA-2025-22005.html",
+  "severity": "Moderate",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 9.",
+  "description": "[3.6.0-12]\n- Rebuilt to include Go1.25.3 to address CVE-2025-47906\n- Resolves: RHEL-125569",
+  "affected_products": [
+    "Oracle Linux 9 for x86_64",
+    "Oracle Linux 9 for aarch64"
+  ],
+  "cves": [
+    "CVE-2025-47906"
+  ],
+  "packages": [
+    "go-rpm-templates-3.6.0-12.el9_7.noarch",
+    "go-srpm-macros-3.6.0-12.el9_7.noarch",
+    "go-filesystem-3.6.0-12.el9_7.x86_64",
+    "go-rpm-macros-3.6.0-12.el9_7.x86_64",
+    "go-rpm-macros-3.6.0-12.el9_7.src"
+  ],
+  "full_text": "[3.6.0-12]\n- Rebuilt to include Go1.25.3 to address CVE-2025-47906\n- Resolves: RHEL-125569\n\nReferences:\nhttps://linux.oracle.com/errata/ELSA-2025-22005.html\nhttps://linux.oracle.com/cve/CVE-2025-47906.html"
+}

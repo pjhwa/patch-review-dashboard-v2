@@ -1,0 +1,29 @@
+{
+  "id": "ELBA-2026-2415",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "title": "libselinux bug fix and enhancement update",
+  "issuedDate": "2026-02-10T00:00:00Z",
+  "updatedDate": "2026-02-10T00:00:00Z",
+  "pubDate": "2026-02-10T00:00:00Z",
+  "dateStr": "2026-02-10",
+  "url": "https://linux.oracle.com/errata/ELBA-2026-2415.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 8.",
+  "description": "[2.9-11]\n- Ignore files removed during relabeling (RHEL-123885)",
+  "affected_products": [
+    "Oracle Linux 8 for x86_64",
+    "Oracle Linux 8 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "python3-libselinux-2.9-11.el8_10.x86_64",
+    "libselinux-2.9-11.el8_10.i686",
+    "libselinux-devel-2.9-11.el8_10.i686",
+    "libselinux-2.9-11.el8_10.x86_64",
+    "libselinux-utils-2.9-11.el8_10.x86_64",
+    "libselinux-2.9-11.el8_10.src",
+    "libselinux-devel-2.9-11.el8_10.x86_64"
+  ],
+  "full_text": "[2.9-11]\n- Ignore files removed during relabeling (RHEL-123885)\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2026-2415.html"
+}

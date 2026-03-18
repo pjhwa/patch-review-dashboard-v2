@@ -1,0 +1,20 @@
+{
+  "id": "RHSA-2025:22777",
+  "vendor": "Red Hat",
+  "url": "https://access.redhat.com/errata/RHSA-2025:22777",
+  "pubDate": "2025-12-04T15:56:54.000Z",
+  "dateStr": "2025-12-04",
+  "severity": "Moderate",
+  "title": "Red Hat Security Advisory: Red Hat JBoss Enterprise Application Platform 8.0.11 security update",
+  "overview": "A security update is now available for Red Hat JBoss Enterprise Application Platform 8.0. Red Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "description": "A security update is now available for Red Hat JBoss Enterprise Application Platform 8.0. Red Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "affected_products": [
+    "Red Hat JBoss Enterprise Application Platform 8.0"
+  ],
+  "cves": [
+    "CVE-2025-4949"
+  ],
+  "packages": [],
+  "fixes": "",
+  "full_text": "Red Hat Security Advisory: Red Hat JBoss Enterprise Application Platform 8.0.11 security update\n\nA security update is now available for Red Hat JBoss Enterprise Application Platform 8.0. Red Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nA security update is now available for Red Hat JBoss Enterprise Application Platform 8.0. Red Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\n\n\nCVE-2025-4949: A flaw was found in Eclipse JGit. This vulnerability can allow information disclosure, denial of service, and other security issues when parsing XML files."
+}

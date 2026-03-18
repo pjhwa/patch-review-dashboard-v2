@@ -1,0 +1,31 @@
+{
+  "id": "USN-7748-1",
+  "vendor": "Canonical / Ubuntu",
+  "type": "Ubuntu Security Notice (USN)",
+  "title": "vim vulnerabilities",
+  "issuedDate": "2025-09-15T13:18:35Z",
+  "updatedDate": "2026-02-10T04:49:48Z",
+  "pubDate": "2025-09-15T13:18:35Z",
+  "dateStr": "2025-09-15",
+  "url": "https://ubuntu.com/security/notices/USN-7748-1",
+  "severity": "None",
+  "overview": "vim vulnerabilities",
+  "description": "It was discovered that Vim incorrectly handled file extraction when opening\nmaliciously crafted zip or tar archives. An attacker could possibly use\nthis issue to create or overwrite files on the system and execute arbitrary\ncode.",
+  "affected_products": [
+    "Ubuntu 24.04 LTS"
+  ],
+  "cves": [],
+  "packages": [
+    "vim-2:9.1.0016-1ubuntu7.9",
+    "vim-athena-2:9.1.0016-1ubuntu7.9",
+    "vim-common-2:9.1.0016-1ubuntu7.9",
+    "vim-gtk3-2:9.1.0016-1ubuntu7.9",
+    "vim-gui-common-2:9.1.0016-1ubuntu7.9",
+    "vim-motif-2:9.1.0016-1ubuntu7.9",
+    "vim-nox-2:9.1.0016-1ubuntu7.9",
+    "vim-runtime-2:9.1.0016-1ubuntu7.9",
+    "vim-tiny-2:9.1.0016-1ubuntu7.9",
+    "xxd-2:9.1.0016-1ubuntu7.9"
+  ],
+  "full_text": "It was discovered that Vim incorrectly handled file extraction when opening\nmaliciously crafted zip or tar archives. An attacker could possibly use\nthis issue to create or overwrite files on the system and execute arbitrary\ncode."
+}

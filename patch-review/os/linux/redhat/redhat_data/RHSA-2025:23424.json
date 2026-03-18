@@ -1,0 +1,45 @@
+{
+  "id": "RHSA-2025:23424",
+  "vendor": "Red Hat",
+  "type": "Security Advisory (RHSA)",
+  "title": "Red Hat Security Advisory: kernel-rt security update",
+  "issuedDate": "2025-12-17T01:15:41+00:00",
+  "updatedDate": "2025-12-17T01:15:41+00:00",
+  "pubDate": "2025-12-17T01:15:41+00:00",
+  "dateStr": "2025-12-17",
+  "url": "https://access.redhat.com/errata/RHSA-2025:23424",
+  "severity": "Important",
+  "overview": "An update for kernel-rt is now available for Red Hat Enterprise Linux 9.0 Update Services for SAP Solutions.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "description": "The kernel-rt packages provide the Real Time Linux Kernel, which enables fine-tuning for systems with extremely high determinism requirements.\n\nSecurity Fix(es):\n\n* kernel: scsi: qla2xxx: Wait for io return on terminate rport (CVE-2023-53322)\n\n* kernel: wifi: cfg80211: fix use-after-free in cmp_bss() (CVE-2025-39864)\n\n* kernel: nbd: fix incomplete validation of ioctl arg (CVE-2023-53513)\n\n* kernel: tcp: Clear tcp_sk(sk)->fastopen_rsk in tcp_disconnect() (CVE-2025-39955)\n\n* kernel: tcp: Don't call reqsk_fastopen_remove() in tcp_conn_request() (CVE-2025-40186)\n\nFor more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux",
+    "Red Hat Enterprise Linux NFV E4S (v.9.0)",
+    "Red Hat Enterprise Linux Real Time E4S (v.9.0)"
+  ],
+  "cves": [
+    "CVE-2023-53322",
+    "CVE-2023-53513",
+    "CVE-2025-39864",
+    "CVE-2025-39955",
+    "CVE-2025-40186"
+  ],
+  "packages": [
+    "kernel-rt-0:5.14.0-70.158.1.rt21.230.el9_0.src",
+    "kernel-rt-0:5.14.0-70.158.1.rt21.230.el9_0.x86_64",
+    "kernel-rt-core-0:5.14.0-70.158.1.rt21.230.el9_0.x86_64",
+    "kernel-rt-debug-0:5.14.0-70.158.1.rt21.230.el9_0.x86_64",
+    "kernel-rt-debug-core-0:5.14.0-70.158.1.rt21.230.el9_0.x86_64",
+    "kernel-rt-debug-devel-0:5.14.0-70.158.1.rt21.230.el9_0.x86_64",
+    "kernel-rt-debug-kvm-0:5.14.0-70.158.1.rt21.230.el9_0.x86_64",
+    "kernel-rt-debug-modules-0:5.14.0-70.158.1.rt21.230.el9_0.x86_64",
+    "kernel-rt-debug-modules-extra-0:5.14.0-70.158.1.rt21.230.el9_0.x86_64",
+    "kernel-rt-devel-0:5.14.0-70.158.1.rt21.230.el9_0.x86_64",
+    "kernel-rt-kvm-0:5.14.0-70.158.1.rt21.230.el9_0.x86_64",
+    "kernel-rt-modules-0:5.14.0-70.158.1.rt21.230.el9_0.x86_64",
+    "kernel-rt-modules-extra-0:5.14.0-70.158.1.rt21.230.el9_0.x86_64",
+    "kernel-rt-debug-debuginfo-0:5.14.0-70.158.1.rt21.230.el9_0.x86_64",
+    "kernel-rt-debuginfo-0:5.14.0-70.158.1.rt21.230.el9_0.x86_64",
+    "kernel-rt-debuginfo-common-x86_64-0:5.14.0-70.158.1.rt21.230.el9_0.x86_64"
+  ],
+  "full_text": "An update for kernel-rt is now available for Red Hat Enterprise Linux 9.0 Update Services for SAP Solutions.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nThe kernel-rt packages provide the Real Time Linux Kernel, which enables fine-tuning for systems with extremely high determinism requirements.\n\nSecurity Fix(es):\n\n* kernel: scsi: qla2xxx: Wait for io return on terminate rport (CVE-2023-53322)\n\n* kernel: wifi: cfg80211: fix use-after-free in cmp_bss() (CVE-2025-39864)\n\n* kernel: nbd: fix incomplete validation of ioctl arg (CVE-2023-53513)\n\n* kernel: tcp: Clear tcp_sk(sk)->fastopen_rsk in tcp_disconnect() (CVE-2025-39955)\n\n* kernel: tcp: Don't call reqsk_fastopen_remove() in tcp_conn_request() (CVE-2025-40186)\n\nFor more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section."
+}

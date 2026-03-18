@@ -1,0 +1,42 @@
+{
+  "id": "RHSA-2026:2441",
+  "vendor": "Red Hat",
+  "type": "Security Advisory (RHSA)",
+  "title": "Red Hat Security Advisory: go-toolset:rhel8 security update",
+  "issuedDate": "2026-02-10T13:45:07+00:00",
+  "updatedDate": "2026-02-10T13:45:07+00:00",
+  "pubDate": "2026-02-10T13:45:07+00:00",
+  "dateStr": "2026-02-10",
+  "url": "https://access.redhat.com/errata/RHSA-2026:2441",
+  "severity": "Important",
+  "overview": "An update for the go-toolset:rhel8 module is now available for Red Hat Enterprise Linux 8.8 Update Services for SAP Solutions and Red Hat Enterprise Linux 8.8 Telecommunications Update Service.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "description": "Go Toolset provides the Go programming language tools and libraries. Go is alternatively known as golang. \n\nSecurity Fix(es):\n\n* crypto/x509: golang: Denial of Service due to excessive resource consumption via crafted certificate (CVE-2025-61729)\n\nFor more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux",
+    "Red Hat Enterprise Linux AppStream E4S (v.8.8)",
+    "Red Hat Enterprise Linux AppStream TUS (v.8.8)"
+  ],
+  "cves": [
+    "CVE-2025-61729"
+  ],
+  "packages": [
+    "delve-0:1.9.1-1.module+el8.8.0+16778+5fbb74f5.src::go-toolset:rhel8",
+    "go-toolset-0:1.19.13-4.module+el8.8.0+23976+18ba1869.src::go-toolset:rhel8",
+    "golang-0:1.19.13-19.module+el8.8.0+23965+aadf92d2.src::go-toolset:rhel8",
+    "delve-0:1.9.1-1.module+el8.8.0+16778+5fbb74f5.x86_64::go-toolset:rhel8",
+    "delve-debuginfo-0:1.9.1-1.module+el8.8.0+16778+5fbb74f5.x86_64::go-toolset:rhel8",
+    "delve-debugsource-0:1.9.1-1.module+el8.8.0+16778+5fbb74f5.x86_64::go-toolset:rhel8",
+    "go-toolset-0:1.19.13-4.module+el8.8.0+23976+18ba1869.x86_64::go-toolset:rhel8",
+    "golang-0:1.19.13-19.module+el8.8.0+23965+aadf92d2.x86_64::go-toolset:rhel8",
+    "golang-bin-0:1.19.13-19.module+el8.8.0+23965+aadf92d2.x86_64::go-toolset:rhel8",
+    "golang-race-0:1.19.13-19.module+el8.8.0+23965+aadf92d2.x86_64::go-toolset:rhel8",
+    "golang-docs-0:1.19.13-19.module+el8.8.0+23965+aadf92d2.noarch::go-toolset:rhel8",
+    "golang-misc-0:1.19.13-19.module+el8.8.0+23965+aadf92d2.noarch::go-toolset:rhel8",
+    "golang-src-0:1.19.13-19.module+el8.8.0+23965+aadf92d2.noarch::go-toolset:rhel8",
+    "golang-tests-0:1.19.13-19.module+el8.8.0+23965+aadf92d2.noarch::go-toolset:rhel8",
+    "go-toolset-0:1.19.13-4.module+el8.8.0+23976+18ba1869.ppc64le::go-toolset:rhel8",
+    "golang-0:1.19.13-19.module+el8.8.0+23965+aadf92d2.ppc64le::go-toolset:rhel8",
+    "golang-bin-0:1.19.13-19.module+el8.8.0+23965+aadf92d2.ppc64le::go-toolset:rhel8"
+  ],
+  "full_text": "An update for the go-toolset:rhel8 module is now available for Red Hat Enterprise Linux 8.8 Update Services for SAP Solutions and Red Hat Enterprise Linux 8.8 Telecommunications Update Service.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nGo Toolset provides the Go programming language tools and libraries. Go is alternatively known as golang. \n\nSecurity Fix(es):\n\n* crypto/x509: golang: Denial of Service due to excessive resource consumption via crafted certificate (CVE-2025-61729)\n\nFor more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section."
+}

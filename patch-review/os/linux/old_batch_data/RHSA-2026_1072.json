@@ -1,0 +1,20 @@
+{
+  "id": "RHSA-2026:1072",
+  "vendor": "Red Hat",
+  "url": "https://access.redhat.com/errata/RHSA-2026:1072",
+  "pubDate": "2026-01-25T22:43:46.000Z",
+  "dateStr": "2026-01-25",
+  "severity": "Moderate",
+  "title": "Red Hat Security Advisory: Red Hat Advanced Cluster Management for Kubernetes v2.15.1 security update",
+  "overview": "Red Hat Advanced Cluster Management for Kubernetes 2.15 General\nAvailability release images, which add new features and enhancements, bug\nfixes, and updated container images.",
+  "description": "Red Hat Advanced Cluster Management for Kubernetes 2.15 General\nAvailability release images, which add new features and enhancements, bug\nfixes, and updated container images.",
+  "affected_products": [
+    "Red Hat Advanced Cluster Management for Kubernetes 2.15"
+  ],
+  "cves": [
+    "CVE-2025-58183"
+  ],
+  "packages": [],
+  "fixes": "",
+  "full_text": "Red Hat Security Advisory: Red Hat Advanced Cluster Management for Kubernetes v2.15.1 security update\n\nRed Hat Advanced Cluster Management for Kubernetes 2.15 General\nAvailability release images, which add new features and enhancements, bug\nfixes, and updated container images.\n\nRed Hat Advanced Cluster Management for Kubernetes 2.15 General\nAvailability release images, which add new features and enhancements, bug\nfixes, and updated container images.\n\n\n\nCVE-2025-58183: A flaw was found in the archive/tar package in the Go standard library. tar.Reader does not set a maximum size on the number of sparse region data blocks in GNU tar pax 1.0 sparse files. A specially crafted tar archive with a pax header indicating a big number of sparse regions can cause a Go program to try to allocate a large amount of memory, causing an out-of-memory condition and resulting in a denial of service."
+}

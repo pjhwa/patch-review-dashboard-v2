@@ -1,0 +1,24 @@
+{
+  "id": "USN-7749-1",
+  "vendor": "Canonical / Ubuntu",
+  "type": "Ubuntu Security Notice (USN)",
+  "title": "libcpanel-json-xs-perl vulnerability",
+  "issuedDate": "2025-09-15T14:17:42Z",
+  "updatedDate": "2026-02-10T04:49:48Z",
+  "pubDate": "2025-09-15T14:17:42Z",
+  "dateStr": "2025-09-15",
+  "url": "https://ubuntu.com/security/notices/USN-7749-1",
+  "severity": "None",
+  "overview": "libcpanel-json-xs-perl vulnerability",
+  "description": "It was discovered that Cpanel-JSON-XS incorrectly handled parsing certain\nJSON data. An attacker could possibly use this issue to cause\nCpanel-JSON-XS to crash, resulting in a denial of service.",
+  "affected_products": [
+    "Ubuntu 22.04 LTS",
+    "Ubuntu 24.04 LTS"
+  ],
+  "cves": [],
+  "packages": [
+    "libcpanel-json-xs-perl-4.27-1ubuntu0.2",
+    "libcpanel-json-xs-perl-4.37-1ubuntu0.1"
+  ],
+  "full_text": "It was discovered that Cpanel-JSON-XS incorrectly handled parsing certain\nJSON data. An attacker could possibly use this issue to cause\nCpanel-JSON-XS to crash, resulting in a denial of service."
+}

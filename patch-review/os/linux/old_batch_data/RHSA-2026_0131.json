@@ -1,0 +1,22 @@
+{
+  "id": "RHSA-2026:0131",
+  "vendor": "Red Hat",
+  "url": "https://access.redhat.com/errata/RHSA-2026:0131",
+  "pubDate": "2026-01-06T13:12:23.000Z",
+  "dateStr": "2026-01-06",
+  "severity": "Important",
+  "title": "Red Hat Security Advisory: Red Hat build of Quarkus 3.20.4.SP1 security update",
+  "overview": "An update is now available for Red Hat build of Quarkus.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability. For more information, see the CVE links in the References section.",
+  "description": "An update is now available for Red Hat build of Quarkus.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability. For more information, see the CVE links in the References section.",
+  "affected_products": [
+    "Red Hat build of Quarkus 3.20.4.SP1"
+  ],
+  "cves": [
+    "CVE-2025-11966",
+    "CVE-2025-12183",
+    "CVE-2025-66566"
+  ],
+  "packages": [],
+  "fixes": "",
+  "full_text": "Red Hat Security Advisory: Red Hat build of Quarkus 3.20.4.SP1 security update\n\nAn update is now available for Red Hat build of Quarkus.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability. For more information, see the CVE links in the References section.\n\nAn update is now available for Red Hat build of Quarkus.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability. For more information, see the CVE links in the References section.\n\n\n\nCVE-2025-11966: In Eclipse Vert.x versions [4.0.0, 4.5.21] and [5.0.0, 5.0.4], when \"directory listing\" is enabled, file and directory names are inserted into generated HTML without proper escaping in the href, title, and link attributes. An attacker who can create or rename files or directories within a served path can craft filenames containing malicious script or HTML content, leading to stored cross-site scripting (XSS) that executes in the context of users viewing the affected directory listing.\n\nCVE-2025-12183: A flaw was found in lz4-java. This vulnerability allows remote attackers to cause denial of service (DoS) and read adjacent memory via untrusted compressed input. This vulnerability affects only programs using the unsafe LZ4_decompress_fast API, known as the \"fast\" decompressor.\n\nCVE-2025-66566: A flaw was found in lz4-java. This vulnerability allows disclosure of sensitive data via crafted compressed input due to insufficient clearing of the output buffer in Java-based decompressor implementations."
+}

@@ -1,0 +1,35 @@
+{
+  "id": "ELBA-2025-28064",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "title": " systemd  bug fix update",
+  "issuedDate": "2025-12-22T00:00:00Z",
+  "updatedDate": "2025-12-22T00:00:00Z",
+  "pubDate": "2025-12-22T00:00:00Z",
+  "dateStr": "2025-12-22",
+  "url": "https://linux.oracle.com/errata/ELBA-2025-28064.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 8.",
+  "description": "[239-82.0.8.8]\n- Return to newest device wins for competing symlink claims [Orabug: 38718322]\n- Fix collection of device units with conflicting devlinks [Orabug: 38599776]\n- Re-apply fix for devlink device units on lvm rename [Orabug: 38491067]",
+  "affected_products": [
+    "Oracle Linux 8 for x86_64",
+    "Oracle Linux 8 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "systemd-pam-239-82.0.8.el8_10.8.x86_64",
+    "systemd-devel-239-82.0.8.el8_10.8.x86_64",
+    "systemd-tests-239-82.0.8.el8_10.8.x86_64",
+    "systemd-container-239-82.0.8.el8_10.8.x86_64",
+    "systemd-devel-239-82.0.8.el8_10.8.i686",
+    "systemd-journal-remote-239-82.0.8.el8_10.8.x86_64",
+    "systemd-239-82.0.8.el8_10.8.src",
+    "systemd-239-82.0.8.el8_10.8.i686",
+    "systemd-libs-239-82.0.8.el8_10.8.i686",
+    "systemd-libs-239-82.0.8.el8_10.8.x86_64",
+    "systemd-container-239-82.0.8.el8_10.8.i686",
+    "systemd-239-82.0.8.el8_10.8.x86_64",
+    "systemd-udev-239-82.0.8.el8_10.8.x86_64"
+  ],
+  "full_text": "[239-82.0.8.8]\n- Return to newest device wins for competing symlink claims [Orabug: 38718322]\n- Fix collection of device units with conflicting devlinks [Orabug: 38599776]\n- Re-apply fix for devlink device units on lvm rename [Orabug: 38491067]\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2025-28064.html"
+}

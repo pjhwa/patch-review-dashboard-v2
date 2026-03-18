@@ -1,0 +1,40 @@
+{
+  "id": "ELBA-2025-28050",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2025-December/019263.html",
+  "synopsis": "[El-errata] ELBA-2025-28050 Oracle Linux 7 linux-firmware bug fix update",
+  "dateStr": "2025-December",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Bug Fix Advisory ELBA-2025-28050",
+  "description": "[20251110-999.45.gitc0af6c70.el7]\n- Rebase to latest upstream [Orabug: 38523856]\n- Include AMD ucode fix [Orabug: 38523856] {CVE-2025-62626}\n\n[20251030-999.44.1.gite9292517.el7]\n- Include AMD ucode fix [Orabug: 38523856] {CVE-2025-62626}\n\n[20250909-999.44.git260ff424.el7]\n- Rewrite the script to accomodate yum-based installs [Orabug: 38409589]\n\n[20250909-999.42.1.git356f06bf.el10]\n- Rewrite the script to accomodate yum-based installs [Orabug: 38410501]\n\n[20250828-999.43.git260ff424.el7]\n- Rebase to latest upstream [Orabug: 38200684]\n- Solve conflicts caused by symbolic link changes [Orabug: 38206139]\n\n[20250826-999.42.git356f06bf.el7]\n- Handling downgrade issue for Nvidia firmware changes [Orabug: 38303112]\n\n[20250611-999.41.git356f06bf.el7]\n- Rebase to latest upstream [Orabug: 38028345]\n\n[20250423-999.40.git32f3227b.el7]\n- Rebase to latest upstream [Orabug: 37868435]\n\n[20250319-999.39.git430633ec.el7]\n- Rebase to latest upstream [Orabug: 37729115]\n\n[20250203-999.38.git0fd450ee.el7]\n- Rebase to latest upstream [Orabug: 37535629]",
+  "affected_products": [
+    "Oracle Linux 7"
+  ],
+  "packages": [
+    "iwl1000-firmware-39.31.5.1-999.45.el7.noarch.rpm",
+    "iwl100-firmware-39.31.5.1-999.45.el7.noarch.rpm",
+    "iwl105-firmware-18.168.6.1-999.45.el7.noarch.rpm",
+    "iwl135-firmware-18.168.6.1-999.45.el7.noarch.rpm",
+    "iwl2000-firmware-18.168.6.1-999.45.el7.noarch.rpm",
+    "iwl2030-firmware-18.168.6.1-999.45.el7.noarch.rpm",
+    "iwl3160-firmware-22.0.7.0-999.45.el7.noarch.rpm",
+    "iwl3945-firmware-15.32.2.9-999.45.el7.noarch.rpm",
+    "iwl4965-firmware-228.61.2.24-999.45.el7.noarch.rpm",
+    "iwl5000-firmware-8.83.5.1_1-999.45.el7.noarch.rpm",
+    "iwl5150-firmware-8.24.2.2-999.45.el7.noarch.rpm",
+    "iwl6000-firmware-9.221.4.1-999.45.el7.noarch.rpm",
+    "iwl6000g2a-firmware-17.168.5.3-999.45.el7.noarch.rpm",
+    "iwl6000g2b-firmware-17.168.5.2-999.45.el7.noarch.rpm",
+    "iwl6050-firmware-41.28.5.1-999.45.el7.noarch.rpm",
+    "iwl7260-firmware-22.0.7.0-999.45.el7.noarch.rpm",
+    "iwlax2xx-firmware-20251110-999.45.el7.noarch.rpm",
+    "linux-firmware-20251110-999.45.gitc0af6c70.el7.noarch.rpm"
+  ],
+  "cves": [
+    "CVE-2025-62626"
+  ],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Bug Fix Advisory ELBA-2025-28050\n\nhttp://linux.oracle.com/errata/ELBA-2025-28050.html\n\nThe following updated rpms for Oracle Linux 7 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\niwl1000-firmware-39.31.5.1-999.45.el7.noarch.rpm\niwl100-firmware-39.31.5.1-999.45.el7.noarch.rpm\niwl105-firmware-18.168.6.1-999.45.el7.noarch.rpm\niwl135-firmware-18.168.6.1-999.45.el7.noarch.rpm\niwl2000-firmware-18.168.6.1-999.45.el7.noarch.rpm\niwl2030-firmware-18.168.6.1-999.45.el7.noarch.rpm\niwl3160-firmware-22.0.7.0-999.45.el7.noarch.rpm\niwl3945-firmware-15.32.2.9-999.45.el7.noarch.rpm\niwl4965-firmware-228.61.2.24-999.45.el7.noarch.rpm\niwl5000-firmware-8.83.5.1_1-999.45.el7.noarch.rpm\niwl5150-firmware-8.24.2.2-999.45.el7.noarch.rpm\niwl6000-firmware-9.221.4.1-999.45.el7.noarch.rpm\niwl6000g2a-firmware-17.168.5.3-999.45.el7.noarch.rpm\niwl6000g2b-firmware-17.168.5.2-999.45.el7.noarch.rpm\niwl6050-firmware-41.28.5.1-999.45.el7.noarch.rpm\niwl7260-firmware-22.0.7.0-999.45.el7.noarch.rpm\niwlax2xx-firmware-20251110-999.45.el7.noarch.rpm\nlinux-firmware-20251110-999.45.gitc0af6c70.el7.noarch.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol7/SRPMS-updates/linux-firmware-20251110-999.45.gitc0af6c70.el7.src.rpm\n\n\n\nDescription of changes:\n\n[20251110-999.45.gitc0af6c70.el7]\n- Rebase to latest upstream [Orabug: 38523856]\n- Include AMD ucode fix [Orabug: 38523856] {CVE-2025-62626}\n\n[20251030-999.44.1.gite9292517.el7]\n- Include AMD ucode fix [Orabug: 38523856] {CVE-2025-62626}\n\n[20250909-999.44.git260ff424.el7]\n- Rewrite the script to accomodate yum-based installs [Orabug: 38409589]\n\n[20250909-999.42.1.git356f06bf.el10]\n- Rewrite the script to accomodate yum-based installs [Orabug: 38410501]\n\n[20250828-999.43.git260ff424.el7]\n- Rebase to latest upstream [Orabug: 38200684]\n- Solve conflicts caused by symbolic link changes [Orabug: 38206139]\n\n[20250826-999.42.git356f06bf.el7]\n- Handling downgrade issue for Nvidia firmware changes [Orabug: 38303112]\n\n[20250611-999.41.git356f06bf.el7]\n- Rebase to latest upstream [Orabug: 38028345]\n\n[20250423-999.40.git32f3227b.el7]\n- Rebase to latest upstream [Orabug: 37868435]\n\n[20250319-999.39.git430633ec.el7]\n- Rebase to latest upstream [Orabug: 37729115]\n\n[20250203-999.38.git0fd450ee.el7]\n- Rebase to latest upstream [Orabug: 37535629]",
+  "vendor": "Oracle"
+}

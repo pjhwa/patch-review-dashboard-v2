@@ -1,0 +1,38 @@
+{
+  "id": "RHBA-2025:20415",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: grafana-pcp bug fix and enhancement update",
+  "issuedDate": "2025-11-11T07:26:26Z",
+  "updatedDate": "2025-11-11T07:26:26Z",
+  "pubDate": "2025-11-11T07:26:26Z",
+  "dateStr": "2025-11-11",
+  "url": "https://access.redhat.com/errata/RHBA-2025:20415",
+  "severity": "None",
+  "overview": "An update for grafana-pcp is now available for Red Hat Enterprise Linux 10.",
+  "description": "For detailed information on changes in this release, see the Red Hat Enterprise Linux 10 Release Notes linked from the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux for IBM z Systems",
+    "Red Hat Enterprise Linux for x86_64 10 x86_64",
+    "Red Hat Enterprise Linux for ARM 64",
+    "Red Hat Enterprise Linux for Power, little endian"
+  ],
+  "cves": [],
+  "packages": [
+    "grafana-pcp-5.3.0-1.el10.src",
+    "grafana-pcp-5.3.0-1.el10.x86_64",
+    "grafana-pcp-debuginfo-5.3.0-1.el10.x86_64",
+    "grafana-pcp-debugsource-5.3.0-1.el10.x86_64",
+    "grafana-pcp-5.3.0-1.el10.s390x",
+    "grafana-pcp-debuginfo-5.3.0-1.el10.s390x",
+    "grafana-pcp-debugsource-5.3.0-1.el10.s390x",
+    "grafana-pcp-5.3.0-1.el10.ppc64le",
+    "grafana-pcp-debuginfo-5.3.0-1.el10.ppc64le",
+    "grafana-pcp-debugsource-5.3.0-1.el10.ppc64le",
+    "grafana-pcp-5.3.0-1.el10.aarch64",
+    "grafana-pcp-debuginfo-5.3.0-1.el10.aarch64",
+    "grafana-pcp-debugsource-5.3.0-1.el10.aarch64"
+  ],
+  "fixes": [],
+  "full_text": "An update for grafana-pcp is now available for Red Hat Enterprise Linux 10.\n\nFor detailed information on changes in this release, see the Red Hat Enterprise Linux 10 Release Notes linked from the References section."
+}

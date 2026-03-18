@@ -1,0 +1,36 @@
+{
+  "id": "ELSA-2026-0921",
+  "vendor": "Oracle",
+  "type": "Security Advisory (ELSA)",
+  "kernel_type": "AppStream",
+  "title": " go-toolset:ol8 security update",
+  "issuedDate": "2026-01-21T00:00:00Z",
+  "updatedDate": "2026-01-21T00:00:00Z",
+  "pubDate": "2026-01-21T00:00:00Z",
+  "dateStr": "2026-01-21",
+  "url": "https://linux.oracle.com/errata/ELSA-2026-0921.html",
+  "severity": "Important",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 8.",
+  "description": "delve\n[1.25.2-1.0.1]\n- Disable DWARF compression which has issues (Alex Burmashev)\n\n[1.25.2-1]\n- Update to Delve 1.25.2 (Sync from CentOS Stream 9)\n- Related: RHEL-121223\n\ngolang\n[1.25.5-1]\n- Update to Go 1.25.5 (fips-1)\n- Resolves: RHEL-139365",
+  "affected_products": [
+    "Oracle Linux 8 for x86_64",
+    "Oracle Linux 8 for aarch64"
+  ],
+  "cves": [
+    "CVE-2025-61729"
+  ],
+  "packages": [
+    "golang-tests-1.25.5-1.module+el8.10.0+90772+95994ed8.noarch",
+    "golang-src-1.25.5-1.module+el8.10.0+90772+95994ed8.noarch",
+    "golang-misc-1.25.5-1.module+el8.10.0+90772+95994ed8.noarch",
+    "golang-docs-1.25.5-1.module+el8.10.0+90772+95994ed8.noarch",
+    "delve-1.25.2-1.0.1.module+el8.10.0+90715+2d4d8dfd.x86_64",
+    "golang-1.25.5-1.module+el8.10.0+90772+95994ed8.x86_64",
+    "go-toolset-1.25.5-1.module+el8.10.0+90772+95994ed8.x86_64",
+    "golang-race-1.25.5-1.module+el8.10.0+90772+95994ed8.x86_64",
+    "golang-bin-1.25.5-1.module+el8.10.0+90772+95994ed8.x86_64",
+    "delve-1.25.2-1.0.1.module+el8.10.0+90715+2d4d8dfd.src",
+    "golang-1.25.5-1.module+el8.10.0+90772+95994ed8.src"
+  ],
+  "full_text": "delve\n[1.25.2-1.0.1]\n- Disable DWARF compression which has issues (Alex Burmashev)\n\n[1.25.2-1]\n- Update to Delve 1.25.2 (Sync from CentOS Stream 9)\n- Related: RHEL-121223\n\ngolang\n[1.25.5-1]\n- Update to Go 1.25.5 (fips-1)\n- Resolves: RHEL-139365\n\nReferences:\nhttps://linux.oracle.com/errata/ELSA-2026-0921.html\nhttps://linux.oracle.com/cve/CVE-2025-61729.html"
+}

@@ -1,0 +1,49 @@
+{
+  "id": "RHBA-2025:20706",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: gnome-shell bug fix and enhancement update",
+  "issuedDate": "2025-11-11T07:50:52Z",
+  "updatedDate": "2025-11-11T07:50:52Z",
+  "pubDate": "2025-11-11T07:50:52Z",
+  "dateStr": "2025-11-11",
+  "url": "https://access.redhat.com/errata/RHBA-2025:20706",
+  "severity": "None",
+  "overview": "An update for gnome-shell is now available for Red Hat Enterprise Linux 10.",
+  "description": "For detailed information on changes in this release, see the Red Hat Enterprise Linux 9 Release Notes linked from the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux for Power, little endian",
+    "Red Hat Enterprise Linux for ARM 64",
+    "Red Hat Enterprise Linux for IBM z Systems",
+    "Red Hat Enterprise Linux for x86_64 10 x86_64"
+  ],
+  "cves": [],
+  "packages": [
+    "gnome-shell-40.10-28.el9.src",
+    "gnome-shell-40.10-28.el9.x86_64",
+    "gnome-shell-debuginfo-40.10-28.el9.x86_64",
+    "gnome-shell-debugsource-40.10-28.el9.x86_64",
+    "gnome-shell-40.10-28.el9.s390x",
+    "gnome-shell-debuginfo-40.10-28.el9.s390x",
+    "gnome-shell-debugsource-40.10-28.el9.s390x",
+    "gnome-shell-40.10-28.el9.ppc64le",
+    "gnome-shell-debuginfo-40.10-28.el9.ppc64le",
+    "gnome-shell-debugsource-40.10-28.el9.ppc64le",
+    "gnome-shell-40.10-28.el9.aarch64",
+    "gnome-shell-debuginfo-40.10-28.el9.aarch64",
+    "gnome-shell-debugsource-40.10-28.el9.aarch64"
+  ],
+  "fixes": [
+    {
+      "id": "RHEL-69401",
+      "url": "https://issues.redhat.com/browse/RHEL-69401",
+      "description": "Blank Screen Power Saving Option goes into infinite login loop"
+    },
+    {
+      "id": "RHEL-92307",
+      "url": "https://issues.redhat.com/browse/RHEL-92307",
+      "description": "gdm dies when user attempts to login while a concurrent VNC session is running"
+    }
+  ],
+  "full_text": "An update for gnome-shell is now available for Red Hat Enterprise Linux 10.\n\nFor detailed information on changes in this release, see the Red Hat Enterprise Linux 9 Release Notes linked from the References section."
+}

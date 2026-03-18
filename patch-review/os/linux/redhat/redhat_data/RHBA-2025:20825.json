@@ -1,0 +1,38 @@
+{
+  "id": "RHBA-2025:20825",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: bpftool bug fix and enhancement update",
+  "issuedDate": "2025-11-11T07:51:13Z",
+  "updatedDate": "2025-11-11T07:51:13Z",
+  "pubDate": "2025-11-11T07:51:13Z",
+  "dateStr": "2025-11-11",
+  "url": "https://access.redhat.com/errata/RHBA-2025:20825",
+  "severity": "None",
+  "overview": "An update for bpftool is now available for Red Hat Enterprise Linux 10.",
+  "description": "For detailed information on changes in this release, see the Red Hat Enterprise Linux 9 Release Notes linked from the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux for IBM z Systems",
+    "Red Hat Enterprise Linux for Power, little endian",
+    "Red Hat Enterprise Linux for ARM 64",
+    "Red Hat Enterprise Linux for x86_64 10 x86_64"
+  ],
+  "cves": [],
+  "packages": [
+    "bpftool-7.5.0-803.el9.src",
+    "bpftool-7.5.0-803.el9.x86_64",
+    "bpftool-debuginfo-7.5.0-803.el9.x86_64",
+    "bpftool-debugsource-7.5.0-803.el9.x86_64",
+    "bpftool-7.5.0-803.el9.s390x",
+    "bpftool-debuginfo-7.5.0-803.el9.s390x",
+    "bpftool-debugsource-7.5.0-803.el9.s390x",
+    "bpftool-7.5.0-803.el9.ppc64le",
+    "bpftool-debuginfo-7.5.0-803.el9.ppc64le",
+    "bpftool-debugsource-7.5.0-803.el9.ppc64le",
+    "bpftool-7.5.0-803.el9.aarch64",
+    "bpftool-debuginfo-7.5.0-803.el9.aarch64",
+    "bpftool-debugsource-7.5.0-803.el9.aarch64"
+  ],
+  "fixes": [],
+  "full_text": "An update for bpftool is now available for Red Hat Enterprise Linux 10.\n\nFor detailed information on changes in this release, see the Red Hat Enterprise Linux 9 Release Notes linked from the References section."
+}

@@ -1,0 +1,114 @@
+{
+  "id": "RHBA-2025:20635",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: nmstate bug fix and enhancement update",
+  "issuedDate": "2025-11-11T07:50:39Z",
+  "updatedDate": "2025-11-11T07:50:39Z",
+  "pubDate": "2025-11-11T07:50:39Z",
+  "dateStr": "2025-11-11",
+  "url": "https://access.redhat.com/errata/RHBA-2025:20635",
+  "severity": "None",
+  "overview": "An update for nmstate is now available for Red Hat Enterprise Linux 10.",
+  "description": "For detailed information on changes in this release, see the Red Hat Enterprise Linux 9 Release Notes linked from the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux for ARM 64",
+    "Red Hat Enterprise Linux for Power, little endian",
+    "Red Hat CodeReady Linux Builder for ARM 64",
+    "Red Hat CodeReady Linux Builder for Power, little endian",
+    "Red Hat Enterprise Linux for IBM z Systems",
+    "Red Hat Enterprise Linux for x86_64 10 x86_64",
+    "Red Hat CodeReady Linux Builder for IBM z Systems",
+    "Red Hat CodeReady Linux Builder for x86_64 10 x86_64"
+  ],
+  "cves": [],
+  "packages": [
+    "nmstate-2.2.49-1.el9.src",
+    "nmstate-2.2.49-1.el9.x86_64",
+    "nmstate-debuginfo-2.2.49-1.el9.i686",
+    "nmstate-debuginfo-2.2.49-1.el9.x86_64",
+    "nmstate-debugsource-2.2.49-1.el9.i686",
+    "nmstate-debugsource-2.2.49-1.el9.x86_64",
+    "nmstate-libs-2.2.49-1.el9.i686",
+    "nmstate-libs-2.2.49-1.el9.x86_64",
+    "nmstate-libs-debuginfo-2.2.49-1.el9.i686",
+    "nmstate-libs-debuginfo-2.2.49-1.el9.x86_64",
+    "python3-libnmstate-2.2.49-1.el9.x86_64",
+    "nmstate-2.2.49-1.el9.s390x",
+    "nmstate-debuginfo-2.2.49-1.el9.s390x",
+    "nmstate-debugsource-2.2.49-1.el9.s390x",
+    "nmstate-libs-2.2.49-1.el9.s390x",
+    "nmstate-libs-debuginfo-2.2.49-1.el9.s390x",
+    "python3-libnmstate-2.2.49-1.el9.s390x",
+    "nmstate-2.2.49-1.el9.ppc64le",
+    "nmstate-debuginfo-2.2.49-1.el9.ppc64le",
+    "nmstate-debugsource-2.2.49-1.el9.ppc64le",
+    "nmstate-libs-2.2.49-1.el9.ppc64le",
+    "nmstate-libs-debuginfo-2.2.49-1.el9.ppc64le",
+    "python3-libnmstate-2.2.49-1.el9.ppc64le",
+    "nmstate-2.2.49-1.el9.aarch64",
+    "nmstate-debuginfo-2.2.49-1.el9.aarch64",
+    "nmstate-debugsource-2.2.49-1.el9.aarch64",
+    "nmstate-libs-2.2.49-1.el9.aarch64",
+    "nmstate-libs-debuginfo-2.2.49-1.el9.aarch64",
+    "python3-libnmstate-2.2.49-1.el9.aarch64",
+    "nmstate-devel-2.2.49-1.el9.i686",
+    "nmstate-devel-2.2.49-1.el9.x86_64",
+    "nmstate-static-2.2.49-1.el9.i686",
+    "nmstate-static-2.2.49-1.el9.x86_64",
+    "nmstate-devel-2.2.49-1.el9.ppc64le",
+    "nmstate-static-2.2.49-1.el9.ppc64le",
+    "nmstate-devel-2.2.49-1.el9.aarch64",
+    "nmstate-static-2.2.49-1.el9.aarch64",
+    "nmstate-devel-2.2.49-1.el9.s390x",
+    "nmstate-static-2.2.49-1.el9.s390x"
+  ],
+  "fixes": [
+    {
+      "id": "RHEL-80418",
+      "url": "https://issues.redhat.com/browse/RHEL-80418",
+      "description": "Add support to nmstate for MTU and quickack"
+    },
+    {
+      "id": "RHEL-82100",
+      "url": "https://issues.redhat.com/browse/RHEL-82100",
+      "description": "DNS NNCP is stuck in Degraded state during reconsiliation"
+    },
+    {
+      "id": "RHEL-67631",
+      "url": "https://issues.redhat.com/browse/RHEL-67631",
+      "description": "Support for vlan-egress-priority-map configuration"
+    },
+    {
+      "id": "RHEL-32495",
+      "url": "https://issues.redhat.com/browse/RHEL-32495",
+      "description": "[RFE] Refer route next hop interface by MAC address"
+    },
+    {
+      "id": "RHEL-74238",
+      "url": "https://issues.redhat.com/browse/RHEL-74238",
+      "description": "Ansible RHEL network system role issue with nmstate `route-rules`"
+    },
+    {
+      "id": "RHEL-88989",
+      "url": "https://issues.redhat.com/browse/RHEL-88989",
+      "description": "nmstate nmpolicy capture MAC fails if interface down [rhel-9.7]"
+    },
+    {
+      "id": "RHEL-85784",
+      "url": "https://issues.redhat.com/browse/RHEL-85784",
+      "description": "[RHEL-9.7] [RFE] Support bond `lacp_active` and `ns_ip6_target` option"
+    },
+    {
+      "id": "RHEL-85787",
+      "url": "https://issues.redhat.com/browse/RHEL-85787",
+      "description": "[RHEL-9.7] Provide validation of OVN Bridge Mapping before applying"
+    },
+    {
+      "id": "RHEL-88993",
+      "url": "https://issues.redhat.com/browse/RHEL-88993",
+      "description": "[RFE] Match interface by PCI address identifier [rhel-9.7]"
+    }
+  ],
+  "full_text": "An update for nmstate is now available for Red Hat Enterprise Linux 10.\n\nFor detailed information on changes in this release, see the Red Hat Enterprise Linux 9 Release Notes linked from the References section."
+}

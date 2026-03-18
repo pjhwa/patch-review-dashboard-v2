@@ -1,0 +1,63 @@
+{
+  "id": "RHBA-2025:23368",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: gnome-control-center and gnome-settings-daemon bug fix and enhancement update",
+  "issuedDate": "2025-12-18T10:46:37Z",
+  "updatedDate": "2025-12-18T10:46:37Z",
+  "pubDate": "2025-12-18T10:46:37Z",
+  "dateStr": "2025-12-18",
+  "url": "https://access.redhat.com/errata/RHBA-2025:23368",
+  "severity": "None",
+  "overview": "An update for gnome-control-center is now available for Red Hat Enterprise Linux 10.",
+  "description": "A daemon to share settings from GNOME to other applications. It also handles global keybindings, as well as a number of desktop-wide settings.Bug Fix(es) and Enhancement(s): Sync minor subscription manager integration fixes from RHEL 9 (JIRA:RHEL-5074)  Icons lost in zh_CN environment (JIRA:RHEL-4180)",
+  "affected_products": [
+    "Red Hat Enterprise Linux for x86_64 10 x86_64",
+    "Red Hat Enterprise Linux for ARM 64",
+    "Red Hat Enterprise Linux for IBM z Systems",
+    "Red Hat Enterprise Linux for Power, little endian"
+  ],
+  "cves": [],
+  "packages": [
+    "gnome-control-center-3.28.2-39.el8_10.src",
+    "gnome-settings-daemon-3.32.0-21.el8_10.src",
+    "gnome-control-center-3.28.2-39.el8_10.x86_64",
+    "gnome-control-center-debuginfo-3.28.2-39.el8_10.x86_64",
+    "gnome-control-center-debugsource-3.28.2-39.el8_10.x86_64",
+    "gnome-control-center-filesystem-3.28.2-39.el8_10.noarch",
+    "gnome-settings-daemon-3.32.0-21.el8_10.x86_64",
+    "gnome-settings-daemon-debuginfo-3.32.0-21.el8_10.x86_64",
+    "gnome-settings-daemon-debugsource-3.32.0-21.el8_10.x86_64",
+    "gnome-control-center-3.28.2-39.el8_10.s390x",
+    "gnome-control-center-debuginfo-3.28.2-39.el8_10.s390x",
+    "gnome-control-center-debugsource-3.28.2-39.el8_10.s390x",
+    "gnome-settings-daemon-3.32.0-21.el8_10.s390x",
+    "gnome-settings-daemon-debuginfo-3.32.0-21.el8_10.s390x",
+    "gnome-settings-daemon-debugsource-3.32.0-21.el8_10.s390x",
+    "gnome-control-center-3.28.2-39.el8_10.ppc64le",
+    "gnome-control-center-debuginfo-3.28.2-39.el8_10.ppc64le",
+    "gnome-control-center-debugsource-3.28.2-39.el8_10.ppc64le",
+    "gnome-settings-daemon-3.32.0-21.el8_10.ppc64le",
+    "gnome-settings-daemon-debuginfo-3.32.0-21.el8_10.ppc64le",
+    "gnome-settings-daemon-debugsource-3.32.0-21.el8_10.ppc64le",
+    "gnome-control-center-3.28.2-39.el8_10.aarch64",
+    "gnome-control-center-debuginfo-3.28.2-39.el8_10.aarch64",
+    "gnome-control-center-debugsource-3.28.2-39.el8_10.aarch64",
+    "gnome-settings-daemon-3.32.0-21.el8_10.aarch64",
+    "gnome-settings-daemon-debuginfo-3.32.0-21.el8_10.aarch64",
+    "gnome-settings-daemon-debugsource-3.32.0-21.el8_10.aarch64"
+  ],
+  "fixes": [
+    {
+      "id": "RHEL-5074",
+      "url": "https://issues.redhat.com/browse/RHEL-5074",
+      "description": "Sync minor subscription manager integration fixes from RHEL 9"
+    },
+    {
+      "id": "RHEL-4180",
+      "url": "https://issues.redhat.com/browse/RHEL-4180",
+      "description": "Icons lost in zh_CN environment"
+    }
+  ],
+  "full_text": "An update for gnome-control-center is now available for Red Hat Enterprise Linux 10.\n\nA daemon to share settings from GNOME to other applications. It also handles global keybindings, as well as a number of desktop-wide settings.Bug Fix(es) and Enhancement(s): Sync minor subscription manager integration fixes from RHEL 9 (JIRA:RHEL-5074)  Icons lost in zh_CN environment (JIRA:RHEL-4180)"
+}

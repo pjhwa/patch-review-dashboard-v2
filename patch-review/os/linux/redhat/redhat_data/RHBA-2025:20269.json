@@ -1,0 +1,133 @@
+{
+  "id": "RHBA-2025:20269",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: nmstate bug fix and enhancement update",
+  "issuedDate": "2025-11-11T07:25:54Z",
+  "updatedDate": "2025-11-11T07:25:54Z",
+  "pubDate": "2025-11-11T07:25:54Z",
+  "dateStr": "2025-11-11",
+  "url": "https://access.redhat.com/errata/RHBA-2025:20269",
+  "severity": "None",
+  "overview": "An update for nmstate is now available for Red Hat Enterprise Linux 10.",
+  "description": "For detailed information on changes in this release, see the Red Hat Enterprise Linux 10 Release Notes linked from the References section.",
+  "affected_products": [
+    "Red Hat CodeReady Linux Builder for ARM 64",
+    "Red Hat CodeReady Linux Builder for IBM z Systems",
+    "Red Hat CodeReady Linux Builder for x86_64 10 x86_64",
+    "Red Hat Enterprise Linux for x86_64 10 x86_64",
+    "Red Hat Enterprise Linux for Power, little endian",
+    "Red Hat Enterprise Linux for IBM z Systems",
+    "Red Hat Enterprise Linux for ARM 64",
+    "Red Hat CodeReady Linux Builder for Power, little endian"
+  ],
+  "cves": [],
+  "packages": [
+    "nmstate-2.2.49-1.el10.src",
+    "nmstate-2.2.49-1.el10.x86_64",
+    "nmstate-debuginfo-2.2.49-1.el10.x86_64",
+    "nmstate-debugsource-2.2.49-1.el10.x86_64",
+    "nmstate-libs-2.2.49-1.el10.x86_64",
+    "nmstate-libs-debuginfo-2.2.49-1.el10.x86_64",
+    "python3-libnmstate-2.2.49-1.el10.x86_64",
+    "nmstate-2.2.49-1.el10.s390x",
+    "nmstate-debuginfo-2.2.49-1.el10.s390x",
+    "nmstate-debugsource-2.2.49-1.el10.s390x",
+    "nmstate-libs-2.2.49-1.el10.s390x",
+    "nmstate-libs-debuginfo-2.2.49-1.el10.s390x",
+    "python3-libnmstate-2.2.49-1.el10.s390x",
+    "nmstate-2.2.49-1.el10.ppc64le",
+    "nmstate-debuginfo-2.2.49-1.el10.ppc64le",
+    "nmstate-debugsource-2.2.49-1.el10.ppc64le",
+    "nmstate-libs-2.2.49-1.el10.ppc64le",
+    "nmstate-libs-debuginfo-2.2.49-1.el10.ppc64le",
+    "python3-libnmstate-2.2.49-1.el10.ppc64le",
+    "nmstate-2.2.49-1.el10.aarch64",
+    "nmstate-debuginfo-2.2.49-1.el10.aarch64",
+    "nmstate-debugsource-2.2.49-1.el10.aarch64",
+    "nmstate-libs-2.2.49-1.el10.aarch64",
+    "nmstate-libs-debuginfo-2.2.49-1.el10.aarch64",
+    "python3-libnmstate-2.2.49-1.el10.aarch64",
+    "nmstate-devel-2.2.49-1.el10.x86_64",
+    "nmstate-static-2.2.49-1.el10.x86_64",
+    "nmstate-devel-2.2.49-1.el10.ppc64le",
+    "nmstate-static-2.2.49-1.el10.ppc64le",
+    "nmstate-devel-2.2.49-1.el10.aarch64",
+    "nmstate-static-2.2.49-1.el10.aarch64",
+    "nmstate-devel-2.2.49-1.el10.s390x",
+    "nmstate-static-2.2.49-1.el10.s390x"
+  ],
+  "fixes": [
+    {
+      "id": "RHEL-84768",
+      "url": "https://issues.redhat.com/browse/RHEL-84768",
+      "description": "Add support to nmstate for MTU and quickack  [rhel-10]"
+    },
+    {
+      "id": "RHEL-82269",
+      "url": "https://issues.redhat.com/browse/RHEL-82269",
+      "description": "DNS NNCP is stuck in Degraded state during reconsiliation  [rhel-10.1]"
+    },
+    {
+      "id": "RHEL-84766",
+      "url": "https://issues.redhat.com/browse/RHEL-84766",
+      "description": "[RFE] Add support in NMSTATE to support FEC [rhel-10]"
+    },
+    {
+      "id": "RHEL-86035",
+      "url": "https://issues.redhat.com/browse/RHEL-86035",
+      "description": "nmstate fails with OVS bonds:  Bug:Failed to extract interface name and type from connection NmConnection"
+    },
+    {
+      "id": "RHEL-86240",
+      "url": "https://issues.redhat.com/browse/RHEL-86240",
+      "description": "nmstate nmpolicy capture MAC fails if interface down"
+    },
+    {
+      "id": "RHEL-91250",
+      "url": "https://issues.redhat.com/browse/RHEL-91250",
+      "description": "Global DNS been discard if installed via OCP assisted intaller mini-iso and full-iso mode"
+    },
+    {
+      "id": "RHEL-92916",
+      "url": "https://issues.redhat.com/browse/RHEL-92916",
+      "description": "vlan connections created using nmcli could not be removed"
+    },
+    {
+      "id": "RHEL-102600",
+      "url": "https://issues.redhat.com/browse/RHEL-102600",
+      "description": "failing to delete with fail_over_mac"
+    },
+    {
+      "id": "RHEL-1415",
+      "url": "https://issues.redhat.com/browse/RHEL-1415",
+      "description": "[RFE] Support bond `lacp_active` and `ns_ip6_target` option"
+    },
+    {
+      "id": "RHEL-37922",
+      "url": "https://issues.redhat.com/browse/RHEL-37922",
+      "description": "Provide validation of OVN Bridge Mapping before applying"
+    },
+    {
+      "id": "RHEL-80116",
+      "url": "https://issues.redhat.com/browse/RHEL-80116",
+      "description": "[RFE] Match interface by PCI address identifier"
+    },
+    {
+      "id": "RHEL-91588",
+      "url": "https://issues.redhat.com/browse/RHEL-91588",
+      "description": "While working with  SR-IOV, nmstate could not handle VF's created."
+    },
+    {
+      "id": "RHEL-94840",
+      "url": "https://issues.redhat.com/browse/RHEL-94840",
+      "description": "Dispatcher scripts used in linux bonds are not refreshed when changes are made"
+    },
+    {
+      "id": "RHEL-106135",
+      "url": "https://issues.redhat.com/browse/RHEL-106135",
+      "description": "Ignore desired MAC when bond in MAC restricted mode"
+    }
+  ],
+  "full_text": "An update for nmstate is now available for Red Hat Enterprise Linux 10.\n\nFor detailed information on changes in this release, see the Red Hat Enterprise Linux 10 Release Notes linked from the References section."
+}

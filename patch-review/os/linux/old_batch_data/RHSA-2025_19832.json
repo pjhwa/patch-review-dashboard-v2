@@ -1,0 +1,25 @@
+{
+  "id": "RHSA-2025:19832",
+  "vendor": "Red Hat",
+  "url": "https://access.redhat.com/errata/RHSA-2025:19832",
+  "pubDate": "2025-11-05T23:49:21.000Z",
+  "dateStr": "2025-11-05",
+  "severity": "Important",
+  "title": "Red Hat Security Advisory: Satellite 6.17.6 Async Update",
+  "overview": "A new release is now available for Red Hat Satellite 6.17 for RHEL 9.\n\nRed Hat Product Security has rated this update as having a security impact\nof Important. A Common Vulnerability Scoring System (CVSS) base score,\nwhich gives a detailed severity rating, is available for each vulnerability\nfrom the CVE link(s) in the References section.",
+  "description": "A new release is now available for Red Hat Satellite 6.17 for RHEL 9.\n\nRed Hat Product Security has rated this update as having a security impact\nof Important. A Common Vulnerability Scoring System (CVSS) base score,\nwhich gives a detailed severity rating, is available for each vulnerability\nfrom the CVE link(s) in the References section.",
+  "affected_products": [
+    "Red Hat Satellite 6.17 for RHEL 9",
+    "Red Hat Satellite 6.17 for RHEL 9",
+    "Red Hat Satellite 6.17 for RHEL 9",
+    "Red Hat Satellite 6.17 for RHEL 9"
+  ],
+  "cves": [
+    "CVE-2025-10622",
+    "CVE-2025-59830",
+    "CVE-2025-61919"
+  ],
+  "packages": [],
+  "fixes": "",
+  "full_text": "Red Hat Security Advisory: Satellite 6.17.6 Async Update\n\nA new release is now available for Red Hat Satellite 6.17 for RHEL 9.\n\nRed Hat Product Security has rated this update as having a security impact\nof Important. A Common Vulnerability Scoring System (CVSS) base score,\nwhich gives a detailed severity rating, is available for each vulnerability\nfrom the CVE link(s) in the References section.\n\nA new release is now available for Red Hat Satellite 6.17 for RHEL 9.\n\nRed Hat Product Security has rated this update as having a security impact\nof Important. A Common Vulnerability Scoring System (CVSS) base score,\nwhich gives a detailed severity rating, is available for each vulnerability\nfrom the CVE link(s) in the References section.\n\nUpdated Packages:\ncandlepin-4.4.23-1.el9sat.src.rpm\nforeman-3.14.0.10-1.el9sat.src.rpm\nforeman-bootloaders-redhat-202506020000-1.el9sat.src.rpm\nrubygem-foreman_maintain-1.10.4-1.el9sat.src.rpm\nrubygem-katello-4.16.0.10-1.el9sat.src.rpm\nrubygem-rack-2.2.20-1.el9sat.src.rpm\nrubygem-smart_proxy_openscap-0.12.1-1.el9sat.src.rpm\nsatellite-6.17.6-1.el9sat.src.rpm\ncandlepin-4.4.23-1.el9sat.noarch.rpm\ncandlepin-selinux-4.4.23-1.el9sat.noarch.rpm\nforeman-3.14.0.10-1.el9sat.noarch.rpm\nforeman-bootloaders-redhat-202506020000-1.el9sat.noarch.rpm\nforeman-bootloaders-redhat-tftpboot-202506020000-1.el9sat.noarch.rpm\nforeman-cli-3.14.0.10-1.el9sat.noarch.rpm\nforeman-debug-3.14.0.10-1.el9sat.noarch.rpm\nforeman-dynflow-sidekiq-3.14.0.10-1.el9sat.noarch.rpm\nforeman-ec2-3.14.0.10-1.el9sat.noarch.rpm\nforeman-journald-3.14.0.10-1.el9sat.noarch.rpm\nforeman-libvirt-3.14.0.10-1.el9sat.noarch.rpm\nforeman-openstack-3.14.0.10-1.el9sat.noarch.rpm\nforeman-ovirt-3.14.0.10-1.el9sat.noarch.rpm\nforeman-pcp-3.14.0.10-1.el9sat.noarch.rpm\nforeman-postgresql-3.14.0.10-1.el9sat.noarch.rpm\nforeman-redis-3.14.0.10-1.el9sat.noarch.rpm\nforeman-service-3.14.0.10-1.el9sat.noarch.rpm\nforeman-telemetry-3.14.0.10-1.el9sat.noarch.rpm\nforeman-vmware-3.14.0.10-1.el9sat.noarch.rpm\nrubygem-foreman_maintain-1.10.4-1.el9sat.noarch.rpm\nrubygem-katello-4.16.0.10-1.el9sat.noarch.rpm\nrubygem-rack-2.2.20-1.el9sat.noarch.rpm\nrubygem-smart_proxy_openscap-0.12.1-1.el9sat.noarch.rpm\nsatellite-6.17.6-1.el9sat.noarch.rpm\nsatellite-cli-6.17.6-1.el9sat.noarch.rpm\nsatellite-common-6.17.6-1.el9sat.noarch.rpm\nsatellite-obsolete-packages-6.17.6-1.el9sat.noarch.rpm\nsatellite-capsule-6.17.6-1.el9sat.noarch.rpm\n\nCVE-2025-10622: A flaw was found in Red Hat Satellite (Foreman component). This vulnerability allows an authenticated user with edit_settings permissions to achieve arbitrary command execution on the underlying operating system via insufficient server-side validation of command whitelisting.\n\nCVE-2025-59830: An unsafe default behavior in Rack::QueryParser allows bypass of the params_limit parameter count restriction when query string parameters are delimited by semicolons (;) rather than ampersands (&). The parser counts only & when enforcing the limit, while still splitting on both & and ;. As a result, an attacker can supply a crafted HTTP query using ; delimiters to exceed the intended parameter count, potentially causing performance degradation or exhaustion of resources (denial of service).\n\nCVE-2025-61919: A memory-exhaustion vulnerability exists in Rack when parsing application/x-www-form-urlencoded request bodies. Rack::Request#POST reads the entire request body into memory without enforcing a maximum length or cap. Attackers can exploit this by sending large form submissions, potentially causing denial of service (DoS) through memory exhaustion. Even with configured parsing limits, the issue occurs before those limits are enforced, allowing unbounded memory allocation proportional to request size."
+}

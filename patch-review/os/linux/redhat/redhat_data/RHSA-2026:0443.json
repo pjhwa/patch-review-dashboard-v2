@@ -1,0 +1,43 @@
+{
+  "id": "RHSA-2026:0443",
+  "vendor": "Red Hat",
+  "type": "Security Advisory (RHSA)",
+  "title": "Red Hat Security Advisory: kernel-rt security update",
+  "issuedDate": "2026-01-12T02:42:33+00:00",
+  "updatedDate": "2026-01-12T02:42:33+00:00",
+  "pubDate": "2026-01-12T02:42:33+00:00",
+  "dateStr": "2026-01-12",
+  "url": "https://access.redhat.com/errata/RHSA-2026:0443",
+  "severity": "Important",
+  "overview": "An update for kernel-rt is now available for Red Hat Enterprise Linux 8.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "description": "The kernel-rt packages provide the Real Time Linux Kernel, which enables fine-tuning for systems with extremely high determinism requirements.\n\nSecurity Fix(es):\n\n* kernel: media: rc: fix races with imon_disconnect() (CVE-2025-39993)\n\n* kernel: sctp: avoid NULL dereference when chunk data buffer is missing (CVE-2025-40240)\n\n* kernel: libceph: fix potential use-after-free in have_mon_and_osd_map() (CVE-2025-68285)\n\nFor more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux",
+    "Red Hat Enterprise Linux NFV (v. 8)",
+    "Red Hat Enterprise Linux RT (v. 8)"
+  ],
+  "cves": [
+    "CVE-2025-39993",
+    "CVE-2025-40240",
+    "CVE-2025-68285"
+  ],
+  "packages": [
+    "kernel-rt-0:4.18.0-553.92.1.rt7.433.el8_10.src",
+    "kernel-rt-0:4.18.0-553.92.1.rt7.433.el8_10.x86_64",
+    "kernel-rt-core-0:4.18.0-553.92.1.rt7.433.el8_10.x86_64",
+    "kernel-rt-debug-0:4.18.0-553.92.1.rt7.433.el8_10.x86_64",
+    "kernel-rt-debug-core-0:4.18.0-553.92.1.rt7.433.el8_10.x86_64",
+    "kernel-rt-debug-devel-0:4.18.0-553.92.1.rt7.433.el8_10.x86_64",
+    "kernel-rt-debug-kvm-0:4.18.0-553.92.1.rt7.433.el8_10.x86_64",
+    "kernel-rt-debug-modules-0:4.18.0-553.92.1.rt7.433.el8_10.x86_64",
+    "kernel-rt-debug-modules-extra-0:4.18.0-553.92.1.rt7.433.el8_10.x86_64",
+    "kernel-rt-devel-0:4.18.0-553.92.1.rt7.433.el8_10.x86_64",
+    "kernel-rt-kvm-0:4.18.0-553.92.1.rt7.433.el8_10.x86_64",
+    "kernel-rt-modules-0:4.18.0-553.92.1.rt7.433.el8_10.x86_64",
+    "kernel-rt-modules-extra-0:4.18.0-553.92.1.rt7.433.el8_10.x86_64",
+    "kernel-rt-debug-debuginfo-0:4.18.0-553.92.1.rt7.433.el8_10.x86_64",
+    "kernel-rt-debuginfo-0:4.18.0-553.92.1.rt7.433.el8_10.x86_64",
+    "kernel-rt-debuginfo-common-x86_64-0:4.18.0-553.92.1.rt7.433.el8_10.x86_64"
+  ],
+  "full_text": "An update for kernel-rt is now available for Red Hat Enterprise Linux 8.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nThe kernel-rt packages provide the Real Time Linux Kernel, which enables fine-tuning for systems with extremely high determinism requirements.\n\nSecurity Fix(es):\n\n* kernel: media: rc: fix races with imon_disconnect() (CVE-2025-39993)\n\n* kernel: sctp: avoid NULL dereference when chunk data buffer is missing (CVE-2025-40240)\n\n* kernel: libceph: fix potential use-after-free in have_mon_and_osd_map() (CVE-2025-68285)\n\nFor more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section."
+}

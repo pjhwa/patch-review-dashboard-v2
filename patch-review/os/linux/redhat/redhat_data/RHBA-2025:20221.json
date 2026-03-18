@@ -1,0 +1,52 @@
+{
+  "id": "RHBA-2025:20221",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: libmbim bug fix and enhancement update",
+  "issuedDate": "2025-11-11T07:25:28Z",
+  "updatedDate": "2025-11-11T07:25:28Z",
+  "pubDate": "2025-11-11T07:25:28Z",
+  "dateStr": "2025-11-11",
+  "url": "https://access.redhat.com/errata/RHBA-2025:20221",
+  "severity": "None",
+  "overview": "An update for libmbim is now available for Red Hat Enterprise Linux 10.",
+  "description": "For detailed information on changes in this release, see the Red Hat Enterprise Linux 10 Release Notes linked from the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux for Power, little endian",
+    "Red Hat Enterprise Linux for x86_64 10 x86_64",
+    "Red Hat Enterprise Linux for ARM 64",
+    "Red Hat Enterprise Linux for IBM z Systems"
+  ],
+  "cves": [],
+  "packages": [
+    "libmbim-1.32.0-1.el10.src",
+    "libmbim-1.32.0-1.el10.x86_64",
+    "libmbim-debuginfo-1.32.0-1.el10.x86_64",
+    "libmbim-debugsource-1.32.0-1.el10.x86_64",
+    "libmbim-utils-1.32.0-1.el10.x86_64",
+    "libmbim-utils-debuginfo-1.32.0-1.el10.x86_64",
+    "libmbim-1.32.0-1.el10.s390x",
+    "libmbim-debuginfo-1.32.0-1.el10.s390x",
+    "libmbim-debugsource-1.32.0-1.el10.s390x",
+    "libmbim-utils-1.32.0-1.el10.s390x",
+    "libmbim-utils-debuginfo-1.32.0-1.el10.s390x",
+    "libmbim-1.32.0-1.el10.ppc64le",
+    "libmbim-debuginfo-1.32.0-1.el10.ppc64le",
+    "libmbim-debugsource-1.32.0-1.el10.ppc64le",
+    "libmbim-utils-1.32.0-1.el10.ppc64le",
+    "libmbim-utils-debuginfo-1.32.0-1.el10.ppc64le",
+    "libmbim-1.32.0-1.el10.aarch64",
+    "libmbim-debuginfo-1.32.0-1.el10.aarch64",
+    "libmbim-debugsource-1.32.0-1.el10.aarch64",
+    "libmbim-utils-1.32.0-1.el10.aarch64",
+    "libmbim-utils-debuginfo-1.32.0-1.el10.aarch64"
+  ],
+  "fixes": [
+    {
+      "id": "RHEL-101710",
+      "url": "https://issues.redhat.com/browse/RHEL-101710",
+      "description": "[rhel-10 wwan] Palcom FCC unlocking tool needs libmbim with version > = 1.32"
+    }
+  ],
+  "full_text": "An update for libmbim is now available for Red Hat Enterprise Linux 10.\n\nFor detailed information on changes in this release, see the Red Hat Enterprise Linux 10 Release Notes linked from the References section."
+}

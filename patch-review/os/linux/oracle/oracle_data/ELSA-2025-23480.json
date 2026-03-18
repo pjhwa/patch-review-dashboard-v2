@@ -1,0 +1,30 @@
+{
+  "id": "ELSA-2025-23480",
+  "vendor": "Oracle",
+  "type": "Security Advisory (ELSA)",
+  "title": " openssh security update",
+  "issuedDate": "2025-12-18T00:00:00Z",
+  "updatedDate": "2025-12-18T00:00:00Z",
+  "pubDate": "2025-12-18T00:00:00Z",
+  "dateStr": "2025-12-18",
+  "url": "https://linux.oracle.com/errata/ELSA-2025-23480.html",
+  "severity": "Moderate",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 9.",
+  "description": "[8.7p1-47.0.1]\n- Upstream references found with /usr/bin/ssh [Orabug: 37814929]\n- upstream: fix AuthorizedPrincipalsCommand when AuthorizedKeysCommand [Orabug: 37647064]\n- Update upstream references [Orabug: 36564626]\n\n[8.7p1-47]\n- CVE-2025-61984: Reject usernames with control characters\n  Resolves: RHEL-128401\n- CVE-2025-61985: Reject URL-strings with NULL characters\n  Resolves: RHEL-128392",
+  "affected_products": [
+    "Oracle Linux 9 for x86_64",
+    "Oracle Linux 9 for aarch64"
+  ],
+  "cves": [
+    "CVE-2025-61984",
+    "CVE-2025-61985"
+  ],
+  "packages": [
+    "openssh-clients-8.7p1-47.0.1.el9_7.x86_64",
+    "openssh-8.7p1-47.0.1.el9_7.src",
+    "openssh-server-8.7p1-47.0.1.el9_7.x86_64",
+    "openssh-8.7p1-47.0.1.el9_7.x86_64",
+    "openssh-keycat-8.7p1-47.0.1.el9_7.x86_64"
+  ],
+  "full_text": "[8.7p1-47.0.1]\n- Upstream references found with /usr/bin/ssh [Orabug: 37814929]\n- upstream: fix AuthorizedPrincipalsCommand when AuthorizedKeysCommand [Orabug: 37647064]\n- Update upstream references [Orabug: 36564626]\n\n[8.7p1-47]\n- CVE-2025-61984: Reject usernames with control characters\n  Resolves: RHEL-128401\n- CVE-2025-61985: Reject URL-strings with NULL characters\n  Resolves: RHEL-128392\n\nReferences:\nhttps://linux.oracle.com/errata/ELSA-2025-23480.html\nhttps://linux.oracle.com/cve/CVE-2025-61984.html\nhttps://linux.oracle.com/cve/CVE-2025-61985.html"
+}

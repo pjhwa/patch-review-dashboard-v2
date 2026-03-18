@@ -1,0 +1,47 @@
+{
+  "id": "ELSA-2025-16880",
+  "vendor": "Oracle",
+  "type": "Security Advisory (ELSA)",
+  "kernel_type": "RHCK",
+  "title": " kernel security update",
+  "issuedDate": "2025-09-29T00:00:00Z",
+  "updatedDate": "2025-09-29T00:00:00Z",
+  "pubDate": "2025-09-29T00:00:00Z",
+  "dateStr": "2025-09-29",
+  "url": "https://linux.oracle.com/errata/ELSA-2025-16880.html",
+  "severity": "Moderate",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 9.",
+  "description": "[5.14.0-570.49.1.0.1_6.OL9]\n- nvme-pci: remove two deallocate zeroes quirks [Orabug: 37756650]\n- Disable UKI signing [Orabug: 36571828]\n- Update Oracle Linux certificates (Kevin Lyons)\n- Disable signing for aarch64 (Ilya Okomin)\n- Oracle Linux RHCK Module Signing Key was added to the kernel trusted keys list (olkmod_signing_key.pem) [Orabug: 29539237]\n- Update x509.genkey [Orabug: 24817676]\n- Conflict with shim-ia32 and shim-x64 <= 15.3-1.0.5\n- Remove upstream reference during boot (Kevin Lyons) [Orabug: 34729535]\n- Add Oracle Linux IMA certificates\n- Add new Oracle Linux Driver Signing (key 1) certificate [Orabug: 37985764]\n\n[5.14.0-570.49.1_6]\n- io_uring/futex: ensure io_futex_wait() cleans up properly on failure (CKI Backport Bot) [RHEL-114335] {CVE-2025-39698}\n- selftests: tls: add tests for zero-length records (Sabrina Dubroca) [RHEL-114326] {CVE-2025-39682}\n- tls: fix handling of zero-length records on the rx_list (Sabrina Dubroca) [RHEL-114326] {CVE-2025-39682}\n\n[5.14.0-570.48.1_6]\n- perf trace: Add missing perf_tool__init() (Michael Petlan) [RHEL-105393]\n- ceph: fix client race condition where r_parent becomes stale before sending message (Alex Markuze) [RHEL-114962]\n- ceph: fix client race condition validating r_parent before applying state (Alex Markuze) [RHEL-114962]\n\n[5.14.0-570.47.1_6]\n- tunnels: reset the GSO metadata before reusing the skb (Antoine Tenart) [RHEL-113916]\n- sctp: linearize cloned gso packets in sctp_rcv (CKI Backport Bot) [RHEL-113333] {CVE-2025-38718}\n- ice: fix max values for dpll pin phase adjust (Petr Oros) [RHEL-113039]\n- ice/ptp: fix crosstimestamp reporting (Petr Oros) [RHEL-112558]\n- ice: fix NULL access of tx->in_use in ice_ll_ts_intr (Petr Oros) [RHEL-112873]\n- ice: fix NULL access of tx->in_use in ice_ptp_ts_irq (Petr Oros) [RHEL-112873]\n- ice: Implement PTP support for E830 devices (Petr Oros) [RHEL-112558]\n- ice: Refactor ice_ptp_init_tx_* (Petr Oros) [RHEL-112558]\n- ice: Add unified ice_capture_crosststamp (Petr Oros) [RHEL-112558]\n- ice: Process TSYN IRQ in a separate function (Petr Oros) [RHEL-112558]\n- ice: Use FIELD_PREP for timestamp values (Petr Oros) [RHEL-112558]\n- ice: Remove unnecessary ice_is_e8xx() functions (Petr Oros) [RHEL-112558]\n- ice: Don't check device type when checking GNSS presence (Petr Oros) [RHEL-112558]\n- ice: Add in/out PTP pin delays (Petr Oros) [RHEL-112558]\n- ice: fix PHY timestamp extraction for ETH56G (Petr Oros) [RHEL-112558]\n- ice: Add correct PHY lane assignment (Petr Oros) [RHEL-112683]\n- ice: Fix ETH56G FC-FEC Rx offset value (Petr Oros) [RHEL-112683]\n- ice: Fix quad registers read on E825 (Petr Oros) [RHEL-112683]\n- ice: Fix E825 initialization (Petr Oros) [RHEL-112683]\n- tcp: drop secpath at the same time as we currently drop dst (Sabrina Dubroca) [RHEL-82136]\n- smb: client: fix use-after-free in cifs_oplock_break (CKI Backport Bot) [RHEL-111196] {CVE-2025-38527}\n- i40e: When removing VF MAC filters, only check PF-set MAC (CKI Backport Bot) [RHEL-109571]\n- cpufreq/cppc: Don't compare desired_perf in target() (Mark Langsdorf) [RHEL-109525]\n- netfilter: nf_conntrack: fix crash due to removal of uninitialised entry (CKI Backport Bot) [RHEL-106432] {CVE-2025-38472}\n- sched/rt: Fix race in push_rt_task (Phil Auld) [RHEL-91800]",
+  "affected_products": [
+    "Oracle Linux 9 for x86_64",
+    "Oracle Linux 9 for aarch64"
+  ],
+  "cves": [
+    "CVE-2025-38472",
+    "CVE-2025-38527",
+    "CVE-2025-38718",
+    "CVE-2025-39682",
+    "CVE-2025-39698"
+  ],
+  "packages": [
+    "kernel-modules-extra-5.14.0-570.49.1.0.1.el9_6.x86_64",
+    "kernel-uki-virt-addons-5.14.0-570.49.1.0.1.el9_6.x86_64",
+    "kernel-debug-modules-5.14.0-570.49.1.0.1.el9_6.x86_64",
+    "python3-perf-5.14.0-570.49.1.0.1.el9_6.x86_64",
+    "kernel-debug-5.14.0-570.49.1.0.1.el9_6.x86_64",
+    "kernel-debug-core-5.14.0-570.49.1.0.1.el9_6.x86_64",
+    "kernel-5.14.0-570.49.1.0.1.el9_6.src",
+    "kernel-core-5.14.0-570.49.1.0.1.el9_6.x86_64",
+    "kernel-modules-5.14.0-570.49.1.0.1.el9_6.x86_64",
+    "kernel-tools-libs-5.14.0-570.49.1.0.1.el9_6.x86_64",
+    "kernel-abi-stablelists-5.14.0-570.49.1.0.1.el9_6.noarch",
+    "kernel-tools-5.14.0-570.49.1.0.1.el9_6.x86_64",
+    "kernel-debug-modules-extra-5.14.0-570.49.1.0.1.el9_6.x86_64",
+    "kernel-debug-uki-virt-5.14.0-570.49.1.0.1.el9_6.x86_64",
+    "kernel-5.14.0-570.49.1.0.1.el9_6.x86_64",
+    "kernel-debug-modules-core-5.14.0-570.49.1.0.1.el9_6.x86_64",
+    "kernel-uki-virt-5.14.0-570.49.1.0.1.el9_6.x86_64",
+    "kernel-modules-core-5.14.0-570.49.1.0.1.el9_6.x86_64"
+  ],
+  "full_text": "[5.14.0-570.49.1.0.1_6.OL9]\n- nvme-pci: remove two deallocate zeroes quirks [Orabug: 37756650]\n- Disable UKI signing [Orabug: 36571828]\n- Update Oracle Linux certificates (Kevin Lyons)\n- Disable signing for aarch64 (Ilya Okomin)\n- Oracle Linux RHCK Module Signing Key was added to the kernel trusted keys list (olkmod_signing_key.pem) [Orabug: 29539237]\n- Update x509.genkey [Orabug: 24817676]\n- Conflict with shim-ia32 and shim-x64 <= 15.3-1.0.5\n- Remove upstream reference during boot (Kevin Lyons) [Orabug: 34729535]\n- Add Oracle Linux IMA certificates\n- Add new Oracle Linux Driver Signing (key 1) certificate [Orabug: 37985764]\n\n[5.14.0-570.49.1_6]\n- io_uring/futex: ensure io_futex_wait() cleans up properly on failure (CKI Backport Bot) [RHEL-114335] {CVE-2025-39698}\n- selftests: tls: add tests for zero-length records (Sabrina Dubroca) [RHEL-114326] {CVE-2025-39682}\n- tls: fix handling of zero-length records on the rx_list (Sabrina Dubroca) [RHEL-114326] {CVE-2025-39682}\n\n[5.14.0-570.48.1_6]\n- perf trace: Add missing perf_tool__init() (Michael Petlan) [RHEL-105393]\n- ceph: fix client race condition where r_parent becomes stale before sending message (Alex Markuze) [RHEL-114962]\n- ceph: fix client race condition validating r_parent before applying state (Alex Markuze) [RHEL-114962]\n\n[5.14.0-570.47.1_6]\n- tunnels: reset the GSO metadata before reusing the skb (Antoine Tenart) [RHEL-113916]\n- sctp: linearize cloned gso packets in sctp_rcv (CKI Backport Bot) [RHEL-113333] {CVE-2025-38718}\n- ice: fix max values for dpll pin phase adjust (Petr Oros) [RHEL-113039]\n- ice/ptp: fix crosstimestamp reporting (Petr Oros) [RHEL-112558]\n- ice: fix NULL access of tx->in_use in ice_ll_ts_intr (Petr Oros) [RHEL-112873]\n- ice: fix NULL access of tx->in_use in ice_ptp_ts_irq (Petr Oros) [RHEL-112873]\n- ice: Implement PTP support for E830 devices (Petr Oros) [RHEL-112558]\n- ice: Refactor ice_ptp_init_tx_* (Petr Oros) [RHEL-112558]\n- ice: Add unified ice_capture_crosststamp (Petr Oros) [RHEL-112558]\n- ice: Process TSYN IRQ in a separate function (Petr Oros) [RHEL-112558]\n- ice: Use FIELD_PREP for timestamp values (Petr Oros) [RHEL-112558]\n- ice: Remove unnecessary ice_is_e8xx() functions (Petr Oros) [RHEL-112558]\n- ice: Don't check device type when checking GNSS presence (Petr Oros) [RHEL-112558]\n- ice: Add in/out PTP pin delays (Petr Oros) [RHEL-112558]\n- ice: fix PHY timestamp extraction for ETH56G (Petr Oros) [RHEL-112558]\n- ice: Add correct PHY lane assignment (Petr Oros) [RHEL-112683]\n- ice: Fix ETH56G FC-FEC Rx offset value (Petr Oros) [RHEL-112683]\n- ice: Fix quad registers read on E825 (Petr Oros) [RHEL-112683]\n- ice: Fix E825 initialization (Petr Oros) [RHEL-112683]\n- tcp: drop secpath at the same time as we currently drop dst (Sabrina Dubroca) [RHEL-82136]\n- smb: client: fix use-after-free in cifs_oplock_break (CKI Backport Bot) [RHEL-111196] {CVE-2025-38527}\n- i40e: When removing VF MAC filters, only check PF-set MAC (CKI Backport Bot) [RHEL-109571]\n- cpufreq/cppc: Don't compare desired_perf in target() (Mark Langsdorf) [RHEL-109525]\n- netfilter: nf_conntrack: fix crash due to removal of uninitialised entry (CKI Backport Bot) [RHEL-106432] {CVE-2025-38472}\n- sched/rt: Fix race in push_rt_task (Phil Auld) [RHEL-91800]\n\nReferences:\nhttps://linux.oracle.com/errata/ELSA-2025-16880.html\nhttps://linux.oracle.com/cve/CVE-2025-38472.html\nhttps://linux.oracle.com/cve/CVE-2025-38527.html\nhttps://linux.oracle.com/cve/CVE-2025-38718.html\nhttps://linux.oracle.com/cve/CVE-2025-39682.html\nhttps://linux.oracle.com/cve/CVE-2025-39698.html"
+}

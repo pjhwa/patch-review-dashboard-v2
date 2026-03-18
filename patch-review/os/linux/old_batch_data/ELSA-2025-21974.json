@@ -1,0 +1,31 @@
+{
+  "id": "ELSA-2025-21974",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2025-November/019052.html",
+  "synopsis": "[El-errata] ELSA-2025-21974 Important: Oracle Linux 8 mingw-expat security update",
+  "dateStr": "2025-November",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Security Advisory ELSA-2025-21974",
+  "description": "[2.5.0-1]\n- Rebase to version 2.5.0\n- Fix the following CVEs\n  CVE-2023-52425 CVE-2024-28757 CVE-2024-45490\n  CVE-2024-45491 CVE-2024-45492 CVE-2024-50602\n  CVE-2024-8176 CVE-2025-59375\n- Resolves: RHEL-114628",
+  "affected_products": [
+    "Oracle Linux 8"
+  ],
+  "packages": [
+    "mingw32-expat-2.5.0-1.el8_10.noarch.rpm",
+    "mingw64-expat-2.5.0-1.el8_10.noarch.rpm"
+  ],
+  "cves": [
+    "CVE-2025-59375",
+    "CVE-2023-52425",
+    "CVE-2024-28757",
+    "CVE-2024-45490",
+    "CVE-2024-45491",
+    "CVE-2024-45492",
+    "CVE-2024-50602",
+    "CVE-2024-8176"
+  ],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Security Advisory ELSA-2025-21974\n\nhttp://linux.oracle.com/errata/ELSA-2025-21974.html\n\nThe following updated rpms for Oracle Linux 8 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\nmingw32-expat-2.5.0-1.el8_10.noarch.rpm\nmingw64-expat-2.5.0-1.el8_10.noarch.rpm\n\n\n\nSRPMS:\nhttp://oss.oracle.com/ol8/SRPMS-updates/mingw-expat-2.5.0-1.el8_10.src.rpm\n\nRelated CVEs:\n\nCVE-2025-59375\n\n\n\n\nDescription of changes:\n\n[2.5.0-1]\n- Rebase to version 2.5.0\n- Fix the following CVEs\n  CVE-2023-52425 CVE-2024-28757 CVE-2024-45490\n  CVE-2024-45491 CVE-2024-45492 CVE-2024-50602\n  CVE-2024-8176 CVE-2025-59375\n- Resolves: RHEL-114628",
+  "vendor": "Oracle"
+}

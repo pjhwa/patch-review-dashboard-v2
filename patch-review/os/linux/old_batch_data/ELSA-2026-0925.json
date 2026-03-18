@@ -1,0 +1,36 @@
+{
+  "id": "ELSA-2026-0925",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2026-February/019755.html",
+  "synopsis": "[El-errata] ELSA-2026-0925 Important: Oracle Linux 7 libsoup security update",
+  "dateStr": "2026-February",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Security Advisory ELSA-2026-0925",
+  "description": "[2.62.2-2.0.9]\n- Fix CVE-2025-14523 [Orabug: 38873507]\n\n[2.62.2-2.0.7]\n- Backport patch for CVE-2025-4945 and CVE-2025-11021 [Orabug: 38664275]\n\n[2.62.2-2.0.5]\n- Fixes CVE-2025-2784 CVE-2025-4948 CVE-2025-32049  [Orabug: 38085184]\n- CVE-2025-32906 CVE-2025-32911 CVE-2025-32913 CVE-2025-32914\n\n[2.62.2-2.0.3]\n- Fixed CVE-2024-52531 buffer overflow via UTF-8 conversion in\n- soup_header_parse_param_list_strict [Orabug: 37557504]",
+  "affected_products": [
+    "Oracle Linux 7"
+  ],
+  "packages": [
+    "libsoup-2.62.2-2.0.9.el7.i686.rpm",
+    "libsoup-2.62.2-2.0.9.el7.x86_64.rpm",
+    "libsoup-devel-2.62.2-2.0.9.el7.i686.rpm",
+    "libsoup-devel-2.62.2-2.0.9.el7.x86_64.rpm"
+  ],
+  "cves": [
+    "CVE-2025-14523",
+    "CVE-2025-4945",
+    "CVE-2025-11021",
+    "CVE-2025-2784",
+    "CVE-2025-4948",
+    "CVE-2025-32049",
+    "CVE-2025-32906",
+    "CVE-2025-32911",
+    "CVE-2025-32913",
+    "CVE-2025-32914",
+    "CVE-2024-52531"
+  ],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Security Advisory ELSA-2026-0925\n\nhttp://linux.oracle.com/errata/ELSA-2026-0925.html\n\nThe following updated rpms for Oracle Linux 7 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\nlibsoup-2.62.2-2.0.9.el7.i686.rpm\nlibsoup-2.62.2-2.0.9.el7.x86_64.rpm\nlibsoup-devel-2.62.2-2.0.9.el7.i686.rpm\nlibsoup-devel-2.62.2-2.0.9.el7.x86_64.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol7/SRPMS-updates/libsoup-2.62.2-2.0.9.el7.src.rpm\n\nRelated CVEs:\n\nCVE-2025-14523\n\n\n\n\nDescription of changes:\n\n[2.62.2-2.0.9]\n- Fix CVE-2025-14523 [Orabug: 38873507]\n\n[2.62.2-2.0.7]\n- Backport patch for CVE-2025-4945 and CVE-2025-11021 [Orabug: 38664275]\n\n[2.62.2-2.0.5]\n- Fixes CVE-2025-2784 CVE-2025-4948 CVE-2025-32049  [Orabug: 38085184]\n- CVE-2025-32906 CVE-2025-32911 CVE-2025-32913 CVE-2025-32914\n\n[2.62.2-2.0.3]\n- Fixed CVE-2024-52531 buffer overflow via UTF-8 conversion in\n- soup_header_parse_param_list_strict [Orabug: 37557504]",
+  "vendor": "Oracle"
+}

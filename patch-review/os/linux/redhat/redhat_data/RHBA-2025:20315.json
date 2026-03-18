@@ -1,0 +1,64 @@
+{
+  "id": "RHBA-2025:20315",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: python-blivet bug fix and enhancement update",
+  "issuedDate": "2025-11-11T07:26:03Z",
+  "updatedDate": "2025-11-11T07:26:03Z",
+  "pubDate": "2025-11-11T07:26:03Z",
+  "dateStr": "2025-11-11",
+  "url": "https://access.redhat.com/errata/RHBA-2025:20315",
+  "severity": "None",
+  "overview": "An update for python-blivet is now available for Red Hat Enterprise Linux 10.",
+  "description": "For detailed information on changes in this release, see the Red Hat Enterprise Linux 10 Release Notes linked from the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux for IBM z Systems",
+    "Red Hat Enterprise Linux for Power, little endian",
+    "Red Hat Enterprise Linux for ARM 64",
+    "Red Hat Enterprise Linux for x86_64 10 x86_64"
+  ],
+  "cves": [],
+  "packages": [
+    "python-blivet-3.10.0-23.el10.src",
+    "blivet-data-3.10.0-23.el10.noarch",
+    "python3-blivet-3.10.0-23.el10.noarch"
+  ],
+  "fixes": [
+    {
+      "id": "RHEL-65846",
+      "url": "https://issues.redhat.com/browse/RHEL-65846",
+      "description": "[RHEL10] blivet.errors.LVMError: The object with LVM ID 'data/thinp' doesn't exist"
+    },
+    {
+      "id": "RHEL-74076",
+      "url": "https://issues.redhat.com/browse/RHEL-74076",
+      "description": "[RHEL10] LVM VG size blivet doesn't use the real size of the PV format"
+    },
+    {
+      "id": "RHEL-84686",
+      "url": "https://issues.redhat.com/browse/RHEL-84686",
+      "description": "[RHEL10] No details displayed when more than 3 partitions are created on a DASD disk"
+    },
+    {
+      "id": "RHEL-84663",
+      "url": "https://issues.redhat.com/browse/RHEL-84663",
+      "description": "[RHEL10] Unable to reinstall system with corrupted LVM thin pool: device path does not exist or is not writable"
+    },
+    {
+      "id": "RHEL-102299",
+      "url": "https://issues.redhat.com/browse/RHEL-102299",
+      "description": "Stratis device factory tests failing in gating"
+    },
+    {
+      "id": "RHEL-93967",
+      "url": "https://issues.redhat.com/browse/RHEL-93967",
+      "description": "[RHEL10] Reinstalling a system with software raid fails when creating the /boot/efi raid: \"Device or resource busy\""
+    },
+    {
+      "id": "RHEL-93966",
+      "url": "https://issues.redhat.com/browse/RHEL-93966",
+      "description": "[RHEL10] gi.overrides.BlockDev.LVMError: Process reported exit code 5: Device not found for /dev/vdb1."
+    }
+  ],
+  "full_text": "An update for python-blivet is now available for Red Hat Enterprise Linux 10.\n\nFor detailed information on changes in this release, see the Red Hat Enterprise Linux 10 Release Notes linked from the References section."
+}

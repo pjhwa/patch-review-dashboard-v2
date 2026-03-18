@@ -1,0 +1,24 @@
+{
+  "id": "ELSA-2026-1838",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2026-February/019703.html",
+  "synopsis": "[El-errata] ELSA-2026-1838 Moderate: Oracle Linux 10 image-builder security update",
+  "dateStr": "2026-February",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Security Advisory ELSA-2026-1838",
+  "description": "[45-1.0.2]\n- Fix CVE-2025-58183",
+  "affected_products": [
+    "Oracle Linux 10"
+  ],
+  "packages": [
+    "image-builder-45-1.0.2.el10.x86_64.rpm",
+    "image-builder-45-1.0.2.el10.aarch64.rpm"
+  ],
+  "cves": [
+    "CVE-2025-58183"
+  ],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Security Advisory ELSA-2026-1838\n\nhttp://linux.oracle.com/errata/ELSA-2026-1838.html\n\nThe following updated rpms for Oracle Linux 10 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\nimage-builder-45-1.0.2.el10.x86_64.rpm\n\naarch64:\nimage-builder-45-1.0.2.el10.aarch64.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol10/SRPMS-updates/image-builder-45-1.0.2.el10.src.rpm\n\nRelated CVEs:\n\nCVE-2025-58183\n\n\n\n\nDescription of changes:\n\n[45-1.0.2]\n- Fix CVE-2025-58183",
+  "vendor": "Oracle"
+}

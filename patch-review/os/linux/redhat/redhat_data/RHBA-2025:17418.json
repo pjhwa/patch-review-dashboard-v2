@@ -1,0 +1,38 @@
+{
+  "id": "RHBA-2025:17418",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: ksh bug fix and enhancement update",
+  "issuedDate": "2025-10-07T04:37:28Z",
+  "updatedDate": "2025-10-07T04:37:28Z",
+  "pubDate": "2025-10-07T04:37:28Z",
+  "dateStr": "2025-10-07",
+  "url": "https://access.redhat.com/errata/RHBA-2025:17418",
+  "severity": "None",
+  "overview": "An update for ksh is now available for Red Hat Enterprise Linux 10.",
+  "description": "KornShell (ksh) is a Unix shell developed by AT&T Bell Laboratories, which is backward-compatible with the Bourne shell (sh) and includes many features of the C shell. The most recent version is KSH-93. KornShell complies with the POSIX.2 standard (IEEE Std 1003.2-1992).Bug Fix(es) and Enhancement(s): [RHEL8] There is a bug in ksh that prevents it from handling multibyte characters properly (JIRA:RHEL-87334)",
+  "affected_products": [
+    "Red Hat Enterprise Linux for x86_64 10 x86_64",
+    "Red Hat Enterprise Linux for IBM z Systems",
+    "Red Hat Enterprise Linux for Power, little endian",
+    "Red Hat Enterprise Linux for ARM 64"
+  ],
+  "cves": [],
+  "packages": [
+    "ksh-20120801-269.el8_10.src",
+    "ksh-20120801-269.el8_10.x86_64",
+    "ksh-debuginfo-20120801-269.el8_10.x86_64",
+    "ksh-debugsource-20120801-269.el8_10.x86_64",
+    "ksh-20120801-269.el8_10.s390x",
+    "ksh-debuginfo-20120801-269.el8_10.s390x",
+    "ksh-debugsource-20120801-269.el8_10.s390x",
+    "ksh-20120801-269.el8_10.ppc64le",
+    "ksh-debuginfo-20120801-269.el8_10.ppc64le",
+    "ksh-debugsource-20120801-269.el8_10.ppc64le",
+    "ksh-20120801-269.el8_10.aarch64",
+    "ksh-debuginfo-20120801-269.el8_10.aarch64",
+    "ksh-debugsource-20120801-269.el8_10.aarch64"
+  ],
+  "fixes": [],
+  "full_text": "An update for ksh is now available for Red Hat Enterprise Linux 10.\n\nKornShell (ksh) is a Unix shell developed by AT&T Bell Laboratories, which is backward-compatible with the Bourne shell (sh) and includes many features of the C shell. The most recent version is KSH-93. KornShell complies with the POSIX.2 standard (IEEE Std 1003.2-1992).Bug Fix(es) and Enhancement(s): [RHEL8] There is a bug in ksh that prevents it from handling multibyte characters properly (JIRA:RHEL-87334)"
+}

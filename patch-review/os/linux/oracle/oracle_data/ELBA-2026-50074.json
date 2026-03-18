@@ -1,0 +1,24 @@
+{
+  "id": "ELBA-2026-50074",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "title": " shim  bug fix update",
+  "issuedDate": "2026-02-02T00:00:00Z",
+  "updatedDate": "2026-02-02T00:00:00Z",
+  "pubDate": "2026-02-02T00:00:00Z",
+  "dateStr": "2026-02-02",
+  "url": "https://linux.oracle.com/errata/ELBA-2026-50074.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 9.",
+  "description": "shim\n[16.1-1.0.2.el9]\n- Update shimx64.efi and shimaa64.efi v16.1 signed by Microsoft [Orabug: 38397615]\n- Update vendor shim v16.1 binaries signed with Oracle Secure Boot Signing (key 2) [Orabug: 38397615]\n\n[16.1-1.0.1.el9]\n- Update shim to upstream v16.1 [Orabug: 38397615]\n\nshim-unsigned-x64\n[16.1-1.0.2.el9]\n- Update SBAT_AUTOMATIC_DATE to 2021030218 [Orabug: 38397615]\n\n[16.1-1.0.1.el9]\n- Update shim to upstream v16.1 [Orabug: 38397615]\n- Update Oracle sbat metadata and vendor certificates [Orabug: 38397615]",
+  "affected_products": [
+    "Oracle Linux 9 for x86_64",
+    "Oracle Linux 9 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "shim-16.1-1.0.2.el9.src",
+    "shim-x64-16.1-1.0.2.el9.x86_64"
+  ],
+  "full_text": "shim\n[16.1-1.0.2.el9]\n- Update shimx64.efi and shimaa64.efi v16.1 signed by Microsoft [Orabug: 38397615]\n- Update vendor shim v16.1 binaries signed with Oracle Secure Boot Signing (key 2) [Orabug: 38397615]\n\n[16.1-1.0.1.el9]\n- Update shim to upstream v16.1 [Orabug: 38397615]\n\nshim-unsigned-x64\n[16.1-1.0.2.el9]\n- Update SBAT_AUTOMATIC_DATE to 2021030218 [Orabug: 38397615]\n\n[16.1-1.0.1.el9]\n- Update shim to upstream v16.1 [Orabug: 38397615]\n- Update Oracle sbat metadata and vendor certificates [Orabug: 38397615]\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2026-50074.html"
+}

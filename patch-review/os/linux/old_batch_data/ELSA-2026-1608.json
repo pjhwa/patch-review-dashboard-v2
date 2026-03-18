@@ -1,0 +1,31 @@
+{
+  "id": "ELSA-2026-1608",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2026-February/019756.html",
+  "synopsis": "[El-errata] ELSA-2026-1608 Moderate: Oracle Linux 7 glib2 security update",
+  "dateStr": "2026-February",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Security Advisory ELSA-2026-1608",
+  "description": "[2.56.1-9.0.3]\n- Fixes CVE-2025-13601  g_escape_uri_string() overflow [Orabug: 38909821]\n\n[2.56.1-9.0.1]\n- Fix overflow of GDBusConnection serial [Orabug: 38666376]",
+  "affected_products": [
+    "Oracle Linux 7"
+  ],
+  "packages": [
+    "glib2-2.56.1-9.0.3.el7_9.i686.rpm",
+    "glib2-2.56.1-9.0.3.el7_9.x86_64.rpm",
+    "glib2-devel-2.56.1-9.0.3.el7_9.i686.rpm",
+    "glib2-devel-2.56.1-9.0.3.el7_9.x86_64.rpm",
+    "glib2-doc-2.56.1-9.0.3.el7_9.noarch.rpm",
+    "glib2-fam-2.56.1-9.0.3.el7_9.x86_64.rpm",
+    "glib2-static-2.56.1-9.0.3.el7_9.i686.rpm",
+    "glib2-static-2.56.1-9.0.3.el7_9.x86_64.rpm",
+    "glib2-tests-2.56.1-9.0.3.el7_9.x86_64.rpm"
+  ],
+  "cves": [
+    "CVE-2025-13601"
+  ],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Security Advisory ELSA-2026-1608\n\nhttp://linux.oracle.com/errata/ELSA-2026-1608.html\n\nThe following updated rpms for Oracle Linux 7 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\nglib2-2.56.1-9.0.3.el7_9.i686.rpm\nglib2-2.56.1-9.0.3.el7_9.x86_64.rpm\nglib2-devel-2.56.1-9.0.3.el7_9.i686.rpm\nglib2-devel-2.56.1-9.0.3.el7_9.x86_64.rpm\nglib2-doc-2.56.1-9.0.3.el7_9.noarch.rpm\nglib2-fam-2.56.1-9.0.3.el7_9.x86_64.rpm\nglib2-static-2.56.1-9.0.3.el7_9.i686.rpm\nglib2-static-2.56.1-9.0.3.el7_9.x86_64.rpm\nglib2-tests-2.56.1-9.0.3.el7_9.x86_64.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol7/SRPMS-updates/glib2-2.56.1-9.0.3.el7_9.src.rpm\n\nRelated CVEs:\n\nCVE-2025-13601\n\n\n\n\nDescription of changes:\n\n[2.56.1-9.0.3]\n- Fixes CVE-2025-13601  g_escape_uri_string() overflow [Orabug: 38909821]\n\n[2.56.1-9.0.1]\n- Fix overflow of GDBusConnection serial [Orabug: 38666376]",
+  "vendor": "Oracle"
+}

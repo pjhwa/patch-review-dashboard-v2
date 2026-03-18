@@ -1,0 +1,20 @@
+{
+  "id": "RHSA-2026:0752",
+  "vendor": "Red Hat",
+  "url": "https://access.redhat.com/errata/RHSA-2026:0752",
+  "pubDate": "2026-01-19T01:17:13.000Z",
+  "dateStr": "2026-01-19",
+  "severity": "Important",
+  "title": "Red Hat Security Advisory: jmc security update",
+  "overview": "An update for jmc is now available for Red Hat Enterprise Linux 9.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "description": "An update for jmc is now available for Red Hat Enterprise Linux 9.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux CodeReady Linux Builder (v. 9)"
+  ],
+  "cves": [
+    "CVE-2025-66566"
+  ],
+  "packages": [],
+  "fixes": "",
+  "full_text": "Red Hat Security Advisory: jmc security update\n\nAn update for jmc is now available for Red Hat Enterprise Linux 9.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nAn update for jmc is now available for Red Hat Enterprise Linux 9.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nUpdated Packages:\njmc-8.2.0-18.el9_7.2.src.rpm\njmc-8.2.0-18.el9_7.2.x86_64.rpm\n\nCVE-2025-66566: A flaw was found in lz4-java. This vulnerability allows disclosure of sensitive data via crafted compressed input due to insufficient clearing of the output buffer in Java-based decompressor implementations."
+}

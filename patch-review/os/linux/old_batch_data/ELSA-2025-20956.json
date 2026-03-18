@@ -1,0 +1,31 @@
+{
+  "id": "ELSA-2025-20956",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2025-November/019070.html",
+  "synopsis": "[El-errata] ELSA-2025-20956 Important: Oracle Linux 9 libtiff security update",
+  "dateStr": "2025-November",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Security Advisory ELSA-2025-20956",
+  "description": "[4.4.0-15.2]\n- fix CVE-2025-8176: tiffdither and tiffmedian skip first line of input\n  images (RHEL-120239)\n\n[4.4.0-15.1]\n- fix CVE-2025-9900: buffer underflow crash in TIFFReadRGBAImageOriented\n  (RHEL-112545)",
+  "affected_products": [
+    "Oracle Linux 9"
+  ],
+  "packages": [
+    "libtiff-4.4.0-15.el9_7.2.i686.rpm",
+    "libtiff-4.4.0-15.el9_7.2.x86_64.rpm",
+    "libtiff-devel-4.4.0-15.el9_7.2.i686.rpm",
+    "libtiff-devel-4.4.0-15.el9_7.2.x86_64.rpm",
+    "libtiff-tools-4.4.0-15.el9_7.2.x86_64.rpm",
+    "libtiff-4.4.0-15.el9_7.2.aarch64.rpm",
+    "libtiff-devel-4.4.0-15.el9_7.2.aarch64.rpm",
+    "libtiff-tools-4.4.0-15.el9_7.2.aarch64.rpm"
+  ],
+  "cves": [
+    "CVE-2025-8176",
+    "CVE-2025-9900"
+  ],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Security Advisory ELSA-2025-20956\n\nhttp://linux.oracle.com/errata/ELSA-2025-20956.html\n\nThe following updated rpms for Oracle Linux 9 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\nlibtiff-4.4.0-15.el9_7.2.i686.rpm\nlibtiff-4.4.0-15.el9_7.2.x86_64.rpm\nlibtiff-devel-4.4.0-15.el9_7.2.i686.rpm\nlibtiff-devel-4.4.0-15.el9_7.2.x86_64.rpm\nlibtiff-tools-4.4.0-15.el9_7.2.x86_64.rpm\n\naarch64:\nlibtiff-4.4.0-15.el9_7.2.aarch64.rpm\nlibtiff-devel-4.4.0-15.el9_7.2.aarch64.rpm\nlibtiff-tools-4.4.0-15.el9_7.2.aarch64.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol9/SRPMS-updates/libtiff-4.4.0-15.el9_7.2.src.rpm\n\nRelated CVEs:\n\nCVE-2025-8176\nCVE-2025-9900\n\n\n\n\nDescription of changes:\n\n[4.4.0-15.2]\n- fix CVE-2025-8176: tiffdither and tiffmedian skip first line of input\n  images (RHEL-120239)\n\n[4.4.0-15.1]\n- fix CVE-2025-9900: buffer underflow crash in TIFFReadRGBAImageOriented\n  (RHEL-112545)",
+  "vendor": "Oracle"
+}

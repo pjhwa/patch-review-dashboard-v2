@@ -1,0 +1,25 @@
+{
+  "id": "RHSA-2026:1412",
+  "vendor": "Red Hat",
+  "url": "https://access.redhat.com/errata/RHSA-2026:1412",
+  "pubDate": "2026-01-27T17:44:24.000Z",
+  "dateStr": "2026-01-27",
+  "severity": "Important",
+  "title": "Red Hat Security Advisory: php:8.2 security update",
+  "overview": "An update for the php:8.2 module is now available for Red Hat Enterprise Linux 8.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "description": "An update for the php:8.2 module is now available for Red Hat Enterprise Linux 8.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux AppStream (v. 8)"
+  ],
+  "cves": [
+    "CVE-2025-1220",
+    "CVE-2025-1735",
+    "CVE-2025-6491",
+    "CVE-2025-14177",
+    "CVE-2025-14178",
+    "CVE-2025-14180"
+  ],
+  "packages": [],
+  "fixes": "",
+  "full_text": "Red Hat Security Advisory: php:8.2 security update\n\nAn update for the php:8.2 module is now available for Red Hat Enterprise Linux 8.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nAn update for the php:8.2 module is now available for Red Hat Enterprise Linux 8.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nUpdated Packages:\na5eca186.src.rpm\n33d54484.src.rpm\n00eaeb41.src.rpm\na5eca186.noarch.rpm\na5eca186.x86_64.rpm\n33d54484.x86_64.rpm\n00eaeb41.x86_64.rpm\na5eca186.s390x.rpm\n33d54484.s390x.rpm\n00eaeb41.s390x.rpm\na5eca186.ppc64le.rpm\n33d54484.ppc64le.rpm\n00eaeb41.ppc64le.rpm\na5eca186.aarch64.rpm\n33d54484.aarch64.rpm\n00eaeb41.aarch64.rpm\n\nCVE-2025-1220: A flaw was found in PHP. The `fsockopen()` function and related functions fail to validate NULL characters within the provided hostname, potentially leading to unexpected behavior during parsing. This flaw allows a network attacker to supply a specially crafted hostname. This issue can result in a denial of service due to parsing errors.\n\nCVE-2025-1735: A flaw was found in PHP. Missing error checking could result in SQL injection, and missing error handling could lead to crashes due to null pointer dereferences.\n\nCVE-2025-6491: A vulnerability was found in PHP. If a SoapVar instance is created with a fully qualified name larger than 2G, this will cause a NULL pointer dereference resulting in a segmentation fault, leading to a denial of service.\n\nCVE-2025-14177: A flaw was found in PHP. The getimagesize() function may leak uninitialized heap memory when processing images in multi-chunk mode, such as through php://filter. This vulnerability, caused by a bug in php_read_stream_all_chunks() that overwrites the buffer without advancing the pointer, allows an attacker to potentially disclose sensitive information from the server's memory. This could compromise the confidentiality of data on the affected server.\n\nCVE-2025-14178: A flaw was found in PHP. A heap-based buffer overflow occurs in the array_merge function when the total element count of packed arrays exceeds the 32-bit limit or the internal HT_MAX_SIZE due to an integer overflow in the precomputation of element counts using the zend_hash_num_elements function, causing a process crash and potentially memory corruption.\n\nCVE-2025-14180: A flaw was found in PHP. When the PDO (PHP Data Objects) PostgreSQL driver is configured with `PDO::ATTR_EMULATE_PREPARES` enabled, a remote attacker can exploit a vulnerability by providing an invalid character sequence within a prepared statement parameter. This can cause a null pointer dereference, leading to a server crash. The primary impact is a Denial of Service (DoS), affecting the availability of the target server."
+}

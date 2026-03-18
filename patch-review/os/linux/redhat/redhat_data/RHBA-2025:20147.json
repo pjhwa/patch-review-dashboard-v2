@@ -1,0 +1,60 @@
+{
+  "id": "RHBA-2025:20147",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: libnvme bug fix and enhancement update",
+  "issuedDate": "2025-11-11T07:25:15Z",
+  "updatedDate": "2025-11-11T07:25:15Z",
+  "pubDate": "2025-11-11T07:25:15Z",
+  "dateStr": "2025-11-11",
+  "url": "https://access.redhat.com/errata/RHBA-2025:20147",
+  "severity": "None",
+  "overview": "An update for libnvme is now available for Red Hat Enterprise Linux 10.",
+  "description": "For detailed information on changes in this release, see the Red Hat Enterprise Linux 10.1 Release Notes linked from the References section.",
+  "affected_products": [
+    "Red Hat CodeReady Linux Builder for Power, little endian",
+    "Red Hat Enterprise Linux for IBM z Systems",
+    "Red Hat CodeReady Linux Builder for ARM 64",
+    "Red Hat Enterprise Linux for x86_64 10 x86_64",
+    "Red Hat Enterprise Linux for Power, little endian",
+    "Red Hat Enterprise Linux for ARM 64",
+    "Red Hat CodeReady Linux Builder for IBM z Systems",
+    "Red Hat CodeReady Linux Builder for x86_64 10 x86_64"
+  ],
+  "cves": [],
+  "packages": [
+    "libnvme-1.13-1.el10.src",
+    "libnvme-1.13-1.el10.x86_64",
+    "libnvme-debuginfo-1.13-1.el10.x86_64",
+    "libnvme-debugsource-1.13-1.el10.x86_64",
+    "python3-libnvme-1.13-1.el10.x86_64",
+    "python3-libnvme-debuginfo-1.13-1.el10.x86_64",
+    "libnvme-1.13-1.el10.s390x",
+    "libnvme-debuginfo-1.13-1.el10.s390x",
+    "libnvme-debugsource-1.13-1.el10.s390x",
+    "python3-libnvme-1.13-1.el10.s390x",
+    "python3-libnvme-debuginfo-1.13-1.el10.s390x",
+    "libnvme-1.13-1.el10.ppc64le",
+    "libnvme-debuginfo-1.13-1.el10.ppc64le",
+    "libnvme-debugsource-1.13-1.el10.ppc64le",
+    "python3-libnvme-1.13-1.el10.ppc64le",
+    "python3-libnvme-debuginfo-1.13-1.el10.ppc64le",
+    "libnvme-1.13-1.el10.aarch64",
+    "libnvme-debuginfo-1.13-1.el10.aarch64",
+    "libnvme-debugsource-1.13-1.el10.aarch64",
+    "python3-libnvme-1.13-1.el10.aarch64",
+    "python3-libnvme-debuginfo-1.13-1.el10.aarch64",
+    "libnvme-devel-1.13-1.el10.x86_64",
+    "libnvme-devel-1.13-1.el10.ppc64le",
+    "libnvme-devel-1.13-1.el10.aarch64",
+    "libnvme-devel-1.13-1.el10.s390x"
+  ],
+  "fixes": [
+    {
+      "id": "RHEL-90418",
+      "url": "https://issues.redhat.com/browse/RHEL-90418",
+      "description": "RHEL10.1: update libnvme to the latest version"
+    }
+  ],
+  "full_text": "An update for libnvme is now available for Red Hat Enterprise Linux 10.\n\nFor detailed information on changes in this release, see the Red Hat Enterprise Linux 10.1 Release Notes linked from the References section."
+}

@@ -1,0 +1,61 @@
+{
+  "id": "RHBA-2025:21012",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: nftables bug fix and enhancement update",
+  "issuedDate": "2025-11-11T18:27:48Z",
+  "updatedDate": "2025-11-11T18:27:48Z",
+  "pubDate": "2025-11-11T18:27:48Z",
+  "dateStr": "2025-11-11",
+  "url": "https://access.redhat.com/errata/RHBA-2025:21012",
+  "severity": "None",
+  "overview": "An update for nftables is now available for Red Hat Enterprise Linux 10.",
+  "description": "nftables provides a packet-filtering tool, with numerous improvements in convenience, features, and performance. It is the designated successor to iptables, ip6tables, arptables and ebtables.Bug Fix(es) and Enhancement(s): nft manpage implies address is always required with dnat, but it's not (JIRA:RHEL-106743)  Attach creating nftables version info to tables' user data (JIRA:RHEL-108851)  Fix for memleak in trace_alloc_list() error path (JIRA:RHEL-111205)",
+  "affected_products": [
+    "Red Hat CodeReady Linux Builder for ARM 64",
+    "Red Hat Enterprise Linux for Power, little endian",
+    "Red Hat Enterprise Linux for x86_64 10 x86_64",
+    "Red Hat CodeReady Linux Builder for x86_64 10 x86_64",
+    "Red Hat Enterprise Linux for ARM 64",
+    "Red Hat CodeReady Linux Builder for IBM z Systems",
+    "Red Hat Enterprise Linux for IBM z Systems",
+    "Red Hat CodeReady Linux Builder for Power, little endian"
+  ],
+  "cves": [],
+  "packages": [
+    "nftables-1.1.1-6.el10_1.src",
+    "nftables-1.1.1-6.el10_1.x86_64",
+    "nftables-debuginfo-1.1.1-6.el10_1.x86_64",
+    "nftables-debugsource-1.1.1-6.el10_1.x86_64",
+    "python3-nftables-1.1.1-6.el10_1.x86_64",
+    "nftables-1.1.1-6.el10_1.s390x",
+    "nftables-debuginfo-1.1.1-6.el10_1.s390x",
+    "nftables-debugsource-1.1.1-6.el10_1.s390x",
+    "python3-nftables-1.1.1-6.el10_1.s390x",
+    "nftables-1.1.1-6.el10_1.ppc64le",
+    "nftables-debuginfo-1.1.1-6.el10_1.ppc64le",
+    "nftables-debugsource-1.1.1-6.el10_1.ppc64le",
+    "python3-nftables-1.1.1-6.el10_1.ppc64le",
+    "nftables-1.1.1-6.el10_1.aarch64",
+    "nftables-debuginfo-1.1.1-6.el10_1.aarch64",
+    "nftables-debugsource-1.1.1-6.el10_1.aarch64",
+    "python3-nftables-1.1.1-6.el10_1.aarch64",
+    "nftables-devel-1.1.1-6.el10_1.x86_64",
+    "nftables-devel-1.1.1-6.el10_1.ppc64le",
+    "nftables-devel-1.1.1-6.el10_1.aarch64",
+    "nftables-devel-1.1.1-6.el10_1.s390x"
+  ],
+  "fixes": [
+    {
+      "id": "RHEL-108851",
+      "url": "https://issues.redhat.com/browse/RHEL-108851",
+      "description": "Attach creating nftables version info to tables' user data"
+    },
+    {
+      "id": "RHEL-111205",
+      "url": "https://issues.redhat.com/browse/RHEL-111205",
+      "description": "Fix for memleak in trace_alloc_list() error path"
+    }
+  ],
+  "full_text": "An update for nftables is now available for Red Hat Enterprise Linux 10.\n\nnftables provides a packet-filtering tool, with numerous improvements in convenience, features, and performance. It is the designated successor to iptables, ip6tables, arptables and ebtables.Bug Fix(es) and Enhancement(s): nft manpage implies address is always required with dnat, but it's not (JIRA:RHEL-106743)  Attach creating nftables version info to tables' user data (JIRA:RHEL-108851)  Fix for memleak in trace_alloc_list() error path (JIRA:RHEL-111205)"
+}

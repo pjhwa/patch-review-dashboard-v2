@@ -1,0 +1,39 @@
+{
+  "id": "ELSA-2026-1842",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2026-February/019697.html",
+  "synopsis": "[El-errata] ELSA-2026-1842 Important: Oracle Linux 10 nodejs24 security update",
+  "dateStr": "2026-February",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Security Advisory ELSA-2026-1842",
+  "description": "[1:24.13.0-1.0.1]\n- Update upstream references\n\n[1:24.13.0-1]\n- Update to 24.13.0\n\n[1:24.11.1-2]\n- makefile: change package manager to RH one",
+  "affected_products": [
+    "Oracle Linux 10"
+  ],
+  "packages": [
+    "nodejs24-24.13.0-1.0.1.el10_1.x86_64.rpm",
+    "nodejs24-devel-24.13.0-1.0.1.el10_1.x86_64.rpm",
+    "nodejs24-docs-24.13.0-1.0.1.el10_1.noarch.rpm",
+    "nodejs24-full-i18n-24.13.0-1.0.1.el10_1.x86_64.rpm",
+    "nodejs24-libs-24.13.0-1.0.1.el10_1.x86_64.rpm",
+    "nodejs24-npm-11.6.2-1.24.13.0.1.0.1.el10_1.noarch.rpm",
+    "nodejs24-24.13.0-1.0.1.el10_1.aarch64.rpm",
+    "nodejs24-devel-24.13.0-1.0.1.el10_1.aarch64.rpm",
+    "nodejs24-docs-24.13.0-1.0.1.el10_1.noarch.rpm",
+    "nodejs24-full-i18n-24.13.0-1.0.1.el10_1.aarch64.rpm",
+    "nodejs24-libs-24.13.0-1.0.1.el10_1.aarch64.rpm",
+    "nodejs24-npm-11.6.2-1.24.13.0.1.0.1.el10_1.noarch.rpm"
+  ],
+  "cves": [
+    "CVE-2025-55130",
+    "CVE-2025-55131",
+    "CVE-2025-55132",
+    "CVE-2025-59465",
+    "CVE-2025-59466",
+    "CVE-2026-21637"
+  ],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Security Advisory ELSA-2026-1842\n\nhttp://linux.oracle.com/errata/ELSA-2026-1842.html\n\nThe following updated rpms for Oracle Linux 10 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\nnodejs24-24.13.0-1.0.1.el10_1.x86_64.rpm\nnodejs24-devel-24.13.0-1.0.1.el10_1.x86_64.rpm\nnodejs24-docs-24.13.0-1.0.1.el10_1.noarch.rpm\nnodejs24-full-i18n-24.13.0-1.0.1.el10_1.x86_64.rpm\nnodejs24-libs-24.13.0-1.0.1.el10_1.x86_64.rpm\nnodejs24-npm-11.6.2-1.24.13.0.1.0.1.el10_1.noarch.rpm\n\naarch64:\nnodejs24-24.13.0-1.0.1.el10_1.aarch64.rpm\nnodejs24-devel-24.13.0-1.0.1.el10_1.aarch64.rpm\nnodejs24-docs-24.13.0-1.0.1.el10_1.noarch.rpm\nnodejs24-full-i18n-24.13.0-1.0.1.el10_1.aarch64.rpm\nnodejs24-libs-24.13.0-1.0.1.el10_1.aarch64.rpm\nnodejs24-npm-11.6.2-1.24.13.0.1.0.1.el10_1.noarch.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol10/SRPMS-updates/nodejs24-24.13.0-1.0.1.el10_1.src.rpm\n\nRelated CVEs:\n\nCVE-2025-55130\nCVE-2025-55131\nCVE-2025-55132\nCVE-2025-59465\nCVE-2025-59466\nCVE-2026-21637\n\n\n\n\nDescription of changes:\n\n[1:24.13.0-1.0.1]\n- Update upstream references\n\n[1:24.13.0-1]\n- Update to 24.13.0\n\n[1:24.11.1-2]\n- makefile: change package manager to RH one",
+  "vendor": "Oracle"
+}

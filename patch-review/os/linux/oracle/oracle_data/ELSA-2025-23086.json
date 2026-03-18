@@ -1,0 +1,31 @@
+{
+  "id": "ELSA-2025-23086",
+  "vendor": "Oracle",
+  "type": "Security Advisory (ELSA)",
+  "kernel_type": "AppStream",
+  "title": " luksmeta security update",
+  "issuedDate": "2025-12-10T00:00:00Z",
+  "updatedDate": "2025-12-10T00:00:00Z",
+  "pubDate": "2025-12-10T00:00:00Z",
+  "dateStr": "2025-12-10",
+  "url": "https://linux.oracle.com/errata/ELSA-2025-23086.html",
+  "severity": "Moderate",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 8.",
+  "description": "[9-4.1]\n- Fix handling of large metadata\n  Resolves: RHEL-122138",
+  "affected_products": [
+    "Oracle Linux 8 for x86_64",
+    "Oracle Linux 8 for aarch64"
+  ],
+  "cves": [
+    "CVE-2025-11568"
+  ],
+  "packages": [
+    "libluksmeta-devel-9-4.el8_10.1.i686",
+    "libluksmeta-devel-9-4.el8_10.1.x86_64",
+    "luksmeta-9-4.el8_10.1.src",
+    "libluksmeta-9-4.el8_10.1.x86_64",
+    "libluksmeta-9-4.el8_10.1.i686",
+    "luksmeta-9-4.el8_10.1.x86_64"
+  ],
+  "full_text": "[9-4.1]\n- Fix handling of large metadata\n  Resolves: RHEL-122138\n\nReferences:\nhttps://linux.oracle.com/errata/ELSA-2025-23086.html\nhttps://linux.oracle.com/cve/CVE-2025-11568.html"
+}

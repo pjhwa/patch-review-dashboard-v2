@@ -1,0 +1,20 @@
+{
+  "id": "RHSA-2026:0835",
+  "vendor": "Red Hat",
+  "url": "https://access.redhat.com/errata/RHSA-2026:0835",
+  "pubDate": "2026-01-20T05:13:19.000Z",
+  "dateStr": "2026-01-20",
+  "severity": "Moderate",
+  "title": "Red Hat Security Advisory: libpq security update",
+  "overview": "An update for libpq is now available for Red Hat Enterprise Linux 8.2 Advanced Update Support.\n\nRed Hat Product Security has rated this update as having a security impact of Moderate. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "description": "An update for libpq is now available for Red Hat Enterprise Linux 8.2 Advanced Update Support.\n\nRed Hat Product Security has rated this update as having a security impact of Moderate. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux AppStream AUS (v. 8.2)"
+  ],
+  "cves": [
+    "CVE-2025-12818"
+  ],
+  "packages": [],
+  "fixes": "",
+  "full_text": "Red Hat Security Advisory: libpq security update\n\nAn update for libpq is now available for Red Hat Enterprise Linux 8.2 Advanced Update Support.\n\nRed Hat Product Security has rated this update as having a security impact of Moderate. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nAn update for libpq is now available for Red Hat Enterprise Linux 8.2 Advanced Update Support.\n\nRed Hat Product Security has rated this update as having a security impact of Moderate. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nUpdated Packages:\nlibpq-12.7-1.el8_2.3.src.rpm\nlibpq-12.7-1.el8_2.3.i686.rpm\nlibpq-12.7-1.el8_2.3.x86_64.rpm\nlibpq-debuginfo-12.7-1.el8_2.3.i686.rpm\nlibpq-debuginfo-12.7-1.el8_2.3.x86_64.rpm\nlibpq-debugsource-12.7-1.el8_2.3.i686.rpm\nlibpq-debugsource-12.7-1.el8_2.3.x86_64.rpm\nlibpq-devel-12.7-1.el8_2.3.i686.rpm\nlibpq-devel-12.7-1.el8_2.3.x86_64.rpm\nlibpq-devel-debuginfo-12.7-1.el8_2.3.i686.rpm\nlibpq-devel-debuginfo-12.7-1.el8_2.3.x86_64.rpm\n\nCVE-2025-12818: A vulnerability has been identified in PostgreSQL’s libpq client library, where integer wraparound in several allocation-size calculations allows a peer or input provider to cause an undersized buffer and then write out-of-bounds by hundreds of megabytes. This can lead to a client application segmentation fault or crash when using libpq to connect to a PostgreSQL server."
+}

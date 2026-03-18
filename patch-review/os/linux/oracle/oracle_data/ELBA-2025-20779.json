@@ -1,0 +1,27 @@
+{
+  "id": "ELBA-2025-20779",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "AppStream",
+  "title": "proj bug fix and enhancement update",
+  "issuedDate": "2025-11-17T00:00:00Z",
+  "updatedDate": "2025-11-17T00:00:00Z",
+  "pubDate": "2025-11-17T00:00:00Z",
+  "dateStr": "2025-11-17",
+  "url": "https://linux.oracle.com/errata/ELBA-2025-20779.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 9.",
+  "description": "[9.6.0-2]\n- Update to 9.6.0\n\n[9.5.1-2]\n- Rebuilt for https://fedoraproject.org/wiki/Fedora_42_Mass_Rebuild\n\n[9.5.1-1]\n- Update to 9.5.1",
+  "affected_products": [
+    "Oracle Linux 9 for x86_64",
+    "Oracle Linux 9 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "proj-data-9.6.0-2.el9.noarch",
+    "proj-9.6.0-2.el9.src",
+    "proj-9.6.0-2.el9.i686",
+    "proj-9.6.0-2.el9.x86_64"
+  ],
+  "full_text": "[9.6.0-2]\n- Update to 9.6.0\n\n[9.5.1-2]\n- Rebuilt for https://fedoraproject.org/wiki/Fedora_42_Mass_Rebuild\n\n[9.5.1-1]\n- Update to 9.5.1\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2025-20779.html"
+}

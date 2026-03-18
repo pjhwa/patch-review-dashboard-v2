@@ -1,0 +1,63 @@
+{
+  "id": "RHBA-2025:20290",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: mingw-qemu-ga-win bug fix and enhancement update",
+  "issuedDate": "2025-11-11T07:25:58Z",
+  "updatedDate": "2025-11-11T07:25:58Z",
+  "pubDate": "2025-11-11T07:25:58Z",
+  "dateStr": "2025-11-11",
+  "url": "https://access.redhat.com/errata/RHBA-2025:20290",
+  "severity": "None",
+  "overview": "An update for mingw-qemu-ga-win is now available for Red Hat Enterprise Linux 10.",
+  "description": "For detailed information on changes in this release, see the Red Hat Enterprise Linux 10 Release Notes linked from the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux for ARM 64",
+    "Red Hat Enterprise Linux for Power, little endian",
+    "Red Hat Enterprise Linux for x86_64 10 x86_64",
+    "Red Hat Enterprise Linux for IBM z Systems"
+  ],
+  "cves": [],
+  "packages": [
+    "mingw-qemu-ga-win-110.0.2-1.el10.src",
+    "mingw-qemu-ga-win-110.0.2-1.el10.noarch"
+  ],
+  "fixes": [
+    {
+      "id": "RHEL-71884",
+      "url": "https://issues.redhat.com/browse/RHEL-71884",
+      "description": "[qemu-guest-agent][RFE] Report CPU load average for Windows VMs"
+    },
+    {
+      "id": "RHEL-11824",
+      "url": "https://issues.redhat.com/browse/RHEL-11824",
+      "description": "[QGA] Check if possible to create VSS installation retry, if previously VSS service was not un-registered correctly"
+    },
+    {
+      "id": "RHEL-83547",
+      "url": "https://issues.redhat.com/browse/RHEL-83547",
+      "description": "Rebase mingw-qemu-ga-win to QEMU 10.0.0"
+    },
+    {
+      "id": "RHEL-96980",
+      "url": "https://issues.redhat.com/browse/RHEL-96980",
+      "description": "mingw-qga: Drop mingw-pixman build deps"
+    },
+    {
+      "id": "RHEL-98947",
+      "url": "https://issues.redhat.com/browse/RHEL-98947",
+      "description": "[mingw-qemu-ga-win] MSI installer ignore VSS installation result"
+    },
+    {
+      "id": "RHEL-104252",
+      "url": "https://issues.redhat.com/browse/RHEL-104252",
+      "description": "[mingw-qemu-ga-win] QAPI error desc does not contain Windows error"
+    },
+    {
+      "id": "RHEL-107174",
+      "url": "https://issues.redhat.com/browse/RHEL-107174",
+      "description": "QGA can't be installed before vioserial driver or without serial port configured qga version-110.0.1-1"
+    }
+  ],
+  "full_text": "An update for mingw-qemu-ga-win is now available for Red Hat Enterprise Linux 10.\n\nFor detailed information on changes in this release, see the Red Hat Enterprise Linux 10 Release Notes linked from the References section."
+}

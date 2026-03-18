@@ -1,0 +1,20 @@
+{
+  "id": "RHSA-2025:19925",
+  "vendor": "Red Hat",
+  "url": "https://access.redhat.com/errata/RHSA-2025:19925",
+  "pubDate": "2025-11-07T12:03:36.000Z",
+  "dateStr": "2025-11-07",
+  "severity": "Moderate",
+  "title": "Red Hat Security Advisory: Red Hat build of Keycloak 26.0.17 Update",
+  "overview": "New Red Hat build of Keycloak 26.0.17 packages are available from the Customer Portal",
+  "description": "New Red Hat build of Keycloak 26.0.17 packages are available from the Customer Portal",
+  "affected_products": [
+    "Red Hat build of Keycloak 26.0.17"
+  ],
+  "cves": [
+    "CVE-2025-10044"
+  ],
+  "packages": [],
+  "fixes": "",
+  "full_text": "Red Hat Security Advisory: Red Hat build of Keycloak 26.0.17 Update\n\nNew Red Hat build of Keycloak 26.0.17 packages are available from the Customer Portal\n\nNew Red Hat build of Keycloak 26.0.17 packages are available from the Customer Portal\n\n\n\nCVE-2025-10044: A flaw was found in Keycloak. Keycloak’s account console and other pages accept arbitrary text in the error_description query parameter. This text is directly rendered in error pages without validation or sanitization. While HTML encoding prevents XSS, an attacker can craft URLs with misleading messages (e.g., fake support phone numbers or URLs), which are displayed within the trusted Keycloak UI. This creates a phishing vector, potentially tricking users into contacting malicious actors."
+}

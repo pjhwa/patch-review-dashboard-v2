@@ -1,0 +1,36 @@
+{
+  "id": "ELSA-2019-2726",
+  "vendor": "Oracle",
+  "type": "Security Advisory (ELSA)",
+  "kernel_type": "AppStream",
+  "title": " go-toolset:ol8 security and bug fix update",
+  "issuedDate": "2026-02-16T00:00:00Z",
+  "updatedDate": "2026-02-16T00:00:00Z",
+  "pubDate": "2026-02-16T00:00:00Z",
+  "dateStr": "2026-02-16",
+  "url": "https://linux.oracle.com/errata/ELSA-2019-2726.html",
+  "severity": "Low",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 8.",
+  "description": "go-toolset\n[1.11.13-1]\n- Bump version to 1.11.13\n- Related: rhbz#1743204\n- Related: rhbz#1743206\n\ngolang\n[1.11.13-2]\n- Improve error message when using non-FIPS API in FIPS mode.\n- Fixes CVE-2019-9512.\n- Fixes CVE-2019-9514.\n- Resolves: rhbz#1745711\n- Resolves: rhbz#1745705\n\n[1.11.6-3]\n- Updates to be less strict on key size in FIPS mode\n- Resolves: rhbz#1731550\n\n[1.11.6-2]\n- Lock to specific OpenSSL version on build\n- Resolves: rhbz#1709606",
+  "affected_products": [
+    "Oracle Linux 8 for x86_64",
+    "Oracle Linux 8 for aarch64"
+  ],
+  "cves": [
+    "CVE-2019-9512",
+    "CVE-2019-9514"
+  ],
+  "packages": [
+    "go-toolset-1.11.13-1.module+el8.0.1+5334+cadcb96c.src",
+    "golang-1.11.13-2.module+el8.0.1+5334+cadcb96c.src",
+    "golang-tests-1.11.13-2.module+el8.0.1+5334+cadcb96c.noarch",
+    "golang-src-1.11.13-2.module+el8.0.1+5334+cadcb96c.noarch",
+    "golang-misc-1.11.13-2.module+el8.0.1+5334+cadcb96c.noarch",
+    "golang-docs-1.11.13-2.module+el8.0.1+5334+cadcb96c.noarch",
+    "golang-race-1.11.13-2.module+el8.0.1+5334+cadcb96c.x86_64",
+    "golang-bin-1.11.13-2.module+el8.0.1+5334+cadcb96c.x86_64",
+    "golang-1.11.13-2.module+el8.0.1+5334+cadcb96c.x86_64",
+    "go-toolset-1.11.13-1.module+el8.0.1+5334+cadcb96c.x86_64"
+  ],
+  "full_text": "go-toolset\n[1.11.13-1]\n- Bump version to 1.11.13\n- Related: rhbz#1743204\n- Related: rhbz#1743206\n\ngolang\n[1.11.13-2]\n- Improve error message when using non-FIPS API in FIPS mode.\n- Fixes CVE-2019-9512.\n- Fixes CVE-2019-9514.\n- Resolves: rhbz#1745711\n- Resolves: rhbz#1745705\n\n[1.11.6-3]\n- Updates to be less strict on key size in FIPS mode\n- Resolves: rhbz#1731550\n\n[1.11.6-2]\n- Lock to specific OpenSSL version on build\n- Resolves: rhbz#1709606\n\nReferences:\nhttps://linux.oracle.com/errata/ELSA-2019-2726.html\nhttps://linux.oracle.com/cve/CVE-2019-9512.html\nhttps://linux.oracle.com/cve/CVE-2019-9514.html"
+}

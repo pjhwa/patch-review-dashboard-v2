@@ -1,0 +1,25 @@
+{
+  "id": "ELBA-2025-20497-0",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "AppStream",
+  "title": "trustee-guest-components bug fix and enhancement update",
+  "issuedDate": "2025-11-25T00:00:00Z",
+  "updatedDate": "2025-11-25T00:00:00Z",
+  "pubDate": "2025-11-25T00:00:00Z",
+  "dateStr": "2025-11-25",
+  "url": "https://linux.oracle.com/errata/ELBA-2025-20497-0.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 10.",
+  "description": "[0.13.0-1]\n- Update to version 0.13.0\n  Enable tdx-attester (tsm-report)\n  Resolves: RHEL-109116\n\n[0.10.0^124.git0061d03-3]\n- Use cargo vendor-filterer to create vendor Source1, make rpminspect happy\n  Resolves: RHEL-73770\n\n[0.10.0^124.git0061d03-2]\n- A smaller vendor Source1\n  Resolves: RHEL-73770\n\n[0.10.0^124.git0061d03-1]\n- Initial commit on c10s\n  Resolves: RHEL-73770",
+  "affected_products": [
+    "Oracle Linux 10 for x86_64",
+    "Oracle Linux 10 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "trustee-guest-components-0.13.0-1.el10.src",
+    "trustee-guest-components-0.13.0-1.el10.x86_64"
+  ],
+  "full_text": "[0.13.0-1]\n- Update to version 0.13.0\n  Enable tdx-attester (tsm-report)\n  Resolves: RHEL-109116\n\n[0.10.0^124.git0061d03-3]\n- Use cargo vendor-filterer to create vendor Source1, make rpminspect happy\n  Resolves: RHEL-73770\n\n[0.10.0^124.git0061d03-2]\n- A smaller vendor Source1\n  Resolves: RHEL-73770\n\n[0.10.0^124.git0061d03-1]\n- Initial commit on c10s\n  Resolves: RHEL-73770\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2025-20497-0.html"
+}

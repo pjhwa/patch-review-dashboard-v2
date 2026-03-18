@@ -1,0 +1,31 @@
+{
+  "id": "ELSA-2025-19113",
+  "vendor": "Oracle",
+  "type": "Security Advisory (ELSA)",
+  "kernel_type": "AppStream",
+  "title": " libtiff security update",
+  "issuedDate": "2025-10-28T00:00:00Z",
+  "updatedDate": "2025-10-28T00:00:00Z",
+  "pubDate": "2025-10-28T00:00:00Z",
+  "dateStr": "2025-10-28",
+  "url": "https://linux.oracle.com/errata/ELSA-2025-19113.html",
+  "severity": "Important",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 9.",
+  "description": "[4.4.0-13.2]\n- fix CVE-2025-8176 off-by-one error skipping first line in tiffdither\n  and tiffmedian\n- Resolves: RHEL-120243\n\n[4.4.0-13.1]\n- fix CVE-2025-9900 buffer underflow in TIFFReadRGBAImageOriented\n- Resolves: RHEL-112542",
+  "affected_products": [
+    "Oracle Linux 9 for x86_64",
+    "Oracle Linux 9 for aarch64"
+  ],
+  "cves": [
+    "CVE-2025-8176",
+    "CVE-2025-9900"
+  ],
+  "packages": [
+    "libtiff-devel-4.4.0-13.el9_6.2.i686",
+    "libtiff-devel-4.4.0-13.el9_6.2.x86_64",
+    "libtiff-4.4.0-13.el9_6.2.x86_64",
+    "libtiff-4.4.0-13.el9_6.2.i686",
+    "libtiff-4.4.0-13.el9_6.2.src"
+  ],
+  "full_text": "[4.4.0-13.2]\n- fix CVE-2025-8176 off-by-one error skipping first line in tiffdither\n  and tiffmedian\n- Resolves: RHEL-120243\n\n[4.4.0-13.1]\n- fix CVE-2025-9900 buffer underflow in TIFFReadRGBAImageOriented\n- Resolves: RHEL-112542\n\nReferences:\nhttps://linux.oracle.com/errata/ELSA-2025-19113.html\nhttps://linux.oracle.com/cve/CVE-2025-8176.html\nhttps://linux.oracle.com/cve/CVE-2025-9900.html"
+}

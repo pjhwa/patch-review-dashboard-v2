@@ -1,0 +1,21 @@
+{
+  "id": "RHSA-2026:2954",
+  "vendor": "Red Hat",
+  "url": "https://access.redhat.com/errata/RHSA-2026:2954",
+  "pubDate": "2026-02-18T15:07:41.000Z",
+  "dateStr": "2026-02-18",
+  "severity": "Important",
+  "title": "Red Hat Security Advisory: munge security update",
+  "overview": "An update for munge is now available for Red Hat Enterprise Linux 10.0 Extended Update Support.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "description": "An update for munge is now available for Red Hat Enterprise Linux 10.0 Extended Update Support.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux AppStream EUS (v. 10.0)",
+    "Red Hat Enterprise Linux CodeReady Linux Builder EUS (v. 10.0)"
+  ],
+  "cves": [
+    "CVE-2026-25506"
+  ],
+  "packages": [],
+  "fixes": "",
+  "full_text": "Red Hat Security Advisory: munge security update\n\nAn update for munge is now available for Red Hat Enterprise Linux 10.0 Extended Update Support.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nAn update for munge is now available for Red Hat Enterprise Linux 10.0 Extended Update Support.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nUpdated Packages:\nmunge-0.5.15-10.el10_0.1.src.rpm\nmunge-0.5.15-10.el10_0.1.x86_64.rpm\nmunge-debuginfo-0.5.15-10.el10_0.1.x86_64.rpm\nmunge-debugsource-0.5.15-10.el10_0.1.x86_64.rpm\nmunge-libs-0.5.15-10.el10_0.1.x86_64.rpm\nmunge-libs-debuginfo-0.5.15-10.el10_0.1.x86_64.rpm\nmunge-0.5.15-10.el10_0.1.s390x.rpm\nmunge-debuginfo-0.5.15-10.el10_0.1.s390x.rpm\nmunge-debugsource-0.5.15-10.el10_0.1.s390x.rpm\nmunge-libs-0.5.15-10.el10_0.1.s390x.rpm\nmunge-libs-debuginfo-0.5.15-10.el10_0.1.s390x.rpm\nmunge-0.5.15-10.el10_0.1.ppc64le.rpm\nmunge-debuginfo-0.5.15-10.el10_0.1.ppc64le.rpm\nmunge-debugsource-0.5.15-10.el10_0.1.ppc64le.rpm\nmunge-libs-0.5.15-10.el10_0.1.ppc64le.rpm\nmunge-libs-debuginfo-0.5.15-10.el10_0.1.ppc64le.rpm\nmunge-0.5.15-10.el10_0.1.aarch64.rpm\nmunge-debuginfo-0.5.15-10.el10_0.1.aarch64.rpm\nmunge-debugsource-0.5.15-10.el10_0.1.aarch64.rpm\nmunge-libs-0.5.15-10.el10_0.1.aarch64.rpm\nmunge-libs-debuginfo-0.5.15-10.el10_0.1.aarch64.rpm\nmunge-devel-0.5.15-10.el10_0.1.x86_64.rpm\nmunge-devel-0.5.15-10.el10_0.1.ppc64le.rpm\nmunge-devel-0.5.15-10.el10_0.1.s390x.rpm\nmunge-devel-0.5.15-10.el10_0.1.aarch64.rpm\n\nCVE-2026-25506: A buffer overflow vulnerability was discovered in the MUNGE authentication daemon (munged). In affected versions, a local attacker can potentially leak secret cryptographic key material from the daemon's memory by sending a specially crafted message with an oversized address field. With the leaked key, an attacker could forge authentication credentials to impersonate any user, potentially escalating privileges in systems that rely on MUNGE for identity verification."
+}

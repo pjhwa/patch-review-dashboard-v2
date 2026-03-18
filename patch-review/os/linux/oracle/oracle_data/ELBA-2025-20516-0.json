@@ -1,0 +1,36 @@
+{
+  "id": "ELBA-2025-20516-0",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "RHCK",
+  "title": "NetworkManager bug fix and enhancement update",
+  "issuedDate": "2025-11-17T00:00:00Z",
+  "updatedDate": "2025-11-17T00:00:00Z",
+  "pubDate": "2025-11-17T00:00:00Z",
+  "dateStr": "2025-11-17",
+  "url": "https://linux.oracle.com/errata/ELBA-2025-20516-0.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 9.",
+  "description": "[1.54.0-1.0.1]\n- disable MPTCP handling by default [Orabug: 34801142]\n- add connectivity check via Oracle servers [Orabug: 32051972]\n- Add a dropin file to make Networkmanager-dispatcher persistent [Orabug: 36989910]\n- Drop 777 permissions from the NetworkManager-dispatcher drop-in directory [Orabug: 37581907]\n\n[1:1.54.0-1]\n- Update to 1.54.0\n- Fix reaply on bridge port VLAN (RHEL-102743)\n- Accept hostnames longer than 64 characters from DNS lookup (RHEL-106787)\n\n[1:1.53.92-1]\n- Update to 1.54.0 (rc3)\n- Fix ipv6 static route deleted with dualstack (RHEL-102772)\n- Allow setting IP method to disabled in port connection (RHEL-102768)\n\n[1:1.53.91-1]\n- Update to 1.54.0 (rc2)\n- Support deactivating a connection without resetting SRIOV sriov_numvfs (RHEL-98728)\n- Fix a race condition in ovs tun interface (RHEL-98551)\n\n[1:1.53.90-1]\n- Update to 1.54.0 (rc1)\n- Devices not becoming managed sometimes (RHEL-93108)\n- Crash on _l3cfg_notify_cb (RHEL-92314)\n- Fix autoconnect-ports for unrealized VLANs and other virtual devices (NMT-1610)\n\n[1:1.53.4-1]\n- Update to 1.53.4 (dev)\n- initrd: add new NBFT parser (RHEL-83061)\n- Add support for configuring per-device IPv4 sysctl forwarding option in NetworkManager (RHEL-59083)\n- Support reapply on OVS settings (RHEL-86877)\n- Add support for configuring the loopback interface in nmtui (RHEL-85770)\n- Replace ioctl wth netlink for ethtool in NetworkManager (RHEL-85764)\n- NetworkManager does not add the lock attribute when rto_min is used (RHEL-85778)\n- Can not change bridge.options.mcast-snooping-enable on partial managemd OVS bridge (RHEL-87168)\n\nResolves: RHEL-83061\nResolves: RHEL-59083\nResolves: RHEL-87596\nResolves: RHEL-85770\nResolves: RHEL-85764\nResolves: RHEL-85778\nResolves: RHEL-87168\n\n[1:1.53.3-1]\n- Update to 1.53.3 (dev)\n- Add more IPv6 prefix delegation options (RHEL-85765)\n- Fix order of parsing port/controller properties in nmcli (RHEL-85767)\n- Improve interface activation logic (RHEL-85766)\n- Fix WireGuard IPv6 firewall rules (RHEL-85763)\n- Support OVS-DPDK dpdk-lsc-interrupt and mtu_request configurations (RHEL-77148)\n\n[1:1.53.2-1]\n- Update to 1.53.2 (dev)\n- Fix invalid memory access on Dnsconfd DBUS error (RHEL-83175)\n- Avoid getting transient hostname when 'localhost' set in /etc/hostname (RHEL-55730)\n\n[1:1.53.1-1]\n- Update to 1.53.1 (dev)\n- Update MPTCP endpoints creation order (RHEL-78752)\n- Print all warnings from nmcli to stderr (RHEL-74255)",
+  "affected_products": [
+    "Oracle Linux 9 for x86_64",
+    "Oracle Linux 9 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "NetworkManager-1.54.0-1.0.1.el9.src",
+    "NetworkManager-libnm-1.54.0-1.0.1.el9.i686",
+    "NetworkManager-1.54.0-1.0.1.el9.x86_64",
+    "NetworkManager-config-server-1.54.0-1.0.1.el9.noarch",
+    "NetworkManager-bluetooth-1.54.0-1.0.1.el9.x86_64",
+    "NetworkManager-initscripts-updown-1.54.0-1.0.1.el9.noarch",
+    "NetworkManager-config-connectivity-oracle-1.54.0-1.0.1.el9.noarch",
+    "NetworkManager-team-1.54.0-1.0.1.el9.x86_64",
+    "NetworkManager-wifi-1.54.0-1.0.1.el9.x86_64",
+    "NetworkManager-wwan-1.54.0-1.0.1.el9.x86_64",
+    "NetworkManager-tui-1.54.0-1.0.1.el9.x86_64",
+    "NetworkManager-libnm-1.54.0-1.0.1.el9.x86_64",
+    "NetworkManager-adsl-1.54.0-1.0.1.el9.x86_64"
+  ],
+  "full_text": "[1.54.0-1.0.1]\n- disable MPTCP handling by default [Orabug: 34801142]\n- add connectivity check via Oracle servers [Orabug: 32051972]\n- Add a dropin file to make Networkmanager-dispatcher persistent [Orabug: 36989910]\n- Drop 777 permissions from the NetworkManager-dispatcher drop-in directory [Orabug: 37581907]\n\n[1:1.54.0-1]\n- Update to 1.54.0\n- Fix reaply on bridge port VLAN (RHEL-102743)\n- Accept hostnames longer than 64 characters from DNS lookup (RHEL-106787)\n\n[1:1.53.92-1]\n- Update to 1.54.0 (rc3)\n- Fix ipv6 static route deleted with dualstack (RHEL-102772)\n- Allow setting IP method to disabled in port connection (RHEL-102768)\n\n[1:1.53.91-1]\n- Update to 1.54.0 (rc2)\n- Support deactivating a connection without resetting SRIOV sriov_numvfs (RHEL-98728)\n- Fix a race condition in ovs tun interface (RHEL-98551)\n\n[1:1.53.90-1]\n- Update to 1.54.0 (rc1)\n- Devices not becoming managed sometimes (RHEL-93108)\n- Crash on _l3cfg_notify_cb (RHEL-92314)\n- Fix autoconnect-ports for unrealized VLANs and other virtual devices (NMT-1610)\n\n[1:1.53.4-1]\n- Update to 1.53.4 (dev)\n- initrd: add new NBFT parser (RHEL-83061)\n- Add support for configuring per-device IPv4 sysctl forwarding option in NetworkManager (RHEL-59083)\n- Support reapply on OVS settings (RHEL-86877)\n- Add support for configuring the loopback interface in nmtui (RHEL-85770)\n- Replace ioctl wth netlink for ethtool in NetworkManager (RHEL-85764)\n- NetworkManager does not add the lock attribute when rto_min is used (RHEL-85778)\n- Can not change bridge.options.mcast-snooping-enable on partial managemd OVS bridge (RHEL-87168)\n\nResolves: RHEL-83061\nResolves: RHEL-59083\nResolves: RHEL-87596\nResolves: RHEL-85770\nResolves: RHEL-85764\nResolves: RHEL-85778\nResolves: RHEL-87168\n\n[1:1.53.3-1]\n- Update to 1.53.3 (dev)\n- Add more IPv6 prefix delegation options (RHEL-85765)\n- Fix order of parsing port/controller properties in nmcli (RHEL-85767)\n- Improve interface activation logic (RHEL-85766)\n- Fix WireGuard IPv6 firewall rules (RHEL-85763)\n- Support OVS-DPDK dpdk-lsc-interrupt and mtu_request configurations (RHEL-77148)\n\n[1:1.53.2-1]\n- Update to 1.53.2 (dev)\n- Fix invalid memory access on Dnsconfd DBUS error (RHEL-83175)\n- Avoid getting transient hostname when 'localhost' set in /etc/hostname (RHEL-55730)\n\n[1:1.53.1-1]\n- Update to 1.53.1 (dev)\n- Update MPTCP endpoints creation order (RHEL-78752)\n- Print all warnings from nmcli to stderr (RHEL-74255)\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2025-20516-0.html"
+}

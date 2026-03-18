@@ -1,0 +1,38 @@
+{
+  "id": "RHBA-2025:20461",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: vsftpd bug fix and enhancement update",
+  "issuedDate": "2025-11-11T07:26:37Z",
+  "updatedDate": "2025-11-11T07:26:37Z",
+  "pubDate": "2025-11-11T07:26:37Z",
+  "dateStr": "2025-11-11",
+  "url": "https://access.redhat.com/errata/RHBA-2025:20461",
+  "severity": "None",
+  "overview": "An update for vsftpd is now available for Red Hat Enterprise Linux 10.",
+  "description": "For detailed information on changes in this release, see the Red Hat Enterprise Linux 10 Release Notes linked from the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux for Power, little endian",
+    "Red Hat Enterprise Linux for IBM z Systems",
+    "Red Hat Enterprise Linux for x86_64 10 x86_64",
+    "Red Hat Enterprise Linux for ARM 64"
+  ],
+  "cves": [],
+  "packages": [
+    "vsftpd-3.0.5-10.el10.src",
+    "vsftpd-3.0.5-10.el10.x86_64",
+    "vsftpd-debuginfo-3.0.5-10.el10.x86_64",
+    "vsftpd-debugsource-3.0.5-10.el10.x86_64",
+    "vsftpd-3.0.5-10.el10.s390x",
+    "vsftpd-debuginfo-3.0.5-10.el10.s390x",
+    "vsftpd-debugsource-3.0.5-10.el10.s390x",
+    "vsftpd-3.0.5-10.el10.ppc64le",
+    "vsftpd-debuginfo-3.0.5-10.el10.ppc64le",
+    "vsftpd-debugsource-3.0.5-10.el10.ppc64le",
+    "vsftpd-3.0.5-10.el10.aarch64",
+    "vsftpd-debuginfo-3.0.5-10.el10.aarch64",
+    "vsftpd-debugsource-3.0.5-10.el10.aarch64"
+  ],
+  "fixes": [],
+  "full_text": "An update for vsftpd is now available for Red Hat Enterprise Linux 10.\n\nFor detailed information on changes in this release, see the Red Hat Enterprise Linux 10 Release Notes linked from the References section."
+}

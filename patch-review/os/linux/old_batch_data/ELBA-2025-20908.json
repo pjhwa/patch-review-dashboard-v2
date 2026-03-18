@@ -1,0 +1,34 @@
+{
+  "id": "ELBA-2025-20908",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2025-November/019057.html",
+  "synopsis": "[El-errata] ELBA-2025-20908 Oracle Linux 9 keylime bug fix and enhancement update",
+  "dateStr": "2025-November",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Bug Fix Advisory ELBA-2025-20908",
+  "description": "[7.12.1-11.2]\n- Properly fix the malformed certificate workaround\n  Resolves: RHEL-111244",
+  "affected_products": [
+    "Oracle Linux 9"
+  ],
+  "packages": [
+    "keylime-7.12.1-11.el9_7.2.x86_64.rpm",
+    "keylime-base-7.12.1-11.el9_7.2.x86_64.rpm",
+    "keylime-registrar-7.12.1-11.el9_7.2.x86_64.rpm",
+    "keylime-selinux-7.12.1-11.el9_7.2.noarch.rpm",
+    "keylime-tenant-7.12.1-11.el9_7.2.x86_64.rpm",
+    "keylime-verifier-7.12.1-11.el9_7.2.x86_64.rpm",
+    "python3-keylime-7.12.1-11.el9_7.2.x86_64.rpm",
+    "keylime-7.12.1-11.el9_7.2.aarch64.rpm",
+    "keylime-base-7.12.1-11.el9_7.2.aarch64.rpm",
+    "keylime-registrar-7.12.1-11.el9_7.2.aarch64.rpm",
+    "keylime-selinux-7.12.1-11.el9_7.2.noarch.rpm",
+    "keylime-tenant-7.12.1-11.el9_7.2.aarch64.rpm",
+    "keylime-verifier-7.12.1-11.el9_7.2.aarch64.rpm",
+    "python3-keylime-7.12.1-11.el9_7.2.aarch64.rpm"
+  ],
+  "cves": [],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Bug Fix Advisory ELBA-2025-20908\n\nhttp://linux.oracle.com/errata/ELBA-2025-20908.html\n\nThe following updated rpms for Oracle Linux 9 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\nkeylime-7.12.1-11.el9_7.2.x86_64.rpm\nkeylime-base-7.12.1-11.el9_7.2.x86_64.rpm\nkeylime-registrar-7.12.1-11.el9_7.2.x86_64.rpm\nkeylime-selinux-7.12.1-11.el9_7.2.noarch.rpm\nkeylime-tenant-7.12.1-11.el9_7.2.x86_64.rpm\nkeylime-verifier-7.12.1-11.el9_7.2.x86_64.rpm\npython3-keylime-7.12.1-11.el9_7.2.x86_64.rpm\n\naarch64:\nkeylime-7.12.1-11.el9_7.2.aarch64.rpm\nkeylime-base-7.12.1-11.el9_7.2.aarch64.rpm\nkeylime-registrar-7.12.1-11.el9_7.2.aarch64.rpm\nkeylime-selinux-7.12.1-11.el9_7.2.noarch.rpm\nkeylime-tenant-7.12.1-11.el9_7.2.aarch64.rpm\nkeylime-verifier-7.12.1-11.el9_7.2.aarch64.rpm\npython3-keylime-7.12.1-11.el9_7.2.aarch64.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol9/SRPMS-updates/keylime-7.12.1-11.el9_7.2.src.rpm\n\n\n\nDescription of changes:\n\n[7.12.1-11.2]\n- Properly fix the malformed certificate workaround\n  Resolves: RHEL-111244",
+  "vendor": "Oracle"
+}

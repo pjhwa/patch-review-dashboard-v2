@@ -1,0 +1,21 @@
+{
+  "id": "RHSA-2025:23485",
+  "vendor": "Red Hat",
+  "url": "https://access.redhat.com/errata/RHSA-2025:23485",
+  "pubDate": "2025-12-17T13:41:11.000Z",
+  "dateStr": "2025-12-17",
+  "severity": "Moderate",
+  "title": "Red Hat Security Advisory: Release of Red Hat OpenShift Developer Tools - Openshift Jenkins 4.14 security update.",
+  "overview": "An update for Openshift Jenkins is now available for Red Hat OpenShift Developer Tools - OpenShift Jenkins 4.14.",
+  "description": "An update for Openshift Jenkins is now available for Red Hat OpenShift Developer Tools - OpenShift Jenkins 4.14.",
+  "affected_products": [
+    "OpenShift Developer Tools and Services 4.14"
+  ],
+  "cves": [
+    "CVE-2025-4949",
+    "CVE-2025-67635"
+  ],
+  "packages": [],
+  "fixes": "",
+  "full_text": "Red Hat Security Advisory: Release of Red Hat OpenShift Developer Tools - Openshift Jenkins 4.14 security update.\n\nAn update for Openshift Jenkins is now available for Red Hat OpenShift Developer Tools - OpenShift Jenkins 4.14.\n\nAn update for Openshift Jenkins is now available for Red Hat OpenShift Developer Tools - OpenShift Jenkins 4.14.\n\n\n\nCVE-2025-4949: A flaw was found in Eclipse JGit. This vulnerability can allow information disclosure, denial of service, and other security issues when parsing XML files.\n\nCVE-2025-67635: Jenkins 2.540 and earlier, LTS 2.528.2 and earlier does not properly close HTTP-based CLI connections when the connection stream becomes corrupted, allowing unauthenticated attackers to cause a denial of service."
+}

@@ -1,0 +1,145 @@
+{
+  "id": "RHBA-2025:20537",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: openssl and openssl-fips-provider bug fix and enhancement update",
+  "issuedDate": "2025-11-11T07:49:51Z",
+  "updatedDate": "2025-11-11T07:49:51Z",
+  "pubDate": "2025-11-11T07:49:51Z",
+  "dateStr": "2025-11-11",
+  "url": "https://access.redhat.com/errata/RHBA-2025:20537",
+  "severity": "None",
+  "overview": "An update for openssl is now available for Red Hat Enterprise Linux 10.",
+  "description": "For detailed information on changes in this release, see the Red Hat Enterprise Linux 9 Release Notes linked from the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux for x86_64 10 x86_64",
+    "Red Hat Enterprise Linux for Power, little endian",
+    "Red Hat Enterprise Linux for ARM 64",
+    "Red Hat Enterprise Linux for IBM z Systems"
+  ],
+  "cves": [],
+  "packages": [
+    "openssl-3.5.1-3.el9.src",
+    "openssl-fips-provider-3.0.7-8.el9.src",
+    "openssl-3.5.1-3.el9.x86_64",
+    "openssl-debuginfo-3.5.1-3.el9.i686",
+    "openssl-debuginfo-3.5.1-3.el9.x86_64",
+    "openssl-debugsource-3.5.1-3.el9.i686",
+    "openssl-debugsource-3.5.1-3.el9.x86_64",
+    "openssl-devel-3.5.1-3.el9.i686",
+    "openssl-devel-3.5.1-3.el9.x86_64",
+    "openssl-fips-provider-3.0.7-8.el9.i686",
+    "openssl-fips-provider-3.0.7-8.el9.x86_64",
+    "openssl-fips-provider-so-3.0.7-8.el9.x86_64",
+    "openssl-fips-provider-so-debuginfo-3.0.7-8.el9.i686",
+    "openssl-fips-provider-so-debuginfo-3.0.7-8.el9.x86_64",
+    "openssl-fips-provider-so-debugsource-3.0.7-8.el9.i686",
+    "openssl-fips-provider-so-debugsource-3.0.7-8.el9.x86_64",
+    "openssl-libs-3.5.1-3.el9.i686",
+    "openssl-libs-3.5.1-3.el9.x86_64",
+    "openssl-libs-debuginfo-3.5.1-3.el9.i686",
+    "openssl-libs-debuginfo-3.5.1-3.el9.x86_64",
+    "openssl-perl-3.5.1-3.el9.x86_64",
+    "openssl-3.5.1-3.el9.s390x",
+    "openssl-debuginfo-3.5.1-3.el9.s390x",
+    "openssl-debugsource-3.5.1-3.el9.s390x",
+    "openssl-devel-3.5.1-3.el9.s390x",
+    "openssl-fips-provider-3.0.7-8.el9.s390x",
+    "openssl-fips-provider-so-3.0.7-8.el9.s390x",
+    "openssl-fips-provider-so-debuginfo-3.0.7-8.el9.s390x",
+    "openssl-fips-provider-so-debugsource-3.0.7-8.el9.s390x",
+    "openssl-libs-3.5.1-3.el9.s390x",
+    "openssl-libs-debuginfo-3.5.1-3.el9.s390x",
+    "openssl-perl-3.5.1-3.el9.s390x",
+    "openssl-3.5.1-3.el9.ppc64le",
+    "openssl-debuginfo-3.5.1-3.el9.ppc64le",
+    "openssl-debugsource-3.5.1-3.el9.ppc64le",
+    "openssl-devel-3.5.1-3.el9.ppc64le",
+    "openssl-fips-provider-3.0.7-8.el9.ppc64le",
+    "openssl-fips-provider-so-3.0.7-8.el9.ppc64le",
+    "openssl-fips-provider-so-debuginfo-3.0.7-8.el9.ppc64le",
+    "openssl-fips-provider-so-debugsource-3.0.7-8.el9.ppc64le",
+    "openssl-libs-3.5.1-3.el9.ppc64le",
+    "openssl-libs-debuginfo-3.5.1-3.el9.ppc64le",
+    "openssl-perl-3.5.1-3.el9.ppc64le",
+    "openssl-3.5.1-3.el9.aarch64",
+    "openssl-debuginfo-3.5.1-3.el9.aarch64",
+    "openssl-debugsource-3.5.1-3.el9.aarch64",
+    "openssl-devel-3.5.1-3.el9.aarch64",
+    "openssl-fips-provider-3.0.7-8.el9.aarch64",
+    "openssl-fips-provider-so-3.0.7-8.el9.aarch64",
+    "openssl-fips-provider-so-debuginfo-3.0.7-8.el9.aarch64",
+    "openssl-fips-provider-so-debugsource-3.0.7-8.el9.aarch64",
+    "openssl-libs-3.5.1-3.el9.aarch64",
+    "openssl-libs-debuginfo-3.5.1-3.el9.aarch64",
+    "openssl-perl-3.5.1-3.el9.aarch64"
+  ],
+  "fixes": [
+    {
+      "id": "RHEL-85954",
+      "url": "https://issues.redhat.com/browse/RHEL-85954",
+      "description": "openssl calls \"close(-1)\" if /dev/z90crypt is missing on s390x"
+    },
+    {
+      "id": "RHEL-88910",
+      "url": "https://issues.redhat.com/browse/RHEL-88910",
+      "description": "OpenSSL ignores \"rh-allow-sha1-signatures = yes\"  option on RHEL-9"
+    },
+    {
+      "id": "RHEL-88912",
+      "url": "https://issues.redhat.com/browse/RHEL-88912",
+      "description": "pkcs12 should not default to pbmac1 in FIPS mode in RHEL-9"
+    },
+    {
+      "id": "RHEL-89859",
+      "url": "https://issues.redhat.com/browse/RHEL-89859",
+      "description": "NO-ENFORCE-EMS no longer works after rebase to 3.5 [RHEL-9]"
+    },
+    {
+      "id": "RHEL-89860",
+      "url": "https://issues.redhat.com/browse/RHEL-89860",
+      "description": "Openssl speed reports error in FIPS mode [RHEL-9]"
+    },
+    {
+      "id": "RHEL-89861",
+      "url": "https://issues.redhat.com/browse/RHEL-89861",
+      "description": "pkeyutl ecdsa sha1 digest is allowed after rebase [RHEL-9]"
+    },
+    {
+      "id": "RHEL-89862",
+      "url": "https://issues.redhat.com/browse/RHEL-89862",
+      "description": "Expose settable params [RHEL-9]"
+    },
+    {
+      "id": "RHEL-90854",
+      "url": "https://issues.redhat.com/browse/RHEL-90854",
+      "description": "Enable sslkeylogfile support [RHEL-9]"
+    },
+    {
+      "id": "RHEL-95239",
+      "url": "https://issues.redhat.com/browse/RHEL-95239",
+      "description": "Make hybrid MLKEM work with our FIPS provider (3.0.7) [Rhel 9.7]"
+    },
+    {
+      "id": "RHEL-97797",
+      "url": "https://issues.redhat.com/browse/RHEL-97797",
+      "description": "Change config_diagnostics comment to make sense again [RHEL-9.7]"
+    },
+    {
+      "id": "RHEL-98723",
+      "url": "https://issues.redhat.com/browse/RHEL-98723",
+      "description": "SSLKEYLOGFILE creates file with with lax permissions"
+    },
+    {
+      "id": "RHEL-105007",
+      "url": "https://issues.redhat.com/browse/RHEL-105007",
+      "description": "fips-provider-next is installed by default"
+    },
+    {
+      "id": "RHEL-104856",
+      "url": "https://issues.redhat.com/browse/RHEL-104856",
+      "description": "fips-provider-next is installed by default"
+    }
+  ],
+  "full_text": "An update for openssl is now available for Red Hat Enterprise Linux 10.\n\nFor detailed information on changes in this release, see the Red Hat Enterprise Linux 9 Release Notes linked from the References section."
+}

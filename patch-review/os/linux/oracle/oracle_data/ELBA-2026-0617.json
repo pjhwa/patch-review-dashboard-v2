@@ -1,0 +1,37 @@
+{
+  "id": "ELBA-2026-0617",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "AppStream",
+  "title": ".NET 9.0 bug fix and enhancement update",
+  "issuedDate": "2026-01-14T00:00:00Z",
+  "updatedDate": "2026-01-14T00:00:00Z",
+  "pubDate": "2026-01-14T00:00:00Z",
+  "dateStr": "2026-01-14",
+  "url": "https://linux.oracle.com/errata/ELBA-2026-0617.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 10.",
+  "description": "[9.0.113-1.0.1]\n- Add support for Oracle Linux\n\n[9.0.113-1]\n- Update to .NET SDK 9.0.113 and Runtime 9.0.12\n- Resolves: RHEL-138648",
+  "affected_products": [
+    "Oracle Linux 10 for x86_64",
+    "Oracle Linux 10 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "dotnet-sdk-9.0-9.0.113-1.0.1.el10_1.x86_64",
+    "aspnetcore-runtime-dbg-9.0-9.0.12-1.0.1.el10_1.x86_64",
+    "netstandard-targeting-pack-2.1-9.0.113-1.0.1.el10_1.x86_64",
+    "aspnetcore-targeting-pack-9.0-9.0.12-1.0.1.el10_1.x86_64",
+    "dotnet-runtime-9.0-9.0.12-1.0.1.el10_1.x86_64",
+    "dotnet-hostfxr-9.0-9.0.12-1.0.1.el10_1.x86_64",
+    "dotnet-sdk-dbg-9.0-9.0.113-1.0.1.el10_1.x86_64",
+    "dotnet-templates-9.0-9.0.113-1.0.1.el10_1.x86_64",
+    "dotnet-runtime-dbg-9.0-9.0.12-1.0.1.el10_1.x86_64",
+    "dotnet-apphost-pack-9.0-9.0.12-1.0.1.el10_1.x86_64",
+    "dotnet-targeting-pack-9.0-9.0.12-1.0.1.el10_1.x86_64",
+    "dotnet-sdk-aot-9.0-9.0.113-1.0.1.el10_1.x86_64",
+    "aspnetcore-runtime-9.0-9.0.12-1.0.1.el10_1.x86_64",
+    "dotnet9.0-9.0.113-1.0.1.el10_1.src"
+  ],
+  "full_text": "[9.0.113-1.0.1]\n- Add support for Oracle Linux\n\n[9.0.113-1]\n- Update to .NET SDK 9.0.113 and Runtime 9.0.12\n- Resolves: RHEL-138648\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2026-0617.html"
+}

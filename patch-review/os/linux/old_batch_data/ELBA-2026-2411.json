@@ -1,0 +1,22 @@
+{
+  "id": "ELBA-2026-2411",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2026-February/019759.html",
+  "synopsis": "[El-errata] ELBA-2026-2411 Oracle Linux 8 kexec-tools bug fix and enhancement update",
+  "dateStr": "2026-February",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Bug Fix Advisory ELBA-2026-2411",
+  "description": "[2.0.31-1.0.4]\n- Fix secure boot after updating to 2.0.31 [Orabug: 38576014]",
+  "affected_products": [
+    "Oracle Linux 8"
+  ],
+  "packages": [
+    "kexec-tools-2.0.31-1.0.4.el8_10.x86_64.rpm",
+    "kexec-tools-2.0.31-1.0.4.el8_10.aarch64.rpm"
+  ],
+  "cves": [],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Bug Fix Advisory ELBA-2026-2411\n\nhttp://linux.oracle.com/errata/ELBA-2026-2411.html\n\nThe following updated rpms for Oracle Linux 8 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\nkexec-tools-2.0.31-1.0.4.el8_10.x86_64.rpm\n\naarch64:\nkexec-tools-2.0.31-1.0.4.el8_10.aarch64.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol8/SRPMS-updates/kexec-tools-2.0.31-1.0.4.el8_10.src.rpm\n\n\n\nDescription of changes:\n\n[2.0.31-1.0.4]\n- Fix secure boot after updating to 2.0.31 [Orabug: 38576014]",
+  "vendor": "Oracle"
+}

@@ -1,0 +1,22 @@
+{
+  "id": "ELBA-2026-1356",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2026-January/019626.html",
+  "synopsis": "[El-errata] ELBA-2026-1356 Oracle Linux 9 fuse-overlayfs bug fix and enhancement update",
+  "dateStr": "2026-January",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Bug Fix Advisory ELBA-2026-1356",
+  "description": "[1.16-1]\n- update to https://github.com/containers/fuse-overlayfs/releases/tag/v1.16\n- fixes \"Update fuse-overlayfs to 1.16 [rhel-9.7.z]\"\n- Resolves: RHEL-128520",
+  "affected_products": [
+    "Oracle Linux 9"
+  ],
+  "packages": [
+    "fuse-overlayfs-1.16-1.el9_7.x86_64.rpm",
+    "fuse-overlayfs-1.16-1.el9_7.aarch64.rpm"
+  ],
+  "cves": [],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Bug Fix Advisory ELBA-2026-1356\n\nhttp://linux.oracle.com/errata/ELBA-2026-1356.html\n\nThe following updated rpms for Oracle Linux 9 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\nfuse-overlayfs-1.16-1.el9_7.x86_64.rpm\n\naarch64:\nfuse-overlayfs-1.16-1.el9_7.aarch64.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol9/SRPMS-updates/fuse-overlayfs-1.16-1.el9_7.src.rpm\n\n\n\nDescription of changes:\n\n[1.16-1]\n- update to https://github.com/containers/fuse-overlayfs/releases/tag/v1.16\n- fixes \"Update fuse-overlayfs to 1.16 [rhel-9.7.z]\"\n- Resolves: RHEL-128520",
+  "vendor": "Oracle"
+}

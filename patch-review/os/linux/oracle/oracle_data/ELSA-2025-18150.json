@@ -1,0 +1,43 @@
+{
+  "id": "ELSA-2025-18150",
+  "vendor": "Oracle",
+  "type": "Security Advisory (ELSA)",
+  "kernel_type": "AppStream",
+  "title": " .NET 9.0 security update",
+  "issuedDate": "2025-10-16T00:00:00Z",
+  "updatedDate": "2025-10-16T00:00:00Z",
+  "pubDate": "2025-10-16T00:00:00Z",
+  "dateStr": "2025-10-16",
+  "url": "https://linux.oracle.com/errata/ELSA-2025-18150.html",
+  "severity": "Important",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 8.",
+  "description": "[9.0.111-1.0.1]\n- Add support for Oracle Linux\n\n[9.0.111-1]\n- Update to .NET SDK 9.0.111 and Runtime 9.0.10\n- Resolves: RHEL-116856",
+  "affected_products": [
+    "Oracle Linux 8 for x86_64",
+    "Oracle Linux 8 for aarch64"
+  ],
+  "cves": [
+    "CVE-2025-55247",
+    "CVE-2025-55248",
+    "CVE-2025-55315"
+  ],
+  "packages": [
+    "dotnet-sdk-9.0-9.0.111-1.0.1.el8_10.x86_64",
+    "aspnetcore-runtime-9.0-9.0.10-1.0.1.el8_10.x86_64",
+    "dotnet-hostfxr-9.0-9.0.10-1.0.1.el8_10.x86_64",
+    "netstandard-targeting-pack-2.1-9.0.111-1.0.1.el8_10.x86_64",
+    "dotnet-runtime-9.0-9.0.10-1.0.1.el8_10.x86_64",
+    "dotnet-targeting-pack-9.0-9.0.10-1.0.1.el8_10.x86_64",
+    "dotnet-host-9.0.10-1.0.1.el8_10.x86_64",
+    "dotnet-sdk-aot-9.0-9.0.111-1.0.1.el8_10.x86_64",
+    "dotnet9.0-9.0.111-1.0.1.el8_10.src",
+    "dotnet-apphost-pack-9.0-9.0.10-1.0.1.el8_10.x86_64",
+    "dotnet-sdk-dbg-9.0-9.0.111-1.0.1.el8_10.x86_64",
+    "dotnet-templates-9.0-9.0.111-1.0.1.el8_10.x86_64",
+    "dotnet-runtime-dbg-9.0-9.0.10-1.0.1.el8_10.x86_64",
+    "aspnetcore-targeting-pack-9.0-9.0.10-1.0.1.el8_10.x86_64",
+    "aspnetcore-runtime-dbg-9.0-9.0.10-1.0.1.el8_10.x86_64",
+    "dotnet-9.0.111-1.0.1.el8_10.x86_64"
+  ],
+  "full_text": "[9.0.111-1.0.1]\n- Add support for Oracle Linux\n\n[9.0.111-1]\n- Update to .NET SDK 9.0.111 and Runtime 9.0.10\n- Resolves: RHEL-116856\n\nReferences:\nhttps://linux.oracle.com/errata/ELSA-2025-18150.html\nhttps://linux.oracle.com/cve/CVE-2025-55247.html\nhttps://linux.oracle.com/cve/CVE-2025-55248.html\nhttps://linux.oracle.com/cve/CVE-2025-55315.html"
+}

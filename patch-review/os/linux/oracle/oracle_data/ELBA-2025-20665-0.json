@@ -1,0 +1,25 @@
+{
+  "id": "ELBA-2025-20665-0",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "AppStream",
+  "title": "kdump-anaconda-addon bug fix and enhancement update",
+  "issuedDate": "2025-11-17T00:00:00Z",
+  "updatedDate": "2025-11-17T00:00:00Z",
+  "pubDate": "2025-11-17T00:00:00Z",
+  "dateStr": "2025-11-17",
+  "url": "https://linux.oracle.com/errata/ELBA-2025-20665-0.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 9.",
+  "description": "[006-15.20220128git9603258]\n- Handle the case where systemd isn't installed (RHEL-86873)\n\n[006-14.20220128git9603258]\n- Disable kdump.service explicitly if users request to (RHEL-41082)",
+  "affected_products": [
+    "Oracle Linux 9 for x86_64",
+    "Oracle Linux 9 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "kdump-anaconda-addon-006-15.20220128git9603258.el9.noarch",
+    "kdump-anaconda-addon-006-15.20220128git9603258.el9.src"
+  ],
+  "full_text": "[006-15.20220128git9603258]\n- Handle the case where systemd isn't installed (RHEL-86873)\n\n[006-14.20220128git9603258]\n- Disable kdump.service explicitly if users request to (RHEL-41082)\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2025-20665-0.html"
+}

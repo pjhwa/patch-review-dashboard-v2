@@ -1,0 +1,26 @@
+{
+  "id": "USN-7828-1",
+  "vendor": "Canonical / Ubuntu",
+  "type": "Ubuntu Security Notice (USN)",
+  "title": "python-ldap vulnerabilities",
+  "issuedDate": "2025-10-20T12:41:40Z",
+  "updatedDate": "2026-02-10T04:50:11Z",
+  "pubDate": "2025-10-20T12:41:40Z",
+  "dateStr": "2025-10-20",
+  "url": "https://ubuntu.com/security/notices/USN-7828-1",
+  "severity": "None",
+  "overview": "python-ldap vulnerabilities",
+  "description": "It was discovered that Python LDAP incorrectly handled special characters\nin the special character filtering function. A remote attacker could\npossibly use this issue to perform LDAP injection attacks.\n(CVE-2025-61911)\n\nArad Inbar discovered that Python LDAP incorrectly escaped NUL character\nbytes. An attacker could possibly use this issue to cause a denial of\nservice. (CVE-2025-61912)",
+  "affected_products": [
+    "Ubuntu 22.04 LTS",
+    "Ubuntu 24.04 LTS"
+  ],
+  "cves": [],
+  "packages": [
+    "python3-ldap-3.2.0-4ubuntu7.2",
+    "python3-ldap-3.4.4-1ubuntu0.24.04.1",
+    "python3-pyldap-3.2.0-4ubuntu7.2",
+    "python3-pyldap-3.4.4-1ubuntu0.24.04.1"
+  ],
+  "full_text": "It was discovered that Python LDAP incorrectly handled special characters\nin the special character filtering function. A remote attacker could\npossibly use this issue to perform LDAP injection attacks.\n(CVE-2025-61911)\n\nArad Inbar discovered that Python LDAP incorrectly escaped NUL character\nbytes. An attacker could possibly use this issue to cause a denial of\nservice. (CVE-2025-61912)"
+}

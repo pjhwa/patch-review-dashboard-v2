@@ -1,0 +1,24 @@
+{
+  "id": "ELBA-2026-0305",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2026-January/019471.html",
+  "synopsis": "[El-errata] ELBA-2026-0305 Oracle Linux 9 NetworkManager-libreswan bug fix and enhancement update",
+  "dateStr": "2026-January",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Bug Fix Advisory ELBA-2026-0305",
+  "description": "[1.2.29-1]\n- Upgrade to 1.2.29\n- Fix error on duplicate key 'phase2alg'. (RHEL-131232)\n- Fix import connection with RSA key. (RHEL-127865)",
+  "affected_products": [
+    "Oracle Linux 9"
+  ],
+  "packages": [
+    "NetworkManager-libreswan-1.2.29-1.el9_7.x86_64.rpm",
+    "NetworkManager-libreswan-gnome-1.2.29-1.el9_7.x86_64.rpm",
+    "NetworkManager-libreswan-1.2.29-1.el9_7.aarch64.rpm",
+    "NetworkManager-libreswan-gnome-1.2.29-1.el9_7.aarch64.rpm"
+  ],
+  "cves": [],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Bug Fix Advisory ELBA-2026-0305\n\nhttp://linux.oracle.com/errata/ELBA-2026-0305.html\n\nThe following updated rpms for Oracle Linux 9 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\nNetworkManager-libreswan-1.2.29-1.el9_7.x86_64.rpm\nNetworkManager-libreswan-gnome-1.2.29-1.el9_7.x86_64.rpm\n\naarch64:\nNetworkManager-libreswan-1.2.29-1.el9_7.aarch64.rpm\nNetworkManager-libreswan-gnome-1.2.29-1.el9_7.aarch64.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol9/SRPMS-updates/NetworkManager-libreswan-1.2.29-1.el9_7.src.rpm\n\n\n\nDescription of changes:\n\n[1.2.29-1]\n- Upgrade to 1.2.29\n- Fix error on duplicate key 'phase2alg'. (RHEL-131232)\n- Fix import connection with RSA key. (RHEL-127865)",
+  "vendor": "Oracle"
+}

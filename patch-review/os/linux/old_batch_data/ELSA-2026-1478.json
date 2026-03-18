@@ -1,0 +1,45 @@
+{
+  "id": "ELSA-2026-1478",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2026-February/019650.html",
+  "synopsis": "[El-errata] ELSA-2026-1478 Moderate: Oracle Linux 9 python3.9 security update",
+  "dateStr": "2026-February",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Security Advisory ELSA-2026-1478",
+  "description": "[3.9.25-3.0.1]\n- Remove upstream URL reference\n\n[3.9.25-3]\n- Security fix for CVE-2025-12084\nResolves: RHEL-135897",
+  "affected_products": [
+    "Oracle Linux 9"
+  ],
+  "packages": [
+    "python-unversioned-command-3.9.25-3.0.1.el9_7.noarch.rpm",
+    "python3-3.9.25-3.0.1.el9_7.i686.rpm",
+    "python3-3.9.25-3.0.1.el9_7.x86_64.rpm",
+    "python3-debug-3.9.25-3.0.1.el9_7.i686.rpm",
+    "python3-debug-3.9.25-3.0.1.el9_7.x86_64.rpm",
+    "python3-devel-3.9.25-3.0.1.el9_7.i686.rpm",
+    "python3-devel-3.9.25-3.0.1.el9_7.x86_64.rpm",
+    "python3-idle-3.9.25-3.0.1.el9_7.i686.rpm",
+    "python3-idle-3.9.25-3.0.1.el9_7.x86_64.rpm",
+    "python3-libs-3.9.25-3.0.1.el9_7.i686.rpm",
+    "python3-libs-3.9.25-3.0.1.el9_7.x86_64.rpm",
+    "python3-test-3.9.25-3.0.1.el9_7.i686.rpm",
+    "python3-test-3.9.25-3.0.1.el9_7.x86_64.rpm",
+    "python3-tkinter-3.9.25-3.0.1.el9_7.i686.rpm",
+    "python3-tkinter-3.9.25-3.0.1.el9_7.x86_64.rpm",
+    "python-unversioned-command-3.9.25-3.0.1.el9_7.noarch.rpm",
+    "python3-3.9.25-3.0.1.el9_7.aarch64.rpm",
+    "python3-debug-3.9.25-3.0.1.el9_7.aarch64.rpm",
+    "python3-devel-3.9.25-3.0.1.el9_7.aarch64.rpm",
+    "python3-idle-3.9.25-3.0.1.el9_7.aarch64.rpm",
+    "python3-libs-3.9.25-3.0.1.el9_7.aarch64.rpm",
+    "python3-test-3.9.25-3.0.1.el9_7.aarch64.rpm",
+    "python3-tkinter-3.9.25-3.0.1.el9_7.aarch64.rpm"
+  ],
+  "cves": [
+    "CVE-2025-12084"
+  ],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Security Advisory ELSA-2026-1478\n\nhttp://linux.oracle.com/errata/ELSA-2026-1478.html\n\nThe following updated rpms for Oracle Linux 9 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\npython-unversioned-command-3.9.25-3.0.1.el9_7.noarch.rpm\npython3-3.9.25-3.0.1.el9_7.i686.rpm\npython3-3.9.25-3.0.1.el9_7.x86_64.rpm\npython3-debug-3.9.25-3.0.1.el9_7.i686.rpm\npython3-debug-3.9.25-3.0.1.el9_7.x86_64.rpm\npython3-devel-3.9.25-3.0.1.el9_7.i686.rpm\npython3-devel-3.9.25-3.0.1.el9_7.x86_64.rpm\npython3-idle-3.9.25-3.0.1.el9_7.i686.rpm\npython3-idle-3.9.25-3.0.1.el9_7.x86_64.rpm\npython3-libs-3.9.25-3.0.1.el9_7.i686.rpm\npython3-libs-3.9.25-3.0.1.el9_7.x86_64.rpm\npython3-test-3.9.25-3.0.1.el9_7.i686.rpm\npython3-test-3.9.25-3.0.1.el9_7.x86_64.rpm\npython3-tkinter-3.9.25-3.0.1.el9_7.i686.rpm\npython3-tkinter-3.9.25-3.0.1.el9_7.x86_64.rpm\n\naarch64:\npython-unversioned-command-3.9.25-3.0.1.el9_7.noarch.rpm\npython3-3.9.25-3.0.1.el9_7.aarch64.rpm\npython3-debug-3.9.25-3.0.1.el9_7.aarch64.rpm\npython3-devel-3.9.25-3.0.1.el9_7.aarch64.rpm\npython3-idle-3.9.25-3.0.1.el9_7.aarch64.rpm\npython3-libs-3.9.25-3.0.1.el9_7.aarch64.rpm\npython3-test-3.9.25-3.0.1.el9_7.aarch64.rpm\npython3-tkinter-3.9.25-3.0.1.el9_7.aarch64.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol9/SRPMS-updates/python3.9-3.9.25-3.0.1.el9_7.src.rpm\n\nRelated CVEs:\n\nCVE-2025-12084\n\n\n\n\nDescription of changes:\n\n[3.9.25-3.0.1]\n- Remove upstream URL reference\n\n[3.9.25-3]\n- Security fix for CVE-2025-12084\nResolves: RHEL-135897",
+  "vendor": "Oracle"
+}

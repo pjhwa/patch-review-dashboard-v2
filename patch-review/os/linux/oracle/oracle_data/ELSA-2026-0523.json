@@ -1,0 +1,46 @@
+{
+  "id": "ELSA-2026-0523",
+  "vendor": "Oracle",
+  "type": "Security Advisory (ELSA)",
+  "kernel_type": "AppStream",
+  "title": " postgresql:13 security update",
+  "issuedDate": "2026-01-14T00:00:00Z",
+  "updatedDate": "2026-01-14T00:00:00Z",
+  "pubDate": "2026-01-14T00:00:00Z",
+  "dateStr": "2026-01-14",
+  "url": "https://linux.oracle.com/errata/ELSA-2026-0523.html",
+  "severity": "Moderate",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 8.",
+  "description": "pgaudit\npg_repack\npostgres-decoderbufs\npostgresql\n[13.23-1]\n- Update to 13.23\n- Resolves: RHEL-128818 (CVE-2025-12818)",
+  "affected_products": [
+    "Oracle Linux 8 for x86_64",
+    "Oracle Linux 8 for aarch64"
+  ],
+  "cves": [
+    "CVE-2025-12817",
+    "CVE-2025-12818"
+  ],
+  "packages": [
+    "pgaudit-1.5.0-1.module+el8.9.0+90098+1560b6c2.src",
+    "pg_repack-1.4.6-3.module+el8.9.0+90098+1560b6c2.src",
+    "postgres-decoderbufs-0.10.0-2.module+el8.9.0+90098+1560b6c2.src",
+    "postgresql-13.23-1.module+el8.10.0+90765+d641efec.src",
+    "postgresql-test-rpm-macros-13.23-1.module+el8.10.0+90765+d641efec.noarch",
+    "postgresql-13.23-1.module+el8.10.0+90765+d641efec.x86_64",
+    "postgresql-docs-13.23-1.module+el8.10.0+90765+d641efec.x86_64",
+    "postgresql-server-13.23-1.module+el8.10.0+90765+d641efec.x86_64",
+    "postgresql-plperl-13.23-1.module+el8.10.0+90765+d641efec.x86_64",
+    "pgaudit-1.5.0-1.module+el8.9.0+90098+1560b6c2.x86_64",
+    "postgres-decoderbufs-0.10.0-2.module+el8.9.0+90098+1560b6c2.x86_64",
+    "pg_repack-1.4.6-3.module+el8.9.0+90098+1560b6c2.x86_64",
+    "postgresql-test-13.23-1.module+el8.10.0+90765+d641efec.x86_64",
+    "postgresql-pltcl-13.23-1.module+el8.10.0+90765+d641efec.x86_64",
+    "postgresql-static-13.23-1.module+el8.10.0+90765+d641efec.x86_64",
+    "postgresql-server-devel-13.23-1.module+el8.10.0+90765+d641efec.x86_64",
+    "postgresql-upgrade-13.23-1.module+el8.10.0+90765+d641efec.x86_64",
+    "postgresql-plpython3-13.23-1.module+el8.10.0+90765+d641efec.x86_64",
+    "postgresql-upgrade-devel-13.23-1.module+el8.10.0+90765+d641efec.x86_64",
+    "postgresql-contrib-13.23-1.module+el8.10.0+90765+d641efec.x86_64"
+  ],
+  "full_text": "pgaudit\npg_repack\npostgres-decoderbufs\npostgresql\n[13.23-1]\n- Update to 13.23\n- Resolves: RHEL-128818 (CVE-2025-12818)\n\nReferences:\nhttps://linux.oracle.com/errata/ELSA-2026-0523.html\nhttps://linux.oracle.com/cve/CVE-2025-12817.html\nhttps://linux.oracle.com/cve/CVE-2025-12818.html"
+}

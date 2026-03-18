@@ -1,0 +1,26 @@
+{
+  "id": "ELBA-2025-20123-0",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "RHCK",
+  "title": "bluez bug fix and enhancement update",
+  "issuedDate": "2025-11-25T00:00:00Z",
+  "updatedDate": "2025-11-25T00:00:00Z",
+  "pubDate": "2025-11-25T00:00:00Z",
+  "dateStr": "2025-11-25",
+  "url": "https://linux.oracle.com/errata/ELBA-2025-20123-0.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 10.",
+  "description": "[5.83-2]\n- Fix problem with menu handling\n  Resolves: RHEL-103965\n\n[5.83-1]\n- Update to 5.83\n- Resolves: RHEL-94817\n\n[5.77-8]\n- Fix startup warnings\n- Resolves: RHEL-88703\n\n[5.77-7]\n- Add OSCI tests\n- Resolves: RHEL-77171",
+  "affected_products": [
+    "Oracle Linux 10 for x86_64",
+    "Oracle Linux 10 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "bluez-5.83-2.el10.x86_64",
+    "bluez-5.83-2.el10.src",
+    "bluez-libs-5.83-2.el10.x86_64"
+  ],
+  "full_text": "[5.83-2]\n- Fix problem with menu handling\n  Resolves: RHEL-103965\n\n[5.83-1]\n- Update to 5.83\n- Resolves: RHEL-94817\n\n[5.77-8]\n- Fix startup warnings\n- Resolves: RHEL-88703\n\n[5.77-7]\n- Add OSCI tests\n- Resolves: RHEL-77171\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2025-20123-0.html"
+}

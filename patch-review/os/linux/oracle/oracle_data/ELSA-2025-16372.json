@@ -1,0 +1,47 @@
+{
+  "id": "ELSA-2025-16372",
+  "vendor": "Oracle",
+  "type": "Security Advisory (ELSA)",
+  "kernel_type": "RHCK",
+  "title": " kernel security update",
+  "issuedDate": "2025-09-22T00:00:00Z",
+  "updatedDate": "2025-09-22T00:00:00Z",
+  "pubDate": "2025-09-22T00:00:00Z",
+  "dateStr": "2025-09-22",
+  "url": "https://linux.oracle.com/errata/ELSA-2025-16372.html",
+  "severity": "Moderate",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 8.",
+  "description": "[4.18.0-553.76.1_10.OL8]\n- Update Oracle Linux certificates (Kevin Lyons)\n- Disable signing for aarch64 (Ilya Okomin)\n- Oracle Linux RHCK Module Signing Key was added to the kernel trusted keys list (olkmod_signing_key.pem) [Orabug: 29539237]\n- Update x509.genkey [Orabug: 24817676]\n- Conflict with shim-ia32 and shim-x64 <= 15.3-1.0.3\n- Remove upstream reference during boot (Kevin Lyons) [Orabug: 34750652]\n- Add new Oracle Linux Driver Signing (key 1) certificate [Orabug: 37985772]\n\n[4.18.0-553.76.1_10]\n- HID: core: Harden s32ton() against conversion to 0 bits (CKI Backport Bot) [RHEL-111027] {CVE-2025-38556}\n- HID: stop exporting hid_snto32() (CKI Backport Bot) [RHEL-111027] {CVE-2025-38556}\n- HID: simplify snto32() (CKI Backport Bot) [RHEL-111027] {CVE-2025-38556}\n- HID: core: fix shift-out-of-bounds in hid_report_raw_event (CKI Backport Bot) [RHEL-111027] {CVE-2025-38556}\n- use uniform permission checks for all mount propagation changes (Ian Kent) [RHEL-107299] {CVE-2025-38498}\n- do_change_type(): refuse to operate on unmounted/not ours mounts (Ian Kent) [RHEL-107299] {CVE-2025-38498}\n- xfs: make sure sb_fdblocks is non-negative (Pavel Reichl) [RHEL-104193]\n- vsock: Fix transport_* TOCTOU (CKI Backport Bot) [RHEL-105991] {CVE-2025-38461}",
+  "affected_products": [
+    "Oracle Linux 8 for x86_64",
+    "Oracle Linux 8 for aarch64"
+  ],
+  "cves": [
+    "CVE-2025-38461",
+    "CVE-2025-38498",
+    "CVE-2025-38556"
+  ],
+  "packages": [
+    "kernel-modules-extra-4.18.0-553.76.1.el8_10.x86_64",
+    "kernel-debug-core-4.18.0-553.76.1.el8_10.x86_64",
+    "python3-perf-4.18.0-553.76.1.el8_10.x86_64",
+    "kernel-headers-4.18.0-553.76.1.el8_10.x86_64",
+    "kernel-debug-devel-4.18.0-553.76.1.el8_10.x86_64",
+    "perf-4.18.0-553.76.1.el8_10.x86_64",
+    "kernel-modules-4.18.0-553.76.1.el8_10.x86_64",
+    "kernel-tools-4.18.0-553.76.1.el8_10.x86_64",
+    "kernel-debug-modules-extra-4.18.0-553.76.1.el8_10.x86_64",
+    "kernel-4.18.0-553.76.1.el8_10.x86_64",
+    "bpftool-4.18.0-553.76.1.el8_10.x86_64",
+    "kernel-cross-headers-4.18.0-553.76.1.el8_10.x86_64",
+    "kernel-abi-stablelists-4.18.0-553.76.1.el8_10.noarch",
+    "kernel-4.18.0-553.76.1.el8_10.src",
+    "kernel-debug-modules-4.18.0-553.76.1.el8_10.x86_64",
+    "kernel-tools-libs-4.18.0-553.76.1.el8_10.x86_64",
+    "kernel-doc-4.18.0-553.76.1.el8_10.noarch",
+    "kernel-debug-4.18.0-553.76.1.el8_10.x86_64",
+    "kernel-core-4.18.0-553.76.1.el8_10.x86_64",
+    "kernel-devel-4.18.0-553.76.1.el8_10.x86_64"
+  ],
+  "full_text": "[4.18.0-553.76.1_10.OL8]\n- Update Oracle Linux certificates (Kevin Lyons)\n- Disable signing for aarch64 (Ilya Okomin)\n- Oracle Linux RHCK Module Signing Key was added to the kernel trusted keys list (olkmod_signing_key.pem) [Orabug: 29539237]\n- Update x509.genkey [Orabug: 24817676]\n- Conflict with shim-ia32 and shim-x64 <= 15.3-1.0.3\n- Remove upstream reference during boot (Kevin Lyons) [Orabug: 34750652]\n- Add new Oracle Linux Driver Signing (key 1) certificate [Orabug: 37985772]\n\n[4.18.0-553.76.1_10]\n- HID: core: Harden s32ton() against conversion to 0 bits (CKI Backport Bot) [RHEL-111027] {CVE-2025-38556}\n- HID: stop exporting hid_snto32() (CKI Backport Bot) [RHEL-111027] {CVE-2025-38556}\n- HID: simplify snto32() (CKI Backport Bot) [RHEL-111027] {CVE-2025-38556}\n- HID: core: fix shift-out-of-bounds in hid_report_raw_event (CKI Backport Bot) [RHEL-111027] {CVE-2025-38556}\n- use uniform permission checks for all mount propagation changes (Ian Kent) [RHEL-107299] {CVE-2025-38498}\n- do_change_type(): refuse to operate on unmounted/not ours mounts (Ian Kent) [RHEL-107299] {CVE-2025-38498}\n- xfs: make sure sb_fdblocks is non-negative (Pavel Reichl) [RHEL-104193]\n- vsock: Fix transport_* TOCTOU (CKI Backport Bot) [RHEL-105991] {CVE-2025-38461}\n\nReferences:\nhttps://linux.oracle.com/errata/ELSA-2025-16372.html\nhttps://linux.oracle.com/cve/CVE-2025-38461.html\nhttps://linux.oracle.com/cve/CVE-2025-38498.html\nhttps://linux.oracle.com/cve/CVE-2025-38556.html"
+}

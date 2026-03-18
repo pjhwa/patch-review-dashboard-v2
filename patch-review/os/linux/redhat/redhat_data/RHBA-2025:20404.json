@@ -1,0 +1,34 @@
+{
+  "id": "RHBA-2025:20404",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: pykickstart bug fix and enhancement update",
+  "issuedDate": "2025-11-11T07:26:22Z",
+  "updatedDate": "2025-11-11T07:26:22Z",
+  "pubDate": "2025-11-11T07:26:22Z",
+  "dateStr": "2025-11-11",
+  "url": "https://access.redhat.com/errata/RHBA-2025:20404",
+  "severity": "None",
+  "overview": "An update for pykickstart is now available for Red Hat Enterprise Linux 10.",
+  "description": "For detailed information on changes in this release, see the Red Hat Enterprise Linux 10.1 Release Notes linked from the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux for ARM 64",
+    "Red Hat Enterprise Linux for IBM z Systems",
+    "Red Hat Enterprise Linux for Power, little endian",
+    "Red Hat Enterprise Linux for x86_64 10 x86_64"
+  ],
+  "cves": [],
+  "packages": [
+    "pykickstart-3.52.9-1.el10.src",
+    "pykickstart-3.52.9-1.el10.noarch",
+    "python3-kickstart-3.52.9-1.el10.noarch"
+  ],
+  "fixes": [
+    {
+      "id": "RHEL-80086",
+      "url": "https://issues.redhat.com/browse/RHEL-80086",
+      "description": "[RHEL-10] Kickstart fails with \"Tried to use undefined partition \"pv.01\" in Volume Group specification\" when defining pv.01 as a Raid with device pattern \"md_*\""
+    }
+  ],
+  "full_text": "An update for pykickstart is now available for Red Hat Enterprise Linux 10.\n\nFor detailed information on changes in this release, see the Red Hat Enterprise Linux 10.1 Release Notes linked from the References section."
+}

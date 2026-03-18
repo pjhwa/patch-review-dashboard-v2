@@ -1,0 +1,38 @@
+{
+  "id": "USN-7886-1",
+  "url": "https://ubuntu.com/security/notices/USN-7886-1",
+  "synopsis": "USN-7886-1: Python vulnerabilities",
+  "dateStr": "24 November 2025",
+  "overview": "Several security issues were fixed in Python.",
+  "description": "It was discovered that Python inefficiently handled expanding system\nenvironment variables. An attacker could possibly use this issue to cause\nPython to consume excessive resources, leading to a denial of service.\n(CVE-2025-6075)\n\nCaleb Brown discovered that Python incorrectly handled the ZIP64 End of\nCentral Directory (EOCD) Locator record offset value. An attacker could\npossibly use this issue to obfuscate malicious content. (CVE-2025-8291)\n\n \n\n \n\n \n\nIt was discovered that Python inefficiently handled expanding system\nenvironment variables. An attacker could possibly use this issue to cause\nPython to consume excessive resources, leading to a denial of service.\n(CVE-2025-6075)\n\nCaleb Brown discovered that Python incorrectly handled the ZIP64 End of\nCentral Directory (EOCD) Locator record offset value. An attacker could\npossibly use this issue to obfuscate malicious content. (CVE-2025-8291)",
+  "packages": [
+    "python3.10",
+    "python3.11",
+    "python3.12",
+    "python3.4",
+    "python3.5",
+    "python3.6",
+    "python3.7",
+    "python3.8",
+    "python3.9"
+  ],
+  "cves": [
+    "CVE-2025-8291",
+    "CVE-2025-6075"
+  ],
+  "affected_products": [
+    "24.04 LTS",
+    "22.04 LTS",
+    "20.04 LTS",
+    "18.04 LTS",
+    "16.04 LTS",
+    "14.04 LTS",
+    "Open side navigation"
+  ],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Ubuntu Security Notices\n\nUSN-7886-1\n\n \n\n \n\n \n\n \n\n \n\n \nUSN-7886-1: Python vulnerabilities\n\n \n\n \n\n \n\n \nPublication date\n\n \n\n \n\n \n24 November 2025\n\n \n\n \n\n \n\n \n\n \nOverview\n\n \n\n \n\n \nSeveral security issues were fixed in Python.\n\n \n\n \n\n \n\n \n\n \nReleases\n\n \n\n \n\n \n\n 24.04 LTS\n\n22.04 LTS\n\n20.04 LTS\n\n18.04 LTS\n\n16.04 LTS\n\n14.04 LTS\n\n \n\n \n\n \n\n \n\n \n\n \n\n Open side navigation\n \n\n \n\n \nPackages\n\n \n\n python3.10 - An interactive high-level object-oriented language\n \n\n python3.11 - An interactive high-level object-oriented language\n \n\n python3.12 - An interactive high-level object-oriented language\n \n\n python3.4 - An interactive high-level object-oriented language\n \n\n python3.5 - An interactive high-level object-oriented language\n \n\n python3.6 - An interactive high-level object-oriented language\n \n\n python3.7 - An interactive high-level object-oriented language\n \n\n python3.8 - An interactive high-level object-oriented language\n \n\n python3.9 - An interactive high-level object-oriented language\n \n\n \n\n \nDetails\n\n \n\n \n\nIt was discovered that Python inefficiently handled expanding system\nenvironment variables. An attacker could possibly use this issue to cause\nPython to consume excessive resources, leading to a denial of service.\n(CVE-2025-6075)\n\nCaleb Brown discovered that Python incorrectly handled the ZIP64 End of\nCentral Directory (EOCD) Locator record offset value. An attacker could\npossibly use this issue to obfuscate malicious content. (CVE-2025-8291)\n\n \n\n \n\n \n\nIt was discovered that Python inefficiently handled expanding system\nenvironment variables. An attacker could possibly use this issue to cause\nPython to consume excessive resources, leading to a denial of service.\n(CVE-2025-6075)\n\nCaleb Brown discovered that Python incorrectly handled the ZIP64 End of\nCentral Directory (EOCD) Locator record offset value. An attacker could\npossibly use this issue to obfuscate malicious content. (CVE-2025-8291)\n\n \n\n \n\n \n\n \nUpdate instructions\n\n \n\n \n\n \n\n \n\nIn general, a standard system update will make all the necessary changes.\n\n Learn more about how to get the fixes.\n \n\n \n\n \n\n \n\n \nThe problem can be corrected by updating your system to the following package versions:\n\n \n\n \n\n \n\n \n\n Ubuntu Release\n Package Version\n \n\n 24.04\n\nLTS noble\n\n libpython3.12t64 – \n\n3.12.3-1ubuntu0.9\n\n python3.12 – \n\n3.12.3-1ubuntu0.9\n\n \n\n 22.04\n\nLTS jammy\n\n idle-python3.11 – \n\n3.11.0~rc1-1~22.04.1~esm6\n\n  \n\nUbuntu Pro\n Fix available with Ubuntu Pro via ESM Apps. A community fix might become publicly available in the future.\n\n \n\n libpython3.10 – \n\n3.10.12-1~22.04.12\n\n python3.10 – \n\n3.10.12-1~22.04.12\n\n python3.11 – \n\n3.11.0~rc1-1~22.04.1~esm6\n\n  \n\nUbuntu Pro\n Fix available with Ubuntu Pro via ESM Apps. A community fix might become publicly available in the future.\n\n \n\n \n\n 20.04\n\nLTS focal\n\n libpython3.8 – \n\n3.8.10-0ubuntu1~20.04.18+esm3\n\n  \n\nUbuntu Pro\n Fix available with Ubuntu Pro.\n\n libpython3.9 – \n\n3.9.5-3ubuntu0~20.04.1+esm7\n\n  \n\nUbuntu Pro\n Fix available with Ubuntu Pro via ESM Apps. A community fix might become publicly available in the future.\n\n \n\n python3.8 – \n\n3.8.10-0ubuntu1~20.04.18+esm3\n\n  \n\nUbuntu Pro\n Fix available with Ubuntu Pro.\n\n python3.9 – \n\n3.9.5-3ubuntu0~20.04.1+esm7\n\n  \n\nUbuntu Pro\n Fix available with Ubuntu Pro via ESM Apps. A community fix might become publicly available in the future.\n\n \n\n \n\n 18.04\n\nLTS bionic\n\n libpython3.6 – \n\n3.6.9-1~18.04ubuntu1.13+esm7\n\n  \n\nUbuntu Pro\n Fix available with Ubuntu Pro.\n\n libpython3.7 – \n\n3.7.5-2ubuntu1~18.04.2+esm8\n\n  \n\nUbuntu Pro\n Fix available with Ubuntu Pro via ESM Apps. A community fix might become publicly available in the future.\n\n \n\n libpython3.8 – \n\n3.8.0-3ubuntu1~18.04.2+esm7\n\n  \n\nUbuntu Pro\n Fix available with Ubuntu Pro via ESM Apps. A community fix might become publicly available in the future.\n\n \n\n python3.6 – \n\n3.6.9-1~18.04ubuntu1.13+esm7\n\n  \n\nUbuntu Pro\n Fix available with Ubuntu Pro.\n\n python3.7 – \n\n3.7.5-2ubuntu1~18.04.2+esm8\n\n  \n\nUbuntu Pro\n Fix available with Ubuntu Pro via ESM Apps. A community fix might become publicly available in the future.\n\n \n\n python3.8 – \n\n3.8.0-3ubuntu1~18.04.2+esm7\n\n  \n\nUbuntu Pro\n Fix available with Ubuntu Pro via ESM Apps. A community fix might become publicly available in the future.\n\n \n\n \n\n 16.04\n\nLTS xenial\n\n libpython3.5 – \n\n3.5.2-2ubuntu0~16.04.13+esm20\n\n  \n\nUbuntu Pro\n Fix available with Ubuntu Pro.\n\n python3.5 – \n\n3.5.2-2ubuntu0~16.04.13+esm20\n\n  \n\nUbuntu Pro\n Fix available with Ubuntu Pro.\n\n \n\n 14.04\n\nLTS trusty\n\n libpython3.4 – \n\n3.4.3-1ubuntu1~14.04.7+esm17\n\n  \n\nUbuntu Pro\n Fix available with Ubuntu Pro via Legacy Support add-on.\n\n libpython3.5 – \n\n3.5.2-2ubuntu0~16.04.4~14.04.1+esm8\n\n  \n\nUbuntu Pro\n Fix available with Ubuntu Pro via Legacy Support add-on.\n\n python3.4 – \n\n3.4.3-1ubuntu1~14.04.7+esm17\n\n  \n\nUbuntu Pro\n Fix available with Ubuntu Pro via Legacy Support add-on.\n\n python3.5 – \n\n3.5.2-2ubuntu0~16.04.4~14.04.1+esm8\n\n  \n\nUbuntu Pro\n Fix available with Ubuntu Pro via Legacy Support add-on.\n\n \n\nReduce your security exposure\n\n \n\n Ubuntu Pro provides ten-year security coverage to 25,000+ packages in Main and Universe repositories, and it is free for up to five machines.\n \n\n \n\n Get Ubuntu Pro\n \n\n \n\nReferences\n\n \n\n \n\n CVE-2025-8291\n \n\n \n\n CVE-2025-6075\n \n\n \n\n \n\n CVE-2025-8291\n \n\n CVE-2025-6075\n \n\n \n\n \nRelated notices\n\n \n\n \n\n USN-7886-2\n \n\n \n\n USN-7886-2",
+  "title": "USN-7886-1: Python vulnerabilities | Ubuntu security notices | Ubuntu",
+  "pubDate": "2025-11-23T15:00:00.000Z",
+  "vendor": "Ubuntu"
+}

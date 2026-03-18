@@ -1,0 +1,61 @@
+{
+  "id": "RHBA-2025:15891",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: dnsmasq bug fix and enhancement update",
+  "issuedDate": "2025-09-16T00:06:33Z",
+  "updatedDate": "2025-09-16T00:06:33Z",
+  "pubDate": "2025-09-16T00:06:33Z",
+  "dateStr": "2025-09-16",
+  "url": "https://access.redhat.com/errata/RHBA-2025:15891",
+  "severity": "None",
+  "overview": "An update for dnsmasq is now available for Red Hat Enterprise Linux 10.",
+  "description": "The dnsmasq packages contain Dnsmasq, a lightweight DNS (Domain Name Server) forwarder and DHCP (Dynamic Host Configuration Protocol) server.Bug Fix(es) and Enhancement(s): enable A/AAAA filtering in dnsmasq  (JIRA:RHEL-105367)",
+  "affected_products": [
+    "Red Hat Enterprise Linux for ARM 64 - 4 years of updates",
+    "Red Hat Enterprise Linux Server - AUS",
+    "Red Hat Enterprise Linux for IBM z Systems - 4 years of updates",
+    "Red Hat Enterprise Linux for ARM 64",
+    "Red Hat Enterprise Linux for IBM z Systems",
+    "Red Hat Enterprise Linux for IBM z Systems - Extended Update Support",
+    "Red Hat Enterprise Linux for x86_64 10 x86_64",
+    "Red Hat Enterprise Linux for x86_64 - Update Services for SAP Solutions 10 x86_64",
+    "Red Hat Enterprise Linux Server for Power LE - Update Services for SAP Solutions",
+    "Red Hat Enterprise Linux for Power, little endian",
+    "Red Hat Enterprise Linux for ARM 64 - Extended Update Support",
+    "Red Hat Enterprise Linux for x86_64 - Extended Update Support 10 x86_64",
+    "Red Hat Enterprise Linux for Power, little endian - Extended Update Support"
+  ],
+  "cves": [],
+  "packages": [
+    "dnsmasq-2.85-17.el9_6.src",
+    "dnsmasq-2.85-17.el9_6.x86_64",
+    "dnsmasq-debuginfo-2.85-17.el9_6.x86_64",
+    "dnsmasq-debugsource-2.85-17.el9_6.x86_64",
+    "dnsmasq-utils-2.85-17.el9_6.x86_64",
+    "dnsmasq-utils-debuginfo-2.85-17.el9_6.x86_64",
+    "dnsmasq-2.85-17.el9_6.s390x",
+    "dnsmasq-debuginfo-2.85-17.el9_6.s390x",
+    "dnsmasq-debugsource-2.85-17.el9_6.s390x",
+    "dnsmasq-utils-2.85-17.el9_6.s390x",
+    "dnsmasq-utils-debuginfo-2.85-17.el9_6.s390x",
+    "dnsmasq-2.85-17.el9_6.ppc64le",
+    "dnsmasq-debuginfo-2.85-17.el9_6.ppc64le",
+    "dnsmasq-debugsource-2.85-17.el9_6.ppc64le",
+    "dnsmasq-utils-2.85-17.el9_6.ppc64le",
+    "dnsmasq-utils-debuginfo-2.85-17.el9_6.ppc64le",
+    "dnsmasq-2.85-17.el9_6.aarch64",
+    "dnsmasq-debuginfo-2.85-17.el9_6.aarch64",
+    "dnsmasq-debugsource-2.85-17.el9_6.aarch64",
+    "dnsmasq-utils-2.85-17.el9_6.aarch64",
+    "dnsmasq-utils-debuginfo-2.85-17.el9_6.aarch64"
+  ],
+  "fixes": [
+    {
+      "id": "RHEL-105367",
+      "url": "https://issues.redhat.com/browse/RHEL-105367",
+      "description": "enable A/AAAA filtering in dnsmasq"
+    }
+  ],
+  "full_text": "An update for dnsmasq is now available for Red Hat Enterprise Linux 10.\n\nThe dnsmasq packages contain Dnsmasq, a lightweight DNS (Domain Name Server) forwarder and DHCP (Dynamic Host Configuration Protocol) server.Bug Fix(es) and Enhancement(s): enable A/AAAA filtering in dnsmasq  (JIRA:RHEL-105367)"
+}

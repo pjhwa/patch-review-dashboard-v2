@@ -1,0 +1,23 @@
+{
+  "id": "RHSA-2025:23546",
+  "vendor": "Red Hat",
+  "url": "https://access.redhat.com/errata/RHSA-2025:23546",
+  "pubDate": "2025-12-17T18:13:48.000Z",
+  "dateStr": "2025-12-17",
+  "severity": "Important",
+  "title": "Red Hat Security Advisory: Red Hat Quay 3.16.0",
+  "overview": "Red Hat Quay 3.16.0 is now available with bug fixes.",
+  "description": "Red Hat Quay 3.16.0 is now available with bug fixes.",
+  "affected_products": [
+    "Red Hat Quay 3.16"
+  ],
+  "cves": [
+    "CVE-2024-34156",
+    "CVE-2025-47913",
+    "CVE-2025-58183",
+    "CVE-2025-58754"
+  ],
+  "packages": [],
+  "fixes": "",
+  "full_text": "Red Hat Security Advisory: Red Hat Quay 3.16.0\n\nRed Hat Quay 3.16.0 is now available with bug fixes.\n\nRed Hat Quay 3.16.0 is now available with bug fixes.\n\n\n\nCVE-2024-34156: A flaw was found in the encoding/gob package of the Golang standard library. Calling Decoder.Decoding, a message that contains deeply nested structures, can cause a panic due to stack exhaustion. This is a follow-up to CVE-2022-30635.\n\nCVE-2025-47913: A flaw in golang.org/x/crypto/ssh/agent causes the SSH agent client to panic when a peer responds with the generic SSH_AGENT_SUCCESS (0x06) message to requests expecting typed replies (e.g., List, Sign). The unmarshal layer produces an unexpected message type, which the client code does not handle, leading to panic(\"unreachable\") or a nil-pointer dereference. A malicious agent or forwarded connection can exploit this to terminate the client process.\n\nCVE-2025-58183: A flaw was found in the archive/tar package in the Go standard library. tar.Reader does not set a maximum size on the number of sparse region data blocks in GNU tar pax 1.0 sparse files. A specially crafted tar archive with a pax header indicating a big number of sparse regions can cause a Go program to try to allocate a large amount of memory, causing an out-of-memory condition and resulting in a denial of service.\n\nCVE-2025-58754: Axios is a promise based HTTP client for the browser and Node.js. When Axios starting in version 0.28.0 and prior to versions 0.30.2 and 1.12.0 runs on Node.js and is given a URL with the `data:` scheme, it does not perform HTTP. Instead, its Node http adapter decodes the entire payload into memory (`Buffer`/`Blob`) and returns a synthetic 200 response. This path ignores `maxContentLength` / `maxBodyLength` (which only protect HTTP responses), so an attacker can supply a very large `data:` URI and cause the process to allocate unbounded memory and crash (DoS), even if the caller requested `responseType: 'stream'`. Versions 0.30.2 and 1.12.0 contain a patch for the issue."
+}

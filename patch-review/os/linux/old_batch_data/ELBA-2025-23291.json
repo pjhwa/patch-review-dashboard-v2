@@ -1,0 +1,22 @@
+{
+  "id": "ELBA-2025-23291",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2025-December/019366.html",
+  "synopsis": "[El-errata] ELBA-2025-23291 Oracle Linux 10 fuse-overlayfs bug fix and enhancement update",
+  "dateStr": "2025-December",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Bug Fix Advisory ELBA-2025-23291",
+  "description": "[1.16-1]\n- update to https://github.com/containers/fuse-overlayfs/releases/tag/v1.16\n- fixes \"Update fuse-overlayfs to 1.16 [rhel-10.1.z]\"\n- Resolves: RHEL-128522",
+  "affected_products": [
+    "Oracle Linux 10"
+  ],
+  "packages": [
+    "fuse-overlayfs-1.16-1.el10_1.x86_64.rpm",
+    "fuse-overlayfs-1.16-1.el10_1.aarch64.rpm"
+  ],
+  "cves": [],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Bug Fix Advisory ELBA-2025-23291\n\nhttp://linux.oracle.com/errata/ELBA-2025-23291.html\n\nThe following updated rpms for Oracle Linux 10 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\nfuse-overlayfs-1.16-1.el10_1.x86_64.rpm\n\naarch64:\nfuse-overlayfs-1.16-1.el10_1.aarch64.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol10/SRPMS-updates/fuse-overlayfs-1.16-1.el10_1.src.rpm\n\n\n\nDescription of changes:\n\n[1.16-1]\n- update to https://github.com/containers/fuse-overlayfs/releases/tag/v1.16\n- fixes \"Update fuse-overlayfs to 1.16 [rhel-10.1.z]\"\n- Resolves: RHEL-128522",
+  "vendor": "Oracle"
+}

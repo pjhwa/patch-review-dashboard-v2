@@ -1,0 +1,26 @@
+{
+  "id": "ELSA-2025-23294",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2025-December/019379.html",
+  "synopsis": "[El-errata] ELSA-2025-23294 Moderate: Oracle Linux 10 skopeo security update",
+  "dateStr": "2025-December",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Security Advisory ELSA-2025-23294",
+  "description": "[1:1.20.0-2]\n- rebuild for CVE-2025-58183\n- Resolves: RHEL-125643",
+  "affected_products": [
+    "Oracle Linux 10"
+  ],
+  "packages": [
+    "skopeo-1.20.0-2.el10_1.x86_64.rpm",
+    "skopeo-tests-1.20.0-2.el10_1.x86_64.rpm",
+    "skopeo-1.20.0-2.el10_1.aarch64.rpm",
+    "skopeo-tests-1.20.0-2.el10_1.aarch64.rpm"
+  ],
+  "cves": [
+    "CVE-2025-58183"
+  ],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Security Advisory ELSA-2025-23294\n\nhttp://linux.oracle.com/errata/ELSA-2025-23294.html\n\nThe following updated rpms for Oracle Linux 10 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\nskopeo-1.20.0-2.el10_1.x86_64.rpm\nskopeo-tests-1.20.0-2.el10_1.x86_64.rpm\n\naarch64:\nskopeo-1.20.0-2.el10_1.aarch64.rpm\nskopeo-tests-1.20.0-2.el10_1.aarch64.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol10/SRPMS-updates/skopeo-1.20.0-2.el10_1.src.rpm\n\nRelated CVEs:\n\nCVE-2025-58183\n\n\n\n\nDescription of changes:\n\n[1:1.20.0-2]\n- rebuild for CVE-2025-58183\n- Resolves: RHEL-125643",
+  "vendor": "Oracle"
+}

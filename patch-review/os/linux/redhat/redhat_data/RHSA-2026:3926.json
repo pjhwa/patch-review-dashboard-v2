@@ -1,0 +1,22 @@
+{
+  "id": "RHSA-2026:3926",
+  "vendor": "Red Hat",
+  "type": "Security Advisory (RHSA)",
+  "title": "Red Hat Security Advisory: Red Hat build of Keycloak 26.2.14 Update",
+  "issuedDate": "2026-03-05T15:33:39+00:00",
+  "updatedDate": "2026-03-05T15:33:39+00:00",
+  "pubDate": "2026-03-05T15:33:39+00:00",
+  "dateStr": "2026-03-05",
+  "url": "https://access.redhat.com/errata/RHSA-2026:3926",
+  "severity": "Important",
+  "overview": "New Red Hat build of Keycloak 26.2.14 packages are available from the Customer Portal",
+  "description": "Red Hat build of Keycloak 26.2.14 is a standalone server, based on the Keycloak project, that provides authentication and standards-based single sign-on capabilities for web and mobile applications.\n\nSecurity fixes:\n* Keycloak SAML broker: Authentication bypass due to disabled SAML client completing IdP-initiated login (CVE-2026-3047)\n* Unauthorized authentication via disabled SAML Identity Provider (CVE-2026-2603)\n* Unauthorized access via improper validation of encrypted SAML assertions (CVE-2026-2092)",
+  "affected_products": [],
+  "cves": [
+    "CVE-2026-2092",
+    "CVE-2026-2603",
+    "CVE-2026-3047"
+  ],
+  "packages": [],
+  "full_text": "New Red Hat build of Keycloak 26.2.14 packages are available from the Customer Portal\n\nRed Hat build of Keycloak 26.2.14 is a standalone server, based on the Keycloak project, that provides authentication and standards-based single sign-on capabilities for web and mobile applications.\n\nSecurity fixes:\n* Keycloak SAML broker: Authentication bypass due to disabled SAML client completing IdP-initiated login (CVE-2026-3047)\n* Unauthorized authentication via disabled SAML Identity Provider (CVE-2026-2603)\n* Unauthorized access via improper validation of encrypted SAML assertions (CVE-2026-2092)"
+}

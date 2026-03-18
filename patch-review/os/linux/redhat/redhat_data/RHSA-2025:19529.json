@@ -1,0 +1,25 @@
+{
+  "id": "RHSA-2025:19529",
+  "vendor": "Red Hat",
+  "type": "Security Advisory (RHSA)",
+  "title": "Red Hat Security Advisory: Red Hat Developer Hub 1.7.2 release.",
+  "issuedDate": "2025-11-03T21:56:14+00:00",
+  "updatedDate": "2025-11-03T21:56:22+00:00",
+  "pubDate": "2025-11-03T21:56:14+00:00",
+  "dateStr": "2025-11-03",
+  "url": "https://access.redhat.com/errata/RHSA-2025:19529",
+  "severity": "Important",
+  "overview": "Red Hat Developer Hub 1.7.2 has been released.",
+  "description": "Red Hat Developer Hub (RHDH) is Red Hat's enterprise-grade, self-managed, customizable developer portal based on Backstage.io. RHDH is supported on OpenShift and other major Kubernetes clusters (AKS, EKS, GKE). The core features of RHDH include a single pane of glass, a centralized software catalog, self-service via golden path templates, and Tech Docs. RHDH is extensible by plugins.",
+  "affected_products": [],
+  "cves": [
+    "CVE-2025-58754",
+    "CVE-2025-59343"
+  ],
+  "packages": [
+    "registry.redhat.io/rhdh/rhdh-hub-rhel9@sha256:385d0b730e3f14f6878221d817b58d31da560c2edc52235b74bbbd8324b29389_amd64",
+    "registry.redhat.io/rhdh/rhdh-rhel9-operator@sha256:9de53b6a5b983f026c3bd91f2cb6eee9ddb881e5d15d0b3df2fa080966abb333_amd64",
+    "registry.redhat.io/rhdh/rhdh-operator-bundle@sha256:89f8116ae0bd38b62ae4babdaff52f15a2f6b266633aa0c4099637a70655b93c_amd64"
+  ],
+  "full_text": "Red Hat Developer Hub 1.7.2 has been released.\n\nRed Hat Developer Hub (RHDH) is Red Hat's enterprise-grade, self-managed, customizable developer portal based on Backstage.io. RHDH is supported on OpenShift and other major Kubernetes clusters (AKS, EKS, GKE). The core features of RHDH include a single pane of glass, a centralized software catalog, self-service via golden path templates, and Tech Docs. RHDH is extensible by plugins."
+}

@@ -1,0 +1,297 @@
+{
+  "id": "RHBA-2025:20435",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: 389-ds-base bug fix and enhancement update",
+  "issuedDate": "2025-11-11T07:26:32Z",
+  "updatedDate": "2025-11-11T07:26:32Z",
+  "pubDate": "2025-11-11T07:26:32Z",
+  "dateStr": "2025-11-11",
+  "url": "https://access.redhat.com/errata/RHBA-2025:20435",
+  "severity": "None",
+  "overview": "An update for 389-ds-base is now available for Red Hat Enterprise Linux 10.",
+  "description": "For detailed information on changes in this release, see the Red Hat Enterprise Linux 10 Release Notes linked from the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux for Power, little endian",
+    "Red Hat CodeReady Linux Builder for ARM 64",
+    "Red Hat Enterprise Linux for x86_64 10 x86_64",
+    "Red Hat CodeReady Linux Builder for x86_64 10 x86_64",
+    "Red Hat CodeReady Linux Builder for Power, little endian",
+    "Red Hat Enterprise Linux for IBM z Systems",
+    "Red Hat Enterprise Linux for ARM 64",
+    "Red Hat CodeReady Linux Builder for IBM z Systems"
+  ],
+  "cves": [],
+  "packages": [
+    "389-ds-base-3.1.3-5.el10_1.src",
+    "389-ds-base-3.1.3-5.el10_1.x86_64",
+    "389-ds-base-bdb-debuginfo-3.1.3-5.el10_1.x86_64",
+    "389-ds-base-debuginfo-3.1.3-5.el10_1.x86_64",
+    "389-ds-base-debugsource-3.1.3-5.el10_1.x86_64",
+    "389-ds-base-libs-3.1.3-5.el10_1.x86_64",
+    "389-ds-base-libs-debuginfo-3.1.3-5.el10_1.x86_64",
+    "389-ds-base-snmp-3.1.3-5.el10_1.x86_64",
+    "389-ds-base-snmp-debuginfo-3.1.3-5.el10_1.x86_64",
+    "python3-lib389-3.1.3-5.el10_1.noarch",
+    "389-ds-base-3.1.3-5.el10_1.s390x",
+    "389-ds-base-bdb-debuginfo-3.1.3-5.el10_1.s390x",
+    "389-ds-base-debuginfo-3.1.3-5.el10_1.s390x",
+    "389-ds-base-debugsource-3.1.3-5.el10_1.s390x",
+    "389-ds-base-libs-3.1.3-5.el10_1.s390x",
+    "389-ds-base-libs-debuginfo-3.1.3-5.el10_1.s390x",
+    "389-ds-base-snmp-3.1.3-5.el10_1.s390x",
+    "389-ds-base-snmp-debuginfo-3.1.3-5.el10_1.s390x",
+    "389-ds-base-3.1.3-5.el10_1.ppc64le",
+    "389-ds-base-bdb-debuginfo-3.1.3-5.el10_1.ppc64le",
+    "389-ds-base-debuginfo-3.1.3-5.el10_1.ppc64le",
+    "389-ds-base-debugsource-3.1.3-5.el10_1.ppc64le",
+    "389-ds-base-libs-3.1.3-5.el10_1.ppc64le",
+    "389-ds-base-libs-debuginfo-3.1.3-5.el10_1.ppc64le",
+    "389-ds-base-snmp-3.1.3-5.el10_1.ppc64le",
+    "389-ds-base-snmp-debuginfo-3.1.3-5.el10_1.ppc64le",
+    "389-ds-base-3.1.3-5.el10_1.aarch64",
+    "389-ds-base-bdb-debuginfo-3.1.3-5.el10_1.aarch64",
+    "389-ds-base-debuginfo-3.1.3-5.el10_1.aarch64",
+    "389-ds-base-debugsource-3.1.3-5.el10_1.aarch64",
+    "389-ds-base-libs-3.1.3-5.el10_1.aarch64",
+    "389-ds-base-libs-debuginfo-3.1.3-5.el10_1.aarch64",
+    "389-ds-base-snmp-3.1.3-5.el10_1.aarch64",
+    "389-ds-base-snmp-debuginfo-3.1.3-5.el10_1.aarch64",
+    "389-ds-base-bdb-3.1.3-5.el10_1.x86_64",
+    "389-ds-base-devel-3.1.3-5.el10_1.x86_64",
+    "389-ds-base-bdb-3.1.3-5.el10_1.ppc64le",
+    "389-ds-base-devel-3.1.3-5.el10_1.ppc64le",
+    "389-ds-base-bdb-3.1.3-5.el10_1.aarch64",
+    "389-ds-base-devel-3.1.3-5.el10_1.aarch64",
+    "389-ds-base-bdb-3.1.3-5.el10_1.s390x",
+    "389-ds-base-devel-3.1.3-5.el10_1.s390x"
+  ],
+  "fixes": [
+    {
+      "id": "RHEL-80162",
+      "url": "https://issues.redhat.com/browse/RHEL-80162",
+      "description": "Rebase 389-ds-base to 3.1.x"
+    },
+    {
+      "id": "RHEL-101926",
+      "url": "https://issues.redhat.com/browse/RHEL-101926",
+      "description": "ipa-backup failed with error : 'No such file or directory: '/usr/sbin/dsctl'"
+    },
+    {
+      "id": "RHEL-35241",
+      "url": "https://issues.redhat.com/browse/RHEL-35241",
+      "description": "ns-slapd crashes in referral mode"
+    },
+    {
+      "id": "RHEL-5117",
+      "url": "https://issues.redhat.com/browse/RHEL-5117",
+      "description": "ns-slapd crash in dbmdb_import_prepare_worker_entry()"
+    },
+    {
+      "id": "RHEL-61327",
+      "url": "https://issues.redhat.com/browse/RHEL-61327",
+      "description": "Incomplete messages about replication in the errors log."
+    },
+    {
+      "id": "RHEL-61353",
+      "url": "https://issues.redhat.com/browse/RHEL-61353",
+      "description": "dbscan  on replication changelog does not display MOD_TYPE"
+    },
+    {
+      "id": "RHEL-62874",
+      "url": "https://issues.redhat.com/browse/RHEL-62874",
+      "description": "dsidm: issue when renaming users"
+    },
+    {
+      "id": "RHEL-65660",
+      "url": "https://issues.redhat.com/browse/RHEL-65660",
+      "description": "DSIDM: Re-enabling user accounts that reached inactivity limit fails with error"
+    },
+    {
+      "id": "RHEL-67003",
+      "url": "https://issues.redhat.com/browse/RHEL-67003",
+      "description": "dsconf backend replication monitor fails if replica id starts with 0"
+    },
+    {
+      "id": "RHEL-67006",
+      "url": "https://issues.redhat.com/browse/RHEL-67006",
+      "description": "dsconf  utility  should let you configure the \"uniqueness-exclude-subtrees\" parameter of the Attribute Uniqueness plug-in"
+    },
+    {
+      "id": "RHEL-67019",
+      "url": "https://issues.redhat.com/browse/RHEL-67019",
+      "description": "Crash in __strlen_sse2 when using the nsRole filter rewriter."
+    },
+    {
+      "id": "RHEL-67022",
+      "url": "https://issues.redhat.com/browse/RHEL-67022",
+      "description": "Password modify extended operation should skip password policy checks when executed by root DN"
+    },
+    {
+      "id": "RHEL-70117",
+      "url": "https://issues.redhat.com/browse/RHEL-70117",
+      "description": "Unify how group description can be added to a new group in WebUI and CLU"
+    },
+    {
+      "id": "RHEL-74085",
+      "url": "https://issues.redhat.com/browse/RHEL-74085",
+      "description": "Increased memory consumption caused by NDN cache"
+    },
+    {
+      "id": "RHEL-74270",
+      "url": "https://issues.redhat.com/browse/RHEL-74270",
+      "description": "[RFE] Implement \"list-dn\" option for dsidm tool in Directory Server"
+    },
+    {
+      "id": "RHEL-76837",
+      "url": "https://issues.redhat.com/browse/RHEL-76837",
+      "description": "dsidm Error: float() argument must be a string or a number, not 'NoneType'"
+    },
+    {
+      "id": "RHEL-76840",
+      "url": "https://issues.redhat.com/browse/RHEL-76840",
+      "description": "Monitoring tab should use dsconf monitor"
+    },
+    {
+      "id": "RHEL-79080",
+      "url": "https://issues.redhat.com/browse/RHEL-79080",
+      "description": "Json option does not work with \"dsidm account get-by-dn\" command"
+    },
+    {
+      "id": "RHEL-80252",
+      "url": "https://issues.redhat.com/browse/RHEL-80252",
+      "description": "[RFE] Structured (JSON) logging option for RHDS access and error logs"
+    },
+    {
+      "id": "RHEL-80253",
+      "url": "https://issues.redhat.com/browse/RHEL-80253",
+      "description": "RHDS hangs when having online backup running together with automember_rebuild task executing"
+    },
+    {
+      "id": "RHEL-83850",
+      "url": "https://issues.redhat.com/browse/RHEL-83850",
+      "description": "mdb database statistics don't work"
+    },
+    {
+      "id": "RHEL-86279",
+      "url": "https://issues.redhat.com/browse/RHEL-86279",
+      "description": "Cannot create a nested role using \"dsidm role create-nested\""
+    },
+    {
+      "id": "RHEL-86280",
+      "url": "https://issues.redhat.com/browse/RHEL-86280",
+      "description": "Cannot create a filtered role using \"dsidm role create-filtered\""
+    },
+    {
+      "id": "RHEL-86313",
+      "url": "https://issues.redhat.com/browse/RHEL-86313",
+      "description": "RootDN Access Control Plugin with wildcards for IP addresses fails with an error \"Invalid IP address\""
+    },
+    {
+      "id": "RHEL-86314",
+      "url": "https://issues.redhat.com/browse/RHEL-86314",
+      "description": "dsidm failing with error \"argument must be a string or a number\""
+    },
+    {
+      "id": "RHEL-86315",
+      "url": "https://issues.redhat.com/browse/RHEL-86315",
+      "description": "Dsidm get_dn option fails for organizational unit, service and posixgroup"
+    },
+    {
+      "id": "RHEL-86316",
+      "url": "https://issues.redhat.com/browse/RHEL-86316",
+      "description": "Dsidm uniquegroup members option does not work"
+    },
+    {
+      "id": "RHEL-86321",
+      "url": "https://issues.redhat.com/browse/RHEL-86321",
+      "description": "dsidm role rename-by-dn does not rename a role"
+    },
+    {
+      "id": "RHEL-86322",
+      "url": "https://issues.redhat.com/browse/RHEL-86322",
+      "description": "dsidm role subtree-status doesn't work"
+    },
+    {
+      "id": "RHEL-86323",
+      "url": "https://issues.redhat.com/browse/RHEL-86323",
+      "description": "dsidm role get-by-dn doesn't work properly with -j option"
+    },
+    {
+      "id": "RHEL-86324",
+      "url": "https://issues.redhat.com/browse/RHEL-86324",
+      "description": "Deleting a role with dsidm results in proper deletion message, but role is still present"
+    },
+    {
+      "id": "RHEL-86785",
+      "url": "https://issues.redhat.com/browse/RHEL-86785",
+      "description": "dscontainer: support loading custom schema"
+    },
+    {
+      "id": "RHEL-86878",
+      "url": "https://issues.redhat.com/browse/RHEL-86878",
+      "description": "segfault at 7ff2370010c8 ip 00007ff2339ba239 sp 00007fed321fe100 error 6 in liblmdb.so.0.0.0"
+    },
+    {
+      "id": "RHEL-89748",
+      "url": "https://issues.redhat.com/browse/RHEL-89748",
+      "description": "Nested group does not receive memberOf attribute"
+    },
+    {
+      "id": "RHEL-95441",
+      "url": "https://issues.redhat.com/browse/RHEL-95441",
+      "description": "ns-slapd[xxxx]: segfault at 10d7d0d0 ip 00007ff734050cdb sp 00007ff6de9f1430 error 6 in libslapd.so.0.1.0[7ff733ec0000+1b3000]"
+    },
+    {
+      "id": "RHEL-95761",
+      "url": "https://issues.redhat.com/browse/RHEL-95761",
+      "description": "Improve  error message when bulk import connection is closed"
+    },
+    {
+      "id": "RHEL-97565",
+      "url": "https://issues.redhat.com/browse/RHEL-97565",
+      "description": "On RHDS 12.6 The user password policy for a user was created, but the pwdpolicysubentry attribute for this user incorrectly points to the People OU password policy instead of the specific user policy."
+    },
+    {
+      "id": "RHEL-79079",
+      "url": "https://issues.redhat.com/browse/RHEL-79079",
+      "description": "Failure to get Server monitoring data when NDN cache is disabled."
+    },
+    {
+      "id": "RHEL-87352",
+      "url": "https://issues.redhat.com/browse/RHEL-87352",
+      "description": "ns-slapd crashed when we add nsslapd-referral"
+    },
+    {
+      "id": "RHEL-109487",
+      "url": "https://issues.redhat.com/browse/RHEL-109487",
+      "description": "AddressSanitizer: leak in do_search"
+    },
+    {
+      "id": "RHEL-101727",
+      "url": "https://issues.redhat.com/browse/RHEL-101727",
+      "description": "The numSubordinates value is not matching the number of direct children."
+    },
+    {
+      "id": "RHEL-112675",
+      "url": "https://issues.redhat.com/browse/RHEL-112675",
+      "description": "Statistics about index lookup report a wrong duration"
+    },
+    {
+      "id": "RHEL-112689",
+      "url": "https://issues.redhat.com/browse/RHEL-112689",
+      "description": "Crash if repl keep alive entry can not be created"
+    },
+    {
+      "id": "RHEL-112722",
+      "url": "https://issues.redhat.com/browse/RHEL-112722",
+      "description": "Exception thrown by dsconf instance repl get_ruv"
+    },
+    {
+      "id": "RHEL-113969",
+      "url": "https://issues.redhat.com/browse/RHEL-113969",
+      "description": "AddressSanitizer: memory leak in memberof_add_memberof_attr"
+    }
+  ],
+  "full_text": "An update for 389-ds-base is now available for Red Hat Enterprise Linux 10.\n\nFor detailed information on changes in this release, see the Red Hat Enterprise Linux 10 Release Notes linked from the References section."
+}

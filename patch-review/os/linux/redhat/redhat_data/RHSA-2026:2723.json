@@ -1,0 +1,29 @@
+{
+  "id": "RHSA-2026:2723",
+  "vendor": "Red Hat",
+  "type": "Security Advisory (RHSA)",
+  "title": "Red Hat Security Advisory: python-urllib3 security update",
+  "issuedDate": "2026-02-16T11:26:37+00:00",
+  "updatedDate": "2026-02-16T11:26:37+00:00",
+  "pubDate": "2026-02-16T11:26:37+00:00",
+  "dateStr": "2026-02-16",
+  "url": "https://access.redhat.com/errata/RHSA-2026:2723",
+  "severity": "Important",
+  "overview": "An update for python-urllib3 is now available for Red Hat Enterprise Linux 8.4 Advanced Mission Critical Update Support and Red Hat Enterprise Linux 8.4 Extended Update Support Long-Life Add-On.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "description": "Python is an interpreted, interactive, object-oriented programming language, which includes modules, classes, exceptions, very high level dynamic data types and dynamic typing. Python supports interfaces to many system calls and libraries, as well as to various windowing systems.\n\nSecurity Fix(es):\n\n* urllib3: urllib3: Unbounded decompression chain leads to resource exhaustion (CVE-2025-66418)\n\n* urllib3: urllib3 Streaming API improperly handles highly compressed data (CVE-2025-66471)\n\n* urllib3: urllib3 vulnerable to decompression-bomb safeguard bypass when following HTTP redirects (streaming API) (CVE-2026-21441)\n\nFor more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux",
+    "Red Hat Enterprise Linux BaseOS AUS (v.8.4)",
+    "Red Hat Enterprise Linux BaseOS EUS EXTENSION (v.8.4)"
+  ],
+  "cves": [
+    "CVE-2025-66418",
+    "CVE-2025-66471",
+    "CVE-2026-21441"
+  ],
+  "packages": [
+    "python-urllib3-0:1.24.2-5.el8_4.1.src",
+    "python3-urllib3-0:1.24.2-5.el8_4.1.noarch"
+  ],
+  "full_text": "An update for python-urllib3 is now available for Red Hat Enterprise Linux 8.4 Advanced Mission Critical Update Support and Red Hat Enterprise Linux 8.4 Extended Update Support Long-Life Add-On.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nPython is an interpreted, interactive, object-oriented programming language, which includes modules, classes, exceptions, very high level dynamic data types and dynamic typing. Python supports interfaces to many system calls and libraries, as well as to various windowing systems.\n\nSecurity Fix(es):\n\n* urllib3: urllib3: Unbounded decompression chain leads to resource exhaustion (CVE-2025-66418)\n\n* urllib3: urllib3 Streaming API improperly handles highly compressed data (CVE-2025-66471)\n\n* urllib3: urllib3 vulnerable to decompression-bomb safeguard bypass when following HTTP redirects (streaming API) (CVE-2026-21441)\n\nFor more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section."
+}

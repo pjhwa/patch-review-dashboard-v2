@@ -1,0 +1,24 @@
+{
+  "id": "USN-7978-1",
+  "vendor": "Canonical / Ubuntu",
+  "type": "Ubuntu Security Notice (USN)",
+  "title": "screen vulnerabilities",
+  "issuedDate": "2026-01-26T18:47:16Z",
+  "updatedDate": "2026-02-10T04:50:48Z",
+  "pubDate": "2026-01-26T18:47:16Z",
+  "dateStr": "2026-01-26",
+  "url": "https://ubuntu.com/security/notices/USN-7978-1",
+  "severity": "None",
+  "overview": "screen vulnerabilities",
+  "description": "It was discovered that GNU Screen incorrectly handled signals when setuid\nor setgid privileges were being used, which is not the default in Ubuntu.\nA local attacker could use this issue to send privileged signals, possibly\nleading to a denial of service. This issue only affected Ubuntu 22.04 LTS.\n(CVE-2023-24626)\n\nIt was discovered that GNU Screen incorrectly handled PTY permissions. A\nlocal attacker could possibly use this issue to connect to an unauthorized\nscreen session. (CVE-2025-46802)\n\nIt was discovered that GNU Screen incorrectly handled file access when\nsetuid privileges were being used, which is not the default in Ubuntu. A\nlocal attacker could use this issue to deduce information about certain\nfile paths. (CVE-2025-46804)\n\nIt was discovered that GNU Screen incorrectly handled signals when setuid\nprivileges were being used, which is not the default in Ubuntu. A local\nattacker could use this issue to send privileged signals, possibly leading\nto a denial of service. (CVE-2025-46805)",
+  "affected_products": [
+    "Ubuntu 22.04 LTS",
+    "Ubuntu 24.04 LTS"
+  ],
+  "cves": [],
+  "packages": [
+    "screen-4.9.0-1ubuntu0.1",
+    "screen-4.9.1-1ubuntu1"
+  ],
+  "full_text": "It was discovered that GNU Screen incorrectly handled signals when setuid\nor setgid privileges were being used, which is not the default in Ubuntu.\nA local attacker could use this issue to send privileged signals, possibly\nleading to a denial of service. This issue only affected Ubuntu 22.04 LTS.\n(CVE-2023-24626)\n\nIt was discovered that GNU Screen incorrectly handled PTY permissions. A\nlocal attacker could possibly use this issue to connect to an unauthorized\nscreen session. (CVE-2025-46802)\n\nIt was discovered that GNU Screen incorrectly handled file access when\nsetuid privileges were being used, which is not the default in Ubuntu. A\nlocal attacker could use this issue to deduce information about certain\nfile paths. (CVE-2025-46804)\n\nIt was discovered that GNU Screen incorrectly handled signals when setuid\nprivileges were being used, which is not the default in Ubuntu. A local\nattacker could use this issue to send privileged signals, possibly leading\nto a denial of service. (CVE-2025-46805)"
+}

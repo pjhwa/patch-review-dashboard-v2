@@ -1,0 +1,25 @@
+{
+  "id": "ELBA-2025-17422",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "AppStream",
+  "title": "gnome-shell bug fix and enhancement update",
+  "issuedDate": "2025-10-07T00:00:00Z",
+  "updatedDate": "2025-10-07T00:00:00Z",
+  "pubDate": "2025-10-07T00:00:00Z",
+  "dateStr": "2025-10-07",
+  "url": "https://linux.oracle.com/errata/ELBA-2025-17422.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 8.",
+  "description": "[3.32.2-58]\n- Don't hard depend on gnome-session-xsession to allow\n  using other session types, e.g. wayland\n  Resolves: RHEL-110531",
+  "affected_products": [
+    "Oracle Linux 8 for x86_64",
+    "Oracle Linux 8 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "gnome-shell-3.32.2-58.el8_10.src",
+    "gnome-shell-3.32.2-58.el8_10.x86_64"
+  ],
+  "full_text": "[3.32.2-58]\n- Don't hard depend on gnome-session-xsession to allow\n  using other session types, e.g. wayland\n  Resolves: RHEL-110531\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2025-17422.html"
+}

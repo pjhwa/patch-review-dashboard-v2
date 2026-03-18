@@ -1,0 +1,26 @@
+{
+  "id": "ELBA-2025-20196-0",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "RHCK",
+  "title": "avahi bug fix and enhancement update",
+  "issuedDate": "2025-11-25T00:00:00Z",
+  "updatedDate": "2025-11-25T00:00:00Z",
+  "pubDate": "2025-11-25T00:00:00Z",
+  "dateStr": "2025-11-25",
+  "url": "https://linux.oracle.com/errata/ELBA-2025-20196-0.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 10.",
+  "description": "[0.9~rc2-2]\n- Fix for CVE-2024-52615 (RHEL-67715)",
+  "affected_products": [
+    "Oracle Linux 10 for x86_64",
+    "Oracle Linux 10 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "avahi-0.9~rc2-2.el10.x86_64",
+    "avahi-0.9~rc2-2.el10.src",
+    "avahi-libs-0.9~rc2-2.el10.x86_64"
+  ],
+  "full_text": "[0.9~rc2-2]\n- Fix for CVE-2024-52615 (RHEL-67715)\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2025-20196-0.html"
+}

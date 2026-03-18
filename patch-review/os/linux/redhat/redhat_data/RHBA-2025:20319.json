@@ -1,0 +1,525 @@
+{
+  "id": "RHBA-2025:20319",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: libvirt bug fix and enhancement update",
+  "issuedDate": "2025-11-11T07:26:04Z",
+  "updatedDate": "2025-11-11T07:26:04Z",
+  "pubDate": "2025-11-11T07:26:04Z",
+  "dateStr": "2025-11-11",
+  "url": "https://access.redhat.com/errata/RHBA-2025:20319",
+  "severity": "None",
+  "overview": "An update for libvirt is now available for Red Hat Enterprise Linux 10.",
+  "description": "For detailed information on changes in this release, see the Red Hat Enterprise Linux 10 Release Notes linked from the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux for ARM 64",
+    "Red Hat Enterprise Linux for Power, little endian",
+    "Red Hat CodeReady Linux Builder for IBM z Systems",
+    "Red Hat CodeReady Linux Builder for x86_64 10 x86_64",
+    "Red Hat CodeReady Linux Builder for ARM 64",
+    "Red Hat Enterprise Linux for IBM z Systems",
+    "Red Hat Enterprise Linux for x86_64 10 x86_64",
+    "Red Hat CodeReady Linux Builder for Power, little endian"
+  ],
+  "cves": [],
+  "packages": [
+    "libvirt-11.5.0-4.el10.src",
+    "libvirt-11.5.0-4.el10.x86_64",
+    "libvirt-client-11.5.0-4.el10.x86_64",
+    "libvirt-client-debuginfo-11.5.0-4.el10.x86_64",
+    "libvirt-client-qemu-11.5.0-4.el10.x86_64",
+    "libvirt-daemon-11.5.0-4.el10.x86_64",
+    "libvirt-daemon-common-11.5.0-4.el10.x86_64",
+    "libvirt-daemon-common-debuginfo-11.5.0-4.el10.x86_64",
+    "libvirt-daemon-config-network-11.5.0-4.el10.x86_64",
+    "libvirt-daemon-config-nwfilter-11.5.0-4.el10.x86_64",
+    "libvirt-daemon-debuginfo-11.5.0-4.el10.x86_64",
+    "libvirt-daemon-driver-interface-11.5.0-4.el10.x86_64",
+    "libvirt-daemon-driver-interface-debuginfo-11.5.0-4.el10.x86_64",
+    "libvirt-daemon-driver-network-11.5.0-4.el10.x86_64",
+    "libvirt-daemon-driver-network-debuginfo-11.5.0-4.el10.x86_64",
+    "libvirt-daemon-driver-nodedev-11.5.0-4.el10.x86_64",
+    "libvirt-daemon-driver-nodedev-debuginfo-11.5.0-4.el10.x86_64",
+    "libvirt-daemon-driver-nwfilter-11.5.0-4.el10.x86_64",
+    "libvirt-daemon-driver-nwfilter-debuginfo-11.5.0-4.el10.x86_64",
+    "libvirt-daemon-driver-qemu-11.5.0-4.el10.x86_64",
+    "libvirt-daemon-driver-qemu-debuginfo-11.5.0-4.el10.x86_64",
+    "libvirt-daemon-driver-secret-11.5.0-4.el10.x86_64",
+    "libvirt-daemon-driver-secret-debuginfo-11.5.0-4.el10.x86_64",
+    "libvirt-daemon-driver-storage-11.5.0-4.el10.x86_64",
+    "libvirt-daemon-driver-storage-core-11.5.0-4.el10.x86_64",
+    "libvirt-daemon-driver-storage-core-debuginfo-11.5.0-4.el10.x86_64",
+    "libvirt-daemon-driver-storage-disk-11.5.0-4.el10.x86_64",
+    "libvirt-daemon-driver-storage-disk-debuginfo-11.5.0-4.el10.x86_64",
+    "libvirt-daemon-driver-storage-iscsi-11.5.0-4.el10.x86_64",
+    "libvirt-daemon-driver-storage-iscsi-debuginfo-11.5.0-4.el10.x86_64",
+    "libvirt-daemon-driver-storage-logical-11.5.0-4.el10.x86_64",
+    "libvirt-daemon-driver-storage-logical-debuginfo-11.5.0-4.el10.x86_64",
+    "libvirt-daemon-driver-storage-mpath-11.5.0-4.el10.x86_64",
+    "libvirt-daemon-driver-storage-mpath-debuginfo-11.5.0-4.el10.x86_64",
+    "libvirt-daemon-driver-storage-rbd-11.5.0-4.el10.x86_64",
+    "libvirt-daemon-driver-storage-rbd-debuginfo-11.5.0-4.el10.x86_64",
+    "libvirt-daemon-driver-storage-scsi-11.5.0-4.el10.x86_64",
+    "libvirt-daemon-driver-storage-scsi-debuginfo-11.5.0-4.el10.x86_64",
+    "libvirt-daemon-kvm-11.5.0-4.el10.x86_64",
+    "libvirt-daemon-lock-11.5.0-4.el10.x86_64",
+    "libvirt-daemon-lock-debuginfo-11.5.0-4.el10.x86_64",
+    "libvirt-daemon-log-11.5.0-4.el10.x86_64",
+    "libvirt-daemon-log-debuginfo-11.5.0-4.el10.x86_64",
+    "libvirt-daemon-plugin-lockd-11.5.0-4.el10.x86_64",
+    "libvirt-daemon-plugin-lockd-debuginfo-11.5.0-4.el10.x86_64",
+    "libvirt-daemon-plugin-sanlock-debuginfo-11.5.0-4.el10.x86_64",
+    "libvirt-daemon-proxy-11.5.0-4.el10.x86_64",
+    "libvirt-daemon-proxy-debuginfo-11.5.0-4.el10.x86_64",
+    "libvirt-debuginfo-11.5.0-4.el10.x86_64",
+    "libvirt-debugsource-11.5.0-4.el10.x86_64",
+    "libvirt-libs-11.5.0-4.el10.x86_64",
+    "libvirt-libs-debuginfo-11.5.0-4.el10.x86_64",
+    "libvirt-nss-11.5.0-4.el10.x86_64",
+    "libvirt-nss-debuginfo-11.5.0-4.el10.x86_64",
+    "libvirt-ssh-proxy-11.5.0-4.el10.x86_64",
+    "libvirt-ssh-proxy-debuginfo-11.5.0-4.el10.x86_64",
+    "libvirt-wireshark-debuginfo-11.5.0-4.el10.x86_64",
+    "libvirt-11.5.0-4.el10.s390x",
+    "libvirt-client-11.5.0-4.el10.s390x",
+    "libvirt-client-debuginfo-11.5.0-4.el10.s390x",
+    "libvirt-client-qemu-11.5.0-4.el10.s390x",
+    "libvirt-daemon-11.5.0-4.el10.s390x",
+    "libvirt-daemon-common-11.5.0-4.el10.s390x",
+    "libvirt-daemon-common-debuginfo-11.5.0-4.el10.s390x",
+    "libvirt-daemon-config-network-11.5.0-4.el10.s390x",
+    "libvirt-daemon-config-nwfilter-11.5.0-4.el10.s390x",
+    "libvirt-daemon-debuginfo-11.5.0-4.el10.s390x",
+    "libvirt-daemon-driver-interface-11.5.0-4.el10.s390x",
+    "libvirt-daemon-driver-interface-debuginfo-11.5.0-4.el10.s390x",
+    "libvirt-daemon-driver-network-11.5.0-4.el10.s390x",
+    "libvirt-daemon-driver-network-debuginfo-11.5.0-4.el10.s390x",
+    "libvirt-daemon-driver-nodedev-11.5.0-4.el10.s390x",
+    "libvirt-daemon-driver-nodedev-debuginfo-11.5.0-4.el10.s390x",
+    "libvirt-daemon-driver-nwfilter-11.5.0-4.el10.s390x",
+    "libvirt-daemon-driver-nwfilter-debuginfo-11.5.0-4.el10.s390x",
+    "libvirt-daemon-driver-qemu-11.5.0-4.el10.s390x",
+    "libvirt-daemon-driver-qemu-debuginfo-11.5.0-4.el10.s390x",
+    "libvirt-daemon-driver-secret-11.5.0-4.el10.s390x",
+    "libvirt-daemon-driver-secret-debuginfo-11.5.0-4.el10.s390x",
+    "libvirt-daemon-driver-storage-11.5.0-4.el10.s390x",
+    "libvirt-daemon-driver-storage-core-11.5.0-4.el10.s390x",
+    "libvirt-daemon-driver-storage-core-debuginfo-11.5.0-4.el10.s390x",
+    "libvirt-daemon-driver-storage-disk-11.5.0-4.el10.s390x",
+    "libvirt-daemon-driver-storage-disk-debuginfo-11.5.0-4.el10.s390x",
+    "libvirt-daemon-driver-storage-iscsi-11.5.0-4.el10.s390x",
+    "libvirt-daemon-driver-storage-iscsi-debuginfo-11.5.0-4.el10.s390x",
+    "libvirt-daemon-driver-storage-logical-11.5.0-4.el10.s390x",
+    "libvirt-daemon-driver-storage-logical-debuginfo-11.5.0-4.el10.s390x",
+    "libvirt-daemon-driver-storage-mpath-11.5.0-4.el10.s390x",
+    "libvirt-daemon-driver-storage-mpath-debuginfo-11.5.0-4.el10.s390x",
+    "libvirt-daemon-driver-storage-rbd-11.5.0-4.el10.s390x",
+    "libvirt-daemon-driver-storage-rbd-debuginfo-11.5.0-4.el10.s390x",
+    "libvirt-daemon-driver-storage-scsi-11.5.0-4.el10.s390x",
+    "libvirt-daemon-driver-storage-scsi-debuginfo-11.5.0-4.el10.s390x",
+    "libvirt-daemon-kvm-11.5.0-4.el10.s390x",
+    "libvirt-daemon-lock-11.5.0-4.el10.s390x",
+    "libvirt-daemon-lock-debuginfo-11.5.0-4.el10.s390x",
+    "libvirt-daemon-log-11.5.0-4.el10.s390x",
+    "libvirt-daemon-log-debuginfo-11.5.0-4.el10.s390x",
+    "libvirt-daemon-plugin-lockd-11.5.0-4.el10.s390x",
+    "libvirt-daemon-plugin-lockd-debuginfo-11.5.0-4.el10.s390x",
+    "libvirt-daemon-plugin-sanlock-debuginfo-11.5.0-4.el10.s390x",
+    "libvirt-daemon-proxy-11.5.0-4.el10.s390x",
+    "libvirt-daemon-proxy-debuginfo-11.5.0-4.el10.s390x",
+    "libvirt-debuginfo-11.5.0-4.el10.s390x",
+    "libvirt-debugsource-11.5.0-4.el10.s390x",
+    "libvirt-libs-11.5.0-4.el10.s390x",
+    "libvirt-libs-debuginfo-11.5.0-4.el10.s390x",
+    "libvirt-nss-11.5.0-4.el10.s390x",
+    "libvirt-nss-debuginfo-11.5.0-4.el10.s390x",
+    "libvirt-ssh-proxy-11.5.0-4.el10.s390x",
+    "libvirt-ssh-proxy-debuginfo-11.5.0-4.el10.s390x",
+    "libvirt-wireshark-debuginfo-11.5.0-4.el10.s390x",
+    "libvirt-11.5.0-4.el10.ppc64le",
+    "libvirt-client-11.5.0-4.el10.ppc64le",
+    "libvirt-client-debuginfo-11.5.0-4.el10.ppc64le",
+    "libvirt-daemon-11.5.0-4.el10.ppc64le",
+    "libvirt-daemon-common-11.5.0-4.el10.ppc64le",
+    "libvirt-daemon-common-debuginfo-11.5.0-4.el10.ppc64le",
+    "libvirt-daemon-config-network-11.5.0-4.el10.ppc64le",
+    "libvirt-daemon-config-nwfilter-11.5.0-4.el10.ppc64le",
+    "libvirt-daemon-debuginfo-11.5.0-4.el10.ppc64le",
+    "libvirt-daemon-driver-interface-11.5.0-4.el10.ppc64le",
+    "libvirt-daemon-driver-interface-debuginfo-11.5.0-4.el10.ppc64le",
+    "libvirt-daemon-driver-network-11.5.0-4.el10.ppc64le",
+    "libvirt-daemon-driver-network-debuginfo-11.5.0-4.el10.ppc64le",
+    "libvirt-daemon-driver-nodedev-11.5.0-4.el10.ppc64le",
+    "libvirt-daemon-driver-nodedev-debuginfo-11.5.0-4.el10.ppc64le",
+    "libvirt-daemon-driver-nwfilter-11.5.0-4.el10.ppc64le",
+    "libvirt-daemon-driver-nwfilter-debuginfo-11.5.0-4.el10.ppc64le",
+    "libvirt-daemon-driver-secret-11.5.0-4.el10.ppc64le",
+    "libvirt-daemon-driver-secret-debuginfo-11.5.0-4.el10.ppc64le",
+    "libvirt-daemon-driver-storage-11.5.0-4.el10.ppc64le",
+    "libvirt-daemon-driver-storage-core-11.5.0-4.el10.ppc64le",
+    "libvirt-daemon-driver-storage-core-debuginfo-11.5.0-4.el10.ppc64le",
+    "libvirt-daemon-driver-storage-disk-11.5.0-4.el10.ppc64le",
+    "libvirt-daemon-driver-storage-disk-debuginfo-11.5.0-4.el10.ppc64le",
+    "libvirt-daemon-driver-storage-iscsi-11.5.0-4.el10.ppc64le",
+    "libvirt-daemon-driver-storage-iscsi-debuginfo-11.5.0-4.el10.ppc64le",
+    "libvirt-daemon-driver-storage-logical-11.5.0-4.el10.ppc64le",
+    "libvirt-daemon-driver-storage-logical-debuginfo-11.5.0-4.el10.ppc64le",
+    "libvirt-daemon-driver-storage-mpath-11.5.0-4.el10.ppc64le",
+    "libvirt-daemon-driver-storage-mpath-debuginfo-11.5.0-4.el10.ppc64le",
+    "libvirt-daemon-driver-storage-rbd-11.5.0-4.el10.ppc64le",
+    "libvirt-daemon-driver-storage-rbd-debuginfo-11.5.0-4.el10.ppc64le",
+    "libvirt-daemon-driver-storage-scsi-11.5.0-4.el10.ppc64le",
+    "libvirt-daemon-driver-storage-scsi-debuginfo-11.5.0-4.el10.ppc64le",
+    "libvirt-daemon-lock-11.5.0-4.el10.ppc64le",
+    "libvirt-daemon-lock-debuginfo-11.5.0-4.el10.ppc64le",
+    "libvirt-daemon-log-11.5.0-4.el10.ppc64le",
+    "libvirt-daemon-log-debuginfo-11.5.0-4.el10.ppc64le",
+    "libvirt-daemon-plugin-lockd-11.5.0-4.el10.ppc64le",
+    "libvirt-daemon-plugin-lockd-debuginfo-11.5.0-4.el10.ppc64le",
+    "libvirt-daemon-proxy-11.5.0-4.el10.ppc64le",
+    "libvirt-daemon-proxy-debuginfo-11.5.0-4.el10.ppc64le",
+    "libvirt-debuginfo-11.5.0-4.el10.ppc64le",
+    "libvirt-debugsource-11.5.0-4.el10.ppc64le",
+    "libvirt-libs-11.5.0-4.el10.ppc64le",
+    "libvirt-libs-debuginfo-11.5.0-4.el10.ppc64le",
+    "libvirt-nss-11.5.0-4.el10.ppc64le",
+    "libvirt-nss-debuginfo-11.5.0-4.el10.ppc64le",
+    "libvirt-ssh-proxy-debuginfo-11.5.0-4.el10.ppc64le",
+    "libvirt-wireshark-debuginfo-11.5.0-4.el10.ppc64le",
+    "libvirt-11.5.0-4.el10.aarch64",
+    "libvirt-client-11.5.0-4.el10.aarch64",
+    "libvirt-client-debuginfo-11.5.0-4.el10.aarch64",
+    "libvirt-client-qemu-11.5.0-4.el10.aarch64",
+    "libvirt-daemon-11.5.0-4.el10.aarch64",
+    "libvirt-daemon-common-11.5.0-4.el10.aarch64",
+    "libvirt-daemon-common-debuginfo-11.5.0-4.el10.aarch64",
+    "libvirt-daemon-config-network-11.5.0-4.el10.aarch64",
+    "libvirt-daemon-config-nwfilter-11.5.0-4.el10.aarch64",
+    "libvirt-daemon-debuginfo-11.5.0-4.el10.aarch64",
+    "libvirt-daemon-driver-interface-11.5.0-4.el10.aarch64",
+    "libvirt-daemon-driver-interface-debuginfo-11.5.0-4.el10.aarch64",
+    "libvirt-daemon-driver-network-11.5.0-4.el10.aarch64",
+    "libvirt-daemon-driver-network-debuginfo-11.5.0-4.el10.aarch64",
+    "libvirt-daemon-driver-nodedev-11.5.0-4.el10.aarch64",
+    "libvirt-daemon-driver-nodedev-debuginfo-11.5.0-4.el10.aarch64",
+    "libvirt-daemon-driver-nwfilter-11.5.0-4.el10.aarch64",
+    "libvirt-daemon-driver-nwfilter-debuginfo-11.5.0-4.el10.aarch64",
+    "libvirt-daemon-driver-qemu-11.5.0-4.el10.aarch64",
+    "libvirt-daemon-driver-qemu-debuginfo-11.5.0-4.el10.aarch64",
+    "libvirt-daemon-driver-secret-11.5.0-4.el10.aarch64",
+    "libvirt-daemon-driver-secret-debuginfo-11.5.0-4.el10.aarch64",
+    "libvirt-daemon-driver-storage-11.5.0-4.el10.aarch64",
+    "libvirt-daemon-driver-storage-core-11.5.0-4.el10.aarch64",
+    "libvirt-daemon-driver-storage-core-debuginfo-11.5.0-4.el10.aarch64",
+    "libvirt-daemon-driver-storage-disk-11.5.0-4.el10.aarch64",
+    "libvirt-daemon-driver-storage-disk-debuginfo-11.5.0-4.el10.aarch64",
+    "libvirt-daemon-driver-storage-iscsi-11.5.0-4.el10.aarch64",
+    "libvirt-daemon-driver-storage-iscsi-debuginfo-11.5.0-4.el10.aarch64",
+    "libvirt-daemon-driver-storage-logical-11.5.0-4.el10.aarch64",
+    "libvirt-daemon-driver-storage-logical-debuginfo-11.5.0-4.el10.aarch64",
+    "libvirt-daemon-driver-storage-mpath-11.5.0-4.el10.aarch64",
+    "libvirt-daemon-driver-storage-mpath-debuginfo-11.5.0-4.el10.aarch64",
+    "libvirt-daemon-driver-storage-rbd-11.5.0-4.el10.aarch64",
+    "libvirt-daemon-driver-storage-rbd-debuginfo-11.5.0-4.el10.aarch64",
+    "libvirt-daemon-driver-storage-scsi-11.5.0-4.el10.aarch64",
+    "libvirt-daemon-driver-storage-scsi-debuginfo-11.5.0-4.el10.aarch64",
+    "libvirt-daemon-kvm-11.5.0-4.el10.aarch64",
+    "libvirt-daemon-lock-11.5.0-4.el10.aarch64",
+    "libvirt-daemon-lock-debuginfo-11.5.0-4.el10.aarch64",
+    "libvirt-daemon-log-11.5.0-4.el10.aarch64",
+    "libvirt-daemon-log-debuginfo-11.5.0-4.el10.aarch64",
+    "libvirt-daemon-plugin-lockd-11.5.0-4.el10.aarch64",
+    "libvirt-daemon-plugin-lockd-debuginfo-11.5.0-4.el10.aarch64",
+    "libvirt-daemon-plugin-sanlock-debuginfo-11.5.0-4.el10.aarch64",
+    "libvirt-daemon-proxy-11.5.0-4.el10.aarch64",
+    "libvirt-daemon-proxy-debuginfo-11.5.0-4.el10.aarch64",
+    "libvirt-debuginfo-11.5.0-4.el10.aarch64",
+    "libvirt-debugsource-11.5.0-4.el10.aarch64",
+    "libvirt-libs-11.5.0-4.el10.aarch64",
+    "libvirt-libs-debuginfo-11.5.0-4.el10.aarch64",
+    "libvirt-nss-11.5.0-4.el10.aarch64",
+    "libvirt-nss-debuginfo-11.5.0-4.el10.aarch64",
+    "libvirt-ssh-proxy-11.5.0-4.el10.aarch64",
+    "libvirt-ssh-proxy-debuginfo-11.5.0-4.el10.aarch64",
+    "libvirt-wireshark-debuginfo-11.5.0-4.el10.aarch64",
+    "libvirt-daemon-plugin-sanlock-11.5.0-4.el10.x86_64",
+    "libvirt-devel-11.5.0-4.el10.x86_64",
+    "libvirt-docs-11.5.0-4.el10.x86_64",
+    "libvirt-devel-11.5.0-4.el10.ppc64le",
+    "libvirt-docs-11.5.0-4.el10.ppc64le",
+    "libvirt-daemon-plugin-sanlock-11.5.0-4.el10.aarch64",
+    "libvirt-devel-11.5.0-4.el10.aarch64",
+    "libvirt-docs-11.5.0-4.el10.aarch64",
+    "libvirt-daemon-plugin-sanlock-11.5.0-4.el10.s390x",
+    "libvirt-devel-11.5.0-4.el10.s390x",
+    "libvirt-docs-11.5.0-4.el10.s390x"
+  ],
+  "fixes": [
+    {
+      "id": "RHEL-20294",
+      "url": "https://issues.redhat.com/browse/RHEL-20294",
+      "description": "Allow to set migration switchover bandwidth manually"
+    },
+    {
+      "id": "RHEL-41264",
+      "url": "https://issues.redhat.com/browse/RHEL-41264",
+      "description": "virsh may request switching to post-copy before migration has started when --timeout-postcopy is used with a short timeout"
+    },
+    {
+      "id": "RHEL-52493",
+      "url": "https://issues.redhat.com/browse/RHEL-52493",
+      "description": "Migration never finished after cancel migration nearly the end of the migration"
+    },
+    {
+      "id": "RHEL-58933",
+      "url": "https://issues.redhat.com/browse/RHEL-58933",
+      "description": "Libvirt reports unclear error if TLS Certificate does not match the hostname"
+    },
+    {
+      "id": "RHEL-7041",
+      "url": "https://issues.redhat.com/browse/RHEL-7041",
+      "description": "Error message changed to a unhelpful message when QEMU fails with vtpm migration"
+    },
+    {
+      "id": "RHEL-7042",
+      "url": "https://issues.redhat.com/browse/RHEL-7042",
+      "description": "migrate-setspeed cannot set the speed of blockjob in non-shared disk migration"
+    },
+    {
+      "id": "RHEL-70656",
+      "url": "https://issues.redhat.com/browse/RHEL-70656",
+      "description": "virt-xml-validate fails for hyperv element"
+    },
+    {
+      "id": "RHEL-7104",
+      "url": "https://issues.redhat.com/browse/RHEL-7104",
+      "description": "Guest shutdown's reason is not correct after cancelling multifd migration"
+    },
+    {
+      "id": "RHEL-71042",
+      "url": "https://issues.redhat.com/browse/RHEL-71042",
+      "description": "Virsh dumpxml get wrong virtio-mem current size right after libvirt deamon restart"
+    },
+    {
+      "id": "RHEL-71810",
+      "url": "https://issues.redhat.com/browse/RHEL-71810",
+      "description": "The host capabilities report incorrect versioned CPU model"
+    },
+    {
+      "id": "RHEL-72021",
+      "url": "https://issues.redhat.com/browse/RHEL-72021",
+      "description": "Misleading documentation of \"host-model\" CPU"
+    },
+    {
+      "id": "RHEL-72052",
+      "url": "https://issues.redhat.com/browse/RHEL-72052",
+      "description": "Isolated CPUs still appear in the virsh emulatorpin result."
+    },
+    {
+      "id": "RHEL-72192",
+      "url": "https://issues.redhat.com/browse/RHEL-72192",
+      "description": "[libvirt]virtiofs: Allow read only mode"
+    },
+    {
+      "id": "RHEL-7342",
+      "url": "https://issues.redhat.com/browse/RHEL-7342",
+      "description": "[libvirt] No persistent reservation manager when blockcopy to scsi pr destination"
+    },
+    {
+      "id": "RHEL-79460",
+      "url": "https://issues.redhat.com/browse/RHEL-79460",
+      "description": "virsh hypervisor-cpu-compare reports host CPU as superset of guest CPU configuration from virsh capabilities output"
+    },
+    {
+      "id": "RHEL-79465",
+      "url": "https://issues.redhat.com/browse/RHEL-79465",
+      "description": "Enhance documentation of hypervisor-cpu-compare to avoid incorrect usage"
+    },
+    {
+      "id": "RHEL-81660",
+      "url": "https://issues.redhat.com/browse/RHEL-81660",
+      "description": "virtqemud crash when starting vm with custom cpu model"
+    },
+    {
+      "id": "RHEL-83062",
+      "url": "https://issues.redhat.com/browse/RHEL-83062",
+      "description": "Host can't shutdown when a virtual network is active"
+    },
+    {
+      "id": "RHEL-24046",
+      "url": "https://issues.redhat.com/browse/RHEL-24046",
+      "description": "FsFreeze windows VM fails but status report frozen"
+    },
+    {
+      "id": "RHEL-40077",
+      "url": "https://issues.redhat.com/browse/RHEL-40077",
+      "description": "'Unable to execute QEMU command 'blockdev-del': Block device libvirt-1-storage is in use' is logged when using 'virsh blockcopy' on a disk with 'copy_on_read' enabled"
+    },
+    {
+      "id": "RHEL-68043",
+      "url": "https://issues.redhat.com/browse/RHEL-68043",
+      "description": "Support direct kernel boot with secure boot protection"
+    },
+    {
+      "id": "RHEL-7035",
+      "url": "https://issues.redhat.com/browse/RHEL-7035",
+      "description": "[RFE] Guest agent should report the interface Permanent address"
+    },
+    {
+      "id": "RHEL-71883",
+      "url": "https://issues.redhat.com/browse/RHEL-71883",
+      "description": "Include CPU load average in libvirt guestinfo"
+    },
+    {
+      "id": "RHEL-77552",
+      "url": "https://issues.redhat.com/browse/RHEL-77552",
+      "description": "Multiqueue block layer support (iothread-vq-mapping) for virtio-scsi"
+    },
+    {
+      "id": "RHEL-80166",
+      "url": "https://issues.redhat.com/browse/RHEL-80166",
+      "description": "[ampere-one-x]Unexpected error log shown when restarting virtqemud with running guest"
+    },
+    {
+      "id": "RHEL-80533",
+      "url": "https://issues.redhat.com/browse/RHEL-80533",
+      "description": "libvirt report unexpected warning about shared memory in the log"
+    },
+    {
+      "id": "RHEL-80688",
+      "url": "https://issues.redhat.com/browse/RHEL-80688",
+      "description": "add 'bus-type' to 'disk' section of virDomainGetGuestInfo (virsh guestinfo)"
+    },
+    {
+      "id": "RHEL-81731",
+      "url": "https://issues.redhat.com/browse/RHEL-81731",
+      "description": "spurious error reported when manual UEFI firmware+nvram path is used"
+    },
+    {
+      "id": "RHEL-81890",
+      "url": "https://issues.redhat.com/browse/RHEL-81890",
+      "description": "Fail to validate domaincaps"
+    },
+    {
+      "id": "RHEL-27172",
+      "url": "https://issues.redhat.com/browse/RHEL-27172",
+      "description": "Misc issues for net-desc, net-metadata cmds"
+    },
+    {
+      "id": "RHEL-71662",
+      "url": "https://issues.redhat.com/browse/RHEL-71662",
+      "description": "Rebase libvirt in RHEL-10.1"
+    },
+    {
+      "id": "RHEL-79088",
+      "url": "https://issues.redhat.com/browse/RHEL-79088",
+      "description": "virt-launcher compute container always prints error message regarding DBUS connection failure"
+    },
+    {
+      "id": "RHEL-82411",
+      "url": "https://issues.redhat.com/browse/RHEL-82411",
+      "description": "TPM state directory on shared storage is removed when migration failed"
+    },
+    {
+      "id": "RHEL-85320",
+      "url": "https://issues.redhat.com/browse/RHEL-85320",
+      "description": "XML error: The <source> of <dataStore> can't have another nested <dataStore> or <backingStore> element"
+    },
+    {
+      "id": "RHEL-85414",
+      "url": "https://issues.redhat.com/browse/RHEL-85414",
+      "description": "Allow the qemu NBD server used for backups to be accessed form outside of containerization (fd-passthrough)"
+    },
+    {
+      "id": "RHEL-86523",
+      "url": "https://issues.redhat.com/browse/RHEL-86523",
+      "description": "logs spammed with error \"'qemu-rdp' is not a suitable qemu-rdp helper name\" on startup of a VM"
+    },
+    {
+      "id": "RHEL-7390",
+      "url": "https://issues.redhat.com/browse/RHEL-7390",
+      "description": "[RFE]Detect nvme disks/controller from VMware by virsh"
+    },
+    {
+      "id": "RHEL-86592",
+      "url": "https://issues.redhat.com/browse/RHEL-86592",
+      "description": "Migration fails when the guest with TPM and on canonical paths in shared_filesystems"
+    },
+    {
+      "id": "RHEL-86952",
+      "url": "https://issues.redhat.com/browse/RHEL-86952",
+      "description": "NVIDIA:Grace:Backport libvirt support for PCI highmem-mmio-size - RHEL 10.1"
+    },
+    {
+      "id": "RHEL-87177",
+      "url": "https://issues.redhat.com/browse/RHEL-87177",
+      "description": "Improve virt-v2v error info when libvirt daemons that provide various services are not running?"
+    },
+    {
+      "id": "RHEL-88747",
+      "url": "https://issues.redhat.com/browse/RHEL-88747",
+      "description": "Unable to restore internal snapshot on libvirt 11.2"
+    },
+    {
+      "id": "RHEL-89414",
+      "url": "https://issues.redhat.com/browse/RHEL-89414",
+      "description": "Missing doc about the flag \"once\" of virsh autostart"
+    },
+    {
+      "id": "RHEL-90160",
+      "url": "https://issues.redhat.com/browse/RHEL-90160",
+      "description": "virtqemud crashed on target host during resume postcopy migration"
+    },
+    {
+      "id": "RHEL-90625",
+      "url": "https://issues.redhat.com/browse/RHEL-90625",
+      "description": "Fails to enable preallocation for hugepage backed virtio-mem device"
+    },
+    {
+      "id": "RHEL-92510",
+      "url": "https://issues.redhat.com/browse/RHEL-92510",
+      "description": "domcapabilities floppy/fdc is incorrect"
+    },
+    {
+      "id": "RHEL-93775",
+      "url": "https://issues.redhat.com/browse/RHEL-93775",
+      "description": "AVC denials happen when start a guest with disk that has data file and backing file"
+    },
+    {
+      "id": "RHEL-100109",
+      "url": "https://issues.redhat.com/browse/RHEL-100109",
+      "description": "libvirt use of RelaxNG APIs in libxml2 is not thread safe"
+    },
+    {
+      "id": "RHEL-100711",
+      "url": "https://issues.redhat.com/browse/RHEL-100711",
+      "description": "Can't secure Libvirt with TLS 1.3 ML-DSA certificates"
+    },
+    {
+      "id": "RHEL-80155",
+      "url": "https://issues.redhat.com/browse/RHEL-80155",
+      "description": "To downgrade log level for qemuTPMGetSwtpmSetupStateArg"
+    },
+    {
+      "id": "RHEL-95196",
+      "url": "https://issues.redhat.com/browse/RHEL-95196",
+      "description": "Persistent guests are set to auto-shutdown when setting auto_shutdown_try_shutdown to transient"
+    },
+    {
+      "id": "RHEL-95361",
+      "url": "https://issues.redhat.com/browse/RHEL-95361",
+      "description": "Could not save multiple guests via auto shutdown"
+    },
+    {
+      "id": "RHEL-105199",
+      "url": "https://issues.redhat.com/browse/RHEL-105199",
+      "description": "Support for manually passing certificates instead of using no_verify [rhel-10.1]"
+    },
+    {
+      "id": "RHEL-104382",
+      "url": "https://issues.redhat.com/browse/RHEL-104382",
+      "description": "RFE: provide a way to override QEMU crypto priority for live migration [rhel-10.1]"
+    }
+  ],
+  "full_text": "An update for libvirt is now available for Red Hat Enterprise Linux 10.\n\nFor detailed information on changes in this release, see the Red Hat Enterprise Linux 10 Release Notes linked from the References section."
+}

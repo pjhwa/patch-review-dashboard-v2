@@ -1,0 +1,25 @@
+{
+  "id": "RHSA-2026:3827",
+  "vendor": "Red Hat",
+  "url": "https://access.redhat.com/errata/RHSA-2026:3827",
+  "pubDate": "2026-03-05T07:31:32.000Z",
+  "dateStr": "2026-03-05",
+  "severity": "Important",
+  "title": "Red Hat Security Advisory: Red Hat OpenShift Pipelines Release 1.20.3",
+  "overview": "The 1.20.3 GA release of Red Hat OpenShift Pipelines Operator..\nFor more details see [product documentation](https://docs.redhat.com/en/documentation/red_hat_openshift_pipelines).",
+  "description": "The 1.20.3 GA release of Red Hat OpenShift Pipelines Operator..\nFor more details see [product documentation](https://docs.redhat.com/en/documentation/red_hat_openshift_pipelines).",
+  "affected_products": [
+    "Red Hat OpenShift Pipelines 1.2"
+  ],
+  "cves": [
+    "CVE-2025-11621",
+    "CVE-2025-12044",
+    "CVE-2025-47913",
+    "CVE-2025-61729",
+    "CVE-2025-66506",
+    "CVE-2025-66564"
+  ],
+  "packages": [],
+  "fixes": "",
+  "full_text": "Red Hat Security Advisory: Red Hat OpenShift Pipelines Release 1.20.3\n\nThe 1.20.3 GA release of Red Hat OpenShift Pipelines Operator..\nFor more details see [product documentation](https://docs.redhat.com/en/documentation/red_hat_openshift_pipelines).\n\nThe 1.20.3 GA release of Red Hat OpenShift Pipelines Operator..\nFor more details see [product documentation](https://docs.redhat.com/en/documentation/red_hat_openshift_pipelines).\n\n\n\nCVE-2025-11621: Vault and Vault Enterprise’s (“Vault”) AWS Auth method may be susceptible to authentication bypass if the role of the configured bound_principal_iam is the same across AWS accounts, or uses a wildcard. This vulnerability, CVE-2025-11621, is fixed in Vault Community Edition 1.21.0 and Vault Enterprise 1.21.0, 1.20.5, 1.19.11, and 1.16.27\n\nCVE-2025-12044: Vault and Vault Enterprise (“Vault”) are vulnerable to an unauthenticated denial of service when processing JSON payloads. This occurs due to a regression from a previous fix for [+HCSEC-2025-24+|https://discuss.hashicorp.com/t/hcsec-2025-24-vault-denial-of-service-though-complex-json-payloads/76393]  which allowed for processing JSON payloads before applying rate limits. This vulnerability, CVE-2025-12044, is fixed in Vault Community Edition 1.21.0 and Vault Enterprise 1.16.27, 1.19.11, 1.20.5, and 1.21.0.\n\nCVE-2025-47913: A flaw in golang.org/x/crypto/ssh/agent causes the SSH agent client to panic when a peer responds with the generic SSH_AGENT_SUCCESS (0x06) message to requests expecting typed replies (e.g., List, Sign). The unmarshal layer produces an unexpected message type, which the client code does not handle, leading to panic(\"unreachable\") or a nil-pointer dereference. A malicious agent or forwarded connection can exploit this to terminate the client process.\n\nCVE-2025-61729: Within HostnameError.Error(), when constructing an error string, there is no limit to the number of hosts that will be printed out. Furthermore, the error string is constructed by repeated string concatenation, leading to quadratic runtime. Therefore, a certificate provided by a malicious actor can result in excessive resource consumption.\n\nCVE-2025-66506: A flaw was found in Fulcio, a free-to-use certificate authority. This vulnerability allows a denial of service (DoS) due to excessive memory allocation when processing a malicious OpenID Connect (OIDC) identity token containing numerous period characters.\n\nCVE-2025-66564: A flaw was found in Sigstore Timestamp Authority. This vulnerability allows a denial of service via excessive memory allocation when processing a specially crafted Object Identifier or Content-Type header."
+}

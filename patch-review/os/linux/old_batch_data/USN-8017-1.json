@@ -1,0 +1,28 @@
+{
+  "id": "USN-8017-1",
+  "url": "https://ubuntu.com/security/notices/USN-8017-1",
+  "synopsis": "USN-8017-1: GLib vulnerabilities",
+  "dateStr": "5 February 2026",
+  "overview": "Several security issues were fixed in GLib.",
+  "description": "It was discovered that GLib incorrectly parsed large Base64 data. An\nattacker could use this issue to cause GLib to crash, resulting in a\ndenial of service, or possibly execute arbitrary code. (CVE-2026-1484)\n\nIt was discovered that GLib incorrectly parsed certain treemagic files.\nAn attacker could use this issue to cause GLib to crash, resulting in a\ndenial of service, or possibly execute arbitrary code. (CVE-2026-1485)\n\nIt was discovered that GLib incorrectly handled Unicode case conversion.\nAn attacker could use this issue to cause GLib to crash, resulting in a\ndenial of service, or possibly execute arbitrary code. (CVE-2026-1489)\n\n \n\n \n\n \n\nIt was discovered that GLib incorrectly parsed large Base64 data. An\nattacker could use this issue to cause GLib to crash, resulting in a\ndenial of service, or possibly execute arbitrary code. (CVE-2026-1484)\n\nIt was discovered that GLib incorrectly parsed certain treemagic files.\nAn attacker could use this issue to cause GLib to crash, resulting in a\ndenial of service, or possibly execute arbitrary code. (CVE-2026-1485)\n\nIt was discovered that GLib incorrectly handled Unicode case conversion.\nAn attacker could use this issue to cause GLib to crash, resulting in a\ndenial of service, or possibly execute arbitrary code. (CVE-2026-1489)",
+  "packages": [
+    "glib2.0"
+  ],
+  "cves": [
+    "CVE-2026-1489",
+    "CVE-2026-1485",
+    "CVE-2026-1484"
+  ],
+  "affected_products": [
+    "25.10",
+    "24.04 LTS",
+    "22.04 LTS",
+    "Open side navigation"
+  ],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Ubuntu Security Notices\n\nUSN-8017-1\n\n \n\n \n\n \n\n \n\n \n\n \nUSN-8017-1: GLib vulnerabilities\n\n \n\n \n\n \n\n \nPublication date\n\n \n\n \n\n \n5 February 2026\n\n \n\n \n\n \n\n \n\n \nOverview\n\n \n\n \n\n \nSeveral security issues were fixed in GLib.\n\n \n\n \n\n \n\n \n\n \nReleases\n\n \n\n \n\n \n\n 25.10\n\n 24.04 LTS\n\n22.04 LTS\n\n \n\n \n\n \n\n \n\n \n\n \n\n Open side navigation\n \n\n \n\n \nPackages\n\n \n\n glib2.0 - GLib library of C routines\n \n\n \n\n \nDetails\n\n \n\n \n\nIt was discovered that GLib incorrectly parsed large Base64 data. An\nattacker could use this issue to cause GLib to crash, resulting in a\ndenial of service, or possibly execute arbitrary code. (CVE-2026-1484)\n\nIt was discovered that GLib incorrectly parsed certain treemagic files.\nAn attacker could use this issue to cause GLib to crash, resulting in a\ndenial of service, or possibly execute arbitrary code. (CVE-2026-1485)\n\nIt was discovered that GLib incorrectly handled Unicode case conversion.\nAn attacker could use this issue to cause GLib to crash, resulting in a\ndenial of service, or possibly execute arbitrary code. (CVE-2026-1489)\n\n \n\n \n\n \n\nIt was discovered that GLib incorrectly parsed large Base64 data. An\nattacker could use this issue to cause GLib to crash, resulting in a\ndenial of service, or possibly execute arbitrary code. (CVE-2026-1484)\n\nIt was discovered that GLib incorrectly parsed certain treemagic files.\nAn attacker could use this issue to cause GLib to crash, resulting in a\ndenial of service, or possibly execute arbitrary code. (CVE-2026-1485)\n\nIt was discovered that GLib incorrectly handled Unicode case conversion.\nAn attacker could use this issue to cause GLib to crash, resulting in a\ndenial of service, or possibly execute arbitrary code. (CVE-2026-1489)\n\n \n\n \n\n \n\n \nUpdate instructions\n\n \n\n \n\n \n\n \n\nIn general, a standard system update will make all the necessary changes.\n\n Learn more about how to get the fixes.\n \n\n \n\n \n\n \n\n \nThe problem can be corrected by updating your system to the following package versions:\n\n \n\n \n\n \n\n \n\n Ubuntu Release\n Package Version\n \n\n 25.10\n\nquesting\n\n libglib2.0-0t64 – \n\n2.86.0-2ubuntu0.3\n\n libglib2.0-bin – \n\n2.86.0-2ubuntu0.3\n\n \n\n 24.04\n\nLTS noble\n\n libglib2.0-0t64 – \n\n2.80.0-6ubuntu3.8\n\n libglib2.0-bin – \n\n2.80.0-6ubuntu3.8\n\n \n\n 22.04\n\nLTS jammy\n\n libglib2.0-0 – \n\n2.72.4-0ubuntu2.9\n\n libglib2.0-bin – \n\n2.72.4-0ubuntu2.9\n\n \n\nReduce your security exposure\n\n \n\n Ubuntu Pro provides ten-year security coverage to 25,000+ packages in Main and Universe repositories, and it is free for up to five machines.\n \n\n \n\n Get Ubuntu Pro\n \n\n \n\nReferences\n\n \n\n \n\n CVE-2026-1489\n \n\n \n\n CVE-2026-1485\n \n\n \n\n CVE-2026-1484\n \n\n \n\n \n\n CVE-2026-1489\n \n\n CVE-2026-1485\n \n\n CVE-2026-1484",
+  "title": "USN-8017-1: GLib vulnerabilities | Ubuntu security notices | Ubuntu",
+  "pubDate": "2026-02-04T15:00:00.000Z",
+  "vendor": "Ubuntu"
+}

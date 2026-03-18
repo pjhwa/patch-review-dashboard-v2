@@ -1,0 +1,35 @@
+{
+  "id": "ELSA-2025-18815",
+  "vendor": "Oracle",
+  "type": "Security Advisory (ELSA)",
+  "kernel_type": "AppStream",
+  "title": " java-1.8.0-openjdk security update",
+  "issuedDate": "2025-10-24T00:00:00Z",
+  "updatedDate": "2025-10-24T00:00:00Z",
+  "pubDate": "2025-10-24T00:00:00Z",
+  "dateStr": "2025-10-24",
+  "url": "https://linux.oracle.com/errata/ELSA-2025-18815.html",
+  "severity": "Moderate",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 8.",
+  "description": "[1:1.8.0.472.b08-1.0.1]\n- Add Oracle vendor bug URL [Orabug: 34340155]\n\n[1:1.8.0.472.b08-1]\n- Update to 8u472-b08 (GA).\n- Update release notes for 8u472-b08.\n- Drop local JDK-8339414 fix as this is now included upstream\n- Reset rpmrelease to 1 now there are no other RPM builds on RHEL 9\n- Sync the copy of the portable specfile with the latest update\n- ** This tarball is embargoed until 2025-10-21 @ 1pm PT. **\n- Resolves: RHEL-118767\n- Resolves: RHEL-119455\n\n[1:1.8.0.462.b08-5]\n- Update get_bundle_versions.sh to match other scripts\n- * get_bundle_versions.sh: Add license\n- * get_bundle_versions.sh: Set compile-command in Emacs\n- * get_bundle_versions.sh: Use different error codes for different failures\n- * get_bundle_versions.sh: Remove unneeded '.' in JPEG version\n- * get_bundle_versions.sh: shellcheck: Double-quote variable references (SC2086)\n- * get_bundle_versions.sh: shellcheck: Drop use of cat and pass file to awk directly (SC2002)\n- Add OpenJDK 8u support to get_bundle_versions.sh\n- Print bundle updates and backouts at end of openjdk_news.sh output\n- Refer user to get_bundle_versions.sh when bundle updates are found by openjdk_news.sh\n- Add timezone data update check to openjdk_news.sh\n- Add duplicate check to openjdk_news.sh\n- Exit if no fixes are obtained rather than try to run filters in openjdk_news.sh\n- Sync the copy of the portable specfile with the latest update\n- Resolves: RHEL-119329\n\n[1:1.8.0.462.b08-5]\n- Add script to obtain bundled library versions from OpenJDK sources\n- Related: RHEL-119329\n\n[1:1.8.0.462.b08-5]\n- Warn about bundled provide version bumps and backouts in openjdk_news.sh\n- Related: RHEL-119329\n\n[1:1.8.0.462.b08-5]\n- Bump rpmrelease for move to portables only on RHEL 8\n- Resolves: RHEL-118775\n\n[1:1.8.0.462.b08-4]\n- Bump rpmrelease for CentOS build\n- Remove obsolete hack to hardcode newer portable version on RHEL\n- Related: RHEL-101648\n- Related: RHEL-102312\n- Related: RHEL-97496",
+  "affected_products": [
+    "Oracle Linux 8 for x86_64",
+    "Oracle Linux 8 for aarch64"
+  ],
+  "cves": [
+    "CVE-2025-53057",
+    "CVE-2025-53066"
+  ],
+  "packages": [
+    "java-1.8.0-openjdk-headless-1.8.0.472.b08-1.0.1.el8.x86_64",
+    "java-1.8.0-openjdk-1.8.0.472.b08-1.0.1.el8.src",
+    "java-1.8.0-openjdk-src-1.8.0.472.b08-1.0.1.el8.x86_64",
+    "java-1.8.0-openjdk-devel-1.8.0.472.b08-1.0.1.el8.x86_64",
+    "java-1.8.0-openjdk-accessibility-1.8.0.472.b08-1.0.1.el8.x86_64",
+    "java-1.8.0-openjdk-javadoc-zip-1.8.0.472.b08-1.0.1.el8.noarch",
+    "java-1.8.0-openjdk-javadoc-1.8.0.472.b08-1.0.1.el8.noarch",
+    "java-1.8.0-openjdk-1.8.0.472.b08-1.0.1.el8.x86_64",
+    "java-1.8.0-openjdk-demo-1.8.0.472.b08-1.0.1.el8.x86_64"
+  ],
+  "full_text": "[1:1.8.0.472.b08-1.0.1]\n- Add Oracle vendor bug URL [Orabug: 34340155]\n\n[1:1.8.0.472.b08-1]\n- Update to 8u472-b08 (GA).\n- Update release notes for 8u472-b08.\n- Drop local JDK-8339414 fix as this is now included upstream\n- Reset rpmrelease to 1 now there are no other RPM builds on RHEL 9\n- Sync the copy of the portable specfile with the latest update\n- ** This tarball is embargoed until 2025-10-21 @ 1pm PT. **\n- Resolves: RHEL-118767\n- Resolves: RHEL-119455\n\n[1:1.8.0.462.b08-5]\n- Update get_bundle_versions.sh to match other scripts\n- * get_bundle_versions.sh: Add license\n- * get_bundle_versions.sh: Set compile-command in Emacs\n- * get_bundle_versions.sh: Use different error codes for different failures\n- * get_bundle_versions.sh: Remove unneeded '.' in JPEG version\n- * get_bundle_versions.sh: shellcheck: Double-quote variable references (SC2086)\n- * get_bundle_versions.sh: shellcheck: Drop use of cat and pass file to awk directly (SC2002)\n- Add OpenJDK 8u support to get_bundle_versions.sh\n- Print bundle updates and backouts at end of openjdk_news.sh output\n- Refer user to get_bundle_versions.sh when bundle updates are found by openjdk_news.sh\n- Add timezone data update check to openjdk_news.sh\n- Add duplicate check to openjdk_news.sh\n- Exit if no fixes are obtained rather than try to run filters in openjdk_news.sh\n- Sync the copy of the portable specfile with the latest update\n- Resolves: RHEL-119329\n\n[1:1.8.0.462.b08-5]\n- Add script to obtain bundled library versions from OpenJDK sources\n- Related: RHEL-119329\n\n[1:1.8.0.462.b08-5]\n- Warn about bundled provide version bumps and backouts in openjdk_news.sh\n- Related: RHEL-119329\n\n[1:1.8.0.462.b08-5]\n- Bump rpmrelease for move to portables only on RHEL 8\n- Resolves: RHEL-118775\n\n[1:1.8.0.462.b08-4]\n- Bump rpmrelease for CentOS build\n- Remove obsolete hack to hardcode newer portable version on RHEL\n- Related: RHEL-101648\n- Related: RHEL-102312\n- Related: RHEL-97496\n\nReferences:\nhttps://linux.oracle.com/errata/ELSA-2025-18815.html\nhttps://linux.oracle.com/cve/CVE-2025-53057.html\nhttps://linux.oracle.com/cve/CVE-2025-53066.html"
+}

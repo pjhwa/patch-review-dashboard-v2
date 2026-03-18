@@ -1,0 +1,36 @@
+{
+  "id": "ELEA-2025-23332",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "AppStream",
+  "title": "nodejs:24 bug fix and enhancement update",
+  "issuedDate": "2025-12-22T00:00:00Z",
+  "updatedDate": "2025-12-22T00:00:00Z",
+  "pubDate": "2025-12-22T00:00:00Z",
+  "dateStr": "2025-12-22",
+  "url": "https://linux.oracle.com/errata/ELEA-2025-23332.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 9.",
+  "description": "nodejs\n[1:24.11.1-2]\n- Disable test-tls-session-cache.js as its not currently compatiable with\n  RHEL environment\n\n[1:24.11.1-1]\n- Update to version 24.11.1\n\nnodejs-nodemon\n[3.0.3-3]\n- Keep BR on just npm\n\n[3.0.3-2]\n- Fix BR for nodejs-npm\n\nnodejs-packaging\n[2021.06-6]\n- Properly handle @group/package deps in nodejs-symlink-deps\n  Resolves: RHEL-121581\n\n[2021.06-5]\n- nodejs.req to properly detect bundled deps",
+  "affected_products": [
+    "Oracle Linux 9 for x86_64",
+    "Oracle Linux 9 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "nodejs-docs-24.11.1-2.module+el9.7.0+90730+edf704f1.noarch",
+    "npm-11.6.2-1.24.11.1.2.module+el9.7.0+90730+edf704f1.noarch",
+    "nodejs-packaging-2021.06-6.module+el9.7.0+90730+edf704f1.noarch",
+    "nodejs-nodemon-3.0.3-3.module+el9.7.0+90730+edf704f1.noarch",
+    "nodejs-packaging-bundler-2021.06-6.module+el9.7.0+90730+edf704f1.noarch",
+    "nodejs-full-i18n-24.11.1-2.module+el9.7.0+90730+edf704f1.x86_64",
+    "nodejs-24.11.1-2.module+el9.7.0+90730+edf704f1.x86_64",
+    "nodejs-devel-24.11.1-2.module+el9.7.0+90730+edf704f1.x86_64",
+    "v8-13.6-devel-13.6.233.10-1.24.11.1.2.module+el9.7.0+90730+edf704f1.x86_64",
+    "nodejs-libs-24.11.1-2.module+el9.7.0+90730+edf704f1.x86_64",
+    "nodejs-packaging-2021.06-6.module+el9.7.0+90730+edf704f1.src",
+    "nodejs-nodemon-3.0.3-3.module+el9.7.0+90730+edf704f1.src",
+    "nodejs-24.11.1-2.module+el9.7.0+90730+edf704f1.src"
+  ],
+  "full_text": "nodejs\n[1:24.11.1-2]\n- Disable test-tls-session-cache.js as its not currently compatiable with\n  RHEL environment\n\n[1:24.11.1-1]\n- Update to version 24.11.1\n\nnodejs-nodemon\n[3.0.3-3]\n- Keep BR on just npm\n\n[3.0.3-2]\n- Fix BR for nodejs-npm\n\nnodejs-packaging\n[2021.06-6]\n- Properly handle @group/package deps in nodejs-symlink-deps\n  Resolves: RHEL-121581\n\n[2021.06-5]\n- nodejs.req to properly detect bundled deps\n\nReferences:\nhttps://linux.oracle.com/errata/ELEA-2025-23332.html"
+}

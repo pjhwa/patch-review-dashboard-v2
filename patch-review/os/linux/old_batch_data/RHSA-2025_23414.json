@@ -1,0 +1,22 @@
+{
+  "id": "RHSA-2025:23414",
+  "vendor": "Red Hat",
+  "url": "https://access.redhat.com/errata/RHSA-2025:23414",
+  "pubDate": "2025-12-17T00:17:06.000Z",
+  "dateStr": "2025-12-17",
+  "severity": "Important",
+  "title": "Red Hat Security Advisory: bind security update",
+  "overview": "An update for bind is now available for Red Hat Enterprise Linux 6 Extended Lifecycle Support  - EXTENSION.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "description": "An update for bind is now available for Red Hat Enterprise Linux 6 Extended Lifecycle Support  - EXTENSION.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux Server -EXTENSION(v. 6 ELS-EXTENSION)",
+    "Red Hat Enterprise Linux Server Optional -EXTENSION (v. 6 ELS -EXTENSION)"
+  ],
+  "cves": [
+    "CVE-2021-25220",
+    "CVE-2025-40778"
+  ],
+  "packages": [],
+  "fixes": "",
+  "full_text": "Red Hat Security Advisory: bind security update\n\nAn update for bind is now available for Red Hat Enterprise Linux 6 Extended Lifecycle Support  - EXTENSION.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nAn update for bind is now available for Red Hat Enterprise Linux 6 Extended Lifecycle Support  - EXTENSION.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nUpdated Packages:\nbind-9.8.2-0.68.rc1.el6_10.17.src.rpm\nbind-9.8.2-0.68.rc1.el6_10.17.x86_64.rpm\nbind-chroot-9.8.2-0.68.rc1.el6_10.17.x86_64.rpm\nbind-debuginfo-9.8.2-0.68.rc1.el6_10.17.i686.rpm\nbind-debuginfo-9.8.2-0.68.rc1.el6_10.17.x86_64.rpm\nbind-devel-9.8.2-0.68.rc1.el6_10.17.i686.rpm\nbind-devel-9.8.2-0.68.rc1.el6_10.17.x86_64.rpm\nbind-libs-9.8.2-0.68.rc1.el6_10.17.i686.rpm\nbind-libs-9.8.2-0.68.rc1.el6_10.17.x86_64.rpm\nbind-sdb-9.8.2-0.68.rc1.el6_10.17.x86_64.rpm\nbind-utils-9.8.2-0.68.rc1.el6_10.17.x86_64.rpm\nbind-9.8.2-0.68.rc1.el6_10.17.i686.rpm\nbind-chroot-9.8.2-0.68.rc1.el6_10.17.i686.rpm\nbind-sdb-9.8.2-0.68.rc1.el6_10.17.i686.rpm\nbind-utils-9.8.2-0.68.rc1.el6_10.17.i686.rpm\nbind-9.8.2-0.68.rc1.el6_10.17.s390x.rpm\nbind-chroot-9.8.2-0.68.rc1.el6_10.17.s390x.rpm\nbind-debuginfo-9.8.2-0.68.rc1.el6_10.17.s390.rpm\nbind-debuginfo-9.8.2-0.68.rc1.el6_10.17.s390x.rpm\nbind-devel-9.8.2-0.68.rc1.el6_10.17.s390.rpm\nbind-devel-9.8.2-0.68.rc1.el6_10.17.s390x.rpm\nbind-libs-9.8.2-0.68.rc1.el6_10.17.s390.rpm\nbind-libs-9.8.2-0.68.rc1.el6_10.17.s390x.rpm\nbind-sdb-9.8.2-0.68.rc1.el6_10.17.s390x.rpm\nbind-utils-9.8.2-0.68.rc1.el6_10.17.s390x.rpm\n\nCVE-2021-25220: A cache poisoning vulnerability was found in BIND when using forwarders. Bogus NS records supplied by the forwarders may be cached and used by name if it needs to recurse for any reason. This issue causes it to obtain and pass on potentially incorrect answers. This flaw allows a remote high privileged attacker to manipulate cache results with incorrect records, leading to queries made to the wrong servers, possibly resulting in false information received on the client's end.\n\nCVE-2025-40778: A vulnerability exists in BIND’s DNS resolver logic that makes it overly permissive when accepting resource records (RRs) in responses. Under certain conditions, this flaw allows attackers to inject unsolicited or forged DNS records into the cache. This can be exploited to poison the resolver cache, redirecting clients to malicious domains or unauthorized servers."
+}

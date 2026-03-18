@@ -1,0 +1,21 @@
+{
+  "id": "RHSA-2025:21981",
+  "vendor": "Red Hat",
+  "url": "https://access.redhat.com/errata/RHSA-2025:21981",
+  "pubDate": "2025-11-24T16:47:41.000Z",
+  "dateStr": "2025-11-24",
+  "severity": "Important",
+  "title": "Red Hat Security Advisory: RHTAS 1.3.1 - Red Hat Trusted Artifact Signer Release",
+  "overview": "The 1.3.1 release of Red Hat Trusted Artifact Signer OpenShift Operator.\nFor more details please visit the product documentation at https://access.redhat.com/documentation/en-us/red_hat_trusted_artifact_signer/1.3",
+  "description": "The 1.3.1 release of Red Hat Trusted Artifact Signer OpenShift Operator.\nFor more details please visit the product documentation at https://access.redhat.com/documentation/en-us/red_hat_trusted_artifact_signer/1.3",
+  "affected_products": [
+    "Red Hat Trusted Artifact Signer 1.3"
+  ],
+  "cves": [
+    "CVE-2025-11621",
+    "CVE-2025-12044"
+  ],
+  "packages": [],
+  "fixes": "",
+  "full_text": "Red Hat Security Advisory: RHTAS 1.3.1 - Red Hat Trusted Artifact Signer Release\n\nThe 1.3.1 release of Red Hat Trusted Artifact Signer OpenShift Operator.\nFor more details please visit the product documentation at https://access.redhat.com/documentation/en-us/red_hat_trusted_artifact_signer/1.3\n\nThe 1.3.1 release of Red Hat Trusted Artifact Signer OpenShift Operator.\nFor more details please visit the product documentation at https://access.redhat.com/documentation/en-us/red_hat_trusted_artifact_signer/1.3\n\n\n\nCVE-2025-11621: Vault and Vault Enterprise’s (“Vault”) AWS Auth method may be susceptible to authentication bypass if the role of the configured bound_principal_iam is the same across AWS accounts, or uses a wildcard. This vulnerability, CVE-2025-11621, is fixed in Vault Community Edition 1.21.0 and Vault Enterprise 1.21.0, 1.20.5, 1.19.11, and 1.16.27\n\nCVE-2025-12044: Vault and Vault Enterprise (“Vault”) are vulnerable to an unauthenticated denial of service when processing JSON payloads. This occurs due to a regression from a previous fix for [+HCSEC-2025-24+|https://discuss.hashicorp.com/t/hcsec-2025-24-vault-denial-of-service-though-complex-json-payloads/76393]  which allowed for processing JSON payloads before applying rate limits. This vulnerability, CVE-2025-12044, is fixed in Vault Community Edition 1.21.0 and Vault Enterprise 1.16.27, 1.19.11, 1.20.5, and 1.21.0."
+}

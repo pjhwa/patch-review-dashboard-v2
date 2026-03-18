@@ -1,0 +1,20 @@
+{
+  "id": "RHSA-2026:0360",
+  "vendor": "Red Hat",
+  "url": "https://access.redhat.com/errata/RHSA-2026:0360",
+  "pubDate": "2026-01-08T14:12:09.000Z",
+  "dateStr": "2026-01-08",
+  "severity": "Important",
+  "title": "Red Hat Security Advisory: Red Hat Ansible Automation Platform 2.6 Product Security Update",
+  "overview": "An update is now available for Red Hat Ansible Automation Platform 2.6\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "description": "An update is now available for Red Hat Ansible Automation Platform 2.6\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "affected_products": [
+    "Red Hat Ansible Automation Platform 2.6 for RHEL 9"
+  ],
+  "cves": [
+    "CVE-2025-14025"
+  ],
+  "packages": [],
+  "fixes": "",
+  "full_text": "Red Hat Security Advisory: Red Hat Ansible Automation Platform 2.6 Product Security Update\n\nAn update is now available for Red Hat Ansible Automation Platform 2.6\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nAn update is now available for Red Hat Ansible Automation Platform 2.6\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nUpdated Packages:\nautomation-gateway-2.6.20260106-1.el9ap.src.rpm\nautomation-gateway-2.6.20260106-1.el9ap.noarch.rpm\nautomation-gateway-config-2.6.20260106-1.el9ap.noarch.rpm\nautomation-gateway-server-2.6.20260106-1.el9ap.noarch.rpm\n\nCVE-2025-14025: A flaw was found in Ansible Automation Platform (AAP). Read-only scoped OAuth2 API Tokens in AAP, are enforced at the Gateway level for Gateway-specific operations. However, this vulnerability allows read-only tokens to perform write operations on backend services (e.g., Controller, Hub, EDA). If this flaw were exploited, an attacker‘s capabilities would only be limited by role based access controls (RBAC)."
+}

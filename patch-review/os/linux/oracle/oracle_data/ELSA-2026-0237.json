@@ -1,0 +1,28 @@
+{
+  "id": "ELSA-2026-0237",
+  "vendor": "Oracle",
+  "type": "Security Advisory (ELSA)",
+  "title": " libpng security update",
+  "issuedDate": "2026-01-07T00:00:00Z",
+  "updatedDate": "2026-01-07T00:00:00Z",
+  "pubDate": "2026-01-07T00:00:00Z",
+  "dateStr": "2026-01-07",
+  "url": "https://linux.oracle.com/errata/ELSA-2026-0237.html",
+  "severity": "Important",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 10.",
+  "description": "[2:1.6.40-8.1]\n- CVE-2025-64720: buffer overflow (RHEL-131422)\n- CVE-2025-65018: heap buffer overflow (RHEL-131435)\n- CVE-2025-66293: out-of-bounds read in png_image_read_composite (RHEL-133212)",
+  "affected_products": [
+    "Oracle Linux 10 for x86_64",
+    "Oracle Linux 10 for aarch64"
+  ],
+  "cves": [
+    "CVE-2025-64720",
+    "CVE-2025-65018",
+    "CVE-2025-66293"
+  ],
+  "packages": [
+    "libpng-1.6.40-8.el10_1.1.src",
+    "libpng-1.6.40-8.el10_1.1.x86_64"
+  ],
+  "full_text": "[2:1.6.40-8.1]\n- CVE-2025-64720: buffer overflow (RHEL-131422)\n- CVE-2025-65018: heap buffer overflow (RHEL-131435)\n- CVE-2025-66293: out-of-bounds read in png_image_read_composite (RHEL-133212)\n\nReferences:\nhttps://linux.oracle.com/errata/ELSA-2026-0237.html\nhttps://linux.oracle.com/cve/CVE-2025-64720.html\nhttps://linux.oracle.com/cve/CVE-2025-65018.html\nhttps://linux.oracle.com/cve/CVE-2025-66293.html"
+}

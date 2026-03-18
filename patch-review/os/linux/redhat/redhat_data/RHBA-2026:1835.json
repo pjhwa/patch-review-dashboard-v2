@@ -1,0 +1,30 @@
+{
+  "id": "RHBA-2026:1835",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: virt-v2v bug fix and enhancement update",
+  "issuedDate": "2026-02-05T15:43:24Z",
+  "updatedDate": "2026-02-05T15:43:24Z",
+  "pubDate": "2026-02-05T15:43:24Z",
+  "dateStr": "2026-02-05",
+  "url": "https://access.redhat.com/errata/RHBA-2026:1835",
+  "severity": "None",
+  "overview": "An update for virt-v2v is now available for Red Hat Enterprise Linux 10.",
+  "description": "Kernel-based Virtual Machine (KVM) offers a full virtualization solution forLinux on numerous hardware platforms. The virt:rhel module contains packageswhich provide user-space components used to run virtual machines using KVM.The packages also provide APIs for managing and interacting with the virtualized systems.Bug Fix(es) and Enhancement(s): Change nbdkit-file-plugin cache=none to cache=default [rhel-10.1.z] (JIRA:RHEL-135750)  v2v can't convert guest with multiple windows OS on rhel10 [rhel-10.1.z] (JIRA:RHEL-137304)  Add new --memsize and --smp options to virt-v2v [rhel-10.1.z] (JIRA:RHEL-139153)",
+  "affected_products": [
+    "Red Hat Enterprise Linux for x86_64 10 x86_64",
+    "Red Hat CodeReady Linux Builder for x86_64 10 x86_64"
+  ],
+  "cves": [],
+  "packages": [
+    "virt-v2v-2.8.1-16.el10_1.src",
+    "virt-v2v-2.8.1-16.el10_1.x86_64",
+    "virt-v2v-bash-completion-2.8.1-16.el10_1.noarch",
+    "virt-v2v-debuginfo-2.8.1-16.el10_1.x86_64",
+    "virt-v2v-debugsource-2.8.1-16.el10_1.x86_64",
+    "virt-v2v-man-pages-ja-2.8.1-16.el10_1.noarch",
+    "virt-v2v-man-pages-uk-2.8.1-16.el10_1.noarch"
+  ],
+  "fixes": [],
+  "full_text": "An update for virt-v2v is now available for Red Hat Enterprise Linux 10.\n\nKernel-based Virtual Machine (KVM) offers a full virtualization solution forLinux on numerous hardware platforms. The virt:rhel module contains packageswhich provide user-space components used to run virtual machines using KVM.The packages also provide APIs for managing and interacting with the virtualized systems.Bug Fix(es) and Enhancement(s): Change nbdkit-file-plugin cache=none to cache=default [rhel-10.1.z] (JIRA:RHEL-135750)  v2v can't convert guest with multiple windows OS on rhel10 [rhel-10.1.z] (JIRA:RHEL-137304)  Add new --memsize and --smp options to virt-v2v [rhel-10.1.z] (JIRA:RHEL-139153)"
+}

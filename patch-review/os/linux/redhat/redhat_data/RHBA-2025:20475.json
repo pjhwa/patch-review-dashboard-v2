@@ -1,0 +1,155 @@
+{
+  "id": "RHBA-2025:20475",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: virtio-win bug fix and enhancement update",
+  "issuedDate": "2025-11-11T07:26:40Z",
+  "updatedDate": "2025-11-11T07:26:40Z",
+  "pubDate": "2025-11-11T07:26:40Z",
+  "dateStr": "2025-11-11",
+  "url": "https://access.redhat.com/errata/RHBA-2025:20475",
+  "severity": "None",
+  "overview": "An update for virtio-win is now available for Red Hat Enterprise Linux 10.",
+  "description": "For detailed information on changes in this release, see the Red Hat Enterprise Linux 10 Release Notes linked from the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux for x86_64 10 x86_64"
+  ],
+  "cves": [],
+  "packages": [
+    "virtio-win-1.9.48-0.el10.src",
+    "virtio-win-1.9.48-0.el10.noarch"
+  ],
+  "fixes": [
+    {
+      "id": "RHEL-81913",
+      "url": "https://issues.redhat.com/browse/RHEL-81913",
+      "description": "\"Disk Stress\" SVVP test failure on Win11"
+    },
+    {
+      "id": "RHEL-82142",
+      "url": "https://issues.redhat.com/browse/RHEL-82142",
+      "description": "virtio-win smbus driver is in /usr/share/ but not virtio-win.iso"
+    },
+    {
+      "id": "RHEL-101554",
+      "url": "https://issues.redhat.com/browse/RHEL-101554",
+      "description": "[virtio-win]Vsock:After wrong password, ssh can't open new connection"
+    },
+    {
+      "id": "RHEL-104252",
+      "url": "https://issues.redhat.com/browse/RHEL-104252",
+      "description": "[mingw-qemu-ga-win] QAPI error desc does not contain Windows error"
+    },
+    {
+      "id": "RHEL-107174",
+      "url": "https://issues.redhat.com/browse/RHEL-107174",
+      "description": "QGA can't be installed before vioserial driver or without serial port configured qga version-110.0.1-1"
+    },
+    {
+      "id": "RHEL-11824",
+      "url": "https://issues.redhat.com/browse/RHEL-11824",
+      "description": "[QGA] Check if possible to create VSS installation retry, if previously VSS service was not un-registered correctly"
+    },
+    {
+      "id": "RHEL-19814",
+      "url": "https://issues.redhat.com/browse/RHEL-19814",
+      "description": "netkvm: Avoid unneeded memory allocation is RX path"
+    },
+    {
+      "id": "RHEL-22354",
+      "url": "https://issues.redhat.com/browse/RHEL-22354",
+      "description": "netkvm: HCK Mini6RSSSendRecv test crashes with BSOD"
+    },
+    {
+      "id": "RHEL-40693",
+      "url": "https://issues.redhat.com/browse/RHEL-40693",
+      "description": "Delay in starting NetKVM Ethernet Adapter with high queues of Qemu netdev"
+    },
+    {
+      "id": "RHEL-50142",
+      "url": "https://issues.redhat.com/browse/RHEL-50142",
+      "description": "Add IO limits to the Windows Guest debugging tool"
+    },
+    {
+      "id": "RHEL-65647",
+      "url": "https://issues.redhat.com/browse/RHEL-65647",
+      "description": "netkvm: code 56 error on startup with 27 NICs using prewhql266"
+    },
+    {
+      "id": "RHEL-73634",
+      "url": "https://issues.redhat.com/browse/RHEL-73634",
+      "description": "[virtio-win][balloon]balloon service should have it's configuration depend on Winmgmt"
+    },
+    {
+      "id": "RHEL-79946",
+      "url": "https://issues.redhat.com/browse/RHEL-79946",
+      "description": "[virtio-win] Virtio drivers fail to install in Windows Server 2016 with non-English locale"
+    },
+    {
+      "id": "RHEL-82494",
+      "url": "https://issues.redhat.com/browse/RHEL-82494",
+      "description": "[virtio-win][netkvm] Server 2025 hang with PollMode enabled"
+    },
+    {
+      "id": "RHEL-83547",
+      "url": "https://issues.redhat.com/browse/RHEL-83547",
+      "description": "Rebase mingw-qemu-ga-win to QEMU 10.0.0"
+    },
+    {
+      "id": "RHEL-83609",
+      "url": "https://issues.redhat.com/browse/RHEL-83609",
+      "description": "[virtio-win][netkvm] BSOD with Win11 driver and NPCAP"
+    },
+    {
+      "id": "RHEL-84655",
+      "url": "https://issues.redhat.com/browse/RHEL-84655",
+      "description": "[Virtio-win] make WDF drivers to fail start if DMA remapping is active and VIRTIO_F_ACCESS_PLATFORM is not used in qemu"
+    },
+    {
+      "id": "RHEL-85521",
+      "url": "https://issues.redhat.com/browse/RHEL-85521",
+      "description": "viogpu occasionally crashes with AllocCmd() returning NULL"
+    },
+    {
+      "id": "RHEL-88155",
+      "url": "https://issues.redhat.com/browse/RHEL-88155",
+      "description": "netkvm: Control queue gets out of sync on timeout of CVQ request"
+    },
+    {
+      "id": "RHEL-91041",
+      "url": "https://issues.redhat.com/browse/RHEL-91041",
+      "description": "[RFE] vsock<=>tcp bridge service implementation"
+    },
+    {
+      "id": "RHEL-94535",
+      "url": "https://issues.redhat.com/browse/RHEL-94535",
+      "description": "[virtio-win][viofs] Fix possible viofs BSOD when WDF DMA init fails"
+    },
+    {
+      "id": "RHEL-96980",
+      "url": "https://issues.redhat.com/browse/RHEL-96980",
+      "description": "mingw-qga: Drop mingw-pixman build deps"
+    },
+    {
+      "id": "RHEL-98947",
+      "url": "https://issues.redhat.com/browse/RHEL-98947",
+      "description": "[mingw-qemu-ga-win] MSI installer ignore VSS installation result"
+    },
+    {
+      "id": "RHEL-99978",
+      "url": "https://issues.redhat.com/browse/RHEL-99978",
+      "description": "vsock<=>tcp bridge service has broken debug GUID"
+    },
+    {
+      "id": "RHEL-32806",
+      "url": "https://issues.redhat.com/browse/RHEL-32806",
+      "description": "[virtio-win][viofs] When creating an additional service VirtioFsSvc-TAG the CLI arguments appear to be ignored"
+    },
+    {
+      "id": "RHEL-87790",
+      "url": "https://issues.redhat.com/browse/RHEL-87790",
+      "description": "BSOD happens after the 277 build installation freezes using virtio_blk"
+    }
+  ],
+  "full_text": "An update for virtio-win is now available for Red Hat Enterprise Linux 10.\n\nFor detailed information on changes in this release, see the Red Hat Enterprise Linux 10 Release Notes linked from the References section."
+}

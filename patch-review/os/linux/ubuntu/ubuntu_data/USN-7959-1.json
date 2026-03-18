@@ -1,0 +1,28 @@
+{
+  "id": "USN-7959-1",
+  "vendor": "Canonical / Ubuntu",
+  "type": "Ubuntu Security Notice (USN)",
+  "title": "klibc vulnerabilities",
+  "issuedDate": "2026-01-14T05:20:01Z",
+  "updatedDate": "2026-02-10T04:50:48Z",
+  "pubDate": "2026-01-14T05:20:01Z",
+  "dateStr": "2026-01-14",
+  "url": "https://ubuntu.com/security/notices/USN-7959-1",
+  "severity": "None",
+  "overview": "klibc vulnerabilities",
+  "description": "It was discovered that zlib, vendored in klibc, did not properly handle\ninteger arithmetic. An attacker could possibly use this issue to execute\narbitrary code or cause a denial of service.",
+  "affected_products": [
+    "Ubuntu 22.04 LTS",
+    "Ubuntu 24.04 LTS"
+  ],
+  "cves": [],
+  "packages": [
+    "klibc-utils-2.0.10-4ubuntu0.2",
+    "klibc-utils-2.0.13-4ubuntu0.2",
+    "libklibc-2.0.10-4ubuntu0.2",
+    "libklibc-2.0.13-4ubuntu0.2",
+    "libklibc-dev-2.0.10-4ubuntu0.2",
+    "libklibc-dev-2.0.13-4ubuntu0.2"
+  ],
+  "full_text": "It was discovered that zlib, vendored in klibc, did not properly handle\ninteger arithmetic. An attacker could possibly use this issue to execute\narbitrary code or cause a denial of service."
+}

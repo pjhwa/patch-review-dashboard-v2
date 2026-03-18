@@ -1,0 +1,30 @@
+{
+  "id": "ELSA-2025-19623",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2025-November/018943.html",
+  "synopsis": "[El-errata] ELSA-2025-19623 Moderate: Oracle Linux 9 xorg-x11-server-Xwayland update",
+  "dateStr": "2025-November",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Security Advisory ELSA-2025-19623",
+  "description": "[23.2.7-5]\n- CVE fix for: CVE-2025-62229 (RHEL-119975), CVE-2025-62230 (RHEL-120020),\n               CVE-2025-62231 (RHEL-125016)",
+  "affected_products": [
+    "Oracle Linux 9"
+  ],
+  "packages": [
+    "xorg-x11-server-Xwayland-23.2.7-5.el9_6.i686.rpm",
+    "xorg-x11-server-Xwayland-23.2.7-5.el9_6.x86_64.rpm",
+    "xorg-x11-server-Xwayland-devel-23.2.7-5.el9_6.i686.rpm",
+    "xorg-x11-server-Xwayland-devel-23.2.7-5.el9_6.x86_64.rpm",
+    "xorg-x11-server-Xwayland-23.2.7-5.el9_6.aarch64.rpm",
+    "xorg-x11-server-Xwayland-devel-23.2.7-5.el9_6.aarch64.rpm"
+  ],
+  "cves": [
+    "CVE-2025-62229",
+    "CVE-2025-62230",
+    "CVE-2025-62231"
+  ],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Security Advisory ELSA-2025-19623\n\nhttp://linux.oracle.com/errata/ELSA-2025-19623.html\n\nThe following updated rpms for Oracle Linux 9 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\nxorg-x11-server-Xwayland-23.2.7-5.el9_6.i686.rpm\nxorg-x11-server-Xwayland-23.2.7-5.el9_6.x86_64.rpm\nxorg-x11-server-Xwayland-devel-23.2.7-5.el9_6.i686.rpm\nxorg-x11-server-Xwayland-devel-23.2.7-5.el9_6.x86_64.rpm\n\naarch64:\nxorg-x11-server-Xwayland-23.2.7-5.el9_6.aarch64.rpm\nxorg-x11-server-Xwayland-devel-23.2.7-5.el9_6.aarch64.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol9/SRPMS-updates/xorg-x11-server-Xwayland-23.2.7-5.el9_6.src.rpm\n\nRelated CVEs:\n\nCVE-2025-62229\nCVE-2025-62230\nCVE-2025-62231\n\n\n\n\nDescription of changes:\n\n[23.2.7-5]\n- CVE fix for: CVE-2025-62229 (RHEL-119975), CVE-2025-62230 (RHEL-120020),\n               CVE-2025-62231 (RHEL-125016)",
+  "vendor": "Oracle"
+}

@@ -1,0 +1,33 @@
+{
+  "id": "RHBA-2026:1357",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: rig bug fix and enhancement update",
+  "issuedDate": "2026-01-27T14:28:03Z",
+  "updatedDate": "2026-01-27T14:28:03Z",
+  "pubDate": "2026-01-27T14:28:03Z",
+  "dateStr": "2026-01-27",
+  "url": "https://access.redhat.com/errata/RHBA-2026:1357",
+  "severity": "None",
+  "overview": "An update for rig is now available for Red Hat Enterprise Linux 10.",
+  "description": "Rig is a utility designed to watch or monitor specific system resources (e.g. log files, journals, system activity, etc...) and then take specific action when the trigger condition is met. Its primary aim is to assist in troubleshooting and data collection for randomly occurring events.Bug Fix(es) and Enhancement(s): rig uses old sosreport command - [rhel-9.7.0-z] (JIRA:RHEL-131182)",
+  "affected_products": [
+    "Red Hat Enterprise Linux for ARM 64",
+    "Red Hat Enterprise Linux for Power, little endian",
+    "Red Hat Enterprise Linux for IBM z Systems",
+    "Red Hat Enterprise Linux for x86_64 10 x86_64"
+  ],
+  "cves": [],
+  "packages": [
+    "rig-1.1-7.el9_7.src",
+    "rig-1.1-7.el9_7.noarch"
+  ],
+  "fixes": [
+    {
+      "id": "RHEL-131182",
+      "url": "https://issues.redhat.com/browse/RHEL-131182",
+      "description": "rig uses old sosreport command - [rhel-9.7.0-z]"
+    }
+  ],
+  "full_text": "An update for rig is now available for Red Hat Enterprise Linux 10.\n\nRig is a utility designed to watch or monitor specific system resources (e.g. log files, journals, system activity, etc...) and then take specific action when the trigger condition is met. Its primary aim is to assist in troubleshooting and data collection for randomly occurring events.Bug Fix(es) and Enhancement(s): rig uses old sosreport command - [rhel-9.7.0-z] (JIRA:RHEL-131182)"
+}

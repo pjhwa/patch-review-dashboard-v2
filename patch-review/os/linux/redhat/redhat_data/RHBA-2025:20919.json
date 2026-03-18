@@ -1,0 +1,52 @@
+{
+  "id": "RHBA-2025:20919",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: buildah bug fix and enhancement update",
+  "issuedDate": "2025-11-11T11:47:28Z",
+  "updatedDate": "2025-11-11T11:47:28Z",
+  "pubDate": "2025-11-11T11:47:28Z",
+  "dateStr": "2025-11-11",
+  "url": "https://access.redhat.com/errata/RHBA-2025:20919",
+  "severity": "None",
+  "overview": "An update for buildah is now available for Red Hat Enterprise Linux 10.",
+  "description": "The buildah package provides a tool for facilitating building OCI container images. Among other things, buildah enables you to: Create a working container, either from scratch or using an image as a starting point; Create an image, either from a working container or using the instructions in a Dockerfile; Build both Docker and OCI images. Bug Fix(es) and Enhancement(s): buildah: create parent directories of mount targets with mode 0755 - [RHEL-9.7]  0day (JIRA:RHEL-115166)",
+  "affected_products": [
+    "Red Hat Enterprise Linux for Power, little endian",
+    "Red Hat Enterprise Linux for IBM z Systems",
+    "Red Hat Enterprise Linux for x86_64 10 x86_64",
+    "Red Hat Enterprise Linux for ARM 64"
+  ],
+  "cves": [],
+  "packages": [
+    "buildah-1.41.4-3.el9_7.src",
+    "buildah-1.41.4-3.el9_7.x86_64",
+    "buildah-debuginfo-1.41.4-3.el9_7.x86_64",
+    "buildah-debugsource-1.41.4-3.el9_7.x86_64",
+    "buildah-tests-1.41.4-3.el9_7.x86_64",
+    "buildah-tests-debuginfo-1.41.4-3.el9_7.x86_64",
+    "buildah-1.41.4-3.el9_7.s390x",
+    "buildah-debuginfo-1.41.4-3.el9_7.s390x",
+    "buildah-debugsource-1.41.4-3.el9_7.s390x",
+    "buildah-tests-1.41.4-3.el9_7.s390x",
+    "buildah-tests-debuginfo-1.41.4-3.el9_7.s390x",
+    "buildah-1.41.4-3.el9_7.ppc64le",
+    "buildah-debuginfo-1.41.4-3.el9_7.ppc64le",
+    "buildah-debugsource-1.41.4-3.el9_7.ppc64le",
+    "buildah-tests-1.41.4-3.el9_7.ppc64le",
+    "buildah-tests-debuginfo-1.41.4-3.el9_7.ppc64le",
+    "buildah-1.41.4-3.el9_7.aarch64",
+    "buildah-debuginfo-1.41.4-3.el9_7.aarch64",
+    "buildah-debugsource-1.41.4-3.el9_7.aarch64",
+    "buildah-tests-1.41.4-3.el9_7.aarch64",
+    "buildah-tests-debuginfo-1.41.4-3.el9_7.aarch64"
+  ],
+  "fixes": [
+    {
+      "id": "RHEL-115166",
+      "url": "https://issues.redhat.com/browse/RHEL-115166",
+      "description": "buildah: create parent directories of mount targets with mode 0755 - [RHEL-9.7]  0day"
+    }
+  ],
+  "full_text": "An update for buildah is now available for Red Hat Enterprise Linux 10.\n\nThe buildah package provides a tool for facilitating building OCI container images. Among other things, buildah enables you to: Create a working container, either from scratch or using an image as a starting point; Create an image, either from a working container or using the instructions in a Dockerfile; Build both Docker and OCI images. Bug Fix(es) and Enhancement(s): buildah: create parent directories of mount targets with mode 0755 - [RHEL-9.7]  0day (JIRA:RHEL-115166)"
+}

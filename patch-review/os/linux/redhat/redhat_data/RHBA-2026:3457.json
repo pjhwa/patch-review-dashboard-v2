@@ -1,0 +1,46 @@
+{
+  "id": "RHBA-2026:3457",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: Satellite 6 Client Bug Fix Update",
+  "issuedDate": "2026-02-26T18:53:51Z",
+  "updatedDate": "2026-02-26T18:53:51Z",
+  "pubDate": "2026-02-26T18:53:51Z",
+  "dateStr": "2026-02-26",
+  "url": "https://access.redhat.com/errata/RHBA-2026:3457",
+  "severity": "None",
+  "overview": "An update for Satellite is now available for Red Hat Enterprise Linux 10.",
+  "description": "Red Hat Satellite is a system management solution that allows organizations toconfigure and maintain their systems without the necessity to provide publicInternet access to their servers or other client systems. It performsprovisioning and configuration management of predefined standard operatingenvironments.",
+  "affected_products": [
+    "Red Hat Enterprise Linux for x86_64 - Extended Update Support 10 x86_64",
+    "Red Hat Enterprise Linux for Power, little endian",
+    "Red Hat Enterprise Linux for Power, little endian - Extended Update Support",
+    "Red Hat Enterprise Linux Server for Power LE - Update Services for SAP Solutions",
+    "Red Hat Enterprise Linux for ARM 64 - Extended Update Support",
+    "Red Hat Enterprise Linux for x86_64 10 x86_64",
+    "Red Hat Enterprise Linux for x86_64 - Update Services for SAP Solutions 10 x86_64",
+    "Red Hat Enterprise Linux for x86_64 - 6 years of updates 10 x86_64",
+    "Red Hat Enterprise Linux Server - AUS",
+    "Red Hat Enterprise Linux for IBM z Systems - Extended Update Support",
+    "Red Hat Enterprise Linux for ARM 64",
+    "Red Hat Enterprise Linux for IBM z Systems",
+    "Red Hat Enterprise Linux Server - TUS"
+  ],
+  "cves": [],
+  "packages": [
+    "foreman_scap_client_bash-0.2.1-1.el10sat.src",
+    "foreman_scap_client_bash-0.2.1-1.el10sat.noarch",
+    "foreman_scap_client_bash-0.2.1-1.el9sat.src",
+    "foreman_scap_client_bash-0.2.1-1.el9sat.noarch",
+    "foreman_scap_client_bash-0.2.1-1.el8sat.src",
+    "foreman_scap_client_bash-0.2.1-1.el8sat.noarch"
+  ],
+  "fixes": [
+    {
+      "id": "SAT-34948",
+      "url": "https://issues.redhat.com/browse/SAT-34948",
+      "description": "Additional blank spaces and quotes in /etc/foreman_scap_client/config.yaml can break bash execution of foreman_scap_client binary"
+    }
+  ],
+  "full_text": "An update for Satellite is now available for Red Hat Enterprise Linux 10.\n\nRed Hat Satellite is a system management solution that allows organizations toconfigure and maintain their systems without the necessity to provide publicInternet access to their servers or other client systems. It performsprovisioning and configuration management of predefined standard operatingenvironments."
+}

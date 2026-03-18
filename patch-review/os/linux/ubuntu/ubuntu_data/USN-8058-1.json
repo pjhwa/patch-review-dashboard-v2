@@ -1,0 +1,26 @@
+{
+  "id": "USN-8058-1",
+  "vendor": "Canonical / Ubuntu",
+  "type": "Ubuntu Security Notice (USN)",
+  "title": "rlottie vulnerabilities",
+  "issuedDate": "2026-02-24T06:23:21Z",
+  "updatedDate": "2026-02-24T06:23:21Z",
+  "pubDate": "2026-02-24T06:23:21Z",
+  "dateStr": "2026-02-24",
+  "url": "https://ubuntu.com/security/notices/USN-8058-1",
+  "severity": "None",
+  "overview": "rlottie vulnerabilities",
+  "description": "It was discovered that rlottie did not properly handle certain inputs. An\nattacker could use this issue to cause a denial of service or possibly\nexecute arbitrary code.",
+  "affected_products": [
+    "Ubuntu 22.04 LTS",
+    "Ubuntu 24.04 LTS"
+  ],
+  "cves": [],
+  "packages": [
+    "librlottie-dev-0.1+dfsg-2ubuntu0.2",
+    "librlottie-dev-0.1+dfsg-4ubuntu1.1",
+    "librlottie0-1-0.1+dfsg-2ubuntu0.2",
+    "librlottie0-1-0.1+dfsg-4ubuntu1.1"
+  ],
+  "full_text": "It was discovered that rlottie did not properly handle certain inputs. An\nattacker could use this issue to cause a denial of service or possibly\nexecute arbitrary code."
+}

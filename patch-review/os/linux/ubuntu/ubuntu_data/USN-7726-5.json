@@ -1,0 +1,32 @@
+{
+  "id": "USN-7726-5",
+  "vendor": "Canonical / Ubuntu",
+  "type": "Ubuntu Security Notice (USN)",
+  "title": "linux-azure, linux-azure-5.15, linux-azure-fips vulnerabilities",
+  "issuedDate": "2025-09-18T16:59:59Z",
+  "updatedDate": "2026-02-10T04:49:48Z",
+  "pubDate": "2025-09-18T16:59:59Z",
+  "dateStr": "2025-09-18",
+  "url": "https://ubuntu.com/security/notices/USN-7726-5",
+  "severity": "None",
+  "overview": "linux-azure, linux-azure-5.15, linux-azure-fips vulnerabilities",
+  "description": "Several security issues were discovered in the Linux kernel.\nAn attacker could possibly use these to compromise the system.\nThis update corrects flaws in the following subsystems:\n  - NTFS3 file system;\n  - Network traffic control;\n(CVE-2024-27407, CVE-2024-57996, CVE-2025-37752, CVE-2025-38350)\n",
+  "affected_products": [
+    "Ubuntu 22.04 LTS"
+  ],
+  "cves": [],
+  "packages": [
+    "linux-azure-cloud-tools-5.15.0-1095-5.15.0-1095.104",
+    "linux-azure-headers-5.15.0-1095-5.15.0-1095.104",
+    "linux-azure-tools-5.15.0-1095-5.15.0-1095.104",
+    "linux-buildinfo-5.15.0-1095-azure-5.15.0-1095.104",
+    "linux-cloud-tools-5.15.0-1095-azure-5.15.0-1095.104",
+    "linux-headers-5.15.0-1095-azure-5.15.0-1095.104",
+    "linux-image-unsigned-5.15.0-1095-azure-5.15.0-1095.104",
+    "linux-modules-5.15.0-1095-azure-5.15.0-1095.104",
+    "linux-modules-extra-5.15.0-1095-azure-5.15.0-1095.104",
+    "linux-modules-involflt-5.15.0-1095-azure-5.15.0-1095.104",
+    "linux-tools-5.15.0-1095-azure-5.15.0-1095.104"
+  ],
+  "full_text": "Several security issues were discovered in the Linux kernel.\nAn attacker could possibly use these to compromise the system.\nThis update corrects flaws in the following subsystems:\n  - NTFS3 file system;\n  - Network traffic control;\n(CVE-2024-27407, CVE-2024-57996, CVE-2025-37752, CVE-2025-38350)\n"
+}

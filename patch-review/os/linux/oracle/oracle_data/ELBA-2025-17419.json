@@ -1,0 +1,33 @@
+{
+  "id": "ELBA-2025-17419",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "AppStream",
+  "title": "motif and mutter bug fix and enhancement update",
+  "issuedDate": "2025-10-07T00:00:00Z",
+  "updatedDate": "2025-10-07T00:00:00Z",
+  "pubDate": "2025-10-07T00:00:00Z",
+  "dateStr": "2025-10-07",
+  "url": "https://linux.oracle.com/errata/ELBA-2025-17419.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 8.",
+  "description": "motif\n[2.3.4-24]\n- Add support for _NET_WORKAREA and _GTK_WORKAREAS\n  Resolves: RHEL-97048\n\nmutter\n[3.32.2-74]\n- Backport implementation for _GTK_WORKAREAS_D# X11 property\n  Related: RHEL-87743",
+  "affected_products": [
+    "Oracle Linux 8 for x86_64",
+    "Oracle Linux 8 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "motif-devel-2.3.4-24.el8_10.x86_64",
+    "motif-devel-2.3.4-24.el8_10.i686",
+    "motif-2.3.4-24.el8_10.src",
+    "motif-static-2.3.4-24.el8_10.x86_64",
+    "motif-static-2.3.4-24.el8_10.i686",
+    "motif-2.3.4-24.el8_10.x86_64",
+    "motif-2.3.4-24.el8_10.i686",
+    "mutter-3.32.2-74.el8_10.x86_64",
+    "mutter-3.32.2-74.el8_10.i686",
+    "mutter-3.32.2-74.el8_10.src"
+  ],
+  "full_text": "motif\n[2.3.4-24]\n- Add support for _NET_WORKAREA and _GTK_WORKAREAS\n  Resolves: RHEL-97048\n\nmutter\n[3.32.2-74]\n- Backport implementation for _GTK_WORKAREAS_D# X11 property\n  Related: RHEL-87743\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2025-17419.html"
+}

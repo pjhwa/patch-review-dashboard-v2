@@ -1,0 +1,38 @@
+{
+  "id": "RHSA-2025:19513",
+  "vendor": "Red Hat",
+  "type": "Security Advisory (RHSA)",
+  "title": "Red Hat Security Advisory: pcs security update",
+  "issuedDate": "2025-11-03T20:18:29+00:00",
+  "updatedDate": "2025-11-03T20:18:29+00:00",
+  "pubDate": "2025-11-03T20:18:29+00:00",
+  "dateStr": "2025-11-03",
+  "url": "https://access.redhat.com/errata/RHSA-2025:19513",
+  "severity": "Important",
+  "overview": "An update for pcs is now available for Red Hat Enterprise Linux 10.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "description": "The pcs packages provide a command-line configuration system for the Pacemaker and Corosync utilities.\n\nSecurity Fix(es):\n\n* rubygem-rack: Rack QueryParser has an unsafe default allowing params_limit bypass via semicolon-separated parameters (CVE-2025-59830)\n\n* rack: Rack's unbounded multipart preamble buffering enables DoS (memory exhaustion) (CVE-2025-61770)\n\n* rack: Rack's multipart parser buffers large non?file fields entirely in memory, enabling DoS (memory exhaustion) (CVE-2025-61771)\n\n* rack: Rack memory exhaustion denial of service (CVE-2025-61772)\n\n* rubygem-rack: Unbounded read in `Rack::Request` form parsing can lead to memory exhaustion (CVE-2025-61919)\n\nFor more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux",
+    "Red Hat Enterprise Linux High Availability (v. 10)"
+  ],
+  "cves": [
+    "CVE-2025-59830",
+    "CVE-2025-61770",
+    "CVE-2025-61771",
+    "CVE-2025-61772",
+    "CVE-2025-61919"
+  ],
+  "packages": [
+    "cockpit-ha-cluster-0:0.12.0-3.el10_0.3.noarch",
+    "pcs-0:0.12.0-3.el10_0.3.src",
+    "pcs-0:0.12.0-3.el10_0.3.aarch64",
+    "pcs-snmp-0:0.12.0-3.el10_0.3.aarch64",
+    "pcs-0:0.12.0-3.el10_0.3.ppc64le",
+    "pcs-snmp-0:0.12.0-3.el10_0.3.ppc64le",
+    "pcs-0:0.12.0-3.el10_0.3.s390x",
+    "pcs-snmp-0:0.12.0-3.el10_0.3.s390x",
+    "pcs-0:0.12.0-3.el10_0.3.x86_64",
+    "pcs-snmp-0:0.12.0-3.el10_0.3.x86_64"
+  ],
+  "full_text": "An update for pcs is now available for Red Hat Enterprise Linux 10.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nThe pcs packages provide a command-line configuration system for the Pacemaker and Corosync utilities.\n\nSecurity Fix(es):\n\n* rubygem-rack: Rack QueryParser has an unsafe default allowing params_limit bypass via semicolon-separated parameters (CVE-2025-59830)\n\n* rack: Rack's unbounded multipart preamble buffering enables DoS (memory exhaustion) (CVE-2025-61770)\n\n* rack: Rack's multipart parser buffers large non?file fields entirely in memory, enabling DoS (memory exhaustion) (CVE-2025-61771)\n\n* rack: Rack memory exhaustion denial of service (CVE-2025-61772)\n\n* rubygem-rack: Unbounded read in `Rack::Request` form parsing can lead to memory exhaustion (CVE-2025-61919)\n\nFor more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section."
+}

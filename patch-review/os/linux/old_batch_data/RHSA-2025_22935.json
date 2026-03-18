@@ -1,0 +1,21 @@
+{
+  "id": "RHSA-2025:22935",
+  "vendor": "Red Hat",
+  "url": "https://access.redhat.com/errata/RHSA-2025:22935",
+  "pubDate": "2025-12-09T14:40:14.000Z",
+  "dateStr": "2025-12-09",
+  "severity": "Important",
+  "title": "Red Hat Security Advisory: Red Hat Update Infrastructure 5 security update",
+  "overview": "The latest release of Red Hat Update Infrastructure. For more details, see the product documentation.",
+  "description": "The latest release of Red Hat Update Infrastructure. For more details, see the product documentation.",
+  "affected_products": [
+    "Red Hat Update Infrastructure 5"
+  ],
+  "cves": [
+    "CVE-2025-47906",
+    "CVE-2025-59375"
+  ],
+  "packages": [],
+  "fixes": "",
+  "full_text": "Red Hat Security Advisory: Red Hat Update Infrastructure 5 security update\n\nThe latest release of Red Hat Update Infrastructure. For more details, see the product documentation.\n\nThe latest release of Red Hat Update Infrastructure. For more details, see the product documentation.\n\n\n\nCVE-2025-47906: If the PATH environment variable contains paths which are executables (rather than just directories), passing certain strings to LookPath (\"\", \".\", and \"..\"), can result in the binaries listed in the PATH being unexpectedly returned.\n\nCVE-2025-59375: A memory amplification vulnerability in libexpat allows attackers to trigger excessive dynamic memory allocations by submitting specially crafted XML input. A small input (~250 KiB) can cause the parser to allocate hundreds of megabytes, leading to denial-of-service (DoS) through memory exhaustion."
+}

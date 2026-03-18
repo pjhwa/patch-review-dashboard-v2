@@ -1,0 +1,38 @@
+{
+  "id": "RHBA-2025:23321",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: s-nail bug fix and enhancement update",
+  "issuedDate": "2025-12-18T10:48:14Z",
+  "updatedDate": "2025-12-18T10:48:14Z",
+  "pubDate": "2025-12-18T10:48:14Z",
+  "dateStr": "2025-12-18",
+  "url": "https://access.redhat.com/errata/RHBA-2025:23321",
+  "severity": "None",
+  "overview": "An update for s-nail is now available for Red Hat Enterprise Linux 10.",
+  "description": "S-nail provides a simple and friendly environment for sending and receiving mail. It is intended to provide the functionality of the POSIX mailx(1) command, but is MIME capable and optionally offers extensions for line editing, S/MIME, SMTP and POP3, among others. S-nail divides incoming mail into its constituent messages and allows the user to deal with them in any order. It offers many commands and internal variables for manipulating messages and sending mail. It provides the user simple editing capabilities to ease the composition of outgoing messages, and increasingly powerful and reliable non-interactive scripting capabilities.Bug Fix(es) and Enhancement(s): BCC's address are displayed in the subject line when sending email using s-nail (JIRA:RHEL-110823)",
+  "affected_products": [
+    "Red Hat Enterprise Linux for ARM 64",
+    "Red Hat Enterprise Linux for x86_64 10 x86_64",
+    "Red Hat Enterprise Linux for Power, little endian",
+    "Red Hat Enterprise Linux for IBM z Systems"
+  ],
+  "cves": [],
+  "packages": [
+    "s-nail-14.9.22-9.el9_7.src",
+    "s-nail-14.9.22-9.el9_7.x86_64",
+    "s-nail-debuginfo-14.9.22-9.el9_7.x86_64",
+    "s-nail-debugsource-14.9.22-9.el9_7.x86_64",
+    "s-nail-14.9.22-9.el9_7.s390x",
+    "s-nail-debuginfo-14.9.22-9.el9_7.s390x",
+    "s-nail-debugsource-14.9.22-9.el9_7.s390x",
+    "s-nail-14.9.22-9.el9_7.ppc64le",
+    "s-nail-debuginfo-14.9.22-9.el9_7.ppc64le",
+    "s-nail-debugsource-14.9.22-9.el9_7.ppc64le",
+    "s-nail-14.9.22-9.el9_7.aarch64",
+    "s-nail-debuginfo-14.9.22-9.el9_7.aarch64",
+    "s-nail-debugsource-14.9.22-9.el9_7.aarch64"
+  ],
+  "fixes": [],
+  "full_text": "An update for s-nail is now available for Red Hat Enterprise Linux 10.\n\nS-nail provides a simple and friendly environment for sending and receiving mail. It is intended to provide the functionality of the POSIX mailx(1) command, but is MIME capable and optionally offers extensions for line editing, S/MIME, SMTP and POP3, among others. S-nail divides incoming mail into its constituent messages and allows the user to deal with them in any order. It offers many commands and internal variables for manipulating messages and sending mail. It provides the user simple editing capabilities to ease the composition of outgoing messages, and increasingly powerful and reliable non-interactive scripting capabilities.Bug Fix(es) and Enhancement(s): BCC's address are displayed in the subject line when sending email using s-nail (JIRA:RHEL-110823)"
+}

@@ -1,0 +1,26 @@
+{
+  "id": "ELBA-2026-0132",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "AppStream",
+  "title": "NetworkManager-libreswan bug fix and enhancement update",
+  "issuedDate": "2026-01-06T00:00:00Z",
+  "updatedDate": "2026-01-06T00:00:00Z",
+  "pubDate": "2026-01-06T00:00:00Z",
+  "dateStr": "2026-01-06",
+  "url": "https://linux.oracle.com/errata/ELBA-2026-0132.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 10.",
+  "description": "[1.2.29-1]\n- Upgrade to 1.2.29\n- Support leftprotoport and rightprotoport options. (RHEL-130909)\n- Fix error on duplicate key 'phase2alg'. (RHEL-131235)\n- Fix import connection with RSA key. (RHEL-127867)",
+  "affected_products": [
+    "Oracle Linux 10 for x86_64",
+    "Oracle Linux 10 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "NetworkManager-libreswan-gnome-1.2.29-1.el10_1.x86_64",
+    "NetworkManager-libreswan-1.2.29-1.el10_1.src",
+    "NetworkManager-libreswan-1.2.29-1.el10_1.x86_64"
+  ],
+  "full_text": "[1.2.29-1]\n- Upgrade to 1.2.29\n- Support leftprotoport and rightprotoport options. (RHEL-130909)\n- Fix error on duplicate key 'phase2alg'. (RHEL-131235)\n- Fix import connection with RSA key. (RHEL-127867)\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2026-0132.html"
+}

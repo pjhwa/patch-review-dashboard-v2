@@ -1,0 +1,41 @@
+{
+  "id": "RHSA-2026:1344",
+  "vendor": "Red Hat",
+  "type": "Security Advisory (RHSA)",
+  "title": "Red Hat Security Advisory: grafana security update",
+  "issuedDate": "2026-01-27T11:37:52+00:00",
+  "updatedDate": "2026-01-27T11:37:52+00:00",
+  "pubDate": "2026-01-27T11:37:52+00:00",
+  "dateStr": "2026-01-27",
+  "url": "https://access.redhat.com/errata/RHSA-2026:1344",
+  "severity": "Important",
+  "overview": "An update for grafana is now available for Red Hat Enterprise Linux 8.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "description": "Grafana is an open source, feature rich metrics dashboard and graph editor for Graphite, InfluxDB & OpenTSDB. \n\nSecurity Fix(es):\n\n* crypto/x509: golang: Denial of Service due to excessive resource consumption via crafted certificate (CVE-2025-61729)\n\nFor more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux",
+    "Red Hat Enterprise Linux AppStream (v. 8)"
+  ],
+  "cves": [
+    "CVE-2025-61729"
+  ],
+  "packages": [
+    "grafana-0:9.2.10-27.el8_10.x86_64",
+    "grafana-selinux-0:9.2.10-27.el8_10.x86_64",
+    "grafana-debugsource-0:9.2.10-27.el8_10.x86_64",
+    "grafana-debuginfo-0:9.2.10-27.el8_10.x86_64",
+    "grafana-0:9.2.10-27.el8_10.s390x",
+    "grafana-selinux-0:9.2.10-27.el8_10.s390x",
+    "grafana-debugsource-0:9.2.10-27.el8_10.s390x",
+    "grafana-debuginfo-0:9.2.10-27.el8_10.s390x",
+    "grafana-0:9.2.10-27.el8_10.src",
+    "grafana-0:9.2.10-27.el8_10.aarch64",
+    "grafana-selinux-0:9.2.10-27.el8_10.aarch64",
+    "grafana-debugsource-0:9.2.10-27.el8_10.aarch64",
+    "grafana-debuginfo-0:9.2.10-27.el8_10.aarch64",
+    "grafana-0:9.2.10-27.el8_10.ppc64le",
+    "grafana-selinux-0:9.2.10-27.el8_10.ppc64le",
+    "grafana-debugsource-0:9.2.10-27.el8_10.ppc64le",
+    "grafana-debuginfo-0:9.2.10-27.el8_10.ppc64le"
+  ],
+  "full_text": "An update for grafana is now available for Red Hat Enterprise Linux 8.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nGrafana is an open source, feature rich metrics dashboard and graph editor for Graphite, InfluxDB & OpenTSDB. \n\nSecurity Fix(es):\n\n* crypto/x509: golang: Denial of Service due to excessive resource consumption via crafted certificate (CVE-2025-61729)\n\nFor more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section."
+}

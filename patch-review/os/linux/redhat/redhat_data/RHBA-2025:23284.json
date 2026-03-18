@@ -1,0 +1,39 @@
+{
+  "id": "RHBA-2025:23284",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: linuxptp bug fix and enhancement update",
+  "issuedDate": "2025-12-18T09:19:11Z",
+  "updatedDate": "2025-12-18T09:19:11Z",
+  "pubDate": "2025-12-18T09:19:11Z",
+  "dateStr": "2025-12-18",
+  "url": "https://access.redhat.com/errata/RHBA-2025:23284",
+  "severity": "None",
+  "overview": "An update for linuxptp is now available for Red Hat Enterprise Linux 10.",
+  "description": "The linuxptp packages provide Precision Time Protocol (PTP) implementation for Linux according to IEEE standard 1588 for Linux. The dual design goals are to provide a robust implementation of the standard and to use the most relevant and modern Application Programming Interfaces (API) offered by the Linux kernel. Bug Fix(es) and Enhancement(s): [rhel-10] ts2phc doesn't handle missing pulses (JIRA:RHEL-112344)",
+  "affected_products": [
+    "Red Hat Enterprise Linux for ARM 64",
+    "Red Hat Enterprise Linux for IBM z Systems",
+    "Red Hat Enterprise Linux for x86_64 10 x86_64",
+    "Red Hat Enterprise Linux for Power, little endian"
+  ],
+  "cves": [],
+  "packages": [
+    "linuxptp-4.4-5.el10_1.src",
+    "linuxptp-4.4-5.el10_1.x86_64",
+    "linuxptp-debuginfo-4.4-5.el10_1.x86_64",
+    "linuxptp-debugsource-4.4-5.el10_1.x86_64",
+    "linuxptp-selinux-4.4-5.el10_1.noarch",
+    "linuxptp-4.4-5.el10_1.s390x",
+    "linuxptp-debuginfo-4.4-5.el10_1.s390x",
+    "linuxptp-debugsource-4.4-5.el10_1.s390x",
+    "linuxptp-4.4-5.el10_1.ppc64le",
+    "linuxptp-debuginfo-4.4-5.el10_1.ppc64le",
+    "linuxptp-debugsource-4.4-5.el10_1.ppc64le",
+    "linuxptp-4.4-5.el10_1.aarch64",
+    "linuxptp-debuginfo-4.4-5.el10_1.aarch64",
+    "linuxptp-debugsource-4.4-5.el10_1.aarch64"
+  ],
+  "fixes": [],
+  "full_text": "An update for linuxptp is now available for Red Hat Enterprise Linux 10.\n\nThe linuxptp packages provide Precision Time Protocol (PTP) implementation for Linux according to IEEE standard 1588 for Linux. The dual design goals are to provide a robust implementation of the standard and to use the most relevant and modern Application Programming Interfaces (API) offered by the Linux kernel. Bug Fix(es) and Enhancement(s): [rhel-10] ts2phc doesn't handle missing pulses (JIRA:RHEL-112344)"
+}

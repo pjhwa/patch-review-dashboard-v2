@@ -1,0 +1,25 @@
+{
+  "id": "USN-7892-1",
+  "url": "https://ubuntu.com/security/notices/USN-7892-1",
+  "synopsis": "USN-7892-1: H2O vulnerability",
+  "dateStr": "26 November 2025",
+  "overview": "H2O could be made to crash if it received specially crafted network traffic.",
+  "description": "It was discovered that H2O exhibited poor server resource management in its\nHTTP/2 protocol. An attacker could possibly use this issue to cause H2O to\ncrash, resulting in a denial of service.\n\n \n\n \n\n \n\nIt was discovered that H2O exhibited poor server resource management in its\nHTTP/2 protocol. An attacker could possibly use this issue to cause H2O to\ncrash, resulting in a denial of service.",
+  "packages": [
+    "h2o"
+  ],
+  "cves": [
+    "CVE-2023-44487"
+  ],
+  "affected_products": [
+    "22.04 LTS",
+    "20.04 LTS",
+    "Open side navigation"
+  ],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Ubuntu Security Notices\n\nUSN-7892-1\n\n \n\n \n\n \n\n \n\n \n\n \nUSN-7892-1: H2O vulnerability\n\n \n\n \n\n \n\n \nPublication date\n\n \n\n \n\n \n26 November 2025\n\n \n\n \n\n \n\n \n\n \nOverview\n\n \n\n \n\n \nH2O could be made to crash if it received specially crafted network traffic.\n\n \n\n \n\n \n\n \n\n \nReleases\n\n \n\n \n\n \n\n 22.04 LTS\n\n20.04 LTS\n\n \n\n \n\n \n\n \n\n \n\n \n\n Open side navigation\n \n\n \n\n \nPackages\n\n \n\n h2o - the optimized HTTP/1, HTTP/2 server\n \n\n \n\n \nDetails\n\n \n\n \n\nIt was discovered that H2O exhibited poor server resource management in its\nHTTP/2 protocol. An attacker could possibly use this issue to cause H2O to\ncrash, resulting in a denial of service.\n\n \n\n \n\n \n\nIt was discovered that H2O exhibited poor server resource management in its\nHTTP/2 protocol. An attacker could possibly use this issue to cause H2O to\ncrash, resulting in a denial of service.\n\n \n\n \n\n \n\n \nUpdate instructions\n\n \n\n \n\n \n\n \n\nIn general, a standard system update will make all the necessary changes.\n\n Learn more about how to get the fixes.\n \n\n \n\n \n\n \n\n \nThe problem can be corrected by updating your system to the following package versions:\n\n \n\n \n\n \n\n \n\n Ubuntu Release\n Package Version\n \n\n 22.04\n\nLTS jammy\n\n h2o – \n\n2.2.5+dfsg2-6.1ubuntu2+esm1\n\n  \n\nUbuntu Pro\n Fix available with Ubuntu Pro via ESM Apps. A community fix might become publicly available in the future.\n\n \n\n libh2o0.13 – \n\n2.2.5+dfsg2-6.1ubuntu2+esm1\n\n  \n\nUbuntu Pro\n Fix available with Ubuntu Pro via ESM Apps. A community fix might become publicly available in the future.\n\n \n\n \n\n 20.04\n\nLTS focal\n\n h2o – \n\n2.2.5+dfsg2-3ubuntu0.1~esm1\n\n  \n\nUbuntu Pro\n Fix available with Ubuntu Pro via ESM Apps. A community fix might become publicly available in the future.\n\n \n\n libh2o0.13 – \n\n2.2.5+dfsg2-3ubuntu0.1~esm1\n\n  \n\nUbuntu Pro\n Fix available with Ubuntu Pro via ESM Apps. A community fix might become publicly available in the future.\n\n \n\n \n\nReduce your security exposure\n\n \n\n Ubuntu Pro provides ten-year security coverage to 25,000+ packages in Main and Universe repositories, and it is free for up to five machines.\n \n\n \n\n Get Ubuntu Pro\n \n\n \n\nReferences\n\n \n\n \n\n CVE-2023-44487\n \n\n \n\n \n\n CVE-2023-44487\n \n\n \n\n \nRelated notices\n\n \n\n \n\n USN-7469-1\n \n\n \n\n USN-7469-2\n \n\n \n\n USN-7469-3\n \n\n \n\n USN-7469-4\n \n\n \n\n USN-7410-1\n \n\n \n\n USN-7067-1\n \n\n \n\n USN-6994-1\n \n\n \n\n USN-6754-1\n \n\n \n\n USN-6574-1\n \n\n \n\n USN-6505-1\n \n\n \n\n USN-7469-1\n \n\n USN-7469-2\n \n\n USN-7469-3\n \n\n USN-7469-4\n \n\n USN-7410-1\n \n\n USN-7067-1\n \n\n USN-6994-1\n \n\n USN-6754-1\n \n\n USN-6574-1\n \n\n USN-6505-1\n \n\n USN-6438-1\n \n\n USN-6427-1\n \n\n USN-6427-2\n \n\n Show 3 more references\n Show less references",
+  "title": "USN-7892-1: H2O vulnerability | Ubuntu security notices | Ubuntu",
+  "pubDate": "2025-11-25T15:00:00.000Z",
+  "vendor": "Ubuntu"
+}

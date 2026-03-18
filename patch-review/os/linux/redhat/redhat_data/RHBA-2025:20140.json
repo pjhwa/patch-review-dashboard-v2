@@ -1,0 +1,42 @@
+{
+  "id": "RHBA-2025:20140",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: libffi bug fix and enhancement update",
+  "issuedDate": "2025-11-11T07:25:13Z",
+  "updatedDate": "2025-11-11T07:25:13Z",
+  "pubDate": "2025-11-11T07:25:13Z",
+  "dateStr": "2025-11-11",
+  "url": "https://access.redhat.com/errata/RHBA-2025:20140",
+  "severity": "None",
+  "overview": "An update for libffi is now available for Red Hat Enterprise Linux 10.",
+  "description": "For detailed information on changes in this release, see the Red Hat Enterprise Linux 10.1 Release Notes linked from the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux for Power, little endian",
+    "Red Hat Enterprise Linux for ARM 64",
+    "Red Hat Enterprise Linux for IBM z Systems",
+    "Red Hat Enterprise Linux for x86_64 10 x86_64"
+  ],
+  "cves": [],
+  "packages": [
+    "libffi-3.4.4-10.el10.src",
+    "libffi-3.4.4-10.el10.x86_64",
+    "libffi-debuginfo-3.4.4-10.el10.x86_64",
+    "libffi-debugsource-3.4.4-10.el10.x86_64",
+    "libffi-devel-3.4.4-10.el10.x86_64",
+    "libffi-3.4.4-10.el10.s390x",
+    "libffi-debuginfo-3.4.4-10.el10.s390x",
+    "libffi-debugsource-3.4.4-10.el10.s390x",
+    "libffi-devel-3.4.4-10.el10.s390x",
+    "libffi-3.4.4-10.el10.ppc64le",
+    "libffi-debuginfo-3.4.4-10.el10.ppc64le",
+    "libffi-debugsource-3.4.4-10.el10.ppc64le",
+    "libffi-devel-3.4.4-10.el10.ppc64le",
+    "libffi-3.4.4-10.el10.aarch64",
+    "libffi-debuginfo-3.4.4-10.el10.aarch64",
+    "libffi-debugsource-3.4.4-10.el10.aarch64",
+    "libffi-devel-3.4.4-10.el10.aarch64"
+  ],
+  "fixes": [],
+  "full_text": "An update for libffi is now available for Red Hat Enterprise Linux 10.\n\nFor detailed information on changes in this release, see the Red Hat Enterprise Linux 10.1 Release Notes linked from the References section."
+}

@@ -1,0 +1,26 @@
+{
+  "id": "ELBA-2025-20115-0",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "RHCK",
+  "title": "crypto-policies bug fix and enhancement update",
+  "issuedDate": "2025-11-25T00:00:00Z",
+  "updatedDate": "2025-11-25T00:00:00Z",
+  "pubDate": "2025-11-25T00:00:00Z",
+  "dateStr": "2025-11-25",
+  "url": "https://linux.oracle.com/errata/ELBA-2025-20115-0.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 10.",
+  "description": "[20250905-2.gitc7eb7b2]\n- add Obsoletes: crypto-policies-pq-preview to ease transition\n  Resolves: RHEL-113008\n\n[20250905-1.gitc7eb7b2]\n- rpm-sequoia: enable MLDSA65-ED25519 and MLDSA87-ED448 in all policies\n- rpm-sequoia: force enable all PQ algorithms for now\n\n[20250804-1.git2ca4115]\n- nss: enable mlkem1024secp384r1, rename mlkem768secp256r1\n- nss: enable ML-DSA\n\n[20250714-1.git95bf40e]\n-  sequoia: add sha3, x25519, ed25519, x448, ed448, but not for rpm-sequoia\n-  sequoia, rpm-sequoia: use ignore_invalid with sha3, x25519, ...\n-  sequoia: Add PQC algorithm\n-  sequoia: Do not include EdDSA in FIPS policy\n-  sequoia: Generate AEAD policy\n-  openssl: send one PQ and one classic key_share; prioritize PQ groups\n-  FIPS: deprioritize X25519-MLKEM768 over P256-MLKEM768 for openssl...\n-  python, policies, tests: alias X25519-MLKEM768 to MLKEM768-X25519\n-  gnutls: enable ML-DSA, for both secure-sig and secure-sig-for-cert\n\n[20250602-1.gita6d4d0c]\n- openssl: fix mistakes in integrity-only cipher definitions\n- FIPS: enable hybrid ML-KEM (TLS only) and pure ML-DSA\n- AD-SUPPORT-LEGACY: resurrect subpolicy as present in RHEL-9\n\n[20250424-2.git9267dee]\n- add Provides: crypto-policies-pq-preview to ease transition\n- require openssl 3.5 outright\n\n[20250424-1.git9267dee]\n- LEGACY/DEFAULT/FUTURE: enable hybrid ML-KEM and pure ML-DSA\n- drop crypto-policies-pq-preview subpackage, TEST-PQ goes into main one\n- NO-PQ: introduce\n- openssl: fix enabling integrity-only ciphersuites (still need min_rsa_size=0)\n\n[20250404-4.gitca0e9a5]\n- Fix accidental turning of oqsprovider BuildRequires into Requires\n- Drop requires on liboqs\n\n[20250404-3.gitca0e9a5]\n- Relax dependency on oqsprovider, also allowing openssl 3.5 instead\n\n[20250404-2.gitca0e9a5]\n- Add a build dependency on oqsprovider as openssh config check is now fussy",
+  "affected_products": [
+    "Oracle Linux 10 for x86_64",
+    "Oracle Linux 10 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "crypto-policies-20250905-2.gitc7eb7b2.el10_1.src",
+    "crypto-policies-scripts-20250905-2.gitc7eb7b2.el10_1.noarch",
+    "crypto-policies-20250905-2.gitc7eb7b2.el10_1.noarch"
+  ],
+  "full_text": "[20250905-2.gitc7eb7b2]\n- add Obsoletes: crypto-policies-pq-preview to ease transition\n  Resolves: RHEL-113008\n\n[20250905-1.gitc7eb7b2]\n- rpm-sequoia: enable MLDSA65-ED25519 and MLDSA87-ED448 in all policies\n- rpm-sequoia: force enable all PQ algorithms for now\n\n[20250804-1.git2ca4115]\n- nss: enable mlkem1024secp384r1, rename mlkem768secp256r1\n- nss: enable ML-DSA\n\n[20250714-1.git95bf40e]\n-  sequoia: add sha3, x25519, ed25519, x448, ed448, but not for rpm-sequoia\n-  sequoia, rpm-sequoia: use ignore_invalid with sha3, x25519, ...\n-  sequoia: Add PQC algorithm\n-  sequoia: Do not include EdDSA in FIPS policy\n-  sequoia: Generate AEAD policy\n-  openssl: send one PQ and one classic key_share; prioritize PQ groups\n-  FIPS: deprioritize X25519-MLKEM768 over P256-MLKEM768 for openssl...\n-  python, policies, tests: alias X25519-MLKEM768 to MLKEM768-X25519\n-  gnutls: enable ML-DSA, for both secure-sig and secure-sig-for-cert\n\n[20250602-1.gita6d4d0c]\n- openssl: fix mistakes in integrity-only cipher definitions\n- FIPS: enable hybrid ML-KEM (TLS only) and pure ML-DSA\n- AD-SUPPORT-LEGACY: resurrect subpolicy as present in RHEL-9\n\n[20250424-2.git9267dee]\n- add Provides: crypto-policies-pq-preview to ease transition\n- require openssl 3.5 outright\n\n[20250424-1.git9267dee]\n- LEGACY/DEFAULT/FUTURE: enable hybrid ML-KEM and pure ML-DSA\n- drop crypto-policies-pq-preview subpackage, TEST-PQ goes into main one\n- NO-PQ: introduce\n- openssl: fix enabling integrity-only ciphersuites (still need min_rsa_size=0)\n\n[20250404-4.gitca0e9a5]\n- Fix accidental turning of oqsprovider BuildRequires into Requires\n- Drop requires on liboqs\n\n[20250404-3.gitca0e9a5]\n- Relax dependency on oqsprovider, also allowing openssl 3.5 instead\n\n[20250404-2.gitca0e9a5]\n- Add a build dependency on oqsprovider as openssh config check is now fussy\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2025-20115-0.html"
+}

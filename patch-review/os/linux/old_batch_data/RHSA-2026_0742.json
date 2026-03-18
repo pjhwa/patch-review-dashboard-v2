@@ -1,0 +1,21 @@
+{
+  "id": "RHSA-2026:0742",
+  "vendor": "Red Hat",
+  "url": "https://access.redhat.com/errata/RHSA-2026:0742",
+  "pubDate": "2026-01-19T00:15:08.000Z",
+  "dateStr": "2026-01-19",
+  "severity": "Critical",
+  "title": "Red Hat Security Advisory: Red Hat JBoss Enterprise Application Platform 7.1.13 on RHEL 7 security update",
+  "overview": "A security update is now available for Red Hat JBoss Enterprise Application Platform 7.1 for Red Hat Enterprise Linux 7.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "description": "A security update is now available for Red Hat JBoss Enterprise Application Platform 7.1 for Red Hat Enterprise Linux 7.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "affected_products": [
+    "Red Hat JBoss Enterprise Application Platform 7.1 EUS for RHEL 7 Server"
+  ],
+  "cves": [
+    "CVE-2025-52999",
+    "CVE-2025-55163"
+  ],
+  "packages": [],
+  "fixes": "",
+  "full_text": "Red Hat Security Advisory: Red Hat JBoss Enterprise Application Platform 7.1.13 on RHEL 7 security update\n\nA security update is now available for Red Hat JBoss Enterprise Application Platform 7.1 for Red Hat Enterprise Linux 7.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nA security update is now available for Red Hat JBoss Enterprise Application Platform 7.1 for Red Hat Enterprise Linux 7.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nUpdated Packages:\neap7-jackson-annotations-2.8.11-2.redhat_00004.1.ep7.el7.src.rpm\neap7-jackson-core-2.8.11-3.redhat_00004.1.ep7.el7.src.rpm\neap7-jackson-jaxrs-providers-2.8.11-3.redhat_00004.1.ep7.el7.src.rpm\neap7-jackson-module-jaxb-annotations-2.8.11-3.redhat_00004.1.ep7.el7.src.rpm\neap7-jackson-modules-java8-2.8.11-2.redhat_00004.1.ep7.el7.src.rpm\neap7-netty-4.1.63-3.Final_redhat_00004.1.ep7.el7.src.rpm\neap7-undertow-1.4.18-18.SP16_redhat_00001.1.ep7.el7.src.rpm\neap7-wildfly-7.1.13-6.GA_redhat_00002.1.ep7.el7.src.rpm\neap7-jackson-annotations-2.8.11-2.redhat_00004.1.ep7.el7.noarch.rpm\neap7-jackson-core-2.8.11-3.redhat_00004.1.ep7.el7.noarch.rpm\neap7-jackson-datatype-jdk8-2.8.11-2.redhat_00004.1.ep7.el7.noarch.rpm\neap7-jackson-datatype-jsr310-2.8.11-2.redhat_00004.1.ep7.el7.noarch.rpm\neap7-jackson-jaxrs-base-2.8.11-3.redhat_00004.1.ep7.el7.noarch.rpm\neap7-jackson-jaxrs-json-provider-2.8.11-3.redhat_00004.1.ep7.el7.noarch.rpm\neap7-jackson-module-jaxb-annotations-2.8.11-3.redhat_00004.1.ep7.el7.noarch.rpm\neap7-jackson-modules-java8-2.8.11-2.redhat_00004.1.ep7.el7.noarch.rpm\neap7-netty-4.1.63-3.Final_redhat_00004.1.ep7.el7.noarch.rpm\neap7-netty-all-4.1.63-3.Final_redhat_00004.1.ep7.el7.noarch.rpm\neap7-undertow-1.4.18-18.SP16_redhat_00001.1.ep7.el7.noarch.rpm\neap7-wildfly-7.1.13-6.GA_redhat_00002.1.ep7.el7.noarch.rpm\neap7-wildfly-modules-7.1.13-6.GA_redhat_00002.1.ep7.el7.noarch.rpm\n\nCVE-2025-52999: A nested data handling flaw was found in Jackson Core. When parsing particularly deeply nested data structures, a StackoverflowError can occur.\n\nCVE-2025-55163: A flaw was found in Netty where malformed client requests can trigger server-side stream resets without triggering abuse counters. This issue, referred to as the \"MadeYouReset\" attack, allows malicious clients to induce excessive server workload by repeatedly causing server-side stream aborts. While not a protocol bug, this highlights a common implementation weakness that can be exploited to cause a denial of service (DoS)."
+}

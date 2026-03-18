@@ -1,0 +1,26 @@
+{
+  "id": "ELBA-2025-20355-0",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "AppStream",
+  "title": "upower bug fix and enhancement update",
+  "issuedDate": "2025-11-25T00:00:00Z",
+  "updatedDate": "2025-11-25T00:00:00Z",
+  "pubDate": "2025-11-25T00:00:00Z",
+  "dateStr": "2025-11-25",
+  "url": "https://linux.oracle.com/errata/ELBA-2025-20355-0.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 10.",
+  "description": "[1.90.9-1]\n- Update to the upstream version 1.90.9\n- Fix unstable OnBattery status\n\n[1.90.8-1]\n- Update to the upstream version 1.90.8\n- Update to 1.90.8\n- README and HACKING were renamed to README.md and HACKING.md\n- Support zsh-completion\n- Resolve memory leak when connecting/disconnecting and refreshing the\n  battery info.\n\n[1.90.6-3]\n- test: Fix incorrect test script",
+  "affected_products": [
+    "Oracle Linux 10 for x86_64",
+    "Oracle Linux 10 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "upower-libs-1.90.9-1.el10.x86_64",
+    "upower-1.90.9-1.el10.x86_64",
+    "upower-1.90.9-1.el10.src"
+  ],
+  "full_text": "[1.90.9-1]\n- Update to the upstream version 1.90.9\n- Fix unstable OnBattery status\n\n[1.90.8-1]\n- Update to the upstream version 1.90.8\n- Update to 1.90.8\n- README and HACKING were renamed to README.md and HACKING.md\n- Support zsh-completion\n- Resolve memory leak when connecting/disconnecting and refreshing the\n  battery info.\n\n[1.90.6-3]\n- test: Fix incorrect test script\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2025-20355-0.html"
+}

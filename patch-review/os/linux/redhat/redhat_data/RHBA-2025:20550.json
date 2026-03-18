@@ -1,0 +1,87 @@
+{
+  "id": "RHBA-2025:20550",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: cockpit bug fix and enhancement update",
+  "issuedDate": "2025-11-11T07:49:53Z",
+  "updatedDate": "2025-11-11T07:49:53Z",
+  "pubDate": "2025-11-11T07:49:53Z",
+  "dateStr": "2025-11-11",
+  "url": "https://access.redhat.com/errata/RHBA-2025:20550",
+  "severity": "None",
+  "overview": "An update for cockpit is now available for Red Hat Enterprise Linux 10.",
+  "description": "For detailed information on changes in this release, see the Red Hat Enterprise Linux 9 Release Notes linked from the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux for Power, little endian",
+    "Red Hat Enterprise Linux for x86_64 10 x86_64",
+    "Red Hat Enterprise Linux for ARM 64",
+    "Red Hat Enterprise Linux for IBM z Systems"
+  ],
+  "cves": [],
+  "packages": [
+    "cockpit-344-1.el9.src",
+    "cockpit-344-1.el9.x86_64",
+    "cockpit-bridge-344-1.el9.noarch",
+    "cockpit-debuginfo-344-1.el9.x86_64",
+    "cockpit-debugsource-344-1.el9.x86_64",
+    "cockpit-doc-344-1.el9.noarch",
+    "cockpit-packagekit-344-1.el9.noarch",
+    "cockpit-storaged-344-1.el9.noarch",
+    "cockpit-system-344-1.el9.noarch",
+    "cockpit-ws-344-1.el9.x86_64",
+    "cockpit-ws-selinux-344-1.el9.x86_64",
+    "cockpit-344-1.el9.s390x",
+    "cockpit-debuginfo-344-1.el9.s390x",
+    "cockpit-debugsource-344-1.el9.s390x",
+    "cockpit-ws-344-1.el9.s390x",
+    "cockpit-ws-selinux-344-1.el9.s390x",
+    "cockpit-344-1.el9.ppc64le",
+    "cockpit-debuginfo-344-1.el9.ppc64le",
+    "cockpit-debugsource-344-1.el9.ppc64le",
+    "cockpit-ws-344-1.el9.ppc64le",
+    "cockpit-ws-selinux-344-1.el9.ppc64le",
+    "cockpit-344-1.el9.aarch64",
+    "cockpit-debuginfo-344-1.el9.aarch64",
+    "cockpit-debugsource-344-1.el9.aarch64",
+    "cockpit-ws-344-1.el9.aarch64",
+    "cockpit-ws-selinux-344-1.el9.aarch64"
+  ],
+  "fixes": [
+    {
+      "id": "RHEL-81728",
+      "url": "https://issues.redhat.com/browse/RHEL-81728",
+      "description": "cockpit-ws generates too weak certificates if \"sscg\" package is not installed and crypto policy is set to FUTURE"
+    },
+    {
+      "id": "RHEL-87397",
+      "url": "https://issues.redhat.com/browse/RHEL-87397",
+      "description": "[RHEL 9.7] Upgrade cockpit to PatternFly 6"
+    },
+    {
+      "id": "RHEL-90743",
+      "url": "https://issues.redhat.com/browse/RHEL-90743",
+      "description": "Incorrect \"Learn more\" Link in Cryptographic Policy Pop-up Points to RHEL 8 Documentation Instead of RHEL 9"
+    },
+    {
+      "id": "RHEL-92062",
+      "url": "https://issues.redhat.com/browse/RHEL-92062",
+      "description": "[RHEL 9.7] add new subpackage cockpit-ws-selinux"
+    },
+    {
+      "id": "RHEL-12150",
+      "url": "https://issues.redhat.com/browse/RHEL-12150",
+      "description": "Terminal theme and other select buttons text overlap in non-English"
+    },
+    {
+      "id": "RHEL-104798",
+      "url": "https://issues.redhat.com/browse/RHEL-104798",
+      "description": "Building cockpit with ASAN+UBSAN support fails in a test due to initializing \"pamh\" to NULL"
+    },
+    {
+      "id": "RHEL-103778",
+      "url": "https://issues.redhat.com/browse/RHEL-103778",
+      "description": "cockpit-bridge path watch (inotify) memory leak"
+    }
+  ],
+  "full_text": "An update for cockpit is now available for Red Hat Enterprise Linux 10.\n\nFor detailed information on changes in this release, see the Red Hat Enterprise Linux 9 Release Notes linked from the References section."
+}

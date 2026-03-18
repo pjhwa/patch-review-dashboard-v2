@@ -1,0 +1,41 @@
+{
+  "id": "ELBA-2026-50062",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "AppStream",
+  "title": " galera  bug fix update",
+  "issuedDate": "2026-01-20T00:00:00Z",
+  "updatedDate": "2026-01-20T00:00:00Z",
+  "pubDate": "2026-01-20T00:00:00Z",
+  "dateStr": "2026-01-20",
+  "url": "https://linux.oracle.com/errata/ELBA-2026-50062.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 8.",
+  "description": "galera\n[25.3.37-1.0.1]\n- Bump release for rebuild - x86_64 and i386 need to be built the same day\n\nJudy\n[1.0.5-18.0.1]\n- Rebuild [Orabug: 31667911]\n\nmariadb\n[3:10.3.39-2.0.1]\n- Bump release for rebuild - x86_64 and i386 need to be built the same day",
+  "affected_products": [
+    "Oracle Linux 8 for x86_64",
+    "Oracle Linux 8 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "Judy-1.0.5-18.0.1.module+el8.3.0+9616+7a81225f.src",
+    "galera-25.3.37-1.0.1.module+el8.10.0+90769+0aa21600.src",
+    "mariadb-10.3.39-2.0.1.module+el8.10.0+90769+0aa21600.src",
+    "mariadb-embedded-10.3.39-2.0.1.module+el8.10.0+90769+0aa21600.x86_64",
+    "mariadb-backup-10.3.39-2.0.1.module+el8.10.0+90769+0aa21600.x86_64",
+    "mariadb-gssapi-server-10.3.39-2.0.1.module+el8.10.0+90769+0aa21600.x86_64",
+    "mariadb-test-10.3.39-2.0.1.module+el8.10.0+90769+0aa21600.x86_64",
+    "mariadb-embedded-devel-10.3.39-2.0.1.module+el8.10.0+90769+0aa21600.x86_64",
+    "mariadb-server-galera-10.3.39-2.0.1.module+el8.10.0+90769+0aa21600.x86_64",
+    "mariadb-errmsg-10.3.39-2.0.1.module+el8.10.0+90769+0aa21600.x86_64",
+    "mariadb-oqgraph-engine-10.3.39-2.0.1.module+el8.10.0+90769+0aa21600.x86_64",
+    "mariadb-devel-10.3.39-2.0.1.module+el8.10.0+90769+0aa21600.x86_64",
+    "mariadb-server-utils-10.3.39-2.0.1.module+el8.10.0+90769+0aa21600.x86_64",
+    "mariadb-10.3.39-2.0.1.module+el8.10.0+90769+0aa21600.x86_64",
+    "mariadb-server-10.3.39-2.0.1.module+el8.10.0+90769+0aa21600.x86_64",
+    "galera-25.3.37-1.0.1.module+el8.10.0+90769+0aa21600.x86_64",
+    "mariadb-common-10.3.39-2.0.1.module+el8.10.0+90769+0aa21600.x86_64",
+    "Judy-1.0.5-18.0.1.module+el8.3.0+9616+7a81225f.x86_64"
+  ],
+  "full_text": "galera\n[25.3.37-1.0.1]\n- Bump release for rebuild - x86_64 and i386 need to be built the same day\n\nJudy\n[1.0.5-18.0.1]\n- Rebuild [Orabug: 31667911]\n\nmariadb\n[3:10.3.39-2.0.1]\n- Bump release for rebuild - x86_64 and i386 need to be built the same day\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2026-50062.html"
+}

@@ -1,0 +1,25 @@
+{
+  "id": "ELBA-2025-16450",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "RHCK",
+  "title": "man-pages bug fix and enhancement update",
+  "issuedDate": "2025-09-24T00:00:00Z",
+  "updatedDate": "2025-09-24T00:00:00Z",
+  "pubDate": "2025-09-24T00:00:00Z",
+  "dateStr": "2025-09-24",
+  "url": "https://linux.oracle.com/errata/ELBA-2025-16450.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 10.",
+  "description": "[6.06-8]\n- Remove man-pages-additional-20140218.tar.xz from sources. (RHEL-101696)\n\n[6.06-7]\n- Break up man-pages-additional-20140218.tar.xz (RHEL-101696)\n- Add rtas.2, swapcontext.2 and cons.saver.8 man pages as a patch.\n\n[6.06-6]\n- sched(7): Mention autogroup disabled behavior.",
+  "affected_products": [
+    "Oracle Linux 10 for x86_64",
+    "Oracle Linux 10 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "man-pages-6.06-8.el10_0.src",
+    "man-pages-6.06-8.el10_0.noarch"
+  ],
+  "full_text": "[6.06-8]\n- Remove man-pages-additional-20140218.tar.xz from sources. (RHEL-101696)\n\n[6.06-7]\n- Break up man-pages-additional-20140218.tar.xz (RHEL-101696)\n- Add rtas.2, swapcontext.2 and cons.saver.8 man pages as a patch.\n\n[6.06-6]\n- sched(7): Mention autogroup disabled behavior.\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2025-16450.html"
+}

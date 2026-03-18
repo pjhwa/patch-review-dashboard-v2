@@ -1,0 +1,41 @@
+{
+  "id": "ELBA-2025-20406-0",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "AppStream",
+  "title": "gcc-toolset-15-gcc bug fix and enhancement update",
+  "issuedDate": "2025-11-25T00:00:00Z",
+  "updatedDate": "2025-11-25T00:00:00Z",
+  "pubDate": "2025-11-25T00:00:00Z",
+  "dateStr": "2025-11-25",
+  "url": "https://linux.oracle.com/errata/ELBA-2025-20406-0.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 10.",
+  "description": "[15.1.1-2.5]\n- Drop the workaround for CVE-2025-5702 (RHEL-100161)\n\n[15.1.1-2.4]\n- Require gcc-toolset-N-runtime (RHEL-94672)\n\n[15.1.1-2.3]\n- ship libstdc++.modules.json (RHEL-97043)\n- configure with --with-long-double-format=ieee (RHEL-97055)\n\n[15.1.1-2.2]\n- Tune for z16 on s390x by default on RHEL10 and later (RHEL-94282)\n- Add AS_NEEDED libstdc++.so.6 when only needed through libstdc++_nonshared\n  (RHEL-84680)\n\n[15.1.1-2.1]\n- configure with --enable-host-pie --enable-host-bind-now (RHEL-95595)\n\n[15.1.1-2]\n- update from releases/gcc-15 branch\n  - PRs ada/112958, ada/120104, c/120057, c++/119863, c++/119864, c++/119938,\n   c++/119939, c++/119981, c++/119996, c++/120012, c++/120013,\n   c++/120023, c++/120125, c++/120161, c++/120350, fortran/102891,\n   fortran/102900, fortran/119928, fortran/119986, fortran/120049,\n   fortran/120107, fortran/120139, fortran/120163, fortran/120179,\n   fortran/120191, ipa/119852, ipa/119973, ipa/120006, ipa/120146,\n   libfortran/120152, libfortran/120153, libfortran/120158,\n   libfortran/120196, libstdc++/118260, libstdc++/119427,\n   libstdc++/119714, libstdc++/120029, libstdc++/120114,\n   libstdc++/120159, libstdc++/120187, libstdc++/120190,\n   libstdc++/120198, libstdc++/120293, modula2/115276, modula2/119914,\n   modula2/119915, modula2/120117, modula2/120188, preprocessor/116047,\n   preprocessor/120061, target/119610, testsuite/119909,\n   tree-optimization/111873, tree-optimization/119712,\n   tree-optimization/120043, tree-optimization/120048,\n   tree-optimization/120074, tree-optimization/120089,\n   tree-optimization/120143, tree-optimization/120211\n\n[15.1.1-1]\n- update from releases/gcc-15 branch\n  - GCC 15.1 release\n  - PRs fortran/119836, target/119327, target/119873, tree-optimization/118407\n\n[14.2.1-7.2]\n- Fix GTS version in package name.\n\n[14.2.1-7.1]\n- new package (RHEL-81741)",
+  "affected_products": [
+    "Oracle Linux 10 for x86_64",
+    "Oracle Linux 10 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "gcc-toolset-15-libstdc++-docs-15.1.1-2.5.el10.x86_64",
+    "gcc-toolset-15-gcc-15.1.1-2.5.el10.src",
+    "gcc-toolset-15-gcc-plugin-devel-15.1.1-2.5.el10.x86_64",
+    "gcc-toolset-15-libgccjit-devel-15.1.1-2.5.el10.x86_64",
+    "gcc-toolset-15-libitm-devel-15.1.1-2.5.el10.x86_64",
+    "gcc-toolset-15-gcc-c++-15.1.1-2.5.el10.x86_64",
+    "gcc-toolset-15-libatomic-devel-15.1.1-2.5.el10.x86_64",
+    "gcc-toolset-15-libasan-devel-15.1.1-2.5.el10.x86_64",
+    "gcc-toolset-15-gcc-gfortran-15.1.1-2.5.el10.x86_64",
+    "gcc-toolset-15-gcc-15.1.1-2.5.el10.x86_64",
+    "gcc-toolset-15-liblsan-devel-15.1.1-2.5.el10.x86_64",
+    "gcc-toolset-15-libtsan-devel-15.1.1-2.5.el10.x86_64",
+    "gcc-toolset-15-offload-nvptx-15.1.1-2.5.el10.x86_64",
+    "gcc-toolset-15-libquadmath-devel-15.1.1-2.5.el10.x86_64",
+    "gcc-toolset-15-libgccjit-15.1.1-2.5.el10.x86_64",
+    "gcc-toolset-15-libubsan-devel-15.1.1-2.5.el10.x86_64",
+    "gcc-toolset-15-gcc-plugin-annobin-15.1.1-2.5.el10.x86_64",
+    "gcc-toolset-15-libstdc++-devel-15.1.1-2.5.el10.x86_64"
+  ],
+  "full_text": "[15.1.1-2.5]\n- Drop the workaround for CVE-2025-5702 (RHEL-100161)\n\n[15.1.1-2.4]\n- Require gcc-toolset-N-runtime (RHEL-94672)\n\n[15.1.1-2.3]\n- ship libstdc++.modules.json (RHEL-97043)\n- configure with --with-long-double-format=ieee (RHEL-97055)\n\n[15.1.1-2.2]\n- Tune for z16 on s390x by default on RHEL10 and later (RHEL-94282)\n- Add AS_NEEDED libstdc++.so.6 when only needed through libstdc++_nonshared\n  (RHEL-84680)\n\n[15.1.1-2.1]\n- configure with --enable-host-pie --enable-host-bind-now (RHEL-95595)\n\n[15.1.1-2]\n- update from releases/gcc-15 branch\n  - PRs ada/112958, ada/120104, c/120057, c++/119863, c++/119864, c++/119938,\n   c++/119939, c++/119981, c++/119996, c++/120012, c++/120013,\n   c++/120023, c++/120125, c++/120161, c++/120350, fortran/102891,\n   fortran/102900, fortran/119928, fortran/119986, fortran/120049,\n   fortran/120107, fortran/120139, fortran/120163, fortran/120179,\n   fortran/120191, ipa/119852, ipa/119973, ipa/120006, ipa/120146,\n   libfortran/120152, libfortran/120153, libfortran/120158,\n   libfortran/120196, libstdc++/118260, libstdc++/119427,\n   libstdc++/119714, libstdc++/120029, libstdc++/120114,\n   libstdc++/120159, libstdc++/120187, libstdc++/120190,\n   libstdc++/120198, libstdc++/120293, modula2/115276, modula2/119914,\n   modula2/119915, modula2/120117, modula2/120188, preprocessor/116047,\n   preprocessor/120061, target/119610, testsuite/119909,\n   tree-optimization/111873, tree-optimization/119712,\n   tree-optimization/120043, tree-optimization/120048,\n   tree-optimization/120074, tree-optimization/120089,\n   tree-optimization/120143, tree-optimization/120211\n\n[15.1.1-1]\n- update from releases/gcc-15 branch\n  - GCC 15.1 release\n  - PRs fortran/119836, target/119327, target/119873, tree-optimization/118407\n\n[14.2.1-7.2]\n- Fix GTS version in package name.\n\n[14.2.1-7.1]\n- new package (RHEL-81741)\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2025-20406-0.html"
+}

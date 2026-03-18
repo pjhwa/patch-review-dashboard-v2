@@ -1,0 +1,40 @@
+{
+  "id": "RHSA-2026:3473",
+  "vendor": "Red Hat",
+  "type": "Security Advisory (RHSA)",
+  "title": "Red Hat Security Advisory: golang security update",
+  "issuedDate": "2026-03-02T01:23:25+00:00",
+  "updatedDate": "2026-03-02T01:23:25+00:00",
+  "pubDate": "2026-03-02T01:23:25+00:00",
+  "dateStr": "2026-03-02",
+  "url": "https://access.redhat.com/errata/RHSA-2026:3473",
+  "severity": "Important",
+  "overview": "An update for golang is now available for Red Hat Enterprise Linux 9.0 Update Services for SAP Solutions.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "description": "The golang packages provide the Go programming language compiler.\n\nSecurity Fix(es):\n\n* golang: archive/zip: Excessive CPU consumption when building archive index in archive/zip (CVE-2025-61728)\n\n* golang: net/url: Memory exhaustion in query parameter parsing in net/url (CVE-2025-61726)\n\n* cmd/cgo: Potential code smuggling via doc comments in cmd/cgo (CVE-2025-61732)\n\nFor more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux",
+    "Red Hat Enterprise Linux AppStream E4S (v.9.0)"
+  ],
+  "cves": [
+    "CVE-2025-61726",
+    "CVE-2025-61728",
+    "CVE-2025-61732"
+  ],
+  "packages": [
+    "golang-0:1.17.13-10.el9_0.src",
+    "golang-0:1.17.13-10.el9_0.aarch64",
+    "golang-bin-0:1.17.13-10.el9_0.aarch64",
+    "golang-0:1.17.13-10.el9_0.ppc64le",
+    "golang-bin-0:1.17.13-10.el9_0.ppc64le",
+    "golang-0:1.17.13-10.el9_0.x86_64",
+    "golang-bin-0:1.17.13-10.el9_0.x86_64",
+    "golang-race-0:1.17.13-10.el9_0.x86_64",
+    "golang-0:1.17.13-10.el9_0.s390x",
+    "golang-bin-0:1.17.13-10.el9_0.s390x",
+    "golang-docs-0:1.17.13-10.el9_0.noarch",
+    "golang-misc-0:1.17.13-10.el9_0.noarch",
+    "golang-src-0:1.17.13-10.el9_0.noarch",
+    "golang-tests-0:1.17.13-10.el9_0.noarch"
+  ],
+  "full_text": "An update for golang is now available for Red Hat Enterprise Linux 9.0 Update Services for SAP Solutions.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nThe golang packages provide the Go programming language compiler.\n\nSecurity Fix(es):\n\n* golang: archive/zip: Excessive CPU consumption when building archive index in archive/zip (CVE-2025-61728)\n\n* golang: net/url: Memory exhaustion in query parameter parsing in net/url (CVE-2025-61726)\n\n* cmd/cgo: Potential code smuggling via doc comments in cmd/cgo (CVE-2025-61732)\n\nFor more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section."
+}

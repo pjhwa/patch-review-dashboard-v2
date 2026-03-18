@@ -1,0 +1,35 @@
+{
+  "id": "RHBA-2025:19565",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: osinfo-db bug fix and enhancement update",
+  "issuedDate": "2025-11-04T00:03:18Z",
+  "updatedDate": "2025-11-04T00:03:18Z",
+  "pubDate": "2025-11-04T00:03:18Z",
+  "dateStr": "2025-11-04",
+  "url": "https://access.redhat.com/errata/RHBA-2025:19565",
+  "severity": "None",
+  "overview": "An update for osinfo-db is now available for Red Hat Enterprise Linux 10.",
+  "description": "The osinfo-db package contains a database that provides information about operating systems and hypervisor platforms to facilitate the automated configuration and provisioning of new virtual machines. Bug Fix(es) and Enhancement(s): [FJ10.0 Bug]: virt-install fails if argument --osinfo is not set (JIRA:RHEL-109774)",
+  "affected_products": [
+    "Red Hat Enterprise Linux for IBM z Systems - Extended Update Support",
+    "Red Hat Enterprise Linux for ARM 64",
+    "Red Hat Enterprise Linux for IBM z Systems",
+    "Red Hat Enterprise Linux for x86_64 10 x86_64",
+    "Red Hat Enterprise Linux for x86_64 - Extended Update Support 10 x86_64",
+    "Red Hat Enterprise Linux for Power, little endian - 4 years of support",
+    "Red Hat Enterprise Linux for x86_64 - 4 years of updates 10 x86_64",
+    "Red Hat Enterprise Linux for IBM z Systems - 4 years of updates",
+    "Red Hat Enterprise Linux for ARM 64 - 4 years of updates",
+    "Red Hat Enterprise Linux for Power, little endian",
+    "Red Hat Enterprise Linux for Power, little endian - Extended Update Support",
+    "Red Hat Enterprise Linux for ARM 64 - Extended Update Support"
+  ],
+  "cves": [],
+  "packages": [
+    "osinfo-db-20250124-2.el10_0.src",
+    "osinfo-db-20250124-2.el10_0.noarch"
+  ],
+  "fixes": [],
+  "full_text": "An update for osinfo-db is now available for Red Hat Enterprise Linux 10.\n\nThe osinfo-db package contains a database that provides information about operating systems and hypervisor platforms to facilitate the automated configuration and provisioning of new virtual machines. Bug Fix(es) and Enhancement(s): [FJ10.0 Bug]: virt-install fails if argument --osinfo is not set (JIRA:RHEL-109774)"
+}

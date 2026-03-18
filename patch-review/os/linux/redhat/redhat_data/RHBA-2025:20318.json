@@ -1,0 +1,44 @@
+{
+  "id": "RHBA-2025:20318",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: mod_auth_openidc bug fix and enhancement update",
+  "issuedDate": "2025-11-11T07:26:04Z",
+  "updatedDate": "2025-11-11T07:26:04Z",
+  "pubDate": "2025-11-11T07:26:04Z",
+  "dateStr": "2025-11-11",
+  "url": "https://access.redhat.com/errata/RHBA-2025:20318",
+  "severity": "None",
+  "overview": "An update for mod_auth_openidc is now available for Red Hat Enterprise Linux 10.",
+  "description": "For detailed information on changes in this release, see the Red Hat Enterprise Linux 10 Release Notes linked from the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux for ARM 64",
+    "Red Hat Enterprise Linux for Power, little endian",
+    "Red Hat Enterprise Linux for IBM z Systems",
+    "Red Hat Enterprise Linux for x86_64 10 x86_64"
+  ],
+  "cves": [],
+  "packages": [
+    "mod_auth_openidc-2.4.16.11-1.el10.src",
+    "mod_auth_openidc-2.4.16.11-1.el10.x86_64",
+    "mod_auth_openidc-debuginfo-2.4.16.11-1.el10.x86_64",
+    "mod_auth_openidc-debugsource-2.4.16.11-1.el10.x86_64",
+    "mod_auth_openidc-2.4.16.11-1.el10.s390x",
+    "mod_auth_openidc-debuginfo-2.4.16.11-1.el10.s390x",
+    "mod_auth_openidc-debugsource-2.4.16.11-1.el10.s390x",
+    "mod_auth_openidc-2.4.16.11-1.el10.ppc64le",
+    "mod_auth_openidc-debuginfo-2.4.16.11-1.el10.ppc64le",
+    "mod_auth_openidc-debugsource-2.4.16.11-1.el10.ppc64le",
+    "mod_auth_openidc-2.4.16.11-1.el10.aarch64",
+    "mod_auth_openidc-debuginfo-2.4.16.11-1.el10.aarch64",
+    "mod_auth_openidc-debugsource-2.4.16.11-1.el10.aarch64"
+  ],
+  "fixes": [
+    {
+      "id": "RHEL-85518",
+      "url": "https://issues.redhat.com/browse/RHEL-85518",
+      "description": "Upgrade mod_auth_openidc - rhel 10"
+    }
+  ],
+  "full_text": "An update for mod_auth_openidc is now available for Red Hat Enterprise Linux 10.\n\nFor detailed information on changes in this release, see the Red Hat Enterprise Linux 10 Release Notes linked from the References section."
+}

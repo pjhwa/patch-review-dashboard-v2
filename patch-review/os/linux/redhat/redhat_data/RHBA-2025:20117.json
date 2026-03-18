@@ -1,0 +1,56 @@
+{
+  "id": "RHBA-2025:20117",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: cronie bug fix and enhancement update",
+  "issuedDate": "2025-11-11T07:25:09Z",
+  "updatedDate": "2025-11-11T07:25:09Z",
+  "pubDate": "2025-11-11T07:25:09Z",
+  "dateStr": "2025-11-11",
+  "url": "https://access.redhat.com/errata/RHBA-2025:20117",
+  "severity": "None",
+  "overview": "An update for cronie is now available for Red Hat Enterprise Linux 10.",
+  "description": "For detailed information on changes in this release, see the Red Hat Enterprise Linux 10 Release Notes linked from the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux for Power, little endian",
+    "Red Hat Enterprise Linux for ARM 64",
+    "Red Hat Enterprise Linux for IBM z Systems",
+    "Red Hat Enterprise Linux for x86_64 10 x86_64"
+  ],
+  "cves": [],
+  "packages": [
+    "cronie-1.7.0-12.el10.src",
+    "cronie-1.7.0-12.el10.x86_64",
+    "cronie-anacron-1.7.0-12.el10.x86_64",
+    "cronie-anacron-debuginfo-1.7.0-12.el10.x86_64",
+    "cronie-debuginfo-1.7.0-12.el10.x86_64",
+    "cronie-debugsource-1.7.0-12.el10.x86_64",
+    "cronie-noanacron-1.7.0-12.el10.x86_64",
+    "cronie-1.7.0-12.el10.s390x",
+    "cronie-anacron-1.7.0-12.el10.s390x",
+    "cronie-anacron-debuginfo-1.7.0-12.el10.s390x",
+    "cronie-debuginfo-1.7.0-12.el10.s390x",
+    "cronie-debugsource-1.7.0-12.el10.s390x",
+    "cronie-noanacron-1.7.0-12.el10.s390x",
+    "cronie-1.7.0-12.el10.ppc64le",
+    "cronie-anacron-1.7.0-12.el10.ppc64le",
+    "cronie-anacron-debuginfo-1.7.0-12.el10.ppc64le",
+    "cronie-debuginfo-1.7.0-12.el10.ppc64le",
+    "cronie-debugsource-1.7.0-12.el10.ppc64le",
+    "cronie-noanacron-1.7.0-12.el10.ppc64le",
+    "cronie-1.7.0-12.el10.aarch64",
+    "cronie-anacron-1.7.0-12.el10.aarch64",
+    "cronie-anacron-debuginfo-1.7.0-12.el10.aarch64",
+    "cronie-debuginfo-1.7.0-12.el10.aarch64",
+    "cronie-debugsource-1.7.0-12.el10.aarch64",
+    "cronie-noanacron-1.7.0-12.el10.aarch64"
+  ],
+  "fixes": [
+    {
+      "id": "RHEL-93969",
+      "url": "https://issues.redhat.com/browse/RHEL-93969",
+      "description": "crontab always prints an error if ~/.cache does not exist [rhel-10.1]"
+    }
+  ],
+  "full_text": "An update for cronie is now available for Red Hat Enterprise Linux 10.\n\nFor detailed information on changes in this release, see the Red Hat Enterprise Linux 10 Release Notes linked from the References section."
+}

@@ -1,0 +1,30 @@
+{
+  "id": "USN-8013-4",
+  "url": "https://ubuntu.com/security/notices/USN-8013-4",
+  "synopsis": "USN-8013-4: Linux kernel vulnerabilities",
+  "dateStr": "11 February 2026",
+  "overview": "Several security issues were fixed in the Linux kernel.",
+  "description": "Several security issues were discovered in the Linux kernel.\nAn attacker could possibly use these to compromise the system.\nThis update corrects flaws in the following subsystems:\n\nCryptographic API;\n\nSMB network file system\n\n \n\n \n\n \n\nSeveral security issues were discovered in the Linux kernel.\nAn attacker could possibly use these to compromise the system.\nThis update corrects flaws in the following subsystems:\n\nCryptographic API;\n\nSMB network file system",
+  "packages": [
+    "linux",
+    "linux",
+    "linux",
+    "linux",
+    "linux"
+  ],
+  "cves": [
+    "CVE-2025-40019",
+    "CVE-2025-38561"
+  ],
+  "affected_products": [
+    "22.04 LTS",
+    "20.04 LTS",
+    "Open side navigation"
+  ],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Ubuntu Security Notices\n\nUSN-8013-4\n\n \n\n \n\n \n\n \n\n \n\n \nUSN-8013-4: Linux kernel vulnerabilities\n\n \n\n \n\n \n\n \nPublication date\n\n \n\n \n\n \n11 February 2026\n\n \n\n \n\n \n\n \n\n \nOverview\n\n \n\n \n\n \nSeveral security issues were fixed in the Linux kernel.\n\n \n\n \n\n \n\n \n\n \nReleases\n\n \n\n \n\n \n\n 22.04 LTS\n\n20.04 LTS\n\n \n\n \n\n \n\n \n\n \n\n \n\n Open side navigation\n \n\n \n\n \nPackages\n\n \n\n linux-aws-5.15 - Linux kernel for Amazon Web Services (AWS) systems\n \n\n linux-gcp-5.15 - Linux kernel for Google Cloud Platform (GCP) systems\n \n\n linux-nvidia-tegra-igx - Linux kernel for NVIDIA Tegra IGX systems\n \n\n linux-oracle-5.15 - Linux kernel for Oracle Cloud systems\n \n\n linux-xilinx-zynqmp - Linux kernel for Xilinx ZynqMP processors\n \n\n \n\n \nDetails\n\n \n\n \n\nSeveral security issues were discovered in the Linux kernel.\nAn attacker could possibly use these to compromise the system.\nThis update corrects flaws in the following subsystems:\n\nCryptographic API;\n\nSMB network file system\n\n \n\n \n\n \n\nSeveral security issues were discovered in the Linux kernel.\nAn attacker could possibly use these to compromise the system.\nThis update corrects flaws in the following subsystems:\n\nCryptographic API;\n\nSMB network file system\n\n \n\n \n\n \n\n \nUpdate instructions\n\n \n\n \n\n \n\n \n\nAfter a standard system update you need to reboot your computer to make\nall the necessary changes.\n\n Learn more about how to get the fixes.\n \n\n \n\n \n\n \n\n \nATTENTION: Due to an unavoidable ABI change the kernel updates have\nbeen given a new version number, which requires you to recompile and\nreinstall all third party kernel modules you might have installed.\nUnless you manually uninstalled the standard kernel metapackages\n(e.g. linux-generic, linux-generic-lts-RELEASE, linux-virtual,\nlinux-powerpc), a standard system upgrade will automatically perform\nthis as well.\n\n \n\n \n\n \nThe problem can be corrected by updating your system to the following package versions:\n\n \n\n \n\n \n\n \n\n Ubuntu Release\n Package Version\n \n\n 22.04\n\nLTS jammy\n\n linux-image-5.15.0-1040-nvidia-tegra-igx – \n\n5.15.0-1040.40\n\n linux-image-5.15.0-1040-nvidia-tegra-igx-rt – \n\n5.15.0-1040.40\n\n linux-image-5.15.0-1063-xilinx-zynqmp – \n\n5.15.0-1063.67\n\n linux-image-nvidia-tegra-igx – \n\n5.15.0.1040.42\n\n linux-image-nvidia-tegra-igx-5.15 – \n\n5.15.0.1040.42\n\n linux-image-nvidia-tegra-igx-rt – \n\n5.15.0.1040.42\n\n linux-image-nvidia-tegra-igx-rt-5.15 – \n\n5.15.0.1040.42\n\n linux-image-xilinx-zynqmp – \n\n5.15.0.1063.66\n\n linux-image-xilinx-zynqmp-5.15 – \n\n5.15.0.1063.66\n\n \n\n 20.04\n\nLTS focal\n\n linux-image-5.15.0-1096-oracle – \n\n5.15.0-1096.102~20.04.1\n\n  \n\nUbuntu Pro\n Fix available with Ubuntu Pro.\n\n linux-image-5.15.0-1099-aws – \n\n5.15.0-1099.106~20.04.1\n\n  \n\nUbuntu Pro\n Fix available with Ubuntu Pro.\n\n linux-image-5.15.0-1099-gcp – \n\n5.15.0-1099.108~20.04.1\n\n  \n\nUbuntu Pro\n Fix available with Ubuntu Pro.\n\n linux-image-aws – \n\n5.15.0.1099.106~20.04.1\n\n  \n\nUbuntu Pro\n Fix available with Ubuntu Pro.\n\n linux-image-aws-5.15 – \n\n5.15.0.1099.106~20.04.1\n\n  \n\nUbuntu Pro\n Fix available with Ubuntu Pro.\n\n linux-image-gcp – \n\n5.15.0.1099.108~20.04.1\n\n  \n\nUbuntu Pro\n Fix available with Ubuntu Pro.\n\n linux-image-gcp-5.15 – \n\n5.15.0.1099.108~20.04.1\n\n  \n\nUbuntu Pro\n Fix available with Ubuntu Pro.\n\n linux-image-oracle – \n\n5.15.0.1096.102~20.04.1\n\n  \n\nUbuntu Pro\n Fix available with Ubuntu Pro.\n\n linux-image-oracle-5.15 – \n\n5.15.0.1096.102~20.04.1\n\n  \n\nUbuntu Pro\n Fix available with Ubuntu Pro.\n\n \n\nReduce your security exposure\n\n \n\n Ubuntu Pro provides ten-year security coverage to 25,000+ packages in Main and Universe repositories, and it is free for up to five machines.\n \n\n \n\n Get Ubuntu Pro\n \n\n \n\nReferences\n\n \n\n \n\n CVE-2025-40019\n \n\n \n\n CVE-2025-38561\n \n\n \n\n \n\n CVE-2025-40019\n \n\n CVE-2025-38561\n \n\n \n\n \nRelated notices\n\n \n\n \n\n USN-8074-1\n \n\n \n\n USN-8074-2\n \n\n \n\n USN-8016-1\n \n\n \n\n USN-8015-1\n \n\n \n\n USN-8015-2\n \n\n \n\n USN-8015-3\n \n\n \n\n USN-8015-4\n \n\n \n\n USN-8015-5\n \n\n \n\n USN-8014-1\n \n\n \n\n USN-8013-1\n \n\n \n\n USN-8074-1\n \n\n USN-8074-2\n \n\n USN-8016-1\n \n\n USN-8015-1\n \n\n USN-8015-2\n \n\n USN-8015-3\n \n\n USN-8015-4\n \n\n USN-8015-5\n \n\n USN-8014-1\n \n\n USN-8013-1\n \n\n USN-8013-2\n \n\n USN-8013-3\n \n\n USN-7990-1\n \n\n USN-7990-2\n \n\n USN-7990-3\n \n\n USN-7990-4\n \n\n USN-7990-5\n \n\n USN-7990-6\n \n\n USN-7934-1\n \n\n USN-7880-1\n \n\n USN-7879-1\n \n\n USN-7879-2\n \n\n USN-7879-3\n \n\n USN-7879-4\n \n\n LSN-0118-1\n \n\n Show 15 more references\n Show less references\n\n \n\n \n\n \n\n \n\n \n\n \nHave additional questions?\n\n \n\n Talk to a member of the team ›",
+  "title": "USN-8013-4: Linux kernel vulnerabilities | Ubuntu security notices | Ubuntu",
+  "pubDate": "2026-02-10T15:00:00.000Z",
+  "vendor": "Ubuntu"
+}

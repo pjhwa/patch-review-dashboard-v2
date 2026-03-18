@@ -1,0 +1,17 @@
+{
+  "id": "ELSA-2026-50005",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2026-January/019636.html",
+  "synopsis": "[El-errata] ELSA-2026-50005 does not affect running systems",
+  "dateStr": "2026-January",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Synopsis: ELSA-2026-50005 does not affect running systems",
+  "description": "",
+  "affected_products": [],
+  "packages": [],
+  "cves": [],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Synopsis: ELSA-2026-50005 does not affect running systems\n\nThe recently released UEKR6 5.4.17 on OL7 and OL8, ELSA-2026-50005,\ndoes not fix any security problems relevant to already running\nsystems. You do not need to take any action to update your systems.\n\nSUPPORT\n\nKsplice support is available at ksplice-support_ww at oracle.com.\n\n\n-------------- next part --------------\nA non-text attachment was scrubbed...\nName: signature.asc\nType: application/pgp-signature\nSize: 833 bytes\nDesc: This is a digitally signed message part\nURL: <http://oss.oracle.com/pipermail/el-errata/attachments/20260129/63283470/attachment.sig>",
+  "vendor": "Oracle"
+}

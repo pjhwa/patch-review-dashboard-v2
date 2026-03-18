@@ -1,0 +1,31 @@
+{
+  "id": "USN-7829-6",
+  "url": "https://ubuntu.com/security/notices/USN-7829-6",
+  "synopsis": "USN-7829-6: Linux kernel vulnerabilities",
+  "dateStr": "4 November 2025",
+  "overview": "Several security issues were fixed in the Linux kernel.",
+  "description": "Several security issues were discovered in the Linux kernel.\nAn attacker could possibly use these to compromise the system.\nThis update corrects flaws in the following subsystems:\n\nGPU drivers;\n\nNetwork drivers;\n\nNetlink\n\n \n\n \n\n \n\nSeveral security issues were discovered in the Linux kernel.\nAn attacker could possibly use these to compromise the system.\nThis update corrects flaws in the following subsystems:\n\nGPU drivers;\n\nNetwork drivers;\n\nNetlink",
+  "packages": [
+    "linux",
+    "linux",
+    "linux",
+    "linux"
+  ],
+  "cves": [
+    "CVE-2025-38727",
+    "CVE-2024-26896",
+    "CVE-2024-26700",
+    "CVE-2023-52593"
+  ],
+  "affected_products": [
+    "22.04 LTS",
+    "20.04 LTS",
+    "Open side navigation"
+  ],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Ubuntu Security Notices\n\nUSN-7829-6\n\n \n\n \n\n \n\n \n\n \n\n \nUSN-7829-6: Linux kernel vulnerabilities\n\n \n\n \n\n \n\n \nPublication date\n\n \n\n \n\n \n4 November 2025\n\n \n\n \n\n \n\n \n\n \nOverview\n\n \n\n \n\n \nSeveral security issues were fixed in the Linux kernel.\n\n \n\n \n\n \n\n \n\n \nReleases\n\n \n\n \n\n \n\n 22.04 LTS\n\n20.04 LTS\n\n \n\n \n\n \n\n \n\n \n\n \n\n Open side navigation\n \n\n \n\n \nPackages\n\n \n\n linux-nvidia-tegra - Linux kernel for NVIDIA Tegra systems\n \n\n linux-nvidia-tegra-5.15 - Linux kernel for NVIDIA Tegra systems\n \n\n linux-nvidia-tegra-igx - Linux kernel for NVIDIA Tegra IGX systems\n \n\n linux-raspi - Linux kernel for Raspberry Pi systems\n \n\n \n\n \nDetails\n\n \n\n \n\nSeveral security issues were discovered in the Linux kernel.\nAn attacker could possibly use these to compromise the system.\nThis update corrects flaws in the following subsystems:\n\nGPU drivers;\n\nNetwork drivers;\n\nNetlink\n\n \n\n \n\n \n\nSeveral security issues were discovered in the Linux kernel.\nAn attacker could possibly use these to compromise the system.\nThis update corrects flaws in the following subsystems:\n\nGPU drivers;\n\nNetwork drivers;\n\nNetlink\n\n \n\n \n\n \n\n \nUpdate instructions\n\n \n\n \n\n \n\n \n\nAfter a standard system update you need to reboot your computer to make\nall the necessary changes.\n\n Learn more about how to get the fixes.\n \n\n \n\n \n\n \n\n \nATTENTION: Due to an unavoidable ABI change the kernel updates have\nbeen given a new version number, which requires you to recompile and\nreinstall all third party kernel modules you might have installed.\nUnless you manually uninstalled the standard kernel metapackages\n(e.g. linux-generic, linux-generic-lts-RELEASE, linux-virtual,\nlinux-powerpc), a standard system upgrade will automatically perform\nthis as well.\n\n \n\n \n\n \nThe problem can be corrected by updating your system to the following package versions:\n\n \n\n \n\n \n\n \n\n Ubuntu Release\n Package Version\n \n\n 22.04\n\nLTS jammy\n\n linux-image-5.15.0-1036-nvidia-tegra-igx – \n\n5.15.0-1036.36\n\n linux-image-5.15.0-1036-nvidia-tegra-igx-rt – \n\n5.15.0-1036.36\n\n linux-image-5.15.0-1047-nvidia-tegra – \n\n5.15.0-1047.47\n\n linux-image-5.15.0-1047-nvidia-tegra-rt – \n\n5.15.0-1047.47\n\n linux-image-5.15.0-1089-raspi – \n\n5.15.0-1089.92\n\n linux-image-nvidia-tegra – \n\n5.15.0.1047.47\n\n linux-image-nvidia-tegra-5.15 – \n\n5.15.0.1047.47\n\n linux-image-nvidia-tegra-igx – \n\n5.15.0.1036.38\n\n linux-image-nvidia-tegra-igx-5.15 – \n\n5.15.0.1036.38\n\n linux-image-nvidia-tegra-igx-rt – \n\n5.15.0.1036.38\n\n linux-image-nvidia-tegra-igx-rt-5.15 – \n\n5.15.0.1036.38\n\n linux-image-nvidia-tegra-rt – \n\n5.15.0.1047.47\n\n linux-image-nvidia-tegra-rt-5.15 – \n\n5.15.0.1047.47\n\n linux-image-raspi – \n\n5.15.0.1089.87\n\n linux-image-raspi-5.15 – \n\n5.15.0.1089.87\n\n linux-image-raspi-nolpae – \n\n5.15.0.1089.87\n\n \n\n 20.04\n\nLTS focal\n\n linux-image-5.15.0-1047-nvidia-tegra – \n\n5.15.0-1047.47~20.04.1\n\n  \n\nUbuntu Pro\n Fix available with Ubuntu Pro.\n\n linux-image-5.15.0-1047-nvidia-tegra-rt – \n\n5.15.0-1047.47~20.04.1\n\n  \n\nUbuntu Pro\n Fix available with Ubuntu Pro.\n\n linux-image-nvidia-tegra – \n\n5.15.0.1047.47~20.04.1\n\n  \n\nUbuntu Pro\n Fix available with Ubuntu Pro.\n\n linux-image-nvidia-tegra-5.15 – \n\n5.15.0.1047.47~20.04.1\n\n  \n\nUbuntu Pro\n Fix available with Ubuntu Pro.\n\n linux-image-nvidia-tegra-rt – \n\n5.15.0.1047.47~20.04.1\n\n  \n\nUbuntu Pro\n Fix available with Ubuntu Pro.\n\n linux-image-nvidia-tegra-rt-5.15 – \n\n5.15.0.1047.47~20.04.1\n\n  \n\nUbuntu Pro\n Fix available with Ubuntu Pro.\n\n \n\nReduce your security exposure\n\n \n\n Ubuntu Pro provides ten-year security coverage to 25,000+ packages in Main and Universe repositories, and it is free for up to five machines.\n \n\n \n\n Get Ubuntu Pro\n \n\n \n\nReferences\n\n \n\n \n\n CVE-2025-38727\n \n\n \n\n CVE-2024-26896\n \n\n \n\n CVE-2024-26700\n \n\n \n\n CVE-2023-52593\n \n\n \n\n \n\n CVE-2025-38727\n \n\n CVE-2024-26896\n \n\n CVE-2024-26700\n \n\n CVE-2023-52593\n \n\n \n\n \nRelated notices\n\n \n\n \n\n USN-7933-1\n \n\n \n\n USN-7829-1\n \n\n \n\n USN-7829-2\n \n\n \n\n USN-7829-3\n \n\n \n\n USN-7829-4\n \n\n \n\n USN-7829-5\n \n\n \n\n USN-6900-1\n \n\n \n\n USN-6895-1\n \n\n \n\n USN-6895-2\n \n\n \n\n USN-6895-3\n \n\n \n\n USN-7933-1\n \n\n USN-7829-1\n \n\n USN-7829-2\n \n\n USN-7829-3\n \n\n USN-7829-4\n \n\n USN-7829-5\n \n\n USN-6900-1\n \n\n USN-6895-1\n \n\n USN-6895-2\n \n\n USN-6895-3\n \n\n USN-6895-4\n \n\n USN-6878-1\n \n\n USN-6819-1\n \n\n USN-6819-2\n \n\n USN-6819-3\n \n\n USN-6819-4\n \n\n USN-6818-1\n \n\n USN-6818-2\n \n\n USN-6818-3\n \n\n USN-6818-4\n \n\n USN-6817-1\n \n\n USN-6817-2\n \n\n USN-6817-3\n \n\n USN-6816-1\n \n\n USN-6688-1\n \n\n Show 15 more references\n Show less references\n\n \n\n \n\n \n\n \n\n \n\n \nHave additional questions?\n\n \n\n Talk to a member of the team ›",
+  "title": "USN-7829-6: Linux kernel vulnerabilities | Ubuntu security notices | Ubuntu",
+  "pubDate": "2025-11-03T15:00:00.000Z",
+  "vendor": "Ubuntu"
+}

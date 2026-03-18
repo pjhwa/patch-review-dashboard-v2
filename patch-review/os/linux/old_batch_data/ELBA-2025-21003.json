@@ -1,0 +1,43 @@
+{
+  "id": "ELBA-2025-21003",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2025-December/019162.html",
+  "synopsis": "[El-errata] ELBA-2025-21003 Oracle Linux 10 mesa bug fix and enhancement update",
+  "dateStr": "2025-December",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Bug Fix Advisory ELBA-2025-21003",
+  "description": "[25.0.7-6]\n- Rebuild for mesa-25.0.7-6.el10_1\n\n[25.0.7-5]\n- Rebuild for mesa-25.0.7-5.el10_1\n\n[25.0.7-4]\n- fix llvmpipe constant loads on s390x",
+  "affected_products": [
+    "Oracle Linux 10"
+  ],
+  "packages": [
+    "mesa-dri-drivers-25.0.7-6.el10_1.x86_64.rpm",
+    "mesa-filesystem-25.0.7-6.el10_1.x86_64.rpm",
+    "mesa-libEGL-25.0.7-6.el10_1.x86_64.rpm",
+    "mesa-libEGL-devel-25.0.7-6.el10_1.x86_64.rpm",
+    "mesa-libGL-25.0.7-6.el10_1.x86_64.rpm",
+    "mesa-libGL-devel-25.0.7-6.el10_1.x86_64.rpm",
+    "mesa-libOSMesa-25.0.7-6.el10_1.x86_64.rpm",
+    "mesa-libOSMesa-devel-25.0.7-6.el10_1.x86_64.rpm",
+    "mesa-libgbm-25.0.7-6.el10_1.x86_64.rpm",
+    "mesa-libgbm-devel-25.0.7-6.el10_1.x86_64.rpm",
+    "mesa-libxatracker-25.0.7-6.el10_1.x86_64.rpm",
+    "mesa-vulkan-drivers-25.0.7-6.el10_1.x86_64.rpm",
+    "mesa-dri-drivers-25.0.7-6.el10_1.aarch64.rpm",
+    "mesa-filesystem-25.0.7-6.el10_1.aarch64.rpm",
+    "mesa-libEGL-25.0.7-6.el10_1.aarch64.rpm",
+    "mesa-libEGL-devel-25.0.7-6.el10_1.aarch64.rpm",
+    "mesa-libGL-25.0.7-6.el10_1.aarch64.rpm",
+    "mesa-libGL-devel-25.0.7-6.el10_1.aarch64.rpm",
+    "mesa-libOSMesa-25.0.7-6.el10_1.aarch64.rpm",
+    "mesa-libOSMesa-devel-25.0.7-6.el10_1.aarch64.rpm",
+    "mesa-libgbm-25.0.7-6.el10_1.aarch64.rpm",
+    "mesa-libgbm-devel-25.0.7-6.el10_1.aarch64.rpm",
+    "mesa-vulkan-drivers-25.0.7-6.el10_1.aarch64.rpm"
+  ],
+  "cves": [],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Bug Fix Advisory ELBA-2025-21003\n\nhttp://linux.oracle.com/errata/ELBA-2025-21003.html\n\nThe following updated rpms for Oracle Linux 10 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\nmesa-dri-drivers-25.0.7-6.el10_1.x86_64.rpm\nmesa-filesystem-25.0.7-6.el10_1.x86_64.rpm\nmesa-libEGL-25.0.7-6.el10_1.x86_64.rpm\nmesa-libEGL-devel-25.0.7-6.el10_1.x86_64.rpm\nmesa-libGL-25.0.7-6.el10_1.x86_64.rpm\nmesa-libGL-devel-25.0.7-6.el10_1.x86_64.rpm\nmesa-libOSMesa-25.0.7-6.el10_1.x86_64.rpm\nmesa-libOSMesa-devel-25.0.7-6.el10_1.x86_64.rpm\nmesa-libgbm-25.0.7-6.el10_1.x86_64.rpm\nmesa-libgbm-devel-25.0.7-6.el10_1.x86_64.rpm\nmesa-libxatracker-25.0.7-6.el10_1.x86_64.rpm\nmesa-vulkan-drivers-25.0.7-6.el10_1.x86_64.rpm\n\naarch64:\nmesa-dri-drivers-25.0.7-6.el10_1.aarch64.rpm\nmesa-filesystem-25.0.7-6.el10_1.aarch64.rpm\nmesa-libEGL-25.0.7-6.el10_1.aarch64.rpm\nmesa-libEGL-devel-25.0.7-6.el10_1.aarch64.rpm\nmesa-libGL-25.0.7-6.el10_1.aarch64.rpm\nmesa-libGL-devel-25.0.7-6.el10_1.aarch64.rpm\nmesa-libOSMesa-25.0.7-6.el10_1.aarch64.rpm\nmesa-libOSMesa-devel-25.0.7-6.el10_1.aarch64.rpm\nmesa-libgbm-25.0.7-6.el10_1.aarch64.rpm\nmesa-libgbm-devel-25.0.7-6.el10_1.aarch64.rpm\nmesa-vulkan-drivers-25.0.7-6.el10_1.aarch64.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol10/SRPMS-updates/mesa-25.0.7-6.el10_1.src.rpm\n\n\n\nDescription of changes:\n\n[25.0.7-6]\n- Rebuild for mesa-25.0.7-6.el10_1\n\n[25.0.7-5]\n- Rebuild for mesa-25.0.7-5.el10_1\n\n[25.0.7-4]\n- fix llvmpipe constant loads on s390x",
+  "vendor": "Oracle"
+}

@@ -1,0 +1,25 @@
+{
+  "id": "ELBA-2025-20835",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "AppStream",
+  "title": "rubygem-mysql2 bug fix and enhancement update",
+  "issuedDate": "2025-11-17T00:00:00Z",
+  "updatedDate": "2025-11-17T00:00:00Z",
+  "pubDate": "2025-11-17T00:00:00Z",
+  "dateStr": "2025-11-17",
+  "url": "https://linux.oracle.com/errata/ELBA-2025-20835.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 9.",
+  "description": "[0.5.3-12]\n- Fix the broken SSL tests with MariaDB 10.5.18.\n  Resolves: RHEL-80220",
+  "affected_products": [
+    "Oracle Linux 9 for x86_64",
+    "Oracle Linux 9 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "rubygem-mysql2-0.5.3-12.el9.x86_64",
+    "rubygem-mysql2-0.5.3-12.el9.src"
+  ],
+  "full_text": "[0.5.3-12]\n- Fix the broken SSL tests with MariaDB 10.5.18.\n  Resolves: RHEL-80220\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2025-20835.html"
+}

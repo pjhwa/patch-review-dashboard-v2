@@ -1,0 +1,32 @@
+{
+  "id": "USN-7967-1",
+  "url": "https://ubuntu.com/security/notices/USN-7967-1",
+  "synopsis": "USN-7967-1: Avahi vulnerabilities",
+  "dateStr": "19 January 2026",
+  "overview": "Several security issues were fixed in Avahi.",
+  "description": "It was discovered that Avahi incorrectly terminated when processing browser\nrecords with wide-area disabled. An attacker could possibly use this issue\nto cause Avahi to crash, resulting in a denial of service. (CVE-2025-68276)\n\nIt was discovered that Avahi incorrectly terminated when processing\nunsolicited CNAME records pointing to resource records with short TTLs. An\nattacker could possibly use this issue to cause Avahi to crash, resulting\nin a denial of service. (CVE-2025-68468)\n\nIt was discovered that Avahi incorrectly terminated when processing\nunsolicited CNAME records in quick succession. An attacker could possibly\nuse this issue to cause Avahi to crash, resulting in a denial of service.\n(CVE-2025-68471)\n\n \n\n \n\n \n\nIt was discovered that Avahi incorrectly terminated when processing browser\nrecords with wide-area disabled. An attacker could possibly use this issue\nto cause Avahi to crash, resulting in a denial of service. (CVE-2025-68276)\n\nIt was discovered that Avahi incorrectly terminated when processing\nunsolicited CNAME records pointing to resource records with short TTLs. An\nattacker could possibly use this issue to cause Avahi to crash, resulting\nin a denial of service. (CVE-2025-68468)\n\nIt was discovered that Avahi incorrectly terminated when processing\nunsolicited CNAME records in quick succession. An attacker could possibly\nuse this issue to cause Avahi to crash, resulting in a denial of service.\n(CVE-2025-68471)",
+  "packages": [
+    "avahi"
+  ],
+  "cves": [
+    "CVE-2025-68471",
+    "CVE-2025-68468",
+    "CVE-2025-68276"
+  ],
+  "affected_products": [
+    "25.10",
+    "24.04 LTS",
+    "22.04 LTS",
+    "20.04 LTS",
+    "18.04 LTS",
+    "16.04 LTS",
+    "14.04 LTS",
+    "Open side navigation"
+  ],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Ubuntu Security Notices\n\nUSN-7967-1\n\n \n\n \n\n \n\n \n\n \n\n \nUSN-7967-1: Avahi vulnerabilities\n\n \n\n \n\n \n\n \nPublication date\n\n \n\n \n\n \n19 January 2026\n\n \n\n \n\n \n\n \n\n \nOverview\n\n \n\n \n\n \nSeveral security issues were fixed in Avahi.\n\n \n\n \n\n \n\n \n\n \nReleases\n\n \n\n \n\n \n\n 25.10\n\n 24.04 LTS\n\n22.04 LTS\n\n20.04 LTS\n\n18.04 LTS\n\n16.04 LTS\n\n14.04 LTS\n\n \n\n \n\n \n\n \n\n \n\n \n\n Open side navigation\n \n\n \n\n \nPackages\n\n \n\n avahi - IPv4LL network address configuration daemon\n \n\n \n\n \nDetails\n\n \n\n \n\nIt was discovered that Avahi incorrectly terminated when processing browser\nrecords with wide-area disabled. An attacker could possibly use this issue\nto cause Avahi to crash, resulting in a denial of service. (CVE-2025-68276)\n\nIt was discovered that Avahi incorrectly terminated when processing\nunsolicited CNAME records pointing to resource records with short TTLs. An\nattacker could possibly use this issue to cause Avahi to crash, resulting\nin a denial of service. (CVE-2025-68468)\n\nIt was discovered that Avahi incorrectly terminated when processing\nunsolicited CNAME records in quick succession. An attacker could possibly\nuse this issue to cause Avahi to crash, resulting in a denial of service.\n(CVE-2025-68471)\n\n \n\n \n\n \n\nIt was discovered that Avahi incorrectly terminated when processing browser\nrecords with wide-area disabled. An attacker could possibly use this issue\nto cause Avahi to crash, resulting in a denial of service. (CVE-2025-68276)\n\nIt was discovered that Avahi incorrectly terminated when processing\nunsolicited CNAME records pointing to resource records with short TTLs. An\nattacker could possibly use this issue to cause Avahi to crash, resulting\nin a denial of service. (CVE-2025-68468)\n\nIt was discovered that Avahi incorrectly terminated when processing\nunsolicited CNAME records in quick succession. An attacker could possibly\nuse this issue to cause Avahi to crash, resulting in a denial of service.\n(CVE-2025-68471)\n\n \n\n \n\n \n\n \nUpdate instructions\n\n \n\n \n\n \n\n \n\nIn general, a standard system update will make all the necessary changes.\n\n Learn more about how to get the fixes.\n \n\n \n\n \n\n \n\n \nThe problem can be corrected by updating your system to the following package versions:\n\n \n\n \n\n \n\n \n\n Ubuntu Release\n Package Version\n \n\n 25.10\n\nquesting\n\n avahi-daemon – \n\n0.8-16ubuntu3.1\n\n \n\n 24.04\n\nLTS noble\n\n avahi-daemon – \n\n0.8-13ubuntu6.1\n\n \n\n 22.04\n\nLTS jammy\n\n avahi-daemon – \n\n0.8-5ubuntu5.4\n\n \n\n 20.04\n\nLTS focal\n\n avahi-daemon – \n\n0.7-4ubuntu7.3+esm1\n\n  \n\nUbuntu Pro\n Fix available with Ubuntu Pro.\n\n \n\n 18.04\n\nLTS bionic\n\n avahi-daemon – \n\n0.7-3.1ubuntu1.3+esm3\n\n  \n\nUbuntu Pro\n Fix available with Ubuntu Pro.\n\n \n\n 16.04\n\nLTS xenial\n\n avahi-daemon – \n\n0.6.32~rc+dfsg-1ubuntu2.3+esm4\n\n  \n\nUbuntu Pro\n Fix available with Ubuntu Pro.\n\n \n\n 14.04\n\nLTS trusty\n\n avahi-daemon – \n\n0.6.31-4ubuntu1.3+esm4\n\n  \n\nUbuntu Pro\n Fix available with Ubuntu Pro via Legacy Support add-on.\n\n \n\nReduce your security exposure\n\n \n\n Ubuntu Pro provides ten-year security coverage to 25,000+ packages in Main and Universe repositories, and it is free for up to five machines.\n \n\n \n\n Get Ubuntu Pro\n \n\n \n\nReferences\n\n \n\n \n\n CVE-2025-68471\n \n\n \n\n CVE-2025-68468\n \n\n \n\n CVE-2025-68276\n \n\n \n\n \n\n CVE-2025-68471\n \n\n CVE-2025-68468\n \n\n CVE-2025-68276",
+  "title": "USN-7967-1: Avahi vulnerabilities | Ubuntu security notices | Ubuntu",
+  "pubDate": "2026-01-18T15:00:00.000Z",
+  "vendor": "Ubuntu"
+}

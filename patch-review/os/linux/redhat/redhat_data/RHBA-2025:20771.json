@@ -1,0 +1,82 @@
+{
+  "id": "RHBA-2025:20771",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: keylime bug fix and enhancement update",
+  "issuedDate": "2025-11-11T07:51:03Z",
+  "updatedDate": "2025-11-11T07:51:03Z",
+  "pubDate": "2025-11-11T07:51:03Z",
+  "dateStr": "2025-11-11",
+  "url": "https://access.redhat.com/errata/RHBA-2025:20771",
+  "severity": "None",
+  "overview": "An update for keylime is now available for Red Hat Enterprise Linux 10.",
+  "description": "For detailed information on changes in this release, see the Red Hat Enterprise Linux 9 Release Notes linked from the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux for IBM z Systems",
+    "Red Hat Enterprise Linux for x86_64 10 x86_64",
+    "Red Hat Enterprise Linux for ARM 64",
+    "Red Hat Enterprise Linux for Power, little endian"
+  ],
+  "cves": [],
+  "packages": [
+    "keylime-7.12.1-11.el9.src",
+    "keylime-7.12.1-11.el9.x86_64",
+    "keylime-base-7.12.1-11.el9.x86_64",
+    "keylime-registrar-7.12.1-11.el9.x86_64",
+    "keylime-selinux-7.12.1-11.el9.noarch",
+    "keylime-tenant-7.12.1-11.el9.x86_64",
+    "keylime-verifier-7.12.1-11.el9.x86_64",
+    "python3-keylime-7.12.1-11.el9.x86_64",
+    "keylime-7.12.1-11.el9.s390x",
+    "keylime-base-7.12.1-11.el9.s390x",
+    "keylime-registrar-7.12.1-11.el9.s390x",
+    "keylime-tenant-7.12.1-11.el9.s390x",
+    "keylime-verifier-7.12.1-11.el9.s390x",
+    "python3-keylime-7.12.1-11.el9.s390x",
+    "keylime-7.12.1-11.el9.ppc64le",
+    "keylime-base-7.12.1-11.el9.ppc64le",
+    "keylime-registrar-7.12.1-11.el9.ppc64le",
+    "keylime-tenant-7.12.1-11.el9.ppc64le",
+    "keylime-verifier-7.12.1-11.el9.ppc64le",
+    "python3-keylime-7.12.1-11.el9.ppc64le",
+    "keylime-7.12.1-11.el9.aarch64",
+    "keylime-base-7.12.1-11.el9.aarch64",
+    "keylime-registrar-7.12.1-11.el9.aarch64",
+    "keylime-tenant-7.12.1-11.el9.aarch64",
+    "keylime-verifier-7.12.1-11.el9.aarch64",
+    "python3-keylime-7.12.1-11.el9.aarch64"
+  ],
+  "fixes": [
+    {
+      "id": "RHEL-78418",
+      "url": "https://issues.redhat.com/browse/RHEL-78418",
+      "description": "Rebase keylime in RHEL 9.7 to at least 7.12.x"
+    },
+    {
+      "id": "RHEL-93678",
+      "url": "https://issues.redhat.com/browse/RHEL-93678",
+      "description": "Incorrect PEM password default after an update breaks keylime"
+    },
+    {
+      "id": "RHEL-76926",
+      "url": "https://issues.redhat.com/browse/RHEL-76926",
+      "description": "keylime directory /var/lib/keylime not populated in image mode"
+    },
+    {
+      "id": "RHEL-77144",
+      "url": "https://issues.redhat.com/browse/RHEL-77144",
+      "description": "/etc/keylime has incorrect ownership when installed to image-mode system"
+    },
+    {
+      "id": "RHEL-104572",
+      "url": "https://issues.redhat.com/browse/RHEL-104572",
+      "description": "Incorrect keylime tpmfiles.d configuration"
+    },
+    {
+      "id": "RHEL-80455",
+      "url": "https://issues.redhat.com/browse/RHEL-80455",
+      "description": "measured boot log parsing fails"
+    }
+  ],
+  "full_text": "An update for keylime is now available for Red Hat Enterprise Linux 10.\n\nFor detailed information on changes in this release, see the Red Hat Enterprise Linux 9 Release Notes linked from the References section."
+}

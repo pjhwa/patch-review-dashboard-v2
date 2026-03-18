@@ -1,0 +1,28 @@
+{
+  "id": "ELSA-2025-21139",
+  "vendor": "Oracle",
+  "type": "Security Advisory (ELSA)",
+  "kernel_type": "AppStream",
+  "title": " python-kdcproxy security update",
+  "issuedDate": "2025-11-25T00:00:00Z",
+  "updatedDate": "2025-11-25T00:00:00Z",
+  "pubDate": "2025-11-25T00:00:00Z",
+  "dateStr": "2025-11-25",
+  "url": "https://linux.oracle.com/errata/ELSA-2025-21139.html",
+  "severity": "Important",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 9.",
+  "description": "[1.0.0-9]\n- Use DNS discovery for declared realms only (CVE-2025-59088)\n  Resolves: RHEL-122779\n- Fix DoS vulnerability based on unbounded TCP buffering (CVE-2025-59089)\n  Resolves: RHEL-122778",
+  "affected_products": [
+    "Oracle Linux 9 for x86_64",
+    "Oracle Linux 9 for aarch64"
+  ],
+  "cves": [
+    "CVE-2025-59088",
+    "CVE-2025-59089"
+  ],
+  "packages": [
+    "python-kdcproxy-1.0.0-9.el9_7.src",
+    "python3-kdcproxy-1.0.0-9.el9_7.noarch"
+  ],
+  "full_text": "[1.0.0-9]\n- Use DNS discovery for declared realms only (CVE-2025-59088)\n  Resolves: RHEL-122779\n- Fix DoS vulnerability based on unbounded TCP buffering (CVE-2025-59089)\n  Resolves: RHEL-122778\n\nReferences:\nhttps://linux.oracle.com/errata/ELSA-2025-21139.html\nhttps://linux.oracle.com/cve/CVE-2025-59088.html\nhttps://linux.oracle.com/cve/CVE-2025-59089.html"
+}

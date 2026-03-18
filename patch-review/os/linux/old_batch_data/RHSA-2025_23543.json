@@ -1,0 +1,20 @@
+{
+  "id": "RHSA-2025:23543",
+  "vendor": "Red Hat",
+  "url": "https://access.redhat.com/errata/RHSA-2025:23543",
+  "pubDate": "2025-12-18T04:34:31.000Z",
+  "dateStr": "2025-12-18",
+  "severity": "Important",
+  "title": "Red Hat Security Advisory: container-tools:rhel8 security update",
+  "overview": "An update for the container-tools:rhel8 module is now available for Red Hat Enterprise Linux 8.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "description": "An update for the container-tools:rhel8 module is now available for Red Hat Enterprise Linux 8.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux AppStream (v. 8)"
+  ],
+  "cves": [
+    "CVE-2025-52881"
+  ],
+  "packages": [],
+  "fixes": "",
+  "full_text": "Red Hat Security Advisory: container-tools:rhel8 security update\n\nAn update for the container-tools:rhel8 module is now available for Red Hat Enterprise Linux 8.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nAn update for the container-tools:rhel8 module is now available for Red Hat Enterprise Linux 8.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nUpdated Packages:\nae6deecc.src.rpm\nae6deecc.noarch.rpm\nae6deecc.x86_64.rpm\nae6deecc.s390x.rpm\nae6deecc.ppc64le.rpm\nae6deecc.aarch64.rpm\n\nCVE-2025-52881: A flaw was found in runc. This attack is a more sophisticated variant of CVE-2019-16884, which was a flaw that allowed an attacker to trick runc into writing the LSM process labels for a container process into a dummy tmpfs file and thus not apply the correct LSM labels to the container process. The mitigation applied for CVE-2019-16884 was fairly limited and effectively only caused runc to verify that when we write LSM labels that those labels are actual procfs files."
+}

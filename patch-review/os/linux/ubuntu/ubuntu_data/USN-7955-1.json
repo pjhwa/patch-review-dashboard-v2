@@ -1,0 +1,24 @@
+{
+  "id": "USN-7955-1",
+  "vendor": "Canonical / Ubuntu",
+  "type": "Ubuntu Security Notice (USN)",
+  "title": "python-urllib3 vulnerability",
+  "issuedDate": "2026-01-12T15:31:10Z",
+  "updatedDate": "2026-02-10T04:50:47Z",
+  "pubDate": "2026-01-12T15:31:10Z",
+  "dateStr": "2026-01-12",
+  "url": "https://ubuntu.com/security/notices/USN-7955-1",
+  "severity": "None",
+  "overview": "python-urllib3 vulnerability",
+  "description": "It was discovered that urllib3 incorrectly handled decompression during\nHTTP redirects. An attacker could possibly use this issue to cause urllib3\nto use excessive resources, causing a denial of service.",
+  "affected_products": [
+    "Ubuntu 22.04 LTS",
+    "Ubuntu 24.04 LTS"
+  ],
+  "cves": [],
+  "packages": [
+    "python3-urllib3-1.26.5-1~exp1ubuntu0.5",
+    "python3-urllib3-2.0.7-1ubuntu0.4"
+  ],
+  "full_text": "It was discovered that urllib3 incorrectly handled decompression during\nHTTP redirects. An attacker could possibly use this issue to cause urllib3\nto use excessive resources, causing a denial of service."
+}

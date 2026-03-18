@@ -1,0 +1,25 @@
+{
+  "id": "USN-8041-1",
+  "url": "https://ubuntu.com/security/notices/USN-8041-1",
+  "synopsis": "USN-8041-1: Dottie vulnerability",
+  "dateStr": "12 February 2026",
+  "overview": "Dottie could be made to run programs if it received specially crafted\nnetwork traffic.",
+  "description": "Yuhan Gao and Peng Zhou discovered that Dottie was vulnerable to prototype\npollution when altering the proto magical attribute. An attacker could\npossibly use this issue to achieve remote code execution.\n\n \n\n \n\n \n\nYuhan Gao and Peng Zhou discovered that Dottie was vulnerable to prototype\npollution when altering the proto magical attribute. An attacker could\npossibly use this issue to achieve remote code execution.",
+  "packages": [
+    "node"
+  ],
+  "cves": [
+    "CVE-2023-26132"
+  ],
+  "affected_products": [
+    "22.04 LTS",
+    "20.04 LTS",
+    "Open side navigation"
+  ],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Ubuntu Security Notices\n\nUSN-8041-1\n\n \n\n \n\n \n\n \n\n \n\n \nUSN-8041-1: Dottie vulnerability\n\n \n\n \n\n \n\n \nPublication date\n\n \n\n \n\n \n12 February 2026\n\n \n\n \n\n \n\n \n\n \nOverview\n\n \n\n \n\n \nDottie could be made to run programs if it received specially crafted\nnetwork traffic.\n\n \n\n \n\n \n\n \n\n \nReleases\n\n \n\n \n\n \n\n 22.04 LTS\n\n20.04 LTS\n\n \n\n \n\n \n\n \n\n \n\n \n\n Open side navigation\n \n\n \n\n \nPackages\n\n \n\n node-dottie - Fast and safe nested object access and manipulation in JavaScript\n \n\n \n\n \nDetails\n\n \n\n \n\nYuhan Gao and Peng Zhou discovered that Dottie was vulnerable to prototype\npollution when altering the proto magical attribute. An attacker could\npossibly use this issue to achieve remote code execution.\n\n \n\n \n\n \n\nYuhan Gao and Peng Zhou discovered that Dottie was vulnerable to prototype\npollution when altering the proto magical attribute. An attacker could\npossibly use this issue to achieve remote code execution.\n\n \n\n \n\n \n\n \nUpdate instructions\n\n \n\n \n\n \n\n \n\nIn general, a standard system update will make all the necessary changes.\n\n Learn more about how to get the fixes.\n \n\n \n\n \n\n \n\n \nThe problem can be corrected by updating your system to the following package versions:\n\n \n\n \n\n \n\n \n\n Ubuntu Release\n Package Version\n \n\n 22.04\n\nLTS jammy\n\n node-dottie – \n\n2.0.2-4ubuntu0.1~esm1\n\n  \n\nUbuntu Pro\n Fix available with Ubuntu Pro via ESM Apps. A community fix might become publicly available in the future.\n\n \n\n \n\n 20.04\n\nLTS focal\n\n node-dottie – \n\n2.0.2-1ubuntu0.1~esm1\n\n  \n\nUbuntu Pro\n Fix available with Ubuntu Pro via ESM Apps. A community fix might become publicly available in the future.\n\n \n\n \n\nReduce your security exposure\n\n \n\n Ubuntu Pro provides ten-year security coverage to 25,000+ packages in Main and Universe repositories, and it is free for up to five machines.\n \n\n \n\n Get Ubuntu Pro\n \n\n \n\nReferences\n\n \n\n \n\n CVE-2023-26132\n \n\n \n\n \n\n CVE-2023-26132",
+  "title": "USN-8041-1: Dottie vulnerability | Ubuntu security notices | Ubuntu",
+  "pubDate": "2026-02-11T15:00:00.000Z",
+  "vendor": "Ubuntu"
+}

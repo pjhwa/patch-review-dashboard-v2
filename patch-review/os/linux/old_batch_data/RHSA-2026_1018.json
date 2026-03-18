@@ -1,0 +1,25 @@
+{
+  "id": "RHSA-2026:1018",
+  "vendor": "Red Hat",
+  "url": "https://access.redhat.com/errata/RHSA-2026:1018",
+  "pubDate": "2026-01-22T15:52:24.000Z",
+  "dateStr": "2026-01-22",
+  "severity": "Important",
+  "title": "Red Hat Security Advisory: Red Hat OpenShift GitOps v1.17.4 security update",
+  "overview": "Important: Red Hat OpenShift GitOps v1.17.4 security update",
+  "description": "Important: Red Hat OpenShift GitOps v1.17.4 security update",
+  "affected_products": [
+    "Red Hat OpenShift GitOps 1.17"
+  ],
+  "cves": [
+    "CVE-2025-47913",
+    "CVE-2025-55190",
+    "CVE-2025-58183",
+    "CVE-2025-58754",
+    "CVE-2025-61729",
+    "CVE-2025-68156"
+  ],
+  "packages": [],
+  "fixes": "",
+  "full_text": "Red Hat Security Advisory: Red Hat OpenShift GitOps v1.17.4 security update\n\nImportant: Red Hat OpenShift GitOps v1.17.4 security update\n\nImportant: Red Hat OpenShift GitOps v1.17.4 security update\n\n\n\nCVE-2025-47913: A flaw in golang.org/x/crypto/ssh/agent causes the SSH agent client to panic when a peer responds with the generic SSH_AGENT_SUCCESS (0x06) message to requests expecting typed replies (e.g., List, Sign). The unmarshal layer produces an unexpected message type, which the client code does not handle, leading to panic(\"unreachable\") or a nil-pointer dereference. A malicious agent or forwarded connection can exploit this to terminate the client process.\n\nCVE-2025-55190: Argo CD is a declarative, GitOps continuous delivery tool for Kubernetes. In versions 2.13.0 through 2.13.8, 2.14.0 through 2.14.15, 3.0.0 through 3.0.12 and 3.1.0-rc1 through 3.1.1, API tokens with project-level permissions are able to retrieve sensitive repository credentials (usernames, passwords) through the project details API endpoint, even when the token only has standard application management permissions and no explicit access to secrets. This vulnerability does not only affect project-level permissions. Any token with project get permissions is also vulnerable, including global permissions such as: `p, role/user, projects, get, *, allow`. This issue is fixed in versions 2.13.9, 2.14.16, 3.0.14 and 3.1.2.\n\nCVE-2025-58183: A flaw was found in the archive/tar package in the Go standard library. tar.Reader does not set a maximum size on the number of sparse region data blocks in GNU tar pax 1.0 sparse files. A specially crafted tar archive with a pax header indicating a big number of sparse regions can cause a Go program to try to allocate a large amount of memory, causing an out-of-memory condition and resulting in a denial of service.\n\nCVE-2025-58754: Axios is a promise based HTTP client for the browser and Node.js. When Axios starting in version 0.28.0 and prior to versions 0.30.2 and 1.12.0 runs on Node.js and is given a URL with the `data:` scheme, it does not perform HTTP. Instead, its Node http adapter decodes the entire payload into memory (`Buffer`/`Blob`) and returns a synthetic 200 response. This path ignores `maxContentLength` / `maxBodyLength` (which only protect HTTP responses), so an attacker can supply a very large `data:` URI and cause the process to allocate unbounded memory and crash (DoS), even if the caller requested `responseType: 'stream'`. Versions 0.30.2 and 1.12.0 contain a patch for the issue.\n\nCVE-2025-61729: Within HostnameError.Error(), when constructing an error string, there is no limit to the number of hosts that will be printed out. Furthermore, the error string is constructed by repeated string concatenation, leading to quadratic runtime. Therefore, a certificate provided by a malicious actor can result in excessive resource consumption.\n\nCVE-2025-68156: A flaw was found in Expr, an expression language and expression evaluation for Go. This vulnerability allows a denial of service (DoS) via recursive traversal over user-provided deeply nested or cyclic data structures without enforcing a maximum recursion depth, leading to a stack overflow panic and application crash."
+}

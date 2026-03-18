@@ -1,0 +1,36 @@
+{
+  "id": "ELBA-2025-19542",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "RHCK",
+  "title": "NetworkManager bug fix and enhancement update",
+  "issuedDate": "2025-11-04T00:00:00Z",
+  "updatedDate": "2025-11-04T00:00:00Z",
+  "pubDate": "2025-11-04T00:00:00Z",
+  "dateStr": "2025-11-04",
+  "url": "https://linux.oracle.com/errata/ELBA-2025-19542.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 9.",
+  "description": "[1:1.52.0-9.0.1]\n- disable MPTCP handling by default [Orabug: 34801142]\n- add connectivity check via Oracle servers [Orabug: 32051972]\n- Add a dropin file to make Networkmanager-dispatcher persistent [Orabug: 36989910]\n- Drop 777 permissions from the NetworkManager-dispatcher drop-in directory [Orabug: 37581907]\n\n[1:1.52.0-9]\n- Rebuild due to wrong buildroot picked in last build\n\n[1:1.52.0-8]\n- Support reapplying sriov.vfs (RHEL-113952)\n- Fix removing unrelated OVS ports (RHEL-121102)",
+  "affected_products": [
+    "Oracle Linux 9 for x86_64",
+    "Oracle Linux 9 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "NetworkManager-config-connectivity-oracle-1.52.0-9.0.1.el9_6.noarch",
+    "NetworkManager-wifi-1.52.0-9.0.1.el9_6.x86_64",
+    "NetworkManager-adsl-1.52.0-9.0.1.el9_6.x86_64",
+    "NetworkManager-bluetooth-1.52.0-9.0.1.el9_6.x86_64",
+    "NetworkManager-1.52.0-9.0.1.el9_6.src",
+    "NetworkManager-tui-1.52.0-9.0.1.el9_6.x86_64",
+    "NetworkManager-team-1.52.0-9.0.1.el9_6.x86_64",
+    "NetworkManager-libnm-1.52.0-9.0.1.el9_6.i686",
+    "NetworkManager-initscripts-updown-1.52.0-9.0.1.el9_6.noarch",
+    "NetworkManager-wwan-1.52.0-9.0.1.el9_6.x86_64",
+    "NetworkManager-1.52.0-9.0.1.el9_6.x86_64",
+    "NetworkManager-config-server-1.52.0-9.0.1.el9_6.noarch",
+    "NetworkManager-libnm-1.52.0-9.0.1.el9_6.x86_64"
+  ],
+  "full_text": "[1:1.52.0-9.0.1]\n- disable MPTCP handling by default [Orabug: 34801142]\n- add connectivity check via Oracle servers [Orabug: 32051972]\n- Add a dropin file to make Networkmanager-dispatcher persistent [Orabug: 36989910]\n- Drop 777 permissions from the NetworkManager-dispatcher drop-in directory [Orabug: 37581907]\n\n[1:1.52.0-9]\n- Rebuild due to wrong buildroot picked in last build\n\n[1:1.52.0-8]\n- Support reapplying sriov.vfs (RHEL-113952)\n- Fix removing unrelated OVS ports (RHEL-121102)\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2025-19542.html"
+}

@@ -1,0 +1,25 @@
+{
+  "id": "ELBA-2026-1357",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "AppStream",
+  "title": "rig bug fix and enhancement update",
+  "issuedDate": "2026-01-27T00:00:00Z",
+  "updatedDate": "2026-01-27T00:00:00Z",
+  "pubDate": "2026-01-27T00:00:00Z",
+  "dateStr": "2026-01-27",
+  "url": "https://linux.oracle.com/errata/ELBA-2026-1357.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 9.",
+  "description": "[1.1-7]\n- Add fix to avoid using deprecated sosreport command.",
+  "affected_products": [
+    "Oracle Linux 9 for x86_64",
+    "Oracle Linux 9 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "rig-1.1-7.el9_7.noarch",
+    "rig-1.1-7.el9_7.src"
+  ],
+  "full_text": "[1.1-7]\n- Add fix to avoid using deprecated sosreport command.\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2026-1357.html"
+}

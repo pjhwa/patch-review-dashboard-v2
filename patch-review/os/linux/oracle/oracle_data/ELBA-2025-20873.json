@@ -1,0 +1,25 @@
+{
+  "id": "ELBA-2025-20873",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "AppStream",
+  "title": "python3.12-cryptography bug fix and enhancement update",
+  "issuedDate": "2025-11-17T00:00:00Z",
+  "updatedDate": "2025-11-17T00:00:00Z",
+  "pubDate": "2025-11-17T00:00:00Z",
+  "dateStr": "2025-11-17",
+  "url": "https://linux.oracle.com/errata/ELBA-2025-20873.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 9.",
+  "description": "[41.0.7-3]\n- Security fix for CVE-2024-26130\nResolves: RHEL-112485",
+  "affected_products": [
+    "Oracle Linux 9 for x86_64",
+    "Oracle Linux 9 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "python3.12-cryptography-41.0.7-3.el9_7.x86_64",
+    "python3.12-cryptography-41.0.7-3.el9_7.src"
+  ],
+  "full_text": "[41.0.7-3]\n- Security fix for CVE-2024-26130\nResolves: RHEL-112485\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2025-20873.html"
+}

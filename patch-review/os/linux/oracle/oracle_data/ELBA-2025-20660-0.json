@@ -1,0 +1,27 @@
+{
+  "id": "ELBA-2025-20660-0",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "AppStream",
+  "title": "rpm-ostree bug fix and enhancement update",
+  "issuedDate": "2025-11-17T00:00:00Z",
+  "updatedDate": "2025-11-17T00:00:00Z",
+  "pubDate": "2025-11-17T00:00:00Z",
+  "dateStr": "2025-11-17",
+  "url": "https://linux.oracle.com/errata/ELBA-2025-20660-0.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 9.",
+  "description": "[2025.10-1]\n- Rebase to 2025.10\n  Resolves: #RHEL-106848\n\n[2025.9-1]\n- Rebase to 2025.9\n  Resolves: #RHEL-103135\n\n[2025.8-3]\n- Move ostree container to bootc\n  Resolves: #RHEL-72863\n\n[2025.8-1]\n- Rebase to 2025.8\n  Resolves: #RHEL-90254\n\n[2025.7-2]\n- Backport https://github.com/coreos/rpm-ostree/pull/5351\n  Resolves: #RHEL-85684\n\n[2025.7-1]\n- Rebase to 2025.7\n  Resolves: #RHEL-85392",
+  "affected_products": [
+    "Oracle Linux 9 for x86_64",
+    "Oracle Linux 9 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "rpm-ostree-libs-2025.10-1.el9.x86_64",
+    "rpm-ostree-libs-2025.10-1.el9.i686",
+    "rpm-ostree-2025.10-1.el9.src",
+    "rpm-ostree-2025.10-1.el9.x86_64"
+  ],
+  "full_text": "[2025.10-1]\n- Rebase to 2025.10\n  Resolves: #RHEL-106848\n\n[2025.9-1]\n- Rebase to 2025.9\n  Resolves: #RHEL-103135\n\n[2025.8-3]\n- Move ostree container to bootc\n  Resolves: #RHEL-72863\n\n[2025.8-1]\n- Rebase to 2025.8\n  Resolves: #RHEL-90254\n\n[2025.7-2]\n- Backport https://github.com/coreos/rpm-ostree/pull/5351\n  Resolves: #RHEL-85684\n\n[2025.7-1]\n- Rebase to 2025.7\n  Resolves: #RHEL-85392\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2025-20660-0.html"
+}

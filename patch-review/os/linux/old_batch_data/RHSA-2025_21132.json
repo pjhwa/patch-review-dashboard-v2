@@ -1,0 +1,20 @@
+{
+  "id": "RHSA-2025:21132",
+  "vendor": "Red Hat",
+  "url": "https://access.redhat.com/errata/RHSA-2025:21132",
+  "pubDate": "2025-11-12T14:09:23.000Z",
+  "dateStr": "2025-11-12",
+  "severity": "Moderate",
+  "title": "Red Hat Security Advisory: Release of containers for RHOSO 18.0.14",
+  "overview": "Red Hat OpenStack Services on OpenShift (RHOSO) 18.0.14 containers are now available.\n\nRed Hat Product Security has rated this update as having a security impact of Moderate. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "description": "Red Hat OpenStack Services on OpenShift (RHOSO) 18.0.14 containers are now available.\n\nRed Hat Product Security has rated this update as having a security impact of Moderate. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "affected_products": [
+    "Red Hat OpenStack Services on OpenShift 18"
+  ],
+  "cves": [
+    "CVE-2025-47907"
+  ],
+  "packages": [],
+  "fixes": "",
+  "full_text": "Red Hat Security Advisory: Release of containers for RHOSO 18.0.14\n\nRed Hat OpenStack Services on OpenShift (RHOSO) 18.0.14 containers are now available.\n\nRed Hat Product Security has rated this update as having a security impact of Moderate. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nRed Hat OpenStack Services on OpenShift (RHOSO) 18.0.14 containers are now available.\n\nRed Hat Product Security has rated this update as having a security impact of Moderate. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\n\n\nCVE-2025-47907: A flaw was found in database/sql. Concurrent queries can produce unexpected results when a query is cancelled during a Scan method call on returned Rows, creating a race condition. This vulnerability allows an attacker who can initiate and cancel queries to trigger this condition, possibly leading to inconsistent data being returned to the application."
+}

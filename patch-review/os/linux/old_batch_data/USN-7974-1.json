@@ -1,0 +1,33 @@
+{
+  "id": "USN-7974-1",
+  "url": "https://ubuntu.com/security/notices/USN-7974-1",
+  "synopsis": "USN-7974-1: libxml2 vulnerabilities",
+  "dateStr": "22 January 2026",
+  "overview": "Several security issues were fixed in libxml2.",
+  "description": "It was discovered that libxml2 incorrectly handled maliciously crafted SGML\ncatalog files. An attacker could possibly use this issue to cause libxml2\nto consume excessive resources, leading to a denial of service.\n(CVE-2025-8732)\n\nIt was discovered that libxml2 incorrectly handled recursive include\ndirectories with the RelaxNG parser. An attacker could possibly use this\nissue to cause libxml2 to consume excessive resources, leading to a denial\nof service. (CVE-2026-0989)\n\nNick Wellnhofer discovered that libxml2 incorrectly parsed catalogs with\nself-referencing URI delegates. An attacker could possibly use this issue\nto cause libxml2 to consume excessive resources, leading to a denial of\nservice. (CVE-2026-0990)\n\nNick Wellnhofer discovered that libxml2 inefficiently parsed catalogs\nlinked with repeating...\n\n \n\n \n\n \n\nIt was discovered that libxml2 incorrectly handled maliciously crafted SGML\ncatalog files. An attacker could possibly use this issue to cause libxml2\nto consume excessive resources, leading to a denial of service.\n(CVE-2025-8732)\n\nIt was discovered that libxml2 incorrectly handled recursive include\ndirectories with the RelaxNG parser. An attacker could possibly use this\nissue to cause libxml2 to consume excessive resources, leading to a denial\nof service. (CVE-2026-0989)\n\nNick Wellnhofer discovered that libxml2 incorrectly parsed catalogs with\nself-referencing URI delegates. An attacker could possibly use this issue\nto cause libxml2 to consume excessive resources, leading to a denial of\nservice. (CVE-2026-0990)\n\nNick Wellnhofer discovered that libxml2 inefficiently parsed catalogs\nlinked with repeating nextCatalog elements. An attacker could possibly use\nthis issue to cause libxml2 to use excessive resources, leading to a denial\nof service. (CVE-2026-0992)\n\n \n\nShow more\n Show less",
+  "packages": [
+    "libxml2"
+  ],
+  "cves": [
+    "CVE-2026-0992",
+    "CVE-2026-0990",
+    "CVE-2026-0989",
+    "CVE-2025-8732"
+  ],
+  "affected_products": [
+    "25.10",
+    "24.04 LTS",
+    "22.04 LTS",
+    "20.04 LTS",
+    "18.04 LTS",
+    "16.04 LTS",
+    "14.04 LTS",
+    "Open side navigation"
+  ],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Ubuntu Security Notices\n\nUSN-7974-1\n\n \n\n \n\n \n\n \n\n \n\n \nUSN-7974-1: libxml2 vulnerabilities\n\n \n\n \n\n \n\n \nPublication date\n\n \n\n \n\n \n22 January 2026\n\n \n\n \n\n \n\n \n\n \nOverview\n\n \n\n \n\n \nSeveral security issues were fixed in libxml2.\n\n \n\n \n\n \n\n \n\n \nReleases\n\n \n\n \n\n \n\n 25.10\n\n 24.04 LTS\n\n22.04 LTS\n\n20.04 LTS\n\n18.04 LTS\n\n16.04 LTS\n\n14.04 LTS\n\n \n\n \n\n \n\n \n\n \n\n \n\n Open side navigation\n \n\n \n\n \nPackages\n\n \n\n libxml2 - GNOME XML library\n \n\n \n\n \nDetails\n\n \n\n \n\nIt was discovered that libxml2 incorrectly handled maliciously crafted SGML\ncatalog files. An attacker could possibly use this issue to cause libxml2\nto consume excessive resources, leading to a denial of service.\n(CVE-2025-8732)\n\nIt was discovered that libxml2 incorrectly handled recursive include\ndirectories with the RelaxNG parser. An attacker could possibly use this\nissue to cause libxml2 to consume excessive resources, leading to a denial\nof service. (CVE-2026-0989)\n\nNick Wellnhofer discovered that libxml2 incorrectly parsed catalogs with\nself-referencing URI delegates. An attacker could possibly use this issue\nto cause libxml2 to consume excessive resources, leading to a denial of\nservice. (CVE-2026-0990)\n\nNick Wellnhofer discovered that libxml2 inefficiently parsed catalogs\nlinked with repeating...\n\n \n\n \n\n \n\nIt was discovered that libxml2 incorrectly handled maliciously crafted SGML\ncatalog files. An attacker could possibly use this issue to cause libxml2\nto consume excessive resources, leading to a denial of service.\n(CVE-2025-8732)\n\nIt was discovered that libxml2 incorrectly handled recursive include\ndirectories with the RelaxNG parser. An attacker could possibly use this\nissue to cause libxml2 to consume excessive resources, leading to a denial\nof service. (CVE-2026-0989)\n\nNick Wellnhofer discovered that libxml2 incorrectly parsed catalogs with\nself-referencing URI delegates. An attacker could possibly use this issue\nto cause libxml2 to consume excessive resources, leading to a denial of\nservice. (CVE-2026-0990)\n\nNick Wellnhofer discovered that libxml2 inefficiently parsed catalogs\nlinked with repeating nextCatalog elements. An attacker could possibly use\nthis issue to cause libxml2 to use excessive resources, leading to a denial\nof service. (CVE-2026-0992)\n\n \n\nShow more\n Show less\n\n \n\n \nUpdate instructions\n\n \n\n \n\n \n\n \n\nIn general, a standard system update will make all the necessary changes.\n\n Learn more about how to get the fixes.\n \n\n \n\n \n\n \n\n \nThe problem can be corrected by updating your system to the following package versions:\n\n \n\n \n\n \n\n \n\n Ubuntu Release\n Package Version\n \n\n 25.10\n\nquesting\n\n libxml2-16 – \n\n2.14.5+dfsg-0.2ubuntu0.1\n\n \n\n 24.04\n\nLTS noble\n\n libxml2 – \n\n2.9.14+dfsg-1.3ubuntu3.7\n\n \n\n 22.04\n\nLTS jammy\n\n libxml2 – \n\n2.9.13+dfsg-1ubuntu0.11\n\n \n\n 20.04\n\nLTS focal\n\n libxml2 – \n\n2.9.10+dfsg-5ubuntu0.20.04.10+esm4\n\n  \n\nUbuntu Pro\n Fix available with Ubuntu Pro.\n\n \n\n 18.04\n\nLTS bionic\n\n libxml2 – \n\n2.9.4+dfsg1-6.1ubuntu1.9+esm7\n\n  \n\nUbuntu Pro\n Fix available with Ubuntu Pro.\n\n \n\n 16.04\n\nLTS xenial\n\n libxml2 – \n\n2.9.3+dfsg1-1ubuntu0.7+esm12\n\n  \n\nUbuntu Pro\n Fix available with Ubuntu Pro.\n\n \n\n 14.04\n\nLTS trusty\n\n libxml2 – \n\n2.9.1+dfsg1-3ubuntu4.13+esm11\n\n  \n\nUbuntu Pro\n Fix available with Ubuntu Pro via Legacy Support add-on.\n\n \n\nReduce your security exposure\n\n \n\n Ubuntu Pro provides ten-year security coverage to 25,000+ packages in Main and Universe repositories, and it is free for up to five machines.\n \n\n \n\n Get Ubuntu Pro\n \n\n \n\nReferences\n\n \n\n \n\n CVE-2026-0992\n \n\n \n\n CVE-2026-0990\n \n\n \n\n CVE-2026-0989\n \n\n \n\n CVE-2025-8732\n \n\n \n\n \n\n CVE-2026-0992\n \n\n CVE-2026-0990\n \n\n CVE-2026-0989\n \n\n CVE-2025-8732",
+  "title": "USN-7974-1: libxml2 vulnerabilities | Ubuntu security notices | Ubuntu",
+  "pubDate": "2026-01-21T15:00:00.000Z",
+  "vendor": "Ubuntu"
+}

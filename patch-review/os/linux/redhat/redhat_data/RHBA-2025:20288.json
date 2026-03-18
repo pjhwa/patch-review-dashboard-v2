@@ -1,0 +1,49 @@
+{
+  "id": "RHBA-2025:20288",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: ptyxis bug fix and enhancement update",
+  "issuedDate": "2025-11-11T07:25:58Z",
+  "updatedDate": "2025-11-11T07:25:58Z",
+  "pubDate": "2025-11-11T07:25:58Z",
+  "dateStr": "2025-11-11",
+  "url": "https://access.redhat.com/errata/RHBA-2025:20288",
+  "severity": "None",
+  "overview": "An update for ptyxis is now available for Red Hat Enterprise Linux 10.",
+  "description": "For detailed information on changes in this release, see the Red Hat Enterprise Linux 10.1 Release Notes linked from the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux for IBM z Systems",
+    "Red Hat Enterprise Linux for ARM 64",
+    "Red Hat Enterprise Linux for x86_64 10 x86_64",
+    "Red Hat Enterprise Linux for Power, little endian"
+  ],
+  "cves": [],
+  "packages": [
+    "ptyxis-47.13-1.el10.src",
+    "ptyxis-47.13-1.el10.x86_64",
+    "ptyxis-debuginfo-47.13-1.el10.x86_64",
+    "ptyxis-debugsource-47.13-1.el10.x86_64",
+    "ptyxis-47.13-1.el10.s390x",
+    "ptyxis-debuginfo-47.13-1.el10.s390x",
+    "ptyxis-debugsource-47.13-1.el10.s390x",
+    "ptyxis-47.13-1.el10.ppc64le",
+    "ptyxis-debuginfo-47.13-1.el10.ppc64le",
+    "ptyxis-debugsource-47.13-1.el10.ppc64le",
+    "ptyxis-47.13-1.el10.aarch64",
+    "ptyxis-debuginfo-47.13-1.el10.aarch64",
+    "ptyxis-debugsource-47.13-1.el10.aarch64"
+  ],
+  "fixes": [
+    {
+      "id": "RHEL-83862",
+      "url": "https://issues.redhat.com/browse/RHEL-83862",
+      "description": "Update Ptyxis to 47.12"
+    },
+    {
+      "id": "RHEL-84778",
+      "url": "https://issues.redhat.com/browse/RHEL-84778",
+      "description": "Update Ptyxis to 47.13"
+    }
+  ],
+  "full_text": "An update for ptyxis is now available for Red Hat Enterprise Linux 10.\n\nFor detailed information on changes in this release, see the Red Hat Enterprise Linux 10.1 Release Notes linked from the References section."
+}

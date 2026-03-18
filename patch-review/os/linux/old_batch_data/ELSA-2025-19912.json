@@ -1,0 +1,40 @@
+{
+  "id": "ELSA-2025-19912",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2025-November/018986.html",
+  "synopsis": "[El-errata] ELSA-2025-19912 Important: Oracle Linux 10 bind security update",
+  "dateStr": "2025-November",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Security Advisory ELSA-2025-19912",
+  "description": "[9.18.33-4.0.1]\n- Fix warning when changing device file permissions [Orabug: 36518580]\n\n[9.18.33-4.2]\n- Fix upstream reported regression in recent CVE fix (CVE-2025-8677)\n\n[9.18.33-4.1]\n- Refuse malformed DNSKEY records (CVE-2025-8677)\n- Address various spoofing attacks (CVE-2025-40778)\n- Prevent cache poisoning due to weak PRNG (CVE-2025-40780)",
+  "affected_products": [
+    "Oracle Linux 10"
+  ],
+  "packages": [
+    "bind-9.18.33-4.0.1.el10_0.2.x86_64.rpm",
+    "bind-chroot-9.18.33-4.0.1.el10_0.2.x86_64.rpm",
+    "bind-devel-9.18.33-4.0.1.el10_0.2.x86_64.rpm",
+    "bind-dnssec-utils-9.18.33-4.0.1.el10_0.2.x86_64.rpm",
+    "bind-doc-9.18.33-4.0.1.el10_0.2.noarch.rpm",
+    "bind-libs-9.18.33-4.0.1.el10_0.2.x86_64.rpm",
+    "bind-license-9.18.33-4.0.1.el10_0.2.noarch.rpm",
+    "bind-utils-9.18.33-4.0.1.el10_0.2.x86_64.rpm",
+    "bind-9.18.33-4.0.1.el10_0.2.aarch64.rpm",
+    "bind-chroot-9.18.33-4.0.1.el10_0.2.aarch64.rpm",
+    "bind-devel-9.18.33-4.0.1.el10_0.2.aarch64.rpm",
+    "bind-dnssec-utils-9.18.33-4.0.1.el10_0.2.aarch64.rpm",
+    "bind-doc-9.18.33-4.0.1.el10_0.2.noarch.rpm",
+    "bind-libs-9.18.33-4.0.1.el10_0.2.aarch64.rpm",
+    "bind-license-9.18.33-4.0.1.el10_0.2.noarch.rpm",
+    "bind-utils-9.18.33-4.0.1.el10_0.2.aarch64.rpm"
+  ],
+  "cves": [
+    "CVE-2025-8677",
+    "CVE-2025-40778",
+    "CVE-2025-40780"
+  ],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Security Advisory ELSA-2025-19912\n\nhttp://linux.oracle.com/errata/ELSA-2025-19912.html\n\nThe following updated rpms for Oracle Linux 10 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\nbind-9.18.33-4.0.1.el10_0.2.x86_64.rpm\nbind-chroot-9.18.33-4.0.1.el10_0.2.x86_64.rpm\nbind-devel-9.18.33-4.0.1.el10_0.2.x86_64.rpm\nbind-dnssec-utils-9.18.33-4.0.1.el10_0.2.x86_64.rpm\nbind-doc-9.18.33-4.0.1.el10_0.2.noarch.rpm\nbind-libs-9.18.33-4.0.1.el10_0.2.x86_64.rpm\nbind-license-9.18.33-4.0.1.el10_0.2.noarch.rpm\nbind-utils-9.18.33-4.0.1.el10_0.2.x86_64.rpm\n\naarch64:\nbind-9.18.33-4.0.1.el10_0.2.aarch64.rpm\nbind-chroot-9.18.33-4.0.1.el10_0.2.aarch64.rpm\nbind-devel-9.18.33-4.0.1.el10_0.2.aarch64.rpm\nbind-dnssec-utils-9.18.33-4.0.1.el10_0.2.aarch64.rpm\nbind-doc-9.18.33-4.0.1.el10_0.2.noarch.rpm\nbind-libs-9.18.33-4.0.1.el10_0.2.aarch64.rpm\nbind-license-9.18.33-4.0.1.el10_0.2.noarch.rpm\nbind-utils-9.18.33-4.0.1.el10_0.2.aarch64.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol10/SRPMS-updates/bind-9.18.33-4.0.1.el10_0.2.src.rpm\n\nRelated CVEs:\n\nCVE-2025-8677\nCVE-2025-40778\nCVE-2025-40780\n\n\n\n\nDescription of changes:\n[9.18.33-4.0.1]\n- Fix warning when changing device file permissions [Orabug: 36518580]\n\n[9.18.33-4.2]\n- Fix upstream reported regression in recent CVE fix (CVE-2025-8677)\n\n[9.18.33-4.1]\n- Refuse malformed DNSKEY records (CVE-2025-8677)\n- Address various spoofing attacks (CVE-2025-40778)\n- Prevent cache poisoning due to weak PRNG (CVE-2025-40780)",
+  "vendor": "Oracle"
+}

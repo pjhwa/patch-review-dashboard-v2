@@ -1,0 +1,26 @@
+{
+  "id": "RHSA-2026:2925",
+  "vendor": "Red Hat",
+  "type": "Security Advisory (RHSA)",
+  "title": "Red Hat Security Advisory: RHTAS 1.2.2 - Red Hat Trusted Artifact Signer Release",
+  "issuedDate": "2026-02-18T12:44:08+00:00",
+  "updatedDate": "2026-02-18T12:44:20+00:00",
+  "pubDate": "2026-02-18T12:44:08+00:00",
+  "dateStr": "2026-02-18",
+  "url": "https://access.redhat.com/errata/RHSA-2026:2925",
+  "severity": "Important",
+  "overview": "The 1.2.2 release of Red Hat Trusted Artifact Signer OpenShift Operator.\nFor more details please visit the product documentation at https://access.redhat.com/documentation/en-us/red_hat_trusted_artifact_signer/1.2",
+  "description": "The RHTAS Operator can be used with OpenShift Container Platform 4.15, 4.16, 4.17, 4.18 and 4.19",
+  "affected_products": [],
+  "cves": [
+    "CVE-2025-64756",
+    "CVE-2025-66418",
+    "CVE-2025-66471",
+    "CVE-2026-21441",
+    "CVE-2026-24049"
+  ],
+  "packages": [
+    "registry.redhat.io/rhtas/segment-reporting-rhel9@sha256:433385e5a9d3524baea007bf67ea785b2ee76b8218debf21fedf935950ab284e_amd64"
+  ],
+  "full_text": "The 1.2.2 release of Red Hat Trusted Artifact Signer OpenShift Operator.\nFor more details please visit the product documentation at https://access.redhat.com/documentation/en-us/red_hat_trusted_artifact_signer/1.2\n\nThe RHTAS Operator can be used with OpenShift Container Platform 4.15, 4.16, 4.17, 4.18 and 4.19"
+}

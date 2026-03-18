@@ -1,0 +1,22 @@
+{
+  "id": "RHSA-2026:3926",
+  "vendor": "Red Hat",
+  "url": "https://access.redhat.com/errata/RHSA-2026:3926",
+  "pubDate": "2026-03-05T15:33:39.000Z",
+  "dateStr": "2026-03-05",
+  "severity": "Important",
+  "title": "Red Hat Security Advisory: Red Hat build of Keycloak 26.2.14 Update",
+  "overview": "New Red Hat build of Keycloak 26.2.14 packages are available from the Customer Portal",
+  "description": "New Red Hat build of Keycloak 26.2.14 packages are available from the Customer Portal",
+  "affected_products": [
+    "Red Hat build of Keycloak 26.2.14"
+  ],
+  "cves": [
+    "CVE-2026-2092",
+    "CVE-2026-2603",
+    "CVE-2026-3047"
+  ],
+  "packages": [],
+  "fixes": "",
+  "full_text": "Red Hat Security Advisory: Red Hat build of Keycloak 26.2.14 Update\n\nNew Red Hat build of Keycloak 26.2.14 packages are available from the Customer Portal\n\nNew Red Hat build of Keycloak 26.2.14 packages are available from the Customer Portal\n\n\n\nCVE-2026-2092: No description is available for this CVE.\n\nCVE-2026-2603: No description is available for this CVE.\n\nCVE-2026-3047: A flaw was found in org.keycloak.broker.saml. When a disabled Security Assertion Markup Language (SAML) client is configured as an Identity Provider (IdP)-initiated broker landing target, it can still complete the login process and establish a Single Sign-On (SSO) session. This allows a remote attacker to gain unauthorized access to other enabled clients without re-authentication, effectively bypassing security restrictions."
+}

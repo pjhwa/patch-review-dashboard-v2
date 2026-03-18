@@ -1,0 +1,40 @@
+{
+  "id": "USN-7944-1",
+  "vendor": "Canonical / Ubuntu",
+  "type": "Ubuntu Security Notice (USN)",
+  "title": "net-snmp vulnerability",
+  "issuedDate": "2026-01-07T12:40:39Z",
+  "updatedDate": "2026-02-10T04:50:47Z",
+  "pubDate": "2026-01-07T12:40:39Z",
+  "dateStr": "2026-01-07",
+  "url": "https://ubuntu.com/security/notices/USN-7944-1",
+  "severity": "None",
+  "overview": "net-snmp vulnerability",
+  "description": "Bahae Bahrini discovered that Net-SNMP could be made to write out of \nbounds. If a user or an automated system were tricked into opening a \nspecially crafted input file, a remote attacker could possibly use \nthis issue to cause a denial of service.",
+  "affected_products": [
+    "Ubuntu 22.04 LTS",
+    "Ubuntu 24.04 LTS"
+  ],
+  "cves": [],
+  "packages": [
+    "libnetsnmptrapd40-5.9.1+dfsg-1ubuntu2.9",
+    "libnetsnmptrapd40t64-5.9.4+dfsg-1.1ubuntu3.2",
+    "libsnmp-base-5.9.1+dfsg-1ubuntu2.9",
+    "libsnmp-base-5.9.4+dfsg-1.1ubuntu3.2",
+    "libsnmp-dev-5.9.1+dfsg-1ubuntu2.9",
+    "libsnmp-dev-5.9.4+dfsg-1.1ubuntu3.2",
+    "libsnmp-perl-5.9.1+dfsg-1ubuntu2.9",
+    "libsnmp-perl-5.9.4+dfsg-1.1ubuntu3.2",
+    "libsnmp40-5.9.1+dfsg-1ubuntu2.9",
+    "libsnmp40t64-5.9.4+dfsg-1.1ubuntu3.2",
+    "snmp-5.9.1+dfsg-1ubuntu2.9",
+    "snmp-5.9.4+dfsg-1.1ubuntu3.2",
+    "snmpd-5.9.1+dfsg-1ubuntu2.9",
+    "snmpd-5.9.4+dfsg-1.1ubuntu3.2",
+    "snmptrapd-5.9.1+dfsg-1ubuntu2.9",
+    "snmptrapd-5.9.4+dfsg-1.1ubuntu3.2",
+    "tkmib-5.9.1+dfsg-1ubuntu2.9",
+    "tkmib-5.9.4+dfsg-1.1ubuntu3.2"
+  ],
+  "full_text": "Bahae Bahrini discovered that Net-SNMP could be made to write out of \nbounds. If a user or an automated system were tricked into opening a \nspecially crafted input file, a remote attacker could possibly use \nthis issue to cause a denial of service."
+}

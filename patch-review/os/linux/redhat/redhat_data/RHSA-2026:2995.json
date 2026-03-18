@@ -1,0 +1,26 @@
+{
+  "id": "RHSA-2026:2995",
+  "vendor": "Red Hat",
+  "type": "Security Advisory (RHSA)",
+  "title": "Red Hat Security Advisory: Red Hat JBoss Core Services Apache HTTP Server 2.4.62 SP3 security update",
+  "issuedDate": "2026-02-23T19:19:20+00:00",
+  "updatedDate": "2026-02-23T19:19:20+00:00",
+  "pubDate": "2026-02-23T19:19:20+00:00",
+  "dateStr": "2026-02-23",
+  "url": "https://access.redhat.com/errata/RHSA-2026:2995",
+  "severity": "Important",
+  "overview": "Red Hat JBoss Core Services Apache HTTP Server 2.4.62 Service Pack 3 is now available.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "description": "Red Hat JBoss Core Services is a set of supplementary software for Red Hat JBoss middleware products. This software, such as Apache HTTP Server, is common to multiple JBoss middleware products and packaged under Red Hat JBoss Core Services, to allow for faster distribution of updates and for a more consistent update experience.\n\nThis release of Red Hat JBoss Core Services Apache HTTP Server 2.4.62 Service Pack 3 serves as a replacement for Red Hat JBoss Core Services Apache HTTP Server 2.4.62 Service Pack 2, and includes bug fixes and enhancements, which are documented in the Release Notes linked to in the References section.\n\nSecurity Fix(es):\n\n* jbcs-httpd24-httpd: Apache HTTP Server: Server Side Includes adds query string to #exec cmd=... [jbcs-httpd-2.4] (CVE-2025-58098)\n* jbcs-httpd24-httpd: Apache HTTP Server: mod_md (ACME), unintended retry intervals [jbcs-httpd-2.4] (CVE-2025-55753)\n* jbcs-httpd24-httpd: Apache HTTP Server: CGI environment variable override [jbcs-httpd-2.4] (CVE-2025-65082)\n* jbcs-httpd24-httpd: Apache HTTP Server: mod_userdir+suexec bypass via AllowOverride FileInfo [jbcs-httpd-2.4] (CVE-2025-66200)\n* openssl: Out-of-bounds read & write in RFC 3211 KEK Unwrap [jbcs-httpd-2.4] (CVE-2025-9230)\n* openssl: OpenSSL: Arbitrary code execution due to out-of-bounds write in PKCS#12 (CVE-2025-69419)\n*[Minor Incident] openssl: OpenSSL: Remote code execution or Denial of Service via oversized Initialization Vector in CMS parsing (CVE-2025-15467)\n\nA Red Hat Security Bulletin which addresses further details about this flaw is available in the References section.\n\nFor more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section.",
+  "affected_products": [],
+  "cves": [
+    "CVE-2025-9230",
+    "CVE-2025-15467",
+    "CVE-2025-55753",
+    "CVE-2025-58098",
+    "CVE-2025-65082",
+    "CVE-2025-66200",
+    "CVE-2025-69419"
+  ],
+  "packages": [],
+  "full_text": "Red Hat JBoss Core Services Apache HTTP Server 2.4.62 Service Pack 3 is now available.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nRed Hat JBoss Core Services is a set of supplementary software for Red Hat JBoss middleware products. This software, such as Apache HTTP Server, is common to multiple JBoss middleware products and packaged under Red Hat JBoss Core Services, to allow for faster distribution of updates and for a more consistent update experience.\n\nThis release of Red Hat JBoss Core Services Apache HTTP Server 2.4.62 Service Pack 3 serves as a replacement for Red Hat JBoss Core Services Apache HTTP Server 2.4.62 Service Pack 2, and includes bug fixes and enhancements, which are documented in the Release Notes linked to in the References section.\n\nSecurity Fix(es):\n\n* jbcs-httpd24-httpd: Apache HTTP Server: Server Side Includes adds query string to #exec cmd=... [jbcs-httpd-2.4] (CVE-2025-58098)\n* jbcs-httpd24-httpd: Apache HTTP Server: mod_md (ACME), unintended retry intervals [jbcs-httpd-2.4] (CVE-2025-55753)\n* jbcs-httpd24-httpd: Apache HTTP Server: CGI environment variable override [jbcs-httpd-2.4] (CVE-2025-65082)\n* jbcs-httpd24-httpd: Apache HTTP Server: mod_userdir+suexec bypass via AllowOverride FileInfo [jbcs-httpd-2.4] (CVE-2025-66200)\n* openssl: Out-of-bounds read & write in RFC 3211 KEK Unwrap [jbcs-httpd-2.4] (CVE-2025-9230)\n* openssl: OpenSSL: Arbitrary code execution due to out-of-bounds write in PKCS#12 (CVE-2025-69419)\n*[Minor Incident] openssl: OpenSSL: Remote code execution or Denial of Service via oversized Initialization Vector in CMS parsing (CVE-2025-15467)\n\nA Red Hat Security Bulletin which addresses further details about this flaw is available in the References section.\n\nFor more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section."
+}

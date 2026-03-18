@@ -1,0 +1,29 @@
+{
+  "id": "USN-7981-1",
+  "url": "https://ubuntu.com/security/notices/USN-7981-1",
+  "synopsis": "USN-7981-1: wlc vulnerabilities",
+  "dateStr": "27 January 2026",
+  "overview": "Several security issues were fixed in wlc.",
+  "description": "It was discovered that wlc did not correctly handle SSL verification. An\nattacker could possibly use this issue to access sensitive resources.\n(CVE-2026-22250)\n\nIt was discovered that wlc did not correctly handle API keys. An attacker\ncould possibly use this issue to leak API keys to a malicious server.\n(CVE-2026-22251)\n\n \n\n \n\n \n\nIt was discovered that wlc did not correctly handle SSL verification. An\nattacker could possibly use this issue to access sensitive resources.\n(CVE-2026-22250)\n\nIt was discovered that wlc did not correctly handle API keys. An attacker\ncould possibly use this issue to leak API keys to a malicious server.\n(CVE-2026-22251)",
+  "packages": [
+    "wlc"
+  ],
+  "cves": [
+    "CVE-2026-22251",
+    "CVE-2026-22250"
+  ],
+  "affected_products": [
+    "25.10",
+    "24.04 LTS",
+    "22.04 LTS",
+    "20.04 LTS",
+    "18.04 LTS",
+    "Open side navigation"
+  ],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Ubuntu Security Notices\n\nUSN-7981-1\n\n \n\n \n\n \n\n \n\n \n\n \nUSN-7981-1: wlc vulnerabilities\n\n \n\n \n\n \n\n \nPublication date\n\n \n\n \n\n \n27 January 2026\n\n \n\n \n\n \n\n \n\n \nOverview\n\n \n\n \n\n \nSeveral security issues were fixed in wlc.\n\n \n\n \n\n \n\n \n\n \nReleases\n\n \n\n \n\n \n\n 25.10\n\n 24.04 LTS\n\n22.04 LTS\n\n20.04 LTS\n\n18.04 LTS\n\n \n\n \n\n \n\n \n\n \n\n \n\n Open side navigation\n \n\n \n\n \nPackages\n\n \n\n wlc - A Weblate command-line client using Weblate’s REST API\n \n\n \n\n \nDetails\n\n \n\n \n\nIt was discovered that wlc did not correctly handle SSL verification. An\nattacker could possibly use this issue to access sensitive resources.\n(CVE-2026-22250)\n\nIt was discovered that wlc did not correctly handle API keys. An attacker\ncould possibly use this issue to leak API keys to a malicious server.\n(CVE-2026-22251)\n\n \n\n \n\n \n\nIt was discovered that wlc did not correctly handle SSL verification. An\nattacker could possibly use this issue to access sensitive resources.\n(CVE-2026-22250)\n\nIt was discovered that wlc did not correctly handle API keys. An attacker\ncould possibly use this issue to leak API keys to a malicious server.\n(CVE-2026-22251)\n\n \n\n \n\n \n\n \nUpdate instructions\n\n \n\n \n\n \n\n \n\nIn general, a standard system update will make all the necessary changes.\n\n Learn more about how to get the fixes.\n \n\n \n\n \n\n \n\n \nThe problem can be corrected by updating your system to the following package versions:\n\n \n\n \n\n \n\n \n\n Ubuntu Release\n Package Version\n \n\n 25.10\n\nquesting\n\n wlc – \n\n1.15-2ubuntu0.1\n\n \n\n 24.04\n\nLTS noble\n\n wlc – \n\n1.13-2ubuntu0.1~esm1\n\n  \n\nUbuntu Pro\n Fix available with Ubuntu Pro via ESM Apps. A community fix might become publicly available in the future.\n\n \n\n \n\n 22.04\n\nLTS jammy\n\n wlc – \n\n1.2-1ubuntu0.22.04.1~esm1\n\n  \n\nUbuntu Pro\n Fix available with Ubuntu Pro via ESM Apps. A community fix might become publicly available in the future.\n\n \n\n \n\n 20.04\n\nLTS focal\n\n wlc – \n\n1.2-1ubuntu0.20.04.1~esm1\n\n  \n\nUbuntu Pro\n Fix available with Ubuntu Pro via ESM Apps. A community fix might become publicly available in the future.\n\n \n\n \n\n 18.04\n\nLTS bionic\n\n wlc – \n\n0.8-1ubuntu0.1~esm1\n\n  \n\nUbuntu Pro\n Fix available with Ubuntu Pro via ESM Apps. A community fix might become publicly available in the future.\n\n \n\n \n\nReduce your security exposure\n\n \n\n Ubuntu Pro provides ten-year security coverage to 25,000+ packages in Main and Universe repositories, and it is free for up to five machines.\n \n\n \n\n Get Ubuntu Pro\n \n\n \n\nReferences\n\n \n\n \n\n CVE-2026-22251\n \n\n \n\n CVE-2026-22250\n \n\n \n\n \n\n CVE-2026-22251\n \n\n CVE-2026-22250",
+  "title": "USN-7981-1: wlc vulnerabilities | Ubuntu security notices | Ubuntu",
+  "pubDate": "2026-01-26T15:00:00.000Z",
+  "vendor": "Ubuntu"
+}

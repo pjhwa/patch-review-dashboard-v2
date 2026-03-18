@@ -1,0 +1,34 @@
+{
+  "id": "ELSA-2025-19912",
+  "vendor": "Oracle",
+  "type": "Security Advisory (ELSA)",
+  "kernel_type": "AppStream",
+  "title": " bind security update",
+  "issuedDate": "2025-11-06T00:00:00Z",
+  "updatedDate": "2025-11-06T00:00:00Z",
+  "pubDate": "2025-11-06T00:00:00Z",
+  "dateStr": "2025-11-06",
+  "url": "https://linux.oracle.com/errata/ELSA-2025-19912.html",
+  "severity": "Important",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 10.",
+  "description": "[9.18.33-4.0.1]\n- Fix warning when changing device file permissions [Orabug: 36518580]\n\n[9.18.33-4.2]\n- Fix upstream reported regression in recent CVE fix (CVE-2025-8677)\n\n[9.18.33-4.1]\n- Refuse malformed DNSKEY records (CVE-2025-8677)\n- Address various spoofing attacks (CVE-2025-40778)\n- Prevent cache poisoning due to weak PRNG (CVE-2025-40780)",
+  "affected_products": [
+    "Oracle Linux 10 for x86_64",
+    "Oracle Linux 10 for aarch64"
+  ],
+  "cves": [
+    "CVE-2025-40778",
+    "CVE-2025-40780",
+    "CVE-2025-8677"
+  ],
+  "packages": [
+    "bind-9.18.33-4.0.1.el10_0.2.x86_64",
+    "bind-9.18.33-4.0.1.el10_0.2.src",
+    "bind-libs-9.18.33-4.0.1.el10_0.2.x86_64",
+    "bind-dnssec-utils-9.18.33-4.0.1.el10_0.2.x86_64",
+    "bind-utils-9.18.33-4.0.1.el10_0.2.x86_64",
+    "bind-chroot-9.18.33-4.0.1.el10_0.2.x86_64",
+    "bind-license-9.18.33-4.0.1.el10_0.2.noarch"
+  ],
+  "full_text": "[9.18.33-4.0.1]\n- Fix warning when changing device file permissions [Orabug: 36518580]\n\n[9.18.33-4.2]\n- Fix upstream reported regression in recent CVE fix (CVE-2025-8677)\n\n[9.18.33-4.1]\n- Refuse malformed DNSKEY records (CVE-2025-8677)\n- Address various spoofing attacks (CVE-2025-40778)\n- Prevent cache poisoning due to weak PRNG (CVE-2025-40780)\n\nReferences:\nhttps://linux.oracle.com/errata/ELSA-2025-19912.html\nhttps://linux.oracle.com/cve/CVE-2025-40778.html\nhttps://linux.oracle.com/cve/CVE-2025-40780.html\nhttps://linux.oracle.com/cve/CVE-2025-8677.html"
+}

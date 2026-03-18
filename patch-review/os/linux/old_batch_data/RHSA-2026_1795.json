@@ -1,0 +1,23 @@
+{
+  "id": "RHSA-2026:1795",
+  "vendor": "Red Hat",
+  "url": "https://access.redhat.com/errata/RHSA-2026:1795",
+  "pubDate": "2026-02-03T07:28:32.000Z",
+  "dateStr": "2026-02-03",
+  "severity": "Important",
+  "title": "Red Hat Security Advisory: resource-agents security update",
+  "overview": "An update for resource-agents is now available for Red Hat Enterprise Linux 7 Extended Lifecycle Support.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "description": "An update for resource-agents is now available for Red Hat Enterprise Linux 7 Extended Lifecycle Support.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux Server for SAP ELS (v. 7)",
+    "Red Hat Enterprise Linux Server for SAPHANA ELS (v. 7)",
+    "Red Hat Enterprise Linux Server HighAvailability (v. 7 ELS)",
+    "Red Hat Enterprise Linux Server ResilientStorage (v. 7 ELS)"
+  ],
+  "cves": [
+    "CVE-2025-66471"
+  ],
+  "packages": [],
+  "fixes": "",
+  "full_text": "Red Hat Security Advisory: resource-agents security update\n\nAn update for resource-agents is now available for Red Hat Enterprise Linux 7 Extended Lifecycle Support.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nAn update for resource-agents is now available for Red Hat Enterprise Linux 7 Extended Lifecycle Support.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nUpdated Packages:\nresource-agents-4.1.1-61.el7_9.22.src.rpm\nresource-agents-debuginfo-4.1.1-61.el7_9.22.x86_64.rpm\nresource-agents-sap-4.1.1-61.el7_9.22.x86_64.rpm\nsap-cluster-connector-3.0.1-37.el7_9.22.x86_64.rpm\nresource-agents-sap-hana-4.1.1-61.el7_9.22.x86_64.rpm\nresource-agents-sap-hana-scaleout-0.164.0-6.el7_9.22.x86_64.rpm\nresource-agents-4.1.1-61.el7_9.22.x86_64.rpm\nresource-agents-aliyun-4.1.1-61.el7_9.22.x86_64.rpm\nresource-agents-gcp-4.1.1-61.el7_9.22.x86_64.rpm\nresource-agents-4.1.1-61.el7_9.22.ppc64le.rpm\nresource-agents-debuginfo-4.1.1-61.el7_9.22.ppc64le.rpm\nresource-agents-sap-4.1.1-61.el7_9.22.ppc64le.rpm\nsap-cluster-connector-3.0.1-37.el7_9.22.ppc64le.rpm\nresource-agents-sap-hana-4.1.1-61.el7_9.22.ppc64le.rpm\nresource-agents-sap-hana-scaleout-0.164.0-6.el7_9.22.ppc64le.rpm\n\nCVE-2025-66471: urllib3 is a user-friendly HTTP client library for Python. Starting in version 1.0 and prior to 2.6.0, the Streaming API improperly handles highly compressed data. urllib3's streaming API is designed for the efficient handling of large HTTP responses by reading the content in chunks, rather than loading the entire response body into memory at once. When streaming a compressed response, urllib3 can perform decoding or decompression based on the HTTP Content-Encoding header (e.g., gzip, deflate, br, or zstd). The library must read compressed data from the network and decompress it until the requested chunk size is met. Any resulting decompressed data that exceeds the requested amount is held in an internal buffer for the next read operation. The decompression logic could cause urllib3 to fully decode a small amount of highly compressed data in a single operation. This can result in excessive resource consumption (high CPU usage and massive memory allocation for the decompressed data."
+}

@@ -1,0 +1,25 @@
+{
+  "id": "ELBA-2025-16862",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "AppStream",
+  "title": "mysql-selinux bug fix and enhancement update",
+  "issuedDate": "2025-09-28T00:00:00Z",
+  "updatedDate": "2025-09-28T00:00:00Z",
+  "pubDate": "2025-09-28T00:00:00Z",
+  "dateStr": "2025-09-28",
+  "url": "https://linux.oracle.com/errata/ELBA-2025-16862.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 8.",
+  "description": "[1.0.14-1]\n- Update to version 1.0.14\n- Resolves: rhbz#2380217",
+  "affected_products": [
+    "Oracle Linux 8 for x86_64",
+    "Oracle Linux 8 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "mysql-selinux-1.0.14-1.el8_10.noarch",
+    "mysql-selinux-1.0.14-1.el8_10.src"
+  ],
+  "full_text": "[1.0.14-1]\n- Update to version 1.0.14\n- Resolves: rhbz#2380217\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2025-16862.html"
+}

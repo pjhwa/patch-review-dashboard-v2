@@ -1,0 +1,22 @@
+{
+  "id": "RHSA-2026:1899",
+  "vendor": "Red Hat",
+  "url": "https://access.redhat.com/errata/RHSA-2026:1899",
+  "pubDate": "2026-02-05T14:43:16.000Z",
+  "dateStr": "2026-02-05",
+  "severity": "Moderate",
+  "title": "Red Hat Security Advisory: Red Hat build of Quarkus 3.20.5 release and security update",
+  "overview": "An update is now available for Red Hat build of Quarkus.\n\nRed Hat Product Security has rated this update as having a security impact of Moderate. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability. For more information, see the CVE links in the References section.",
+  "description": "An update is now available for Red Hat build of Quarkus.\n\nRed Hat Product Security has rated this update as having a security impact of Moderate. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability. For more information, see the CVE links in the References section.",
+  "affected_products": [
+    "Red Hat build of Quarkus 3.20.5"
+  ],
+  "cves": [
+    "CVE-2025-59432",
+    "CVE-2025-66560",
+    "CVE-2025-67735"
+  ],
+  "packages": [],
+  "fixes": "",
+  "full_text": "Red Hat Security Advisory: Red Hat build of Quarkus 3.20.5 release and security update\n\nAn update is now available for Red Hat build of Quarkus.\n\nRed Hat Product Security has rated this update as having a security impact of Moderate. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability. For more information, see the CVE links in the References section.\n\nAn update is now available for Red Hat build of Quarkus.\n\nRed Hat Product Security has rated this update as having a security impact of Moderate. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability. For more information, see the CVE links in the References section.\n\n\n\nCVE-2025-59432: SCRAM (Salted Challenge Response Authentication Mechanism) is part of the family of Simple Authentication and Security Layer (SASL, RFC 4422) authentication mechanisms. Prior to version 3.2, a timing attack vulnerability exists in the SCRAM Java implementation. The issue arises because Arrays.equals was used to compare secret values such as client proofs and server signatures. Since Arrays.equals performs a short-circuit comparison, the execution time varies depending on how many leading bytes match. This behavior could allow an attacker to perform a timing side-channel attack and potentially infer sensitive authentication material. All users relying on SCRAM authentication are impacted. This vulnerability has been patched in version 3.1 by replacing Arrays.equals with MessageDigest.isEqual, which ensures constant-time comparison.\n\nCVE-2025-66560: Quarkus is a Cloud Native, (Linux) Container First framework for writing Java applications. Prior to versions 3.31.0, 3.27.2, and 3.20.5, a vulnerability exists in the HTTP layer of Quarkus REST related to response handling. When a response is being written, the framework waits for previously written response chunks to be fully transmitted before proceeding. If the client connection is dropped during this waiting period, the associated worker thread is never released and becomes permanently blocked. Under sustained or repeated occurrences, this can exhaust the available worker threads, leading to degraded performance, or complete unavailability of the application. This issue has been patched in versions 3.31.0, 3.27.2, and 3.20.5. A workaround involves implementing a health check that monitors the status and saturation of the worker thread pool to detect abnormal thread retention early.\n\nCVE-2025-67735: A flaw was found in Netty (netty-codec-http). This vulnerability allows request smuggling via CRLF (Carriage Return Line Feed) injection with the request URI when constructing a request."
+}

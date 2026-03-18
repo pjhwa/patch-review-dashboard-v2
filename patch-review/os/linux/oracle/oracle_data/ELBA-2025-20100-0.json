@@ -1,0 +1,35 @@
+{
+  "id": "ELBA-2025-20100-0",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "RHCK",
+  "title": "grub2 bug fix and enhancement update",
+  "issuedDate": "2025-11-25T00:00:00Z",
+  "updatedDate": "2025-11-25T00:00:00Z",
+  "pubDate": "2025-11-25T00:00:00Z",
+  "dateStr": "2025-11-25",
+  "url": "https://linux.oracle.com/errata/ELBA-2025-20100-0.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 10.",
+  "description": "[2.12-29.0.1]\n- efinet: Close and reopen card on failure [Orabug: 37808688]\n- Update grub2 dependencies to match new Secure Boot certificate chain of trust [Orabug: 37766761]\n- Fix typo in SBAT metadata [Orabug: 37693946]\n- Allow installation of grub2 only with shim-aa64 that allows booting it [Orabug: 37693946]\n- Enable btrfs module [Orabug: 37412995]\n- Restored shim related conflicts and provide. [Orabug: 37376920]\n- Rework the scripts to cover both in-place upgrade and update scenarios [Orabug: 36768566]\n- Support setting custom kernels as default kernels [Orabug: 36043978]\n- Bump SBAT metadata for grub to 3 [Orabug: 34872719]\n- Fix CVE-2022-3775 [Orabug: 34871953]\n- Enable signing for aarch64 EFI\n- Fix signing certificate names\n- Enable back btrfs grub module for EFI pre-built image [Orabug: 34360986]\n- Replaced bugzilla.oracle.com references [Orabug: 34202300]\n- Update provided certificate version to 202204 [JIRA: OLDIS-16371]\n- Various coverity fixes [JIRA: OLDIS-16371]\n- bump SBAT generation\n- Update bug url [Orabug: 34202300]\n- Revert provided certificate version back to 202102 [JIRA: OLDIS-16371]\n- Update signing certificate [JIRA: OLDIS-16371]\n- fix SBAT data [JIRA: OLDIS-16371]\n- Update requires [JIRA: OLDIS-16371]\n- Rebuild for SecureBoot signatures [Orabug: 33801813]\n- Do not add shim and grub certificate deps for aarch64 packages [Orabug: 32670033]\n- Update Oracle SBAT data [Orabug: 32670033]\n- Use new signing certificate [Orabug: 32670033]\n- honor /etc/sysconfig/kernel DEFAULTKERNEL setting for BLS [Orabug: 30643497]\n- set EFIDIR as redhat for additional grub2 tools [Orabug: 29875597]\n- Update upstream references [Orabug: 26388226]\n- Insert Unbreakable Enterprise Kernel text into BLS config file [Orabug: 29417955]\n- Put 'with' in menuentry instead of 'using' [Orabug: 18504756]\n- Use different titles for UEK and RHCK kernels [Orabug: 18504756]\n\n[2.12-29]\n- spec: Update signing key to redhatsecureboot802\n- Resolves: #RHEL-116730\n\n[2.12-28]\n- Remove strong stack protector on target CFLAGS\n- Related: #RHEL-89464\n\n[2.12-27]\n- Revert annobin's regex removal into cflags_sed\n- Resolves: #RHEL-89464\n\n[2.12-26]\n- Enable strong stack protector on EFI configurations\n- Resolves: #RHEL-89464\n\n[2.12-25]\n- 20-grub.install: Skip BLS removal when entry type is type2\n- Resolves: #RHEL-104167\n\n[2.12-24]\n- spec/posttrans: move grub config stub creation out of spec\n- Resolves: #RHEL-69943\n\n[2.12-23]\n- Set correctly the memory attributes for the kernel PE sections\n- Resolves: #RHEL-97086\n\n[2.12-22]\n- workaround: do not update mem attrs even if EFI protocol is present\n- Resolves: #RHEL-97086\n\n[2.12-21]\n- Bump version (see CS-2896)\n- Resolves: #RHEL-94342",
+  "affected_products": [
+    "Oracle Linux 10 for x86_64",
+    "Oracle Linux 10 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "grub2-efi-x64-2.12-29.0.1.el10_1.x86_64",
+    "grub2-tools-2.12-29.0.1.el10_1.x86_64",
+    "grub2-pc-modules-2.12-29.0.1.el10_1.noarch",
+    "grub2-pc-2.12-29.0.1.el10_1.x86_64",
+    "grub2-tools-minimal-2.12-29.0.1.el10_1.x86_64",
+    "grub2-efi-x64-modules-2.12-29.0.1.el10_1.noarch",
+    "grub2-common-2.12-29.0.1.el10_1.noarch",
+    "grub2-efi-x64-cdboot-2.12-29.0.1.el10_1.x86_64",
+    "grub2-2.12-29.0.1.el10_1.src",
+    "grub2-tools-efi-2.12-29.0.1.el10_1.x86_64",
+    "grub2-efi-aa64-modules-2.12-29.0.1.el10_1.noarch",
+    "grub2-tools-extra-2.12-29.0.1.el10_1.x86_64"
+  ],
+  "full_text": "[2.12-29.0.1]\n- efinet: Close and reopen card on failure [Orabug: 37808688]\n- Update grub2 dependencies to match new Secure Boot certificate chain of trust [Orabug: 37766761]\n- Fix typo in SBAT metadata [Orabug: 37693946]\n- Allow installation of grub2 only with shim-aa64 that allows booting it [Orabug: 37693946]\n- Enable btrfs module [Orabug: 37412995]\n- Restored shim related conflicts and provide. [Orabug: 37376920]\n- Rework the scripts to cover both in-place upgrade and update scenarios [Orabug: 36768566]\n- Support setting custom kernels as default kernels [Orabug: 36043978]\n- Bump SBAT metadata for grub to 3 [Orabug: 34872719]\n- Fix CVE-2022-3775 [Orabug: 34871953]\n- Enable signing for aarch64 EFI\n- Fix signing certificate names\n- Enable back btrfs grub module for EFI pre-built image [Orabug: 34360986]\n- Replaced bugzilla.oracle.com references [Orabug: 34202300]\n- Update provided certificate version to 202204 [JIRA: OLDIS-16371]\n- Various coverity fixes [JIRA: OLDIS-16371]\n- bump SBAT generation\n- Update bug url [Orabug: 34202300]\n- Revert provided certificate version back to 202102 [JIRA: OLDIS-16371]\n- Update signing certificate [JIRA: OLDIS-16371]\n- fix SBAT data [JIRA: OLDIS-16371]\n- Update requires [JIRA: OLDIS-16371]\n- Rebuild for SecureBoot signatures [Orabug: 33801813]\n- Do not add shim and grub certificate deps for aarch64 packages [Orabug: 32670033]\n- Update Oracle SBAT data [Orabug: 32670033]\n- Use new signing certificate [Orabug: 32670033]\n- honor /etc/sysconfig/kernel DEFAULTKERNEL setting for BLS [Orabug: 30643497]\n- set EFIDIR as redhat for additional grub2 tools [Orabug: 29875597]\n- Update upstream references [Orabug: 26388226]\n- Insert Unbreakable Enterprise Kernel text into BLS config file [Orabug: 29417955]\n- Put 'with' in menuentry instead of 'using' [Orabug: 18504756]\n- Use different titles for UEK and RHCK kernels [Orabug: 18504756]\n\n[2.12-29]\n- spec: Update signing key to redhatsecureboot802\n- Resolves: #RHEL-116730\n\n[2.12-28]\n- Remove strong stack protector on target CFLAGS\n- Related: #RHEL-89464\n\n[2.12-27]\n- Revert annobin's regex removal into cflags_sed\n- Resolves: #RHEL-89464\n\n[2.12-26]\n- Enable strong stack protector on EFI configurations\n- Resolves: #RHEL-89464\n\n[2.12-25]\n- 20-grub.install: Skip BLS removal when entry type is type2\n- Resolves: #RHEL-104167\n\n[2.12-24]\n- spec/posttrans: move grub config stub creation out of spec\n- Resolves: #RHEL-69943\n\n[2.12-23]\n- Set correctly the memory attributes for the kernel PE sections\n- Resolves: #RHEL-97086\n\n[2.12-22]\n- workaround: do not update mem attrs even if EFI protocol is present\n- Resolves: #RHEL-97086\n\n[2.12-21]\n- Bump version (see CS-2896)\n- Resolves: #RHEL-94342\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2025-20100-0.html"
+}

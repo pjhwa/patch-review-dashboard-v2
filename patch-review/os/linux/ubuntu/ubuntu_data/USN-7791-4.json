@@ -1,0 +1,35 @@
+{
+  "id": "USN-7791-4",
+  "vendor": "Canonical / Ubuntu",
+  "type": "Ubuntu Security Notice (USN)",
+  "title": "linux-oracle, linux-oracle-6.14 vulnerabilities",
+  "issuedDate": "2025-10-14T15:43:06Z",
+  "updatedDate": "2026-02-10T04:50:10Z",
+  "pubDate": "2025-10-14T15:43:06Z",
+  "dateStr": "2025-10-14",
+  "url": "https://ubuntu.com/security/notices/USN-7791-4",
+  "severity": "None",
+  "overview": "linux-oracle, linux-oracle-6.14 vulnerabilities",
+  "description": "Several security issues were discovered in the Linux kernel.\nAn attacker could possibly use these to compromise the system.\nThis update corrects flaws in the following subsystems:\n  - Packet sockets;\n  - Network traffic control;\n  - VMware vSockets driver;\n  - XFRM subsystem;\n(CVE-2025-38477, CVE-2025-38618, CVE-2025-38500, CVE-2025-38617)\n",
+  "affected_products": [
+    "Ubuntu 24.04 LTS"
+  ],
+  "cves": [],
+  "packages": [
+    "linux-buildinfo-6.14.0-1014-oracle-6.14.0-1014.14~24.04.1",
+    "linux-buildinfo-6.14.0-1014-oracle-64k-6.14.0-1014.14~24.04.1",
+    "linux-headers-6.14.0-1014-oracle-6.14.0-1014.14~24.04.1",
+    "linux-headers-6.14.0-1014-oracle-64k-6.14.0-1014.14~24.04.1",
+    "linux-image-unsigned-6.14.0-1014-oracle-6.14.0-1014.14~24.04.1",
+    "linux-image-unsigned-6.14.0-1014-oracle-64k-6.14.0-1014.14~24.04.1",
+    "linux-modules-6.14.0-1014-oracle-6.14.0-1014.14~24.04.1",
+    "linux-modules-6.14.0-1014-oracle-64k-6.14.0-1014.14~24.04.1",
+    "linux-modules-extra-6.14.0-1014-oracle-6.14.0-1014.14~24.04.1",
+    "linux-modules-extra-6.14.0-1014-oracle-64k-6.14.0-1014.14~24.04.1",
+    "linux-oracle-6.14-headers-6.14.0-1014-6.14.0-1014.14~24.04.1",
+    "linux-oracle-6.14-tools-6.14.0-1014-6.14.0-1014.14~24.04.1",
+    "linux-tools-6.14.0-1014-oracle-6.14.0-1014.14~24.04.1",
+    "linux-tools-6.14.0-1014-oracle-64k-6.14.0-1014.14~24.04.1"
+  ],
+  "full_text": "Several security issues were discovered in the Linux kernel.\nAn attacker could possibly use these to compromise the system.\nThis update corrects flaws in the following subsystems:\n  - Packet sockets;\n  - Network traffic control;\n  - VMware vSockets driver;\n  - XFRM subsystem;\n(CVE-2025-38477, CVE-2025-38618, CVE-2025-38500, CVE-2025-38617)\n"
+}

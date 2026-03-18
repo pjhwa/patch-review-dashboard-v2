@@ -1,0 +1,99 @@
+{
+  "id": "RHBA-2025:20115",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: crypto-policies bug fix and enhancement update",
+  "issuedDate": "2025-11-11T07:25:08Z",
+  "updatedDate": "2025-11-11T07:25:08Z",
+  "pubDate": "2025-11-11T07:25:08Z",
+  "dateStr": "2025-11-11",
+  "url": "https://access.redhat.com/errata/RHBA-2025:20115",
+  "severity": "None",
+  "overview": "An update for crypto-policies is now available for Red Hat Enterprise Linux 10.",
+  "description": "For detailed information on changes in this release, see the Red Hat Enterprise Linux 10 Release Notes linked from the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux for Power, little endian",
+    "Red Hat Enterprise Linux for x86_64 10 x86_64",
+    "Red Hat Enterprise Linux for ARM 64",
+    "Red Hat Enterprise Linux for IBM z Systems"
+  ],
+  "cves": [],
+  "packages": [
+    "crypto-policies-20250905-2.gitc7eb7b2.el10_1.src",
+    "crypto-policies-20250905-2.gitc7eb7b2.el10_1.noarch",
+    "crypto-policies-scripts-20250905-2.gitc7eb7b2.el10_1.noarch"
+  ],
+  "fixes": [
+    {
+      "id": "RHEL-86250",
+      "url": "https://issues.redhat.com/browse/RHEL-86250",
+      "description": "crypto-policies FTBFS"
+    },
+    {
+      "id": "RHEL-59104",
+      "url": "https://issues.redhat.com/browse/RHEL-59104",
+      "description": "Exclude integrity-only TLS 1.3 by CP"
+    },
+    {
+      "id": "RHEL-86059",
+      "url": "https://issues.redhat.com/browse/RHEL-86059",
+      "description": "Enable PQ crypto in DEFAULT crypto policy"
+    },
+    {
+      "id": "RHEL-81979",
+      "url": "https://issues.redhat.com/browse/RHEL-81979",
+      "description": "gnutls now supports P384-MLKEM1024"
+    },
+    {
+      "id": "RHEL-92148",
+      "url": "https://issues.redhat.com/browse/RHEL-92148",
+      "description": "Enable PQC algorithms in FIPS mode"
+    },
+    {
+      "id": "RHEL-101123",
+      "url": "https://issues.redhat.com/browse/RHEL-101123",
+      "description": "Enable support for ML-DSA in GnuTLS"
+    },
+    {
+      "id": "RHEL-97763",
+      "url": "https://issues.redhat.com/browse/RHEL-97763",
+      "description": "*P:Q/*class:ics - use new openssl group selection syntax in crypto-policies"
+    },
+    {
+      "id": "RHEL-98732",
+      "url": "https://issues.redhat.com/browse/RHEL-98732",
+      "description": "Update crypto policies to support PQC in sequoia"
+    },
+    {
+      "id": "RHEL-99813",
+      "url": "https://issues.redhat.com/browse/RHEL-99813",
+      "description": "X25519-MLKEM768 should be aliased to MLKEM768-X25519"
+    },
+    {
+      "id": "RHEL-103962",
+      "url": "https://issues.redhat.com/browse/RHEL-103962",
+      "description": "enable ML-DSA in NSS in crypto-policies"
+    },
+    {
+      "id": "RHEL-106868",
+      "url": "https://issues.redhat.com/browse/RHEL-106868",
+      "description": "Enable the mlkem1024secp384r1 group for NSS"
+    },
+    {
+      "id": "RHEL-111245",
+      "url": "https://issues.redhat.com/browse/RHEL-111245",
+      "description": "rpm --import mldsa87.pub fails in FIPS (crypto-policies)"
+    },
+    {
+      "id": "RHEL-112392",
+      "url": "https://issues.redhat.com/browse/RHEL-112392",
+      "description": "allow PQ algorithms in all rpm-sequoia crypto-policies"
+    },
+    {
+      "id": "RHEL-113008",
+      "url": "https://issues.redhat.com/browse/RHEL-113008",
+      "description": "crypto-policies in RHEL 10.1 should obsolete crypto-policies-pq-preview"
+    }
+  ],
+  "full_text": "An update for crypto-policies is now available for Red Hat Enterprise Linux 10.\n\nFor detailed information on changes in this release, see the Red Hat Enterprise Linux 10 Release Notes linked from the References section."
+}

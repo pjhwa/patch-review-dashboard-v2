@@ -1,0 +1,28 @@
+{
+  "id": "ELBA-2025-20582-0",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "RHCK",
+  "title": "libtalloc bug fix and enhancement update",
+  "issuedDate": "2025-11-17T00:00:00Z",
+  "updatedDate": "2025-11-17T00:00:00Z",
+  "pubDate": "2025-11-17T00:00:00Z",
+  "dateStr": "2025-11-17",
+  "url": "https://linux.oracle.com/errata/ELBA-2025-20582-0.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 9.",
+  "description": "[2.4.3-1]\n- Rebase to version 2.4.3\n- resolves: RHEL-89882",
+  "affected_products": [
+    "Oracle Linux 9 for x86_64",
+    "Oracle Linux 9 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "python3-talloc-2.4.3-1.el9.i686",
+    "libtalloc-2.4.3-1.el9.x86_64",
+    "libtalloc-2.4.3-1.el9.src",
+    "python3-talloc-2.4.3-1.el9.x86_64",
+    "libtalloc-2.4.3-1.el9.i686"
+  ],
+  "full_text": "[2.4.3-1]\n- Rebase to version 2.4.3\n- resolves: RHEL-89882\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2025-20582-0.html"
+}

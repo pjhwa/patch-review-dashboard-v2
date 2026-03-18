@@ -1,0 +1,28 @@
+{
+  "id": "USN-7991-1",
+  "vendor": "Canonical / Ubuntu",
+  "type": "Ubuntu Security Notice (USN)",
+  "title": "thunderbird vulnerabilities",
+  "issuedDate": "2026-02-02T12:11:46Z",
+  "updatedDate": "2026-02-10T04:50:48Z",
+  "pubDate": "2026-02-02T12:11:46Z",
+  "dateStr": "2026-02-02",
+  "url": "https://ubuntu.com/security/notices/USN-7991-1",
+  "severity": "None",
+  "overview": "thunderbird vulnerabilities",
+  "description": "Multiple security issues were discovered in Thunderbird. If a user were\ntricked into opening a specially crafted website in a browsing context,\nan attacker could potentially exploit these to cause a denial of service,\nobtain sensitive information, bypass security restrictions, cross-site\ntracing, or execute arbitrary code.",
+  "affected_products": [
+    "Ubuntu 22.04 LTS"
+  ],
+  "cves": [],
+  "packages": [
+    "thunderbird-1:140.7.1+build1-0ubuntu0.22.04.1",
+    "thunderbird-dev-1:140.7.1+build1-0ubuntu0.22.04.1",
+    "thunderbird-gnome-support-1:140.7.1+build1-0ubuntu0.22.04.1",
+    "thunderbird-mozsymbols-1:140.7.1+build1-0ubuntu0.22.04.1",
+    "xul-ext-calendar-timezones-1:140.7.1+build1-0ubuntu0.22.04.1",
+    "xul-ext-gdata-provider-1:140.7.1+build1-0ubuntu0.22.04.1",
+    "xul-ext-lightning-1:140.7.1+build1-0ubuntu0.22.04.1"
+  ],
+  "full_text": "Multiple security issues were discovered in Thunderbird. If a user were\ntricked into opening a specially crafted website in a browsing context,\nan attacker could potentially exploit these to cause a denial of service,\nobtain sensitive information, bypass security restrictions, cross-site\ntracing, or execute arbitrary code."
+}

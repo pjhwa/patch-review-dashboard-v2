@@ -1,0 +1,23 @@
+{
+  "id": "RHSA-2026:2726",
+  "vendor": "Red Hat",
+  "url": "https://access.redhat.com/errata/RHSA-2026:2726",
+  "pubDate": "2026-02-16T12:04:57.000Z",
+  "dateStr": "2026-02-16",
+  "severity": "Important",
+  "title": "Red Hat Security Advisory: pki-deps:10.6 security update",
+  "overview": "An update for the pki-deps:10.6 module is now available for Red Hat Enterprise Linux 8.6 Advanced Mission Critical Update Support, Red Hat Enterprise Linux 8.6 Update Services for SAP Solutions, and Red Hat Enterprise Linux 8.6 Telecommunications Update Service.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "description": "An update for the pki-deps:10.6 module is now available for Red Hat Enterprise Linux 8.6 Advanced Mission Critical Update Support, Red Hat Enterprise Linux 8.6 Update Services for SAP Solutions, and Red Hat Enterprise Linux 8.6 Telecommunications Update Service.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux AppStream AUS (v.8.6)",
+    "Red Hat Enterprise Linux AppStream E4S (v.8.6)",
+    "Red Hat Enterprise Linux AppStream TUS (v.8.6)"
+  ],
+  "cves": [
+    "CVE-2025-31651",
+    "CVE-2025-55752"
+  ],
+  "packages": [],
+  "fixes": "",
+  "full_text": "Red Hat Security Advisory: pki-deps:10.6 security update\n\nAn update for the pki-deps:10.6 module is now available for Red Hat Enterprise Linux 8.6 Advanced Mission Critical Update Support, Red Hat Enterprise Linux 8.6 Update Services for SAP Solutions, and Red Hat Enterprise Linux 8.6 Telecommunications Update Service.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nAn update for the pki-deps:10.6 module is now available for Red Hat Enterprise Linux 8.6 Advanced Mission Critical Update Support, Red Hat Enterprise Linux 8.6 Update Services for SAP Solutions, and Red Hat Enterprise Linux 8.6 Telecommunications Update Service.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nUpdated Packages:\n6dfb954c.src.rpm\n72837426.src.rpm\n419fb810.src.rpm\nb3b8726f.3.src.rpm\naafc0b27.src.rpm\n4574fbff.src.rpm\n6dfb954c.noarch.rpm\n72837426.noarch.rpm\n419fb810.noarch.rpm\nb3b8726f.3.noarch.rpm\n6dfb954c.x86_64.rpm\naafc0b27.noarch.rpm\n4574fbff.noarch.rpm\n6dfb954c.ppc64le.rpm\n\nCVE-2025-31651: A flaw was found in Apache Tomcat's rewrite rule processing component. This vulnerability allows security constraints to be bypassed via specially crafted HTTP requests when specific, uncommon rewrite rule configurations are in use.\n\nCVE-2025-55752: A directory traversal vulnerability in Apache Tomcat caused by improper URL normalization during request rewriting. When specific rewrite rules are used, an attacker could craft a malicious request to bypass access restrictions and reach protected directories such as /WEB-INF/ or /META-INF/. If HTTP PUT requests are also enabled, this flaw could allow the upload of malicious files, potentially leading to remote code execution."
+}

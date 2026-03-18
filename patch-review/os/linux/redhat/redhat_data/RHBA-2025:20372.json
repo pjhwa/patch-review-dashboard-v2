@@ -1,0 +1,66 @@
+{
+  "id": "RHBA-2025:20372",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: gdm bug fix and enhancement update",
+  "issuedDate": "2025-11-11T07:26:16Z",
+  "updatedDate": "2025-11-11T07:26:16Z",
+  "pubDate": "2025-11-11T07:26:16Z",
+  "dateStr": "2025-11-11",
+  "url": "https://access.redhat.com/errata/RHBA-2025:20372",
+  "severity": "None",
+  "overview": "An update for gdm is now available for Red Hat Enterprise Linux 10.",
+  "description": "For detailed information on changes in this release, see the Red Hat Enterprise Linux 10 Release Notes linked from the References section.",
+  "affected_products": [
+    "Red Hat CodeReady Linux Builder for IBM z Systems",
+    "Red Hat Enterprise Linux for x86_64 10 x86_64",
+    "Red Hat Enterprise Linux for Power, little endian",
+    "Red Hat CodeReady Linux Builder for ARM 64",
+    "Red Hat CodeReady Linux Builder for x86_64 10 x86_64",
+    "Red Hat Enterprise Linux for IBM z Systems",
+    "Red Hat Enterprise Linux for ARM 64",
+    "Red Hat CodeReady Linux Builder for Power, little endian"
+  ],
+  "cves": [],
+  "packages": [
+    "gdm-47.0-11.el10.src",
+    "gdm-47.0-11.el10.x86_64",
+    "gdm-debuginfo-47.0-11.el10.x86_64",
+    "gdm-debugsource-47.0-11.el10.x86_64",
+    "gdm-47.0-11.el10.s390x",
+    "gdm-debuginfo-47.0-11.el10.s390x",
+    "gdm-debugsource-47.0-11.el10.s390x",
+    "gdm-47.0-11.el10.ppc64le",
+    "gdm-debuginfo-47.0-11.el10.ppc64le",
+    "gdm-debugsource-47.0-11.el10.ppc64le",
+    "gdm-47.0-11.el10.aarch64",
+    "gdm-debuginfo-47.0-11.el10.aarch64",
+    "gdm-debugsource-47.0-11.el10.aarch64",
+    "gdm-devel-47.0-11.el10.x86_64",
+    "gdm-pam-extensions-devel-47.0-11.el10.x86_64",
+    "gdm-devel-47.0-11.el10.ppc64le",
+    "gdm-pam-extensions-devel-47.0-11.el10.ppc64le",
+    "gdm-devel-47.0-11.el10.aarch64",
+    "gdm-pam-extensions-devel-47.0-11.el10.aarch64",
+    "gdm-devel-47.0-11.el10.s390x",
+    "gdm-pam-extensions-devel-47.0-11.el10.s390x"
+  ],
+  "fixes": [
+    {
+      "id": "RHEL-1846",
+      "url": "https://issues.redhat.com/browse/RHEL-1846",
+      "description": "\"USER_LOGIN\" messages not logged in audit post gdm-40"
+    },
+    {
+      "id": "RHEL-5703",
+      "url": "https://issues.redhat.com/browse/RHEL-5703",
+      "description": "File descriptor leak occurring when idle-delay screen lock occurs in XDMCP"
+    },
+    {
+      "id": "RHEL-69319",
+      "url": "https://issues.redhat.com/browse/RHEL-69319",
+      "description": "Headless session service file is missing [Install] entry"
+    }
+  ],
+  "full_text": "An update for gdm is now available for Red Hat Enterprise Linux 10.\n\nFor detailed information on changes in this release, see the Red Hat Enterprise Linux 10 Release Notes linked from the References section."
+}

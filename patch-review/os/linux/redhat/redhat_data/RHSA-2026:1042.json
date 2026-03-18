@@ -1,0 +1,33 @@
+{
+  "id": "RHSA-2026:1042",
+  "vendor": "Red Hat",
+  "type": "Security Advisory (RHSA)",
+  "title": "Red Hat Security Advisory: cert-manager Operator for Red Hat OpenShift 1.18.1",
+  "issuedDate": "2026-01-22T18:14:00+00:00",
+  "updatedDate": "2026-01-22T18:14:05+00:00",
+  "pubDate": "2026-01-22T18:14:00+00:00",
+  "dateStr": "2026-01-22",
+  "url": "https://access.redhat.com/errata/RHSA-2026:1042",
+  "severity": "Important",
+  "overview": "cert-manager Operator for Red Hat OpenShift 1.18.1",
+  "description": "The cert-manager Operator for Red Hat OpenShift builds on top of Kubernetes, introducing certificate authorities\nand certificates as first-class resource types in the Kubernetes API. This makes it possible to provide\ncertificates-as-a-service to developers working within your Kubernetes cluster.",
+  "affected_products": [],
+  "cves": [
+    "CVE-2025-61727",
+    "CVE-2025-61729",
+    "CVE-2025-66418",
+    "CVE-2025-66471",
+    "CVE-2026-21441"
+  ],
+  "packages": [
+    "registry.redhat.io/cert-manager/jetstack-cert-manager-rhel9@sha256:c8c319818479dfb5856d50ccebe1c6aaad008aff2b1ac5c317763a697884b2c2_amd64",
+    "registry.redhat.io/cert-manager/jetstack-cert-manager-acmesolver-rhel9@sha256:08b6b8c954c1a7ceb5a446eb1bc3e28c434cc576b77cd369c85ea79775dfb1cc_amd64",
+    "registry.redhat.io/cert-manager/jetstack-cert-manager-rhel9@sha256:bf234df32160c906c15cc437b66a7b35a913a400f921f2cd2e44c83a02d9c7b0_s390x",
+    "registry.redhat.io/cert-manager/jetstack-cert-manager-acmesolver-rhel9@sha256:2f2e78fd6d5a22d977e80100425da58d77a5286d4d017c38e27d7900d52fdb28_s390x",
+    "registry.redhat.io/cert-manager/jetstack-cert-manager-rhel9@sha256:77f4d70980abe59f1e69bf38bfeeeed0b84b27fe9ae3286666d01a0c8aa6b067_ppc64le",
+    "registry.redhat.io/cert-manager/jetstack-cert-manager-acmesolver-rhel9@sha256:7906836c624e2aea656d2c64bd3fee260b69c9f6a0ab46e5d228154f5d6241c4_ppc64le",
+    "registry.redhat.io/cert-manager/jetstack-cert-manager-rhel9@sha256:9f89f2a9de21e45f472d533a7b627c7f27fdf726efef24ff972cebfd30815cbf_arm64",
+    "registry.redhat.io/cert-manager/jetstack-cert-manager-acmesolver-rhel9@sha256:749ce9e6e1216fc8e8e29c01ff14b11a1290de1bec9bd4d692f5cbace03f8e95_arm64"
+  ],
+  "full_text": "cert-manager Operator for Red Hat OpenShift 1.18.1\n\nThe cert-manager Operator for Red Hat OpenShift builds on top of Kubernetes, introducing certificate authorities\nand certificates as first-class resource types in the Kubernetes API. This makes it possible to provide\ncertificates-as-a-service to developers working within your Kubernetes cluster."
+}

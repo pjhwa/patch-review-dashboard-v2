@@ -1,0 +1,24 @@
+{
+  "id": "USN-7983-1",
+  "vendor": "Canonical / Ubuntu",
+  "type": "Ubuntu Security Notice (USN)",
+  "title": "containerd, containerd-app vulnerabilities",
+  "issuedDate": "2026-01-29T07:43:08Z",
+  "updatedDate": "2026-02-10T04:50:48Z",
+  "pubDate": "2026-01-29T07:43:08Z",
+  "dateStr": "2026-01-29",
+  "url": "https://ubuntu.com/security/notices/USN-7983-1",
+  "severity": "None",
+  "overview": "containerd, containerd-app vulnerabilities",
+  "description": "David Leadbeater discovered that containerd incorrectly set certain\ndirectory path permissions. An attacker could possibly use this issue to\nachieve unauthorised access to the files. (CVE-2024-25621)\n\nIt was discovered that containerd did not properly handle the execution\nof the goroutine of container attach. An attacker could possibly use this\nissue to cause a denial of service. (CVE-2025-64329)",
+  "affected_products": [
+    "Ubuntu 22.04 LTS",
+    "Ubuntu 24.04 LTS"
+  ],
+  "cves": [],
+  "packages": [
+    "containerd-1.7.28-0ubuntu1~24.04.2",
+    "golang-github-containerd-containerd-dev-1.6.12-0ubuntu1~22.04.10"
+  ],
+  "full_text": "David Leadbeater discovered that containerd incorrectly set certain\ndirectory path permissions. An attacker could possibly use this issue to\nachieve unauthorised access to the files. (CVE-2024-25621)\n\nIt was discovered that containerd did not properly handle the execution\nof the goroutine of container attach. An attacker could possibly use this\nissue to cause a denial of service. (CVE-2025-64329)"
+}

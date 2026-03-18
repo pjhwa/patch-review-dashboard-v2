@@ -1,0 +1,25 @@
+{
+  "id": "ELBA-2025-20871",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "AppStream",
+  "title": "ksh bug fix and enhancement update",
+  "issuedDate": "2025-11-17T00:00:00Z",
+  "updatedDate": "2025-11-17T00:00:00Z",
+  "pubDate": "2025-11-17T00:00:00Z",
+  "dateStr": "2025-11-17",
+  "url": "https://linux.oracle.com/errata/ELBA-2025-20871.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 9.",
+  "description": "[1.0.6-14.0.1]\n- Disable _AST_no_spawnveg for taskset workaround [Orabug: 26754277]\n\n[3:1.0.6-14]\n- Fix arbitrary command execution/code injection bugs\n  Resolves: RHEL-99063\n\n[3:1.0.6-13]\n- Fix SIGPIPE subshell regression\n  Resolves: RHEL-92646\n\n[3:1.0.6-12]\n- Fix recalling lines starting with whitespace\n  Resolves: RHEL-74464\n\n[3:1.0.6-11]\n- Fix segfault upon SIGWINCH after 'stty -echo'\n  Resolves: RHEL-91097\n\n[3:1.0.6-10]\n- Fix long multibyte characters paste issue via ssh\n  Resolves: RHEL-87561\n\n[3:1.0.6-9]\n- Fix 'stty -echo' in scripts\n  Resolves: RHEL-83043\n\n[3:1.0.6-8]\n- Fix segfault on starting ksh with no TERM env var\n  Resolves: RHEL-83283",
+  "affected_products": [
+    "Oracle Linux 9 for x86_64",
+    "Oracle Linux 9 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "ksh-1.0.6-14.0.1.el9.x86_64",
+    "ksh-1.0.6-14.0.1.el9.src"
+  ],
+  "full_text": "[1.0.6-14.0.1]\n- Disable _AST_no_spawnveg for taskset workaround [Orabug: 26754277]\n\n[3:1.0.6-14]\n- Fix arbitrary command execution/code injection bugs\n  Resolves: RHEL-99063\n\n[3:1.0.6-13]\n- Fix SIGPIPE subshell regression\n  Resolves: RHEL-92646\n\n[3:1.0.6-12]\n- Fix recalling lines starting with whitespace\n  Resolves: RHEL-74464\n\n[3:1.0.6-11]\n- Fix segfault upon SIGWINCH after 'stty -echo'\n  Resolves: RHEL-91097\n\n[3:1.0.6-10]\n- Fix long multibyte characters paste issue via ssh\n  Resolves: RHEL-87561\n\n[3:1.0.6-9]\n- Fix 'stty -echo' in scripts\n  Resolves: RHEL-83043\n\n[3:1.0.6-8]\n- Fix segfault on starting ksh with no TERM env var\n  Resolves: RHEL-83283\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2025-20871.html"
+}

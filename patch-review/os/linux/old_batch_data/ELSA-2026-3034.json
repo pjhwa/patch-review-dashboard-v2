@@ -1,0 +1,30 @@
+{
+  "id": "ELSA-2026-3034",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2026-February/019817.html",
+  "synopsis": "[El-errata] ELSA-2026-3034 Important: Oracle Linux 9 munge security update",
+  "dateStr": "2026-February",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Security Advisory ELSA-2026-3034",
+  "description": "[0.5.13-14.0.1]\n- Updated path for removal of unneeded init file\n\n[0.5.13-14]\n- Fix CVE-2026-25506\n- Resolved: RHEL-148533",
+  "affected_products": [
+    "Oracle Linux 9"
+  ],
+  "packages": [
+    "munge-0.5.13-14.0.1.el9_7.x86_64.rpm",
+    "munge-devel-0.5.13-14.0.1.el9_7.i686.rpm",
+    "munge-devel-0.5.13-14.0.1.el9_7.x86_64.rpm",
+    "munge-libs-0.5.13-14.0.1.el9_7.i686.rpm",
+    "munge-libs-0.5.13-14.0.1.el9_7.x86_64.rpm",
+    "munge-0.5.13-14.0.1.el9_7.aarch64.rpm",
+    "munge-devel-0.5.13-14.0.1.el9_7.aarch64.rpm",
+    "munge-libs-0.5.13-14.0.1.el9_7.aarch64.rpm"
+  ],
+  "cves": [
+    "CVE-2026-25506"
+  ],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Security Advisory ELSA-2026-3034\n\nhttp://linux.oracle.com/errata/ELSA-2026-3034.html\n\nThe following updated rpms for Oracle Linux 9 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\nmunge-0.5.13-14.0.1.el9_7.x86_64.rpm\nmunge-devel-0.5.13-14.0.1.el9_7.i686.rpm\nmunge-devel-0.5.13-14.0.1.el9_7.x86_64.rpm\nmunge-libs-0.5.13-14.0.1.el9_7.i686.rpm\nmunge-libs-0.5.13-14.0.1.el9_7.x86_64.rpm\n\naarch64:\nmunge-0.5.13-14.0.1.el9_7.aarch64.rpm\nmunge-devel-0.5.13-14.0.1.el9_7.aarch64.rpm\nmunge-libs-0.5.13-14.0.1.el9_7.aarch64.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol9/SRPMS-updates/munge-0.5.13-14.0.1.el9_7.src.rpm\n\nRelated CVEs:\n\nCVE-2026-25506\n\n\n\n\nDescription of changes:\n\n[0.5.13-14.0.1]\n- Updated path for removal of unneeded init file\n\n[0.5.13-14]\n- Fix CVE-2026-25506\n- Resolved: RHEL-148533",
+  "vendor": "Oracle"
+}

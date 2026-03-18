@@ -1,0 +1,73 @@
+{
+  "id": "RHBA-2025:20298",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: edk2 bug fix and enhancement update",
+  "issuedDate": "2025-11-11T07:25:59Z",
+  "updatedDate": "2025-11-11T07:25:59Z",
+  "pubDate": "2025-11-11T07:25:59Z",
+  "dateStr": "2025-11-11",
+  "url": "https://access.redhat.com/errata/RHBA-2025:20298",
+  "severity": "None",
+  "overview": "An update for edk2 is now available for Red Hat Enterprise Linux 10.",
+  "description": "For detailed information on changes in this release, see the Red Hat Enterprise Linux 10 Release Notes linked from the References section.",
+  "affected_products": [
+    "Red Hat CodeReady Linux Builder for x86_64 10 x86_64",
+    "Red Hat CodeReady Linux Builder for ARM 64",
+    "Red Hat CodeReady Linux Builder for IBM z Systems",
+    "Red Hat CodeReady Linux Builder for Power, little endian",
+    "Red Hat Enterprise Linux for ARM 64",
+    "Red Hat Enterprise Linux for x86_64 10 x86_64"
+  ],
+  "cves": [],
+  "packages": [
+    "edk2-20250523-2.el10.src",
+    "edk2-ovmf-20250523-2.el10.noarch",
+    "edk2-aarch64-20250523-2.el10.noarch",
+    "edk2-debugsource-20250523-2.el10.x86_64",
+    "edk2-tools-20250523-2.el10.x86_64",
+    "edk2-tools-debuginfo-20250523-2.el10.x86_64",
+    "edk2-tools-doc-20250523-2.el10.noarch",
+    "edk2-debugsource-20250523-2.el10.aarch64",
+    "edk2-tools-20250523-2.el10.aarch64",
+    "edk2-tools-debuginfo-20250523-2.el10.aarch64"
+  ],
+  "fixes": [
+    {
+      "id": "RHEL-75592",
+      "url": "https://issues.redhat.com/browse/RHEL-75592",
+      "description": "[edk2,rhel-10] rebase to edk2-stable202502"
+    },
+    {
+      "id": "RHEL-82646",
+      "url": "https://issues.redhat.com/browse/RHEL-82646",
+      "description": "[edk2,rhel-10.1] fix typo in fwcfg file name"
+    },
+    {
+      "id": "RHEL-82837",
+      "url": "https://issues.redhat.com/browse/RHEL-82837",
+      "description": "The newer revocation file and Server 2025 required to update it [rhel-10.1]"
+    },
+    {
+      "id": "RHEL-82556",
+      "url": "https://issues.redhat.com/browse/RHEL-82556",
+      "description": "[edk2,rhel-10] rebase to edk2-stable202505"
+    },
+    {
+      "id": "RHEL-88088",
+      "url": "https://issues.redhat.com/browse/RHEL-88088",
+      "description": "[RHEL10.1] edk2 ASSERT [RngDxe] BaseArmTrngLibNull.c(86): ((BOOLEAN)(0==1))"
+    },
+    {
+      "id": "RHEL-2908",
+      "url": "https://issues.redhat.com/browse/RHEL-2908",
+      "description": "[aarch64][EDK2] UEFI writable variable service in QEMU"
+    },
+    {
+      "id": "RHEL-96866",
+      "url": "https://issues.redhat.com/browse/RHEL-96866",
+      "description": "[edk2,rhel-10] dbx update 20250610"
+    }
+  ],
+  "full_text": "An update for edk2 is now available for Red Hat Enterprise Linux 10.\n\nFor detailed information on changes in this release, see the Red Hat Enterprise Linux 10 Release Notes linked from the References section."
+}

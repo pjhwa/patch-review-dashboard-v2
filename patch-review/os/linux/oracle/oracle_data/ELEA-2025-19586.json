@@ -1,0 +1,25 @@
+{
+  "id": "ELEA-2025-19586",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "AppStream",
+  "title": "rhel-system-roles bug fix and enhancement update",
+  "issuedDate": "2025-11-04T00:00:00Z",
+  "updatedDate": "2025-11-04T00:00:00Z",
+  "pubDate": "2025-11-04T00:00:00Z",
+  "dateStr": "2025-11-04",
+  "url": "https://linux.oracle.com/errata/ELEA-2025-19586.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 9.",
+  "description": "[1.96.0-0.1.0.1]\n- Replace bug reporting url [Orabug: 34202300]\n- Replace upstream references from description tag [OLDIS-1810]\n- Replace upstream URLs from galaxy_transform.py command in spec file\n- Remove comments which confuse ruamel\n- Replace upstream reference of Ansible Collection in spec file [Orabug: 32904501]\n\n[1.96.0-0.1]\n- Resolves: RHEL-100720 :  Add an HPC System Role",
+  "affected_products": [
+    "Oracle Linux 9 for x86_64",
+    "Oracle Linux 9 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "rhel-system-roles-1.96.0-0.1.0.1.el9_6.noarch",
+    "rhel-system-roles-1.96.0-0.1.0.1.el9_6.src"
+  ],
+  "full_text": "[1.96.0-0.1.0.1]\n- Replace bug reporting url [Orabug: 34202300]\n- Replace upstream references from description tag [OLDIS-1810]\n- Replace upstream URLs from galaxy_transform.py command in spec file\n- Remove comments which confuse ruamel\n- Replace upstream reference of Ansible Collection in spec file [Orabug: 32904501]\n\n[1.96.0-0.1]\n- Resolves: RHEL-100720 :  Add an HPC System Role\n\nReferences:\nhttps://linux.oracle.com/errata/ELEA-2025-19586.html"
+}

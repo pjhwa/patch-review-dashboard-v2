@@ -1,0 +1,110 @@
+[
+  {
+    "issueId": "USN-7047-1",
+    "description": "Fixes memory exhaustion bugs in libvirt leading to denial of service for managed virtual machines. No data loss or system compromise risks.",
+    "reason": "[Risk Assessed & Accepted] Not \"Critical\", not \"Important\" patch.",
+    "dateExcluded": "2026-02-27T06:17:52.060Z"
+  },
+  {
+    "issueId": "RHSA-2026:2786",
+    "description": "Fixes moderate impact integer overflow in memalign function. glibc is critical but this specific issue has moderate impact.",
+    "reason": "[Risk Assessed & Accepted] Moderate",
+    "dateExcluded": "2026-02-27T06:40:19.960Z"
+  },
+  {
+    "issueId": "ELBA-2025-19559",
+    "description": "Bug fixes and enhancements for initscripts. No critical security issues identified. Network configuration improvements.",
+    "reason": "[Risk Assessed & Accepted] Not Critical",
+    "dateExcluded": "2026-02-27T06:42:07.561Z"
+  },
+  {
+    "issueId": "ELBA-2025-19659",
+    "description": "Bug fixes for SELinux labels and rseq patch in Kubernetes. No critical security issues. Container orchestration improvements.",
+    "reason": "[Risk Assessed & Accepted] Not Critical",
+    "dateExcluded": "2026-02-27T06:47:53.787Z"
+  },
+  {
+    "issueId": "ELBA-2025-23230",
+    "description": "Bug fixes for 389-ds-base including replication issues and memory leaks. No critical security issues. Directory service improvements.",
+    "reason": "[Risk Assessed & Accepted] Not Critical",
+    "dateExcluded": "2026-02-27T06:48:22.793Z"
+  },
+  {
+    "issueId": "ELBA-2026-50082",
+    "description": "Enhancement update with multiple package updates for KVM. No critical security issues. Virtualization platform updates.",
+    "reason": "[Risk Assessed & Accepted] Not Critical",
+    "dateExcluded": "2026-02-27T06:48:29.091Z"
+  },
+  {
+    "issueId": "USN-8045-1",
+    "description": "Fixes SSL certificate validation issues and denial of service in resource agents. Resource agent configuration updates.",
+    "reason": "[Risk Assessed & Accepted] Moderate",
+    "dateExcluded": "2026-02-27T06:48:56.872Z"
+  },
+  {
+    "issueId": "USN-8043-1",
+    "description": "Fixes resource exhaustion from malicious certificates and PKCS11 token issues. No data loss or system compromise risks.",
+    "reason": "[Dependency Conflict (Breaks App)] 의존성으로 서비스 충돌 및 장애 우려 ",
+    "dateExcluded": "2026-03-11T02:00:31.640Z"
+  },
+  {
+    "issueId": "ELSA-2025-22205",
+    "description": "Fixes multiple critical vulnerabilities in BIND DNS server including remote code execution (CVE-2025-12345), DNS cache poisoning (CVE-2025-12346), and denial of service. Essential for network infrastructure security.",
+    "reason": "[Environment Mismatch (e.g., Module not used)] not used",
+    "dateExcluded": "2026-03-03T03:30:34.375Z"
+  },
+  {
+    "issueId": "ELSA-2025-22213",
+    "description": "Fixes critical vulnerabilities in nftables firewall including local privilege escalation (CVE-2025-12347), buffer overflows, and potential root access. Fundamental to network security.",
+    "reason": "[Other] not used",
+    "dateExcluded": "2026-03-03T03:30:45.407Z"
+  },
+  {
+    "issueId": "ELSA-2025-22217",
+    "description": "Fixes multiple critical vulnerabilities in OpenSSL including remote code execution, buffer overflows, and cryptographic weaknesses. Essential for SSL/TLS security.",
+    "reason": "[Dependency Conflict (Breaks App)] 서비스 충돌 우려",
+    "dateExcluded": "2026-03-03T03:31:02.714Z"
+  },
+  {
+    "issueId": "ELSA-2025-22228",
+    "description": "Fixes critical vulnerabilities in PostgreSQL including SQL injection (CVE-2025-12348), privilege escalation, and data access. Critical for database security.",
+    "reason": "[Other] not used",
+    "dateExcluded": "2026-03-03T03:34:28.984Z"
+  },
+  {
+    "issueId": "ELSA-2025-22233",
+    "description": "Fixes critical vulnerabilities in Samba including remote code execution (CVE-2025-12349), privilege escalation, and authentication bypass. Handles file sharing and authentication.",
+    "reason": "[Other] N/A",
+    "dateExcluded": "2026-03-03T03:41:16.519Z"
+  },
+  {
+    "issueId": "ELSA-2025-23483",
+    "description": "Fixes critical vulnerabilities in SSH daemon including authentication bypass and privilege escalation. Critical for secure remote access.",
+    "reason": "[Other] not used",
+    "dateExcluded": "2026-03-03T03:52:01.670Z"
+  },
+  {
+    "issueId": "ELBA-2026-50074",
+    "description": "Fixes critical boot loader vulnerabilities affecting system boot process. Essential for secure boot functionality.",
+    "reason": "[Other] not used",
+    "dateExcluded": "2026-03-03T03:52:30.023Z"
+  },
+  {
+    "issueId": "test-issue-123",
+    "description": "Sync test",
+    "reason": "test",
+    "dateExcluded": "2026-03-11T01:22:44.872Z"
+  },
+  {
+    "issueId": "test-issue-456",
+    "description": "Auto-sync path fix test",
+    "reason": "Testing the path fix",
+    "dateExcluded": "2026-03-11T01:24:13.742Z"
+  },
+  {
+    "issueId": "d6348108-f592-4780-8c01-e46bb13d7e39",
+    "description": "Critical remote code execution in GitHub Actions workflow due to unsanitized branch name interpolation, allowing arbitrary command execution with repository write permissions.",
+    "reason": "[Other] Ceph의 코드에 대한 보안 패치가 아니라 Gtihub Actions workflow에 대한 내용이다.",
+    "dateExcluded": "2026-03-11T09:27:42.420Z"
+  }
+]

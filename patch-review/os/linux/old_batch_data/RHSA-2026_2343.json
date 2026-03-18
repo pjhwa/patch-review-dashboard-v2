@@ -1,0 +1,23 @@
+{
+  "id": "RHSA-2026:2343",
+  "vendor": "Red Hat",
+  "url": "https://access.redhat.com/errata/RHSA-2026:2343",
+  "pubDate": "2026-02-09T14:20:06.000Z",
+  "dateStr": "2026-02-09",
+  "severity": "Important",
+  "title": "Red Hat Security Advisory: Red Hat OpenShift API for Data Protection",
+  "overview": "A new version of OpenShift API for Data Protection (OADP) is now available.",
+  "description": "A new version of OpenShift API for Data Protection (OADP) is now available.",
+  "affected_products": [
+    "OpenShift API for Data Protection 1.5"
+  ],
+  "cves": [
+    "CVE-2024-25621",
+    "CVE-2025-52881",
+    "CVE-2025-58183",
+    "CVE-2025-61729"
+  ],
+  "packages": [],
+  "fixes": "",
+  "full_text": "Red Hat Security Advisory: Red Hat OpenShift API for Data Protection\n\nA new version of OpenShift API for Data Protection (OADP) is now available.\n\nA new version of OpenShift API for Data Protection (OADP) is now available.\n\n\n\nCVE-2024-25621: containerd is an open-source container runtime. Versions 0.1.0 through 1.7.28, 2.0.0-beta.0 through 2.0.6, 2.1.0-beta.0 through 2.1.4 and 2.2.0-beta.0 through 2.2.0-rc.1 have an overly broad default permission vulnerability. Directory paths `/var/lib/containerd`, `/run/containerd/io.containerd.grpc.v1.cri` and `/run/containerd/io.containerd.sandbox.controller.v1.shim` were all created with incorrect permissions. This issue is fixed in versions 1.7.29, 2.0.7, 2.1.5 and 2.2.0. Workarounds include updating system administrator permissions so the host can manually chmod the directories to not have group or world accessible permissions, or to run containerd in rootless mode.\n\nCVE-2025-52881: A flaw was found in runc. This attack is a more sophisticated variant of CVE-2019-16884, which was a flaw that allowed an attacker to trick runc into writing the LSM process labels for a container process into a dummy tmpfs file and thus not apply the correct LSM labels to the container process. The mitigation applied for CVE-2019-16884 was fairly limited and effectively only caused runc to verify that when we write LSM labels that those labels are actual procfs files.\n\nCVE-2025-58183: A flaw was found in the archive/tar package in the Go standard library. tar.Reader does not set a maximum size on the number of sparse region data blocks in GNU tar pax 1.0 sparse files. A specially crafted tar archive with a pax header indicating a big number of sparse regions can cause a Go program to try to allocate a large amount of memory, causing an out-of-memory condition and resulting in a denial of service.\n\nCVE-2025-61729: Within HostnameError.Error(), when constructing an error string, there is no limit to the number of hosts that will be printed out. Furthermore, the error string is constructed by repeated string concatenation, leading to quadratic runtime. Therefore, a certificate provided by a malicious actor can result in excessive resource consumption."
+}

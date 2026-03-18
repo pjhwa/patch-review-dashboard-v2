@@ -1,0 +1,48 @@
+{
+  "id": "RHBA-2025:20285",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: setroubleshoot bug fix and enhancement update",
+  "issuedDate": "2025-11-11T07:25:57Z",
+  "updatedDate": "2025-11-11T07:25:57Z",
+  "pubDate": "2025-11-11T07:25:57Z",
+  "dateStr": "2025-11-11",
+  "url": "https://access.redhat.com/errata/RHBA-2025:20285",
+  "severity": "None",
+  "overview": "An update for setroubleshoot is now available for Red Hat Enterprise Linux 10.",
+  "description": "For detailed information on changes in this release, see the Red Hat Enterprise Linux 10 Release Notes linked from the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux for IBM z Systems",
+    "Red Hat Enterprise Linux for ARM 64",
+    "Red Hat Enterprise Linux for x86_64 10 x86_64",
+    "Red Hat Enterprise Linux for Power, little endian"
+  ],
+  "cves": [],
+  "packages": [
+    "setroubleshoot-3.3.35-4.el10.src",
+    "setroubleshoot-3.3.35-4.el10.x86_64",
+    "setroubleshoot-debugsource-3.3.35-4.el10.x86_64",
+    "setroubleshoot-server-3.3.35-4.el10.x86_64",
+    "setroubleshoot-server-debuginfo-3.3.35-4.el10.x86_64",
+    "setroubleshoot-3.3.35-4.el10.s390x",
+    "setroubleshoot-debugsource-3.3.35-4.el10.s390x",
+    "setroubleshoot-server-3.3.35-4.el10.s390x",
+    "setroubleshoot-server-debuginfo-3.3.35-4.el10.s390x",
+    "setroubleshoot-3.3.35-4.el10.ppc64le",
+    "setroubleshoot-debugsource-3.3.35-4.el10.ppc64le",
+    "setroubleshoot-server-3.3.35-4.el10.ppc64le",
+    "setroubleshoot-server-debuginfo-3.3.35-4.el10.ppc64le",
+    "setroubleshoot-3.3.35-4.el10.aarch64",
+    "setroubleshoot-debugsource-3.3.35-4.el10.aarch64",
+    "setroubleshoot-server-3.3.35-4.el10.aarch64",
+    "setroubleshoot-server-debuginfo-3.3.35-4.el10.aarch64"
+  ],
+  "fixes": [
+    {
+      "id": "RHEL-90842",
+      "url": "https://issues.redhat.com/browse/RHEL-90842",
+      "description": "[BZ#2365614] setroubleshoot-server: call systemctl instead of /sbin/service in scriptlets"
+    }
+  ],
+  "full_text": "An update for setroubleshoot is now available for Red Hat Enterprise Linux 10.\n\nFor detailed information on changes in this release, see the Red Hat Enterprise Linux 10 Release Notes linked from the References section."
+}

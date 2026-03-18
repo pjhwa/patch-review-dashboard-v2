@@ -1,0 +1,31 @@
+{
+  "id": "RHBA-2025:20141",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: accel-config bug fix and enhancement update",
+  "issuedDate": "2025-11-11T07:25:13Z",
+  "updatedDate": "2025-11-11T07:25:13Z",
+  "pubDate": "2025-11-11T07:25:13Z",
+  "dateStr": "2025-11-11",
+  "url": "https://access.redhat.com/errata/RHBA-2025:20141",
+  "severity": "None",
+  "overview": "An update for accel-config is now available for Red Hat Enterprise Linux 10.",
+  "description": "For detailed information on changes in this release, see the Red Hat Enterprise Linux 10.1 Release Notes linked from the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux for x86_64 10 x86_64",
+    "Red Hat CodeReady Linux Builder for x86_64 10 x86_64"
+  ],
+  "cves": [],
+  "packages": [
+    "accel-config-4.1.8-3.el10.src",
+    "accel-config-4.1.8-3.el10.x86_64",
+    "accel-config-debuginfo-4.1.8-3.el10.x86_64",
+    "accel-config-debugsource-4.1.8-3.el10.x86_64",
+    "accel-config-libs-4.1.8-3.el10.x86_64",
+    "accel-config-libs-debuginfo-4.1.8-3.el10.x86_64",
+    "accel-config-test-debuginfo-4.1.8-3.el10.x86_64",
+    "accel-config-devel-4.1.8-3.el10.x86_64"
+  ],
+  "fixes": [],
+  "full_text": "An update for accel-config is now available for Red Hat Enterprise Linux 10.\n\nFor detailed information on changes in this release, see the Red Hat Enterprise Linux 10.1 Release Notes linked from the References section."
+}

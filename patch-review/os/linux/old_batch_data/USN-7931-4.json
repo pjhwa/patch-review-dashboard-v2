@@ -1,0 +1,28 @@
+{
+  "id": "USN-7931-4",
+  "url": "https://ubuntu.com/security/notices/USN-7931-4",
+  "synopsis": "USN-7931-4: Linux kernel (Xilinx) vulnerabilities",
+  "dateStr": "19 December 2025",
+  "overview": "Several security issues were fixed in the Linux kernel.",
+  "description": "Several security issues were discovered in the Linux kernel.\nAn attacker could possibly use these to compromise the system.\nThis update corrects flaws in the following subsystems:\n\nCryptographic API;\n\nMedia drivers;\n\nMemory management;\n\nAppletalk network protocol;\n\nNetfilter\n\n \n\n \n\n \n\nSeveral security issues were discovered in the Linux kernel.\nAn attacker could possibly use these to compromise the system.\nThis update corrects flaws in the following subsystems:\n\nCryptographic API;\n\nMedia drivers;\n\nMemory management;\n\nAppletalk network protocol;\n\nNetfilter",
+  "packages": [
+    "linux"
+  ],
+  "cves": [
+    "CVE-2025-40018",
+    "CVE-2025-39993",
+    "CVE-2025-39964",
+    "CVE-2025-38666",
+    "CVE-2025-37958"
+  ],
+  "affected_products": [
+    "24.04 LTS",
+    "Open side navigation"
+  ],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Ubuntu Security Notices\n\nUSN-7931-4\n\n \n\n \n\n \n\n \n\n \n\n \nUSN-7931-4: Linux kernel (Xilinx) vulnerabilities\n\n \n\n \n\n \n\n \nPublication date\n\n \n\n \n\n \n19 December 2025\n\n \n\n \n\n \n\n \n\n \nOverview\n\n \n\n \n\n \nSeveral security issues were fixed in the Linux kernel.\n\n \n\n \n\n \n\n \n\n \nReleases\n\n \n\n \n\n \n\n 24.04 LTS\n\n \n\n \n\n \n\n \n\n \n\n \n\n Open side navigation\n \n\n \n\n \nPackages\n\n \n\n linux-xilinx - Linux kernel for Xilinx systems\n \n\n \n\n \nDetails\n\n \n\n \n\nSeveral security issues were discovered in the Linux kernel.\nAn attacker could possibly use these to compromise the system.\nThis update corrects flaws in the following subsystems:\n\nCryptographic API;\n\nMedia drivers;\n\nMemory management;\n\nAppletalk network protocol;\n\nNetfilter\n\n \n\n \n\n \n\nSeveral security issues were discovered in the Linux kernel.\nAn attacker could possibly use these to compromise the system.\nThis update corrects flaws in the following subsystems:\n\nCryptographic API;\n\nMedia drivers;\n\nMemory management;\n\nAppletalk network protocol;\n\nNetfilter\n\n \n\n \n\n \n\n \nUpdate instructions\n\n \n\n \n\n \n\n \n\nAfter a standard system update you need to reboot your computer to make\nall the necessary changes.\n\n Learn more about how to get the fixes.\n \n\n \n\n \n\n \n\n \nATTENTION: Due to an unavoidable ABI change the kernel updates have\nbeen given a new version number, which requires you to recompile and\nreinstall all third party kernel modules you might have installed.\nUnless you manually uninstalled the standard kernel metapackages\n(e.g. linux-generic, linux-generic-lts-RELEASE, linux-virtual,\nlinux-powerpc), a standard system upgrade will automatically perform\nthis as well.\n\n \n\n \n\n \nThe problem can be corrected by updating your system to the following package versions:\n\n \n\n \n\n \n\n \n\n Ubuntu Release\n Package Version\n \n\n 24.04\n\nLTS noble\n\n linux-image-6.8.0-1021-xilinx – \n\n6.8.0-1021.22\n\n linux-image-xilinx – \n\n6.8.0.1021.22\n\n linux-image-xilinx-6.8 – \n\n6.8.0.1021.22\n\n linux-image-xilinx-zynqmp – \n\n6.8.0.1021.22\n\n \n\nReduce your security exposure\n\n \n\n Ubuntu Pro provides ten-year security coverage to 25,000+ packages in Main and Universe repositories, and it is free for up to five machines.\n \n\n \n\n Get Ubuntu Pro\n \n\n \n\nReferences\n\n \n\n \n\n CVE-2025-40018\n \n\n \n\n CVE-2025-39993\n \n\n \n\n CVE-2025-39964\n \n\n \n\n CVE-2025-38666\n \n\n \n\n CVE-2025-37958\n \n\n \n\n \n\n CVE-2025-40018\n \n\n CVE-2025-39993\n \n\n CVE-2025-39964\n \n\n CVE-2025-38666\n \n\n CVE-2025-37958\n \n\n \n\n \nRelated notices\n\n \n\nSearch\n\nid=“usn”\nClose\n Search\n\n USN-7988-1\n \n\n \n\n USN-7988-2\n \n\n \n\n USN-7988-3\n \n\n \n\n USN-7988-4\n \n\n \n\n USN-7988-5\n \n\n \n\n USN-7987-1\n \n\n \n\n USN-7987-2\n \n\n \n\n USN-7940-1\n \n\n \n\n USN-7940-2\n \n\n \n\n USN-7939-1\n \n\n \n\n USN-7988-1\n \n\n USN-7988-2\n \n\n USN-7988-3\n \n\n USN-7988-4\n \n\n USN-7988-5\n \n\n USN-7987-1\n \n\n USN-7987-2\n \n\n USN-7940-1\n \n\n USN-7940-2\n \n\n USN-7939-1\n \n\n USN-7939-2\n \n\n USN-7938-1\n \n\n USN-7937-1\n \n\n USN-7936-1\n \n\n USN-7935-1\n \n\n USN-7934-1\n \n\n USN-7933-1\n \n\n USN-7931-3\n \n\n USN-7931-2\n \n\n USN-7931-1\n \n\n USN-7931-5\n \n\n USN-7930-2\n \n\n USN-7930-1\n \n\n USN-7928-1\n \n\n USN-7928-2\n \n\n USN-7928-3\n \n\n USN-7928-4\n \n\n USN-7928-5\n \n\n USN-7922-1\n \n\n USN-7922-2\n \n\n USN-7922-3\n \n\n USN-7922-4\n \n\n USN-7922-5\n \n\n USN-7921-1\n \n\n USN-7921-2\n \n\n USN-7920-1\n \n\n USN-7920-2\n \n\n USN-7910-1\n \n\n USN-7910-2\n \n\n USN-7909-1\n \n\n USN-7909-2\n \n\n USN-7909-3\n \n\n USN-7909-4\n \n\n USN-7909-5\n \n\n USN-7907-1\n \n\n USN-7907-2\n \n\n USN-7907-3\n \n\n USN-7907-4\n \n\n USN-7907-5\n \n\n USN-7880-1\n \n\n USN-7879-1\n \n\n USN-7879-2\n \n\n USN-7879-3\n \n\n USN-7879-4\n \n\n USN-7776-1\n \n\n USN-7775-1\n \n\n USN-7775-2\n \n\n USN-7775-3\n \n\n USN-7774-1\n \n\n USN-7774-2\n \n\n USN-7774-3\n \n\n USN-7774-4\n \n\n USN-7774-5\n \n\n USN-7721-1\n \n\n USN-7699-1\n \n\n USN-7699-2\n \n\n Show 56 more references\n Show less references\n\n \n\n \n\n \n\n \n\n \n\n \nHave additional questions?\n\n \n\n Talk to a member of the team ›",
+  "title": "USN-7931-4: Linux kernel (Xilinx) vulnerabilities | Ubuntu security notices | Ubuntu",
+  "pubDate": "2025-12-18T15:00:00.000Z",
+  "vendor": "Ubuntu"
+}

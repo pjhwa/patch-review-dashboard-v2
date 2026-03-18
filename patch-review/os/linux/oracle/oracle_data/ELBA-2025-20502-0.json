@@ -1,0 +1,32 @@
+{
+  "id": "ELBA-2025-20502-0",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "AppStream",
+  "title": "tomcat bug fix and enhancement update",
+  "issuedDate": "2025-11-25T00:00:00Z",
+  "updatedDate": "2025-11-25T00:00:00Z",
+  "pubDate": "2025-11-25T00:00:00Z",
+  "dateStr": "2025-11-25",
+  "url": "https://linux.oracle.com/errata/ELBA-2025-20502-0.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 10.",
+  "description": "[1:10.1.36-3]\n- Resolves: RHEL-102184\n  tomcat: http/2 'MadeYouReset' DoS attack through HTTP/2 control frames (CVE-2025-48989)\n- Resolves: RHEL-108906\n  tomcat: Denial of service (CVE-2025-52520)\n\n[1:10.1.36-2]\n- Resolves: RHEL-108900\n  tomcat: Apache  FileUpload DOS via part headers (CVE-2025-48976)\n- Resolves: RHEL-108902\n  tomcat: Dos in multipart upload (CVE-2025-48988)\n- Resolves: RHEL-108904\n  tomcat: Security constraint bypass for pre/post-resources (CVE-2025-49125)\n- Resolves: RHEL-108908\n  tomcat: Denial of service (CVE-2025-53506)",
+  "affected_products": [
+    "Oracle Linux 10 for x86_64",
+    "Oracle Linux 10 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "tomcat-admin-webapps-10.1.36-3.el10.noarch",
+    "tomcat-docs-webapp-10.1.36-3.el10.noarch",
+    "tomcat-servlet-6.0-api-10.1.36-3.el10.noarch",
+    "tomcat-webapps-10.1.36-3.el10.noarch",
+    "tomcat-el-5.0-api-10.1.36-3.el10.noarch",
+    "tomcat-10.1.36-3.el10.noarch",
+    "tomcat-jsp-3.1-api-10.1.36-3.el10.noarch",
+    "tomcat-lib-10.1.36-3.el10.noarch",
+    "tomcat-10.1.36-3.el10.src"
+  ],
+  "full_text": "[1:10.1.36-3]\n- Resolves: RHEL-102184\n  tomcat: http/2 'MadeYouReset' DoS attack through HTTP/2 control frames (CVE-2025-48989)\n- Resolves: RHEL-108906\n  tomcat: Denial of service (CVE-2025-52520)\n\n[1:10.1.36-2]\n- Resolves: RHEL-108900\n  tomcat: Apache  FileUpload DOS via part headers (CVE-2025-48976)\n- Resolves: RHEL-108902\n  tomcat: Dos in multipart upload (CVE-2025-48988)\n- Resolves: RHEL-108904\n  tomcat: Security constraint bypass for pre/post-resources (CVE-2025-49125)\n- Resolves: RHEL-108908\n  tomcat: Denial of service (CVE-2025-53506)\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2025-20502-0.html"
+}

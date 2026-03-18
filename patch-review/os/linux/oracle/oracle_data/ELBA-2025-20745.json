@@ -1,0 +1,27 @@
+{
+  "id": "ELBA-2025-20745",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "AppStream",
+  "title": "cups-filters bug fix and enhancement update",
+  "issuedDate": "2025-11-17T00:00:00Z",
+  "updatedDate": "2025-11-17T00:00:00Z",
+  "pubDate": "2025-11-17T00:00:00Z",
+  "dateStr": "2025-11-17",
+  "url": "https://linux.oracle.com/errata/ELBA-2025-20745.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 9.",
+  "description": "[1.28.7-22.0.1]\n- header/footer not being printed in banner page. [Orabug: 28265099] (isaac.chen@oracle.com)\n- Fixes [Orabug: 29163824] source indentation not following convention (isaac.chen@oracle.com)\n\n[1.28.7-22]\n- RHEL-65587 texttopdf omits Chinese characters when creating PDF documents\n\n[1.28.7-21]\n- RHEL-6519 RFE: Synchronize server defaults with clients",
+  "affected_products": [
+    "Oracle Linux 9 for x86_64",
+    "Oracle Linux 9 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "cups-filters-libs-1.28.7-22.0.1.el9.x86_64",
+    "cups-filters-libs-1.28.7-22.0.1.el9.i686",
+    "cups-filters-1.28.7-22.0.1.el9.src",
+    "cups-filters-1.28.7-22.0.1.el9.x86_64"
+  ],
+  "full_text": "[1.28.7-22.0.1]\n- header/footer not being printed in banner page. [Orabug: 28265099] (isaac.chen@oracle.com)\n- Fixes [Orabug: 29163824] source indentation not following convention (isaac.chen@oracle.com)\n\n[1.28.7-22]\n- RHEL-65587 texttopdf omits Chinese characters when creating PDF documents\n\n[1.28.7-21]\n- RHEL-6519 RFE: Synchronize server defaults with clients\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2025-20745.html"
+}

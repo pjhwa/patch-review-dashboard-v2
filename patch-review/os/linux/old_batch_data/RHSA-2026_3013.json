@@ -1,0 +1,22 @@
+{
+  "id": "RHSA-2026:3013",
+  "vendor": "Red Hat",
+  "url": "https://access.redhat.com/errata/RHSA-2026:3013",
+  "pubDate": "2026-02-19T16:24:11.000Z",
+  "dateStr": "2026-02-19",
+  "severity": "Important",
+  "title": "Red Hat Security Advisory: munge security update",
+  "overview": "An update for munge is now available for Red Hat Enterprise Linux 8.6 Advanced Mission Critical Update Support, Red Hat Enterprise Linux 8.6 Update Services for SAP Solutions, and Red Hat Enterprise Linux 8.6 Telecommunications Update Service.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "description": "An update for munge is now available for Red Hat Enterprise Linux 8.6 Advanced Mission Critical Update Support, Red Hat Enterprise Linux 8.6 Update Services for SAP Solutions, and Red Hat Enterprise Linux 8.6 Telecommunications Update Service.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux AppStream AUS (v.8.6)",
+    "Red Hat Enterprise Linux AppStream E4S (v.8.6)",
+    "Red Hat Enterprise Linux AppStream TUS (v.8.6)"
+  ],
+  "cves": [
+    "CVE-2026-25506"
+  ],
+  "packages": [],
+  "fixes": "",
+  "full_text": "Red Hat Security Advisory: munge security update\n\nAn update for munge is now available for Red Hat Enterprise Linux 8.6 Advanced Mission Critical Update Support, Red Hat Enterprise Linux 8.6 Update Services for SAP Solutions, and Red Hat Enterprise Linux 8.6 Telecommunications Update Service.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nAn update for munge is now available for Red Hat Enterprise Linux 8.6 Advanced Mission Critical Update Support, Red Hat Enterprise Linux 8.6 Update Services for SAP Solutions, and Red Hat Enterprise Linux 8.6 Telecommunications Update Service.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nUpdated Packages:\nmunge-0.5.13-2.el8_6.1.src.rpm\nmunge-0.5.13-2.el8_6.1.x86_64.rpm\nmunge-debuginfo-0.5.13-2.el8_6.1.i686.rpm\nmunge-debuginfo-0.5.13-2.el8_6.1.x86_64.rpm\nmunge-debugsource-0.5.13-2.el8_6.1.i686.rpm\nmunge-debugsource-0.5.13-2.el8_6.1.x86_64.rpm\nmunge-libs-0.5.13-2.el8_6.1.i686.rpm\nmunge-libs-0.5.13-2.el8_6.1.x86_64.rpm\nmunge-libs-debuginfo-0.5.13-2.el8_6.1.i686.rpm\nmunge-libs-debuginfo-0.5.13-2.el8_6.1.x86_64.rpm\nmunge-0.5.13-2.el8_6.1.ppc64le.rpm\nmunge-debuginfo-0.5.13-2.el8_6.1.ppc64le.rpm\nmunge-debugsource-0.5.13-2.el8_6.1.ppc64le.rpm\nmunge-libs-0.5.13-2.el8_6.1.ppc64le.rpm\nmunge-libs-debuginfo-0.5.13-2.el8_6.1.ppc64le.rpm\n\nCVE-2026-25506: A buffer overflow vulnerability was discovered in the MUNGE authentication daemon (munged). In affected versions, a local attacker can potentially leak secret cryptographic key material from the daemon's memory by sending a specially crafted message with an oversized address field. With the leaked key, an attacker could forge authentication credentials to impersonate any user, potentially escalating privileges in systems that rely on MUNGE for identity verification."
+}

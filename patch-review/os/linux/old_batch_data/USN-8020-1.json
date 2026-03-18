@@ -1,0 +1,28 @@
+{
+  "id": "USN-8020-1",
+  "url": "https://ubuntu.com/security/notices/USN-8020-1",
+  "synopsis": "USN-8020-1: libsoup vulnerabilities",
+  "dateStr": "8 February 2026",
+  "overview": "Several security issues were fixed in libsoup.",
+  "description": "It was discovered that libsoup did not correctly handle certain\nURL-decoded input, which could allow for HTTP header injection. A remote\nattacker could possibly use this issue to cause a denial of service or\nexecute arbitrary code. (CVE-2026-1467, CVE-2026-1536)\n\nIt was discovered that libsoup did not correctly handle removal of the\nProxy-Authorization header. A remote attacker could possibly use this\nissue to leak sensitive information. (CVE-2026-1539)\n\n \n\n \n\n \n\nIt was discovered that libsoup did not correctly handle certain\nURL-decoded input, which could allow for HTTP header injection. A remote\nattacker could possibly use this issue to cause a denial of service or\nexecute arbitrary code. (CVE-2026-1467, CVE-2026-1536)\n\nIt was discovered that libsoup did not correctly handle removal of the\nProxy-Authorization header. A remote attacker could possibly use this\nissue to leak sensitive information. (CVE-2026-1539)",
+  "packages": [
+    "libsoup3"
+  ],
+  "cves": [
+    "CVE-2026-1539",
+    "CVE-2026-1536",
+    "CVE-2026-1467"
+  ],
+  "affected_products": [
+    "25.10",
+    "24.04 LTS",
+    "22.04 LTS",
+    "Open side navigation"
+  ],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Ubuntu Security Notices\n\nUSN-8020-1\n\n \n\n \n\n \n\n \n\n \n\n \nUSN-8020-1: libsoup vulnerabilities\n\n \n\n \n\n \n\n \nPublication date\n\n \n\n \n\n \n8 February 2026\n\n \n\n \n\n \n\n \n\n \nOverview\n\n \n\n \n\n \nSeveral security issues were fixed in libsoup.\n\n \n\n \n\n \n\n \n\n \nReleases\n\n \n\n \n\n \n\n 25.10\n\n 24.04 LTS\n\n22.04 LTS\n\n \n\n \n\n \n\n \n\n \n\n \n\n Open side navigation\n \n\n \n\n \nPackages\n\n \n\n libsoup3 - HTTP client/server library for GNOME\n \n\n \n\n \nDetails\n\n \n\n \n\nIt was discovered that libsoup did not correctly handle certain\nURL-decoded input, which could allow for HTTP header injection. A remote\nattacker could possibly use this issue to cause a denial of service or\nexecute arbitrary code. (CVE-2026-1467, CVE-2026-1536)\n\nIt was discovered that libsoup did not correctly handle removal of the\nProxy-Authorization header. A remote attacker could possibly use this\nissue to leak sensitive information. (CVE-2026-1539)\n\n \n\n \n\n \n\nIt was discovered that libsoup did not correctly handle certain\nURL-decoded input, which could allow for HTTP header injection. A remote\nattacker could possibly use this issue to cause a denial of service or\nexecute arbitrary code. (CVE-2026-1467, CVE-2026-1536)\n\nIt was discovered that libsoup did not correctly handle removal of the\nProxy-Authorization header. A remote attacker could possibly use this\nissue to leak sensitive information. (CVE-2026-1539)\n\n \n\n \n\n \n\n \nUpdate instructions\n\n \n\n \n\n \n\n \n\nIn general, a standard system update will make all the necessary changes.\n\n Learn more about how to get the fixes.\n \n\n \n\n \n\n \n\n \nThe problem can be corrected by updating your system to the following package versions:\n\n \n\n \n\n \n\n \n\n Ubuntu Release\n Package Version\n \n\n 25.10\n\nquesting\n\n gir1.2-soup-3.0 – \n\n3.6.5-4ubuntu0.2\n\n libsoup-3.0-0 – \n\n3.6.5-4ubuntu0.2\n\n libsoup-3.0-common – \n\n3.6.5-4ubuntu0.2\n\n libsoup-3.0-dev – \n\n3.6.5-4ubuntu0.2\n\n libsoup-3.0-doc – \n\n3.6.5-4ubuntu0.2\n\n libsoup-3.0-tests – \n\n3.6.5-4ubuntu0.2\n\n \n\n 24.04\n\nLTS noble\n\n gir1.2-soup-3.0 – \n\n3.4.4-5ubuntu0.7\n\n libsoup-3.0-0 – \n\n3.4.4-5ubuntu0.7\n\n libsoup-3.0-common – \n\n3.4.4-5ubuntu0.7\n\n libsoup-3.0-dev – \n\n3.4.4-5ubuntu0.7\n\n libsoup-3.0-doc – \n\n3.4.4-5ubuntu0.7\n\n libsoup-3.0-tests – \n\n3.4.4-5ubuntu0.7\n\n \n\n 22.04\n\nLTS jammy\n\n gir1.2-soup-3.0 – \n\n3.0.7-0ubuntu1+esm7\n\n  \n\nUbuntu Pro\n Fix available with Ubuntu Pro via ESM Apps. A community fix might become publicly available in the future.\n\n \n\n libsoup-3.0-0 – \n\n3.0.7-0ubuntu1+esm7\n\n  \n\nUbuntu Pro\n Fix available with Ubuntu Pro via ESM Apps. A community fix might become publicly available in the future.\n\n \n\n libsoup-3.0-common – \n\n3.0.7-0ubuntu1+esm7\n\n  \n\nUbuntu Pro\n Fix available with Ubuntu Pro via ESM Apps. A community fix might become publicly available in the future.\n\n \n\n libsoup-3.0-dev – \n\n3.0.7-0ubuntu1+esm7\n\n  \n\nUbuntu Pro\n Fix available with Ubuntu Pro via ESM Apps. A community fix might become publicly available in the future.\n\n \n\n libsoup-3.0-doc – \n\n3.0.7-0ubuntu1+esm7\n\n  \n\nUbuntu Pro\n Fix available with Ubuntu Pro via ESM Apps. A community fix might become publicly available in the future.\n\n \n\n libsoup-3.0-tests – \n\n3.0.7-0ubuntu1+esm7\n\n  \n\nUbuntu Pro\n Fix available with Ubuntu Pro via ESM Apps. A community fix might become publicly available in the future.\n\n \n\n \n\nReduce your security exposure\n\n \n\n Ubuntu Pro provides ten-year security coverage to 25,000+ packages in Main and Universe repositories, and it is free for up to five machines.\n \n\n \n\n Get Ubuntu Pro\n \n\n \n\nReferences\n\n \n\n \n\n CVE-2026-1539\n \n\n \n\n CVE-2026-1536\n \n\n \n\n CVE-2026-1467\n \n\n \n\n \n\n CVE-2026-1539\n \n\n CVE-2026-1536\n \n\n CVE-2026-1467",
+  "title": "USN-8020-1: libsoup vulnerabilities | Ubuntu security notices | Ubuntu",
+  "pubDate": "2026-02-07T15:00:00.000Z",
+  "vendor": "Ubuntu"
+}

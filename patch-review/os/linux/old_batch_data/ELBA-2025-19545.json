@@ -1,0 +1,26 @@
+{
+  "id": "ELBA-2025-19545",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2025-November/018950.html",
+  "synopsis": "[El-errata] ELBA-2025-19545 Oracle Linux 10 cifs-utils bug fix update",
+  "dateStr": "2025-November",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Bug Fix Advisory ELBA-2025-19545",
+  "description": "[7.2-1]\n- resolves: RHEL-80183 - Update to version 7.2",
+  "affected_products": [
+    "Oracle Linux 10"
+  ],
+  "packages": [
+    "cifs-utils-7.2-0.el10_0.1.x86_64.rpm",
+    "cifs-utils-devel-7.2-0.el10_0.1.x86_64.rpm",
+    "pam_cifscreds-7.2-0.el10_0.1.x86_64.rpm",
+    "cifs-utils-7.2-0.el10_0.1.aarch64.rpm",
+    "cifs-utils-devel-7.2-0.el10_0.1.aarch64.rpm",
+    "pam_cifscreds-7.2-0.el10_0.1.aarch64.rpm"
+  ],
+  "cves": [],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Bug Fix Advisory ELBA-2025-19545\n\nhttp://linux.oracle.com/errata/ELBA-2025-19545.html\n\nThe following updated rpms for Oracle Linux 10 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\ncifs-utils-7.2-0.el10_0.1.x86_64.rpm\ncifs-utils-devel-7.2-0.el10_0.1.x86_64.rpm\npam_cifscreds-7.2-0.el10_0.1.x86_64.rpm\n\naarch64:\ncifs-utils-7.2-0.el10_0.1.aarch64.rpm\ncifs-utils-devel-7.2-0.el10_0.1.aarch64.rpm\npam_cifscreds-7.2-0.el10_0.1.aarch64.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol10/SRPMS-updates/cifs-utils-7.2-0.el10_0.1.src.rpm\n\n\n\nDescription of changes:\n\n[7.2-1]\n- resolves: RHEL-80183 - Update to version 7.2",
+  "vendor": "Oracle"
+}

@@ -25,7 +25,7 @@ export async function POST(request: Request) {
             return NextResponse.json({ error: `Automated execution is not yet configured for ${productId}` }, { status: 400 });
         }
 
-        const linuxSkillDir = path.join(process.env.HOME || '/home/citec', '.openclaw/workspace/skills/patch-review/os/linux-v2');
+        const linuxSkillDir = path.join(process.env.HOME || '/home/citec', '.openclaw/workspace/skills/patch-review/os/linux');
         const statusFile = path.join(linuxSkillDir, 'pipeline_status.json');
         const { spawn } = require('child_process');
         const fs = require('fs');

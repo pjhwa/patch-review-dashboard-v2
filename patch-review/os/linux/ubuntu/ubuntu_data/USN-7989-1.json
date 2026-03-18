@@ -1,0 +1,23 @@
+{
+  "id": "USN-7989-1",
+  "vendor": "Canonical / Ubuntu",
+  "type": "Ubuntu Security Notice (USN)",
+  "title": "python-internetarchive vulnerability",
+  "issuedDate": "2026-02-02T02:41:26Z",
+  "updatedDate": "2026-02-10T04:50:48Z",
+  "pubDate": "2026-02-02T02:41:26Z",
+  "dateStr": "2026-02-02",
+  "url": "https://ubuntu.com/security/notices/USN-7989-1",
+  "severity": "None",
+  "overview": "python-internetarchive vulnerability",
+  "description": "Pengo Wray discovered that The Internet Archive Python Library incorrectly\nhandled certain file paths when downloading files. An attacker could\npossibly use this issue to write files to arbitrary locations on the file\nsystem.",
+  "affected_products": [
+    "Ubuntu 22.04 LTS"
+  ],
+  "cves": [],
+  "packages": [
+    "internetarchive-1.9.9-1ubuntu0.1",
+    "python3-internetarchive-1.9.9-1ubuntu0.1"
+  ],
+  "full_text": "Pengo Wray discovered that The Internet Archive Python Library incorrectly\nhandled certain file paths when downloading files. An attacker could\npossibly use this issue to write files to arbitrary locations on the file\nsystem."
+}

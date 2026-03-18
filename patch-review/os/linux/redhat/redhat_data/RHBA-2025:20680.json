@@ -1,0 +1,50 @@
+{
+  "id": "RHBA-2025:20680",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: go-rpm-macros bug fix and enhancement update",
+  "issuedDate": "2025-11-11T07:50:48Z",
+  "updatedDate": "2025-11-11T07:50:48Z",
+  "pubDate": "2025-11-11T07:50:48Z",
+  "dateStr": "2025-11-11",
+  "url": "https://access.redhat.com/errata/RHBA-2025:20680",
+  "severity": "None",
+  "overview": "An update for go-rpm-macros is now available for Red Hat Enterprise Linux 10.",
+  "description": "For detailed information on changes in this release, see the Red Hat Enterprise Linux 9 Release Notes linked from the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux for x86_64 10 x86_64",
+    "Red Hat Enterprise Linux for ARM 64",
+    "Red Hat Enterprise Linux for Power, little endian",
+    "Red Hat Enterprise Linux for IBM z Systems"
+  ],
+  "cves": [],
+  "packages": [
+    "go-rpm-macros-3.6.0-11.el9.src",
+    "go-filesystem-3.6.0-11.el9.x86_64",
+    "go-rpm-macros-3.6.0-11.el9.x86_64",
+    "go-rpm-macros-debuginfo-3.6.0-11.el9.x86_64",
+    "go-rpm-macros-debugsource-3.6.0-11.el9.x86_64",
+    "go-rpm-templates-3.6.0-11.el9.noarch",
+    "go-srpm-macros-3.6.0-11.el9.noarch",
+    "go-filesystem-3.6.0-11.el9.s390x",
+    "go-rpm-macros-3.6.0-11.el9.s390x",
+    "go-rpm-macros-debuginfo-3.6.0-11.el9.s390x",
+    "go-rpm-macros-debugsource-3.6.0-11.el9.s390x",
+    "go-filesystem-3.6.0-11.el9.ppc64le",
+    "go-rpm-macros-3.6.0-11.el9.ppc64le",
+    "go-rpm-macros-debuginfo-3.6.0-11.el9.ppc64le",
+    "go-rpm-macros-debugsource-3.6.0-11.el9.ppc64le",
+    "go-filesystem-3.6.0-11.el9.aarch64",
+    "go-rpm-macros-3.6.0-11.el9.aarch64",
+    "go-rpm-macros-debuginfo-3.6.0-11.el9.aarch64",
+    "go-rpm-macros-debugsource-3.6.0-11.el9.aarch64"
+  ],
+  "fixes": [
+    {
+      "id": "RHEL-7366",
+      "url": "https://issues.redhat.com/browse/RHEL-7366",
+      "description": "Golist does not function correctly because of the patch replacing urfave/cli"
+    }
+  ],
+  "full_text": "An update for go-rpm-macros is now available for Red Hat Enterprise Linux 10.\n\nFor detailed information on changes in this release, see the Red Hat Enterprise Linux 9 Release Notes linked from the References section."
+}

@@ -34,7 +34,7 @@ interface ProductConfig {
 
   // ── File System Layout ────────────────────────────────────
   skillDirRelative: string;      // Relative to ~/.openclaw/workspace/skills/patch-review/
-                                 // e.g. 'os/linux-v2', 'database/mariadb'
+                                 // e.g. 'os/linux', 'database/mariadb'
   dataSubDir: string;            // e.g. 'redhat_data', 'mariadb_data'
   rawDataFilePrefix: string[];   // Filename prefixes: ['RHSA-', 'RHBA-'], ['ELSA-']
   preprocessingScript: string;   // e.g. 'patch_preprocessing.py'
@@ -91,9 +91,9 @@ interface ProductConfig {
 
 | id | name | category | skillDirRelative | jobName | ragExclusion | passthrough | csvBOM |
 |----|------|----------|-----------------|---------|--------------|-------------|--------|
-| `redhat` | Red Hat Enterprise Linux | os | `os/linux-v2` | `run-redhat-pipeline` | prompt-injection | ✅ | ❌ |
-| `oracle` | Oracle Linux | os | `os/linux-v2` | `run-oracle-pipeline` | prompt-injection | ✅ | ❌ |
-| `ubuntu` | Ubuntu Linux | os | `os/linux-v2` | `run-ubuntu-pipeline` | prompt-injection | ✅ | ❌ |
+| `redhat` | Red Hat Enterprise Linux | os | `os/linux` | `run-redhat-pipeline` | prompt-injection | ✅ | ❌ |
+| `oracle` | Oracle Linux | os | `os/linux` | `run-oracle-pipeline` | prompt-injection | ✅ | ❌ |
+| `ubuntu` | Ubuntu Linux | os | `os/linux` | `run-ubuntu-pipeline` | prompt-injection | ✅ | ❌ |
 | `windows` | Windows Server | os | `os/windows` | `run-windows-pipeline` | file-hiding | ❌ | ✅ |
 | `ceph` | Ceph | storage | `storage/ceph` | `run-ceph-pipeline` | file-hiding | ✅ | ✅ |
 | `mariadb` | MariaDB | database | `database/mariadb` | `run-mariadb-pipeline` | file-hiding | ✅ | ✅ |

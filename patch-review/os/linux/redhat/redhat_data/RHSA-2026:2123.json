@@ -1,0 +1,22 @@
+{
+  "id": "RHSA-2026:2123",
+  "vendor": "Red Hat",
+  "type": "Security Advisory (RHSA)",
+  "title": "Red Hat Security Advisory: Red Hat OpenShift Builds 1.7.0",
+  "issuedDate": "2026-02-05T14:26:23+00:00",
+  "updatedDate": "2026-02-05T14:26:35+00:00",
+  "pubDate": "2026-02-05T14:26:23+00:00",
+  "dateStr": "2026-02-05",
+  "url": "https://access.redhat.com/errata/RHSA-2026:2123",
+  "severity": "Important",
+  "overview": "Red Hat OpenShift Builds 1.7.0",
+  "description": "Release of Red Hat OpenShift Builds 1.7.0",
+  "affected_products": [],
+  "cves": [
+    "CVE-2025-61729"
+  ],
+  "packages": [
+    "registry.redhat.io/openshift-builds/openshift-builds-operator-bundle@sha256:c215fefbe944f32ee3dd07774ea8b1fb4329067b614591c118b1f6ec9caa56af_amd64"
+  ],
+  "full_text": "Red Hat OpenShift Builds 1.7.0\n\nRelease of Red Hat OpenShift Builds 1.7.0"
+}

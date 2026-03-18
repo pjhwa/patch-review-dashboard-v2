@@ -1,0 +1,29 @@
+{
+  "id": "ELSA-2025-22011",
+  "vendor": "Oracle",
+  "type": "Security Advisory (ELSA)",
+  "kernel_type": "AppStream",
+  "title": " buildah security update",
+  "issuedDate": "2025-11-25T00:00:00Z",
+  "updatedDate": "2025-11-25T00:00:00Z",
+  "pubDate": "2025-11-25T00:00:00Z",
+  "dateStr": "2025-11-25",
+  "url": "https://linux.oracle.com/errata/ELSA-2025-22011.html",
+  "severity": "Important",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 9.",
+  "description": "[1.41.6-1.0.1]\n- Drop nmap-ncat requirement and skip ignore-socket test case [Orabug: 34117178]\n\n[2:1.41.6-1]\n- update to the latest content of https://github.com/containers/buildah/tree/release-1.41\n  (https://github.com/containers/buildah/commit/2ece502)\n- fixes '[Minor Incident] CVE-2025-52881 buildah: container escape and denial of service due to arbitrary write gadgets and procfs write redirects [rhel-9.7.z]'\n- Resolves: RHEL-126925\n\n[2:1.41.4-4]\n- rebuild for CVE-2025-58183\n- Resolves: RHEL-125680\n\n[2:1.41.4-3]\n- fix the TMT tests\n- Related: RHEL-115166\n\n[2:1.41.4-2]\n- rebuild as last build was built in the wrong tag\n- Related: RHEL-115166\n\n[2:1.41.4-1]\n- update to the latest content of https://github.com/containers/buildah/tree/release-1.41\n  (https://github.com/containers/buildah/commit/ee5b574)\n- fixes 'buildah: create parent directories of mount targets with mode 0755 - [RHEL-9.7]  0day'\n- Resolves: RHEL-115166",
+  "affected_products": [
+    "Oracle Linux 9 for x86_64",
+    "Oracle Linux 9 for aarch64"
+  ],
+  "cves": [
+    "CVE-2025-52881",
+    "CVE-2025-58183"
+  ],
+  "packages": [
+    "buildah-1.41.6-1.0.1.el9_7.x86_64",
+    "buildah-1.41.6-1.0.1.el9_7.src",
+    "buildah-tests-1.41.6-1.0.1.el9_7.x86_64"
+  ],
+  "full_text": "[1.41.6-1.0.1]\n- Drop nmap-ncat requirement and skip ignore-socket test case [Orabug: 34117178]\n\n[2:1.41.6-1]\n- update to the latest content of https://github.com/containers/buildah/tree/release-1.41\n  (https://github.com/containers/buildah/commit/2ece502)\n- fixes '[Minor Incident] CVE-2025-52881 buildah: container escape and denial of service due to arbitrary write gadgets and procfs write redirects [rhel-9.7.z]'\n- Resolves: RHEL-126925\n\n[2:1.41.4-4]\n- rebuild for CVE-2025-58183\n- Resolves: RHEL-125680\n\n[2:1.41.4-3]\n- fix the TMT tests\n- Related: RHEL-115166\n\n[2:1.41.4-2]\n- rebuild as last build was built in the wrong tag\n- Related: RHEL-115166\n\n[2:1.41.4-1]\n- update to the latest content of https://github.com/containers/buildah/tree/release-1.41\n  (https://github.com/containers/buildah/commit/ee5b574)\n- fixes 'buildah: create parent directories of mount targets with mode 0755 - [RHEL-9.7]  0day'\n- Resolves: RHEL-115166\n\nReferences:\nhttps://linux.oracle.com/errata/ELSA-2025-22011.html\nhttps://linux.oracle.com/cve/CVE-2025-52881.html\nhttps://linux.oracle.com/cve/CVE-2025-58183.html"
+}

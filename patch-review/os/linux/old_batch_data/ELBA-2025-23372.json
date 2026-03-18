@@ -1,0 +1,29 @@
+{
+  "id": "ELBA-2025-23372",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2025-December/019418.html",
+  "synopsis": "[El-errata] ELBA-2025-23372 Oracle Linux 8 httpd:2.4 bug fix and enhancement update",
+  "dateStr": "2025-December",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Bug Fix Advisory ELBA-2025-23372",
+  "description": "httpd\n[2.4.37-65.5.0.1]\n- Replace index.html with Oracle's index page oracle_index.html\n\n[2.4.37-65.5]\n- Resolves: RHEL-99944 - CVE-2025-49812 httpd: HTTP Session Hijack via a TLS upgrade\n- Resolves: RHEL-99969 - CVE-2024-47252 httpd: insufficient escaping of\n  user-supplied data in mod_ssl\n- Resolves: RHEL-99961 - CVE-2025-23048 httpd: access control bypass by trusted\n  clients is possible using TLS 1.3 session resumption\n\nmod_http2\n[1.15.7-10.4]\n- Resolves: RHEL-105186 - httpd:2.4/httpd: untrusted input from a client causes\n  an assertion to fail in the Apache mod_proxy_http2 module (CVE-2025-49630)\n\nmod_md\n[1:2.0.8-8]\n- Resolves: #1832844 - mod_md does not work with ACME server that does not\n  provide keyChange or revokeCert resources",
+  "affected_products": [
+    "Oracle Linux 8"
+  ],
+  "packages": [
+    "mod_http2-1.15.7-10.module+el8.10.0+90652+bef864ba.4.x86_64.rpm",
+    "mod_md-2.0.8-8.module+el8.9.0+90011+2f9c6a23.x86_64.rpm",
+    "mod_http2-1.15.7-10.module+el8.10.0+90652+bef864ba.4.aarch64.rpm",
+    "mod_md-2.0.8-8.module+el8.9.0+90011+2f9c6a23.aarch64.rpm"
+  ],
+  "cves": [
+    "CVE-2025-49812",
+    "CVE-2024-47252",
+    "CVE-2025-23048",
+    "CVE-2025-49630"
+  ],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Bug Fix Advisory ELBA-2025-23372\n\nhttp://linux.oracle.com/errata/ELBA-2025-23372.html\n\nThe following updated rpms for Oracle Linux 8 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\nmod_http2-1.15.7-10.module+el8.10.0+90652+bef864ba.4.x86_64.rpm\nmod_md-2.0.8-8.module+el8.9.0+90011+2f9c6a23.x86_64.rpm\n\naarch64:\nmod_http2-1.15.7-10.module+el8.10.0+90652+bef864ba.4.aarch64.rpm\nmod_md-2.0.8-8.module+el8.9.0+90011+2f9c6a23.aarch64.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol8/SRPMS-updates/mod_http2-1.15.7-10.module+el8.10.0+90652+bef864ba.4.src.rpm\nhttp://oss.oracle.com/ol8/SRPMS-updates/mod_md-2.0.8-8.module+el8.9.0+90011+2f9c6a23.src.rpm\n\n\n\nDescription of changes:\n\nhttpd\n[2.4.37-65.5.0.1]\n- Replace index.html with Oracle's index page oracle_index.html\n\n[2.4.37-65.5]\n- Resolves: RHEL-99944 - CVE-2025-49812 httpd: HTTP Session Hijack via a TLS upgrade\n- Resolves: RHEL-99969 - CVE-2024-47252 httpd: insufficient escaping of\n  user-supplied data in mod_ssl\n- Resolves: RHEL-99961 - CVE-2025-23048 httpd: access control bypass by trusted\n  clients is possible using TLS 1.3 session resumption\n\nmod_http2\n[1.15.7-10.4]\n- Resolves: RHEL-105186 - httpd:2.4/httpd: untrusted input from a client causes\n  an assertion to fail in the Apache mod_proxy_http2 module (CVE-2025-49630)\n\nmod_md\n[1:2.0.8-8]\n- Resolves: #1832844 - mod_md does not work with ACME server that does not\n  provide keyChange or revokeCert resources",
+  "vendor": "Oracle"
+}

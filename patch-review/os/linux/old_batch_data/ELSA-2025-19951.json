@@ -1,0 +1,45 @@
+{
+  "id": "ELSA-2025-19951",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2025-November/019005.html",
+  "synopsis": "[El-errata] ELSA-2025-19951 Important: Oracle Linux 9 bind security update",
+  "dateStr": "2025-November",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Security Advisory ELSA-2025-19951",
+  "description": "[9.16.23-31.0.1]\n- Fix warning when changing device file permissions [Orabug: 36518580]\n\n[32:9.16.23-31.2]\n- Replace downstream fixes with upstream changes\n\n[32:9.16.23-31.1]\n- Prevent cache poisoning due to weak PRNG (CVE-2025-40780)\n- Address various spoofing attacks (CVE-2025-40778)",
+  "affected_products": [
+    "Oracle Linux 9"
+  ],
+  "packages": [
+    "bind-9.16.23-31.0.1.el9_6.2.x86_64.rpm",
+    "bind-chroot-9.16.23-31.0.1.el9_6.2.x86_64.rpm",
+    "bind-devel-9.16.23-31.0.1.el9_6.2.i686.rpm",
+    "bind-devel-9.16.23-31.0.1.el9_6.2.x86_64.rpm",
+    "bind-dnssec-doc-9.16.23-31.0.1.el9_6.2.noarch.rpm",
+    "bind-dnssec-utils-9.16.23-31.0.1.el9_6.2.x86_64.rpm",
+    "bind-doc-9.16.23-31.0.1.el9_6.2.noarch.rpm",
+    "bind-libs-9.16.23-31.0.1.el9_6.2.i686.rpm",
+    "bind-libs-9.16.23-31.0.1.el9_6.2.x86_64.rpm",
+    "bind-license-9.16.23-31.0.1.el9_6.2.noarch.rpm",
+    "bind-utils-9.16.23-31.0.1.el9_6.2.x86_64.rpm",
+    "python3-bind-9.16.23-31.0.1.el9_6.2.noarch.rpm",
+    "bind-9.16.23-31.0.1.el9_6.2.aarch64.rpm",
+    "bind-chroot-9.16.23-31.0.1.el9_6.2.aarch64.rpm",
+    "bind-devel-9.16.23-31.0.1.el9_6.2.aarch64.rpm",
+    "bind-dnssec-doc-9.16.23-31.0.1.el9_6.2.noarch.rpm",
+    "bind-dnssec-utils-9.16.23-31.0.1.el9_6.2.aarch64.rpm",
+    "bind-doc-9.16.23-31.0.1.el9_6.2.noarch.rpm",
+    "bind-libs-9.16.23-31.0.1.el9_6.2.aarch64.rpm",
+    "bind-license-9.16.23-31.0.1.el9_6.2.noarch.rpm",
+    "bind-utils-9.16.23-31.0.1.el9_6.2.aarch64.rpm",
+    "python3-bind-9.16.23-31.0.1.el9_6.2.noarch.rpm"
+  ],
+  "cves": [
+    "CVE-2025-40778",
+    "CVE-2025-40780"
+  ],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Security Advisory ELSA-2025-19951\n\nhttp://linux.oracle.com/errata/ELSA-2025-19951.html\n\nThe following updated rpms for Oracle Linux 9 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\nbind-9.16.23-31.0.1.el9_6.2.x86_64.rpm\nbind-chroot-9.16.23-31.0.1.el9_6.2.x86_64.rpm\nbind-devel-9.16.23-31.0.1.el9_6.2.i686.rpm\nbind-devel-9.16.23-31.0.1.el9_6.2.x86_64.rpm\nbind-dnssec-doc-9.16.23-31.0.1.el9_6.2.noarch.rpm\nbind-dnssec-utils-9.16.23-31.0.1.el9_6.2.x86_64.rpm\nbind-doc-9.16.23-31.0.1.el9_6.2.noarch.rpm\nbind-libs-9.16.23-31.0.1.el9_6.2.i686.rpm\nbind-libs-9.16.23-31.0.1.el9_6.2.x86_64.rpm\nbind-license-9.16.23-31.0.1.el9_6.2.noarch.rpm\nbind-utils-9.16.23-31.0.1.el9_6.2.x86_64.rpm\npython3-bind-9.16.23-31.0.1.el9_6.2.noarch.rpm\n\naarch64:\nbind-9.16.23-31.0.1.el9_6.2.aarch64.rpm\nbind-chroot-9.16.23-31.0.1.el9_6.2.aarch64.rpm\nbind-devel-9.16.23-31.0.1.el9_6.2.aarch64.rpm\nbind-dnssec-doc-9.16.23-31.0.1.el9_6.2.noarch.rpm\nbind-dnssec-utils-9.16.23-31.0.1.el9_6.2.aarch64.rpm\nbind-doc-9.16.23-31.0.1.el9_6.2.noarch.rpm\nbind-libs-9.16.23-31.0.1.el9_6.2.aarch64.rpm\nbind-license-9.16.23-31.0.1.el9_6.2.noarch.rpm\nbind-utils-9.16.23-31.0.1.el9_6.2.aarch64.rpm\npython3-bind-9.16.23-31.0.1.el9_6.2.noarch.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol9/SRPMS-updates/bind-9.16.23-31.0.1.el9_6.2.src.rpm\n\nRelated CVEs:\n\nCVE-2025-40778\nCVE-2025-40780\n\n\n\n\nDescription of changes:\n\n[9.16.23-31.0.1]\n- Fix warning when changing device file permissions [Orabug: 36518580]\n\n[32:9.16.23-31.2]\n- Replace downstream fixes with upstream changes\n\n[32:9.16.23-31.1]\n- Prevent cache poisoning due to weak PRNG (CVE-2025-40780)\n- Address various spoofing attacks (CVE-2025-40778)",
+  "vendor": "Oracle"
+}

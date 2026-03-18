@@ -1,0 +1,26 @@
+{
+  "id": "USN-7898-1",
+  "url": "https://ubuntu.com/security/notices/USN-7898-1",
+  "synopsis": "USN-7898-1: OpenVPN vulnerability",
+  "dateStr": "27 November 2025",
+  "overview": "OpenVPN could allow unintended access to network services.",
+  "description": "Joshua Rogers discovered that OpenVPN incorrectly handled HMAC verification\nchecks. A remote attacker could possibly use this issue to bypass source IP\naddress validation.\n\n \n\n \n\n \n\nJoshua Rogers discovered that OpenVPN incorrectly handled HMAC verification\nchecks. A remote attacker could possibly use this issue to bypass source IP\naddress validation.",
+  "packages": [
+    "openvpn"
+  ],
+  "cves": [
+    "CVE-2025-13086"
+  ],
+  "affected_products": [
+    "25.10",
+    "25.04",
+    "24.04 LTS",
+    "Open side navigation"
+  ],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Ubuntu Security Notices\n\nUSN-7898-1\n\n \n\n \n\n \n\n \n\n \n\n \nUSN-7898-1: OpenVPN vulnerability\n\n \n\n \n\n \n\n \nPublication date\n\n \n\n \n\n \n27 November 2025\n\n \n\n \n\n \n\n \n\n \nOverview\n\n \n\n \n\n \nOpenVPN could allow unintended access to network services.\n\n \n\n \n\n \n\n \n\n \nReleases\n\n \n\n \n\n \n\n 25.10\n\n 25.04\n\n 24.04 LTS\n\n \n\n \n\n \n\n \n\n \n\n \n\n Open side navigation\n \n\n \n\n \nPackages\n\n \n\n openvpn - virtual private network software\n \n\n \n\n \nDetails\n\n \n\n \n\nJoshua Rogers discovered that OpenVPN incorrectly handled HMAC verification\nchecks. A remote attacker could possibly use this issue to bypass source IP\naddress validation.\n\n \n\n \n\n \n\nJoshua Rogers discovered that OpenVPN incorrectly handled HMAC verification\nchecks. A remote attacker could possibly use this issue to bypass source IP\naddress validation.\n\n \n\n \n\n \n\n \nUpdate instructions\n\n \n\n \n\n \n\n \n\nAfter a standard system update you need to reboot your computer to make\nall the necessary changes.\n\n Learn more about how to get the fixes.\n \n\n \n\n \n\n \n\n \nThe problem can be corrected by updating your system to the following package versions:\n\n \n\n \n\n \n\n \n\n Ubuntu Release\n Package Version\n \n\n 25.10\n\nquesting\n\n openvpn – \n\n2.6.14-2ubuntu1.1\n\n \n\n 25.04\n\nplucky\n\n openvpn – \n\n2.6.14-0ubuntu0.25.04.3\n\n \n\n 24.04\n\nLTS noble\n\n openvpn – \n\n2.6.14-0ubuntu0.24.04.3\n\n \n\nReduce your security exposure\n\n \n\n Ubuntu Pro provides ten-year security coverage to 25,000+ packages in Main and Universe repositories, and it is free for up to five machines.\n \n\n \n\n Get Ubuntu Pro\n \n\n \n\nReferences\n\n \n\n \n\n CVE-2025-13086\n \n\n \n\n \n\n CVE-2025-13086",
+  "title": "USN-7898-1: OpenVPN vulnerability | Ubuntu security notices | Ubuntu",
+  "pubDate": "2025-11-26T15:00:00.000Z",
+  "vendor": "Ubuntu"
+}

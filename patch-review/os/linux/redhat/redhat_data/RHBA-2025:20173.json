@@ -1,0 +1,52 @@
+{
+  "id": "RHBA-2025:20173",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: erofs-utils bug fix and enhancement update",
+  "issuedDate": "2025-11-11T07:25:19Z",
+  "updatedDate": "2025-11-11T07:25:19Z",
+  "pubDate": "2025-11-11T07:25:19Z",
+  "dateStr": "2025-11-11",
+  "url": "https://access.redhat.com/errata/RHBA-2025:20173",
+  "severity": "None",
+  "overview": "An update for erofs-utils is now available for Red Hat Enterprise Linux 10.",
+  "description": "For detailed information on changes in this release, see the Red Hat Enterprise Linux 10 Release Notes linked from the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux for ARM 64",
+    "Red Hat Enterprise Linux for x86_64 10 x86_64",
+    "Red Hat Enterprise Linux for Power, little endian",
+    "Red Hat Enterprise Linux for IBM z Systems"
+  ],
+  "cves": [],
+  "packages": [
+    "erofs-utils-1.8.10-1.el10.src",
+    "erofs-fuse-1.8.10-1.el10.x86_64",
+    "erofs-fuse-debuginfo-1.8.10-1.el10.x86_64",
+    "erofs-utils-1.8.10-1.el10.x86_64",
+    "erofs-utils-debuginfo-1.8.10-1.el10.x86_64",
+    "erofs-utils-debugsource-1.8.10-1.el10.x86_64",
+    "erofs-fuse-1.8.10-1.el10.s390x",
+    "erofs-fuse-debuginfo-1.8.10-1.el10.s390x",
+    "erofs-utils-1.8.10-1.el10.s390x",
+    "erofs-utils-debuginfo-1.8.10-1.el10.s390x",
+    "erofs-utils-debugsource-1.8.10-1.el10.s390x",
+    "erofs-fuse-1.8.10-1.el10.ppc64le",
+    "erofs-fuse-debuginfo-1.8.10-1.el10.ppc64le",
+    "erofs-utils-1.8.10-1.el10.ppc64le",
+    "erofs-utils-debuginfo-1.8.10-1.el10.ppc64le",
+    "erofs-utils-debugsource-1.8.10-1.el10.ppc64le",
+    "erofs-fuse-1.8.10-1.el10.aarch64",
+    "erofs-fuse-debuginfo-1.8.10-1.el10.aarch64",
+    "erofs-utils-1.8.10-1.el10.aarch64",
+    "erofs-utils-debuginfo-1.8.10-1.el10.aarch64",
+    "erofs-utils-debugsource-1.8.10-1.el10.aarch64"
+  ],
+  "fixes": [
+    {
+      "id": "RHEL-106459",
+      "url": "https://issues.redhat.com/browse/RHEL-106459",
+      "description": "Update erofs-utils to 1.8.10+"
+    }
+  ],
+  "full_text": "An update for erofs-utils is now available for Red Hat Enterprise Linux 10.\n\nFor detailed information on changes in this release, see the Red Hat Enterprise Linux 10 Release Notes linked from the References section."
+}

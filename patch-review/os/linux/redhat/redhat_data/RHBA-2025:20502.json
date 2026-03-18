@@ -1,0 +1,34 @@
+{
+  "id": "RHBA-2025:20502",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: tomcat bug fix and enhancement update",
+  "issuedDate": "2025-11-11T07:26:45Z",
+  "updatedDate": "2025-11-11T07:26:45Z",
+  "pubDate": "2025-11-11T07:26:45Z",
+  "dateStr": "2025-11-11",
+  "url": "https://access.redhat.com/errata/RHBA-2025:20502",
+  "severity": "None",
+  "overview": "An update for tomcat is now available for Red Hat Enterprise Linux 10.",
+  "description": "For detailed information on changes in this release, see the Red Hat Enterprise Linux 10 Release Notes linked from the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux for x86_64 10 x86_64",
+    "Red Hat Enterprise Linux for ARM 64",
+    "Red Hat Enterprise Linux for Power, little endian",
+    "Red Hat Enterprise Linux for IBM z Systems"
+  ],
+  "cves": [],
+  "packages": [
+    "tomcat-10.1.36-3.el10.src",
+    "tomcat-10.1.36-3.el10.noarch",
+    "tomcat-admin-webapps-10.1.36-3.el10.noarch",
+    "tomcat-docs-webapp-10.1.36-3.el10.noarch",
+    "tomcat-el-5.0-api-10.1.36-3.el10.noarch",
+    "tomcat-jsp-3.1-api-10.1.36-3.el10.noarch",
+    "tomcat-lib-10.1.36-3.el10.noarch",
+    "tomcat-servlet-6.0-api-10.1.36-3.el10.noarch",
+    "tomcat-webapps-10.1.36-3.el10.noarch"
+  ],
+  "fixes": [],
+  "full_text": "An update for tomcat is now available for Red Hat Enterprise Linux 10.\n\nFor detailed information on changes in this release, see the Red Hat Enterprise Linux 10 Release Notes linked from the References section."
+}

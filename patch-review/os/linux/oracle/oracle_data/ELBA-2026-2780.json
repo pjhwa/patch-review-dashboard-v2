@@ -1,0 +1,27 @@
+{
+  "id": "ELBA-2026-2780",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "AppStream",
+  "title": "redis:7 bug fix and enhancement update",
+  "issuedDate": "2026-02-17T00:00:00Z",
+  "updatedDate": "2026-02-17T00:00:00Z",
+  "pubDate": "2026-02-17T00:00:00Z",
+  "dateStr": "2026-02-17",
+  "url": "https://linux.oracle.com/errata/ELBA-2026-2780.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 9.",
+  "description": "[7.2.11-2.0.1]\n- Build with 64k pages to support redis on UEK on aarch64\n\n[7.2.11-2]\n- add sysusers.d file for user management\n- add tmpfiles.d file for temporary dir management\n\n[7.2.11-1]\n- rebase to 7.2.11 for CVE-2025-49844 CVE-2025-46817 CVE-2025-46818 CVE-2025-46819\n\n[7.2.10-1]\n- rebase to 7.2.10 for CVE-2025-27151 CVE-2025-32023 and CVE-2025-48367\n\n[7.2.8-1]\n- rebase to 7.2.8 for CVE-2025-21605\n\n[7.2.7-1]\n- rebase to 7.2.7 for CVE-2024-46981 and CVE-2024-51741\n\n[7.2.6-1]\n- rebase to 7.2.6  RHEL-26628",
+  "affected_products": [
+    "Oracle Linux 9 for x86_64",
+    "Oracle Linux 9 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "redis-doc-7.2.11-2.0.1.module+el9.7.0+90806+2f80a718.noarch",
+    "redis-7.2.11-2.0.1.module+el9.7.0+90806+2f80a718.src",
+    "redis-7.2.11-2.0.1.module+el9.7.0+90806+2f80a718.x86_64",
+    "redis-devel-7.2.11-2.0.1.module+el9.7.0+90806+2f80a718.x86_64"
+  ],
+  "full_text": "[7.2.11-2.0.1]\n- Build with 64k pages to support redis on UEK on aarch64\n\n[7.2.11-2]\n- add sysusers.d file for user management\n- add tmpfiles.d file for temporary dir management\n\n[7.2.11-1]\n- rebase to 7.2.11 for CVE-2025-49844 CVE-2025-46817 CVE-2025-46818 CVE-2025-46819\n\n[7.2.10-1]\n- rebase to 7.2.10 for CVE-2025-27151 CVE-2025-32023 and CVE-2025-48367\n\n[7.2.8-1]\n- rebase to 7.2.8 for CVE-2025-21605\n\n[7.2.7-1]\n- rebase to 7.2.7 for CVE-2024-46981 and CVE-2024-51741\n\n[7.2.6-1]\n- rebase to 7.2.6  RHEL-26628\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2026-2780.html"
+}

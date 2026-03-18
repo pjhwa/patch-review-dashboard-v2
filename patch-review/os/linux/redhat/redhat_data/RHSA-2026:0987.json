@@ -1,0 +1,34 @@
+{
+  "id": "RHSA-2026:0987",
+  "vendor": "Red Hat",
+  "type": "Security Advisory (RHSA)",
+  "title": "Red Hat Security Advisory: osbuild-composer security update",
+  "issuedDate": "2026-01-22T11:30:22+00:00",
+  "updatedDate": "2026-01-22T11:30:22+00:00",
+  "pubDate": "2026-01-22T11:30:22+00:00",
+  "dateStr": "2026-01-22",
+  "url": "https://access.redhat.com/errata/RHSA-2026:0987",
+  "severity": "Moderate",
+  "overview": "An update for osbuild-composer is now available for Red Hat Enterprise Linux 8.4 Advanced Mission Critical Update Support and Red Hat Enterprise Linux 8.4 Extended Update Support Long-Life Add-On.\n\nRed Hat Product Security has rated this update as having a security impact of Moderate. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "description": "An image building service based on osbuild It is inspired by lorax-composer and exposes the same API. As such, it is a drop-in replacement.\n\nSecurity Fix(es):\n\n* golang: archive/tar: Unbounded allocation when parsing GNU sparse map (CVE-2025-58183)\n\nFor more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux",
+    "Red Hat Enterprise Linux AppStream AUS (v.8.4)",
+    "Red Hat Enterprise Linux AppStream EUS EXTENSION (v.8.4)"
+  ],
+  "cves": [
+    "CVE-2025-58183"
+  ],
+  "packages": [
+    "osbuild-composer-0:28.7-4.el8_4.src",
+    "osbuild-composer-0:28.7-4.el8_4.x86_64",
+    "osbuild-composer-core-0:28.7-4.el8_4.x86_64",
+    "osbuild-composer-worker-0:28.7-4.el8_4.x86_64",
+    "osbuild-composer-debugsource-0:28.7-4.el8_4.x86_64",
+    "osbuild-composer-core-debuginfo-0:28.7-4.el8_4.x86_64",
+    "osbuild-composer-debuginfo-0:28.7-4.el8_4.x86_64",
+    "osbuild-composer-tests-debuginfo-0:28.7-4.el8_4.x86_64",
+    "osbuild-composer-worker-debuginfo-0:28.7-4.el8_4.x86_64"
+  ],
+  "full_text": "An update for osbuild-composer is now available for Red Hat Enterprise Linux 8.4 Advanced Mission Critical Update Support and Red Hat Enterprise Linux 8.4 Extended Update Support Long-Life Add-On.\n\nRed Hat Product Security has rated this update as having a security impact of Moderate. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nAn image building service based on osbuild It is inspired by lorax-composer and exposes the same API. As such, it is a drop-in replacement.\n\nSecurity Fix(es):\n\n* golang: archive/tar: Unbounded allocation when parsing GNU sparse map (CVE-2025-58183)\n\nFor more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section."
+}

@@ -1,0 +1,21 @@
+{
+  "id": "ELBA-2025-19544",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2025-November/018926.html",
+  "synopsis": "[El-errata] ELBA-2025-19544 Oracle Linux 9 mdadm bug fix and enhancement update",
+  "dateStr": "2025-November",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Bug Fix Advisory ELBA-2025-19544",
+  "description": "[4.3-5.0.1]\n- mdmon: imsm: fix metadata corruption when managing new array. [Orabug: 37635990]\n\n[4.3-5]\n- allow assemble with name which has :\n- Resolves RHEL-109231",
+  "affected_products": [
+    "Oracle Linux 9"
+  ],
+  "packages": [
+    "mdadm-4.3-5.0.1.el9_6.aarch64.rpm"
+  ],
+  "cves": [],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Bug Fix Advisory ELBA-2025-19544\n\nhttp://linux.oracle.com/errata/ELBA-2025-19544.html\n\nThe following updated rpms for Oracle Linux 9 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\n\naarch64:\nmdadm-4.3-5.0.1.el9_6.aarch64.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol9/SRPMS-updates/mdadm-4.3-5.0.1.el9_6.src.rpm\n\n\n\nDescription of changes:\n\n[4.3-5.0.1]\n- mdmon: imsm: fix metadata corruption when managing new array. [Orabug: 37635990]\n\n[4.3-5]\n- allow assemble with name which has :\n- Resolves RHEL-109231",
+  "vendor": "Oracle"
+}

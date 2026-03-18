@@ -1,0 +1,26 @@
+{
+  "id": "ELBA-2026-2787",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "title": "nftables bug fix and enhancement update",
+  "issuedDate": "2026-02-17T00:00:00Z",
+  "updatedDate": "2026-02-17T00:00:00Z",
+  "pubDate": "2026-02-17T00:00:00Z",
+  "dateStr": "2026-02-17",
+  "url": "https://linux.oracle.com/errata/ELBA-2026-2787.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 9.",
+  "description": "[[1.0.9-6.el9]]\n- Revert doc/ part of 'exthdr: add boolean DCCP option matching' (Phil Sutter) [RHEL-126817]\n- Revert doc/ part of 'meta: introduce meta broute support' (Phil Sutter) [RHEL-126817]\n- Revert doc/ part of 'src: add tcp option reset support' (Phil Sutter) [RHEL-126817]\n- spec: Update expected test suite results (Phil Sutter) [RHEL-126817]\n\n[[1.0.9-5.el9]]\n- tests: py: missing json output in never merge across non-expression statements (Phil Sutter) [RHEL-114095]\n- tests: py: add missing json.output data (Phil Sutter) [RHEL-114095]\n- tests: py: remove huge-limit test cases (Phil Sutter) [RHEL-114095]\n- datatype: rt_symbol_table_init() to search for iproute2 configs (Phil Sutter) [RHEL-114095]\n- tests: shell: connect chains to hook point (Phil Sutter) [RHEL-114095]\n- tests: shell: Fix sets/reset_command_0 for current kernels (Phil Sutter) [RHEL-114095]\n\n[[1.0.9-4.el9]]\n- parser_json: fix handle memleak from error path (Phil Sutter) [RHEL-88181]\n- json: deal appropriately with multidevice in chain (Phil Sutter) [RHEL-88181]\n\n[[1.0.9-3.el9]]\n- cache: Always set NFT_CACHE_TERSE for list cmd with --terse (Phil Sutter) [RHEL-45633]\n\n[[1.0.9-2.el9]]\n- Add support for table's persist flag (Phil Sutter) [RHEL-32122]",
+  "affected_products": [
+    "Oracle Linux 9 for x86_64",
+    "Oracle Linux 9 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "python3-nftables-1.0.9-6.el9_7.x86_64",
+    "nftables-1.0.9-6.el9_7.x86_64",
+    "nftables-1.0.9-6.el9_7.i686",
+    "nftables-1.0.9-6.el9_7.src"
+  ],
+  "full_text": "[[1.0.9-6.el9]]\n- Revert doc/ part of 'exthdr: add boolean DCCP option matching' (Phil Sutter) [RHEL-126817]\n- Revert doc/ part of 'meta: introduce meta broute support' (Phil Sutter) [RHEL-126817]\n- Revert doc/ part of 'src: add tcp option reset support' (Phil Sutter) [RHEL-126817]\n- spec: Update expected test suite results (Phil Sutter) [RHEL-126817]\n\n[[1.0.9-5.el9]]\n- tests: py: missing json output in never merge across non-expression statements (Phil Sutter) [RHEL-114095]\n- tests: py: add missing json.output data (Phil Sutter) [RHEL-114095]\n- tests: py: remove huge-limit test cases (Phil Sutter) [RHEL-114095]\n- datatype: rt_symbol_table_init() to search for iproute2 configs (Phil Sutter) [RHEL-114095]\n- tests: shell: connect chains to hook point (Phil Sutter) [RHEL-114095]\n- tests: shell: Fix sets/reset_command_0 for current kernels (Phil Sutter) [RHEL-114095]\n\n[[1.0.9-4.el9]]\n- parser_json: fix handle memleak from error path (Phil Sutter) [RHEL-88181]\n- json: deal appropriately with multidevice in chain (Phil Sutter) [RHEL-88181]\n\n[[1.0.9-3.el9]]\n- cache: Always set NFT_CACHE_TERSE for list cmd with --terse (Phil Sutter) [RHEL-45633]\n\n[[1.0.9-2.el9]]\n- Add support for table's persist flag (Phil Sutter) [RHEL-32122]\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2026-2787.html"
+}

@@ -1,0 +1,28 @@
+{
+  "id": "ELBA-2025-20400-0",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "AppStream",
+  "title": "bcc bug fix and enhancement update",
+  "issuedDate": "2025-11-25T00:00:00Z",
+  "updatedDate": "2025-11-25T00:00:00Z",
+  "pubDate": "2025-11-25T00:00:00Z",
+  "dateStr": "2025-11-25",
+  "url": "https://linux.oracle.com/errata/ELBA-2025-20400-0.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 10.",
+  "description": "[0.34.0-2]\n- Fix bio* tools tracepoints (RHEL-99677)\n\n[0.34.0-1]\n- Rebase to the latest version (RHEL-78921)\n- Rebuild with LLVM 20 (RHEL-81772)\n- Silence warning of trace tools (RHEL-68952)\n- Fix bpf-runqlen (RHEL-91190)\n- Fix sslsniff and sofdsnoop (RHEL-58348)\n- Fix slabratetop (RHEL-58810)\n- Fix funclatency funcslower and gethostlatency on s390x (RHEL-68947)\n- Fix bpf-klockstat on aarch64 and ppc64 (RHEL-83001)\n- Remove unsupported bpf-bcachefs* and bpf-zfs* tools (RHEL-75529)\n- Fix multiples ppc64 tools (RHEL-58147)",
+  "affected_products": [
+    "Oracle Linux 10 for x86_64",
+    "Oracle Linux 10 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "bcc-tools-0.34.0-2.el10.x86_64",
+    "libbpf-tools-0.34.0-2.el10.x86_64",
+    "bcc-0.34.0-2.el10.src",
+    "python3-bcc-0.34.0-2.el10.noarch",
+    "bcc-0.34.0-2.el10.x86_64"
+  ],
+  "full_text": "[0.34.0-2]\n- Fix bio* tools tracepoints (RHEL-99677)\n\n[0.34.0-1]\n- Rebase to the latest version (RHEL-78921)\n- Rebuild with LLVM 20 (RHEL-81772)\n- Silence warning of trace tools (RHEL-68952)\n- Fix bpf-runqlen (RHEL-91190)\n- Fix sslsniff and sofdsnoop (RHEL-58348)\n- Fix slabratetop (RHEL-58810)\n- Fix funclatency funcslower and gethostlatency on s390x (RHEL-68947)\n- Fix bpf-klockstat on aarch64 and ppc64 (RHEL-83001)\n- Remove unsupported bpf-bcachefs* and bpf-zfs* tools (RHEL-75529)\n- Fix multiples ppc64 tools (RHEL-58147)\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2025-20400-0.html"
+}

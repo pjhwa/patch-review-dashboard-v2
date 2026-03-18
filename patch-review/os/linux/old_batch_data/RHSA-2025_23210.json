@@ -1,0 +1,20 @@
+{
+  "id": "RHSA-2025:23210",
+  "vendor": "Red Hat",
+  "url": "https://access.redhat.com/errata/RHSA-2025:23210",
+  "pubDate": "2025-12-16T19:29:15.000Z",
+  "dateStr": "2025-12-16",
+  "severity": "Important",
+  "title": "Red Hat Security Advisory: keylime security update",
+  "overview": "An update for keylime is now available for Red Hat Enterprise Linux 9.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "description": "An update for keylime is now available for Red Hat Enterprise Linux 9.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux AppStream (v. 9)"
+  ],
+  "cves": [
+    "CVE-2025-13609"
+  ],
+  "packages": [],
+  "fixes": "",
+  "full_text": "Red Hat Security Advisory: keylime security update\n\nAn update for keylime is now available for Red Hat Enterprise Linux 9.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nAn update for keylime is now available for Red Hat Enterprise Linux 9.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nUpdated Packages:\nkeylime-7.12.1-11.el9_7.3.src.rpm\nkeylime-7.12.1-11.el9_7.3.x86_64.rpm\nkeylime-base-7.12.1-11.el9_7.3.x86_64.rpm\nkeylime-registrar-7.12.1-11.el9_7.3.x86_64.rpm\nkeylime-selinux-7.12.1-11.el9_7.3.noarch.rpm\nkeylime-tenant-7.12.1-11.el9_7.3.x86_64.rpm\nkeylime-verifier-7.12.1-11.el9_7.3.x86_64.rpm\npython3-keylime-7.12.1-11.el9_7.3.x86_64.rpm\nkeylime-7.12.1-11.el9_7.3.s390x.rpm\nkeylime-base-7.12.1-11.el9_7.3.s390x.rpm\nkeylime-registrar-7.12.1-11.el9_7.3.s390x.rpm\nkeylime-tenant-7.12.1-11.el9_7.3.s390x.rpm\nkeylime-verifier-7.12.1-11.el9_7.3.s390x.rpm\npython3-keylime-7.12.1-11.el9_7.3.s390x.rpm\nkeylime-7.12.1-11.el9_7.3.ppc64le.rpm\nkeylime-base-7.12.1-11.el9_7.3.ppc64le.rpm\nkeylime-registrar-7.12.1-11.el9_7.3.ppc64le.rpm\nkeylime-tenant-7.12.1-11.el9_7.3.ppc64le.rpm\nkeylime-verifier-7.12.1-11.el9_7.3.ppc64le.rpm\npython3-keylime-7.12.1-11.el9_7.3.ppc64le.rpm\nkeylime-7.12.1-11.el9_7.3.aarch64.rpm\nkeylime-base-7.12.1-11.el9_7.3.aarch64.rpm\nkeylime-registrar-7.12.1-11.el9_7.3.aarch64.rpm\nkeylime-tenant-7.12.1-11.el9_7.3.aarch64.rpm\nkeylime-verifier-7.12.1-11.el9_7.3.aarch64.rpm\npython3-keylime-7.12.1-11.el9_7.3.aarch64.rpm\n\nCVE-2025-13609: A vulnerability has been identified in keylime where an attacker can exploit this flaw by registering a new agent using a different Trusted Platform Module (TPM) device but claiming an existing agent's unique identifier (UUID). This action overwrites the legitimate agent's identity, enabling the attacker to impersonate the compromised agent and potentially bypass security controls."
+}

@@ -1,0 +1,52 @@
+{
+  "id": "RHBA-2025:17424",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: dnsmasq bug fix and enhancement update",
+  "issuedDate": "2025-10-07T04:37:39Z",
+  "updatedDate": "2025-10-07T04:37:39Z",
+  "pubDate": "2025-10-07T04:37:39Z",
+  "dateStr": "2025-10-07",
+  "url": "https://access.redhat.com/errata/RHBA-2025:17424",
+  "severity": "None",
+  "overview": "An update for dnsmasq is now available for Red Hat Enterprise Linux 10.",
+  "description": "The dnsmasq packages contain Dnsmasq, a lightweight DNS (Domain Name Server) forwarder and DHCP (Dynamic Host Configuration Protocol) server.Bug Fix(es) and Enhancement(s): dnsmasq caching not working as expected (JIRA:RHEL-61943)  dnsmasq does not forward all of the received queries although it does in previous versions. (JIRA:RHEL-6586)",
+  "affected_products": [
+    "Red Hat Enterprise Linux for x86_64 10 x86_64",
+    "Red Hat Enterprise Linux for IBM z Systems",
+    "Red Hat Enterprise Linux for Power, little endian",
+    "Red Hat Enterprise Linux for ARM 64"
+  ],
+  "cves": [],
+  "packages": [
+    "dnsmasq-2.79-35.el8_10.src",
+    "dnsmasq-2.79-35.el8_10.x86_64",
+    "dnsmasq-debuginfo-2.79-35.el8_10.x86_64",
+    "dnsmasq-debugsource-2.79-35.el8_10.x86_64",
+    "dnsmasq-utils-2.79-35.el8_10.x86_64",
+    "dnsmasq-utils-debuginfo-2.79-35.el8_10.x86_64",
+    "dnsmasq-2.79-35.el8_10.s390x",
+    "dnsmasq-debuginfo-2.79-35.el8_10.s390x",
+    "dnsmasq-debugsource-2.79-35.el8_10.s390x",
+    "dnsmasq-utils-2.79-35.el8_10.s390x",
+    "dnsmasq-utils-debuginfo-2.79-35.el8_10.s390x",
+    "dnsmasq-2.79-35.el8_10.ppc64le",
+    "dnsmasq-debuginfo-2.79-35.el8_10.ppc64le",
+    "dnsmasq-debugsource-2.79-35.el8_10.ppc64le",
+    "dnsmasq-utils-2.79-35.el8_10.ppc64le",
+    "dnsmasq-utils-debuginfo-2.79-35.el8_10.ppc64le",
+    "dnsmasq-2.79-35.el8_10.aarch64",
+    "dnsmasq-debuginfo-2.79-35.el8_10.aarch64",
+    "dnsmasq-debugsource-2.79-35.el8_10.aarch64",
+    "dnsmasq-utils-2.79-35.el8_10.aarch64",
+    "dnsmasq-utils-debuginfo-2.79-35.el8_10.aarch64"
+  ],
+  "fixes": [
+    {
+      "id": "RHEL-6586",
+      "url": "https://issues.redhat.com/browse/RHEL-6586",
+      "description": "dnsmasq does not forward all of the received queries although it does in previous versions."
+    }
+  ],
+  "full_text": "An update for dnsmasq is now available for Red Hat Enterprise Linux 10.\n\nThe dnsmasq packages contain Dnsmasq, a lightweight DNS (Domain Name Server) forwarder and DHCP (Dynamic Host Configuration Protocol) server.Bug Fix(es) and Enhancement(s): dnsmasq caching not working as expected (JIRA:RHEL-61943)  dnsmasq does not forward all of the received queries although it does in previous versions. (JIRA:RHEL-6586)"
+}

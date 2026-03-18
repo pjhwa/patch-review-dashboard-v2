@@ -1,0 +1,46 @@
+{
+  "id": "RHBA-2025:20651",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: guestfs-tools bug fix and enhancement update",
+  "issuedDate": "2025-11-11T07:50:42Z",
+  "updatedDate": "2025-11-11T07:50:42Z",
+  "pubDate": "2025-11-11T07:50:42Z",
+  "dateStr": "2025-11-11",
+  "url": "https://access.redhat.com/errata/RHBA-2025:20651",
+  "severity": "None",
+  "overview": "An update for guestfs-tools is now available for Red Hat Enterprise Linux 10.",
+  "description": "For detailed information on changes in this release, see the Red Hat Enterprise Linux 9 Release Notes linked from the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux for x86_64 10 x86_64",
+    "Red Hat Enterprise Linux for ARM 64",
+    "Red Hat Enterprise Linux for IBM z Systems"
+  ],
+  "cves": [],
+  "packages": [
+    "guestfs-tools-1.52.2-6.el9.src",
+    "guestfs-tools-1.52.2-6.el9.x86_64",
+    "guestfs-tools-debuginfo-1.52.2-6.el9.x86_64",
+    "guestfs-tools-debugsource-1.52.2-6.el9.x86_64",
+    "virt-win-reg-1.52.2-6.el9.noarch",
+    "guestfs-tools-1.52.2-6.el9.s390x",
+    "guestfs-tools-debuginfo-1.52.2-6.el9.s390x",
+    "guestfs-tools-debugsource-1.52.2-6.el9.s390x",
+    "guestfs-tools-1.52.2-6.el9.aarch64",
+    "guestfs-tools-debuginfo-1.52.2-6.el9.aarch64",
+    "guestfs-tools-debugsource-1.52.2-6.el9.aarch64"
+  ],
+  "fixes": [
+    {
+      "id": "RHEL-83200",
+      "url": "https://issues.redhat.com/browse/RHEL-83200",
+      "description": "virt-builder, virt-v2v & other tools with -v and --install causes dnf5 error [rhel-9.6]"
+    },
+    {
+      "id": "RHEL-109521",
+      "url": "https://issues.redhat.com/browse/RHEL-109521",
+      "description": "Update guestfs-tools firstboot.bat"
+    }
+  ],
+  "full_text": "An update for guestfs-tools is now available for Red Hat Enterprise Linux 10.\n\nFor detailed information on changes in this release, see the Red Hat Enterprise Linux 9 Release Notes linked from the References section."
+}

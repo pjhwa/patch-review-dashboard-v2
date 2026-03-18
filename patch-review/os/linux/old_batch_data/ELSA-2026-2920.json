@@ -1,0 +1,34 @@
+{
+  "id": "ELSA-2026-2920",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2026-February/019818.html",
+  "synopsis": "[El-errata] ELSA-2026-2920 Important: Oracle Linux 9 grafana security update",
+  "dateStr": "2026-February",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Security Advisory ELSA-2026-2920",
+  "description": "[10.2.6-17]\n- Resolves RHEL-144959: CVE-2026-21721\n- Resolves RHEL-146863: CVE-2025-61726\n- Resolves RHEL-147081: CVE-2025-61729\n- Resolves RHEL-147370: CVE-2025-61728\n- Resolves RHEL-149621: CVE-2025-68121\n\n[10.2.6-17]\n- Resolves RHEL-125692: CVE-2025-58183\n- Resolves RHEL-120426: Grafana-selinux prevents plugins from searching cgroups\n\n[10.2.6-15]\n- Resolves RHEL-97518: Rework grafana-selinux spec file sections\n- Resolves RHEL-87861: Add additional SELinux rules for grafana-selinux package to allow LDAP connections\n\n[10.2.6-13]\n- Resolves RHEL-89953: CVE-2025-4123\n\n[10.2.6-12]\n- Resolves RHEL-85419: Move grafana home directory to /var/lib/grafana\n\n[10.2.6-11]\n- Resolves RHEL-84636: CVE-2025-30204\n\n[10.2.6-10]\n- Resolves RHEL-75919: grafana selinux issue with autofs_t\n\n[10.2.6-9]\n- Resolves RHEL-69939: allow mssql datasource in selinux policy\n\n[10.2.6-8]\n- Resolves RHEL-62312: CVE-2024-47875\n\n[10.2.6-5]\n- Resolves RHEL-47185",
+  "affected_products": [
+    "Oracle Linux 9"
+  ],
+  "packages": [
+    "grafana-10.2.6-18.el9_7.x86_64.rpm",
+    "grafana-selinux-10.2.6-18.el9_7.x86_64.rpm",
+    "grafana-10.2.6-18.el9_7.aarch64.rpm",
+    "grafana-selinux-10.2.6-18.el9_7.aarch64.rpm"
+  ],
+  "cves": [
+    "CVE-2025-61726",
+    "CVE-2025-61728",
+    "CVE-2025-61729",
+    "CVE-2025-68121",
+    "CVE-2026-21721",
+    "CVE-2025-58183",
+    "CVE-2025-4123",
+    "CVE-2025-30204",
+    "CVE-2024-47875"
+  ],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Security Advisory ELSA-2026-2920\n\nhttp://linux.oracle.com/errata/ELSA-2026-2920.html\n\nThe following updated rpms for Oracle Linux 9 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\ngrafana-10.2.6-18.el9_7.x86_64.rpm\ngrafana-selinux-10.2.6-18.el9_7.x86_64.rpm\n\naarch64:\ngrafana-10.2.6-18.el9_7.aarch64.rpm\ngrafana-selinux-10.2.6-18.el9_7.aarch64.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol9/SRPMS-updates/grafana-10.2.6-18.el9_7.src.rpm\n\nRelated CVEs:\n\nCVE-2025-61726\nCVE-2025-61728\nCVE-2025-61729\nCVE-2025-68121\nCVE-2026-21721\n\n\n\n\nDescription of changes:\n\n[10.2.6-17]\n- Resolves RHEL-144959: CVE-2026-21721\n- Resolves RHEL-146863: CVE-2025-61726\n- Resolves RHEL-147081: CVE-2025-61729\n- Resolves RHEL-147370: CVE-2025-61728\n- Resolves RHEL-149621: CVE-2025-68121\n\n[10.2.6-17]\n- Resolves RHEL-125692: CVE-2025-58183\n- Resolves RHEL-120426: Grafana-selinux prevents plugins from searching cgroups\n\n[10.2.6-15]\n- Resolves RHEL-97518: Rework grafana-selinux spec file sections\n- Resolves RHEL-87861: Add additional SELinux rules for grafana-selinux package to allow LDAP connections\n\n[10.2.6-13]\n- Resolves RHEL-89953: CVE-2025-4123\n\n[10.2.6-12]\n- Resolves RHEL-85419: Move grafana home directory to /var/lib/grafana\n\n[10.2.6-11]\n- Resolves RHEL-84636: CVE-2025-30204\n\n[10.2.6-10]\n- Resolves RHEL-75919: grafana selinux issue with autofs_t\n\n[10.2.6-9]\n- Resolves RHEL-69939: allow mssql datasource in selinux policy\n\n[10.2.6-8]\n- Resolves RHEL-62312: CVE-2024-47875\n\n[10.2.6-5]\n- Resolves RHEL-47185",
+  "vendor": "Oracle"
+}

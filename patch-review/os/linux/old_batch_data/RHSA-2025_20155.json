@@ -1,0 +1,21 @@
+{
+  "id": "RHSA-2025:20155",
+  "vendor": "Red Hat",
+  "url": "https://access.redhat.com/errata/RHSA-2025:20155",
+  "pubDate": "2025-11-11T08:32:02.000Z",
+  "dateStr": "2025-11-11",
+  "severity": "Moderate",
+  "title": "Red Hat Security Advisory: binutils security update",
+  "overview": "An update for binutils is now available for Red Hat Enterprise Linux 10.\n\nRed Hat Product Security has rated this update as having a security impact of Moderate. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "description": "An update for binutils is now available for Red Hat Enterprise Linux 10.\n\nRed Hat Product Security has rated this update as having a security impact of Moderate. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux AppStream (v. 10)",
+    "Red Hat Enterprise Linux BaseOS (v. 10)"
+  ],
+  "cves": [
+    "CVE-2025-5244"
+  ],
+  "packages": [],
+  "fixes": "",
+  "full_text": "Red Hat Security Advisory: binutils security update\n\nAn update for binutils is now available for Red Hat Enterprise Linux 10.\n\nRed Hat Product Security has rated this update as having a security impact of Moderate. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nAn update for binutils is now available for Red Hat Enterprise Linux 10.\n\nRed Hat Product Security has rated this update as having a security impact of Moderate. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nUpdated Packages:\nbinutils-2.41-58.el10.src.rpm\nbinutils-2.41-58.el10.x86_64.rpm\nbinutils-debuginfo-2.41-58.el10.x86_64.rpm\nbinutils-debugsource-2.41-58.el10.x86_64.rpm\nbinutils-devel-2.41-58.el10.x86_64.rpm\nbinutils-gold-2.41-58.el10.x86_64.rpm\nbinutils-gold-debuginfo-2.41-58.el10.x86_64.rpm\nbinutils-gprofng-debuginfo-2.41-58.el10.x86_64.rpm\ncross-binutils-aarch64-debuginfo-2.41-58.el10.x86_64.rpm\ncross-binutils-ppc64le-debuginfo-2.41-58.el10.x86_64.rpm\ncross-binutils-s390x-debuginfo-2.41-58.el10.x86_64.rpm\nbinutils-2.41-58.el10.s390x.rpm\nbinutils-debuginfo-2.41-58.el10.s390x.rpm\nbinutils-debugsource-2.41-58.el10.s390x.rpm\nbinutils-devel-2.41-58.el10.s390x.rpm\nbinutils-gold-2.41-58.el10.s390x.rpm\nbinutils-gold-debuginfo-2.41-58.el10.s390x.rpm\nbinutils-2.41-58.el10.ppc64le.rpm\nbinutils-debuginfo-2.41-58.el10.ppc64le.rpm\nbinutils-debugsource-2.41-58.el10.ppc64le.rpm\nbinutils-devel-2.41-58.el10.ppc64le.rpm\nbinutils-gold-2.41-58.el10.ppc64le.rpm\nbinutils-gold-debuginfo-2.41-58.el10.ppc64le.rpm\nbinutils-2.41-58.el10.aarch64.rpm\nbinutils-debuginfo-2.41-58.el10.aarch64.rpm\nbinutils-debugsource-2.41-58.el10.aarch64.rpm\nbinutils-devel-2.41-58.el10.aarch64.rpm\nbinutils-gold-2.41-58.el10.aarch64.rpm\nbinutils-gold-debuginfo-2.41-58.el10.aarch64.rpm\nbinutils-gprofng-debuginfo-2.41-58.el10.aarch64.rpm\n\nCVE-2025-5244: A vulnerability was found in GNU Binutils 2.40 to version 2.44 and affects the elf_gc_sweep function of the bfd/elflink.c file of the component ld. The manipulation leads to memory corruption and a program crash. An attacker must have local access to exploit this vulnerability."
+}

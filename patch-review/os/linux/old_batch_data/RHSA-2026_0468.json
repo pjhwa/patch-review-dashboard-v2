@@ -1,0 +1,20 @@
+{
+  "id": "RHSA-2026:0468",
+  "vendor": "Red Hat",
+  "url": "https://access.redhat.com/errata/RHSA-2026:0468",
+  "pubDate": "2026-01-12T15:22:38.000Z",
+  "dateStr": "2026-01-12",
+  "severity": "Important",
+  "title": "Red Hat Security Advisory: Red Hat Build of Apache Camel 4.14 for Quarkus 3.27 update is now available (RHBQ 3.27.1.SP1)",
+  "overview": "An update for Red Hat Build of Apache Camel 4.14 for Quarkus 3.27 update is now available (RHBQ 3.27.1.SP1).\nThe purpose of this text-only errata is to inform you about the enhancements that improve your developer experience and ensure the security and stability of your products.\nRed Hat Product Security has rated this update as having a security impact of Important.",
+  "description": "An update for Red Hat Build of Apache Camel 4.14 for Quarkus 3.27 update is now available (RHBQ 3.27.1.SP1).\nThe purpose of this text-only errata is to inform you about the enhancements that improve your developer experience and ensure the security and stability of your products.\nRed Hat Product Security has rated this update as having a security impact of Important.",
+  "affected_products": [
+    "Red Hat Build of Apache Camel 4.14 for Quarkus 3.27"
+  ],
+  "cves": [
+    "CVE-2025-66566"
+  ],
+  "packages": [],
+  "fixes": "",
+  "full_text": "Red Hat Security Advisory: Red Hat Build of Apache Camel 4.14 for Quarkus 3.27 update is now available (RHBQ 3.27.1.SP1)\n\nAn update for Red Hat Build of Apache Camel 4.14 for Quarkus 3.27 update is now available (RHBQ 3.27.1.SP1).\nThe purpose of this text-only errata is to inform you about the enhancements that improve your developer experience and ensure the security and stability of your products.\nRed Hat Product Security has rated this update as having a security impact of Important.\n\nAn update for Red Hat Build of Apache Camel 4.14 for Quarkus 3.27 update is now available (RHBQ 3.27.1.SP1).\nThe purpose of this text-only errata is to inform you about the enhancements that improve your developer experience and ensure the security and stability of your products.\nRed Hat Product Security has rated this update as having a security impact of Important.\n\n\n\nCVE-2025-66566: A flaw was found in lz4-java. This vulnerability allows disclosure of sensitive data via crafted compressed input due to insufficient clearing of the output buffer in Java-based decompressor implementations."
+}

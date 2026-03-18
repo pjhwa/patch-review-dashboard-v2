@@ -1,0 +1,34 @@
+{
+  "id": "RHBA-2025:20664",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: python-virt-firmware bug fix and enhancement update",
+  "issuedDate": "2025-11-11T07:50:45Z",
+  "updatedDate": "2025-11-11T07:50:45Z",
+  "pubDate": "2025-11-11T07:50:45Z",
+  "dateStr": "2025-11-11",
+  "url": "https://access.redhat.com/errata/RHBA-2025:20664",
+  "severity": "None",
+  "overview": "An update for python-virt-firmware is now available for Red Hat Enterprise Linux 10.",
+  "description": "For detailed information on changes in this release, see the Red Hat Enterprise Linux 9 Release Notes linked from the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux for IBM z Systems",
+    "Red Hat Enterprise Linux for x86_64 10 x86_64",
+    "Red Hat Enterprise Linux for Power, little endian",
+    "Red Hat Enterprise Linux for ARM 64"
+  ],
+  "cves": [],
+  "packages": [
+    "python-virt-firmware-25.7.3-1.el9.src",
+    "python3-virt-firmware-25.7.3-1.el9.noarch",
+    "uki-direct-25.7.3-1.el9.noarch"
+  ],
+  "fixes": [
+    {
+      "id": "RHEL-101805",
+      "url": "https://issues.redhat.com/browse/RHEL-101805",
+      "description": "[virt-firmware,rhel-9] rebase to 25.7 release"
+    }
+  ],
+  "full_text": "An update for python-virt-firmware is now available for Red Hat Enterprise Linux 10.\n\nFor detailed information on changes in this release, see the Red Hat Enterprise Linux 9 Release Notes linked from the References section."
+}

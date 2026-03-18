@@ -1,0 +1,55 @@
+{
+  "id": "RHBA-2025:20732",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: ansible-freeipa bug fix and enhancement update",
+  "issuedDate": "2025-11-11T07:50:55Z",
+  "updatedDate": "2025-11-11T07:50:55Z",
+  "pubDate": "2025-11-11T07:50:55Z",
+  "dateStr": "2025-11-11",
+  "url": "https://access.redhat.com/errata/RHBA-2025:20732",
+  "severity": "None",
+  "overview": "An update for ansible-freeipa is now available for Red Hat Enterprise Linux 10.",
+  "description": "For detailed information on changes in this release, see the Red Hat Enterprise Linux 9 Release Notes linked from the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux for ARM 64",
+    "Red Hat Enterprise Linux for x86_64 10 x86_64",
+    "Red Hat Enterprise Linux for IBM z Systems",
+    "Red Hat Enterprise Linux for Power, little endian"
+  ],
+  "cves": [],
+  "packages": [
+    "ansible-freeipa-1.15.1-1.el9.src",
+    "ansible-freeipa-1.15.1-1.el9.noarch",
+    "ansible-freeipa-collection-1.15.1-1.el9.noarch",
+    "ansible-freeipa-tests-1.15.1-1.el9.noarch"
+  ],
+  "fixes": [
+    {
+      "id": "RHEL-104652",
+      "url": "https://issues.redhat.com/browse/RHEL-104652",
+      "description": "[ansible-freeipa] Rebase to latest version for RHEL-9.7"
+    },
+    {
+      "id": "RHEL-78636",
+      "url": "https://issues.redhat.com/browse/RHEL-78636",
+      "description": "[ansible-freeipa] Add support for DNS-over-TLS for ipaclient, ipareplica and ipaserver roles - RHEL-9.7"
+    },
+    {
+      "id": "RHEL-79820",
+      "url": "https://issues.redhat.com/browse/RHEL-79820",
+      "description": "[ansbile-freeipa] Ensure ipaidrange required parameters are correct on recent versions of IPA [rhel-9]"
+    },
+    {
+      "id": "RHEL-94769",
+      "url": "https://issues.redhat.com/browse/RHEL-94769",
+      "description": "[RFE] [ansible-freeipa] Provide playbook compatibility in Ansible freeipa/idm RPM - RHEL-9.7"
+    },
+    {
+      "id": "RHEL-106558",
+      "url": "https://issues.redhat.com/browse/RHEL-106558",
+      "description": "[ansible-freeipa] ipaclient: client_dns has new statestore arg with IPA change e6445b8 - RHEL-9.7"
+    }
+  ],
+  "full_text": "An update for ansible-freeipa is now available for Red Hat Enterprise Linux 10.\n\nFor detailed information on changes in this release, see the Red Hat Enterprise Linux 9 Release Notes linked from the References section."
+}

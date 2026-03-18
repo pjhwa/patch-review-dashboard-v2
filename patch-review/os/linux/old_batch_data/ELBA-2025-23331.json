@@ -1,0 +1,22 @@
+{
+  "id": "ELBA-2025-23331",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2025-December/019344.html",
+  "synopsis": "[El-errata] ELBA-2025-23331 Oracle Linux 9 python-awscrt bug fix and enhancement update",
+  "dateStr": "2025-December",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Bug Fix Advisory ELBA-2025-23331",
+  "description": "[0.27.2-2]\n- Add patch fixing FIPS mode crash in awscli2\n  Resolves: RHEL-131280",
+  "affected_products": [
+    "Oracle Linux 9"
+  ],
+  "packages": [
+    "python3-awscrt-0.27.2-2.el9_7.x86_64.rpm",
+    "python3-awscrt-0.27.2-2.el9_7.aarch64.rpm"
+  ],
+  "cves": [],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Bug Fix Advisory ELBA-2025-23331\n\nhttp://linux.oracle.com/errata/ELBA-2025-23331.html\n\nThe following updated rpms for Oracle Linux 9 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\npython3-awscrt-0.27.2-2.el9_7.x86_64.rpm\n\naarch64:\npython3-awscrt-0.27.2-2.el9_7.aarch64.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol9/SRPMS-updates/python-awscrt-0.27.2-2.el9_7.src.rpm\n\n\n\nDescription of changes:\n\n[0.27.2-2]\n- Add patch fixing FIPS mode crash in awscli2\n  Resolves: RHEL-131280",
+  "vendor": "Oracle"
+}

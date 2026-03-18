@@ -1,0 +1,20 @@
+{
+  "id": "RHSA-2025:22005",
+  "vendor": "Red Hat",
+  "url": "https://access.redhat.com/errata/RHSA-2025:22005",
+  "pubDate": "2025-11-25T01:21:20.000Z",
+  "dateStr": "2025-11-25",
+  "severity": "Moderate",
+  "title": "Red Hat Security Advisory: go-rpm-macros security update",
+  "overview": "An update for go-rpm-macros is now available for Red Hat Enterprise Linux 9.\n\nRed Hat Product Security has rated this update as having a security impact of Moderate. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "description": "An update for go-rpm-macros is now available for Red Hat Enterprise Linux 9.\n\nRed Hat Product Security has rated this update as having a security impact of Moderate. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux AppStream (v. 9)"
+  ],
+  "cves": [
+    "CVE-2025-47906"
+  ],
+  "packages": [],
+  "fixes": "",
+  "full_text": "Red Hat Security Advisory: go-rpm-macros security update\n\nAn update for go-rpm-macros is now available for Red Hat Enterprise Linux 9.\n\nRed Hat Product Security has rated this update as having a security impact of Moderate. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nAn update for go-rpm-macros is now available for Red Hat Enterprise Linux 9.\n\nRed Hat Product Security has rated this update as having a security impact of Moderate. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nUpdated Packages:\ngo-rpm-macros-3.6.0-12.el9_7.src.rpm\ngo-filesystem-3.6.0-12.el9_7.x86_64.rpm\ngo-rpm-macros-3.6.0-12.el9_7.x86_64.rpm\ngo-rpm-macros-debuginfo-3.6.0-12.el9_7.x86_64.rpm\ngo-rpm-macros-debugsource-3.6.0-12.el9_7.x86_64.rpm\ngo-rpm-templates-3.6.0-12.el9_7.noarch.rpm\ngo-srpm-macros-3.6.0-12.el9_7.noarch.rpm\ngo-filesystem-3.6.0-12.el9_7.s390x.rpm\ngo-rpm-macros-3.6.0-12.el9_7.s390x.rpm\ngo-rpm-macros-debuginfo-3.6.0-12.el9_7.s390x.rpm\ngo-rpm-macros-debugsource-3.6.0-12.el9_7.s390x.rpm\ngo-filesystem-3.6.0-12.el9_7.ppc64le.rpm\ngo-rpm-macros-3.6.0-12.el9_7.ppc64le.rpm\ngo-rpm-macros-debuginfo-3.6.0-12.el9_7.ppc64le.rpm\ngo-rpm-macros-debugsource-3.6.0-12.el9_7.ppc64le.rpm\ngo-filesystem-3.6.0-12.el9_7.aarch64.rpm\ngo-rpm-macros-3.6.0-12.el9_7.aarch64.rpm\ngo-rpm-macros-debuginfo-3.6.0-12.el9_7.aarch64.rpm\ngo-rpm-macros-debugsource-3.6.0-12.el9_7.aarch64.rpm\n\nCVE-2025-47906: If the PATH environment variable contains paths which are executables (rather than just directories), passing certain strings to LookPath (\"\", \".\", and \"..\"), can result in the binaries listed in the PATH being unexpectedly returned."
+}

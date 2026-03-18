@@ -1,0 +1,27 @@
+{
+  "id": "ELSA-2026-50095",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2026-February/019785.html",
+  "synopsis": "[El-errata] New Ksplice updates for UEKR7 5.15.0 on OL8 and OL9 (ELSA-2026-50095)",
+  "dateStr": "2026-February",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Synopsis: ELSA-2026-50095 can now be patched using Ksplice",
+  "description": "",
+  "affected_products": [],
+  "packages": [],
+  "cves": [
+    "CVE-2023-4015",
+    "CVE-2023-5197",
+    "CVE-2025-38566",
+    "CVE-2025-38571",
+    "CVE-2025-40215",
+    "CVE-2025-40256",
+    "CVE-2025-40258",
+    "CVE-2025-68209",
+    "CVE-2025-68325"
+  ],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Synopsis: ELSA-2026-50095 can now be patched using Ksplice\nCVEs: CVE-2023-4015 CVE-2023-5197 CVE-2025-38566 CVE-2025-38571 CVE-2025-40215 CVE-2025-40256 CVE-2025-40258 CVE-2025-68209 CVE-2025-68325\n\nUsers with Oracle Linux Premier Support can now use Ksplice to patch\nagainst the latest Oracle Linux Security Advisory, ELSA-2026-50095.\nMore information about this errata can be found at\nhttps://linux.oracle.com/errata/ELSA-2026-50095.html\n\nINSTALLING THE UPDATES\n\nWe recommend that all users of Ksplice Uptrack running UEKR7 5.15.0 on\nOL8 and OL9 install these updates.\n\nOn systems that have \"autoinstall = yes\" in /etc/uptrack/uptrack.conf,\nthese updates will be installed automatically and you do not need to\ntake any action.\n\nAlternatively, you can install these updates by running:\n\n# /usr/sbin/uptrack-upgrade -y\n\n\nDESCRIPTION\n\n* CVE-2025-38566: Remote denial-of-service in SUNRPC.\n\nOrabug: 38334968\n\n\n* CVE-2025-38571: Use-after-free in NFS over TLS.\n\nOrabug: 38334981\n\n\n* CVE-2025-40256, CVE-2025-40215: Race condition in XFRM subsystem.\n\nOrabug: 38730492\n\n\n* CVE-2025-40258: Use-after-free in MPTCP: Multipath TCP driver.\n\n* CVE-2025-68209: Null pointer dereference in Mellanox devices driver.\n\nOrabug: 38420735\n\n\n* CVE-2025-68325: Null pointer dereference in CAKE network scheduler.\n\n* Missing ARMv8.7 PMU support in KVM subsystem.\n\nOrabug: 38784458\n\n\nSUPPORT\n\nKsplice support is available at ksplice-support_ww at oracle.com.",
+  "vendor": "Oracle"
+}

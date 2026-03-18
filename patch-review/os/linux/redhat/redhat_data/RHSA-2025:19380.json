@@ -1,0 +1,41 @@
+{
+  "id": "RHSA-2025:19380",
+  "vendor": "Red Hat",
+  "type": "Security Advisory (RHSA)",
+  "title": "Red Hat Security Advisory: Assisted Installer RHEL 9 components for Multicluster Engine for Kubernetes 2.9.1",
+  "issuedDate": "2025-10-30T18:39:47+00:00",
+  "updatedDate": "2025-10-30T18:39:51+00:00",
+  "pubDate": "2025-10-30T18:39:47+00:00",
+  "dateStr": "2025-10-30",
+  "url": "https://access.redhat.com/errata/RHSA-2025:19380",
+  "severity": "Moderate",
+  "overview": "Assisted installer RHEL 9 components for the multicluster engine for Kubernetes 2.9.1 General Availability release, with updates to container images.",
+  "description": "Assisted Installer RHEL 9 integrates components for the general multicluster engine\nfor Kubernetes 2.9.1 release that simplify the process of deploying OpenShift Container\nPlatform clusters.\n\nThe multicluster engine for Kubernetes provides the foundational components\nthat are necessary for the centralized management of multiple\nKubernetes-based clusters across data centers, public clouds, and private\nclouds.\n\nYou can use the engine to create new Red Hat OpenShift Container Platform\nclusters, or to import existing Kubernetes-based clusters for management.\n\nAfter the clusters are managed, you can use the APIs that\nare provided by the engine to distribute configuration based on placement\npolicy.",
+  "affected_products": [],
+  "cves": [
+    "CVE-2025-47907"
+  ],
+  "packages": [
+    "registry.redhat.io/multicluster-engine/assisted-image-service-rhel9@sha256:c06cf83e4e6e82a5eba3470f6c2d0f64a14381bcf9781304a38178f5da71d445_amd64",
+    "registry.redhat.io/multicluster-engine/assisted-installer-rhel9@sha256:a68de20386cd773e90e0d9132f06b91c53b461dafe1479e27a5ace0818f4792b_amd64",
+    "registry.redhat.io/multicluster-engine/assisted-installer-agent-rhel9@sha256:298856ac98371e67ec2e80aed138a658883d412a9920c481c0f4deb8acae7f9c_amd64",
+    "registry.redhat.io/multicluster-engine/assisted-installer-controller-rhel9@sha256:aed5dfdcb0ee1ba8f6c8bdd015fdce09ba1e587c67fbdf87dbefd26526c7ec52_amd64",
+    "registry.redhat.io/multicluster-engine/assisted-service-9-rhel9@sha256:5b27e57783e7d236b6bdc62205bce79a49c9dfef81befd1612caa5f588637e89_amd64",
+    "registry.redhat.io/multicluster-engine/assisted-image-service-rhel9@sha256:af83216b5d9133295c322c769da53110b525900ab1be1bc5d6285cc735d939dc_arm64",
+    "registry.redhat.io/multicluster-engine/assisted-installer-rhel9@sha256:7487489606b42c61062c2f6c5d4d4faff1aa8b0bab20bebb4f87d2c97281f697_arm64",
+    "registry.redhat.io/multicluster-engine/assisted-installer-agent-rhel9@sha256:1facf3f046fb257c3625a79a91973c991005500f9b883f9cbc93a3e82c3c3869_arm64",
+    "registry.redhat.io/multicluster-engine/assisted-installer-controller-rhel9@sha256:7e81ff2323a78a5fe129341f9d5f76bf10281cae3200aecd041a4beff1cb6f60_arm64",
+    "registry.redhat.io/multicluster-engine/assisted-service-9-rhel9@sha256:d25be8f16424ea9b44d2445c9cd110dec9dcbebd7d548538abaf104016996131_arm64",
+    "registry.redhat.io/multicluster-engine/assisted-image-service-rhel9@sha256:63aa20a1eb2914eebfeb83594deb0fd9c447d514f93717cac15b338d81f12834_ppc64le",
+    "registry.redhat.io/multicluster-engine/assisted-installer-rhel9@sha256:3c2e9356f0bb37df08f3d71c3a86d6fcdfa8e507a170a03a8189a0b84c7546b5_ppc64le",
+    "registry.redhat.io/multicluster-engine/assisted-installer-agent-rhel9@sha256:31c7eaee68cc23e9f668bc3c9905c43cad30b408cb36ff6085ab24ed80d2fcb4_ppc64le",
+    "registry.redhat.io/multicluster-engine/assisted-installer-controller-rhel9@sha256:e7b3b4fbf1d5572a21fe71c9d67a4bc49d5ee1cb65617df73aa3cbc8a7c03667_ppc64le",
+    "registry.redhat.io/multicluster-engine/assisted-service-9-rhel9@sha256:799d9b838f43e2e793006886f0c2b95ba7d19348b758380af26be4d340d09107_ppc64le",
+    "registry.redhat.io/multicluster-engine/assisted-image-service-rhel9@sha256:b8e2c62b5e549c418a4fd0955d10e3b2a1820980f23c8b3190bf30291f4b4520_s390x",
+    "registry.redhat.io/multicluster-engine/assisted-installer-rhel9@sha256:6686e0ad44636396a85ceeaef061239ebd0074aae9918a9acd853f06452fe338_s390x",
+    "registry.redhat.io/multicluster-engine/assisted-installer-agent-rhel9@sha256:e2f7dee46f99e471670dbe6092ceb343fd9b72b4a918ada47408d4ef4a5f8868_s390x",
+    "registry.redhat.io/multicluster-engine/assisted-installer-controller-rhel9@sha256:9f0be189b0548949d71724bab7ffa0bda82d3886d487b8bbbed06335e178fd42_s390x",
+    "registry.redhat.io/multicluster-engine/assisted-service-9-rhel9@sha256:2a07834560fcc6bf627475872b10f7f0d90b6f5a2af51795c9e1797c4d770291_s390x"
+  ],
+  "full_text": "Assisted installer RHEL 9 components for the multicluster engine for Kubernetes 2.9.1 General Availability release, with updates to container images.\n\nAssisted Installer RHEL 9 integrates components for the general multicluster engine\nfor Kubernetes 2.9.1 release that simplify the process of deploying OpenShift Container\nPlatform clusters.\n\nThe multicluster engine for Kubernetes provides the foundational components\nthat are necessary for the centralized management of multiple\nKubernetes-based clusters across data centers, public clouds, and private\nclouds.\n\nYou can use the engine to create new Red Hat OpenShift Container Platform\nclusters, or to import existing Kubernetes-based clusters for management.\n\nAfter the clusters are managed, you can use the APIs that\nare provided by the engine to distribute configuration based on placement\npolicy."
+}

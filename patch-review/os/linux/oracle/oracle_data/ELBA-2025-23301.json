@@ -1,0 +1,27 @@
+{
+  "id": "ELBA-2025-23301",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "AppStream",
+  "title": "rust-coreos-installer bug fix and enhancement update",
+  "issuedDate": "2025-12-18T00:00:00Z",
+  "updatedDate": "2025-12-18T00:00:00Z",
+  "pubDate": "2025-12-18T00:00:00Z",
+  "dateStr": "2025-12-18",
+  "url": "https://linux.oracle.com/errata/ELBA-2025-23301.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 10.",
+  "description": "[0.24.0-5.0.1]\n- Prevent error generating initrd during kernel package POSTTRANS script\n  [Orabug: 38073419]\n\n[0.24.0-5]\n- rootmap: Inject mpath.wwid= when on multipath\n  Backport https://github.com/coreos/coreos-installer/pull/1676/commits/a40af0a3ec13c4fd49b34317e80f6c0bc845b46a\n  Resolves RHEL-127858\n\n[0.24.0-4]\n- Check if firstboot args are defined and add them manually\n  Backport https://github.com/coreos/coreos-installer/pull/1699\n\n[0.24.0-3]\n- Use the full path for the 'root=' kernel arg when rootfs on mpath\n  Backport https://github.com/coreos/coreos-installer/pull/1677\n\n[0.24.0-2]\n- Restore single-decimal precision to stream output\n  Backport https://github.com/coreos/coreos-installer/pull/1654",
+  "affected_products": [
+    "Oracle Linux 10 for x86_64",
+    "Oracle Linux 10 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "coreos-installer-bootinfra-0.24.0-5.0.1.el10_1.x86_64",
+    "rust-coreos-installer-0.24.0-5.0.1.el10_1.src",
+    "coreos-installer-dracut-0.24.0-5.0.1.el10_1.x86_64",
+    "coreos-installer-0.24.0-5.0.1.el10_1.x86_64"
+  ],
+  "full_text": "[0.24.0-5.0.1]\n- Prevent error generating initrd during kernel package POSTTRANS script\n  [Orabug: 38073419]\n\n[0.24.0-5]\n- rootmap: Inject mpath.wwid= when on multipath\n  Backport https://github.com/coreos/coreos-installer/pull/1676/commits/a40af0a3ec13c4fd49b34317e80f6c0bc845b46a\n  Resolves RHEL-127858\n\n[0.24.0-4]\n- Check if firstboot args are defined and add them manually\n  Backport https://github.com/coreos/coreos-installer/pull/1699\n\n[0.24.0-3]\n- Use the full path for the 'root=' kernel arg when rootfs on mpath\n  Backport https://github.com/coreos/coreos-installer/pull/1677\n\n[0.24.0-2]\n- Restore single-decimal precision to stream output\n  Backport https://github.com/coreos/coreos-installer/pull/1654\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2025-23301.html"
+}

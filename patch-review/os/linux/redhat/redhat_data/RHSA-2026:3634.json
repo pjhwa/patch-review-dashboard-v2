@@ -1,0 +1,44 @@
+{
+  "id": "RHSA-2026:3634",
+  "vendor": "Red Hat",
+  "type": "Security Advisory (RHSA)",
+  "title": "Red Hat Security Advisory: kernel-rt security update",
+  "issuedDate": "2026-03-03T09:54:06+00:00",
+  "updatedDate": "2026-03-03T09:54:06+00:00",
+  "pubDate": "2026-03-03T09:54:06+00:00",
+  "dateStr": "2026-03-03",
+  "url": "https://access.redhat.com/errata/RHSA-2026:3634",
+  "severity": "Important",
+  "overview": "An update for kernel-rt is now available for Red Hat Enterprise Linux 7 Extended Lifecycle Support.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "description": "The kernel-rt packages provide the Real Time Linux Kernel, which enables fine-tuning for systems with extremely high determinism requirements.\n\nSecurity Fix(es):\n\n* kernel: Linux kernel: Memory corruption in Squashfs due to incorrect block size calculation (CVE-2025-38415)\n\n* kernel: Linux kernel: Denial of Service in ATM CLIP module via infinite recursion (CVE-2025-38459)\n\n* kernel: Linux kernel: Denial of Service via out-of-bounds read in USB configuration parsing (CVE-2025-39760)\n\n* kernel: efivarfs: Fix slab-out-of-bounds in efivarfs_d_compare (CVE-2025-39817)\n\n* kernel: media: rc: fix races with imon_disconnect() (CVE-2025-39993)\n\n* kernel: Linux kernel: Use-after-free in proc_readdir_de() can lead to privilege escalation or denial of service. (CVE-2025-40271)\n\n* kernel: ext4: fix use-after-free in ext4_orphan_cleanup (CVE-2022-50673)\n\n* kernel: NFSv4/pNFS: Clear NFS_INO_LAYOUTCOMMIT in pnfs_mark_layout_stateid_invalid (CVE-2025-68349)\n\n* kernel: Linux kernel: Use-after-free in teql queueing discipline can lead to privilege escalation (CVE-2026-23074)\n\nFor more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux",
+    "Red Hat Enterprise Linux for Real Time (v. 7 ELS)"
+  ],
+  "cves": [
+    "CVE-2022-50673",
+    "CVE-2025-38415",
+    "CVE-2025-38459",
+    "CVE-2025-39760",
+    "CVE-2025-39817",
+    "CVE-2025-39993",
+    "CVE-2025-40271",
+    "CVE-2025-68349",
+    "CVE-2026-23074"
+  ],
+  "packages": [
+    "kernel-rt-0:3.10.0-1160.147.1.rt56.1299.el7.src",
+    "kernel-rt-0:3.10.0-1160.147.1.rt56.1299.el7.x86_64",
+    "kernel-rt-debug-0:3.10.0-1160.147.1.rt56.1299.el7.x86_64",
+    "kernel-rt-debug-devel-0:3.10.0-1160.147.1.rt56.1299.el7.x86_64",
+    "kernel-rt-devel-0:3.10.0-1160.147.1.rt56.1299.el7.x86_64",
+    "kernel-rt-trace-0:3.10.0-1160.147.1.rt56.1299.el7.x86_64",
+    "kernel-rt-trace-devel-0:3.10.0-1160.147.1.rt56.1299.el7.x86_64",
+    "kernel-rt-debug-debuginfo-0:3.10.0-1160.147.1.rt56.1299.el7.x86_64",
+    "kernel-rt-debuginfo-0:3.10.0-1160.147.1.rt56.1299.el7.x86_64",
+    "kernel-rt-debuginfo-common-x86_64-0:3.10.0-1160.147.1.rt56.1299.el7.x86_64",
+    "kernel-rt-trace-debuginfo-0:3.10.0-1160.147.1.rt56.1299.el7.x86_64",
+    "kernel-rt-doc-0:3.10.0-1160.147.1.rt56.1299.el7.noarch"
+  ],
+  "full_text": "An update for kernel-rt is now available for Red Hat Enterprise Linux 7 Extended Lifecycle Support.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nThe kernel-rt packages provide the Real Time Linux Kernel, which enables fine-tuning for systems with extremely high determinism requirements.\n\nSecurity Fix(es):\n\n* kernel: Linux kernel: Memory corruption in Squashfs due to incorrect block size calculation (CVE-2025-38415)\n\n* kernel: Linux kernel: Denial of Service in ATM CLIP module via infinite recursion (CVE-2025-38459)\n\n* kernel: Linux kernel: Denial of Service via out-of-bounds read in USB configuration parsing (CVE-2025-39760)\n\n* kernel: efivarfs: Fix slab-out-of-bounds in efivarfs_d_compare (CVE-2025-39817)\n\n* kernel: media: rc: fix races with imon_disconnect() (CVE-2025-39993)\n\n* kernel: Linux kernel: Use-after-free in proc_readdir_de() can lead to privilege escalation or denial of service. (CVE-2025-40271)\n\n* kernel: ext4: fix use-after-free in ext4_orphan_cleanup (CVE-2022-50673)\n\n* kernel: NFSv4/pNFS: Clear NFS_INO_LAYOUTCOMMIT in pnfs_mark_layout_stateid_invalid (CVE-2025-68349)\n\n* kernel: Linux kernel: Use-after-free in teql queueing discipline can lead to privilege escalation (CVE-2026-23074)\n\nFor more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section."
+}

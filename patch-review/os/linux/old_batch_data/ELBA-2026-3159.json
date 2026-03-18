@@ -1,0 +1,30 @@
+{
+  "id": "ELBA-2026-3159",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2026-February/019842.html",
+  "synopsis": "[El-errata] ELBA-2026-3159 Oracle Linux 10 iptables bug fix and enhancement update",
+  "dateStr": "2026-February",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Bug Fix Advisory ELBA-2026-3159",
+  "description": "[1.8.11-12.0.1]\n- Install kernel-modules-extra-matched if kernel-core is installed\n- Update dependencies for additional UEK kernel flavours [Orabug: 38000003]\n- Also allow installation with kernel-uek-extra-netfilter [Orabug: 37585869]\n\n[[1.8.11-12.el10]]\n- Revert \"spec: Require kernel-modules-extra-matched meta package\" (Phil Sutter) [RHEL-127030]",
+  "affected_products": [
+    "Oracle Linux 10"
+  ],
+  "packages": [
+    "iptables-devel-1.8.11-12.0.1.el10_1.x86_64.rpm",
+    "iptables-libs-1.8.11-12.0.1.el10_1.x86_64.rpm",
+    "iptables-nft-1.8.11-12.0.1.el10_1.x86_64.rpm",
+    "iptables-nft-services-1.8.11-12.0.1.el10_1.noarch.rpm",
+    "iptables-utils-1.8.11-12.0.1.el10_1.x86_64.rpm",
+    "iptables-devel-1.8.11-12.0.1.el10_1.aarch64.rpm",
+    "iptables-libs-1.8.11-12.0.1.el10_1.aarch64.rpm",
+    "iptables-nft-1.8.11-12.0.1.el10_1.aarch64.rpm",
+    "iptables-nft-services-1.8.11-12.0.1.el10_1.noarch.rpm",
+    "iptables-utils-1.8.11-12.0.1.el10_1.aarch64.rpm"
+  ],
+  "cves": [],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Bug Fix Advisory ELBA-2026-3159\n\nhttp://linux.oracle.com/errata/ELBA-2026-3159.html\n\nThe following updated rpms for Oracle Linux 10 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\niptables-devel-1.8.11-12.0.1.el10_1.x86_64.rpm\niptables-libs-1.8.11-12.0.1.el10_1.x86_64.rpm\niptables-nft-1.8.11-12.0.1.el10_1.x86_64.rpm\niptables-nft-services-1.8.11-12.0.1.el10_1.noarch.rpm\niptables-utils-1.8.11-12.0.1.el10_1.x86_64.rpm\n\naarch64:\niptables-devel-1.8.11-12.0.1.el10_1.aarch64.rpm\niptables-libs-1.8.11-12.0.1.el10_1.aarch64.rpm\niptables-nft-1.8.11-12.0.1.el10_1.aarch64.rpm\niptables-nft-services-1.8.11-12.0.1.el10_1.noarch.rpm\niptables-utils-1.8.11-12.0.1.el10_1.aarch64.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol10/SRPMS-updates/iptables-1.8.11-12.0.1.el10_1.src.rpm\n\n\n\nDescription of changes:\n\n[1.8.11-12.0.1]\n- Install kernel-modules-extra-matched if kernel-core is installed\n- Update dependencies for additional UEK kernel flavours [Orabug: 38000003]\n- Also allow installation with kernel-uek-extra-netfilter [Orabug: 37585869]\n\n[[1.8.11-12.el10]]\n- Revert \"spec: Require kernel-modules-extra-matched meta package\" (Phil Sutter) [RHEL-127030]",
+  "vendor": "Oracle"
+}

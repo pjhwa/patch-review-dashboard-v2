@@ -1,0 +1,40 @@
+{
+  "id": "ELSA-2026-2222",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2026-February/019728.html",
+  "synopsis": "[El-errata] ELSA-2026-2222 Important: Oracle Linux 10 freerdp security update",
+  "dateStr": "2026-February",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Security Advisory ELSA-2026-2222",
+  "description": "[2:3.10.3-5.1]\n- Backport several CVE fixes\n  Resolves: RHEL-142413, RHEL-142397, RHEL-142381, RHEL-142365, RHEL-142349\n  Resolves: RHEL-142333, RHEL-142317",
+  "affected_products": [
+    "Oracle Linux 10"
+  ],
+  "packages": [
+    "freerdp-3.10.3-5.el10_1.1.x86_64.rpm",
+    "freerdp-devel-3.10.3-5.el10_1.1.x86_64.rpm",
+    "freerdp-libs-3.10.3-5.el10_1.1.x86_64.rpm",
+    "freerdp-server-3.10.3-5.el10_1.1.x86_64.rpm",
+    "libwinpr-3.10.3-5.el10_1.1.x86_64.rpm",
+    "libwinpr-devel-3.10.3-5.el10_1.1.x86_64.rpm",
+    "freerdp-3.10.3-5.el10_1.1.aarch64.rpm",
+    "freerdp-devel-3.10.3-5.el10_1.1.aarch64.rpm",
+    "freerdp-libs-3.10.3-5.el10_1.1.aarch64.rpm",
+    "freerdp-server-3.10.3-5.el10_1.1.aarch64.rpm",
+    "libwinpr-3.10.3-5.el10_1.1.aarch64.rpm",
+    "libwinpr-devel-3.10.3-5.el10_1.1.aarch64.rpm"
+  ],
+  "cves": [
+    "CVE-2026-23530",
+    "CVE-2026-23531",
+    "CVE-2026-23532",
+    "CVE-2026-23533",
+    "CVE-2026-23534",
+    "CVE-2026-23883",
+    "CVE-2026-23884"
+  ],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Security Advisory ELSA-2026-2222\n\nhttp://linux.oracle.com/errata/ELSA-2026-2222.html\n\nThe following updated rpms for Oracle Linux 10 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\nfreerdp-3.10.3-5.el10_1.1.x86_64.rpm\nfreerdp-devel-3.10.3-5.el10_1.1.x86_64.rpm\nfreerdp-libs-3.10.3-5.el10_1.1.x86_64.rpm\nfreerdp-server-3.10.3-5.el10_1.1.x86_64.rpm\nlibwinpr-3.10.3-5.el10_1.1.x86_64.rpm\nlibwinpr-devel-3.10.3-5.el10_1.1.x86_64.rpm\n\naarch64:\nfreerdp-3.10.3-5.el10_1.1.aarch64.rpm\nfreerdp-devel-3.10.3-5.el10_1.1.aarch64.rpm\nfreerdp-libs-3.10.3-5.el10_1.1.aarch64.rpm\nfreerdp-server-3.10.3-5.el10_1.1.aarch64.rpm\nlibwinpr-3.10.3-5.el10_1.1.aarch64.rpm\nlibwinpr-devel-3.10.3-5.el10_1.1.aarch64.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol10/SRPMS-updates/freerdp-3.10.3-5.el10_1.1.src.rpm\n\nRelated CVEs:\n\nCVE-2026-23530\nCVE-2026-23531\nCVE-2026-23532\nCVE-2026-23533\nCVE-2026-23534\nCVE-2026-23883\nCVE-2026-23884\n\n\n\n\nDescription of changes:\n\n[2:3.10.3-5.1]\n- Backport several CVE fixes\n  Resolves: RHEL-142413, RHEL-142397, RHEL-142381, RHEL-142365, RHEL-142349\n  Resolves: RHEL-142333, RHEL-142317",
+  "vendor": "Oracle"
+}

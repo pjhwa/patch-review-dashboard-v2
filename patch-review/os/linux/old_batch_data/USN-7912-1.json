@@ -1,0 +1,27 @@
+{
+  "id": "USN-7912-1",
+  "url": "https://ubuntu.com/security/notices/USN-7912-1",
+  "synopsis": "USN-7912-1: CUPS vulnerability",
+  "dateStr": "4 December 2025",
+  "overview": "CUPS could be made to stop responding if it received specially crafted\nnetwork traffic.",
+  "description": "Johannes Meixner and Paul Zirnik discovered that CUPS incorrectly handled\nclients that send messages slowly. A remote attacker could possibly use\nthis issue to cause CUPS to stop responding, resulting in a denial of\nservice. (CVE-2025-58436)\n\nIn addition, this update fixes a regression introduced in USN-7897-1 which\nresulted in certain invalid configuration file directives to cause the CUPS\ndaemon to fail to start.\n\n \n\n \n\n \n\nJohannes Meixner and Paul Zirnik discovered that CUPS incorrectly handled\nclients that send messages slowly. A remote attacker could possibly use\nthis issue to cause CUPS to stop responding, resulting in a denial of\nservice. (CVE-2025-58436)\n\nIn addition, this update fixes a regression introduced in USN-7897-1 which\nresulted in certain invalid configuration file directives to cause the CUPS\ndaemon to fail to start.",
+  "packages": [
+    "cups"
+  ],
+  "cves": [
+    "CVE-2025-58436"
+  ],
+  "affected_products": [
+    "25.10",
+    "25.04",
+    "24.04 LTS",
+    "22.04 LTS",
+    "Open side navigation"
+  ],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Ubuntu Security Notices\n\nUSN-7912-1\n\n \n\n \n\n \n\n \n\n \n\n \nUSN-7912-1: CUPS vulnerability\n\n \n\n \n\n \n\n \nPublication date\n\n \n\n \n\n \n4 December 2025\n\n \n\n \n\n \n\n \n\n \nOverview\n\n \n\n \n\n \nCUPS could be made to stop responding if it received specially crafted\nnetwork traffic.\n\n \n\n \n\n \n\n \n\n \nReleases\n\n \n\n \n\n \n\n 25.10\n\n 25.04\n\n 24.04 LTS\n\n22.04 LTS\n\n \n\n \n\n \n\n \n\n \n\n \n\n Open side navigation\n \n\n \n\n \nPackages\n\n \n\n cups - Common UNIX Printing System(tm)\n \n\n \n\n \nDetails\n\n \n\n \n\nJohannes Meixner and Paul Zirnik discovered that CUPS incorrectly handled\nclients that send messages slowly. A remote attacker could possibly use\nthis issue to cause CUPS to stop responding, resulting in a denial of\nservice. (CVE-2025-58436)\n\nIn addition, this update fixes a regression introduced in USN-7897-1 which\nresulted in certain invalid configuration file directives to cause the CUPS\ndaemon to fail to start.\n\n \n\n \n\n \n\nJohannes Meixner and Paul Zirnik discovered that CUPS incorrectly handled\nclients that send messages slowly. A remote attacker could possibly use\nthis issue to cause CUPS to stop responding, resulting in a denial of\nservice. (CVE-2025-58436)\n\nIn addition, this update fixes a regression introduced in USN-7897-1 which\nresulted in certain invalid configuration file directives to cause the CUPS\ndaemon to fail to start.\n\n \n\n \n\n \n\n \nUpdate instructions\n\n \n\n \n\n \n\n \n\nIn general, a standard system update will make all the necessary changes.\n\n Learn more about how to get the fixes.\n \n\n \n\n \n\n \n\n \nThe problem can be corrected by updating your system to the following package versions:\n\n \n\n \n\n \n\n \n\n Ubuntu Release\n Package Version\n \n\n 25.10\n\nquesting\n\n cups – \n\n2.4.12-0ubuntu3.5\n\n cups-daemon – \n\n2.4.12-0ubuntu3.5\n\n \n\n 25.04\n\nplucky\n\n cups – \n\n2.4.12-0ubuntu1.6\n\n cups-daemon – \n\n2.4.12-0ubuntu1.6\n\n \n\n 24.04\n\nLTS noble\n\n cups – \n\n2.4.7-1.2ubuntu7.9\n\n cups-daemon – \n\n2.4.7-1.2ubuntu7.9\n\n \n\n 22.04\n\nLTS jammy\n\n cups – \n\n2.4.1op1-1ubuntu4.16\n\n cups-daemon – \n\n2.4.1op1-1ubuntu4.16\n\n \n\nReduce your security exposure\n\n \n\n Ubuntu Pro provides ten-year security coverage to 25,000+ packages in Main and Universe repositories, and it is free for up to five machines.\n \n\n \n\n Get Ubuntu Pro\n \n\n \n\nReferences\n\n \n\n \n\n https://launchpad.net/bugs/2133207\n \n\n \n\n CVE-2025-58436\n \n\n \n\n \n\n CVE-2025-58436\n \n\n \n\n \nRelated notices\n\n \n\n \n\n USN-7912-2\n \n\n \n\n USN-7912-2",
+  "title": "USN-7912-1: CUPS vulnerability | Ubuntu security notices | Ubuntu",
+  "pubDate": "2025-12-03T15:00:00.000Z",
+  "vendor": "Ubuntu"
+}

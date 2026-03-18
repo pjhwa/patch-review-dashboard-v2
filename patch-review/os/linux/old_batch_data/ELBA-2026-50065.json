@@ -1,0 +1,34 @@
+{
+  "id": "ELBA-2026-50065",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2026-January/019557.html",
+  "synopsis": "[El-errata] ELBA-2026-50065 Oracle Linux 10 osbuild bug fix update",
+  "dateStr": "2026-January",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Bug Fix Advisory ELBA-2026-50065",
+  "description": "[166-1.0.1]\n- Bump to v166 to add support for anaconda ISO generation via image-builder [JIRA: OLDIS-50153]",
+  "affected_products": [
+    "Oracle Linux 10"
+  ],
+  "packages": [
+    "osbuild-depsolve-dnf-166-1.0.1.el10.noarch.rpm",
+    "osbuild-luks2-166-1.0.1.el10.noarch.rpm",
+    "osbuild-lvm2-166-1.0.1.el10.noarch.rpm",
+    "osbuild-ostree-166-1.0.1.el10.noarch.rpm",
+    "osbuild-selinux-166-1.0.1.el10.noarch.rpm",
+    "osbuild-166-1.0.1.el10.noarch.rpm",
+    "python3-osbuild-166-1.0.1.el10.noarch.rpm",
+    "osbuild-depsolve-dnf-166-1.0.1.el10.noarch.rpm",
+    "osbuild-luks2-166-1.0.1.el10.noarch.rpm",
+    "osbuild-lvm2-166-1.0.1.el10.noarch.rpm",
+    "osbuild-ostree-166-1.0.1.el10.noarch.rpm",
+    "osbuild-selinux-166-1.0.1.el10.noarch.rpm",
+    "osbuild-166-1.0.1.el10.noarch.rpm",
+    "python3-osbuild-166-1.0.1.el10.noarch.rpm"
+  ],
+  "cves": [],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Bug Fix Advisory ELBA-2026-50065\n\nhttp://linux.oracle.com/errata/ELBA-2026-50065.html\n\nThe following updated rpms for Oracle Linux 10 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\nosbuild-depsolve-dnf-166-1.0.1.el10.noarch.rpm\nosbuild-luks2-166-1.0.1.el10.noarch.rpm\nosbuild-lvm2-166-1.0.1.el10.noarch.rpm\nosbuild-ostree-166-1.0.1.el10.noarch.rpm\nosbuild-selinux-166-1.0.1.el10.noarch.rpm\nosbuild-166-1.0.1.el10.noarch.rpm\npython3-osbuild-166-1.0.1.el10.noarch.rpm\n\naarch64:\nosbuild-depsolve-dnf-166-1.0.1.el10.noarch.rpm\nosbuild-luks2-166-1.0.1.el10.noarch.rpm\nosbuild-lvm2-166-1.0.1.el10.noarch.rpm\nosbuild-ostree-166-1.0.1.el10.noarch.rpm\nosbuild-selinux-166-1.0.1.el10.noarch.rpm\nosbuild-166-1.0.1.el10.noarch.rpm\npython3-osbuild-166-1.0.1.el10.noarch.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol10/SRPMS-updates/osbuild-166-1.0.1.el10.src.rpm\n\n\n\nDescription of changes:\n\n[166-1.0.1]\n- Bump to v166 to add support for anaconda ISO generation via image-builder [JIRA: OLDIS-50153]",
+  "vendor": "Oracle"
+}

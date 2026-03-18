@@ -1,0 +1,21 @@
+{
+  "id": "RHSA-2025:22765",
+  "vendor": "Red Hat",
+  "type": "Security Advisory (RHSA)",
+  "title": "Red Hat Security Advisory: HawtIO 4.3.0 for Red Hat build of Apache Camel 4 Release and security update.",
+  "issuedDate": "2025-12-04T15:07:27+00:00",
+  "updatedDate": "2025-12-04T15:07:27+00:00",
+  "pubDate": "2025-12-04T15:07:27+00:00",
+  "dateStr": "2025-12-04",
+  "url": "https://access.redhat.com/errata/RHSA-2025:22765",
+  "severity": "Important",
+  "overview": "HawtIO 4.3.0 for Red Hat build of Apache Camel 4 GA Release is now available.\n\nThe purpose of this text-only errata is to inform you about the enhancements that improve your developer experience and ensure the security and stability of your products.\n\nRed Hat Product Security has rated this update as having a security impact of\nImportant. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "description": "HawtIO 4.3.0 for Red Hat build of Apache Camel 4 GA Release is now available.\n\nThe purpose of this text-only errata is to inform you about the enhancements that improve your developer experience and ensure the security and stability of your products.\n\n* spring-security-core: Spring Security authorization bypass (CVE-2025-41248);\n\n* spring-core: Spring Framework Annotation Detection Vulnerability (CVE-2025-41249);\n\n* org.springframework/spring-core: Spring Framework Annotation Detection Vulnerability (CVE-2025-41249);",
+  "affected_products": [],
+  "cves": [
+    "CVE-2025-41248",
+    "CVE-2025-41249"
+  ],
+  "packages": [],
+  "full_text": "HawtIO 4.3.0 for Red Hat build of Apache Camel 4 GA Release is now available.\n\nThe purpose of this text-only errata is to inform you about the enhancements that improve your developer experience and ensure the security and stability of your products.\n\nRed Hat Product Security has rated this update as having a security impact of\nImportant. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nHawtIO 4.3.0 for Red Hat build of Apache Camel 4 GA Release is now available.\n\nThe purpose of this text-only errata is to inform you about the enhancements that improve your developer experience and ensure the security and stability of your products.\n\n* spring-security-core: Spring Security authorization bypass (CVE-2025-41248);\n\n* spring-core: Spring Framework Annotation Detection Vulnerability (CVE-2025-41249);\n\n* org.springframework/spring-core: Spring Framework Annotation Detection Vulnerability (CVE-2025-41249);"
+}

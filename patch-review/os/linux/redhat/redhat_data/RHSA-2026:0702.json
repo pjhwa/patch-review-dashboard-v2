@@ -1,0 +1,32 @@
+{
+  "id": "RHSA-2026:0702",
+  "vendor": "Red Hat",
+  "type": "Security Advisory (RHSA)",
+  "title": "Red Hat Security Advisory: OpenShift Container Platform 4.17.47 bug fix and security update",
+  "issuedDate": "2026-01-22T19:09:07+00:00",
+  "updatedDate": "2026-01-22T19:09:07+00:00",
+  "pubDate": "2026-01-22T19:09:07+00:00",
+  "dateStr": "2026-01-22",
+  "url": "https://access.redhat.com/errata/RHSA-2026:0702",
+  "severity": "Important",
+  "overview": "Red Hat OpenShift Container Platform release 4.17.47 is now available with\nupdates to packages and images that fix several bugs and add enhancements.\n\n This release includes a security update for Red Hat OpenShift Container\nPlatform 4.17.\n\nRed Hat Product Security has rated this update as having a security impact\nof Important. A Common Vulnerability Scoring System (CVSS) base score,\nwhich gives a detailed severity rating, is available for each vulnerability\nfrom the CVE link(s) in the References section.",
+  "description": "Red Hat OpenShift Container Platform is Red Hat's cloud computing\nKubernetes application platform solution designed for on-premise or private\ncloud deployments.\n\nThis advisory contains the container images for Red Hat OpenShift Container\nPlatform 4.17.47. See the following advisory for the RPM packages for this\nrelease:\n\nhttps://access.redhat.com/errata/RHSA-2026:0701\n\nSpace precludes documenting all of the container images in this advisory.\nSee the following Release Notes documentation, which will be updated\nshortly for this release, for details about these changes:\n\nhttps://docs.redhat.com/en/documentation/openshift_container_platform/4.17/html/release_notes/\n\nSecurity Fix(es):\n\n* bind: Resource exhaustion via malformed DNSKEY handling (CVE-2025-8677)\n* bind: Cache poisoning attacks with unsolicited RRs (CVE-2025-40778)\n* bind: Cache poisoning due to weak PRNG (CVE-2025-40780)\n* expat: libexpat in Expat allows attackers to trigger large dynamic memory\nallocations via a small document that is submitted for parsing\n(CVE-2025-59375)\n* libssh: Invalid return code for chacha20 poly1305 with OpenSSL backend\n(CVE-2025-5987)\n* openssl: Out-of-bounds read & write in RFC 3211 KEK Unwrap\n(CVE-2025-9230)\n* libxslt: libxml2: Inifinite recursion at exsltDynMapFunction function in\nlibexslt/dynamic.c (CVE-2025-9714)\n* qemu-kvm: VNC WebSocket handshake use-after-free (CVE-2025-11234)\n\nFor more details about the security issue(s), including the impact, a CVSS\nscore, acknowledgments, and other related information, refer to the CVE\npage(s) listed in the References section.\n\nAll OpenShift Container Platform 4.17 users are advised to upgrade to these\nupdated packages and images when they are available in the appropriate\nrelease channel. To check for available updates, use the OpenShift CLI (oc)\nor web console. Instructions for upgrading a cluster are available at\nhttps://docs.redhat.com/en/documentation/openshift_container_platform/4.17/html-single/updating_clusters/index#updating-cluster-cli.",
+  "affected_products": [],
+  "cves": [
+    "CVE-2025-5987",
+    "CVE-2025-8677",
+    "CVE-2025-9230",
+    "CVE-2025-9714",
+    "CVE-2025-11234",
+    "CVE-2025-40778",
+    "CVE-2025-40780",
+    "CVE-2025-59375"
+  ],
+  "packages": [
+    "rhcos-aarch64-417.94.202601120213-0",
+    "rhcos-ppc64le-417.94.202601120213-0",
+    "rhcos-s390x-417.94.202601120213-0",
+    "rhcos-x86_64-417.94.202601120213-0"
+  ],
+  "full_text": "Red Hat OpenShift Container Platform release 4.17.47 is now available with\nupdates to packages and images that fix several bugs and add enhancements.\n\n This release includes a security update for Red Hat OpenShift Container\nPlatform 4.17.\n\nRed Hat Product Security has rated this update as having a security impact\nof Important. A Common Vulnerability Scoring System (CVSS) base score,\nwhich gives a detailed severity rating, is available for each vulnerability\nfrom the CVE link(s) in the References section.\n\nRed Hat OpenShift Container Platform is Red Hat's cloud computing\nKubernetes application platform solution designed for on-premise or private\ncloud deployments.\n\nThis advisory contains the container images for Red Hat OpenShift Container\nPlatform 4.17.47. See the following advisory for the RPM packages for this\nrelease:\n\nhttps://access.redhat.com/errata/RHSA-2026:0701\n\nSpace precludes documenting all of the container images in this advisory.\nSee the following Release Notes documentation, which will be updated\nshortly for this release, for details about these changes:\n\nhttps://docs.redhat.com/en/documentation/openshift_container_platform/4.17/html/release_notes/\n\nSecurity Fix(es):\n\n* bind: Resource exhaustion via malformed DNSKEY handling (CVE-2025-8677)\n* bind: Cache poisoning attacks with unsolicited RRs (CVE-2025-40778)\n* bind: Cache poisoning due to weak PRNG (CVE-2025-40780)\n* expat: libexpat in Expat allows attackers to trigger large dynamic memory\nallocations via a small document that is submitted for parsing\n(CVE-2025-59375)\n* libssh: Invalid return code for chacha20 poly1305 with OpenSSL backend\n(CVE-2025-5987)\n* openssl: Out-of-bounds read & write in RFC 3211 KEK Unwrap\n(CVE-2025-9230)\n* libxslt: libxml2: Inifinite recursion at exsltDynMapFunction function in\nlibexslt/dynamic.c (CVE-2025-9714)\n* qemu-kvm: VNC WebSocket handshake use-after-free (CVE-2025-11234)\n\nFor more details about the security issue(s), including the impact, a CVSS\nscore, acknowledgments, and other related information, refer to the CVE\npage(s) listed in the References section.\n\nAll OpenShift Container Platform 4.17 users are advised to upgrade to these\nupdated packages and images when they are available in the appropriate\nrelease channel. To check for available updates, use the OpenShift CLI (oc)\nor web console. Instructions for upgrading a cluster are available at\nhttps://docs.redhat.com/en/documentation/openshift_container_platform/4.17/html-single/updating_clusters/index#updating-cluster-cli."
+}

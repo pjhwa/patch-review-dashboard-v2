@@ -1,0 +1,27 @@
+{
+  "id": "RHSA-2026:3359",
+  "vendor": "Red Hat",
+  "type": "Security Advisory (RHSA)",
+  "title": "Red Hat Security Advisory: python-pyasn1 security update",
+  "issuedDate": "2026-02-25T14:42:21+00:00",
+  "updatedDate": "2026-02-25T14:42:21+00:00",
+  "pubDate": "2026-02-25T14:42:21+00:00",
+  "dateStr": "2026-02-25",
+  "url": "https://access.redhat.com/errata/RHSA-2026:3359",
+  "severity": "Important",
+  "overview": "An update for python-pyasn1 is now available for Red Hat Enterprise Linux 9.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "description": "Python is an interpreted, interactive, object-oriented programming language, which includes modules, classes, exceptions, very high level dynamic data types and dynamic typing. Python supports interfaces to many system calls and libraries, as well as to various windowing systems.\n\nSecurity Fix(es):\n\n* pyasn1: pyasn1: Denial of Service due to memory exhaustion from malformed RELATIVE-OID (CVE-2026-23490)\n\nFor more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux",
+    "Red Hat Enterprise Linux AppStream (v. 9)"
+  ],
+  "cves": [
+    "CVE-2026-23490"
+  ],
+  "packages": [
+    "python-pyasn1-0:0.4.8-7.el9_7.src",
+    "python3-pyasn1-0:0.4.8-7.el9_7.noarch",
+    "python3-pyasn1-modules-0:0.4.8-7.el9_7.noarch"
+  ],
+  "full_text": "An update for python-pyasn1 is now available for Red Hat Enterprise Linux 9.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nPython is an interpreted, interactive, object-oriented programming language, which includes modules, classes, exceptions, very high level dynamic data types and dynamic typing. Python supports interfaces to many system calls and libraries, as well as to various windowing systems.\n\nSecurity Fix(es):\n\n* pyasn1: pyasn1: Denial of Service due to memory exhaustion from malformed RELATIVE-OID (CVE-2026-23490)\n\nFor more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section."
+}

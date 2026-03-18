@@ -1,0 +1,21 @@
+{
+  "id": "RHSA-2026:3089",
+  "vendor": "Red Hat",
+  "url": "https://access.redhat.com/errata/RHSA-2026:3089",
+  "pubDate": "2026-02-23T14:46:08.000Z",
+  "dateStr": "2026-02-23",
+  "severity": "Important",
+  "title": "Red Hat Security Advisory: Red Hat Developer Hub 1.8.4 release.",
+  "overview": "Red Hat Developer Hub 1.8.4 has been released.",
+  "description": "Red Hat Developer Hub 1.8.4 has been released.",
+  "affected_products": [
+    "Red Hat Developer Hub 1.8"
+  ],
+  "cves": [
+    "CVE-2025-61726",
+    "CVE-2025-68121"
+  ],
+  "packages": [],
+  "fixes": "",
+  "full_text": "Red Hat Security Advisory: Red Hat Developer Hub 1.8.4 release.\n\nRed Hat Developer Hub 1.8.4 has been released.\n\nRed Hat Developer Hub 1.8.4 has been released.\n\n\n\nCVE-2025-61726: A flaw was found in the net/url package in the Go standard library. The package does not enforce a limit on the number of unique query parameters it parses. A Go application using the net/http.Request.ParseForm method will try to process all parameters provided in the request. A specially crafted HTTP request containing a massive number of query parameters will cause the application to consume an excessive amount of memory, eventually causing the application to crash or become unresponsive, resulting in a denial of service.\n\nCVE-2025-68121: During session resumption in crypto/tls, if the underlying Config has its ClientCAs or RootCAs fields mutated between the initial handshake and the resumed handshake, the resumed handshake may succeed when it should have failed. This may happen when a user calls Config.Clone and mutates the returned Config, or uses Config.GetConfigForClient. This can cause a client to resume a session with a server that it would not have resumed with during the initial handshake, or cause a server to resume a session with a client that it would not have resumed with during the initial handshake."
+}

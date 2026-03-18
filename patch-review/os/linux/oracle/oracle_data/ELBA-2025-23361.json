@@ -1,0 +1,28 @@
+{
+  "id": "ELBA-2025-23361",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "AppStream",
+  "title": "unixODBC bug fix and enhancement update",
+  "issuedDate": "2025-12-18T00:00:00Z",
+  "updatedDate": "2025-12-18T00:00:00Z",
+  "pubDate": "2025-12-18T00:00:00Z",
+  "dateStr": "2025-12-18",
+  "url": "https://linux.oracle.com/errata/ELBA-2025-23361.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 8.",
+  "description": "[2.3.7-2]\n- fix __iptr_as_string() overflows buffer\n- Resolves: RHEL-118425",
+  "affected_products": [
+    "Oracle Linux 8 for x86_64",
+    "Oracle Linux 8 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "unixODBC-devel-2.3.7-2.el8_10.i686",
+    "unixODBC-devel-2.3.7-2.el8_10.x86_64",
+    "unixODBC-2.3.7-2.el8_10.src",
+    "unixODBC-2.3.7-2.el8_10.i686",
+    "unixODBC-2.3.7-2.el8_10.x86_64"
+  ],
+  "full_text": "[2.3.7-2]\n- fix __iptr_as_string() overflows buffer\n- Resolves: RHEL-118425\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2025-23361.html"
+}

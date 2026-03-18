@@ -1,0 +1,22 @@
+{
+  "id": "RHSA-2025:22924",
+  "vendor": "Red Hat",
+  "type": "Security Advisory (RHSA)",
+  "title": "Red Hat Security Advisory: Red Hat JBoss Web Server 5.8.6 release and security update",
+  "issuedDate": "2025-12-09T15:22:27+00:00",
+  "updatedDate": "2025-12-09T15:22:27+00:00",
+  "pubDate": "2025-12-09T15:22:27+00:00",
+  "dateStr": "2025-12-09",
+  "url": "https://access.redhat.com/errata/RHSA-2025:22924",
+  "severity": "Important",
+  "overview": "Red Hat JBoss Web Server 5.8.6 zip release is now available for Red Hat Enterprise Linux 7, Red Hat Enterprise Linux 8, Red Hat Enterprise Linux 9, and Windows Server.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "description": "Red Hat JBoss Web Server is a fully integrated and certified set of components for hosting Java web applications. It is comprised of the Apache Tomcat Servlet container, JBoss HTTP Connector (mod_cluster), the PicketLink Vault extension for Apache Tomcat, and the Tomcat Native library.\n\nThis release of Red Hat JBoss Web Server 5.8.6 serves as a replacement for Red Hat JBoss Web Server 5.8.5. This release includes bug fixes, enhancements and component upgrades, which are documented in the Release Notes that are linked to in the References section.\n\nSecurity Fix(es):\n\n* [Minor Incident] tomcat: http/2 \"MadeYouReset\" DoS attack through HTTP/2 control frames [jws-5] (CVE-2025-48989)\n* tomcat: Apache Tomcat: Bypass of rules in Rewrite Valve [jws-5] (CVE-2025-31651)\n* tomcat-catalina: Apache Tomcat: Directory traversal via rewrite with possible RCE [jws-5] (CVE-2025-55752)\n\nFor more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section.",
+  "affected_products": [],
+  "cves": [
+    "CVE-2025-31651",
+    "CVE-2025-48989",
+    "CVE-2025-55752"
+  ],
+  "packages": [],
+  "full_text": "Red Hat JBoss Web Server 5.8.6 zip release is now available for Red Hat Enterprise Linux 7, Red Hat Enterprise Linux 8, Red Hat Enterprise Linux 9, and Windows Server.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nRed Hat JBoss Web Server is a fully integrated and certified set of components for hosting Java web applications. It is comprised of the Apache Tomcat Servlet container, JBoss HTTP Connector (mod_cluster), the PicketLink Vault extension for Apache Tomcat, and the Tomcat Native library.\n\nThis release of Red Hat JBoss Web Server 5.8.6 serves as a replacement for Red Hat JBoss Web Server 5.8.5. This release includes bug fixes, enhancements and component upgrades, which are documented in the Release Notes that are linked to in the References section.\n\nSecurity Fix(es):\n\n* [Minor Incident] tomcat: http/2 \"MadeYouReset\" DoS attack through HTTP/2 control frames [jws-5] (CVE-2025-48989)\n* tomcat: Apache Tomcat: Bypass of rules in Rewrite Valve [jws-5] (CVE-2025-31651)\n* tomcat-catalina: Apache Tomcat: Directory traversal via rewrite with possible RCE [jws-5] (CVE-2025-55752)\n\nFor more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section."
+}

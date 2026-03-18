@@ -1,0 +1,42 @@
+{
+  "id": "RHBA-2025:20740",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: grafana bug fix and enhancement update",
+  "issuedDate": "2025-11-11T07:50:57Z",
+  "updatedDate": "2025-11-11T07:50:57Z",
+  "pubDate": "2025-11-11T07:50:57Z",
+  "dateStr": "2025-11-11",
+  "url": "https://access.redhat.com/errata/RHBA-2025:20740",
+  "severity": "None",
+  "overview": "An update for grafana is now available for Red Hat Enterprise Linux 10.",
+  "description": "For detailed information on changes in this release, see the Red Hat Enterprise Linux 9 Release Notes linked from the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux for x86_64 10 x86_64",
+    "Red Hat Enterprise Linux for ARM 64",
+    "Red Hat Enterprise Linux for IBM z Systems",
+    "Red Hat Enterprise Linux for Power, little endian"
+  ],
+  "cves": [],
+  "packages": [
+    "grafana-10.2.6-15.el9.src",
+    "grafana-10.2.6-15.el9.x86_64",
+    "grafana-debuginfo-10.2.6-15.el9.x86_64",
+    "grafana-debugsource-10.2.6-15.el9.x86_64",
+    "grafana-selinux-10.2.6-15.el9.x86_64",
+    "grafana-10.2.6-15.el9.s390x",
+    "grafana-debuginfo-10.2.6-15.el9.s390x",
+    "grafana-debugsource-10.2.6-15.el9.s390x",
+    "grafana-selinux-10.2.6-15.el9.s390x",
+    "grafana-10.2.6-15.el9.ppc64le",
+    "grafana-debuginfo-10.2.6-15.el9.ppc64le",
+    "grafana-debugsource-10.2.6-15.el9.ppc64le",
+    "grafana-selinux-10.2.6-15.el9.ppc64le",
+    "grafana-10.2.6-15.el9.aarch64",
+    "grafana-debuginfo-10.2.6-15.el9.aarch64",
+    "grafana-debugsource-10.2.6-15.el9.aarch64",
+    "grafana-selinux-10.2.6-15.el9.aarch64"
+  ],
+  "fixes": [],
+  "full_text": "An update for grafana is now available for Red Hat Enterprise Linux 10.\n\nFor detailed information on changes in this release, see the Red Hat Enterprise Linux 9 Release Notes linked from the References section."
+}

@@ -1,0 +1,29 @@
+{
+  "id": "ELSA-2026-3405",
+  "vendor": "Oracle",
+  "type": "Security Advisory (ELSA)",
+  "title": " libpng security update",
+  "issuedDate": "2026-02-26T00:00:00Z",
+  "updatedDate": "2026-02-26T00:00:00Z",
+  "pubDate": "2026-02-26T00:00:00Z",
+  "dateStr": "2026-02-26",
+  "url": "https://linux.oracle.com/errata/ELSA-2026-3405.html",
+  "severity": "Important",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 9.",
+  "description": "[2:1.6.37-12.2]\n- fix CVE-2026-25646: heap buffer overflow in png_set_quantize (RHEL-148970)\n- fix CVE-2026-22695: heap buffer over-read in png_image_finish_read (RHEL-148403)\n- fix CVE-2026-22801: heap buffer over-read in png_image_write_*bit (RHEL-147343)",
+  "affected_products": [
+    "Oracle Linux 9 for x86_64",
+    "Oracle Linux 9 for aarch64"
+  ],
+  "cves": [
+    "CVE-2026-22695",
+    "CVE-2026-22801",
+    "CVE-2026-25646"
+  ],
+  "packages": [
+    "libpng-1.6.37-12.el9_7.2.src",
+    "libpng-1.6.37-12.el9_7.2.i686",
+    "libpng-1.6.37-12.el9_7.2.x86_64"
+  ],
+  "full_text": "[2:1.6.37-12.2]\n- fix CVE-2026-25646: heap buffer overflow in png_set_quantize (RHEL-148970)\n- fix CVE-2026-22695: heap buffer over-read in png_image_finish_read (RHEL-148403)\n- fix CVE-2026-22801: heap buffer over-read in png_image_write_*bit (RHEL-147343)\n\nReferences:\nhttps://linux.oracle.com/errata/ELSA-2026-3405.html\nhttps://linux.oracle.com/cve/CVE-2026-22695.html\nhttps://linux.oracle.com/cve/CVE-2026-22801.html\nhttps://linux.oracle.com/cve/CVE-2026-25646.html"
+}

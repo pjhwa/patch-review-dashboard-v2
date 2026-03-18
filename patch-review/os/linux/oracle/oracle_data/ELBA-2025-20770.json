@@ -1,0 +1,26 @@
+{
+  "id": "ELBA-2025-20770",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "AppStream",
+  "title": "pykickstart bug fix and enhancement update",
+  "issuedDate": "2025-11-17T00:00:00Z",
+  "updatedDate": "2025-11-17T00:00:00Z",
+  "pubDate": "2025-11-17T00:00:00Z",
+  "dateStr": "2025-11-17",
+  "url": "https://linux.oracle.com/errata/ELBA-2025-20770.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 9.",
+  "description": "[3.32.15-1.0.1]\n- Support btrfs partition command in RHEL9_Partition class\n  [Orabug: 33796791]\n- Fix exception in installer.\n- Sync OL 8 command handlers with upstream [Orabug: 31683439]\n- Don't exit installer if btrfs is specified for autopart [Orabug: 31192722]\n- Don't exit installer with message that btrfs is unsupported [Orabug: 31192722]\n- Fix crash when using btrfs [Orabug: 30792917]\n- Remove the RHSM command [Orabug: 30902364]\n- drop syspurpose command [Orabug: 29443881]\n- Include the OL8 Handler class in the commandMap [Orabug: 29373077]\n- Make sure version is output properly for OL [Orabug: 20440019]\n- Alter tools to recognize OL version strings [Orabug: 20440019]\n- Enable Oracle Linux handlers\n\n[3.32.15-1]\n- workflows: run tests using only python 3.9 (bcl)\n  Related: RHEL-75659\n- workflows: Switch to using ubuntu-latest (bcl)\n  Related: RHEL-75659\n- Do not remove 'md' prefix from RAID names (vtrefny)\n  Resolves: RHEL-75659",
+  "affected_products": [
+    "Oracle Linux 9 for x86_64",
+    "Oracle Linux 9 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "python3-kickstart-3.32.15-1.0.1.el9.noarch",
+    "pykickstart-3.32.15-1.0.1.el9.src",
+    "pykickstart-3.32.15-1.0.1.el9.noarch"
+  ],
+  "full_text": "[3.32.15-1.0.1]\n- Support btrfs partition command in RHEL9_Partition class\n  [Orabug: 33796791]\n- Fix exception in installer.\n- Sync OL 8 command handlers with upstream [Orabug: 31683439]\n- Don't exit installer if btrfs is specified for autopart [Orabug: 31192722]\n- Don't exit installer with message that btrfs is unsupported [Orabug: 31192722]\n- Fix crash when using btrfs [Orabug: 30792917]\n- Remove the RHSM command [Orabug: 30902364]\n- drop syspurpose command [Orabug: 29443881]\n- Include the OL8 Handler class in the commandMap [Orabug: 29373077]\n- Make sure version is output properly for OL [Orabug: 20440019]\n- Alter tools to recognize OL version strings [Orabug: 20440019]\n- Enable Oracle Linux handlers\n\n[3.32.15-1]\n- workflows: run tests using only python 3.9 (bcl)\n  Related: RHEL-75659\n- workflows: Switch to using ubuntu-latest (bcl)\n  Related: RHEL-75659\n- Do not remove 'md' prefix from RAID names (vtrefny)\n  Resolves: RHEL-75659\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2025-20770.html"
+}

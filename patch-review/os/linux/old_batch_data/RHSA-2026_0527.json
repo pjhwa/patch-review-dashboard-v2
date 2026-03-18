@@ -1,0 +1,21 @@
+{
+  "id": "RHSA-2026:0527",
+  "vendor": "Red Hat",
+  "url": "https://access.redhat.com/errata/RHSA-2026:0527",
+  "pubDate": "2026-01-13T16:52:50.000Z",
+  "dateStr": "2026-01-13",
+  "severity": "Important",
+  "title": "Red Hat Security Advisory: VolSync v0.14 security fixes and container updates",
+  "overview": "VolSync v0.14 General Availability release images, which provide enhancements, security fixes, and updated container images.\n\nRed Hat Product Security has rated this update as having a security impact\nof Important. A Common Vulnerability Scoring System (CVSS) base score,\nwhich gives a detailed severity rating, is available for each vulnerability\nfrom the CVE links in the References section.",
+  "description": "VolSync v0.14 General Availability release images, which provide enhancements, security fixes, and updated container images.\n\nRed Hat Product Security has rated this update as having a security impact\nof Important. A Common Vulnerability Scoring System (CVSS) base score,\nwhich gives a detailed severity rating, is available for each vulnerability\nfrom the CVE links in the References section.",
+  "affected_products": [
+    "Red Hat Advanced Cluster Management for Kubernetes 2.15"
+  ],
+  "cves": [
+    "CVE-2025-47913",
+    "CVE-2025-58183"
+  ],
+  "packages": [],
+  "fixes": "",
+  "full_text": "Red Hat Security Advisory: VolSync v0.14 security fixes and container updates\n\nVolSync v0.14 General Availability release images, which provide enhancements, security fixes, and updated container images.\n\nRed Hat Product Security has rated this update as having a security impact\nof Important. A Common Vulnerability Scoring System (CVSS) base score,\nwhich gives a detailed severity rating, is available for each vulnerability\nfrom the CVE links in the References section.\n\nVolSync v0.14 General Availability release images, which provide enhancements, security fixes, and updated container images.\n\nRed Hat Product Security has rated this update as having a security impact\nof Important. A Common Vulnerability Scoring System (CVSS) base score,\nwhich gives a detailed severity rating, is available for each vulnerability\nfrom the CVE links in the References section.\n\n\n\nCVE-2025-47913: A flaw in golang.org/x/crypto/ssh/agent causes the SSH agent client to panic when a peer responds with the generic SSH_AGENT_SUCCESS (0x06) message to requests expecting typed replies (e.g., List, Sign). The unmarshal layer produces an unexpected message type, which the client code does not handle, leading to panic(\"unreachable\") or a nil-pointer dereference. A malicious agent or forwarded connection can exploit this to terminate the client process.\n\nCVE-2025-58183: A flaw was found in the archive/tar package in the Go standard library. tar.Reader does not set a maximum size on the number of sparse region data blocks in GNU tar pax 1.0 sparse files. A specially crafted tar archive with a pax header indicating a big number of sparse regions can cause a Go program to try to allocate a large amount of memory, causing an out-of-memory condition and resulting in a denial of service."
+}

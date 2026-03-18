@@ -1,0 +1,21 @@
+{
+  "id": "RHSA-2026:3507",
+  "vendor": "Red Hat",
+  "url": "https://access.redhat.com/errata/RHSA-2026:3507",
+  "pubDate": "2026-03-02T08:05:16.000Z",
+  "dateStr": "2026-03-02",
+  "severity": "Important",
+  "title": "Red Hat Security Advisory: valkey security update",
+  "overview": "An update for valkey is now available for Red Hat Enterprise Linux 9.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "description": "An update for valkey is now available for Red Hat Enterprise Linux 9.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux AppStream (v. 9)"
+  ],
+  "cves": [
+    "CVE-2025-67733",
+    "CVE-2026-21863"
+  ],
+  "packages": [],
+  "fixes": "",
+  "full_text": "Red Hat Security Advisory: valkey security update\n\nAn update for valkey is now available for Red Hat Enterprise Linux 9.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nAn update for valkey is now available for Red Hat Enterprise Linux 9.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nUpdated Packages:\nvalkey-8.0.7-1.el9_7.src.rpm\nvalkey-8.0.7-1.el9_7.x86_64.rpm\nvalkey-debuginfo-8.0.7-1.el9_7.x86_64.rpm\nvalkey-debugsource-8.0.7-1.el9_7.x86_64.rpm\nvalkey-devel-8.0.7-1.el9_7.x86_64.rpm\nvalkey-8.0.7-1.el9_7.s390x.rpm\nvalkey-debuginfo-8.0.7-1.el9_7.s390x.rpm\nvalkey-debugsource-8.0.7-1.el9_7.s390x.rpm\nvalkey-devel-8.0.7-1.el9_7.s390x.rpm\nvalkey-8.0.7-1.el9_7.ppc64le.rpm\nvalkey-debuginfo-8.0.7-1.el9_7.ppc64le.rpm\nvalkey-debugsource-8.0.7-1.el9_7.ppc64le.rpm\nvalkey-devel-8.0.7-1.el9_7.ppc64le.rpm\nvalkey-8.0.7-1.el9_7.aarch64.rpm\nvalkey-debuginfo-8.0.7-1.el9_7.aarch64.rpm\nvalkey-debugsource-8.0.7-1.el9_7.aarch64.rpm\nvalkey-devel-8.0.7-1.el9_7.aarch64.rpm\n\nCVE-2025-67733: A flaw was found in Valkey, a distributed key-value database. A malicious user can exploit this vulnerability by using scripting commands to inject arbitrary information into the response stream. This is caused by improper handling of null characters in the error handling code for Lua scripts. Successful exploitation could lead to corrupting or returning tampered data to other users on the same connection, impacting data integrity and availability.\n\nCVE-2026-21863: A flaw was found in Valkey, a distributed key-value database. A malicious actor with access to the Valkey clusterbus port can exploit an input validation vulnerability by sending a specially crafted invalid clusterbus packet. This lack of validation for clusterbus ping extension packets can lead to an out-of-bounds read. Consequently, this may cause the system to crash, resulting in a Denial of Service (DoS)."
+}

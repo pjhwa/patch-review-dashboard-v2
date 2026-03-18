@@ -1,0 +1,45 @@
+{
+  "id": "RHBA-2025:20217",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: smartmontools bug fix and enhancement update",
+  "issuedDate": "2025-11-11T07:25:28Z",
+  "updatedDate": "2025-11-11T07:25:28Z",
+  "pubDate": "2025-11-11T07:25:28Z",
+  "dateStr": "2025-11-11",
+  "url": "https://access.redhat.com/errata/RHBA-2025:20217",
+  "severity": "None",
+  "overview": "An update for smartmontools is now available for Red Hat Enterprise Linux 10.",
+  "description": "For detailed information on changes in this release, see the Red Hat Enterprise Linux 10 Release Notes linked from the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux for Power, little endian",
+    "Red Hat Enterprise Linux for x86_64 10 x86_64",
+    "Red Hat Enterprise Linux for ARM 64",
+    "Red Hat Enterprise Linux for IBM z Systems"
+  ],
+  "cves": [],
+  "packages": [
+    "smartmontools-7.4-8.el10.src",
+    "smartmontools-7.4-8.el10.x86_64",
+    "smartmontools-debuginfo-7.4-8.el10.x86_64",
+    "smartmontools-debugsource-7.4-8.el10.x86_64",
+    "smartmontools-selinux-7.4-8.el10.noarch",
+    "smartmontools-7.4-8.el10.s390x",
+    "smartmontools-debuginfo-7.4-8.el10.s390x",
+    "smartmontools-debugsource-7.4-8.el10.s390x",
+    "smartmontools-7.4-8.el10.ppc64le",
+    "smartmontools-debuginfo-7.4-8.el10.ppc64le",
+    "smartmontools-debugsource-7.4-8.el10.ppc64le",
+    "smartmontools-7.4-8.el10.aarch64",
+    "smartmontools-debuginfo-7.4-8.el10.aarch64",
+    "smartmontools-debugsource-7.4-8.el10.aarch64"
+  ],
+  "fixes": [
+    {
+      "id": "RHEL-83471",
+      "url": "https://issues.redhat.com/browse/RHEL-83471",
+      "description": "[RHEL10] /usr/sbin/smartd get coredump"
+    }
+  ],
+  "full_text": "An update for smartmontools is now available for Red Hat Enterprise Linux 10.\n\nFor detailed information on changes in this release, see the Red Hat Enterprise Linux 10 Release Notes linked from the References section."
+}

@@ -1,0 +1,38 @@
+{
+  "id": "RHBA-2025:20408",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: perl-FCGI bug fix and enhancement update",
+  "issuedDate": "2025-11-11T07:26:24Z",
+  "updatedDate": "2025-11-11T07:26:24Z",
+  "pubDate": "2025-11-11T07:26:24Z",
+  "dateStr": "2025-11-11",
+  "url": "https://access.redhat.com/errata/RHBA-2025:20408",
+  "severity": "None",
+  "overview": "An update for perl-FCGI is now available for Red Hat Enterprise Linux 10.",
+  "description": "For detailed information on changes in this release, see the Red Hat Enterprise Linux 10 Release Notes linked from the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux for IBM z Systems",
+    "Red Hat Enterprise Linux for x86_64 10 x86_64",
+    "Red Hat Enterprise Linux for ARM 64",
+    "Red Hat Enterprise Linux for Power, little endian"
+  ],
+  "cves": [],
+  "packages": [
+    "perl-FCGI-0.82-14.el10.src",
+    "perl-FCGI-0.82-14.el10.x86_64",
+    "perl-FCGI-debuginfo-0.82-14.el10.x86_64",
+    "perl-FCGI-debugsource-0.82-14.el10.x86_64",
+    "perl-FCGI-0.82-14.el10.s390x",
+    "perl-FCGI-debuginfo-0.82-14.el10.s390x",
+    "perl-FCGI-debugsource-0.82-14.el10.s390x",
+    "perl-FCGI-0.82-14.el10.ppc64le",
+    "perl-FCGI-debuginfo-0.82-14.el10.ppc64le",
+    "perl-FCGI-debugsource-0.82-14.el10.ppc64le",
+    "perl-FCGI-0.82-14.el10.aarch64",
+    "perl-FCGI-debuginfo-0.82-14.el10.aarch64",
+    "perl-FCGI-debugsource-0.82-14.el10.aarch64"
+  ],
+  "fixes": [],
+  "full_text": "An update for perl-FCGI is now available for Red Hat Enterprise Linux 10.\n\nFor detailed information on changes in this release, see the Red Hat Enterprise Linux 10 Release Notes linked from the References section."
+}

@@ -1,0 +1,24 @@
+{
+  "id": "ELBA-2025-23288",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2025-December/019364.html",
+  "synopsis": "[El-errata] ELBA-2025-23288 Oracle Linux 10 virt-v2v bug fix and enhancement update",
+  "dateStr": "2025-December",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Bug Fix Advisory ELBA-2025-23288",
+  "description": "[2.8.1-13.0.1]\n- Replaced bugzilla.oracle.com references [Orabug: 34202300]\n- replaced upstream references [Orabug:34089586]\n\n[1:2.8.1-13]\n- Fix pnputil driver store after conversion\n  resolves: RHEL-128908\n\n[1:2.8.1-12]\n- Fix ESP conversion if C:\\Windows\\Temp has alternate case\n  resolves: RHEL-124791",
+  "affected_products": [
+    "Oracle Linux 10"
+  ],
+  "packages": [
+    "virt-v2v-2.8.1-13.0.1.el10_1.x86_64.rpm",
+    "virt-v2v-bash-completion-2.8.1-13.0.1.el10_1.noarch.rpm",
+    "virt-v2v-man-pages-ja-2.8.1-13.0.1.el10_1.noarch.rpm",
+    "virt-v2v-man-pages-uk-2.8.1-13.0.1.el10_1.noarch.rpm"
+  ],
+  "cves": [],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Bug Fix Advisory ELBA-2025-23288\n\nhttp://linux.oracle.com/errata/ELBA-2025-23288.html\n\nThe following updated rpms for Oracle Linux 10 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\nvirt-v2v-2.8.1-13.0.1.el10_1.x86_64.rpm\nvirt-v2v-bash-completion-2.8.1-13.0.1.el10_1.noarch.rpm\nvirt-v2v-man-pages-ja-2.8.1-13.0.1.el10_1.noarch.rpm\nvirt-v2v-man-pages-uk-2.8.1-13.0.1.el10_1.noarch.rpm\n\n\n\nSRPMS:\nhttp://oss.oracle.com/ol10/SRPMS-updates/virt-v2v-2.8.1-13.0.1.el10_1.src.rpm\n\n\n\nDescription of changes:\n\n[2.8.1-13.0.1]\n- Replaced bugzilla.oracle.com references [Orabug: 34202300]\n- replaced upstream references [Orabug:34089586]\n\n[1:2.8.1-13]\n- Fix pnputil driver store after conversion\n  resolves: RHEL-128908\n\n[1:2.8.1-12]\n- Fix ESP conversion if C:\\Windows\\Temp has alternate case\n  resolves: RHEL-124791",
+  "vendor": "Oracle"
+}

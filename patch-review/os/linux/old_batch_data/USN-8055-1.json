@@ -1,0 +1,26 @@
+{
+  "id": "USN-8055-1",
+  "url": "https://ubuntu.com/security/notices/USN-8055-1",
+  "synopsis": "USN-8055-1: Evolution Data Server vulnerability",
+  "dateStr": "23 February 2026",
+  "overview": "Evolution Data Server could be made to remove files.",
+  "description": "It was discovered that Evolution Data Server incorrectly handled removing\nlocal cache files. An attacker could possibly use this issue to cause\nEvolution Data Server to remove arbitrary files.\n\n \n\n \n\n \n\nIt was discovered that Evolution Data Server incorrectly handled removing\nlocal cache files. An attacker could possibly use this issue to cause\nEvolution Data Server to remove arbitrary files.",
+  "packages": [
+    "evolution"
+  ],
+  "cves": [
+    "CVE-2026-2604"
+  ],
+  "affected_products": [
+    "25.10",
+    "24.04 LTS",
+    "22.04 LTS",
+    "Open side navigation"
+  ],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Ubuntu Security Notices\n\nUSN-8055-1\n\n \n\n \n\n \n\n \n\n \n\n \nUSN-8055-1: Evolution Data Server vulnerability\n\n \n\n \n\n \n\n \nPublication date\n\n \n\n \n\n \n23 February 2026\n\n \n\n \n\n \n\n \n\n \nOverview\n\n \n\n \n\n \nEvolution Data Server could be made to remove files.\n\n \n\n \n\n \n\n \n\n \nReleases\n\n \n\n \n\n \n\n 25.10\n\n 24.04 LTS\n\n22.04 LTS\n\n \n\n \n\n \n\n \n\n \n\n \n\n Open side navigation\n \n\n \n\n \nPackages\n\n \n\n evolution-data-server - Evolution suite data server\n \n\n \n\n \nDetails\n\n \n\n \n\nIt was discovered that Evolution Data Server incorrectly handled removing\nlocal cache files. An attacker could possibly use this issue to cause\nEvolution Data Server to remove arbitrary files.\n\n \n\n \n\n \n\nIt was discovered that Evolution Data Server incorrectly handled removing\nlocal cache files. An attacker could possibly use this issue to cause\nEvolution Data Server to remove arbitrary files.\n\n \n\n \n\n \n\n \nUpdate instructions\n\n \n\n \n\n \n\n \n\nAfter a standard system update you need to restart your session to make all\nthe necessary changes.\n\n Learn more about how to get the fixes.\n \n\n \n\n \n\n \n\n \nThe problem can be corrected by updating your system to the following package versions:\n\n \n\n \n\n \n\n \n\n Ubuntu Release\n Package Version\n \n\n 25.10\n\nquesting\n\n evolution-data-server – \n\n3.56.2-3ubuntu0.1\n\n evolution-data-server-common – \n\n3.56.2-3ubuntu0.1\n\n libcamel-1.2-64t64 – \n\n3.56.2-3ubuntu0.1\n\n libebackend-1.2-11t64 – \n\n3.56.2-3ubuntu0.1\n\n libebook-1.2-21t64 – \n\n3.56.2-3ubuntu0.1\n\n libebook-contacts-1.2-4t64 – \n\n3.56.2-3ubuntu0.1\n\n libecal-2.0-3 – \n\n3.56.2-3ubuntu0.1\n\n libedata-book-1.2-27t64 – \n\n3.56.2-3ubuntu0.1\n\n libedata-cal-2.0-2t64 – \n\n3.56.2-3ubuntu0.1\n\n libedataserver-1.2-27t64 – \n\n3.56.2-3ubuntu0.1\n\n libedataserverui-1.2-4t64 – \n\n3.56.2-3ubuntu0.1\n\n libedataserverui4-1.0-0t64 – \n\n3.56.2-3ubuntu0.1\n\n \n\n 24.04\n\nLTS noble\n\n evolution-data-server – \n\n3.52.3-0ubuntu1.2\n\n evolution-data-server-common – \n\n3.52.3-0ubuntu1.2\n\n libcamel-1.2-64t64 – \n\n3.52.3-0ubuntu1.2\n\n libebackend-1.2-11t64 – \n\n3.52.3-0ubuntu1.2\n\n libebook-1.2-21t64 – \n\n3.52.3-0ubuntu1.2\n\n libebook-contacts-1.2-4t64 – \n\n3.52.3-0ubuntu1.2\n\n libecal-2.0-3 – \n\n3.52.3-0ubuntu1.2\n\n libedata-book-1.2-27t64 – \n\n3.52.3-0ubuntu1.2\n\n libedata-cal-2.0-2t64 – \n\n3.52.3-0ubuntu1.2\n\n libedataserver-1.2-27t64 – \n\n3.52.3-0ubuntu1.2\n\n libedataserverui-1.2-4t64 – \n\n3.52.3-0ubuntu1.2\n\n libedataserverui4-1.0-0t64 – \n\n3.52.3-0ubuntu1.2\n\n \n\n 22.04\n\nLTS jammy\n\n evolution-data-server – \n\n3.44.4-0ubuntu1.2\n\n evolution-data-server-common – \n\n3.44.4-0ubuntu1.2\n\n libcamel-1.2-63 – \n\n3.44.4-0ubuntu1.2\n\n libebackend-1.2-10 – \n\n3.44.4-0ubuntu1.2\n\n libebook-1.2-20 – \n\n3.44.4-0ubuntu1.2\n\n libebook-contacts-1.2-3 – \n\n3.44.4-0ubuntu1.2\n\n libecal-2.0-1 – \n\n3.44.4-0ubuntu1.2\n\n libedata-book-1.2-26 – \n\n3.44.4-0ubuntu1.2\n\n libedata-cal-2.0-1 – \n\n3.44.4-0ubuntu1.2\n\n libedataserver-1.2-26 – \n\n3.44.4-0ubuntu1.2\n\n libedataserverui-1.2-3 – \n\n3.44.4-0ubuntu1.2\n\n \n\nReduce your security exposure\n\n \n\n Ubuntu Pro provides ten-year security coverage to 25,000+ packages in Main and Universe repositories, and it is free for up to five machines.\n \n\n \n\n Get Ubuntu Pro\n \n\n \n\nReferences\n\n \n\n \n\n CVE-2026-2604\n \n\n \n\n \n\n CVE-2026-2604",
+  "title": "USN-8055-1: Evolution Data Server vulnerability | Ubuntu security notices | Ubuntu",
+  "pubDate": "2026-02-22T15:00:00.000Z",
+  "vendor": "Ubuntu"
+}

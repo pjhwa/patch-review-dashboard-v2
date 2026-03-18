@@ -1,0 +1,60 @@
+{
+  "id": "RHBA-2025:20302",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: python-virt-firmware bug fix and enhancement update",
+  "issuedDate": "2025-11-11T07:26:00Z",
+  "updatedDate": "2025-11-11T07:26:00Z",
+  "pubDate": "2025-11-11T07:26:00Z",
+  "dateStr": "2025-11-11",
+  "url": "https://access.redhat.com/errata/RHBA-2025:20302",
+  "severity": "None",
+  "overview": "An update for python-virt-firmware is now available for Red Hat Enterprise Linux 10.",
+  "description": "For detailed information on changes in this release, see the Red Hat Enterprise Linux 10 Release Notes linked from the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux for IBM z Systems",
+    "Red Hat Enterprise Linux for Power, little endian",
+    "Red Hat Enterprise Linux for ARM 64",
+    "Red Hat Enterprise Linux for x86_64 10 x86_64"
+  ],
+  "cves": [],
+  "packages": [
+    "python-virt-firmware-25.7.3-1.el10.src",
+    "python3-virt-firmware-25.7.3-1.el10.noarch",
+    "uki-direct-25.7.3-1.el10.noarch",
+    "virt-sb-certs-25.7.3-1.el10.noarch"
+  ],
+  "fixes": [
+    {
+      "id": "RHEL-84416",
+      "url": "https://issues.redhat.com/browse/RHEL-84416",
+      "description": "[virt-firmware,rhel-10] rebase to 25.3 release"
+    },
+    {
+      "id": "RHEL-84982",
+      "url": "https://issues.redhat.com/browse/RHEL-84982",
+      "description": "[virt-firmware,rhel-10] do not run bootctl if not needed"
+    },
+    {
+      "id": "RHEL-85519",
+      "url": "https://issues.redhat.com/browse/RHEL-85519",
+      "description": "[virt-firmware,rhel-10] do not use %libdir in specfile"
+    },
+    {
+      "id": "RHEL-87172",
+      "url": "https://issues.redhat.com/browse/RHEL-87172",
+      "description": "[rhel-10] [python-virt-firmware] rebase to version 25.4.1"
+    },
+    {
+      "id": "RHEL-84415",
+      "url": "https://issues.redhat.com/browse/RHEL-84415",
+      "description": "[virt-firmware,rhel-10] move secure boot certificates into sub-rpm"
+    },
+    {
+      "id": "RHEL-101730",
+      "url": "https://issues.redhat.com/browse/RHEL-101730",
+      "description": "[virt-firmware,rhel-10] rebase to 25.7 release"
+    }
+  ],
+  "full_text": "An update for python-virt-firmware is now available for Red Hat Enterprise Linux 10.\n\nFor detailed information on changes in this release, see the Red Hat Enterprise Linux 10 Release Notes linked from the References section."
+}

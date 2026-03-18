@@ -1,0 +1,70 @@
+{
+  "id": "RHBA-2025:21123",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: leapp-repository bug fix and enhancement update",
+  "issuedDate": "2025-11-12T11:39:37Z",
+  "updatedDate": "2025-11-12T11:39:37Z",
+  "pubDate": "2025-11-12T11:39:37Z",
+  "dateStr": "2025-11-12",
+  "url": "https://access.redhat.com/errata/RHBA-2025:21123",
+  "severity": "None",
+  "overview": "An update for leapp-repository is now available for Red Hat Enterprise Linux 10.",
+  "description": "Repositories for leappBug Fix(es) and Enhancement(s): Inhibited upgrade because of Intel i5-1250PE CPU (JIRA:RHEL-53801)  Traceback in target_userspace_creator (JIRA:RHEL-77945)  Leapp upgrade from RHEL 8.10 to RHEL 9.x fails when Valgrind packages are installed (JIRA:RHEL-84978)  Leapp module.py library does not read the DNF config (JIRA:RHEL-39095)  Azure Gen1 VMs upgraded from RHEL 7 > RHEL 8 > RHEL 9 fail to boot (JIRA:RHEL-38255)  Getting \"Error: GPG check FAILED\" while performing leapp upgrade (JIRA:RHEL-47472)  Missing checks for (in)correct target version format (JIRA:RHEL-96238)  Create a Leapp actor for MySQL for RHEL 8->9 migration (JIRA:RHEL-5459)  Leapp fails while running \"su - -c update-ca-trust\" exit code 127 with fapolicy enabled [rhel-8] (JIRA:RHEL-65599)  Rebase leapp-repository to v0.23.0 (rhel-8.10) (JIRA:RHEL-67627)",
+  "affected_products": [
+    "Red Hat Enterprise Linux for IBM z Systems",
+    "Red Hat Enterprise Linux for ARM 64",
+    "Red Hat Enterprise Linux for x86_64 10 x86_64",
+    "Red Hat Enterprise Linux for Power, little endian"
+  ],
+  "cves": [],
+  "packages": [
+    "leapp-repository-0.23.0-1.el8_10.src",
+    "leapp-upgrade-el8toel9-0.23.0-1.el8_10.noarch",
+    "leapp-upgrade-el8toel9-deps-0.23.0-1.el8_10.noarch",
+    "leapp-upgrade-el8toel9-fapolicyd-0.23.0-1.el8_10.noarch"
+  ],
+  "fixes": [
+    {
+      "id": "RHEL-77945",
+      "url": "https://issues.redhat.com/browse/RHEL-77945",
+      "description": "Traceback in target_userspace_creator"
+    },
+    {
+      "id": "RHEL-84978",
+      "url": "https://issues.redhat.com/browse/RHEL-84978",
+      "description": "Leapp upgrade from RHEL 8.10 to RHEL 9.x fails when Valgrind packages are installed"
+    },
+    {
+      "id": "RHEL-39095",
+      "url": "https://issues.redhat.com/browse/RHEL-39095",
+      "description": "Leapp module.py library does not read the DNF config"
+    },
+    {
+      "id": "RHEL-38255",
+      "url": "https://issues.redhat.com/browse/RHEL-38255",
+      "description": "Azure Gen1 VMs upgraded from RHEL 7 > RHEL 8 > RHEL 9 fail to boot"
+    },
+    {
+      "id": "RHEL-96238",
+      "url": "https://issues.redhat.com/browse/RHEL-96238",
+      "description": "Missing checks for (in)correct target version format"
+    },
+    {
+      "id": "RHEL-5459",
+      "url": "https://issues.redhat.com/browse/RHEL-5459",
+      "description": "Create a Leapp actor for MySQL for RHEL 8->9 migration"
+    },
+    {
+      "id": "RHEL-65599",
+      "url": "https://issues.redhat.com/browse/RHEL-65599",
+      "description": "Leapp fails while running \"su - -c update-ca-trust\" exit code 127 with fapolicy enabled [rhel-8]"
+    },
+    {
+      "id": "RHEL-67627",
+      "url": "https://issues.redhat.com/browse/RHEL-67627",
+      "description": "Rebase leapp-repository to v0.23.0 (rhel-8.10)"
+    }
+  ],
+  "full_text": "An update for leapp-repository is now available for Red Hat Enterprise Linux 10.\n\nRepositories for leappBug Fix(es) and Enhancement(s): Inhibited upgrade because of Intel i5-1250PE CPU (JIRA:RHEL-53801)  Traceback in target_userspace_creator (JIRA:RHEL-77945)  Leapp upgrade from RHEL 8.10 to RHEL 9.x fails when Valgrind packages are installed (JIRA:RHEL-84978)  Leapp module.py library does not read the DNF config (JIRA:RHEL-39095)  Azure Gen1 VMs upgraded from RHEL 7 > RHEL 8 > RHEL 9 fail to boot (JIRA:RHEL-38255)  Getting \"Error: GPG check FAILED\" while performing leapp upgrade (JIRA:RHEL-47472)  Missing checks for (in)correct target version format (JIRA:RHEL-96238)  Create a Leapp actor for MySQL for RHEL 8->9 migration (JIRA:RHEL-5459)  Leapp fails while running \"su - -c update-ca-trust\" exit code 127 with fapolicy enabled [rhel-8] (JIRA:RHEL-65599)  Rebase leapp-repository to v0.23.0 (rhel-8.10) (JIRA:RHEL-67627)"
+}

@@ -1,0 +1,30 @@
+{
+  "id": "ELBA-2025-19538",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "RHCK",
+  "title": "dracut bug fix and enhancement update",
+  "issuedDate": "2025-11-06T00:00:00Z",
+  "updatedDate": "2025-11-06T00:00:00Z",
+  "pubDate": "2025-11-06T00:00:00Z",
+  "dateStr": "2025-11-06",
+  "url": "https://linux.oracle.com/errata/ELBA-2025-19538.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 9.",
+  "description": "[057-89.git20250311.0.1]\n- Ship Oracle IMA certificate [Orabug: 35992862]\n- Ship 98-integrity.conf, populating initramfs with Oracle IMA certificate [Orabug: 35992862]\n- fix(systemd): add missing modprobe@.service [Orabug: 35267570]\n- Include sys-fs-fuse-connections.mount if needed [Orabug: 35267570]\n- network-legacy: Revert some shellcheck that breaks parse_option_121 in dhclient [Orabug: 33778173]\n- Change installation dir in network legacy module-setup so that file is never missing [Orabug: 33516170]\n- Fix paths in squash module, so that correct modprobe is installed [Orabug: 33514517]\n- Install missing 68-del-part-node.rules [Orabug: 32827579]\n- Fix permission denied error while upgrading from OL8u2 to OL8u3 [Orabug 32160196]\n- dracut-shutdown.service should run before shutdown.target is invoked [Orabug: 29629738]\n- Update list of necessary files after squashfs execution [Orabug: 29864620]\n- Supress iscsidm error output during non-debug PV boot [Orabug: 29846195]\n- Stop block device service in case system is dropped to emergency shell [Orabug: 29851988]\n- Enable booting from block device if netroot=iscsi has failed [Orabug: 29478156]\n- Calculate relative path for kernel and initrd in 51-dracut-rescue.instal [Orabug: 29503293]\n- 40network scripts ifup and netlib updates for iSCSI [Orabug: 28502725]\n- Increase timeout when waiting for carrier detection on a network interface [Orabug: 24657828] (kevin.x.lyons@oracle.com)\n- add hyperv-keyboard for Hyper-V Gen2 VM [Orabug: 19191303] (Vaughan Cao)\n\n[057-89.git20250311]\n- chore(multipath): remove rd_NO_MULTIPATH kernel command\n- refactor(multipath): remove custom multipathd.service\n- fix(multipath): disable user_friendly_names with mpathconf\n  Resolves: RHEL-109565\n  Resolves: RHEL-96101",
+  "affected_products": [
+    "Oracle Linux 9 for x86_64",
+    "Oracle Linux 9 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "dracut-tools-057-89.git20250311.0.1.el9_6.x86_64",
+    "dracut-config-generic-057-89.git20250311.0.1.el9_6.x86_64",
+    "dracut-squash-057-89.git20250311.0.1.el9_6.x86_64",
+    "dracut-057-89.git20250311.0.1.el9_6.src",
+    "dracut-config-rescue-057-89.git20250311.0.1.el9_6.x86_64",
+    "dracut-057-89.git20250311.0.1.el9_6.x86_64",
+    "dracut-network-057-89.git20250311.0.1.el9_6.x86_64"
+  ],
+  "full_text": "[057-89.git20250311.0.1]\n- Ship Oracle IMA certificate [Orabug: 35992862]\n- Ship 98-integrity.conf, populating initramfs with Oracle IMA certificate [Orabug: 35992862]\n- fix(systemd): add missing modprobe@.service [Orabug: 35267570]\n- Include sys-fs-fuse-connections.mount if needed [Orabug: 35267570]\n- network-legacy: Revert some shellcheck that breaks parse_option_121 in dhclient [Orabug: 33778173]\n- Change installation dir in network legacy module-setup so that file is never missing [Orabug: 33516170]\n- Fix paths in squash module, so that correct modprobe is installed [Orabug: 33514517]\n- Install missing 68-del-part-node.rules [Orabug: 32827579]\n- Fix permission denied error while upgrading from OL8u2 to OL8u3 [Orabug 32160196]\n- dracut-shutdown.service should run before shutdown.target is invoked [Orabug: 29629738]\n- Update list of necessary files after squashfs execution [Orabug: 29864620]\n- Supress iscsidm error output during non-debug PV boot [Orabug: 29846195]\n- Stop block device service in case system is dropped to emergency shell [Orabug: 29851988]\n- Enable booting from block device if netroot=iscsi has failed [Orabug: 29478156]\n- Calculate relative path for kernel and initrd in 51-dracut-rescue.instal [Orabug: 29503293]\n- 40network scripts ifup and netlib updates for iSCSI [Orabug: 28502725]\n- Increase timeout when waiting for carrier detection on a network interface [Orabug: 24657828] (kevin.x.lyons@oracle.com)\n- add hyperv-keyboard for Hyper-V Gen2 VM [Orabug: 19191303] (Vaughan Cao)\n\n[057-89.git20250311]\n- chore(multipath): remove rd_NO_MULTIPATH kernel command\n- refactor(multipath): remove custom multipathd.service\n- fix(multipath): disable user_friendly_names with mpathconf\n  Resolves: RHEL-109565\n  Resolves: RHEL-96101\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2025-19538.html"
+}

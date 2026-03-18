@@ -250,14 +250,13 @@ export async function GET(request: Request) {
                 isReviewCompleted: pgsqlIsReviewCompleted,
             },
             { id: 'mysql', name: 'MySQL', stages: null, active: false, isReviewCompleted: false },
-            { id: 'mongodb', name: 'MongoDB', stages: null, active: false, isReviewCompleted: false },
         ];
 
         return NextResponse.json({ products: databaseProducts });
     }
     // ==================== END DATABASE ====================
 
-    const linuxSkillDir = path.join(process.env.HOME || '/home/citec', '.openclaw/workspace/skills/patch-review/os/linux-v2');
+    const linuxSkillDir = path.join(process.env.HOME || '/home/citec', '.openclaw/workspace/skills/patch-review/os/linux');
 
     const counts = {
         redhat: { collected: 0, preprocessed: 0, reviewed: 0 },

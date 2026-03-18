@@ -1,0 +1,25 @@
+{
+  "id": "ELBA-2025-20571-0",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "RHCK",
+  "title": "chrony bug fix and enhancement update",
+  "issuedDate": "2025-11-17T00:00:00Z",
+  "updatedDate": "2025-11-17T00:00:00Z",
+  "pubDate": "2025-11-17T00:00:00Z",
+  "dateStr": "2025-11-17",
+  "url": "https://linux.oracle.com/errata/ELBA-2025-20571-0.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 9.",
+  "description": "[4.6.1-2.0.1]\n- Fixed chrony starting before network-online service [Orabug: 36813717]\n- Change chrony.conf to use pool.ntp.org [Orabug: 28627760]\n\n[4.6.1-2]\n- improve description of refresh directive (RHEL-82096)\n- improve logging of selection failures (RHEL-80388 RHEL-80413 RHEL-80415)\n- fix sourcedir reloading to not multiply sources (RHEL-95016)\n- switch from patchX to patch -P X",
+  "affected_products": [
+    "Oracle Linux 9 for x86_64",
+    "Oracle Linux 9 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "chrony-4.6.1-2.0.1.el9.x86_64",
+    "chrony-4.6.1-2.0.1.el9.src"
+  ],
+  "full_text": "[4.6.1-2.0.1]\n- Fixed chrony starting before network-online service [Orabug: 36813717]\n- Change chrony.conf to use pool.ntp.org [Orabug: 28627760]\n\n[4.6.1-2]\n- improve description of refresh directive (RHEL-82096)\n- improve logging of selection failures (RHEL-80388 RHEL-80413 RHEL-80415)\n- fix sourcedir reloading to not multiply sources (RHEL-95016)\n- switch from patchX to patch -P X\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2025-20571-0.html"
+}

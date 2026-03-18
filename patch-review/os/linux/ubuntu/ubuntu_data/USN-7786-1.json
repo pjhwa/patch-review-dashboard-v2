@@ -1,0 +1,28 @@
+{
+  "id": "USN-7786-1",
+  "vendor": "Canonical / Ubuntu",
+  "type": "Ubuntu Security Notice (USN)",
+  "title": "openssl, openssl1.0 vulnerabilities",
+  "issuedDate": "2025-09-30T14:44:07Z",
+  "updatedDate": "2026-02-10T04:50:09Z",
+  "pubDate": "2025-09-30T14:44:07Z",
+  "dateStr": "2025-09-30",
+  "url": "https://ubuntu.com/security/notices/USN-7786-1",
+  "severity": "None",
+  "overview": "openssl, openssl1.0 vulnerabilities",
+  "description": "Stanislav Fort discovered that OpenSSL incorrectly handled memory when\ntrying to decrypt CMS messages encrypted with password-based encryption. An\nattacker could possibly use this issue to cause a denial of service or\nexecute arbitrary code. (CVE-2025-9230)\n\nStanislav Fort discovered that OpenSSL had a timing side-channel in SM2\nsignature computations on ARM platforms. A remote attacker could possibly\nuse this issue to recover private data. This issue only affected Ubuntu\n25.04. (CVE-2025-9231)\n\nStanislav Fort discovered that OpenSSL incorrectly handled memory during\nHTTP requests when \"no_proxy\" environment variable is set. An attacker\ncould possibly use this issue to cause a denial of service. This issue only\naffected Ubuntu 25.04. (CVE-2025-9232)",
+  "affected_products": [
+    "Ubuntu 22.04 LTS",
+    "Ubuntu 24.04 LTS"
+  ],
+  "cves": [],
+  "packages": [
+    "libssl-dev-3.0.13-0ubuntu3.6",
+    "libssl-dev-3.0.2-0ubuntu1.20",
+    "libssl3-3.0.2-0ubuntu1.20",
+    "libssl3t64-3.0.13-0ubuntu3.6",
+    "openssl-3.0.13-0ubuntu3.6",
+    "openssl-3.0.2-0ubuntu1.20"
+  ],
+  "full_text": "Stanislav Fort discovered that OpenSSL incorrectly handled memory when\ntrying to decrypt CMS messages encrypted with password-based encryption. An\nattacker could possibly use this issue to cause a denial of service or\nexecute arbitrary code. (CVE-2025-9230)\n\nStanislav Fort discovered that OpenSSL had a timing side-channel in SM2\nsignature computations on ARM platforms. A remote attacker could possibly\nuse this issue to recover private data. This issue only affected Ubuntu\n25.04. (CVE-2025-9231)\n\nStanislav Fort discovered that OpenSSL incorrectly handled memory during\nHTTP requests when \"no_proxy\" environment variable is set. An attacker\ncould possibly use this issue to cause a denial of service. This issue only\naffected Ubuntu 25.04. (CVE-2025-9232)"
+}

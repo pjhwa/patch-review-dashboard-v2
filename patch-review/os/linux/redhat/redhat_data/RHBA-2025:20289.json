@@ -1,0 +1,44 @@
+{
+  "id": "RHBA-2025:20289",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: debugedit bug fix and enhancement update",
+  "issuedDate": "2025-11-11T07:25:58Z",
+  "updatedDate": "2025-11-11T07:25:58Z",
+  "pubDate": "2025-11-11T07:25:58Z",
+  "dateStr": "2025-11-11",
+  "url": "https://access.redhat.com/errata/RHBA-2025:20289",
+  "severity": "None",
+  "overview": "An update for debugedit is now available for Red Hat Enterprise Linux 10.",
+  "description": "For detailed information on changes in this release, see the Red Hat Enterprise Linux 10 Release Notes linked from the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux for IBM z Systems",
+    "Red Hat Enterprise Linux for ARM 64",
+    "Red Hat Enterprise Linux for x86_64 10 x86_64",
+    "Red Hat Enterprise Linux for Power, little endian"
+  ],
+  "cves": [],
+  "packages": [
+    "debugedit-5.1-8.el10.src",
+    "debugedit-5.1-8.el10.x86_64",
+    "debugedit-debuginfo-5.1-8.el10.x86_64",
+    "debugedit-debugsource-5.1-8.el10.x86_64",
+    "debugedit-5.1-8.el10.s390x",
+    "debugedit-debuginfo-5.1-8.el10.s390x",
+    "debugedit-debugsource-5.1-8.el10.s390x",
+    "debugedit-5.1-8.el10.ppc64le",
+    "debugedit-debuginfo-5.1-8.el10.ppc64le",
+    "debugedit-debugsource-5.1-8.el10.ppc64le",
+    "debugedit-5.1-8.el10.aarch64",
+    "debugedit-debuginfo-5.1-8.el10.aarch64",
+    "debugedit-debugsource-5.1-8.el10.aarch64"
+  ],
+  "fixes": [
+    {
+      "id": "RHEL-86684",
+      "url": "https://issues.redhat.com/browse/RHEL-86684",
+      "description": "debugedit: Handle unused .debug_str_offsets entries"
+    }
+  ],
+  "full_text": "An update for debugedit is now available for Red Hat Enterprise Linux 10.\n\nFor detailed information on changes in this release, see the Red Hat Enterprise Linux 10 Release Notes linked from the References section."
+}

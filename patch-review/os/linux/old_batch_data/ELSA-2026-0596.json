@@ -1,0 +1,39 @@
+{
+  "id": "ELSA-2026-0596",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2026-January/019514.html",
+  "synopsis": "[El-errata] ELSA-2026-0596 Moderate: Oracle Linux 8 cups security update",
+  "dateStr": "2026-January",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Security Advisory ELSA-2026-0596",
+  "description": "[1:2.2.6-66]\n- fix use-after-free reported by OSH\n\n[1:2.2.6-65]\n- RHEL-129729 CVE-2025-58436 cups: Slow client communication leads to a possible DoS attack\n- RHEL-129720 CVE-2025-61915 cups: Local denial-of-service via cupsd.conf update and related issues",
+  "affected_products": [
+    "Oracle Linux 8"
+  ],
+  "packages": [
+    "cups-2.2.6-66.el8_10.x86_64.rpm",
+    "cups-client-2.2.6-66.el8_10.x86_64.rpm",
+    "cups-devel-2.2.6-66.el8_10.i686.rpm",
+    "cups-devel-2.2.6-66.el8_10.x86_64.rpm",
+    "cups-filesystem-2.2.6-66.el8_10.noarch.rpm",
+    "cups-ipptool-2.2.6-66.el8_10.x86_64.rpm",
+    "cups-libs-2.2.6-66.el8_10.i686.rpm",
+    "cups-libs-2.2.6-66.el8_10.x86_64.rpm",
+    "cups-lpd-2.2.6-66.el8_10.x86_64.rpm",
+    "cups-2.2.6-66.el8_10.aarch64.rpm",
+    "cups-client-2.2.6-66.el8_10.aarch64.rpm",
+    "cups-devel-2.2.6-66.el8_10.aarch64.rpm",
+    "cups-filesystem-2.2.6-66.el8_10.noarch.rpm",
+    "cups-ipptool-2.2.6-66.el8_10.aarch64.rpm",
+    "cups-libs-2.2.6-66.el8_10.aarch64.rpm",
+    "cups-lpd-2.2.6-66.el8_10.aarch64.rpm"
+  ],
+  "cves": [
+    "CVE-2025-58436",
+    "CVE-2025-61915"
+  ],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Security Advisory ELSA-2026-0596\n\nhttp://linux.oracle.com/errata/ELSA-2026-0596.html\n\nThe following updated rpms for Oracle Linux 8 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\ncups-2.2.6-66.el8_10.x86_64.rpm\ncups-client-2.2.6-66.el8_10.x86_64.rpm\ncups-devel-2.2.6-66.el8_10.i686.rpm\ncups-devel-2.2.6-66.el8_10.x86_64.rpm\ncups-filesystem-2.2.6-66.el8_10.noarch.rpm\ncups-ipptool-2.2.6-66.el8_10.x86_64.rpm\ncups-libs-2.2.6-66.el8_10.i686.rpm\ncups-libs-2.2.6-66.el8_10.x86_64.rpm\ncups-lpd-2.2.6-66.el8_10.x86_64.rpm\n\naarch64:\ncups-2.2.6-66.el8_10.aarch64.rpm\ncups-client-2.2.6-66.el8_10.aarch64.rpm\ncups-devel-2.2.6-66.el8_10.aarch64.rpm\ncups-filesystem-2.2.6-66.el8_10.noarch.rpm\ncups-ipptool-2.2.6-66.el8_10.aarch64.rpm\ncups-libs-2.2.6-66.el8_10.aarch64.rpm\ncups-lpd-2.2.6-66.el8_10.aarch64.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol8/SRPMS-updates/cups-2.2.6-66.el8_10.src.rpm\n\nRelated CVEs:\n\nCVE-2025-58436\nCVE-2025-61915\n\n\n\n\nDescription of changes:\n\n[1:2.2.6-66]\n- fix use-after-free reported by OSH\n\n[1:2.2.6-65]\n- RHEL-129729 CVE-2025-58436 cups: Slow client communication leads to a possible DoS attack\n- RHEL-129720 CVE-2025-61915 cups: Local denial-of-service via cupsd.conf update and related issues",
+  "vendor": "Oracle"
+}

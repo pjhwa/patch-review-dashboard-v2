@@ -1,0 +1,20 @@
+{
+  "id": "RHSA-2025:22863",
+  "vendor": "Red Hat",
+  "url": "https://access.redhat.com/errata/RHSA-2025:22863",
+  "pubDate": "2025-12-08T16:08:23.000Z",
+  "dateStr": "2025-12-08",
+  "severity": "Important",
+  "title": "Red Hat Security Advisory: OpenShift Container Platform 4.17.45 CNF IBU extras update",
+  "overview": "An update for ibu components is available for Red Hat OpenShift Container Platform 4.17.",
+  "description": "An update for ibu components is available for Red Hat OpenShift Container Platform 4.17.",
+  "affected_products": [
+    "Red Hat OpenShift Container Platform 4.17"
+  ],
+  "cves": [
+    "CVE-2024-45339"
+  ],
+  "packages": [],
+  "fixes": "",
+  "full_text": "Red Hat Security Advisory: OpenShift Container Platform 4.17.45 CNF IBU extras update\n\nAn update for ibu components is available for Red Hat OpenShift Container Platform 4.17.\n\nAn update for ibu components is available for Red Hat OpenShift Container Platform 4.17.\n\n\n\nCVE-2024-45339: A flaw was found in glog, a logging library. This vulnerability allows an unprivileged attacker to overwrite sensitive files via a symbolic link planted in a widely writable directory, exploiting the log file path predictability."
+}

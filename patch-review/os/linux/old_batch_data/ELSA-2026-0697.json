@@ -1,0 +1,26 @@
+{
+  "id": "ELSA-2026-0697",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2026-January/019531.html",
+  "synopsis": "[El-errata] ELSA-2026-0697 Important: Oracle Linux 10 gnupg2 security update",
+  "dateStr": "2026-January",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Security Advisory ELSA-2026-0697",
+  "description": "[2.4.5-3]\n- Fix CVE-2025-68973 (gpg.fail/memcpy)\n- Avoid weak dependencies",
+  "affected_products": [
+    "Oracle Linux 10"
+  ],
+  "packages": [
+    "gnupg2-2.4.5-3.el10_1.x86_64.rpm",
+    "gnupg2-smime-2.4.5-3.el10_1.x86_64.rpm",
+    "gnupg2-2.4.5-3.el10_1.aarch64.rpm",
+    "gnupg2-smime-2.4.5-3.el10_1.aarch64.rpm"
+  ],
+  "cves": [
+    "CVE-2025-68973"
+  ],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Security Advisory ELSA-2026-0697\n\nhttp://linux.oracle.com/errata/ELSA-2026-0697.html\n\nThe following updated rpms for Oracle Linux 10 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\ngnupg2-2.4.5-3.el10_1.x86_64.rpm\ngnupg2-smime-2.4.5-3.el10_1.x86_64.rpm\n\naarch64:\ngnupg2-2.4.5-3.el10_1.aarch64.rpm\ngnupg2-smime-2.4.5-3.el10_1.aarch64.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol10/SRPMS-updates/gnupg2-2.4.5-3.el10_1.src.rpm\n\nRelated CVEs:\n\nCVE-2025-68973\n\n\n\n\nDescription of changes:\n\n[2.4.5-3]\n- Fix CVE-2025-68973 (gpg.fail/memcpy)\n- Avoid weak dependencies",
+  "vendor": "Oracle"
+}

@@ -559,7 +559,7 @@ export function startWorker() {
     new Worker('patch-pipeline', async (job: Job) => {
         return new Promise((resolve, reject) => {
             console.log(`Starting pipeline job ${job.id} (name: ${job.name})`);
-            const linuxV2Dir = path.join(process.env.HOME || '/home/citec', '.openclaw/workspace/skills/patch-review/os/linux-v2');
+            const linuxV2Dir = path.join(process.env.HOME || '/home/citec', '.openclaw/workspace/skills/patch-review/os/linux');
             const linuxSkillDir = linuxV2Dir;
 
             const outputReportFilename = job.name === 'manual-review' ? `manual_ai_report_${job.id}.json` : 'patch_review_ai_report.json';

@@ -13,7 +13,7 @@
 | name | `(예: MySQL, MongoDB, AlmaLinux)` |
 | vendorString | `(DB vendor 필드에 들어갈 정확한 문자열, 예: 'MySQL', 'Oracle')` |
 | category | `os` / `storage` / `database` / `virtualization` |
-| skillDirRelative | `(예: database/mysql, os/linux-v2)` |
+| skillDirRelative | `(예: database/mysql, os/linux)` |
 | active | `true` / `false` |
 
 ---

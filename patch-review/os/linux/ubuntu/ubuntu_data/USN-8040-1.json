@@ -1,0 +1,28 @@
+{
+  "id": "USN-8040-1",
+  "vendor": "Canonical / Ubuntu",
+  "type": "Ubuntu Security Notice (USN)",
+  "title": "munge vulnerability",
+  "issuedDate": "2026-02-12T18:08:10Z",
+  "updatedDate": "2026-02-27T09:22:10Z",
+  "pubDate": "2026-02-12T18:08:10Z",
+  "dateStr": "2026-02-12",
+  "url": "https://ubuntu.com/security/notices/USN-8040-1",
+  "severity": "None",
+  "overview": "munge vulnerability",
+  "description": "Titouan Lazard discovered that MUNGE contained an exploitable buffer\noverflow in munged (the MUNGE authentication daemon). A local attacker\ncould possibly use this issue to forge MUNGE credentials, leading to\narbitrary code execution.",
+  "affected_products": [
+    "Ubuntu 22.04 LTS",
+    "Ubuntu 24.04 LTS"
+  ],
+  "cves": [],
+  "packages": [
+    "libmunge-dev-0.5.14-6ubuntu0.1",
+    "libmunge-dev-0.5.15-4ubuntu0.1",
+    "libmunge2-0.5.14-6ubuntu0.1",
+    "libmunge2-0.5.15-4ubuntu0.1",
+    "munge-0.5.14-6ubuntu0.1",
+    "munge-0.5.15-4ubuntu0.1"
+  ],
+  "full_text": "Titouan Lazard discovered that MUNGE contained an exploitable buffer\noverflow in munged (the MUNGE authentication daemon). A local attacker\ncould possibly use this issue to forge MUNGE credentials, leading to\narbitrary code execution."
+}

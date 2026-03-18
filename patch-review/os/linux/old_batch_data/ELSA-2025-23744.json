@@ -1,0 +1,24 @@
+{
+  "id": "ELSA-2025-23744",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2025-December/019395.html",
+  "synopsis": "[El-errata] ELSA-2025-23744 Important: Oracle Linux 9 git-lfs security update",
+  "dateStr": "2025-December",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Security Advisory ELSA-2025-23744",
+  "description": "[3.6.1-4]\n- Backport fix for CVE-2025-26625\n- Resolves: RHEL-122431",
+  "affected_products": [
+    "Oracle Linux 9"
+  ],
+  "packages": [
+    "git-lfs-3.6.1-4.el9_7.x86_64.rpm",
+    "git-lfs-3.6.1-4.el9_7.aarch64.rpm"
+  ],
+  "cves": [
+    "CVE-2025-26625"
+  ],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Security Advisory ELSA-2025-23744\n\nhttp://linux.oracle.com/errata/ELSA-2025-23744.html\n\nThe following updated rpms for Oracle Linux 9 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\ngit-lfs-3.6.1-4.el9_7.x86_64.rpm\n\naarch64:\ngit-lfs-3.6.1-4.el9_7.aarch64.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol9/SRPMS-updates/git-lfs-3.6.1-4.el9_7.src.rpm\n\nRelated CVEs:\n\nCVE-2025-26625\n\n\n\n\nDescription of changes:\n\n[3.6.1-4]\n- Backport fix for CVE-2025-26625\n- Resolves: RHEL-122431",
+  "vendor": "Oracle"
+}

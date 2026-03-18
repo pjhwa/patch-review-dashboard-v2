@@ -1,0 +1,33 @@
+{
+  "id": "ELSA-2026-2224",
+  "vendor": "Oracle",
+  "type": "Security Advisory (ELSA)",
+  "kernel_type": "AppStream",
+  "title": " keylime security update",
+  "issuedDate": "2026-02-09T00:00:00Z",
+  "updatedDate": "2026-02-09T00:00:00Z",
+  "pubDate": "2026-02-09T00:00:00Z",
+  "dateStr": "2026-02-09",
+  "url": "https://linux.oracle.com/errata/ELSA-2026-2224.html",
+  "severity": "Critical",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 9.",
+  "description": "[7.12.1-11.4]\n- CVE-2026-1709: Registrar authentication bypass\n  Resolves: RHEL-145390",
+  "affected_products": [
+    "Oracle Linux 9 for x86_64",
+    "Oracle Linux 9 for aarch64"
+  ],
+  "cves": [
+    "CVE-2026-1709"
+  ],
+  "packages": [
+    "keylime-tenant-7.12.1-11.el9_7.4.x86_64",
+    "keylime-base-7.12.1-11.el9_7.4.x86_64",
+    "python3-keylime-7.12.1-11.el9_7.4.x86_64",
+    "keylime-7.12.1-11.el9_7.4.x86_64",
+    "keylime-verifier-7.12.1-11.el9_7.4.x86_64",
+    "keylime-7.12.1-11.el9_7.4.src",
+    "keylime-registrar-7.12.1-11.el9_7.4.x86_64",
+    "keylime-selinux-7.12.1-11.el9_7.4.noarch"
+  ],
+  "full_text": "[7.12.1-11.4]\n- CVE-2026-1709: Registrar authentication bypass\n  Resolves: RHEL-145390\n\nReferences:\nhttps://linux.oracle.com/errata/ELSA-2026-2224.html\nhttps://linux.oracle.com/cve/CVE-2026-1709.html"
+}

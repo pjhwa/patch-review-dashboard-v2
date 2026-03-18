@@ -1,0 +1,22 @@
+{
+  "id": "ELBA-2025-19592",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2025-November/018933.html",
+  "synopsis": "[El-errata] ELBA-2025-19592 Oracle Linux 9 keepalived bug fix and enhancement update",
+  "dateStr": "2025-November",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Bug Fix Advisory ELBA-2025-19592",
+  "description": "[2.2.8-5]\n- lvs: if lost misc check child register checker again\n  Resolves: RHEL-81944",
+  "affected_products": [
+    "Oracle Linux 9"
+  ],
+  "packages": [
+    "keepalived-2.2.8-5.el9_6.x86_64.rpm",
+    "keepalived-2.2.8-5.el9_6.aarch64.rpm"
+  ],
+  "cves": [],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Bug Fix Advisory ELBA-2025-19592\n\nhttp://linux.oracle.com/errata/ELBA-2025-19592.html\n\nThe following updated rpms for Oracle Linux 9 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\nkeepalived-2.2.8-5.el9_6.x86_64.rpm\n\naarch64:\nkeepalived-2.2.8-5.el9_6.aarch64.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol9/SRPMS-updates/keepalived-2.2.8-5.el9_6.src.rpm\n\n\n\nDescription of changes:\n\n[2.2.8-5]\n- lvs: if lost misc check child register checker again\n  Resolves: RHEL-81944",
+  "vendor": "Oracle"
+}

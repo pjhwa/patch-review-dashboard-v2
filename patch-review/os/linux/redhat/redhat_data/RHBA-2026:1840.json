@@ -1,0 +1,44 @@
+{
+  "id": "RHBA-2026:1840",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: desktop-file-utils bug fix and enhancement update",
+  "issuedDate": "2026-02-05T15:43:25Z",
+  "updatedDate": "2026-02-05T15:43:25Z",
+  "pubDate": "2026-02-05T15:43:25Z",
+  "dateStr": "2026-02-05",
+  "url": "https://access.redhat.com/errata/RHBA-2026:1840",
+  "severity": "None",
+  "overview": "An update for desktop-file-utils is now available for Red Hat Enterprise Linux 10.",
+  "description": ".desktop files are used to describe an application for inclusion in GNOME or KDE menus.  This package contains desktop-file-validate which checks whether a .desktop file complies with the specification at http://www.freedesktop.org/standards/, and desktop-file-install which installs a desktop file to the standard directory, optionally fixing it up in the process.Bug Fix(es) and Enhancement(s): Update allowed DEs in desktop-file-validate (JIRA:RHEL-107113)",
+  "affected_products": [
+    "Red Hat Enterprise Linux for ARM 64",
+    "Red Hat Enterprise Linux for x86_64 10 x86_64",
+    "Red Hat Enterprise Linux for IBM z Systems",
+    "Red Hat Enterprise Linux for Power, little endian"
+  ],
+  "cves": [],
+  "packages": [
+    "desktop-file-utils-0.26-15.el10_1.src",
+    "desktop-file-utils-0.26-15.el10_1.x86_64",
+    "desktop-file-utils-debuginfo-0.26-15.el10_1.x86_64",
+    "desktop-file-utils-debugsource-0.26-15.el10_1.x86_64",
+    "desktop-file-utils-0.26-15.el10_1.s390x",
+    "desktop-file-utils-debuginfo-0.26-15.el10_1.s390x",
+    "desktop-file-utils-debugsource-0.26-15.el10_1.s390x",
+    "desktop-file-utils-0.26-15.el10_1.ppc64le",
+    "desktop-file-utils-debuginfo-0.26-15.el10_1.ppc64le",
+    "desktop-file-utils-debugsource-0.26-15.el10_1.ppc64le",
+    "desktop-file-utils-0.26-15.el10_1.aarch64",
+    "desktop-file-utils-debuginfo-0.26-15.el10_1.aarch64",
+    "desktop-file-utils-debugsource-0.26-15.el10_1.aarch64"
+  ],
+  "fixes": [
+    {
+      "id": "RHEL-107113",
+      "url": "https://issues.redhat.com/browse/RHEL-107113",
+      "description": "Update allowed DEs in desktop-file-validate"
+    }
+  ],
+  "full_text": "An update for desktop-file-utils is now available for Red Hat Enterprise Linux 10.\n\n.desktop files are used to describe an application for inclusion in GNOME or KDE menus.  This package contains desktop-file-validate which checks whether a .desktop file complies with the specification at http://www.freedesktop.org/standards/, and desktop-file-install which installs a desktop file to the standard directory, optionally fixing it up in the process.Bug Fix(es) and Enhancement(s): Update allowed DEs in desktop-file-validate (JIRA:RHEL-107113)"
+}

@@ -1,0 +1,44 @@
+{
+  "id": "RHBA-2025:20286",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: gnome-initial-setup bug fix and enhancement update",
+  "issuedDate": "2025-11-11T07:25:57Z",
+  "updatedDate": "2025-11-11T07:25:57Z",
+  "pubDate": "2025-11-11T07:25:57Z",
+  "dateStr": "2025-11-11",
+  "url": "https://access.redhat.com/errata/RHBA-2025:20286",
+  "severity": "None",
+  "overview": "An update for gnome-initial-setup is now available for Red Hat Enterprise Linux 10.",
+  "description": "For detailed information on changes in this release, see the Red Hat Enterprise Linux 10 Release Notes linked from the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux for IBM z Systems",
+    "Red Hat Enterprise Linux for ARM 64",
+    "Red Hat Enterprise Linux for x86_64 10 x86_64",
+    "Red Hat Enterprise Linux for Power, little endian"
+  ],
+  "cves": [],
+  "packages": [
+    "gnome-initial-setup-46.7-1.el10.src",
+    "gnome-initial-setup-46.7-1.el10.x86_64",
+    "gnome-initial-setup-debuginfo-46.7-1.el10.x86_64",
+    "gnome-initial-setup-debugsource-46.7-1.el10.x86_64",
+    "gnome-initial-setup-46.7-1.el10.s390x",
+    "gnome-initial-setup-debuginfo-46.7-1.el10.s390x",
+    "gnome-initial-setup-debugsource-46.7-1.el10.s390x",
+    "gnome-initial-setup-46.7-1.el10.ppc64le",
+    "gnome-initial-setup-debuginfo-46.7-1.el10.ppc64le",
+    "gnome-initial-setup-debugsource-46.7-1.el10.ppc64le",
+    "gnome-initial-setup-46.7-1.el10.aarch64",
+    "gnome-initial-setup-debuginfo-46.7-1.el10.aarch64",
+    "gnome-initial-setup-debugsource-46.7-1.el10.aarch64"
+  ],
+  "fixes": [
+    {
+      "id": "RHEL-71384",
+      "url": "https://issues.redhat.com/browse/RHEL-71384",
+      "description": "Please backport Fedora 40 changes in gnome-initial-setup if needed (2024-12-15)"
+    }
+  ],
+  "full_text": "An update for gnome-initial-setup is now available for Red Hat Enterprise Linux 10.\n\nFor detailed information on changes in this release, see the Red Hat Enterprise Linux 10 Release Notes linked from the References section."
+}

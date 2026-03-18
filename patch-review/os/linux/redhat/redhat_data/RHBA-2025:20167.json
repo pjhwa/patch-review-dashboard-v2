@@ -1,0 +1,168 @@
+{
+  "id": "RHBA-2025:20167",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: lvm2 bug fix and enhancement update",
+  "issuedDate": "2025-11-11T07:25:18Z",
+  "updatedDate": "2025-11-11T07:25:18Z",
+  "pubDate": "2025-11-11T07:25:18Z",
+  "dateStr": "2025-11-11",
+  "url": "https://access.redhat.com/errata/RHBA-2025:20167",
+  "severity": "None",
+  "overview": "An update for lvm2 is now available for Red Hat Enterprise Linux 10.",
+  "description": "For detailed information on changes in this release, see the Red Hat Enterprise Linux 10 Release Notes linked from the References section.",
+  "affected_products": [
+    "Red Hat CodeReady Linux Builder for Power, little endian",
+    "Red Hat Enterprise Linux for IBM z Systems",
+    "Red Hat CodeReady Linux Builder for ARM 64",
+    "Red Hat Enterprise Linux for x86_64 10 x86_64",
+    "Red Hat Enterprise Linux for Power, little endian",
+    "Red Hat Enterprise Linux for ARM 64",
+    "Red Hat CodeReady Linux Builder for IBM z Systems",
+    "Red Hat CodeReady Linux Builder for x86_64 10 x86_64"
+  ],
+  "cves": [],
+  "packages": [
+    "lvm2-2.03.32-3.el10.src",
+    "device-mapper-1.02.206-3.el10.x86_64",
+    "device-mapper-debuginfo-1.02.206-3.el10.x86_64",
+    "device-mapper-event-1.02.206-3.el10.x86_64",
+    "device-mapper-event-debuginfo-1.02.206-3.el10.x86_64",
+    "device-mapper-event-libs-1.02.206-3.el10.x86_64",
+    "device-mapper-event-libs-debuginfo-1.02.206-3.el10.x86_64",
+    "device-mapper-libs-1.02.206-3.el10.x86_64",
+    "device-mapper-libs-debuginfo-1.02.206-3.el10.x86_64",
+    "lvm2-2.03.32-3.el10.x86_64",
+    "lvm2-dbusd-2.03.32-3.el10.noarch",
+    "lvm2-debuginfo-2.03.32-3.el10.x86_64",
+    "lvm2-debugsource-2.03.32-3.el10.x86_64",
+    "lvm2-libs-2.03.32-3.el10.x86_64",
+    "lvm2-libs-debuginfo-2.03.32-3.el10.x86_64",
+    "lvm2-lockd-2.03.32-3.el10.x86_64",
+    "lvm2-lockd-debuginfo-2.03.32-3.el10.x86_64",
+    "lvm2-testsuite-debuginfo-2.03.32-3.el10.x86_64",
+    "device-mapper-1.02.206-3.el10.s390x",
+    "device-mapper-debuginfo-1.02.206-3.el10.s390x",
+    "device-mapper-event-1.02.206-3.el10.s390x",
+    "device-mapper-event-debuginfo-1.02.206-3.el10.s390x",
+    "device-mapper-event-libs-1.02.206-3.el10.s390x",
+    "device-mapper-event-libs-debuginfo-1.02.206-3.el10.s390x",
+    "device-mapper-libs-1.02.206-3.el10.s390x",
+    "device-mapper-libs-debuginfo-1.02.206-3.el10.s390x",
+    "lvm2-2.03.32-3.el10.s390x",
+    "lvm2-debuginfo-2.03.32-3.el10.s390x",
+    "lvm2-debugsource-2.03.32-3.el10.s390x",
+    "lvm2-libs-2.03.32-3.el10.s390x",
+    "lvm2-libs-debuginfo-2.03.32-3.el10.s390x",
+    "lvm2-lockd-2.03.32-3.el10.s390x",
+    "lvm2-lockd-debuginfo-2.03.32-3.el10.s390x",
+    "lvm2-testsuite-debuginfo-2.03.32-3.el10.s390x",
+    "device-mapper-1.02.206-3.el10.ppc64le",
+    "device-mapper-debuginfo-1.02.206-3.el10.ppc64le",
+    "device-mapper-event-1.02.206-3.el10.ppc64le",
+    "device-mapper-event-debuginfo-1.02.206-3.el10.ppc64le",
+    "device-mapper-event-libs-1.02.206-3.el10.ppc64le",
+    "device-mapper-event-libs-debuginfo-1.02.206-3.el10.ppc64le",
+    "device-mapper-libs-1.02.206-3.el10.ppc64le",
+    "device-mapper-libs-debuginfo-1.02.206-3.el10.ppc64le",
+    "lvm2-2.03.32-3.el10.ppc64le",
+    "lvm2-debuginfo-2.03.32-3.el10.ppc64le",
+    "lvm2-debugsource-2.03.32-3.el10.ppc64le",
+    "lvm2-libs-2.03.32-3.el10.ppc64le",
+    "lvm2-libs-debuginfo-2.03.32-3.el10.ppc64le",
+    "lvm2-lockd-2.03.32-3.el10.ppc64le",
+    "lvm2-lockd-debuginfo-2.03.32-3.el10.ppc64le",
+    "lvm2-testsuite-debuginfo-2.03.32-3.el10.ppc64le",
+    "device-mapper-1.02.206-3.el10.aarch64",
+    "device-mapper-debuginfo-1.02.206-3.el10.aarch64",
+    "device-mapper-event-1.02.206-3.el10.aarch64",
+    "device-mapper-event-debuginfo-1.02.206-3.el10.aarch64",
+    "device-mapper-event-libs-1.02.206-3.el10.aarch64",
+    "device-mapper-event-libs-debuginfo-1.02.206-3.el10.aarch64",
+    "device-mapper-libs-1.02.206-3.el10.aarch64",
+    "device-mapper-libs-debuginfo-1.02.206-3.el10.aarch64",
+    "lvm2-2.03.32-3.el10.aarch64",
+    "lvm2-debuginfo-2.03.32-3.el10.aarch64",
+    "lvm2-debugsource-2.03.32-3.el10.aarch64",
+    "lvm2-libs-2.03.32-3.el10.aarch64",
+    "lvm2-libs-debuginfo-2.03.32-3.el10.aarch64",
+    "lvm2-lockd-2.03.32-3.el10.aarch64",
+    "lvm2-lockd-debuginfo-2.03.32-3.el10.aarch64",
+    "lvm2-testsuite-debuginfo-2.03.32-3.el10.aarch64",
+    "device-mapper-devel-1.02.206-3.el10.x86_64",
+    "device-mapper-event-devel-1.02.206-3.el10.x86_64",
+    "lvm2-devel-2.03.32-3.el10.x86_64",
+    "device-mapper-devel-1.02.206-3.el10.ppc64le",
+    "device-mapper-event-devel-1.02.206-3.el10.ppc64le",
+    "lvm2-devel-2.03.32-3.el10.ppc64le",
+    "device-mapper-devel-1.02.206-3.el10.aarch64",
+    "device-mapper-event-devel-1.02.206-3.el10.aarch64",
+    "lvm2-devel-2.03.32-3.el10.aarch64",
+    "device-mapper-devel-1.02.206-3.el10.s390x",
+    "device-mapper-event-devel-1.02.206-3.el10.s390x",
+    "lvm2-devel-2.03.32-3.el10.s390x"
+  ],
+  "fixes": [
+    {
+      "id": "RHEL-65535",
+      "url": "https://issues.redhat.com/browse/RHEL-65535",
+      "description": "unable to stack an LV on top of VDO PVs on a physical machine using physical devices"
+    },
+    {
+      "id": "RHEL-70451",
+      "url": "https://issues.redhat.com/browse/RHEL-70451",
+      "description": "[RHEL10.1] Rebase lvm2 to 2.03.29 or later"
+    },
+    {
+      "id": "RHEL-89825",
+      "url": "https://issues.redhat.com/browse/RHEL-89825",
+      "description": "[RHEL10] lvextend should check for and report \"Not enough free memory for VDO target\" like lvcreate does"
+    },
+    {
+      "id": "RHEL-89826",
+      "url": "https://issues.redhat.com/browse/RHEL-89826",
+      "description": "[RHEL10] unable to xfs_grow resized vdo virt lv"
+    },
+    {
+      "id": "RHEL-89827",
+      "url": "https://issues.redhat.com/browse/RHEL-89827",
+      "description": "[RHEL10] vdo snapshot origin resize paradox"
+    },
+    {
+      "id": "RHEL-89828",
+      "url": "https://issues.redhat.com/browse/RHEL-89828",
+      "description": "[RHEL10] Unable to remove locked or leftover logical volume segment after a pvmove failure"
+    },
+    {
+      "id": "RHEL-89829",
+      "url": "https://issues.redhat.com/browse/RHEL-89829",
+      "description": "[RHEL10] \"invalid sanlock host_id\" leaves newly created VG unremovable"
+    },
+    {
+      "id": "RHEL-89830",
+      "url": "https://issues.redhat.com/browse/RHEL-89830",
+      "description": "[RHEL10] Do a better messaging about unsupported resize of VDO volume with snaphots"
+    },
+    {
+      "id": "RHEL-89832",
+      "url": "https://issues.redhat.com/browse/RHEL-89832",
+      "description": "[RHEL10] lvm raid: add repair support to allow activation of Raid456LVs with too many transiently failed recurred devices"
+    },
+    {
+      "id": "RHEL-89835",
+      "url": "https://issues.redhat.com/browse/RHEL-89835",
+      "description": "[RHEL10] Clean up lvmlockd calls for thin-related commands"
+    },
+    {
+      "id": "RHEL-89970",
+      "url": "https://issues.redhat.com/browse/RHEL-89970",
+      "description": "[RHEL10] lvmlockd should free unused resource structures"
+    },
+    {
+      "id": "RHEL-90129",
+      "url": "https://issues.redhat.com/browse/RHEL-90129",
+      "description": "[RHEL10] vgremove hangs immediately after lockstart"
+    }
+  ],
+  "full_text": "An update for lvm2 is now available for Red Hat Enterprise Linux 10.\n\nFor detailed information on changes in this release, see the Red Hat Enterprise Linux 10 Release Notes linked from the References section."
+}

@@ -25,7 +25,7 @@ export function startWorker() {
     new Worker('patch-pipeline', async (job: Job) => {
         return new Promise((resolve, reject) => {
             console.log(`Starting pipeline job ${job.id} (name: ${job.name})`);
-            const linuxV2Dir = path.join(process.env.HOME || '/home/citec', '.openclaw/workspace/skills/patch-review/os/linux-v2');
+            const linuxV2Dir = path.join(process.env.HOME || '/home/citec', '.openclaw/workspace/skills/patch-review/os/linux');
             const cephSkillDir = path.join(process.env.HOME || '/home/citec', '.openclaw/workspace/skills/patch-review/storage/ceph');
 
             async function withOpenClawLock(jobLog: (msg: string) => Promise<void>, fn: () => Promise<any>): Promise<any> {

@@ -1,0 +1,30 @@
+{
+  "id": "RHSA-2026:2922",
+  "vendor": "Red Hat",
+  "type": "Security Advisory (RHSA)",
+  "title": "Red Hat Security Advisory: RHTAS 1.2.2 - Red Hat Trusted Artifact Signer Release",
+  "issuedDate": "2026-02-18T12:26:00+00:00",
+  "updatedDate": "2026-02-18T12:26:06+00:00",
+  "pubDate": "2026-02-18T12:26:00+00:00",
+  "dateStr": "2026-02-18",
+  "url": "https://access.redhat.com/errata/RHSA-2026:2922",
+  "severity": "Important",
+  "overview": "The 1.2.2 release of Red Hat Trusted Artifact Signer OpenShift Operator.\nFor more details please visit the product documentation at https://access.redhat.com/documentation/en-us/red_hat_trusted_artifact_signer/1.2",
+  "description": "The RHTAS Operator can be used with OpenShift Container Platform 4.15, 4.16, 4.17, 4.18 and 4.19",
+  "affected_products": [],
+  "cves": [
+    "CVE-2025-47913",
+    "CVE-2025-61729",
+    "CVE-2025-65945",
+    "CVE-2025-66506",
+    "CVE-2026-22772"
+  ],
+  "packages": [
+    "registry.redhat.io/rhtas/cosign-rhel9@sha256:8efb2c8f77e91d7a15063ddc6f7eca1226a494f0f9340590af6e3a2eb9c462c3_amd64",
+    "registry.redhat.io/rhtas/fetch-tsa-certs-rhel9@sha256:e001128c079f0355e88161c08f092d0d5b0d2f984fdb672002d4bcddf9585cd5_amd64",
+    "registry.redhat.io/rhtas/gitsign-rhel9@sha256:4c59990381ce313cd845257e95fd2e910b3d84459c5b3c3aa09fce954a328101_amd64",
+    "registry.redhat.io/rhtas/rekor-cli-rhel9@sha256:6dc1b8af2586c0b7dc2786ed075f3e387943bed78818e02c7bd38f0ac1cace0b_amd64",
+    "registry.redhat.io/rhtas/updatetree-rhel9@sha256:cfba6d424b5e45362bb4e61d9b05bb49a24beb56a3c5ddc3aebdd2e0647179de_amd64"
+  ],
+  "full_text": "The 1.2.2 release of Red Hat Trusted Artifact Signer OpenShift Operator.\nFor more details please visit the product documentation at https://access.redhat.com/documentation/en-us/red_hat_trusted_artifact_signer/1.2\n\nThe RHTAS Operator can be used with OpenShift Container Platform 4.15, 4.16, 4.17, 4.18 and 4.19"
+}

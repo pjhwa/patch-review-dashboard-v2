@@ -1,0 +1,24 @@
+{
+  "id": "RHSA-2025:22905",
+  "vendor": "Red Hat",
+  "url": "https://access.redhat.com/errata/RHSA-2025:22905",
+  "pubDate": "2025-12-09T10:09:13.000Z",
+  "dateStr": "2025-12-09",
+  "severity": "Important",
+  "title": "Red Hat Security Advisory: Red Hat OpenShift Pipelines Release 1.19.4",
+  "overview": "The 1.19.4 GA release of Red Hat OpenShift Pipelines Operator..\nFor more details see [product documentation](https://docs.redhat.com/en/documentation/red_hat_openshift_pipelines).",
+  "description": "The 1.19.4 GA release of Red Hat OpenShift Pipelines Operator..\nFor more details see [product documentation](https://docs.redhat.com/en/documentation/red_hat_openshift_pipelines).",
+  "affected_products": [
+    "Red Hat OpenShift Pipelines 1.19"
+  ],
+  "cves": [
+    "CVE-2025-6545",
+    "CVE-2025-6547",
+    "CVE-2025-9287",
+    "CVE-2025-9288",
+    "CVE-2025-64756"
+  ],
+  "packages": [],
+  "fixes": "",
+  "full_text": "Red Hat Security Advisory: Red Hat OpenShift Pipelines Release 1.19.4\n\nThe 1.19.4 GA release of Red Hat OpenShift Pipelines Operator..\nFor more details see [product documentation](https://docs.redhat.com/en/documentation/red_hat_openshift_pipelines).\n\nThe 1.19.4 GA release of Red Hat OpenShift Pipelines Operator..\nFor more details see [product documentation](https://docs.redhat.com/en/documentation/red_hat_openshift_pipelines).\n\n\n\nCVE-2025-6545: A flaw was found in the npm pbkdf2 library, allowing signature spoofing. When executing in javascript engines other than Nodejs or Nodejs when importing pbkdf2/browser, certain algorithms will silently fail and return invalid data. The return values are predictable, which undermines the security guarantees of the package.\n\nCVE-2025-6547: A flaw was found in the npm pbkdf2 library, allowing signature spoofing. Under specific use cases, pbkdf2 may return static keys. This issue only occurs when running the library on Node.js.\n\nCVE-2025-9287: An improper input validation vulnerability was found in the cipher-base npm package. Missing input type checks in the polyfill of the Node.js `createHash` function result in invalid value calculations, hanging and rewinding the hash state, including turning a tagged hash into an untagged hash, for malicious JSON-stringifyable inputs.\n\nCVE-2025-9288: A vulnerability was found in sha.js, where the hashing implementation does not perform sufficient input type validation. The .update() function accepts arbitrary objects, including those with crafted length properties, which can alter the internal state machine of the hashing process. This flaw may result in unexpected behavior such as rewinding the hash state, producing inconsistent digest outputs, or entering invalid processing loops. The issue was introduced due to the reliance on JavaScript object coercion rules rather than enforcing strict buffer or string inputs.\n\nCVE-2025-64756: A flaw was found in glob. This vulnerability allows arbitrary command execution via processing files with malicious names when the glob command-line interface (CLI) is used with the -c/--cmd option, enabling shell metacharacters to trigger command injection."
+}

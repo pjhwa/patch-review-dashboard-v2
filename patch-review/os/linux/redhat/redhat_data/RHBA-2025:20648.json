@@ -1,0 +1,44 @@
+{
+  "id": "RHBA-2025:20648",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: aardvark-dns bug fix and enhancement update",
+  "issuedDate": "2025-11-11T07:50:42Z",
+  "updatedDate": "2025-11-11T07:50:42Z",
+  "pubDate": "2025-11-11T07:50:42Z",
+  "dateStr": "2025-11-11",
+  "url": "https://access.redhat.com/errata/RHBA-2025:20648",
+  "severity": "None",
+  "overview": "An update for aardvark-dns is now available for Red Hat Enterprise Linux 10.",
+  "description": "For detailed information on changes in this release, see the Red Hat Enterprise Linux 9 Release Notes linked from the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux for Power, little endian",
+    "Red Hat Enterprise Linux for x86_64 10 x86_64",
+    "Red Hat Enterprise Linux for ARM 64",
+    "Red Hat Enterprise Linux for IBM z Systems"
+  ],
+  "cves": [],
+  "packages": [
+    "aardvark-dns-1.16.0-1.el9.src",
+    "aardvark-dns-1.16.0-1.el9.x86_64",
+    "aardvark-dns-debuginfo-1.16.0-1.el9.x86_64",
+    "aardvark-dns-debugsource-1.16.0-1.el9.x86_64",
+    "aardvark-dns-1.16.0-1.el9.s390x",
+    "aardvark-dns-debuginfo-1.16.0-1.el9.s390x",
+    "aardvark-dns-debugsource-1.16.0-1.el9.s390x",
+    "aardvark-dns-1.16.0-1.el9.ppc64le",
+    "aardvark-dns-debuginfo-1.16.0-1.el9.ppc64le",
+    "aardvark-dns-debugsource-1.16.0-1.el9.ppc64le",
+    "aardvark-dns-1.16.0-1.el9.aarch64",
+    "aardvark-dns-debuginfo-1.16.0-1.el9.aarch64",
+    "aardvark-dns-debugsource-1.16.0-1.el9.aarch64"
+  ],
+  "fixes": [
+    {
+      "id": "RHEL-109681",
+      "url": "https://issues.redhat.com/browse/RHEL-109681",
+      "description": "Update aardvark-dns in RHEL9.7"
+    }
+  ],
+  "full_text": "An update for aardvark-dns is now available for Red Hat Enterprise Linux 10.\n\nFor detailed information on changes in this release, see the Red Hat Enterprise Linux 9 Release Notes linked from the References section."
+}

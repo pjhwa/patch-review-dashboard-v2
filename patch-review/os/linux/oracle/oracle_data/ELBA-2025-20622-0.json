@@ -1,0 +1,25 @@
+{
+  "id": "ELBA-2025-20622-0",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "RHCK",
+  "title": "fwupd bug fix and enhancement update",
+  "issuedDate": "2025-11-17T00:00:00Z",
+  "updatedDate": "2025-11-17T00:00:00Z",
+  "pubDate": "2025-11-17T00:00:00Z",
+  "dateStr": "2025-11-17",
+  "url": "https://linux.oracle.com/errata/ELBA-2025-20622-0.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 9.",
+  "description": "[1.9.31-1.0.1]\n- Drop pesign.service restart in postun [Orabug: 34760075]\n- Update signing certificate [JIRA: OLDIS-16371]\n- Rebuild for SecureBoot signatures [Orabug: 33801813]\n- Build with the updated Oracle certificate\n- Use oraclesecureboot301 as certdir [Orabug: 29881368]\n- Use new signing certificate (Alex Burmashev)\n- Update SBAT data to include Oracle [Oracle: 33072886]\n\n[1.9.31-1]\n- Rebase to get new hardware support\n- Resolves: #RHEL-82423\n\n[1.9.29-1]\n- Rebase to get new hardware support\n- Resolves: #RHEL-82423",
+  "affected_products": [
+    "Oracle Linux 9 for x86_64",
+    "Oracle Linux 9 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "fwupd-1.9.31-1.0.1.el9.src",
+    "fwupd-1.9.31-1.0.1.el9.x86_64"
+  ],
+  "full_text": "[1.9.31-1.0.1]\n- Drop pesign.service restart in postun [Orabug: 34760075]\n- Update signing certificate [JIRA: OLDIS-16371]\n- Rebuild for SecureBoot signatures [Orabug: 33801813]\n- Build with the updated Oracle certificate\n- Use oraclesecureboot301 as certdir [Orabug: 29881368]\n- Use new signing certificate (Alex Burmashev)\n- Update SBAT data to include Oracle [Oracle: 33072886]\n\n[1.9.31-1]\n- Rebase to get new hardware support\n- Resolves: #RHEL-82423\n\n[1.9.29-1]\n- Rebase to get new hardware support\n- Resolves: #RHEL-82423\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2025-20622-0.html"
+}

@@ -1,0 +1,26 @@
+{
+  "id": "ELSA-2026-0975",
+  "vendor": "Oracle",
+  "type": "Security Advisory (ELSA)",
+  "title": " glib2 security update",
+  "issuedDate": "2026-01-22T00:00:00Z",
+  "updatedDate": "2026-01-22T00:00:00Z",
+  "pubDate": "2026-01-22T00:00:00Z",
+  "dateStr": "2026-01-22",
+  "url": "https://linux.oracle.com/errata/ELSA-2026-0975.html",
+  "severity": "Moderate",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 10.",
+  "description": "[2.80.4-12]\n- Fix NVR\n\n[2.80.4-11]\n- Add patch for CVE-2025-13601",
+  "affected_products": [
+    "Oracle Linux 10 for x86_64",
+    "Oracle Linux 10 for aarch64"
+  ],
+  "cves": [
+    "CVE-2025-13601"
+  ],
+  "packages": [
+    "glib2-2.80.4-10.el10_1.12.x86_64",
+    "glib2-2.80.4-10.el10_1.12.src"
+  ],
+  "full_text": "[2.80.4-12]\n- Fix NVR\n\n[2.80.4-11]\n- Add patch for CVE-2025-13601\n\nReferences:\nhttps://linux.oracle.com/errata/ELSA-2026-0975.html\nhttps://linux.oracle.com/cve/CVE-2025-13601.html"
+}

@@ -1,0 +1,28 @@
+{
+  "id": "RHSA-2025:19421",
+  "vendor": "Red Hat",
+  "type": "Security Advisory (RHSA)",
+  "title": "Red Hat Security Advisory: Red Hat Enterprise Linux AI 1.5 (Intel Gaudi)",
+  "issuedDate": "2025-11-03T07:30:00+00:00",
+  "updatedDate": "2025-11-03T07:30:08+00:00",
+  "pubDate": "2025-11-03T07:30:00+00:00",
+  "dateStr": "2025-11-03",
+  "url": "https://access.redhat.com/errata/RHSA-2025:19421",
+  "severity": "Important",
+  "overview": "Red Hat Enterprise Linux AI 1.5 (Intel Gaudi) is now available.",
+  "description": "Red Hat® Enterprise Linux® AI is a foundation model platform to seamlessly develop, test, \nand run Granite family large language models (LLMs) for enterprise applications. This \ncontainer provides NVIDIA hardware enablement and the InstructLab application stack.",
+  "affected_products": [
+    "Red Hat Enterprise Linux AI",
+    "Red Hat Enterprise Linux AI 1.5"
+  ],
+  "cves": [
+    "CVE-2025-8194",
+    "CVE-2025-47273",
+    "CVE-2025-48956",
+    "CVE-2025-57809"
+  ],
+  "packages": [
+    "registry.redhat.io/rhelai1/instructlab-intel-rhel9@sha256:cf0ec4ad1520ff2ce83420846830286e036f310f880cf8a533f0966c35ebd32f_amd64"
+  ],
+  "full_text": "Red Hat Enterprise Linux AI 1.5 (Intel Gaudi) is now available.\n\nRed Hat® Enterprise Linux® AI is a foundation model platform to seamlessly develop, test, \nand run Granite family large language models (LLMs) for enterprise applications. This \ncontainer provides NVIDIA hardware enablement and the InstructLab application stack."
+}

@@ -1,0 +1,32 @@
+{
+  "id": "RHSA-2026:3925",
+  "vendor": "Red Hat",
+  "type": "Security Advisory (RHSA)",
+  "title": "Red Hat Security Advisory: Red Hat build of Keycloak 26.2.14 Images Update",
+  "issuedDate": "2026-03-05T15:35:42+00:00",
+  "updatedDate": "2026-03-05T15:35:42+00:00",
+  "pubDate": "2026-03-05T15:35:42+00:00",
+  "dateStr": "2026-03-05",
+  "url": "https://access.redhat.com/errata/RHSA-2026:3925",
+  "severity": "Important",
+  "overview": "New images are available for Red Hat build of Keycloak 26.2.14 and Red Hat build of Keycloak 26.2.14 Operator, running on OpenShift Container Platform",
+  "description": "Red Hat build of Keycloak is an integrated sign-on solution, available as a Red Hat JBoss Middleware for OpenShift containerized image. The Red Hat build of Keycloak for OpenShift image provides an authentication server that you can use to log in centrally, log out, and register. You can also manage user accounts for web applications, mobile applications, and RESTful web services.\nRed Hat build of Keycloak Operator for OpenShift simplifies deployment and management of Keycloak 26.2.14 clusters.\nThis erratum releases new images for Red Hat build of Keycloak 26.2.14 for use within the OpenShift Container Platform cloud computing Platform-as-a-Service (PaaS) for on-premise or private cloud deployments, aligning with the standalone product release.\n\nSecurity fixes:\n* Keycloak SAML broker: Authentication bypass due to disabled SAML client completing IdP-initiated login (CVE-2026-3047)\n* Unauthorized authentication via disabled SAML Identity Provider (CVE-2026-2603)\n* Unauthorized access via improper validation of encrypted SAML assertions (CVE-2026-2092)",
+  "affected_products": [],
+  "cves": [
+    "CVE-2026-2092",
+    "CVE-2026-2603",
+    "CVE-2026-3047"
+  ],
+  "packages": [
+    "rhbk/keycloak-rhel9@sha256:172d9f060709fdf5df5b6a8db9dc8001ff4d41025900e225d43ded8d189522d6_ppc64le",
+    "rhbk/keycloak-rhel9-operator@sha256:6dead5fff17a33fc1e37a28f98051f631a74b616d0a2d66fe84169d0eeaed0b4_ppc64le",
+    "rhbk/keycloak-rhel9@sha256:708b0282101911143c468a7c78a3c815e8a8fcee01d001d1e9504d7fa14c9337_arm64",
+    "rhbk/keycloak-rhel9-operator@sha256:252532cad9e091df87b895d82a59dfb6bc7bc97a777fe313ca43f0cacee7bd10_arm64",
+    "rhbk/keycloak-rhel9@sha256:08b5b94d827dbdaba29126c9389476341d1ca9ebeca6a764491862a38d19bb0e_s390x",
+    "rhbk/keycloak-rhel9-operator@sha256:cb02cd23c13e0ae1e6404784b22608444b0752749432970ad1e8c4f2cd74ea53_s390x",
+    "rhbk/keycloak-rhel9@sha256:97f579e9720a458a3d4a277dd19cc0e669b70bf863fdda5298f420d6442dd199_amd64",
+    "rhbk/keycloak-operator-bundle@sha256:ca0959572305bc27cc969355f06e14b0bb5c7dedea9619e884f7bd3bec9bb2bc_amd64",
+    "rhbk/keycloak-rhel9-operator@sha256:c1664981fec90044019cc72cd634f7d1568e9ca906bce2c6365dfa548ac88122_amd64"
+  ],
+  "full_text": "New images are available for Red Hat build of Keycloak 26.2.14 and Red Hat build of Keycloak 26.2.14 Operator, running on OpenShift Container Platform\n\nRed Hat build of Keycloak is an integrated sign-on solution, available as a Red Hat JBoss Middleware for OpenShift containerized image. The Red Hat build of Keycloak for OpenShift image provides an authentication server that you can use to log in centrally, log out, and register. You can also manage user accounts for web applications, mobile applications, and RESTful web services.\nRed Hat build of Keycloak Operator for OpenShift simplifies deployment and management of Keycloak 26.2.14 clusters.\nThis erratum releases new images for Red Hat build of Keycloak 26.2.14 for use within the OpenShift Container Platform cloud computing Platform-as-a-Service (PaaS) for on-premise or private cloud deployments, aligning with the standalone product release.\n\nSecurity fixes:\n* Keycloak SAML broker: Authentication bypass due to disabled SAML client completing IdP-initiated login (CVE-2026-3047)\n* Unauthorized authentication via disabled SAML Identity Provider (CVE-2026-2603)\n* Unauthorized access via improper validation of encrypted SAML assertions (CVE-2026-2092)"
+}

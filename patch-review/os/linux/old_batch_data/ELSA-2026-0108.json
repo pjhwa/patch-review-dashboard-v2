@@ -1,0 +1,30 @@
+{
+  "id": "ELSA-2026-0108",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2026-January/019447.html",
+  "synopsis": "[El-errata] ELSA-2026-0108 Moderate: Oracle Linux 10 gcc-toolset-15-binutils security update",
+  "dateStr": "2026-January",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Security Advisory ELSA-2026-0108",
+  "description": "[2.44-7.1]\n- Fix a potential illegal memory access when linking a corrupt input file.  (RHEL-130616)",
+  "affected_products": [
+    "Oracle Linux 10"
+  ],
+  "packages": [
+    "gcc-toolset-15-binutils-2.44-7.el10_1.1.x86_64.rpm",
+    "gcc-toolset-15-binutils-devel-2.44-7.el10_1.1.x86_64.rpm",
+    "gcc-toolset-15-binutils-gold-2.44-7.el10_1.1.x86_64.rpm",
+    "gcc-toolset-15-binutils-gprofng-2.44-7.el10_1.1.x86_64.rpm",
+    "gcc-toolset-15-binutils-2.44-7.el10_1.1.aarch64.rpm",
+    "gcc-toolset-15-binutils-devel-2.44-7.el10_1.1.aarch64.rpm",
+    "gcc-toolset-15-binutils-gold-2.44-7.el10_1.1.aarch64.rpm",
+    "gcc-toolset-15-binutils-gprofng-2.44-7.el10_1.1.aarch64.rpm"
+  ],
+  "cves": [
+    "CVE-2025-11083"
+  ],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Security Advisory ELSA-2026-0108\n\nhttp://linux.oracle.com/errata/ELSA-2026-0108.html\n\nThe following updated rpms for Oracle Linux 10 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\ngcc-toolset-15-binutils-2.44-7.el10_1.1.x86_64.rpm\ngcc-toolset-15-binutils-devel-2.44-7.el10_1.1.x86_64.rpm\ngcc-toolset-15-binutils-gold-2.44-7.el10_1.1.x86_64.rpm\ngcc-toolset-15-binutils-gprofng-2.44-7.el10_1.1.x86_64.rpm\n\naarch64:\ngcc-toolset-15-binutils-2.44-7.el10_1.1.aarch64.rpm\ngcc-toolset-15-binutils-devel-2.44-7.el10_1.1.aarch64.rpm\ngcc-toolset-15-binutils-gold-2.44-7.el10_1.1.aarch64.rpm\ngcc-toolset-15-binutils-gprofng-2.44-7.el10_1.1.aarch64.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol10/SRPMS-updates/gcc-toolset-15-binutils-2.44-7.el10_1.1.src.rpm\n\nRelated CVEs:\n\nCVE-2025-11083\n\n\n\n\nDescription of changes:\n\n[2.44-7.1]\n- Fix a potential illegal memory access when linking a corrupt input file.  (RHEL-130616)",
+  "vendor": "Oracle"
+}

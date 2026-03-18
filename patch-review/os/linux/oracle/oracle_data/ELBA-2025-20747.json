@@ -1,0 +1,25 @@
+{
+  "id": "ELBA-2025-20747",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "AppStream",
+  "title": "lorax-templates-rhel bug fix and enhancement update",
+  "issuedDate": "2025-11-17T00:00:00Z",
+  "updatedDate": "2025-11-17T00:00:00Z",
+  "pubDate": "2025-11-17T00:00:00Z",
+  "dateStr": "2025-11-17",
+  "url": "https://linux.oracle.com/errata/ELBA-2025-20747.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 9.",
+  "description": "[9.7-3.0.1]\n- Fix text string in Rescue option [Orabug: 37830987]\n- Resolve Wayland issue with UEKR8 [Orabug: 37569575]\n- Do not install nmap-ncat or libreport-rhel-anaconda-bugzilla into runtime.\n- Remove RHCK initrd from runtime image when creating the UEK\n  boot ISO. (mark.will@oracle.com) [Orabug: 34085357]\n- Dropped redhat-release-eula.\n- Updated description and Summary.\n- Set permissions under  to 555 [Orabug: 28945615]\n- Allow to create UEK boot iso\n\n[9.7-3]\n- live-install.tmpl: Fix broken single item tuple (bcl)\n  Related: RHEL-108149\n- libvirt.tmpl: Fix use of xrange (bcl)\n  Related: RHEL-108149\n- 80-rhel: Remove unused templates and config files (bcl)\n  Resolves: RHEL-108149\n- Fix tzselect path in runtime-cleanup.tmpl (jikortus)\n  Resolves: RHEL-101453\n\n[9.7-2]\n- Set ppc64le default boot to test the media (bcl)\n  Resolves: RHEL-93170\n\n[9.7-1]\n- Bump release version to 9.7 (bcl)\n  Related: RHEL-91930\n- Add a boot menu for fips=1 (bcl)\n  Resolves: RHEL-91930",
+  "affected_products": [
+    "Oracle Linux 9 for x86_64",
+    "Oracle Linux 9 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "lorax-templates-rhel-9.7-3.0.1.el9.src",
+    "lorax-templates-rhel-9.7-3.0.1.el9.noarch"
+  ],
+  "full_text": "[9.7-3.0.1]\n- Fix text string in Rescue option [Orabug: 37830987]\n- Resolve Wayland issue with UEKR8 [Orabug: 37569575]\n- Do not install nmap-ncat or libreport-rhel-anaconda-bugzilla into runtime.\n- Remove RHCK initrd from runtime image when creating the UEK\n  boot ISO. (mark.will@oracle.com) [Orabug: 34085357]\n- Dropped redhat-release-eula.\n- Updated description and Summary.\n- Set permissions under  to 555 [Orabug: 28945615]\n- Allow to create UEK boot iso\n\n[9.7-3]\n- live-install.tmpl: Fix broken single item tuple (bcl)\n  Related: RHEL-108149\n- libvirt.tmpl: Fix use of xrange (bcl)\n  Related: RHEL-108149\n- 80-rhel: Remove unused templates and config files (bcl)\n  Resolves: RHEL-108149\n- Fix tzselect path in runtime-cleanup.tmpl (jikortus)\n  Resolves: RHEL-101453\n\n[9.7-2]\n- Set ppc64le default boot to test the media (bcl)\n  Resolves: RHEL-93170\n\n[9.7-1]\n- Bump release version to 9.7 (bcl)\n  Related: RHEL-91930\n- Add a boot menu for fips=1 (bcl)\n  Resolves: RHEL-91930\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2025-20747.html"
+}

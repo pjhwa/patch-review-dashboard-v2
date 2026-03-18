@@ -1,0 +1,24 @@
+{
+  "id": "ELBA-2025-20925",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2025-November/019101.html",
+  "synopsis": "[El-errata] ELBA-2025-20925 Oracle Linux 9 frr bug fix and enhancement update",
+  "dateStr": "2025-November",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Bug Fix Advisory ELBA-2025-20925",
+  "description": "[8.5.3-9.1]\n- Backported a fix for nexthop hashing mess\n- Resolves: RHEL-114183",
+  "affected_products": [
+    "Oracle Linux 9"
+  ],
+  "packages": [
+    "frr-8.5.3-9.el9_7.1.x86_64.rpm",
+    "frr-selinux-8.5.3-9.el9_7.1.noarch.rpm",
+    "frr-8.5.3-9.el9_7.1.aarch64.rpm",
+    "frr-selinux-8.5.3-9.el9_7.1.noarch.rpm"
+  ],
+  "cves": [],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Bug Fix Advisory ELBA-2025-20925\n\nhttp://linux.oracle.com/errata/ELBA-2025-20925.html\n\nThe following updated rpms for Oracle Linux 9 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\nfrr-8.5.3-9.el9_7.1.x86_64.rpm\nfrr-selinux-8.5.3-9.el9_7.1.noarch.rpm\n\naarch64:\nfrr-8.5.3-9.el9_7.1.aarch64.rpm\nfrr-selinux-8.5.3-9.el9_7.1.noarch.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol9/SRPMS-updates/frr-8.5.3-9.el9_7.1.src.rpm\n\n\n\nDescription of changes:\n\n[8.5.3-9.1]\n- Backported a fix for nexthop hashing mess\n- Resolves: RHEL-114183",
+  "vendor": "Oracle"
+}

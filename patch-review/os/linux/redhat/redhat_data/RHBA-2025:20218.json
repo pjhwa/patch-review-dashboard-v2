@@ -1,0 +1,44 @@
+{
+  "id": "RHBA-2025:20218",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: dbus-broker bug fix and enhancement update",
+  "issuedDate": "2025-11-11T07:25:28Z",
+  "updatedDate": "2025-11-11T07:25:28Z",
+  "pubDate": "2025-11-11T07:25:28Z",
+  "dateStr": "2025-11-11",
+  "url": "https://access.redhat.com/errata/RHBA-2025:20218",
+  "severity": "None",
+  "overview": "An update for dbus-broker is now available for Red Hat Enterprise Linux 10.",
+  "description": "For detailed information on changes in this release, see the Red Hat Enterprise Linux 10 Release Notes linked from the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux for Power, little endian",
+    "Red Hat Enterprise Linux for x86_64 10 x86_64",
+    "Red Hat Enterprise Linux for ARM 64",
+    "Red Hat Enterprise Linux for IBM z Systems"
+  ],
+  "cves": [],
+  "packages": [
+    "dbus-broker-36-4.el10.src",
+    "dbus-broker-36-4.el10.x86_64",
+    "dbus-broker-debuginfo-36-4.el10.x86_64",
+    "dbus-broker-debugsource-36-4.el10.x86_64",
+    "dbus-broker-36-4.el10.s390x",
+    "dbus-broker-debuginfo-36-4.el10.s390x",
+    "dbus-broker-debugsource-36-4.el10.s390x",
+    "dbus-broker-36-4.el10.ppc64le",
+    "dbus-broker-debuginfo-36-4.el10.ppc64le",
+    "dbus-broker-debugsource-36-4.el10.ppc64le",
+    "dbus-broker-36-4.el10.aarch64",
+    "dbus-broker-debuginfo-36-4.el10.aarch64",
+    "dbus-broker-debugsource-36-4.el10.aarch64"
+  ],
+  "fixes": [
+    {
+      "id": "RHEL-106597",
+      "url": "https://issues.redhat.com/browse/RHEL-106597",
+      "description": "put https://src.fedoraproject.org/rpms/dbus-broker/c/1271d175cb7fe0f9705080a665aba7602e1ee673?branch=f42 to centos stream 10"
+    }
+  ],
+  "full_text": "An update for dbus-broker is now available for Red Hat Enterprise Linux 10.\n\nFor detailed information on changes in this release, see the Red Hat Enterprise Linux 10 Release Notes linked from the References section."
+}

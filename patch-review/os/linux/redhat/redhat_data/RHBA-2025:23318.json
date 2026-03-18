@@ -1,0 +1,33 @@
+{
+  "id": "RHBA-2025:23318",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: python-jmespath bug fix and enhancement update",
+  "issuedDate": "2025-12-18T10:48:13Z",
+  "updatedDate": "2025-12-18T10:48:13Z",
+  "pubDate": "2025-12-18T10:48:13Z",
+  "dateStr": "2025-12-18",
+  "url": "https://access.redhat.com/errata/RHBA-2025:23318",
+  "severity": "None",
+  "overview": "An update for python-jmespath is now available for Red Hat Enterprise Linux 10.",
+  "description": "Python is an interpreted, interactive, object-oriented programming language, which includes modules, classes, exceptions, very high level dynamic data types and dynamic typing. Python supports interfaces to many system calls and libraries, as well as to various windowing systems.Bug Fix(es) and Enhancement(s): [RFE] Update python-jmespath package (JIRA:RHEL-126064)",
+  "affected_products": [
+    "Red Hat Enterprise Linux for x86_64 10 x86_64",
+    "Red Hat Enterprise Linux for IBM z Systems",
+    "Red Hat Enterprise Linux for ARM 64",
+    "Red Hat Enterprise Linux for Power, little endian"
+  ],
+  "cves": [],
+  "packages": [
+    "python-jmespath-1.0.1-1.el9_7.src",
+    "python3-jmespath-1.0.1-1.el9_7.noarch"
+  ],
+  "fixes": [
+    {
+      "id": "RHEL-126064",
+      "url": "https://issues.redhat.com/browse/RHEL-126064",
+      "description": "[RFE] Update python-jmespath package"
+    }
+  ],
+  "full_text": "An update for python-jmespath is now available for Red Hat Enterprise Linux 10.\n\nPython is an interpreted, interactive, object-oriented programming language, which includes modules, classes, exceptions, very high level dynamic data types and dynamic typing. Python supports interfaces to many system calls and libraries, as well as to various windowing systems.Bug Fix(es) and Enhancement(s): [RFE] Update python-jmespath package (JIRA:RHEL-126064)"
+}

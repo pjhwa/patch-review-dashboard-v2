@@ -1,0 +1,35 @@
+{
+  "id": "ELSA-2025-23052",
+  "vendor": "Oracle",
+  "type": "Security Advisory (ELSA)",
+  "kernel_type": "AppStream",
+  "title": " tomcat9 security update",
+  "issuedDate": "2025-12-10T00:00:00Z",
+  "updatedDate": "2025-12-10T00:00:00Z",
+  "pubDate": "2025-12-10T00:00:00Z",
+  "dateStr": "2025-12-10",
+  "url": "https://linux.oracle.com/errata/ELSA-2025-23052.html",
+  "severity": "Important",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 10.",
+  "description": "[1:9.0.87-8.1]\n- Resolves: RHEL-124497\n  tomcat: Directory traversal via rewrite with possible RCE (CVE-2025-55752)\n- Resolves: RHEL-91732\n  tomcat: Bypass of rules in Rewrite Valve (CVE-2025-31651)",
+  "affected_products": [
+    "Oracle Linux 10 for x86_64",
+    "Oracle Linux 10 for aarch64"
+  ],
+  "cves": [
+    "CVE-2025-31651",
+    "CVE-2025-55752"
+  ],
+  "packages": [
+    "tomcat9-el-3.0-api-9.0.87-8.el10_1.1.noarch",
+    "tomcat9-jsp-2.3-api-9.0.87-8.el10_1.1.noarch",
+    "tomcat9-9.0.87-8.el10_1.1.src",
+    "tomcat9-docs-webapp-9.0.87-8.el10_1.1.noarch",
+    "tomcat9-webapps-9.0.87-8.el10_1.1.noarch",
+    "tomcat9-admin-webapps-9.0.87-8.el10_1.1.noarch",
+    "tomcat9-9.0.87-8.el10_1.1.noarch",
+    "tomcat9-servlet-4.0-api-9.0.87-8.el10_1.1.noarch",
+    "tomcat9-lib-9.0.87-8.el10_1.1.noarch"
+  ],
+  "full_text": "[1:9.0.87-8.1]\n- Resolves: RHEL-124497\n  tomcat: Directory traversal via rewrite with possible RCE (CVE-2025-55752)\n- Resolves: RHEL-91732\n  tomcat: Bypass of rules in Rewrite Valve (CVE-2025-31651)\n\nReferences:\nhttps://linux.oracle.com/errata/ELSA-2025-23052.html\nhttps://linux.oracle.com/cve/CVE-2025-31651.html\nhttps://linux.oracle.com/cve/CVE-2025-55752.html"
+}

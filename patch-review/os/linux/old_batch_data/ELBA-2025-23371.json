@@ -1,0 +1,24 @@
+{
+  "id": "ELBA-2025-23371",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2025-December/019311.html",
+  "synopsis": "[El-errata] ELBA-2025-23371 Oracle Linux 8 nmap bug fix and enhancement update",
+  "dateStr": "2025-December",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Bug Fix Advisory ELBA-2025-23371",
+  "description": "[2:7.92-2]\n- Resolves: RHEL-40632 - Nmap scans fail with enic driver",
+  "affected_products": [
+    "Oracle Linux 8"
+  ],
+  "packages": [
+    "nmap-7.92-2.el8_10.x86_64.rpm",
+    "nmap-ncat-7.92-2.el8_10.x86_64.rpm",
+    "nmap-7.92-2.el8_10.aarch64.rpm",
+    "nmap-ncat-7.92-2.el8_10.aarch64.rpm"
+  ],
+  "cves": [],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Bug Fix Advisory ELBA-2025-23371\n\nhttp://linux.oracle.com/errata/ELBA-2025-23371.html\n\nThe following updated rpms for Oracle Linux 8 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\nnmap-7.92-2.el8_10.x86_64.rpm\nnmap-ncat-7.92-2.el8_10.x86_64.rpm\n\naarch64:\nnmap-7.92-2.el8_10.aarch64.rpm\nnmap-ncat-7.92-2.el8_10.aarch64.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol8/SRPMS-updates/nmap-7.92-2.el8_10.src.rpm\n\n\n\nDescription of changes:\n\n[2:7.92-2]\n- Resolves: RHEL-40632 - Nmap scans fail with enic driver",
+  "vendor": "Oracle"
+}

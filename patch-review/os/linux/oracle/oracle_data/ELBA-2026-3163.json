@@ -1,0 +1,28 @@
+{
+  "id": "ELBA-2026-3163",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "title": "opencryptoki bug fix and enhancement update",
+  "issuedDate": "2026-02-24T00:00:00Z",
+  "updatedDate": "2026-02-24T00:00:00Z",
+  "pubDate": "2026-02-24T00:00:00Z",
+  "dateStr": "2026-02-24",
+  "url": "https://linux.oracle.com/errata/ELBA-2026-3163.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 10.",
+  "description": "[3.25.0-5.1]\n- Fix unwrapping of attribute bound EC keys\n- Fix private secure key blob import\n  Resolves: RHEL-131645",
+  "affected_products": [
+    "Oracle Linux 10 for x86_64",
+    "Oracle Linux 10 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "opencryptoki-swtok-3.25.0-5.el10_1.1.x86_64",
+    "opencryptoki-3.25.0-5.el10_1.1.x86_64",
+    "opencryptoki-3.25.0-5.el10_1.1.src",
+    "opencryptoki-icsftok-3.25.0-5.el10_1.1.x86_64",
+    "opencryptoki-libs-3.25.0-5.el10_1.1.x86_64",
+    "opencryptoki-ccatok-3.25.0-5.el10_1.1.x86_64"
+  ],
+  "full_text": "[3.25.0-5.1]\n- Fix unwrapping of attribute bound EC keys\n- Fix private secure key blob import\n  Resolves: RHEL-131645\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2026-3163.html"
+}

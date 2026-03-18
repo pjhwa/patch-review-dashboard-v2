@@ -1,0 +1,28 @@
+{
+  "id": "ELBA-2026-3160",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2026-February/019844.html",
+  "synopsis": "[El-errata] ELBA-2026-3160 Oracle Linux 10 ipset bug fix and enhancement update",
+  "dateStr": "2026-February",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Bug Fix Advisory ELBA-2026-3160",
+  "description": "[7.22-9.0.1]\n- Update dependencies for additional UEK kernel flavours [Orabug: 38000003]\n- Depend either on kernel-extra or kernel-uek-extra-netfilter [Orabug: 37585869]\n\n[7.22-9]\n- Do not require kernel-modules-extra-matched meta package",
+  "affected_products": [
+    "Oracle Linux 10"
+  ],
+  "packages": [
+    "ipset-7.22-9.0.1.el10_1.x86_64.rpm",
+    "ipset-devel-7.22-9.0.1.el10_1.x86_64.rpm",
+    "ipset-libs-7.22-9.0.1.el10_1.x86_64.rpm",
+    "ipset-service-7.22-9.0.1.el10_1.noarch.rpm",
+    "ipset-7.22-9.0.1.el10_1.aarch64.rpm",
+    "ipset-devel-7.22-9.0.1.el10_1.aarch64.rpm",
+    "ipset-libs-7.22-9.0.1.el10_1.aarch64.rpm",
+    "ipset-service-7.22-9.0.1.el10_1.noarch.rpm"
+  ],
+  "cves": [],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Bug Fix Advisory ELBA-2026-3160\n\nhttp://linux.oracle.com/errata/ELBA-2026-3160.html\n\nThe following updated rpms for Oracle Linux 10 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\nipset-7.22-9.0.1.el10_1.x86_64.rpm\nipset-devel-7.22-9.0.1.el10_1.x86_64.rpm\nipset-libs-7.22-9.0.1.el10_1.x86_64.rpm\nipset-service-7.22-9.0.1.el10_1.noarch.rpm\n\naarch64:\nipset-7.22-9.0.1.el10_1.aarch64.rpm\nipset-devel-7.22-9.0.1.el10_1.aarch64.rpm\nipset-libs-7.22-9.0.1.el10_1.aarch64.rpm\nipset-service-7.22-9.0.1.el10_1.noarch.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol10/SRPMS-updates/ipset-7.22-9.0.1.el10_1.src.rpm\n\n\n\nDescription of changes:\n\n[7.22-9.0.1]\n- Update dependencies for additional UEK kernel flavours [Orabug: 38000003]\n- Depend either on kernel-extra or kernel-uek-extra-netfilter [Orabug: 37585869]\n\n[7.22-9]\n- Do not require kernel-modules-extra-matched meta package",
+  "vendor": "Oracle"
+}

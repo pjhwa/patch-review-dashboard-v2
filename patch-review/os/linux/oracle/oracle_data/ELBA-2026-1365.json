@@ -1,0 +1,25 @@
+{
+  "id": "ELBA-2026-1365",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "AppStream",
+  "title": "cloud-init bug fix and enhancement update",
+  "issuedDate": "2026-01-29T00:00:00Z",
+  "updatedDate": "2026-01-29T00:00:00Z",
+  "pubDate": "2026-01-29T00:00:00Z",
+  "dateStr": "2026-01-29",
+  "url": "https://linux.oracle.com/errata/ELBA-2026-1365.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 9.",
+  "description": "[24.4-7.0.1.el9_7.1]\n- Fix Oracle Datasource network and getdata methods for OCI OL [Orabug: 35950168]\n- Fix log file permission [Orabug: 35302969]\n- Update detection logic for OL distros in config template [Orabug: 34845400]\n- Added missing services in rhel/systemd/cloud-init.service [Orabug: 32183938]\n- Added missing services in cloud-init.service.tmpl for sshd [Orabug: 32183938]\n- Forward port applicable cloud-init 18.4-2.0.3 changes to cloud-init-18-5 [Orabug: 30435672]\n- limit permissions [Orabug: 31352433]\n- Changes to ignore all enslaved interfaces [Orabug: 30092148]\n- Make Oracle datasource detect dracut based config files [Orabug: 29956753]\n- add modified version of enable-ec2_utils-to-stop-retrying-to-get-ec2-metadata.patch:\n  1. Enable ec2_utils.py having a way to stop retrying to get ec2 metadata\n  2. Apply stop retrying to get ec2 metadata to helper/openstack.py MetadataReader\n  Resolves: Oracle-Bug:41660 (Bugzilla)\n- added OL to list of known distros\nResolves: rhbz#1427280\nResolves: rhbz#1427280\n\n[24.4-7.el9_7.1]\n- ci-downstream-Do-not-override-changes-in-disable-sshd-k.patch [RHEL-128876]\n- Resolves: RHEL-128876\n  ([rhel-9] cloud-init upgrade is overwriting modifications in disable-sshd-keygen-if-cloud-init-active.conf)",
+  "affected_products": [
+    "Oracle Linux 9 for x86_64",
+    "Oracle Linux 9 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "cloud-init-24.4-7.0.1.el9_7.1.noarch",
+    "cloud-init-24.4-7.0.1.el9_7.1.src"
+  ],
+  "full_text": "[24.4-7.0.1.el9_7.1]\n- Fix Oracle Datasource network and getdata methods for OCI OL [Orabug: 35950168]\n- Fix log file permission [Orabug: 35302969]\n- Update detection logic for OL distros in config template [Orabug: 34845400]\n- Added missing services in rhel/systemd/cloud-init.service [Orabug: 32183938]\n- Added missing services in cloud-init.service.tmpl for sshd [Orabug: 32183938]\n- Forward port applicable cloud-init 18.4-2.0.3 changes to cloud-init-18-5 [Orabug: 30435672]\n- limit permissions [Orabug: 31352433]\n- Changes to ignore all enslaved interfaces [Orabug: 30092148]\n- Make Oracle datasource detect dracut based config files [Orabug: 29956753]\n- add modified version of enable-ec2_utils-to-stop-retrying-to-get-ec2-metadata.patch:\n  1. Enable ec2_utils.py having a way to stop retrying to get ec2 metadata\n  2. Apply stop retrying to get ec2 metadata to helper/openstack.py MetadataReader\n  Resolves: Oracle-Bug:41660 (Bugzilla)\n- added OL to list of known distros\nResolves: rhbz#1427280\nResolves: rhbz#1427280\n\n[24.4-7.el9_7.1]\n- ci-downstream-Do-not-override-changes-in-disable-sshd-k.patch [RHEL-128876]\n- Resolves: RHEL-128876\n  ([rhel-9] cloud-init upgrade is overwriting modifications in disable-sshd-keygen-if-cloud-init-active.conf)\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2026-1365.html"
+}

@@ -1,0 +1,42 @@
+{
+  "id": "ELSA-2026-1178",
+  "vendor": "Oracle",
+  "type": "Security Advisory (ELSA)",
+  "title": " kernel security update",
+  "issuedDate": "2026-01-26T00:00:00Z",
+  "updatedDate": "2026-01-26T00:00:00Z",
+  "pubDate": "2026-01-26T00:00:00Z",
+  "dateStr": "2026-01-26",
+  "url": "https://linux.oracle.com/errata/ELSA-2026-1178.html",
+  "severity": "Moderate",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 10.",
+  "description": "[6.12.0-124.29.1]\n- Add new Oracle Linux Driver Signing (key 1) certificate [Orabug: 37985782]\n- Disable UKI signing [Orabug: 36571828]\n- Update Oracle Linux certificates (Kevin Lyons)\n- Disable signing for aarch64 (Ilya Okomin)\n- Oracle Linux RHCK Module Signing Key was added to the kernel trusted keys list (olkmod_signing_key.pem) [Orabug: 29539237]\n- Update x509.genkey [Orabug: 24817676]\n- Conflict with shim-ia32 and shim-x64 <= 15.3-1.0.5]\n- Remove upstream reference during boot (Kevin Lyons) [Orabug: 34729535]\n- Add Oracle Linux IMA certificates\n- Update module name for cryptographic module [Orabug: 37400433]\n- Clean git history at setup stage\n\n[6.12.0-124.29.1]\n- gitlab-ci: use rhel10.1 builder image (Michael Hofmann)\n- mm/vmalloc: fix data race in show_numa_info() (Waiman Long) [RHEL-137997] {CVE-2025-38383}\n- vmalloc: use for_each_vmap_node() in purge-vmap-area (Waiman Long) [RHEL-137997]\n- vmalloc: switch to for_each_vmap_node() helper (Waiman Long) [RHEL-137997]\n- vmalloc: add for_each_vmap_node() helper (Waiman Long) [RHEL-137997]\n- smb: client: fix refcount leak in smb2_set_path_attr (Paulo Alcantara) [RHEL-128581]\n- smb: client: fix potential UAF in smb2_close_cached_fid() (Paulo Alcantara) [RHEL-128581]\n- smb: client: fix potential cfid UAF in smb2_query_info_compound (Paulo Alcantara) [RHEL-128581]\n- smb: client: Fix refcount leak for cifs_sb_tlink (Paulo Alcantara) [RHEL-128581]\n- cifs: parse_dfs_referrals: prevent oob on malformed input (Paulo Alcantara) [RHEL-128581]\n- smb: client: remove cfids_invalidation_worker (Paulo Alcantara) [RHEL-128581]\n- smb client: fix bug with newly created file in cached dir (Paulo Alcantara) [RHEL-128581]\n- smb: client: short-circuit negative lookups when parent dir is fully cached (Paulo Alcantara) [RHEL-128581]\n- smb: client: short-circuit in open_cached_dir_by_dentry() if !dentry (Paulo Alcantara) [RHEL-128581]\n- smb: client: remove pointless cfid->has_lease check (Paulo Alcantara) [RHEL-128581]\n- smb: client: remove unused fid_lock (Paulo Alcantara) [RHEL-128581]\n- smb: client: update cfid->last_access_time in open_cached_dir_by_dentry() (Paulo Alcantara) [RHEL-128581]\n- smb: client: ensure open_cached_dir_by_dentry() only returns valid cfid (Paulo Alcantara) [RHEL-128581]\n- smb: client: account smb directory cache usage and per-tcon totals (Paulo Alcantara) [RHEL-128581]\n- smb: client: add drop_dir_cache module parameter to invalidate cached dirents (Paulo Alcantara) [RHEL-128581]\n- smb: client: show lease state as R/H/W (or NONE) in open_files (Paulo Alcantara) [RHEL-128581]\n- smb: client: show negotiated cipher in DebugData (Paulo Alcantara) [RHEL-128581]\n- smb: client: add new tracepoint to trace lease break notification (Paulo Alcantara) [RHEL-128581]\n- smb: client: Fix NULL pointer dereference in cifs_debug_dirs_proc_show() (Paulo Alcantara) [RHEL-128581]\n- coredump: Only sort VMAs when core_sort_vma sysctl is set (Herton R. Krzesinski) [RHEL-113364]",
+  "affected_products": [
+    "Oracle Linux 10 for x86_64",
+    "Oracle Linux 10 for aarch64"
+  ],
+  "cves": [
+    "CVE-2025-38383"
+  ],
+  "packages": [
+    "kernel-6.12.0-124.29.1.el10_1.x86_64",
+    "kernel-uki-virt-addons-6.12.0-124.29.1.el10_1.x86_64",
+    "kernel-debug-modules-extra-6.12.0-124.29.1.el10_1.x86_64",
+    "kernel-modules-extra-6.12.0-124.29.1.el10_1.x86_64",
+    "kernel-debug-6.12.0-124.29.1.el10_1.x86_64",
+    "kernel-modules-extra-matched-6.12.0-124.29.1.el10_1.x86_64",
+    "kernel-tools-6.12.0-124.29.1.el10_1.x86_64",
+    "kernel-6.12.0-124.29.1.el10_1.src",
+    "kernel-uki-virt-6.12.0-124.29.1.el10_1.x86_64",
+    "kernel-debug-core-6.12.0-124.29.1.el10_1.x86_64",
+    "kernel-tools-libs-6.12.0-124.29.1.el10_1.x86_64",
+    "kernel-abi-stablelists-6.12.0-124.29.1.el10_1.noarch",
+    "kernel-debug-modules-core-6.12.0-124.29.1.el10_1.x86_64",
+    "kernel-debug-modules-6.12.0-124.29.1.el10_1.x86_64",
+    "kernel-debug-uki-virt-6.12.0-124.29.1.el10_1.x86_64",
+    "kernel-modules-core-6.12.0-124.29.1.el10_1.x86_64",
+    "kernel-core-6.12.0-124.29.1.el10_1.x86_64",
+    "kernel-modules-6.12.0-124.29.1.el10_1.x86_64"
+  ],
+  "full_text": "[6.12.0-124.29.1]\n- Add new Oracle Linux Driver Signing (key 1) certificate [Orabug: 37985782]\n- Disable UKI signing [Orabug: 36571828]\n- Update Oracle Linux certificates (Kevin Lyons)\n- Disable signing for aarch64 (Ilya Okomin)\n- Oracle Linux RHCK Module Signing Key was added to the kernel trusted keys list (olkmod_signing_key.pem) [Orabug: 29539237]\n- Update x509.genkey [Orabug: 24817676]\n- Conflict with shim-ia32 and shim-x64 <= 15.3-1.0.5]\n- Remove upstream reference during boot (Kevin Lyons) [Orabug: 34729535]\n- Add Oracle Linux IMA certificates\n- Update module name for cryptographic module [Orabug: 37400433]\n- Clean git history at setup stage\n\n[6.12.0-124.29.1]\n- gitlab-ci: use rhel10.1 builder image (Michael Hofmann)\n- mm/vmalloc: fix data race in show_numa_info() (Waiman Long) [RHEL-137997] {CVE-2025-38383}\n- vmalloc: use for_each_vmap_node() in purge-vmap-area (Waiman Long) [RHEL-137997]\n- vmalloc: switch to for_each_vmap_node() helper (Waiman Long) [RHEL-137997]\n- vmalloc: add for_each_vmap_node() helper (Waiman Long) [RHEL-137997]\n- smb: client: fix refcount leak in smb2_set_path_attr (Paulo Alcantara) [RHEL-128581]\n- smb: client: fix potential UAF in smb2_close_cached_fid() (Paulo Alcantara) [RHEL-128581]\n- smb: client: fix potential cfid UAF in smb2_query_info_compound (Paulo Alcantara) [RHEL-128581]\n- smb: client: Fix refcount leak for cifs_sb_tlink (Paulo Alcantara) [RHEL-128581]\n- cifs: parse_dfs_referrals: prevent oob on malformed input (Paulo Alcantara) [RHEL-128581]\n- smb: client: remove cfids_invalidation_worker (Paulo Alcantara) [RHEL-128581]\n- smb client: fix bug with newly created file in cached dir (Paulo Alcantara) [RHEL-128581]\n- smb: client: short-circuit negative lookups when parent dir is fully cached (Paulo Alcantara) [RHEL-128581]\n- smb: client: short-circuit in open_cached_dir_by_dentry() if !dentry (Paulo Alcantara) [RHEL-128581]\n- smb: client: remove pointless cfid->has_lease check (Paulo Alcantara) [RHEL-128581]\n- smb: client: remove unused fid_lock (Paulo Alcantara) [RHEL-128581]\n- smb: client: update cfid->last_access_time in open_cached_dir_by_dentry() (Paulo Alcantara) [RHEL-128581]\n- smb: client: ensure open_cached_dir_by_dentry() only returns valid cfid (Paulo Alcantara) [RHEL-128581]\n- smb: client: account smb directory cache usage and per-tcon totals (Paulo Alcantara) [RHEL-128581]\n- smb: client: add drop_dir_cache module parameter to invalidate cached dirents (Paulo Alcantara) [RHEL-128581]\n- smb: client: show lease state as R/H/W (or NONE) in open_files (Paulo Alcantara) [RHEL-128581]\n- smb: client: show negotiated cipher in DebugData (Paulo Alcantara) [RHEL-128581]\n- smb: client: add new tracepoint to trace lease break notification (Paulo Alcantara) [RHEL-128581]\n- smb: client: Fix NULL pointer dereference in cifs_debug_dirs_proc_show() (Paulo Alcantara) [RHEL-128581]\n- coredump: Only sort VMAs when core_sort_vma sysctl is set (Herton R. Krzesinski) [RHEL-113364]\n\nReferences:\nhttps://linux.oracle.com/errata/ELSA-2026-1178.html\nhttps://linux.oracle.com/cve/CVE-2025-38383.html"
+}

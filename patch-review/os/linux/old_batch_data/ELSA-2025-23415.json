@@ -1,0 +1,24 @@
+{
+  "id": "ELSA-2025-23415",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2026-January/019430.html",
+  "synopsis": "[El-errata] ELSA-2025-23415 Moderate: Oracle Linux 7 rsync security update",
+  "dateStr": "2026-January",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Security Advisory ELSA-2025-23415",
+  "description": "[3.1.2-12.0.3]\n- Fix CVE-2024-12087 [Orabug: 38771262]\n\n[3.1.2-12.0.1]\n* Back port fix for CVE-2024-12085 [Orabug: 37524229]",
+  "affected_products": [
+    "Oracle Linux 7"
+  ],
+  "packages": [
+    "rsync-3.1.2-12.0.3.el7_9.x86_64.rpm"
+  ],
+  "cves": [
+    "CVE-2024-12087",
+    "CVE-2024-12085"
+  ],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Security Advisory ELSA-2025-23415\n\nhttp://linux.oracle.com/errata/ELSA-2025-23415.html\n\nThe following updated rpms for Oracle Linux 7 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\nrsync-3.1.2-12.0.3.el7_9.x86_64.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol7/SRPMS-updates/rsync-3.1.2-12.0.3.el7_9.src.rpm\n\nRelated CVEs:\n\nCVE-2024-12087\n\n\n\n\nDescription of changes:\n\n[3.1.2-12.0.3]\n- Fix CVE-2024-12087 [Orabug: 38771262]\n\n[3.1.2-12.0.1]\n* Back port fix for CVE-2024-12085 [Orabug: 37524229]",
+  "vendor": "Oracle"
+}

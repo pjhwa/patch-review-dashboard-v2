@@ -1,0 +1,29 @@
+{
+  "id": "ELSA-2026-50153",
+  "vendor": "Oracle",
+  "type": "Security Advisory (ELSA)",
+  "kernel_type": "UEK",
+  "title": "dtrace security update",
+  "issuedDate": "2026-03-13T00:00:00Z",
+  "updatedDate": "2026-03-13T00:00:00Z",
+  "pubDate": "2026-03-13T00:00:00Z",
+  "dateStr": "2026-03-13",
+  "url": "https://linux.oracle.com/errata/ELSA-2026-50153.html",
+  "severity": "Moderate",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 9.",
+  "description": "[2.0.6-1]\n- Fix dtprobed unsafe probe description handling (CVE-2026-21991).\n  [Orabug: 39054018]\n\n  Credit Statement:\n  The following people or organizations reported security vulnerabilities addressed by this ELSA to Oracle:\n    Dhiraj Mishra: CVE-2026-21991",
+  "affected_products": [
+    "Oracle Linux 9 for x86_64",
+    "Oracle Linux 9 for aarch64"
+  ],
+  "cves": [
+    "CVE-2026-21991"
+  ],
+  "packages": [
+    "dtrace-devel-2.0.6-1.el9.x86_64",
+    "dtrace-testsuite-2.0.6-1.el9.x86_64",
+    "dtrace-2.0.6-1.el9.src",
+    "dtrace-2.0.6-1.el9.x86_64"
+  ],
+  "full_text": "[2.0.6-1]\n- Fix dtprobed unsafe probe description handling (CVE-2026-21991).\n  [Orabug: 39054018]\n\n  Credit Statement:\n  The following people or organizations reported security vulnerabilities addressed by this ELSA to Oracle:\n    Dhiraj Mishra: CVE-2026-21991\n\nReferences:\nhttps://linux.oracle.com/errata/ELSA-2026-50153.html\nhttps://linux.oracle.com/cve/CVE-2026-21991.html"
+}

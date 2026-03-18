@@ -1,0 +1,41 @@
+{
+  "id": "ELSA-2026-50133",
+  "vendor": "Oracle",
+  "type": "Security Advisory (ELSA)",
+  "kernel_type": "UEK",
+  "title": "Unbreakable Enterprise kernel security update",
+  "issuedDate": "2026-02-27T00:00:00Z",
+  "updatedDate": "2026-02-27T00:00:00Z",
+  "pubDate": "2026-02-27T00:00:00Z",
+  "dateStr": "2026-02-27",
+  "url": "https://linux.oracle.com/errata/ELSA-2026-50133.html",
+  "severity": "Important",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 8.",
+  "description": "[5.15.0-317.197.5.2]\n- xfrm: flush all states in xfrm_state_fini (Sabrina Dubroca)  [Orabug: 39016261] \n- xfrm: also call xfrm_state_delete_tunnel at destroy time for states that were never added (Sabrina Dubroca)  [Orabug: 39016261] \n- Revert 'xfrm: destroy xfrm_state synchronously on net exit path' (Sabrina Dubroca)  [Orabug: 39016261] \n- tls: Use __sk_dst_get() and dst_dev_rcu() in get_netdev_for_sock(). (Kuniyuki Iwashima)  [Orabug: 39016219]  {CVE-2025-40149}\n- net: Add locking to protect skb->dev access in ip_output (Sharath Chandra Vurukala)  [Orabug: 39016219]",
+  "affected_products": [
+    "Oracle Linux 8 for x86_64",
+    "Oracle Linux 8 for aarch64"
+  ],
+  "cves": [
+    "CVE-2025-40149",
+    "CVE-2025-40256"
+  ],
+  "packages": [
+    "kernel-uek-modules-5.15.0-317.197.5.2.el8uek.x86_64",
+    "kernel-uek-5.15.0-317.197.5.2.el8uek.src",
+    "kernel-uek-debug-5.15.0-317.197.5.2.el8uek.x86_64",
+    "kernel-uek-modules-extra-5.15.0-317.197.5.2.el8uek.x86_64",
+    "kernel-uek-5.15.0-317.197.5.2.el8uek.x86_64",
+    "kernel-uek-core-5.15.0-317.197.5.2.el8uek.x86_64",
+    "kernel-uek-debug-modules-extra-5.15.0-317.197.5.2.el8uek.x86_64",
+    "bpftool-5.15.0-317.197.5.2.el8uek.x86_64",
+    "kernel-uek-container-debug-5.15.0-317.197.5.2.el8uek.x86_64",
+    "kernel-uek-debug-devel-5.15.0-317.197.5.2.el8uek.x86_64",
+    "kernel-uek-debug-core-5.15.0-317.197.5.2.el8uek.x86_64",
+    "kernel-uek-doc-5.15.0-317.197.5.2.el8uek.noarch",
+    "kernel-uek-devel-5.15.0-317.197.5.2.el8uek.x86_64",
+    "kernel-uek-debug-modules-5.15.0-317.197.5.2.el8uek.x86_64",
+    "kernel-uek-container-5.15.0-317.197.5.2.el8uek.x86_64"
+  ],
+  "full_text": "[5.15.0-317.197.5.2]\n- xfrm: flush all states in xfrm_state_fini (Sabrina Dubroca)  [Orabug: 39016261] \n- xfrm: also call xfrm_state_delete_tunnel at destroy time for states that were never added (Sabrina Dubroca)  [Orabug: 39016261] \n- Revert 'xfrm: destroy xfrm_state synchronously on net exit path' (Sabrina Dubroca)  [Orabug: 39016261] \n- tls: Use __sk_dst_get() and dst_dev_rcu() in get_netdev_for_sock(). (Kuniyuki Iwashima)  [Orabug: 39016219]  {CVE-2025-40149}\n- net: Add locking to protect skb->dev access in ip_output (Sharath Chandra Vurukala)  [Orabug: 39016219]\n\nReferences:\nhttps://linux.oracle.com/errata/ELSA-2026-50133.html\nhttps://linux.oracle.com/cve/CVE-2025-40149.html\nhttps://linux.oracle.com/cve/CVE-2025-40256.html"
+}

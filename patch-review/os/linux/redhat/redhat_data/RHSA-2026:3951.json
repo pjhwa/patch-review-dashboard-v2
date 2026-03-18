@@ -1,0 +1,22 @@
+{
+  "id": "RHSA-2026:3951",
+  "vendor": "Red Hat",
+  "type": "Security Advisory (RHSA)",
+  "title": "Red Hat Security Advisory: JBoss EAP XP 5.0 Update 4.0 release. See references for release notes.",
+  "issuedDate": "2026-03-05T20:00:33+00:00",
+  "updatedDate": "2026-03-05T20:00:33+00:00",
+  "pubDate": "2026-03-05T20:00:33+00:00",
+  "dateStr": "2026-03-05",
+  "url": "https://access.redhat.com/errata/RHSA-2026:3951",
+  "severity": "Important",
+  "overview": "JBoss EAP XP 5.0 Update 4.0 release. See references for release notes.",
+  "description": "JBoss EAP XP 5.0 Update 4.0 GA release. See references for release notes.\n\nSecurity Fix(es):\n\n* vertx-core: static handler component cache can be manipulated to deny the access to static files [eapxp-5] (CVE-2026-1002)\n\n* netty-codec: Netty's BrotliDecoder is vulnerable to DoS via zip bomb style attack [eapxp-5] (CVE-2025-58057)\n\n* lz4-java: lz4-java: Information Disclosure via Insufficient Output Buffer Clearing [eapxp-5] (CVE-2025-66566)\n\nFor more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section.",
+  "affected_products": [],
+  "cves": [
+    "CVE-2025-58057",
+    "CVE-2025-66566",
+    "CVE-2026-1002"
+  ],
+  "packages": [],
+  "full_text": "JBoss EAP XP 5.0 Update 4.0 release. See references for release notes.\n\nJBoss EAP XP 5.0 Update 4.0 GA release. See references for release notes.\n\nSecurity Fix(es):\n\n* vertx-core: static handler component cache can be manipulated to deny the access to static files [eapxp-5] (CVE-2026-1002)\n\n* netty-codec: Netty's BrotliDecoder is vulnerable to DoS via zip bomb style attack [eapxp-5] (CVE-2025-58057)\n\n* lz4-java: lz4-java: Information Disclosure via Insufficient Output Buffer Clearing [eapxp-5] (CVE-2025-66566)\n\nFor more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section."
+}

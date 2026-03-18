@@ -1,0 +1,37 @@
+{
+  "id": "RHSA-2026:3699",
+  "vendor": "Red Hat",
+  "type": "Security Advisory (RHSA)",
+  "title": "Red Hat Security Advisory: yggdrasil-worker-package-manager security update",
+  "issuedDate": "2026-03-04T05:15:19+00:00",
+  "updatedDate": "2026-03-04T05:15:19+00:00",
+  "pubDate": "2026-03-04T05:15:19+00:00",
+  "dateStr": "2026-03-04",
+  "url": "https://access.redhat.com/errata/RHSA-2026:3699",
+  "severity": "Important",
+  "overview": "An update for yggdrasil-worker-package-manager is now available for Red Hat Enterprise Linux 10.0 Extended Update Support.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "description": "yggdrasil-worker-package-manager is a simple package manager yggd worker. It knows how to install and remove packages, add, remove, enable and disable repositories, and does rudimentary detection of the host it is running on to guess the package manager to use. It only installs packages that match one of the provided allow-pattern regular expressions.\n\nSecurity Fix(es):\n\n* golang: net/url: Memory exhaustion in query parameter parsing in net/url (CVE-2025-61726)\n\nFor more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux",
+    "Red Hat Enterprise Linux AppStream EUS (v. 10.0)"
+  ],
+  "cves": [
+    "CVE-2025-61726"
+  ],
+  "packages": [
+    "yggdrasil-worker-package-manager-0:0.2.3-4.el10_0.src",
+    "yggdrasil-worker-package-manager-0:0.2.3-4.el10_0.aarch64",
+    "yggdrasil-worker-package-manager-debugsource-0:0.2.3-4.el10_0.aarch64",
+    "yggdrasil-worker-package-manager-debuginfo-0:0.2.3-4.el10_0.aarch64",
+    "yggdrasil-worker-package-manager-0:0.2.3-4.el10_0.ppc64le",
+    "yggdrasil-worker-package-manager-debugsource-0:0.2.3-4.el10_0.ppc64le",
+    "yggdrasil-worker-package-manager-debuginfo-0:0.2.3-4.el10_0.ppc64le",
+    "yggdrasil-worker-package-manager-0:0.2.3-4.el10_0.s390x",
+    "yggdrasil-worker-package-manager-debugsource-0:0.2.3-4.el10_0.s390x",
+    "yggdrasil-worker-package-manager-debuginfo-0:0.2.3-4.el10_0.s390x",
+    "yggdrasil-worker-package-manager-0:0.2.3-4.el10_0.x86_64",
+    "yggdrasil-worker-package-manager-debugsource-0:0.2.3-4.el10_0.x86_64",
+    "yggdrasil-worker-package-manager-debuginfo-0:0.2.3-4.el10_0.x86_64"
+  ],
+  "full_text": "An update for yggdrasil-worker-package-manager is now available for Red Hat Enterprise Linux 10.0 Extended Update Support.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nyggdrasil-worker-package-manager is a simple package manager yggd worker. It knows how to install and remove packages, add, remove, enable and disable repositories, and does rudimentary detection of the host it is running on to guess the package manager to use. It only installs packages that match one of the provided allow-pattern regular expressions.\n\nSecurity Fix(es):\n\n* golang: net/url: Memory exhaustion in query parameter parsing in net/url (CVE-2025-61726)\n\nFor more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section."
+}

@@ -1,0 +1,29 @@
+{
+  "id": "USN-7976-1",
+  "url": "https://ubuntu.com/security/notices/USN-7976-1",
+  "synopsis": "USN-7976-1: Form-Data vulnerability",
+  "dateStr": "26 January 2026",
+  "overview": "Form-Data could be made to allow unintended access.",
+  "description": "Ben Shonaldmann discovered that Form-data incorrectly generated boundary\nvalues for multipart form-encoded data, leading to predictable values. A\nremote attacker could possibly use this issue to make arbitrary requests\nto internal systems.\n\n \n\n \n\n \n\nBen Shonaldmann discovered that Form-data incorrectly generated boundary\nvalues for multipart form-encoded data, leading to predictable values. A\nremote attacker could possibly use this issue to make arbitrary requests\nto internal systems.",
+  "packages": [
+    "node"
+  ],
+  "cves": [
+    "CVE-2025-7783"
+  ],
+  "affected_products": [
+    "24.04 LTS",
+    "22.04 LTS",
+    "20.04 LTS",
+    "18.04 LTS",
+    "16.04 LTS",
+    "14.04 LTS",
+    "Open side navigation"
+  ],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Ubuntu Security Notices\n\nUSN-7976-1\n\n \n\n \n\n \n\n \n\n \n\n \nUSN-7976-1: Form-Data vulnerability\n\n \n\n \n\n \n\n \nPublication date\n\n \n\n \n\n \n26 January 2026\n\n \n\n \n\n \n\n \n\n \nOverview\n\n \n\n \n\n \nForm-Data could be made to allow unintended access.\n\n \n\n \n\n \n\n \n\n \nReleases\n\n \n\n \n\n \n\n 24.04 LTS\n\n22.04 LTS\n\n20.04 LTS\n\n18.04 LTS\n\n16.04 LTS\n\n14.04 LTS\n\n \n\n \n\n \n\n \n\n \n\n \n\n Open side navigation\n \n\n \n\n \nPackages\n\n \n\n node-form-data - A library to create readable ‘multipart/form-data’ streams\n \n\n \n\n \nDetails\n\n \n\n \n\nBen Shonaldmann discovered that Form-data incorrectly generated boundary\nvalues for multipart form-encoded data, leading to predictable values. A\nremote attacker could possibly use this issue to make arbitrary requests\nto internal systems.\n\n \n\n \n\n \n\nBen Shonaldmann discovered that Form-data incorrectly generated boundary\nvalues for multipart form-encoded data, leading to predictable values. A\nremote attacker could possibly use this issue to make arbitrary requests\nto internal systems.\n\n \n\n \n\n \n\n \nUpdate instructions\n\n \n\n \n\n \n\n \n\nIn general, a standard system update will make all the necessary changes.\n\n Learn more about how to get the fixes.\n \n\n \n\n \n\n \n\n \nThe problem can be corrected by updating your system to the following package versions:\n\n \n\n \n\n \n\n \n\n Ubuntu Release\n Package Version\n \n\n 24.04\n\nLTS noble\n\n node-form-data – \n\n4.0.0-1ubuntu0.1\n\n \n\n 22.04\n\nLTS jammy\n\n node-form-data – \n\n3.0.1-1ubuntu0.1~esm1\n\n  \n\nUbuntu Pro\n Fix available with Ubuntu Pro via ESM Apps. A community fix might become publicly available in the future.\n\n \n\n \n\n 20.04\n\nLTS focal\n\n node-form-data – \n\n3.0.0-2ubuntu0.1~esm1\n\n  \n\nUbuntu Pro\n Fix available with Ubuntu Pro via ESM Apps. A community fix might become publicly available in the future.\n\n \n\n \n\n 18.04\n\nLTS bionic\n\n node-form-data – \n\n0.1.0-1ubuntu0.18.04.1~esm1\n\n  \n\nUbuntu Pro\n Fix available with Ubuntu Pro via ESM Apps. A community fix might become publicly available in the future.\n\n \n\n \n\n 16.04\n\nLTS xenial\n\n node-form-data – \n\n0.1.0-1ubuntu0.16.04.1~esm1\n\n  \n\nUbuntu Pro\n Fix available with Ubuntu Pro via ESM Apps. A community fix might become publicly available in the future.\n\n \n\n \n\n 14.04\n\nLTS trusty\n\n node-form-data – \n\n0.1.0-1ubuntu0.14.04.1~esm1\n\n  \n\nUbuntu Pro\n Fix available with Ubuntu Pro via Legacy Support add-on.\n\n \n\nReduce your security exposure\n\n \n\n Ubuntu Pro provides ten-year security coverage to 25,000+ packages in Main and Universe repositories, and it is free for up to five machines.\n \n\n \n\n Get Ubuntu Pro\n \n\n \n\nReferences\n\n \n\n \n\n CVE-2025-7783\n \n\n \n\n \n\n CVE-2025-7783",
+  "title": "USN-7976-1: Form-Data vulnerability | Ubuntu security notices | Ubuntu",
+  "pubDate": "2026-01-25T15:00:00.000Z",
+  "vendor": "Ubuntu"
+}

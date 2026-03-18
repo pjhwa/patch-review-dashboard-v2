@@ -1,0 +1,22 @@
+{
+  "id": "RHSA-2025:20801",
+  "vendor": "Red Hat",
+  "url": "https://access.redhat.com/errata/RHSA-2025:20801",
+  "pubDate": "2025-11-11T09:33:14.000Z",
+  "dateStr": "2025-11-11",
+  "severity": "Moderate",
+  "title": "Red Hat Security Advisory: libtiff security update",
+  "overview": "An update for libtiff is now available for Red Hat Enterprise Linux 9.\n\nRed Hat Product Security has rated this update as having a security impact of Moderate. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "description": "An update for libtiff is now available for Red Hat Enterprise Linux 9.\n\nRed Hat Product Security has rated this update as having a security impact of Moderate. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux AppStream (v. 9)",
+    "Red Hat Enterprise Linux CodeReady Linux Builder (v. 9)"
+  ],
+  "cves": [
+    "CVE-2023-52355",
+    "CVE-2023-52356"
+  ],
+  "packages": [],
+  "fixes": "",
+  "full_text": "Red Hat Security Advisory: libtiff security update\n\nAn update for libtiff is now available for Red Hat Enterprise Linux 9.\n\nRed Hat Product Security has rated this update as having a security impact of Moderate. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nAn update for libtiff is now available for Red Hat Enterprise Linux 9.\n\nRed Hat Product Security has rated this update as having a security impact of Moderate. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nUpdated Packages:\nlibtiff-4.4.0-15.el9.src.rpm\nlibtiff-4.4.0-15.el9.i686.rpm\nlibtiff-4.4.0-15.el9.x86_64.rpm\nlibtiff-debuginfo-4.4.0-15.el9.i686.rpm\nlibtiff-debuginfo-4.4.0-15.el9.x86_64.rpm\nlibtiff-debugsource-4.4.0-15.el9.i686.rpm\nlibtiff-debugsource-4.4.0-15.el9.x86_64.rpm\nlibtiff-devel-4.4.0-15.el9.i686.rpm\nlibtiff-devel-4.4.0-15.el9.x86_64.rpm\nlibtiff-tools-debuginfo-4.4.0-15.el9.i686.rpm\nlibtiff-tools-debuginfo-4.4.0-15.el9.x86_64.rpm\nlibtiff-4.4.0-15.el9.s390x.rpm\nlibtiff-debuginfo-4.4.0-15.el9.s390x.rpm\nlibtiff-debugsource-4.4.0-15.el9.s390x.rpm\nlibtiff-devel-4.4.0-15.el9.s390x.rpm\nlibtiff-tools-debuginfo-4.4.0-15.el9.s390x.rpm\nlibtiff-4.4.0-15.el9.ppc64le.rpm\nlibtiff-debuginfo-4.4.0-15.el9.ppc64le.rpm\nlibtiff-debugsource-4.4.0-15.el9.ppc64le.rpm\nlibtiff-devel-4.4.0-15.el9.ppc64le.rpm\nlibtiff-tools-debuginfo-4.4.0-15.el9.ppc64le.rpm\nlibtiff-4.4.0-15.el9.aarch64.rpm\nlibtiff-debuginfo-4.4.0-15.el9.aarch64.rpm\nlibtiff-debugsource-4.4.0-15.el9.aarch64.rpm\nlibtiff-devel-4.4.0-15.el9.aarch64.rpm\nlibtiff-tools-debuginfo-4.4.0-15.el9.aarch64.rpm\nlibtiff-tools-4.4.0-15.el9.x86_64.rpm\nlibtiff-tools-4.4.0-15.el9.ppc64le.rpm\nlibtiff-tools-4.4.0-15.el9.aarch64.rpm\nlibtiff-tools-4.4.0-15.el9.s390x.rpm\n\nCVE-2023-52355: An out-of-memory flaw was found in libtiff that could be triggered by passing a crafted tiff file to the TIFFRasterScanlineSize64() API. This flaw allows a remote attacker to cause a denial of service via a crafted input with a size smaller than 379 KB.\n\nCVE-2023-52356: A segment fault (SEGV) flaw was found in libtiff that could be triggered by passing a crafted tiff file to the TIFFReadRGBATileExt() API. This flaw allows a remote attacker to cause a heap-buffer overflow, leading to a denial of service."
+}

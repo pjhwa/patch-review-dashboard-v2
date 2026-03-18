@@ -1,0 +1,20 @@
+{
+  "id": "RHSA-2025:23542",
+  "vendor": "Red Hat",
+  "url": "https://access.redhat.com/errata/RHSA-2025:23542",
+  "pubDate": "2025-12-17T16:35:07.000Z",
+  "dateStr": "2025-12-17",
+  "severity": "Low",
+  "title": "Red Hat Security Advisory: OpenShift File Integrity Operator bug fix and enhancement update",
+  "overview": "An updated OpenShift File Integrity Operator image that fixes various bugs and adds new\nenhancements is now available for the Red Hat OpenShift Enterprise 4 catalog.",
+  "description": "An updated OpenShift File Integrity Operator image that fixes various bugs and adds new\nenhancements is now available for the Red Hat OpenShift Enterprise 4 catalog.",
+  "affected_products": [
+    "File Integrity Operator 1"
+  ],
+  "cves": [
+    "CVE-2025-7195"
+  ],
+  "packages": [],
+  "fixes": "",
+  "full_text": "Red Hat Security Advisory: OpenShift File Integrity Operator bug fix and enhancement update\n\nAn updated OpenShift File Integrity Operator image that fixes various bugs and adds new\nenhancements is now available for the Red Hat OpenShift Enterprise 4 catalog.\n\nAn updated OpenShift File Integrity Operator image that fixes various bugs and adds new\nenhancements is now available for the Red Hat OpenShift Enterprise 4 catalog.\n\n\n\nCVE-2025-7195: Early versions of Operator-SDK provided an insecure method to allow operator containers to run in environments that used a random UID. Operator-SDK before 0.15.2 provided a script, user_setup, which modifies the permissions of the /etc/passwd file to 664 during build time. Developers who used Operator-SDK before 0.15.2 to scaffold their operator may still be impacted by this if the insecure user_setup script is still being used to build new container images. \n\nIn affected images, the /etc/passwd file is created during build time with group-writable permissions and a group ownership of root (gid=0). An attacker who can execute commands within an affected container, even as a non-root user, may be able to leverage their membership in the root group to modify the /etc/passwd file. This could allow the attacker to add a new user with any arbitrary UID, including UID 0, leading to full root privileges within the container."
+}

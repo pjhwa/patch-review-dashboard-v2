@@ -1,0 +1,26 @@
+{
+  "id": "ELSA-2026-3359",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2026-February/019868.html",
+  "synopsis": "[El-errata] ELSA-2026-3359 Important: Oracle Linux 9 python-pyasn1 security update",
+  "dateStr": "2026-February",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Security Advisory ELSA-2026-3359",
+  "description": "[0.4.8-7]\n- Resolves: RHEL-148154",
+  "affected_products": [
+    "Oracle Linux 9"
+  ],
+  "packages": [
+    "python3-pyasn1-0.4.8-7.el9_7.noarch.rpm",
+    "python3-pyasn1-modules-0.4.8-7.el9_7.noarch.rpm",
+    "python3-pyasn1-0.4.8-7.el9_7.noarch.rpm",
+    "python3-pyasn1-modules-0.4.8-7.el9_7.noarch.rpm"
+  ],
+  "cves": [
+    "CVE-2026-23490"
+  ],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Security Advisory ELSA-2026-3359\n\nhttp://linux.oracle.com/errata/ELSA-2026-3359.html\n\nThe following updated rpms for Oracle Linux 9 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\npython3-pyasn1-0.4.8-7.el9_7.noarch.rpm\npython3-pyasn1-modules-0.4.8-7.el9_7.noarch.rpm\n\naarch64:\npython3-pyasn1-0.4.8-7.el9_7.noarch.rpm\npython3-pyasn1-modules-0.4.8-7.el9_7.noarch.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol9/SRPMS-updates/python-pyasn1-0.4.8-7.el9_7.src.rpm\n\nRelated CVEs:\n\nCVE-2026-23490\n\n\n\n\nDescription of changes:\n\n[0.4.8-7]\n- Resolves: RHEL-148154",
+  "vendor": "Oracle"
+}

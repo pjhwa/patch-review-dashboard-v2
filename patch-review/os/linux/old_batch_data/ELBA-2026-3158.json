@@ -1,0 +1,30 @@
+{
+  "id": "ELBA-2026-3158",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2026-February/019839.html",
+  "synopsis": "[El-errata] ELBA-2026-3158 Oracle Linux 10 firewalld bug fix and enhancement update",
+  "dateStr": "2026-February",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Bug Fix Advisory ELBA-2026-3158",
+  "description": "[2.4.0-1.0.1]\n- Red Hat Satellite and Red Hat high availaibility reference found in cockpit UI\n  [Orabug: 30257573]\n- discard empty RH-Satellite-6.xml [Orabug: 30328734]\n- Remove capsule file as well, since it references removed config [Orabug: 33513329]\n\n[2.4.0-1]\n- rebase package to v2.4.0",
+  "affected_products": [
+    "Oracle Linux 10"
+  ],
+  "packages": [
+    "firewall-applet-2.4.0-1.0.1.el10_1.noarch.rpm",
+    "firewall-config-2.4.0-1.0.1.el10_1.noarch.rpm",
+    "firewalld-2.4.0-1.0.1.el10_1.noarch.rpm",
+    "firewalld-filesystem-2.4.0-1.0.1.el10_1.noarch.rpm",
+    "python3-firewall-2.4.0-1.0.1.el10_1.noarch.rpm",
+    "firewall-applet-2.4.0-1.0.1.el10_1.noarch.rpm",
+    "firewall-config-2.4.0-1.0.1.el10_1.noarch.rpm",
+    "firewalld-2.4.0-1.0.1.el10_1.noarch.rpm",
+    "firewalld-filesystem-2.4.0-1.0.1.el10_1.noarch.rpm",
+    "python3-firewall-2.4.0-1.0.1.el10_1.noarch.rpm"
+  ],
+  "cves": [],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Bug Fix Advisory ELBA-2026-3158\n\nhttp://linux.oracle.com/errata/ELBA-2026-3158.html\n\nThe following updated rpms for Oracle Linux 10 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\nfirewall-applet-2.4.0-1.0.1.el10_1.noarch.rpm\nfirewall-config-2.4.0-1.0.1.el10_1.noarch.rpm\nfirewalld-2.4.0-1.0.1.el10_1.noarch.rpm\nfirewalld-filesystem-2.4.0-1.0.1.el10_1.noarch.rpm\npython3-firewall-2.4.0-1.0.1.el10_1.noarch.rpm\n\naarch64:\nfirewall-applet-2.4.0-1.0.1.el10_1.noarch.rpm\nfirewall-config-2.4.0-1.0.1.el10_1.noarch.rpm\nfirewalld-2.4.0-1.0.1.el10_1.noarch.rpm\nfirewalld-filesystem-2.4.0-1.0.1.el10_1.noarch.rpm\npython3-firewall-2.4.0-1.0.1.el10_1.noarch.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol10/SRPMS-updates/firewalld-2.4.0-1.0.1.el10_1.src.rpm\n\n\n\nDescription of changes:\n\n[2.4.0-1.0.1]\n- Red Hat Satellite and Red Hat high availaibility reference found in cockpit UI\n  [Orabug: 30257573]\n- discard empty RH-Satellite-6.xml [Orabug: 30328734]\n- Remove capsule file as well, since it references removed config [Orabug: 33513329]\n\n[2.4.0-1]\n- rebase package to v2.4.0",
+  "vendor": "Oracle"
+}

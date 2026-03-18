@@ -1,0 +1,30 @@
+{
+  "id": "RHBA-2026:2281",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: virtio-win bug fix and enhancement update",
+  "issuedDate": "2026-02-09T08:56:58Z",
+  "updatedDate": "2026-02-09T08:56:58Z",
+  "pubDate": "2026-02-09T08:56:58Z",
+  "dateStr": "2026-02-09",
+  "url": "https://access.redhat.com/errata/RHBA-2026:2281",
+  "severity": "None",
+  "overview": "An update for virtio-win is now available for Red Hat Enterprise Linux 10.",
+  "description": "Kernel-based Virtual Machine (KVM) offers a full virtualization solution forLinux on numerous hardware platforms. The virt:rhel module contains packageswhich provide user-space components used to run virtual machines using KVM.The packages also provide APIs for managing and interacting with the virtualized systems.Bug Fix(es) and Enhancement(s): \"MEMORY MANAGEMENT\" BSOD with no storage delay and only on virtio-blk [rhel-10.1.z] (JIRA:RHEL-145871)",
+  "affected_products": [
+    "Red Hat Enterprise Linux for x86_64 10 x86_64"
+  ],
+  "cves": [],
+  "packages": [
+    "virtio-win-1.9.52-0.el10_1.src",
+    "virtio-win-1.9.52-0.el10_1.noarch"
+  ],
+  "fixes": [
+    {
+      "id": "RHEL-145871",
+      "url": "https://issues.redhat.com/browse/RHEL-145871",
+      "description": "\"MEMORY MANAGEMENT\" BSOD with no storage delay and only on virtio-blk [rhel-10.1.z]"
+    }
+  ],
+  "full_text": "An update for virtio-win is now available for Red Hat Enterprise Linux 10.\n\nKernel-based Virtual Machine (KVM) offers a full virtualization solution forLinux on numerous hardware platforms. The virt:rhel module contains packageswhich provide user-space components used to run virtual machines using KVM.The packages also provide APIs for managing and interacting with the virtualized systems.Bug Fix(es) and Enhancement(s): \"MEMORY MANAGEMENT\" BSOD with no storage delay and only on virtio-blk [rhel-10.1.z] (JIRA:RHEL-145871)"
+}

@@ -1,0 +1,25 @@
+{
+  "id": "USN-8012-1",
+  "url": "https://ubuntu.com/security/notices/USN-8012-1",
+  "synopsis": "USN-8012-1: GitHub CLI vulnerabilities",
+  "dateStr": "4 February 2026",
+  "overview": "Several security issues were fixed in GitHub CLI.",
+  "description": "It was discovered that GitHub CLI could behave unexpectedly if users\ndownloaded a malicious GitHub Actions workflow artifact through gh run\ndownload. An attacker could possibly use this issue to create or overwrite\nfiles in unintended directories. (CVE-2024-54132)\n\nIt was discovered that GitHub CLI could behave unexpectedly when cloning\nrepositories containing git submodules hosted outside of GitHub.com and\nghe.com. An attacker could possibly use this issue to gather authentication\ntokens. (CVE-2024-53858)\n\n \n\n \n\n \n\nIt was discovered that GitHub CLI could behave unexpectedly if users\ndownloaded a malicious GitHub Actions workflow artifact through gh run\ndownload. An attacker could possibly use this issue to create or overwrite\nfiles in unintended directories. (CVE-2024-54132)\n\nIt was discovered that GitHub CLI could behave unexpectedly when cloning\nrepositories containing git submodules hosted outside of GitHub.com and\nghe.com. An attacker could possibly use this issue to gather authentication\ntokens. (CVE-2024-53858)",
+  "packages": [
+    "gh"
+  ],
+  "cves": [
+    "CVE-2024-54132",
+    "CVE-2024-53858"
+  ],
+  "affected_products": [
+    "24.04 LTS",
+    "Open side navigation"
+  ],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Ubuntu Security Notices\n\nUSN-8012-1\n\n \n\n \n\n \n\n \n\n \n\n \nUSN-8012-1: GitHub CLI vulnerabilities\n\n \n\n \n\n \n\n \nPublication date\n\n \n\n \n\n \n4 February 2026\n\n \n\n \n\n \n\n \n\n \nOverview\n\n \n\n \n\n \nSeveral security issues were fixed in GitHub CLI.\n\n \n\n \n\n \n\n \n\n \nReleases\n\n \n\n \n\n \n\n 24.04 LTS\n\n \n\n \n\n \n\n \n\n \n\n \n\n Open side navigation\n \n\n \n\n \nPackages\n\n \n\n gh - GitHub for the terminal\n \n\n \n\n \nDetails\n\n \n\n \n\nIt was discovered that GitHub CLI could behave unexpectedly if users\ndownloaded a malicious GitHub Actions workflow artifact through gh run\ndownload. An attacker could possibly use this issue to create or overwrite\nfiles in unintended directories. (CVE-2024-54132)\n\nIt was discovered that GitHub CLI could behave unexpectedly when cloning\nrepositories containing git submodules hosted outside of GitHub.com and\nghe.com. An attacker could possibly use this issue to gather authentication\ntokens. (CVE-2024-53858)\n\n \n\n \n\n \n\nIt was discovered that GitHub CLI could behave unexpectedly if users\ndownloaded a malicious GitHub Actions workflow artifact through gh run\ndownload. An attacker could possibly use this issue to create or overwrite\nfiles in unintended directories. (CVE-2024-54132)\n\nIt was discovered that GitHub CLI could behave unexpectedly when cloning\nrepositories containing git submodules hosted outside of GitHub.com and\nghe.com. An attacker could possibly use this issue to gather authentication\ntokens. (CVE-2024-53858)\n\n \n\n \n\n \n\n \nUpdate instructions\n\n \n\n \n\n \n\n \n\nIn general, a standard system update will make all the necessary changes.\n\n Learn more about how to get the fixes.\n \n\n \n\n \n\n \n\n \nThe problem can be corrected by updating your system to the following package versions:\n\n \n\n \n\n \n\n \n\n Ubuntu Release\n Package Version\n \n\n 24.04\n\nLTS noble\n\n gh – \n\n2.45.0-1ubuntu0.3+esm2\n\n  \n\nUbuntu Pro\n Fix available with Ubuntu Pro via ESM Apps. A community fix might become publicly available in the future.\n\n \n\n \n\nReduce your security exposure\n\n \n\n Ubuntu Pro provides ten-year security coverage to 25,000+ packages in Main and Universe repositories, and it is free for up to five machines.\n \n\n \n\n Get Ubuntu Pro\n \n\n \n\nReferences\n\n \n\n \n\n CVE-2024-54132\n \n\n \n\n CVE-2024-53858\n \n\n \n\n \n\n CVE-2024-54132\n \n\n CVE-2024-53858",
+  "title": "USN-8012-1: GitHub CLI vulnerabilities | Ubuntu security notices | Ubuntu",
+  "pubDate": "2026-02-03T15:00:00.000Z",
+  "vendor": "Ubuntu"
+}

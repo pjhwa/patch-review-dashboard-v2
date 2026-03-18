@@ -1,0 +1,27 @@
+{
+  "id": "ELBA-2025-20799",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "AppStream",
+  "title": "dwarves bug fix and enhancement update",
+  "issuedDate": "2025-11-17T00:00:00Z",
+  "updatedDate": "2025-11-17T00:00:00Z",
+  "pubDate": "2025-11-17T00:00:00Z",
+  "dateStr": "2025-11-17",
+  "url": "https://linux.oracle.com/errata/ELBA-2025-20799.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 9.",
+  "description": "[1.30-1]\n- New release: 1.30\n- Better detection of abort during DWARF loader thread processing\n- pahole now detects presence of libbpf APIs and BTF features using weak function\n  declarations when built using a shared library libbpf\n- Type tags are emitted for BPF arena pointers with new BTF 'attributes' feature\n- New release: 1.29\n- Multithreading is now in the DWARF loader using a jobs queue and a pool of worker threads.\n- The BTF encoding now is always reproducible, and as fast/faster than before.\n- The memory consumption is reduced.\n- Support for multiple BTF_DECL_TAGs pointing to same tag.\n- Verify that pfunct prints btf_decl_tags read from BTF.\n- Don't print functions twice when using 'pfunct -f function_name'.\n- New release: 1.28\n- Various improvements to reduce the memory footprint of pahole, notably when doing BTF encoding.\n- Show flexible arrays statistics\n- Add '--padding N' and '--padding_ge N' to show structs with paddings\n- Introduce --running_kernel_vmlinux to find a vmlinux that matches the build-id of the running kernel.\n- Don't stop pfunct output at the first function that matches a filter, show all of them\n- Allow encoding data about all global variables, not just per CPU ones\n- Handle .BTF_ids section endianness, fully supporting cross builds\n- Generate decl tags for bpf_fastcall for eligible kfuncs\n- Add 'distilled_base' BTF feature to split BTF generation.\n- Use the ELF_C_READ_MMAP mode with libelf, reducing peak memory utilization\n- Allow overriding /sys/kernel/btf/vmlinux via the PAHOLE_VMLINUX_BTF_FILENAME env var\n- Allow setting the list of compile units via PAHOLE_LANG_EXCLUDE env var\n- Serialize access to elfutils dwarf_getlocation().\n- Honour --lang_exclude when merging LTO built CUs.\n- Add the debuginfod client cache directory to the vmlinux search path.\n- Print the CU's language when a tag isn't supported.\n- Initial support for GNU_formal_parameter_pack, GNU_template_parameter_pack, template_value_param and template_type_param DWARF tags.\n- Improve the parameter parsing by checking DW_OP_[GNU_]entry_value\n- Introduce a tests/ directory with regression tests",
+  "affected_products": [
+    "Oracle Linux 9 for x86_64",
+    "Oracle Linux 9 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "dwarves-1.30-1.el9.x86_64",
+    "libdwarves1-1.30-1.el9.i686",
+    "libdwarves1-1.30-1.el9.x86_64",
+    "dwarves-1.30-1.el9.src"
+  ],
+  "full_text": "[1.30-1]\n- New release: 1.30\n- Better detection of abort during DWARF loader thread processing\n- pahole now detects presence of libbpf APIs and BTF features using weak function\n  declarations when built using a shared library libbpf\n- Type tags are emitted for BPF arena pointers with new BTF 'attributes' feature\n- New release: 1.29\n- Multithreading is now in the DWARF loader using a jobs queue and a pool of worker threads.\n- The BTF encoding now is always reproducible, and as fast/faster than before.\n- The memory consumption is reduced.\n- Support for multiple BTF_DECL_TAGs pointing to same tag.\n- Verify that pfunct prints btf_decl_tags read from BTF.\n- Don't print functions twice when using 'pfunct -f function_name'.\n- New release: 1.28\n- Various improvements to reduce the memory footprint of pahole, notably when doing BTF encoding.\n- Show flexible arrays statistics\n- Add '--padding N' and '--padding_ge N' to show structs with paddings\n- Introduce --running_kernel_vmlinux to find a vmlinux that matches the build-id of the running kernel.\n- Don't stop pfunct output at the first function that matches a filter, show all of them\n- Allow encoding data about all global variables, not just per CPU ones\n- Handle .BTF_ids section endianness, fully supporting cross builds\n- Generate decl tags for bpf_fastcall for eligible kfuncs\n- Add 'distilled_base' BTF feature to split BTF generation.\n- Use the ELF_C_READ_MMAP mode with libelf, reducing peak memory utilization\n- Allow overriding /sys/kernel/btf/vmlinux via the PAHOLE_VMLINUX_BTF_FILENAME env var\n- Allow setting the list of compile units via PAHOLE_LANG_EXCLUDE env var\n- Serialize access to elfutils dwarf_getlocation().\n- Honour --lang_exclude when merging LTO built CUs.\n- Add the debuginfod client cache directory to the vmlinux search path.\n- Print the CU's language when a tag isn't supported.\n- Initial support for GNU_formal_parameter_pack, GNU_template_parameter_pack, template_value_param and template_type_param DWARF tags.\n- Improve the parameter parsing by checking DW_OP_[GNU_]entry_value\n- Introduce a tests/ directory with regression tests\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2025-20799.html"
+}

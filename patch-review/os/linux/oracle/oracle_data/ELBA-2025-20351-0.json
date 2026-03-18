@@ -1,0 +1,25 @@
+{
+  "id": "ELBA-2025-20351-0",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "AppStream",
+  "title": "cockpit-files bug fix and enhancement update",
+  "issuedDate": "2025-11-25T00:00:00Z",
+  "updatedDate": "2025-11-25T00:00:00Z",
+  "pubDate": "2025-11-25T00:00:00Z",
+  "dateStr": "2025-11-25",
+  "url": "https://linux.oracle.com/errata/ELBA-2025-20351-0.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 10.",
+  "description": "[24-1]\n- Bug fixes and translation updates\n\n[23-1]\n- Bug fixes and translation updates\n\n[22-1]\n- Bug fixes and translation updates\n\n[21-1]\n- Bug fixes and translation updates\n\n[20-1]\n- Translation updates\n- Bug fixes\n\n[19-1]\n- Upgraded to Patternfly 6\n- Symbolic links\n\n[18-1]\n- Translation updates\n- Bug fixes\n\n[17-1]\n- MacOS keyboard shortcuts",
+  "affected_products": [
+    "Oracle Linux 10 for x86_64",
+    "Oracle Linux 10 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "cockpit-files-24-1.el10.noarch",
+    "cockpit-files-24-1.el10.src"
+  ],
+  "full_text": "[24-1]\n- Bug fixes and translation updates\n\n[23-1]\n- Bug fixes and translation updates\n\n[22-1]\n- Bug fixes and translation updates\n\n[21-1]\n- Bug fixes and translation updates\n\n[20-1]\n- Translation updates\n- Bug fixes\n\n[19-1]\n- Upgraded to Patternfly 6\n- Symbolic links\n\n[18-1]\n- Translation updates\n- Bug fixes\n\n[17-1]\n- MacOS keyboard shortcuts\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2025-20351-0.html"
+}

@@ -1,0 +1,32 @@
+{
+  "id": "ELSA-2025-19238",
+  "vendor": "Oracle",
+  "type": "Security Advisory (ELSA)",
+  "kernel_type": "AppStream",
+  "title": " redis:6 security update",
+  "issuedDate": "2025-10-30T00:00:00Z",
+  "updatedDate": "2025-10-30T00:00:00Z",
+  "pubDate": "2025-10-30T00:00:00Z",
+  "dateStr": "2025-10-30",
+  "url": "https://linux.oracle.com/errata/ELSA-2025-19238.html",
+  "severity": "Important",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 8.",
+  "description": "[6.2.20-1.0.1]\n- Build with 64k pages to support redis on both UEK6 and UEK7 on aarch64\n\n[6.2.20-1]\n- rebase to 6.2.20 for CVE-2025-49844 CVE-2025-46817 CVE-2025-46818 CVE-2025-46819",
+  "affected_products": [
+    "Oracle Linux 8 for x86_64",
+    "Oracle Linux 8 for aarch64"
+  ],
+  "cves": [
+    "CVE-2025-46817",
+    "CVE-2025-46818",
+    "CVE-2025-46819",
+    "CVE-2025-49844"
+  ],
+  "packages": [
+    "redis-6.2.20-1.0.1.module+el8.10.0+90692+1027f9f2.src",
+    "redis-doc-6.2.20-1.0.1.module+el8.10.0+90692+1027f9f2.noarch",
+    "redis-devel-6.2.20-1.0.1.module+el8.10.0+90692+1027f9f2.x86_64",
+    "redis-6.2.20-1.0.1.module+el8.10.0+90692+1027f9f2.x86_64"
+  ],
+  "full_text": "[6.2.20-1.0.1]\n- Build with 64k pages to support redis on both UEK6 and UEK7 on aarch64\n\n[6.2.20-1]\n- rebase to 6.2.20 for CVE-2025-49844 CVE-2025-46817 CVE-2025-46818 CVE-2025-46819\n\nReferences:\nhttps://linux.oracle.com/errata/ELSA-2025-19238.html\nhttps://linux.oracle.com/cve/CVE-2025-46817.html\nhttps://linux.oracle.com/cve/CVE-2025-46818.html\nhttps://linux.oracle.com/cve/CVE-2025-46819.html\nhttps://linux.oracle.com/cve/CVE-2025-49844.html"
+}

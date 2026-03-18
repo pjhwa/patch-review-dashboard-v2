@@ -1,0 +1,24 @@
+{
+  "id": "USN-7838-1",
+  "vendor": "Canonical / Ubuntu",
+  "type": "Ubuntu Security Notice (USN)",
+  "title": "fetchmail vulnerability",
+  "issuedDate": "2025-10-23T16:39:33Z",
+  "updatedDate": "2026-02-10T04:50:20Z",
+  "pubDate": "2025-10-23T16:39:33Z",
+  "dateStr": "2025-10-23",
+  "url": "https://ubuntu.com/security/notices/USN-7838-1",
+  "severity": "None",
+  "overview": "fetchmail vulnerability",
+  "description": "It was discovered that the fetchmail SMTP client incorrectly handled\ncertain status code messages. An attacker controlling a malicious server\ncould possibly use this issue to cause fetchmail to crash, resulting in a\ndenial of service.",
+  "affected_products": [
+    "Ubuntu 22.04 LTS",
+    "Ubuntu 24.04 LTS"
+  ],
+  "cves": [],
+  "packages": [
+    "fetchmail-6.4.27-1ubuntu0.1",
+    "fetchmail-6.4.38-1ubuntu4.1"
+  ],
+  "full_text": "It was discovered that the fetchmail SMTP client incorrectly handled\ncertain status code messages. An attacker controlling a malicious server\ncould possibly use this issue to cause fetchmail to crash, resulting in a\ndenial of service."
+}

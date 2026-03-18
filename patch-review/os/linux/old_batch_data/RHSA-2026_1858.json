@@ -1,0 +1,25 @@
+{
+  "id": "RHSA-2026:1858",
+  "vendor": "Red Hat",
+  "url": "https://access.redhat.com/errata/RHSA-2026:1858",
+  "pubDate": "2026-02-03T17:17:26.000Z",
+  "dateStr": "2026-02-03",
+  "severity": "Important",
+  "title": "Red Hat Security Advisory: Red Hat Ceph Storage",
+  "overview": "A new version of Red Hat build of Ceph Storage has been released",
+  "description": "A new version of Red Hat build of Ceph Storage has been released",
+  "affected_products": [
+    "Red Hat Ceph Storage 7"
+  ],
+  "cves": [
+    "CVE-2025-6069",
+    "CVE-2025-8291",
+    "CVE-2025-45582",
+    "CVE-2025-61984",
+    "CVE-2025-61985",
+    "CVE-2025-68973"
+  ],
+  "packages": [],
+  "fixes": "",
+  "full_text": "Red Hat Security Advisory: Red Hat Ceph Storage\n\nA new version of Red Hat build of Ceph Storage has been released\n\nA new version of Red Hat build of Ceph Storage has been released\n\n\n\nCVE-2025-6069: A denial-of-service (DoS) vulnerability has been discovered in Python's html.parser.HTMLParser class. When processing specially malformed HTML input, the parsing runtime can become quadratic with respect to the input size. This significantly increased processing time can lead to excessive resource consumption, ultimately causing a denial-of-service condition in applications that rely on this parser.\n\nCVE-2025-8291: The 'zipfile' module would not check the validity of the ZIP64 End of\nCentral Directory (EOCD) Locator record offset value would not be used to\nlocate the ZIP64 EOCD record, instead the ZIP64 EOCD record would be\nassumed to be the previous record in the ZIP archive. This could be abused\nto create ZIP archives that are handled differently by the 'zipfile' module\ncompared to other ZIP implementations.\n\n\nRemediation maintains this behavior, but checks that the offset specified\nin the ZIP64 EOCD Locator record matches the expected value.\n\nCVE-2025-45582: A relative path traversal flaw was found in the gnu tar utility. When archives with relative paths are extracted without the ‘--keep-old-files’ (‘-k’), the extraction process may overwrite existing files that the current user has access to. The server may be impacted if these files are critical to the operation of some service.\n\nCVE-2025-61984: ssh in OpenSSH before 10.1 allows control characters in usernames that originate from certain possibly untrusted sources, potentially leading to code execution when a ProxyCommand is used. The untrusted sources are the command line and %-sequence expansion of a configuration file. (A configuration file that provides a complete literal username is not categorized as an untrusted source.)\n\nCVE-2025-61985: ssh in OpenSSH before 10.1 allows the '\\0' character in an ssh:// URI, potentially leading to code execution when a ProxyCommand is used.\n\nCVE-2025-68973: A flaw was found in GnuPG. An attacker can provide crafted input to the `armor_filter` function, which incorrectly increments an index variable, leading to an out-of-bounds write. This memory corruption vulnerability may allow for information disclosure and could potentially lead to arbitrary code execution."
+}

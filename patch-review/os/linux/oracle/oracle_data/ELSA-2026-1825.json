@@ -1,0 +1,28 @@
+{
+  "id": "ELSA-2026-1825",
+  "vendor": "Oracle",
+  "type": "Security Advisory (ELSA)",
+  "title": " curl security update",
+  "issuedDate": "2026-02-03T00:00:00Z",
+  "updatedDate": "2026-02-03T00:00:00Z",
+  "pubDate": "2026-02-03T00:00:00Z",
+  "dateStr": "2026-02-03",
+  "url": "https://linux.oracle.com/errata/ELSA-2026-1825.html",
+  "severity": "Moderate",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 10.",
+  "description": "[8.12.1-2.el10_1.2]\n- openssl: respect system crypto policy for TLS max version (RHEL-128923)\n\n[8.12.1-2.el10_1.1]\n- cookie: don't treat the leading slash as trailing (CVE-2025-9086)\n  Resolves: RHEL-122689",
+  "affected_products": [
+    "Oracle Linux 10 for x86_64",
+    "Oracle Linux 10 for aarch64"
+  ],
+  "cves": [
+    "CVE-2025-9086"
+  ],
+  "packages": [
+    "libcurl-minimal-8.12.1-2.el10_1.2.x86_64",
+    "curl-8.12.1-2.el10_1.2.src",
+    "libcurl-8.12.1-2.el10_1.2.x86_64",
+    "curl-8.12.1-2.el10_1.2.x86_64"
+  ],
+  "full_text": "[8.12.1-2.el10_1.2]\n- openssl: respect system crypto policy for TLS max version (RHEL-128923)\n\n[8.12.1-2.el10_1.1]\n- cookie: don't treat the leading slash as trailing (CVE-2025-9086)\n  Resolves: RHEL-122689\n\nReferences:\nhttps://linux.oracle.com/errata/ELSA-2026-1825.html\nhttps://linux.oracle.com/cve/CVE-2025-9086.html"
+}

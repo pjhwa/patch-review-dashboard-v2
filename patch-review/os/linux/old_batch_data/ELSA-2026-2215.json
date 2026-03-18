@@ -1,0 +1,29 @@
+{
+  "id": "ELSA-2026-2215",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2026-February/019742.html",
+  "synopsis": "[El-errata] ELSA-2026-2215 Important: Oracle Linux 8 libsoup security update",
+  "dateStr": "2026-February",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Security Advisory ELSA-2026-2215",
+  "description": "[2.62.3-13]\n- Backport patch for CVE-2026-1761\n\n[2.62.3-12]\n- Backport patch for CVE-2026-0719\n- Fix NTLM authentication test failures in FIPS mode",
+  "affected_products": [
+    "Oracle Linux 8"
+  ],
+  "packages": [
+    "libsoup-2.62.3-13.el8_10.i686.rpm",
+    "libsoup-2.62.3-13.el8_10.x86_64.rpm",
+    "libsoup-devel-2.62.3-13.el8_10.i686.rpm",
+    "libsoup-devel-2.62.3-13.el8_10.x86_64.rpm",
+    "libsoup-2.62.3-13.el8_10.aarch64.rpm",
+    "libsoup-devel-2.62.3-13.el8_10.aarch64.rpm"
+  ],
+  "cves": [
+    "CVE-2026-0719",
+    "CVE-2026-1761"
+  ],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Security Advisory ELSA-2026-2215\n\nhttp://linux.oracle.com/errata/ELSA-2026-2215.html\n\nThe following updated rpms for Oracle Linux 8 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\nlibsoup-2.62.3-13.el8_10.i686.rpm\nlibsoup-2.62.3-13.el8_10.x86_64.rpm\nlibsoup-devel-2.62.3-13.el8_10.i686.rpm\nlibsoup-devel-2.62.3-13.el8_10.x86_64.rpm\n\naarch64:\nlibsoup-2.62.3-13.el8_10.aarch64.rpm\nlibsoup-devel-2.62.3-13.el8_10.aarch64.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol8/SRPMS-updates/libsoup-2.62.3-13.el8_10.src.rpm\n\nRelated CVEs:\n\nCVE-2026-0719\nCVE-2026-1761\n\n\n\n\nDescription of changes:\n\n[2.62.3-13]\n- Backport patch for CVE-2026-1761\n\n[2.62.3-12]\n- Backport patch for CVE-2026-0719\n- Fix NTLM authentication test failures in FIPS mode",
+  "vendor": "Oracle"
+}

@@ -4,7 +4,7 @@ import path from 'path';
 
 export async function GET() {
     try {
-        const linuxSkillDir = path.join(process.env.HOME || '/home/citec', '.openclaw/workspace/skills/patch-review/os/linux-v2');
+        const linuxSkillDir = path.join(process.env.HOME || '/home/citec', '.openclaw/workspace/skills/patch-review/os/linux');
         const archiveDir = path.join(linuxSkillDir, 'archive');
 
         if (!fs.existsSync(archiveDir)) {

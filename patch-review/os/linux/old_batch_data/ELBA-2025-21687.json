@@ -1,0 +1,29 @@
+{
+  "id": "ELBA-2025-21687",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2026-February/019682.html",
+  "synopsis": "[El-errata] ELBA-2025-21687 Oracle Linux 7 glib2 bug fix and enhancement update",
+  "dateStr": "2026-February",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Bug Fix Advisory ELBA-2025-21687",
+  "description": "[2.56.1-9.0.1]\n- Fix overflow of GDBusConnection serial [Orabug: 38666376]",
+  "affected_products": [
+    "Oracle Linux 7"
+  ],
+  "packages": [
+    "glib2-2.56.1-9.0.1.el7_9.i686.rpm",
+    "glib2-2.56.1-9.0.1.el7_9.x86_64.rpm",
+    "glib2-devel-2.56.1-9.0.1.el7_9.i686.rpm",
+    "glib2-devel-2.56.1-9.0.1.el7_9.x86_64.rpm",
+    "glib2-doc-2.56.1-9.0.1.el7_9.noarch.rpm",
+    "glib2-fam-2.56.1-9.0.1.el7_9.x86_64.rpm",
+    "glib2-static-2.56.1-9.0.1.el7_9.i686.rpm",
+    "glib2-static-2.56.1-9.0.1.el7_9.x86_64.rpm",
+    "glib2-tests-2.56.1-9.0.1.el7_9.x86_64.rpm"
+  ],
+  "cves": [],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Bug Fix Advisory ELBA-2025-21687\n\nhttp://linux.oracle.com/errata/ELBA-2025-21687.html\n\nThe following updated rpms for Oracle Linux 7 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\nglib2-2.56.1-9.0.1.el7_9.i686.rpm\nglib2-2.56.1-9.0.1.el7_9.x86_64.rpm\nglib2-devel-2.56.1-9.0.1.el7_9.i686.rpm\nglib2-devel-2.56.1-9.0.1.el7_9.x86_64.rpm\nglib2-doc-2.56.1-9.0.1.el7_9.noarch.rpm\nglib2-fam-2.56.1-9.0.1.el7_9.x86_64.rpm\nglib2-static-2.56.1-9.0.1.el7_9.i686.rpm\nglib2-static-2.56.1-9.0.1.el7_9.x86_64.rpm\nglib2-tests-2.56.1-9.0.1.el7_9.x86_64.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol7/SRPMS-updates/glib2-2.56.1-9.0.1.el7_9.src.rpm\n\n\n\nDescription of changes:\n\n[2.56.1-9.0.1]\n- Fix overflow of GDBusConnection serial [Orabug: 38666376]",
+  "vendor": "Oracle"
+}

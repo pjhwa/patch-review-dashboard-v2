@@ -1,0 +1,29 @@
+{
+  "id": "ELSA-2026-3040",
+  "vendor": "Oracle",
+  "type": "Security Advisory (ELSA)",
+  "kernel_type": "AppStream",
+  "title": " grafana-pcp security update",
+  "issuedDate": "2026-02-23T00:00:00Z",
+  "updatedDate": "2026-02-23T00:00:00Z",
+  "pubDate": "2026-02-23T00:00:00Z",
+  "dateStr": "2026-02-23",
+  "url": "https://linux.oracle.com/errata/ELSA-2026-3040.html",
+  "severity": "Important",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 9.",
+  "description": "[5.1.1-12]\n- Resolves RHEL-146864: CVE-2025-61726\n- Resolves RHEL-147082: CVE-2025-61729\n- Resolves RHEL-149622: CVE-2025-68121",
+  "affected_products": [
+    "Oracle Linux 9 for x86_64",
+    "Oracle Linux 9 for aarch64"
+  ],
+  "cves": [
+    "CVE-2025-61726",
+    "CVE-2025-61729",
+    "CVE-2025-68121"
+  ],
+  "packages": [
+    "grafana-pcp-5.1.1-12.el9_7.src",
+    "grafana-pcp-5.1.1-12.el9_7.x86_64"
+  ],
+  "full_text": "[5.1.1-12]\n- Resolves RHEL-146864: CVE-2025-61726\n- Resolves RHEL-147082: CVE-2025-61729\n- Resolves RHEL-149622: CVE-2025-68121\n\nReferences:\nhttps://linux.oracle.com/errata/ELSA-2026-3040.html\nhttps://linux.oracle.com/cve/CVE-2025-61726.html\nhttps://linux.oracle.com/cve/CVE-2025-61729.html\nhttps://linux.oracle.com/cve/CVE-2025-68121.html"
+}

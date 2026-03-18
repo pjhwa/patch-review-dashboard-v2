@@ -1,0 +1,30 @@
+{
+  "id": "RHBA-2025:17587",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: Updated ubi9/ubi-micro container image",
+  "issuedDate": "2025-10-08T16:03:04Z",
+  "updatedDate": "2025-10-08T16:03:04Z",
+  "pubDate": "2025-10-08T16:03:04Z",
+  "dateStr": "2025-10-08",
+  "url": "https://access.redhat.com/errata/RHBA-2025:17587",
+  "severity": "None",
+  "overview": "An update for Updated is now available for Red Hat Enterprise Linux 10.",
+  "description": "The ubi9/ubi-micro container image is designed and engineered to be used by other Red Hat products. This image is only supported for approved Red Hat products. This image is maintained by Red Hat and updated regularly.",
+  "affected_products": [
+    "Red Hat Enterprise Linux for x86_64 10 x86_64",
+    "Red Hat Enterprise Linux for ARM 64",
+    "Red Hat Enterprise Linux for IBM z Systems",
+    "Red Hat Enterprise Linux for Power, little endian"
+  ],
+  "cves": [],
+  "packages": [],
+  "fixes": [
+    {
+      "id": "BZ - 2383146",
+      "url": "https://bugzilla.redhat.com/show_bug.cgi?id=2383146",
+      "description": "CVE-2025-8058 glibc: Double free in glibc"
+    }
+  ],
+  "full_text": "An update for Updated is now available for Red Hat Enterprise Linux 10.\n\nThe ubi9/ubi-micro container image is designed and engineered to be used by other Red Hat products. This image is only supported for approved Red Hat products. This image is maintained by Red Hat and updated regularly."
+}

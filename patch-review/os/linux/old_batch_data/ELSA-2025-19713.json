@@ -1,0 +1,29 @@
+{
+  "id": "ELSA-2025-19713",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2025-November/018942.html",
+  "synopsis": "[El-errata] ELSA-2025-19713 Important: Oracle Linux 9 libsoup security update",
+  "dateStr": "2025-November",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Security Advisory ELSA-2025-19713",
+  "description": "[2.72.0-10.3]\n- Backport patch for CVE-2025-4945 and CVE-2025-11021\n\n[2.72.0-10.2]\n- Backport patches for various CVEs\n  Resolves: RHEL-85888\n  Resolves: RHEL-87081\n  Resolves: RHEL-88332\n  Resolves: RHEL-92285\n\n[2.72.0-10.1]\n- Backport patches for various CVEs, plus test improvements\n  Resolves: RHEL-85906\n  Resolves: RHEL-85912\n  Resolves: RHEL-85919\n  Resolves: RHEL-87061\n  Resolves: RHEL-87069\n  Resolves: RHEL-87102\n  Resolves: RHEL-87120\n  Resolves: RHEL-88364\n  Resolves: RHEL-88367",
+  "affected_products": [
+    "Oracle Linux 9"
+  ],
+  "packages": [
+    "libsoup-2.72.0-10.el9_6.3.i686.rpm",
+    "libsoup-2.72.0-10.el9_6.3.x86_64.rpm",
+    "libsoup-devel-2.72.0-10.el9_6.3.i686.rpm",
+    "libsoup-devel-2.72.0-10.el9_6.3.x86_64.rpm",
+    "libsoup-2.72.0-10.el9_6.3.aarch64.rpm",
+    "libsoup-devel-2.72.0-10.el9_6.3.aarch64.rpm"
+  ],
+  "cves": [
+    "CVE-2025-4945",
+    "CVE-2025-11021"
+  ],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Security Advisory ELSA-2025-19713\n\nhttp://linux.oracle.com/errata/ELSA-2025-19713.html\n\nThe following updated rpms for Oracle Linux 9 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\nlibsoup-2.72.0-10.el9_6.3.i686.rpm\nlibsoup-2.72.0-10.el9_6.3.x86_64.rpm\nlibsoup-devel-2.72.0-10.el9_6.3.i686.rpm\nlibsoup-devel-2.72.0-10.el9_6.3.x86_64.rpm\n\naarch64:\nlibsoup-2.72.0-10.el9_6.3.aarch64.rpm\nlibsoup-devel-2.72.0-10.el9_6.3.aarch64.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol9/SRPMS-updates/libsoup-2.72.0-10.el9_6.3.src.rpm\n\nRelated CVEs:\n\nCVE-2025-4945\nCVE-2025-11021\n\n\n\n\nDescription of changes:\n\n[2.72.0-10.3]\n- Backport patch for CVE-2025-4945 and CVE-2025-11021\n\n[2.72.0-10.2]\n- Backport patches for various CVEs\n  Resolves: RHEL-85888\n  Resolves: RHEL-87081\n  Resolves: RHEL-88332\n  Resolves: RHEL-92285\n\n[2.72.0-10.1]\n- Backport patches for various CVEs, plus test improvements\n  Resolves: RHEL-85906\n  Resolves: RHEL-85912\n  Resolves: RHEL-85919\n  Resolves: RHEL-87061\n  Resolves: RHEL-87069\n  Resolves: RHEL-87102\n  Resolves: RHEL-87120\n  Resolves: RHEL-88364\n  Resolves: RHEL-88367",
+  "vendor": "Oracle"
+}

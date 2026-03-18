@@ -1,0 +1,26 @@
+{
+  "id": "USN-7932-1",
+  "vendor": "Canonical / Ubuntu",
+  "type": "Ubuntu Security Notice (USN)",
+  "title": "libsoup3 vulnerability",
+  "issuedDate": "2025-12-15T15:05:29Z",
+  "updatedDate": "2026-02-10T04:50:47Z",
+  "pubDate": "2025-12-15T15:05:29Z",
+  "dateStr": "2025-12-15",
+  "url": "https://ubuntu.com/security/notices/USN-7932-1",
+  "severity": "None",
+  "overview": "libsoup3 vulnerability",
+  "description": "It was discovered libsoup incorrectly handled memory when handling specific\nHTTP/2 read and cancel sequences. An attacker could possibly use this issue\nto cause a denial of service.",
+  "affected_products": [
+    "Ubuntu 24.04 LTS"
+  ],
+  "cves": [],
+  "packages": [
+    "gir1.2-soup-3.0-3.4.4-5ubuntu0.6",
+    "libsoup-3.0-0-3.4.4-5ubuntu0.6",
+    "libsoup-3.0-common-3.4.4-5ubuntu0.6",
+    "libsoup-3.0-dev-3.4.4-5ubuntu0.6",
+    "libsoup-3.0-tests-3.4.4-5ubuntu0.6"
+  ],
+  "full_text": "It was discovered libsoup incorrectly handled memory when handling specific\nHTTP/2 read and cancel sequences. An attacker could possibly use this issue\nto cause a denial of service."
+}

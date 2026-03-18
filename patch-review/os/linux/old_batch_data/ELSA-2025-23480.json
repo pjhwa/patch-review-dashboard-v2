@@ -1,0 +1,35 @@
+{
+  "id": "ELSA-2025-23480",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2025-December/019357.html",
+  "synopsis": "[El-errata] ELSA-2025-23480 Moderate: Oracle Linux 9 openssh security update",
+  "dateStr": "2025-December",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Security Advisory ELSA-2025-23480",
+  "description": "[8.7p1-47.0.1]\n- Upstream references found with /usr/bin/ssh [Orabug: 37814929]\n- upstream: fix AuthorizedPrincipalsCommand when AuthorizedKeysCommand [Orabug: 37647064]\n- Update upstream references [Orabug: 36564626]\n\n[8.7p1-47]\n- CVE-2025-61984: Reject usernames with control characters\n  Resolves: RHEL-128401\n- CVE-2025-61985: Reject URL-strings with NULL characters\n  Resolves: RHEL-128392",
+  "affected_products": [
+    "Oracle Linux 9"
+  ],
+  "packages": [
+    "openssh-8.7p1-47.0.1.el9_7.x86_64.rpm",
+    "openssh-askpass-8.7p1-47.0.1.el9_7.x86_64.rpm",
+    "openssh-clients-8.7p1-47.0.1.el9_7.x86_64.rpm",
+    "openssh-keycat-8.7p1-47.0.1.el9_7.x86_64.rpm",
+    "openssh-server-8.7p1-47.0.1.el9_7.x86_64.rpm",
+    "pam_ssh_agent_auth-0.10.4-5.47.0.1.el9_7.x86_64.rpm",
+    "openssh-8.7p1-47.0.1.el9_7.aarch64.rpm",
+    "openssh-askpass-8.7p1-47.0.1.el9_7.aarch64.rpm",
+    "openssh-clients-8.7p1-47.0.1.el9_7.aarch64.rpm",
+    "openssh-keycat-8.7p1-47.0.1.el9_7.aarch64.rpm",
+    "openssh-server-8.7p1-47.0.1.el9_7.aarch64.rpm",
+    "pam_ssh_agent_auth-0.10.4-5.47.0.1.el9_7.aarch64.rpm"
+  ],
+  "cves": [
+    "CVE-2025-61984",
+    "CVE-2025-61985"
+  ],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Security Advisory ELSA-2025-23480\n\nhttp://linux.oracle.com/errata/ELSA-2025-23480.html\n\nThe following updated rpms for Oracle Linux 9 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\nopenssh-8.7p1-47.0.1.el9_7.x86_64.rpm\nopenssh-askpass-8.7p1-47.0.1.el9_7.x86_64.rpm\nopenssh-clients-8.7p1-47.0.1.el9_7.x86_64.rpm\nopenssh-keycat-8.7p1-47.0.1.el9_7.x86_64.rpm\nopenssh-server-8.7p1-47.0.1.el9_7.x86_64.rpm\npam_ssh_agent_auth-0.10.4-5.47.0.1.el9_7.x86_64.rpm\n\naarch64:\nopenssh-8.7p1-47.0.1.el9_7.aarch64.rpm\nopenssh-askpass-8.7p1-47.0.1.el9_7.aarch64.rpm\nopenssh-clients-8.7p1-47.0.1.el9_7.aarch64.rpm\nopenssh-keycat-8.7p1-47.0.1.el9_7.aarch64.rpm\nopenssh-server-8.7p1-47.0.1.el9_7.aarch64.rpm\npam_ssh_agent_auth-0.10.4-5.47.0.1.el9_7.aarch64.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol9/SRPMS-updates/openssh-8.7p1-47.0.1.el9_7.src.rpm\n\nRelated CVEs:\n\nCVE-2025-61984\nCVE-2025-61985\n\n\n\n\nDescription of changes:\n\n[8.7p1-47.0.1]\n- Upstream references found with /usr/bin/ssh [Orabug: 37814929]\n- upstream: fix AuthorizedPrincipalsCommand when AuthorizedKeysCommand [Orabug: 37647064]\n- Update upstream references [Orabug: 36564626]\n\n[8.7p1-47]\n- CVE-2025-61984: Reject usernames with control characters\n  Resolves: RHEL-128401\n- CVE-2025-61985: Reject URL-strings with NULL characters\n  Resolves: RHEL-128392",
+  "vendor": "Oracle"
+}

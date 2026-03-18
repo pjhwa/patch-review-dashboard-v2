@@ -1,0 +1,22 @@
+{
+  "id": "RHSA-2025:23051",
+  "vendor": "Red Hat",
+  "url": "https://access.redhat.com/errata/RHSA-2025:23051",
+  "pubDate": "2025-12-10T14:38:53.000Z",
+  "dateStr": "2025-12-10",
+  "severity": "Important",
+  "title": "Red Hat Security Advisory: tomcat security update",
+  "overview": "An update for tomcat is now available for Red Hat Enterprise Linux 10.0 Extended Update Support.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "description": "An update for tomcat is now available for Red Hat Enterprise Linux 10.0 Extended Update Support.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux AppStream EUS (v. 10.0)"
+  ],
+  "cves": [
+    "CVE-2025-31651",
+    "CVE-2025-55752",
+    "CVE-2025-61795"
+  ],
+  "packages": [],
+  "fixes": "",
+  "full_text": "Red Hat Security Advisory: tomcat security update\n\nAn update for tomcat is now available for Red Hat Enterprise Linux 10.0 Extended Update Support.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nAn update for tomcat is now available for Red Hat Enterprise Linux 10.0 Extended Update Support.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nUpdated Packages:\ntomcat-10.1.36-1.el10_0.3.src.rpm\ntomcat-10.1.36-1.el10_0.3.noarch.rpm\ntomcat-admin-webapps-10.1.36-1.el10_0.3.noarch.rpm\ntomcat-docs-webapp-10.1.36-1.el10_0.3.noarch.rpm\ntomcat-el-5.0-api-10.1.36-1.el10_0.3.noarch.rpm\ntomcat-jsp-3.1-api-10.1.36-1.el10_0.3.noarch.rpm\ntomcat-lib-10.1.36-1.el10_0.3.noarch.rpm\ntomcat-servlet-6.0-api-10.1.36-1.el10_0.3.noarch.rpm\ntomcat-webapps-10.1.36-1.el10_0.3.noarch.rpm\n\nCVE-2025-31651: A flaw was found in Apache Tomcat's rewrite rule processing component. This vulnerability allows security constraints to be bypassed via specially crafted HTTP requests when specific, uncommon rewrite rule configurations are in use.\n\nCVE-2025-55752: A directory traversal vulnerability in Apache Tomcat caused by improper URL normalization during request rewriting. When specific rewrite rules are used, an attacker could craft a malicious request to bypass access restrictions and reach protected directories such as /WEB-INF/ or /META-INF/. If HTTP PUT requests are also enabled, this flaw could allow the upload of malicious files, potentially leading to remote code execution.\n\nCVE-2025-61795: Improper Resource Shutdown or Release vulnerability in Apache Tomcat.\n\nIf an error occurred (including exceeding limits) during the processing of a multipart upload, temporary copies of the uploaded parts written to disc were not cleaned up immediately but left for the garbage collection process to delete. Depending on JVM settings, application memory usage and application load, it was possible that space for the temporary copies of uploaded parts would be filled faster than GC cleared it, leading to a DoS.\n\n\n\nThis issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.11, from 10.1.0-M1 through 10.1.46, from 9.0.0.M1 through 9.0.109.\n\nThe following versions were EOL at the time the CVE was created but are \nknown to be affected: 8.5.0 though 8.5.100. Other, older, EOL versions may also be affected.\nUsers are recommended to upgrade to version 11.0.12 or later, 10.1.47 or later or 9.0.110 or later which fixes the issue."
+}

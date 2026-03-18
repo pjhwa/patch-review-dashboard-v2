@@ -1,0 +1,21 @@
+{
+  "id": "ELBA-2025-19546",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2025-November/018951.html",
+  "synopsis": "[El-errata] ELBA-2025-19546 Oracle Linux 10 microcode_ctl bug fix and enhancement update",
+  "dateStr": "2025-November",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Bug Fix Advisory ELBA-2025-19546",
+  "description": "[4:20250211-1.20250812-1.0.1]\n- enable use with UEK8 kernels\n- don't bother calling dracut if virtualized\n- ensure UEK also rebuilds initramfs\n- enable early update for 06-4f-01\n- enable early and late load on RHCK",
+  "affected_products": [
+    "Oracle Linux 10"
+  ],
+  "packages": [
+    "microcode_ctl-20250211-1.20250812.1.0.1.el10_0.noarch.rpm"
+  ],
+  "cves": [],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Bug Fix Advisory ELBA-2025-19546\n\nhttp://linux.oracle.com/errata/ELBA-2025-19546.html\n\nThe following updated rpms for Oracle Linux 10 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\nmicrocode_ctl-20250211-1.20250812.1.0.1.el10_0.noarch.rpm\n\n\n\nSRPMS:\nhttp://oss.oracle.com/ol10/SRPMS-updates/microcode_ctl-20250211-1.20250812.1.0.1.el10_0.src.rpm\n\n\n\nDescription of changes:\n\n[4:20250211-1.20250812-1.0.1]\n- enable use with UEK8 kernels\n- don't bother calling dracut if virtualized\n- ensure UEK also rebuilds initramfs\n- enable early update for 06-4f-01\n- enable early and late load on RHCK",
+  "vendor": "Oracle"
+}

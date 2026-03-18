@@ -1,0 +1,27 @@
+{
+  "id": "ELSA-2026-2039",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2026-February/019691.html",
+  "synopsis": "[El-errata] ELSA-2026-2039 Important: Oracle Linux 9 fontforge security update",
+  "dateStr": "2026-February",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Security Advisory ELSA-2026-2039",
+  "description": "[20201107-7]\n- Resolves: RHEL-138206\n  CVE-2025-15279 GUtils BMP File Parsing Heap-based Buffer Overflow\n- Resolves: RHEL-138228\n  CVE-2025-15275 SFD File Parsing Heap-based Buffer Overflow\n- Resolves: RHEL-138158\n  CVE-2025-15269 SFD File Parsing Use-After-Free",
+  "affected_products": [
+    "Oracle Linux 9"
+  ],
+  "packages": [
+    "fontforge-20201107-7.el9_7.i686.rpm",
+    "fontforge-20201107-7.el9_7.x86_64.rpm",
+    "fontforge-20201107-7.el9_7.aarch64.rpm"
+  ],
+  "cves": [
+    "CVE-2025-15269",
+    "CVE-2025-15275",
+    "CVE-2025-15279"
+  ],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Security Advisory ELSA-2026-2039\n\nhttp://linux.oracle.com/errata/ELSA-2026-2039.html\n\nThe following updated rpms for Oracle Linux 9 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\nfontforge-20201107-7.el9_7.i686.rpm\nfontforge-20201107-7.el9_7.x86_64.rpm\n\naarch64:\nfontforge-20201107-7.el9_7.aarch64.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol9/SRPMS-updates/fontforge-20201107-7.el9_7.src.rpm\n\nRelated CVEs:\n\nCVE-2025-15269\nCVE-2025-15275\nCVE-2025-15279\n\n\n\n\nDescription of changes:\n\n[20201107-7]\n- Resolves: RHEL-138206\n  CVE-2025-15279 GUtils BMP File Parsing Heap-based Buffer Overflow\n- Resolves: RHEL-138228\n  CVE-2025-15275 SFD File Parsing Heap-based Buffer Overflow\n- Resolves: RHEL-138158\n  CVE-2025-15269 SFD File Parsing Use-After-Free",
+  "vendor": "Oracle"
+}

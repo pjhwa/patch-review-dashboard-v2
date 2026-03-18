@@ -1,0 +1,39 @@
+{
+  "id": "ELSA-2025-28019",
+  "vendor": "Oracle",
+  "type": "Security Advisory (ELSA)",
+  "kernel_type": "AppStream",
+  "title": "postgresql security update",
+  "issuedDate": "2025-11-28T00:00:00Z",
+  "updatedDate": "2025-11-28T00:00:00Z",
+  "pubDate": "2025-11-28T00:00:00Z",
+  "dateStr": "2025-11-28",
+  "url": "https://linux.oracle.com/errata/ELSA-2025-28019.html",
+  "severity": "Important",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 8.",
+  "description": "[12.22-5.0.1]\n- Add backport of CVE-2025-8714 [Orabug: 38667546]\n\n[12.22-5]\n- Fix previous Backport\n\n[12.22-4]\n- Backport CVE-2025-8715\n\n[12.22-3]\n- Fix backport for CVE-2025-1094\n\n[12.22-2]\n- Backport fix for CVE-2025-1094\n\n[12.22-1]\n- Update to 12.22\n- Fixes: CVE-2024-10976 CVE-2024-10978\n\n[12.20-1]\n- Update to 12.20\n- Fix CVE-2024-7348\n\n[12.18-1]\n- Update to 12.18\n- Fix CVE-2024-0985\n\n[12.17-1]\n- Update to version 12.17\n  Fix: CVE-2023-5868, CVE-2023-5869, CVE-2023-5870\n\n[12.15-3]\n- Update postgresql-setup to 8.7 (https://github.com/devexp-db/postgresql-setup/pull/35)",
+  "affected_products": [
+    "Oracle Linux 8 for x86_64",
+    "Oracle Linux 8 for aarch64"
+  ],
+  "cves": [
+    "CVE-2025-8714"
+  ],
+  "packages": [
+    "postgresql-12.22-5.0.1.module+el8.10.0+90711+f3f8ea77.src",
+    "postgresql-test-rpm-macros-12.22-5.0.1.module+el8.10.0+90711+f3f8ea77.noarch",
+    "postgresql-server-12.22-5.0.1.module+el8.10.0+90711+f3f8ea77.x86_64",
+    "postgresql-static-12.22-5.0.1.module+el8.10.0+90711+f3f8ea77.x86_64",
+    "postgresql-server-devel-12.22-5.0.1.module+el8.10.0+90711+f3f8ea77.x86_64",
+    "postgresql-plperl-12.22-5.0.1.module+el8.10.0+90711+f3f8ea77.x86_64",
+    "postgresql-upgrade-devel-12.22-5.0.1.module+el8.10.0+90711+f3f8ea77.x86_64",
+    "postgresql-upgrade-12.22-5.0.1.module+el8.10.0+90711+f3f8ea77.x86_64",
+    "postgresql-pltcl-12.22-5.0.1.module+el8.10.0+90711+f3f8ea77.x86_64",
+    "postgresql-12.22-5.0.1.module+el8.10.0+90711+f3f8ea77.x86_64",
+    "postgresql-docs-12.22-5.0.1.module+el8.10.0+90711+f3f8ea77.x86_64",
+    "postgresql-plpython3-12.22-5.0.1.module+el8.10.0+90711+f3f8ea77.x86_64",
+    "postgresql-contrib-12.22-5.0.1.module+el8.10.0+90711+f3f8ea77.x86_64",
+    "postgresql-test-12.22-5.0.1.module+el8.10.0+90711+f3f8ea77.x86_64"
+  ],
+  "full_text": "[12.22-5.0.1]\n- Add backport of CVE-2025-8714 [Orabug: 38667546]\n\n[12.22-5]\n- Fix previous Backport\n\n[12.22-4]\n- Backport CVE-2025-8715\n\n[12.22-3]\n- Fix backport for CVE-2025-1094\n\n[12.22-2]\n- Backport fix for CVE-2025-1094\n\n[12.22-1]\n- Update to 12.22\n- Fixes: CVE-2024-10976 CVE-2024-10978\n\n[12.20-1]\n- Update to 12.20\n- Fix CVE-2024-7348\n\n[12.18-1]\n- Update to 12.18\n- Fix CVE-2024-0985\n\n[12.17-1]\n- Update to version 12.17\n  Fix: CVE-2023-5868, CVE-2023-5869, CVE-2023-5870\n\n[12.15-3]\n- Update postgresql-setup to 8.7 (https://github.com/devexp-db/postgresql-setup/pull/35)\n\nReferences:\nhttps://linux.oracle.com/errata/ELSA-2025-28019.html\nhttps://linux.oracle.com/cve/CVE-2025-8714.html"
+}

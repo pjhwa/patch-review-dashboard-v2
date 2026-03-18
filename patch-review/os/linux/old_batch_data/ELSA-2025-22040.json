@@ -1,0 +1,47 @@
+{
+  "id": "ELSA-2025-22040",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2025-December/019262.html",
+  "synopsis": "[El-errata] ELSA-2025-22040 Low: Oracle Linux 7 xorg-x11-server security update",
+  "dateStr": "2025-December",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Security Advisory ELSA-2025-22040",
+  "description": "[1.20.4-29.0.5]\n- Security update for CVE-2025-62229 CVE-2025-62230 CVE-2025-62231 [Orabug: 38691191]\n\n[1.20.4-29.0.3]\n- Fix CVE-2025-49175, CVE-2025-49176, CVE-2025-49178, CVE-2025-49179, CVE-2025-49180 [Orabug: 38157695]\n\n[1.20.4-29.0.1]\n- Fixed CVE-2025-26594 CVE-2025-26595 CVE-2025-26596\n- CVE-2025-26597 CVE-2025-26598 CVE-2025-26599 CVE-2025-26600\n- CVE-2025-26601 [Orabug: 37712847]",
+  "affected_products": [
+    "Oracle Linux 7"
+  ],
+  "packages": [
+    "xorg-x11-server-Xdmx-1.20.4-29.0.5.el7_9.x86_64.rpm",
+    "xorg-x11-server-Xephyr-1.20.4-29.0.5.el7_9.x86_64.rpm",
+    "xorg-x11-server-Xnest-1.20.4-29.0.5.el7_9.x86_64.rpm",
+    "xorg-x11-server-Xorg-1.20.4-29.0.5.el7_9.x86_64.rpm",
+    "xorg-x11-server-Xvfb-1.20.4-29.0.5.el7_9.x86_64.rpm",
+    "xorg-x11-server-Xwayland-1.20.4-29.0.5.el7_9.x86_64.rpm",
+    "xorg-x11-server-common-1.20.4-29.0.5.el7_9.x86_64.rpm",
+    "xorg-x11-server-devel-1.20.4-29.0.5.el7_9.i686.rpm",
+    "xorg-x11-server-devel-1.20.4-29.0.5.el7_9.x86_64.rpm",
+    "xorg-x11-server-source-1.20.4-29.0.5.el7_9.noarch.rpm"
+  ],
+  "cves": [
+    "CVE-2025-62229",
+    "CVE-2025-62230",
+    "CVE-2025-62231",
+    "CVE-2025-49175",
+    "CVE-2025-49176",
+    "CVE-2025-49178",
+    "CVE-2025-49179",
+    "CVE-2025-49180",
+    "CVE-2025-26594",
+    "CVE-2025-26595",
+    "CVE-2025-26596",
+    "CVE-2025-26597",
+    "CVE-2025-26598",
+    "CVE-2025-26599",
+    "CVE-2025-26600",
+    "CVE-2025-26601"
+  ],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Security Advisory ELSA-2025-22040\n\nhttp://linux.oracle.com/errata/ELSA-2025-22040.html\n\nThe following updated rpms for Oracle Linux 7 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\nxorg-x11-server-Xdmx-1.20.4-29.0.5.el7_9.x86_64.rpm\nxorg-x11-server-Xephyr-1.20.4-29.0.5.el7_9.x86_64.rpm\nxorg-x11-server-Xnest-1.20.4-29.0.5.el7_9.x86_64.rpm\nxorg-x11-server-Xorg-1.20.4-29.0.5.el7_9.x86_64.rpm\nxorg-x11-server-Xvfb-1.20.4-29.0.5.el7_9.x86_64.rpm\nxorg-x11-server-Xwayland-1.20.4-29.0.5.el7_9.x86_64.rpm\nxorg-x11-server-common-1.20.4-29.0.5.el7_9.x86_64.rpm\nxorg-x11-server-devel-1.20.4-29.0.5.el7_9.i686.rpm\nxorg-x11-server-devel-1.20.4-29.0.5.el7_9.x86_64.rpm\nxorg-x11-server-source-1.20.4-29.0.5.el7_9.noarch.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol7/SRPMS-updates/xorg-x11-server-1.20.4-29.0.5.el7_9.src.rpm\n\nRelated CVEs:\n\nCVE-2025-62229\nCVE-2025-62230\nCVE-2025-62231\n\n\n\n\nDescription of changes:\n\n[1.20.4-29.0.5]\n- Security update for CVE-2025-62229 CVE-2025-62230 CVE-2025-62231 [Orabug: 38691191]\n\n[1.20.4-29.0.3]\n- Fix CVE-2025-49175, CVE-2025-49176, CVE-2025-49178, CVE-2025-49179, CVE-2025-49180 [Orabug: 38157695]\n\n[1.20.4-29.0.1]\n- Fixed CVE-2025-26594 CVE-2025-26595 CVE-2025-26596\n- CVE-2025-26597 CVE-2025-26598 CVE-2025-26599 CVE-2025-26600\n- CVE-2025-26601 [Orabug: 37712847]",
+  "vendor": "Oracle"
+}

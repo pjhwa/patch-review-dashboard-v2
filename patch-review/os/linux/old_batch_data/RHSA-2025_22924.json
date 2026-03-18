@@ -1,0 +1,22 @@
+{
+  "id": "RHSA-2025:22924",
+  "vendor": "Red Hat",
+  "url": "https://access.redhat.com/errata/RHSA-2025:22924",
+  "pubDate": "2025-12-09T15:22:27.000Z",
+  "dateStr": "2025-12-09",
+  "severity": "Important",
+  "title": "Red Hat Security Advisory: Red Hat JBoss Web Server 5.8.6 release and security update",
+  "overview": "Red Hat JBoss Web Server 5.8.6 zip release is now available for Red Hat Enterprise Linux 7, Red Hat Enterprise Linux 8, Red Hat Enterprise Linux 9, and Windows Server.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "description": "Red Hat JBoss Web Server 5.8.6 zip release is now available for Red Hat Enterprise Linux 7, Red Hat Enterprise Linux 8, Red Hat Enterprise Linux 9, and Windows Server.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "affected_products": [
+    "Red Hat JBoss Web Server 5.8.6"
+  ],
+  "cves": [
+    "CVE-2025-31651",
+    "CVE-2025-48989",
+    "CVE-2025-55752"
+  ],
+  "packages": [],
+  "fixes": "",
+  "full_text": "Red Hat Security Advisory: Red Hat JBoss Web Server 5.8.6 release and security update\n\nRed Hat JBoss Web Server 5.8.6 zip release is now available for Red Hat Enterprise Linux 7, Red Hat Enterprise Linux 8, Red Hat Enterprise Linux 9, and Windows Server.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nRed Hat JBoss Web Server 5.8.6 zip release is now available for Red Hat Enterprise Linux 7, Red Hat Enterprise Linux 8, Red Hat Enterprise Linux 9, and Windows Server.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\n\n\nCVE-2025-31651: A flaw was found in Apache Tomcat's rewrite rule processing component. This vulnerability allows security constraints to be bypassed via specially crafted HTTP requests when specific, uncommon rewrite rule configurations are in use.\n\nCVE-2025-48989: A flaw was found in Apache Tomcat where malformed client requests can trigger server-side stream resets without triggering abuse counters. This issue, referred to as the \"MadeYouReset\" attack, allows malicious clients to induce excessive server workload by repeatedly causing server-side stream aborts. While not a protocol bug, this highlights a common implementation weakness that can be exploited to cause a denial of service (DoS).\n\nCVE-2025-55752: A directory traversal vulnerability in Apache Tomcat caused by improper URL normalization during request rewriting. When specific rewrite rules are used, an attacker could craft a malicious request to bypass access restrictions and reach protected directories such as /WEB-INF/ or /META-INF/. If HTTP PUT requests are also enabled, this flaw could allow the upload of malicious files, potentially leading to remote code execution."
+}

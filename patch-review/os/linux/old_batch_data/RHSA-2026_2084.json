@@ -1,0 +1,22 @@
+{
+  "id": "RHSA-2026:2084",
+  "vendor": "Red Hat",
+  "url": "https://access.redhat.com/errata/RHSA-2026:2084",
+  "pubDate": "2026-02-05T11:58:50.000Z",
+  "dateStr": "2026-02-05",
+  "severity": "Moderate",
+  "title": "Red Hat Security Advisory: python3.11 security update",
+  "overview": "An update for python3.11 is now available for Red Hat Enterprise Linux 8.8 Update Services for SAP Solutions and Red Hat Enterprise Linux 8.8 Telecommunications Update Service.\n\nRed Hat Product Security has rated this update as having a security impact of Moderate. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "description": "An update for python3.11 is now available for Red Hat Enterprise Linux 8.8 Update Services for SAP Solutions and Red Hat Enterprise Linux 8.8 Telecommunications Update Service.\n\nRed Hat Product Security has rated this update as having a security impact of Moderate. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux AppStream E4S (v.8.8)",
+    "Red Hat Enterprise Linux AppStream TUS (v.8.8)"
+  ],
+  "cves": [
+    "CVE-2025-12084",
+    "CVE-2025-13836"
+  ],
+  "packages": [],
+  "fixes": "",
+  "full_text": "Red Hat Security Advisory: python3.11 security update\n\nAn update for python3.11 is now available for Red Hat Enterprise Linux 8.8 Update Services for SAP Solutions and Red Hat Enterprise Linux 8.8 Telecommunications Update Service.\n\nRed Hat Product Security has rated this update as having a security impact of Moderate. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nAn update for python3.11 is now available for Red Hat Enterprise Linux 8.8 Update Services for SAP Solutions and Red Hat Enterprise Linux 8.8 Telecommunications Update Service.\n\nRed Hat Product Security has rated this update as having a security impact of Moderate. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nUpdated Packages:\npython3.11-3.11.2-2.el8_8.7.src.rpm\npython3.11-3.11.2-2.el8_8.7.x86_64.rpm\npython3.11-debuginfo-3.11.2-2.el8_8.7.i686.rpm\npython3.11-debuginfo-3.11.2-2.el8_8.7.x86_64.rpm\npython3.11-debugsource-3.11.2-2.el8_8.7.i686.rpm\npython3.11-debugsource-3.11.2-2.el8_8.7.x86_64.rpm\npython3.11-devel-3.11.2-2.el8_8.7.i686.rpm\npython3.11-devel-3.11.2-2.el8_8.7.x86_64.rpm\npython3.11-libs-3.11.2-2.el8_8.7.i686.rpm\npython3.11-libs-3.11.2-2.el8_8.7.x86_64.rpm\npython3.11-rpm-macros-3.11.2-2.el8_8.7.noarch.rpm\npython3.11-tkinter-3.11.2-2.el8_8.7.x86_64.rpm\npython3.11-3.11.2-2.el8_8.7.ppc64le.rpm\npython3.11-debuginfo-3.11.2-2.el8_8.7.ppc64le.rpm\npython3.11-debugsource-3.11.2-2.el8_8.7.ppc64le.rpm\npython3.11-devel-3.11.2-2.el8_8.7.ppc64le.rpm\npython3.11-libs-3.11.2-2.el8_8.7.ppc64le.rpm\npython3.11-tkinter-3.11.2-2.el8_8.7.ppc64le.rpm\n\nCVE-2025-12084: When building nested elements using xml.dom.minidom methods such as appendChild() that have a dependency on _clear_id_cache() the algorithm is quadratic. Availability can be impacted when building excessively nested documents.\n\nCVE-2025-13836: A flaw was found in the http.client module in the Python standard library. When reading an HTTP response from a server, if no read amount is specified, the default behavior will be to use Content-Length. This issue allows a malicious server to cause the client to read large amounts of data into memory, potentially causing memory allocations errors, swapping, out-of-memory conditions or even system freezes."
+}

@@ -1,0 +1,36 @@
+{
+  "id": "RHBA-2025:20131",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: mokutil bug fix and enhancement update",
+  "issuedDate": "2025-11-11T07:25:11Z",
+  "updatedDate": "2025-11-11T07:25:11Z",
+  "pubDate": "2025-11-11T07:25:11Z",
+  "dateStr": "2025-11-11",
+  "url": "https://access.redhat.com/errata/RHBA-2025:20131",
+  "severity": "None",
+  "overview": "An update for mokutil is now available for Red Hat Enterprise Linux 10.",
+  "description": "For detailed information on changes in this release, see the Red Hat Enterprise Linux 10.1 Release Notes linked from the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux for x86_64 10 x86_64",
+    "Red Hat Enterprise Linux for ARM 64"
+  ],
+  "cves": [],
+  "packages": [
+    "mokutil-0.7.2-1.el10.src",
+    "mokutil-0.7.2-1.el10.x86_64",
+    "mokutil-debuginfo-0.7.2-1.el10.x86_64",
+    "mokutil-debugsource-0.7.2-1.el10.x86_64",
+    "mokutil-0.7.2-1.el10.aarch64",
+    "mokutil-debuginfo-0.7.2-1.el10.aarch64",
+    "mokutil-debugsource-0.7.2-1.el10.aarch64"
+  ],
+  "fixes": [
+    {
+      "id": "RHEL-88740",
+      "url": "https://issues.redhat.com/browse/RHEL-88740",
+      "description": "Rebase rhel-10 mokutil to latest upstream version tag (0.7.2)"
+    }
+  ],
+  "full_text": "An update for mokutil is now available for Red Hat Enterprise Linux 10.\n\nFor detailed information on changes in this release, see the Red Hat Enterprise Linux 10.1 Release Notes linked from the References section."
+}

@@ -1,0 +1,49 @@
+{
+  "id": "RHBA-2025:20381",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: ipa-healthcheck bug fix and enhancement update",
+  "issuedDate": "2025-11-11T07:26:18Z",
+  "updatedDate": "2025-11-11T07:26:18Z",
+  "pubDate": "2025-11-11T07:26:18Z",
+  "dateStr": "2025-11-11",
+  "url": "https://access.redhat.com/errata/RHBA-2025:20381",
+  "severity": "None",
+  "overview": "An update for ipa-healthcheck is now available for Red Hat Enterprise Linux 10.",
+  "description": "For detailed information on changes in this release, see the Red Hat Enterprise Linux 10 Release Notes linked from the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux for IBM z Systems",
+    "Red Hat Enterprise Linux for x86_64 10 x86_64",
+    "Red Hat Enterprise Linux for ARM 64",
+    "Red Hat Enterprise Linux for Power, little endian"
+  ],
+  "cves": [],
+  "packages": [
+    "ipa-healthcheck-0.16-11.el10.src",
+    "ipa-healthcheck-0.16-11.el10.noarch",
+    "ipa-healthcheck-core-0.16-11.el10.noarch"
+  ],
+  "fixes": [
+    {
+      "id": "RHEL-67635",
+      "url": "https://issues.redhat.com/browse/RHEL-67635",
+      "description": "ipa-healthcheck uses fips-mode-setup to determine FIPS state"
+    },
+    {
+      "id": "RHEL-78399",
+      "url": "https://issues.redhat.com/browse/RHEL-78399",
+      "description": "Have ipa-healthcheck warn on expiring user-provided certificates"
+    },
+    {
+      "id": "RHEL-98806",
+      "url": "https://issues.redhat.com/browse/RHEL-98806",
+      "description": "Fix the warning displayed on running ipa-healthcheck"
+    },
+    {
+      "id": "RHEL-99999",
+      "url": "https://issues.redhat.com/browse/RHEL-99999",
+      "description": "IPAOpenSSLChainValidation changed behavior with ca-certificates update"
+    }
+  ],
+  "full_text": "An update for ipa-healthcheck is now available for Red Hat Enterprise Linux 10.\n\nFor detailed information on changes in this release, see the Red Hat Enterprise Linux 10 Release Notes linked from the References section."
+}

@@ -1,0 +1,48 @@
+{
+  "id": "ELSA-2026-0759",
+  "vendor": "Oracle",
+  "type": "Security Advisory (ELSA)",
+  "title": " kernel security update",
+  "issuedDate": "2026-01-19T00:00:00Z",
+  "updatedDate": "2026-01-19T00:00:00Z",
+  "pubDate": "2026-01-19T00:00:00Z",
+  "dateStr": "2026-01-19",
+  "url": "https://linux.oracle.com/errata/ELSA-2026-0759.html",
+  "severity": "Important",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 8.",
+  "description": "[4.18.0-553.94.1]\n- Update Oracle Linux certificates (Kevin Lyons)\n- Disable signing for aarch64 (Ilya Okomin)\n- Oracle Linux RHCK Module Signing Key was added to the kernel trusted keys list (olkmod_signing_key.pem) [Orabug: 29539237]\n- Update x509.genkey [Orabug: 24817676]\n- Conflict with shim-ia32 and shim-x64 <= 15.3-1.0.3\n- Remove upstream reference during boot (Kevin Lyons) [Orabug: 34750652]\n- Add new Oracle Linux Driver Signing (key 1) certificate [Orabug: 37985772]\n\n[4.18.0-553.94.1]\n- net: atlantic: fix fragment overflow handling in RX path (CKI Backport Bot) [RHEL-139482] {CVE-2025-68301}\n- smb: client: let recv_done verify data_offset, data_length and remaining_data_length (Paulo Alcantara) [RHEL-131387] {CVE-2025-39933}\n- smb: client: Fix use-after-free in cifs_fill_dirent (CKI Backport Bot) [RHEL-134369] {CVE-2025-38051}\n\n[4.18.0-553.93.1]\n- mm: compaction: update the COMPACT[STALL|FAIL] events properly (Lucas Oakley) [RHEL-132449]\n- drm/sched: Fix potential double free in drm_sched_job_add_resv_dependencies (Mika Penttila) [RHEL-125456] {CVE-2025-40096}\n- drm/i915: mark requests for GuC virtual engines to avoid use-after-free (CKI Backport Bot) [RHEL-124682] {CVE-2023-53552}",
+  "affected_products": [
+    "Oracle Linux 8 for x86_64",
+    "Oracle Linux 8 for aarch64"
+  ],
+  "cves": [
+    "CVE-2023-53552",
+    "CVE-2025-38051",
+    "CVE-2025-39933",
+    "CVE-2025-40096",
+    "CVE-2025-68301"
+  ],
+  "packages": [
+    "bpftool-4.18.0-553.94.1.el8_10.x86_64",
+    "kernel-tools-libs-4.18.0-553.94.1.el8_10.x86_64",
+    "kernel-debug-4.18.0-553.94.1.el8_10.x86_64",
+    "kernel-4.18.0-553.94.1.el8_10.src",
+    "kernel-4.18.0-553.94.1.el8_10.x86_64",
+    "kernel-core-4.18.0-553.94.1.el8_10.x86_64",
+    "kernel-headers-4.18.0-553.94.1.el8_10.x86_64",
+    "kernel-debug-devel-4.18.0-553.94.1.el8_10.x86_64",
+    "perf-4.18.0-553.94.1.el8_10.x86_64",
+    "kernel-debug-modules-extra-4.18.0-553.94.1.el8_10.x86_64",
+    "kernel-debug-core-4.18.0-553.94.1.el8_10.x86_64",
+    "kernel-cross-headers-4.18.0-553.94.1.el8_10.x86_64",
+    "kernel-tools-4.18.0-553.94.1.el8_10.x86_64",
+    "kernel-debug-modules-4.18.0-553.94.1.el8_10.x86_64",
+    "kernel-modules-extra-4.18.0-553.94.1.el8_10.x86_64",
+    "python3-perf-4.18.0-553.94.1.el8_10.x86_64",
+    "kernel-modules-4.18.0-553.94.1.el8_10.x86_64",
+    "kernel-abi-stablelists-4.18.0-553.94.1.el8_10.noarch",
+    "kernel-doc-4.18.0-553.94.1.el8_10.noarch",
+    "kernel-devel-4.18.0-553.94.1.el8_10.x86_64"
+  ],
+  "full_text": "[4.18.0-553.94.1]\n- Update Oracle Linux certificates (Kevin Lyons)\n- Disable signing for aarch64 (Ilya Okomin)\n- Oracle Linux RHCK Module Signing Key was added to the kernel trusted keys list (olkmod_signing_key.pem) [Orabug: 29539237]\n- Update x509.genkey [Orabug: 24817676]\n- Conflict with shim-ia32 and shim-x64 <= 15.3-1.0.3\n- Remove upstream reference during boot (Kevin Lyons) [Orabug: 34750652]\n- Add new Oracle Linux Driver Signing (key 1) certificate [Orabug: 37985772]\n\n[4.18.0-553.94.1]\n- net: atlantic: fix fragment overflow handling in RX path (CKI Backport Bot) [RHEL-139482] {CVE-2025-68301}\n- smb: client: let recv_done verify data_offset, data_length and remaining_data_length (Paulo Alcantara) [RHEL-131387] {CVE-2025-39933}\n- smb: client: Fix use-after-free in cifs_fill_dirent (CKI Backport Bot) [RHEL-134369] {CVE-2025-38051}\n\n[4.18.0-553.93.1]\n- mm: compaction: update the COMPACT[STALL|FAIL] events properly (Lucas Oakley) [RHEL-132449]\n- drm/sched: Fix potential double free in drm_sched_job_add_resv_dependencies (Mika Penttila) [RHEL-125456] {CVE-2025-40096}\n- drm/i915: mark requests for GuC virtual engines to avoid use-after-free (CKI Backport Bot) [RHEL-124682] {CVE-2023-53552}\n\nReferences:\nhttps://linux.oracle.com/errata/ELSA-2026-0759.html\nhttps://linux.oracle.com/cve/CVE-2023-53552.html\nhttps://linux.oracle.com/cve/CVE-2025-38051.html\nhttps://linux.oracle.com/cve/CVE-2025-39933.html\nhttps://linux.oracle.com/cve/CVE-2025-40096.html\nhttps://linux.oracle.com/cve/CVE-2025-68301.html"
+}

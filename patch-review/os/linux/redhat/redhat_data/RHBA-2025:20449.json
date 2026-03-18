@@ -1,0 +1,59 @@
+{
+  "id": "RHBA-2025:20449",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: dnsconfd bug fix and enhancement update",
+  "issuedDate": "2025-11-11T07:26:34Z",
+  "updatedDate": "2025-11-11T07:26:34Z",
+  "pubDate": "2025-11-11T07:26:34Z",
+  "dateStr": "2025-11-11",
+  "url": "https://access.redhat.com/errata/RHBA-2025:20449",
+  "severity": "None",
+  "overview": "An update for dnsconfd is now available for Red Hat Enterprise Linux 10.",
+  "description": "For detailed information on changes in this release, see the Red Hat Enterprise Linux 10 Release Notes linked from the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux for Power, little endian",
+    "Red Hat Enterprise Linux for x86_64 10 x86_64",
+    "Red Hat Enterprise Linux for IBM z Systems",
+    "Red Hat Enterprise Linux for ARM 64"
+  ],
+  "cves": [],
+  "packages": [
+    "dnsconfd-1.7.3-2.el10.src",
+    "dnsconfd-1.7.3-2.el10.x86_64",
+    "dnsconfd-debugsource-1.7.3-2.el10.x86_64",
+    "dnsconfd-dracut-1.7.3-2.el10.x86_64",
+    "dnsconfd-micro-1.7.3-2.el10.x86_64",
+    "dnsconfd-micro-debuginfo-1.7.3-2.el10.x86_64",
+    "dnsconfd-selinux-1.7.3-2.el10.noarch",
+    "dnsconfd-unbound-1.7.3-2.el10.noarch",
+    "dnsconfd-1.7.3-2.el10.s390x",
+    "dnsconfd-debugsource-1.7.3-2.el10.s390x",
+    "dnsconfd-dracut-1.7.3-2.el10.s390x",
+    "dnsconfd-micro-1.7.3-2.el10.s390x",
+    "dnsconfd-micro-debuginfo-1.7.3-2.el10.s390x",
+    "dnsconfd-1.7.3-2.el10.ppc64le",
+    "dnsconfd-debugsource-1.7.3-2.el10.ppc64le",
+    "dnsconfd-dracut-1.7.3-2.el10.ppc64le",
+    "dnsconfd-micro-1.7.3-2.el10.ppc64le",
+    "dnsconfd-micro-debuginfo-1.7.3-2.el10.ppc64le",
+    "dnsconfd-1.7.3-2.el10.aarch64",
+    "dnsconfd-debugsource-1.7.3-2.el10.aarch64",
+    "dnsconfd-dracut-1.7.3-2.el10.aarch64",
+    "dnsconfd-micro-1.7.3-2.el10.aarch64",
+    "dnsconfd-micro-debuginfo-1.7.3-2.el10.aarch64"
+  ],
+  "fixes": [
+    {
+      "id": "RHEL-81709",
+      "url": "https://issues.redhat.com/browse/RHEL-81709",
+      "description": "dns_dnsconfd_unbound_full_tunnel_vpn test fail"
+    },
+    {
+      "id": "RHEL-92412",
+      "url": "https://issues.redhat.com/browse/RHEL-92412",
+      "description": "Make dnsconfd check CA bundle on update"
+    }
+  ],
+  "full_text": "An update for dnsconfd is now available for Red Hat Enterprise Linux 10.\n\nFor detailed information on changes in this release, see the Red Hat Enterprise Linux 10 Release Notes linked from the References section."
+}

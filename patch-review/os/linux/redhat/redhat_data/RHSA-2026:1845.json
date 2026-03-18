@@ -1,0 +1,42 @@
+{
+  "id": "RHSA-2026:1845",
+  "vendor": "Red Hat",
+  "type": "Security Advisory (RHSA)",
+  "title": "Red Hat Security Advisory: Red Hat build of Cryostat security update",
+  "issuedDate": "2026-02-03T16:03:10+00:00",
+  "updatedDate": "2026-02-03T16:03:10+00:00",
+  "pubDate": "2026-02-03T16:03:10+00:00",
+  "dateStr": "2026-02-03",
+  "url": "https://access.redhat.com/errata/RHSA-2026:1845",
+  "severity": "Important",
+  "overview": "An update is now available for the Red Hat build of Cryostat 4 on RHEL 9.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "description": "An update is now available for the Red Hat build of Cryostat 4 on RHEL 9.\n\nSecurity Fix(es):\n\n* lodash: prototype pollution in _.unset and _.omit functions (CVE-2025-13465)\n* crypto/x509: golang: Denial of Service due to excessive resource consumption via crafted certificate (CVE-2025-61729)\n\nFor more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section.",
+  "affected_products": [],
+  "cves": [
+    "CVE-2025-13465",
+    "CVE-2025-61729"
+  ],
+  "packages": [
+    "cryostat/cryostat-agent-init-rhel9@sha256:b82d92ac78e25087e561504bad3807ea18a33d63ab793864fb7d30ecb912f0ba_arm64",
+    "cryostat/cryostat-db-rhel9@sha256:dea99ab6872a6341decefc51890636de99213176653386fe5d8bc18cc1b6df34_arm64",
+    "cryostat/cryostat-grafana-dashboard-rhel9@sha256:d679915df6424ec97422ea0cdb3bde5328317db82442cd926f13435e616461dd_arm64",
+    "cryostat/cryostat-openshift-console-plugin-rhel9@sha256:0bac59ee4cb3cc16ad5be85929901ccdb60a90aeb8d6e9c5ab8f0672aa807b58_arm64",
+    "cryostat/cryostat-reports-rhel9@sha256:2627c1495f16419a5e34add58469bc666bf55952f7fedc9cc74722ac8723d76e_arm64",
+    "cryostat/cryostat-rhel9@sha256:b013dd38437afb1efa38f8fb2d51bbb1fc6f7e29cc1c1de993306d700e63a18e_arm64",
+    "cryostat/cryostat-operator-bundle@sha256:f74fa0e3433e0f456d6449c23fffbc7e76c962e21bddea294486de6c102110da_arm64",
+    "cryostat/cryostat-rhel9-operator@sha256:8dc560b4e90178db5d17c0760da1d03983b91bb9aac943c53cfa6c629094f6ea_arm64",
+    "cryostat/cryostat-storage-rhel9@sha256:cac5cec9aab5e40826174186765191306d3bd47938f9d7a5d10908dd5297c74e_arm64",
+    "cryostat/jfr-datasource-rhel9@sha256:2ae0dbddcc4307ec548ec63e00072b71921f35b963d880659109be4f20aafeee_arm64",
+    "cryostat/cryostat-agent-init-rhel9@sha256:3a75004a386d2bf4b584223771d68c68d3427b63b407460dfb191b7749c3bf2b_amd64",
+    "cryostat/cryostat-db-rhel9@sha256:0aef42d9a7e35ecabb504a175eb0a1b20a0f0766a72343c742ed9b8db5f26949_amd64",
+    "cryostat/cryostat-grafana-dashboard-rhel9@sha256:add54a1ef1e49c831b4a2ade3da785b400bbfd89081e741d80ca31f791595e02_amd64",
+    "cryostat/cryostat-openshift-console-plugin-rhel9@sha256:67f723dc0ce5d6b5d217e9df119a6b24a0a44d4bcca645144d8fec808e402e59_amd64",
+    "cryostat/cryostat-reports-rhel9@sha256:08c55db955986b86d663690097260c47d5d7a48ff54868015a1cf24d007fb369_amd64",
+    "cryostat/cryostat-rhel9@sha256:d1a241d0e4992137cab559814d108648da3c3546c1052fb7f5ea4529f6cb40d4_amd64",
+    "cryostat/cryostat-operator-bundle@sha256:8a62abfc3d67785e363203466f56ca230d1a2af9cb4e29a0ba743feed2a850d2_amd64",
+    "cryostat/cryostat-rhel9-operator@sha256:676c921b3dabb4261f5ccbf4940500c57ae8da0db8324d18b7a3267c3946d0d5_amd64",
+    "cryostat/cryostat-storage-rhel9@sha256:04e0353e7d4d6f4c519d421bcf4276c91646493026c6ebb2f5d7f036ff793eff_amd64",
+    "cryostat/jfr-datasource-rhel9@sha256:42f428c0ee462ac2b474499ed80dc73aeabdba5cbec4a0d686b519df8d92ac86_amd64"
+  ],
+  "full_text": "An update is now available for the Red Hat build of Cryostat 4 on RHEL 9.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nAn update is now available for the Red Hat build of Cryostat 4 on RHEL 9.\n\nSecurity Fix(es):\n\n* lodash: prototype pollution in _.unset and _.omit functions (CVE-2025-13465)\n* crypto/x509: golang: Denial of Service due to excessive resource consumption via crafted certificate (CVE-2025-61729)\n\nFor more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section."
+}

@@ -1,0 +1,278 @@
+{
+  "id": "RHBA-2025:20293",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: qemu-kvm bug fix and enhancement update",
+  "issuedDate": "2025-11-11T07:25:58Z",
+  "updatedDate": "2025-11-11T07:25:58Z",
+  "pubDate": "2025-11-11T07:25:58Z",
+  "dateStr": "2025-11-11",
+  "url": "https://access.redhat.com/errata/RHBA-2025:20293",
+  "severity": "None",
+  "overview": "An update for qemu-kvm is now available for Red Hat Enterprise Linux 10.",
+  "description": "For detailed information on changes in this release, see the Red Hat Enterprise Linux 10 Release Notes linked from the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux for IBM z Systems",
+    "Red Hat Enterprise Linux for ARM 64",
+    "Red Hat Enterprise Linux for x86_64 10 x86_64",
+    "Red Hat Enterprise Linux for Power, little endian"
+  ],
+  "cves": [],
+  "packages": [
+    "qemu-kvm-10.0.0-14.el10_1.src",
+    "qemu-guest-agent-10.0.0-14.el10_1.x86_64",
+    "qemu-guest-agent-debuginfo-10.0.0-14.el10_1.x86_64",
+    "qemu-img-10.0.0-14.el10_1.x86_64",
+    "qemu-img-debuginfo-10.0.0-14.el10_1.x86_64",
+    "qemu-kvm-10.0.0-14.el10_1.x86_64",
+    "qemu-kvm-audio-dbus-debuginfo-10.0.0-14.el10_1.x86_64",
+    "qemu-kvm-audio-pa-10.0.0-14.el10_1.x86_64",
+    "qemu-kvm-audio-pa-debuginfo-10.0.0-14.el10_1.x86_64",
+    "qemu-kvm-block-blkio-10.0.0-14.el10_1.x86_64",
+    "qemu-kvm-block-blkio-debuginfo-10.0.0-14.el10_1.x86_64",
+    "qemu-kvm-block-curl-10.0.0-14.el10_1.x86_64",
+    "qemu-kvm-block-curl-debuginfo-10.0.0-14.el10_1.x86_64",
+    "qemu-kvm-block-rbd-10.0.0-14.el10_1.x86_64",
+    "qemu-kvm-block-rbd-debuginfo-10.0.0-14.el10_1.x86_64",
+    "qemu-kvm-common-10.0.0-14.el10_1.x86_64",
+    "qemu-kvm-common-debuginfo-10.0.0-14.el10_1.x86_64",
+    "qemu-kvm-core-10.0.0-14.el10_1.x86_64",
+    "qemu-kvm-core-debuginfo-10.0.0-14.el10_1.x86_64",
+    "qemu-kvm-debugsource-10.0.0-14.el10_1.x86_64",
+    "qemu-kvm-device-display-virtio-gpu-10.0.0-14.el10_1.x86_64",
+    "qemu-kvm-device-display-virtio-gpu-debuginfo-10.0.0-14.el10_1.x86_64",
+    "qemu-kvm-device-display-virtio-gpu-pci-10.0.0-14.el10_1.x86_64",
+    "qemu-kvm-device-display-virtio-gpu-pci-debuginfo-10.0.0-14.el10_1.x86_64",
+    "qemu-kvm-device-display-virtio-vga-10.0.0-14.el10_1.x86_64",
+    "qemu-kvm-device-display-virtio-vga-debuginfo-10.0.0-14.el10_1.x86_64",
+    "qemu-kvm-device-usb-host-10.0.0-14.el10_1.x86_64",
+    "qemu-kvm-device-usb-host-debuginfo-10.0.0-14.el10_1.x86_64",
+    "qemu-kvm-device-usb-redirect-10.0.0-14.el10_1.x86_64",
+    "qemu-kvm-device-usb-redirect-debuginfo-10.0.0-14.el10_1.x86_64",
+    "qemu-kvm-docs-10.0.0-14.el10_1.x86_64",
+    "qemu-kvm-tests-debuginfo-10.0.0-14.el10_1.x86_64",
+    "qemu-kvm-tools-10.0.0-14.el10_1.x86_64",
+    "qemu-kvm-tools-debuginfo-10.0.0-14.el10_1.x86_64",
+    "qemu-kvm-ui-dbus-debuginfo-10.0.0-14.el10_1.x86_64",
+    "qemu-kvm-ui-egl-headless-10.0.0-14.el10_1.x86_64",
+    "qemu-kvm-ui-egl-headless-debuginfo-10.0.0-14.el10_1.x86_64",
+    "qemu-kvm-ui-opengl-10.0.0-14.el10_1.x86_64",
+    "qemu-kvm-ui-opengl-debuginfo-10.0.0-14.el10_1.x86_64",
+    "qemu-pr-helper-10.0.0-14.el10_1.x86_64",
+    "qemu-pr-helper-debuginfo-10.0.0-14.el10_1.x86_64",
+    "qemu-guest-agent-10.0.0-14.el10_1.s390x",
+    "qemu-guest-agent-debuginfo-10.0.0-14.el10_1.s390x",
+    "qemu-img-10.0.0-14.el10_1.s390x",
+    "qemu-img-debuginfo-10.0.0-14.el10_1.s390x",
+    "qemu-kvm-10.0.0-14.el10_1.s390x",
+    "qemu-kvm-audio-dbus-debuginfo-10.0.0-14.el10_1.s390x",
+    "qemu-kvm-audio-pa-10.0.0-14.el10_1.s390x",
+    "qemu-kvm-audio-pa-debuginfo-10.0.0-14.el10_1.s390x",
+    "qemu-kvm-block-blkio-10.0.0-14.el10_1.s390x",
+    "qemu-kvm-block-blkio-debuginfo-10.0.0-14.el10_1.s390x",
+    "qemu-kvm-block-curl-10.0.0-14.el10_1.s390x",
+    "qemu-kvm-block-curl-debuginfo-10.0.0-14.el10_1.s390x",
+    "qemu-kvm-block-rbd-10.0.0-14.el10_1.s390x",
+    "qemu-kvm-block-rbd-debuginfo-10.0.0-14.el10_1.s390x",
+    "qemu-kvm-common-10.0.0-14.el10_1.s390x",
+    "qemu-kvm-common-debuginfo-10.0.0-14.el10_1.s390x",
+    "qemu-kvm-core-10.0.0-14.el10_1.s390x",
+    "qemu-kvm-core-debuginfo-10.0.0-14.el10_1.s390x",
+    "qemu-kvm-debugsource-10.0.0-14.el10_1.s390x",
+    "qemu-kvm-device-display-virtio-gpu-10.0.0-14.el10_1.s390x",
+    "qemu-kvm-device-display-virtio-gpu-ccw-10.0.0-14.el10_1.s390x",
+    "qemu-kvm-device-display-virtio-gpu-ccw-debuginfo-10.0.0-14.el10_1.s390x",
+    "qemu-kvm-device-display-virtio-gpu-debuginfo-10.0.0-14.el10_1.s390x",
+    "qemu-kvm-device-usb-host-10.0.0-14.el10_1.s390x",
+    "qemu-kvm-device-usb-host-debuginfo-10.0.0-14.el10_1.s390x",
+    "qemu-kvm-docs-10.0.0-14.el10_1.s390x",
+    "qemu-kvm-tests-debuginfo-10.0.0-14.el10_1.s390x",
+    "qemu-kvm-tools-10.0.0-14.el10_1.s390x",
+    "qemu-kvm-tools-debuginfo-10.0.0-14.el10_1.s390x",
+    "qemu-kvm-ui-dbus-debuginfo-10.0.0-14.el10_1.s390x",
+    "qemu-pr-helper-10.0.0-14.el10_1.s390x",
+    "qemu-pr-helper-debuginfo-10.0.0-14.el10_1.s390x",
+    "qemu-guest-agent-10.0.0-14.el10_1.ppc64le",
+    "qemu-guest-agent-debuginfo-10.0.0-14.el10_1.ppc64le",
+    "qemu-img-10.0.0-14.el10_1.ppc64le",
+    "qemu-img-debuginfo-10.0.0-14.el10_1.ppc64le",
+    "qemu-kvm-debugsource-10.0.0-14.el10_1.ppc64le",
+    "qemu-guest-agent-10.0.0-14.el10_1.aarch64",
+    "qemu-guest-agent-debuginfo-10.0.0-14.el10_1.aarch64",
+    "qemu-img-10.0.0-14.el10_1.aarch64",
+    "qemu-img-debuginfo-10.0.0-14.el10_1.aarch64",
+    "qemu-kvm-10.0.0-14.el10_1.aarch64",
+    "qemu-kvm-audio-dbus-debuginfo-10.0.0-14.el10_1.aarch64",
+    "qemu-kvm-audio-pa-10.0.0-14.el10_1.aarch64",
+    "qemu-kvm-audio-pa-debuginfo-10.0.0-14.el10_1.aarch64",
+    "qemu-kvm-block-blkio-10.0.0-14.el10_1.aarch64",
+    "qemu-kvm-block-blkio-debuginfo-10.0.0-14.el10_1.aarch64",
+    "qemu-kvm-block-curl-10.0.0-14.el10_1.aarch64",
+    "qemu-kvm-block-curl-debuginfo-10.0.0-14.el10_1.aarch64",
+    "qemu-kvm-block-rbd-10.0.0-14.el10_1.aarch64",
+    "qemu-kvm-block-rbd-debuginfo-10.0.0-14.el10_1.aarch64",
+    "qemu-kvm-common-10.0.0-14.el10_1.aarch64",
+    "qemu-kvm-common-debuginfo-10.0.0-14.el10_1.aarch64",
+    "qemu-kvm-core-10.0.0-14.el10_1.aarch64",
+    "qemu-kvm-core-debuginfo-10.0.0-14.el10_1.aarch64",
+    "qemu-kvm-debugsource-10.0.0-14.el10_1.aarch64",
+    "qemu-kvm-device-display-virtio-gpu-10.0.0-14.el10_1.aarch64",
+    "qemu-kvm-device-display-virtio-gpu-debuginfo-10.0.0-14.el10_1.aarch64",
+    "qemu-kvm-device-display-virtio-gpu-pci-10.0.0-14.el10_1.aarch64",
+    "qemu-kvm-device-display-virtio-gpu-pci-debuginfo-10.0.0-14.el10_1.aarch64",
+    "qemu-kvm-device-usb-host-10.0.0-14.el10_1.aarch64",
+    "qemu-kvm-device-usb-host-debuginfo-10.0.0-14.el10_1.aarch64",
+    "qemu-kvm-device-usb-redirect-10.0.0-14.el10_1.aarch64",
+    "qemu-kvm-device-usb-redirect-debuginfo-10.0.0-14.el10_1.aarch64",
+    "qemu-kvm-docs-10.0.0-14.el10_1.aarch64",
+    "qemu-kvm-tests-debuginfo-10.0.0-14.el10_1.aarch64",
+    "qemu-kvm-tools-10.0.0-14.el10_1.aarch64",
+    "qemu-kvm-tools-debuginfo-10.0.0-14.el10_1.aarch64",
+    "qemu-kvm-ui-dbus-debuginfo-10.0.0-14.el10_1.aarch64",
+    "qemu-pr-helper-10.0.0-14.el10_1.aarch64",
+    "qemu-pr-helper-debuginfo-10.0.0-14.el10_1.aarch64"
+  ],
+  "fixes": [
+    {
+      "id": "RHEL-69776",
+      "url": "https://issues.redhat.com/browse/RHEL-69776",
+      "description": "[rhel10]Guest crashed on the target host when the migration was canceled"
+    },
+    {
+      "id": "RHEL-83535",
+      "url": "https://issues.redhat.com/browse/RHEL-83535",
+      "description": "[Qemu RHEL-10] qemu-trace-stap should handle lack of stap more gracefully"
+    },
+    {
+      "id": "RHEL-26079",
+      "url": "https://issues.redhat.com/browse/RHEL-26079",
+      "description": "Multiqueue block layer support (iothread-vq-mapping) for virtio-scsi"
+    },
+    {
+      "id": "RHEL-56872",
+      "url": "https://issues.redhat.com/browse/RHEL-56872",
+      "description": "qemu-ga: Fix some potential issues find by coverity"
+    },
+    {
+      "id": "RHEL-59572",
+      "url": "https://issues.redhat.com/browse/RHEL-59572",
+      "description": "[RHEL10][Windows] Rss support for virtio-net driver is bad on windows guest"
+    },
+    {
+      "id": "RHEL-68035",
+      "url": "https://issues.redhat.com/browse/RHEL-68035",
+      "description": "support direct kernel boot with secure boot protection [rhel-10,qemu]"
+    },
+    {
+      "id": "RHEL-68613",
+      "url": "https://issues.redhat.com/browse/RHEL-68613",
+      "description": "[rhel-10] qemu reports \"virtio: zero sized buffers are not allowed\" during guest reboot which protected by smmuv3"
+    },
+    {
+      "id": "RHEL-71938",
+      "url": "https://issues.redhat.com/browse/RHEL-71938",
+      "description": "[RFE][RHEL10.0] mlx VF multifd migration"
+    },
+    {
+      "id": "RHEL-71993",
+      "url": "https://issues.redhat.com/browse/RHEL-71993",
+      "description": "Adaptive polling in AioContext can't properly handle events of different latency"
+    },
+    {
+      "id": "RHEL-74473",
+      "url": "https://issues.redhat.com/browse/RHEL-74473",
+      "description": "Rebase qemu-kvm to QEMU 10.0.0"
+    },
+    {
+      "id": "RHEL-86606",
+      "url": "https://issues.redhat.com/browse/RHEL-86606",
+      "description": "scsi-block: Error policy is ignored for host_status errors"
+    },
+    {
+      "id": "RHEL-86949",
+      "url": "https://issues.redhat.com/browse/RHEL-86949",
+      "description": "NVIDIA:Grace:Backport QEMU support for PCI highmem-mmio-size - RHEL 10.1"
+    },
+    {
+      "id": "RHEL-86056",
+      "url": "https://issues.redhat.com/browse/RHEL-86056",
+      "description": "Enable 'vhost-user-gpu-pci' in qemu-kvm for RHIVOS"
+    },
+    {
+      "id": "RHEL-85635",
+      "url": "https://issues.redhat.com/browse/RHEL-85635",
+      "description": "Video stuck about 1 min after switchover phase when play one video during postcopy-preempt migration"
+    },
+    {
+      "id": "RHEL-91219",
+      "url": "https://issues.redhat.com/browse/RHEL-91219",
+      "description": "[qemu-guest-agent] Enable 'guest-get-load' by default [RHEL-10]"
+    },
+    {
+      "id": "RHEL-88435",
+      "url": "https://issues.redhat.com/browse/RHEL-88435",
+      "description": "migrate-disks-detect-zeroes doesn't take effect for disk migration [rhel-10.1]"
+    },
+    {
+      "id": "RHEL-88437",
+      "url": "https://issues.redhat.com/browse/RHEL-88437",
+      "description": "Disk size of target raw image is full allocated when doing mirror with default discard value [rhel-10.1]"
+    },
+    {
+      "id": "RHEL-67706",
+      "url": "https://issues.redhat.com/browse/RHEL-67706",
+      "description": "postcopy on the destination host can't switch into pause status under the network issue if boot VM with '-S'"
+    },
+    {
+      "id": "RHEL-96057",
+      "url": "https://issues.redhat.com/browse/RHEL-96057",
+      "description": "qemu-kvm: Various small issues in the spec file"
+    },
+    {
+      "id": "RHEL-83883",
+      "url": "https://issues.redhat.com/browse/RHEL-83883",
+      "description": "Video stuck after switchover phase when play one video during migration"
+    },
+    {
+      "id": "RHEL-85649",
+      "url": "https://issues.redhat.com/browse/RHEL-85649",
+      "description": "[RHEL 10]Qemu/amd-iommu: Add ability to manually specify the AMDVI-PCI device"
+    },
+    {
+      "id": "RHEL-95479",
+      "url": "https://issues.redhat.com/browse/RHEL-95479",
+      "description": "ftrivial-auto-var-init=zero reduced performance"
+    },
+    {
+      "id": "RHEL-98555",
+      "url": "https://issues.redhat.com/browse/RHEL-98555",
+      "description": "[s390x][RHEL10.1][ccw-device] there would be memory leak with virtio_blk disks"
+    },
+    {
+      "id": "RHEL-88561",
+      "url": "https://issues.redhat.com/browse/RHEL-88561",
+      "description": "qemu graph deadlock during job-dismiss"
+    },
+    {
+      "id": "RHEL-96854",
+      "url": "https://issues.redhat.com/browse/RHEL-96854",
+      "description": "Performance Degradation(aio=threads) between Upstream Commit b75c5f9 and 984a32f"
+    },
+    {
+      "id": "RHEL-45624",
+      "url": "https://issues.redhat.com/browse/RHEL-45624",
+      "description": "Deprecate rtl8139 NIC in QEMU"
+    },
+    {
+      "id": "RHEL-102325",
+      "url": "https://issues.redhat.com/browse/RHEL-102325",
+      "description": "[qemu] enable variable service for edk2"
+    },
+    {
+      "id": "RHEL-105440",
+      "url": "https://issues.redhat.com/browse/RHEL-105440",
+      "description": "Openstack guest becomes inaccessible via network when storage network on the hypervisor is disabled/lost [rhel-10.1]"
+    }
+  ],
+  "full_text": "An update for qemu-kvm is now available for Red Hat Enterprise Linux 10.\n\nFor detailed information on changes in this release, see the Red Hat Enterprise Linux 10 Release Notes linked from the References section."
+}

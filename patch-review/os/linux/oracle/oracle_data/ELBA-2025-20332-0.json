@@ -1,0 +1,26 @@
+{
+  "id": "ELBA-2025-20332-0",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "AppStream",
+  "title": "gnome-control-center bug fix and enhancement update",
+  "issuedDate": "2025-11-25T00:00:00Z",
+  "updatedDate": "2025-11-25T00:00:00Z",
+  "pubDate": "2025-11-25T00:00:00Z",
+  "dateStr": "2025-11-25",
+  "url": "https://linux.oracle.com/errata/ELBA-2025-20332-0.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 10.",
+  "description": "[47.7-1]\n- Update to 47.7\n\n[47.6-3]\n- Add 'Minimize and Maximize' window control settings\n\n[47.6-2]\n- Add Access Point 'Attach' setting to wwan connections\n\n[47.6-1]\n- Update to 47.6\n\n[47.5-2]\n- Add option to enable/disable Activities Overview Shortcut\n\n[47.5-1]\n- Update to 47.5\n\n[47.3-5]\n- Add subscription-manager translations for supported languages",
+  "affected_products": [
+    "Oracle Linux 10 for x86_64",
+    "Oracle Linux 10 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "gnome-control-center-filesystem-47.7-1.el10.noarch",
+    "gnome-control-center-47.7-1.el10.src",
+    "gnome-control-center-47.7-1.el10.x86_64"
+  ],
+  "full_text": "[47.7-1]\n- Update to 47.7\n\n[47.6-3]\n- Add 'Minimize and Maximize' window control settings\n\n[47.6-2]\n- Add Access Point 'Attach' setting to wwan connections\n\n[47.6-1]\n- Update to 47.6\n\n[47.5-2]\n- Add option to enable/disable Activities Overview Shortcut\n\n[47.5-1]\n- Update to 47.5\n\n[47.3-5]\n- Add subscription-manager translations for supported languages\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2025-20332-0.html"
+}

@@ -1,0 +1,26 @@
+{
+  "id": "ELSA-2026-2230",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2026-February/019730.html",
+  "synopsis": "[El-errata] ELSA-2026-2230 Important: Oracle Linux 10 fontforge security update",
+  "dateStr": "2026-February",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Security Advisory ELSA-2026-2230",
+  "description": "[20230101-14]\n- Resolves: RHEL-138159\n  CVE-2025-15279 GUtils BMP File Parsing Heap-based Buffer Overflow\n- Resolves: RHEL-138144\n  CVE-2025-15275 SFD File Parsing Heap-based Buffer Overflow\n- Resolves: RHEL-138126\n  CVE-2025-15269 SFD File Parsing Use-After-Free",
+  "affected_products": [
+    "Oracle Linux 10"
+  ],
+  "packages": [
+    "fontforge-20230101-14.el10_1.x86_64.rpm",
+    "fontforge-20230101-14.el10_1.aarch64.rpm"
+  ],
+  "cves": [
+    "CVE-2025-15269",
+    "CVE-2025-15275",
+    "CVE-2025-15279"
+  ],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Security Advisory ELSA-2026-2230\n\nhttp://linux.oracle.com/errata/ELSA-2026-2230.html\n\nThe following updated rpms for Oracle Linux 10 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\nfontforge-20230101-14.el10_1.x86_64.rpm\n\naarch64:\nfontforge-20230101-14.el10_1.aarch64.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol10/SRPMS-updates/fontforge-20230101-14.el10_1.src.rpm\n\nRelated CVEs:\n\nCVE-2025-15269\nCVE-2025-15275\nCVE-2025-15279\n\n\n\n\nDescription of changes:\n\n[20230101-14]\n- Resolves: RHEL-138159\n  CVE-2025-15279 GUtils BMP File Parsing Heap-based Buffer Overflow\n- Resolves: RHEL-138144\n  CVE-2025-15275 SFD File Parsing Heap-based Buffer Overflow\n- Resolves: RHEL-138126\n  CVE-2025-15269 SFD File Parsing Use-After-Free",
+  "vendor": "Oracle"
+}

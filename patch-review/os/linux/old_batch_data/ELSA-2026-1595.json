@@ -1,0 +1,25 @@
+{
+  "id": "ELSA-2026-1595",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2026-February/019651.html",
+  "synopsis": "[El-errata] ELSA-2026-1595 Moderate: Oracle Linux 9 iperf3 security update",
+  "dateStr": "2026-February",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Security Advisory ELSA-2026-1595",
+  "description": "[3.9-14.1]\n- Resolves: RHEL-136181 - iperf Heap Buffer Overflow (CVE-2025-54349)",
+  "affected_products": [
+    "Oracle Linux 9"
+  ],
+  "packages": [
+    "iperf3-3.9-14.el9_7.1.i686.rpm",
+    "iperf3-3.9-14.el9_7.1.x86_64.rpm",
+    "iperf3-3.9-14.el9_7.1.aarch64.rpm"
+  ],
+  "cves": [
+    "CVE-2025-54349"
+  ],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Security Advisory ELSA-2026-1595\n\nhttp://linux.oracle.com/errata/ELSA-2026-1595.html\n\nThe following updated rpms for Oracle Linux 9 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\niperf3-3.9-14.el9_7.1.i686.rpm\niperf3-3.9-14.el9_7.1.x86_64.rpm\n\naarch64:\niperf3-3.9-14.el9_7.1.aarch64.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol9/SRPMS-updates/iperf3-3.9-14.el9_7.1.src.rpm\n\nRelated CVEs:\n\nCVE-2025-54349\n\n\n\n\nDescription of changes:\n\n[3.9-14.1]\n- Resolves: RHEL-136181 - iperf Heap Buffer Overflow (CVE-2025-54349)",
+  "vendor": "Oracle"
+}

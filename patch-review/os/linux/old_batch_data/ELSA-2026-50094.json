@@ -1,0 +1,22 @@
+{
+  "id": "ELSA-2026-50094",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2026-February/019774.html",
+  "synopsis": "[El-errata] New Ksplice updates for UEKR8 6.12.0 on OL9 and OL10 (ELSA-2026-50094)",
+  "dateStr": "2026-February",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Synopsis: ELSA-2026-50094 can now be patched using Ksplice",
+  "description": "",
+  "affected_products": [],
+  "packages": [],
+  "cves": [
+    "CVE-2025-40149",
+    "CVE-2025-40257",
+    "CVE-2025-40258",
+    "CVE-2025-68209"
+  ],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Synopsis: ELSA-2026-50094 can now be patched using Ksplice\nCVEs: CVE-2025-40149 CVE-2025-40257 CVE-2025-40258 CVE-2025-68209\n\nUsers with Oracle Linux Premier Support can now use Ksplice to patch\nagainst the latest Oracle Linux Security Advisory, ELSA-2026-50094.\nMore information about this errata can be found at\nhttps://linux.oracle.com/errata/ELSA-2026-50094.html\n\nINSTALLING THE UPDATES\n\nWe recommend that all users of Ksplice Uptrack running UEKR8 6.12.0 on\nOL9 and OL10 install these updates.\n\nOn systems that have \"autoinstall = yes\" in /etc/uptrack/uptrack.conf,\nthese updates will be installed automatically and you do not need to\ntake any action.\n\nAlternatively, you can install these updates by running:\n\n# /usr/sbin/uptrack-upgrade -y\n\n\nDESCRIPTION\n\n* CVE-2025-40149: Use-after-free in Transport Layer Security HW offload driver.\n\nOrabug: 38649136\n\n\n* CVE-2025-40257: Use-after-free in MPTCP: Multipath TCP driver.\n\n* CVE-2025-40258: Use-after-free in Multipath TCP driver.\n\n* CVE-2025-68209: Null pointer dereference in Mellanox devices driver.\n\nOrabug: 38750222\n\n\nSUPPORT\n\nKsplice support is available at ksplice-support_ww at oracle.com.",
+  "vendor": "Oracle"
+}

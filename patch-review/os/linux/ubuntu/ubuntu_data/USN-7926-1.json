@@ -1,0 +1,24 @@
+{
+  "id": "USN-7926-1",
+  "vendor": "Canonical / Ubuntu",
+  "type": "Ubuntu Security Notice (USN)",
+  "title": "keystone vulnerabilities",
+  "issuedDate": "2025-12-11T14:24:04Z",
+  "updatedDate": "2026-02-10T04:50:46Z",
+  "pubDate": "2025-12-11T14:24:04Z",
+  "dateStr": "2025-12-11",
+  "url": "https://ubuntu.com/security/notices/USN-7926-1",
+  "severity": "None",
+  "overview": "keystone vulnerabilities",
+  "description": "Kay discovered that OpenStack Keystone incorrectly handled the ec2tokens\nand s3tokens APIs. A remote attacker could possibly use this issue to\nobtain unauthorized access and escalate privileges. (CVE-2025-65073)\n\nIt was discovered that OpenStack Keystone only validated the first 72\nbytes of an application secret. An attacker could possibly use this issue\nto bypass password complexity. (CVE-2021-3563)\n\nIt was discovered that OpenStack Keystone had a time lag before a token\nshould be revoked by the security policy. A remote administrator could use\nthis issue to maintain access for longer than expected. (CVE-2022-2447)",
+  "affected_products": [
+    "Ubuntu 22.04 LTS"
+  ],
+  "cves": [],
+  "packages": [
+    "keystone-2:21.0.1-0ubuntu2.1",
+    "keystone-common-2:21.0.1-0ubuntu2.1",
+    "python3-keystone-2:21.0.1-0ubuntu2.1"
+  ],
+  "full_text": "Kay discovered that OpenStack Keystone incorrectly handled the ec2tokens\nand s3tokens APIs. A remote attacker could possibly use this issue to\nobtain unauthorized access and escalate privileges. (CVE-2025-65073)\n\nIt was discovered that OpenStack Keystone only validated the first 72\nbytes of an application secret. An attacker could possibly use this issue\nto bypass password complexity. (CVE-2021-3563)\n\nIt was discovered that OpenStack Keystone had a time lag before a token\nshould be revoked by the security policy. A remote administrator could use\nthis issue to maintain access for longer than expected. (CVE-2022-2447)"
+}

@@ -1,0 +1,30 @@
+{
+  "id": "ELSA-2025-21015",
+  "vendor": "Oracle",
+  "type": "Security Advisory (ELSA)",
+  "kernel_type": "RHCK",
+  "title": " vim security update",
+  "issuedDate": "2025-12-02T00:00:00Z",
+  "updatedDate": "2025-12-02T00:00:00Z",
+  "pubDate": "2025-12-02T00:00:00Z",
+  "dateStr": "2025-12-02",
+  "url": "https://linux.oracle.com/errata/ELSA-2025-21015.html",
+  "severity": "Moderate",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 10.",
+  "description": "[9.1.083-6.0.1]\n- Remove upstream references [Orabug: 31197557]\n\n[2:9.1.083-6]\n- RHEL-113549 CVE-2025-53906 vim: Vim path traversal\n- RHEL-113543 CVE-2025-53905 vim: Vim path traversial",
+  "affected_products": [
+    "Oracle Linux 10 for x86_64",
+    "Oracle Linux 10 for aarch64"
+  ],
+  "cves": [
+    "CVE-2025-53905",
+    "CVE-2025-53906"
+  ],
+  "packages": [
+    "vim-minimal-9.1.083-6.0.1.el10_1.x86_64",
+    "vim-data-9.1.083-6.0.1.el10_1.noarch",
+    "vim-filesystem-9.1.083-6.0.1.el10_1.noarch",
+    "vim-9.1.083-6.0.1.el10_1.src"
+  ],
+  "full_text": "[9.1.083-6.0.1]\n- Remove upstream references [Orabug: 31197557]\n\n[2:9.1.083-6]\n- RHEL-113549 CVE-2025-53906 vim: Vim path traversal\n- RHEL-113543 CVE-2025-53905 vim: Vim path traversial\n\nReferences:\nhttps://linux.oracle.com/errata/ELSA-2025-21015.html\nhttps://linux.oracle.com/cve/CVE-2025-53905.html\nhttps://linux.oracle.com/cve/CVE-2025-53906.html"
+}

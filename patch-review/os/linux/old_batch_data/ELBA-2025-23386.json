@@ -1,0 +1,22 @@
+{
+  "id": "ELBA-2025-23386",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2025-December/019320.html",
+  "synopsis": "[El-errata] ELBA-2025-23386 Oracle Linux 8 autofs bug fix and enhancement update",
+  "dateStr": "2025-December",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Bug Fix Advisory ELBA-2025-23386",
+  "description": "[5.1.4-114.0.1.6]\n- Add autofs-5.0.5-lookup-mounts.patch [Orabug:12658280]",
+  "affected_products": [
+    "Oracle Linux 8"
+  ],
+  "packages": [
+    "autofs-5.1.4-114.0.1.el8_10.6.x86_64.rpm",
+    "autofs-5.1.4-114.0.1.el8_10.6.aarch64.rpm"
+  ],
+  "cves": [],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Bug Fix Advisory ELBA-2025-23386\n\nhttp://linux.oracle.com/errata/ELBA-2025-23386.html\n\nThe following updated rpms for Oracle Linux 8 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\nautofs-5.1.4-114.0.1.el8_10.6.x86_64.rpm\n\naarch64:\nautofs-5.1.4-114.0.1.el8_10.6.aarch64.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol8/SRPMS-updates/autofs-5.1.4-114.0.1.el8_10.6.src.rpm\n\n\n\nDescription of changes:\n\n[5.1.4-114.0.1.6]\n- Add autofs-5.0.5-lookup-mounts.patch [Orabug:12658280]",
+  "vendor": "Oracle"
+}

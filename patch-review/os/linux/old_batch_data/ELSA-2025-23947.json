@@ -1,0 +1,26 @@
+{
+  "id": "ELSA-2025-23947",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2026-February/019711.html",
+  "synopsis": "[El-errata] New Ksplice updates for RHCK 7 (ELSA-2025-23947)",
+  "dateStr": "2026-February",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Synopsis: ELSA-2025-23947 can now be patched using Ksplice",
+  "description": "",
+  "affected_products": [],
+  "packages": [],
+  "cves": [
+    "CVE-2022-2978",
+    "CVE-2022-43945",
+    "CVE-2022-50356",
+    "CVE-2023-53178",
+    "CVE-2023-53297",
+    "CVE-2023-53322",
+    "CVE-2025-38729",
+    "CVE-2025-39757"
+  ],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Synopsis: ELSA-2025-23947 can now be patched using Ksplice\nCVEs: CVE-2022-2978 CVE-2022-43945 CVE-2022-50356 CVE-2023-53178 CVE-2023-53297 CVE-2023-53322 CVE-2025-38729 CVE-2025-39757\n\nUsers with Oracle Linux Premier Support can now use Ksplice to patch\nagainst the latest Oracle Linux Security Advisory, ELSA-2025-23947.\nMore information about this errata can be found at\nhttps://linux.oracle.com/errata/ELSA-2025-23947.html\n\nINSTALLING THE UPDATES\n\nWe recommend that all users of Ksplice Uptrack running RHCK 7 install\nthese updates.\n\nOn systems that have \"autoinstall = yes\" in /etc/uptrack/uptrack.conf,\nthese updates will be installed automatically and you do not need to\ntake any action.\n\nAlternatively, you can install these updates by running:\n\n# /usr/sbin/uptrack-upgrade -y\n\n\nDESCRIPTION\n\n* CVE-2022-2978: Denial-of-service when initializing inodes.\n\n* CVE-2022-43945: Out-of-bounds memory access in NFSD.\n\nA logic error in NFSD when a small RPC Call message arrives in an\noversized RPC record can lead to a buffer overflow. A remote attacker\ncould use this flaw for a denial-of-service or privilege escalation.\n\n\n* CVE-2022-50356: Null pointer dereference in SFB network scheduler.\n\n* CVE-2023-53178: Memory corruption in Compressed cache for swap pages driver.\n\n* CVE-2023-53297: Deadlock in Bluetooth subsystem.\n\n* CVE-2023-53322: Use-after-free in QLogic QLA2XXX Fibre Channel driver.\n\n* CVE-2025-39757, CVE-2025-38729: Out-of-bounds memory access in Advanced Linux Sound Architecture (ALSA) driver.\n\nSUPPORT\n\nKsplice support is available at ksplice-support_ww at oracle.com.",
+  "vendor": "Oracle"
+}

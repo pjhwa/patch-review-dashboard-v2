@@ -1,0 +1,21 @@
+{
+  "id": "RHSA-2026:2226",
+  "vendor": "Red Hat",
+  "url": "https://access.redhat.com/errata/RHSA-2026:2226",
+  "pubDate": "2026-02-09T01:39:26.000Z",
+  "dateStr": "2026-02-09",
+  "severity": "Important",
+  "title": "Red Hat Security Advisory: brotli security update",
+  "overview": "An update for brotli is now available for Red Hat Enterprise Linux 9.0 Update Services for SAP Solutions.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "description": "An update for brotli is now available for Red Hat Enterprise Linux 9.0 Update Services for SAP Solutions.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux AppStream E4S (v.9.0)",
+    "Red Hat Enterprise Linux BaseOS E4S (v.9.0)"
+  ],
+  "cves": [
+    "CVE-2025-6176"
+  ],
+  "packages": [],
+  "fixes": "",
+  "full_text": "Red Hat Security Advisory: brotli security update\n\nAn update for brotli is now available for Red Hat Enterprise Linux 9.0 Update Services for SAP Solutions.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nAn update for brotli is now available for Red Hat Enterprise Linux 9.0 Update Services for SAP Solutions.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nUpdated Packages:\nbrotli-1.0.9-6.el9_0.1.src.rpm\nbrotli-1.0.9-6.el9_0.1.ppc64le.rpm\nbrotli-debuginfo-1.0.9-6.el9_0.1.ppc64le.rpm\nbrotli-debugsource-1.0.9-6.el9_0.1.ppc64le.rpm\nbrotli-devel-1.0.9-6.el9_0.1.ppc64le.rpm\nlibbrotli-1.0.9-6.el9_0.1.ppc64le.rpm\nlibbrotli-debuginfo-1.0.9-6.el9_0.1.ppc64le.rpm\npython3-brotli-1.0.9-6.el9_0.1.ppc64le.rpm\npython3-brotli-debuginfo-1.0.9-6.el9_0.1.ppc64le.rpm\nbrotli-1.0.9-6.el9_0.1.i686.rpm\nbrotli-1.0.9-6.el9_0.1.x86_64.rpm\nbrotli-debuginfo-1.0.9-6.el9_0.1.i686.rpm\nbrotli-debuginfo-1.0.9-6.el9_0.1.x86_64.rpm\nbrotli-debugsource-1.0.9-6.el9_0.1.i686.rpm\nbrotli-debugsource-1.0.9-6.el9_0.1.x86_64.rpm\nbrotli-devel-1.0.9-6.el9_0.1.i686.rpm\nbrotli-devel-1.0.9-6.el9_0.1.x86_64.rpm\nlibbrotli-1.0.9-6.el9_0.1.i686.rpm\nlibbrotli-1.0.9-6.el9_0.1.x86_64.rpm\nlibbrotli-debuginfo-1.0.9-6.el9_0.1.i686.rpm\nlibbrotli-debuginfo-1.0.9-6.el9_0.1.x86_64.rpm\npython3-brotli-1.0.9-6.el9_0.1.x86_64.rpm\npython3-brotli-debuginfo-1.0.9-6.el9_0.1.i686.rpm\npython3-brotli-debuginfo-1.0.9-6.el9_0.1.x86_64.rpm\nbrotli-1.0.9-6.el9_0.1.aarch64.rpm\nbrotli-debuginfo-1.0.9-6.el9_0.1.aarch64.rpm\nbrotli-debugsource-1.0.9-6.el9_0.1.aarch64.rpm\nbrotli-devel-1.0.9-6.el9_0.1.aarch64.rpm\nlibbrotli-1.0.9-6.el9_0.1.aarch64.rpm\nlibbrotli-debuginfo-1.0.9-6.el9_0.1.aarch64.rpm\npython3-brotli-1.0.9-6.el9_0.1.aarch64.rpm\npython3-brotli-debuginfo-1.0.9-6.el9_0.1.aarch64.rpm\nbrotli-1.0.9-6.el9_0.1.s390x.rpm\nbrotli-debuginfo-1.0.9-6.el9_0.1.s390x.rpm\nbrotli-debugsource-1.0.9-6.el9_0.1.s390x.rpm\nbrotli-devel-1.0.9-6.el9_0.1.s390x.rpm\nlibbrotli-1.0.9-6.el9_0.1.s390x.rpm\nlibbrotli-debuginfo-1.0.9-6.el9_0.1.s390x.rpm\npython3-brotli-1.0.9-6.el9_0.1.s390x.rpm\npython3-brotli-debuginfo-1.0.9-6.el9_0.1.s390x.rpm\n\nCVE-2025-6176: Scrapy are vulnerable to a denial of service (DoS) attack due to a flaw in its brotli decompression implementation. The protection mechanism against decompression bombs fails to mitigate the brotli variant, allowing remote servers to crash clients with less than 80GB of available memory. This occurs because brotli can achieve extremely high compression ratios for zero-filled data, leading to excessive memory consumption during decompression."
+}

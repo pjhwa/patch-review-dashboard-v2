@@ -1,0 +1,31 @@
+{
+  "id": "ELSA-2025-20956",
+  "vendor": "Oracle",
+  "type": "Security Advisory (ELSA)",
+  "kernel_type": "AppStream",
+  "title": " libtiff security update",
+  "issuedDate": "2025-11-25T00:00:00Z",
+  "updatedDate": "2025-11-25T00:00:00Z",
+  "pubDate": "2025-11-25T00:00:00Z",
+  "dateStr": "2025-11-25",
+  "url": "https://linux.oracle.com/errata/ELSA-2025-20956.html",
+  "severity": "Important",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 9.",
+  "description": "[4.4.0-15.2]\n- fix CVE-2025-8176: tiffdither and tiffmedian skip first line of input\n  images (RHEL-120239)\n\n[4.4.0-15.1]\n- fix CVE-2025-9900: buffer underflow crash in TIFFReadRGBAImageOriented\n  (RHEL-112545)",
+  "affected_products": [
+    "Oracle Linux 9 for x86_64",
+    "Oracle Linux 9 for aarch64"
+  ],
+  "cves": [
+    "CVE-2025-8176",
+    "CVE-2025-9900"
+  ],
+  "packages": [
+    "libtiff-devel-4.4.0-15.el9_7.2.x86_64",
+    "libtiff-devel-4.4.0-15.el9_7.2.i686",
+    "libtiff-4.4.0-15.el9_7.2.src",
+    "libtiff-4.4.0-15.el9_7.2.i686",
+    "libtiff-4.4.0-15.el9_7.2.x86_64"
+  ],
+  "full_text": "[4.4.0-15.2]\n- fix CVE-2025-8176: tiffdither and tiffmedian skip first line of input\n  images (RHEL-120239)\n\n[4.4.0-15.1]\n- fix CVE-2025-9900: buffer underflow crash in TIFFReadRGBAImageOriented\n  (RHEL-112545)\n\nReferences:\nhttps://linux.oracle.com/errata/ELSA-2025-20956.html\nhttps://linux.oracle.com/cve/CVE-2025-8176.html\nhttps://linux.oracle.com/cve/CVE-2025-9900.html"
+}

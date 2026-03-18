@@ -1,0 +1,21 @@
+{
+  "id": "RHSA-2025:22394",
+  "vendor": "Red Hat",
+  "url": "https://access.redhat.com/errata/RHSA-2025:22394",
+  "pubDate": "2025-12-01T08:55:07.000Z",
+  "dateStr": "2025-12-01",
+  "severity": "Moderate",
+  "title": "Red Hat Security Advisory: qt6-qtsvg security update",
+  "overview": "An update for qt6-qtsvg is now available for Red Hat Enterprise Linux 10.\n\nRed Hat Product Security has rated this update as having a security impact of Moderate. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "description": "An update for qt6-qtsvg is now available for Red Hat Enterprise Linux 10.\n\nRed Hat Product Security has rated this update as having a security impact of Moderate. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux AppStream (v. 10)",
+    "Red Hat Enterprise Linux CodeReady Linux Builder (v. 10)"
+  ],
+  "cves": [
+    "CVE-2025-10728"
+  ],
+  "packages": [],
+  "fixes": "",
+  "full_text": "Red Hat Security Advisory: qt6-qtsvg security update\n\nAn update for qt6-qtsvg is now available for Red Hat Enterprise Linux 10.\n\nRed Hat Product Security has rated this update as having a security impact of Moderate. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nAn update for qt6-qtsvg is now available for Red Hat Enterprise Linux 10.\n\nRed Hat Product Security has rated this update as having a security impact of Moderate. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nUpdated Packages:\nqt6-qtsvg-6.9.1-2.el10_1.2.src.rpm\nqt6-qtsvg-6.9.1-2.el10_1.2.x86_64.rpm\nqt6-qtsvg-debuginfo-6.9.1-2.el10_1.2.x86_64.rpm\nqt6-qtsvg-debugsource-6.9.1-2.el10_1.2.x86_64.rpm\nqt6-qtsvg-devel-6.9.1-2.el10_1.2.x86_64.rpm\nqt6-qtsvg-tests-debuginfo-6.9.1-2.el10_1.2.x86_64.rpm\nqt6-qtsvg-6.9.1-2.el10_1.2.s390x.rpm\nqt6-qtsvg-debuginfo-6.9.1-2.el10_1.2.s390x.rpm\nqt6-qtsvg-debugsource-6.9.1-2.el10_1.2.s390x.rpm\nqt6-qtsvg-devel-6.9.1-2.el10_1.2.s390x.rpm\nqt6-qtsvg-tests-debuginfo-6.9.1-2.el10_1.2.s390x.rpm\nqt6-qtsvg-6.9.1-2.el10_1.2.ppc64le.rpm\nqt6-qtsvg-debuginfo-6.9.1-2.el10_1.2.ppc64le.rpm\nqt6-qtsvg-debugsource-6.9.1-2.el10_1.2.ppc64le.rpm\nqt6-qtsvg-devel-6.9.1-2.el10_1.2.ppc64le.rpm\nqt6-qtsvg-tests-debuginfo-6.9.1-2.el10_1.2.ppc64le.rpm\nqt6-qtsvg-6.9.1-2.el10_1.2.aarch64.rpm\nqt6-qtsvg-debuginfo-6.9.1-2.el10_1.2.aarch64.rpm\nqt6-qtsvg-debugsource-6.9.1-2.el10_1.2.aarch64.rpm\nqt6-qtsvg-devel-6.9.1-2.el10_1.2.aarch64.rpm\nqt6-qtsvg-tests-debuginfo-6.9.1-2.el10_1.2.aarch64.rpm\nqt6-qtsvg-examples-6.9.1-2.el10_1.2.x86_64.rpm\nqt6-qtsvg-examples-6.9.1-2.el10_1.2.ppc64le.rpm\nqt6-qtsvg-examples-6.9.1-2.el10_1.2.aarch64.rpm\nqt6-qtsvg-examples-6.9.1-2.el10_1.2.s390x.rpm\n\nCVE-2025-10728: When the module renders a Svg file that contains a <pattern> element, it might end up rendering it recursively leading to stack overflow DoS"
+}

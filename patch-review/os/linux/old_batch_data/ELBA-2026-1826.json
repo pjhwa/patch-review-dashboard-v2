@@ -1,0 +1,26 @@
+{
+  "id": "ELBA-2026-1826",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2026-February/019669.html",
+  "synopsis": "[El-errata] ELBA-2026-1826 Oracle Linux 10 crypto-policies bug fix and enhancement update",
+  "dateStr": "2026-February",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Bug Fix Advisory ELBA-2026-1826",
+  "description": "[20250905-2.gitc7eb7b2.1]\n- turn crypto-policies-pq-preview back into a real noarch package\n  Resolves: RHEL-130596",
+  "affected_products": [
+    "Oracle Linux 10"
+  ],
+  "packages": [
+    "crypto-policies-20250905-2.gitc7eb7b2.el10_1.1.noarch.rpm",
+    "crypto-policies-pq-preview-20250905-2.gitc7eb7b2.el10_1.1.noarch.rpm",
+    "crypto-policies-scripts-20250905-2.gitc7eb7b2.el10_1.1.noarch.rpm",
+    "crypto-policies-20250905-2.gitc7eb7b2.el10_1.1.noarch.rpm",
+    "crypto-policies-pq-preview-20250905-2.gitc7eb7b2.el10_1.1.noarch.rpm",
+    "crypto-policies-scripts-20250905-2.gitc7eb7b2.el10_1.1.noarch.rpm"
+  ],
+  "cves": [],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Bug Fix Advisory ELBA-2026-1826\n\nhttp://linux.oracle.com/errata/ELBA-2026-1826.html\n\nThe following updated rpms for Oracle Linux 10 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\ncrypto-policies-20250905-2.gitc7eb7b2.el10_1.1.noarch.rpm\ncrypto-policies-pq-preview-20250905-2.gitc7eb7b2.el10_1.1.noarch.rpm\ncrypto-policies-scripts-20250905-2.gitc7eb7b2.el10_1.1.noarch.rpm\n\naarch64:\ncrypto-policies-20250905-2.gitc7eb7b2.el10_1.1.noarch.rpm\ncrypto-policies-pq-preview-20250905-2.gitc7eb7b2.el10_1.1.noarch.rpm\ncrypto-policies-scripts-20250905-2.gitc7eb7b2.el10_1.1.noarch.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol10/SRPMS-updates/crypto-policies-20250905-2.gitc7eb7b2.el10_1.1.src.rpm\n\n\n\nDescription of changes:\n\n[20250905-2.gitc7eb7b2.1]\n- turn crypto-policies-pq-preview back into a real noarch package\n  Resolves: RHEL-130596",
+  "vendor": "Oracle"
+}

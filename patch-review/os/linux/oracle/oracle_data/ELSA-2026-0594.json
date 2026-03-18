@@ -1,0 +1,26 @@
+{
+  "id": "ELSA-2026-0594",
+  "vendor": "Oracle",
+  "type": "Security Advisory (ELSA)",
+  "title": " libpq security update",
+  "issuedDate": "2026-01-14T00:00:00Z",
+  "updatedDate": "2026-01-14T00:00:00Z",
+  "pubDate": "2026-01-14T00:00:00Z",
+  "dateStr": "2026-01-14",
+  "url": "https://linux.oracle.com/errata/ELSA-2026-0594.html",
+  "severity": "Moderate",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 10.",
+  "description": "[16.11-3]\n- Release bump\n\n[16.11-1]\n- Rebase to upstream release 16.11",
+  "affected_products": [
+    "Oracle Linux 10 for x86_64",
+    "Oracle Linux 10 for aarch64"
+  ],
+  "cves": [
+    "CVE-2025-12818"
+  ],
+  "packages": [
+    "libpq-16.11-3.el10_1.x86_64",
+    "libpq-16.11-3.el10_1.src"
+  ],
+  "full_text": "[16.11-3]\n- Release bump\n\n[16.11-1]\n- Rebase to upstream release 16.11\n\nReferences:\nhttps://linux.oracle.com/errata/ELSA-2026-0594.html\nhttps://linux.oracle.com/cve/CVE-2025-12818.html"
+}

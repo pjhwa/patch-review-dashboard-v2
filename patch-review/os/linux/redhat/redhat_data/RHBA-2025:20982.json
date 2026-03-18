@@ -1,0 +1,38 @@
+{
+  "id": "RHBA-2025:20982",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: gnome-initial-setup bug fix and enhancement update",
+  "issuedDate": "2025-11-11T18:27:42Z",
+  "updatedDate": "2025-11-11T18:27:42Z",
+  "pubDate": "2025-11-11T18:27:42Z",
+  "dateStr": "2025-11-11",
+  "url": "https://access.redhat.com/errata/RHBA-2025:20982",
+  "severity": "None",
+  "overview": "An update for gnome-initial-setup is now available for Red Hat Enterprise Linux 10.",
+  "description": "The gnome-initial-setup packages provide the Initial Setup application for GNOME, which allows for quick configuration of the operating system after installation.Bug Fix(es) and Enhancement(s): Please check how users/groups are handled in gnome-initial-setup for Image Mode [rhel-10] (JIRA:RHEL-82252)",
+  "affected_products": [
+    "Red Hat Enterprise Linux for IBM z Systems",
+    "Red Hat Enterprise Linux for ARM 64",
+    "Red Hat Enterprise Linux for x86_64 10 x86_64",
+    "Red Hat Enterprise Linux for Power, little endian"
+  ],
+  "cves": [],
+  "packages": [
+    "gnome-initial-setup-46.7-2.el10_1.src",
+    "gnome-initial-setup-46.7-2.el10_1.x86_64",
+    "gnome-initial-setup-debuginfo-46.7-2.el10_1.x86_64",
+    "gnome-initial-setup-debugsource-46.7-2.el10_1.x86_64",
+    "gnome-initial-setup-46.7-2.el10_1.s390x",
+    "gnome-initial-setup-debuginfo-46.7-2.el10_1.s390x",
+    "gnome-initial-setup-debugsource-46.7-2.el10_1.s390x",
+    "gnome-initial-setup-46.7-2.el10_1.ppc64le",
+    "gnome-initial-setup-debuginfo-46.7-2.el10_1.ppc64le",
+    "gnome-initial-setup-debugsource-46.7-2.el10_1.ppc64le",
+    "gnome-initial-setup-46.7-2.el10_1.aarch64",
+    "gnome-initial-setup-debuginfo-46.7-2.el10_1.aarch64",
+    "gnome-initial-setup-debugsource-46.7-2.el10_1.aarch64"
+  ],
+  "fixes": [],
+  "full_text": "An update for gnome-initial-setup is now available for Red Hat Enterprise Linux 10.\n\nThe gnome-initial-setup packages provide the Initial Setup application for GNOME, which allows for quick configuration of the operating system after installation.Bug Fix(es) and Enhancement(s): Please check how users/groups are handled in gnome-initial-setup for Image Mode [rhel-10] (JIRA:RHEL-82252)"
+}

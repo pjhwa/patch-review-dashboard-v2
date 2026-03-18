@@ -1,0 +1,51 @@
+{
+  "id": "RHSA-2026:4447",
+  "vendor": "Red Hat",
+  "type": "Security Advisory (RHSA)",
+  "title": "Red Hat Security Advisory: libvpx security update",
+  "issuedDate": "2026-03-12T15:24:51+00:00",
+  "updatedDate": "2026-03-12T15:24:51+00:00",
+  "pubDate": "2026-03-12T15:24:51+00:00",
+  "dateStr": "2026-03-12",
+  "url": "https://access.redhat.com/errata/RHSA-2026:4447",
+  "severity": "Important",
+  "overview": "An update for libvpx is now available for Red Hat Enterprise Linux 9.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "description": "The libvpx packages provide the VP8 SDK, which allows the encoding and decoding of the VP8 video codec, commonly used with the WebM multimedia container file format.\n\nSecurity Fix(es):\n\n* libvpx: Heap buffer overflow in libvpx (CVE-2026-2447)\n\nFor more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux",
+    "Red Hat Enterprise Linux AppStream (v. 9)",
+    "Red Hat Enterprise Linux CodeReady Linux Builder (v. 9)"
+  ],
+  "cves": [
+    "CVE-2026-2447"
+  ],
+  "packages": [
+    "libvpx-0:1.9.0-10.el9_7.s390x",
+    "libvpx-debugsource-0:1.9.0-10.el9_7.s390x",
+    "libvpx-debuginfo-0:1.9.0-10.el9_7.s390x",
+    "libvpx-utils-debuginfo-0:1.9.0-10.el9_7.s390x",
+    "libvpx-devel-0:1.9.0-10.el9_7.s390x",
+    "libvpx-0:1.9.0-10.el9_7.src",
+    "libvpx-0:1.9.0-10.el9_7.aarch64",
+    "libvpx-debugsource-0:1.9.0-10.el9_7.aarch64",
+    "libvpx-debuginfo-0:1.9.0-10.el9_7.aarch64",
+    "libvpx-utils-debuginfo-0:1.9.0-10.el9_7.aarch64",
+    "libvpx-devel-0:1.9.0-10.el9_7.aarch64",
+    "libvpx-0:1.9.0-10.el9_7.ppc64le",
+    "libvpx-debugsource-0:1.9.0-10.el9_7.ppc64le",
+    "libvpx-debuginfo-0:1.9.0-10.el9_7.ppc64le",
+    "libvpx-utils-debuginfo-0:1.9.0-10.el9_7.ppc64le",
+    "libvpx-devel-0:1.9.0-10.el9_7.ppc64le",
+    "libvpx-0:1.9.0-10.el9_7.i686",
+    "libvpx-debugsource-0:1.9.0-10.el9_7.i686",
+    "libvpx-debuginfo-0:1.9.0-10.el9_7.i686",
+    "libvpx-utils-debuginfo-0:1.9.0-10.el9_7.i686",
+    "libvpx-devel-0:1.9.0-10.el9_7.i686",
+    "libvpx-0:1.9.0-10.el9_7.x86_64",
+    "libvpx-debugsource-0:1.9.0-10.el9_7.x86_64",
+    "libvpx-debuginfo-0:1.9.0-10.el9_7.x86_64",
+    "libvpx-utils-debuginfo-0:1.9.0-10.el9_7.x86_64",
+    "libvpx-devel-0:1.9.0-10.el9_7.x86_64"
+  ],
+  "full_text": "An update for libvpx is now available for Red Hat Enterprise Linux 9.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nThe libvpx packages provide the VP8 SDK, which allows the encoding and decoding of the VP8 video codec, commonly used with the WebM multimedia container file format.\n\nSecurity Fix(es):\n\n* libvpx: Heap buffer overflow in libvpx (CVE-2026-2447)\n\nFor more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section."
+}

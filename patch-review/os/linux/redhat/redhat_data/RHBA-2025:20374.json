@@ -1,0 +1,45 @@
+{
+  "id": "RHBA-2025:20374",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: passt bug fix and enhancement update",
+  "issuedDate": "2025-11-11T07:26:16Z",
+  "updatedDate": "2025-11-11T07:26:16Z",
+  "pubDate": "2025-11-11T07:26:16Z",
+  "dateStr": "2025-11-11",
+  "url": "https://access.redhat.com/errata/RHBA-2025:20374",
+  "severity": "None",
+  "overview": "An update for passt is now available for Red Hat Enterprise Linux 10.",
+  "description": "For detailed information on changes in this release, see the Red Hat Enterprise Linux 10 Release Notes linked from the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux for x86_64 10 x86_64",
+    "Red Hat Enterprise Linux for Power, little endian",
+    "Red Hat Enterprise Linux for IBM z Systems",
+    "Red Hat Enterprise Linux for ARM 64"
+  ],
+  "cves": [],
+  "packages": [
+    "passt-0^20250512.g8ec1341-2.el10.src",
+    "passt-0^20250512.g8ec1341-2.el10.x86_64",
+    "passt-debuginfo-0^20250512.g8ec1341-2.el10.x86_64",
+    "passt-debugsource-0^20250512.g8ec1341-2.el10.x86_64",
+    "passt-selinux-0^20250512.g8ec1341-2.el10.noarch",
+    "passt-0^20250512.g8ec1341-2.el10.s390x",
+    "passt-debuginfo-0^20250512.g8ec1341-2.el10.s390x",
+    "passt-debugsource-0^20250512.g8ec1341-2.el10.s390x",
+    "passt-0^20250512.g8ec1341-2.el10.ppc64le",
+    "passt-debuginfo-0^20250512.g8ec1341-2.el10.ppc64le",
+    "passt-debugsource-0^20250512.g8ec1341-2.el10.ppc64le",
+    "passt-0^20250512.g8ec1341-2.el10.aarch64",
+    "passt-debuginfo-0^20250512.g8ec1341-2.el10.aarch64",
+    "passt-debugsource-0^20250512.g8ec1341-2.el10.aarch64"
+  ],
+  "fixes": [
+    {
+      "id": "RHEL-84285",
+      "url": "https://issues.redhat.com/browse/RHEL-84285",
+      "description": "Rebase passt for current CentOS Stream 10 from Fedora passt-0^20250512.g8ec1341-1.fc43"
+    }
+  ],
+  "full_text": "An update for passt is now available for Red Hat Enterprise Linux 10.\n\nFor detailed information on changes in this release, see the Red Hat Enterprise Linux 10 Release Notes linked from the References section."
+}

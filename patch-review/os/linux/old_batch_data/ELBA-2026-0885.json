@@ -1,0 +1,30 @@
+{
+  "id": "ELBA-2026-0885",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2026-January/019574.html",
+  "synopsis": "[El-errata] ELBA-2026-0885 Oracle Linux 8 cockpit bug fix and enhancement update",
+  "dateStr": "2026-January",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Bug Fix Advisory ELBA-2026-0885",
+  "description": "[310.6-1.0.1]\n- Fixed cockpit_ws_t selinux issue for tmpfs [Orabug: 36013589]\n- Move update-motd out of cockpit_ws_t context [Orabug: 36013589]\n- Update documentation links [Orabug: 34706402]\n- Drop subscription-manager-cockpit requirement for ol [Orabug: 34681110]\n- Remove duplicate reference to server in cockpit [Orabug: 33862832]\n- Update documentation links [Orabug: 32795691]\n- Make documentation links point to Oracle Linux information [Orabug: 30271413] [Orabug: 32013095]\n- Fix rendering of hwinfo page on systems with some empty memory slots [Orabug: 32826970]\n\n[310.6]\n- Remove recommends on subscription-manager-cockpit if applicable\n\n[310.6-1]\n- networking: Fix renaming of bridges and other groups (RHEL-131249)\n- networkmanager: use connection.type as a fallback (RHEL-131244)",
+  "affected_products": [
+    "Oracle Linux 8"
+  ],
+  "packages": [
+    "cockpit-310.6-1.0.1.el8_10.x86_64.rpm",
+    "cockpit-bridge-310.6-1.0.1.el8_10.x86_64.rpm",
+    "cockpit-doc-310.6-1.0.1.el8_10.noarch.rpm",
+    "cockpit-system-310.6-1.0.1.el8_10.noarch.rpm",
+    "cockpit-ws-310.6-1.0.1.el8_10.x86_64.rpm",
+    "cockpit-310.6-1.0.1.el8_10.aarch64.rpm",
+    "cockpit-bridge-310.6-1.0.1.el8_10.aarch64.rpm",
+    "cockpit-doc-310.6-1.0.1.el8_10.noarch.rpm",
+    "cockpit-system-310.6-1.0.1.el8_10.noarch.rpm",
+    "cockpit-ws-310.6-1.0.1.el8_10.aarch64.rpm"
+  ],
+  "cves": [],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Bug Fix Advisory ELBA-2026-0885\n\nhttp://linux.oracle.com/errata/ELBA-2026-0885.html\n\nThe following updated rpms for Oracle Linux 8 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\ncockpit-310.6-1.0.1.el8_10.x86_64.rpm\ncockpit-bridge-310.6-1.0.1.el8_10.x86_64.rpm\ncockpit-doc-310.6-1.0.1.el8_10.noarch.rpm\ncockpit-system-310.6-1.0.1.el8_10.noarch.rpm\ncockpit-ws-310.6-1.0.1.el8_10.x86_64.rpm\n\naarch64:\ncockpit-310.6-1.0.1.el8_10.aarch64.rpm\ncockpit-bridge-310.6-1.0.1.el8_10.aarch64.rpm\ncockpit-doc-310.6-1.0.1.el8_10.noarch.rpm\ncockpit-system-310.6-1.0.1.el8_10.noarch.rpm\ncockpit-ws-310.6-1.0.1.el8_10.aarch64.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol8/SRPMS-updates/cockpit-310.6-1.0.1.el8_10.src.rpm\n\n\n\nDescription of changes:\n\n[310.6-1.0.1]\n- Fixed cockpit_ws_t selinux issue for tmpfs [Orabug: 36013589]\n- Move update-motd out of cockpit_ws_t context [Orabug: 36013589]\n- Update documentation links [Orabug: 34706402]\n- Drop subscription-manager-cockpit requirement for ol [Orabug: 34681110]\n- Remove duplicate reference to server in cockpit [Orabug: 33862832]\n- Update documentation links [Orabug: 32795691]\n- Make documentation links point to Oracle Linux information [Orabug: 30271413] [Orabug: 32013095]\n- Fix rendering of hwinfo page on systems with some empty memory slots [Orabug: 32826970]\n\n[310.6]\n- Remove recommends on subscription-manager-cockpit if applicable\n\n[310.6-1]\n- networking: Fix renaming of bridges and other groups (RHEL-131249)\n- networkmanager: use connection.type as a fallback (RHEL-131244)",
+  "vendor": "Oracle"
+}

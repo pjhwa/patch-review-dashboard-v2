@@ -1,0 +1,28 @@
+{
+  "id": "USN-7792-2",
+  "vendor": "Canonical / Ubuntu",
+  "type": "Ubuntu Security Notice (USN)",
+  "title": "linux-raspi vulnerabilities",
+  "issuedDate": "2025-10-02T13:34:46Z",
+  "updatedDate": "2026-02-10T04:50:10Z",
+  "pubDate": "2025-10-02T13:34:46Z",
+  "dateStr": "2025-10-02",
+  "url": "https://ubuntu.com/security/notices/USN-7792-2",
+  "severity": "None",
+  "overview": "linux-raspi vulnerabilities",
+  "description": "Several security issues were discovered in the Linux kernel.\nAn attacker could possibly use these to compromise the system.\nThis update corrects flaws in the following subsystems:\n  - Ext4 file system;\n  - Packet sockets;\n  - Network traffic control;\n  - TLS protocol;\n  - VMware vSockets driver;\n  - XFRM subsystem;\n(CVE-2025-37756, CVE-2025-38500, CVE-2025-37785, CVE-2025-38477,\nCVE-2025-38618, CVE-2025-38617)\n",
+  "affected_products": [
+    "Ubuntu 24.04 LTS"
+  ],
+  "cves": [],
+  "packages": [
+    "linux-buildinfo-6.8.0-1040-raspi-6.8.0-1040.44",
+    "linux-headers-6.8.0-1040-raspi-6.8.0-1040.44",
+    "linux-image-6.8.0-1040-raspi-6.8.0-1040.44",
+    "linux-modules-6.8.0-1040-raspi-6.8.0-1040.44",
+    "linux-raspi-headers-6.8.0-1040-6.8.0-1040.44",
+    "linux-raspi-tools-6.8.0-1040-6.8.0-1040.44",
+    "linux-tools-6.8.0-1040-raspi-6.8.0-1040.44"
+  ],
+  "full_text": "Several security issues were discovered in the Linux kernel.\nAn attacker could possibly use these to compromise the system.\nThis update corrects flaws in the following subsystems:\n  - Ext4 file system;\n  - Packet sockets;\n  - Network traffic control;\n  - TLS protocol;\n  - VMware vSockets driver;\n  - XFRM subsystem;\n(CVE-2025-37756, CVE-2025-38500, CVE-2025-37785, CVE-2025-38477,\nCVE-2025-38618, CVE-2025-38617)\n"
+}

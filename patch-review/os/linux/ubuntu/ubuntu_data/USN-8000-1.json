@@ -1,0 +1,36 @@
+{
+  "id": "USN-8000-1",
+  "vendor": "Canonical / Ubuntu",
+  "type": "Ubuntu Security Notice (USN)",
+  "title": "openjdk-8 vulnerabilities",
+  "issuedDate": "2026-02-02T23:02:27Z",
+  "updatedDate": "2026-02-10T04:50:49Z",
+  "pubDate": "2026-02-02T23:02:27Z",
+  "dateStr": "2026-02-02",
+  "url": "https://ubuntu.com/security/notices/USN-8000-1",
+  "severity": "None",
+  "overview": "openjdk-8 vulnerabilities",
+  "description": "It was discovered that the RMI component of OpenJDK 8 would establish\nRMI TCP endpoint connections to a remote host without setting an\nendpoint identification algorithm. An unauthenticated remote attacker\ncould possibly use this issue to steal sensitive information.\n(CVE-2026-21925)\n\nMingijung discovered that the AWT and JavaFX componenets of OpenJDK 8\ncould run programs if Desktop.browse() was supplied a filename as a\nURI. An unauthenticated remote attacker could possibly use this issue\nto execute arbitrary code. (CVE-2026-21932)\n\nZhihui Chen discovered that the Networking component of OpenJDK 8\nwas suceptible to a CRLF injection vulnerability via the HttpServer\nclass. An unauthenticated remote attacker could possibly use this\nissue to modify files or leak sensitive information. (CVE-2026-21933)\n\nIreneusz Pastusiak discovered that the Security component of OpenJDK 8\nfailed to verify provided URIs point to a legitimate source when\nAIA is enabled. An unauthenticated remote attacker could possibly\nuse this issue to redirect users to malicious hosts.\n(CVE-2026-21945)\n\nIn addition to security fixes, the updated packages contain bug fixes,\nnew features, and possibly incompatible changes.\n\nPlease see the following for more information:\nhttps://openjdk.org/groups/vulnerability/advisories/2026-01-20",
+  "affected_products": [
+    "Ubuntu 22.04 LTS",
+    "Ubuntu 24.04 LTS"
+  ],
+  "cves": [],
+  "packages": [
+    "openjdk-8-demo-8u482-ga~us1-0ubuntu1~22.04",
+    "openjdk-8-demo-8u482-ga~us1-0ubuntu1~24.04",
+    "openjdk-8-jdk-8u482-ga~us1-0ubuntu1~22.04",
+    "openjdk-8-jdk-8u482-ga~us1-0ubuntu1~24.04",
+    "openjdk-8-jdk-headless-8u482-ga~us1-0ubuntu1~22.04",
+    "openjdk-8-jdk-headless-8u482-ga~us1-0ubuntu1~24.04",
+    "openjdk-8-jre-8u482-ga~us1-0ubuntu1~22.04",
+    "openjdk-8-jre-8u482-ga~us1-0ubuntu1~24.04",
+    "openjdk-8-jre-headless-8u482-ga~us1-0ubuntu1~22.04",
+    "openjdk-8-jre-headless-8u482-ga~us1-0ubuntu1~24.04",
+    "openjdk-8-jre-zero-8u482-ga~us1-0ubuntu1~22.04",
+    "openjdk-8-jre-zero-8u482-ga~us1-0ubuntu1~24.04",
+    "openjdk-8-source-8u482-ga~us1-0ubuntu1~22.04",
+    "openjdk-8-source-8u482-ga~us1-0ubuntu1~24.04"
+  ],
+  "full_text": "It was discovered that the RMI component of OpenJDK 8 would establish\nRMI TCP endpoint connections to a remote host without setting an\nendpoint identification algorithm. An unauthenticated remote attacker\ncould possibly use this issue to steal sensitive information.\n(CVE-2026-21925)\n\nMingijung discovered that the AWT and JavaFX componenets of OpenJDK 8\ncould run programs if Desktop.browse() was supplied a filename as a\nURI. An unauthenticated remote attacker could possibly use this issue\nto execute arbitrary code. (CVE-2026-21932)\n\nZhihui Chen discovered that the Networking component of OpenJDK 8\nwas suceptible to a CRLF injection vulnerability via the HttpServer\nclass. An unauthenticated remote attacker could possibly use this\nissue to modify files or leak sensitive information. (CVE-2026-21933)\n\nIreneusz Pastusiak discovered that the Security component of OpenJDK 8\nfailed to verify provided URIs point to a legitimate source when\nAIA is enabled. An unauthenticated remote attacker could possibly\nuse this issue to redirect users to malicious hosts.\n(CVE-2026-21945)\n\nIn addition to security fixes, the updated packages contain bug fixes,\nnew features, and possibly incompatible changes.\n\nPlease see the following for more information:\nhttps://openjdk.org/groups/vulnerability/advisories/2026-01-20"
+}

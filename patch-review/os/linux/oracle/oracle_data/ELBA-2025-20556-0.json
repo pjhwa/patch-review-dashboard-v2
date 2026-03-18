@@ -1,0 +1,25 @@
+{
+  "id": "ELBA-2025-20556-0",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "RHCK",
+  "title": "grubby bug fix and enhancement update",
+  "issuedDate": "2025-11-17T00:00:00Z",
+  "updatedDate": "2025-11-17T00:00:00Z",
+  "pubDate": "2025-11-17T00:00:00Z",
+  "dateStr": "2025-11-17",
+  "url": "https://linux.oracle.com/errata/ELBA-2025-20556-0.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 9.",
+  "description": "[8.40-68.0.1]\n- Handle cleanup of modules.* for RHCK and UEK [Orabug: 18493431]\n- Pick a suitable default kernel to boot if the current option is removed [Orabug: 22738301]\n- Set whatever entry before saved entry\n- Set different titles for RHCK and UEK [Orabug: 18504756] (Kevin Lyons)\n- Do not add /boot twice for btrfs subvolumes [Orabug: 34380742]\n\n[8.40-68]\n- Update cfg when setting a default kernel\n  Resolves: #RHEL-106612\n\n[8.40-67]\n- Bump NVR\n- Related: #RHEL-61421\n\n[8.40-66]\n- grubby-bls: on PPC systems, remove petiboot's version checks\n- Resolves: #RHEL-61421\n\n[8.40-65]\n- On grub cfg updates, run grub2-mkconfig for Xen systems\n  Resolves: #RHEL-50691",
+  "affected_products": [
+    "Oracle Linux 9 for x86_64",
+    "Oracle Linux 9 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "grubby-8.40-68.0.1.el9.x86_64",
+    "grubby-8.40-68.0.1.el9.src"
+  ],
+  "full_text": "[8.40-68.0.1]\n- Handle cleanup of modules.* for RHCK and UEK [Orabug: 18493431]\n- Pick a suitable default kernel to boot if the current option is removed [Orabug: 22738301]\n- Set whatever entry before saved entry\n- Set different titles for RHCK and UEK [Orabug: 18504756] (Kevin Lyons)\n- Do not add /boot twice for btrfs subvolumes [Orabug: 34380742]\n\n[8.40-68]\n- Update cfg when setting a default kernel\n  Resolves: #RHEL-106612\n\n[8.40-67]\n- Bump NVR\n- Related: #RHEL-61421\n\n[8.40-66]\n- grubby-bls: on PPC systems, remove petiboot's version checks\n- Resolves: #RHEL-61421\n\n[8.40-65]\n- On grub cfg updates, run grub2-mkconfig for Xen systems\n  Resolves: #RHEL-50691\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2025-20556-0.html"
+}

@@ -1,0 +1,41 @@
+{
+  "id": "RHSA-2025:23326",
+  "vendor": "Red Hat",
+  "type": "Security Advisory (RHSA)",
+  "title": "Red Hat Security Advisory: skopeo security update",
+  "issuedDate": "2025-12-18T13:18:48+00:00",
+  "updatedDate": "2025-12-18T13:18:48+00:00",
+  "pubDate": "2025-12-18T13:18:48+00:00",
+  "dateStr": "2025-12-18",
+  "url": "https://access.redhat.com/errata/RHSA-2025:23326",
+  "severity": "Moderate",
+  "overview": "An update for skopeo is now available for Red Hat Enterprise Linux 9.\n\nRed Hat Product Security has rated this update as having a security impact of Moderate. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "description": "The skopeo command lets you inspect images from container image registries, get images and image layers, and use signatures to create and verify files. \n\nSecurity Fix(es):\n\n* golang: archive/tar: Unbounded allocation when parsing GNU sparse map (CVE-2025-58183)\n\nFor more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux",
+    "Red Hat Enterprise Linux AppStream (v. 9)"
+  ],
+  "cves": [
+    "CVE-2025-58183"
+  ],
+  "packages": [
+    "skopeo-2:1.20.0-2.el9_7.src",
+    "skopeo-2:1.20.0-2.el9_7.aarch64",
+    "skopeo-tests-2:1.20.0-2.el9_7.aarch64",
+    "skopeo-debugsource-2:1.20.0-2.el9_7.aarch64",
+    "skopeo-debuginfo-2:1.20.0-2.el9_7.aarch64",
+    "skopeo-2:1.20.0-2.el9_7.ppc64le",
+    "skopeo-tests-2:1.20.0-2.el9_7.ppc64le",
+    "skopeo-debugsource-2:1.20.0-2.el9_7.ppc64le",
+    "skopeo-debuginfo-2:1.20.0-2.el9_7.ppc64le",
+    "skopeo-2:1.20.0-2.el9_7.x86_64",
+    "skopeo-tests-2:1.20.0-2.el9_7.x86_64",
+    "skopeo-debugsource-2:1.20.0-2.el9_7.x86_64",
+    "skopeo-debuginfo-2:1.20.0-2.el9_7.x86_64",
+    "skopeo-2:1.20.0-2.el9_7.s390x",
+    "skopeo-tests-2:1.20.0-2.el9_7.s390x",
+    "skopeo-debugsource-2:1.20.0-2.el9_7.s390x",
+    "skopeo-debuginfo-2:1.20.0-2.el9_7.s390x"
+  ],
+  "full_text": "An update for skopeo is now available for Red Hat Enterprise Linux 9.\n\nRed Hat Product Security has rated this update as having a security impact of Moderate. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nThe skopeo command lets you inspect images from container image registries, get images and image layers, and use signatures to create and verify files. \n\nSecurity Fix(es):\n\n* golang: archive/tar: Unbounded allocation when parsing GNU sparse map (CVE-2025-58183)\n\nFor more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section."
+}

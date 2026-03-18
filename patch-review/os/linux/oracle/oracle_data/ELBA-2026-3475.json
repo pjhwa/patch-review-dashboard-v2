@@ -1,0 +1,28 @@
+{
+  "id": "ELBA-2026-3475",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "title": "selinux-policy bug fix and enhancement update",
+  "issuedDate": "2026-03-05T00:00:00Z",
+  "updatedDate": "2026-03-05T00:00:00Z",
+  "pubDate": "2026-03-05T00:00:00Z",
+  "dateStr": "2026-03-05",
+  "url": "https://linux.oracle.com/errata/ELBA-2026-3475.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 10.",
+  "description": "[42.1.7-1.0.2.el10_1.1]\n- Fix specfile triggers for fapolicyd and usbguard DSP modules [Orabug: 38681740] [Orabug: 38579739]\n- Allow systemd_fstab_generator_t to read udev pid files [Orabug: 37139639]\n- Allow systemd_fstab_generator_t to read sysfs filesystem [Orabug: 37139639]\n- Allow systemd_fstab_generator_t to get attributs of fixed_disk_device_t and\n  removable_device_t [Orabug: 37139639]\n- Change reference in /etc/selinux/config to point to Oracle doc [Orabug: 36899915]\n- Allow user_mail_domain to manage exim_log_t and exim_spool_t link files [Orabug: 36617121]\n- Allow exim_t to read exim_log_t and manage exim_spool_t link files [Orabug: 36430005]\n- Make import-state work with mls policy [Orabug: 32636699]\n- Add map permission to lvm_t on lvm_metadata_t. [Orabug: 31405325]\n- Add comment for map on lvm_metadata_t. [Orabug: 31405325]\n- Make cloud-init work with mls policy [Orabug: 32430460]\n- Allow systemd-pstore to transfer files from /sys/fs/pstore [Orabug: 31594666]\n- Make lsmd and rngd work with mls policy [Orabug: 31405378]\n- Allow virt_domain to mmap virt_content_t files [Orabug: 30932671]\n- Add vhost-scsi to be vhost_device_t type [Orabug: 27774921]\n- Allow ocfs2_dlmfs to be mounted with ocfs2_dlmfs_t type. [Orabug: 13333429]\n\n[42.1.7-1.1]\n- Allow nfsd_t domain setuid and setgid capability for rpc.mountd\nResolves: RHEL-148248",
+  "affected_products": [
+    "Oracle Linux 10 for x86_64",
+    "Oracle Linux 10 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "selinux-policy-sandbox-42.1.7-1.0.2.el10_1.1.noarch",
+    "selinux-policy-doc-42.1.7-1.0.2.el10_1.1.noarch",
+    "selinux-policy-mls-42.1.7-1.0.2.el10_1.1.noarch",
+    "selinux-policy-42.1.7-1.0.2.el10_1.1.noarch",
+    "selinux-policy-targeted-42.1.7-1.0.2.el10_1.1.noarch",
+    "selinux-policy-42.1.7-1.0.2.el10_1.1.src"
+  ],
+  "full_text": "[42.1.7-1.0.2.el10_1.1]\n- Fix specfile triggers for fapolicyd and usbguard DSP modules [Orabug: 38681740] [Orabug: 38579739]\n- Allow systemd_fstab_generator_t to read udev pid files [Orabug: 37139639]\n- Allow systemd_fstab_generator_t to read sysfs filesystem [Orabug: 37139639]\n- Allow systemd_fstab_generator_t to get attributs of fixed_disk_device_t and\n  removable_device_t [Orabug: 37139639]\n- Change reference in /etc/selinux/config to point to Oracle doc [Orabug: 36899915]\n- Allow user_mail_domain to manage exim_log_t and exim_spool_t link files [Orabug: 36617121]\n- Allow exim_t to read exim_log_t and manage exim_spool_t link files [Orabug: 36430005]\n- Make import-state work with mls policy [Orabug: 32636699]\n- Add map permission to lvm_t on lvm_metadata_t. [Orabug: 31405325]\n- Add comment for map on lvm_metadata_t. [Orabug: 31405325]\n- Make cloud-init work with mls policy [Orabug: 32430460]\n- Allow systemd-pstore to transfer files from /sys/fs/pstore [Orabug: 31594666]\n- Make lsmd and rngd work with mls policy [Orabug: 31405378]\n- Allow virt_domain to mmap virt_content_t files [Orabug: 30932671]\n- Add vhost-scsi to be vhost_device_t type [Orabug: 27774921]\n- Allow ocfs2_dlmfs to be mounted with ocfs2_dlmfs_t type. [Orabug: 13333429]\n\n[42.1.7-1.1]\n- Allow nfsd_t domain setuid and setgid capability for rpc.mountd\nResolves: RHEL-148248\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2026-3475.html"
+}

@@ -1,0 +1,26 @@
+{
+  "id": "ELBA-2025-21007",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "RHCK",
+  "title": "cups bug fix and enhancement update",
+  "issuedDate": "2025-12-02T00:00:00Z",
+  "updatedDate": "2025-12-02T00:00:00Z",
+  "pubDate": "2025-12-02T00:00:00Z",
+  "dateStr": "2025-12-02",
+  "url": "https://linux.oracle.com/errata/ELBA-2025-21007.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 10.",
+  "description": "[1:2.4.10-12]\n- RHEL-112419 CVE-2025-58060 cups: Authentication Bypass in CUPS Authorization Handling\n- RHEL-113073 CVE-2025-58364 cups: Null Pointer Dereference in CUPS ipp_read_io() Leading to Remote DoS",
+  "affected_products": [
+    "Oracle Linux 10 for x86_64",
+    "Oracle Linux 10 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "cups-libs-2.4.10-12.el10_1.x86_64",
+    "cups-2.4.10-12.el10_1.src",
+    "cups-filesystem-2.4.10-12.el10_1.noarch"
+  ],
+  "full_text": "[1:2.4.10-12]\n- RHEL-112419 CVE-2025-58060 cups: Authentication Bypass in CUPS Authorization Handling\n- RHEL-113073 CVE-2025-58364 cups: Null Pointer Dereference in CUPS ipp_read_io() Leading to Remote DoS\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2025-21007.html"
+}

@@ -1,0 +1,38 @@
+{
+  "id": "RHBA-2025:17414",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: autofs bug fix and enhancement update",
+  "issuedDate": "2025-10-07T04:36:26Z",
+  "updatedDate": "2025-10-07T04:36:26Z",
+  "pubDate": "2025-10-07T04:36:26Z",
+  "dateStr": "2025-10-07",
+  "url": "https://access.redhat.com/errata/RHBA-2025:17414",
+  "severity": "None",
+  "overview": "An update for autofs is now available for Red Hat Enterprise Linux 10.",
+  "description": "The autofs utility controls the operation of the automount daemon. The daemon automatically mounts file systems when in use and unmounts them when they are not busy.Bug Fix(es) and Enhancement(s): automount blocked when attempting to lookup ldap maps (JIRA:RHEL-111930)",
+  "affected_products": [
+    "Red Hat Enterprise Linux for Power, little endian",
+    "Red Hat Enterprise Linux for x86_64 10 x86_64",
+    "Red Hat Enterprise Linux for IBM z Systems",
+    "Red Hat Enterprise Linux for ARM 64"
+  ],
+  "cves": [],
+  "packages": [
+    "autofs-5.1.4-114.el8_10.5.src",
+    "autofs-5.1.4-114.el8_10.5.x86_64",
+    "autofs-debuginfo-5.1.4-114.el8_10.5.x86_64",
+    "autofs-debugsource-5.1.4-114.el8_10.5.x86_64",
+    "autofs-5.1.4-114.el8_10.5.s390x",
+    "autofs-debuginfo-5.1.4-114.el8_10.5.s390x",
+    "autofs-debugsource-5.1.4-114.el8_10.5.s390x",
+    "autofs-5.1.4-114.el8_10.5.ppc64le",
+    "autofs-debuginfo-5.1.4-114.el8_10.5.ppc64le",
+    "autofs-debugsource-5.1.4-114.el8_10.5.ppc64le",
+    "autofs-5.1.4-114.el8_10.5.aarch64",
+    "autofs-debuginfo-5.1.4-114.el8_10.5.aarch64",
+    "autofs-debugsource-5.1.4-114.el8_10.5.aarch64"
+  ],
+  "fixes": [],
+  "full_text": "An update for autofs is now available for Red Hat Enterprise Linux 10.\n\nThe autofs utility controls the operation of the automount daemon. The daemon automatically mounts file systems when in use and unmounts them when they are not busy.Bug Fix(es) and Enhancement(s): automount blocked when attempting to lookup ldap maps (JIRA:RHEL-111930)"
+}

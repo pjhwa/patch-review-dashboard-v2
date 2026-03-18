@@ -1,0 +1,26 @@
+{
+  "id": "ELBA-2026-50143",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "AppStream",
+  "title": " fapolicyd  bug fix update",
+  "issuedDate": "2026-03-10T00:00:00Z",
+  "updatedDate": "2026-03-10T00:00:00Z",
+  "pubDate": "2026-03-10T00:00:00Z",
+  "dateStr": "2026-03-10",
+  "url": "https://linux.oracle.com/errata/ELBA-2026-50143.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 8.",
+  "description": "[1.3.2-1.0.2]\n- Adds patches from upstream to fix fapolicyd hang issue [Orabug: 38726762]",
+  "affected_products": [
+    "Oracle Linux 8 for x86_64",
+    "Oracle Linux 8 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "fapolicyd-1.3.2-1.0.2.el8.src",
+    "fapolicyd-selinux-1.3.2-1.0.2.el8.noarch",
+    "fapolicyd-1.3.2-1.0.2.el8.x86_64"
+  ],
+  "full_text": "[1.3.2-1.0.2]\n- Adds patches from upstream to fix fapolicyd hang issue [Orabug: 38726762]\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2026-50143.html"
+}

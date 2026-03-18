@@ -1,0 +1,24 @@
+{
+  "id": "RHSA-2026:3556",
+  "vendor": "Red Hat",
+  "url": "https://access.redhat.com/errata/RHSA-2026:3556",
+  "pubDate": "2026-03-02T16:52:33.000Z",
+  "dateStr": "2026-03-02",
+  "severity": "Important",
+  "title": "Red Hat Security Advisory: Red Hat OpenShift Service Mesh 2.6.14",
+  "overview": "Red Hat OpenShift Service Mesh 2.6.14\n\nThis update has a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "description": "Red Hat OpenShift Service Mesh 2.6.14\n\nThis update has a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "affected_products": [
+    "Red Hat OpenShift Service Mesh 2.6"
+  ],
+  "cves": [
+    "CVE-2025-61726",
+    "CVE-2025-61728",
+    "CVE-2025-61731",
+    "CVE-2025-61732",
+    "CVE-2025-68121"
+  ],
+  "packages": [],
+  "fixes": "",
+  "full_text": "Red Hat Security Advisory: Red Hat OpenShift Service Mesh 2.6.14\n\nRed Hat OpenShift Service Mesh 2.6.14\n\nThis update has a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nRed Hat OpenShift Service Mesh 2.6.14\n\nThis update has a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\n\n\nCVE-2025-61726: A flaw was found in the net/url package in the Go standard library. The package does not enforce a limit on the number of unique query parameters it parses. A Go application using the net/http.Request.ParseForm method will try to process all parameters provided in the request. A specially crafted HTTP request containing a massive number of query parameters will cause the application to consume an excessive amount of memory, eventually causing the application to crash or become unresponsive, resulting in a denial of service.\n\nCVE-2025-61728: A flaw was found in the archive/zip package in the Go standard library. A super-linear file name indexing algorithm is used in the first time a file in an archive is opened. A crafted zip archive containing a specific arrangement of file names can cause an excessive CPU and memory consumption. A Go application processing a malicious archive can become unresponsive or crash, resulting in a denial of service.\n\nCVE-2025-61731: A flaw was found in cmd/go. An attacker can exploit this by building a malicious Go source file that uses the '#cgo pkg-config:' directive. This allows the attacker to write to an arbitrary file with partial control over its content, by providing a '--log-file' argument to the pkg-config command. This vulnerability can lead to arbitrary file write.\n\nCVE-2025-61732: A discrepancy between how Go and C/C++ comments were parsed allowed for code smuggling into the resulting cgo binary.\n\nCVE-2025-68121: During session resumption in crypto/tls, if the underlying Config has its ClientCAs or RootCAs fields mutated between the initial handshake and the resumed handshake, the resumed handshake may succeed when it should have failed. This may happen when a user calls Config.Clone and mutates the returned Config, or uses Config.GetConfigForClient. This can cause a client to resume a session with a server that it would not have resumed with during the initial handshake, or cause a server to resume a session with a client that it would not have resumed with during the initial handshake."
+}

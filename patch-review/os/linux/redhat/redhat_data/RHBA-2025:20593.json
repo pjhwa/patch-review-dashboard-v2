@@ -1,0 +1,44 @@
+{
+  "id": "RHBA-2025:20593",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: rng-tools bug fix and enhancement update",
+  "issuedDate": "2025-11-11T07:50:02Z",
+  "updatedDate": "2025-11-11T07:50:02Z",
+  "pubDate": "2025-11-11T07:50:02Z",
+  "dateStr": "2025-11-11",
+  "url": "https://access.redhat.com/errata/RHBA-2025:20593",
+  "severity": "None",
+  "overview": "An update for rng-tools is now available for Red Hat Enterprise Linux 10.",
+  "description": "For detailed information on changes in this release, see the Red Hat Enterprise Linux 9 Release Notes linked from the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux for IBM z Systems",
+    "Red Hat Enterprise Linux for ARM 64",
+    "Red Hat Enterprise Linux for Power, little endian",
+    "Red Hat Enterprise Linux for x86_64 10 x86_64"
+  ],
+  "cves": [],
+  "packages": [
+    "rng-tools-6.17-2.el9.src",
+    "rng-tools-6.17-2.el9.x86_64",
+    "rng-tools-debuginfo-6.17-2.el9.x86_64",
+    "rng-tools-debugsource-6.17-2.el9.x86_64",
+    "rng-tools-6.17-2.el9.s390x",
+    "rng-tools-debuginfo-6.17-2.el9.s390x",
+    "rng-tools-debugsource-6.17-2.el9.s390x",
+    "rng-tools-6.17-2.el9.ppc64le",
+    "rng-tools-debuginfo-6.17-2.el9.ppc64le",
+    "rng-tools-debugsource-6.17-2.el9.ppc64le",
+    "rng-tools-6.17-2.el9.aarch64",
+    "rng-tools-debuginfo-6.17-2.el9.aarch64",
+    "rng-tools-debugsource-6.17-2.el9.aarch64"
+  ],
+  "fixes": [
+    {
+      "id": "RHEL-91119",
+      "url": "https://issues.redhat.com/browse/RHEL-91119",
+      "description": "[RHEL-9.7] rng-tools update for jitter source"
+    }
+  ],
+  "full_text": "An update for rng-tools is now available for Red Hat Enterprise Linux 10.\n\nFor detailed information on changes in this release, see the Red Hat Enterprise Linux 9 Release Notes linked from the References section."
+}

@@ -1,0 +1,24 @@
+{
+  "id": "ELBA-2025-25732",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2025-November/018883.html",
+  "synopsis": "[El-errata] ELBA-2025-25732 Oracle Linux 9 leapp-repository bug fix update",
+  "dateStr": "2025-November",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Bug Fix Advisory ELBA-2025-25732",
+  "description": "[0.22.0-1.0.6]\n- Implement Inhibitor for --iso conflict if problematic files present [Orabug: 38489510]",
+  "affected_products": [
+    "Oracle Linux 9"
+  ],
+  "packages": [
+    "leapp-upgrade-el9toel10-0.22.0-1.0.6.el9.noarch.rpm",
+    "leapp-upgrade-el9toel10-deps-0.22.0-1.0.6.el9.noarch.rpm",
+    "leapp-upgrade-el9toel10-0.22.0-1.0.6.el9.noarch.rpm",
+    "leapp-upgrade-el9toel10-deps-0.22.0-1.0.6.el9.noarch.rpm"
+  ],
+  "cves": [],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Bug Fix Advisory ELBA-2025-25732\n\nhttp://linux.oracle.com/errata/ELBA-2025-25732.html\n\nThe following updated rpms for Oracle Linux 9 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\nleapp-upgrade-el9toel10-0.22.0-1.0.6.el9.noarch.rpm\nleapp-upgrade-el9toel10-deps-0.22.0-1.0.6.el9.noarch.rpm\n\naarch64:\nleapp-upgrade-el9toel10-0.22.0-1.0.6.el9.noarch.rpm\nleapp-upgrade-el9toel10-deps-0.22.0-1.0.6.el9.noarch.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol9/SRPMS-updates/leapp-repository-0.22.0-1.0.6.el9.src.rpm\n\n\n\nDescription of changes:\n\n[0.22.0-1.0.6]\n- Implement Inhibitor for --iso conflict if problematic files present [Orabug: 38489510]",
+  "vendor": "Oracle"
+}

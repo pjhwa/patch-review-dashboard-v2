@@ -1,0 +1,25 @@
+{
+  "id": "USN-7923-1",
+  "url": "https://ubuntu.com/security/notices/USN-7923-1",
+  "synopsis": "USN-7923-1: Qt vulnerability",
+  "dateStr": "11 December 2025",
+  "overview": "Qt could be made to crash or run programs as your login if it\nopened a specially crafted file.",
+  "description": "It was discovered that Qt did not correctly handle certain memory\noperations. If a user or automated system were tricked into opening a\nspecially crafted file, an attacker could possibly use this issue to\ncause a denial of service or execute arbitrary code.\n\n \n\n \n\n \n\nIt was discovered that Qt did not correctly handle certain memory\noperations. If a user or automated system were tricked into opening a\nspecially crafted file, an attacker could possibly use this issue to\ncause a denial of service or execute arbitrary code.",
+  "packages": [
+    "qtbase"
+  ],
+  "cves": [
+    "CVE-2024-25580"
+  ],
+  "affected_products": [
+    "22.04 LTS",
+    "20.04 LTS",
+    "Open side navigation"
+  ],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Ubuntu Security Notices\n\nUSN-7923-1\n\n \n\n \n\n \n\n \n\n \n\n \nUSN-7923-1: Qt vulnerability\n\n \n\n \n\n \n\n \nPublication date\n\n \n\n \n\n \n11 December 2025\n\n \n\n \n\n \n\n \n\n \nOverview\n\n \n\n \n\n \nQt could be made to crash or run programs as your login if it\nopened a specially crafted file.\n\n \n\n \n\n \n\n \n\n \nReleases\n\n \n\n \n\n \n\n 22.04 LTS\n\n20.04 LTS\n\n \n\n \n\n \n\n \n\n \n\n \n\n Open side navigation\n \n\n \n\n \nPackages\n\n \n\n qtbase-opensource-src - Qt 5 libraries\n \n\n \n\n \nDetails\n\n \n\n \n\nIt was discovered that Qt did not correctly handle certain memory\noperations. If a user or automated system were tricked into opening a\nspecially crafted file, an attacker could possibly use this issue to\ncause a denial of service or execute arbitrary code.\n\n \n\n \n\n \n\nIt was discovered that Qt did not correctly handle certain memory\noperations. If a user or automated system were tricked into opening a\nspecially crafted file, an attacker could possibly use this issue to\ncause a denial of service or execute arbitrary code.\n\n \n\n \n\n \n\n \nUpdate instructions\n\n \n\n \n\n \n\n \n\nIn general, a standard system update will make all the necessary changes.\n\n Learn more about how to get the fixes.\n \n\n \n\n \n\n \n\n \nThe problem can be corrected by updating your system to the following package versions:\n\n \n\n \n\n \n\n \n\n Ubuntu Release\n Package Version\n \n\n 22.04\n\nLTS jammy\n\n libqt5core5a – \n\n5.15.3+dfsg-2ubuntu0.2+esm2\n\n  \n\nUbuntu Pro\n Fix available with Ubuntu Pro via ESM Apps. A community fix might become publicly available in the future.\n\n \n\n libqt5gui5 – \n\n5.15.3+dfsg-2ubuntu0.2+esm2\n\n  \n\nUbuntu Pro\n Fix available with Ubuntu Pro via ESM Apps. A community fix might become publicly available in the future.\n\n \n\n \n\n 20.04\n\nLTS focal\n\n libqt5core5a – \n\n5.12.8+dfsg-0ubuntu2.1+esm2\n\n  \n\nUbuntu Pro\n Fix available with Ubuntu Pro via ESM Apps. A community fix might become publicly available in the future.\n\n \n\n libqt5gui5 – \n\n5.12.8+dfsg-0ubuntu2.1+esm2\n\n  \n\nUbuntu Pro\n Fix available with Ubuntu Pro via ESM Apps. A community fix might become publicly available in the future.\n\n \n\n \n\nReduce your security exposure\n\n \n\n Ubuntu Pro provides ten-year security coverage to 25,000+ packages in Main and Universe repositories, and it is free for up to five machines.\n \n\n \n\n Get Ubuntu Pro\n \n\n \n\nReferences\n\n \n\n \n\n CVE-2024-25580\n \n\n \n\n \n\n CVE-2024-25580",
+  "title": "USN-7923-1: Qt vulnerability | Ubuntu security notices | Ubuntu",
+  "pubDate": "2025-12-10T15:00:00.000Z",
+  "vendor": "Ubuntu"
+}

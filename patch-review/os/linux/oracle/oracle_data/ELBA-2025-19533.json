@@ -1,0 +1,27 @@
+{
+  "id": "ELBA-2025-19533",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "RHCK",
+  "title": "nftables bug fix update",
+  "issuedDate": "2025-11-05T00:00:00Z",
+  "updatedDate": "2025-11-05T00:00:00Z",
+  "pubDate": "2025-11-05T00:00:00Z",
+  "dateStr": "2025-11-05",
+  "url": "https://linux.oracle.com/errata/ELBA-2025-19533.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 9.",
+  "description": "[[1.0.9-4.el9]]\n- parser_json: fix handle memleak from error path (Phil Sutter) [RHEL-88181]\n- json: deal appropriately with multidevice in chain (Phil Sutter) [RHEL-88181]",
+  "affected_products": [
+    "Oracle Linux 9 for x86_64",
+    "Oracle Linux 9 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "python3-nftables-1.0.9-4.el9_6.x86_64",
+    "nftables-1.0.9-4.el9_6.src",
+    "nftables-1.0.9-4.el9_6.x86_64",
+    "nftables-1.0.9-4.el9_6.i686"
+  ],
+  "full_text": "[[1.0.9-4.el9]]\n- parser_json: fix handle memleak from error path (Phil Sutter) [RHEL-88181]\n- json: deal appropriately with multidevice in chain (Phil Sutter) [RHEL-88181]\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2025-19533.html"
+}

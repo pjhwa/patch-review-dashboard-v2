@@ -1,0 +1,25 @@
+{
+  "id": "ELBA-2025-20576-0",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "RHCK",
+  "title": "unzip bug fix and enhancement update",
+  "issuedDate": "2025-11-17T00:00:00Z",
+  "updatedDate": "2025-11-17T00:00:00Z",
+  "pubDate": "2025-11-17T00:00:00Z",
+  "dateStr": "2025-11-17",
+  "url": "https://linux.oracle.com/errata/ELBA-2025-20576-0.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 9.",
+  "description": "[6.0-59.0.1]\n- Fix data descriptor length for signed zip [Orabug: 34508726]\n\n[6.0-59]\n- Allow decompression of some wrongly compressed files\nResolves: RHEL-86228",
+  "affected_products": [
+    "Oracle Linux 9 for x86_64",
+    "Oracle Linux 9 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "unzip-6.0-59.0.1.el9.x86_64",
+    "unzip-6.0-59.0.1.el9.src"
+  ],
+  "full_text": "[6.0-59.0.1]\n- Fix data descriptor length for signed zip [Orabug: 34508726]\n\n[6.0-59]\n- Allow decompression of some wrongly compressed files\nResolves: RHEL-86228\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2025-20576-0.html"
+}

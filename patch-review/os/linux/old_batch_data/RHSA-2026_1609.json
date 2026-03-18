@@ -1,0 +1,23 @@
+{
+  "id": "RHSA-2026:1609",
+  "vendor": "Red Hat",
+  "url": "https://access.redhat.com/errata/RHSA-2026:1609",
+  "pubDate": "2026-01-30T15:48:57.000Z",
+  "dateStr": "2026-01-30",
+  "severity": "Important",
+  "title": "Red Hat Security Advisory: Red Hat Ansible Automation Platform 2.5 Container Release Update",
+  "overview": "An update is now available for Red Hat Ansible Automation Platform 2.5",
+  "description": "An update is now available for Red Hat Ansible Automation Platform 2.5",
+  "affected_products": [
+    "Red Hat Ansible Automation Platform 2.5"
+  ],
+  "cves": [
+    "CVE-2025-64460",
+    "CVE-2025-66471",
+    "CVE-2025-69223",
+    "CVE-2026-21441"
+  ],
+  "packages": [],
+  "fixes": "",
+  "full_text": "Red Hat Security Advisory: Red Hat Ansible Automation Platform 2.5 Container Release Update\n\nAn update is now available for Red Hat Ansible Automation Platform 2.5\n\nAn update is now available for Red Hat Ansible Automation Platform 2.5\n\n\n\nCVE-2025-64460: A flaw was found in Django. This vulnerability allows a remote attacker to cause a potential denial-of-service (DoS) attack triggering Central Processing Unit (CPU) and memory exhaustion via specially crafted Extensible Markup Language (XML) input processed by the XML Deserializer.\n\nCVE-2025-66471: urllib3 is a user-friendly HTTP client library for Python. Starting in version 1.0 and prior to 2.6.0, the Streaming API improperly handles highly compressed data. urllib3's streaming API is designed for the efficient handling of large HTTP responses by reading the content in chunks, rather than loading the entire response body into memory at once. When streaming a compressed response, urllib3 can perform decoding or decompression based on the HTTP Content-Encoding header (e.g., gzip, deflate, br, or zstd). The library must read compressed data from the network and decompress it until the requested chunk size is met. Any resulting decompressed data that exceeds the requested amount is held in an internal buffer for the next read operation. The decompression logic could cause urllib3 to fully decode a small amount of highly compressed data in a single operation. This can result in excessive resource consumption (high CPU usage and massive memory allocation for the decompressed data.\n\nCVE-2025-69223: AIOHTTP is an asynchronous HTTP client/server framework for asyncio and Python. Versions 3.13.2 and below allow a zip bomb to be used to execute a DoS against the AIOHTTP server. An attacker may be able to send a compressed request that when decompressed by AIOHTTP could exhaust the host's memory. This issue is fixed in version 3.13.3.\n\nCVE-2026-21441: urllib3 is an HTTP client library for Python. urllib3's streaming API is designed for the efficient handling of large HTTP responses by reading the content in chunks, rather than loading the entire response body into memory at once. urllib3 can perform decoding or decompression based on the HTTP `Content-Encoding` header (e.g., `gzip`, `deflate`, `br`, or `zstd`). When using the streaming API, the library decompresses only the necessary bytes, enabling partial content consumption. Starting in version 1.22 and prior to version 2.6.3, for HTTP redirect responses, the library would read the entire response body to drain the connection and decompress the content unnecessarily. This decompression occurred even before any read methods were called, and configured read limits did not restrict the amount of decompressed data. As a result, there was no safeguard against decompression bombs. A malicious server could exploit this to trigger excessive resource consumption on the client. Applications and libraries are affected when they stream content from untrusted sources by setting `preload_content=False` when they do not disable redirects. Users should upgrade to at least urllib3 v2.6.3, in which the library does not decode content of redirect responses when `preload_content=False`. If upgrading is not immediately possible, disable redirects by setting `redirect=False` for requests to untrusted source."
+}

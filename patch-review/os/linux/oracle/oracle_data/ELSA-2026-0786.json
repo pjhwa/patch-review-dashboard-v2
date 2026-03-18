@@ -1,0 +1,42 @@
+{
+  "id": "ELSA-2026-0786",
+  "vendor": "Oracle",
+  "type": "Security Advisory (ELSA)",
+  "title": " kernel security update",
+  "issuedDate": "2026-01-20T00:00:00Z",
+  "updatedDate": "2026-01-20T00:00:00Z",
+  "pubDate": "2026-01-20T00:00:00Z",
+  "dateStr": "2026-01-20",
+  "url": "https://linux.oracle.com/errata/ELSA-2026-0786.html",
+  "severity": "Important",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 10.",
+  "description": "[6.12.0-124.28.1]\n- Add new Oracle Linux Driver Signing (key 1) certificate [Orabug: 37985782]\n- Disable UKI signing [Orabug: 36571828]\n- Update Oracle Linux certificates (Kevin Lyons)\n- Disable signing for aarch64 (Ilya Okomin)\n- Oracle Linux RHCK Module Signing Key was added to the kernel trusted keys list (olkmod_signing_key.pem) [Orabug: 29539237]\n- Update x509.genkey [Orabug: 24817676]\n- Conflict with shim-ia32 and shim-x64 <= 15.3-1.0.5]\n- Remove upstream reference during boot (Kevin Lyons) [Orabug: 34729535]\n- Add Oracle Linux IMA certificates\n- Update module name for cryptographic module [Orabug: 37400433]\n- Clean git history at setup stage\n\n[6.12.0-124.28.1]\n- libceph: fix potential use-after-free in have_mon_and_osd_map() (CKI Backport Bot) [RHEL-137403] {CVE-2025-68285}",
+  "affected_products": [
+    "Oracle Linux 10 for x86_64",
+    "Oracle Linux 10 for aarch64"
+  ],
+  "cves": [
+    "CVE-2025-68285"
+  ],
+  "packages": [
+    "kernel-tools-libs-6.12.0-124.28.1.el10_1.x86_64",
+    "kernel-modules-extra-6.12.0-124.28.1.el10_1.x86_64",
+    "kernel-core-6.12.0-124.28.1.el10_1.x86_64",
+    "kernel-debug-6.12.0-124.28.1.el10_1.x86_64",
+    "kernel-debug-modules-extra-6.12.0-124.28.1.el10_1.x86_64",
+    "kernel-modules-core-6.12.0-124.28.1.el10_1.x86_64",
+    "kernel-uki-virt-6.12.0-124.28.1.el10_1.x86_64",
+    "kernel-6.12.0-124.28.1.el10_1.x86_64",
+    "kernel-abi-stablelists-6.12.0-124.28.1.el10_1.noarch",
+    "kernel-debug-modules-6.12.0-124.28.1.el10_1.x86_64",
+    "kernel-debug-uki-virt-6.12.0-124.28.1.el10_1.x86_64",
+    "kernel-debug-modules-core-6.12.0-124.28.1.el10_1.x86_64",
+    "kernel-modules-extra-matched-6.12.0-124.28.1.el10_1.x86_64",
+    "kernel-6.12.0-124.28.1.el10_1.src",
+    "kernel-uki-virt-addons-6.12.0-124.28.1.el10_1.x86_64",
+    "kernel-tools-6.12.0-124.28.1.el10_1.x86_64",
+    "kernel-debug-core-6.12.0-124.28.1.el10_1.x86_64",
+    "kernel-modules-6.12.0-124.28.1.el10_1.x86_64"
+  ],
+  "full_text": "[6.12.0-124.28.1]\n- Add new Oracle Linux Driver Signing (key 1) certificate [Orabug: 37985782]\n- Disable UKI signing [Orabug: 36571828]\n- Update Oracle Linux certificates (Kevin Lyons)\n- Disable signing for aarch64 (Ilya Okomin)\n- Oracle Linux RHCK Module Signing Key was added to the kernel trusted keys list (olkmod_signing_key.pem) [Orabug: 29539237]\n- Update x509.genkey [Orabug: 24817676]\n- Conflict with shim-ia32 and shim-x64 <= 15.3-1.0.5]\n- Remove upstream reference during boot (Kevin Lyons) [Orabug: 34729535]\n- Add Oracle Linux IMA certificates\n- Update module name for cryptographic module [Orabug: 37400433]\n- Clean git history at setup stage\n\n[6.12.0-124.28.1]\n- libceph: fix potential use-after-free in have_mon_and_osd_map() (CKI Backport Bot) [RHEL-137403] {CVE-2025-68285}\n\nReferences:\nhttps://linux.oracle.com/errata/ELSA-2026-0786.html\nhttps://linux.oracle.com/cve/CVE-2025-68285.html"
+}

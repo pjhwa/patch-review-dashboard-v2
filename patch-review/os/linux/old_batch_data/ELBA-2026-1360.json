@@ -1,0 +1,33 @@
+{
+  "id": "ELBA-2026-1360",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2026-January/019616.html",
+  "synopsis": "[El-errata] ELBA-2026-1360 Oracle Linux 9 nmstate bug fix and enhancement update",
+  "dateStr": "2026-January",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Bug Fix Advisory ELBA-2026-1360",
+  "description": "[2.2.57-1]\n- Upgrade to 2.2.57\n- Use global DNS even for static IP with static DNS. (RHEL-126730)\n- Add libreswan leftprotoport and rightprotoport support. (RHEL-130911",
+  "affected_products": [
+    "Oracle Linux 9"
+  ],
+  "packages": [
+    "nmstate-2.2.57-1.el9_7.x86_64.rpm",
+    "nmstate-devel-2.2.57-1.el9_7.i686.rpm",
+    "nmstate-devel-2.2.57-1.el9_7.x86_64.rpm",
+    "nmstate-libs-2.2.57-1.el9_7.i686.rpm",
+    "nmstate-libs-2.2.57-1.el9_7.x86_64.rpm",
+    "nmstate-static-2.2.57-1.el9_7.i686.rpm",
+    "nmstate-static-2.2.57-1.el9_7.x86_64.rpm",
+    "python3-libnmstate-2.2.57-1.el9_7.x86_64.rpm",
+    "nmstate-2.2.57-1.el9_7.aarch64.rpm",
+    "nmstate-devel-2.2.57-1.el9_7.aarch64.rpm",
+    "nmstate-libs-2.2.57-1.el9_7.aarch64.rpm",
+    "nmstate-static-2.2.57-1.el9_7.aarch64.rpm",
+    "python3-libnmstate-2.2.57-1.el9_7.aarch64.rpm"
+  ],
+  "cves": [],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Bug Fix Advisory ELBA-2026-1360\n\nhttp://linux.oracle.com/errata/ELBA-2026-1360.html\n\nThe following updated rpms for Oracle Linux 9 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\nnmstate-2.2.57-1.el9_7.x86_64.rpm\nnmstate-devel-2.2.57-1.el9_7.i686.rpm\nnmstate-devel-2.2.57-1.el9_7.x86_64.rpm\nnmstate-libs-2.2.57-1.el9_7.i686.rpm\nnmstate-libs-2.2.57-1.el9_7.x86_64.rpm\nnmstate-static-2.2.57-1.el9_7.i686.rpm\nnmstate-static-2.2.57-1.el9_7.x86_64.rpm\npython3-libnmstate-2.2.57-1.el9_7.x86_64.rpm\n\naarch64:\nnmstate-2.2.57-1.el9_7.aarch64.rpm\nnmstate-devel-2.2.57-1.el9_7.aarch64.rpm\nnmstate-libs-2.2.57-1.el9_7.aarch64.rpm\nnmstate-static-2.2.57-1.el9_7.aarch64.rpm\npython3-libnmstate-2.2.57-1.el9_7.aarch64.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol9/SRPMS-updates/nmstate-2.2.57-1.el9_7.src.rpm\n\n\n\nDescription of changes:\n\n[2.2.57-1]\n- Upgrade to 2.2.57\n- Use global DNS even for static IP with static DNS. (RHEL-126730)\n- Add libreswan leftprotoport and rightprotoport support. (RHEL-130911",
+  "vendor": "Oracle"
+}

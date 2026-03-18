@@ -1,0 +1,20 @@
+{
+  "id": "RHSA-2025:22428",
+  "vendor": "Red Hat",
+  "url": "https://access.redhat.com/errata/RHSA-2025:22428",
+  "pubDate": "2025-12-01T14:29:00.000Z",
+  "dateStr": "2025-12-01",
+  "severity": "Moderate",
+  "title": "Red Hat Security Advisory: Cost Management Metrics Operator Update",
+  "overview": "Cost Management Metrics Operator version 4.3.0 release.",
+  "description": "Cost Management Metrics Operator version 4.3.0 release.",
+  "affected_products": [
+    "Cost Management 4"
+  ],
+  "cves": [
+    "CVE-2025-9230"
+  ],
+  "packages": [],
+  "fixes": "",
+  "full_text": "Red Hat Security Advisory: Cost Management Metrics Operator Update\n\nCost Management Metrics Operator version 4.3.0 release.\n\nCost Management Metrics Operator version 4.3.0 release.\n\n\n\nCVE-2025-9230: Issue summary: An application trying to decrypt CMS messages encrypted using\npassword based encryption can trigger an out-of-bounds read and write.\n\nImpact summary: This out-of-bounds read may trigger a crash which leads to\nDenial of Service for an application. The out-of-bounds write can cause\na memory corruption which can have various consequences including\na Denial of Service or Execution of attacker-supplied code.\n\nAlthough the consequences of a successful exploit of this vulnerability\ncould be severe, the probability that the attacker would be able to\nperform it is low. Besides, password based (PWRI) encryption support in CMS\nmessages is very rarely used. For that reason the issue was assessed as\nModerate severity according to our Security Policy.\n\nThe FIPS modules in 3.5, 3.4, 3.3, 3.2, 3.1 and 3.0 are not affected by this\nissue, as the CMS implementation is outside the OpenSSL FIPS module\nboundary."
+}

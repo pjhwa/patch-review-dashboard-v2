@@ -1,0 +1,140 @@
+{
+  "id": "RHBA-2025:20336",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: ipa bug fix and enhancement update",
+  "issuedDate": "2025-11-11T07:26:07Z",
+  "updatedDate": "2025-11-11T07:26:07Z",
+  "pubDate": "2025-11-11T07:26:07Z",
+  "dateStr": "2025-11-11",
+  "url": "https://access.redhat.com/errata/RHBA-2025:20336",
+  "severity": "None",
+  "overview": "An update for ipa is now available for Red Hat Enterprise Linux 10.",
+  "description": "For detailed information on changes in this release, see the Red Hat Enterprise Linux 10 Release Notes linked from the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux for ARM 64",
+    "Red Hat Enterprise Linux for Power, little endian",
+    "Red Hat CodeReady Linux Builder for IBM z Systems",
+    "Red Hat CodeReady Linux Builder for x86_64 10 x86_64",
+    "Red Hat Enterprise Linux for IBM z Systems",
+    "Red Hat CodeReady Linux Builder for ARM 64",
+    "Red Hat Enterprise Linux for x86_64 10 x86_64",
+    "Red Hat CodeReady Linux Builder for Power, little endian"
+  ],
+  "cves": [],
+  "packages": [
+    "ipa-4.12.2-24.el10.src",
+    "ipa-client-4.12.2-24.el10.x86_64",
+    "ipa-client-common-4.12.2-24.el10.noarch",
+    "ipa-client-debuginfo-4.12.2-24.el10.x86_64",
+    "ipa-client-encrypted-dns-4.12.2-24.el10.x86_64",
+    "ipa-client-epn-4.12.2-24.el10.x86_64",
+    "ipa-client-samba-4.12.2-24.el10.x86_64",
+    "ipa-common-4.12.2-24.el10.noarch",
+    "ipa-debuginfo-4.12.2-24.el10.x86_64",
+    "ipa-debugsource-4.12.2-24.el10.x86_64",
+    "ipa-selinux-4.12.2-24.el10.noarch",
+    "ipa-selinux-luna-4.12.2-24.el10.noarch",
+    "ipa-selinux-nfast-4.12.2-24.el10.noarch",
+    "ipa-server-4.12.2-24.el10.x86_64",
+    "ipa-server-common-4.12.2-24.el10.noarch",
+    "ipa-server-debuginfo-4.12.2-24.el10.x86_64",
+    "ipa-server-dns-4.12.2-24.el10.noarch",
+    "ipa-server-encrypted-dns-4.12.2-24.el10.x86_64",
+    "ipa-server-trust-ad-4.12.2-24.el10.x86_64",
+    "ipa-server-trust-ad-debuginfo-4.12.2-24.el10.x86_64",
+    "python3-ipaclient-4.12.2-24.el10.noarch",
+    "python3-ipalib-4.12.2-24.el10.noarch",
+    "python3-ipaserver-4.12.2-24.el10.noarch",
+    "ipa-client-4.12.2-24.el10.s390x",
+    "ipa-client-debuginfo-4.12.2-24.el10.s390x",
+    "ipa-client-encrypted-dns-4.12.2-24.el10.s390x",
+    "ipa-client-epn-4.12.2-24.el10.s390x",
+    "ipa-client-samba-4.12.2-24.el10.s390x",
+    "ipa-debuginfo-4.12.2-24.el10.s390x",
+    "ipa-debugsource-4.12.2-24.el10.s390x",
+    "ipa-server-4.12.2-24.el10.s390x",
+    "ipa-server-debuginfo-4.12.2-24.el10.s390x",
+    "ipa-server-encrypted-dns-4.12.2-24.el10.s390x",
+    "ipa-server-trust-ad-4.12.2-24.el10.s390x",
+    "ipa-server-trust-ad-debuginfo-4.12.2-24.el10.s390x",
+    "ipa-client-4.12.2-24.el10.ppc64le",
+    "ipa-client-debuginfo-4.12.2-24.el10.ppc64le",
+    "ipa-client-encrypted-dns-4.12.2-24.el10.ppc64le",
+    "ipa-client-epn-4.12.2-24.el10.ppc64le",
+    "ipa-client-samba-4.12.2-24.el10.ppc64le",
+    "ipa-debuginfo-4.12.2-24.el10.ppc64le",
+    "ipa-debugsource-4.12.2-24.el10.ppc64le",
+    "ipa-server-4.12.2-24.el10.ppc64le",
+    "ipa-server-debuginfo-4.12.2-24.el10.ppc64le",
+    "ipa-server-encrypted-dns-4.12.2-24.el10.ppc64le",
+    "ipa-server-trust-ad-4.12.2-24.el10.ppc64le",
+    "ipa-server-trust-ad-debuginfo-4.12.2-24.el10.ppc64le",
+    "ipa-client-4.12.2-24.el10.aarch64",
+    "ipa-client-debuginfo-4.12.2-24.el10.aarch64",
+    "ipa-client-encrypted-dns-4.12.2-24.el10.aarch64",
+    "ipa-client-epn-4.12.2-24.el10.aarch64",
+    "ipa-client-samba-4.12.2-24.el10.aarch64",
+    "ipa-debuginfo-4.12.2-24.el10.aarch64",
+    "ipa-debugsource-4.12.2-24.el10.aarch64",
+    "ipa-server-4.12.2-24.el10.aarch64",
+    "ipa-server-debuginfo-4.12.2-24.el10.aarch64",
+    "ipa-server-encrypted-dns-4.12.2-24.el10.aarch64",
+    "ipa-server-trust-ad-4.12.2-24.el10.aarch64",
+    "ipa-server-trust-ad-debuginfo-4.12.2-24.el10.aarch64",
+    "python3-ipatests-4.12.2-24.el10.noarch"
+  ],
+  "fixes": [
+    {
+      "id": "RHEL-4845",
+      "url": "https://issues.redhat.com/browse/RHEL-4845",
+      "description": "Protect *all* IPA service principals"
+    },
+    {
+      "id": "RHEL-67633",
+      "url": "https://issues.redhat.com/browse/RHEL-67633",
+      "description": "ipa-healthcheck has tests which call fips-mode-setup"
+    },
+    {
+      "id": "RHEL-81200",
+      "url": "https://issues.redhat.com/browse/RHEL-81200",
+      "description": "Ipa client --raw --structured throws internal error"
+    },
+    {
+      "id": "RHEL-86481",
+      "url": "https://issues.redhat.com/browse/RHEL-86481",
+      "description": "[RHEL-10.1] Include latest fixes in python3-ipatests package"
+    },
+    {
+      "id": "RHEL-68803",
+      "url": "https://issues.redhat.com/browse/RHEL-68803",
+      "description": "ipa-migrate with LDIF file from backup of remote server, fails with error 'change collided with another change'"
+    },
+    {
+      "id": "RHEL-79072",
+      "url": "https://issues.redhat.com/browse/RHEL-79072",
+      "description": "ipa idrange-add --help should be more clear about required options"
+    },
+    {
+      "id": "RHEL-89834",
+      "url": "https://issues.redhat.com/browse/RHEL-89834",
+      "description": "[RHEL-10.1] Include latest fixes in python3-ipatests package"
+    },
+    {
+      "id": "RHEL-97053",
+      "url": "https://issues.redhat.com/browse/RHEL-97053",
+      "description": "ipa-idrange-fix: 'Env' object has no attribute 'basedn'"
+    },
+    {
+      "id": "RHEL-105973",
+      "url": "https://issues.redhat.com/browse/RHEL-105973",
+      "description": "Include fixes in python3-ipatests package"
+    },
+    {
+      "id": "RHEL-89979",
+      "url": "https://issues.redhat.com/browse/RHEL-89979",
+      "description": "[rhel-10.1] Support OpenSSL provider API"
+    }
+  ],
+  "full_text": "An update for ipa is now available for Red Hat Enterprise Linux 10.\n\nFor detailed information on changes in this release, see the Red Hat Enterprise Linux 10 Release Notes linked from the References section."
+}

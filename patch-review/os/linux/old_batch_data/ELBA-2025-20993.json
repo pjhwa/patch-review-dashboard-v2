@@ -1,0 +1,51 @@
+{
+  "id": "ELBA-2025-20993",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2025-December/019168.html",
+  "synopsis": "[El-errata] ELBA-2025-20993 Important: Oracle Linux 10 .NET 10.0 bug fix and enhancement update",
+  "dateStr": "2025-December",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Bug Fix Advisory ELBA-2025-20993",
+  "description": "[10.0.100~rc.2.25502.107-0.12.0.1]\n- Add support for Oracle Linux\n\n[10.0.100~rc.2.25502.107-0.12]\n- Update to .NET SDK 10.0.100-rc.2.25502.107 and Runtime 10.0.0-rc.2.25502.107\n- Resolves: RHEL-121558\n\n[10.0.100~rc.1.25451.107-0.11]\n- Disable bootstrap\n- Related: RHEL-114571\n\n[10.0.100~rc.1.25451.107-0.10]\n- Update to .NET 10 RC 1\n- Resolves: RHEL-114571",
+  "affected_products": [
+    "Oracle Linux 10"
+  ],
+  "packages": [
+    "aspnetcore-runtime-10.0-10.0.0~rc.2.25502.107-0.12.0.1.el10_1.x86_64.rpm",
+    "aspnetcore-runtime-dbg-10.0-10.0.0~rc.2.25502.107-0.12.0.1.el10_1.x86_64.rpm",
+    "aspnetcore-targeting-pack-10.0-10.0.0~rc.2.25502.107-0.12.0.1.el10_1.x86_64.rpm",
+    "dotnet-apphost-pack-10.0-10.0.0~rc.2.25502.107-0.12.0.1.el10_1.x86_64.rpm",
+    "dotnet-host-10.0.0~rc.2.25502.107-0.12.0.1.el10_1.x86_64.rpm",
+    "dotnet-hostfxr-10.0-10.0.0~rc.2.25502.107-0.12.0.1.el10_1.x86_64.rpm",
+    "dotnet-runtime-10.0-10.0.0~rc.2.25502.107-0.12.0.1.el10_1.x86_64.rpm",
+    "dotnet-runtime-dbg-10.0-10.0.0~rc.2.25502.107-0.12.0.1.el10_1.x86_64.rpm",
+    "dotnet-sdk-10.0-10.0.100~rc.2.25502.107-0.12.0.1.el10_1.x86_64.rpm",
+    "dotnet-sdk-10.0-source-built-artifacts-10.0.100~rc.2.25502.107-0.12.0.1.el10_1.x86_64.rpm",
+    "dotnet-sdk-aot-10.0-10.0.100~rc.2.25502.107-0.12.0.1.el10_1.x86_64.rpm",
+    "dotnet-sdk-dbg-10.0-10.0.100~rc.2.25502.107-0.12.0.1.el10_1.x86_64.rpm",
+    "dotnet-targeting-pack-10.0-10.0.0~rc.2.25502.107-0.12.0.1.el10_1.x86_64.rpm",
+    "dotnet-templates-10.0-10.0.100~rc.2.25502.107-0.12.0.1.el10_1.x86_64.rpm",
+    "aspnetcore-runtime-10.0-10.0.0~rc.2.25502.107-0.12.0.1.el10_1.aarch64.rpm",
+    "aspnetcore-runtime-dbg-10.0-10.0.0~rc.2.25502.107-0.12.0.1.el10_1.aarch64.rpm",
+    "aspnetcore-targeting-pack-10.0-10.0.0~rc.2.25502.107-0.12.0.1.el10_1.aarch64.rpm",
+    "dotnet-apphost-pack-10.0-10.0.0~rc.2.25502.107-0.12.0.1.el10_1.aarch64.rpm",
+    "dotnet-host-10.0.0~rc.2.25502.107-0.12.0.1.el10_1.aarch64.rpm",
+    "dotnet-hostfxr-10.0-10.0.0~rc.2.25502.107-0.12.0.1.el10_1.aarch64.rpm",
+    "dotnet-runtime-10.0-10.0.0~rc.2.25502.107-0.12.0.1.el10_1.aarch64.rpm",
+    "dotnet-runtime-dbg-10.0-10.0.0~rc.2.25502.107-0.12.0.1.el10_1.aarch64.rpm",
+    "dotnet-sdk-10.0-10.0.100~rc.2.25502.107-0.12.0.1.el10_1.aarch64.rpm",
+    "dotnet-sdk-10.0-source-built-artifacts-10.0.100~rc.2.25502.107-0.12.0.1.el10_1.aarch64.rpm",
+    "dotnet-sdk-aot-10.0-10.0.100~rc.2.25502.107-0.12.0.1.el10_1.aarch64.rpm",
+    "dotnet-sdk-dbg-10.0-10.0.100~rc.2.25502.107-0.12.0.1.el10_1.aarch64.rpm",
+    "dotnet-targeting-pack-10.0-10.0.0~rc.2.25502.107-0.12.0.1.el10_1.aarch64.rpm",
+    "dotnet-templates-10.0-10.0.100~rc.2.25502.107-0.12.0.1.el10_1.aarch64.rpm"
+  ],
+  "cves": [
+    "CVE-2025-55247",
+    "CVE-2025-55315"
+  ],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Bug Fix Advisory ELBA-2025-20993\n\nhttp://linux.oracle.com/errata/ELBA-2025-20993.html\n\nThe following updated rpms for Oracle Linux 10 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\naspnetcore-runtime-10.0-10.0.0~rc.2.25502.107-0.12.0.1.el10_1.x86_64.rpm\naspnetcore-runtime-dbg-10.0-10.0.0~rc.2.25502.107-0.12.0.1.el10_1.x86_64.rpm\naspnetcore-targeting-pack-10.0-10.0.0~rc.2.25502.107-0.12.0.1.el10_1.x86_64.rpm\ndotnet-apphost-pack-10.0-10.0.0~rc.2.25502.107-0.12.0.1.el10_1.x86_64.rpm\ndotnet-host-10.0.0~rc.2.25502.107-0.12.0.1.el10_1.x86_64.rpm\ndotnet-hostfxr-10.0-10.0.0~rc.2.25502.107-0.12.0.1.el10_1.x86_64.rpm\ndotnet-runtime-10.0-10.0.0~rc.2.25502.107-0.12.0.1.el10_1.x86_64.rpm\ndotnet-runtime-dbg-10.0-10.0.0~rc.2.25502.107-0.12.0.1.el10_1.x86_64.rpm\ndotnet-sdk-10.0-10.0.100~rc.2.25502.107-0.12.0.1.el10_1.x86_64.rpm\ndotnet-sdk-10.0-source-built-artifacts-10.0.100~rc.2.25502.107-0.12.0.1.el10_1.x86_64.rpm\ndotnet-sdk-aot-10.0-10.0.100~rc.2.25502.107-0.12.0.1.el10_1.x86_64.rpm\ndotnet-sdk-dbg-10.0-10.0.100~rc.2.25502.107-0.12.0.1.el10_1.x86_64.rpm\ndotnet-targeting-pack-10.0-10.0.0~rc.2.25502.107-0.12.0.1.el10_1.x86_64.rpm\ndotnet-templates-10.0-10.0.100~rc.2.25502.107-0.12.0.1.el10_1.x86_64.rpm\n\naarch64:\naspnetcore-runtime-10.0-10.0.0~rc.2.25502.107-0.12.0.1.el10_1.aarch64.rpm\naspnetcore-runtime-dbg-10.0-10.0.0~rc.2.25502.107-0.12.0.1.el10_1.aarch64.rpm\naspnetcore-targeting-pack-10.0-10.0.0~rc.2.25502.107-0.12.0.1.el10_1.aarch64.rpm\ndotnet-apphost-pack-10.0-10.0.0~rc.2.25502.107-0.12.0.1.el10_1.aarch64.rpm\ndotnet-host-10.0.0~rc.2.25502.107-0.12.0.1.el10_1.aarch64.rpm\ndotnet-hostfxr-10.0-10.0.0~rc.2.25502.107-0.12.0.1.el10_1.aarch64.rpm\ndotnet-runtime-10.0-10.0.0~rc.2.25502.107-0.12.0.1.el10_1.aarch64.rpm\ndotnet-runtime-dbg-10.0-10.0.0~rc.2.25502.107-0.12.0.1.el10_1.aarch64.rpm\ndotnet-sdk-10.0-10.0.100~rc.2.25502.107-0.12.0.1.el10_1.aarch64.rpm\ndotnet-sdk-10.0-source-built-artifacts-10.0.100~rc.2.25502.107-0.12.0.1.el10_1.aarch64.rpm\ndotnet-sdk-aot-10.0-10.0.100~rc.2.25502.107-0.12.0.1.el10_1.aarch64.rpm\ndotnet-sdk-dbg-10.0-10.0.100~rc.2.25502.107-0.12.0.1.el10_1.aarch64.rpm\ndotnet-targeting-pack-10.0-10.0.0~rc.2.25502.107-0.12.0.1.el10_1.aarch64.rpm\ndotnet-templates-10.0-10.0.100~rc.2.25502.107-0.12.0.1.el10_1.aarch64.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol10/SRPMS-updates/dotnet10.0-10.0.100~rc.2.25502.107-0.12.0.1.el10_1.src.rpm\n\nRelated CVEs:\n\nCVE-2025-55247\nCVE-2025-55315\n\n\n\n\nDescription of changes:\n\n[10.0.100~rc.2.25502.107-0.12.0.1]\n- Add support for Oracle Linux\n\n[10.0.100~rc.2.25502.107-0.12]\n- Update to .NET SDK 10.0.100-rc.2.25502.107 and Runtime 10.0.0-rc.2.25502.107\n- Resolves: RHEL-121558\n\n[10.0.100~rc.1.25451.107-0.11]\n- Disable bootstrap\n- Related: RHEL-114571\n\n[10.0.100~rc.1.25451.107-0.10]\n- Update to .NET 10 RC 1\n- Resolves: RHEL-114571",
+  "vendor": "Oracle"
+}

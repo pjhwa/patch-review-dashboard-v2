@@ -1,0 +1,22 @@
+{
+  "id": "ELBA-2025-19570",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2025-November/018903.html",
+  "synopsis": "[El-errata] ELBA-2025-19570 Oracle Linux 8 rig bug fix and enhancement update",
+  "dateStr": "2025-November",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Bug Fix Advisory ELBA-2025-19570",
+  "description": "[1.1-4]\n- Add fix to avoid using deprecated sosreport command.",
+  "affected_products": [
+    "Oracle Linux 8"
+  ],
+  "packages": [
+    "rig-1.1-4.el8_10.noarch.rpm",
+    "rig-1.1-4.el8_10.noarch.rpm"
+  ],
+  "cves": [],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Bug Fix Advisory ELBA-2025-19570\n\nhttp://linux.oracle.com/errata/ELBA-2025-19570.html\n\nThe following updated rpms for Oracle Linux 8 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\nrig-1.1-4.el8_10.noarch.rpm\n\naarch64:\nrig-1.1-4.el8_10.noarch.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol8/SRPMS-updates/rig-1.1-4.el8_10.src.rpm\n\n\n\nDescription of changes:\n\n[1.1-4]\n- Add fix to avoid using deprecated sosreport command.",
+  "vendor": "Oracle"
+}

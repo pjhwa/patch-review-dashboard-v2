@@ -1,0 +1,25 @@
+{
+  "id": "ELEA-2025-20105-0",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "RHCK",
+  "title": "tzdata bug fix and enhancement update",
+  "issuedDate": "2025-11-25T00:00:00Z",
+  "updatedDate": "2025-11-25T00:00:00Z",
+  "pubDate": "2025-11-25T00:00:00Z",
+  "dateStr": "2025-11-25",
+  "url": "https://linux.oracle.com/errata/ELEA-2025-20105-0.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 10.",
+  "description": "[2025b-2]\n- Included NEWS file with docs. (RHEL-105042)",
+  "affected_products": [
+    "Oracle Linux 10 for x86_64",
+    "Oracle Linux 10 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "tzdata-2025b-2.el10.noarch",
+    "tzdata-2025b-2.el10.src"
+  ],
+  "full_text": "[2025b-2]\n- Included NEWS file with docs. (RHEL-105042)\n\nReferences:\nhttps://linux.oracle.com/errata/ELEA-2025-20105-0.html"
+}

@@ -1,0 +1,39 @@
+{
+  "id": "ELSA-2026-2081",
+  "vendor": "Oracle",
+  "type": "Security Advisory (ELSA)",
+  "kernel_type": "AppStream",
+  "title": " freerdp security update",
+  "issuedDate": "2026-02-05T00:00:00Z",
+  "updatedDate": "2026-02-05T00:00:00Z",
+  "pubDate": "2026-02-05T00:00:00Z",
+  "dateStr": "2026-02-05",
+  "url": "https://linux.oracle.com/errata/ELSA-2026-2081.html",
+  "severity": "Important",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 8.",
+  "description": "[2:2.11.7-2]\n- Backport several CVE fixes\n  Resolves: RHEL-142417, RHEL-142401, RHEL-142385, RHEL-142369, RHEL-142353\n  Resolves: RHEL-142337, RHEL-142321",
+  "affected_products": [
+    "Oracle Linux 8 for x86_64",
+    "Oracle Linux 8 for aarch64"
+  ],
+  "cves": [
+    "CVE-2026-23530",
+    "CVE-2026-23531",
+    "CVE-2026-23532",
+    "CVE-2026-23533",
+    "CVE-2026-23534",
+    "CVE-2026-23883",
+    "CVE-2026-23884"
+  ],
+  "packages": [
+    "libwinpr-devel-2.11.7-2.el8_10.i686",
+    "libwinpr-devel-2.11.7-2.el8_10.x86_64",
+    "freerdp-2.11.7-2.el8_10.src",
+    "freerdp-libs-2.11.7-2.el8_10.x86_64",
+    "freerdp-libs-2.11.7-2.el8_10.i686",
+    "libwinpr-2.11.7-2.el8_10.x86_64",
+    "libwinpr-2.11.7-2.el8_10.i686",
+    "freerdp-2.11.7-2.el8_10.x86_64"
+  ],
+  "full_text": "[2:2.11.7-2]\n- Backport several CVE fixes\n  Resolves: RHEL-142417, RHEL-142401, RHEL-142385, RHEL-142369, RHEL-142353\n  Resolves: RHEL-142337, RHEL-142321\n\nReferences:\nhttps://linux.oracle.com/errata/ELSA-2026-2081.html\nhttps://linux.oracle.com/cve/CVE-2026-23530.html\nhttps://linux.oracle.com/cve/CVE-2026-23531.html\nhttps://linux.oracle.com/cve/CVE-2026-23532.html\nhttps://linux.oracle.com/cve/CVE-2026-23533.html\nhttps://linux.oracle.com/cve/CVE-2026-23534.html\nhttps://linux.oracle.com/cve/CVE-2026-23883.html\nhttps://linux.oracle.com/cve/CVE-2026-23884.html"
+}

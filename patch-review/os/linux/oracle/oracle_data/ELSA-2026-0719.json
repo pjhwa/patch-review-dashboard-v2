@@ -1,0 +1,26 @@
+{
+  "id": "ELSA-2026-0719",
+  "vendor": "Oracle",
+  "type": "Security Advisory (ELSA)",
+  "title": " gnupg2 security update",
+  "issuedDate": "2026-01-15T00:00:00Z",
+  "updatedDate": "2026-01-15T00:00:00Z",
+  "pubDate": "2026-01-15T00:00:00Z",
+  "dateStr": "2026-01-15",
+  "url": "https://linux.oracle.com/errata/ELSA-2026-0719.html",
+  "severity": "Important",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 9.",
+  "description": "[2.3.3-5]\n- Fix CVE-2025-68973 (gpg.fail/memcpy)",
+  "affected_products": [
+    "Oracle Linux 9 for x86_64",
+    "Oracle Linux 9 for aarch64"
+  ],
+  "cves": [
+    "CVE-2025-68973"
+  ],
+  "packages": [
+    "gnupg2-2.3.3-5.el9_7.x86_64",
+    "gnupg2-2.3.3-5.el9_7.src"
+  ],
+  "full_text": "[2.3.3-5]\n- Fix CVE-2025-68973 (gpg.fail/memcpy)\n\nReferences:\nhttps://linux.oracle.com/errata/ELSA-2026-0719.html\nhttps://linux.oracle.com/cve/CVE-2025-68973.html"
+}

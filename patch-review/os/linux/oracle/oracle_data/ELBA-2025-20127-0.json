@@ -1,0 +1,25 @@
+{
+  "id": "ELBA-2025-20127-0",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "RHCK",
+  "title": "autofs bug fix and enhancement update",
+  "issuedDate": "2025-11-25T00:00:00Z",
+  "updatedDate": "2025-11-25T00:00:00Z",
+  "pubDate": "2025-11-25T00:00:00Z",
+  "dateStr": "2025-11-25",
+  "url": "https://linux.oracle.com/errata/ELBA-2025-20127-0.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 10.",
+  "description": "[5.1.9-13.0.1]\n- Add autofs-5.0.5-lookup-mounts.patch [Orabug: 12658280]\n\n[1:5.1.9-13]\n- RHEL-90571 - autofs: segfault while dereferencing null mapent [rhel-10]\n  - fix handling of ignored offsets.\n  - fix invalidated map entry handling in hosts module.\n- Resolves: RHEL-90571\n\n[1:5.1.9-12]\n- RHEL-87525 - autofs hang - autofs-5.1.4-114.el8_10.2 [rhel-10]\n  - fix submount shutdown race.\n  - fix deadlock in master_notify_submount().\n  - fix lock ordering deadlock in expire_cleanup().\n- Resolves: RHEL-87525",
+  "affected_products": [
+    "Oracle Linux 10 for x86_64",
+    "Oracle Linux 10 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "autofs-5.1.9-13.0.1.el10.x86_64",
+    "autofs-5.1.9-13.0.1.el10.src"
+  ],
+  "full_text": "[5.1.9-13.0.1]\n- Add autofs-5.0.5-lookup-mounts.patch [Orabug: 12658280]\n\n[1:5.1.9-13]\n- RHEL-90571 - autofs: segfault while dereferencing null mapent [rhel-10]\n  - fix handling of ignored offsets.\n  - fix invalidated map entry handling in hosts module.\n- Resolves: RHEL-90571\n\n[1:5.1.9-12]\n- RHEL-87525 - autofs hang - autofs-5.1.4-114.el8_10.2 [rhel-10]\n  - fix submount shutdown race.\n  - fix deadlock in master_notify_submount().\n  - fix lock ordering deadlock in expire_cleanup().\n- Resolves: RHEL-87525\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2025-20127-0.html"
+}

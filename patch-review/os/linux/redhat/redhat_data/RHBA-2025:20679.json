@@ -1,0 +1,76 @@
+{
+  "id": "RHBA-2025:20679",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: lorax bug fix and enhancement update",
+  "issuedDate": "2025-11-11T07:50:48Z",
+  "updatedDate": "2025-11-11T07:50:48Z",
+  "pubDate": "2025-11-11T07:50:48Z",
+  "dateStr": "2025-11-11",
+  "url": "https://access.redhat.com/errata/RHBA-2025:20679",
+  "severity": "None",
+  "overview": "An update for lorax is now available for Red Hat Enterprise Linux 10.",
+  "description": "For detailed information on changes in this release, see the Red Hat Enterprise Linux 9 Release Notes linked from the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux for IBM z Systems",
+    "Red Hat Enterprise Linux for ARM 64",
+    "Red Hat Enterprise Linux for Power, little endian",
+    "Red Hat Enterprise Linux for x86_64 10 x86_64"
+  ],
+  "cves": [],
+  "packages": [
+    "lorax-34.9.29-1.el9.src",
+    "lorax-34.9.29-1.el9.x86_64",
+    "lorax-docs-34.9.29-1.el9.x86_64",
+    "lorax-lmc-novirt-34.9.29-1.el9.x86_64",
+    "lorax-lmc-virt-34.9.29-1.el9.x86_64",
+    "lorax-templates-generic-34.9.29-1.el9.x86_64",
+    "lorax-34.9.29-1.el9.s390x",
+    "lorax-docs-34.9.29-1.el9.s390x",
+    "lorax-lmc-novirt-34.9.29-1.el9.s390x",
+    "lorax-lmc-virt-34.9.29-1.el9.s390x",
+    "lorax-templates-generic-34.9.29-1.el9.s390x",
+    "lorax-34.9.29-1.el9.ppc64le",
+    "lorax-docs-34.9.29-1.el9.ppc64le",
+    "lorax-lmc-novirt-34.9.29-1.el9.ppc64le",
+    "lorax-templates-generic-34.9.29-1.el9.ppc64le",
+    "lorax-34.9.29-1.el9.aarch64",
+    "lorax-docs-34.9.29-1.el9.aarch64",
+    "lorax-lmc-novirt-34.9.29-1.el9.aarch64",
+    "lorax-lmc-virt-34.9.29-1.el9.aarch64",
+    "lorax-templates-generic-34.9.29-1.el9.aarch64"
+  ],
+  "fixes": [
+    {
+      "id": "RHEL-83208",
+      "url": "https://issues.redhat.com/browse/RHEL-83208",
+      "description": "[mkksiso] Kernel command line modifcations are not present when booting from USB in UEFI mode"
+    },
+    {
+      "id": "RHEL-83986",
+      "url": "https://issues.redhat.com/browse/RHEL-83986",
+      "description": "[RHEL-9][livemedia-creator] D-Bus erros due to missing permissions in CPIO appended to initrd"
+    },
+    {
+      "id": "RHEL-69019",
+      "url": "https://issues.redhat.com/browse/RHEL-69019",
+      "description": "lorax: Adjust to glibc UsrMerge/UsrMove/MoveToUsr transition"
+    },
+    {
+      "id": "RHEL-95360",
+      "url": "https://issues.redhat.com/browse/RHEL-95360",
+      "description": "Not enough space in install.img/rootfs.img on ppc64le"
+    },
+    {
+      "id": "RHEL-100463",
+      "url": "https://issues.redhat.com/browse/RHEL-100463",
+      "description": "[RHEL-9] Typo in a path in runtime-cleanup.tmpl"
+    },
+    {
+      "id": "RHEL-54712",
+      "url": "https://issues.redhat.com/browse/RHEL-54712",
+      "description": "[RHEL-9.7] Sync lorax-templates-rhel and lorax-templates-generic"
+    }
+  ],
+  "full_text": "An update for lorax is now available for Red Hat Enterprise Linux 10.\n\nFor detailed information on changes in this release, see the Red Hat Enterprise Linux 9 Release Notes linked from the References section."
+}

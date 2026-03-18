@@ -1,0 +1,21 @@
+{
+  "id": "RHSA-2025:19920",
+  "vendor": "Red Hat",
+  "url": "https://access.redhat.com/errata/RHSA-2025:19920",
+  "pubDate": "2025-11-06T17:05:08.000Z",
+  "dateStr": "2025-11-06",
+  "severity": "Important",
+  "title": "Red Hat Security Advisory: webkitgtk4 security update",
+  "overview": "An update for webkitgtk4 is now available for Red Hat Enterprise Linux 7 Extended Lifecycle Support.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "description": "An update for webkitgtk4 is now available for Red Hat Enterprise Linux 7 Extended Lifecycle Support.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux Server (v. 7 ELS)",
+    "Red Hat Enterprise Linux Server Optional (v. 7 ELS)"
+  ],
+  "cves": [
+    "CVE-2025-43343"
+  ],
+  "packages": [],
+  "fixes": "",
+  "full_text": "Red Hat Security Advisory: webkitgtk4 security update\n\nAn update for webkitgtk4 is now available for Red Hat Enterprise Linux 7 Extended Lifecycle Support.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nAn update for webkitgtk4 is now available for Red Hat Enterprise Linux 7 Extended Lifecycle Support.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nUpdated Packages:\nwebkitgtk4-2.50.1-1.el7_9.src.rpm\nwebkitgtk4-2.50.1-1.el7_9.x86_64.rpm\nwebkitgtk4-debuginfo-2.50.1-1.el7_9.x86_64.rpm\nwebkitgtk4-devel-2.50.1-1.el7_9.x86_64.rpm\nwebkitgtk4-doc-2.50.1-1.el7_9.noarch.rpm\nwebkitgtk4-jsc-2.50.1-1.el7_9.x86_64.rpm\nwebkitgtk4-jsc-devel-2.50.1-1.el7_9.x86_64.rpm\nwebkitgtk4-2.50.1-1.el7_9.s390x.rpm\nwebkitgtk4-debuginfo-2.50.1-1.el7_9.s390x.rpm\nwebkitgtk4-devel-2.50.1-1.el7_9.s390x.rpm\nwebkitgtk4-jsc-2.50.1-1.el7_9.s390x.rpm\nwebkitgtk4-jsc-devel-2.50.1-1.el7_9.s390x.rpm\nwebkitgtk4-2.50.1-1.el7_9.ppc64le.rpm\nwebkitgtk4-debuginfo-2.50.1-1.el7_9.ppc64le.rpm\nwebkitgtk4-devel-2.50.1-1.el7_9.ppc64le.rpm\nwebkitgtk4-jsc-2.50.1-1.el7_9.ppc64le.rpm\nwebkitgtk4-jsc-devel-2.50.1-1.el7_9.ppc64le.rpm\n\nCVE-2025-43343: A flaw was found in WebKitGTK. Processing malicious web content can cause an unexpected process crash due to improper memory handling."
+}

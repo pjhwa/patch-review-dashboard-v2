@@ -1,0 +1,20 @@
+{
+  "id": "RHSA-2025:21383",
+  "vendor": "Red Hat",
+  "url": "https://access.redhat.com/errata/RHSA-2025:21383",
+  "pubDate": "2025-11-13T18:53:38.000Z",
+  "dateStr": "2025-11-13",
+  "severity": "Moderate",
+  "title": "Red Hat Security Advisory: go-toolset:rhel8 security update",
+  "overview": "An update for the go-toolset:rhel8 module is now available for Red Hat Enterprise Linux 8.2 Advanced Update Support.\n\nRed Hat Product Security has rated this update as having a security impact of Moderate. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "description": "An update for the go-toolset:rhel8 module is now available for Red Hat Enterprise Linux 8.2 Advanced Update Support.\n\nRed Hat Product Security has rated this update as having a security impact of Moderate. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux AppStream AUS (v. 8.2)"
+  ],
+  "cves": [
+    "CVE-2025-47907"
+  ],
+  "packages": [],
+  "fixes": "",
+  "full_text": "Red Hat Security Advisory: go-toolset:rhel8 security update\n\nAn update for the go-toolset:rhel8 module is now available for Red Hat Enterprise Linux 8.2 Advanced Update Support.\n\nRed Hat Product Security has rated this update as having a security impact of Moderate. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nAn update for the go-toolset:rhel8 module is now available for Red Hat Enterprise Linux 8.2 Advanced Update Support.\n\nRed Hat Product Security has rated this update as having a security impact of Moderate. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nUpdated Packages:\n896cb53e.src.rpm\nfa98b974.src.rpm\nd458f451.src.rpm\n896cb53e.x86_64.rpm\nfa98b974.x86_64.rpm\nd458f451.x86_64.rpm\nd458f451.noarch.rpm\n\nCVE-2025-47907: A flaw was found in database/sql. Concurrent queries can produce unexpected results when a query is cancelled during a Scan method call on returned Rows, creating a race condition. This vulnerability allows an attacker who can initiate and cancel queries to trigger this condition, possibly leading to inconsistent data being returned to the application."
+}

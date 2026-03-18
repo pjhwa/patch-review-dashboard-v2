@@ -1,0 +1,40 @@
+{
+  "id": "RHBA-2025:16429",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: virtiofsd bug fix and enhancement update",
+  "issuedDate": "2025-09-23T07:44:03Z",
+  "updatedDate": "2025-09-23T07:44:03Z",
+  "pubDate": "2025-09-23T07:44:03Z",
+  "dateStr": "2025-09-23",
+  "url": "https://access.redhat.com/errata/RHBA-2025:16429",
+  "severity": "None",
+  "overview": "An update for virtiofsd is now available for Red Hat Enterprise Linux 10.",
+  "description": "Kernel-based Virtual Machine (KVM) offers a full virtualization solution forLinux on numerous hardware platforms. The virt:rhel module contains packageswhich provide user-space components used to run virtual machines using KVM.The packages also provide APIs for managing and interacting with the virtualized systems.Bug Fix(es) and Enhancement(s): Rebase virtiofsd to latest version for RHEL 9.6.z [rhel-10.0.z] (JIRA:RHEL-97010)",
+  "affected_products": [
+    "Red Hat Enterprise Linux for ARM 64",
+    "Red Hat Enterprise Linux for IBM z Systems - 4 years of updates",
+    "Red Hat Enterprise Linux for IBM z Systems",
+    "Red Hat Enterprise Linux for ARM 64 - Extended Update Support",
+    "Red Hat Enterprise Linux for x86_64 - Extended Update Support 10 x86_64",
+    "Red Hat Enterprise Linux for x86_64 - 4 years of updates 10 x86_64",
+    "Red Hat Enterprise Linux for IBM z Systems - Extended Update Support",
+    "Red Hat Enterprise Linux for ARM 64 - 4 years of updates",
+    "Red Hat Enterprise Linux for x86_64 10 x86_64"
+  ],
+  "cves": [],
+  "packages": [
+    "virtiofsd-1.13.2-1.el10_0.src",
+    "virtiofsd-1.13.2-1.el10_0.x86_64",
+    "virtiofsd-debuginfo-1.13.2-1.el10_0.x86_64",
+    "virtiofsd-debugsource-1.13.2-1.el10_0.x86_64",
+    "virtiofsd-1.13.2-1.el10_0.s390x",
+    "virtiofsd-debuginfo-1.13.2-1.el10_0.s390x",
+    "virtiofsd-debugsource-1.13.2-1.el10_0.s390x",
+    "virtiofsd-1.13.2-1.el10_0.aarch64",
+    "virtiofsd-debuginfo-1.13.2-1.el10_0.aarch64",
+    "virtiofsd-debugsource-1.13.2-1.el10_0.aarch64"
+  ],
+  "fixes": [],
+  "full_text": "An update for virtiofsd is now available for Red Hat Enterprise Linux 10.\n\nKernel-based Virtual Machine (KVM) offers a full virtualization solution forLinux on numerous hardware platforms. The virt:rhel module contains packageswhich provide user-space components used to run virtual machines using KVM.The packages also provide APIs for managing and interacting with the virtualized systems.Bug Fix(es) and Enhancement(s): Rebase virtiofsd to latest version for RHEL 9.6.z [rhel-10.0.z] (JIRA:RHEL-97010)"
+}

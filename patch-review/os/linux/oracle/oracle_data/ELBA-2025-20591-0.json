@@ -1,0 +1,25 @@
+{
+  "id": "ELBA-2025-20591-0",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "RHCK",
+  "title": "rootfiles bug fix and enhancement update",
+  "issuedDate": "2025-11-17T00:00:00Z",
+  "updatedDate": "2025-11-17T00:00:00Z",
+  "pubDate": "2025-11-17T00:00:00Z",
+  "dateStr": "2025-11-17",
+  "url": "https://linux.oracle.com/errata/ELBA-2025-20591-0.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 9.",
+  "description": "[8.1-35]\n- Fix file permissions and do not verify digest, file size\n  and modification time (RHEL-92548)",
+  "affected_products": [
+    "Oracle Linux 9 for x86_64",
+    "Oracle Linux 9 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "rootfiles-8.1-35.el9.noarch",
+    "rootfiles-8.1-35.el9.src"
+  ],
+  "full_text": "[8.1-35]\n- Fix file permissions and do not verify digest, file size\n  and modification time (RHEL-92548)\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2025-20591-0.html"
+}

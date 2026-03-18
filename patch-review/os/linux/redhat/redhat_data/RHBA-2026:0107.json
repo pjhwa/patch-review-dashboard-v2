@@ -1,0 +1,28 @@
+{
+  "id": "RHBA-2026:0107",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: WALinuxAgent bug fix and enhancement update",
+  "issuedDate": "2026-01-06T06:26:17Z",
+  "updatedDate": "2026-01-06T06:26:17Z",
+  "pubDate": "2026-01-06T06:26:17Z",
+  "dateStr": "2026-01-06",
+  "url": "https://access.redhat.com/errata/RHBA-2026:0107",
+  "severity": "None",
+  "overview": "An update for WALinuxAgent is now available for Red Hat Enterprise Linux 10.",
+  "description": "The Microsoft Azure Linux Agent supports the provisioning and running of Linux VMs in the Microsoft Azure cloud. This package should be installed on Linux disk images that are built to run in the Microsoft Azure environment.Bug Fix(es) and Enhancement(s): Update walagent to 2.14 to support FIPS 140-3 on Azure [rhel-10.1.z] (JIRA:RHEL-129954)",
+  "affected_products": [
+    "Red Hat Enterprise Linux for IBM z Systems",
+    "Red Hat Enterprise Linux for Power, little endian",
+    "Red Hat Enterprise Linux for ARM 64",
+    "Red Hat Enterprise Linux for x86_64 10 x86_64"
+  ],
+  "cves": [],
+  "packages": [
+    "WALinuxAgent-2.13.1.1-2.el10_1.1.src",
+    "WALinuxAgent-2.13.1.1-2.el10_1.1.noarch",
+    "WALinuxAgent-udev-2.13.1.1-2.el10_1.1.noarch"
+  ],
+  "fixes": [],
+  "full_text": "An update for WALinuxAgent is now available for Red Hat Enterprise Linux 10.\n\nThe Microsoft Azure Linux Agent supports the provisioning and running of Linux VMs in the Microsoft Azure cloud. This package should be installed on Linux disk images that are built to run in the Microsoft Azure environment.Bug Fix(es) and Enhancement(s): Update walagent to 2.14 to support FIPS 140-3 on Azure [rhel-10.1.z] (JIRA:RHEL-129954)"
+}

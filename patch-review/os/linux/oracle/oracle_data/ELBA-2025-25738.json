@@ -1,0 +1,27 @@
+{
+  "id": "ELBA-2025-25738",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "UEK",
+  "title": " dtrace  bug fix update",
+  "issuedDate": "2025-11-05T00:00:00Z",
+  "updatedDate": "2025-11-05T00:00:00Z",
+  "pubDate": "2025-11-05T00:00:00Z",
+  "dateStr": "2025-11-05",
+  "url": "https://linux.oracle.com/errata/ELBA-2025-25738.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 9.",
+  "description": "[2.0.4-1]\n- TCP, UDP, and stapsdt providers implemented.  (Alan Maguire)\n- New learning materials:  the User's Guide in Markdown format,\n  example scripts, and a context file for LLMs.\n  (Eugene Loh, Bruce McCulloch, Ruud van der Pas, Elena Zannoni).\n- Allow [u]stack() to be used as a variable value.  (Kris Van Hees)\n  [Orabug: 37950533]\n- Comments using // are now supported.  (Kris Van Hees)\n- Scalability improvements.  (Kris Van Hees)\n- Error injection via return() action.  (Kris Van Hees)\n- Improved string handling.  (Kris Van Hees)\n- Various bug fixes.  (Eugene Loh, Kris Van Hees)\n- Fix dyn vars overwriting one another.  [Orabug: 37994729]\n- Fix regression:  list fbt probes by default.  [Orabug: 38249511]\n- Various testsuite fixes and improvements.\n  (Nick Alcock, Eugene Loh, Alan Maguire, Kris Van Hees)\n- Add test for preprocessor definitions.  [Orabug: 28763074]\n- Fix some stack tests.  [Orabug: 37459289]",
+  "affected_products": [
+    "Oracle Linux 9 for x86_64",
+    "Oracle Linux 9 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "dtrace-2.0.4-1.el9.src",
+    "dtrace-2.0.4-1.el9.x86_64",
+    "dtrace-testsuite-2.0.4-1.el9.x86_64",
+    "dtrace-devel-2.0.4-1.el9.x86_64"
+  ],
+  "full_text": "[2.0.4-1]\n- TCP, UDP, and stapsdt providers implemented.  (Alan Maguire)\n- New learning materials:  the User's Guide in Markdown format,\n  example scripts, and a context file for LLMs.\n  (Eugene Loh, Bruce McCulloch, Ruud van der Pas, Elena Zannoni).\n- Allow [u]stack() to be used as a variable value.  (Kris Van Hees)\n  [Orabug: 37950533]\n- Comments using // are now supported.  (Kris Van Hees)\n- Scalability improvements.  (Kris Van Hees)\n- Error injection via return() action.  (Kris Van Hees)\n- Improved string handling.  (Kris Van Hees)\n- Various bug fixes.  (Eugene Loh, Kris Van Hees)\n- Fix dyn vars overwriting one another.  [Orabug: 37994729]\n- Fix regression:  list fbt probes by default.  [Orabug: 38249511]\n- Various testsuite fixes and improvements.\n  (Nick Alcock, Eugene Loh, Alan Maguire, Kris Van Hees)\n- Add test for preprocessor definitions.  [Orabug: 28763074]\n- Fix some stack tests.  [Orabug: 37459289]\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2025-25738.html"
+}

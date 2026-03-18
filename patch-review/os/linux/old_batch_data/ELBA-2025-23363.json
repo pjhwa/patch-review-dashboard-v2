@@ -1,0 +1,26 @@
+{
+  "id": "ELBA-2025-23363",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2025-December/019390.html",
+  "synopsis": "[El-errata] ELBA-2025-23363 Oracle Linux 8 rest bug fix and enhancement update",
+  "dateStr": "2025-December",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Bug Fix Advisory ELBA-2025-23363",
+  "description": "[0.8.1-3]\n- Rebuild for shipping rest-devel in CRB\n- Resolves: RHEL-122462",
+  "affected_products": [
+    "Oracle Linux 8"
+  ],
+  "packages": [
+    "rest-0.8.1-3.el8_10.i686.rpm",
+    "rest-0.8.1-3.el8_10.x86_64.rpm",
+    "rest-devel-0.8.1-3.el8_10.i686.rpm",
+    "rest-devel-0.8.1-3.el8_10.x86_64.rpm",
+    "rest-0.8.1-3.el8_10.aarch64.rpm",
+    "rest-devel-0.8.1-3.el8_10.aarch64.rpm"
+  ],
+  "cves": [],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Bug Fix Advisory ELBA-2025-23363\n\nhttp://linux.oracle.com/errata/ELBA-2025-23363.html\n\nThe following updated rpms for Oracle Linux 8 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\nrest-0.8.1-3.el8_10.i686.rpm\nrest-0.8.1-3.el8_10.x86_64.rpm\nrest-devel-0.8.1-3.el8_10.i686.rpm\nrest-devel-0.8.1-3.el8_10.x86_64.rpm\n\naarch64:\nrest-0.8.1-3.el8_10.aarch64.rpm\nrest-devel-0.8.1-3.el8_10.aarch64.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol8/SRPMS-updates/rest-0.8.1-3.el8_10.src.rpm\n\n\n\nDescription of changes:\n\n[0.8.1-3]\n- Rebuild for shipping rest-devel in CRB\n- Resolves: RHEL-122462",
+  "vendor": "Oracle"
+}

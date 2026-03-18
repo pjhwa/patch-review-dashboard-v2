@@ -1,0 +1,33 @@
+{
+  "id": "RHBA-2025:23370",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: osinfo-db bug fix and enhancement update",
+  "issuedDate": "2025-12-18T10:46:37Z",
+  "updatedDate": "2025-12-18T10:46:37Z",
+  "pubDate": "2025-12-18T10:46:37Z",
+  "dateStr": "2025-12-18",
+  "url": "https://access.redhat.com/errata/RHBA-2025:23370",
+  "severity": "None",
+  "overview": "An update for osinfo-db is now available for Red Hat Enterprise Linux 10.",
+  "description": "The osinfo-db package contains a database that provides information about operating systems and hypervisor platforms to facilitate the automated configuration and provisioning of new virtual machines. Bug Fix(es) and Enhancement(s): [RFE] Add RHEL 9.5 and RHEL 9.6 to cockpit Operating system list (JIRA:RHEL-103999)",
+  "affected_products": [
+    "Red Hat Enterprise Linux for Power, little endian",
+    "Red Hat Enterprise Linux for x86_64 10 x86_64",
+    "Red Hat Enterprise Linux for IBM z Systems",
+    "Red Hat Enterprise Linux for ARM 64"
+  ],
+  "cves": [],
+  "packages": [
+    "osinfo-db-20250606-1.el8_10.src",
+    "osinfo-db-20250606-1.el8_10.noarch"
+  ],
+  "fixes": [
+    {
+      "id": "RHEL-103999",
+      "url": "https://issues.redhat.com/browse/RHEL-103999",
+      "description": "[RFE] Add RHEL 9.5 and RHEL 9.6 to cockpit Operating system list"
+    }
+  ],
+  "full_text": "An update for osinfo-db is now available for Red Hat Enterprise Linux 10.\n\nThe osinfo-db package contains a database that provides information about operating systems and hypervisor platforms to facilitate the automated configuration and provisioning of new virtual machines. Bug Fix(es) and Enhancement(s): [RFE] Add RHEL 9.5 and RHEL 9.6 to cockpit Operating system list (JIRA:RHEL-103999)"
+}

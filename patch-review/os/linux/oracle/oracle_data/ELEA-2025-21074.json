@@ -1,0 +1,25 @@
+{
+  "id": "ELEA-2025-21074",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "AppStream",
+  "title": "gcc-toolset-15-gdb bug fix and enhancement update",
+  "issuedDate": "2025-12-12T00:00:00Z",
+  "updatedDate": "2025-12-12T00:00:00Z",
+  "pubDate": "2025-12-12T00:00:00Z",
+  "dateStr": "2025-12-12",
+  "url": "https://linux.oracle.com/errata/ELEA-2025-21074.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 8.",
+  "description": "[16.3-1]\n- Backport amd64 decoding fixes\n  (Tom de Vries, RHEL-7329)\n\n* Mon May 26 2025 Guinevere Larsen <guinevere@redhat.com>\n- Backport 's390: Add support for z17 as CPU name\n  (Jen Remus, RHEL-50069)\n\n* Tue May 13 2025 Alexandra Hajkova <ahajkova@redhat.com>\n- Rebase to FSF GDB 16.3.\n  Deleted: gdb-rhbz2354997-gstack-drop-readnever.patch\n  Resolves: RHEL-92896\n\n[16.2-1]\n- Initial import of sources for GTS15 repository\n\n* Fri Mar 28 2025 Keith Seitz <keiths@redhat.com>\n- Backport 'Fix gstack issues' from upstream.\n  (Keith Seitz, RH BZ 2354997)\n\n* Thu Feb 13 2025 Alexandra Hajkova <ahajkova@redhat.com>\n- Bump the release number.\n\n* Tue Feb 11 2025 Alexandra Hajkova <ahajkova@redhat.com>\n- Rebase to FSF GDB 16.2.\n  Dropped:  gdb-backport-buildid-related-changes.patch\n            gdb-catchpoint-re-set.patch\n            gdb-remove-qnx-neutrino-support.patch\n  Modified: gdb-add-rpm-suggestion-script.patch\n\n* Thu Jan 23 2025 Alexandra Hajkova <ahajkova@redhat.com>\n- Remove upstreamed gdb-6.3-gstack-20050411.patch.\n\n* Fri Jan 17 2025 Guinevere Larsen <guinevere@redhat.com>\n- remove gdb-test-bt-cfi-without-die.patch.  This test has been\n  accepted upstream and will make its way back to testing with\n  the GDB 17 release.\n\n* Thu Jan 16 2025 Fedora Release Engineering <releng@fedoraproject.org>\n- Rebuilt for https://fedoraproject.org/wiki/Fedora_42_Mass_Rebuild",
+  "affected_products": [
+    "Oracle Linux 8 for x86_64",
+    "Oracle Linux 8 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "gcc-toolset-15-gdb-16.3-1.el8_10.x86_64",
+    "gcc-toolset-15-gdb-16.3-1.el8_10.src"
+  ],
+  "full_text": "[16.3-1]\n- Backport amd64 decoding fixes\n  (Tom de Vries, RHEL-7329)\n\n* Mon May 26 2025 Guinevere Larsen <guinevere@redhat.com>\n- Backport 's390: Add support for z17 as CPU name\n  (Jen Remus, RHEL-50069)\n\n* Tue May 13 2025 Alexandra Hajkova <ahajkova@redhat.com>\n- Rebase to FSF GDB 16.3.\n  Deleted: gdb-rhbz2354997-gstack-drop-readnever.patch\n  Resolves: RHEL-92896\n\n[16.2-1]\n- Initial import of sources for GTS15 repository\n\n* Fri Mar 28 2025 Keith Seitz <keiths@redhat.com>\n- Backport 'Fix gstack issues' from upstream.\n  (Keith Seitz, RH BZ 2354997)\n\n* Thu Feb 13 2025 Alexandra Hajkova <ahajkova@redhat.com>\n- Bump the release number.\n\n* Tue Feb 11 2025 Alexandra Hajkova <ahajkova@redhat.com>\n- Rebase to FSF GDB 16.2.\n  Dropped:  gdb-backport-buildid-related-changes.patch\n            gdb-catchpoint-re-set.patch\n            gdb-remove-qnx-neutrino-support.patch\n  Modified: gdb-add-rpm-suggestion-script.patch\n\n* Thu Jan 23 2025 Alexandra Hajkova <ahajkova@redhat.com>\n- Remove upstreamed gdb-6.3-gstack-20050411.patch.\n\n* Fri Jan 17 2025 Guinevere Larsen <guinevere@redhat.com>\n- remove gdb-test-bt-cfi-without-die.patch.  This test has been\n  accepted upstream and will make its way back to testing with\n  the GDB 17 release.\n\n* Thu Jan 16 2025 Fedora Release Engineering <releng@fedoraproject.org>\n- Rebuilt for https://fedoraproject.org/wiki/Fedora_42_Mass_Rebuild\n\nReferences:\nhttps://linux.oracle.com/errata/ELEA-2025-21074.html"
+}

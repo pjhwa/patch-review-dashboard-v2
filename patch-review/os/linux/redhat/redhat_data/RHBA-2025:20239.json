@@ -1,0 +1,32 @@
+{
+  "id": "RHBA-2025:20239",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: shim bug fix and enhancement update",
+  "issuedDate": "2025-11-11T07:25:32Z",
+  "updatedDate": "2025-11-11T07:25:32Z",
+  "pubDate": "2025-11-11T07:25:32Z",
+  "dateStr": "2025-11-11",
+  "url": "https://access.redhat.com/errata/RHBA-2025:20239",
+  "severity": "None",
+  "overview": "An update for shim is now available for Red Hat Enterprise Linux 10.",
+  "description": "For detailed information on changes in this release, see the Red Hat Enterprise Linux 10 Release Notes linked from the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux for ARM 64",
+    "Red Hat Enterprise Linux for x86_64 10 x86_64"
+  ],
+  "cves": [],
+  "packages": [
+    "shim-16.1-2.el10_1.src",
+    "shim-x64-16.1-2.el10_1.x86_64",
+    "shim-aa64-16.1-2.el10_1.aarch64"
+  ],
+  "fixes": [
+    {
+      "id": "RHEL-81188",
+      "url": "https://issues.redhat.com/browse/RHEL-81188",
+      "description": "get RHEL-10 shim signed for Secure Boot (x86 and aarch)"
+    }
+  ],
+  "full_text": "An update for shim is now available for Red Hat Enterprise Linux 10.\n\nFor detailed information on changes in this release, see the Red Hat Enterprise Linux 10 Release Notes linked from the References section."
+}

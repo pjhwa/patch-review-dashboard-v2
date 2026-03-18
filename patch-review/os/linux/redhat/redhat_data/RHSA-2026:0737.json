@@ -1,0 +1,38 @@
+{
+  "id": "RHSA-2026:0737",
+  "vendor": "Red Hat",
+  "type": "Security Advisory (RHSA)",
+  "title": "Red Hat Security Advisory: OpenShift Compliance Operator bug fix and enhancement update",
+  "issuedDate": "2026-01-15T23:39:47+00:00",
+  "updatedDate": "2026-01-15T23:39:56+00:00",
+  "pubDate": "2026-01-15T23:39:47+00:00",
+  "dateStr": "2026-01-15",
+  "url": "https://access.redhat.com/errata/RHSA-2026:0737",
+  "severity": "Low",
+  "overview": "An updated OpenShift Compliance Operator image that fixes various bugs and adds new\nenhancements is now available for the Red Hat OpenShift Enterprise 4 catalog.",
+  "description": "The OpenShift Compliance Operator v1.8.1 is now available.\nSee the documentation for bug fix information:\n\nhttps://docs.redhat.com/en/documentation/openshift_container_platform/latest/html/security_and_compliance/compliance-operator#compliance-operator-release-notes",
+  "affected_products": [],
+  "cves": [
+    "CVE-2025-7195"
+  ],
+  "packages": [
+    "registry.redhat.io/compliance/openshift-compliance-operator-bundle@sha256:4d0f9d6fd1a4856a870e48b99dc3714de17a65813e0caea50564cd63c79f11ab_amd64",
+    "registry.redhat.io/compliance/openshift-compliance-content-rhel8@sha256:c83b17521bcf4687ce625af3e4771af79acbfe06a84f8361babfa3de5c96f8c0_amd64",
+    "registry.redhat.io/compliance/openshift-compliance-must-gather-rhel8@sha256:e75496b12cc5ea8ee990f5c48eb226a985f0fac77dfd9358999a915d6e3f8440_amd64",
+    "registry.redhat.io/compliance/openshift-compliance-openscap-rhel8@sha256:c70223946fe2da42492f18184540c67d95f109c1f4eac89b6fae8ddcc64aebb6_amd64",
+    "registry.redhat.io/compliance/openshift-compliance-rhel8-operator@sha256:eaddf506bddce47e0ea3fc4e5e827533a7349d228964dfbc919044f8e7f7108d_amd64",
+    "registry.redhat.io/compliance/openshift-compliance-content-rhel8@sha256:5021683827a84666f7d7db8c2946d6df6fe440a60fae4b4116cb3d7069ce0f8a_arm64",
+    "registry.redhat.io/compliance/openshift-compliance-must-gather-rhel8@sha256:8785d63200e3d69438ff6ccbdf46c58b14deceb13140ec878482d0b28c888b50_arm64",
+    "registry.redhat.io/compliance/openshift-compliance-openscap-rhel8@sha256:50dab241896f4531ce58a67788cb2e52c7ccef7e87d457ff5b582e7b77414f96_arm64",
+    "registry.redhat.io/compliance/openshift-compliance-rhel8-operator@sha256:0deacfbd0d55638fb334e2435007586fcfd3a08328c3a7c9b2908bb0cab759c2_arm64",
+    "registry.redhat.io/compliance/openshift-compliance-content-rhel8@sha256:97eb97d086c27db57d8e796a034064323792bc6666643b36c5c8439730d3f60d_ppc64le",
+    "registry.redhat.io/compliance/openshift-compliance-must-gather-rhel8@sha256:9d6b9b992968665864c87dd5996981e24276043e7ca742707fa745a059e4c44e_ppc64le",
+    "registry.redhat.io/compliance/openshift-compliance-openscap-rhel8@sha256:bd2924732958a2d3c06dc66a141ad26824bf11d99b175430291ccee84d0aeb2b_ppc64le",
+    "registry.redhat.io/compliance/openshift-compliance-rhel8-operator@sha256:74010cf229f6fa17a927e56f63db06f9fe4ce61dce5e8bece77d05a082c49e3b_ppc64le",
+    "registry.redhat.io/compliance/openshift-compliance-content-rhel8@sha256:45639de3f6d9e482f9dbbba28e08ac892001bc2f53829d520769ffdf17fcfca5_s390x",
+    "registry.redhat.io/compliance/openshift-compliance-must-gather-rhel8@sha256:7073072fe893e3ef6e0a17e6f3937c523a58b96cb1f1a5ed7e9c4e3a5ceddb1c_s390x",
+    "registry.redhat.io/compliance/openshift-compliance-openscap-rhel8@sha256:0b6981c2ca3a9ca0082d639754a414947697b8d3493ebb46446f5a24b63f42b5_s390x",
+    "registry.redhat.io/compliance/openshift-compliance-rhel8-operator@sha256:e043fdf674a120f56d62a0c6ff2b91bc8c61875d5ce371abc3540714928e0528_s390x"
+  ],
+  "full_text": "An updated OpenShift Compliance Operator image that fixes various bugs and adds new\nenhancements is now available for the Red Hat OpenShift Enterprise 4 catalog.\n\nThe OpenShift Compliance Operator v1.8.1 is now available.\nSee the documentation for bug fix information:\n\nhttps://docs.redhat.com/en/documentation/openshift_container_platform/latest/html/security_and_compliance/compliance-operator#compliance-operator-release-notes"
+}

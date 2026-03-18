@@ -1,0 +1,22 @@
+{
+  "id": "ELBA-2025-23321",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2025-December/019296.html",
+  "synopsis": "[El-errata] ELBA-2025-23321 Oracle Linux 9 s-nail bug fix and enhancement update",
+  "dateStr": "2025-December",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Bug Fix Advisory ELBA-2025-23321",
+  "description": "[14.9.22-9]\n- Stop adding BCC lines to subject\n- Resolves: RHEL-110823",
+  "affected_products": [
+    "Oracle Linux 9"
+  ],
+  "packages": [
+    "s-nail-14.9.22-9.el9_7.x86_64.rpm",
+    "s-nail-14.9.22-9.el9_7.aarch64.rpm"
+  ],
+  "cves": [],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Bug Fix Advisory ELBA-2025-23321\n\nhttp://linux.oracle.com/errata/ELBA-2025-23321.html\n\nThe following updated rpms for Oracle Linux 9 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\ns-nail-14.9.22-9.el9_7.x86_64.rpm\n\naarch64:\ns-nail-14.9.22-9.el9_7.aarch64.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol9/SRPMS-updates/s-nail-14.9.22-9.el9_7.src.rpm\n\n\n\nDescription of changes:\n\n[14.9.22-9]\n- Stop adding BCC lines to subject\n- Resolves: RHEL-110823",
+  "vendor": "Oracle"
+}

@@ -1,0 +1,22 @@
+{
+  "id": "ELBA-2025-23370",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2025-December/019417.html",
+  "synopsis": "[El-errata] ELBA-2025-23370 Oracle Linux 8 osinfo-db bug fix and enhancement update",
+  "dateStr": "2025-December",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Bug Fix Advisory ELBA-2025-23370",
+  "description": "[20250606-1.0.1]\n- Fix invalid reference in os oracle.com/ol/9.5.xml [Orabug: 37315406]\n- Add OL9.5 data [Orabug: 37315406]\n\n[20250606-1]\n- Update to new release (v202506060) to include RHEL-9.5\n  and RHEL-9.6 (RHEL-103999)",
+  "affected_products": [
+    "Oracle Linux 8"
+  ],
+  "packages": [
+    "osinfo-db-20250606-1.0.1.el8_10.noarch.rpm",
+    "osinfo-db-20250606-1.0.1.el8_10.noarch.rpm"
+  ],
+  "cves": [],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Bug Fix Advisory ELBA-2025-23370\n\nhttp://linux.oracle.com/errata/ELBA-2025-23370.html\n\nThe following updated rpms for Oracle Linux 8 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\nosinfo-db-20250606-1.0.1.el8_10.noarch.rpm\n\naarch64:\nosinfo-db-20250606-1.0.1.el8_10.noarch.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol8/SRPMS-updates/osinfo-db-20250606-1.0.1.el8_10.src.rpm\n\n\n\nDescription of changes:\n\n[20250606-1.0.1]\n- Fix invalid reference in os oracle.com/ol/9.5.xml [Orabug: 37315406]\n- Add OL9.5 data [Orabug: 37315406]\n\n[20250606-1]\n- Update to new release (v202506060) to include RHEL-9.5\n  and RHEL-9.6 (RHEL-103999)",
+  "vendor": "Oracle"
+}

@@ -1,0 +1,64 @@
+{
+  "id": "RHBA-2025:20347",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: gnome-shell bug fix and enhancement update",
+  "issuedDate": "2025-11-11T07:26:09Z",
+  "updatedDate": "2025-11-11T07:26:09Z",
+  "pubDate": "2025-11-11T07:26:09Z",
+  "dateStr": "2025-11-11",
+  "url": "https://access.redhat.com/errata/RHBA-2025:20347",
+  "severity": "None",
+  "overview": "An update for gnome-shell is now available for Red Hat Enterprise Linux 10.",
+  "description": "For detailed information on changes in this release, see the Red Hat Enterprise Linux 10 Release Notes linked from the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux for ARM 64",
+    "Red Hat Enterprise Linux for IBM z Systems",
+    "Red Hat Enterprise Linux for x86_64 10 x86_64",
+    "Red Hat Enterprise Linux for Power, little endian"
+  ],
+  "cves": [],
+  "packages": [
+    "gnome-shell-47.8-6.el10.src",
+    "gnome-shell-47.8-6.el10.x86_64",
+    "gnome-shell-debuginfo-47.8-6.el10.x86_64",
+    "gnome-shell-debugsource-47.8-6.el10.x86_64",
+    "gnome-shell-47.8-6.el10.s390x",
+    "gnome-shell-debuginfo-47.8-6.el10.s390x",
+    "gnome-shell-debugsource-47.8-6.el10.s390x",
+    "gnome-shell-47.8-6.el10.ppc64le",
+    "gnome-shell-debuginfo-47.8-6.el10.ppc64le",
+    "gnome-shell-debugsource-47.8-6.el10.ppc64le",
+    "gnome-shell-47.8-6.el10.aarch64",
+    "gnome-shell-debuginfo-47.8-6.el10.aarch64",
+    "gnome-shell-debugsource-47.8-6.el10.aarch64"
+  ],
+  "fixes": [
+    {
+      "id": "RHEL-86195",
+      "url": "https://issues.redhat.com/browse/RHEL-86195",
+      "description": "Please backport Fedora 41 changes in gnome-shell if needed (2025-04-06)"
+    },
+    {
+      "id": "RHEL-92293",
+      "url": "https://issues.redhat.com/browse/RHEL-92293",
+      "description": "Please backport Fedora 41 changes in gnome-shell if needed (2025-05-18)"
+    },
+    {
+      "id": "RHEL-103395",
+      "url": "https://issues.redhat.com/browse/RHEL-103395",
+      "description": "Please backport Fedora 41 changes in gnome-shell if needed (2025-07-13)"
+    },
+    {
+      "id": "RHEL-94743",
+      "url": "https://issues.redhat.com/browse/RHEL-94743",
+      "description": "Please backport Fedora 41 changes in gnome-shell if needed (2025-06-02)"
+    },
+    {
+      "id": "RHEL-105841",
+      "url": "https://issues.redhat.com/browse/RHEL-105841",
+      "description": "Input method switching to CJK IME leaves the input indicator blank."
+    }
+  ],
+  "full_text": "An update for gnome-shell is now available for Red Hat Enterprise Linux 10.\n\nFor detailed information on changes in this release, see the Red Hat Enterprise Linux 10 Release Notes linked from the References section."
+}

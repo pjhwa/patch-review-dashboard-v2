@@ -1,0 +1,25 @@
+{
+  "id": "ELBA-2025-20521-0",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "RHCK",
+  "title": "autofs bug fix and enhancement update",
+  "issuedDate": "2025-11-17T00:00:00Z",
+  "updatedDate": "2025-11-17T00:00:00Z",
+  "pubDate": "2025-11-17T00:00:00Z",
+  "dateStr": "2025-11-17",
+  "url": "https://linux.oracle.com/errata/ELBA-2025-20521-0.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 9.",
+  "description": "[5.1.7-65.0.1]\n- Add autofs-5.0.5-lookup-mounts.patch [Orabug: 12658280]\n\n[1:5.1.7-65]\n- RHEL-85615 - autofs fails to mount shares when using kerberised LDAP\n  - always recreate credential cache.\n  - fix always recreate credential cache.\n-Resolves: RHEL-85615\n\n[1:5.1.7-64]\n- RHEL-81885 - autofs: segfault while dereferencing null mapent\n  - fix handling of ignored offsets.\n  - fix invalidated map entry handling in hosts module.\n  - fix changelog revision number of previous change.\n- Resolves: RHEL-81885\n\n[1:5.1.7-63]\n- RHEL-87031 - autofs hang - autofs-5.1.4-114.el8_10.2\n  - fix lock ordering deadlock in expire_cleanup().\n  - change spec file %patchN to %patch -P N as required by rpm(8).\n  - Fix compile error caused by function pointer types in cyrus-sasl module.\n  - removed references to patch1 and patch2 due to rbmbuild(8) complaints.\n- Resolves: RHEL-87031\n\n[1:5.1.7-61]\n- RHEL-32684 - sssd autofs fails to get correct EHOSTDOWN if requested\n  incorrect mount after upgrade to sssd-2.9.1-4.el8_9.5.x86_64\n  - handle sss special case getautomntbyname() error\n- Resolves: RHEL-32684",
+  "affected_products": [
+    "Oracle Linux 9 for x86_64",
+    "Oracle Linux 9 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "autofs-5.1.7-65.0.1.el9.x86_64",
+    "autofs-5.1.7-65.0.1.el9.src"
+  ],
+  "full_text": "[5.1.7-65.0.1]\n- Add autofs-5.0.5-lookup-mounts.patch [Orabug: 12658280]\n\n[1:5.1.7-65]\n- RHEL-85615 - autofs fails to mount shares when using kerberised LDAP\n  - always recreate credential cache.\n  - fix always recreate credential cache.\n-Resolves: RHEL-85615\n\n[1:5.1.7-64]\n- RHEL-81885 - autofs: segfault while dereferencing null mapent\n  - fix handling of ignored offsets.\n  - fix invalidated map entry handling in hosts module.\n  - fix changelog revision number of previous change.\n- Resolves: RHEL-81885\n\n[1:5.1.7-63]\n- RHEL-87031 - autofs hang - autofs-5.1.4-114.el8_10.2\n  - fix lock ordering deadlock in expire_cleanup().\n  - change spec file %patchN to %patch -P N as required by rpm(8).\n  - Fix compile error caused by function pointer types in cyrus-sasl module.\n  - removed references to patch1 and patch2 due to rbmbuild(8) complaints.\n- Resolves: RHEL-87031\n\n[1:5.1.7-61]\n- RHEL-32684 - sssd autofs fails to get correct EHOSTDOWN if requested\n  incorrect mount after upgrade to sssd-2.9.1-4.el8_9.5.x86_64\n  - handle sss special case getautomntbyname() error\n- Resolves: RHEL-32684\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2025-20521-0.html"
+}

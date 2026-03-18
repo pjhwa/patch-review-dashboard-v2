@@ -1,0 +1,39 @@
+{
+  "id": "RHSA-2026:3839",
+  "vendor": "Red Hat",
+  "type": "Security Advisory (RHSA)",
+  "title": "Red Hat Security Advisory: image-builder security update",
+  "issuedDate": "2026-03-05T10:11:47+00:00",
+  "updatedDate": "2026-03-05T10:11:47+00:00",
+  "pubDate": "2026-03-05T10:11:47+00:00",
+  "dateStr": "2026-03-05",
+  "url": "https://access.redhat.com/errata/RHSA-2026:3839",
+  "severity": "Important",
+  "overview": "An update for image-builder is now available for Red Hat Enterprise Linux 9.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "description": "A local binary for building customized OS artifacts such as VM images and OSTree commits. Uses osbuild under the hood.\n\nSecurity Fix(es):\n\n* crypto/x509: golang: Denial of Service due to excessive resource consumption via crafted certificate (CVE-2025-61729)\n\n* golang: net/url: Memory exhaustion in query parameter parsing in net/url (CVE-2025-61726)\n\n* crypto/tls: Unexpected session resumption in crypto/tls (CVE-2025-68121)\n\nFor more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux",
+    "Red Hat Enterprise Linux AppStream (v. 9)"
+  ],
+  "cves": [
+    "CVE-2025-61726",
+    "CVE-2025-61729",
+    "CVE-2025-68121"
+  ],
+  "packages": [
+    "image-builder-0:31-3.el9_7.aarch64",
+    "image-builder-debugsource-0:31-3.el9_7.aarch64",
+    "image-builder-debuginfo-0:31-3.el9_7.aarch64",
+    "image-builder-0:31-3.el9_7.ppc64le",
+    "image-builder-debugsource-0:31-3.el9_7.ppc64le",
+    "image-builder-debuginfo-0:31-3.el9_7.ppc64le",
+    "image-builder-0:31-3.el9_7.src",
+    "image-builder-0:31-3.el9_7.x86_64",
+    "image-builder-debugsource-0:31-3.el9_7.x86_64",
+    "image-builder-debuginfo-0:31-3.el9_7.x86_64",
+    "image-builder-0:31-3.el9_7.s390x",
+    "image-builder-debugsource-0:31-3.el9_7.s390x",
+    "image-builder-debuginfo-0:31-3.el9_7.s390x"
+  ],
+  "full_text": "An update for image-builder is now available for Red Hat Enterprise Linux 9.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nA local binary for building customized OS artifacts such as VM images and OSTree commits. Uses osbuild under the hood.\n\nSecurity Fix(es):\n\n* crypto/x509: golang: Denial of Service due to excessive resource consumption via crafted certificate (CVE-2025-61729)\n\n* golang: net/url: Memory exhaustion in query parameter parsing in net/url (CVE-2025-61726)\n\n* crypto/tls: Unexpected session resumption in crypto/tls (CVE-2025-68121)\n\nFor more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section."
+}

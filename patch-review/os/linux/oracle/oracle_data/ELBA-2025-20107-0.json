@@ -1,0 +1,27 @@
+{
+  "id": "ELBA-2025-20107-0",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "RHCK",
+  "title": "libdnf bug fix and enhancement update",
+  "issuedDate": "2025-11-25T00:00:00Z",
+  "updatedDate": "2025-11-25T00:00:00Z",
+  "pubDate": "2025-11-25T00:00:00Z",
+  "dateStr": "2025-11-25",
+  "url": "https://linux.oracle.com/errata/ELBA-2025-20107-0.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 10.",
+  "description": "[0.73.1-12.0.1]\n- Recognise new kernel-uek RPMs as multiversion and installonlypkg [Orabug: 36053872]\n- Replaced bugzilla.oracle.com references [Orabug: 34202300]\n- Update OL9 dnf to recognize UEK7(kernel-uek-core & kernel-uek-modules) as installonlypkgs package [Orabug: 33861607]\n- Replaced bugzilla.redhat.com with bugzilla.oracle.com in config [Orabug: 29656932]\n- Add support for apps that use libdnf to access yum url with 'ociregion' variable [Orabug: 30121584]\n- Update OL8 dnf to recognise kernel-uek as installonlypkgs package [Orabug: 31018668]\n- Disable rhsm [Orabug: 29901202]\n\n[0.73.1-12]\n- Bump version due to failed build\n\n[0.73.1-11]\n- history DB: Add 'persistence' column (RHEL-99825)\n- conf: Add bootc_unsafe_paths (RHEL-99826)\n\n[0.73.1-10]\n- module: Warn if module config file is inaccessible (RHEL-83804)",
+  "affected_products": [
+    "Oracle Linux 10 for x86_64",
+    "Oracle Linux 10 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "libdnf-0.73.1-12.0.1.el10.src",
+    "libdnf-0.73.1-12.0.1.el10.x86_64",
+    "python3-hawkey-0.73.1-12.0.1.el10.x86_64",
+    "python3-libdnf-0.73.1-12.0.1.el10.x86_64"
+  ],
+  "full_text": "[0.73.1-12.0.1]\n- Recognise new kernel-uek RPMs as multiversion and installonlypkg [Orabug: 36053872]\n- Replaced bugzilla.oracle.com references [Orabug: 34202300]\n- Update OL9 dnf to recognize UEK7(kernel-uek-core & kernel-uek-modules) as installonlypkgs package [Orabug: 33861607]\n- Replaced bugzilla.redhat.com with bugzilla.oracle.com in config [Orabug: 29656932]\n- Add support for apps that use libdnf to access yum url with 'ociregion' variable [Orabug: 30121584]\n- Update OL8 dnf to recognise kernel-uek as installonlypkgs package [Orabug: 31018668]\n- Disable rhsm [Orabug: 29901202]\n\n[0.73.1-12]\n- Bump version due to failed build\n\n[0.73.1-11]\n- history DB: Add 'persistence' column (RHEL-99825)\n- conf: Add bootc_unsafe_paths (RHEL-99826)\n\n[0.73.1-10]\n- module: Warn if module config file is inaccessible (RHEL-83804)\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2025-20107-0.html"
+}

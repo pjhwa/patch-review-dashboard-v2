@@ -1,0 +1,37 @@
+{
+  "id": "RHSA-2026:0029",
+  "vendor": "Red Hat",
+  "type": "Security Advisory (RHSA)",
+  "title": "Red Hat Security Advisory: mod_md security update",
+  "issuedDate": "2026-01-05T05:28:58+00:00",
+  "updatedDate": "2026-01-05T05:28:58+00:00",
+  "pubDate": "2026-01-05T05:28:58+00:00",
+  "dateStr": "2026-01-05",
+  "url": "https://access.redhat.com/errata/RHSA-2026:0029",
+  "severity": "Important",
+  "overview": "An update for mod_md is now available for Red Hat Enterprise Linux 9.4 Extended Update Support.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "description": "This module manages common properties of domains for one or more virtual hosts. Specifically it can use the ACME protocol to automate certificate provisioning.  Certificates will be configured for managed domains and their virtual hosts automatically, including at renewal.\n\nSecurity Fix(es):\n\n* mod_md: Apache HTTP Server: mod_md (ACME), unintended retry intervals (CVE-2025-55753)\n\nFor more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux",
+    "Red Hat Enterprise Linux AppStream EUS (v.9.4)"
+  ],
+  "cves": [
+    "CVE-2025-55753"
+  ],
+  "packages": [
+    "mod_md-1:2.4.19-1.el9_4.1.src",
+    "mod_md-1:2.4.19-1.el9_4.1.aarch64",
+    "mod_md-debugsource-1:2.4.19-1.el9_4.1.aarch64",
+    "mod_md-debuginfo-1:2.4.19-1.el9_4.1.aarch64",
+    "mod_md-1:2.4.19-1.el9_4.1.ppc64le",
+    "mod_md-debugsource-1:2.4.19-1.el9_4.1.ppc64le",
+    "mod_md-debuginfo-1:2.4.19-1.el9_4.1.ppc64le",
+    "mod_md-1:2.4.19-1.el9_4.1.x86_64",
+    "mod_md-debugsource-1:2.4.19-1.el9_4.1.x86_64",
+    "mod_md-debuginfo-1:2.4.19-1.el9_4.1.x86_64",
+    "mod_md-1:2.4.19-1.el9_4.1.s390x",
+    "mod_md-debugsource-1:2.4.19-1.el9_4.1.s390x",
+    "mod_md-debuginfo-1:2.4.19-1.el9_4.1.s390x"
+  ],
+  "full_text": "An update for mod_md is now available for Red Hat Enterprise Linux 9.4 Extended Update Support.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nThis module manages common properties of domains for one or more virtual hosts. Specifically it can use the ACME protocol to automate certificate provisioning.  Certificates will be configured for managed domains and their virtual hosts automatically, including at renewal.\n\nSecurity Fix(es):\n\n* mod_md: Apache HTTP Server: mod_md (ACME), unintended retry intervals (CVE-2025-55753)\n\nFor more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section."
+}

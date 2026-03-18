@@ -1,0 +1,31 @@
+{
+  "id": "RHSA-2025:22938",
+  "vendor": "Red Hat",
+  "type": "Security Advisory (RHSA)",
+  "title": "Red Hat Security Advisory: Kiali 2.11.5 for Red Hat OpenShift Service Mesh 3.1",
+  "issuedDate": "2025-12-09T14:59:35+00:00",
+  "updatedDate": "2025-12-12T21:35:51+00:00",
+  "pubDate": "2025-12-09T14:59:35+00:00",
+  "dateStr": "2025-12-09",
+  "url": "https://access.redhat.com/errata/RHSA-2025:22938",
+  "severity": "Important",
+  "overview": "Kiali 2.11.5 for Red Hat OpenShift Service Mesh 3.1\n\nThis update has a security impact of Moderate. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "description": "Kiali 2.11.5, for Red Hat OpenShift Service Mesh 3.1, provides observability for the service mesh by offering a visual representation of the mesh topology and metrics, helping users monitor, trace, and manage efficiently.\n\nSecurity Fix(es):\n\n* kiali-ossmc-rhel9: node-forge ASN.1 Unbounded Recursion (CVE-2025-66031)\n\n* kiali-rhel9: node-forge ASN.1 Unbounded Recursion (CVE-2025-66031)\n\n* kiali-ossmc-rhel9: glob CLI: Command injection via -c/--cmd executes matches with shell:true (CVE-2025-64756)\n\n* kiali-rhel9: glob CLI: Command injection via -c/--cmd executes matches with shell:true (CVE-2025-64756)",
+  "affected_products": [],
+  "cves": [
+    "CVE-2025-12816",
+    "CVE-2025-64756",
+    "CVE-2025-66031"
+  ],
+  "packages": [
+    "registry.redhat.io/openshift-service-mesh/kiali-rhel9@sha256:00743a84647ebaac732100a5e224ec024d3dfa22a9a942b4df81d1042eac2493_amd64",
+    "registry.redhat.io/openshift-service-mesh/kiali-ossmc-rhel9@sha256:53f1ed0ec0b57f5d35c51dda8d3490649c91c2596658f91e9e206c6fb476ee1a_amd64",
+    "registry.redhat.io/openshift-service-mesh/kiali-rhel9@sha256:85b7d05d935a5d86fc0695ef7ab7edefd27c2674bd35a4e5997b6ac7bbbaa2a8_arm64",
+    "registry.redhat.io/openshift-service-mesh/kiali-ossmc-rhel9@sha256:928ed23934eae4e9c16ac23eaa828cc09f2d0ae539f330454ad6222e8cec3250_arm64",
+    "registry.redhat.io/openshift-service-mesh/kiali-rhel9@sha256:9d884a817a1a1e8924b6405e694ffae05f78664f4e00f355ec2ddd7c05446e53_ppc64le",
+    "registry.redhat.io/openshift-service-mesh/kiali-ossmc-rhel9@sha256:502dcba52460677c5d20f2649216e62c426acb83fbfb38bd630e942b9c0c2733_ppc64le",
+    "registry.redhat.io/openshift-service-mesh/kiali-rhel9@sha256:ef0ddf23bae41b1c9aad0b05c90aecc2a21b45e125013a139e705c27285907c5_s390x",
+    "registry.redhat.io/openshift-service-mesh/kiali-ossmc-rhel9@sha256:75b9064c9e83a08e0147ff97fd45ca8b3adb6f16bccedf66c146a74a8c769b25_s390x"
+  ],
+  "full_text": "Kiali 2.11.5 for Red Hat OpenShift Service Mesh 3.1\n\nThis update has a security impact of Moderate. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nKiali 2.11.5, for Red Hat OpenShift Service Mesh 3.1, provides observability for the service mesh by offering a visual representation of the mesh topology and metrics, helping users monitor, trace, and manage efficiently.\n\nSecurity Fix(es):\n\n* kiali-ossmc-rhel9: node-forge ASN.1 Unbounded Recursion (CVE-2025-66031)\n\n* kiali-rhel9: node-forge ASN.1 Unbounded Recursion (CVE-2025-66031)\n\n* kiali-ossmc-rhel9: glob CLI: Command injection via -c/--cmd executes matches with shell:true (CVE-2025-64756)\n\n* kiali-rhel9: glob CLI: Command injection via -c/--cmd executes matches with shell:true (CVE-2025-64756)"
+}

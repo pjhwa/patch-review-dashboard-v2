@@ -1,0 +1,53 @@
+{
+  "id": "ELSA-2026-1628",
+  "vendor": "Oracle",
+  "type": "Security Advisory (ELSA)",
+  "kernel_type": "AppStream",
+  "title": " php security update",
+  "issuedDate": "2026-02-01T00:00:00Z",
+  "updatedDate": "2026-02-01T00:00:00Z",
+  "pubDate": "2026-02-01T00:00:00Z",
+  "dateStr": "2026-02-01",
+  "url": "https://linux.oracle.com/errata/ELSA-2026-1628.html",
+  "severity": "Important",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 10.",
+  "description": "[8.3.29-1]\n- rebase to 8.3.29",
+  "affected_products": [
+    "Oracle Linux 10 for x86_64",
+    "Oracle Linux 10 for aarch64"
+  ],
+  "cves": [
+    "CVE-2025-14177",
+    "CVE-2025-14178",
+    "CVE-2025-14180"
+  ],
+  "packages": [
+    "php-process-8.3.29-1.el10_1.x86_64",
+    "php-8.3.29-1.el10_1.x86_64",
+    "php-pdo-8.3.29-1.el10_1.x86_64",
+    "php-cli-8.3.29-1.el10_1.x86_64",
+    "php-bcmath-8.3.29-1.el10_1.x86_64",
+    "php-dba-8.3.29-1.el10_1.x86_64",
+    "php-devel-8.3.29-1.el10_1.x86_64",
+    "php-soap-8.3.29-1.el10_1.x86_64",
+    "php-mbstring-8.3.29-1.el10_1.x86_64",
+    "php-ffi-8.3.29-1.el10_1.x86_64",
+    "php-enchant-8.3.29-1.el10_1.x86_64",
+    "php-snmp-8.3.29-1.el10_1.x86_64",
+    "php-fpm-8.3.29-1.el10_1.x86_64",
+    "php-intl-8.3.29-1.el10_1.x86_64",
+    "php-odbc-8.3.29-1.el10_1.x86_64",
+    "php-gmp-8.3.29-1.el10_1.x86_64",
+    "php-common-8.3.29-1.el10_1.x86_64",
+    "php-mysqlnd-8.3.29-1.el10_1.x86_64",
+    "php-xml-8.3.29-1.el10_1.x86_64",
+    "php-opcache-8.3.29-1.el10_1.x86_64",
+    "php-pgsql-8.3.29-1.el10_1.x86_64",
+    "php-gd-8.3.29-1.el10_1.x86_64",
+    "php-8.3.29-1.el10_1.src",
+    "php-dbg-8.3.29-1.el10_1.x86_64",
+    "php-embedded-8.3.29-1.el10_1.x86_64",
+    "php-ldap-8.3.29-1.el10_1.x86_64"
+  ],
+  "full_text": "[8.3.29-1]\n- rebase to 8.3.29\n\nReferences:\nhttps://linux.oracle.com/errata/ELSA-2026-1628.html\nhttps://linux.oracle.com/cve/CVE-2025-14177.html\nhttps://linux.oracle.com/cve/CVE-2025-14178.html\nhttps://linux.oracle.com/cve/CVE-2025-14180.html"
+}

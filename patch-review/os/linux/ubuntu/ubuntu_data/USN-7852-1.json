@@ -1,0 +1,30 @@
+{
+  "id": "USN-7852-1",
+  "vendor": "Canonical / Ubuntu",
+  "type": "Ubuntu Security Notice (USN)",
+  "title": "libxml2 vulnerability",
+  "issuedDate": "2025-10-30T16:39:20Z",
+  "updatedDate": "2026-02-10T04:50:20Z",
+  "pubDate": "2025-10-30T16:39:20Z",
+  "dateStr": "2025-10-30",
+  "url": "https://ubuntu.com/security/notices/USN-7852-1",
+  "severity": "None",
+  "overview": "libxml2 vulnerability",
+  "description": "It was discovered that libxslt, used by libxml2, incorrectly handled\ncertain attributes. An attacker could use this issue to cause a crash,\nresulting in a denial of service, or possibly execute arbitrary code. This\nupdate adds a fix to libxml2 to mitigate the libxslt vulnerability.",
+  "affected_products": [
+    "Ubuntu 22.04 LTS",
+    "Ubuntu 24.04 LTS"
+  ],
+  "cves": [],
+  "packages": [
+    "libxml2-2.9.13+dfsg-1ubuntu0.10",
+    "libxml2-2.9.14+dfsg-1.3ubuntu3.6",
+    "libxml2-dev-2.9.13+dfsg-1ubuntu0.10",
+    "libxml2-dev-2.9.14+dfsg-1.3ubuntu3.6",
+    "libxml2-utils-2.9.13+dfsg-1ubuntu0.10",
+    "libxml2-utils-2.9.14+dfsg-1.3ubuntu3.6",
+    "python3-libxml2-2.9.13+dfsg-1ubuntu0.10",
+    "python3-libxml2-2.9.14+dfsg-1.3ubuntu3.6"
+  ],
+  "full_text": "It was discovered that libxslt, used by libxml2, incorrectly handled\ncertain attributes. An attacker could use this issue to cause a crash,\nresulting in a denial of service, or possibly execute arbitrary code. This\nupdate adds a fix to libxml2 to mitigate the libxslt vulnerability."
+}

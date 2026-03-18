@@ -1,0 +1,42 @@
+{
+  "id": "ELSA-2026-0079",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2026-January/019593.html",
+  "synopsis": "[El-errata] ELSA-2026-0079 Moderate: Oracle Linux 7 perl security update",
+  "dateStr": "2026-January",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Security Advisory ELSA-2026-0079",
+  "description": "[4:5.16.3-299.0.1]\n- Fixed CVE-2023-31484 verify TLS certificates [Orabug: 38816274]",
+  "affected_products": [
+    "Oracle Linux 7"
+  ],
+  "packages": [
+    "perl-5.16.3-299.0.1.el7_9.x86_64.rpm",
+    "perl-CPAN-1.9800-299.0.1.el7_9.noarch.rpm",
+    "perl-ExtUtils-CBuilder-0.28.2.6-299.0.1.el7_9.noarch.rpm",
+    "perl-ExtUtils-Embed-1.30-299.0.1.el7_9.noarch.rpm",
+    "perl-ExtUtils-Install-1.58-299.0.1.el7_9.noarch.rpm",
+    "perl-IO-Zlib-1.10-299.0.1.el7_9.noarch.rpm",
+    "perl-Locale-Maketext-Simple-0.21-299.0.1.el7_9.noarch.rpm",
+    "perl-Module-CoreList-2.76.02-299.0.1.el7_9.noarch.rpm",
+    "perl-Module-Loaded-0.08-299.0.1.el7_9.noarch.rpm",
+    "perl-Object-Accessor-0.42-299.0.1.el7_9.noarch.rpm",
+    "perl-Package-Constants-0.02-299.0.1.el7_9.noarch.rpm",
+    "perl-Pod-Escapes-1.04-299.0.1.el7_9.noarch.rpm",
+    "perl-Time-Piece-1.20.1-299.0.1.el7_9.x86_64.rpm",
+    "perl-core-5.16.3-299.0.1.el7_9.x86_64.rpm",
+    "perl-devel-5.16.3-299.0.1.el7_9.i686.rpm",
+    "perl-devel-5.16.3-299.0.1.el7_9.x86_64.rpm",
+    "perl-libs-5.16.3-299.0.1.el7_9.i686.rpm",
+    "perl-libs-5.16.3-299.0.1.el7_9.x86_64.rpm",
+    "perl-macros-5.16.3-299.0.1.el7_9.x86_64.rpm",
+    "perl-tests-5.16.3-299.0.1.el7_9.x86_64.rpm"
+  ],
+  "cves": [
+    "CVE-2023-31484"
+  ],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Security Advisory ELSA-2026-0079\n\nhttp://linux.oracle.com/errata/ELSA-2026-0079.html\n\nThe following updated rpms for Oracle Linux 7 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\nperl-5.16.3-299.0.1.el7_9.x86_64.rpm\nperl-CPAN-1.9800-299.0.1.el7_9.noarch.rpm\nperl-ExtUtils-CBuilder-0.28.2.6-299.0.1.el7_9.noarch.rpm\nperl-ExtUtils-Embed-1.30-299.0.1.el7_9.noarch.rpm\nperl-ExtUtils-Install-1.58-299.0.1.el7_9.noarch.rpm\nperl-IO-Zlib-1.10-299.0.1.el7_9.noarch.rpm\nperl-Locale-Maketext-Simple-0.21-299.0.1.el7_9.noarch.rpm\nperl-Module-CoreList-2.76.02-299.0.1.el7_9.noarch.rpm\nperl-Module-Loaded-0.08-299.0.1.el7_9.noarch.rpm\nperl-Object-Accessor-0.42-299.0.1.el7_9.noarch.rpm\nperl-Package-Constants-0.02-299.0.1.el7_9.noarch.rpm\nperl-Pod-Escapes-1.04-299.0.1.el7_9.noarch.rpm\nperl-Time-Piece-1.20.1-299.0.1.el7_9.x86_64.rpm\nperl-core-5.16.3-299.0.1.el7_9.x86_64.rpm\nperl-devel-5.16.3-299.0.1.el7_9.i686.rpm\nperl-devel-5.16.3-299.0.1.el7_9.x86_64.rpm\nperl-libs-5.16.3-299.0.1.el7_9.i686.rpm\nperl-libs-5.16.3-299.0.1.el7_9.x86_64.rpm\nperl-macros-5.16.3-299.0.1.el7_9.x86_64.rpm\nperl-tests-5.16.3-299.0.1.el7_9.x86_64.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol7/SRPMS-updates/perl-5.16.3-299.0.1.el7_9.src.rpm\n\nRelated CVEs:\n\nCVE-2023-31484\n\n\n\n\nDescription of changes:\n\n[4:5.16.3-299.0.1]\n- Fixed CVE-2023-31484 verify TLS certificates [Orabug: 38816274]",
+  "vendor": "Oracle"
+}

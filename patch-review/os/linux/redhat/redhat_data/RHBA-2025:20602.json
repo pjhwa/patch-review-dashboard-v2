@@ -1,0 +1,40 @@
+{
+  "id": "RHBA-2025:20602",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: perftest bug fix and enhancement update",
+  "issuedDate": "2025-11-11T07:50:03Z",
+  "updatedDate": "2025-11-11T07:50:03Z",
+  "pubDate": "2025-11-11T07:50:03Z",
+  "dateStr": "2025-11-11",
+  "url": "https://access.redhat.com/errata/RHBA-2025:20602",
+  "severity": "None",
+  "overview": "An update for perftest is now available for Red Hat Enterprise Linux 10.",
+  "description": "For detailed information on changes in this release, see the Red Hat Enterprise Linux 9 Release Notes linked from the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux for ARM 64",
+    "Red Hat Enterprise Linux for Power, little endian",
+    "Red Hat Enterprise Linux for x86_64 10 x86_64"
+  ],
+  "cves": [],
+  "packages": [
+    "perftest-25.04.0.0.84-1.el9.src",
+    "perftest-25.04.0.0.84-1.el9.x86_64",
+    "perftest-debuginfo-25.04.0.0.84-1.el9.x86_64",
+    "perftest-debugsource-25.04.0.0.84-1.el9.x86_64",
+    "perftest-25.04.0.0.84-1.el9.ppc64le",
+    "perftest-debuginfo-25.04.0.0.84-1.el9.ppc64le",
+    "perftest-debugsource-25.04.0.0.84-1.el9.ppc64le",
+    "perftest-25.04.0.0.84-1.el9.aarch64",
+    "perftest-debuginfo-25.04.0.0.84-1.el9.aarch64",
+    "perftest-debugsource-25.04.0.0.84-1.el9.aarch64"
+  ],
+  "fixes": [
+    {
+      "id": "RHEL-99801",
+      "url": "https://issues.redhat.com/browse/RHEL-99801",
+      "description": "[RHEL-9.7] perftest: update package"
+    }
+  ],
+  "full_text": "An update for perftest is now available for Red Hat Enterprise Linux 10.\n\nFor detailed information on changes in this release, see the Red Hat Enterprise Linux 9 Release Notes linked from the References section."
+}

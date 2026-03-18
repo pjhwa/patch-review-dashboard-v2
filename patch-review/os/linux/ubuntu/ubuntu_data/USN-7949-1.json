@@ -1,0 +1,26 @@
+{
+  "id": "USN-7949-1",
+  "vendor": "Canonical / Ubuntu",
+  "type": "Ubuntu Security Notice (USN)",
+  "title": "libsodium vulnerability",
+  "issuedDate": "2026-01-08T15:15:58Z",
+  "updatedDate": "2026-02-10T04:50:47Z",
+  "pubDate": "2026-01-08T15:15:58Z",
+  "dateStr": "2026-01-08",
+  "url": "https://ubuntu.com/security/notices/USN-7949-1",
+  "severity": "None",
+  "overview": "libsodium vulnerability",
+  "description": "It was discovered that Sodium incorrectly handled the elliptic curve point\nvalidity check in certain atypical use cases. This could result in invalid\npoints being used, contrary to expectations.",
+  "affected_products": [
+    "Ubuntu 22.04 LTS",
+    "Ubuntu 24.04 LTS"
+  ],
+  "cves": [],
+  "packages": [
+    "libsodium-dev-1.0.18-1ubuntu0.22.04.1",
+    "libsodium-dev-1.0.18-1ubuntu0.24.04.1",
+    "libsodium23-1.0.18-1ubuntu0.22.04.1",
+    "libsodium23-1.0.18-1ubuntu0.24.04.1"
+  ],
+  "full_text": "It was discovered that Sodium incorrectly handled the elliptic curve point\nvalidity check in certain atypical use cases. This could result in invalid\npoints being used, contrary to expectations."
+}

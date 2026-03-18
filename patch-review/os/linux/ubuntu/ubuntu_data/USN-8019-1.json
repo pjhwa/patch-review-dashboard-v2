@@ -1,0 +1,26 @@
+{
+  "id": "USN-8019-1",
+  "vendor": "Canonical / Ubuntu",
+  "type": "Ubuntu Security Notice (USN)",
+  "title": "tracker-miners vulnerabilities",
+  "issuedDate": "2026-02-05T14:47:57Z",
+  "updatedDate": "2026-02-10T04:50:49Z",
+  "pubDate": "2026-02-05T14:47:57Z",
+  "dateStr": "2026-02-05",
+  "url": "https://ubuntu.com/security/notices/USN-8019-1",
+  "severity": "None",
+  "overview": "tracker-miners vulnerabilities",
+  "description": "Fatih Çelik discovered that tracker-miners incorrectly handled certain\nmalformed MP3 files. An attacker could use this issue to cause\ntracker-miners to crash, resulting in a denial of service, or possibly\nexecute arbitrary code.",
+  "affected_products": [
+    "Ubuntu 22.04 LTS",
+    "Ubuntu 24.04 LTS"
+  ],
+  "cves": [],
+  "packages": [
+    "tracker-extract-3.3.3-0ubuntu0.20.04.4",
+    "tracker-extract-3.7.1-1ubuntu0.1",
+    "tracker-miner-fs-3.3.3-0ubuntu0.20.04.4",
+    "tracker-miner-fs-3.7.1-1ubuntu0.1"
+  ],
+  "full_text": "Fatih Çelik discovered that tracker-miners incorrectly handled certain\nmalformed MP3 files. An attacker could use this issue to cause\ntracker-miners to crash, resulting in a denial of service, or possibly\nexecute arbitrary code."
+}

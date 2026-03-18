@@ -1,0 +1,28 @@
+{
+  "id": "ELBA-2025-23156",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2025-December/019286.html",
+  "synopsis": "[El-errata] ELBA-2025-23156 Oracle Linux 10 ipmitool bug fix and enhancement update",
+  "dateStr": "2025-December",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Bug Fix Advisory ELBA-2025-23156",
+  "description": "[1.8.19-10]\n- Apply Debian/upstream patch: 137aeb64, fixes ipmitool lan print\n- Add patch that partially reverts 6e037d6bfb to fix regression in 1.8.19\n  Among others fixes ipmievd startup (fedora#2303185)",
+  "affected_products": [
+    "Oracle Linux 10"
+  ],
+  "packages": [
+    "bmc-snmp-proxy-1.8.19-10.el10_1.noarch.rpm",
+    "exchange-bmc-os-info-1.8.19-10.el10_1.noarch.rpm",
+    "ipmievd-1.8.19-10.el10_1.x86_64.rpm",
+    "ipmitool-1.8.19-10.el10_1.x86_64.rpm",
+    "bmc-snmp-proxy-1.8.19-10.el10_1.noarch.rpm",
+    "exchange-bmc-os-info-1.8.19-10.el10_1.noarch.rpm",
+    "ipmievd-1.8.19-10.el10_1.aarch64.rpm",
+    "ipmitool-1.8.19-10.el10_1.aarch64.rpm"
+  ],
+  "cves": [],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Bug Fix Advisory ELBA-2025-23156\n\nhttp://linux.oracle.com/errata/ELBA-2025-23156.html\n\nThe following updated rpms for Oracle Linux 10 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\nbmc-snmp-proxy-1.8.19-10.el10_1.noarch.rpm\nexchange-bmc-os-info-1.8.19-10.el10_1.noarch.rpm\nipmievd-1.8.19-10.el10_1.x86_64.rpm\nipmitool-1.8.19-10.el10_1.x86_64.rpm\n\naarch64:\nbmc-snmp-proxy-1.8.19-10.el10_1.noarch.rpm\nexchange-bmc-os-info-1.8.19-10.el10_1.noarch.rpm\nipmievd-1.8.19-10.el10_1.aarch64.rpm\nipmitool-1.8.19-10.el10_1.aarch64.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol10/SRPMS-updates/ipmitool-1.8.19-10.el10_1.src.rpm\n\n\n\nDescription of changes:\n\n[1.8.19-10]\n- Apply Debian/upstream patch: 137aeb64, fixes ipmitool lan print\n- Add patch that partially reverts 6e037d6bfb to fix regression in 1.8.19\n  Among others fixes ipmievd startup (fedora#2303185)",
+  "vendor": "Oracle"
+}

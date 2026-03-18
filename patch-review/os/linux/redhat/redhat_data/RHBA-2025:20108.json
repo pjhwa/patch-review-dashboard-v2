@@ -1,0 +1,38 @@
+{
+  "id": "RHBA-2025:20108",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: redhat-fonts bug fix and enhancement update",
+  "issuedDate": "2025-11-11T07:25:07Z",
+  "updatedDate": "2025-11-11T07:25:07Z",
+  "pubDate": "2025-11-11T07:25:07Z",
+  "dateStr": "2025-11-11",
+  "url": "https://access.redhat.com/errata/RHBA-2025:20108",
+  "severity": "None",
+  "overview": "An update for redhat-fonts is now available for Red Hat Enterprise Linux 10.",
+  "description": "For detailed information on changes in this release, see the Red Hat Enterprise Linux 10.1 Release Notes linked from the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux for IBM z Systems",
+    "Red Hat Enterprise Linux for Power, little endian",
+    "Red Hat Enterprise Linux for ARM 64",
+    "Red Hat Enterprise Linux for x86_64 10 x86_64"
+  ],
+  "cves": [],
+  "packages": [
+    "redhat-fonts-4.1.0-1.el10.src",
+    "redhat-display-fonts-4.1.0-1.el10.noarch",
+    "redhat-display-vf-fonts-4.1.0-1.el10.noarch",
+    "redhat-mono-fonts-4.1.0-1.el10.noarch",
+    "redhat-mono-vf-fonts-4.1.0-1.el10.noarch",
+    "redhat-text-fonts-4.1.0-1.el10.noarch",
+    "redhat-text-vf-fonts-4.1.0-1.el10.noarch"
+  ],
+  "fixes": [
+    {
+      "id": "RHEL-64904",
+      "url": "https://issues.redhat.com/browse/RHEL-64904",
+      "description": "update Red Hat fonts to newer upstream release for RHEL 10"
+    }
+  ],
+  "full_text": "An update for redhat-fonts is now available for Red Hat Enterprise Linux 10.\n\nFor detailed information on changes in this release, see the Red Hat Enterprise Linux 10.1 Release Notes linked from the References section."
+}

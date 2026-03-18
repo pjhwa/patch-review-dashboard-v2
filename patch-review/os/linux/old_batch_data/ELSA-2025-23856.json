@@ -1,0 +1,33 @@
+{
+  "id": "ELSA-2025-23856",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2025-December/019408.html",
+  "synopsis": "[El-errata] ELSA-2025-23856 Important: Oracle Linux 9 thunderbird security update",
+  "dateStr": "2025-December",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Security Advisory ELSA-2025-23856",
+  "description": "[140.6.0-1.0.1]\n- Fix prefs for new nss [Orabug: 37079813]\n- Add Oracle prefs\n\n[140.6.0]\n- Add OpenELA debranding\n\n[140.6.0-1]\n- Update to 140.6.0 ESR",
+  "affected_products": [
+    "Oracle Linux 9"
+  ],
+  "packages": [
+    "thunderbird-140.6.0-1.0.1.el9_7.x86_64.rpm",
+    "thunderbird-140.6.0-1.0.1.el9_7.aarch64.rpm"
+  ],
+  "cves": [
+    "CVE-2025-14321",
+    "CVE-2025-14322",
+    "CVE-2025-14323",
+    "CVE-2025-14324",
+    "CVE-2025-14325",
+    "CVE-2025-14328",
+    "CVE-2025-14329",
+    "CVE-2025-14330",
+    "CVE-2025-14331",
+    "CVE-2025-14333"
+  ],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Security Advisory ELSA-2025-23856\n\nhttp://linux.oracle.com/errata/ELSA-2025-23856.html\n\nThe following updated rpms for Oracle Linux 9 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\nthunderbird-140.6.0-1.0.1.el9_7.x86_64.rpm\n\naarch64:\nthunderbird-140.6.0-1.0.1.el9_7.aarch64.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol9/SRPMS-updates/thunderbird-140.6.0-1.0.1.el9_7.src.rpm\n\nRelated CVEs:\n\nCVE-2025-14321\nCVE-2025-14322\nCVE-2025-14323\nCVE-2025-14324\nCVE-2025-14325\nCVE-2025-14328\nCVE-2025-14329\nCVE-2025-14330\nCVE-2025-14331\nCVE-2025-14333\n\n\n\n\nDescription of changes:\n\n[140.6.0-1.0.1]\n- Fix prefs for new nss [Orabug: 37079813]\n- Add Oracle prefs\n\n[140.6.0]\n- Add OpenELA debranding\n\n[140.6.0-1]\n- Update to 140.6.0 ESR",
+  "vendor": "Oracle"
+}

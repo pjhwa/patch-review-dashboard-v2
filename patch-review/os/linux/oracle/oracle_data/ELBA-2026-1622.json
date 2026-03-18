@@ -1,0 +1,29 @@
+{
+  "id": "ELBA-2026-1622",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "AppStream",
+  "title": "podman bug fix and enhancement update",
+  "issuedDate": "2026-02-01T00:00:00Z",
+  "updatedDate": "2026-02-01T00:00:00Z",
+  "pubDate": "2026-02-01T00:00:00Z",
+  "dateStr": "2026-02-01",
+  "url": "https://linux.oracle.com/errata/ELBA-2026-1622.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 9.",
+  "description": "[5.6.0-13.0.1]\n- Add devices on container startup, not on creation\n- overlay: Put should ignore ENINVAL for Unmount [Orabug: 36234694]\n- Drop nmap-ncat requirement and skip ignore-socket test case [Orabug: 34117404]\n\n[6:5.6.0-13]\n- update to the latest content of https://github.com/containers/podman/tree/v5.6-rhel\n  (https://github.com/containers/podman/commit/1dce7a7)\n- fixes 'Podman 5.6 regression: container fails to start when WORKDIR is a symlink (file exists error) [rhel-9.7.z]'\n- Resolves: RHEL-142311",
+  "affected_products": [
+    "Oracle Linux 9 for x86_64",
+    "Oracle Linux 9 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "podman-5.6.0-13.0.1.el9_7.src",
+    "podman-remote-5.6.0-13.0.1.el9_7.x86_64",
+    "podman-5.6.0-13.0.1.el9_7.x86_64",
+    "podman-tests-5.6.0-13.0.1.el9_7.x86_64",
+    "podman-docker-5.6.0-13.0.1.el9_7.noarch",
+    "podman-plugins-5.6.0-13.0.1.el9_7.x86_64"
+  ],
+  "full_text": "[5.6.0-13.0.1]\n- Add devices on container startup, not on creation\n- overlay: Put should ignore ENINVAL for Unmount [Orabug: 36234694]\n- Drop nmap-ncat requirement and skip ignore-socket test case [Orabug: 34117404]\n\n[6:5.6.0-13]\n- update to the latest content of https://github.com/containers/podman/tree/v5.6-rhel\n  (https://github.com/containers/podman/commit/1dce7a7)\n- fixes 'Podman 5.6 regression: container fails to start when WORKDIR is a symlink (file exists error) [rhel-9.7.z]'\n- Resolves: RHEL-142311\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2026-1622.html"
+}

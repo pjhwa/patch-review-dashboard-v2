@@ -1,0 +1,48 @@
+{
+  "id": "ELSA-2026-0524",
+  "vendor": "Oracle",
+  "type": "Security Advisory (ELSA)",
+  "kernel_type": "AppStream",
+  "title": " postgresql:15 security update",
+  "issuedDate": "2026-01-14T00:00:00Z",
+  "updatedDate": "2026-01-14T00:00:00Z",
+  "pubDate": "2026-01-14T00:00:00Z",
+  "dateStr": "2026-01-14",
+  "url": "https://linux.oracle.com/errata/ELSA-2026-0524.html",
+  "severity": "Moderate",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 8.",
+  "description": "pgaudit\npg_repack\npostgres-decoderbufs\npostgresql\n[15.15-1]\n- Update to 15.15\n- Resolves: RHEL-128819 (CVE-2025-12818)",
+  "affected_products": [
+    "Oracle Linux 8 for x86_64",
+    "Oracle Linux 8 for aarch64"
+  ],
+  "cves": [
+    "CVE-2025-12817",
+    "CVE-2025-12818"
+  ],
+  "packages": [
+    "postgresql-upgrade-15.15-1.module+el8.10.0+90764+d97d4711.x86_64",
+    "postgresql-server-15.15-1.module+el8.10.0+90764+d97d4711.x86_64",
+    "postgresql-contrib-15.15-1.module+el8.10.0+90764+d97d4711.x86_64",
+    "postgresql-static-15.15-1.module+el8.10.0+90764+d97d4711.x86_64",
+    "postgresql-docs-15.15-1.module+el8.10.0+90764+d97d4711.x86_64",
+    "postgresql-test-15.15-1.module+el8.10.0+90764+d97d4711.x86_64",
+    "postgresql-pltcl-15.15-1.module+el8.10.0+90764+d97d4711.x86_64",
+    "postgresql-private-devel-15.15-1.module+el8.10.0+90764+d97d4711.x86_64",
+    "postgresql-server-devel-15.15-1.module+el8.10.0+90764+d97d4711.x86_64",
+    "postgresql-private-libs-15.15-1.module+el8.10.0+90764+d97d4711.x86_64",
+    "postgresql-upgrade-devel-15.15-1.module+el8.10.0+90764+d97d4711.x86_64",
+    "postgresql-15.15-1.module+el8.10.0+90764+d97d4711.x86_64",
+    "postgresql-plpython3-15.15-1.module+el8.10.0+90764+d97d4711.x86_64",
+    "postgresql-plperl-15.15-1.module+el8.10.0+90764+d97d4711.x86_64",
+    "pgaudit-1.7.0-1.module+el8.9.0+90110+d8a562d5.x86_64",
+    "pg_repack-1.4.8-1.module+el8.9.0+90110+d8a562d5.x86_64",
+    "postgres-decoderbufs-1.9.7-1.Final.module+el8.9.0+90110+d8a562d5.x86_64",
+    "postgres-decoderbufs-1.9.7-1.Final.module+el8.9.0+90110+d8a562d5.src",
+    "postgresql-15.15-1.module+el8.10.0+90764+d97d4711.src",
+    "pgaudit-1.7.0-1.module+el8.9.0+90110+d8a562d5.src",
+    "pg_repack-1.4.8-1.module+el8.9.0+90110+d8a562d5.src",
+    "postgresql-test-rpm-macros-15.15-1.module+el8.10.0+90764+d97d4711.noarch"
+  ],
+  "full_text": "pgaudit\npg_repack\npostgres-decoderbufs\npostgresql\n[15.15-1]\n- Update to 15.15\n- Resolves: RHEL-128819 (CVE-2025-12818)\n\nReferences:\nhttps://linux.oracle.com/errata/ELSA-2026-0524.html\nhttps://linux.oracle.com/cve/CVE-2025-12817.html\nhttps://linux.oracle.com/cve/CVE-2025-12818.html"
+}

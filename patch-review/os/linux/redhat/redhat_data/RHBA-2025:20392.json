@@ -1,0 +1,53 @@
+{
+  "id": "RHBA-2025:20392",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: libsecret bug fix and enhancement update",
+  "issuedDate": "2025-11-11T07:26:20Z",
+  "updatedDate": "2025-11-11T07:26:20Z",
+  "pubDate": "2025-11-11T07:26:20Z",
+  "dateStr": "2025-11-11",
+  "url": "https://access.redhat.com/errata/RHBA-2025:20392",
+  "severity": "None",
+  "overview": "An update for libsecret is now available for Red Hat Enterprise Linux 10.",
+  "description": "For detailed information on changes in this release, see the Red Hat Enterprise Linux 10.1 Release Notes linked from the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux for IBM z Systems",
+    "Red Hat Enterprise Linux for x86_64 10 x86_64",
+    "Red Hat Enterprise Linux for ARM 64",
+    "Red Hat CodeReady Linux Builder for IBM z Systems",
+    "Red Hat Enterprise Linux for Power, little endian",
+    "Red Hat CodeReady Linux Builder for ARM 64",
+    "Red Hat CodeReady Linux Builder for x86_64 10 x86_64",
+    "Red Hat CodeReady Linux Builder for Power, little endian"
+  ],
+  "cves": [],
+  "packages": [
+    "libsecret-0.21.2-8.el10.src",
+    "libsecret-0.21.2-8.el10.x86_64",
+    "libsecret-debuginfo-0.21.2-8.el10.x86_64",
+    "libsecret-debugsource-0.21.2-8.el10.x86_64",
+    "libsecret-devel-0.21.2-8.el10.x86_64",
+    "libsecret-0.21.2-8.el10.s390x",
+    "libsecret-debuginfo-0.21.2-8.el10.s390x",
+    "libsecret-debugsource-0.21.2-8.el10.s390x",
+    "libsecret-devel-0.21.2-8.el10.s390x",
+    "libsecret-0.21.2-8.el10.ppc64le",
+    "libsecret-debuginfo-0.21.2-8.el10.ppc64le",
+    "libsecret-debugsource-0.21.2-8.el10.ppc64le",
+    "libsecret-devel-0.21.2-8.el10.ppc64le",
+    "libsecret-0.21.2-8.el10.aarch64",
+    "libsecret-debuginfo-0.21.2-8.el10.aarch64",
+    "libsecret-debugsource-0.21.2-8.el10.aarch64",
+    "libsecret-devel-0.21.2-8.el10.aarch64",
+    "libsecret-mock-service-0.21.2-8.el10.noarch"
+  ],
+  "fixes": [
+    {
+      "id": "RHEL-81780",
+      "url": "https://issues.redhat.com/browse/RHEL-81780",
+      "description": "Package libsecret-mock-service and push it in CRB"
+    }
+  ],
+  "full_text": "An update for libsecret is now available for Red Hat Enterprise Linux 10.\n\nFor detailed information on changes in this release, see the Red Hat Enterprise Linux 10.1 Release Notes linked from the References section."
+}

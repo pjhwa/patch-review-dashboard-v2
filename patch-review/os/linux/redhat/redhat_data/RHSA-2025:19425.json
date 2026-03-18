@@ -1,0 +1,28 @@
+{
+  "id": "RHSA-2025:19425",
+  "vendor": "Red Hat",
+  "type": "Security Advisory (RHSA)",
+  "title": "Red Hat Security Advisory: Red Hat Enterprise Linux AI 1.5 (AMD)",
+  "issuedDate": "2025-11-03T07:33:42+00:00",
+  "updatedDate": "2025-11-03T07:33:50+00:00",
+  "pubDate": "2025-11-03T07:33:42+00:00",
+  "dateStr": "2025-11-03",
+  "url": "https://access.redhat.com/errata/RHSA-2025:19425",
+  "severity": "Important",
+  "overview": "Red Hat Enterprise Linux AI 1.5 (AMD) is now available.",
+  "description": "Red Hat® Enterprise Linux® AI is a foundation model platform to seamlessly develop, test, \nand run Granite family large language models (LLMs) for enterprise applications. This \ncontainer provides NVIDIA hardware enablement and the InstructLab application stack.",
+  "affected_products": [
+    "Red Hat Enterprise Linux AI",
+    "Red Hat Enterprise Linux AI 1.5"
+  ],
+  "cves": [
+    "CVE-2025-8194",
+    "CVE-2025-47273",
+    "CVE-2025-48956",
+    "CVE-2025-57809"
+  ],
+  "packages": [
+    "registry.redhat.io/rhelai1/instructlab-amd-rhel9@sha256:03f22e965af16fe84aed7d30e7b8db00dead11d9fd4b11e3c9abb2e68dd910f1_amd64"
+  ],
+  "full_text": "Red Hat Enterprise Linux AI 1.5 (AMD) is now available.\n\nRed Hat® Enterprise Linux® AI is a foundation model platform to seamlessly develop, test, \nand run Granite family large language models (LLMs) for enterprise applications. This \ncontainer provides NVIDIA hardware enablement and the InstructLab application stack."
+}

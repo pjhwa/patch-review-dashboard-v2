@@ -1,0 +1,39 @@
+{
+  "id": "RHSA-2026:0323",
+  "vendor": "Red Hat",
+  "type": "Security Advisory (RHSA)",
+  "title": "Red Hat Security Advisory: libpng security update",
+  "issuedDate": "2026-01-08T11:26:24+00:00",
+  "updatedDate": "2026-01-08T11:26:24+00:00",
+  "pubDate": "2026-01-08T11:26:24+00:00",
+  "dateStr": "2026-01-08",
+  "url": "https://access.redhat.com/errata/RHSA-2026:0323",
+  "severity": "Important",
+  "overview": "An update for libpng is now available for Red Hat Enterprise Linux 8.2 Advanced Update Support.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "description": "The libpng packages contain a library of functions for creating and manipulating Portable Network Graphics (PNG) image format files.\n\nSecurity Fix(es):\n\n* libpng: LIBPNG buffer overflow (CVE-2025-64720)\n\n* libpng: LIBPNG heap buffer overflow (CVE-2025-65018)\n\n* libpng: LIBPNG out-of-bounds read in png_image_read_composite (CVE-2025-66293)\n\nFor more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux",
+    "Red Hat Enterprise Linux BaseOS AUS (v. 8.2)"
+  ],
+  "cves": [
+    "CVE-2025-64720",
+    "CVE-2025-65018",
+    "CVE-2025-66293"
+  ],
+  "packages": [
+    "libpng-2:1.6.34-8.el8_2.1.src",
+    "libpng-2:1.6.34-8.el8_2.1.i686",
+    "libpng-devel-2:1.6.34-8.el8_2.1.i686",
+    "libpng-debugsource-2:1.6.34-8.el8_2.1.i686",
+    "libpng-debuginfo-2:1.6.34-8.el8_2.1.i686",
+    "libpng-devel-debuginfo-2:1.6.34-8.el8_2.1.i686",
+    "libpng-tools-debuginfo-2:1.6.34-8.el8_2.1.i686",
+    "libpng-2:1.6.34-8.el8_2.1.x86_64",
+    "libpng-devel-2:1.6.34-8.el8_2.1.x86_64",
+    "libpng-debugsource-2:1.6.34-8.el8_2.1.x86_64",
+    "libpng-debuginfo-2:1.6.34-8.el8_2.1.x86_64",
+    "libpng-devel-debuginfo-2:1.6.34-8.el8_2.1.x86_64",
+    "libpng-tools-debuginfo-2:1.6.34-8.el8_2.1.x86_64"
+  ],
+  "full_text": "An update for libpng is now available for Red Hat Enterprise Linux 8.2 Advanced Update Support.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nThe libpng packages contain a library of functions for creating and manipulating Portable Network Graphics (PNG) image format files.\n\nSecurity Fix(es):\n\n* libpng: LIBPNG buffer overflow (CVE-2025-64720)\n\n* libpng: LIBPNG heap buffer overflow (CVE-2025-65018)\n\n* libpng: LIBPNG out-of-bounds read in png_image_read_composite (CVE-2025-66293)\n\nFor more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section."
+}

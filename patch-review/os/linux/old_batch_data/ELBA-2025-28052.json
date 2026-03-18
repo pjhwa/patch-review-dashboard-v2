@@ -1,0 +1,22 @@
+{
+  "id": "ELBA-2025-28052",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2025-December/019288.html",
+  "synopsis": "[El-errata] ELBA-2025-28052 Oracle Linux 10 rust-sequoia-sq bug fix update",
+  "dateStr": "2025-December",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Bug Fix Advisory ELBA-2025-28052",
+  "description": "[1.3.1.1-1.0.2]\n- Put \"Requires\" openssl-libs in correct placeholder [Orabug: 38742109]\n\n[1.3.1.1-1.0.1]\n- Hard require needed openssl-libs [Orabug: 38742109]",
+  "affected_products": [
+    "Oracle Linux 10"
+  ],
+  "packages": [
+    "sequoia-sq-1.3.1.1-1.0.2.el10.x86_64.rpm",
+    "sequoia-sq-1.3.1.1-1.0.2.el10.aarch64.rpm"
+  ],
+  "cves": [],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Bug Fix Advisory ELBA-2025-28052\n\nhttp://linux.oracle.com/errata/ELBA-2025-28052.html\n\nThe following updated rpms for Oracle Linux 10 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\nsequoia-sq-1.3.1.1-1.0.2.el10.x86_64.rpm\n\naarch64:\nsequoia-sq-1.3.1.1-1.0.2.el10.aarch64.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol10/SRPMS-updates/rust-sequoia-sq-1.3.1.1-1.0.2.el10.src.rpm\n\n\n\nDescription of changes:\n\n[1.3.1.1-1.0.2]\n- Put \"Requires\" openssl-libs in correct placeholder [Orabug: 38742109]\n\n[1.3.1.1-1.0.1]\n- Hard require needed openssl-libs [Orabug: 38742109]",
+  "vendor": "Oracle"
+}

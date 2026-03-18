@@ -1,0 +1,40 @@
+{
+  "id": "USN-7846-1",
+  "vendor": "Canonical / Ubuntu",
+  "type": "Ubuntu Security Notice (USN)",
+  "title": "xorg-server, xwayland vulnerabilities",
+  "issuedDate": "2025-10-29T11:49:03Z",
+  "updatedDate": "2026-02-10T04:50:20Z",
+  "pubDate": "2025-10-29T11:49:03Z",
+  "dateStr": "2025-10-29",
+  "url": "https://ubuntu.com/security/notices/USN-7846-1",
+  "severity": "None",
+  "overview": "xorg-server, xwayland vulnerabilities",
+  "description": "Jan-Niklas Sohn discovered that the X.Org X Server incorrectly handled\ncertain memory operations. An attacker could use these issues to cause the\nX Server to crash, leading to a denial of service, obtain sensitive\ninformation, or possibly execute arbitrary code.",
+  "affected_products": [
+    "Ubuntu 22.04 LTS",
+    "Ubuntu 24.04 LTS"
+  ],
+  "cves": [],
+  "packages": [
+    "xnest-2:21.1.12-1ubuntu1.5",
+    "xnest-2:21.1.4-2ubuntu1.7~22.04.16",
+    "xorg-server-source-2:21.1.12-1ubuntu1.5",
+    "xorg-server-source-2:21.1.4-2ubuntu1.7~22.04.16",
+    "xserver-common-2:21.1.12-1ubuntu1.5",
+    "xserver-common-2:21.1.4-2ubuntu1.7~22.04.16",
+    "xserver-xephyr-2:21.1.12-1ubuntu1.5",
+    "xserver-xephyr-2:21.1.4-2ubuntu1.7~22.04.16",
+    "xserver-xorg-core-2:21.1.12-1ubuntu1.5",
+    "xserver-xorg-core-2:21.1.4-2ubuntu1.7~22.04.16",
+    "xserver-xorg-dev-2:21.1.12-1ubuntu1.5",
+    "xserver-xorg-dev-2:21.1.4-2ubuntu1.7~22.04.16",
+    "xserver-xorg-legacy-2:21.1.12-1ubuntu1.5",
+    "xserver-xorg-legacy-2:21.1.4-2ubuntu1.7~22.04.16",
+    "xvfb-2:21.1.12-1ubuntu1.5",
+    "xvfb-2:21.1.4-2ubuntu1.7~22.04.16",
+    "xwayland-2:22.1.1-1ubuntu0.20",
+    "xwayland-2:23.2.6-1ubuntu0.7"
+  ],
+  "full_text": "Jan-Niklas Sohn discovered that the X.Org X Server incorrectly handled\ncertain memory operations. An attacker could use these issues to cause the\nX Server to crash, leading to a denial of service, obtain sensitive\ninformation, or possibly execute arbitrary code."
+}

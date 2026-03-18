@@ -1,0 +1,21 @@
+{
+  "id": "ELBA-2025-22492",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2026-January/019592.html",
+  "synopsis": "[El-errata] ELBA-2025-22492 Oracle Linux 7 ca-certificates bug fix and enhancement update",
+  "dateStr": "2026-January",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Bug Fix Advisory ELBA-2025-22492",
+  "description": "[2025.2.80_v9.0.304-71.0.1]\n- Resolve ELBA-2025-22492 [Orabug: 38712242]\n- Update to CKBI 2.80_v9.0.304 from NSS 3.114\n-    Adding:\n-     # Certificate \"TWCA CYBER Root CA\"\n-     # Certificate \"TWCA Global Root CA G2\"\n-     # Certificate \"SecureSign Root CA12\"\n-     # Certificate \"SecureSign Root CA14\"\n-     # Certificate \"SecureSign Root CA15\"\n-     # Certificate \"D-TRUST BR Root CA 2 2023\"\n-     # Certificate \"TrustAsia SMIME ECC Root CA\"\n-     # Certificate \"TrustAsia SMIME RSA Root CA\"\n-     # Certificate \"TrustAsia TLS ECC Root CA\"\n-     # Certificate \"TrustAsia TLS RSA Root CA\"\n-     # Certificate \"D-TRUST EV Root CA 2 2023\"\n-     # Certificate \"SwissSign RSA SMIME Root CA 2022 - 1\"\n-     # Certificate \"SwissSign RSA TLS Root CA 2022 - 1\"\n-     # Certificate \"Sectigo Public Code Signing Root R46\"\n-     # Certificate \"Sectigo Public Code Signing Root E46\"",
+  "affected_products": [
+    "Oracle Linux 7"
+  ],
+  "packages": [
+    "ca-certificates-2025.2.80_v9.0.304-71.0.1.el7_9.noarch.rpm"
+  ],
+  "cves": [],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Bug Fix Advisory ELBA-2025-22492\n\nhttp://linux.oracle.com/errata/ELBA-2025-22492.html\n\nThe following updated rpms for Oracle Linux 7 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\nca-certificates-2025.2.80_v9.0.304-71.0.1.el7_9.noarch.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol7/SRPMS-updates/ca-certificates-2025.2.80_v9.0.304-71.0.1.el7_9.src.rpm\n\n\n\nDescription of changes:\n\n[2025.2.80_v9.0.304-71.0.1]\n- Resolve ELBA-2025-22492 [Orabug: 38712242]\n- Update to CKBI 2.80_v9.0.304 from NSS 3.114\n-    Adding:\n-     # Certificate \"TWCA CYBER Root CA\"\n-     # Certificate \"TWCA Global Root CA G2\"\n-     # Certificate \"SecureSign Root CA12\"\n-     # Certificate \"SecureSign Root CA14\"\n-     # Certificate \"SecureSign Root CA15\"\n-     # Certificate \"D-TRUST BR Root CA 2 2023\"\n-     # Certificate \"TrustAsia SMIME ECC Root CA\"\n-     # Certificate \"TrustAsia SMIME RSA Root CA\"\n-     # Certificate \"TrustAsia TLS ECC Root CA\"\n-     # Certificate \"TrustAsia TLS RSA Root CA\"\n-     # Certificate \"D-TRUST EV Root CA 2 2023\"\n-     # Certificate \"SwissSign RSA SMIME Root CA 2022 - 1\"\n-     # Certificate \"SwissSign RSA TLS Root CA 2022 - 1\"\n-     # Certificate \"Sectigo Public Code Signing Root R46\"\n-     # Certificate \"Sectigo Public Code Signing Root E46\"",
+  "vendor": "Oracle"
+}

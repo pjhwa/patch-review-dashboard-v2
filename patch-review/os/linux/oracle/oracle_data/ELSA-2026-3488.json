@@ -1,0 +1,43 @@
+{
+  "id": "ELSA-2026-3488",
+  "vendor": "Oracle",
+  "type": "Security Advisory (ELSA)",
+  "title": " kernel security update",
+  "issuedDate": "2026-03-02T00:00:00Z",
+  "updatedDate": "2026-03-02T00:00:00Z",
+  "pubDate": "2026-03-02T00:00:00Z",
+  "dateStr": "2026-03-02",
+  "url": "https://linux.oracle.com/errata/ELSA-2026-3488.html",
+  "severity": "Moderate",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 9.",
+  "description": "[5.14.0-611.36.1]\n- Disable UKI signing [Orabug: 36571828]\n- Update Oracle Linux certificates (Kevin Lyons)\n- Disable signing for aarch64 (Ilya Okomin)\n- Oracle Linux RHCK Module Signing Key was added to the kernel trusted keys list (olkmod_signing_key.pem) [Orabug: 29539237]\n- Update x509.genkey [Orabug: 24817676]\n- Conflict with shim-ia32 and shim-x64 <= 15.3-1.0.5]\n- Remove upstream reference during boot (Kevin Lyons) [Orabug: 34729535]\n- Add Oracle Linux IMA certificates\n- Add new Oracle Linux Driver Signing (key 1) certificate [Orabug: 37985764]\n\n[5.14.0-611.36.1]\n- net/smc: Remove validation of reserved bits in CLC Decline message (Mete Durlu) [RHEL-143718]\n- autofs: dont trigger mount if it cant succeed (Ian Kent) [RHEL-149495]\n- migrate: correct lock ordering for hugetlb file folios (Luiz Capitulino) [RHEL-147266] {CVE-2026-23097}\n- ice: PTP: fix missing timestamps on E825 hardware (CKI Backport Bot) [RHEL-148166]\n- fou: Don't allow 0 for FOU_ATTR_IPPROTO. (Xin Long) [RHEL-144987]\n- tools: ynl: Specify --no-line-number in ynl-regen.sh. (Xin Long) [RHEL-144987]\n- gue: Fix skb memleak with inner IP protocol 0. (Xin Long) [RHEL-144987]\n- netlink: specs: fou: replace underscores with dashes in names (Xin Long) [RHEL-144987]\n- fou: fix initialization of grc (Xin Long) [RHEL-144987]\n- fou: Fix null-ptr-deref in GRO. (Xin Long) [RHEL-144987]\n- fou: remove warn in gue_gro_receive on unsupported protocol (Xin Long) [RHEL-144987]\n- fou: Remove XRFM from NET_FOU Kconfig (Xin Long) [RHEL-144987]\n- fou: remove sparse errors (Xin Long) [RHEL-144987]\n- redhat: enable FOU modules in kernel-modules-extra (Xin Long) [RHEL-144987]\n- s390/mm: Fix __ptep_rdp() inline assembly (Mete Durlu) [RHEL-143713]\n- dpll: expose fractional frequency offset in ppt (Ivan Vecera) [RHEL-146357]\n- dpll: zl3073x: Implement device mode setting support (Ivan Vecera) [RHEL-147459]\n- dpll: add dpll_device op to set working mode (Ivan Vecera) [RHEL-147459]\n- dpll: add dpll_device op to get supported modes (Ivan Vecera) [RHEL-147459]\n- i40e: add rh_phys_port_name mod option to behave like upstream (CKI Backport Bot) [RHEL-128237]\n- ice: add rh_phys_port_name mod option to behave like upstream (CKI Backport Bot) [RHEL-128237]\n- scsi: qla2xxx: Fix bsg_done() causing double free (Ewan D. Milne) [RHEL-146049]\n- ipv6: BUG() in pskb_expand_head() as part of calipso_skbuff_setattr() (CKI Backport Bot) [RHEL-143545] {CVE-2025-71085}\n- tick/sched: Limit non-timekeeper CPUs calling jiffies update (Phil Auld) [RHEL-141462]\n- smc: Use __sk_dst_get() and dst_dev_rcu() in smc_clc_prfx_match(). (Mete Durlu) [RHEL-130017] {CVE-2025-40168}",
+  "affected_products": [
+    "Oracle Linux 9 for x86_64",
+    "Oracle Linux 9 for aarch64"
+  ],
+  "cves": [
+    "CVE-2025-40168",
+    "CVE-2025-71085",
+    "CVE-2026-23097"
+  ],
+  "packages": [
+    "kernel-core-5.14.0-611.36.1.el9_7.x86_64",
+    "kernel-modules-5.14.0-611.36.1.el9_7.x86_64",
+    "kernel-uki-virt-5.14.0-611.36.1.el9_7.x86_64",
+    "kernel-debug-5.14.0-611.36.1.el9_7.x86_64",
+    "kernel-debug-core-5.14.0-611.36.1.el9_7.x86_64",
+    "kernel-debug-modules-core-5.14.0-611.36.1.el9_7.x86_64",
+    "kernel-debug-modules-5.14.0-611.36.1.el9_7.x86_64",
+    "kernel-5.14.0-611.36.1.el9_7.src",
+    "kernel-modules-extra-5.14.0-611.36.1.el9_7.x86_64",
+    "kernel-modules-core-5.14.0-611.36.1.el9_7.x86_64",
+    "kernel-5.14.0-611.36.1.el9_7.x86_64",
+    "kernel-tools-5.14.0-611.36.1.el9_7.x86_64",
+    "kernel-uki-virt-addons-5.14.0-611.36.1.el9_7.x86_64",
+    "kernel-abi-stablelists-5.14.0-611.36.1.el9_7.noarch",
+    "kernel-tools-libs-5.14.0-611.36.1.el9_7.x86_64",
+    "kernel-debug-uki-virt-5.14.0-611.36.1.el9_7.x86_64",
+    "kernel-debug-modules-extra-5.14.0-611.36.1.el9_7.x86_64"
+  ],
+  "full_text": "[5.14.0-611.36.1]\n- Disable UKI signing [Orabug: 36571828]\n- Update Oracle Linux certificates (Kevin Lyons)\n- Disable signing for aarch64 (Ilya Okomin)\n- Oracle Linux RHCK Module Signing Key was added to the kernel trusted keys list (olkmod_signing_key.pem) [Orabug: 29539237]\n- Update x509.genkey [Orabug: 24817676]\n- Conflict with shim-ia32 and shim-x64 <= 15.3-1.0.5]\n- Remove upstream reference during boot (Kevin Lyons) [Orabug: 34729535]\n- Add Oracle Linux IMA certificates\n- Add new Oracle Linux Driver Signing (key 1) certificate [Orabug: 37985764]\n\n[5.14.0-611.36.1]\n- net/smc: Remove validation of reserved bits in CLC Decline message (Mete Durlu) [RHEL-143718]\n- autofs: dont trigger mount if it cant succeed (Ian Kent) [RHEL-149495]\n- migrate: correct lock ordering for hugetlb file folios (Luiz Capitulino) [RHEL-147266] {CVE-2026-23097}\n- ice: PTP: fix missing timestamps on E825 hardware (CKI Backport Bot) [RHEL-148166]\n- fou: Don't allow 0 for FOU_ATTR_IPPROTO. (Xin Long) [RHEL-144987]\n- tools: ynl: Specify --no-line-number in ynl-regen.sh. (Xin Long) [RHEL-144987]\n- gue: Fix skb memleak with inner IP protocol 0. (Xin Long) [RHEL-144987]\n- netlink: specs: fou: replace underscores with dashes in names (Xin Long) [RHEL-144987]\n- fou: fix initialization of grc (Xin Long) [RHEL-144987]\n- fou: Fix null-ptr-deref in GRO. (Xin Long) [RHEL-144987]\n- fou: remove warn in gue_gro_receive on unsupported protocol (Xin Long) [RHEL-144987]\n- fou: Remove XRFM from NET_FOU Kconfig (Xin Long) [RHEL-144987]\n- fou: remove sparse errors (Xin Long) [RHEL-144987]\n- redhat: enable FOU modules in kernel-modules-extra (Xin Long) [RHEL-144987]\n- s390/mm: Fix __ptep_rdp() inline assembly (Mete Durlu) [RHEL-143713]\n- dpll: expose fractional frequency offset in ppt (Ivan Vecera) [RHEL-146357]\n- dpll: zl3073x: Implement device mode setting support (Ivan Vecera) [RHEL-147459]\n- dpll: add dpll_device op to set working mode (Ivan Vecera) [RHEL-147459]\n- dpll: add dpll_device op to get supported modes (Ivan Vecera) [RHEL-147459]\n- i40e: add rh_phys_port_name mod option to behave like upstream (CKI Backport Bot) [RHEL-128237]\n- ice: add rh_phys_port_name mod option to behave like upstream (CKI Backport Bot) [RHEL-128237]\n- scsi: qla2xxx: Fix bsg_done() causing double free (Ewan D. Milne) [RHEL-146049]\n- ipv6: BUG() in pskb_expand_head() as part of calipso_skbuff_setattr() (CKI Backport Bot) [RHEL-143545] {CVE-2025-71085}\n- tick/sched: Limit non-timekeeper CPUs calling jiffies update (Phil Auld) [RHEL-141462]\n- smc: Use __sk_dst_get() and dst_dev_rcu() in smc_clc_prfx_match(). (Mete Durlu) [RHEL-130017] {CVE-2025-40168}\n\nReferences:\nhttps://linux.oracle.com/errata/ELSA-2026-3488.html\nhttps://linux.oracle.com/cve/CVE-2025-40168.html\nhttps://linux.oracle.com/cve/CVE-2025-71085.html\nhttps://linux.oracle.com/cve/CVE-2026-23097.html"
+}

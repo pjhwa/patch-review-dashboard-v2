@@ -1,0 +1,21 @@
+{
+  "id": "ELSA-2025-22395",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2025-December/019386.html",
+  "synopsis": "[El-errata] New Ksplice updates for RHCK 10 (ELSA-2025-22395)",
+  "dateStr": "2025-December",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Synopsis: ELSA-2025-22395 can now be patched using Ksplice",
+  "description": "",
+  "affected_products": [],
+  "packages": [],
+  "cves": [
+    "CVE-2025-22068",
+    "CVE-2025-38724",
+    "CVE-2025-39973"
+  ],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Synopsis: ELSA-2025-22395 can now be patched using Ksplice\nCVEs: CVE-2025-22068 CVE-2025-38724 CVE-2025-39973\n\nUsers with Oracle Linux Premier Support can now use Ksplice to patch\nagainst the latest Oracle Linux Security Advisory, ELSA-2025-22395.\nMore information about this errata can be found at\nhttps://linux.oracle.com/errata/ELSA-2025-22395.html\n\nINSTALLING THE UPDATES\n\nWe recommend that all users of Ksplice Uptrack running RHCK 10 install\nthese updates.\n\nOn systems that have \"autoinstall = yes\" in /etc/uptrack/uptrack.conf,\nthese updates will be installed automatically and you do not need to\ntake any action.\n\nAlternatively, you can install these updates by running:\n\n# /usr/sbin/uptrack-upgrade -y\n\n\nDESCRIPTION\n\n* CVE-2025-22068: Use-after-free in Userspace block driver.\n\n* CVE-2025-38724: Use-after-free in NFSv4 server driver.\n\n* CVE-2025-39973: Out-of-bounds memory access in Intel(R) Ethernet Controller XL710 Family driver.\n\nSUPPORT\n\nKsplice support is available at ksplice-support_ww at oracle.com.",
+  "vendor": "Oracle"
+}

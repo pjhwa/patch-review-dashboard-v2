@@ -1,0 +1,60 @@
+{
+  "id": "RHBA-2025:23329",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: ignition bug fix and enhancement update",
+  "issuedDate": "2025-12-18T10:48:15Z",
+  "updatedDate": "2025-12-18T10:48:15Z",
+  "pubDate": "2025-12-18T10:48:15Z",
+  "dateStr": "2025-12-18",
+  "url": "https://access.redhat.com/errata/RHBA-2025:23329",
+  "severity": "None",
+  "overview": "An update for ignition is now available for Red Hat Enterprise Linux 10.",
+  "description": "Ignition is a utility used to manipulate systems during the initramfs. This includes partitioning disks, formatting partitions, writing files (regular files, systemd units, etc.), and configuring users. On first boot, Ignition reads its configuration from a source of truth (remote URL, network metadata service, hypervisor bridge, etc.) and applies the configuration.Bug Fix(es) and Enhancement(s): [rhel-9.7.z] Backport build ignition with GOEXPERIMENT=strictfipsruntime (JIRA:RHEL-129126)",
+  "affected_products": [
+    "Red Hat Enterprise Linux for ARM 64",
+    "Red Hat Enterprise Linux for x86_64 10 x86_64",
+    "Red Hat Enterprise Linux for Power, little endian",
+    "Red Hat Enterprise Linux for IBM z Systems"
+  ],
+  "cves": [],
+  "packages": [
+    "ignition-2.23.0-2.el9_7.src",
+    "ignition-2.23.0-2.el9_7.x86_64",
+    "ignition-debuginfo-2.23.0-2.el9_7.x86_64",
+    "ignition-debugsource-2.23.0-2.el9_7.x86_64",
+    "ignition-edge-2.23.0-2.el9_7.x86_64",
+    "ignition-grub-2.23.0-2.el9_7.x86_64",
+    "ignition-validate-2.23.0-2.el9_7.x86_64",
+    "ignition-validate-debuginfo-2.23.0-2.el9_7.x86_64",
+    "ignition-2.23.0-2.el9_7.s390x",
+    "ignition-debuginfo-2.23.0-2.el9_7.s390x",
+    "ignition-debugsource-2.23.0-2.el9_7.s390x",
+    "ignition-edge-2.23.0-2.el9_7.s390x",
+    "ignition-grub-2.23.0-2.el9_7.s390x",
+    "ignition-validate-2.23.0-2.el9_7.s390x",
+    "ignition-validate-debuginfo-2.23.0-2.el9_7.s390x",
+    "ignition-2.23.0-2.el9_7.ppc64le",
+    "ignition-debuginfo-2.23.0-2.el9_7.ppc64le",
+    "ignition-debugsource-2.23.0-2.el9_7.ppc64le",
+    "ignition-edge-2.23.0-2.el9_7.ppc64le",
+    "ignition-grub-2.23.0-2.el9_7.ppc64le",
+    "ignition-validate-2.23.0-2.el9_7.ppc64le",
+    "ignition-validate-debuginfo-2.23.0-2.el9_7.ppc64le",
+    "ignition-2.23.0-2.el9_7.aarch64",
+    "ignition-debuginfo-2.23.0-2.el9_7.aarch64",
+    "ignition-debugsource-2.23.0-2.el9_7.aarch64",
+    "ignition-edge-2.23.0-2.el9_7.aarch64",
+    "ignition-grub-2.23.0-2.el9_7.aarch64",
+    "ignition-validate-2.23.0-2.el9_7.aarch64",
+    "ignition-validate-debuginfo-2.23.0-2.el9_7.aarch64"
+  ],
+  "fixes": [
+    {
+      "id": "RHEL-129126",
+      "url": "https://issues.redhat.com/browse/RHEL-129126",
+      "description": "[rhel-9.7.z] Backport build ignition with GOEXPERIMENT=strictfipsruntime"
+    }
+  ],
+  "full_text": "An update for ignition is now available for Red Hat Enterprise Linux 10.\n\nIgnition is a utility used to manipulate systems during the initramfs. This includes partitioning disks, formatting partitions, writing files (regular files, systemd units, etc.), and configuring users. On first boot, Ignition reads its configuration from a source of truth (remote URL, network metadata service, hypervisor bridge, etc.) and applies the configuration.Bug Fix(es) and Enhancement(s): [rhel-9.7.z] Backport build ignition with GOEXPERIMENT=strictfipsruntime (JIRA:RHEL-129126)"
+}

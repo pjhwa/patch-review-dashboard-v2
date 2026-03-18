@@ -1,0 +1,25 @@
+{
+  "id": "RHSA-2026:0851",
+  "vendor": "Red Hat",
+  "url": "https://access.redhat.com/errata/RHSA-2026:0851",
+  "pubDate": "2026-01-20T13:58:11.000Z",
+  "dateStr": "2026-01-20",
+  "severity": "Important",
+  "title": "Red Hat Security Advisory: net-snmp security update",
+  "overview": "An update for net-snmp is now available for Red Hat Enterprise Linux 8.6 Advanced Mission Critical Update Support, Red Hat Enterprise Linux 8.6 Update Services for SAP Solutions, and Red Hat Enterprise Linux 8.6 Telecommunications Update Service.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "description": "An update for net-snmp is now available for Red Hat Enterprise Linux 8.6 Advanced Mission Critical Update Support, Red Hat Enterprise Linux 8.6 Update Services for SAP Solutions, and Red Hat Enterprise Linux 8.6 Telecommunications Update Service.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux AppStream AUS (v.8.6)",
+    "Red Hat Enterprise Linux BaseOS AUS (v.8.6)",
+    "Red Hat Enterprise Linux AppStream E4S (v.8.6)",
+    "Red Hat Enterprise Linux BaseOS E4S (v.8.6)",
+    "Red Hat Enterprise Linux AppStream TUS (v.8.6)",
+    "Red Hat Enterprise Linux BaseOS TUS (v.8.6)"
+  ],
+  "cves": [
+    "CVE-2025-68615"
+  ],
+  "packages": [],
+  "fixes": "",
+  "full_text": "Red Hat Security Advisory: net-snmp security update\n\nAn update for net-snmp is now available for Red Hat Enterprise Linux 8.6 Advanced Mission Critical Update Support, Red Hat Enterprise Linux 8.6 Update Services for SAP Solutions, and Red Hat Enterprise Linux 8.6 Telecommunications Update Service.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nAn update for net-snmp is now available for Red Hat Enterprise Linux 8.6 Advanced Mission Critical Update Support, Red Hat Enterprise Linux 8.6 Update Services for SAP Solutions, and Red Hat Enterprise Linux 8.6 Telecommunications Update Service.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nUpdated Packages:\nnet-snmp-5.8-25.el8_6.3.src.rpm\nnet-snmp-5.8-25.el8_6.3.x86_64.rpm\nnet-snmp-agent-libs-5.8-25.el8_6.3.i686.rpm\nnet-snmp-agent-libs-5.8-25.el8_6.3.x86_64.rpm\nnet-snmp-agent-libs-debuginfo-5.8-25.el8_6.3.i686.rpm\nnet-snmp-agent-libs-debuginfo-5.8-25.el8_6.3.x86_64.rpm\nnet-snmp-debuginfo-5.8-25.el8_6.3.i686.rpm\nnet-snmp-debuginfo-5.8-25.el8_6.3.x86_64.rpm\nnet-snmp-debugsource-5.8-25.el8_6.3.i686.rpm\nnet-snmp-debugsource-5.8-25.el8_6.3.x86_64.rpm\nnet-snmp-devel-5.8-25.el8_6.3.i686.rpm\nnet-snmp-devel-5.8-25.el8_6.3.x86_64.rpm\nnet-snmp-libs-5.8-25.el8_6.3.i686.rpm\nnet-snmp-libs-5.8-25.el8_6.3.x86_64.rpm\nnet-snmp-libs-debuginfo-5.8-25.el8_6.3.i686.rpm\nnet-snmp-libs-debuginfo-5.8-25.el8_6.3.x86_64.rpm\nnet-snmp-perl-5.8-25.el8_6.3.x86_64.rpm\nnet-snmp-perl-debuginfo-5.8-25.el8_6.3.i686.rpm\nnet-snmp-perl-debuginfo-5.8-25.el8_6.3.x86_64.rpm\nnet-snmp-utils-5.8-25.el8_6.3.x86_64.rpm\nnet-snmp-utils-debuginfo-5.8-25.el8_6.3.i686.rpm\nnet-snmp-utils-debuginfo-5.8-25.el8_6.3.x86_64.rpm\nnet-snmp-5.8-25.el8_6.3.ppc64le.rpm\nnet-snmp-agent-libs-5.8-25.el8_6.3.ppc64le.rpm\nnet-snmp-agent-libs-debuginfo-5.8-25.el8_6.3.ppc64le.rpm\nnet-snmp-debuginfo-5.8-25.el8_6.3.ppc64le.rpm\nnet-snmp-debugsource-5.8-25.el8_6.3.ppc64le.rpm\nnet-snmp-devel-5.8-25.el8_6.3.ppc64le.rpm\nnet-snmp-libs-5.8-25.el8_6.3.ppc64le.rpm\nnet-snmp-libs-debuginfo-5.8-25.el8_6.3.ppc64le.rpm\nnet-snmp-perl-5.8-25.el8_6.3.ppc64le.rpm\nnet-snmp-perl-debuginfo-5.8-25.el8_6.3.ppc64le.rpm\nnet-snmp-utils-5.8-25.el8_6.3.ppc64le.rpm\nnet-snmp-utils-debuginfo-5.8-25.el8_6.3.ppc64le.rpm\n\nCVE-2025-68615: A flaw was found in net-snmp. A remote attacker can trigger a buffer overflow in the snmptrapd daemon by sending a specially crafted SNMP packet, causing the daemon to crash and resulting in a denial of service."
+}

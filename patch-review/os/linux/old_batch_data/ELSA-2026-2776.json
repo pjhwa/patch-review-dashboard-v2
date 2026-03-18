@@ -1,0 +1,30 @@
+{
+  "id": "ELSA-2026-2776",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2026-February/019798.html",
+  "synopsis": "[El-errata] ELSA-2026-2776 Moderate: Oracle Linux 9 edk2 security update",
+  "dateStr": "2026-February",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Security Advisory ELSA-2026-2776",
+  "description": "[20241117-4.0.1.el9_7.3]\n- Replace upstream references [Orabug:36569119]\n\n[20241117-4.el9_7.3]\n- edk2-OvmfPkg-MemEncryptSevLib-Evict-cache-lines-during-SN.patch [RHEL-125104]\n- edk2-MdePkg-Add-the-COHERENCY_SFW_NO-CPUID-bit-field.patch [RHEL-125104]\n- edk2-OvmfPkg-ResetVector-Make-ReceivedVc-a-flag-in-SEV-ES.patch [RHEL-125104]\n- edk2-OvmfPkg-MemEncryptSevLib-Check-if-SEV-SNP-coherency-.patch [RHEL-125104]\n- edk2-openssl-flatten-contents-of-openssl-tarball.patch [RHEL-115923]\n- edk2-Bumped-openssl-submodule-to-version-3.0.7-29.1.patch [RHEL-115923]\n- Resolves: RHEL-125104\n  ([edk2] VM panic on booting SNP guest with large memory on Genoa [rhel-9.7.z])\n- Resolves: RHEL-115923\n  (CVE-2025-9230 edk2: Out-of-bounds read & write in RFC 3211 KEK Unwrap [rhel-9.7.z])\n\n[20241117-4.el9_7.2]\n- edk2-OvmfPkg-IoMmuDxe-Fix-1M-and-2M-buffer-handling.patch [RHEL-121875]\n- Resolves: RHEL-121875\n  (Fail to create AMD SEV SLES 15 SP4 guest via virt-install --cdrom [rhel-9.7.z])\n\n[20241117-4.el9_7.1]\n- edk2-OvmfPkg-IoMmuDxe-Fix-1M-and-2M-buffer-handling.patch [RHEL-121875]\n- Resolves: RHEL-121875\n  (Fail to create AMD SEV SLES 15 SP4 guest via virt-install --cdrom [rhel-9.7.z])",
+  "affected_products": [
+    "Oracle Linux 9"
+  ],
+  "packages": [
+    "edk2-aarch64-20241117-4.0.1.el9_7.3.noarch.rpm",
+    "edk2-ovmf-20241117-4.0.1.el9_7.3.noarch.rpm",
+    "edk2-tools-20241117-4.0.1.el9_7.3.x86_64.rpm",
+    "edk2-tools-doc-20241117-4.0.1.el9_7.3.noarch.rpm",
+    "edk2-aarch64-20241117-4.0.1.el9_7.3.noarch.rpm",
+    "edk2-ovmf-20241117-4.0.1.el9_7.3.noarch.rpm",
+    "edk2-tools-20241117-4.0.1.el9_7.3.aarch64.rpm",
+    "edk2-tools-doc-20241117-4.0.1.el9_7.3.noarch.rpm"
+  ],
+  "cves": [
+    "CVE-2025-9230"
+  ],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Security Advisory ELSA-2026-2776\n\nhttp://linux.oracle.com/errata/ELSA-2026-2776.html\n\nThe following updated rpms for Oracle Linux 9 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\nedk2-aarch64-20241117-4.0.1.el9_7.3.noarch.rpm\nedk2-ovmf-20241117-4.0.1.el9_7.3.noarch.rpm\nedk2-tools-20241117-4.0.1.el9_7.3.x86_64.rpm\nedk2-tools-doc-20241117-4.0.1.el9_7.3.noarch.rpm\n\naarch64:\nedk2-aarch64-20241117-4.0.1.el9_7.3.noarch.rpm\nedk2-ovmf-20241117-4.0.1.el9_7.3.noarch.rpm\nedk2-tools-20241117-4.0.1.el9_7.3.aarch64.rpm\nedk2-tools-doc-20241117-4.0.1.el9_7.3.noarch.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol9/SRPMS-updates/edk2-20241117-4.0.1.el9_7.3.src.rpm\n\nRelated CVEs:\n\nCVE-2025-9230\n\n\n\n\nDescription of changes:\n\n[20241117-4.0.1.el9_7.3]\n- Replace upstream references [Orabug:36569119]\n\n[20241117-4.el9_7.3]\n- edk2-OvmfPkg-MemEncryptSevLib-Evict-cache-lines-during-SN.patch [RHEL-125104]\n- edk2-MdePkg-Add-the-COHERENCY_SFW_NO-CPUID-bit-field.patch [RHEL-125104]\n- edk2-OvmfPkg-ResetVector-Make-ReceivedVc-a-flag-in-SEV-ES.patch [RHEL-125104]\n- edk2-OvmfPkg-MemEncryptSevLib-Check-if-SEV-SNP-coherency-.patch [RHEL-125104]\n- edk2-openssl-flatten-contents-of-openssl-tarball.patch [RHEL-115923]\n- edk2-Bumped-openssl-submodule-to-version-3.0.7-29.1.patch [RHEL-115923]\n- Resolves: RHEL-125104\n  ([edk2] VM panic on booting SNP guest with large memory on Genoa [rhel-9.7.z])\n- Resolves: RHEL-115923\n  (CVE-2025-9230 edk2: Out-of-bounds read & write in RFC 3211 KEK Unwrap [rhel-9.7.z])\n\n[20241117-4.el9_7.2]\n- edk2-OvmfPkg-IoMmuDxe-Fix-1M-and-2M-buffer-handling.patch [RHEL-121875]\n- Resolves: RHEL-121875\n  (Fail to create AMD SEV SLES 15 SP4 guest via virt-install --cdrom [rhel-9.7.z])\n\n[20241117-4.el9_7.1]\n- edk2-OvmfPkg-IoMmuDxe-Fix-1M-and-2M-buffer-handling.patch [RHEL-121875]\n- Resolves: RHEL-121875\n  (Fail to create AMD SEV SLES 15 SP4 guest via virt-install --cdrom [rhel-9.7.z])",
+  "vendor": "Oracle"
+}

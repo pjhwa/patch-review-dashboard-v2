@@ -1,0 +1,41 @@
+{
+  "id": "RHBA-2025:20733",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: lftp bug fix and enhancement update",
+  "issuedDate": "2025-11-11T07:50:56Z",
+  "updatedDate": "2025-11-11T07:50:56Z",
+  "pubDate": "2025-11-11T07:50:56Z",
+  "dateStr": "2025-11-11",
+  "url": "https://access.redhat.com/errata/RHBA-2025:20733",
+  "severity": "None",
+  "overview": "An update for lftp is now available for Red Hat Enterprise Linux 10.",
+  "description": "For detailed information on changes in this release, see the Red Hat Enterprise Linux 9 Release Notes linked from the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux for x86_64 10 x86_64",
+    "Red Hat Enterprise Linux for ARM 64",
+    "Red Hat Enterprise Linux for IBM z Systems",
+    "Red Hat Enterprise Linux for Power, little endian"
+  ],
+  "cves": [],
+  "packages": [
+    "lftp-4.9.2-7.el9.src",
+    "lftp-4.9.2-7.el9.i686",
+    "lftp-4.9.2-7.el9.x86_64",
+    "lftp-debuginfo-4.9.2-7.el9.i686",
+    "lftp-debuginfo-4.9.2-7.el9.x86_64",
+    "lftp-debugsource-4.9.2-7.el9.i686",
+    "lftp-debugsource-4.9.2-7.el9.x86_64",
+    "lftp-4.9.2-7.el9.s390x",
+    "lftp-debuginfo-4.9.2-7.el9.s390x",
+    "lftp-debugsource-4.9.2-7.el9.s390x",
+    "lftp-4.9.2-7.el9.ppc64le",
+    "lftp-debuginfo-4.9.2-7.el9.ppc64le",
+    "lftp-debugsource-4.9.2-7.el9.ppc64le",
+    "lftp-4.9.2-7.el9.aarch64",
+    "lftp-debuginfo-4.9.2-7.el9.aarch64",
+    "lftp-debugsource-4.9.2-7.el9.aarch64"
+  ],
+  "fixes": [],
+  "full_text": "An update for lftp is now available for Red Hat Enterprise Linux 10.\n\nFor detailed information on changes in this release, see the Red Hat Enterprise Linux 9 Release Notes linked from the References section."
+}

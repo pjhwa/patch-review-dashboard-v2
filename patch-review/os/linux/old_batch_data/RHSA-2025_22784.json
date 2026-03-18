@@ -1,0 +1,20 @@
+{
+  "id": "RHSA-2025:22784",
+  "vendor": "Red Hat",
+  "url": "https://access.redhat.com/errata/RHSA-2025:22784",
+  "pubDate": "2025-12-04T22:51:38.000Z",
+  "dateStr": "2025-12-04",
+  "severity": "Moderate",
+  "title": "Red Hat Security Advisory: Submariner v0.22 security fixes and container updates",
+  "overview": "Submariner v0.22 General Availability release images, which provide enhancements, security fixes, and updated container images.\n\nRed Hat Product Security has rated this update as having a security impact\nof Moderate. A Common Vulnerability Scoring System (CVSS) base score,\nwhich gives a detailed severity rating, is available for each vulnerability\nfrom the CVE links in the References section.\nRed Hat Advanced Cluster Management for Kubernetes v2.15",
+  "description": "Submariner v0.22 General Availability release images, which provide enhancements, security fixes, and updated container images.\n\nRed Hat Product Security has rated this update as having a security impact\nof Moderate. A Common Vulnerability Scoring System (CVSS) base score,\nwhich gives a detailed severity rating, is available for each vulnerability\nfrom the CVE links in the References section.\nRed Hat Advanced Cluster Management for Kubernetes v2.15",
+  "affected_products": [
+    "Red Hat Advanced Cluster Management for Kubernetes 2.15"
+  ],
+  "cves": [
+    "CVE-2025-59530"
+  ],
+  "packages": [],
+  "fixes": "",
+  "full_text": "Red Hat Security Advisory: Submariner v0.22 security fixes and container updates\n\nSubmariner v0.22 General Availability release images, which provide enhancements, security fixes, and updated container images.\n\nRed Hat Product Security has rated this update as having a security impact\nof Moderate. A Common Vulnerability Scoring System (CVSS) base score,\nwhich gives a detailed severity rating, is available for each vulnerability\nfrom the CVE links in the References section.\nRed Hat Advanced Cluster Management for Kubernetes v2.15\n\nSubmariner v0.22 General Availability release images, which provide enhancements, security fixes, and updated container images.\n\nRed Hat Product Security has rated this update as having a security impact\nof Moderate. A Common Vulnerability Scoring System (CVSS) base score,\nwhich gives a detailed severity rating, is available for each vulnerability\nfrom the CVE links in the References section.\nRed Hat Advanced Cluster Management for Kubernetes v2.15\n\n\n\nCVE-2025-59530: quic-go is an implementation of the QUIC protocol in Go. In versions prior to 0.49.0, 0.54.1, and 0.55.0, a misbehaving or malicious server can cause a denial-of-service (DoS) attack on the quic-go client by triggering an assertion failure, leading to a process crash. This requires no authentication and can be exploited during the handshake phase. This was observed in the wild with certain server implementations. quic-go needs to be able to handle misbehaving server implementations, including those that prematurely send a HANDSHAKE_DONE frame. Versions 0.49.0, 0.54.1, and 0.55.0 discard Initial keys when receiving a HANDSHAKE_DONE frame, thereby correctly handling premature HANDSHAKE_DONE frames."
+}

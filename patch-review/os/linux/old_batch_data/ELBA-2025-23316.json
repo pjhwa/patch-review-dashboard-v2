@@ -1,0 +1,40 @@
+{
+  "id": "ELBA-2025-23316",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2026-January/019453.html",
+  "synopsis": "[El-errata] ELBA-2025-23316 Oracle Linux 9 nodejs:22 bug fix and enhancement update",
+  "dateStr": "2026-January",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Bug Fix Advisory ELBA-2025-23316",
+  "description": "nodejs-packaging\n[2021.06-5]\n- nodejs.req to properly detect bundled deps",
+  "affected_products": [
+    "Oracle Linux 9"
+  ],
+  "packages": [
+    "nodejs-22.19.0-2.module+el9.7.0+90752+34782e9c.x86_64.rpm",
+    "nodejs-devel-22.19.0-2.module+el9.7.0+90752+34782e9c.x86_64.rpm",
+    "nodejs-docs-22.19.0-2.module+el9.7.0+90752+34782e9c.noarch.rpm",
+    "nodejs-full-i18n-22.19.0-2.module+el9.7.0+90752+34782e9c.x86_64.rpm",
+    "nodejs-libs-22.19.0-2.module+el9.7.0+90752+34782e9c.x86_64.rpm",
+    "nodejs-nodemon-3.0.1-1.module+el9.7.0+90752+34782e9c.noarch.rpm",
+    "nodejs-packaging-2021.06-5.module+el9.7.0+90752+34782e9c.noarch.rpm",
+    "nodejs-packaging-bundler-2021.06-5.module+el9.7.0+90752+34782e9c.noarch.rpm",
+    "npm-10.9.3-1.22.19.0.2.module+el9.7.0+90752+34782e9c.x86_64.rpm",
+    "v8-12.4-devel-12.4.254.21-1.22.19.0.2.module+el9.7.0+90752+34782e9c.x86_64.rpm",
+    "nodejs-22.19.0-2.module+el9.7.0+90752+34782e9c.aarch64.rpm",
+    "nodejs-devel-22.19.0-2.module+el9.7.0+90752+34782e9c.aarch64.rpm",
+    "nodejs-docs-22.19.0-2.module+el9.7.0+90752+34782e9c.noarch.rpm",
+    "nodejs-full-i18n-22.19.0-2.module+el9.7.0+90752+34782e9c.aarch64.rpm",
+    "nodejs-libs-22.19.0-2.module+el9.7.0+90752+34782e9c.aarch64.rpm",
+    "nodejs-nodemon-3.0.1-1.module+el9.7.0+90752+34782e9c.noarch.rpm",
+    "nodejs-packaging-2021.06-5.module+el9.7.0+90752+34782e9c.noarch.rpm",
+    "nodejs-packaging-bundler-2021.06-5.module+el9.7.0+90752+34782e9c.noarch.rpm",
+    "npm-10.9.3-1.22.19.0.2.module+el9.7.0+90752+34782e9c.aarch64.rpm",
+    "v8-12.4-devel-12.4.254.21-1.22.19.0.2.module+el9.7.0+90752+34782e9c.aarch64.rpm"
+  ],
+  "cves": [],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Bug Fix Advisory ELBA-2025-23316\n\nhttp://linux.oracle.com/errata/ELBA-2025-23316.html\n\nThe following updated rpms for Oracle Linux 9 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\nnodejs-22.19.0-2.module+el9.7.0+90752+34782e9c.x86_64.rpm\nnodejs-devel-22.19.0-2.module+el9.7.0+90752+34782e9c.x86_64.rpm\nnodejs-docs-22.19.0-2.module+el9.7.0+90752+34782e9c.noarch.rpm\nnodejs-full-i18n-22.19.0-2.module+el9.7.0+90752+34782e9c.x86_64.rpm\nnodejs-libs-22.19.0-2.module+el9.7.0+90752+34782e9c.x86_64.rpm\nnodejs-nodemon-3.0.1-1.module+el9.7.0+90752+34782e9c.noarch.rpm\nnodejs-packaging-2021.06-5.module+el9.7.0+90752+34782e9c.noarch.rpm\nnodejs-packaging-bundler-2021.06-5.module+el9.7.0+90752+34782e9c.noarch.rpm\nnpm-10.9.3-1.22.19.0.2.module+el9.7.0+90752+34782e9c.x86_64.rpm\nv8-12.4-devel-12.4.254.21-1.22.19.0.2.module+el9.7.0+90752+34782e9c.x86_64.rpm\n\naarch64:\nnodejs-22.19.0-2.module+el9.7.0+90752+34782e9c.aarch64.rpm\nnodejs-devel-22.19.0-2.module+el9.7.0+90752+34782e9c.aarch64.rpm\nnodejs-docs-22.19.0-2.module+el9.7.0+90752+34782e9c.noarch.rpm\nnodejs-full-i18n-22.19.0-2.module+el9.7.0+90752+34782e9c.aarch64.rpm\nnodejs-libs-22.19.0-2.module+el9.7.0+90752+34782e9c.aarch64.rpm\nnodejs-nodemon-3.0.1-1.module+el9.7.0+90752+34782e9c.noarch.rpm\nnodejs-packaging-2021.06-5.module+el9.7.0+90752+34782e9c.noarch.rpm\nnodejs-packaging-bundler-2021.06-5.module+el9.7.0+90752+34782e9c.noarch.rpm\nnpm-10.9.3-1.22.19.0.2.module+el9.7.0+90752+34782e9c.aarch64.rpm\nv8-12.4-devel-12.4.254.21-1.22.19.0.2.module+el9.7.0+90752+34782e9c.aarch64.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol9/SRPMS-updates/nodejs-22.19.0-2.module+el9.7.0+90752+34782e9c.src.rpm\nhttp://oss.oracle.com/ol9/SRPMS-updates/nodejs-nodemon-3.0.1-1.module+el9.7.0+90752+34782e9c.src.rpm\nhttp://oss.oracle.com/ol9/SRPMS-updates/nodejs-packaging-2021.06-5.module+el9.7.0+90752+34782e9c.src.rpm\n\n\n\nDescription of changes:\n\nnodejs-packaging\n[2021.06-5]\n- nodejs.req to properly detect bundled deps",
+  "vendor": "Oracle"
+}

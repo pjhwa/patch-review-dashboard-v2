@@ -1,0 +1,27 @@
+{
+  "id": "ELSA-2025-23484",
+  "vendor": "Oracle",
+  "type": "Security Advisory (ELSA)",
+  "title": " libssh security update",
+  "issuedDate": "2025-12-17T00:00:00Z",
+  "updatedDate": "2025-12-17T00:00:00Z",
+  "pubDate": "2025-12-17T00:00:00Z",
+  "dateStr": "2025-12-17",
+  "url": "https://linux.oracle.com/errata/ELSA-2025-23484.html",
+  "severity": "Moderate",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 10.",
+  "description": "[0.11.1-5]\n- Fix CVE-2025-5987\n  Resolves: RHEL-130040",
+  "affected_products": [
+    "Oracle Linux 10 for x86_64",
+    "Oracle Linux 10 for aarch64"
+  ],
+  "cves": [
+    "CVE-2025-5987"
+  ],
+  "packages": [
+    "libssh-0.11.1-5.el10_1.x86_64",
+    "libssh-config-0.11.1-5.el10_1.noarch",
+    "libssh-0.11.1-5.el10_1.src"
+  ],
+  "full_text": "[0.11.1-5]\n- Fix CVE-2025-5987\n  Resolves: RHEL-130040\n\nReferences:\nhttps://linux.oracle.com/errata/ELSA-2025-23484.html\nhttps://linux.oracle.com/cve/CVE-2025-5987.html"
+}

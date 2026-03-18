@@ -1,0 +1,32 @@
+{
+  "id": "RHSA-2026:1338",
+  "vendor": "Red Hat",
+  "type": "Security Advisory (RHSA)",
+  "title": "Red Hat Security Advisory: resource-agents security update",
+  "issuedDate": "2026-01-27T09:52:33+00:00",
+  "updatedDate": "2026-01-27T09:52:33+00:00",
+  "pubDate": "2026-01-27T09:52:33+00:00",
+  "dateStr": "2026-01-27",
+  "url": "https://access.redhat.com/errata/RHSA-2026:1338",
+  "severity": "Important",
+  "overview": "An update for resource-agents is now available for Red Hat Enterprise Linux 8.4 Advanced Mission Critical Update Support and Red Hat Enterprise Linux 8.4 Extended Update Support Long-Life Add-On.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "description": "The resource-agents packages provide the Pacemaker and RGManager service managers with a set of scripts. These scripts interface with several services to allow operating in a high-availability (HA) environment.\n\nSecurity Fix(es):\n\n* urllib3: urllib3: Unbounded decompression chain leads to resource exhaustion (CVE-2025-66418)\n\nFor more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux",
+    "Red Hat Enterprise Linux High Availability AUS (v.8.4)",
+    "Red Hat Enterprise Linux HighAvailability EUS EXTENSION (v.8.4)"
+  ],
+  "cves": [
+    "CVE-2025-66418"
+  ],
+  "packages": [
+    "resource-agents-0:4.1.1-90.el8_4.21.src",
+    "resource-agents-0:4.1.1-90.el8_4.21.x86_64",
+    "resource-agents-aliyun-0:4.1.1-90.el8_4.21.x86_64",
+    "resource-agents-gcp-0:4.1.1-90.el8_4.21.x86_64",
+    "resource-agents-debugsource-0:4.1.1-90.el8_4.21.x86_64",
+    "resource-agents-aliyun-debuginfo-0:4.1.1-90.el8_4.21.x86_64",
+    "resource-agents-debuginfo-0:4.1.1-90.el8_4.21.x86_64"
+  ],
+  "full_text": "An update for resource-agents is now available for Red Hat Enterprise Linux 8.4 Advanced Mission Critical Update Support and Red Hat Enterprise Linux 8.4 Extended Update Support Long-Life Add-On.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nThe resource-agents packages provide the Pacemaker and RGManager service managers with a set of scripts. These scripts interface with several services to allow operating in a high-availability (HA) environment.\n\nSecurity Fix(es):\n\n* urllib3: urllib3: Unbounded decompression chain leads to resource exhaustion (CVE-2025-66418)\n\nFor more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section."
+}

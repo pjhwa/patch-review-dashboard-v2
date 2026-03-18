@@ -1,0 +1,28 @@
+{
+  "id": "ELSA-2026-3031",
+  "vendor": "Oracle",
+  "type": "Security Advisory (ELSA)",
+  "kernel_type": "AppStream",
+  "title": " libpng15 security update",
+  "issuedDate": "2026-02-23T00:00:00Z",
+  "updatedDate": "2026-02-23T00:00:00Z",
+  "pubDate": "2026-02-23T00:00:00Z",
+  "dateStr": "2026-02-23",
+  "url": "https://linux.oracle.com/errata/ELSA-2026-3031.html",
+  "severity": "Important",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 9.",
+  "description": "[1.5.30-14.1]\n- fix CVE-2026-25646: heap buffer overflow in png_set_quantize (RHEL-148404)",
+  "affected_products": [
+    "Oracle Linux 9 for x86_64",
+    "Oracle Linux 9 for aarch64"
+  ],
+  "cves": [
+    "CVE-2026-25646"
+  ],
+  "packages": [
+    "libpng15-1.5.30-14.el9_7.1.src",
+    "libpng15-1.5.30-14.el9_7.1.i686",
+    "libpng15-1.5.30-14.el9_7.1.x86_64"
+  ],
+  "full_text": "[1.5.30-14.1]\n- fix CVE-2026-25646: heap buffer overflow in png_set_quantize (RHEL-148404)\n\nReferences:\nhttps://linux.oracle.com/errata/ELSA-2026-3031.html\nhttps://linux.oracle.com/cve/CVE-2026-25646.html"
+}

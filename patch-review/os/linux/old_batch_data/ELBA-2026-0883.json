@@ -1,0 +1,22 @@
+{
+  "id": "ELBA-2026-0883",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2026-January/019572.html",
+  "synopsis": "[El-errata] ELBA-2026-0883 Oracle Linux 8 os-prober bug fix and enhancement update",
+  "dateStr": "2026-January",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Bug Fix Advisory ELBA-2026-0883",
+  "description": "[1.74-11.0.1]\n- Add patch os-prober-oracle.patch to add Oracle to the list of Linux distributions\n\n[1.74-11]\n- Bump release number\n- Resolves: #RHEL-55234\n\n[1.74-10]\n- 90fallback: include possible kernel parameters from grub's default file\n- common.sh: do not resolve symbolic link on mapped device filesystems\n- Resolves: #RHEL-55234",
+  "affected_products": [
+    "Oracle Linux 8"
+  ],
+  "packages": [
+    "os-prober-1.74-11.0.1.el8_10.x86_64.rpm",
+    "os-prober-1.74-11.0.1.el8_10.aarch64.rpm"
+  ],
+  "cves": [],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Bug Fix Advisory ELBA-2026-0883\n\nhttp://linux.oracle.com/errata/ELBA-2026-0883.html\n\nThe following updated rpms for Oracle Linux 8 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\nos-prober-1.74-11.0.1.el8_10.x86_64.rpm\n\naarch64:\nos-prober-1.74-11.0.1.el8_10.aarch64.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol8/SRPMS-updates/os-prober-1.74-11.0.1.el8_10.src.rpm\n\n\n\nDescription of changes:\n\n[1.74-11.0.1]\n- Add patch os-prober-oracle.patch to add Oracle to the list of Linux distributions\n\n[1.74-11]\n- Bump release number\n- Resolves: #RHEL-55234\n\n[1.74-10]\n- 90fallback: include possible kernel parameters from grub's default file\n- common.sh: do not resolve symbolic link on mapped device filesystems\n- Resolves: #RHEL-55234",
+  "vendor": "Oracle"
+}

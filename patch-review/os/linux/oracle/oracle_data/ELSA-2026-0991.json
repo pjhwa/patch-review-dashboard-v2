@@ -1,0 +1,31 @@
+{
+  "id": "ELSA-2026-0991",
+  "vendor": "Oracle",
+  "type": "Security Advisory (ELSA)",
+  "title": " glib2 security update",
+  "issuedDate": "2026-01-22T00:00:00Z",
+  "updatedDate": "2026-01-22T00:00:00Z",
+  "pubDate": "2026-01-22T00:00:00Z",
+  "dateStr": "2026-01-22",
+  "url": "https://linux.oracle.com/errata/ELSA-2026-0991.html",
+  "severity": "Moderate",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 8.",
+  "description": "[2.56.4-168]\n- Add patch for CVE-2025-13601\n- Fix GUnixMount issues\n- Enable testsuite during RPM check phase",
+  "affected_products": [
+    "Oracle Linux 8 for x86_64",
+    "Oracle Linux 8 for aarch64"
+  ],
+  "cves": [
+    "CVE-2025-13601"
+  ],
+  "packages": [
+    "glib2-2.56.4-168.el8_10.i686",
+    "glib2-tests-2.56.4-168.el8_10.x86_64",
+    "glib2-2.56.4-168.el8_10.x86_64",
+    "glib2-devel-2.56.4-168.el8_10.x86_64",
+    "glib2-fam-2.56.4-168.el8_10.x86_64",
+    "glib2-devel-2.56.4-168.el8_10.i686",
+    "glib2-2.56.4-168.el8_10.src"
+  ],
+  "full_text": "[2.56.4-168]\n- Add patch for CVE-2025-13601\n- Fix GUnixMount issues\n- Enable testsuite during RPM check phase\n\nReferences:\nhttps://linux.oracle.com/errata/ELSA-2026-0991.html\nhttps://linux.oracle.com/cve/CVE-2025-13601.html"
+}

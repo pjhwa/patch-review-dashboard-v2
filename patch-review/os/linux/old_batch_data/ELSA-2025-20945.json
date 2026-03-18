@@ -1,0 +1,33 @@
+{
+  "id": "ELSA-2025-20945",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2025-November/019113.html",
+  "synopsis": "[El-errata] ELSA-2025-20945 Moderate: Oracle Linux 9 vim security update",
+  "dateStr": "2025-November",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Security Advisory ELSA-2025-20945",
+  "description": "[8.2.2637-23.0.1]\n- Remove upstream references [Orabug: 31197557]\n\n[2:8.2.2637-23]\n- RHEL-112005 CVE-2025-53905 vim: Vim path traversial\n- RHEL-112009 CVE-2025-53906 vim: Vim path traversal",
+  "affected_products": [
+    "Oracle Linux 9"
+  ],
+  "packages": [
+    "vim-X11-8.2.2637-23.0.1.el9_7.x86_64.rpm",
+    "vim-common-8.2.2637-23.0.1.el9_7.x86_64.rpm",
+    "vim-enhanced-8.2.2637-23.0.1.el9_7.x86_64.rpm",
+    "vim-filesystem-8.2.2637-23.0.1.el9_7.noarch.rpm",
+    "vim-minimal-8.2.2637-23.0.1.el9_7.x86_64.rpm",
+    "vim-X11-8.2.2637-23.0.1.el9_7.aarch64.rpm",
+    "vim-common-8.2.2637-23.0.1.el9_7.aarch64.rpm",
+    "vim-enhanced-8.2.2637-23.0.1.el9_7.aarch64.rpm",
+    "vim-filesystem-8.2.2637-23.0.1.el9_7.noarch.rpm",
+    "vim-minimal-8.2.2637-23.0.1.el9_7.aarch64.rpm"
+  ],
+  "cves": [
+    "CVE-2025-53905",
+    "CVE-2025-53906"
+  ],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Security Advisory ELSA-2025-20945\n\nhttp://linux.oracle.com/errata/ELSA-2025-20945.html\n\nThe following updated rpms for Oracle Linux 9 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\nvim-X11-8.2.2637-23.0.1.el9_7.x86_64.rpm\nvim-common-8.2.2637-23.0.1.el9_7.x86_64.rpm\nvim-enhanced-8.2.2637-23.0.1.el9_7.x86_64.rpm\nvim-filesystem-8.2.2637-23.0.1.el9_7.noarch.rpm\nvim-minimal-8.2.2637-23.0.1.el9_7.x86_64.rpm\n\naarch64:\nvim-X11-8.2.2637-23.0.1.el9_7.aarch64.rpm\nvim-common-8.2.2637-23.0.1.el9_7.aarch64.rpm\nvim-enhanced-8.2.2637-23.0.1.el9_7.aarch64.rpm\nvim-filesystem-8.2.2637-23.0.1.el9_7.noarch.rpm\nvim-minimal-8.2.2637-23.0.1.el9_7.aarch64.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol9/SRPMS-updates/vim-8.2.2637-23.0.1.el9_7.src.rpm\n\nRelated CVEs:\n\nCVE-2025-53905\nCVE-2025-53906\n\n\n\n\nDescription of changes:\n\n[8.2.2637-23.0.1]\n- Remove upstream references [Orabug: 31197557]\n\n[2:8.2.2637-23]\n- RHEL-112005 CVE-2025-53905 vim: Vim path traversial\n- RHEL-112009 CVE-2025-53906 vim: Vim path traversal",
+  "vendor": "Oracle"
+}

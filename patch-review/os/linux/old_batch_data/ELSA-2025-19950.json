@@ -1,0 +1,40 @@
+{
+  "id": "ELSA-2025-19950",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2025-November/019004.html",
+  "synopsis": "[El-errata] ELSA-2025-19950 Important: Oracle Linux 9 bind9.18 security update",
+  "dateStr": "2025-November",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Security Advisory ELSA-2025-19950",
+  "description": "[32:9.18.29-4.2]\n- Fix upstream reported regression in recent CVE fix (CVE-2025-8677)\n- Add upstream created test to this regression\n\n[32:9.18.29-4.1]\n- Refuse malformed DNSKEY records (CVE-2025-8677)\n- Address various spoofing attacks (CVE-2025-40778)\n- Prevent cache poisoning due to weak PRNG (CVE-2025-40780)",
+  "affected_products": [
+    "Oracle Linux 9"
+  ],
+  "packages": [
+    "bind9.18-9.18.29-4.el9_6.2.x86_64.rpm",
+    "bind9.18-chroot-9.18.29-4.el9_6.2.x86_64.rpm",
+    "bind9.18-devel-9.18.29-4.el9_6.2.i686.rpm",
+    "bind9.18-devel-9.18.29-4.el9_6.2.x86_64.rpm",
+    "bind9.18-dnssec-utils-9.18.29-4.el9_6.2.x86_64.rpm",
+    "bind9.18-doc-9.18.29-4.el9_6.2.noarch.rpm",
+    "bind9.18-libs-9.18.29-4.el9_6.2.i686.rpm",
+    "bind9.18-libs-9.18.29-4.el9_6.2.x86_64.rpm",
+    "bind9.18-utils-9.18.29-4.el9_6.2.x86_64.rpm",
+    "bind9.18-9.18.29-4.el9_6.2.aarch64.rpm",
+    "bind9.18-chroot-9.18.29-4.el9_6.2.aarch64.rpm",
+    "bind9.18-devel-9.18.29-4.el9_6.2.aarch64.rpm",
+    "bind9.18-dnssec-utils-9.18.29-4.el9_6.2.aarch64.rpm",
+    "bind9.18-doc-9.18.29-4.el9_6.2.noarch.rpm",
+    "bind9.18-libs-9.18.29-4.el9_6.2.aarch64.rpm",
+    "bind9.18-utils-9.18.29-4.el9_6.2.aarch64.rpm"
+  ],
+  "cves": [
+    "CVE-2025-8677",
+    "CVE-2025-40778",
+    "CVE-2025-40780"
+  ],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Security Advisory ELSA-2025-19950\n\nhttp://linux.oracle.com/errata/ELSA-2025-19950.html\n\nThe following updated rpms for Oracle Linux 9 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\nbind9.18-9.18.29-4.el9_6.2.x86_64.rpm\nbind9.18-chroot-9.18.29-4.el9_6.2.x86_64.rpm\nbind9.18-devel-9.18.29-4.el9_6.2.i686.rpm\nbind9.18-devel-9.18.29-4.el9_6.2.x86_64.rpm\nbind9.18-dnssec-utils-9.18.29-4.el9_6.2.x86_64.rpm\nbind9.18-doc-9.18.29-4.el9_6.2.noarch.rpm\nbind9.18-libs-9.18.29-4.el9_6.2.i686.rpm\nbind9.18-libs-9.18.29-4.el9_6.2.x86_64.rpm\nbind9.18-utils-9.18.29-4.el9_6.2.x86_64.rpm\n\naarch64:\nbind9.18-9.18.29-4.el9_6.2.aarch64.rpm\nbind9.18-chroot-9.18.29-4.el9_6.2.aarch64.rpm\nbind9.18-devel-9.18.29-4.el9_6.2.aarch64.rpm\nbind9.18-dnssec-utils-9.18.29-4.el9_6.2.aarch64.rpm\nbind9.18-doc-9.18.29-4.el9_6.2.noarch.rpm\nbind9.18-libs-9.18.29-4.el9_6.2.aarch64.rpm\nbind9.18-utils-9.18.29-4.el9_6.2.aarch64.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol9/SRPMS-updates/bind9.18-9.18.29-4.el9_6.2.src.rpm\n\nRelated CVEs:\n\nCVE-2025-8677\nCVE-2025-40778\nCVE-2025-40780\n\n\n\n\nDescription of changes:\n\n[32:9.18.29-4.2]\n- Fix upstream reported regression in recent CVE fix (CVE-2025-8677)\n- Add upstream created test to this regression\n\n[32:9.18.29-4.1]\n- Refuse malformed DNSKEY records (CVE-2025-8677)\n- Address various spoofing attacks (CVE-2025-40778)\n- Prevent cache poisoning due to weak PRNG (CVE-2025-40780)",
+  "vendor": "Oracle"
+}

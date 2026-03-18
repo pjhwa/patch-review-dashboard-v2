@@ -1,0 +1,26 @@
+{
+  "id": "USN-7805-1",
+  "vendor": "Canonical / Ubuntu",
+  "type": "Ubuntu Security Notice (USN)",
+  "title": "haproxy vulnerability",
+  "issuedDate": "2025-10-06T14:09:00Z",
+  "updatedDate": "2026-02-10T04:50:11Z",
+  "pubDate": "2025-10-06T14:09:00Z",
+  "dateStr": "2025-10-06",
+  "url": "https://ubuntu.com/security/notices/USN-7805-1",
+  "severity": "None",
+  "overview": "haproxy vulnerability",
+  "description": "Oula Kivalo discovered that HAProxy incorrectly handled parsing certain\njson numbers. A remote attacker could possibly use this issue to cause\nHAProxy to crash, resulting in a denial of service.",
+  "affected_products": [
+    "Ubuntu 22.04 LTS",
+    "Ubuntu 24.04 LTS"
+  ],
+  "cves": [],
+  "packages": [
+    "haproxy-2.4.24-0ubuntu0.22.04.3",
+    "haproxy-2.8.5-1ubuntu3.4",
+    "vim-haproxy-2.4.24-0ubuntu0.22.04.3",
+    "vim-haproxy-2.8.5-1ubuntu3.4"
+  ],
+  "full_text": "Oula Kivalo discovered that HAProxy incorrectly handled parsing certain\njson numbers. A remote attacker could possibly use this issue to cause\nHAProxy to crash, resulting in a denial of service."
+}

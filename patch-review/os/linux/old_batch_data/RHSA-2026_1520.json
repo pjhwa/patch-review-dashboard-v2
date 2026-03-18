@@ -1,0 +1,20 @@
+{
+  "id": "RHSA-2026:1520",
+  "vendor": "Red Hat",
+  "url": "https://access.redhat.com/errata/RHSA-2026:1520",
+  "pubDate": "2026-01-29T01:14:38.000Z",
+  "dateStr": "2026-01-29",
+  "severity": "Moderate",
+  "title": "Red Hat Security Advisory: Red Hat multicluster global hub 1.6.1 security update",
+  "overview": "Red Hat multicluster global hub v1.6.1 general availability release images, which provide security fixes, bug fixes, and updated container images.\n\nRed Hat Product Security has rated this update as having a security impact of Moderate. \nA Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE links in the References section.",
+  "description": "Red Hat multicluster global hub v1.6.1 general availability release images, which provide security fixes, bug fixes, and updated container images.\n\nRed Hat Product Security has rated this update as having a security impact of Moderate. \nA Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE links in the References section.",
+  "affected_products": [
+    "Red Hat multicluster global hub 1.6.1"
+  ],
+  "cves": [
+    "CVE-2025-58183"
+  ],
+  "packages": [],
+  "fixes": "",
+  "full_text": "Red Hat Security Advisory: Red Hat multicluster global hub 1.6.1 security update\n\nRed Hat multicluster global hub v1.6.1 general availability release images, which provide security fixes, bug fixes, and updated container images.\n\nRed Hat Product Security has rated this update as having a security impact of Moderate. \nA Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE links in the References section.\n\nRed Hat multicluster global hub v1.6.1 general availability release images, which provide security fixes, bug fixes, and updated container images.\n\nRed Hat Product Security has rated this update as having a security impact of Moderate. \nA Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE links in the References section.\n\n\n\nCVE-2025-58183: A flaw was found in the archive/tar package in the Go standard library. tar.Reader does not set a maximum size on the number of sparse region data blocks in GNU tar pax 1.0 sparse files. A specially crafted tar archive with a pax header indicating a big number of sparse regions can cause a Go program to try to allocate a large amount of memory, causing an out-of-memory condition and resulting in a denial of service."
+}

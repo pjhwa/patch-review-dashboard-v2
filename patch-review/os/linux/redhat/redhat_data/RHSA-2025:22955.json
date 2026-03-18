@@ -1,0 +1,26 @@
+{
+  "id": "RHSA-2025:22955",
+  "vendor": "Red Hat",
+  "type": "Security Advisory (RHSA)",
+  "title": "Red Hat Security Advisory: Red Hat OpenStack Platform 17.1.12 director Operator container images",
+  "issuedDate": "2025-12-09T16:44:15+00:00",
+  "updatedDate": "2025-12-09T16:44:24+00:00",
+  "pubDate": "2025-12-09T16:44:15+00:00",
+  "dateStr": "2025-12-09",
+  "url": "https://access.redhat.com/errata/RHSA-2025:22955",
+  "severity": "Important",
+  "overview": "Updated container images are now available for director Operator for Red Hat OpenStack Platform 17.1.12 (Wallaby) for RHEL 9.2.\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "description": "Red Hat OpenStack Platform provides the facilities for building, deploying and monitoring a private or public infrastructure-as-a-service (IaaS) cloud running on commonly available physical hardware.\n\nThe Red Hat OpenStack Platform (RHOSP) director Operator adds the ability to install and run a RHOSP cloud within OpenShift Container Platform (OCP).\n\nSecurity Fixes:\n * containerd local privilege excalation (CVE-2024-25621)\n * SSH client panic due to unexpected SSH_AGENT_SUCCESS (CVE-2025-47913)",
+  "affected_products": [],
+  "cves": [
+    "CVE-2024-25621",
+    "CVE-2025-47913"
+  ],
+  "packages": [
+    "registry.redhat.io/rhosp-rhel9/osp-director-agent@sha256:a618bbff08e2c106afa08a7daf100b51ac7ae53fe932fa2611087df303cc79f0_amd64",
+    "registry.redhat.io/rhosp-rhel9/osp-director-downloader@sha256:58019aa648510b1cab8159798b4e155b0c0c7830747a849d61f804dc03a21cf8_amd64",
+    "registry.redhat.io/rhosp-rhel9/osp-director-operator-bundle@sha256:bdf3ef41beefd75babb1bc576bc52d46611efb3ba1ff3443ac7d1fe9f10f215b_amd64",
+    "registry.redhat.io/rhosp-rhel9/osp-director-operator@sha256:262d9d9ee1f5093a467168981f3bd952836ca227801acaca506cbcf496a38c8c_amd64"
+  ],
+  "full_text": "Updated container images are now available for director Operator for Red Hat OpenStack Platform 17.1.12 (Wallaby) for RHEL 9.2.\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nRed Hat OpenStack Platform provides the facilities for building, deploying and monitoring a private or public infrastructure-as-a-service (IaaS) cloud running on commonly available physical hardware.\n\nThe Red Hat OpenStack Platform (RHOSP) director Operator adds the ability to install and run a RHOSP cloud within OpenShift Container Platform (OCP).\n\nSecurity Fixes:\n * containerd local privilege excalation (CVE-2024-25621)\n * SSH client panic due to unexpected SSH_AGENT_SUCCESS (CVE-2025-47913)"
+}

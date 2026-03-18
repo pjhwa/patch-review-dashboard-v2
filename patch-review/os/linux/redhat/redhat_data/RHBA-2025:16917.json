@@ -1,0 +1,76 @@
+{
+  "id": "RHBA-2025:16917",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: scap-security-guide bug fix and enhancement update",
+  "issuedDate": "2025-09-29T07:50:19Z",
+  "updatedDate": "2025-09-29T07:50:19Z",
+  "pubDate": "2025-09-29T07:50:19Z",
+  "dateStr": "2025-09-29",
+  "url": "https://access.redhat.com/errata/RHBA-2025:16917",
+  "severity": "None",
+  "overview": "An update for scap-security-guide is now available for Red Hat Enterprise Linux 10.",
+  "description": "The SCAP Security Guide project provides a guide for configuration of the system from the final system's security point of view. The guidance is specified in the Security Content Automation Protocol (SCAP) format and constitutes a catalog of practical hardening advice, linked to government requirements where applicable. The project bridges the gap between generalized policy requirements and specific implementation guidelines.For detailed information on changes in this release, see the SCAP Security Guide release notes linked from the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux Server for Power LE - Update Services for SAP Solutions",
+    "Red Hat Enterprise Linux for x86_64 - Update Services for SAP Solutions 10 x86_64",
+    "Red Hat Enterprise Linux for x86_64 - 4 years of updates 10 x86_64",
+    "Red Hat Enterprise Linux for IBM z Systems - Extended Update Support",
+    "Red Hat Enterprise Linux for ARM 64",
+    "Red Hat Enterprise Linux for Power, little endian - Extended Update Support",
+    "Red Hat Enterprise Linux for ARM 64 - Extended Update Support",
+    "Red Hat Enterprise Linux for ARM 64 - 4 years of updates",
+    "Red Hat Enterprise Linux for x86_64 10 x86_64",
+    "Red Hat Enterprise Linux for IBM z Systems - 4 years of updates",
+    "Red Hat Enterprise Linux for IBM z Systems",
+    "Red Hat Enterprise Linux for x86_64 - Extended Update Support 10 x86_64",
+    "Red Hat Enterprise Linux Server - AUS",
+    "Red Hat Enterprise Linux for Power, little endian",
+    "Red Hat Enterprise Linux for Power, little endian - 4 years of support"
+  ],
+  "cves": [],
+  "packages": [
+    "scap-security-guide-0.1.78-1.el10.src",
+    "scap-security-guide-0.1.78-1.el10.noarch",
+    "scap-security-guide-doc-0.1.78-1.el10.noarch",
+    "scap-security-guide-0.1.78-1.el9.src",
+    "scap-security-guide-0.1.78-1.el9.noarch",
+    "scap-security-guide-doc-0.1.78-1.el9.noarch",
+    "scap-security-guide-0.1.78-1.el8.src",
+    "scap-security-guide-0.1.78-1.el8.noarch",
+    "scap-security-guide-doc-0.1.78-1.el8.noarch"
+  ],
+  "fixes": [
+    {
+      "id": "RHEL-102328",
+      "url": "https://issues.redhat.com/browse/RHEL-102328",
+      "description": "Rule \"ensure_gpgcheck_never_disabled\" is not selected for CIS on RHEL9"
+    },
+    {
+      "id": "RHEL-111008",
+      "url": "https://issues.redhat.com/browse/RHEL-111008",
+      "description": "Rebase scap-security-guide to the latest upstream version"
+    },
+    {
+      "id": "RHEL-111009",
+      "url": "https://issues.redhat.com/browse/RHEL-111009",
+      "description": "Rebase scap-security-guide to the latest upstream version"
+    },
+    {
+      "id": "RHEL-111011",
+      "url": "https://issues.redhat.com/browse/RHEL-111011",
+      "description": "Rebase scap-security-guide to the latest upstream version"
+    },
+    {
+      "id": "RHEL-1821",
+      "url": "https://issues.redhat.com/browse/RHEL-1821",
+      "description": "[RHEL8.7/SCAP/RFE] Improve gnutls version test to be order independent"
+    },
+    {
+      "id": "RHEL-89812",
+      "url": "https://issues.redhat.com/browse/RHEL-89812",
+      "description": "OSCAP Scan is showing False Positive"
+    }
+  ],
+  "full_text": "An update for scap-security-guide is now available for Red Hat Enterprise Linux 10.\n\nThe SCAP Security Guide project provides a guide for configuration of the system from the final system's security point of view. The guidance is specified in the Security Content Automation Protocol (SCAP) format and constitutes a catalog of practical hardening advice, linked to government requirements where applicable. The project bridges the gap between generalized policy requirements and specific implementation guidelines.For detailed information on changes in this release, see the SCAP Security Guide release notes linked from the References section."
+}

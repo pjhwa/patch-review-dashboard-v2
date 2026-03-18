@@ -1,0 +1,46 @@
+{
+  "id": "ELSA-2025-19105",
+  "vendor": "Oracle",
+  "type": "Security Advisory (ELSA)",
+  "kernel_type": "RHCK",
+  "title": " kernel security update",
+  "issuedDate": "2025-10-28T00:00:00Z",
+  "updatedDate": "2025-10-28T00:00:00Z",
+  "pubDate": "2025-10-28T00:00:00Z",
+  "dateStr": "2025-10-28",
+  "url": "https://linux.oracle.com/errata/ELSA-2025-19105.html",
+  "severity": "Moderate",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 9.",
+  "description": "[5.14.0-570.58.1.0.1]\n- nvme-pci: remove two deallocate zeroes quirks [Orabug: 37756650]\n- Disable UKI signing [Orabug: 36571828]\n- Update Oracle Linux certificates (Kevin Lyons)\n- Disable signing for aarch64 (Ilya Okomin)\n- Oracle Linux RHCK Module Signing Key was added to the kernel trusted keys list (olkmod_signing_key.pem) [Orabug: 29539237]\n- Update x509.genkey [Orabug: 24817676]\n- Conflict with shim-ia32 and shim-x64 <= 15.3-1.0.5]\n- Remove upstream reference during boot (Kevin Lyons) [Orabug: 34729535]\n- Add Oracle Linux IMA certificates\n- Add new Oracle Linux Driver Signing (key 1) certificate [Orabug: 37985764]\n\n[5.14.0-570.58.1]\n- pstore/ram: Check start of empty przs during init (CKI Backport Bot) [RHEL-122067] {CVE-2023-53331}\n- vsock/virtio: Validate length in packet header before skb_put() (Jon Maloy) [RHEL-114299] {CVE-2025-39718}\n\n[5.14.0-570.57.1]\n- NFSv4/flexfiles: Fix layout merge mirror check. (Benjamin Coddington) [RHEL-118731]\n- NFS: Fix filehandle bounds checking in nfs_fh_to_dentry() (CKI Backport Bot) [RHEL-113610] {CVE-2025-39730}\n\n[5.14.0-570.56.1]\n- NFS: Return the file btime in the statx results when appropriate (Benjamin Coddington) [RHEL-111706]\n- nfs: Add timecreate to nfs inode (Benjamin Coddington) [RHEL-111706]\n- Expand the type of nfs_fattr->valid (Benjamin Coddington) [RHEL-111706]\n- smb: client: fix wrong index reference in smb2_compound_op() (Paulo Alcantara) [RHEL-117879]\n- smb: client: handle unlink(2) of files open by different clients (Paulo Alcantara) [RHEL-117879]\n- smb: client: fix file open check in __cifs_unlink() (Paulo Alcantara) [RHEL-117879]\n- smb: client: fix filename matching of deferred files (Paulo Alcantara) [RHEL-117879]\n- smb: client: fix data loss due to broken rename(2) (Paulo Alcantara) [RHEL-117879]\n- smb: client: fix compound alignment with encryption (Paulo Alcantara) [RHEL-117879]\n- fs/smb: Fix inconsistent refcnt update (Paulo Alcantara) [RHEL-117879] {CVE-2025-39819}\n- ALSA: hda/ca0132: Fix buffer overflow in add_tuning_control (CKI Backport Bot) [RHEL-114848] {CVE-2025-39751}\n- NFS: Fixup allocation flags for nfsiod's __GFP_NORETRY (Benjamin Coddington) [RHEL-116232]\n- xfs: make sure sb_fdblocks is non-negative (CKI Backport Bot) [RHEL-114540]\n- block: fix adding folio to bio (Ming Lei) [RHEL-96789]",
+  "affected_products": [
+    "Oracle Linux 9 for x86_64",
+    "Oracle Linux 9 for aarch64"
+  ],
+  "cves": [
+    "CVE-2023-53331",
+    "CVE-2025-39718",
+    "CVE-2025-39730",
+    "CVE-2025-39751",
+    "CVE-2025-39819"
+  ],
+  "packages": [
+    "kernel-debug-5.14.0-570.58.1.0.1.el9_6.x86_64",
+    "kernel-tools-libs-5.14.0-570.58.1.0.1.el9_6.x86_64",
+    "kernel-modules-5.14.0-570.58.1.0.1.el9_6.x86_64",
+    "kernel-modules-extra-5.14.0-570.58.1.0.1.el9_6.x86_64",
+    "kernel-modules-core-5.14.0-570.58.1.0.1.el9_6.x86_64",
+    "kernel-tools-5.14.0-570.58.1.0.1.el9_6.x86_64",
+    "kernel-uki-virt-5.14.0-570.58.1.0.1.el9_6.x86_64",
+    "kernel-abi-stablelists-5.14.0-570.58.1.0.1.el9_6.noarch",
+    "kernel-debug-modules-5.14.0-570.58.1.0.1.el9_6.x86_64",
+    "kernel-debug-uki-virt-5.14.0-570.58.1.0.1.el9_6.x86_64",
+    "kernel-debug-modules-extra-5.14.0-570.58.1.0.1.el9_6.x86_64",
+    "kernel-uki-virt-addons-5.14.0-570.58.1.0.1.el9_6.x86_64",
+    "kernel-5.14.0-570.58.1.0.1.el9_6.x86_64",
+    "kernel-debug-core-5.14.0-570.58.1.0.1.el9_6.x86_64",
+    "kernel-core-5.14.0-570.58.1.0.1.el9_6.x86_64",
+    "kernel-5.14.0-570.58.1.0.1.el9_6.src",
+    "kernel-debug-modules-core-5.14.0-570.58.1.0.1.el9_6.x86_64"
+  ],
+  "full_text": "[5.14.0-570.58.1.0.1]\n- nvme-pci: remove two deallocate zeroes quirks [Orabug: 37756650]\n- Disable UKI signing [Orabug: 36571828]\n- Update Oracle Linux certificates (Kevin Lyons)\n- Disable signing for aarch64 (Ilya Okomin)\n- Oracle Linux RHCK Module Signing Key was added to the kernel trusted keys list (olkmod_signing_key.pem) [Orabug: 29539237]\n- Update x509.genkey [Orabug: 24817676]\n- Conflict with shim-ia32 and shim-x64 <= 15.3-1.0.5]\n- Remove upstream reference during boot (Kevin Lyons) [Orabug: 34729535]\n- Add Oracle Linux IMA certificates\n- Add new Oracle Linux Driver Signing (key 1) certificate [Orabug: 37985764]\n\n[5.14.0-570.58.1]\n- pstore/ram: Check start of empty przs during init (CKI Backport Bot) [RHEL-122067] {CVE-2023-53331}\n- vsock/virtio: Validate length in packet header before skb_put() (Jon Maloy) [RHEL-114299] {CVE-2025-39718}\n\n[5.14.0-570.57.1]\n- NFSv4/flexfiles: Fix layout merge mirror check. (Benjamin Coddington) [RHEL-118731]\n- NFS: Fix filehandle bounds checking in nfs_fh_to_dentry() (CKI Backport Bot) [RHEL-113610] {CVE-2025-39730}\n\n[5.14.0-570.56.1]\n- NFS: Return the file btime in the statx results when appropriate (Benjamin Coddington) [RHEL-111706]\n- nfs: Add timecreate to nfs inode (Benjamin Coddington) [RHEL-111706]\n- Expand the type of nfs_fattr->valid (Benjamin Coddington) [RHEL-111706]\n- smb: client: fix wrong index reference in smb2_compound_op() (Paulo Alcantara) [RHEL-117879]\n- smb: client: handle unlink(2) of files open by different clients (Paulo Alcantara) [RHEL-117879]\n- smb: client: fix file open check in __cifs_unlink() (Paulo Alcantara) [RHEL-117879]\n- smb: client: fix filename matching of deferred files (Paulo Alcantara) [RHEL-117879]\n- smb: client: fix data loss due to broken rename(2) (Paulo Alcantara) [RHEL-117879]\n- smb: client: fix compound alignment with encryption (Paulo Alcantara) [RHEL-117879]\n- fs/smb: Fix inconsistent refcnt update (Paulo Alcantara) [RHEL-117879] {CVE-2025-39819}\n- ALSA: hda/ca0132: Fix buffer overflow in add_tuning_control (CKI Backport Bot) [RHEL-114848] {CVE-2025-39751}\n- NFS: Fixup allocation flags for nfsiod's __GFP_NORETRY (Benjamin Coddington) [RHEL-116232]\n- xfs: make sure sb_fdblocks is non-negative (CKI Backport Bot) [RHEL-114540]\n- block: fix adding folio to bio (Ming Lei) [RHEL-96789]\n\nReferences:\nhttps://linux.oracle.com/errata/ELSA-2025-19105.html\nhttps://linux.oracle.com/cve/CVE-2023-53331.html\nhttps://linux.oracle.com/cve/CVE-2025-39718.html\nhttps://linux.oracle.com/cve/CVE-2025-39730.html\nhttps://linux.oracle.com/cve/CVE-2025-39751.html\nhttps://linux.oracle.com/cve/CVE-2025-39819.html"
+}

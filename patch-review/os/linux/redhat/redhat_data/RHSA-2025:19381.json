@@ -1,0 +1,25 @@
+{
+  "id": "RHSA-2025:19381",
+  "vendor": "Red Hat",
+  "type": "Security Advisory (RHSA)",
+  "title": "Red Hat Security Advisory: Assisted Installer RHEL 8 components for Multicluster Engine for Kubernetes 2.9.1",
+  "issuedDate": "2025-10-30T18:49:30+00:00",
+  "updatedDate": "2025-10-30T18:49:41+00:00",
+  "pubDate": "2025-10-30T18:49:30+00:00",
+  "dateStr": "2025-10-30",
+  "url": "https://access.redhat.com/errata/RHSA-2025:19381",
+  "severity": "Moderate",
+  "overview": "Assisted installer RHEL 8 components for the multicluster engine for Kubernetes 2.9.1 General Availability release, with updates to container images.",
+  "description": "Assisted Installer RHEL 8 integrates components for the general multicluster engine\nfor Kubernetes 2.9.1 release that simplify the process of deploying OpenShift Container\nPlatform clusters.\n\nThe multicluster engine for Kubernetes provides the foundational components\nthat are necessary for the centralized management of multiple\nKubernetes-based clusters across data centers, public clouds, and private\nclouds.\n\nYou can use the engine to create new Red Hat OpenShift Container Platform\nclusters, or to import existing Kubernetes-based clusters for management.\n\nAfter the clusters are managed, you can use the APIs that\nare provided by the engine to distribute configuration based on placement\npolicy.",
+  "affected_products": [],
+  "cves": [
+    "CVE-2025-47907"
+  ],
+  "packages": [
+    "registry.redhat.io/multicluster-engine/assisted-service-8-rhel8@sha256:6083afd8a79e3a0db09004e90d8084d237db97369940c1e9725dd03729e0d734_amd64",
+    "registry.redhat.io/multicluster-engine/assisted-service-8-rhel8@sha256:681e182f48d1cd275d7c097f004d3f5eb305ebb8dd62f0bb07b1a63f9ea87146_arm64",
+    "registry.redhat.io/multicluster-engine/assisted-service-8-rhel8@sha256:247d68d562a9d22e5d1eaa186f0e6d067a453655cfd1e6fa2b58e33b22771163_ppc64le",
+    "registry.redhat.io/multicluster-engine/assisted-service-8-rhel8@sha256:7994a6075605f6788e3a69fd005d5fc6cbcdd34d86fed1e479e1a553b452a558_s390x"
+  ],
+  "full_text": "Assisted installer RHEL 8 components for the multicluster engine for Kubernetes 2.9.1 General Availability release, with updates to container images.\n\nAssisted Installer RHEL 8 integrates components for the general multicluster engine\nfor Kubernetes 2.9.1 release that simplify the process of deploying OpenShift Container\nPlatform clusters.\n\nThe multicluster engine for Kubernetes provides the foundational components\nthat are necessary for the centralized management of multiple\nKubernetes-based clusters across data centers, public clouds, and private\nclouds.\n\nYou can use the engine to create new Red Hat OpenShift Container Platform\nclusters, or to import existing Kubernetes-based clusters for management.\n\nAfter the clusters are managed, you can use the APIs that\nare provided by the engine to distribute configuration based on placement\npolicy."
+}

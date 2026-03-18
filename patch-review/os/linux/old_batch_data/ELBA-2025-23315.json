@@ -1,0 +1,38 @@
+{
+  "id": "ELBA-2025-23315",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2026-January/019452.html",
+  "synopsis": "[El-errata] ELBA-2025-23315 Oracle Linux 9 nodejs:20 bug fix and enhancement update",
+  "dateStr": "2026-January",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Bug Fix Advisory ELBA-2025-23315",
+  "description": "nodejs\n[1:20.19.5-1]\n- Update to version 20.19.5\nResolves: RHEL-114749\n\nnodejs-nodemon\n[3.0.1-1]\n- Rebase to 3.0.1\n- Resolves: CVE-2022-25883\n\nnodejs-packaging\n[2021.06-5]\n- nodejs.req to properly detect bundled deps",
+  "affected_products": [
+    "Oracle Linux 9"
+  ],
+  "packages": [
+    "nodejs-20.19.5-1.module+el9.7.0+90751+6015d9d4.x86_64.rpm",
+    "nodejs-devel-20.19.5-1.module+el9.7.0+90751+6015d9d4.x86_64.rpm",
+    "nodejs-docs-20.19.5-1.module+el9.7.0+90751+6015d9d4.noarch.rpm",
+    "nodejs-full-i18n-20.19.5-1.module+el9.7.0+90751+6015d9d4.x86_64.rpm",
+    "nodejs-nodemon-3.0.1-1.module+el9.6.0+90603+e4b3d4d2.noarch.rpm",
+    "nodejs-packaging-2021.06-5.module+el9.7.0+90751+6015d9d4.noarch.rpm",
+    "nodejs-packaging-bundler-2021.06-5.module+el9.7.0+90751+6015d9d4.noarch.rpm",
+    "npm-10.8.2-1.20.19.5.1.module+el9.7.0+90751+6015d9d4.x86_64.rpm",
+    "nodejs-20.19.5-1.module+el9.7.0+90751+6015d9d4.aarch64.rpm",
+    "nodejs-devel-20.19.5-1.module+el9.7.0+90751+6015d9d4.aarch64.rpm",
+    "nodejs-docs-20.19.5-1.module+el9.7.0+90751+6015d9d4.noarch.rpm",
+    "nodejs-full-i18n-20.19.5-1.module+el9.7.0+90751+6015d9d4.aarch64.rpm",
+    "nodejs-nodemon-3.0.1-1.module+el9.6.0+90603+e4b3d4d2.noarch.rpm",
+    "nodejs-packaging-2021.06-5.module+el9.7.0+90751+6015d9d4.noarch.rpm",
+    "nodejs-packaging-bundler-2021.06-5.module+el9.7.0+90751+6015d9d4.noarch.rpm",
+    "npm-10.8.2-1.20.19.5.1.module+el9.7.0+90751+6015d9d4.aarch64.rpm"
+  ],
+  "cves": [
+    "CVE-2022-25883"
+  ],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Bug Fix Advisory ELBA-2025-23315\n\nhttp://linux.oracle.com/errata/ELBA-2025-23315.html\n\nThe following updated rpms for Oracle Linux 9 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\nnodejs-20.19.5-1.module+el9.7.0+90751+6015d9d4.x86_64.rpm\nnodejs-devel-20.19.5-1.module+el9.7.0+90751+6015d9d4.x86_64.rpm\nnodejs-docs-20.19.5-1.module+el9.7.0+90751+6015d9d4.noarch.rpm\nnodejs-full-i18n-20.19.5-1.module+el9.7.0+90751+6015d9d4.x86_64.rpm\nnodejs-nodemon-3.0.1-1.module+el9.6.0+90603+e4b3d4d2.noarch.rpm\nnodejs-packaging-2021.06-5.module+el9.7.0+90751+6015d9d4.noarch.rpm\nnodejs-packaging-bundler-2021.06-5.module+el9.7.0+90751+6015d9d4.noarch.rpm\nnpm-10.8.2-1.20.19.5.1.module+el9.7.0+90751+6015d9d4.x86_64.rpm\n\naarch64:\nnodejs-20.19.5-1.module+el9.7.0+90751+6015d9d4.aarch64.rpm\nnodejs-devel-20.19.5-1.module+el9.7.0+90751+6015d9d4.aarch64.rpm\nnodejs-docs-20.19.5-1.module+el9.7.0+90751+6015d9d4.noarch.rpm\nnodejs-full-i18n-20.19.5-1.module+el9.7.0+90751+6015d9d4.aarch64.rpm\nnodejs-nodemon-3.0.1-1.module+el9.6.0+90603+e4b3d4d2.noarch.rpm\nnodejs-packaging-2021.06-5.module+el9.7.0+90751+6015d9d4.noarch.rpm\nnodejs-packaging-bundler-2021.06-5.module+el9.7.0+90751+6015d9d4.noarch.rpm\nnpm-10.8.2-1.20.19.5.1.module+el9.7.0+90751+6015d9d4.aarch64.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol9/SRPMS-updates/nodejs-20.19.5-1.module+el9.7.0+90751+6015d9d4.src.rpm\nhttp://oss.oracle.com/ol9/SRPMS-updates/nodejs-nodemon-3.0.1-1.module+el9.6.0+90603+e4b3d4d2.src.rpm\nhttp://oss.oracle.com/ol9/SRPMS-updates/nodejs-packaging-2021.06-5.module+el9.7.0+90751+6015d9d4.src.rpm\n\n\n\nDescription of changes:\n\nnodejs\n[1:20.19.5-1]\n- Update to version 20.19.5\nResolves: RHEL-114749\n\nnodejs-nodemon\n[3.0.1-1]\n- Rebase to 3.0.1\n- Resolves: CVE-2022-25883\n\nnodejs-packaging\n[2021.06-5]\n- nodejs.req to properly detect bundled deps",
+  "vendor": "Oracle"
+}

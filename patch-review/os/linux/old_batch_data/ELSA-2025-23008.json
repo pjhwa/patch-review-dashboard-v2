@@ -1,0 +1,45 @@
+{
+  "id": "ELSA-2025-23008",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2025-December/019243.html",
+  "synopsis": "[El-errata] ELSA-2025-23008 Moderate: Oracle Linux 10 mysql8.4 security update",
+  "dateStr": "2025-December",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Security Advisory ELSA-2025-23008",
+  "description": "[8.4.7-1]\n- Rebase to 8.4.7",
+  "affected_products": [
+    "Oracle Linux 10"
+  ],
+  "packages": [
+    "mysql8.4-8.4.7-1.el10_1.x86_64.rpm",
+    "mysql8.4-common-8.4.7-1.el10_1.noarch.rpm",
+    "mysql8.4-devel-8.4.7-1.el10_1.x86_64.rpm",
+    "mysql8.4-errmsg-8.4.7-1.el10_1.noarch.rpm",
+    "mysql8.4-libs-8.4.7-1.el10_1.x86_64.rpm",
+    "mysql8.4-server-8.4.7-1.el10_1.x86_64.rpm",
+    "mysql8.4-test-8.4.7-1.el10_1.x86_64.rpm",
+    "mysql8.4-test-data-8.4.7-1.el10_1.noarch.rpm",
+    "mysql8.4-8.4.7-1.el10_1.aarch64.rpm",
+    "mysql8.4-common-8.4.7-1.el10_1.noarch.rpm",
+    "mysql8.4-devel-8.4.7-1.el10_1.aarch64.rpm",
+    "mysql8.4-errmsg-8.4.7-1.el10_1.noarch.rpm",
+    "mysql8.4-libs-8.4.7-1.el10_1.aarch64.rpm",
+    "mysql8.4-server-8.4.7-1.el10_1.aarch64.rpm",
+    "mysql8.4-test-8.4.7-1.el10_1.aarch64.rpm",
+    "mysql8.4-test-data-8.4.7-1.el10_1.noarch.rpm"
+  ],
+  "cves": [
+    "CVE-2025-53040",
+    "CVE-2025-53042",
+    "CVE-2025-53044",
+    "CVE-2025-53045",
+    "CVE-2025-53053",
+    "CVE-2025-53054",
+    "CVE-2025-53062",
+    "CVE-2025-53069"
+  ],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Security Advisory ELSA-2025-23008\n\nhttp://linux.oracle.com/errata/ELSA-2025-23008.html\n\nThe following updated rpms for Oracle Linux 10 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\nmysql8.4-8.4.7-1.el10_1.x86_64.rpm\nmysql8.4-common-8.4.7-1.el10_1.noarch.rpm\nmysql8.4-devel-8.4.7-1.el10_1.x86_64.rpm\nmysql8.4-errmsg-8.4.7-1.el10_1.noarch.rpm\nmysql8.4-libs-8.4.7-1.el10_1.x86_64.rpm\nmysql8.4-server-8.4.7-1.el10_1.x86_64.rpm\nmysql8.4-test-8.4.7-1.el10_1.x86_64.rpm\nmysql8.4-test-data-8.4.7-1.el10_1.noarch.rpm\n\naarch64:\nmysql8.4-8.4.7-1.el10_1.aarch64.rpm\nmysql8.4-common-8.4.7-1.el10_1.noarch.rpm\nmysql8.4-devel-8.4.7-1.el10_1.aarch64.rpm\nmysql8.4-errmsg-8.4.7-1.el10_1.noarch.rpm\nmysql8.4-libs-8.4.7-1.el10_1.aarch64.rpm\nmysql8.4-server-8.4.7-1.el10_1.aarch64.rpm\nmysql8.4-test-8.4.7-1.el10_1.aarch64.rpm\nmysql8.4-test-data-8.4.7-1.el10_1.noarch.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol10/SRPMS-updates/mysql8.4-8.4.7-1.el10_1.src.rpm\n\nRelated CVEs:\n\nCVE-2025-53040\nCVE-2025-53042\nCVE-2025-53044\nCVE-2025-53045\nCVE-2025-53053\nCVE-2025-53054\nCVE-2025-53062\nCVE-2025-53069\n\n\n\n\nDescription of changes:\n\n[8.4.7-1]\n- Rebase to 8.4.7",
+  "vendor": "Oracle"
+}

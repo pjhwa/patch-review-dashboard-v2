@@ -1,0 +1,48 @@
+{
+  "id": "RHBA-2025:20152",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: libtracefs bug fix and enhancement update",
+  "issuedDate": "2025-11-11T07:25:15Z",
+  "updatedDate": "2025-11-11T07:25:15Z",
+  "pubDate": "2025-11-11T07:25:15Z",
+  "dateStr": "2025-11-11",
+  "url": "https://access.redhat.com/errata/RHBA-2025:20152",
+  "severity": "None",
+  "overview": "An update for libtracefs is now available for Red Hat Enterprise Linux 10.",
+  "description": "For detailed information on changes in this release, see the Red Hat Enterprise Linux 10 Release Notes linked from the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux for IBM z Systems",
+    "Red Hat Enterprise Linux for x86_64 10 x86_64",
+    "Red Hat Enterprise Linux for Power, little endian",
+    "Red Hat Enterprise Linux for ARM 64"
+  ],
+  "cves": [],
+  "packages": [
+    "libtracefs-1.8.2-1.el10.src",
+    "libtracefs-1.8.2-1.el10.x86_64",
+    "libtracefs-debuginfo-1.8.2-1.el10.x86_64",
+    "libtracefs-debugsource-1.8.2-1.el10.x86_64",
+    "libtracefs-devel-1.8.2-1.el10.x86_64",
+    "libtracefs-1.8.2-1.el10.s390x",
+    "libtracefs-debuginfo-1.8.2-1.el10.s390x",
+    "libtracefs-debugsource-1.8.2-1.el10.s390x",
+    "libtracefs-devel-1.8.2-1.el10.s390x",
+    "libtracefs-1.8.2-1.el10.ppc64le",
+    "libtracefs-debuginfo-1.8.2-1.el10.ppc64le",
+    "libtracefs-debugsource-1.8.2-1.el10.ppc64le",
+    "libtracefs-devel-1.8.2-1.el10.ppc64le",
+    "libtracefs-1.8.2-1.el10.aarch64",
+    "libtracefs-debuginfo-1.8.2-1.el10.aarch64",
+    "libtracefs-debugsource-1.8.2-1.el10.aarch64",
+    "libtracefs-devel-1.8.2-1.el10.aarch64"
+  ],
+  "fixes": [
+    {
+      "id": "RHEL-94793",
+      "url": "https://issues.redhat.com/browse/RHEL-94793",
+      "description": "Rebase libtracefs to version 1.8.1 or above"
+    }
+  ],
+  "full_text": "An update for libtracefs is now available for Red Hat Enterprise Linux 10.\n\nFor detailed information on changes in this release, see the Red Hat Enterprise Linux 10 Release Notes linked from the References section."
+}

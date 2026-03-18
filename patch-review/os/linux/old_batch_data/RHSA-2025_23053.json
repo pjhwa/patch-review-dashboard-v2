@@ -1,0 +1,21 @@
+{
+  "id": "RHSA-2025:23053",
+  "vendor": "Red Hat",
+  "url": "https://access.redhat.com/errata/RHSA-2025:23053",
+  "pubDate": "2025-12-10T14:39:58.000Z",
+  "dateStr": "2025-12-10",
+  "severity": "Important",
+  "title": "Red Hat Security Advisory: tomcat9 security update",
+  "overview": "An update for tomcat9 is now available for Red Hat Enterprise Linux 10.0 Extended Update Support.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "description": "An update for tomcat9 is now available for Red Hat Enterprise Linux 10.0 Extended Update Support.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux AppStream EUS (v. 10.0)"
+  ],
+  "cves": [
+    "CVE-2025-31651",
+    "CVE-2025-55752"
+  ],
+  "packages": [],
+  "fixes": "",
+  "full_text": "Red Hat Security Advisory: tomcat9 security update\n\nAn update for tomcat9 is now available for Red Hat Enterprise Linux 10.0 Extended Update Support.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nAn update for tomcat9 is now available for Red Hat Enterprise Linux 10.0 Extended Update Support.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nUpdated Packages:\ntomcat9-9.0.87-5.el10_0.4.src.rpm\ntomcat9-9.0.87-5.el10_0.4.noarch.rpm\ntomcat9-admin-webapps-9.0.87-5.el10_0.4.noarch.rpm\ntomcat9-docs-webapp-9.0.87-5.el10_0.4.noarch.rpm\ntomcat9-el-3.0-api-9.0.87-5.el10_0.4.noarch.rpm\ntomcat9-jsp-2.3-api-9.0.87-5.el10_0.4.noarch.rpm\ntomcat9-lib-9.0.87-5.el10_0.4.noarch.rpm\ntomcat9-servlet-4.0-api-9.0.87-5.el10_0.4.noarch.rpm\ntomcat9-webapps-9.0.87-5.el10_0.4.noarch.rpm\n\nCVE-2025-31651: A flaw was found in Apache Tomcat's rewrite rule processing component. This vulnerability allows security constraints to be bypassed via specially crafted HTTP requests when specific, uncommon rewrite rule configurations are in use.\n\nCVE-2025-55752: A directory traversal vulnerability in Apache Tomcat caused by improper URL normalization during request rewriting. When specific rewrite rules are used, an attacker could craft a malicious request to bypass access restrictions and reach protected directories such as /WEB-INF/ or /META-INF/. If HTTP PUT requests are also enabled, this flaw could allow the upload of malicious files, potentially leading to remote code execution."
+}

@@ -1,0 +1,20 @@
+{
+  "id": "RHSA-2025:22939",
+  "vendor": "Red Hat",
+  "url": "https://access.redhat.com/errata/RHSA-2025:22939",
+  "pubDate": "2025-12-09T15:08:18.000Z",
+  "dateStr": "2025-12-09",
+  "severity": "Low",
+  "title": "Red Hat Security Advisory: Red Hat OpenShift Service Mesh 3.0.7",
+  "overview": "Red Hat OpenShift Service Mesh 3.0.7",
+  "description": "Red Hat OpenShift Service Mesh 3.0.7",
+  "affected_products": [
+    "Red Hat OpenShift Service Mesh 3"
+  ],
+  "cves": [
+    "CVE-2025-53643"
+  ],
+  "packages": [],
+  "fixes": "",
+  "full_text": "Red Hat Security Advisory: Red Hat OpenShift Service Mesh 3.0.7\n\nRed Hat OpenShift Service Mesh 3.0.7\n\nRed Hat OpenShift Service Mesh 3.0.7\n\n\n\nCVE-2025-53643: A request smuggling flaw was found in the aiohttp python library. If a pure Python version of aiohttp is installed, without the usual C extensions, for example, or if AIOHTTP_NO_EXTENSIONS is enabled, an attacker can execute a request smuggling attack to bypass certain firewalls or proxy protections."
+}

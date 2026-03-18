@@ -1,0 +1,47 @@
+{
+  "id": "ELSA-2026-2421",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2026-February/019763.html",
+  "synopsis": "[El-errata] ELSA-2026-2421 Important: Oracle Linux 8 nodejs:22 security update",
+  "dateStr": "2026-February",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Security Advisory ELSA-2026-2421",
+  "description": "nodejs\n[1:22.22.0-1]\n- Update to 22.22.0\n  Resolves: RHEL-118152\n\nnodejs-nodemon\n[3.0.1-1]\n- Exclude ix86 arches from building.\n  Related: RHEL-35991\n\nnodejs-packaging\n[2021.06-4]\n- Exclude ix86 arches from building.\n  Related: RHEL-35991",
+  "affected_products": [
+    "Oracle Linux 8"
+  ],
+  "packages": [
+    "nodejs-22.22.0-1.module+el8.10.0+90783+325ded07.x86_64.rpm",
+    "nodejs-devel-22.22.0-1.module+el8.10.0+90783+325ded07.x86_64.rpm",
+    "nodejs-docs-22.22.0-1.module+el8.10.0+90783+325ded07.noarch.rpm",
+    "nodejs-full-i18n-22.22.0-1.module+el8.10.0+90783+325ded07.x86_64.rpm",
+    "nodejs-libs-22.22.0-1.module+el8.10.0+90783+325ded07.x86_64.rpm",
+    "nodejs-nodemon-3.0.1-1.module+el8.10.0+90677+9c05a177.noarch.rpm",
+    "nodejs-packaging-2021.06-4.module+el8.10.0+90783+325ded07.noarch.rpm",
+    "nodejs-packaging-bundler-2021.06-4.module+el8.10.0+90783+325ded07.noarch.rpm",
+    "npm-10.9.4-1.22.22.0.1.module+el8.10.0+90783+325ded07.x86_64.rpm",
+    "v8-12.4-devel-12.4.254.21-1.22.22.0.1.module+el8.10.0+90783+325ded07.x86_64.rpm",
+    "nodejs-22.22.0-1.module+el8.10.0+90783+325ded07.aarch64.rpm",
+    "nodejs-devel-22.22.0-1.module+el8.10.0+90783+325ded07.aarch64.rpm",
+    "nodejs-docs-22.22.0-1.module+el8.10.0+90783+325ded07.noarch.rpm",
+    "nodejs-full-i18n-22.22.0-1.module+el8.10.0+90783+325ded07.aarch64.rpm",
+    "nodejs-libs-22.22.0-1.module+el8.10.0+90783+325ded07.aarch64.rpm",
+    "nodejs-nodemon-3.0.1-1.module+el8.10.0+90677+9c05a177.noarch.rpm",
+    "nodejs-packaging-2021.06-4.module+el8.10.0+90783+325ded07.noarch.rpm",
+    "nodejs-packaging-bundler-2021.06-4.module+el8.10.0+90783+325ded07.noarch.rpm",
+    "npm-10.9.4-1.22.22.0.1.module+el8.10.0+90783+325ded07.aarch64.rpm",
+    "v8-12.4-devel-12.4.254.21-1.22.22.0.1.module+el8.10.0+90783+325ded07.aarch64.rpm"
+  ],
+  "cves": [
+    "CVE-2025-55130",
+    "CVE-2025-55131",
+    "CVE-2025-55132",
+    "CVE-2025-59465",
+    "CVE-2025-59466",
+    "CVE-2026-21637"
+  ],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Security Advisory ELSA-2026-2421\n\nhttp://linux.oracle.com/errata/ELSA-2026-2421.html\n\nThe following updated rpms for Oracle Linux 8 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\nnodejs-22.22.0-1.module+el8.10.0+90783+325ded07.x86_64.rpm\nnodejs-devel-22.22.0-1.module+el8.10.0+90783+325ded07.x86_64.rpm\nnodejs-docs-22.22.0-1.module+el8.10.0+90783+325ded07.noarch.rpm\nnodejs-full-i18n-22.22.0-1.module+el8.10.0+90783+325ded07.x86_64.rpm\nnodejs-libs-22.22.0-1.module+el8.10.0+90783+325ded07.x86_64.rpm\nnodejs-nodemon-3.0.1-1.module+el8.10.0+90677+9c05a177.noarch.rpm\nnodejs-packaging-2021.06-4.module+el8.10.0+90783+325ded07.noarch.rpm\nnodejs-packaging-bundler-2021.06-4.module+el8.10.0+90783+325ded07.noarch.rpm\nnpm-10.9.4-1.22.22.0.1.module+el8.10.0+90783+325ded07.x86_64.rpm\nv8-12.4-devel-12.4.254.21-1.22.22.0.1.module+el8.10.0+90783+325ded07.x86_64.rpm\n\naarch64:\nnodejs-22.22.0-1.module+el8.10.0+90783+325ded07.aarch64.rpm\nnodejs-devel-22.22.0-1.module+el8.10.0+90783+325ded07.aarch64.rpm\nnodejs-docs-22.22.0-1.module+el8.10.0+90783+325ded07.noarch.rpm\nnodejs-full-i18n-22.22.0-1.module+el8.10.0+90783+325ded07.aarch64.rpm\nnodejs-libs-22.22.0-1.module+el8.10.0+90783+325ded07.aarch64.rpm\nnodejs-nodemon-3.0.1-1.module+el8.10.0+90677+9c05a177.noarch.rpm\nnodejs-packaging-2021.06-4.module+el8.10.0+90783+325ded07.noarch.rpm\nnodejs-packaging-bundler-2021.06-4.module+el8.10.0+90783+325ded07.noarch.rpm\nnpm-10.9.4-1.22.22.0.1.module+el8.10.0+90783+325ded07.aarch64.rpm\nv8-12.4-devel-12.4.254.21-1.22.22.0.1.module+el8.10.0+90783+325ded07.aarch64.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol8/SRPMS-updates/nodejs-22.22.0-1.module+el8.10.0+90783+325ded07.src.rpm\nhttp://oss.oracle.com/ol8/SRPMS-updates/nodejs-nodemon-3.0.1-1.module+el8.10.0+90677+9c05a177.src.rpm\nhttp://oss.oracle.com/ol8/SRPMS-updates/nodejs-packaging-2021.06-4.module+el8.10.0+90783+325ded07.src.rpm\n\nRelated CVEs:\n\nCVE-2025-55130\nCVE-2025-55131\nCVE-2025-55132\nCVE-2025-59465\nCVE-2025-59466\nCVE-2026-21637\n\n\n\n\nDescription of changes:\n\nnodejs\n[1:22.22.0-1]\n- Update to 22.22.0\n  Resolves: RHEL-118152\n\nnodejs-nodemon\n[3.0.1-1]\n- Exclude ix86 arches from building.\n  Related: RHEL-35991\n\nnodejs-packaging\n[2021.06-4]\n- Exclude ix86 arches from building.\n  Related: RHEL-35991",
+  "vendor": "Oracle"
+}

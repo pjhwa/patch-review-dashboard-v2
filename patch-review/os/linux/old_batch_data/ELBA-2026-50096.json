@@ -1,0 +1,22 @@
+{
+  "id": "ELBA-2026-50096",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2026-February/019779.html",
+  "synopsis": "[El-errata] ELBA-2026-50096 Oracle Linux 9 smartmontools bug fix update",
+  "dateStr": "2026-February",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Bug Fix Advisory ELBA-2026-50096",
+  "description": "[1:7.2-9.0.1]\n- smartmontools: Fix bug for key types other than a-z not supported [Orabug: 38907908]\n- smartmontools: Fix bug for SCSI json mismatched format type",
+  "affected_products": [
+    "Oracle Linux 9"
+  ],
+  "packages": [
+    "smartmontools-7.2-9.0.1.el9.x86_64.rpm",
+    "smartmontools-7.2-9.0.1.el9.aarch64.rpm"
+  ],
+  "cves": [],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Bug Fix Advisory ELBA-2026-50096\n\nhttp://linux.oracle.com/errata/ELBA-2026-50096.html\n\nThe following updated rpms for Oracle Linux 9 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\nsmartmontools-7.2-9.0.1.el9.x86_64.rpm\n\naarch64:\nsmartmontools-7.2-9.0.1.el9.aarch64.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol9/SRPMS-updates/smartmontools-7.2-9.0.1.el9.src.rpm\n\n\n\nDescription of changes:\n\n[1:7.2-9.0.1]\n- smartmontools: Fix bug for key types other than a-z not supported [Orabug: 38907908]\n- smartmontools: Fix bug for SCSI json mismatched format type",
+  "vendor": "Oracle"
+}

@@ -1,0 +1,26 @@
+{
+  "id": "ELBA-2025-25735",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "RHCK",
+  "title": " oracle-common-release  bug fix update",
+  "issuedDate": "2025-11-05T00:00:00Z",
+  "updatedDate": "2025-11-05T00:00:00Z",
+  "pubDate": "2025-11-05T00:00:00Z",
+  "dateStr": "2025-11-05",
+  "url": "https://linux.oracle.com/errata/ELBA-2025-25735.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 9.",
+  "description": "[1.0-6]\n- Retire Oracle Instant Client 23ai repositories [JIRA: OLRM-712]\n- Add Oracle Instant Client 26ai repositories [JIRA: OLRM-712]",
+  "affected_products": [
+    "Oracle Linux 9 for x86_64",
+    "Oracle Linux 9 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "oracle-common-release-1.0-6.el9.src",
+    "oracle-java-jdk-release-el9-1.0-6.el9.x86_64",
+    "oracle-instantclient-release-26ai-el9-1.0-6.el9.x86_64"
+  ],
+  "full_text": "[1.0-6]\n- Retire Oracle Instant Client 23ai repositories [JIRA: OLRM-712]\n- Add Oracle Instant Client 26ai repositories [JIRA: OLRM-712]\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2025-25735.html"
+}

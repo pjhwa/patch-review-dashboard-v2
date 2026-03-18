@@ -1,0 +1,25 @@
+{
+  "id": "ELBA-2025-20631-0",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "AppStream",
+  "title": "gnome-settings-daemon bug fix and enhancement update",
+  "issuedDate": "2025-11-17T00:00:00Z",
+  "updatedDate": "2025-11-17T00:00:00Z",
+  "pubDate": "2025-11-17T00:00:00Z",
+  "dateStr": "2025-11-17",
+  "url": "https://linux.oracle.com/errata/ELBA-2025-20631-0.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 9.",
+  "description": "[40.0.1-22]\n- Use mount path in 'Low disk' notification when multiple mount points have same name\n  Related: RHEL-11910\n\n[40.0.1-21]\n- Add build option to disable subman plugin\n  Related: RHEL-4092\n\n[40.0.1-20]\n- Make 'Register System' notification launch registration dialog directly\n  Related: RHEL-4101",
+  "affected_products": [
+    "Oracle Linux 9 for x86_64",
+    "Oracle Linux 9 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "gnome-settings-daemon-40.0.1-22.el9.x86_64",
+    "gnome-settings-daemon-40.0.1-22.el9.src"
+  ],
+  "full_text": "[40.0.1-22]\n- Use mount path in 'Low disk' notification when multiple mount points have same name\n  Related: RHEL-11910\n\n[40.0.1-21]\n- Add build option to disable subman plugin\n  Related: RHEL-4092\n\n[40.0.1-20]\n- Make 'Register System' notification launch registration dialog directly\n  Related: RHEL-4101\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2025-20631-0.html"
+}

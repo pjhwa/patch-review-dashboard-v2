@@ -1,0 +1,26 @@
+{
+  "id": "ELBA-2025-20924",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "AppStream",
+  "title": "NetworkManager-libreswan bug fix and enhancement update",
+  "issuedDate": "2025-11-25T00:00:00Z",
+  "updatedDate": "2025-11-25T00:00:00Z",
+  "pubDate": "2025-11-25T00:00:00Z",
+  "dateStr": "2025-11-25",
+  "url": "https://linux.oracle.com/errata/ELBA-2025-20924.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 9.",
+  "description": "[1.2.27-2]\n- Fix potentional crash in malformed imports\n\n[1.2.27-1]\n- Update to 1.2.27 version\n- Add support for nm-auto-defaults + symetric import/export (RHEL-118843)\n- Support leftsendcert in X.509-Based VPN (RHEL-110772)\n- Support rightca in ipsec section\n- Esp param properly exported\n\n[1.2.26-3]\n- Fix regression on phase2alg/esp for IKEv1 (RHEL-85768)\n\n[1.2.26-2]\n- Add support for nm-auto-defaults (RHEL-85768)\n\n[1.2.26-1]\n- Update to 1.2.26 release\n- Add support for leftsubnets/rightsubnets (RHEL-56553)",
+  "affected_products": [
+    "Oracle Linux 9 for x86_64",
+    "Oracle Linux 9 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "NetworkManager-libreswan-1.2.27-2.el9_7.x86_64",
+    "NetworkManager-libreswan-1.2.27-2.el9_7.src",
+    "NetworkManager-libreswan-gnome-1.2.27-2.el9_7.x86_64"
+  ],
+  "full_text": "[1.2.27-2]\n- Fix potentional crash in malformed imports\n\n[1.2.27-1]\n- Update to 1.2.27 version\n- Add support for nm-auto-defaults + symetric import/export (RHEL-118843)\n- Support leftsendcert in X.509-Based VPN (RHEL-110772)\n- Support rightca in ipsec section\n- Esp param properly exported\n\n[1.2.26-3]\n- Fix regression on phase2alg/esp for IKEv1 (RHEL-85768)\n\n[1.2.26-2]\n- Add support for nm-auto-defaults (RHEL-85768)\n\n[1.2.26-1]\n- Update to 1.2.26 release\n- Add support for leftsubnets/rightsubnets (RHEL-56553)\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2025-20924.html"
+}

@@ -1,0 +1,38 @@
+{
+  "id": "RHBA-2025:20213",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: psacct bug fix and enhancement update",
+  "issuedDate": "2025-11-11T07:25:27Z",
+  "updatedDate": "2025-11-11T07:25:27Z",
+  "pubDate": "2025-11-11T07:25:27Z",
+  "dateStr": "2025-11-11",
+  "url": "https://access.redhat.com/errata/RHBA-2025:20213",
+  "severity": "None",
+  "overview": "An update for psacct is now available for Red Hat Enterprise Linux 10.",
+  "description": "For detailed information on changes in this release, see the Red Hat Enterprise Linux 10 Release Notes linked from the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux for Power, little endian",
+    "Red Hat Enterprise Linux for x86_64 10 x86_64",
+    "Red Hat Enterprise Linux for ARM 64",
+    "Red Hat Enterprise Linux for IBM z Systems"
+  ],
+  "cves": [],
+  "packages": [
+    "psacct-6.6.4-25.el10.src",
+    "psacct-6.6.4-25.el10.x86_64",
+    "psacct-debuginfo-6.6.4-25.el10.x86_64",
+    "psacct-debugsource-6.6.4-25.el10.x86_64",
+    "psacct-6.6.4-25.el10.s390x",
+    "psacct-debuginfo-6.6.4-25.el10.s390x",
+    "psacct-debugsource-6.6.4-25.el10.s390x",
+    "psacct-6.6.4-25.el10.ppc64le",
+    "psacct-debuginfo-6.6.4-25.el10.ppc64le",
+    "psacct-debugsource-6.6.4-25.el10.ppc64le",
+    "psacct-6.6.4-25.el10.aarch64",
+    "psacct-debuginfo-6.6.4-25.el10.aarch64",
+    "psacct-debugsource-6.6.4-25.el10.aarch64"
+  ],
+  "fixes": [],
+  "full_text": "An update for psacct is now available for Red Hat Enterprise Linux 10.\n\nFor detailed information on changes in this release, see the Red Hat Enterprise Linux 10 Release Notes linked from the References section."
+}

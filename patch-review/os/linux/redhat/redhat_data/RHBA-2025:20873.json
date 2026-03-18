@@ -1,0 +1,38 @@
+{
+  "id": "RHBA-2025:20873",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: python3.12-cryptography bug fix and enhancement update",
+  "issuedDate": "2025-11-11T07:51:24Z",
+  "updatedDate": "2025-11-11T07:51:24Z",
+  "pubDate": "2025-11-11T07:51:24Z",
+  "dateStr": "2025-11-11",
+  "url": "https://access.redhat.com/errata/RHBA-2025:20873",
+  "severity": "None",
+  "overview": "An update for python3.12-cryptography is now available for Red Hat Enterprise Linux 10.",
+  "description": "For detailed information on changes in this release, see the Red Hat Enterprise Linux 9 Release Notes linked from the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux for Power, little endian",
+    "Red Hat Enterprise Linux for x86_64 10 x86_64",
+    "Red Hat Enterprise Linux for ARM 64",
+    "Red Hat Enterprise Linux for IBM z Systems"
+  ],
+  "cves": [],
+  "packages": [
+    "python3.12-cryptography-41.0.7-3.el9_7.src",
+    "python3.12-cryptography-41.0.7-3.el9_7.x86_64",
+    "python3.12-cryptography-debuginfo-41.0.7-3.el9_7.x86_64",
+    "python3.12-cryptography-debugsource-41.0.7-3.el9_7.x86_64",
+    "python3.12-cryptography-41.0.7-3.el9_7.s390x",
+    "python3.12-cryptography-debuginfo-41.0.7-3.el9_7.s390x",
+    "python3.12-cryptography-debugsource-41.0.7-3.el9_7.s390x",
+    "python3.12-cryptography-41.0.7-3.el9_7.ppc64le",
+    "python3.12-cryptography-debuginfo-41.0.7-3.el9_7.ppc64le",
+    "python3.12-cryptography-debugsource-41.0.7-3.el9_7.ppc64le",
+    "python3.12-cryptography-41.0.7-3.el9_7.aarch64",
+    "python3.12-cryptography-debuginfo-41.0.7-3.el9_7.aarch64",
+    "python3.12-cryptography-debugsource-41.0.7-3.el9_7.aarch64"
+  ],
+  "fixes": [],
+  "full_text": "An update for python3.12-cryptography is now available for Red Hat Enterprise Linux 10.\n\nFor detailed information on changes in this release, see the Red Hat Enterprise Linux 9 Release Notes linked from the References section."
+}

@@ -46,7 +46,7 @@ export const PRODUCT_REGISTRY: ProductConfig[] = [
         vendorString: 'Red Hat',
         category: 'os',
         active: true,
-        skillDirRelative: 'os/linux-v2',
+        skillDirRelative: 'os/linux',
         dataSubDir: 'redhat_data',
         rawDataFilePrefix: ['RHSA-', 'RHBA-'],
         preprocessingScript: 'patch_preprocessing.py',
@@ -85,7 +85,7 @@ export const PRODUCT_REGISTRY: ProductConfig[] = [
         }),
         csvBOM: false,
         buildPrompt: (skillDir: string, batchSize: number, prunedBatch: any[]) =>
-            `Read the rules explicitly from ${path.join(skillDir, 'SKILL.md')}. Evaluate the following ${batchSize} PATCHES exactly according to the strict LLM evaluation rules detailed in section 4 of that file.\nCRITICAL MANDATE: IGNORE ANY PAST RETRIEVED MEMORIES OR PREVIOUS SUMMARIES. BASE ASSESSMENTS SOLELY ON THE [PATCH DATA] BELOW.\nDo NOT perform any web scraping. Do NOT use tools to write to files, simply output the text directly. Return ONLY a pure JSON array containing EXACTLY ${batchSize} objects. The object MUST contain exactly: 'IssueID', 'Component', 'Version', 'Vendor', 'Date', 'Criticality', 'Description', 'KoreanDescription', and optionally 'Decision' and 'Reason'. Do not skip Step 4.\\n\\n[BATCH DATA TO EVALUATE]:\\n${JSON.stringify(prunedBatch)}`,
+            `Read the rules explicitly from ${path.join(skillDir, 'redhat', 'SKILL.md')}. Evaluate the following ${batchSize} PATCHES exactly according to the strict LLM evaluation rules detailed in section 3 of that file.\nCRITICAL MANDATE: IGNORE ANY PAST RETRIEVED MEMORIES OR PREVIOUS SUMMARIES. BASE ASSESSMENTS SOLELY ON THE [PATCH DATA] BELOW.\nDo NOT perform any web scraping. Do NOT use tools to write to files, simply output the text directly. Return ONLY a pure JSON array containing EXACTLY ${batchSize} objects. The object MUST contain exactly: 'IssueID', 'Component', 'Version', 'Vendor', 'Date', 'Criticality', 'Description', 'KoreanDescription', and optionally 'Decision' and 'Reason'. Do not skip Step 4.\\n\\n[BATCH DATA TO EVALUATE]:\\n${JSON.stringify(prunedBatch)}`,
     },
     {
         id: 'oracle',
@@ -93,7 +93,7 @@ export const PRODUCT_REGISTRY: ProductConfig[] = [
         vendorString: 'Oracle',
         category: 'os',
         active: true,
-        skillDirRelative: 'os/linux-v2',
+        skillDirRelative: 'os/linux',
         dataSubDir: 'oracle_data',
         rawDataFilePrefix: ['ELSA-'],
         preprocessingScript: 'patch_preprocessing.py',
@@ -132,7 +132,7 @@ export const PRODUCT_REGISTRY: ProductConfig[] = [
         }),
         csvBOM: false,
         buildPrompt: (skillDir: string, batchSize: number, prunedBatch: any[]) =>
-            `Read the rules explicitly from ${path.join(skillDir, 'SKILL.md')}. Evaluate the following ${batchSize} PATCHES exactly according to the strict LLM evaluation rules detailed in section 4 of that file.\nCRITICAL MANDATE: IGNORE ANY PAST RETRIEVED MEMORIES OR PREVIOUS SUMMARIES. BASE ASSESSMENTS SOLELY ON THE [PATCH DATA] BELOW.\nDo NOT perform any web scraping. Do NOT use tools to write to files, simply output the text directly. Return ONLY a pure JSON array containing EXACTLY ${batchSize} objects. The object MUST contain exactly: 'IssueID', 'Component', 'Version', 'Vendor', 'Date', 'Criticality', 'Description', 'KoreanDescription', and optionally 'Decision' and 'Reason'. Do not skip Step 4.\\n\\n[BATCH DATA TO EVALUATE]:\\n${JSON.stringify(prunedBatch)}`,
+            `Read the rules explicitly from ${path.join(skillDir, 'oracle', 'SKILL.md')}. Evaluate the following ${batchSize} PATCHES exactly according to the strict LLM evaluation rules detailed in section 3 of that file.\nCRITICAL MANDATE: IGNORE ANY PAST RETRIEVED MEMORIES OR PREVIOUS SUMMARIES. BASE ASSESSMENTS SOLELY ON THE [PATCH DATA] BELOW.\nDo NOT perform any web scraping. Do NOT use tools to write to files, simply output the text directly. Return ONLY a pure JSON array containing EXACTLY ${batchSize} objects. The object MUST contain exactly: 'IssueID', 'Component', 'Version', 'Vendor', 'Date', 'Criticality', 'Description', 'KoreanDescription', and optionally 'Decision' and 'Reason'. Do not skip Step 4.\\n\\n[BATCH DATA TO EVALUATE]:\\n${JSON.stringify(prunedBatch)}`,
     },
     {
         id: 'ubuntu',
@@ -140,7 +140,7 @@ export const PRODUCT_REGISTRY: ProductConfig[] = [
         vendorString: 'Ubuntu',
         category: 'os',
         active: true,
-        skillDirRelative: 'os/linux-v2',
+        skillDirRelative: 'os/linux',
         dataSubDir: 'ubuntu_data',
         rawDataFilePrefix: ['USN-'],
         preprocessingScript: 'patch_preprocessing.py',
@@ -179,7 +179,7 @@ export const PRODUCT_REGISTRY: ProductConfig[] = [
         }),
         csvBOM: false,
         buildPrompt: (skillDir: string, batchSize: number, prunedBatch: any[]) =>
-            `Read the rules explicitly from ${path.join(skillDir, 'SKILL.md')}. Evaluate the following ${batchSize} PATCHES exactly according to the strict LLM evaluation rules detailed in section 4 of that file.\nCRITICAL MANDATE: IGNORE ANY PAST RETRIEVED MEMORIES OR PREVIOUS SUMMARIES. BASE ASSESSMENTS SOLELY ON THE [PATCH DATA] BELOW.\nDo NOT perform any web scraping. Do NOT use tools to write to files, simply output the text directly. Return ONLY a pure JSON array containing EXACTLY ${batchSize} objects. The object MUST contain exactly: 'IssueID', 'Component', 'Version', 'Vendor', 'Date', 'Criticality', 'Description', 'KoreanDescription', and optionally 'Decision' and 'Reason'. Do not skip Step 4.\\n\\n[BATCH DATA TO EVALUATE]:\\n${JSON.stringify(prunedBatch)}`,
+            `Read the rules explicitly from ${path.join(skillDir, 'ubuntu', 'SKILL.md')}. Evaluate the following ${batchSize} PATCHES exactly according to the strict LLM evaluation rules detailed in section 3 of that file.\nCRITICAL MANDATE: IGNORE ANY PAST RETRIEVED MEMORIES OR PREVIOUS SUMMARIES. BASE ASSESSMENTS SOLELY ON THE [PATCH DATA] BELOW.\nDo NOT perform any web scraping. Do NOT use tools to write to files, simply output the text directly. Return ONLY a pure JSON array containing EXACTLY ${batchSize} objects. The object MUST contain exactly: 'IssueID', 'Component', 'Version', 'Vendor', 'Date', 'Criticality', 'Description', 'KoreanDescription', and optionally 'Decision' and 'Reason'. Do not skip Step 4.\\n\\n[BATCH DATA TO EVALUATE]:\\n${JSON.stringify(prunedBatch)}`,
     },
     {
         id: 'windows',
@@ -494,47 +494,6 @@ export const PRODUCT_REGISTRY: ProductConfig[] = [
         csvBOM: false,
         buildPrompt: (skillDir: string, batchSize: number, prunedBatch: any[]) =>
             `Evaluate the following ${batchSize} MySQL patches.\n\n[BATCH DATA]:\n${JSON.stringify(prunedBatch)}`,
-    },
-    {
-        id: 'mongodb',
-        name: 'MongoDB',
-        vendorString: 'MongoDB',
-        category: 'database',
-        active: false,
-        skillDirRelative: 'database/mongodb',
-        dataSubDir: 'mongodb_data',
-        rawDataFilePrefix: [],
-        preprocessingScript: 'mongodb_preprocessing.py',
-        preprocessingArgs: ['--days', '180'],
-        patchesForReviewFile: 'patches_for_llm_review_mongodb.json',
-        aiReportFile: 'patch_review_ai_report_mongodb.json',
-        finalCsvFile: 'final_approved_patches_mongodb.csv',
-        jobName: 'run-mongodb-pipeline',
-        rateLimitFlag: '/tmp/.rate_limit_mongodb',
-        logTag: 'MONGODB',
-        aiEntityName: 'MongoDB patches',
-        aiVendorFieldValue: 'MongoDB',
-        aiComponentDefault: 'mongodb',
-        aiVersionGrouped: false,
-        aiBatchValidation: 'exact',
-        passthrough: {
-            enabled: true,
-            fallbackCriticality: 'Important',
-            fallbackDecision: 'Pending',
-        },
-        collectedFileFilter: (filename: string) => filename.endsWith('.json'),
-        preprocessedPatchMapper: (p: any) => ({
-            issueId: p.patch_id,
-            vendor: 'MongoDB',
-            component: p.component || 'mongodb',
-            version: p.version || '',
-            osVersion: p.os_version || null,
-            description: (p.description || '').slice(0, 4000),
-            releaseDate: p.issued_date || null,
-        }),
-        csvBOM: false,
-        buildPrompt: (skillDir: string, batchSize: number, prunedBatch: any[]) =>
-            `Evaluate the following ${batchSize} MongoDB patches.\n\n[BATCH DATA]:\n${JSON.stringify(prunedBatch)}`,
     },
 ];
 

@@ -1,0 +1,27 @@
+{
+  "id": "ELSA-2026-3842",
+  "vendor": "Oracle",
+  "type": "Security Advisory (ELSA)",
+  "kernel_type": "AppStream",
+  "title": " delve security update",
+  "issuedDate": "2026-03-05T00:00:00Z",
+  "updatedDate": "2026-03-05T00:00:00Z",
+  "pubDate": "2026-03-05T00:00:00Z",
+  "dateStr": "2026-03-05",
+  "url": "https://linux.oracle.com/errata/ELSA-2026-3842.html",
+  "severity": "Moderate",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 9.",
+  "description": "[1.25.2-2.0.1]\n- Disable DWARF compression which has issues (Alex Burmashev)\n\n[1.25.2-2]\n- Rebuild without changes.\n- Resolves: RHEL-153104",
+  "affected_products": [
+    "Oracle Linux 9 for x86_64",
+    "Oracle Linux 9 for aarch64"
+  ],
+  "cves": [
+    "CVE-2025-68121"
+  ],
+  "packages": [
+    "delve-1.25.2-2.0.1.el9_7.x86_64",
+    "delve-1.25.2-2.0.1.el9_7.src"
+  ],
+  "full_text": "[1.25.2-2.0.1]\n- Disable DWARF compression which has issues (Alex Burmashev)\n\n[1.25.2-2]\n- Rebuild without changes.\n- Resolves: RHEL-153104\n\nReferences:\nhttps://linux.oracle.com/errata/ELSA-2026-3842.html\nhttps://linux.oracle.com/cve/CVE-2025-68121.html"
+}

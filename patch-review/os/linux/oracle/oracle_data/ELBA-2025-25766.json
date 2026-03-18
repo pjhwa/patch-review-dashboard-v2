@@ -1,0 +1,26 @@
+{
+  "id": "ELBA-2025-25766",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "AppStream",
+  "title": " leapp-repository  bug fix update",
+  "issuedDate": "2025-11-13T00:00:00Z",
+  "updatedDate": "2025-11-13T00:00:00Z",
+  "pubDate": "2025-11-13T00:00:00Z",
+  "dateStr": "2025-11-13",
+  "url": "https://linux.oracle.com/errata/ELBA-2025-25766.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 8.",
+  "description": "[0.20.0-2.0.25]\n- Add additional mappings for OL9 upgrade [Orabug: 38640419]\n- Add additional problematic i686 package [Orabug: 38544332]\n- Update supported RHCK version [Orabug: 38640727]\n- Add mappings for mysql 8.4 stream [Orabug: 38644271]",
+  "affected_products": [
+    "Oracle Linux 8 for x86_64",
+    "Oracle Linux 8 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "leapp-repository-0.20.0-2.0.25.el8.src",
+    "leapp-upgrade-el8toel9-0.20.0-2.0.25.el8.noarch",
+    "leapp-upgrade-el8toel9-deps-0.20.0-2.0.25.el8.noarch"
+  ],
+  "full_text": "[0.20.0-2.0.25]\n- Add additional mappings for OL9 upgrade [Orabug: 38640419]\n- Add additional problematic i686 package [Orabug: 38544332]\n- Update supported RHCK version [Orabug: 38640727]\n- Add mappings for mysql 8.4 stream [Orabug: 38644271]\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2025-25766.html"
+}

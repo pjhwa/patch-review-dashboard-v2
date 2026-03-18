@@ -1,0 +1,39 @@
+{
+  "id": "RHSA-2025:19927",
+  "vendor": "Red Hat",
+  "type": "Security Advisory (RHSA)",
+  "title": "Red Hat Security Advisory: runc security update",
+  "issuedDate": "2025-11-07T18:11:41+00:00",
+  "updatedDate": "2025-11-07T18:11:41+00:00",
+  "pubDate": "2025-11-07T18:11:41+00:00",
+  "dateStr": "2025-11-07",
+  "url": "https://access.redhat.com/errata/RHSA-2025:19927",
+  "severity": "Important",
+  "overview": "An update for runc is now available for Red Hat Enterprise Linux 9.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "description": "The runC tool is a lightweight, portable implementation of the Open Container Format (OCF) that provides container runtime.\n\nSecurity Fix(es):\n\n* runc: container escape via 'masked path' abuse due to mount race conditions (CVE-2025-31133)\n\n* runc: container escape with malicious config due to /dev/console mount and related races (CVE-2025-52565)\n\n* runc: container escape and denial of service due to arbitrary write gadgets and procfs write redirects (CVE-2025-52881)\n\nFor more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux",
+    "Red Hat Enterprise Linux AppStream (v. 9)"
+  ],
+  "cves": [
+    "CVE-2025-31133",
+    "CVE-2025-52565",
+    "CVE-2025-52881"
+  ],
+  "packages": [
+    "runc-4:1.2.5-3.el9_6.src",
+    "runc-4:1.2.5-3.el9_6.aarch64",
+    "runc-debugsource-4:1.2.5-3.el9_6.aarch64",
+    "runc-debuginfo-4:1.2.5-3.el9_6.aarch64",
+    "runc-4:1.2.5-3.el9_6.ppc64le",
+    "runc-debugsource-4:1.2.5-3.el9_6.ppc64le",
+    "runc-debuginfo-4:1.2.5-3.el9_6.ppc64le",
+    "runc-4:1.2.5-3.el9_6.x86_64",
+    "runc-debugsource-4:1.2.5-3.el9_6.x86_64",
+    "runc-debuginfo-4:1.2.5-3.el9_6.x86_64",
+    "runc-4:1.2.5-3.el9_6.s390x",
+    "runc-debugsource-4:1.2.5-3.el9_6.s390x",
+    "runc-debuginfo-4:1.2.5-3.el9_6.s390x"
+  ],
+  "full_text": "An update for runc is now available for Red Hat Enterprise Linux 9.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nThe runC tool is a lightweight, portable implementation of the Open Container Format (OCF) that provides container runtime.\n\nSecurity Fix(es):\n\n* runc: container escape via 'masked path' abuse due to mount race conditions (CVE-2025-31133)\n\n* runc: container escape with malicious config due to /dev/console mount and related races (CVE-2025-52565)\n\n* runc: container escape and denial of service due to arbitrary write gadgets and procfs write redirects (CVE-2025-52881)\n\nFor more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section."
+}

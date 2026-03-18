@@ -1,0 +1,49 @@
+{
+  "id": "ELSA-2025-18281",
+  "vendor": "Oracle",
+  "type": "Security Advisory (ELSA)",
+  "kernel_type": "RHCK",
+  "title": " kernel security update",
+  "issuedDate": "2025-10-20T00:00:00Z",
+  "updatedDate": "2025-10-20T00:00:00Z",
+  "pubDate": "2025-10-20T00:00:00Z",
+  "dateStr": "2025-10-20",
+  "url": "https://linux.oracle.com/errata/ELSA-2025-18281.html",
+  "severity": "Moderate",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 9.",
+  "description": "[5.14.0-570.55.1.0.1]\n- nvme-pci: remove two deallocate zeroes quirks [Orabug: 37756650]\n- Disable UKI signing [Orabug: 36571828]\n- Update Oracle Linux certificates (Kevin Lyons)\n- Disable signing for aarch64 (Ilya Okomin)\n- Oracle Linux RHCK Module Signing Key was added to the kernel trusted keys list (olkmod_signing_key.pem) [Orabug: 29539237]\n- Update x509.genkey [Orabug: 24817676]\n- Conflict with shim-ia32 and shim-x64 <= 15.3-1.0.5]\n- Remove upstream reference during boot (Kevin Lyons) [Orabug: 34729535]\n- Add Oracle Linux IMA certificates\n- Add new Oracle Linux Driver Signing (key 1) certificate [Orabug: 37985764]\n\n[5.14.0-570.55.1]\n- scsi: lpfc: Fix buffer free/clear order in deferred receive path (CKI Backport Bot) [RHEL-119115] {CVE-2025-39841}\n\n[5.14.0-570.54.1]\n- firmware: arm_scpi: Ensure scpi_info is not assigned if the probe fails (Charles Mirabile) [RHEL-113836] {CVE-2022-50087}\n- SUNRPC: call xs_sock_process_cmsg for all cmsg (Olga Kornievskaia) [RHEL-110811]\n- sunrpc: fix client side handling of tls alerts (Olga Kornievskaia) [RHEL-110811] {CVE-2025-38571}\n- efivarfs: Fix slab-out-of-bounds in efivarfs_d_compare (CKI Backport Bot) [RHEL-118256] {CVE-2025-39817}\n- sunrpc: fix handling of server side tls alerts (Steve Dickson) [RHEL-111070] {CVE-2025-38566}\n- platform/x86/intel: power-domains: Use topology_logical_package_id() for package ID (Jay Shin) [RHEL-116679]\n\n[5.14.0-570.53.1]\n- wifi: cfg80211: sme: cap SSID length in __cfg80211_connect_result() (CKI Backport Bot) [RHEL-117578] {CVE-2025-39849}\n- ibmvnic: Use ndo_get_stats64 to fix inaccurate SAR reporting (Mamatha Inamdar) [RHEL-114436]\n- ibmvnic: Fix hardcoded NUM_RX_STATS/NUM_TX_STATS with dynamic sizeof (Mamatha Inamdar) [RHEL-114436]\n- ibmvnic: Add stat for tx direct vs tx batched (Mamatha Inamdar) [RHEL-114436]\n- nfsd: don't ignore the return code of svc_proc_register() (Olga Kornievskaia) [RHEL-93610] {CVE-2025-22026}\n- irdma: free iwdev->rf after removing MSI-X (CKI Backport Bot) [RHEL-111485]",
+  "affected_products": [
+    "Oracle Linux 9 for x86_64",
+    "Oracle Linux 9 for aarch64"
+  ],
+  "cves": [
+    "CVE-2022-50087",
+    "CVE-2025-22026",
+    "CVE-2025-38566",
+    "CVE-2025-38571",
+    "CVE-2025-39817",
+    "CVE-2025-39841",
+    "CVE-2025-39849"
+  ],
+  "packages": [
+    "kernel-5.14.0-570.55.1.0.1.el9_6.x86_64",
+    "kernel-debug-uki-virt-5.14.0-570.55.1.0.1.el9_6.x86_64",
+    "kernel-uki-virt-addons-5.14.0-570.55.1.0.1.el9_6.x86_64",
+    "kernel-modules-extra-5.14.0-570.55.1.0.1.el9_6.x86_64",
+    "kernel-modules-core-5.14.0-570.55.1.0.1.el9_6.x86_64",
+    "kernel-abi-stablelists-5.14.0-570.55.1.0.1.el9_6.noarch",
+    "kernel-debug-modules-extra-5.14.0-570.55.1.0.1.el9_6.x86_64",
+    "kernel-uki-virt-5.14.0-570.55.1.0.1.el9_6.x86_64",
+    "kernel-modules-5.14.0-570.55.1.0.1.el9_6.x86_64",
+    "python3-perf-5.14.0-570.55.1.0.1.el9_6.x86_64",
+    "kernel-debug-5.14.0-570.55.1.0.1.el9_6.x86_64",
+    "kernel-5.14.0-570.55.1.0.1.el9_6.src",
+    "kernel-tools-libs-5.14.0-570.55.1.0.1.el9_6.x86_64",
+    "kernel-debug-modules-core-5.14.0-570.55.1.0.1.el9_6.x86_64",
+    "kernel-debug-core-5.14.0-570.55.1.0.1.el9_6.x86_64",
+    "kernel-core-5.14.0-570.55.1.0.1.el9_6.x86_64",
+    "kernel-debug-modules-5.14.0-570.55.1.0.1.el9_6.x86_64",
+    "kernel-tools-5.14.0-570.55.1.0.1.el9_6.x86_64"
+  ],
+  "full_text": "[5.14.0-570.55.1.0.1]\n- nvme-pci: remove two deallocate zeroes quirks [Orabug: 37756650]\n- Disable UKI signing [Orabug: 36571828]\n- Update Oracle Linux certificates (Kevin Lyons)\n- Disable signing for aarch64 (Ilya Okomin)\n- Oracle Linux RHCK Module Signing Key was added to the kernel trusted keys list (olkmod_signing_key.pem) [Orabug: 29539237]\n- Update x509.genkey [Orabug: 24817676]\n- Conflict with shim-ia32 and shim-x64 <= 15.3-1.0.5]\n- Remove upstream reference during boot (Kevin Lyons) [Orabug: 34729535]\n- Add Oracle Linux IMA certificates\n- Add new Oracle Linux Driver Signing (key 1) certificate [Orabug: 37985764]\n\n[5.14.0-570.55.1]\n- scsi: lpfc: Fix buffer free/clear order in deferred receive path (CKI Backport Bot) [RHEL-119115] {CVE-2025-39841}\n\n[5.14.0-570.54.1]\n- firmware: arm_scpi: Ensure scpi_info is not assigned if the probe fails (Charles Mirabile) [RHEL-113836] {CVE-2022-50087}\n- SUNRPC: call xs_sock_process_cmsg for all cmsg (Olga Kornievskaia) [RHEL-110811]\n- sunrpc: fix client side handling of tls alerts (Olga Kornievskaia) [RHEL-110811] {CVE-2025-38571}\n- efivarfs: Fix slab-out-of-bounds in efivarfs_d_compare (CKI Backport Bot) [RHEL-118256] {CVE-2025-39817}\n- sunrpc: fix handling of server side tls alerts (Steve Dickson) [RHEL-111070] {CVE-2025-38566}\n- platform/x86/intel: power-domains: Use topology_logical_package_id() for package ID (Jay Shin) [RHEL-116679]\n\n[5.14.0-570.53.1]\n- wifi: cfg80211: sme: cap SSID length in __cfg80211_connect_result() (CKI Backport Bot) [RHEL-117578] {CVE-2025-39849}\n- ibmvnic: Use ndo_get_stats64 to fix inaccurate SAR reporting (Mamatha Inamdar) [RHEL-114436]\n- ibmvnic: Fix hardcoded NUM_RX_STATS/NUM_TX_STATS with dynamic sizeof (Mamatha Inamdar) [RHEL-114436]\n- ibmvnic: Add stat for tx direct vs tx batched (Mamatha Inamdar) [RHEL-114436]\n- nfsd: don't ignore the return code of svc_proc_register() (Olga Kornievskaia) [RHEL-93610] {CVE-2025-22026}\n- irdma: free iwdev->rf after removing MSI-X (CKI Backport Bot) [RHEL-111485]\n\nReferences:\nhttps://linux.oracle.com/errata/ELSA-2025-18281.html\nhttps://linux.oracle.com/cve/CVE-2022-50087.html\nhttps://linux.oracle.com/cve/CVE-2025-22026.html\nhttps://linux.oracle.com/cve/CVE-2025-38566.html\nhttps://linux.oracle.com/cve/CVE-2025-38571.html\nhttps://linux.oracle.com/cve/CVE-2025-39817.html\nhttps://linux.oracle.com/cve/CVE-2025-39841.html\nhttps://linux.oracle.com/cve/CVE-2025-39849.html"
+}

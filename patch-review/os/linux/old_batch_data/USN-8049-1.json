@@ -1,0 +1,26 @@
+{
+  "id": "USN-8049-1",
+  "url": "https://ubuntu.com/security/notices/USN-8049-1",
+  "synopsis": "USN-8049-1: Nova vulnerability",
+  "dateStr": "17 February 2026",
+  "overview": "Nova could be made to destroy data.",
+  "description": "Dan Smith discovered that Nova incorrectly called qemu-img without a format\nrestriction when resizing disks. An attacker could possibly use this issue\nto destroy data on the host system.\n\n \n\n \n\n \n\nDan Smith discovered that Nova incorrectly called qemu-img without a format\nrestriction when resizing disks. An attacker could possibly use this issue\nto destroy data on the host system.",
+  "packages": [
+    "nova"
+  ],
+  "cves": [
+    "CVE-2026-24708"
+  ],
+  "affected_products": [
+    "25.10",
+    "24.04 LTS",
+    "22.04 LTS",
+    "Open side navigation"
+  ],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Ubuntu Security Notices\n\nUSN-8049-1\n\n \n\n \n\n \n\n \n\n \n\n \nUSN-8049-1: Nova vulnerability\n\n \n\n \n\n \n\n \nPublication date\n\n \n\n \n\n \n17 February 2026\n\n \n\n \n\n \n\n \n\n \nOverview\n\n \n\n \n\n \nNova could be made to destroy data.\n\n \n\n \n\n \n\n \n\n \nReleases\n\n \n\n \n\n \n\n 25.10\n\n 24.04 LTS\n\n22.04 LTS\n\n \n\n \n\n \n\n \n\n \n\n \n\n Open side navigation\n \n\n \n\n \nPackages\n\n \n\n nova - OpenStack Compute cloud infrastructure\n \n\n \n\n \nDetails\n\n \n\n \n\nDan Smith discovered that Nova incorrectly called qemu-img without a format\nrestriction when resizing disks. An attacker could possibly use this issue\nto destroy data on the host system.\n\n \n\n \n\n \n\nDan Smith discovered that Nova incorrectly called qemu-img without a format\nrestriction when resizing disks. An attacker could possibly use this issue\nto destroy data on the host system.\n\n \n\n \n\n \n\n \nUpdate instructions\n\n \n\n \n\n \n\n \n\nIn general, a standard system update will make all the necessary changes.\n\n Learn more about how to get the fixes.\n \n\n \n\n \n\n \n\n \nThe problem can be corrected by updating your system to the following package versions:\n\n \n\n \n\n \n\n \n\n Ubuntu Release\n Package Version\n \n\n 25.10\n\nquesting\n\n nova-common – \n\n3:32.0.0-0ubuntu1.1\n\n python3-nova – \n\n3:32.0.0-0ubuntu1.1\n\n \n\n 24.04\n\nLTS noble\n\n nova-common – \n\n3:29.2.0-0ubuntu1.3\n\n python3-nova – \n\n3:29.2.0-0ubuntu1.3\n\n \n\n 22.04\n\nLTS jammy\n\n nova-common – \n\n3:25.2.1-0ubuntu2.10\n\n python3-nova – \n\n3:25.2.1-0ubuntu2.10\n\n \n\nReduce your security exposure\n\n \n\n Ubuntu Pro provides ten-year security coverage to 25,000+ packages in Main and Universe repositories, and it is free for up to five machines.\n \n\n \n\n Get Ubuntu Pro\n \n\n \n\nReferences\n\n \n\n \n\n CVE-2026-24708\n \n\n \n\n \n\n CVE-2026-24708",
+  "title": "USN-8049-1: Nova vulnerability | Ubuntu security notices | Ubuntu",
+  "pubDate": "2026-02-16T15:00:00.000Z",
+  "vendor": "Ubuntu"
+}

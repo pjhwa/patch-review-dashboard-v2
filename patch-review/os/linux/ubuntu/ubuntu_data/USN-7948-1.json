@@ -1,0 +1,38 @@
+{
+  "id": "USN-7948-1",
+  "vendor": "Canonical / Ubuntu",
+  "type": "Ubuntu Security Notice (USN)",
+  "title": "gpsd vulnerabilities",
+  "issuedDate": "2026-01-08T14:34:17Z",
+  "updatedDate": "2026-02-10T04:50:47Z",
+  "pubDate": "2026-01-08T14:34:17Z",
+  "dateStr": "2026-01-08",
+  "url": "https://ubuntu.com/security/notices/USN-7948-1",
+  "severity": "None",
+  "overview": "gpsd vulnerabilities",
+  "description": "It was discovered that GPSd incorrectly handled processing NMEA2000\npackets. An attacker could use this issue to cause GPSd to crash, resulting\nin a denial of service, or possibly execute arbitrary code.\n(CVE-2025-67268)\n\nIt was discovered that GPSd incorrectly handled processing NAVCOM packets.\nAn attacker could possibly use this issue to cause GPSd to consume\nresources, resulting in a denial of service. (CVE-2025-67269)",
+  "affected_products": [
+    "Ubuntu 22.04 LTS",
+    "Ubuntu 24.04 LTS"
+  ],
+  "cves": [],
+  "packages": [
+    "gpsd-3.22-4ubuntu2.1",
+    "gpsd-3.25-3ubuntu3.2",
+    "gpsd-clients-3.22-4ubuntu2.1",
+    "gpsd-clients-3.25-3ubuntu3.2",
+    "gpsd-tools-3.22-4ubuntu2.1",
+    "gpsd-tools-3.25-3ubuntu3.2",
+    "libgps-dev-3.22-4ubuntu2.1",
+    "libgps-dev-3.25-3ubuntu3.2",
+    "libgps28-3.22-4ubuntu2.1",
+    "libgps30t64-3.25-3ubuntu3.2",
+    "libqgpsmm-dev-3.22-4ubuntu2.1",
+    "libqgpsmm-dev-3.25-3ubuntu3.2",
+    "libqgpsmm28-3.22-4ubuntu2.1",
+    "libqgpsmm30t64-3.25-3ubuntu3.2",
+    "python3-gps-3.22-4ubuntu2.1",
+    "python3-gps-3.25-3ubuntu3.2"
+  ],
+  "full_text": "It was discovered that GPSd incorrectly handled processing NMEA2000\npackets. An attacker could use this issue to cause GPSd to crash, resulting\nin a denial of service, or possibly execute arbitrary code.\n(CVE-2025-67268)\n\nIt was discovered that GPSd incorrectly handled processing NAVCOM packets.\nAn attacker could possibly use this issue to cause GPSd to consume\nresources, resulting in a denial of service. (CVE-2025-67269)"
+}

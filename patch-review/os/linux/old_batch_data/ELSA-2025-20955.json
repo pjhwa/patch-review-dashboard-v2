@@ -1,0 +1,37 @@
+{
+  "id": "ELSA-2025-20955",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2025-November/019119.html",
+  "synopsis": "[El-errata] ELSA-2025-20955 Important: Oracle Linux 9 redis:7 security update",
+  "dateStr": "2025-November",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Security Advisory ELSA-2025-20955",
+  "description": "[7.2.11-1.0.1]\n- Build with 64k pages to support redis on UEK on aarch64\n\n[7.2.11-1]\n- rebase to 7.2.11 for CVE-2025-49844 CVE-2025-46817 CVE-2025-46818 CVE-2025-46819\n\n[7.2.10-1]\n- rebase to 7.2.10 for CVE-2025-27151 CVE-2025-32023 and CVE-2025-48367\n\n[7.2.8-1]\n- rebase to 7.2.8 for CVE-2025-21605\n\n[7.2.7-1]\n- rebase to 7.2.7 for CVE-2024-46981 and CVE-2024-51741\n\n[7.2.6-1]\n- rebase to 7.2.6  RHEL-26628",
+  "affected_products": [
+    "Oracle Linux 9"
+  ],
+  "packages": [
+    "redis-7.2.11-1.0.1.module+el9.7.0+90709+dc2ec98a.x86_64.rpm",
+    "redis-devel-7.2.11-1.0.1.module+el9.7.0+90709+dc2ec98a.x86_64.rpm",
+    "redis-doc-7.2.11-1.0.1.module+el9.7.0+90709+dc2ec98a.noarch.rpm",
+    "redis-7.2.11-1.0.1.module+el9.7.0+90709+dc2ec98a.aarch64.rpm",
+    "redis-devel-7.2.11-1.0.1.module+el9.7.0+90709+dc2ec98a.aarch64.rpm",
+    "redis-doc-7.2.11-1.0.1.module+el9.7.0+90709+dc2ec98a.noarch.rpm"
+  ],
+  "cves": [
+    "CVE-2025-46817",
+    "CVE-2025-46818",
+    "CVE-2025-46819",
+    "CVE-2025-49844",
+    "CVE-2025-27151",
+    "CVE-2025-32023",
+    "CVE-2025-48367",
+    "CVE-2025-21605",
+    "CVE-2024-46981",
+    "CVE-2024-51741"
+  ],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Security Advisory ELSA-2025-20955\n\nhttp://linux.oracle.com/errata/ELSA-2025-20955.html\n\nThe following updated rpms for Oracle Linux 9 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\nredis-7.2.11-1.0.1.module+el9.7.0+90709+dc2ec98a.x86_64.rpm\nredis-devel-7.2.11-1.0.1.module+el9.7.0+90709+dc2ec98a.x86_64.rpm\nredis-doc-7.2.11-1.0.1.module+el9.7.0+90709+dc2ec98a.noarch.rpm\n\naarch64:\nredis-7.2.11-1.0.1.module+el9.7.0+90709+dc2ec98a.aarch64.rpm\nredis-devel-7.2.11-1.0.1.module+el9.7.0+90709+dc2ec98a.aarch64.rpm\nredis-doc-7.2.11-1.0.1.module+el9.7.0+90709+dc2ec98a.noarch.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol9/SRPMS-updates/redis-7.2.11-1.0.1.module+el9.7.0+90709+dc2ec98a.src.rpm\n\nRelated CVEs:\n\nCVE-2025-46817\nCVE-2025-46818\nCVE-2025-46819\nCVE-2025-49844\n\n\n\n\nDescription of changes:\n\n[7.2.11-1.0.1]\n- Build with 64k pages to support redis on UEK on aarch64\n\n[7.2.11-1]\n- rebase to 7.2.11 for CVE-2025-49844 CVE-2025-46817 CVE-2025-46818 CVE-2025-46819\n\n[7.2.10-1]\n- rebase to 7.2.10 for CVE-2025-27151 CVE-2025-32023 and CVE-2025-48367\n\n[7.2.8-1]\n- rebase to 7.2.8 for CVE-2025-21605\n\n[7.2.7-1]\n- rebase to 7.2.7 for CVE-2024-46981 and CVE-2024-51741\n\n[7.2.6-1]\n- rebase to 7.2.6  RHEL-26628",
+  "vendor": "Oracle"
+}

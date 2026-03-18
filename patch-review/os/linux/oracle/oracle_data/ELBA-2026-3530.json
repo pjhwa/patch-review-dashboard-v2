@@ -1,0 +1,40 @@
+{
+  "id": "ELBA-2026-3530",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "title": "kernel bug fix and enhancement update",
+  "issuedDate": "2026-03-02T00:00:00Z",
+  "updatedDate": "2026-03-02T00:00:00Z",
+  "pubDate": "2026-03-02T00:00:00Z",
+  "dateStr": "2026-03-02",
+  "url": "https://linux.oracle.com/errata/ELBA-2026-3530.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 10.",
+  "description": "[6.12.0-124.40.1]\n- Add new Oracle Linux Driver Signing (key 1) certificate [Orabug: 37985782]\n- Disable UKI signing [Orabug: 36571828]\n- Update Oracle Linux certificates (Kevin Lyons)\n- Disable signing for aarch64 (Ilya Okomin)\n- Oracle Linux RHCK Module Signing Key was added to the kernel trusted keys list (olkmod_signing_key.pem) [Orabug: 29539237]\n- Update x509.genkey [Orabug: 24817676]\n- Conflict with shim-ia32 and shim-x64 <= 15.3-1.0.5]\n- Remove upstream reference during boot (Kevin Lyons) [Orabug: 34729535]\n- Add Oracle Linux IMA certificates\n- Update module name for cryptographic module [Orabug: 37400433]\n- Clean git history at setup stage\n\n[6.12.0-124.40.1]\n- s390/mm: Fix __ptep_rdp() inline assembly (Mete Durlu) [RHEL-143715]\n- ice: PTP: fix missing timestamps on E825 hardware (CKI Backport Bot) [RHEL-148168]\n- fou: Don't allow 0 for FOU_ATTR_IPPROTO. (Xin Long) [RHEL-144984]\n- tools: ynl: Specify --no-line-number in ynl-regen.sh. (Xin Long) [RHEL-144984]\n- gue: Fix skb memleak with inner IP protocol 0. (Xin Long) [RHEL-144984]\n- netlink: specs: fou: replace underscores with dashes in names (Xin Long) [RHEL-144984]\n- redhat: enable FOU modules in kernel-modules-extra (Xin Long) [RHEL-144984]\n- net/smc: Remove validation of reserved bits in CLC Decline message (CKI Backport Bot) [RHEL-143717]\n- scsi: s390: zfcp: Ensure synchronous unit_add (CKI Backport Bot) [RHEL-143733]\n- smb: client: Add tracepoint for krb5 auth (Paulo Alcantara) [RHEL-145511]\n- smb: client: improve error message when creating SMB session (Paulo Alcantara) [RHEL-145511]\n- smb: client: relax session and tcon reconnect attempts (Paulo Alcantara) [RHEL-145511]\n- cifs: #include cifsglob.h before trace.h to allow structs in tracepoints (Paulo Alcantara) [RHEL-145511]\n- ALSA: hda/realtek - Enable Mute LED for Lenovo platform (Jaroslav Kysela) [RHEL-141440]",
+  "affected_products": [
+    "Oracle Linux 10 for x86_64",
+    "Oracle Linux 10 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "kernel-modules-core-6.12.0-124.40.1.el10_1.x86_64",
+    "kernel-modules-extra-6.12.0-124.40.1.el10_1.x86_64",
+    "kernel-debug-core-6.12.0-124.40.1.el10_1.x86_64",
+    "kernel-debug-uki-virt-6.12.0-124.40.1.el10_1.x86_64",
+    "kernel-abi-stablelists-6.12.0-124.40.1.el10_1.noarch",
+    "kernel-uki-virt-addons-6.12.0-124.40.1.el10_1.x86_64",
+    "kernel-core-6.12.0-124.40.1.el10_1.x86_64",
+    "kernel-uki-virt-6.12.0-124.40.1.el10_1.x86_64",
+    "kernel-debug-modules-6.12.0-124.40.1.el10_1.x86_64",
+    "kernel-6.12.0-124.40.1.el10_1.src",
+    "kernel-6.12.0-124.40.1.el10_1.x86_64",
+    "kernel-modules-extra-matched-6.12.0-124.40.1.el10_1.x86_64",
+    "kernel-tools-6.12.0-124.40.1.el10_1.x86_64",
+    "kernel-debug-modules-extra-6.12.0-124.40.1.el10_1.x86_64",
+    "kernel-debug-6.12.0-124.40.1.el10_1.x86_64",
+    "kernel-debug-modules-core-6.12.0-124.40.1.el10_1.x86_64",
+    "kernel-modules-6.12.0-124.40.1.el10_1.x86_64",
+    "kernel-tools-libs-6.12.0-124.40.1.el10_1.x86_64"
+  ],
+  "full_text": "[6.12.0-124.40.1]\n- Add new Oracle Linux Driver Signing (key 1) certificate [Orabug: 37985782]\n- Disable UKI signing [Orabug: 36571828]\n- Update Oracle Linux certificates (Kevin Lyons)\n- Disable signing for aarch64 (Ilya Okomin)\n- Oracle Linux RHCK Module Signing Key was added to the kernel trusted keys list (olkmod_signing_key.pem) [Orabug: 29539237]\n- Update x509.genkey [Orabug: 24817676]\n- Conflict with shim-ia32 and shim-x64 <= 15.3-1.0.5]\n- Remove upstream reference during boot (Kevin Lyons) [Orabug: 34729535]\n- Add Oracle Linux IMA certificates\n- Update module name for cryptographic module [Orabug: 37400433]\n- Clean git history at setup stage\n\n[6.12.0-124.40.1]\n- s390/mm: Fix __ptep_rdp() inline assembly (Mete Durlu) [RHEL-143715]\n- ice: PTP: fix missing timestamps on E825 hardware (CKI Backport Bot) [RHEL-148168]\n- fou: Don't allow 0 for FOU_ATTR_IPPROTO. (Xin Long) [RHEL-144984]\n- tools: ynl: Specify --no-line-number in ynl-regen.sh. (Xin Long) [RHEL-144984]\n- gue: Fix skb memleak with inner IP protocol 0. (Xin Long) [RHEL-144984]\n- netlink: specs: fou: replace underscores with dashes in names (Xin Long) [RHEL-144984]\n- redhat: enable FOU modules in kernel-modules-extra (Xin Long) [RHEL-144984]\n- net/smc: Remove validation of reserved bits in CLC Decline message (CKI Backport Bot) [RHEL-143717]\n- scsi: s390: zfcp: Ensure synchronous unit_add (CKI Backport Bot) [RHEL-143733]\n- smb: client: Add tracepoint for krb5 auth (Paulo Alcantara) [RHEL-145511]\n- smb: client: improve error message when creating SMB session (Paulo Alcantara) [RHEL-145511]\n- smb: client: relax session and tcon reconnect attempts (Paulo Alcantara) [RHEL-145511]\n- cifs: #include cifsglob.h before trace.h to allow structs in tracepoints (Paulo Alcantara) [RHEL-145511]\n- ALSA: hda/realtek - Enable Mute LED for Lenovo platform (Jaroslav Kysela) [RHEL-141440]\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2026-3530.html"
+}

@@ -1,0 +1,40 @@
+{
+  "id": "USN-7942-1",
+  "vendor": "Canonical / Ubuntu",
+  "type": "Ubuntu Security Notice (USN)",
+  "title": "glib2.0 vulnerabilities",
+  "issuedDate": "2026-01-06T15:17:45Z",
+  "updatedDate": "2026-02-10T04:50:47Z",
+  "pubDate": "2026-01-06T15:17:45Z",
+  "dateStr": "2026-01-06",
+  "url": "https://ubuntu.com/security/notices/USN-7942-1",
+  "severity": "None",
+  "overview": "glib2.0 vulnerabilities",
+  "description": "It was discovered that GLib incorrectly handled escaping URI strings. An\nattacker could use this issue to cause GLib to crash, resulting in a\ndenial of service, or possibly execute arbitrary code. (CVE-2025-13601)\n\nIt was discovered that GLib incorrectly parsed certain GVariants. An\nattacker could use this issue to cause GLib to crash, resulting in a\ndenial of service, or possibly execute arbitrary code. (CVE-2025-14087)\n\nIt was discovered that GLib incorrectly parsed certain long invalid ISO\n8601 timestamps. An attacker could possibly use this issue to cause GLib to\ncrash, resulting in a denial of service. This issue only affected Ubuntu\n22.04 LTS and Ubuntu 24.04 LTS. (CVE-2025-3360)\n\nIt was discovered that GLib incorrectly handled GString memory operations.\nAn attacker could use this issue to cause GLib to crash, resulting in a\ndenial of service, or possibly execute arbitrary code. This issue only\naffected Ubuntu 24.04 LTS and Ubuntu 25.04. (CVE-2025-6052)\n\nIt was discovered that GLib incorrectly handled creating temporary files.\nAn attacker could possibly use this issue to access unauthorized data. This\nissue only affected Ubuntu 22.04 LTS, Ubuntu 24.04 LTS, and Ubuntu 25.04.\n(CVE-2025-7039)",
+  "affected_products": [
+    "Ubuntu 22.04 LTS",
+    "Ubuntu 24.04 LTS"
+  ],
+  "cves": [],
+  "packages": [
+    "gir1.2-girepository-3.0-2.80.0-6ubuntu3.6",
+    "gir1.2-girepository-3.0-dev-2.80.0-6ubuntu3.6",
+    "gir1.2-glib-2.0-2.80.0-6ubuntu3.6",
+    "gir1.2-glib-2.0-dev-2.80.0-6ubuntu3.6",
+    "libgirepository-2.0-0-2.80.0-6ubuntu3.6",
+    "libgirepository-2.0-dev-2.80.0-6ubuntu3.6",
+    "libglib2.0-0-2.72.4-0ubuntu2.7",
+    "libglib2.0-0t64-2.80.0-6ubuntu3.6",
+    "libglib2.0-bin-2.72.4-0ubuntu2.7",
+    "libglib2.0-bin-2.80.0-6ubuntu3.6",
+    "libglib2.0-data-2.72.4-0ubuntu2.7",
+    "libglib2.0-data-2.80.0-6ubuntu3.6",
+    "libglib2.0-dev-2.72.4-0ubuntu2.7",
+    "libglib2.0-dev-2.80.0-6ubuntu3.6",
+    "libglib2.0-dev-bin-2.72.4-0ubuntu2.7",
+    "libglib2.0-dev-bin-2.80.0-6ubuntu3.6",
+    "libglib2.0-tests-2.72.4-0ubuntu2.7",
+    "libglib2.0-tests-2.80.0-6ubuntu3.6"
+  ],
+  "full_text": "It was discovered that GLib incorrectly handled escaping URI strings. An\nattacker could use this issue to cause GLib to crash, resulting in a\ndenial of service, or possibly execute arbitrary code. (CVE-2025-13601)\n\nIt was discovered that GLib incorrectly parsed certain GVariants. An\nattacker could use this issue to cause GLib to crash, resulting in a\ndenial of service, or possibly execute arbitrary code. (CVE-2025-14087)\n\nIt was discovered that GLib incorrectly parsed certain long invalid ISO\n8601 timestamps. An attacker could possibly use this issue to cause GLib to\ncrash, resulting in a denial of service. This issue only affected Ubuntu\n22.04 LTS and Ubuntu 24.04 LTS. (CVE-2025-3360)\n\nIt was discovered that GLib incorrectly handled GString memory operations.\nAn attacker could use this issue to cause GLib to crash, resulting in a\ndenial of service, or possibly execute arbitrary code. This issue only\naffected Ubuntu 24.04 LTS and Ubuntu 25.04. (CVE-2025-6052)\n\nIt was discovered that GLib incorrectly handled creating temporary files.\nAn attacker could possibly use this issue to access unauthorized data. This\nissue only affected Ubuntu 22.04 LTS, Ubuntu 24.04 LTS, and Ubuntu 25.04.\n(CVE-2025-7039)"
+}

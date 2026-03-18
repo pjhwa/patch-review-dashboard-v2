@@ -1,0 +1,23 @@
+{
+  "id": "RHSA-2025:19440",
+  "vendor": "Red Hat",
+  "url": "https://access.redhat.com/errata/RHSA-2025:19440",
+  "pubDate": "2025-11-03T09:06:28.000Z",
+  "dateStr": "2025-11-03",
+  "severity": "Moderate",
+  "title": "Red Hat Security Advisory: kernel-rt security update",
+  "overview": "An update for kernel-rt is now available for Red Hat Enterprise Linux 8.\n\nRed Hat Product Security has rated this update as having a security impact of Moderate. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "description": "An update for kernel-rt is now available for Red Hat Enterprise Linux 8.\n\nRed Hat Product Security has rated this update as having a security impact of Moderate. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux NFV (v. 8)",
+    "Red Hat Enterprise Linux RT (v. 8)"
+  ],
+  "cves": [
+    "CVE-2023-53226",
+    "CVE-2023-53257",
+    "CVE-2025-39864"
+  ],
+  "packages": [],
+  "fixes": "",
+  "full_text": "Red Hat Security Advisory: kernel-rt security update\n\nAn update for kernel-rt is now available for Red Hat Enterprise Linux 8.\n\nRed Hat Product Security has rated this update as having a security impact of Moderate. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nAn update for kernel-rt is now available for Red Hat Enterprise Linux 8.\n\nRed Hat Product Security has rated this update as having a security impact of Moderate. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nUpdated Packages:\nkernel-rt-4.18.0-553.82.1.rt7.423.el8_10.src.rpm\nkernel-rt-4.18.0-553.82.1.rt7.423.el8_10.x86_64.rpm\nkernel-rt-core-4.18.0-553.82.1.rt7.423.el8_10.x86_64.rpm\nkernel-rt-debug-4.18.0-553.82.1.rt7.423.el8_10.x86_64.rpm\nkernel-rt-debug-core-4.18.0-553.82.1.rt7.423.el8_10.x86_64.rpm\nkernel-rt-debug-debuginfo-4.18.0-553.82.1.rt7.423.el8_10.x86_64.rpm\nkernel-rt-debug-devel-4.18.0-553.82.1.rt7.423.el8_10.x86_64.rpm\nkernel-rt-debug-modules-4.18.0-553.82.1.rt7.423.el8_10.x86_64.rpm\nkernel-rt-debug-modules-extra-4.18.0-553.82.1.rt7.423.el8_10.x86_64.rpm\nkernel-rt-debuginfo-4.18.0-553.82.1.rt7.423.el8_10.x86_64.rpm\nkernel-rt-debuginfo-common-x86_64-4.18.0-553.82.1.rt7.423.el8_10.x86_64.rpm\nkernel-rt-devel-4.18.0-553.82.1.rt7.423.el8_10.x86_64.rpm\nkernel-rt-modules-4.18.0-553.82.1.rt7.423.el8_10.x86_64.rpm\nkernel-rt-modules-extra-4.18.0-553.82.1.rt7.423.el8_10.x86_64.rpm\nkernel-rt-debug-kvm-4.18.0-553.82.1.rt7.423.el8_10.x86_64.rpm\nkernel-rt-kvm-4.18.0-553.82.1.rt7.423.el8_10.x86_64.rpm\n\nCVE-2023-53226: In the Linux kernel, the following vulnerability has been resolved:\n\nwifi: mwifiex: Fix OOB and integer underflow when rx packets\n\nMake sure mwifiex_process_mgmt_packet,\nmwifiex_process_sta_rx_packet and mwifiex_process_uap_rx_packet,\nmwifiex_uap_queue_bridged_pkt and mwifiex_process_rx_packet\nnot out-of-bounds access the skb->data buffer.\n\nCVE-2023-53257: In the Linux kernel, the following vulnerability has been resolved:\n\nwifi: mac80211: check S1G action frame size\n\nBefore checking the action code, check that it even\nexists in the frame.\n\nCVE-2025-39864: In the Linux kernel, the following vulnerability has been resolved:\n\nwifi: cfg80211: fix use-after-free in cmp_bss()\n\nFollowing bss_free() quirk introduced in commit 776b3580178f\n(\"cfg80211: track hidden SSID networks properly\"), adjust\ncfg80211_update_known_bss() to free the last beacon frame\nelements only if they're not shared via the corresponding\n'hidden_beacon_bss' pointer."
+}

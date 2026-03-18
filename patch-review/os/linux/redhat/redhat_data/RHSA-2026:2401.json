@@ -1,0 +1,33 @@
+{
+  "id": "RHSA-2026:2401",
+  "vendor": "Red Hat",
+  "type": "Security Advisory (RHSA)",
+  "title": "Red Hat Security Advisory: brotli security update",
+  "issuedDate": "2026-02-10T09:06:53+00:00",
+  "updatedDate": "2026-02-10T09:06:53+00:00",
+  "pubDate": "2026-02-10T09:06:53+00:00",
+  "dateStr": "2026-02-10",
+  "url": "https://access.redhat.com/errata/RHSA-2026:2401",
+  "severity": "Important",
+  "overview": "An update for brotli is now available for Red Hat Enterprise Linux 8.2 Advanced Update Support.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "description": "Brotli is a generic-purpose lossless compression algorithm that compresses data using a combination of a modern variant of the LZ77 algorithm, Huffman coding and 2nd order context modeling, with a compression ratio comparable to the best currently available general-purpose compression methods. It is similar in speed with deflate but offers more dense compression. \n\nSecurity Fix(es):\n\n* Scrapy: python-scrapy: brotli: Python brotli decompression bomb DoS (CVE-2025-6176)\n\nFor more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux",
+    "Red Hat Enterprise Linux BaseOS AUS (v. 8.2)"
+  ],
+  "cves": [
+    "CVE-2025-6176"
+  ],
+  "packages": [
+    "brotli-0:1.0.6-1.el8_2.1.src",
+    "brotli-0:1.0.6-1.el8_2.1.i686",
+    "brotli-debugsource-0:1.0.6-1.el8_2.1.i686",
+    "brotli-debuginfo-0:1.0.6-1.el8_2.1.i686",
+    "python3-brotli-debuginfo-0:1.0.6-1.el8_2.1.i686",
+    "brotli-0:1.0.6-1.el8_2.1.x86_64",
+    "brotli-debugsource-0:1.0.6-1.el8_2.1.x86_64",
+    "brotli-debuginfo-0:1.0.6-1.el8_2.1.x86_64",
+    "python3-brotli-debuginfo-0:1.0.6-1.el8_2.1.x86_64"
+  ],
+  "full_text": "An update for brotli is now available for Red Hat Enterprise Linux 8.2 Advanced Update Support.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nBrotli is a generic-purpose lossless compression algorithm that compresses data using a combination of a modern variant of the LZ77 algorithm, Huffman coding and 2nd order context modeling, with a compression ratio comparable to the best currently available general-purpose compression methods. It is similar in speed with deflate but offers more dense compression. \n\nSecurity Fix(es):\n\n* Scrapy: python-scrapy: brotli: Python brotli decompression bomb DoS (CVE-2025-6176)\n\nFor more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section."
+}

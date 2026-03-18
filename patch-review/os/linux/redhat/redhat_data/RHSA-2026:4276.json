@@ -1,0 +1,24 @@
+{
+  "id": "RHSA-2026:4276",
+  "vendor": "Red Hat",
+  "type": "Security Advisory (RHSA)",
+  "title": "Red Hat Security Advisory: RHTAS 1.3.2 - Tech Preview Release Of the Model Validation Operator",
+  "issuedDate": "2026-03-11T09:11:34+00:00",
+  "updatedDate": "2026-03-11T09:11:44+00:00",
+  "pubDate": "2026-03-11T09:11:34+00:00",
+  "dateStr": "2026-03-11",
+  "url": "https://access.redhat.com/errata/RHSA-2026:4276",
+  "severity": "Important",
+  "overview": "The Tech Preview release of the RHTAS Model Validation Operator.\nFor more details please visit the product documentation at https://access.redhat.com/documentation/en-us/red_hat_trusted_artifact_signer/1.3",
+  "description": "The RHTAS Model Validation Operator can be used with OpenShift Container Platform 4.16, 4.17, 4.18, 4.19, 4.20 and 4.21",
+  "affected_products": [],
+  "cves": [
+    "CVE-2025-61726",
+    "CVE-2025-61729"
+  ],
+  "packages": [
+    "registry.redhat.io/rhtas/model-validation-operator-bundle@sha256:8471c015335f643ecd982a5afd1d54d257d05941e7411a2f3df08d8dd0a0e7e5_amd64",
+    "registry.redhat.io/rhtas/model-validation-rhel9-operator@sha256:6567a87975df684dd6bf5ad25d27d1b1c406e00eafd5a23ba442fa791194a4e2_amd64"
+  ],
+  "full_text": "The Tech Preview release of the RHTAS Model Validation Operator.\nFor more details please visit the product documentation at https://access.redhat.com/documentation/en-us/red_hat_trusted_artifact_signer/1.3\n\nThe RHTAS Model Validation Operator can be used with OpenShift Container Platform 4.16, 4.17, 4.18, 4.19, 4.20 and 4.21"
+}

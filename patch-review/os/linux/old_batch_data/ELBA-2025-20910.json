@@ -1,0 +1,22 @@
+{
+  "id": "ELBA-2025-20910",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2025-November/019093.html",
+  "synopsis": "[El-errata] ELBA-2025-20910 Oracle Linux 9 python-websockets bug fix and enhancement update",
+  "dateStr": "2025-November",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Bug Fix Advisory ELBA-2025-20910",
+  "description": "[14.2-1]\n- Update to 14.2 and add patch to remove shell=True\n  Resolves: RHEL-113034",
+  "affected_products": [
+    "Oracle Linux 9"
+  ],
+  "packages": [
+    "python3-websockets-14.2-1.el9_7.x86_64.rpm",
+    "python3-websockets-14.2-1.el9_7.aarch64.rpm"
+  ],
+  "cves": [],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Bug Fix Advisory ELBA-2025-20910\n\nhttp://linux.oracle.com/errata/ELBA-2025-20910.html\n\nThe following updated rpms for Oracle Linux 9 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\npython3-websockets-14.2-1.el9_7.x86_64.rpm\n\naarch64:\npython3-websockets-14.2-1.el9_7.aarch64.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol9/SRPMS-updates/python-websockets-14.2-1.el9_7.src.rpm\n\n\n\nDescription of changes:\n\n[14.2-1]\n- Update to 14.2 and add patch to remove shell=True\n  Resolves: RHEL-113034",
+  "vendor": "Oracle"
+}

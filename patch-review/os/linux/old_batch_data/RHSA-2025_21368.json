@@ -1,0 +1,24 @@
+{
+  "id": "RHSA-2025:21368",
+  "vendor": "Red Hat",
+  "url": "https://access.redhat.com/errata/RHSA-2025:21368",
+  "pubDate": "2025-11-13T17:36:32.000Z",
+  "dateStr": "2025-11-13",
+  "severity": "Moderate",
+  "title": "Red Hat Security Advisory: Red Hat OpenShift Data Foundation 4.18 security, enhancement & bug fix update",
+  "overview": "Red Hat OpenShift Data Foundation 4.18 security, enhancement & bug fix update",
+  "description": "Red Hat OpenShift Data Foundation 4.18 security, enhancement & bug fix update",
+  "affected_products": [
+    "Red Hat Openshift Data Foundation 4.18"
+  ],
+  "cves": [
+    "CVE-2022-0155",
+    "CVE-2022-0536",
+    "CVE-2025-5889",
+    "CVE-2025-7195",
+    "CVE-2025-22150"
+  ],
+  "packages": [],
+  "fixes": "",
+  "full_text": "Red Hat Security Advisory: Red Hat OpenShift Data Foundation 4.18 security, enhancement & bug fix update\n\nRed Hat OpenShift Data Foundation 4.18 security, enhancement & bug fix update\n\nRed Hat OpenShift Data Foundation 4.18 security, enhancement & bug fix update\n\n\n\nCVE-2022-0155: A flaw was found in follow-redirects when fetching a remote URL with a cookie when it gets to the Location response header. This flaw allows an attacker to hijack the account as the cookie is leaked.\n\nCVE-2022-0536: A flaw was found in the follow-redirects package. This flaw allows the exposure of sensitive information to an unauthorized actor due to the usage of insecure HTTP protocol. This issue happens with an Authorization header leak from the same hostname, https-http, and requires a Man-in-the-Middle (MITM) attack.\n\nCVE-2025-5889: A denial-of-service (DoS) vulnerability has been identified in the brace-expansion JavaScript package. This issue occurs due to inefficient regular expression complexity, which can be exploited by an attacker providing specially crafted input. Such input could lead to excessive processing time and resource consumption, rendering applications that utilize this package unresponsive and causing a denial-of-service condition.\n\nCVE-2025-7195: Early versions of Operator-SDK provided an insecure method to allow operator containers to run in environments that used a random UID. Operator-SDK before 0.15.2 provided a script, user_setup, which modifies the permissions of the /etc/passwd file to 664 during build time. Developers who used Operator-SDK before 0.15.2 to scaffold their operator may still be impacted by this if the insecure user_setup script is still being used to build new container images. \n\nIn affected images, the /etc/passwd file is created during build time with group-writable permissions and a group ownership of root (gid=0). An attacker who can execute commands within an affected container, even as a non-root user, may be able to leverage their membership in the root group to modify the /etc/passwd file. This could allow the attacker to add a new user with any arbitrary UID, including UID 0, leading to full root privileges within the container.\n\nCVE-2025-22150: A flaw was found in the undici package for Node.js. Undici uses `Math.random()` to choose the boundary for a multipart/form-data request. It is known that the output of `Math.random()` can be predicted if several of its generated values are known. If an app has a mechanism that sends multipart requests to an attacker-controlled website, it can leak the necessary values. Therefore, an attacker can tamper with the requests going to the backend APIs if certain conditions are met."
+}

@@ -1,0 +1,28 @@
+{
+  "id": "ELSA-2026-1380",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2026-February/019641.html",
+  "synopsis": "[El-errata] ELSA-2026-1380 Moderate: Oracle Linux 8 osbuild-composer security update",
+  "dateStr": "2026-February",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Security Advisory ELSA-2026-1380",
+  "description": "[101.4-2.0.1]\n- Support using repository definitons with OCI variables [JIRA: OLDIS-38657]\n- Update repositories to contain OCI variables\n- Remove image types Minimal-raw and wsl [JIRA: OLDIS-38123]\n- Increase default /boot size to 1GB [Orabug: 36827079]\n- support for building OL8/9 images on Oracle Linux 8 [Orabug: 36400619]\n\n[101.4-2]\n- Rebuilt to fix:\n  - CVE-2025-58183\n  - RHEL-125669",
+  "affected_products": [
+    "Oracle Linux 8"
+  ],
+  "packages": [
+    "osbuild-composer-101.4-2.0.1.el8_10.x86_64.rpm",
+    "osbuild-composer-core-101.4-2.0.1.el8_10.x86_64.rpm",
+    "osbuild-composer-worker-101.4-2.0.1.el8_10.x86_64.rpm",
+    "osbuild-composer-101.4-2.0.1.el8_10.aarch64.rpm",
+    "osbuild-composer-core-101.4-2.0.1.el8_10.aarch64.rpm",
+    "osbuild-composer-worker-101.4-2.0.1.el8_10.aarch64.rpm"
+  ],
+  "cves": [
+    "CVE-2025-58183"
+  ],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Security Advisory ELSA-2026-1380\n\nhttp://linux.oracle.com/errata/ELSA-2026-1380.html\n\nThe following updated rpms for Oracle Linux 8 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\nosbuild-composer-101.4-2.0.1.el8_10.x86_64.rpm\nosbuild-composer-core-101.4-2.0.1.el8_10.x86_64.rpm\nosbuild-composer-worker-101.4-2.0.1.el8_10.x86_64.rpm\n\naarch64:\nosbuild-composer-101.4-2.0.1.el8_10.aarch64.rpm\nosbuild-composer-core-101.4-2.0.1.el8_10.aarch64.rpm\nosbuild-composer-worker-101.4-2.0.1.el8_10.aarch64.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol8/SRPMS-updates/osbuild-composer-101.4-2.0.1.el8_10.src.rpm\n\nRelated CVEs:\n\nCVE-2025-58183\n\n\n\n\nDescription of changes:\n\n[101.4-2.0.1]\n- Support using repository definitons with OCI variables [JIRA: OLDIS-38657]\n- Update repositories to contain OCI variables\n- Remove image types Minimal-raw and wsl [JIRA: OLDIS-38123]\n- Increase default /boot size to 1GB [Orabug: 36827079]\n- support for building OL8/9 images on Oracle Linux 8 [Orabug: 36400619]\n\n[101.4-2]\n- Rebuilt to fix:\n  - CVE-2025-58183\n  - RHEL-125669",
+  "vendor": "Oracle"
+}

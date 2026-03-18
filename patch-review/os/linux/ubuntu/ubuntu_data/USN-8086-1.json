@@ -1,0 +1,24 @@
+{
+  "id": "USN-8086-1",
+  "vendor": "Canonical / Ubuntu",
+  "type": "Ubuntu Security Notice (USN)",
+  "title": "freetype vulnerability",
+  "issuedDate": "2026-03-12T05:15:06Z",
+  "updatedDate": "2026-03-12T05:15:06Z",
+  "pubDate": "2026-03-12T05:15:06Z",
+  "dateStr": "2026-03-12",
+  "url": "https://ubuntu.com/security/notices/USN-8086-1",
+  "severity": "None",
+  "overview": "freetype vulnerability",
+  "description": "It was discovered that FreeType did not correctly handle certain integer\narithmetic. An attacker could possibly use this issue to leak sensitive\ninformation.",
+  "affected_products": [
+    "Ubuntu 24.04 LTS"
+  ],
+  "cves": [],
+  "packages": [
+    "freetype2-demos-2.13.2+dfsg-1ubuntu0.1",
+    "libfreetype-dev-2.13.2+dfsg-1ubuntu0.1",
+    "libfreetype6-2.13.2+dfsg-1ubuntu0.1"
+  ],
+  "full_text": "It was discovered that FreeType did not correctly handle certain integer\narithmetic. An attacker could possibly use this issue to leak sensitive\ninformation."
+}

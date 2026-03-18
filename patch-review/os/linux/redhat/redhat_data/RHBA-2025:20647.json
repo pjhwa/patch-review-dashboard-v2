@@ -1,0 +1,91 @@
+{
+  "id": "RHBA-2025:20647",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: tigervnc bug fix and enhancement update",
+  "issuedDate": "2025-11-11T07:50:41Z",
+  "updatedDate": "2025-11-11T07:50:41Z",
+  "pubDate": "2025-11-11T07:50:41Z",
+  "dateStr": "2025-11-11",
+  "url": "https://access.redhat.com/errata/RHBA-2025:20647",
+  "severity": "None",
+  "overview": "An update for tigervnc is now available for Red Hat Enterprise Linux 10.",
+  "description": "For detailed information on changes in this release, see the Red Hat Enterprise Linux 9 Release Notes linked from the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux for ARM 64",
+    "Red Hat Enterprise Linux for Power, little endian",
+    "Red Hat Enterprise Linux for IBM z Systems",
+    "Red Hat Enterprise Linux for x86_64 10 x86_64"
+  ],
+  "cves": [],
+  "packages": [
+    "tigervnc-1.15.0-5.el9.src",
+    "tigervnc-1.15.0-5.el9.x86_64",
+    "tigervnc-debuginfo-1.15.0-5.el9.x86_64",
+    "tigervnc-debugsource-1.15.0-5.el9.x86_64",
+    "tigervnc-icons-1.15.0-5.el9.noarch",
+    "tigervnc-license-1.15.0-5.el9.noarch",
+    "tigervnc-selinux-1.15.0-5.el9.noarch",
+    "tigervnc-server-1.15.0-5.el9.x86_64",
+    "tigervnc-server-debuginfo-1.15.0-5.el9.x86_64",
+    "tigervnc-server-minimal-1.15.0-5.el9.x86_64",
+    "tigervnc-server-minimal-debuginfo-1.15.0-5.el9.x86_64",
+    "tigervnc-server-module-1.15.0-5.el9.x86_64",
+    "tigervnc-server-module-debuginfo-1.15.0-5.el9.x86_64",
+    "tigervnc-1.15.0-5.el9.s390x",
+    "tigervnc-debuginfo-1.15.0-5.el9.s390x",
+    "tigervnc-debugsource-1.15.0-5.el9.s390x",
+    "tigervnc-server-1.15.0-5.el9.s390x",
+    "tigervnc-server-debuginfo-1.15.0-5.el9.s390x",
+    "tigervnc-server-minimal-1.15.0-5.el9.s390x",
+    "tigervnc-server-minimal-debuginfo-1.15.0-5.el9.s390x",
+    "tigervnc-server-module-1.15.0-5.el9.s390x",
+    "tigervnc-server-module-debuginfo-1.15.0-5.el9.s390x",
+    "tigervnc-1.15.0-5.el9.ppc64le",
+    "tigervnc-debuginfo-1.15.0-5.el9.ppc64le",
+    "tigervnc-debugsource-1.15.0-5.el9.ppc64le",
+    "tigervnc-server-1.15.0-5.el9.ppc64le",
+    "tigervnc-server-debuginfo-1.15.0-5.el9.ppc64le",
+    "tigervnc-server-minimal-1.15.0-5.el9.ppc64le",
+    "tigervnc-server-minimal-debuginfo-1.15.0-5.el9.ppc64le",
+    "tigervnc-server-module-1.15.0-5.el9.ppc64le",
+    "tigervnc-server-module-debuginfo-1.15.0-5.el9.ppc64le",
+    "tigervnc-1.15.0-5.el9.aarch64",
+    "tigervnc-debuginfo-1.15.0-5.el9.aarch64",
+    "tigervnc-debugsource-1.15.0-5.el9.aarch64",
+    "tigervnc-server-1.15.0-5.el9.aarch64",
+    "tigervnc-server-debuginfo-1.15.0-5.el9.aarch64",
+    "tigervnc-server-minimal-1.15.0-5.el9.aarch64",
+    "tigervnc-server-minimal-debuginfo-1.15.0-5.el9.aarch64",
+    "tigervnc-server-module-1.15.0-5.el9.aarch64",
+    "tigervnc-server-module-debuginfo-1.15.0-5.el9.aarch64"
+  ],
+  "fixes": [
+    {
+      "id": "RHEL-77973",
+      "url": "https://issues.redhat.com/browse/RHEL-77973",
+      "description": "VNC session crashes early when having \"unlimited\" configured as \"nofile\" limit"
+    },
+    {
+      "id": "RHEL-77975",
+      "url": "https://issues.redhat.com/browse/RHEL-77975",
+      "description": "VNC session crashes early for root user when having no UI component configured for the user"
+    },
+    {
+      "id": "RHEL-78617",
+      "url": "https://issues.redhat.com/browse/RHEL-78617",
+      "description": "Tigervnc 1.15.0 rebase"
+    },
+    {
+      "id": "RHEL-86511",
+      "url": "https://issues.redhat.com/browse/RHEL-86511",
+      "description": "Fix inetd mode not working introduced with Tigervnc 1.15.0"
+    },
+    {
+      "id": "RHEL-93573",
+      "url": "https://issues.redhat.com/browse/RHEL-93573",
+      "description": "x0vncserver on RHEL 9.6 can no longer auth from passwordfile"
+    }
+  ],
+  "full_text": "An update for tigervnc is now available for Red Hat Enterprise Linux 10.\n\nFor detailed information on changes in this release, see the Red Hat Enterprise Linux 9 Release Notes linked from the References section."
+}

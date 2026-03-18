@@ -1,0 +1,26 @@
+{
+  "id": "RHBA-2025:20369",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: intel-lpmd bug fix and enhancement update",
+  "issuedDate": "2025-11-11T07:26:15Z",
+  "updatedDate": "2025-11-11T07:26:15Z",
+  "pubDate": "2025-11-11T07:26:15Z",
+  "dateStr": "2025-11-11",
+  "url": "https://access.redhat.com/errata/RHBA-2025:20369",
+  "severity": "None",
+  "overview": "An update for intel-lpmd is now available for Red Hat Enterprise Linux 10.",
+  "description": "For detailed information on changes in this release, see the Red Hat Enterprise Linux 10.1 Release Notes linked from the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux for x86_64 10 x86_64"
+  ],
+  "cves": [],
+  "packages": [
+    "intel-lpmd-0.0.9-1.el10.src",
+    "intel-lpmd-0.0.9-1.el10.x86_64",
+    "intel-lpmd-debuginfo-0.0.9-1.el10.x86_64",
+    "intel-lpmd-debugsource-0.0.9-1.el10.x86_64"
+  ],
+  "fixes": [],
+  "full_text": "An update for intel-lpmd is now available for Red Hat Enterprise Linux 10.\n\nFor detailed information on changes in this release, see the Red Hat Enterprise Linux 10.1 Release Notes linked from the References section."
+}

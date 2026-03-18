@@ -1,0 +1,48 @@
+{
+  "id": "RHBA-2025:20333",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: gnome-session bug fix and enhancement update",
+  "issuedDate": "2025-11-11T07:26:07Z",
+  "updatedDate": "2025-11-11T07:26:07Z",
+  "pubDate": "2025-11-11T07:26:07Z",
+  "dateStr": "2025-11-11",
+  "url": "https://access.redhat.com/errata/RHBA-2025:20333",
+  "severity": "None",
+  "overview": "An update for gnome-session is now available for Red Hat Enterprise Linux 10.",
+  "description": "For detailed information on changes in this release, see the Red Hat Enterprise Linux 10 Release Notes linked from the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux for ARM 64",
+    "Red Hat Enterprise Linux for Power, little endian",
+    "Red Hat Enterprise Linux for IBM z Systems",
+    "Red Hat Enterprise Linux for x86_64 10 x86_64"
+  ],
+  "cves": [],
+  "packages": [
+    "gnome-session-46.0-10.el10.src",
+    "gnome-session-46.0-10.el10.x86_64",
+    "gnome-session-debuginfo-46.0-10.el10.x86_64",
+    "gnome-session-debugsource-46.0-10.el10.x86_64",
+    "gnome-session-wayland-session-46.0-10.el10.x86_64",
+    "gnome-session-46.0-10.el10.s390x",
+    "gnome-session-debuginfo-46.0-10.el10.s390x",
+    "gnome-session-debugsource-46.0-10.el10.s390x",
+    "gnome-session-wayland-session-46.0-10.el10.s390x",
+    "gnome-session-46.0-10.el10.ppc64le",
+    "gnome-session-debuginfo-46.0-10.el10.ppc64le",
+    "gnome-session-debugsource-46.0-10.el10.ppc64le",
+    "gnome-session-wayland-session-46.0-10.el10.ppc64le",
+    "gnome-session-46.0-10.el10.aarch64",
+    "gnome-session-debuginfo-46.0-10.el10.aarch64",
+    "gnome-session-debugsource-46.0-10.el10.aarch64",
+    "gnome-session-wayland-session-46.0-10.el10.aarch64"
+  ],
+  "fixes": [
+    {
+      "id": "RHEL-93929",
+      "url": "https://issues.redhat.com/browse/RHEL-93929",
+      "description": "GNOME Settings in CS10 has Subscription Manager module but it's broken anyway"
+    }
+  ],
+  "full_text": "An update for gnome-session is now available for Red Hat Enterprise Linux 10.\n\nFor detailed information on changes in this release, see the Red Hat Enterprise Linux 10 Release Notes linked from the References section."
+}

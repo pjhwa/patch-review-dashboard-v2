@@ -1,0 +1,44 @@
+{
+  "id": "RHBA-2025:23384",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: sudo bug fix and enhancement update",
+  "issuedDate": "2025-12-18T10:46:39Z",
+  "updatedDate": "2025-12-18T10:46:39Z",
+  "pubDate": "2025-12-18T10:46:39Z",
+  "dateStr": "2025-12-18",
+  "url": "https://access.redhat.com/errata/RHBA-2025:23384",
+  "severity": "None",
+  "overview": "An update for sudo is now available for Red Hat Enterprise Linux 10.",
+  "description": "The sudo packages contain the sudo utility which allows system administrators to provide certain users with the permission to execute privileged commands, which are used for system management purposes, without having to log in as root.Bug Fix(es) and Enhancement(s): sudo passes SHELL environment variable twice to the shell being executed [rhel-8] (JIRA:RHEL-127360)",
+  "affected_products": [
+    "Red Hat Enterprise Linux for Power, little endian",
+    "Red Hat Enterprise Linux for IBM z Systems",
+    "Red Hat Enterprise Linux for ARM 64",
+    "Red Hat Enterprise Linux for x86_64 10 x86_64"
+  ],
+  "cves": [],
+  "packages": [
+    "sudo-1.9.5p2-1.el8_10.3.src",
+    "sudo-1.9.5p2-1.el8_10.3.x86_64",
+    "sudo-debuginfo-1.9.5p2-1.el8_10.3.x86_64",
+    "sudo-debugsource-1.9.5p2-1.el8_10.3.x86_64",
+    "sudo-1.9.5p2-1.el8_10.3.s390x",
+    "sudo-debuginfo-1.9.5p2-1.el8_10.3.s390x",
+    "sudo-debugsource-1.9.5p2-1.el8_10.3.s390x",
+    "sudo-1.9.5p2-1.el8_10.3.ppc64le",
+    "sudo-debuginfo-1.9.5p2-1.el8_10.3.ppc64le",
+    "sudo-debugsource-1.9.5p2-1.el8_10.3.ppc64le",
+    "sudo-1.9.5p2-1.el8_10.3.aarch64",
+    "sudo-debuginfo-1.9.5p2-1.el8_10.3.aarch64",
+    "sudo-debugsource-1.9.5p2-1.el8_10.3.aarch64"
+  ],
+  "fixes": [
+    {
+      "id": "RHEL-127360",
+      "url": "https://issues.redhat.com/browse/RHEL-127360",
+      "description": "sudo passes SHELL environment variable twice to the shell being executed [rhel-8]"
+    }
+  ],
+  "full_text": "An update for sudo is now available for Red Hat Enterprise Linux 10.\n\nThe sudo packages contain the sudo utility which allows system administrators to provide certain users with the permission to execute privileged commands, which are used for system management purposes, without having to log in as root.Bug Fix(es) and Enhancement(s): sudo passes SHELL environment variable twice to the shell being executed [rhel-8] (JIRA:RHEL-127360)"
+}

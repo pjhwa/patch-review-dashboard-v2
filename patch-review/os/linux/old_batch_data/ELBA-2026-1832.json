@@ -1,0 +1,38 @@
+{
+  "id": "ELBA-2026-1832",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2026-February/019676.html",
+  "synopsis": "[El-errata] ELBA-2026-1832 Oracle Linux 10 apr-util bug fix and enhancement update",
+  "dateStr": "2026-February",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Bug Fix Advisory ELBA-2026-1832",
+  "description": "[1.6.3-23]\n- Resolves: RHEL-117419 - apr-util lmdb prevent htdbm to remove user",
+  "affected_products": [
+    "Oracle Linux 10"
+  ],
+  "packages": [
+    "apr-util-1.6.3-23.el10_1.x86_64.rpm",
+    "apr-util-devel-1.6.3-23.el10_1.x86_64.rpm",
+    "apr-util-ldap-1.6.3-23.el10_1.x86_64.rpm",
+    "apr-util-lmdb-1.6.3-23.el10_1.x86_64.rpm",
+    "apr-util-mysql-1.6.3-23.el10_1.x86_64.rpm",
+    "apr-util-odbc-1.6.3-23.el10_1.x86_64.rpm",
+    "apr-util-openssl-1.6.3-23.el10_1.x86_64.rpm",
+    "apr-util-pgsql-1.6.3-23.el10_1.x86_64.rpm",
+    "apr-util-sqlite-1.6.3-23.el10_1.x86_64.rpm",
+    "apr-util-1.6.3-23.el10_1.aarch64.rpm",
+    "apr-util-devel-1.6.3-23.el10_1.aarch64.rpm",
+    "apr-util-ldap-1.6.3-23.el10_1.aarch64.rpm",
+    "apr-util-lmdb-1.6.3-23.el10_1.aarch64.rpm",
+    "apr-util-mysql-1.6.3-23.el10_1.aarch64.rpm",
+    "apr-util-odbc-1.6.3-23.el10_1.aarch64.rpm",
+    "apr-util-openssl-1.6.3-23.el10_1.aarch64.rpm",
+    "apr-util-pgsql-1.6.3-23.el10_1.aarch64.rpm",
+    "apr-util-sqlite-1.6.3-23.el10_1.aarch64.rpm"
+  ],
+  "cves": [],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Bug Fix Advisory ELBA-2026-1832\n\nhttp://linux.oracle.com/errata/ELBA-2026-1832.html\n\nThe following updated rpms for Oracle Linux 10 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\napr-util-1.6.3-23.el10_1.x86_64.rpm\napr-util-devel-1.6.3-23.el10_1.x86_64.rpm\napr-util-ldap-1.6.3-23.el10_1.x86_64.rpm\napr-util-lmdb-1.6.3-23.el10_1.x86_64.rpm\napr-util-mysql-1.6.3-23.el10_1.x86_64.rpm\napr-util-odbc-1.6.3-23.el10_1.x86_64.rpm\napr-util-openssl-1.6.3-23.el10_1.x86_64.rpm\napr-util-pgsql-1.6.3-23.el10_1.x86_64.rpm\napr-util-sqlite-1.6.3-23.el10_1.x86_64.rpm\n\naarch64:\napr-util-1.6.3-23.el10_1.aarch64.rpm\napr-util-devel-1.6.3-23.el10_1.aarch64.rpm\napr-util-ldap-1.6.3-23.el10_1.aarch64.rpm\napr-util-lmdb-1.6.3-23.el10_1.aarch64.rpm\napr-util-mysql-1.6.3-23.el10_1.aarch64.rpm\napr-util-odbc-1.6.3-23.el10_1.aarch64.rpm\napr-util-openssl-1.6.3-23.el10_1.aarch64.rpm\napr-util-pgsql-1.6.3-23.el10_1.aarch64.rpm\napr-util-sqlite-1.6.3-23.el10_1.aarch64.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol10/SRPMS-updates/apr-util-1.6.3-23.el10_1.src.rpm\n\n\n\nDescription of changes:\n\n[1.6.3-23]\n- Resolves: RHEL-117419 - apr-util lmdb prevent htdbm to remove user",
+  "vendor": "Oracle"
+}

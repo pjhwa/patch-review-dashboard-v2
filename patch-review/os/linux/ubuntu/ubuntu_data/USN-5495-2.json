@@ -1,0 +1,28 @@
+{
+  "id": "USN-5495-2",
+  "vendor": "Canonical / Ubuntu",
+  "type": "Ubuntu Security Notice (USN)",
+  "title": "curl regression",
+  "issuedDate": "2025-09-29T11:26:27Z",
+  "updatedDate": "2026-02-10T04:42:40Z",
+  "pubDate": "2025-09-29T11:26:27Z",
+  "dateStr": "2025-09-29",
+  "url": "https://ubuntu.com/security/notices/USN-5495-2",
+  "severity": "None",
+  "overview": "curl regression",
+  "description": "USN-5495-1 fixed vulnerabilities in curl. The fix for CVE-2022-32205\nmiscalculated the maximum cookie size, causing a regression. This update\nfixes the problem.\n\nOriginal advisory details:\n\n Harry Sintonen discovered that curl incorrectly handled certain cookies.\n An attacker could possibly use this issue to cause a denial of service.\n This issue only affected Ubuntu 21.10, and Ubuntu 22.04 LTS. (CVE-2022-32205)\n\n Harry Sintonen discovered that curl incorrectly handled certain HTTP compressions.\n An attacker could possibly use this issue to cause a denial of service.\n (CVE-2022-32206)\n\n Harry Sintonen incorrectly handled certain file permissions.\n An attacker could possibly use this issue to expose sensitive information.\n This issue only affected Ubuntu 21.10, and Ubuntu 22.04 LTS. (CVE-2022-32207)\n\n Harry Sintonen discovered that curl incorrectly handled certain FTP-KRB messages.\n An attacker could possibly use this to perform a machine-in-the-middle attack.\n (CVE-2022-32208)\n",
+  "affected_products": [
+    "Ubuntu 22.04 LTS"
+  ],
+  "cves": [],
+  "packages": [
+    "curl-7.81.0-1ubuntu1.21",
+    "libcurl3-gnutls-7.81.0-1ubuntu1.21",
+    "libcurl3-nss-7.81.0-1ubuntu1.21",
+    "libcurl4-7.81.0-1ubuntu1.21",
+    "libcurl4-gnutls-dev-7.81.0-1ubuntu1.21",
+    "libcurl4-nss-dev-7.81.0-1ubuntu1.21",
+    "libcurl4-openssl-dev-7.81.0-1ubuntu1.21"
+  ],
+  "full_text": "USN-5495-1 fixed vulnerabilities in curl. The fix for CVE-2022-32205\nmiscalculated the maximum cookie size, causing a regression. This update\nfixes the problem.\n\nOriginal advisory details:\n\n Harry Sintonen discovered that curl incorrectly handled certain cookies.\n An attacker could possibly use this issue to cause a denial of service.\n This issue only affected Ubuntu 21.10, and Ubuntu 22.04 LTS. (CVE-2022-32205)\n\n Harry Sintonen discovered that curl incorrectly handled certain HTTP compressions.\n An attacker could possibly use this issue to cause a denial of service.\n (CVE-2022-32206)\n\n Harry Sintonen incorrectly handled certain file permissions.\n An attacker could possibly use this issue to expose sensitive information.\n This issue only affected Ubuntu 21.10, and Ubuntu 22.04 LTS. (CVE-2022-32207)\n\n Harry Sintonen discovered that curl incorrectly handled certain FTP-KRB messages.\n An attacker could possibly use this to perform a machine-in-the-middle attack.\n (CVE-2022-32208)\n"
+}

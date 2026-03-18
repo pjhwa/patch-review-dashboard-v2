@@ -1,0 +1,40 @@
+{
+  "id": "USN-7995-1",
+  "vendor": "Canonical / Ubuntu",
+  "type": "Ubuntu Security Notice (USN)",
+  "title": "openjdk-25 vulnerabilities",
+  "issuedDate": "2026-02-02T17:59:49Z",
+  "updatedDate": "2026-02-10T04:50:49Z",
+  "pubDate": "2026-02-02T17:59:49Z",
+  "dateStr": "2026-02-02",
+  "url": "https://ubuntu.com/security/notices/USN-7995-1",
+  "severity": "None",
+  "overview": "openjdk-25 vulnerabilities",
+  "description": "It was discovered that the RMI component of OpenJDK 25 would establish\nRMI TCP endpoint connections to a remote host without setting an\nendpoint identification algorithm. An unauthenticated remote attacker\ncould possibly use this issue to steal sensitive information.\n(CVE-2026-21925)\n\nMingijung discovered that the AWT and JavaFX componenets of OpenJDK 25\ncould run programs if Desktop.browse() was supplied a filename as a\nURI. An unauthenticated remote attacker could possibly use this issue\nto execute arbitrary code. (CVE-2026-21932)\n\nZhihui Chen discovered that the Networking component of OpenJDK 25\nwas suceptible to a CRLF injection vulnerability via the HttpServer\nclass. An unauthenticated remote attacker could possibly use this\nissue to modify files or leak sensitive information. (CVE-2026-21933)\n\nIreneusz Pastusiak discovered that the Security component of OpenJDK\n25 failed to verify provided URIs point to a legitimate source when\nAIA is enabled. An unauthenticated remote attacker could possibly\nuse this issue to redirect users to malicious hosts.\n(CVE-2026-21945)\n\nIn addition to security fixes, the updated packages contain bug fixes,\nnew features, and possibly incompatible changes.\n\nPlease see the following for more information:\nhttps://openjdk.org/groups/vulnerability/advisories/2026-01-20",
+  "affected_products": [
+    "Ubuntu 22.04 LTS",
+    "Ubuntu 24.04 LTS"
+  ],
+  "cves": [],
+  "packages": [
+    "openjdk-25-demo-25.0.2+10-1~22.04",
+    "openjdk-25-demo-25.0.2+10-1~24.04",
+    "openjdk-25-jdk-25.0.2+10-1~22.04",
+    "openjdk-25-jdk-25.0.2+10-1~24.04",
+    "openjdk-25-jdk-headless-25.0.2+10-1~22.04",
+    "openjdk-25-jdk-headless-25.0.2+10-1~24.04",
+    "openjdk-25-jre-25.0.2+10-1~22.04",
+    "openjdk-25-jre-25.0.2+10-1~24.04",
+    "openjdk-25-jre-headless-25.0.2+10-1~22.04",
+    "openjdk-25-jre-headless-25.0.2+10-1~24.04",
+    "openjdk-25-jre-zero-25.0.2+10-1~22.04",
+    "openjdk-25-jre-zero-25.0.2+10-1~24.04",
+    "openjdk-25-jvmci-jdk-25.0.2+10-1~22.04",
+    "openjdk-25-jvmci-jdk-25.0.2+10-1~24.04",
+    "openjdk-25-source-25.0.2+10-1~22.04",
+    "openjdk-25-source-25.0.2+10-1~24.04",
+    "openjdk-25-testsupport-25.0.2+10-1~22.04",
+    "openjdk-25-testsupport-25.0.2+10-1~24.04"
+  ],
+  "full_text": "It was discovered that the RMI component of OpenJDK 25 would establish\nRMI TCP endpoint connections to a remote host without setting an\nendpoint identification algorithm. An unauthenticated remote attacker\ncould possibly use this issue to steal sensitive information.\n(CVE-2026-21925)\n\nMingijung discovered that the AWT and JavaFX componenets of OpenJDK 25\ncould run programs if Desktop.browse() was supplied a filename as a\nURI. An unauthenticated remote attacker could possibly use this issue\nto execute arbitrary code. (CVE-2026-21932)\n\nZhihui Chen discovered that the Networking component of OpenJDK 25\nwas suceptible to a CRLF injection vulnerability via the HttpServer\nclass. An unauthenticated remote attacker could possibly use this\nissue to modify files or leak sensitive information. (CVE-2026-21933)\n\nIreneusz Pastusiak discovered that the Security component of OpenJDK\n25 failed to verify provided URIs point to a legitimate source when\nAIA is enabled. An unauthenticated remote attacker could possibly\nuse this issue to redirect users to malicious hosts.\n(CVE-2026-21945)\n\nIn addition to security fixes, the updated packages contain bug fixes,\nnew features, and possibly incompatible changes.\n\nPlease see the following for more information:\nhttps://openjdk.org/groups/vulnerability/advisories/2026-01-20"
+}

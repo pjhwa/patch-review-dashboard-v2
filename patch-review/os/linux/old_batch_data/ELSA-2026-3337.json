@@ -1,0 +1,35 @@
+{
+  "id": "ELSA-2026-3337",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2026-February/019866.html",
+  "synopsis": "[El-errata] ELSA-2026-3337 Important: Oracle Linux 9 podman security update",
+  "dateStr": "2026-February",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Security Advisory ELSA-2026-3337",
+  "description": "[5.6.0-14.0.1]\n- Add devices on container startup, not on creation\n- overlay: Put should ignore ENINVAL for Unmount [Orabug: 36234694]\n- Drop nmap-ncat requirement and skip ignore-socket test case [Orabug: 34117404]\n\n[6:5.6.0-14]\n- Rebuild for new golang to address CVE-2025-61726\n- Resolves: RHEL-146869",
+  "affected_products": [
+    "Oracle Linux 9"
+  ],
+  "packages": [
+    "podman-5.6.0-14.0.1.el9_7.x86_64.rpm",
+    "podman-docker-5.6.0-14.0.1.el9_7.noarch.rpm",
+    "podman-plugins-5.6.0-14.0.1.el9_7.x86_64.rpm",
+    "podman-remote-5.6.0-14.0.1.el9_7.x86_64.rpm",
+    "podman-tests-5.6.0-14.0.1.el9_7.x86_64.rpm",
+    "podman-5.6.0-14.0.1.el9_7.aarch64.rpm",
+    "podman-docker-5.6.0-14.0.1.el9_7.noarch.rpm",
+    "podman-plugins-5.6.0-14.0.1.el9_7.aarch64.rpm",
+    "podman-remote-5.6.0-14.0.1.el9_7.aarch64.rpm",
+    "podman-tests-5.6.0-14.0.1.el9_7.aarch64.rpm"
+  ],
+  "cves": [
+    "CVE-2025-61726",
+    "CVE-2025-61728",
+    "CVE-2025-61729",
+    "CVE-2025-68121"
+  ],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Security Advisory ELSA-2026-3337\n\nhttp://linux.oracle.com/errata/ELSA-2026-3337.html\n\nThe following updated rpms for Oracle Linux 9 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\npodman-5.6.0-14.0.1.el9_7.x86_64.rpm\npodman-docker-5.6.0-14.0.1.el9_7.noarch.rpm\npodman-plugins-5.6.0-14.0.1.el9_7.x86_64.rpm\npodman-remote-5.6.0-14.0.1.el9_7.x86_64.rpm\npodman-tests-5.6.0-14.0.1.el9_7.x86_64.rpm\n\naarch64:\npodman-5.6.0-14.0.1.el9_7.aarch64.rpm\npodman-docker-5.6.0-14.0.1.el9_7.noarch.rpm\npodman-plugins-5.6.0-14.0.1.el9_7.aarch64.rpm\npodman-remote-5.6.0-14.0.1.el9_7.aarch64.rpm\npodman-tests-5.6.0-14.0.1.el9_7.aarch64.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol9/SRPMS-updates/podman-5.6.0-14.0.1.el9_7.src.rpm\n\nRelated CVEs:\n\nCVE-2025-61726\nCVE-2025-61728\nCVE-2025-61729\nCVE-2025-68121\n\n\n\n\nDescription of changes:\n\n[5.6.0-14.0.1]\n- Add devices on container startup, not on creation\n- overlay: Put should ignore ENINVAL for Unmount [Orabug: 36234694]\n- Drop nmap-ncat requirement and skip ignore-socket test case [Orabug: 34117404]\n\n[6:5.6.0-14]\n- Rebuild for new golang to address CVE-2025-61726\n- Resolves: RHEL-146869",
+  "vendor": "Oracle"
+}

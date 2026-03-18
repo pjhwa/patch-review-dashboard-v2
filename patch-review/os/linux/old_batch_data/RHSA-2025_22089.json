@@ -1,0 +1,24 @@
+{
+  "id": "RHSA-2025:22089",
+  "vendor": "Red Hat",
+  "url": "https://access.redhat.com/errata/RHSA-2025:22089",
+  "pubDate": "2025-11-25T16:06:13.000Z",
+  "dateStr": "2025-11-25",
+  "severity": "Moderate",
+  "title": "Red Hat Security Advisory: Red Hat build of Keycloak 26.2.11 Security Update",
+  "overview": "New Red Hat build of Keycloak 26.2.11 packages are available from the Customer Portal",
+  "description": "New Red Hat build of Keycloak 26.2.11 packages are available from the Customer Portal",
+  "affected_products": [
+    "Red Hat build of Keycloak 26.2.11"
+  ],
+  "cves": [
+    "CVE-2025-11429",
+    "CVE-2025-12110",
+    "CVE-2025-12150",
+    "CVE-2025-12390",
+    "CVE-2025-13467"
+  ],
+  "packages": [],
+  "fixes": "",
+  "full_text": "Red Hat Security Advisory: Red Hat build of Keycloak 26.2.11 Security Update\n\nNew Red Hat build of Keycloak 26.2.11 packages are available from the Customer Portal\n\nNew Red Hat build of Keycloak 26.2.11 packages are available from the Customer Portal\n\n\n\nCVE-2025-11429: A flaw was found in Keycloak. Keycloak does not immediately enforce the disabling of the \"Remember Me\" realm setting on existing user sessions. Sessions created while \"Remember Me\" was active retain their extended session lifetime until they expire, overriding the administrator's recent security configuration change. This is a logic flaw in session management increases the potential window for successful session hijacking or unauthorized long-term access persistence. The flaw lies in the session expiration logic relying on the session-local \"remember-me\" flag without validating the current realm-level configuration.\n\nCVE-2025-12110: A flaw was found in Keycloak. An offline session continues to be valid when the offline_access scope is removed from the client. The refresh token is accepted and you can continue to request new tokens for the session. As it can lead to a situation where an administrator removes the scope, and assumes that offline sessions are no longer available, but they are.\n\nCVE-2025-12150: A flaw was found in Keycloak’s WebAuthn registration component. This vulnerability allows an attacker to bypass the configured attestation policy and register untrusted or forged authenticators via submission of an attestation object with fmt: \"none\", even when the realm is configured to require direct attestation. This can lead to weakened authentication integrity and unauthorized authenticator registration.\n\nCVE-2025-12390: A flaw was found in Keycloak. In Keycloak where a user can accidentally get access to another user's session if both use the same device and browser. This happens because Keycloak sometimes reuses session identifiers and doesn’t clean up properly during logout when browser cookies are missing. As a result, one user may receive tokens that belong to another user.\n\nCVE-2025-13467: A flaw was found in the Keycloak LDAP User Federation provider. This vulnerability allows an authenticated realm administrator to trigger deserialization of untrusted Java objects via a malicious LDAP server configuration."
+}

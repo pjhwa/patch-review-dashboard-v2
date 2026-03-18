@@ -1,0 +1,20 @@
+{
+  "id": "RHSA-2026:3053",
+  "vendor": "Red Hat",
+  "url": "https://access.redhat.com/errata/RHSA-2026:3053",
+  "pubDate": "2026-02-23T06:47:46.000Z",
+  "dateStr": "2026-02-23",
+  "severity": "Important",
+  "title": "Red Hat Security Advisory: butane security update",
+  "overview": "An update for butane is now available for Red Hat Enterprise Linux 9.4 Extended Update Support.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "description": "An update for butane is now available for Red Hat Enterprise Linux 9.4 Extended Update Support.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux AppStream EUS (v.9.4)"
+  ],
+  "cves": [
+    "CVE-2025-61729"
+  ],
+  "packages": [],
+  "fixes": "",
+  "full_text": "Red Hat Security Advisory: butane security update\n\nAn update for butane is now available for Red Hat Enterprise Linux 9.4 Extended Update Support.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nAn update for butane is now available for Red Hat Enterprise Linux 9.4 Extended Update Support.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nUpdated Packages:\nbutane-0.20.0-1.el9_4.1.src.rpm\nbutane-0.20.0-1.el9_4.1.x86_64.rpm\nbutane-debuginfo-0.20.0-1.el9_4.1.x86_64.rpm\nbutane-debugsource-0.20.0-1.el9_4.1.x86_64.rpm\nbutane-0.20.0-1.el9_4.1.s390x.rpm\nbutane-debuginfo-0.20.0-1.el9_4.1.s390x.rpm\nbutane-debugsource-0.20.0-1.el9_4.1.s390x.rpm\nbutane-0.20.0-1.el9_4.1.ppc64le.rpm\nbutane-debuginfo-0.20.0-1.el9_4.1.ppc64le.rpm\nbutane-debugsource-0.20.0-1.el9_4.1.ppc64le.rpm\nbutane-0.20.0-1.el9_4.1.aarch64.rpm\nbutane-debuginfo-0.20.0-1.el9_4.1.aarch64.rpm\nbutane-debugsource-0.20.0-1.el9_4.1.aarch64.rpm\n\nCVE-2025-61729: Within HostnameError.Error(), when constructing an error string, there is no limit to the number of hosts that will be printed out. Furthermore, the error string is constructed by repeated string concatenation, leading to quadratic runtime. Therefore, a certificate provided by a malicious actor can result in excessive resource consumption."
+}

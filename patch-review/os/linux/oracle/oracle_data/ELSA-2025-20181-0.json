@@ -1,0 +1,28 @@
+{
+  "id": "ELSA-2025-20181-0",
+  "vendor": "Oracle",
+  "type": "Security Advisory (ELSA)",
+  "kernel_type": "RHCK",
+  "title": " pam security update",
+  "issuedDate": "2025-11-25T00:00:00Z",
+  "updatedDate": "2025-11-25T00:00:00Z",
+  "pubDate": "2025-11-25T00:00:00Z",
+  "dateStr": "2025-11-25",
+  "url": "https://linux.oracle.com/errata/ELSA-2025-20181-0.html",
+  "severity": "Important",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 10.",
+  "description": "[1.6.1-8]\n- pam_namespace: fix potential privilege escalation.\n  Resolves: CVE-2025-6020 and RHEL-101174",
+  "affected_products": [
+    "Oracle Linux 10 for x86_64",
+    "Oracle Linux 10 for aarch64"
+  ],
+  "cves": [
+    "CVE-2025-6020"
+  ],
+  "packages": [
+    "pam-1.6.1-8.el10.src",
+    "pam-1.6.1-8.el10.x86_64",
+    "pam-libs-1.6.1-8.el10.x86_64"
+  ],
+  "full_text": "[1.6.1-8]\n- pam_namespace: fix potential privilege escalation.\n  Resolves: CVE-2025-6020 and RHEL-101174\n\nReferences:\nhttps://linux.oracle.com/errata/ELSA-2025-20181-0.html\nhttps://linux.oracle.com/cve/CVE-2025-6020.html"
+}

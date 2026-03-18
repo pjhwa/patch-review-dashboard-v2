@@ -1,0 +1,97 @@
+{
+  "id": "RHBA-2025:20206",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: dracut bug fix and enhancement update",
+  "issuedDate": "2025-11-11T07:25:26Z",
+  "updatedDate": "2025-11-11T07:25:26Z",
+  "pubDate": "2025-11-11T07:25:26Z",
+  "dateStr": "2025-11-11",
+  "url": "https://access.redhat.com/errata/RHBA-2025:20206",
+  "severity": "None",
+  "overview": "An update for dracut is now available for Red Hat Enterprise Linux 10.",
+  "description": "For detailed information on changes in this release, see the Red Hat Enterprise Linux 10 Release Notes linked from the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux for Power, little endian",
+    "Red Hat Enterprise Linux for x86_64 10 x86_64",
+    "Red Hat Enterprise Linux for ARM 64",
+    "Red Hat Enterprise Linux for IBM z Systems"
+  ],
+  "cves": [],
+  "packages": [
+    "dracut-107-3.el10.src",
+    "dracut-107-3.el10.x86_64",
+    "dracut-caps-107-3.el10.x86_64",
+    "dracut-config-generic-107-3.el10.x86_64",
+    "dracut-config-rescue-107-3.el10.x86_64",
+    "dracut-debuginfo-107-3.el10.x86_64",
+    "dracut-debugsource-107-3.el10.x86_64",
+    "dracut-live-107-3.el10.x86_64",
+    "dracut-network-107-3.el10.x86_64",
+    "dracut-squash-107-3.el10.x86_64",
+    "dracut-tools-107-3.el10.x86_64",
+    "dracut-107-3.el10.s390x",
+    "dracut-caps-107-3.el10.s390x",
+    "dracut-config-generic-107-3.el10.s390x",
+    "dracut-config-rescue-107-3.el10.s390x",
+    "dracut-debuginfo-107-3.el10.s390x",
+    "dracut-debugsource-107-3.el10.s390x",
+    "dracut-live-107-3.el10.s390x",
+    "dracut-network-107-3.el10.s390x",
+    "dracut-squash-107-3.el10.s390x",
+    "dracut-tools-107-3.el10.s390x",
+    "dracut-107-3.el10.ppc64le",
+    "dracut-caps-107-3.el10.ppc64le",
+    "dracut-config-generic-107-3.el10.ppc64le",
+    "dracut-config-rescue-107-3.el10.ppc64le",
+    "dracut-debuginfo-107-3.el10.ppc64le",
+    "dracut-debugsource-107-3.el10.ppc64le",
+    "dracut-live-107-3.el10.ppc64le",
+    "dracut-network-107-3.el10.ppc64le",
+    "dracut-squash-107-3.el10.ppc64le",
+    "dracut-tools-107-3.el10.ppc64le",
+    "dracut-107-3.el10.aarch64",
+    "dracut-caps-107-3.el10.aarch64",
+    "dracut-config-generic-107-3.el10.aarch64",
+    "dracut-config-rescue-107-3.el10.aarch64",
+    "dracut-debuginfo-107-3.el10.aarch64",
+    "dracut-debugsource-107-3.el10.aarch64",
+    "dracut-live-107-3.el10.aarch64",
+    "dracut-network-107-3.el10.aarch64",
+    "dracut-squash-107-3.el10.aarch64",
+    "dracut-tools-107-3.el10.aarch64"
+  ],
+  "fixes": [
+    {
+      "id": "RHEL-97473",
+      "url": "https://issues.redhat.com/browse/RHEL-97473",
+      "description": "Rebase dracut to 106+"
+    },
+    {
+      "id": "RHEL-89924",
+      "url": "https://issues.redhat.com/browse/RHEL-89924",
+      "description": "[RHEL 10] fix configuration in order to match SquashFS"
+    },
+    {
+      "id": "RHEL-86153",
+      "url": "https://issues.redhat.com/browse/RHEL-86153",
+      "description": "dracut-105 breaks multipath"
+    },
+    {
+      "id": "RHEL-95542",
+      "url": "https://issues.redhat.com/browse/RHEL-95542",
+      "description": "do not pull libgcrypt into initramfs"
+    },
+    {
+      "id": "RHEL-96152",
+      "url": "https://issues.redhat.com/browse/RHEL-96152",
+      "description": "Running dracut leads to \"grep: warning: stray \\ before /\""
+    },
+    {
+      "id": "RHEL-104223",
+      "url": "https://issues.redhat.com/browse/RHEL-104223",
+      "description": "[RHEL 10.1] nvmf: Backport NBFT-related patches"
+    }
+  ],
+  "full_text": "An update for dracut is now available for Red Hat Enterprise Linux 10.\n\nFor detailed information on changes in this release, see the Red Hat Enterprise Linux 10 Release Notes linked from the References section."
+}

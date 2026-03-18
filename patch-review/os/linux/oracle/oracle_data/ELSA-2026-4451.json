@@ -1,0 +1,37 @@
+{
+  "id": "ELSA-2026-4451",
+  "vendor": "Oracle",
+  "type": "Security Advisory (ELSA)",
+  "kernel_type": "AppStream",
+  "title": " .NET 8.0 security update",
+  "issuedDate": "2026-03-12T00:00:00Z",
+  "updatedDate": "2026-03-12T00:00:00Z",
+  "pubDate": "2026-03-12T00:00:00Z",
+  "dateStr": "2026-03-12",
+  "url": "https://linux.oracle.com/errata/ELSA-2026-4451.html",
+  "severity": "Important",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 10.",
+  "description": "[8.0.125-1.0.1]\n- Add support for Oracle Linux\n\n[8.0.125-1]\n- Update to .NET SDK 8.0.125 and Runtime 8.0.25\n- Resolves: RHEL-152937",
+  "affected_products": [
+    "Oracle Linux 10 for x86_64",
+    "Oracle Linux 10 for aarch64"
+  ],
+  "cves": [
+    "CVE-2026-26130"
+  ],
+  "packages": [
+    "aspnetcore-targeting-pack-8.0-8.0.25-1.0.1.el10_1.x86_64",
+    "dotnet8.0-8.0.125-1.0.1.el10_1.src",
+    "dotnet-runtime-dbg-8.0-8.0.25-1.0.1.el10_1.x86_64",
+    "dotnet-apphost-pack-8.0-8.0.25-1.0.1.el10_1.x86_64",
+    "dotnet-targeting-pack-8.0-8.0.25-1.0.1.el10_1.x86_64",
+    "aspnetcore-runtime-dbg-8.0-8.0.25-1.0.1.el10_1.x86_64",
+    "dotnet-runtime-8.0-8.0.25-1.0.1.el10_1.x86_64",
+    "dotnet-sdk-dbg-8.0-8.0.125-1.0.1.el10_1.x86_64",
+    "aspnetcore-runtime-8.0-8.0.25-1.0.1.el10_1.x86_64",
+    "dotnet-sdk-8.0-8.0.125-1.0.1.el10_1.x86_64",
+    "dotnet-templates-8.0-8.0.125-1.0.1.el10_1.x86_64",
+    "dotnet-hostfxr-8.0-8.0.25-1.0.1.el10_1.x86_64"
+  ],
+  "full_text": "[8.0.125-1.0.1]\n- Add support for Oracle Linux\n\n[8.0.125-1]\n- Update to .NET SDK 8.0.125 and Runtime 8.0.25\n- Resolves: RHEL-152937\n\nReferences:\nhttps://linux.oracle.com/errata/ELSA-2026-4451.html\nhttps://linux.oracle.com/cve/CVE-2026-26130.html"
+}

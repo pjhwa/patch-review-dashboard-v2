@@ -1,0 +1,36 @@
+{
+  "id": "ELBA-2025-28051",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2025-December/019287.html",
+  "synopsis": "[El-errata] ELBA-2025-28051 Oracle Linux 10 bind bug fix update",
+  "dateStr": "2025-December",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Bug Fix Advisory ELBA-2025-28051",
+  "description": "[9.18.33-10.0.2]\n- Hard require needed openssl-libs [Orabug: 38742109]",
+  "affected_products": [
+    "Oracle Linux 10"
+  ],
+  "packages": [
+    "bind-chroot-9.18.33-10.0.2.el10_1.2.x86_64.rpm",
+    "bind-devel-9.18.33-10.0.2.el10_1.2.x86_64.rpm",
+    "bind-dnssec-utils-9.18.33-10.0.2.el10_1.2.x86_64.rpm",
+    "bind-doc-9.18.33-10.0.2.el10_1.2.noarch.rpm",
+    "bind-libs-9.18.33-10.0.2.el10_1.2.x86_64.rpm",
+    "bind-license-9.18.33-10.0.2.el10_1.2.noarch.rpm",
+    "bind-utils-9.18.33-10.0.2.el10_1.2.x86_64.rpm",
+    "bind-9.18.33-10.0.2.el10_1.2.x86_64.rpm",
+    "bind-chroot-9.18.33-10.0.2.el10_1.2.aarch64.rpm",
+    "bind-devel-9.18.33-10.0.2.el10_1.2.aarch64.rpm",
+    "bind-dnssec-utils-9.18.33-10.0.2.el10_1.2.aarch64.rpm",
+    "bind-doc-9.18.33-10.0.2.el10_1.2.noarch.rpm",
+    "bind-libs-9.18.33-10.0.2.el10_1.2.aarch64.rpm",
+    "bind-license-9.18.33-10.0.2.el10_1.2.noarch.rpm",
+    "bind-utils-9.18.33-10.0.2.el10_1.2.aarch64.rpm",
+    "bind-9.18.33-10.0.2.el10_1.2.aarch64.rpm"
+  ],
+  "cves": [],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Bug Fix Advisory ELBA-2025-28051\n\nhttp://linux.oracle.com/errata/ELBA-2025-28051.html\n\nThe following updated rpms for Oracle Linux 10 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\nbind-chroot-9.18.33-10.0.2.el10_1.2.x86_64.rpm\nbind-devel-9.18.33-10.0.2.el10_1.2.x86_64.rpm\nbind-dnssec-utils-9.18.33-10.0.2.el10_1.2.x86_64.rpm\nbind-doc-9.18.33-10.0.2.el10_1.2.noarch.rpm\nbind-libs-9.18.33-10.0.2.el10_1.2.x86_64.rpm\nbind-license-9.18.33-10.0.2.el10_1.2.noarch.rpm\nbind-utils-9.18.33-10.0.2.el10_1.2.x86_64.rpm\nbind-9.18.33-10.0.2.el10_1.2.x86_64.rpm\n\naarch64:\nbind-chroot-9.18.33-10.0.2.el10_1.2.aarch64.rpm\nbind-devel-9.18.33-10.0.2.el10_1.2.aarch64.rpm\nbind-dnssec-utils-9.18.33-10.0.2.el10_1.2.aarch64.rpm\nbind-doc-9.18.33-10.0.2.el10_1.2.noarch.rpm\nbind-libs-9.18.33-10.0.2.el10_1.2.aarch64.rpm\nbind-license-9.18.33-10.0.2.el10_1.2.noarch.rpm\nbind-utils-9.18.33-10.0.2.el10_1.2.aarch64.rpm\nbind-9.18.33-10.0.2.el10_1.2.aarch64.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol10/SRPMS-updates/bind-9.18.33-10.0.2.el10_1.2.src.rpm\n\n\n\nDescription of changes:\n\n[9.18.33-10.0.2]\n- Hard require needed openssl-libs [Orabug: 38742109]",
+  "vendor": "Oracle"
+}

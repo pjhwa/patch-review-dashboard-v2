@@ -1,0 +1,28 @@
+{
+  "id": "ELSA-2025-21013",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2025-December/019195.html",
+  "synopsis": "[El-errata] ELSA-2025-21013 Moderate: Oracle Linux 10 libssh security update",
+  "dateStr": "2025-December",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Security Advisory ELSA-2025-21013",
+  "description": "[0.11.1-4]\n- Rebuild due to broken build auto-tagging",
+  "affected_products": [
+    "Oracle Linux 10"
+  ],
+  "packages": [
+    "libssh-0.11.1-4.el10_1.x86_64.rpm",
+    "libssh-config-0.11.1-4.el10_1.noarch.rpm",
+    "libssh-devel-0.11.1-4.el10_1.x86_64.rpm",
+    "libssh-0.11.1-4.el10_1.aarch64.rpm",
+    "libssh-config-0.11.1-4.el10_1.noarch.rpm",
+    "libssh-devel-0.11.1-4.el10_1.aarch64.rpm"
+  ],
+  "cves": [
+    "CVE-2025-5318"
+  ],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Security Advisory ELSA-2025-21013\n\nhttp://linux.oracle.com/errata/ELSA-2025-21013.html\n\nThe following updated rpms for Oracle Linux 10 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\nlibssh-0.11.1-4.el10_1.x86_64.rpm\nlibssh-config-0.11.1-4.el10_1.noarch.rpm\nlibssh-devel-0.11.1-4.el10_1.x86_64.rpm\n\naarch64:\nlibssh-0.11.1-4.el10_1.aarch64.rpm\nlibssh-config-0.11.1-4.el10_1.noarch.rpm\nlibssh-devel-0.11.1-4.el10_1.aarch64.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol10/SRPMS-updates/libssh-0.11.1-4.el10_1.src.rpm\n\nRelated CVEs:\n\nCVE-2025-5318\n\n\n\n\nDescription of changes:\n\n[0.11.1-4]\n- Rebuild due to broken build auto-tagging",
+  "vendor": "Oracle"
+}

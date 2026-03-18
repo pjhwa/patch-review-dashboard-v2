@@ -1,0 +1,38 @@
+{
+  "id": "ELSA-2025-20958",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2025-November/019072.html",
+  "synopsis": "[El-errata] ELSA-2025-20958 Important: Oracle Linux 9 tigervnc security update",
+  "dateStr": "2025-November",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Security Advisory ELSA-2025-20958",
+  "description": "[1.15.0-6]\n- Fix CVE-2025-62229: xorg-x11-server: Use-after-free in XPresentNotify structures creation\n  Resolves: RHEL-119986\n\n- Fix CVE-2025-62230: xorg-x11-server: Use-after-free in Xkb client resource removal\n  Resolves: RHEL-120007\n\n- Fix CVE-2025-62231: xorg-x11-server: Value overflow in Xkb extension XkbSetCompatMap()\n  Resolves: RHEL-120768",
+  "affected_products": [
+    "Oracle Linux 9"
+  ],
+  "packages": [
+    "tigervnc-1.15.0-6.el9_7.x86_64.rpm",
+    "tigervnc-icons-1.15.0-6.el9_7.noarch.rpm",
+    "tigervnc-license-1.15.0-6.el9_7.noarch.rpm",
+    "tigervnc-selinux-1.15.0-6.el9_7.noarch.rpm",
+    "tigervnc-server-1.15.0-6.el9_7.x86_64.rpm",
+    "tigervnc-server-minimal-1.15.0-6.el9_7.x86_64.rpm",
+    "tigervnc-server-module-1.15.0-6.el9_7.x86_64.rpm",
+    "tigervnc-1.15.0-6.el9_7.aarch64.rpm",
+    "tigervnc-icons-1.15.0-6.el9_7.noarch.rpm",
+    "tigervnc-license-1.15.0-6.el9_7.noarch.rpm",
+    "tigervnc-selinux-1.15.0-6.el9_7.noarch.rpm",
+    "tigervnc-server-1.15.0-6.el9_7.aarch64.rpm",
+    "tigervnc-server-minimal-1.15.0-6.el9_7.aarch64.rpm",
+    "tigervnc-server-module-1.15.0-6.el9_7.aarch64.rpm"
+  ],
+  "cves": [
+    "CVE-2025-62229",
+    "CVE-2025-62230",
+    "CVE-2025-62231"
+  ],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Security Advisory ELSA-2025-20958\n\nhttp://linux.oracle.com/errata/ELSA-2025-20958.html\n\nThe following updated rpms for Oracle Linux 9 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\ntigervnc-1.15.0-6.el9_7.x86_64.rpm\ntigervnc-icons-1.15.0-6.el9_7.noarch.rpm\ntigervnc-license-1.15.0-6.el9_7.noarch.rpm\ntigervnc-selinux-1.15.0-6.el9_7.noarch.rpm\ntigervnc-server-1.15.0-6.el9_7.x86_64.rpm\ntigervnc-server-minimal-1.15.0-6.el9_7.x86_64.rpm\ntigervnc-server-module-1.15.0-6.el9_7.x86_64.rpm\n\naarch64:\ntigervnc-1.15.0-6.el9_7.aarch64.rpm\ntigervnc-icons-1.15.0-6.el9_7.noarch.rpm\ntigervnc-license-1.15.0-6.el9_7.noarch.rpm\ntigervnc-selinux-1.15.0-6.el9_7.noarch.rpm\ntigervnc-server-1.15.0-6.el9_7.aarch64.rpm\ntigervnc-server-minimal-1.15.0-6.el9_7.aarch64.rpm\ntigervnc-server-module-1.15.0-6.el9_7.aarch64.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol9/SRPMS-updates/tigervnc-1.15.0-6.el9_7.src.rpm\n\nRelated CVEs:\n\nCVE-2025-62229\nCVE-2025-62230\nCVE-2025-62231\n\n\n\n\nDescription of changes:\n\n[1.15.0-6]\n- Fix CVE-2025-62229: xorg-x11-server: Use-after-free in XPresentNotify structures creation\n  Resolves: RHEL-119986\n\n- Fix CVE-2025-62230: xorg-x11-server: Use-after-free in Xkb client resource removal\n  Resolves: RHEL-120007\n\n- Fix CVE-2025-62231: xorg-x11-server: Value overflow in Xkb extension XkbSetCompatMap()\n  Resolves: RHEL-120768",
+  "vendor": "Oracle"
+}

@@ -1,0 +1,26 @@
+{
+  "id": "ELBA-2025-20517-0",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "RHCK",
+  "title": "python-setuptools bug fix and enhancement update",
+  "issuedDate": "2025-11-17T00:00:00Z",
+  "updatedDate": "2025-11-17T00:00:00Z",
+  "pubDate": "2025-11-17T00:00:00Z",
+  "dateStr": "2025-11-17",
+  "url": "https://linux.oracle.com/errata/ELBA-2025-20517-0.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 9.",
+  "description": "[53.0.0-15]\n- Security fix for CVE-2025-47273\nResolves: RHEL-96808\n\n[53.0.0-14]\n- Make sure the INSTALLER is not pip and remove RECORD\n- Resolves: RHEL-82609",
+  "affected_products": [
+    "Oracle Linux 9 for x86_64",
+    "Oracle Linux 9 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "python3-setuptools-wheel-53.0.0-15.el9.noarch",
+    "python3-setuptools-53.0.0-15.el9.noarch",
+    "python-setuptools-53.0.0-15.el9.src"
+  ],
+  "full_text": "[53.0.0-15]\n- Security fix for CVE-2025-47273\nResolves: RHEL-96808\n\n[53.0.0-14]\n- Make sure the INSTALLER is not pip and remove RECORD\n- Resolves: RHEL-82609\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2025-20517-0.html"
+}

@@ -1,0 +1,25 @@
+{
+  "id": "ELBA-2025-20308-0",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "AppStream",
+  "title": "sscg bug fix and enhancement update",
+  "issuedDate": "2025-11-25T00:00:00Z",
+  "updatedDate": "2025-11-25T00:00:00Z",
+  "pubDate": "2025-11-25T00:00:00Z",
+  "dateStr": "2025-11-25",
+  "url": "https://linux.oracle.com/errata/ELBA-2025-20308-0.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 10.",
+  "description": "[3.0.5-12]\n- Fix IP address handling in CA certificate SAN constraints\n- Add automatic single-IP subnet mask to IP addresses in CA name\n  constraints\n- Update help text to show simplified IP format without subnet mask\n- Add comprehensive test for basicConstraints\n\n[3.0.5-11]\n- Ensure 'critical' basicConstraint for CA cert\n\n[3.0.5-10]\n- x509: Use proper version for CSR",
+  "affected_products": [
+    "Oracle Linux 10 for x86_64",
+    "Oracle Linux 10 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "sscg-3.0.5-12.el10.src",
+    "sscg-3.0.5-12.el10.x86_64"
+  ],
+  "full_text": "[3.0.5-12]\n- Fix IP address handling in CA certificate SAN constraints\n- Add automatic single-IP subnet mask to IP addresses in CA name\n  constraints\n- Update help text to show simplified IP format without subnet mask\n- Add comprehensive test for basicConstraints\n\n[3.0.5-11]\n- Ensure 'critical' basicConstraint for CA cert\n\n[3.0.5-10]\n- x509: Use proper version for CSR\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2025-20308-0.html"
+}

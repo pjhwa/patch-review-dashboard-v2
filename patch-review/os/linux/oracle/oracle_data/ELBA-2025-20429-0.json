@@ -1,0 +1,30 @@
+{
+  "id": "ELBA-2025-20429-0",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "AppStream",
+  "title": "hyperv-daemons bug fix and enhancement update",
+  "issuedDate": "2025-11-25T00:00:00Z",
+  "updatedDate": "2025-11-25T00:00:00Z",
+  "pubDate": "2025-11-25T00:00:00Z",
+  "dateStr": "2025-11-25",
+  "url": "https://linux.oracle.com/errata/ELBA-2025-20429-0.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 10.",
+  "description": "[0-0.50.20220731git]\n- hpvd-tools-hv-Enable-debug-logs-for-hv_kvp_daemon.patch [RHEL-95811]\n- Resolves: RHEL-95811\n  ([RHEL-10]Backport tools: hv: Enable debug logs for hv_kvp_daemon for RHEL 10)",
+  "affected_products": [
+    "Oracle Linux 10 for x86_64",
+    "Oracle Linux 10 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "hypervvssd-0-0.50.20220731git.el10.x86_64",
+    "hypervkvpd-0-0.50.20220731git.el10.x86_64",
+    "hyperv-tools-0-0.50.20220731git.el10.noarch",
+    "hyperv-daemons-license-0-0.50.20220731git.el10.noarch",
+    "hypervfcopyd-0-0.50.20220731git.el10.x86_64",
+    "hyperv-daemons-0-0.50.20220731git.el10.src",
+    "hyperv-daemons-0-0.50.20220731git.el10.x86_64"
+  ],
+  "full_text": "[0-0.50.20220731git]\n- hpvd-tools-hv-Enable-debug-logs-for-hv_kvp_daemon.patch [RHEL-95811]\n- Resolves: RHEL-95811\n  ([RHEL-10]Backport tools: hv: Enable debug logs for hv_kvp_daemon for RHEL 10)\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2025-20429-0.html"
+}

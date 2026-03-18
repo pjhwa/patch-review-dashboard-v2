@@ -1,0 +1,24 @@
+{
+  "id": "RHSA-2026:2137",
+  "vendor": "Red Hat",
+  "type": "Security Advisory (RHSA)",
+  "title": "Red Hat Security Advisory: RHTAS 1.3.2 - Red Hat Trusted Artifact Signer Release",
+  "issuedDate": "2026-02-05T15:26:20+00:00",
+  "updatedDate": "2026-02-05T15:26:31+00:00",
+  "pubDate": "2026-02-05T15:26:20+00:00",
+  "dateStr": "2026-02-05",
+  "url": "https://access.redhat.com/errata/RHSA-2026:2137",
+  "severity": "Important",
+  "overview": "The 1.3.2 release of Red Hat Trusted Artifact Signer OpenShift Operator.\nFor more details please visit the product documentation at https://access.redhat.com/documentation/en-us/red_hat_trusted_artifact_signer/1.3",
+  "description": "The RHTAS Operator can be used with OpenShift Container Platform 4.16, 4.17, 4.18, 4.19, and 4.20",
+  "affected_products": [],
+  "cves": [
+    "CVE-2025-66418",
+    "CVE-2025-66471",
+    "CVE-2026-21441"
+  ],
+  "packages": [
+    "registry.redhat.io/rhtas/client-server-rhel9@sha256:39c72cf5b519408d1659bb630ac4ea5f9d067b049019fe4d1b5cc7680afa9060_amd64"
+  ],
+  "full_text": "The 1.3.2 release of Red Hat Trusted Artifact Signer OpenShift Operator.\nFor more details please visit the product documentation at https://access.redhat.com/documentation/en-us/red_hat_trusted_artifact_signer/1.3\n\nThe RHTAS Operator can be used with OpenShift Container Platform 4.16, 4.17, 4.18, 4.19, and 4.20"
+}

@@ -1,0 +1,32 @@
+{
+  "id": "ELSA-2025-21881",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2025-November/019045.html",
+  "synopsis": "[El-errata] ELSA-2025-21881 Important: Oracle Linux 8 thunderbird security update",
+  "dateStr": "2025-November",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Security Advisory ELSA-2025-21881",
+  "description": "[140.5.0-2.0.1]\n- Fix prefs for new nss [Orabug: 37079820]\n- Add Oracle prefs file\n\n[140.5.0]\n- Add OpenELA debranding\n\n[140.5.0-2]\n- Update to 140.5.0 ESR",
+  "affected_products": [
+    "Oracle Linux 8"
+  ],
+  "packages": [
+    "thunderbird-140.5.0-2.0.1.el8_10.x86_64.rpm",
+    "thunderbird-140.5.0-2.0.1.el8_10.aarch64.rpm"
+  ],
+  "cves": [
+    "CVE-2025-13012",
+    "CVE-2025-13013",
+    "CVE-2025-13014",
+    "CVE-2025-13015",
+    "CVE-2025-13016",
+    "CVE-2025-13017",
+    "CVE-2025-13018",
+    "CVE-2025-13019",
+    "CVE-2025-13020"
+  ],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Security Advisory ELSA-2025-21881\n\nhttp://linux.oracle.com/errata/ELSA-2025-21881.html\n\nThe following updated rpms for Oracle Linux 8 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\nthunderbird-140.5.0-2.0.1.el8_10.x86_64.rpm\n\naarch64:\nthunderbird-140.5.0-2.0.1.el8_10.aarch64.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol8/SRPMS-updates/thunderbird-140.5.0-2.0.1.el8_10.src.rpm\n\nRelated CVEs:\n\nCVE-2025-13012\nCVE-2025-13013\nCVE-2025-13014\nCVE-2025-13015\nCVE-2025-13016\nCVE-2025-13017\nCVE-2025-13018\nCVE-2025-13019\nCVE-2025-13020\n\n\n\n\nDescription of changes:\n\n[140.5.0-2.0.1]\n- Fix prefs for new nss [Orabug: 37079820]\n- Add Oracle prefs file\n\n[140.5.0]\n- Add OpenELA debranding\n\n[140.5.0-2]\n- Update to 140.5.0 ESR",
+  "vendor": "Oracle"
+}

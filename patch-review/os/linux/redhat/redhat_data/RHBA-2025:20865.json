@@ -1,0 +1,44 @@
+{
+  "id": "RHBA-2025:20865",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: ibus-libzhuyin bug fix and enhancement update",
+  "issuedDate": "2025-11-11T07:51:22Z",
+  "updatedDate": "2025-11-11T07:51:22Z",
+  "pubDate": "2025-11-11T07:51:22Z",
+  "dateStr": "2025-11-11",
+  "url": "https://access.redhat.com/errata/RHBA-2025:20865",
+  "severity": "None",
+  "overview": "An update for ibus-libzhuyin is now available for Red Hat Enterprise Linux 10.",
+  "description": "For detailed information on changes in this release, see the Red Hat Enterprise Linux 9 Release Notes linked from the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux for Power, little endian",
+    "Red Hat Enterprise Linux for x86_64 10 x86_64",
+    "Red Hat Enterprise Linux for ARM 64",
+    "Red Hat Enterprise Linux for IBM z Systems"
+  ],
+  "cves": [],
+  "packages": [
+    "ibus-libzhuyin-1.10.0-5.el9.src",
+    "ibus-libzhuyin-1.10.0-5.el9.x86_64",
+    "ibus-libzhuyin-debuginfo-1.10.0-5.el9.x86_64",
+    "ibus-libzhuyin-debugsource-1.10.0-5.el9.x86_64",
+    "ibus-libzhuyin-1.10.0-5.el9.s390x",
+    "ibus-libzhuyin-debuginfo-1.10.0-5.el9.s390x",
+    "ibus-libzhuyin-debugsource-1.10.0-5.el9.s390x",
+    "ibus-libzhuyin-1.10.0-5.el9.ppc64le",
+    "ibus-libzhuyin-debuginfo-1.10.0-5.el9.ppc64le",
+    "ibus-libzhuyin-debugsource-1.10.0-5.el9.ppc64le",
+    "ibus-libzhuyin-1.10.0-5.el9.aarch64",
+    "ibus-libzhuyin-debuginfo-1.10.0-5.el9.aarch64",
+    "ibus-libzhuyin-debugsource-1.10.0-5.el9.aarch64"
+  ],
+  "fixes": [
+    {
+      "id": "RHEL-106766",
+      "url": "https://issues.redhat.com/browse/RHEL-106766",
+      "description": "Input method switch not working when New-Zhuyin IM is selected."
+    }
+  ],
+  "full_text": "An update for ibus-libzhuyin is now available for Red Hat Enterprise Linux 10.\n\nFor detailed information on changes in this release, see the Red Hat Enterprise Linux 9 Release Notes linked from the References section."
+}

@@ -1,0 +1,22 @@
+{
+  "id": "ELBA-2025-19565",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2025-November/018959.html",
+  "synopsis": "[El-errata] ELBA-2025-19565 Oracle Linux 10 osinfo-db bug fix and enhancement update",
+  "dateStr": "2025-November",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Bug Fix Advisory ELBA-2025-19565",
+  "description": "[20250124-2.0.1]\n- Add OL9.6 data [Orabug: 37816177]\n- Make sure all OL XML files are included [Orabug: 37816177]\n- Add OL10.0 data\n- Add 9.5 data\n\n[20250124-2]\n- Fixes x86_64 pxeboot in RHEL 10",
+  "affected_products": [
+    "Oracle Linux 10"
+  ],
+  "packages": [
+    "osinfo-db-20250124-2.0.1.el10_0.noarch.rpm",
+    "osinfo-db-20250124-2.0.1.el10_0.noarch.rpm"
+  ],
+  "cves": [],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Bug Fix Advisory ELBA-2025-19565\n\nhttp://linux.oracle.com/errata/ELBA-2025-19565.html\n\nThe following updated rpms for Oracle Linux 10 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\nosinfo-db-20250124-2.0.1.el10_0.noarch.rpm\n\naarch64:\nosinfo-db-20250124-2.0.1.el10_0.noarch.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol10/SRPMS-updates/osinfo-db-20250124-2.0.1.el10_0.src.rpm\n\n\n\nDescription of changes:\n\n[20250124-2.0.1]\n- Add OL9.6 data [Orabug: 37816177]\n- Make sure all OL XML files are included [Orabug: 37816177]\n- Add OL10.0 data\n- Add 9.5 data\n\n[20250124-2]\n- Fixes x86_64 pxeboot in RHEL 10",
+  "vendor": "Oracle"
+}

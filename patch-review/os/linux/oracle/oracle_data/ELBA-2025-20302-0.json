@@ -1,0 +1,27 @@
+{
+  "id": "ELBA-2025-20302-0",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "AppStream",
+  "title": "python-virt-firmware bug fix and enhancement update",
+  "issuedDate": "2025-11-25T00:00:00Z",
+  "updatedDate": "2025-11-25T00:00:00Z",
+  "pubDate": "2025-11-25T00:00:00Z",
+  "dateStr": "2025-11-25",
+  "url": "https://linux.oracle.com/errata/ELBA-2025-20302-0.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 10.",
+  "description": "[25.7.3-1.0.1]\n- Hide redhat reference in python-virt-firmware [Orabug: 36562018]\n\n[25.7.3-1]\n- update to bugfix release 25.7.3\n\n[25.7.2-1]\n- update to bugfix release 25.7.2\n\n[25.7-1]\n- update to 25.7, switch to pyproject rpm macros\n\n[25.4.1-1]\n- rebase to version 25.4.1\n\n[25.3-2]\n- specfile: do not use %{_libdir}\n\n[25.3-1]\n- rebase to 25.3, split virt-sb-certs sub-rpm",
+  "affected_products": [
+    "Oracle Linux 10 for x86_64",
+    "Oracle Linux 10 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "uki-direct-25.7.3-1.0.1.el10.noarch",
+    "virt-sb-certs-25.7.3-1.0.1.el10.noarch",
+    "python-virt-firmware-25.7.3-1.0.1.el10.src",
+    "python3-virt-firmware-25.7.3-1.0.1.el10.noarch"
+  ],
+  "full_text": "[25.7.3-1.0.1]\n- Hide redhat reference in python-virt-firmware [Orabug: 36562018]\n\n[25.7.3-1]\n- update to bugfix release 25.7.3\n\n[25.7.2-1]\n- update to bugfix release 25.7.2\n\n[25.7-1]\n- update to 25.7, switch to pyproject rpm macros\n\n[25.4.1-1]\n- rebase to version 25.4.1\n\n[25.3-2]\n- specfile: do not use %{_libdir}\n\n[25.3-1]\n- rebase to 25.3, split virt-sb-certs sub-rpm\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2025-20302-0.html"
+}

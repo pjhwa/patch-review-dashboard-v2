@@ -1,0 +1,26 @@
+{
+  "id": "ELBA-2025-21078",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2025-December/019272.html",
+  "synopsis": "[El-errata] ELBA-2025-21078 Oracle Linux 8 gcc-toolset-15-annobin bug fix and enhancement update",
+  "dateStr": "2025-December",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Bug Fix Advisory ELBA-2025-21078",
+  "description": "[12.93-4]\n- Generate latest-annobin.tar.xz at prep phase (RHEL-95704)\n\n[12.93-3]\n- Disable bootstrapping.  Also use error() in place of warning() in the gcc plugin.  (RHEL-95704)\n\n[12.93-2]\n- NVR bump in order to allow rebuilding with correct GTS-15 tags.  (RHEL-81744)\n\n[12.93-1]\n- Initial commit on c8s.  (RHELPLAN-171846)",
+  "affected_products": [
+    "Oracle Linux 8"
+  ],
+  "packages": [
+    "gcc-toolset-15-annobin-annocheck-12.93-4.el8_10.x86_64.rpm",
+    "gcc-toolset-15-annobin-docs-12.93-4.el8_10.noarch.rpm",
+    "gcc-toolset-15-annobin-plugin-gcc-12.93-4.el8_10.x86_64.rpm",
+    "gcc-toolset-15-annobin-annocheck-12.93-4.el8_10.aarch64.rpm",
+    "gcc-toolset-15-annobin-docs-12.93-4.el8_10.noarch.rpm",
+    "gcc-toolset-15-annobin-plugin-gcc-12.93-4.el8_10.aarch64.rpm"
+  ],
+  "cves": [],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Bug Fix Advisory ELBA-2025-21078\n\nhttp://linux.oracle.com/errata/ELBA-2025-21078.html\n\nThe following updated rpms for Oracle Linux 8 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\ngcc-toolset-15-annobin-annocheck-12.93-4.el8_10.x86_64.rpm\ngcc-toolset-15-annobin-docs-12.93-4.el8_10.noarch.rpm\ngcc-toolset-15-annobin-plugin-gcc-12.93-4.el8_10.x86_64.rpm\n\naarch64:\ngcc-toolset-15-annobin-annocheck-12.93-4.el8_10.aarch64.rpm\ngcc-toolset-15-annobin-docs-12.93-4.el8_10.noarch.rpm\ngcc-toolset-15-annobin-plugin-gcc-12.93-4.el8_10.aarch64.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol8/SRPMS-updates/gcc-toolset-15-annobin-12.93-4.el8_10.src.rpm\n\n\n\nDescription of changes:\n\n[12.93-4]\n- Generate latest-annobin.tar.xz at prep phase (RHEL-95704)\n\n[12.93-3]\n- Disable bootstrapping.  Also use error() in place of warning() in the gcc plugin.  (RHEL-95704)\n\n[12.93-2]\n- NVR bump in order to allow rebuilding with correct GTS-15 tags.  (RHEL-81744)\n\n[12.93-1]\n- Initial commit on c8s.  (RHELPLAN-171846)",
+  "vendor": "Oracle"
+}

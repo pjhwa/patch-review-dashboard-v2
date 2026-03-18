@@ -1,0 +1,52 @@
+{
+  "id": "RHBA-2025:20391",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: python-psutil bug fix and enhancement update",
+  "issuedDate": "2025-11-11T07:26:20Z",
+  "updatedDate": "2025-11-11T07:26:20Z",
+  "pubDate": "2025-11-11T07:26:20Z",
+  "dateStr": "2025-11-11",
+  "url": "https://access.redhat.com/errata/RHBA-2025:20391",
+  "severity": "None",
+  "overview": "An update for python-psutil is now available for Red Hat Enterprise Linux 10.",
+  "description": "For detailed information on changes in this release, see the Red Hat Enterprise Linux 10.1 Release Notes linked from the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux for IBM z Systems",
+    "Red Hat Enterprise Linux for x86_64 10 x86_64",
+    "Red Hat Enterprise Linux for ARM 64",
+    "Red Hat CodeReady Linux Builder for IBM z Systems",
+    "Red Hat Enterprise Linux for Power, little endian",
+    "Red Hat CodeReady Linux Builder for Power, little endian",
+    "Red Hat CodeReady Linux Builder for ARM 64",
+    "Red Hat CodeReady Linux Builder for x86_64 10 x86_64"
+  ],
+  "cves": [],
+  "packages": [
+    "python-psutil-5.9.8-6.el10.src",
+    "python-psutil-debugsource-5.9.8-6.el10.x86_64",
+    "python3-psutil-5.9.8-6.el10.x86_64",
+    "python3-psutil-debuginfo-5.9.8-6.el10.x86_64",
+    "python-psutil-debugsource-5.9.8-6.el10.s390x",
+    "python3-psutil-5.9.8-6.el10.s390x",
+    "python3-psutil-debuginfo-5.9.8-6.el10.s390x",
+    "python-psutil-debugsource-5.9.8-6.el10.ppc64le",
+    "python3-psutil-5.9.8-6.el10.ppc64le",
+    "python3-psutil-debuginfo-5.9.8-6.el10.ppc64le",
+    "python-psutil-debugsource-5.9.8-6.el10.aarch64",
+    "python3-psutil-5.9.8-6.el10.aarch64",
+    "python3-psutil-debuginfo-5.9.8-6.el10.aarch64",
+    "python3-psutil-tests-5.9.8-6.el10.x86_64",
+    "python3-psutil-tests-5.9.8-6.el10.ppc64le",
+    "python3-psutil-tests-5.9.8-6.el10.aarch64",
+    "python3-psutil-tests-5.9.8-6.el10.s390x"
+  ],
+  "fixes": [
+    {
+      "id": "RHEL-93392",
+      "url": "https://issues.redhat.com/browse/RHEL-93392",
+      "description": "python-psutil: FTBFS on riscv64 (test suite failure)"
+    }
+  ],
+  "full_text": "An update for python-psutil is now available for Red Hat Enterprise Linux 10.\n\nFor detailed information on changes in this release, see the Red Hat Enterprise Linux 10.1 Release Notes linked from the References section."
+}

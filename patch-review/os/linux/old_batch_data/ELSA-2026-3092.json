@@ -1,0 +1,25 @@
+{
+  "id": "ELSA-2026-3092",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2026-February/019827.html",
+  "synopsis": "[El-errata] ELSA-2026-3092 Important: Oracle Linux 10 golang-github-openprinting-ipp-usb security update",
+  "dateStr": "2026-February",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Security Advisory ELSA-2026-3092",
+  "description": "[0.9.27-5]\n- rebuilt to fix CVE-2025-68121, CVE-2025-61726",
+  "affected_products": [
+    "Oracle Linux 10"
+  ],
+  "packages": [
+    "ipp-usb-0.9.27-5.el10_1.x86_64.rpm",
+    "ipp-usb-0.9.27-5.el10_1.aarch64.rpm"
+  ],
+  "cves": [
+    "CVE-2025-61726",
+    "CVE-2025-68121"
+  ],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Security Advisory ELSA-2026-3092\n\nhttp://linux.oracle.com/errata/ELSA-2026-3092.html\n\nThe following updated rpms for Oracle Linux 10 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\nipp-usb-0.9.27-5.el10_1.x86_64.rpm\n\naarch64:\nipp-usb-0.9.27-5.el10_1.aarch64.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol10/SRPMS-updates/golang-github-openprinting-ipp-usb-0.9.27-5.el10_1.src.rpm\n\nRelated CVEs:\n\nCVE-2025-61726\nCVE-2025-68121\n\n\n\n\nDescription of changes:\n\n[0.9.27-5]\n- rebuilt to fix CVE-2025-68121, CVE-2025-61726",
+  "vendor": "Oracle"
+}

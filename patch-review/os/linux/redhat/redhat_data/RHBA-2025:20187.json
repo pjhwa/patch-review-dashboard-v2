@@ -1,0 +1,56 @@
+{
+  "id": "RHBA-2025:20187",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: libbpf bug fix and enhancement update",
+  "issuedDate": "2025-11-11T07:25:22Z",
+  "updatedDate": "2025-11-11T07:25:22Z",
+  "pubDate": "2025-11-11T07:25:22Z",
+  "dateStr": "2025-11-11",
+  "url": "https://access.redhat.com/errata/RHBA-2025:20187",
+  "severity": "None",
+  "overview": "An update for libbpf is now available for Red Hat Enterprise Linux 10.",
+  "description": "For detailed information on changes in this release, see the Red Hat Enterprise Linux 10 Release Notes linked from the References section.",
+  "affected_products": [
+    "Red Hat CodeReady Linux Builder for ARM 64",
+    "Red Hat Enterprise Linux for ARM 64",
+    "Red Hat Enterprise Linux for x86_64 10 x86_64",
+    "Red Hat CodeReady Linux Builder for Power, little endian",
+    "Red Hat Enterprise Linux for Power, little endian",
+    "Red Hat Enterprise Linux for IBM z Systems",
+    "Red Hat CodeReady Linux Builder for IBM z Systems",
+    "Red Hat CodeReady Linux Builder for x86_64 10 x86_64"
+  ],
+  "cves": [],
+  "packages": [
+    "libbpf-1.6.0-3.el10.src",
+    "libbpf-1.6.0-3.el10.x86_64",
+    "libbpf-debuginfo-1.6.0-3.el10.x86_64",
+    "libbpf-debugsource-1.6.0-3.el10.x86_64",
+    "libbpf-1.6.0-3.el10.s390x",
+    "libbpf-debuginfo-1.6.0-3.el10.s390x",
+    "libbpf-debugsource-1.6.0-3.el10.s390x",
+    "libbpf-1.6.0-3.el10.ppc64le",
+    "libbpf-debuginfo-1.6.0-3.el10.ppc64le",
+    "libbpf-debugsource-1.6.0-3.el10.ppc64le",
+    "libbpf-1.6.0-3.el10.aarch64",
+    "libbpf-debuginfo-1.6.0-3.el10.aarch64",
+    "libbpf-debugsource-1.6.0-3.el10.aarch64",
+    "libbpf-devel-1.6.0-3.el10.x86_64",
+    "libbpf-static-1.6.0-3.el10.x86_64",
+    "libbpf-devel-1.6.0-3.el10.ppc64le",
+    "libbpf-static-1.6.0-3.el10.ppc64le",
+    "libbpf-devel-1.6.0-3.el10.aarch64",
+    "libbpf-static-1.6.0-3.el10.aarch64",
+    "libbpf-devel-1.6.0-3.el10.s390x",
+    "libbpf-static-1.6.0-3.el10.s390x"
+  ],
+  "fixes": [
+    {
+      "id": "RHEL-108999",
+      "url": "https://issues.redhat.com/browse/RHEL-108999",
+      "description": "libbpf RPM build fails for z-stream/0-day"
+    }
+  ],
+  "full_text": "An update for libbpf is now available for Red Hat Enterprise Linux 10.\n\nFor detailed information on changes in this release, see the Red Hat Enterprise Linux 10 Release Notes linked from the References section."
+}

@@ -1,0 +1,24 @@
+{
+  "id": "ELSA-2026-0002",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2026-January/019424.html",
+  "synopsis": "[El-errata] ELSA-2026-0002 Moderate: Oracle Linux 10 tar security update",
+  "dateStr": "2026-January",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Security Advisory ELSA-2026-0002",
+  "description": "[2:1.35-9]\n- Fix a tiny mistake in the last patch affecting hardling extraction\n  (w/o visible consequences)\n\n[2:1.35-8]\n- Backport upstream changes to jailify extraction directory\n  Includes related gnulib changes to add openat2\n  Fixes CVE-2025-45582",
+  "affected_products": [
+    "Oracle Linux 10"
+  ],
+  "packages": [
+    "tar-1.35-9.el10_1.x86_64.rpm",
+    "tar-1.35-9.el10_1.aarch64.rpm"
+  ],
+  "cves": [
+    "CVE-2025-45582"
+  ],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Security Advisory ELSA-2026-0002\n\nhttp://linux.oracle.com/errata/ELSA-2026-0002.html\n\nThe following updated rpms for Oracle Linux 10 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\ntar-1.35-9.el10_1.x86_64.rpm\n\naarch64:\ntar-1.35-9.el10_1.aarch64.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol10/SRPMS-updates/tar-1.35-9.el10_1.src.rpm\n\nRelated CVEs:\n\nCVE-2025-45582\n\n\n\n\nDescription of changes:\n\n[2:1.35-9]\n- Fix a tiny mistake in the last patch affecting hardling extraction\n  (w/o visible consequences)\n\n[2:1.35-8]\n- Backport upstream changes to jailify extraction directory\n  Includes related gnulib changes to add openat2\n  Fixes CVE-2025-45582",
+  "vendor": "Oracle"
+}

@@ -1,0 +1,38 @@
+{
+  "id": "ELBA-2025-25764",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "UEK",
+  "title": " Unbreakable Enterprise kernel bug fix update",
+  "issuedDate": "2025-11-13T00:00:00Z",
+  "updatedDate": "2025-11-13T00:00:00Z",
+  "pubDate": "2025-11-13T00:00:00Z",
+  "dateStr": "2025-11-13",
+  "url": "https://linux.oracle.com/errata/ELBA-2025-25764.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 8.",
+  "description": "[5.15.0-314.193.5.4]\n- KVM: arm64: Fix softirq masking in FPSIMD register saving sequence (Will Deacon)  [Orabug: 38513233]",
+  "affected_products": [
+    "Oracle Linux 8 for x86_64",
+    "Oracle Linux 8 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "kernel-uek-5.15.0-314.193.5.4.el8uek.x86_64",
+    "kernel-uek-debug-devel-5.15.0-314.193.5.4.el8uek.x86_64",
+    "kernel-uek-container-debug-5.15.0-314.193.5.4.el8uek.x86_64",
+    "bpftool-5.15.0-314.193.5.4.el8uek.x86_64",
+    "kernel-uek-debug-modules-extra-5.15.0-314.193.5.4.el8uek.x86_64",
+    "kernel-uek-debug-5.15.0-314.193.5.4.el8uek.x86_64",
+    "kernel-uek-debug-core-5.15.0-314.193.5.4.el8uek.x86_64",
+    "kernel-uek-core-5.15.0-314.193.5.4.el8uek.x86_64",
+    "kernel-uek-5.15.0-314.193.5.4.el8uek.src",
+    "kernel-uek-container-5.15.0-314.193.5.4.el8uek.x86_64",
+    "kernel-uek-modules-extra-5.15.0-314.193.5.4.el8uek.x86_64",
+    "kernel-uek-devel-5.15.0-314.193.5.4.el8uek.x86_64",
+    "kernel-uek-doc-5.15.0-314.193.5.4.el8uek.noarch",
+    "kernel-uek-modules-5.15.0-314.193.5.4.el8uek.x86_64",
+    "kernel-uek-debug-modules-5.15.0-314.193.5.4.el8uek.x86_64"
+  ],
+  "full_text": "[5.15.0-314.193.5.4]\n- KVM: arm64: Fix softirq masking in FPSIMD register saving sequence (Will Deacon)  [Orabug: 38513233]\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2025-25764.html"
+}

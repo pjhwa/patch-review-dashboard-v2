@@ -1,0 +1,44 @@
+{
+  "id": "ELSA-2026-0445",
+  "vendor": "Oracle",
+  "type": "Security Advisory (ELSA)",
+  "title": " kernel security update",
+  "issuedDate": "2026-01-12T00:00:00Z",
+  "updatedDate": "2026-01-12T00:00:00Z",
+  "pubDate": "2026-01-12T00:00:00Z",
+  "dateStr": "2026-01-12",
+  "url": "https://linux.oracle.com/errata/ELSA-2026-0445.html",
+  "severity": "Moderate",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 9.",
+  "description": "[5.14.0-611.20.1]\n- Disable UKI signing [Orabug: 36571828]\n- Update Oracle Linux certificates (Kevin Lyons)\n- Disable signing for aarch64 (Ilya Okomin)\n- Oracle Linux RHCK Module Signing Key was added to the kernel trusted keys list (olkmod_signing_key.pem) [Orabug: 29539237]\n- Update x509.genkey [Orabug: 24817676]\n- Conflict with shim-ia32 and shim-x64 <= 15.3-1.0.5]\n- Remove upstream reference during boot (Kevin Lyons) [Orabug: 34729535]\n- Add Oracle Linux IMA certificates\n- Add new Oracle Linux Driver Signing (key 1) certificate [Orabug: 37985764]\n\n[5.14.0-611.20.1]\n- HID: multitouch: fix slab out-of-bounds access in mt_report_fixup() (CKI Backport Bot) [RHEL-124607] {CVE-2025-39806}\n- sctp: avoid NULL dereference when chunk data buffer is missing (CKI Backport Bot) [RHEL-134001] {CVE-2025-40240}\n- selftests/landlock: Add a new test for setuid() (Stepan Horacek) [RHEL-132712]\n- selftests/landlock: Split signal_scoping_threads tests (Stepan Horacek) [RHEL-132712]\n- landlock: Always allow signals between threads of the same process (Stepan Horacek) [RHEL-132712]\n- landlock: Prepare to add second errata (Stepan Horacek) [RHEL-132712]\n- landlock: Add the errata interface (Stepan Horacek) [RHEL-132712]\n- selftests/landlock: Test signal scoping for threads (Stepan Horacek) [RHEL-132712]\n- selftests/landlock: Test signal scoping (Stepan Horacek) [RHEL-132712]\n- landlock: Add signal scoping (Stepan Horacek) [RHEL-132712]\n\n[5.14.0-611.19.1]\n- scsi: st: Skip buffer flush for information ioctls (John Meneghini) [RHEL-133543]\n- scsi: st: Separate st-unique ioctl handling from SCSI common ioctl handling (John Meneghini) [RHEL-133543]\n- audit: fix out-of-bounds read in audit_compare_dname_path() (Richard Guy Briggs) [RHEL-119176] {CVE-2025-39840}\n\n[5.14.0-611.18.1]\n- NFS: remove revoked delegation from server's delegation list (Benjamin Coddington) [RHEL-134237]\n- redhat: use RELEASE_LOCALVERSION also for dist-get-tag (Jan Stancek)\n- redhat: introduce RELEASE_LOCALVERSION variable (Jan Stancek)\n\n[5.14.0-611.17.1]\n- smb: client: handle lack of IPC in dfs_cache_refresh() (Paulo Alcantara) [RHEL-126165]\n- smb: client: get rid of d_drop() in cifs_do_rename() (Paulo Alcantara) [RHEL-124917]\n- mm/memory-failure: fix VM_BUG_ON_PAGE(PagePoisoned(page)) when unpoison memory (CKI Backport Bot) [RHEL-119150] {CVE-2025-39883}",
+  "affected_products": [
+    "Oracle Linux 9 for x86_64",
+    "Oracle Linux 9 for aarch64"
+  ],
+  "cves": [
+    "CVE-2025-39806",
+    "CVE-2025-39840",
+    "CVE-2025-39883",
+    "CVE-2025-40240"
+  ],
+  "packages": [
+    "kernel-modules-extra-5.14.0-611.20.1.el9_7.x86_64",
+    "kernel-tools-libs-5.14.0-611.20.1.el9_7.x86_64",
+    "kernel-abi-stablelists-5.14.0-611.20.1.el9_7.noarch",
+    "kernel-modules-5.14.0-611.20.1.el9_7.x86_64",
+    "kernel-debug-modules-extra-5.14.0-611.20.1.el9_7.x86_64",
+    "kernel-core-5.14.0-611.20.1.el9_7.x86_64",
+    "kernel-debug-core-5.14.0-611.20.1.el9_7.x86_64",
+    "kernel-5.14.0-611.20.1.el9_7.x86_64",
+    "kernel-debug-modules-5.14.0-611.20.1.el9_7.x86_64",
+    "kernel-tools-5.14.0-611.20.1.el9_7.x86_64",
+    "kernel-debug-uki-virt-5.14.0-611.20.1.el9_7.x86_64",
+    "kernel-debug-5.14.0-611.20.1.el9_7.x86_64",
+    "kernel-5.14.0-611.20.1.el9_7.src",
+    "kernel-uki-virt-5.14.0-611.20.1.el9_7.x86_64",
+    "kernel-debug-modules-core-5.14.0-611.20.1.el9_7.x86_64",
+    "kernel-modules-core-5.14.0-611.20.1.el9_7.x86_64",
+    "kernel-uki-virt-addons-5.14.0-611.20.1.el9_7.x86_64"
+  ],
+  "full_text": "[5.14.0-611.20.1]\n- Disable UKI signing [Orabug: 36571828]\n- Update Oracle Linux certificates (Kevin Lyons)\n- Disable signing for aarch64 (Ilya Okomin)\n- Oracle Linux RHCK Module Signing Key was added to the kernel trusted keys list (olkmod_signing_key.pem) [Orabug: 29539237]\n- Update x509.genkey [Orabug: 24817676]\n- Conflict with shim-ia32 and shim-x64 <= 15.3-1.0.5]\n- Remove upstream reference during boot (Kevin Lyons) [Orabug: 34729535]\n- Add Oracle Linux IMA certificates\n- Add new Oracle Linux Driver Signing (key 1) certificate [Orabug: 37985764]\n\n[5.14.0-611.20.1]\n- HID: multitouch: fix slab out-of-bounds access in mt_report_fixup() (CKI Backport Bot) [RHEL-124607] {CVE-2025-39806}\n- sctp: avoid NULL dereference when chunk data buffer is missing (CKI Backport Bot) [RHEL-134001] {CVE-2025-40240}\n- selftests/landlock: Add a new test for setuid() (Stepan Horacek) [RHEL-132712]\n- selftests/landlock: Split signal_scoping_threads tests (Stepan Horacek) [RHEL-132712]\n- landlock: Always allow signals between threads of the same process (Stepan Horacek) [RHEL-132712]\n- landlock: Prepare to add second errata (Stepan Horacek) [RHEL-132712]\n- landlock: Add the errata interface (Stepan Horacek) [RHEL-132712]\n- selftests/landlock: Test signal scoping for threads (Stepan Horacek) [RHEL-132712]\n- selftests/landlock: Test signal scoping (Stepan Horacek) [RHEL-132712]\n- landlock: Add signal scoping (Stepan Horacek) [RHEL-132712]\n\n[5.14.0-611.19.1]\n- scsi: st: Skip buffer flush for information ioctls (John Meneghini) [RHEL-133543]\n- scsi: st: Separate st-unique ioctl handling from SCSI common ioctl handling (John Meneghini) [RHEL-133543]\n- audit: fix out-of-bounds read in audit_compare_dname_path() (Richard Guy Briggs) [RHEL-119176] {CVE-2025-39840}\n\n[5.14.0-611.18.1]\n- NFS: remove revoked delegation from server's delegation list (Benjamin Coddington) [RHEL-134237]\n- redhat: use RELEASE_LOCALVERSION also for dist-get-tag (Jan Stancek)\n- redhat: introduce RELEASE_LOCALVERSION variable (Jan Stancek)\n\n[5.14.0-611.17.1]\n- smb: client: handle lack of IPC in dfs_cache_refresh() (Paulo Alcantara) [RHEL-126165]\n- smb: client: get rid of d_drop() in cifs_do_rename() (Paulo Alcantara) [RHEL-124917]\n- mm/memory-failure: fix VM_BUG_ON_PAGE(PagePoisoned(page)) when unpoison memory (CKI Backport Bot) [RHEL-119150] {CVE-2025-39883}\n\nReferences:\nhttps://linux.oracle.com/errata/ELSA-2026-0445.html\nhttps://linux.oracle.com/cve/CVE-2025-39806.html\nhttps://linux.oracle.com/cve/CVE-2025-39840.html\nhttps://linux.oracle.com/cve/CVE-2025-39883.html\nhttps://linux.oracle.com/cve/CVE-2025-40240.html"
+}

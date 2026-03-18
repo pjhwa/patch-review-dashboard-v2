@@ -1,0 +1,31 @@
+{
+  "id": "ELSA-2025-21702",
+  "vendor": "Oracle",
+  "type": "Security Advisory (ELSA)",
+  "kernel_type": "AppStream",
+  "title": " podman security update",
+  "issuedDate": "2025-11-25T00:00:00Z",
+  "updatedDate": "2025-11-25T00:00:00Z",
+  "pubDate": "2025-11-25T00:00:00Z",
+  "dateStr": "2025-11-25",
+  "url": "https://linux.oracle.com/errata/ELSA-2025-21702.html",
+  "severity": "Important",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 9.",
+  "description": "[5.6.0-7.0.1]\n- Add devices on container startup, not on creation\n- overlay: Put should ignore ENINVAL for Unmount [Orabug: 36234694]\n- Drop nmap-ncat requirement and skip ignore-socket test case [Orabug: 34117404]\n\n[6:5.6.0-7]\n- update to the latest content of https://github.com/containers/podman/tree/v5.6-rhel\n  (https://github.com/containers/podman/commit/2791007)\n- fixes '[Minor Incident] CVE-2025-52881 podman: container escape and denial of service due to arbitrary write gadgets and procfs write redirects [rhel-9.7.z]'\n- Resolves: RHEL-126913\n\n[6:5.6.0-6]\n- update to the latest content of https://github.com/containers/podman/tree/v5.6-rhel\n  (https://github.com/containers/podman/commit/61231e1)\n- fixes 'Timeouts while pushing Sigstore logs to Rekor - [RHEL 9.7] 0day'\n- Resolves: RHEL-111076\n\n[6:5.6.0-5]\n- rebuild as last build was built in the wrong tag\n- Related: RHEL-110317\n\n[6:5.6.0-4]\n- update to the latest content of https://github.com/containers/podman/tree/v5.6-rhel\n  (https://github.com/containers/podman/commit/c5a3735)\n- fixes 'Can not find network create and rm message from podman event when set --events-backend to journald - [RHEL 9.7] 0day'\n- Resolves: RHEL-110317\n\n[6:5.6.0-3]\n- update to the latest content of https://github.com/containers/podman/tree/v5.6-rhel\n  (https://github.com/containers/podman/commit/7078b79)\n- fixes 'CVE-2025-9566 podman: Podman kube play command may overwrite host files [rhel-9.7]'\n- Resolves: RHEL-113151",
+  "affected_products": [
+    "Oracle Linux 9 for x86_64",
+    "Oracle Linux 9 for aarch64"
+  ],
+  "cves": [
+    "CVE-2025-52881"
+  ],
+  "packages": [
+    "podman-5.6.0-7.0.1.el9_7.src",
+    "podman-5.6.0-7.0.1.el9_7.x86_64",
+    "podman-docker-5.6.0-7.0.1.el9_7.noarch",
+    "podman-tests-5.6.0-7.0.1.el9_7.x86_64",
+    "podman-remote-5.6.0-7.0.1.el9_7.x86_64",
+    "podman-plugins-5.6.0-7.0.1.el9_7.x86_64"
+  ],
+  "full_text": "[5.6.0-7.0.1]\n- Add devices on container startup, not on creation\n- overlay: Put should ignore ENINVAL for Unmount [Orabug: 36234694]\n- Drop nmap-ncat requirement and skip ignore-socket test case [Orabug: 34117404]\n\n[6:5.6.0-7]\n- update to the latest content of https://github.com/containers/podman/tree/v5.6-rhel\n  (https://github.com/containers/podman/commit/2791007)\n- fixes '[Minor Incident] CVE-2025-52881 podman: container escape and denial of service due to arbitrary write gadgets and procfs write redirects [rhel-9.7.z]'\n- Resolves: RHEL-126913\n\n[6:5.6.0-6]\n- update to the latest content of https://github.com/containers/podman/tree/v5.6-rhel\n  (https://github.com/containers/podman/commit/61231e1)\n- fixes 'Timeouts while pushing Sigstore logs to Rekor - [RHEL 9.7] 0day'\n- Resolves: RHEL-111076\n\n[6:5.6.0-5]\n- rebuild as last build was built in the wrong tag\n- Related: RHEL-110317\n\n[6:5.6.0-4]\n- update to the latest content of https://github.com/containers/podman/tree/v5.6-rhel\n  (https://github.com/containers/podman/commit/c5a3735)\n- fixes 'Can not find network create and rm message from podman event when set --events-backend to journald - [RHEL 9.7] 0day'\n- Resolves: RHEL-110317\n\n[6:5.6.0-3]\n- update to the latest content of https://github.com/containers/podman/tree/v5.6-rhel\n  (https://github.com/containers/podman/commit/7078b79)\n- fixes 'CVE-2025-9566 podman: Podman kube play command may overwrite host files [rhel-9.7]'\n- Resolves: RHEL-113151\n\nReferences:\nhttps://linux.oracle.com/errata/ELSA-2025-21702.html\nhttps://linux.oracle.com/cve/CVE-2025-52881.html"
+}

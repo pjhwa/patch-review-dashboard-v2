@@ -1,0 +1,22 @@
+{
+  "id": "ELSA-2026-50061",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2026-January/019637.html",
+  "synopsis": "[El-errata] New Ksplice updates for UEKR6 5.4.17 on OL7 and OL8 (ELSA-2026-50061, ELSA-2026-50071)",
+  "dateStr": "2026-January",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Synopsis: ELSA-2026-50061, ELSA-2026-50071 can now be patched using Ksplice",
+  "description": "",
+  "affected_products": [],
+  "packages": [],
+  "cves": [
+    "CVE-2025-39964",
+    "CVE-2025-40022",
+    "CVE-2025-40248",
+    "CVE-2025-40280"
+  ],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Synopsis: ELSA-2026-50061, ELSA-2026-50071 can now be patched using Ksplice\nCVEs: CVE-2025-39964 CVE-2025-40022 CVE-2025-40248 CVE-2025-40280\n\nUsers with Oracle Linux Premier Support can now use Ksplice to patch\nagainst the latest Oracle Linux Security Advisory, ELSA-2026-50061.\nMore information about this errata can be found at\nhttps://linux.oracle.com/errata/ELSA-2026-50061.html\n\nINSTALLING THE UPDATES\n\nWe recommend that all users of Ksplice Uptrack running UEKR6 5.4.17 on\nOL7 and OL8 install these updates.\n\nOn systems that have \"autoinstall = yes\" in /etc/uptrack/uptrack.conf,\nthese updates will be installed automatically and you do not need to\ntake any action.\n\nAlternatively, you can install these updates by running:\n\n# /usr/sbin/uptrack-upgrade -y\n\n\nDESCRIPTION\n\n* CVE-2025-40022, CVE-2025-39964: Improper handling of concurrent input in crypto subsystem.\n\nOrabug: 38855313\n\n\n* CVE-2025-40248: Use-after-free in Virtual Socket protocol driver.\n\nOrabug: 38855319\n\n\n* CVE-2025-40280: Use-after-free in TIPC Protocol driver.\n\nOrabug: 38855323\n\n\nSUPPORT\n\nKsplice support is available at ksplice-support_ww at oracle.com.\n\n\n-------------- next part --------------\nA non-text attachment was scrubbed...\nName: signature.asc\nType: application/pgp-signature\nSize: 833 bytes\nDesc: This is a digitally signed message part\nURL: <http://oss.oracle.com/pipermail/el-errata/attachments/20260130/fe062fe1/attachment.sig>",
+  "vendor": "Oracle"
+}

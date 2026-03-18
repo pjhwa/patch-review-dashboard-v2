@@ -1,0 +1,30 @@
+{
+  "id": "RHBA-2026:2348",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: rh-podman-desktop bug fix and enhancement update",
+  "issuedDate": "2026-02-12T15:08:59Z",
+  "updatedDate": "2026-02-12T15:08:59Z",
+  "pubDate": "2026-02-12T15:08:59Z",
+  "dateStr": "2026-02-12",
+  "url": "https://access.redhat.com/errata/RHBA-2026:2348",
+  "severity": "None",
+  "overview": "An update for rh-podman-desktop is now available for Red Hat Enterprise Linux 10.",
+  "description": "Red Hat build of Podman Desktop is a graphical tool for managing containers using Podman. It allows users to run, manage, and configure containers and container images using a desktop GUI.Bug Fix(es) and Enhancement(s): Update RH Podman Desktop to 1.0 (JIRA:RHEL-146064)",
+  "affected_products": [
+    "Red Hat Enterprise Linux for x86_64 10 x86_64"
+  ],
+  "cves": [],
+  "packages": [
+    "rh-podman-desktop-1.0.0-4.el10_1.src",
+    "rh-podman-desktop-1.0.0-4.el10_1.x86_64"
+  ],
+  "fixes": [
+    {
+      "id": "RHEL-146064",
+      "url": "https://issues.redhat.com/browse/RHEL-146064",
+      "description": "Update RH Podman Desktop to 1.0"
+    }
+  ],
+  "full_text": "An update for rh-podman-desktop is now available for Red Hat Enterprise Linux 10.\n\nRed Hat build of Podman Desktop is a graphical tool for managing containers using Podman. It allows users to run, manage, and configure containers and container images using a desktop GUI.Bug Fix(es) and Enhancement(s): Update RH Podman Desktop to 1.0 (JIRA:RHEL-146064)"
+}

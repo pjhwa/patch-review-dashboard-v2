@@ -1,0 +1,23 @@
+{
+  "id": "RHSA-2026:2233",
+  "vendor": "Red Hat",
+  "url": "https://access.redhat.com/errata/RHSA-2026:2233",
+  "pubDate": "2026-02-09T02:15:36.000Z",
+  "dateStr": "2026-02-09",
+  "severity": "Moderate",
+  "title": "Red Hat Security Advisory: python3.12 security update",
+  "overview": "An update for python3.12 is now available for Red Hat Enterprise Linux 10.0 Extended Update Support.\n\nRed Hat Product Security has rated this update as having a security impact of Moderate. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "description": "An update for python3.12 is now available for Red Hat Enterprise Linux 10.0 Extended Update Support.\n\nRed Hat Product Security has rated this update as having a security impact of Moderate. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux AppStream EUS (v. 10.0)",
+    "Red Hat Enterprise Linux BaseOS EUS (v. 10.0)",
+    "Red Hat Enterprise Linux CodeReady Linux Builder EUS (v. 10.0)"
+  ],
+  "cves": [
+    "CVE-2025-12084",
+    "CVE-2025-13836"
+  ],
+  "packages": [],
+  "fixes": "",
+  "full_text": "Red Hat Security Advisory: python3.12 security update\n\nAn update for python3.12 is now available for Red Hat Enterprise Linux 10.0 Extended Update Support.\n\nRed Hat Product Security has rated this update as having a security impact of Moderate. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nAn update for python3.12 is now available for Red Hat Enterprise Linux 10.0 Extended Update Support.\n\nRed Hat Product Security has rated this update as having a security impact of Moderate. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nUpdated Packages:\npython3.12-3.12.9-2.el10_0.6.src.rpm\npython-unversioned-command-3.12.9-2.el10_0.6.noarch.rpm\npython3-3.12.9-2.el10_0.6.x86_64.rpm\npython3-devel-3.12.9-2.el10_0.6.x86_64.rpm\npython3-libs-3.12.9-2.el10_0.6.x86_64.rpm\npython3-tkinter-3.12.9-2.el10_0.6.x86_64.rpm\npython3.12-debuginfo-3.12.9-2.el10_0.6.x86_64.rpm\npython3.12-debugsource-3.12.9-2.el10_0.6.x86_64.rpm\npython3-3.12.9-2.el10_0.6.s390x.rpm\npython3-devel-3.12.9-2.el10_0.6.s390x.rpm\npython3-libs-3.12.9-2.el10_0.6.s390x.rpm\npython3-tkinter-3.12.9-2.el10_0.6.s390x.rpm\npython3.12-debuginfo-3.12.9-2.el10_0.6.s390x.rpm\npython3.12-debugsource-3.12.9-2.el10_0.6.s390x.rpm\npython3-3.12.9-2.el10_0.6.ppc64le.rpm\npython3-devel-3.12.9-2.el10_0.6.ppc64le.rpm\npython3-libs-3.12.9-2.el10_0.6.ppc64le.rpm\npython3-tkinter-3.12.9-2.el10_0.6.ppc64le.rpm\npython3.12-debuginfo-3.12.9-2.el10_0.6.ppc64le.rpm\npython3.12-debugsource-3.12.9-2.el10_0.6.ppc64le.rpm\npython3-3.12.9-2.el10_0.6.aarch64.rpm\npython3-devel-3.12.9-2.el10_0.6.aarch64.rpm\npython3-libs-3.12.9-2.el10_0.6.aarch64.rpm\npython3-tkinter-3.12.9-2.el10_0.6.aarch64.rpm\npython3.12-debuginfo-3.12.9-2.el10_0.6.aarch64.rpm\npython3.12-debugsource-3.12.9-2.el10_0.6.aarch64.rpm\npython3-debug-3.12.9-2.el10_0.6.x86_64.rpm\npython3-idle-3.12.9-2.el10_0.6.x86_64.rpm\npython3-test-3.12.9-2.el10_0.6.x86_64.rpm\npython3-debug-3.12.9-2.el10_0.6.ppc64le.rpm\npython3-idle-3.12.9-2.el10_0.6.ppc64le.rpm\npython3-test-3.12.9-2.el10_0.6.ppc64le.rpm\npython3-debug-3.12.9-2.el10_0.6.s390x.rpm\npython3-idle-3.12.9-2.el10_0.6.s390x.rpm\npython3-test-3.12.9-2.el10_0.6.s390x.rpm\npython3-debug-3.12.9-2.el10_0.6.aarch64.rpm\npython3-idle-3.12.9-2.el10_0.6.aarch64.rpm\npython3-test-3.12.9-2.el10_0.6.aarch64.rpm\n\nCVE-2025-12084: When building nested elements using xml.dom.minidom methods such as appendChild() that have a dependency on _clear_id_cache() the algorithm is quadratic. Availability can be impacted when building excessively nested documents.\n\nCVE-2025-13836: A flaw was found in the http.client module in the Python standard library. When reading an HTTP response from a server, if no read amount is specified, the default behavior will be to use Content-Length. This issue allows a malicious server to cause the client to read large amounts of data into memory, potentially causing memory allocations errors, swapping, out-of-memory conditions or even system freezes."
+}

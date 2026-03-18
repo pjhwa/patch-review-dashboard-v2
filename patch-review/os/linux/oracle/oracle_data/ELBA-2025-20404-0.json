@@ -1,0 +1,26 @@
+{
+  "id": "ELBA-2025-20404-0",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "AppStream",
+  "title": "pykickstart bug fix and enhancement update",
+  "issuedDate": "2025-11-25T00:00:00Z",
+  "updatedDate": "2025-11-25T00:00:00Z",
+  "pubDate": "2025-11-25T00:00:00Z",
+  "dateStr": "2025-11-25",
+  "url": "https://linux.oracle.com/errata/ELBA-2025-20404-0.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 10.",
+  "description": "[3.52.9-1.0.1]\n- Support btrfs with --autopart on uek\n  [Orabug: 37413006]\n- Revert back to Fedora 38 Autopart handler to support BTRFS\n  [Orabug: 37413006]\n- Retain the btrfs command in RHEL10_BTRFS class\n  [Orabug: 37119393]\n- Support btrfs partition command in RHEL9_Partition class\n  [Orabug: 33796791]\n- Sync OL 8 command handlers with upstream [Orabug: 31683439]\n- Don't exit installer if btrfs is specified for autopart [Orabug: 31192722]\n- Don't exit installer with message that btrfs is unsupported [Orabug: 31192722]\n- Fix crash when using btrfs [Orabug: 30792917]\n- Remove the RHSM command [Orabug: 30902364]\n- drop syspurpose command [Orabug: 29443881]\n- Include the OL8 Handler class in the commandMap [Orabug: 29373077]\n- Make sure version is output properly for OL [Orabug: 20440019]\n- Alter tools to recognize OL version strings [Orabug: 20440019]\n- Enable Oracle Linux handlers\n\n[3.52.9-1]\n- workflows: Switch to using ubuntu-latest (bcl)\n  Related: RHEL-80086\n- Do not remove 'md' prefix from RAID names (vtrefny)\n  Resolves: RHEL-80086",
+  "affected_products": [
+    "Oracle Linux 10 for x86_64",
+    "Oracle Linux 10 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "pykickstart-3.52.9-1.0.1.el10.noarch",
+    "pykickstart-3.52.9-1.0.1.el10.src",
+    "python3-kickstart-3.52.9-1.0.1.el10.noarch"
+  ],
+  "full_text": "[3.52.9-1.0.1]\n- Support btrfs with --autopart on uek\n  [Orabug: 37413006]\n- Revert back to Fedora 38 Autopart handler to support BTRFS\n  [Orabug: 37413006]\n- Retain the btrfs command in RHEL10_BTRFS class\n  [Orabug: 37119393]\n- Support btrfs partition command in RHEL9_Partition class\n  [Orabug: 33796791]\n- Sync OL 8 command handlers with upstream [Orabug: 31683439]\n- Don't exit installer if btrfs is specified for autopart [Orabug: 31192722]\n- Don't exit installer with message that btrfs is unsupported [Orabug: 31192722]\n- Fix crash when using btrfs [Orabug: 30792917]\n- Remove the RHSM command [Orabug: 30902364]\n- drop syspurpose command [Orabug: 29443881]\n- Include the OL8 Handler class in the commandMap [Orabug: 29373077]\n- Make sure version is output properly for OL [Orabug: 20440019]\n- Alter tools to recognize OL version strings [Orabug: 20440019]\n- Enable Oracle Linux handlers\n\n[3.52.9-1]\n- workflows: Switch to using ubuntu-latest (bcl)\n  Related: RHEL-80086\n- Do not remove 'md' prefix from RAID names (vtrefny)\n  Resolves: RHEL-80086\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2025-20404-0.html"
+}

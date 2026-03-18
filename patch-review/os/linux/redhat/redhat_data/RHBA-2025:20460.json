@@ -1,0 +1,38 @@
+{
+  "id": "RHBA-2025:20460",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: orca bug fix and enhancement update",
+  "issuedDate": "2025-11-11T07:26:37Z",
+  "updatedDate": "2025-11-11T07:26:37Z",
+  "pubDate": "2025-11-11T07:26:37Z",
+  "dateStr": "2025-11-11",
+  "url": "https://access.redhat.com/errata/RHBA-2025:20460",
+  "severity": "None",
+  "overview": "An update for orca is now available for Red Hat Enterprise Linux 10.",
+  "description": "For detailed information on changes in this release, see the Red Hat Enterprise Linux 10 Release Notes linked from the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux for ARM 64",
+    "Red Hat Enterprise Linux for Power, little endian",
+    "Red Hat Enterprise Linux for IBM z Systems",
+    "Red Hat Enterprise Linux for x86_64 10 x86_64"
+  ],
+  "cves": [],
+  "packages": [
+    "orca-48.0-1.el10.src",
+    "orca-48.0-1.el10.noarch"
+  ],
+  "fixes": [
+    {
+      "id": "RHEL-65520",
+      "url": "https://issues.redhat.com/browse/RHEL-65520",
+      "description": "No API for screen readers to receive keyboard events under a Wayland session"
+    },
+    {
+      "id": "RHEL-83399",
+      "url": "https://issues.redhat.com/browse/RHEL-83399",
+      "description": "Rebase to Orca 48"
+    }
+  ],
+  "full_text": "An update for orca is now available for Red Hat Enterprise Linux 10.\n\nFor detailed information on changes in this release, see the Red Hat Enterprise Linux 10 Release Notes linked from the References section."
+}

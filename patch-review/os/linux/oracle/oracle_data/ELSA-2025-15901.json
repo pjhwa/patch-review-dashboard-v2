@@ -1,0 +1,29 @@
+{
+  "id": "ELSA-2025-15901",
+  "vendor": "Oracle",
+  "type": "Security Advisory (ELSA)",
+  "kernel_type": "AppStream",
+  "title": " podman security update",
+  "issuedDate": "2025-09-16T00:00:00Z",
+  "updatedDate": "2025-09-16T00:00:00Z",
+  "pubDate": "2025-09-16T00:00:00Z",
+  "dateStr": "2025-09-16",
+  "url": "https://linux.oracle.com/errata/ELSA-2025-15901.html",
+  "severity": "Important",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 10.",
+  "description": "[6:5.4.0-13.0.1]\n- Add devices on container startup, not on creation\n- overlay: Put should ignore ENINVAL for Unmount [Orabug: 36234694]\n- Drop nmap-ncat requirement and skip ignore-socket test case [Orabug: 34117404]\n\n[6:5.4.0-13]\n- update to the latest content of https://github.com/containers/podman/tree/v5.4-rhel\n  (https://github.com/containers/podman/commit/b0d88c7)\n- fixes 'CVE-2025-9566 podman: Podman kube play command may overwrite host files [rhel-9.6.z]'\n- Resolves: RHEL-113152",
+  "affected_products": [
+    "Oracle Linux 10 for x86_64",
+    "Oracle Linux 10 for aarch64"
+  ],
+  "cves": [
+    "CVE-2025-9566"
+  ],
+  "packages": [
+    "podman-5.4.0-13.0.1.el10_0.src",
+    "podman-5.4.0-13.0.1.el10_0.x86_64",
+    "podman-remote-5.4.0-13.0.1.el10_0.x86_64",
+    "podman-docker-5.4.0-13.0.1.el10_0.noarch"
+  ],
+  "full_text": "[6:5.4.0-13.0.1]\n- Add devices on container startup, not on creation\n- overlay: Put should ignore ENINVAL for Unmount [Orabug: 36234694]\n- Drop nmap-ncat requirement and skip ignore-socket test case [Orabug: 34117404]\n\n[6:5.4.0-13]\n- update to the latest content of https://github.com/containers/podman/tree/v5.4-rhel\n  (https://github.com/containers/podman/commit/b0d88c7)\n- fixes 'CVE-2025-9566 podman: Podman kube play command may overwrite host files [rhel-9.6.z]'\n- Resolves: RHEL-113152\n\nReferences:\nhttps://linux.oracle.com/errata/ELSA-2025-15901.html\nhttps://linux.oracle.com/cve/CVE-2025-9566.html"
+}

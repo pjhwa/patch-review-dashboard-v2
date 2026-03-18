@@ -1,0 +1,20 @@
+{
+  "id": "RHSA-2025:23747",
+  "vendor": "Red Hat",
+  "url": "https://access.redhat.com/errata/RHSA-2025:23747",
+  "pubDate": "2025-12-22T01:42:23.000Z",
+  "dateStr": "2025-12-22",
+  "severity": "Moderate",
+  "title": "Red Hat Security Advisory: grafana security update",
+  "overview": "An update for grafana is now available for Red Hat Enterprise Linux 9.2 Update Services for SAP Solutions.\n\nRed Hat Product Security has rated this update as having a security impact of Moderate. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "description": "An update for grafana is now available for Red Hat Enterprise Linux 9.2 Update Services for SAP Solutions.\n\nRed Hat Product Security has rated this update as having a security impact of Moderate. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux AppStream E4S (v.9.2)"
+  ],
+  "cves": [
+    "CVE-2025-58183"
+  ],
+  "packages": [],
+  "fixes": "",
+  "full_text": "Red Hat Security Advisory: grafana security update\n\nAn update for grafana is now available for Red Hat Enterprise Linux 9.2 Update Services for SAP Solutions.\n\nRed Hat Product Security has rated this update as having a security impact of Moderate. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nAn update for grafana is now available for Red Hat Enterprise Linux 9.2 Update Services for SAP Solutions.\n\nRed Hat Product Security has rated this update as having a security impact of Moderate. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nUpdated Packages:\ngrafana-9.0.9-9.el9_2.src.rpm\ngrafana-9.0.9-9.el9_2.x86_64.rpm\ngrafana-debuginfo-9.0.9-9.el9_2.x86_64.rpm\ngrafana-debugsource-9.0.9-9.el9_2.x86_64.rpm\ngrafana-9.0.9-9.el9_2.ppc64le.rpm\ngrafana-debuginfo-9.0.9-9.el9_2.ppc64le.rpm\ngrafana-debugsource-9.0.9-9.el9_2.ppc64le.rpm\ngrafana-9.0.9-9.el9_2.aarch64.rpm\ngrafana-debuginfo-9.0.9-9.el9_2.aarch64.rpm\ngrafana-debugsource-9.0.9-9.el9_2.aarch64.rpm\ngrafana-9.0.9-9.el9_2.s390x.rpm\ngrafana-debuginfo-9.0.9-9.el9_2.s390x.rpm\ngrafana-debugsource-9.0.9-9.el9_2.s390x.rpm\n\nCVE-2025-58183: A flaw was found in the archive/tar package in the Go standard library. tar.Reader does not set a maximum size on the number of sparse region data blocks in GNU tar pax 1.0 sparse files. A specially crafted tar archive with a pax header indicating a big number of sparse regions can cause a Go program to try to allocate a large amount of memory, causing an out-of-memory condition and resulting in a denial of service."
+}

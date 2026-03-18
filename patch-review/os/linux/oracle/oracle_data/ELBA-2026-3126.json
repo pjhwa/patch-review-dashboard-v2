@@ -1,0 +1,30 @@
+{
+  "id": "ELBA-2026-3126",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "AppStream",
+  "title": "389-ds:1.4 bug fix and enhancement update",
+  "issuedDate": "2026-02-24T00:00:00Z",
+  "updatedDate": "2026-02-24T00:00:00Z",
+  "pubDate": "2026-02-24T00:00:00Z",
+  "dateStr": "2026-02-24",
+  "url": "https://linux.oracle.com/errata/ELBA-2026-3126.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 8.",
+  "description": "[1.4.3.39-22]\n- Resolves: RHEL-148485 - Upgrading IDM to latest version: 389-ds-base and ipa-server breaks replication [rhel-8.10.z]\n\n[1.4.3.39-21]\n- Resolves: RHEL-141419 - (&(cn:dn:=groups)) no longer returns results [rhel-8.10.z]\n- Resolves: RHEL-140272 - ipa-healthcheck is complaining about missing or\n                          incorrectly configured system indexes. [rhel-8.10.z]",
+  "affected_products": [
+    "Oracle Linux 8 for x86_64",
+    "Oracle Linux 8 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "389-ds-base-1.4.3.39-22.module+el8.10.0+90818+58a94ceb.src",
+    "389-ds-base-snmp-1.4.3.39-22.module+el8.10.0+90818+58a94ceb.x86_64",
+    "389-ds-base-devel-1.4.3.39-22.module+el8.10.0+90818+58a94ceb.x86_64",
+    "389-ds-base-libs-1.4.3.39-22.module+el8.10.0+90818+58a94ceb.x86_64",
+    "389-ds-base-legacy-tools-1.4.3.39-22.module+el8.10.0+90818+58a94ceb.x86_64",
+    "389-ds-base-1.4.3.39-22.module+el8.10.0+90818+58a94ceb.x86_64",
+    "python3-lib389-1.4.3.39-22.module+el8.10.0+90818+58a94ceb.noarch"
+  ],
+  "full_text": "[1.4.3.39-22]\n- Resolves: RHEL-148485 - Upgrading IDM to latest version: 389-ds-base and ipa-server breaks replication [rhel-8.10.z]\n\n[1.4.3.39-21]\n- Resolves: RHEL-141419 - (&(cn:dn:=groups)) no longer returns results [rhel-8.10.z]\n- Resolves: RHEL-140272 - ipa-healthcheck is complaining about missing or\n                          incorrectly configured system indexes. [rhel-8.10.z]\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2026-3126.html"
+}

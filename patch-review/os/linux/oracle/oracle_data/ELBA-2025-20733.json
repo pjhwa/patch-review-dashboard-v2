@@ -1,0 +1,26 @@
+{
+  "id": "ELBA-2025-20733",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "AppStream",
+  "title": "lftp bug fix and enhancement update",
+  "issuedDate": "2025-11-17T00:00:00Z",
+  "updatedDate": "2025-11-17T00:00:00Z",
+  "pubDate": "2025-11-17T00:00:00Z",
+  "dateStr": "2025-11-17",
+  "url": "https://linux.oracle.com/errata/ELBA-2025-20733.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 9.",
+  "description": "[4.9.2-7]\n- Do not wait for server close-notify on TLS close\n- Resolves: RHEL-100406\n\n[4.9.2-6]\n- Improve fix for close of TLS connection\n- Resolves: RHEL-90997\n\n[4.9.2-5]\n- Ensure proper closing of TLS connection\n- Resolves: RHEL-90997",
+  "affected_products": [
+    "Oracle Linux 9 for x86_64",
+    "Oracle Linux 9 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "lftp-4.9.2-7.el9.src",
+    "lftp-4.9.2-7.el9.i686",
+    "lftp-4.9.2-7.el9.x86_64"
+  ],
+  "full_text": "[4.9.2-7]\n- Do not wait for server close-notify on TLS close\n- Resolves: RHEL-100406\n\n[4.9.2-6]\n- Improve fix for close of TLS connection\n- Resolves: RHEL-90997\n\n[4.9.2-5]\n- Ensure proper closing of TLS connection\n- Resolves: RHEL-90997\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2025-20733.html"
+}

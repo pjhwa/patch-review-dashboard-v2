@@ -1,0 +1,28 @@
+{
+  "id": "ELBA-2025-23289",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2025-December/019365.html",
+  "synopsis": "[El-errata] ELBA-2025-23289 Oracle Linux 10 ignition bug fix and enhancement update",
+  "dateStr": "2025-December",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Bug Fix Advisory ELBA-2025-23289",
+  "description": "[2.22.0-3.0.1]\n- Remove sgdisk requirement and create symbolic link to sgdisk [Orabug: 37470782]\n\n[2.22.0-3]\n- spec: backport fips fix and update build with\n  goexperiment=strictfipsruntime\n\n[2.22.0-2]\n- RHEL-125909: Backport patch to fix device mapper partitioning",
+  "affected_products": [
+    "Oracle Linux 10"
+  ],
+  "packages": [
+    "ignition-2.22.0-3.0.1.el10_1.x86_64.rpm",
+    "ignition-edge-2.22.0-3.0.1.el10_1.x86_64.rpm",
+    "ignition-grub-2.22.0-3.0.1.el10_1.x86_64.rpm",
+    "ignition-validate-2.22.0-3.0.1.el10_1.x86_64.rpm",
+    "ignition-2.22.0-3.0.1.el10_1.aarch64.rpm",
+    "ignition-edge-2.22.0-3.0.1.el10_1.aarch64.rpm",
+    "ignition-grub-2.22.0-3.0.1.el10_1.aarch64.rpm",
+    "ignition-validate-2.22.0-3.0.1.el10_1.aarch64.rpm"
+  ],
+  "cves": [],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Bug Fix Advisory ELBA-2025-23289\n\nhttp://linux.oracle.com/errata/ELBA-2025-23289.html\n\nThe following updated rpms for Oracle Linux 10 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\nignition-2.22.0-3.0.1.el10_1.x86_64.rpm\nignition-edge-2.22.0-3.0.1.el10_1.x86_64.rpm\nignition-grub-2.22.0-3.0.1.el10_1.x86_64.rpm\nignition-validate-2.22.0-3.0.1.el10_1.x86_64.rpm\n\naarch64:\nignition-2.22.0-3.0.1.el10_1.aarch64.rpm\nignition-edge-2.22.0-3.0.1.el10_1.aarch64.rpm\nignition-grub-2.22.0-3.0.1.el10_1.aarch64.rpm\nignition-validate-2.22.0-3.0.1.el10_1.aarch64.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol10/SRPMS-updates/ignition-2.22.0-3.0.1.el10_1.src.rpm\n\n\n\nDescription of changes:\n\n[2.22.0-3.0.1]\n- Remove sgdisk requirement and create symbolic link to sgdisk [Orabug: 37470782]\n\n[2.22.0-3]\n- spec: backport fips fix and update build with\n  goexperiment=strictfipsruntime\n\n[2.22.0-2]\n- RHEL-125909: Backport patch to fix device mapper partitioning",
+  "vendor": "Oracle"
+}

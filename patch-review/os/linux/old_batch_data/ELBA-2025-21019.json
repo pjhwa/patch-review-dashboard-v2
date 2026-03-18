@@ -1,0 +1,22 @@
+{
+  "id": "ELBA-2025-21019",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2025-December/019182.html",
+  "synopsis": "[El-errata] ELBA-2025-21019 Oracle Linux 10 realmd bug fix and enhancement update",
+  "dateStr": "2025-December",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Bug Fix Advisory ELBA-2025-21019",
+  "description": "[0.17.1-13]\n- add renew command\n  Resolves: RHEL-117645",
+  "affected_products": [
+    "Oracle Linux 10"
+  ],
+  "packages": [
+    "realmd-0.17.1-13.el10_1.x86_64.rpm",
+    "realmd-0.17.1-13.el10_1.aarch64.rpm"
+  ],
+  "cves": [],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Bug Fix Advisory ELBA-2025-21019\n\nhttp://linux.oracle.com/errata/ELBA-2025-21019.html\n\nThe following updated rpms for Oracle Linux 10 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\nrealmd-0.17.1-13.el10_1.x86_64.rpm\n\naarch64:\nrealmd-0.17.1-13.el10_1.aarch64.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol10/SRPMS-updates/realmd-0.17.1-13.el10_1.src.rpm\n\n\n\nDescription of changes:\n\n[0.17.1-13]\n- add renew command\n  Resolves: RHEL-117645",
+  "vendor": "Oracle"
+}

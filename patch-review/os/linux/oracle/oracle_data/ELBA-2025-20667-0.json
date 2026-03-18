@@ -1,0 +1,26 @@
+{
+  "id": "ELBA-2025-20667-0",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "AppStream",
+  "title": "gnome-control-center bug fix and enhancement update",
+  "issuedDate": "2025-11-17T00:00:00Z",
+  "updatedDate": "2025-11-17T00:00:00Z",
+  "pubDate": "2025-11-17T00:00:00Z",
+  "dateStr": "2025-11-17",
+  "url": "https://linux.oracle.com/errata/ELBA-2025-20667-0.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 9.",
+  "description": "[40.0-42]\n- Fix crash with non-supported tuned-ppd profiles\n\n[40.0-41]\n- Update zh_CN translations for Keyboard settings\n  Related: RHEL-11909\n\n[40.0-40]\n- Allow launching subscription registration dialog directly\n  Related: RHEL-4101",
+  "affected_products": [
+    "Oracle Linux 9 for x86_64",
+    "Oracle Linux 9 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "gnome-control-center-filesystem-40.0-42.el9.noarch",
+    "gnome-control-center-40.0-42.el9.x86_64",
+    "gnome-control-center-40.0-42.el9.src"
+  ],
+  "full_text": "[40.0-42]\n- Fix crash with non-supported tuned-ppd profiles\n\n[40.0-41]\n- Update zh_CN translations for Keyboard settings\n  Related: RHEL-11909\n\n[40.0-40]\n- Allow launching subscription registration dialog directly\n  Related: RHEL-4101\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2025-20667-0.html"
+}

@@ -1,0 +1,34 @@
+{
+  "id": "ELSA-2026-0367",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2026-January/019594.html",
+  "synopsis": "[El-errata] ELSA-2026-0367 Important: Oracle Linux 7 mariadb security update",
+  "dateStr": "2026-January",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Security Advisory ELSA-2026-0367",
+  "description": "[1:5.5.68-1.0.1]\n- Fixes CVE-2025-13699, remote code execution via improper path validation [Orabug: 38829265]\n- Fixes failing SSL and timezone tests",
+  "affected_products": [
+    "Oracle Linux 7"
+  ],
+  "packages": [
+    "mariadb-5.5.68-1.0.1.el7.x86_64.rpm",
+    "mariadb-bench-5.5.68-1.0.1.el7.x86_64.rpm",
+    "mariadb-devel-5.5.68-1.0.1.el7.i686.rpm",
+    "mariadb-devel-5.5.68-1.0.1.el7.x86_64.rpm",
+    "mariadb-embedded-5.5.68-1.0.1.el7.i686.rpm",
+    "mariadb-embedded-5.5.68-1.0.1.el7.x86_64.rpm",
+    "mariadb-embedded-devel-5.5.68-1.0.1.el7.i686.rpm",
+    "mariadb-embedded-devel-5.5.68-1.0.1.el7.x86_64.rpm",
+    "mariadb-libs-5.5.68-1.0.1.el7.i686.rpm",
+    "mariadb-libs-5.5.68-1.0.1.el7.x86_64.rpm",
+    "mariadb-server-5.5.68-1.0.1.el7.x86_64.rpm",
+    "mariadb-test-5.5.68-1.0.1.el7.x86_64.rpm"
+  ],
+  "cves": [
+    "CVE-2025-13699"
+  ],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Security Advisory ELSA-2026-0367\n\nhttp://linux.oracle.com/errata/ELSA-2026-0367.html\n\nThe following updated rpms for Oracle Linux 7 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\nmariadb-5.5.68-1.0.1.el7.x86_64.rpm\nmariadb-bench-5.5.68-1.0.1.el7.x86_64.rpm\nmariadb-devel-5.5.68-1.0.1.el7.i686.rpm\nmariadb-devel-5.5.68-1.0.1.el7.x86_64.rpm\nmariadb-embedded-5.5.68-1.0.1.el7.i686.rpm\nmariadb-embedded-5.5.68-1.0.1.el7.x86_64.rpm\nmariadb-embedded-devel-5.5.68-1.0.1.el7.i686.rpm\nmariadb-embedded-devel-5.5.68-1.0.1.el7.x86_64.rpm\nmariadb-libs-5.5.68-1.0.1.el7.i686.rpm\nmariadb-libs-5.5.68-1.0.1.el7.x86_64.rpm\nmariadb-server-5.5.68-1.0.1.el7.x86_64.rpm\nmariadb-test-5.5.68-1.0.1.el7.x86_64.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol7/SRPMS-updates/mariadb-5.5.68-1.0.1.el7.src.rpm\n\nRelated CVEs:\n\nCVE-2025-13699\n\n\n\n\nDescription of changes:\n\n[1:5.5.68-1.0.1]\n- Fixes CVE-2025-13699, remote code execution via improper path validation [Orabug: 38829265]\n- Fixes failing SSL and timezone tests",
+  "vendor": "Oracle"
+}

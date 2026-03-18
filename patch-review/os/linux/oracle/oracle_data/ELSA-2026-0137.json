@@ -1,0 +1,37 @@
+{
+  "id": "ELSA-2026-0137",
+  "vendor": "Oracle",
+  "type": "Security Advisory (ELSA)",
+  "kernel_type": "AppStream",
+  "title": " mariadb security update",
+  "issuedDate": "2026-01-07T00:00:00Z",
+  "updatedDate": "2026-01-07T00:00:00Z",
+  "pubDate": "2026-01-07T00:00:00Z",
+  "dateStr": "2026-01-07",
+  "url": "https://linux.oracle.com/errata/ELSA-2026-0137.html",
+  "severity": "Important",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 9.",
+  "description": "[3:10.5.29-3]\n- Release bump for rebuild",
+  "affected_products": [
+    "Oracle Linux 9 for x86_64",
+    "Oracle Linux 9 for aarch64"
+  ],
+  "cves": [
+    "CVE-2025-13699"
+  ],
+  "packages": [
+    "mariadb-gssapi-server-10.5.29-3.el9_7.x86_64",
+    "mariadb-errmsg-10.5.29-3.el9_7.x86_64",
+    "mariadb-backup-10.5.29-3.el9_7.x86_64",
+    "mariadb-common-10.5.29-3.el9_7.x86_64",
+    "mariadb-server-10.5.29-3.el9_7.x86_64",
+    "mariadb-pam-10.5.29-3.el9_7.x86_64",
+    "mariadb-server-galera-10.5.29-3.el9_7.x86_64",
+    "mariadb-embedded-10.5.29-3.el9_7.x86_64",
+    "mariadb-server-utils-10.5.29-3.el9_7.x86_64",
+    "mariadb-oqgraph-engine-10.5.29-3.el9_7.x86_64",
+    "mariadb-10.5.29-3.el9_7.src",
+    "mariadb-10.5.29-3.el9_7.x86_64"
+  ],
+  "full_text": "[3:10.5.29-3]\n- Release bump for rebuild\n\nReferences:\nhttps://linux.oracle.com/errata/ELSA-2026-0137.html\nhttps://linux.oracle.com/cve/CVE-2025-13699.html"
+}

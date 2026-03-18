@@ -1,0 +1,27 @@
+{
+  "id": "RHSA-2026:0527",
+  "vendor": "Red Hat",
+  "type": "Security Advisory (RHSA)",
+  "title": "Red Hat Security Advisory: VolSync v0.14 security fixes and container updates",
+  "issuedDate": "2026-01-13T16:52:50+00:00",
+  "updatedDate": "2026-01-13T16:52:58+00:00",
+  "pubDate": "2026-01-13T16:52:50+00:00",
+  "dateStr": "2026-01-13",
+  "url": "https://access.redhat.com/errata/RHSA-2026:0527",
+  "severity": "Important",
+  "overview": "VolSync v0.14 General Availability release images, which provide enhancements, security fixes, and updated container images.\n\nRed Hat Product Security has rated this update as having a security impact\nof Important. A Common Vulnerability Scoring System (CVSS) base score,\nwhich gives a detailed severity rating, is available for each vulnerability\nfrom the CVE links in the References section.",
+  "description": "VolSync v0.14 is a Kubernetes operator that enables asynchronous\nreplication of persistent volumes within a cluster, or across clusters. After\ndeploying the VolSync operator, it can create and maintain copies of your\npersistent data.\n\nFor more information about VolSync, see:\n\nhttps://docs.redhat.com/documentation/en-us/red_hat_advanced_cluster_management_for_kubernetes/2.15/html/business_continuity/business-cont-overview#volsync\n\nor the VolSync open source community website at: https://volsync.readthedocs.io/en/stable/.",
+  "affected_products": [],
+  "cves": [
+    "CVE-2025-47913",
+    "CVE-2025-58183"
+  ],
+  "packages": [
+    "registry.redhat.io/rhacm2/volsync-rhel9@sha256:1e398c39bc39c754de8998eebc1f79127af95f5978cbe9c26034a95d10feb6df_amd64",
+    "registry.redhat.io/rhacm2/volsync-operator-bundle@sha256:dada417982350c8f5b0ea5285d5568ac2ca23cba871de64fa80c9d2af43de48c_amd64",
+    "registry.redhat.io/rhacm2/volsync-rhel9@sha256:a90157ccc6fafba463ccc0b4dc7ec9911909152dbe7efed9d794da65ccc76050_ppc64le",
+    "registry.redhat.io/rhacm2/volsync-rhel9@sha256:21a637e366f145dfc0f8ab1ed2e7bda009e0403561502d54f18ef3257392777c_s390x",
+    "registry.redhat.io/rhacm2/volsync-rhel9@sha256:087a7ad5462d1867c1b1fb18c3f20c8a3864aaa1bc5bc0a227efb6c862c9f851_arm64"
+  ],
+  "full_text": "VolSync v0.14 General Availability release images, which provide enhancements, security fixes, and updated container images.\n\nRed Hat Product Security has rated this update as having a security impact\nof Important. A Common Vulnerability Scoring System (CVSS) base score,\nwhich gives a detailed severity rating, is available for each vulnerability\nfrom the CVE links in the References section.\n\nVolSync v0.14 is a Kubernetes operator that enables asynchronous\nreplication of persistent volumes within a cluster, or across clusters. After\ndeploying the VolSync operator, it can create and maintain copies of your\npersistent data.\n\nFor more information about VolSync, see:\n\nhttps://docs.redhat.com/documentation/en-us/red_hat_advanced_cluster_management_for_kubernetes/2.15/html/business_continuity/business-cont-overview#volsync\n\nor the VolSync open source community website at: https://volsync.readthedocs.io/en/stable/."
+}

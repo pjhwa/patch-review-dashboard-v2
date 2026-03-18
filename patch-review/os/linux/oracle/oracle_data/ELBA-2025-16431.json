@@ -1,0 +1,25 @@
+{
+  "id": "ELBA-2025-16431",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "AppStream",
+  "title": "redhat-rpm-config bug fix and enhancement update",
+  "issuedDate": "2025-09-24T00:00:00Z",
+  "updatedDate": "2025-09-24T00:00:00Z",
+  "pubDate": "2025-09-24T00:00:00Z",
+  "dateStr": "2025-09-24",
+  "url": "https://linux.oracle.com/errata/ELBA-2025-16431.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 10.",
+  "description": "[289-1.0.1.1]\n- Disabled changelog trimming for kernel-uek package [Orabug: 36807719]\n\n[289-1.1]\n- Add -specs=/usr/lib/rpm/redhat/redhat-hardened-ld-errors back to GCC ldflags (RHEL-91949)\n\n[288-1.1]\n- Add -mbranch-protection=standard to extension builder flags (RHEL-86099)",
+  "affected_products": [
+    "Oracle Linux 10 for x86_64",
+    "Oracle Linux 10 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "redhat-rpm-config-289-1.0.1.el10_0.1.src",
+    "redhat-rpm-config-289-1.0.1.el10_0.1.noarch"
+  ],
+  "full_text": "[289-1.0.1.1]\n- Disabled changelog trimming for kernel-uek package [Orabug: 36807719]\n\n[289-1.1]\n- Add -specs=/usr/lib/rpm/redhat/redhat-hardened-ld-errors back to GCC ldflags (RHEL-91949)\n\n[288-1.1]\n- Add -mbranch-protection=standard to extension builder flags (RHEL-86099)\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2025-16431.html"
+}

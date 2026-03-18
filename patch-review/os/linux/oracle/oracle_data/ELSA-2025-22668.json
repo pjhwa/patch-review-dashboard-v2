@@ -1,0 +1,37 @@
+{
+  "id": "ELSA-2025-22668",
+  "vendor": "Oracle",
+  "type": "Security Advisory (ELSA)",
+  "kernel_type": "AppStream",
+  "title": " go-toolset:ol8 security update",
+  "issuedDate": "2025-12-05T00:00:00Z",
+  "updatedDate": "2025-12-05T00:00:00Z",
+  "pubDate": "2025-12-05T00:00:00Z",
+  "dateStr": "2025-12-05",
+  "url": "https://linux.oracle.com/errata/ELSA-2025-22668.html",
+  "severity": "Moderate",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 8.",
+  "description": "delve\n[1.25.2-1.0.1]\n- Disable DWARF compression which has issues (Alex Burmashev)\n\n[1.25.2-1]\n- Update to Delve 1.25.2 (Sync from CentOS Stream 9)\n- Related: RHEL-121223\n\ngolang\n[1.25.3-1]\n- Update to Go 1.25.3 (sync from CentOS Stream 9)\n- Build go-toolset as a subpackage\n- Preserve GOAMD64=v1 for RHEL 8\n- Resolves: RHEL-121223",
+  "affected_products": [
+    "Oracle Linux 8 for x86_64",
+    "Oracle Linux 8 for aarch64"
+  ],
+  "cves": [
+    "CVE-2025-47906",
+    "CVE-2025-58183"
+  ],
+  "packages": [
+    "golang-1.25.3-2.module+el8.10.0+90715+2d4d8dfd.src",
+    "delve-1.25.2-1.0.1.module+el8.10.0+90715+2d4d8dfd.src",
+    "golang-1.25.3-2.module+el8.10.0+90715+2d4d8dfd.x86_64",
+    "golang-race-1.25.3-2.module+el8.10.0+90715+2d4d8dfd.x86_64",
+    "go-toolset-1.25.3-2.module+el8.10.0+90715+2d4d8dfd.x86_64",
+    "golang-bin-1.25.3-2.module+el8.10.0+90715+2d4d8dfd.x86_64",
+    "golang-misc-1.25.3-2.module+el8.10.0+90715+2d4d8dfd.noarch",
+    "golang-src-1.25.3-2.module+el8.10.0+90715+2d4d8dfd.noarch",
+    "golang-docs-1.25.3-2.module+el8.10.0+90715+2d4d8dfd.noarch",
+    "golang-tests-1.25.3-2.module+el8.10.0+90715+2d4d8dfd.noarch",
+    "delve-1.25.2-1.0.1.module+el8.10.0+90715+2d4d8dfd.x86_64"
+  ],
+  "full_text": "delve\n[1.25.2-1.0.1]\n- Disable DWARF compression which has issues (Alex Burmashev)\n\n[1.25.2-1]\n- Update to Delve 1.25.2 (Sync from CentOS Stream 9)\n- Related: RHEL-121223\n\ngolang\n[1.25.3-1]\n- Update to Go 1.25.3 (sync from CentOS Stream 9)\n- Build go-toolset as a subpackage\n- Preserve GOAMD64=v1 for RHEL 8\n- Resolves: RHEL-121223\n\nReferences:\nhttps://linux.oracle.com/errata/ELSA-2025-22668.html\nhttps://linux.oracle.com/cve/CVE-2025-47906.html\nhttps://linux.oracle.com/cve/CVE-2025-58183.html"
+}

@@ -1,0 +1,26 @@
+{
+  "id": "ELBA-2025-23284",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "AppStream",
+  "title": "linuxptp bug fix and enhancement update",
+  "issuedDate": "2025-12-18T00:00:00Z",
+  "updatedDate": "2025-12-18T00:00:00Z",
+  "pubDate": "2025-12-18T00:00:00Z",
+  "dateStr": "2025-12-18",
+  "url": "https://linux.oracle.com/errata/ELBA-2025-23284.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 10.",
+  "description": "[4.4-5]\n- handle missing pulses in ts2phc (RHEL-112344)",
+  "affected_products": [
+    "Oracle Linux 10 for x86_64",
+    "Oracle Linux 10 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "linuxptp-4.4-5.el10_1.src",
+    "linuxptp-4.4-5.el10_1.x86_64",
+    "linuxptp-selinux-4.4-5.el10_1.noarch"
+  ],
+  "full_text": "[4.4-5]\n- handle missing pulses in ts2phc (RHEL-112344)\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2025-23284.html"
+}

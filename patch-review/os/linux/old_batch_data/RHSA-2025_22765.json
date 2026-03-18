@@ -1,0 +1,21 @@
+{
+  "id": "RHSA-2025:22765",
+  "vendor": "Red Hat",
+  "url": "https://access.redhat.com/errata/RHSA-2025:22765",
+  "pubDate": "2025-12-04T15:07:27.000Z",
+  "dateStr": "2025-12-04",
+  "severity": "Important",
+  "title": "Red Hat Security Advisory: HawtIO 4.3.0 for Red Hat build of Apache Camel 4 Release and security update.",
+  "overview": "HawtIO 4.3.0 for Red Hat build of Apache Camel 4 GA Release is now available.\n\nThe purpose of this text-only errata is to inform you about the enhancements that improve your developer experience and ensure the security and stability of your products.\n\nRed Hat Product Security has rated this update as having a security impact of\nImportant. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "description": "HawtIO 4.3.0 for Red Hat build of Apache Camel 4 GA Release is now available.\n\nThe purpose of this text-only errata is to inform you about the enhancements that improve your developer experience and ensure the security and stability of your products.\n\nRed Hat Product Security has rated this update as having a security impact of\nImportant. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "affected_products": [
+    "HawtIO HawtIO 4.3.0"
+  ],
+  "cves": [
+    "CVE-2025-41248",
+    "CVE-2025-41249"
+  ],
+  "packages": [],
+  "fixes": "",
+  "full_text": "Red Hat Security Advisory: HawtIO 4.3.0 for Red Hat build of Apache Camel 4 Release and security update.\n\nHawtIO 4.3.0 for Red Hat build of Apache Camel 4 GA Release is now available.\n\nThe purpose of this text-only errata is to inform you about the enhancements that improve your developer experience and ensure the security and stability of your products.\n\nRed Hat Product Security has rated this update as having a security impact of\nImportant. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nHawtIO 4.3.0 for Red Hat build of Apache Camel 4 GA Release is now available.\n\nThe purpose of this text-only errata is to inform you about the enhancements that improve your developer experience and ensure the security and stability of your products.\n\nRed Hat Product Security has rated this update as having a security impact of\nImportant. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\n\n\nCVE-2025-41248: The Spring Security annotation detection mechanism may not correctly resolve annotations on methods within type hierarchies with a parameterized super type with unbounded generics. This can be an issue when using @PreAuthorize and other method security annotations, resulting in an authorization bypass.\n\nYour application may be affected by this if you are using Spring Security's @EnableMethodSecurity feature.\n\nYou are not affected by this if you are not using @EnableMethodSecurity or if you do not use security annotations on methods in generic superclasses or generic interfaces.\n\nThis CVE is published in conjunction with  CVE-2025-41249 https://spring.io/security/cve-2025-41249 .\n\nCVE-2025-41249: The Spring Framework annotation detection mechanism may not correctly resolve annotations on methods within type hierarchies with a parameterized super type with unbounded generics. This can be an issue if such annotations are used for authorization decisions.\n\nYour application may be affected by this if you are using Spring Security's @EnableMethodSecurity feature.\n\nYou are not affected by this if you are not using @EnableMethodSecurity or if you do not use security annotations on methods in generic superclasses or generic interfaces.\n\nThis CVE is published in conjunction with  CVE-2025-41248 https://spring.io/security/cve-2025-41248 ."
+}

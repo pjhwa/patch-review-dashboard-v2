@@ -1,0 +1,36 @@
+{
+  "id": "RHBA-2025:16261",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: container-selinux bug fix and enhancement update",
+  "issuedDate": "2025-09-22T01:01:16Z",
+  "updatedDate": "2025-09-22T01:01:16Z",
+  "pubDate": "2025-09-22T01:01:16Z",
+  "dateStr": "2025-09-22",
+  "url": "https://access.redhat.com/errata/RHBA-2025:16261",
+  "severity": "None",
+  "overview": "An update for container-selinux is now available for Red Hat Enterprise Linux 10.",
+  "description": "The container-selinux package provides SELinux policies for container runtimes.Bug Fix(es) and Enhancement(s): Update container-selinux package to resolve OCP 4.20 issues [rhel-9.6.z] (JIRA:RHEL-115663)",
+  "affected_products": [
+    "Red Hat Enterprise Linux for x86_64 - Update Services for SAP Solutions 10 x86_64",
+    "Red Hat Enterprise Linux for ARM 64",
+    "Red Hat Enterprise Linux for x86_64 - Extended Update Support 10 x86_64",
+    "Red Hat Enterprise Linux for Power, little endian - Extended Update Support",
+    "Red Hat Enterprise Linux Server for Power LE - Update Services for SAP Solutions",
+    "Red Hat Enterprise Linux for x86_64 10 x86_64",
+    "Red Hat Enterprise Linux for ARM 64 - 4 years of updates",
+    "Red Hat Enterprise Linux for IBM z Systems",
+    "Red Hat Enterprise Linux for Power, little endian",
+    "Red Hat Enterprise Linux for IBM z Systems - Extended Update Support",
+    "Red Hat Enterprise Linux Server - AUS",
+    "Red Hat Enterprise Linux for ARM 64 - Extended Update Support",
+    "Red Hat Enterprise Linux for IBM z Systems - 4 years of updates"
+  ],
+  "cves": [],
+  "packages": [
+    "container-selinux-2.237.0-2.el9_6.src",
+    "container-selinux-2.237.0-2.el9_6.noarch"
+  ],
+  "fixes": [],
+  "full_text": "An update for container-selinux is now available for Red Hat Enterprise Linux 10.\n\nThe container-selinux package provides SELinux policies for container runtimes.Bug Fix(es) and Enhancement(s): Update container-selinux package to resolve OCP 4.20 issues [rhel-9.6.z] (JIRA:RHEL-115663)"
+}

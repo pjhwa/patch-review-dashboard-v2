@@ -1,0 +1,44 @@
+{
+  "id": "RHBA-2025:20697",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: containernetworking-plugins bug fix and enhancement update",
+  "issuedDate": "2025-11-11T07:50:51Z",
+  "updatedDate": "2025-11-11T07:50:51Z",
+  "pubDate": "2025-11-11T07:50:51Z",
+  "dateStr": "2025-11-11",
+  "url": "https://access.redhat.com/errata/RHBA-2025:20697",
+  "severity": "None",
+  "overview": "An update for containernetworking-plugins is now available for Red Hat Enterprise Linux 10.",
+  "description": "For detailed information on changes in this release, see the Red Hat Enterprise Linux 9 Release Notes linked from the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux for Power, little endian",
+    "Red Hat Enterprise Linux for ARM 64",
+    "Red Hat Enterprise Linux for IBM z Systems",
+    "Red Hat Enterprise Linux for x86_64 10 x86_64"
+  ],
+  "cves": [],
+  "packages": [
+    "containernetworking-plugins-1.7.1-1.el9.src",
+    "containernetworking-plugins-1.7.1-1.el9.x86_64",
+    "containernetworking-plugins-debuginfo-1.7.1-1.el9.x86_64",
+    "containernetworking-plugins-debugsource-1.7.1-1.el9.x86_64",
+    "containernetworking-plugins-1.7.1-1.el9.s390x",
+    "containernetworking-plugins-debuginfo-1.7.1-1.el9.s390x",
+    "containernetworking-plugins-debugsource-1.7.1-1.el9.s390x",
+    "containernetworking-plugins-1.7.1-1.el9.ppc64le",
+    "containernetworking-plugins-debuginfo-1.7.1-1.el9.ppc64le",
+    "containernetworking-plugins-debugsource-1.7.1-1.el9.ppc64le",
+    "containernetworking-plugins-1.7.1-1.el9.aarch64",
+    "containernetworking-plugins-debuginfo-1.7.1-1.el9.aarch64",
+    "containernetworking-plugins-debugsource-1.7.1-1.el9.aarch64"
+  ],
+  "fixes": [
+    {
+      "id": "RHEL-89428",
+      "url": "https://issues.redhat.com/browse/RHEL-89428",
+      "description": "Package containernetworking-plugins for RHEL9.7"
+    }
+  ],
+  "full_text": "An update for containernetworking-plugins is now available for Red Hat Enterprise Linux 10.\n\nFor detailed information on changes in this release, see the Red Hat Enterprise Linux 9 Release Notes linked from the References section."
+}

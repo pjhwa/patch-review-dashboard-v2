@@ -1,0 +1,53 @@
+{
+  "id": "RHBA-2025:16329",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: crun bug fix and enhancement update",
+  "issuedDate": "2025-09-22T06:06:34Z",
+  "updatedDate": "2025-09-22T06:06:34Z",
+  "pubDate": "2025-09-22T06:06:34Z",
+  "dateStr": "2025-09-22",
+  "url": "https://access.redhat.com/errata/RHBA-2025:16329",
+  "severity": "None",
+  "overview": "An update for crun is now available for Red Hat Enterprise Linux 10.",
+  "description": "crun is a OCI runtimeBug Fix(es) and Enhancement(s): When using crun, the container?s terminal output is sometimes partially missing - [RHEL 9.6] (JIRA:RHEL-110662)  Backport multiple crun fixes to RHEL 9.6 [rhel-9.6.z] (JIRA:RHEL-115666)",
+  "affected_products": [
+    "Red Hat Enterprise Linux for x86_64 10 x86_64",
+    "Red Hat Enterprise Linux for ARM 64",
+    "Red Hat Enterprise Linux for x86_64 - Update Services for SAP Solutions 10 x86_64",
+    "Red Hat Enterprise Linux for x86_64 - Extended Update Support 10 x86_64",
+    "Red Hat Enterprise Linux for IBM z Systems - Extended Update Support",
+    "Red Hat Enterprise Linux for Power, little endian - Extended Update Support",
+    "Red Hat Enterprise Linux for ARM 64 - 4 years of updates",
+    "Red Hat Enterprise Linux Server for Power LE - Update Services for SAP Solutions",
+    "Red Hat Enterprise Linux for IBM z Systems",
+    "Red Hat Enterprise Linux for Power, little endian",
+    "Red Hat Enterprise Linux Server - AUS",
+    "Red Hat Enterprise Linux for IBM z Systems - 4 years of updates",
+    "Red Hat Enterprise Linux for ARM 64 - Extended Update Support"
+  ],
+  "cves": [],
+  "packages": [
+    "crun-1.23.1-2.el9_6.src",
+    "crun-1.23.1-2.el9_6.x86_64",
+    "crun-debuginfo-1.23.1-2.el9_6.x86_64",
+    "crun-debugsource-1.23.1-2.el9_6.x86_64",
+    "crun-1.23.1-2.el9_6.s390x",
+    "crun-debuginfo-1.23.1-2.el9_6.s390x",
+    "crun-debugsource-1.23.1-2.el9_6.s390x",
+    "crun-1.23.1-2.el9_6.ppc64le",
+    "crun-debuginfo-1.23.1-2.el9_6.ppc64le",
+    "crun-debugsource-1.23.1-2.el9_6.ppc64le",
+    "crun-1.23.1-2.el9_6.aarch64",
+    "crun-debuginfo-1.23.1-2.el9_6.aarch64",
+    "crun-debugsource-1.23.1-2.el9_6.aarch64"
+  ],
+  "fixes": [
+    {
+      "id": "RHEL-110662",
+      "url": "https://issues.redhat.com/browse/RHEL-110662",
+      "description": "When using crun, the container?s terminal output is sometimes partially missing - [RHEL 9.6]"
+    }
+  ],
+  "full_text": "An update for crun is now available for Red Hat Enterprise Linux 10.\n\ncrun is a OCI runtimeBug Fix(es) and Enhancement(s): When using crun, the container?s terminal output is sometimes partially missing - [RHEL 9.6] (JIRA:RHEL-110662)  Backport multiple crun fixes to RHEL 9.6 [rhel-9.6.z] (JIRA:RHEL-115666)"
+}

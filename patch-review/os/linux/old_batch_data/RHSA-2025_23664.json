@@ -1,0 +1,20 @@
+{
+  "id": "RHSA-2025:23664",
+  "vendor": "Red Hat",
+  "url": "https://access.redhat.com/errata/RHSA-2025:23664",
+  "pubDate": "2025-12-18T18:53:08.000Z",
+  "dateStr": "2025-12-18",
+  "severity": "Important",
+  "title": "Red Hat Security Advisory: opentelemetry-collector security update",
+  "overview": "An update for opentelemetry-collector is now available for Red Hat Enterprise Linux 10.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "description": "An update for opentelemetry-collector is now available for Red Hat Enterprise Linux 10.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux AppStream (v. 10)"
+  ],
+  "cves": [
+    "CVE-2025-68156"
+  ],
+  "packages": [],
+  "fixes": "",
+  "full_text": "Red Hat Security Advisory: opentelemetry-collector security update\n\nAn update for opentelemetry-collector is now available for Red Hat Enterprise Linux 10.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nAn update for opentelemetry-collector is now available for Red Hat Enterprise Linux 10.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nUpdated Packages:\nopentelemetry-collector-0.135.0-2.el10_1.src.rpm\nopentelemetry-collector-0.135.0-2.el10_1.x86_64.rpm\nopentelemetry-collector-0.135.0-2.el10_1.s390x.rpm\nopentelemetry-collector-0.135.0-2.el10_1.ppc64le.rpm\nopentelemetry-collector-0.135.0-2.el10_1.aarch64.rpm\n\nCVE-2025-68156: A flaw was found in Expr, an expression language and expression evaluation for Go. This vulnerability allows a denial of service (DoS) via recursive traversal over user-provided deeply nested or cyclic data structures without enforcing a maximum recursion depth, leading to a stack overflow panic and application crash."
+}

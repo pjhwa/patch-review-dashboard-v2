@@ -1,0 +1,33 @@
+{
+  "id": "ELEA-2025-20508-0",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "AppStream",
+  "title": "java-25-openjdk bug fix and enhancement update",
+  "issuedDate": "2025-11-25T00:00:00Z",
+  "updatedDate": "2025-11-25T00:00:00Z",
+  "pubDate": "2025-11-25T00:00:00Z",
+  "dateStr": "2025-11-25",
+  "url": "https://linux.oracle.com/errata/ELEA-2025-20508-0.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 10.",
+  "description": "[1:22.0.2.0.9-1.0.1]\n- Add Oracle vendor bug URL\n\n[1:22.0.2.0.9-1]\n- Update to jdk-22.0.2+9 (GA)\n- Update release notes with features of JDK 22\n- Remove 21u FIPS patch and disable use until we are ready for the 25 version\n- Adjust CLDR expectations in TestTranslations.java after JDK-8317979 started using tzdata values\n- Adjust TestTranslations.java to expect the same short name throughout for fr_FR and de_DE (bug?)\n- Sync the copy of the portable specfile with the latest update\n- Remove references to libsystemconf.so and nss.fips.cfg from the 21u FIPS patch\n- Include static libraries in the vm_variant subdirectory after JDK-8307858 (libjvm.a)\n- Flip equals test in TestSecurityProperties.java to handle null values from Security.getProperty\n- Introduce crypto_policy_active to designate whether we should expect policy adherence in testing\n- Flip crypto_policy_active to false while the crypto policy & FIPS patch is not present\n- Handle new libsimdsort.so introduced on x86_64 only by JDK-8309130\n- Related: RHEL-100678\n\n[1:21.0.8.0.9-1]\n- Create java-25-openjdk package based on java-21-openjdk\n- Introduce fakefeaturever to pretend we are java-25-openjdk ahead of time\n- Sync the copy of the portable specfile with the latest update\n- Update README file for java-25-openjdk\n- Make sure this is not the default/system JDK providing 'java', 'jre', 'java-devel' ,etc.\n- Related: RHEL-100678\n\n[1:21.0.8.0.9-1]\n- Update to jdk-21.0.8+9 (GA)\n- Related: RHEL-100678",
+  "affected_products": [
+    "Oracle Linux 10 for x86_64",
+    "Oracle Linux 10 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "java-25-openjdk-22.0.2.0.9-1.0.1.el10.x86_64",
+    "java-25-openjdk-devel-22.0.2.0.9-1.0.1.el10.x86_64",
+    "java-25-openjdk-static-libs-22.0.2.0.9-1.0.1.el10.x86_64",
+    "java-25-openjdk-javadoc-zip-22.0.2.0.9-1.0.1.el10.x86_64",
+    "java-25-openjdk-javadoc-22.0.2.0.9-1.0.1.el10.x86_64",
+    "java-25-openjdk-22.0.2.0.9-1.0.1.el10.src",
+    "java-25-openjdk-jmods-22.0.2.0.9-1.0.1.el10.x86_64",
+    "java-25-openjdk-src-22.0.2.0.9-1.0.1.el10.x86_64",
+    "java-25-openjdk-headless-22.0.2.0.9-1.0.1.el10.x86_64",
+    "java-25-openjdk-demo-22.0.2.0.9-1.0.1.el10.x86_64"
+  ],
+  "full_text": "[1:22.0.2.0.9-1.0.1]\n- Add Oracle vendor bug URL\n\n[1:22.0.2.0.9-1]\n- Update to jdk-22.0.2+9 (GA)\n- Update release notes with features of JDK 22\n- Remove 21u FIPS patch and disable use until we are ready for the 25 version\n- Adjust CLDR expectations in TestTranslations.java after JDK-8317979 started using tzdata values\n- Adjust TestTranslations.java to expect the same short name throughout for fr_FR and de_DE (bug?)\n- Sync the copy of the portable specfile with the latest update\n- Remove references to libsystemconf.so and nss.fips.cfg from the 21u FIPS patch\n- Include static libraries in the vm_variant subdirectory after JDK-8307858 (libjvm.a)\n- Flip equals test in TestSecurityProperties.java to handle null values from Security.getProperty\n- Introduce crypto_policy_active to designate whether we should expect policy adherence in testing\n- Flip crypto_policy_active to false while the crypto policy & FIPS patch is not present\n- Handle new libsimdsort.so introduced on x86_64 only by JDK-8309130\n- Related: RHEL-100678\n\n[1:21.0.8.0.9-1]\n- Create java-25-openjdk package based on java-21-openjdk\n- Introduce fakefeaturever to pretend we are java-25-openjdk ahead of time\n- Sync the copy of the portable specfile with the latest update\n- Update README file for java-25-openjdk\n- Make sure this is not the default/system JDK providing 'java', 'jre', 'java-devel' ,etc.\n- Related: RHEL-100678\n\n[1:21.0.8.0.9-1]\n- Update to jdk-21.0.8+9 (GA)\n- Related: RHEL-100678\n\nReferences:\nhttps://linux.oracle.com/errata/ELEA-2025-20508-0.html"
+}

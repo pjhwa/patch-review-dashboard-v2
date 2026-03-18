@@ -1,0 +1,34 @@
+{
+  "id": "USN-7783-1",
+  "vendor": "Canonical / Ubuntu",
+  "type": "Ubuntu Security Notice (USN)",
+  "title": "tiff vulnerabilities",
+  "issuedDate": "2025-09-29T14:08:03Z",
+  "updatedDate": "2026-02-10T04:50:09Z",
+  "pubDate": "2025-09-29T14:08:03Z",
+  "dateStr": "2025-09-29",
+  "url": "https://ubuntu.com/security/notices/USN-7783-1",
+  "severity": "None",
+  "overview": "tiff vulnerabilities",
+  "description": "Xudong Cao and Yuqing Zhang discovered that LibTIFF incorrectly handled\nmemory when parsing malformed TIFF images. An attacker could possibly use\nthis issue to cause LibTIFF to crash, resulting in a denial of service.\n(CVE-2025-8961)\n\nXudong Cao and Yuqing Zhang discovered that LibTIFF incorrectly handled\nmemory when parsing malformed TIFF image headers. An attacker could\npossibly use this issue to cause LibTIFF to leak memory, resulting in a\ndenial of service. (CVE-2025-9165)\n\nIt was discovered that LibTIFF incorrectly handled memory when parsing\nmalformed TIFF image metadata. An attacker could possibly use this issue to\ncause a denial of service, obtain sensitive information, or execute\narbitrary code. (CVE-2025-9900)",
+  "affected_products": [
+    "Ubuntu 22.04 LTS",
+    "Ubuntu 24.04 LTS"
+  ],
+  "cves": [],
+  "packages": [
+    "libtiff-dev-4.3.0-6ubuntu0.12",
+    "libtiff-dev-4.5.1+git230720-4ubuntu2.4",
+    "libtiff-opengl-4.3.0-6ubuntu0.12",
+    "libtiff-opengl-4.5.1+git230720-4ubuntu2.4",
+    "libtiff-tools-4.3.0-6ubuntu0.12",
+    "libtiff-tools-4.5.1+git230720-4ubuntu2.4",
+    "libtiff5-4.3.0-6ubuntu0.12",
+    "libtiff5-dev-4.3.0-6ubuntu0.12",
+    "libtiff5-dev-4.5.1+git230720-4ubuntu2.4",
+    "libtiff6-4.5.1+git230720-4ubuntu2.4",
+    "libtiffxx5-4.3.0-6ubuntu0.12",
+    "libtiffxx6-4.5.1+git230720-4ubuntu2.4"
+  ],
+  "full_text": "Xudong Cao and Yuqing Zhang discovered that LibTIFF incorrectly handled\nmemory when parsing malformed TIFF images. An attacker could possibly use\nthis issue to cause LibTIFF to crash, resulting in a denial of service.\n(CVE-2025-8961)\n\nXudong Cao and Yuqing Zhang discovered that LibTIFF incorrectly handled\nmemory when parsing malformed TIFF image headers. An attacker could\npossibly use this issue to cause LibTIFF to leak memory, resulting in a\ndenial of service. (CVE-2025-9165)\n\nIt was discovered that LibTIFF incorrectly handled memory when parsing\nmalformed TIFF image metadata. An attacker could possibly use this issue to\ncause a denial of service, obtain sensitive information, or execute\narbitrary code. (CVE-2025-9900)"
+}

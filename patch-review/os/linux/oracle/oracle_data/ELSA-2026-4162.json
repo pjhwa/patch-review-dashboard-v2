@@ -1,0 +1,36 @@
+{
+  "id": "ELSA-2026-4162",
+  "vendor": "Oracle",
+  "type": "Security Advisory (ELSA)",
+  "kernel_type": "AppStream",
+  "title": " mysql8.4 security update",
+  "issuedDate": "2026-03-10T00:00:00Z",
+  "updatedDate": "2026-03-10T00:00:00Z",
+  "pubDate": "2026-03-10T00:00:00Z",
+  "dateStr": "2026-03-10",
+  "url": "https://linux.oracle.com/errata/ELSA-2026-4162.html",
+  "severity": "Moderate",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 10.",
+  "description": "[8.4.8-1]\n- Rebase to 8.4.8\n\n[8.4.7-2]\n- Skip tests that are failing on Konflux\n- Resolves: ROK-831",
+  "affected_products": [
+    "Oracle Linux 10 for x86_64",
+    "Oracle Linux 10 for aarch64"
+  ],
+  "cves": [
+    "CVE-2026-21936",
+    "CVE-2026-21937",
+    "CVE-2026-21941",
+    "CVE-2026-21948",
+    "CVE-2026-21964",
+    "CVE-2026-21968"
+  ],
+  "packages": [
+    "mysql8.4-common-8.4.8-1.el10_1.noarch",
+    "mysql8.4-8.4.8-1.el10_1.x86_64",
+    "mysql8.4-errmsg-8.4.8-1.el10_1.noarch",
+    "mysql8.4-8.4.8-1.el10_1.src",
+    "mysql8.4-libs-8.4.8-1.el10_1.x86_64",
+    "mysql8.4-server-8.4.8-1.el10_1.x86_64"
+  ],
+  "full_text": "[8.4.8-1]\n- Rebase to 8.4.8\n\n[8.4.7-2]\n- Skip tests that are failing on Konflux\n- Resolves: ROK-831\n\nReferences:\nhttps://linux.oracle.com/errata/ELSA-2026-4162.html\nhttps://linux.oracle.com/cve/CVE-2026-21936.html\nhttps://linux.oracle.com/cve/CVE-2026-21937.html\nhttps://linux.oracle.com/cve/CVE-2026-21941.html\nhttps://linux.oracle.com/cve/CVE-2026-21948.html\nhttps://linux.oracle.com/cve/CVE-2026-21964.html\nhttps://linux.oracle.com/cve/CVE-2026-21968.html"
+}

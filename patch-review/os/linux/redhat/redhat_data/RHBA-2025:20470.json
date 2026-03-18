@@ -1,0 +1,44 @@
+{
+  "id": "RHBA-2025:20470",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: redhat-cloud-client-configuration bug fix and enhancement update",
+  "issuedDate": "2025-11-11T07:26:39Z",
+  "updatedDate": "2025-11-11T07:26:39Z",
+  "pubDate": "2025-11-11T07:26:39Z",
+  "dateStr": "2025-11-11",
+  "url": "https://access.redhat.com/errata/RHBA-2025:20470",
+  "severity": "None",
+  "overview": "An update for redhat-cloud-client-configuration is now available for Red Hat Enterprise Linux 10.",
+  "description": "For detailed information on changes in this release, see the Red Hat Enterprise Linux 10 Release Notes linked from the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux for ARM 64",
+    "Red Hat Enterprise Linux for Power, little endian",
+    "Red Hat Enterprise Linux for IBM z Systems",
+    "Red Hat Enterprise Linux for x86_64 10 x86_64"
+  ],
+  "cves": [],
+  "packages": [
+    "redhat-cloud-client-configuration-1-15.el10.src",
+    "redhat-cloud-client-configuration-1-15.el10.noarch",
+    "redhat-cloud-client-configuration-cdn-1-15.el10.noarch"
+  ],
+  "fixes": [
+    {
+      "id": "RHEL-101898",
+      "url": "https://issues.redhat.com/browse/RHEL-101898",
+      "description": "[rhccc] We should use yggdrasil (not rhcd) on rhel-10"
+    },
+    {
+      "id": "RHEL-105250",
+      "url": "https://issues.redhat.com/browse/RHEL-105250",
+      "description": "Fix redhat-cloud-client-configuration to support the new autoregistration v2 flow"
+    },
+    {
+      "id": "RHEL-107525",
+      "url": "https://issues.redhat.com/browse/RHEL-107525",
+      "description": "[rhccc] yggdrasil* unit files should not refer rhcd"
+    }
+  ],
+  "full_text": "An update for redhat-cloud-client-configuration is now available for Red Hat Enterprise Linux 10.\n\nFor detailed information on changes in this release, see the Red Hat Enterprise Linux 10 Release Notes linked from the References section."
+}

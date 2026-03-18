@@ -1,0 +1,33 @@
+{
+  "id": "ELBA-2025-20700-0",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "AppStream",
+  "title": "java-21-openjdk bug fix and enhancement update",
+  "issuedDate": "2025-11-17T00:00:00Z",
+  "updatedDate": "2025-11-17T00:00:00Z",
+  "pubDate": "2025-11-17T00:00:00Z",
+  "dateStr": "2025-11-17",
+  "url": "https://linux.oracle.com/errata/ELBA-2025-20700-0.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 9.",
+  "description": "[1:21.0.8.0.9-1.0.1]\n- Add Oracle vendor bug URL [Orabug: 34340155]\n\n[1:21.0.8.0.9-1.1]\n- Update to jdk-21.0.8+9 (GA)\n- Update release notes to 21.0.8+9\n- Switch to GA mode\n- Sync the copy of the portable specfile with the latest update\n- ** This tarball is embargoed until 2025-07-15 @ 1pm PT. **\n- Resolves: RHEL-102289\n\n[1:21.0.7.0.6-3]\n- Recommend PipeWire on RHEL 9 and later for java.awt.Robot screenshots under Wayland\n- Resolves: RHEL-102677\n\n[1:21.0.8.0.8-0.1.ea]\n- Update to jdk-21.0.8+8 (EA)\n- Update release notes to 21.0.8+8\n- Sync the copy of the portable specfile with the latest update\n- Resolves: RHEL-101798\n\n[1:21.0.8.0.2-0.1.ea]\n- Update to jdk-21.0.8+2 (EA)\n- Update release notes to 21.0.8+2\n- Sync the copy of the portable specfile with the latest update\n- Add timezone data update check to openjdk_news.sh\n- Add duplicate check to openjdk_news.sh\n- Exit if no fixes are obtained rather than try to run filters in openjdk_news.sh\n- Related: RHEL-101798\n- Resolves: RHEL-103209\n\n[1:21.0.8.0.1-0.1.ea]\n- Update get_bundle_versions.sh to match other scripts\n- * get_bundle_versions.sh: Add license\n- * get_bundle_versions.sh: Set compile-command in Emacs\n- * get_bundle_versions.sh: Use different error codes for different failures\n- * get_bundle_versions.sh: Remove unneeded '.' in JPEG version\n- * get_bundle_versions.sh: shellcheck: Double-quote variable references (SC2086)\n- * get_bundle_versions.sh: shellcheck: Drop use of cat and pass file to awk directly (SC2002)\n- Add OpenJDK 8u support to get_bundle_versions.sh\n- Print bundle updates and backouts at end of openjdk_news.sh output\n- Refer user to get_bundle_versions.sh when bundle updates are found by openjdk_news.sh\n- Related: RHEL-103209\n\n[1:21.0.8.0.1-0.1.ea]\n- Add script to obtain bundled library versions from OpenJDK sources\n- Related: RHEL-103209\n\n[1:21.0.8.0.1-0.1.ea]\n- Warn about bundled provide version bumps and backouts in openjdk_news.sh\n- Related: RHEL-103209\n\n[1:21.0.8.0.1-0.1.ea]\n- Update to jdk-21.0.8+1 (EA)\n- Update release notes to 21.0.8+1\n- Bump freetype version to 2.13.3 following JDK-8348596\n- Bump harfbuzz version to 10.4.0 following JDK-8348597\n- Bump lcms2 version to 2.17.0 following JDK-8348110\n- Bump libpng version to 1.6.47 following JDK-8348598\n- Switch to EA mode\n- Drop JDK-8351500 local patch which is now available in 21.0.8+1 upstream\n- Sync the copy of the portable specfile with the latest update\n- Related: RHEL-101798\n\n[1:21.0.7.0.6-2]\n- Add local version of JDK-8351500 for early interim release before 21.0.8\n- Sync the copy of the portable specfile with the latest update\n- Resolves: RHEL-90309",
+  "affected_products": [
+    "Oracle Linux 9 for x86_64",
+    "Oracle Linux 9 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "java-21-openjdk-21.0.8.0.9-1.0.1.el9.src",
+    "java-21-openjdk-static-libs-21.0.8.0.9-1.0.1.el9.x86_64",
+    "java-21-openjdk-jmods-21.0.8.0.9-1.0.1.el9.x86_64",
+    "java-21-openjdk-javadoc-21.0.8.0.9-1.0.1.el9.x86_64",
+    "java-21-openjdk-demo-21.0.8.0.9-1.0.1.el9.x86_64",
+    "java-21-openjdk-headless-21.0.8.0.9-1.0.1.el9.x86_64",
+    "java-21-openjdk-21.0.8.0.9-1.0.1.el9.x86_64",
+    "java-21-openjdk-src-21.0.8.0.9-1.0.1.el9.x86_64",
+    "java-21-openjdk-devel-21.0.8.0.9-1.0.1.el9.x86_64",
+    "java-21-openjdk-javadoc-zip-21.0.8.0.9-1.0.1.el9.x86_64"
+  ],
+  "full_text": "[1:21.0.8.0.9-1.0.1]\n- Add Oracle vendor bug URL [Orabug: 34340155]\n\n[1:21.0.8.0.9-1.1]\n- Update to jdk-21.0.8+9 (GA)\n- Update release notes to 21.0.8+9\n- Switch to GA mode\n- Sync the copy of the portable specfile with the latest update\n- ** This tarball is embargoed until 2025-07-15 @ 1pm PT. **\n- Resolves: RHEL-102289\n\n[1:21.0.7.0.6-3]\n- Recommend PipeWire on RHEL 9 and later for java.awt.Robot screenshots under Wayland\n- Resolves: RHEL-102677\n\n[1:21.0.8.0.8-0.1.ea]\n- Update to jdk-21.0.8+8 (EA)\n- Update release notes to 21.0.8+8\n- Sync the copy of the portable specfile with the latest update\n- Resolves: RHEL-101798\n\n[1:21.0.8.0.2-0.1.ea]\n- Update to jdk-21.0.8+2 (EA)\n- Update release notes to 21.0.8+2\n- Sync the copy of the portable specfile with the latest update\n- Add timezone data update check to openjdk_news.sh\n- Add duplicate check to openjdk_news.sh\n- Exit if no fixes are obtained rather than try to run filters in openjdk_news.sh\n- Related: RHEL-101798\n- Resolves: RHEL-103209\n\n[1:21.0.8.0.1-0.1.ea]\n- Update get_bundle_versions.sh to match other scripts\n- * get_bundle_versions.sh: Add license\n- * get_bundle_versions.sh: Set compile-command in Emacs\n- * get_bundle_versions.sh: Use different error codes for different failures\n- * get_bundle_versions.sh: Remove unneeded '.' in JPEG version\n- * get_bundle_versions.sh: shellcheck: Double-quote variable references (SC2086)\n- * get_bundle_versions.sh: shellcheck: Drop use of cat and pass file to awk directly (SC2002)\n- Add OpenJDK 8u support to get_bundle_versions.sh\n- Print bundle updates and backouts at end of openjdk_news.sh output\n- Refer user to get_bundle_versions.sh when bundle updates are found by openjdk_news.sh\n- Related: RHEL-103209\n\n[1:21.0.8.0.1-0.1.ea]\n- Add script to obtain bundled library versions from OpenJDK sources\n- Related: RHEL-103209\n\n[1:21.0.8.0.1-0.1.ea]\n- Warn about bundled provide version bumps and backouts in openjdk_news.sh\n- Related: RHEL-103209\n\n[1:21.0.8.0.1-0.1.ea]\n- Update to jdk-21.0.8+1 (EA)\n- Update release notes to 21.0.8+1\n- Bump freetype version to 2.13.3 following JDK-8348596\n- Bump harfbuzz version to 10.4.0 following JDK-8348597\n- Bump lcms2 version to 2.17.0 following JDK-8348110\n- Bump libpng version to 1.6.47 following JDK-8348598\n- Switch to EA mode\n- Drop JDK-8351500 local patch which is now available in 21.0.8+1 upstream\n- Sync the copy of the portable specfile with the latest update\n- Related: RHEL-101798\n\n[1:21.0.7.0.6-2]\n- Add local version of JDK-8351500 for early interim release before 21.0.8\n- Sync the copy of the portable specfile with the latest update\n- Resolves: RHEL-90309\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2025-20700-0.html"
+}

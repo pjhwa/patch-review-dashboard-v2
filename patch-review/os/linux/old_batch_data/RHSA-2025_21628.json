@@ -1,0 +1,21 @@
+{
+  "id": "RHSA-2025:21628",
+  "vendor": "Red Hat",
+  "url": "https://access.redhat.com/errata/RHSA-2025:21628",
+  "pubDate": "2025-11-17T22:28:49.000Z",
+  "dateStr": "2025-11-17",
+  "severity": "Critical",
+  "title": "Red Hat Security Advisory: lasso security update",
+  "overview": "An update for lasso is now available for Red Hat Enterprise Linux 8.\n\nRed Hat Product Security has rated this update as having a security impact of Critical. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "description": "An update for lasso is now available for Red Hat Enterprise Linux 8.\n\nRed Hat Product Security has rated this update as having a security impact of Critical. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux AppStream (v. 8)",
+    "Red Hat Enterprise Linux CRB (v. 8)"
+  ],
+  "cves": [
+    "CVE-2025-47151"
+  ],
+  "packages": [],
+  "fixes": "",
+  "full_text": "Red Hat Security Advisory: lasso security update\n\nAn update for lasso is now available for Red Hat Enterprise Linux 8.\n\nRed Hat Product Security has rated this update as having a security impact of Critical. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nAn update for lasso is now available for Red Hat Enterprise Linux 8.\n\nRed Hat Product Security has rated this update as having a security impact of Critical. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nUpdated Packages:\nlasso-2.6.0-14.el8_10.src.rpm\njava-lasso-debuginfo-2.6.0-14.el8_10.i686.rpm\njava-lasso-debuginfo-2.6.0-14.el8_10.x86_64.rpm\nlasso-2.6.0-14.el8_10.i686.rpm\nlasso-2.6.0-14.el8_10.x86_64.rpm\nlasso-debuginfo-2.6.0-14.el8_10.i686.rpm\nlasso-debuginfo-2.6.0-14.el8_10.x86_64.rpm\nlasso-debugsource-2.6.0-14.el8_10.i686.rpm\nlasso-debugsource-2.6.0-14.el8_10.x86_64.rpm\nperl-lasso-debuginfo-2.6.0-14.el8_10.i686.rpm\nperl-lasso-debuginfo-2.6.0-14.el8_10.x86_64.rpm\npython3-lasso-2.6.0-14.el8_10.x86_64.rpm\npython3-lasso-debuginfo-2.6.0-14.el8_10.i686.rpm\npython3-lasso-debuginfo-2.6.0-14.el8_10.x86_64.rpm\njava-lasso-debuginfo-2.6.0-14.el8_10.s390x.rpm\nlasso-2.6.0-14.el8_10.s390x.rpm\nlasso-debuginfo-2.6.0-14.el8_10.s390x.rpm\nlasso-debugsource-2.6.0-14.el8_10.s390x.rpm\nperl-lasso-debuginfo-2.6.0-14.el8_10.s390x.rpm\npython3-lasso-2.6.0-14.el8_10.s390x.rpm\npython3-lasso-debuginfo-2.6.0-14.el8_10.s390x.rpm\njava-lasso-debuginfo-2.6.0-14.el8_10.ppc64le.rpm\nlasso-2.6.0-14.el8_10.ppc64le.rpm\nlasso-debuginfo-2.6.0-14.el8_10.ppc64le.rpm\nlasso-debugsource-2.6.0-14.el8_10.ppc64le.rpm\nperl-lasso-debuginfo-2.6.0-14.el8_10.ppc64le.rpm\npython3-lasso-2.6.0-14.el8_10.ppc64le.rpm\npython3-lasso-debuginfo-2.6.0-14.el8_10.ppc64le.rpm\njava-lasso-debuginfo-2.6.0-14.el8_10.aarch64.rpm\nlasso-2.6.0-14.el8_10.aarch64.rpm\nlasso-debuginfo-2.6.0-14.el8_10.aarch64.rpm\nlasso-debugsource-2.6.0-14.el8_10.aarch64.rpm\nperl-lasso-debuginfo-2.6.0-14.el8_10.aarch64.rpm\npython3-lasso-2.6.0-14.el8_10.aarch64.rpm\npython3-lasso-debuginfo-2.6.0-14.el8_10.aarch64.rpm\nlasso-devel-2.6.0-14.el8_10.i686.rpm\nlasso-devel-2.6.0-14.el8_10.x86_64.rpm\nlasso-devel-2.6.0-14.el8_10.ppc64le.rpm\nlasso-devel-2.6.0-14.el8_10.aarch64.rpm\nlasso-devel-2.6.0-14.el8_10.s390x.rpm\n\nCVE-2025-47151: A type confusion vulnerability exists in the lasso_node_impl_init_from_xml functionality of Entr'ouvert Lasso 2.8.2 and prior. A specially crafted SAML response can lead to an arbitrary code execution. An attacker can send a malformed SAML response to trigger this vulnerability."
+}

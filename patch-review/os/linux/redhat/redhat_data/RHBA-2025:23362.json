@@ -1,0 +1,56 @@
+{
+  "id": "RHBA-2025:23362",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: gnome-autoar bug fix and enhancement update",
+  "issuedDate": "2025-12-18T10:46:36Z",
+  "updatedDate": "2025-12-18T10:46:36Z",
+  "pubDate": "2025-12-18T10:46:36Z",
+  "dateStr": "2025-12-18",
+  "url": "https://access.redhat.com/errata/RHBA-2025:23362",
+  "severity": "None",
+  "overview": "An update for gnome-autoar is now available for Red Hat Enterprise Linux 10.",
+  "description": "gnome-autoar is a GObject based library for handling archives.Bug Fix(es) and Enhancement(s): [RFE] Please add gnome-autoar-devel to RHEL 8 CRB repo (JIRA:RHEL-120192)",
+  "affected_products": [
+    "Red Hat Enterprise Linux for x86_64 10 x86_64",
+    "Red Hat CodeReady Linux Builder for x86_64 10 x86_64",
+    "Red Hat Enterprise Linux for ARM 64",
+    "Red Hat Enterprise Linux for IBM z Systems",
+    "Red Hat Enterprise Linux for Power, little endian",
+    "Red Hat CodeReady Linux Builder for Power, little endian",
+    "Red Hat CodeReady Linux Builder for ARM 64",
+    "Red Hat CodeReady Linux Builder for IBM z Systems"
+  ],
+  "cves": [],
+  "packages": [
+    "gnome-autoar-0.2.3-3.el8_10.src",
+    "gnome-autoar-0.2.3-3.el8_10.i686",
+    "gnome-autoar-0.2.3-3.el8_10.x86_64",
+    "gnome-autoar-debuginfo-0.2.3-3.el8_10.i686",
+    "gnome-autoar-debuginfo-0.2.3-3.el8_10.x86_64",
+    "gnome-autoar-debugsource-0.2.3-3.el8_10.i686",
+    "gnome-autoar-debugsource-0.2.3-3.el8_10.x86_64",
+    "gnome-autoar-0.2.3-3.el8_10.s390x",
+    "gnome-autoar-debuginfo-0.2.3-3.el8_10.s390x",
+    "gnome-autoar-debugsource-0.2.3-3.el8_10.s390x",
+    "gnome-autoar-0.2.3-3.el8_10.ppc64le",
+    "gnome-autoar-debuginfo-0.2.3-3.el8_10.ppc64le",
+    "gnome-autoar-debugsource-0.2.3-3.el8_10.ppc64le",
+    "gnome-autoar-0.2.3-3.el8_10.aarch64",
+    "gnome-autoar-debuginfo-0.2.3-3.el8_10.aarch64",
+    "gnome-autoar-debugsource-0.2.3-3.el8_10.aarch64",
+    "gnome-autoar-devel-0.2.3-3.el8_10.i686",
+    "gnome-autoar-devel-0.2.3-3.el8_10.x86_64",
+    "gnome-autoar-devel-0.2.3-3.el8_10.ppc64le",
+    "gnome-autoar-devel-0.2.3-3.el8_10.aarch64",
+    "gnome-autoar-devel-0.2.3-3.el8_10.s390x"
+  ],
+  "fixes": [
+    {
+      "id": "RHEL-120192",
+      "url": "https://issues.redhat.com/browse/RHEL-120192",
+      "description": "[RFE] Please add gnome-autoar-devel to RHEL 8 CRB repo"
+    }
+  ],
+  "full_text": "An update for gnome-autoar is now available for Red Hat Enterprise Linux 10.\n\ngnome-autoar is a GObject based library for handling archives.Bug Fix(es) and Enhancement(s): [RFE] Please add gnome-autoar-devel to RHEL 8 CRB repo (JIRA:RHEL-120192)"
+}

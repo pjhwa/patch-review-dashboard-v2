@@ -1,0 +1,21 @@
+{
+  "id": "RHSA-2025:21775",
+  "vendor": "Red Hat",
+  "url": "https://access.redhat.com/errata/RHSA-2025:21775",
+  "pubDate": "2025-11-19T20:53:45.000Z",
+  "dateStr": "2025-11-19",
+  "severity": "Moderate",
+  "title": "Red Hat Security Advisory: Red Hat Ansible Automation Platform 2.6 Container Release Update",
+  "overview": "An update is now available for Red Hat Ansible Automation Platform 2.6",
+  "description": "An update is now available for Red Hat Ansible Automation Platform 2.6",
+  "affected_products": [
+    "Red Hat Ansible Automation Platform 2.6"
+  ],
+  "cves": [
+    "CVE-2025-9909",
+    "CVE-2025-59530"
+  ],
+  "packages": [],
+  "fixes": "",
+  "full_text": "Red Hat Security Advisory: Red Hat Ansible Automation Platform 2.6 Container Release Update\n\nAn update is now available for Red Hat Ansible Automation Platform 2.6\n\nAn update is now available for Red Hat Ansible Automation Platform 2.6\n\n\n\nCVE-2025-9909: A flaw was found in the Red Hat Ansible Automation Platform Gateway route creation component. This vulnerability allows credential theft via the creation of misleading routes using a double-slash (//) prefix in the gateway_path. A malicious or socially engineered administrator can configure a honey-pot route to intercept and exfiltrate user credentials, potentially maintaining persistent access or creating a backdoor even after their permissions are revoked.\n\nCVE-2025-59530: quic-go is an implementation of the QUIC protocol in Go. In versions prior to 0.49.0, 0.54.1, and 0.55.0, a misbehaving or malicious server can cause a denial-of-service (DoS) attack on the quic-go client by triggering an assertion failure, leading to a process crash. This requires no authentication and can be exploited during the handshake phase. This was observed in the wild with certain server implementations. quic-go needs to be able to handle misbehaving server implementations, including those that prematurely send a HANDSHAKE_DONE frame. Versions 0.49.0, 0.54.1, and 0.55.0 discard Initial keys when receiving a HANDSHAKE_DONE frame, thereby correctly handling premature HANDSHAKE_DONE frames."
+}

@@ -1,0 +1,40 @@
+{
+  "id": "ELSA-2025-18814",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2025-November/019021.html",
+  "synopsis": "[El-errata] ELSA-2025-18814 Moderate: Oracle Linux 7 java-1.8.0-openjdk security update",
+  "dateStr": "2025-November",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Security Advisory ELSA-2025-18814",
+  "description": "[1.8.0.472.b08-1.0.1]\n- Update to 8u472-b08 (GA) [Orabug: 38571645]\n- Update release notes for 8u472-b08.\n- Drop local JDK-8339414 fix as this is now included upstream\n- Reset rpmrelease to 1 now there are no other RPM builds on RHEL 8\n- Sync the copy of the portable specfile with the latest update\n- ** This tarball is embargoed until 2025-10-21 @ 1pm PT. **\n- Resolves: RHEL-118769\n- Resolves: RHEL-119444\n- Fixes CVE-2025-53057 CVE-2025-53066\n\n[1:1.8.0.462.b08-1.0.1]\n- Update to 8u462-b08 (GA) [Orabug: 38248370]\n- Update release notes for 8u462-b08.\n- Require tzdata 2025b due to upstream inclusion of JDK-8352716\n- Add early backport of JDK-8339414\n- Sync the copy of the portable specfile with the latest update\n- ** This tarball is embargoed until 2025-07-15 @ 1pm PT. **\n- Resolves: RHEL-101654\n- Resolves: RHEL-102307\n- Resolves: RHEL-102907\n\n[1.8.0.452.b09-1.0.1]\n- Update to 8u452-b09 (GA) \t[Orabug: 38144314]\n- Update release notes for 8u452-b09.\n- Remove long option documentation from JDK-8335912/JDK-8337499 as not present in 8u\n- Require tzdata 2025a due to upstream inclusion of JDK-8347965\n- ** This tarball is embargoed until 2025-04-15 @ 1pm PT. **\n- Resolves: RHEL-86973\n- Resolves: RHEL-86616\n\n[1:1.8.0.442.b06-1.0.3]\n- Fixed CVE-2025-21587, CVE-2025-30691  and CVE-2025-30698 [Orabug: 37840723]\n\n[1:1.8.0.442.b06-1.0.1]\n- Update to 8u442-b06 (GA) [Orabug: 37506184]\n- Update release notes for 8u442-b06.\n- Add a simple -version check on both the JDK and JRE bin/java",
+  "affected_products": [
+    "Oracle Linux 7"
+  ],
+  "packages": [
+    "java-1.8.0-openjdk-1.8.0.472.b08-1.0.1.el7_9.i686.rpm",
+    "java-1.8.0-openjdk-1.8.0.472.b08-1.0.1.el7_9.x86_64.rpm",
+    "java-1.8.0-openjdk-accessibility-1.8.0.472.b08-1.0.1.el7_9.i686.rpm",
+    "java-1.8.0-openjdk-accessibility-1.8.0.472.b08-1.0.1.el7_9.x86_64.rpm",
+    "java-1.8.0-openjdk-demo-1.8.0.472.b08-1.0.1.el7_9.i686.rpm",
+    "java-1.8.0-openjdk-demo-1.8.0.472.b08-1.0.1.el7_9.x86_64.rpm",
+    "java-1.8.0-openjdk-devel-1.8.0.472.b08-1.0.1.el7_9.i686.rpm",
+    "java-1.8.0-openjdk-devel-1.8.0.472.b08-1.0.1.el7_9.x86_64.rpm",
+    "java-1.8.0-openjdk-headless-1.8.0.472.b08-1.0.1.el7_9.i686.rpm",
+    "java-1.8.0-openjdk-headless-1.8.0.472.b08-1.0.1.el7_9.x86_64.rpm",
+    "java-1.8.0-openjdk-javadoc-1.8.0.472.b08-1.0.1.el7_9.noarch.rpm",
+    "java-1.8.0-openjdk-javadoc-zip-1.8.0.472.b08-1.0.1.el7_9.noarch.rpm",
+    "java-1.8.0-openjdk-src-1.8.0.472.b08-1.0.1.el7_9.i686.rpm",
+    "java-1.8.0-openjdk-src-1.8.0.472.b08-1.0.1.el7_9.x86_64.rpm"
+  ],
+  "cves": [
+    "CVE-2025-53057",
+    "CVE-2025-53066",
+    "CVE-2025-21587",
+    "CVE-2025-30691",
+    "CVE-2025-30698"
+  ],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Security Advisory ELSA-2025-18814\n\nhttp://linux.oracle.com/errata/ELSA-2025-18814.html\n\nThe following updated rpms for Oracle Linux 7 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\njava-1.8.0-openjdk-1.8.0.472.b08-1.0.1.el7_9.i686.rpm\njava-1.8.0-openjdk-1.8.0.472.b08-1.0.1.el7_9.x86_64.rpm\njava-1.8.0-openjdk-accessibility-1.8.0.472.b08-1.0.1.el7_9.i686.rpm\njava-1.8.0-openjdk-accessibility-1.8.0.472.b08-1.0.1.el7_9.x86_64.rpm\njava-1.8.0-openjdk-demo-1.8.0.472.b08-1.0.1.el7_9.i686.rpm\njava-1.8.0-openjdk-demo-1.8.0.472.b08-1.0.1.el7_9.x86_64.rpm\njava-1.8.0-openjdk-devel-1.8.0.472.b08-1.0.1.el7_9.i686.rpm\njava-1.8.0-openjdk-devel-1.8.0.472.b08-1.0.1.el7_9.x86_64.rpm\njava-1.8.0-openjdk-headless-1.8.0.472.b08-1.0.1.el7_9.i686.rpm\njava-1.8.0-openjdk-headless-1.8.0.472.b08-1.0.1.el7_9.x86_64.rpm\njava-1.8.0-openjdk-javadoc-1.8.0.472.b08-1.0.1.el7_9.noarch.rpm\njava-1.8.0-openjdk-javadoc-zip-1.8.0.472.b08-1.0.1.el7_9.noarch.rpm\njava-1.8.0-openjdk-src-1.8.0.472.b08-1.0.1.el7_9.i686.rpm\njava-1.8.0-openjdk-src-1.8.0.472.b08-1.0.1.el7_9.x86_64.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol7/SRPMS-updates/java-1.8.0-openjdk-1.8.0.472.b08-1.0.1.el7_9.src.rpm\n\nRelated CVEs:\n\nCVE-2025-53057\nCVE-2025-53066\n\n\n\n\nDescription of changes:\n\n[1.8.0.472.b08-1.0.1]\n- Update to 8u472-b08 (GA) [Orabug: 38571645]\n- Update release notes for 8u472-b08.\n- Drop local JDK-8339414 fix as this is now included upstream\n- Reset rpmrelease to 1 now there are no other RPM builds on RHEL 8\n- Sync the copy of the portable specfile with the latest update\n- ** This tarball is embargoed until 2025-10-21 @ 1pm PT. **\n- Resolves: RHEL-118769\n- Resolves: RHEL-119444\n- Fixes CVE-2025-53057 CVE-2025-53066\n\n[1:1.8.0.462.b08-1.0.1]\n- Update to 8u462-b08 (GA) [Orabug: 38248370]\n- Update release notes for 8u462-b08.\n- Require tzdata 2025b due to upstream inclusion of JDK-8352716\n- Add early backport of JDK-8339414\n- Sync the copy of the portable specfile with the latest update\n- ** This tarball is embargoed until 2025-07-15 @ 1pm PT. **\n- Resolves: RHEL-101654\n- Resolves: RHEL-102307\n- Resolves: RHEL-102907\n\n[1.8.0.452.b09-1.0.1]\n- Update to 8u452-b09 (GA) \t[Orabug: 38144314]\n- Update release notes for 8u452-b09.\n- Remove long option documentation from JDK-8335912/JDK-8337499 as not present in 8u\n- Require tzdata 2025a due to upstream inclusion of JDK-8347965\n- ** This tarball is embargoed until 2025-04-15 @ 1pm PT. **\n- Resolves: RHEL-86973\n- Resolves: RHEL-86616\n\n[1:1.8.0.442.b06-1.0.3]\n- Fixed CVE-2025-21587, CVE-2025-30691  and CVE-2025-30698 [Orabug: 37840723]\n\n[1:1.8.0.442.b06-1.0.1]\n- Update to 8u442-b06 (GA) [Orabug: 37506184]\n- Update release notes for 8u442-b06.\n- Add a simple -version check on both the JDK and JRE bin/java",
+  "vendor": "Oracle"
+}

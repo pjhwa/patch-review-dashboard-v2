@@ -1,0 +1,26 @@
+{
+  "id": "ELBA-2025-20644-0",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "AppStream",
+  "title": "skopeo bug fix and enhancement update",
+  "issuedDate": "2025-11-17T00:00:00Z",
+  "updatedDate": "2025-11-17T00:00:00Z",
+  "pubDate": "2025-11-17T00:00:00Z",
+  "dateStr": "2025-11-17",
+  "url": "https://linux.oracle.com/errata/ELBA-2025-20644-0.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 9.",
+  "description": "[1:1.20.0-1]\n- update to https://github.com/containers/skopeo/releases/tag/v1.20.0\n- Related: RHEL-80816\n\n[1:1.19.0-2]\n- Do not require BATS on RHEL\n- Resolves: RHEL-97592\n\n[1:1.19.0-1]\n- update to https://github.com/containers/skopeo/releases/tag/v1.19.0\n- Related: RHEL-80816\n\n[2:1.18.1-3]\n- fix gating.yaml\n- Related: RHEL-80816",
+  "affected_products": [
+    "Oracle Linux 9 for x86_64",
+    "Oracle Linux 9 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "skopeo-1.20.0-1.el9.x86_64",
+    "skopeo-1.20.0-1.el9.src",
+    "skopeo-tests-1.20.0-1.el9.x86_64"
+  ],
+  "full_text": "[1:1.20.0-1]\n- update to https://github.com/containers/skopeo/releases/tag/v1.20.0\n- Related: RHEL-80816\n\n[1:1.19.0-2]\n- Do not require BATS on RHEL\n- Resolves: RHEL-97592\n\n[1:1.19.0-1]\n- update to https://github.com/containers/skopeo/releases/tag/v1.19.0\n- Related: RHEL-80816\n\n[2:1.18.1-3]\n- fix gating.yaml\n- Related: RHEL-80816\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2025-20644-0.html"
+}

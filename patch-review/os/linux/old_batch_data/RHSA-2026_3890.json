@@ -1,0 +1,23 @@
+{
+  "id": "RHSA-2026:3890",
+  "vendor": "Red Hat",
+  "url": "https://access.redhat.com/errata/RHSA-2026:3890",
+  "pubDate": "2026-03-05T13:32:44.000Z",
+  "dateStr": "2026-03-05",
+  "severity": "Important",
+  "title": "Red Hat Security Advisory: Red Hat Build of Apache Camel 4.14.4 for Spring Boot release.",
+  "overview": "Red Hat build of Apache Camel 4.14.4 for Spring Boot patch release and security update is now available.\n\nRed Hat Product Security has rated this update as having a security impact of\nImportant. A Common Vulnerability Scoring System (CVSS) base score, which gives\na detailed severity rating, is available for each vulnerability from the CVE\nlink(s) in the References section.",
+  "description": "Red Hat build of Apache Camel 4.14.4 for Spring Boot patch release and security update is now available.\n\nRed Hat Product Security has rated this update as having a security impact of\nImportant. A Common Vulnerability Scoring System (CVSS) base score, which gives\na detailed severity rating, is available for each vulnerability from the CVE\nlink(s) in the References section.",
+  "affected_products": [
+    "Red Hat build of Apache Camel 4.14.4 for Spring Boot 3.5.11"
+  ],
+  "cves": [
+    "CVE-2025-12543",
+    "CVE-2026-1002",
+    "CVE-2026-27727",
+    "CVE-2026-27830"
+  ],
+  "packages": [],
+  "fixes": "",
+  "full_text": "Red Hat Security Advisory: Red Hat Build of Apache Camel 4.14.4 for Spring Boot release.\n\nRed Hat build of Apache Camel 4.14.4 for Spring Boot patch release and security update is now available.\n\nRed Hat Product Security has rated this update as having a security impact of\nImportant. A Common Vulnerability Scoring System (CVSS) base score, which gives\na detailed severity rating, is available for each vulnerability from the CVE\nlink(s) in the References section.\n\nRed Hat build of Apache Camel 4.14.4 for Spring Boot patch release and security update is now available.\n\nRed Hat Product Security has rated this update as having a security impact of\nImportant. A Common Vulnerability Scoring System (CVSS) base score, which gives\na detailed severity rating, is available for each vulnerability from the CVE\nlink(s) in the References section.\n\n\n\nCVE-2025-12543: A flaw was found in the Undertow HTTP server core, which is used in WildFly, JBoss EAP, and other Java applications. The Undertow library fails to properly validate the Host header in incoming HTTP requests.As a result, requests containing malformed or malicious Host headers are processed without rejection, enabling attackers to poison caches, perform internal network scans, or hijack user sessions.\n\nCVE-2026-1002: A flaw was found in Vert.x. The Web static handler component cache can be manipulated to deny the access to static files served by the handler using specifically crafted request URIs, preventing legitimate users from accessing static files with an HTTP 404 response.\n\nCVE-2026-27727: mchange-commons-java, a library that provides Java utilities, includes code that mirrors early implementations of JNDI functionality, including support for remote `factoryClassLocation` values, by which code can be downloaded and invoked within a running application. If an attacker can provoke an application to read a maliciously crafted `jaxax.naming.Reference` or serialized object, they can provoke the download and execution of malicious code. Implementations of this functionality within the JDK were disabled by default behind a System property that defaults to `false`, `com.sun.jndi.ldap.object.trustURLCodebase`. However, since mchange-commons-java includes an independent implementation of JNDI derefencing, libraries (such as c3p0) that resolve references via that implementation could be provoked to download and execute malicious code even after the JDK was hardened. Mirroring the JDK patch, mchange-commons-java's JNDI functionality is gated by configuration parameters that default to restrictive values starting in version 0.4.0. No known workarounds are available. Versions prior to 0.4.0 should be avoided on application CLASSPATHs.\n\nCVE-2026-27830: A flaw was found in c3p0, a Java Database Connectivity (JDBC) Connection pooling library. This vulnerability allows an attacker to achieve arbitrary code execution by providing maliciously crafted Java-serialized objects or `javax.naming.Reference` instances. By manipulating the `userOverridesAsString` property, an attacker can cause the application to download and execute malicious code from a remote location on its CLASSPATH."
+}

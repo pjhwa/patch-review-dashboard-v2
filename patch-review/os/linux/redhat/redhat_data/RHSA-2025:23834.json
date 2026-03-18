@@ -1,0 +1,35 @@
+{
+  "id": "RHSA-2025:23834",
+  "vendor": "Red Hat",
+  "type": "Security Advisory (RHSA)",
+  "title": "Red Hat Security Advisory: go-rpm-macros security update",
+  "issuedDate": "2025-12-22T09:38:58+00:00",
+  "updatedDate": "2025-12-22T09:38:58+00:00",
+  "pubDate": "2025-12-22T09:38:58+00:00",
+  "dateStr": "2025-12-22",
+  "url": "https://access.redhat.com/errata/RHSA-2025:23834",
+  "severity": "Moderate",
+  "overview": "An update for go-rpm-macros is now available for Red Hat Enterprise Linux 9.4 Extended Update Support.\n\nRed Hat Product Security has rated this update as having a security impact of Moderate. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "description": "This package provides build-stage rpm automation to simplify the creation of Go language (golang) packages.  It does not need to be included in the default build root: go-srpm-macros will pull it in for Go packages only.\n\nSecurity Fix(es):\n\n* os/exec: Unexpected paths returned from LookPath in os/exec (CVE-2025-47906)\n\nFor more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux",
+    "Red Hat Enterprise Linux AppStream EUS (v.9.4)"
+  ],
+  "cves": [
+    "CVE-2025-47906"
+  ],
+  "packages": [
+    "go-filesystem-0:3.2.0-4.el9_4.aarch64",
+    "go-rpm-macros-0:3.2.0-4.el9_4.aarch64",
+    "go-filesystem-0:3.2.0-4.el9_4.ppc64le",
+    "go-rpm-macros-0:3.2.0-4.el9_4.ppc64le",
+    "go-filesystem-0:3.2.0-4.el9_4.x86_64",
+    "go-rpm-macros-0:3.2.0-4.el9_4.x86_64",
+    "go-filesystem-0:3.2.0-4.el9_4.s390x",
+    "go-rpm-macros-0:3.2.0-4.el9_4.s390x",
+    "go-rpm-macros-0:3.2.0-4.el9_4.src",
+    "go-rpm-templates-0:3.2.0-4.el9_4.noarch",
+    "go-srpm-macros-0:3.2.0-4.el9_4.noarch"
+  ],
+  "full_text": "An update for go-rpm-macros is now available for Red Hat Enterprise Linux 9.4 Extended Update Support.\n\nRed Hat Product Security has rated this update as having a security impact of Moderate. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nThis package provides build-stage rpm automation to simplify the creation of Go language (golang) packages.  It does not need to be included in the default build root: go-srpm-macros will pull it in for Go packages only.\n\nSecurity Fix(es):\n\n* os/exec: Unexpected paths returned from LookPath in os/exec (CVE-2025-47906)\n\nFor more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section."
+}

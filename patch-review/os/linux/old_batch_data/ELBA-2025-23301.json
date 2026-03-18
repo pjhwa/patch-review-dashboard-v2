@@ -1,0 +1,26 @@
+{
+  "id": "ELBA-2025-23301",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2025-December/019374.html",
+  "synopsis": "[El-errata] ELBA-2025-23301 Oracle Linux 10 rust-coreos-installer bug fix and enhancement update",
+  "dateStr": "2025-December",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Bug Fix Advisory ELBA-2025-23301",
+  "description": "[0.24.0-5.0.1]\n- Prevent error generating initrd during kernel package POSTTRANS script\n  [Orabug: 38073419]\n\n[0.24.0-5]\n- rootmap: Inject mpath.wwid=$WWID when on multipath\n  Backport https://github.com/coreos/coreos-installer/pull/1676/commits/a40af0a3ec13c4fd49b34317e80f6c0bc845b46a\n  Resolves RHEL-127858\n\n[0.24.0-4]\n- Check if firstboot args are defined and add them manually\n  Backport https://github.com/coreos/coreos-installer/pull/1699\n\n[0.24.0-3]\n- Use the full path for the 'root=' kernel arg when rootfs on mpath\n  Backport https://github.com/coreos/coreos-installer/pull/1677\n\n[0.24.0-2]\n- Restore single-decimal precision to stream output\n  Backport https://github.com/coreos/coreos-installer/pull/1654",
+  "affected_products": [
+    "Oracle Linux 10"
+  ],
+  "packages": [
+    "coreos-installer-0.24.0-5.0.1.el10_1.x86_64.rpm",
+    "coreos-installer-bootinfra-0.24.0-5.0.1.el10_1.x86_64.rpm",
+    "coreos-installer-dracut-0.24.0-5.0.1.el10_1.x86_64.rpm",
+    "coreos-installer-0.24.0-5.0.1.el10_1.aarch64.rpm",
+    "coreos-installer-bootinfra-0.24.0-5.0.1.el10_1.aarch64.rpm",
+    "coreos-installer-dracut-0.24.0-5.0.1.el10_1.aarch64.rpm"
+  ],
+  "cves": [],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Bug Fix Advisory ELBA-2025-23301\n\nhttp://linux.oracle.com/errata/ELBA-2025-23301.html\n\nThe following updated rpms for Oracle Linux 10 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\ncoreos-installer-0.24.0-5.0.1.el10_1.x86_64.rpm\ncoreos-installer-bootinfra-0.24.0-5.0.1.el10_1.x86_64.rpm\ncoreos-installer-dracut-0.24.0-5.0.1.el10_1.x86_64.rpm\n\naarch64:\ncoreos-installer-0.24.0-5.0.1.el10_1.aarch64.rpm\ncoreos-installer-bootinfra-0.24.0-5.0.1.el10_1.aarch64.rpm\ncoreos-installer-dracut-0.24.0-5.0.1.el10_1.aarch64.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol10/SRPMS-updates/rust-coreos-installer-0.24.0-5.0.1.el10_1.src.rpm\n\n\n\nDescription of changes:\n\n[0.24.0-5.0.1]\n- Prevent error generating initrd during kernel package POSTTRANS script\n  [Orabug: 38073419]\n\n[0.24.0-5]\n- rootmap: Inject mpath.wwid=$WWID when on multipath\n  Backport https://github.com/coreos/coreos-installer/pull/1676/commits/a40af0a3ec13c4fd49b34317e80f6c0bc845b46a\n  Resolves RHEL-127858\n\n[0.24.0-4]\n- Check if firstboot args are defined and add them manually\n  Backport https://github.com/coreos/coreos-installer/pull/1699\n\n[0.24.0-3]\n- Use the full path for the 'root=' kernel arg when rootfs on mpath\n  Backport https://github.com/coreos/coreos-installer/pull/1677\n\n[0.24.0-2]\n- Restore single-decimal precision to stream output\n  Backport https://github.com/coreos/coreos-installer/pull/1654",
+  "vendor": "Oracle"
+}

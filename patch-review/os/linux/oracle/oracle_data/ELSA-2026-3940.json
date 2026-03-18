@@ -1,0 +1,28 @@
+{
+  "id": "ELSA-2026-3940",
+  "vendor": "Oracle",
+  "type": "Security Advisory (ELSA)",
+  "title": " nfs-utils security update",
+  "issuedDate": "2026-03-05T00:00:00Z",
+  "updatedDate": "2026-03-05T00:00:00Z",
+  "pubDate": "2026-03-05T00:00:00Z",
+  "dateStr": "2026-03-05",
+  "url": "https://linux.oracle.com/errata/ELSA-2026-3940.html",
+  "severity": "Moderate",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 9.",
+  "description": "[2.5.4-38.0.1.el9_7.3]\n- spec: remove multiple warnings when upgrading nfs-utils with gssproxy [Orabug: 36044562]\n\n[2.5.4-38.3]\n- Add requires for selinux-policy (RHEL-127104)\n\n[2.5.4-38.2]\n- Replace statfs64 with statfs (RHEL-127104)\n- NFS export symlink vulnerability fix (RHEL-127104)\n- mountd: Minor refactor of get_rootfh() (RHEL-127104)\n- mountd: Separate lookup of the exported directory and the mount path (RHEL-127104)\n- support: Add a mini-library to extract and apply RPC credentials (RHEL-127104)\n- Fix access checks when mounting subdirectories in NFSv3 (RHEL-127104)\n  Resolves: CVE-2025-12801",
+  "affected_products": [
+    "Oracle Linux 9 for x86_64",
+    "Oracle Linux 9 for aarch64"
+  ],
+  "cves": [
+    "CVE-2025-12801"
+  ],
+  "packages": [
+    "nfs-utils-2.5.4-38.0.1.el9_7.3.x86_64",
+    "libnfsidmap-2.5.4-38.0.1.el9_7.3.i686",
+    "nfs-utils-2.5.4-38.0.1.el9_7.3.src",
+    "libnfsidmap-2.5.4-38.0.1.el9_7.3.x86_64"
+  ],
+  "full_text": "[2.5.4-38.0.1.el9_7.3]\n- spec: remove multiple warnings when upgrading nfs-utils with gssproxy [Orabug: 36044562]\n\n[2.5.4-38.3]\n- Add requires for selinux-policy (RHEL-127104)\n\n[2.5.4-38.2]\n- Replace statfs64 with statfs (RHEL-127104)\n- NFS export symlink vulnerability fix (RHEL-127104)\n- mountd: Minor refactor of get_rootfh() (RHEL-127104)\n- mountd: Separate lookup of the exported directory and the mount path (RHEL-127104)\n- support: Add a mini-library to extract and apply RPC credentials (RHEL-127104)\n- Fix access checks when mounting subdirectories in NFSv3 (RHEL-127104)\n  Resolves: CVE-2025-12801\n\nReferences:\nhttps://linux.oracle.com/errata/ELSA-2026-3940.html\nhttps://linux.oracle.com/cve/CVE-2025-12801.html"
+}

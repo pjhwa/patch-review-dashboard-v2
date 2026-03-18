@@ -1,0 +1,35 @@
+{
+  "id": "USN-7829-5",
+  "vendor": "Canonical / Ubuntu",
+  "type": "Ubuntu Security Notice (USN)",
+  "title": "linux-intel-iotg, linux-intel-iotg-5.15 vulnerabilities",
+  "issuedDate": "2025-10-28T17:03:58Z",
+  "updatedDate": "2026-02-10T04:50:11Z",
+  "pubDate": "2025-10-28T17:03:58Z",
+  "dateStr": "2025-10-28",
+  "url": "https://ubuntu.com/security/notices/USN-7829-5",
+  "severity": "None",
+  "overview": "linux-intel-iotg, linux-intel-iotg-5.15 vulnerabilities",
+  "description": "Several security issues were discovered in the Linux kernel.\nAn attacker could possibly use these to compromise the system.\nThis update corrects flaws in the following subsystems:\n  - GPU drivers;\n  - Network drivers;\n  - Netlink;\n(CVE-2024-26700, CVE-2025-38727, CVE-2023-52593, CVE-2024-26896)\n",
+  "affected_products": [
+    "Ubuntu 22.04 LTS"
+  ],
+  "cves": [],
+  "packages": [
+    "linux-buildinfo-5.15.0-1090-intel-iotg-5.15.0-1090.96",
+    "linux-cloud-tools-5.15.0-1090-intel-iotg-5.15.0-1090.96",
+    "linux-headers-5.15.0-1090-intel-iotg-5.15.0-1090.96",
+    "linux-image-unsigned-5.15.0-1090-intel-iotg-5.15.0-1090.96",
+    "linux-intel-iotg-cloud-tools-5.15.0-1090-5.15.0-1090.96",
+    "linux-intel-iotg-cloud-tools-common-5.15.0-1090.96",
+    "linux-intel-iotg-headers-5.15.0-1090-5.15.0-1090.96",
+    "linux-intel-iotg-tools-5.15.0-1090-5.15.0-1090.96",
+    "linux-intel-iotg-tools-common-5.15.0-1090.96",
+    "linux-intel-iotg-tools-host-5.15.0-1090.96",
+    "linux-modules-5.15.0-1090-intel-iotg-5.15.0-1090.96",
+    "linux-modules-extra-5.15.0-1090-intel-iotg-5.15.0-1090.96",
+    "linux-modules-iwlwifi-5.15.0-1090-intel-iotg-5.15.0-1090.96",
+    "linux-tools-5.15.0-1090-intel-iotg-5.15.0-1090.96"
+  ],
+  "full_text": "Several security issues were discovered in the Linux kernel.\nAn attacker could possibly use these to compromise the system.\nThis update corrects flaws in the following subsystems:\n  - GPU drivers;\n  - Network drivers;\n  - Netlink;\n(CVE-2024-26700, CVE-2025-38727, CVE-2023-52593, CVE-2024-26896)\n"
+}

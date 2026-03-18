@@ -1,0 +1,89 @@
+{
+  "id": "RHBA-2025:20529",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: libdnf bug fix and enhancement update",
+  "issuedDate": "2025-11-11T07:49:50Z",
+  "updatedDate": "2025-11-11T07:49:50Z",
+  "pubDate": "2025-11-11T07:49:50Z",
+  "dateStr": "2025-11-11",
+  "url": "https://access.redhat.com/errata/RHBA-2025:20529",
+  "severity": "None",
+  "overview": "An update for libdnf is now available for Red Hat Enterprise Linux 10.",
+  "description": "For detailed information on changes in this release, see the Red Hat Enterprise Linux 9 Release Notes linked from the References section.",
+  "affected_products": [
+    "Red Hat CodeReady Linux Builder for Power, little endian",
+    "Red Hat Enterprise Linux for x86_64 10 x86_64",
+    "Red Hat CodeReady Linux Builder for ARM 64",
+    "Red Hat CodeReady Linux Builder for x86_64 10 x86_64",
+    "Red Hat CodeReady Linux Builder for IBM z Systems",
+    "Red Hat Enterprise Linux for Power, little endian",
+    "Red Hat Enterprise Linux for IBM z Systems",
+    "Red Hat Enterprise Linux for ARM 64"
+  ],
+  "cves": [],
+  "packages": [
+    "libdnf-0.69.0-16.el9.src",
+    "libdnf-0.69.0-16.el9.i686",
+    "libdnf-0.69.0-16.el9.x86_64",
+    "libdnf-debuginfo-0.69.0-16.el9.i686",
+    "libdnf-debuginfo-0.69.0-16.el9.x86_64",
+    "libdnf-debugsource-0.69.0-16.el9.i686",
+    "libdnf-debugsource-0.69.0-16.el9.x86_64",
+    "python3-hawkey-0.69.0-16.el9.x86_64",
+    "python3-hawkey-debuginfo-0.69.0-16.el9.i686",
+    "python3-hawkey-debuginfo-0.69.0-16.el9.x86_64",
+    "python3-libdnf-0.69.0-16.el9.x86_64",
+    "python3-libdnf-debuginfo-0.69.0-16.el9.i686",
+    "python3-libdnf-debuginfo-0.69.0-16.el9.x86_64",
+    "libdnf-0.69.0-16.el9.s390x",
+    "libdnf-debuginfo-0.69.0-16.el9.s390x",
+    "libdnf-debugsource-0.69.0-16.el9.s390x",
+    "python3-hawkey-0.69.0-16.el9.s390x",
+    "python3-hawkey-debuginfo-0.69.0-16.el9.s390x",
+    "python3-libdnf-0.69.0-16.el9.s390x",
+    "python3-libdnf-debuginfo-0.69.0-16.el9.s390x",
+    "libdnf-0.69.0-16.el9.ppc64le",
+    "libdnf-debuginfo-0.69.0-16.el9.ppc64le",
+    "libdnf-debugsource-0.69.0-16.el9.ppc64le",
+    "python3-hawkey-0.69.0-16.el9.ppc64le",
+    "python3-hawkey-debuginfo-0.69.0-16.el9.ppc64le",
+    "python3-libdnf-0.69.0-16.el9.ppc64le",
+    "python3-libdnf-debuginfo-0.69.0-16.el9.ppc64le",
+    "libdnf-0.69.0-16.el9.aarch64",
+    "libdnf-debuginfo-0.69.0-16.el9.aarch64",
+    "libdnf-debugsource-0.69.0-16.el9.aarch64",
+    "python3-hawkey-0.69.0-16.el9.aarch64",
+    "python3-hawkey-debuginfo-0.69.0-16.el9.aarch64",
+    "python3-libdnf-0.69.0-16.el9.aarch64",
+    "python3-libdnf-debuginfo-0.69.0-16.el9.aarch64",
+    "libdnf-devel-0.69.0-16.el9.i686",
+    "libdnf-devel-0.69.0-16.el9.x86_64",
+    "libdnf-devel-0.69.0-16.el9.ppc64le",
+    "libdnf-devel-0.69.0-16.el9.aarch64",
+    "libdnf-devel-0.69.0-16.el9.s390x"
+  ],
+  "fixes": [
+    {
+      "id": "RHEL-62833",
+      "url": "https://issues.redhat.com/browse/RHEL-62833",
+      "description": "dnf doesn't warn the user when a file is not accessible, which may lead to discrepancies in the command output"
+    },
+    {
+      "id": "RHEL-100622",
+      "url": "https://issues.redhat.com/browse/RHEL-100622",
+      "description": "libdnf: Warn/disallow changes outside /usr, /etc with --transient [rhel-9]"
+    },
+    {
+      "id": "RHEL-100623",
+      "url": "https://issues.redhat.com/browse/RHEL-100623",
+      "description": "libdnf: Mark transient transactions in history [rhel-9]"
+    },
+    {
+      "id": "RHEL-95006",
+      "url": "https://issues.redhat.com/browse/RHEL-95006",
+      "description": "[libdnf] RFE:  Introduce $releasever_major, $releasever_minor variables"
+    }
+  ],
+  "full_text": "An update for libdnf is now available for Red Hat Enterprise Linux 10.\n\nFor detailed information on changes in this release, see the Red Hat Enterprise Linux 9 Release Notes linked from the References section."
+}

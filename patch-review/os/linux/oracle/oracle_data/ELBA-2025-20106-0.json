@@ -1,0 +1,29 @@
+{
+  "id": "ELBA-2025-20106-0",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "RHCK",
+  "title": "dnf bug fix and enhancement update",
+  "issuedDate": "2025-11-25T00:00:00Z",
+  "updatedDate": "2025-11-25T00:00:00Z",
+  "pubDate": "2025-11-25T00:00:00Z",
+  "dateStr": "2025-11-25",
+  "url": "https://linux.oracle.com/errata/ELBA-2025-20106-0.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 10.",
+  "description": "[4.20.0-18.0.1]\n- Replaced bugzilla.oracle.com references [Orabug: 34202300]\n- Fixed python stack trace with updateinfo list cves command [Orabug: 32749660]\n- Replaced upstream bugzilla reporting reference. [Orabug: 32829849]\n\n[4.20.0-18]\n- Fix detecting releasever_minor in dnf-automatic (RHEL-106141)\n\n[4.20.0-17]\n- Add deprecation warning to modularity commands/docs (RHEL-89940)\n\n[4.20.0-16]\n- Obsolete RHEL-9-only multisig DNF plugin (RHEL-102336)\n\n[4.20.0-15]\n- Mark transient transactions in DNF history (RHEL-84515)\n- Warn/disallow changes outside /usr, /etc with --transient (RHEL-84501)",
+  "affected_products": [
+    "Oracle Linux 10 for x86_64",
+    "Oracle Linux 10 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "dnf-4.20.0-18.0.1.el10.noarch",
+    "dnf-4.20.0-18.0.1.el10.src",
+    "python3-dnf-4.20.0-18.0.1.el10.noarch",
+    "yum-4.20.0-18.0.1.el10.noarch",
+    "dnf-automatic-4.20.0-18.0.1.el10.noarch",
+    "dnf-data-4.20.0-18.0.1.el10.noarch"
+  ],
+  "full_text": "[4.20.0-18.0.1]\n- Replaced bugzilla.oracle.com references [Orabug: 34202300]\n- Fixed python stack trace with updateinfo list cves command [Orabug: 32749660]\n- Replaced upstream bugzilla reporting reference. [Orabug: 32829849]\n\n[4.20.0-18]\n- Fix detecting releasever_minor in dnf-automatic (RHEL-106141)\n\n[4.20.0-17]\n- Add deprecation warning to modularity commands/docs (RHEL-89940)\n\n[4.20.0-16]\n- Obsolete RHEL-9-only multisig DNF plugin (RHEL-102336)\n\n[4.20.0-15]\n- Mark transient transactions in DNF history (RHEL-84515)\n- Warn/disallow changes outside /usr, /etc with --transient (RHEL-84501)\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2025-20106-0.html"
+}

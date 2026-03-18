@@ -1,0 +1,38 @@
+{
+  "id": "RHBA-2025:20665",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: kdump-anaconda-addon bug fix and enhancement update",
+  "issuedDate": "2025-11-11T07:50:45Z",
+  "updatedDate": "2025-11-11T07:50:45Z",
+  "pubDate": "2025-11-11T07:50:45Z",
+  "dateStr": "2025-11-11",
+  "url": "https://access.redhat.com/errata/RHBA-2025:20665",
+  "severity": "None",
+  "overview": "An update for kdump-anaconda-addon is now available for Red Hat Enterprise Linux 10.",
+  "description": "For detailed information on changes in this release, see the Red Hat Enterprise Linux 9.7 Release Notes linked from the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux for IBM z Systems",
+    "Red Hat Enterprise Linux for x86_64 10 x86_64",
+    "Red Hat Enterprise Linux for Power, little endian",
+    "Red Hat Enterprise Linux for ARM 64"
+  ],
+  "cves": [],
+  "packages": [
+    "kdump-anaconda-addon-006-15.20220128git9603258.el9.src",
+    "kdump-anaconda-addon-006-15.20220128git9603258.el9.noarch"
+  ],
+  "fixes": [
+    {
+      "id": "RHEL-41082",
+      "url": "https://issues.redhat.com/browse/RHEL-41082",
+      "description": "Anaconda does not disable KDUMP service even if we request to disable it during installation"
+    },
+    {
+      "id": "RHEL-86873",
+      "url": "https://issues.redhat.com/browse/RHEL-86873",
+      "description": "[RHEL-9] kdump-annaconda-addon: handle the case of no systemctl"
+    }
+  ],
+  "full_text": "An update for kdump-anaconda-addon is now available for Red Hat Enterprise Linux 10.\n\nFor detailed information on changes in this release, see the Red Hat Enterprise Linux 9.7 Release Notes linked from the References section."
+}

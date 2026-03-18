@@ -1,0 +1,26 @@
+{
+  "id": "ELBA-2025-23300",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "AppStream",
+  "title": "libwacom bug fix and enhancement update",
+  "issuedDate": "2025-12-18T00:00:00Z",
+  "updatedDate": "2025-12-18T00:00:00Z",
+  "pubDate": "2025-12-18T00:00:00Z",
+  "dateStr": "2025-12-18",
+  "url": "https://linux.oracle.com/errata/ELBA-2025-23300.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 10.",
+  "description": "[2.14.0-4]\n- Rearrange the dial leaders for the  Intuos Pro 3rd Gen (RHEL-122812)",
+  "affected_products": [
+    "Oracle Linux 10 for x86_64",
+    "Oracle Linux 10 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "libwacom-data-2.14.0-4.el10_1.noarch",
+    "libwacom-2.14.0-4.el10_1.x86_64",
+    "libwacom-2.14.0-4.el10_1.src"
+  ],
+  "full_text": "[2.14.0-4]\n- Rearrange the dial leaders for the  Intuos Pro 3rd Gen (RHEL-122812)\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2025-23300.html"
+}

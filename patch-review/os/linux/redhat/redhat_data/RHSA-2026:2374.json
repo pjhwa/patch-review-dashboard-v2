@@ -1,0 +1,25 @@
+{
+  "id": "RHSA-2026:2374",
+  "vendor": "Red Hat",
+  "type": "Security Advisory (RHSA)",
+  "title": "Red Hat Security Advisory: Red Hat Web Terminal Operator 1.13.0 release.",
+  "issuedDate": "2026-02-09T21:56:53+00:00",
+  "updatedDate": "2026-02-09T21:57:03+00:00",
+  "pubDate": "2026-02-09T21:56:53+00:00",
+  "dateStr": "2026-02-09",
+  "url": "https://access.redhat.com/errata/RHSA-2026:2374",
+  "severity": "Important",
+  "overview": "Red Hat Web Terminal Operator 1.13.0 has been released.",
+  "description": "The Web Terminal provides a way to access a fully in-browser terminal emulator within the OpenShift Console. Command-line tools for interacting with the OpenShift cluster are pre-installed.",
+  "affected_products": [],
+  "cves": [
+    "CVE-2025-61729"
+  ],
+  "packages": [
+    "registry.redhat.io/web-terminal/web-terminal-exec-rhel9@sha256:6f78170f41610859d522324bffe3590d991c0e02ce44da9968d540a8db7c1bfd_amd64",
+    "registry.redhat.io/web-terminal/web-terminal-rhel9-operator@sha256:aa94bed77f40f0bf99aa71d95439aefcd8dce9ad01fa35e5013f67227fc8cc99_amd64",
+    "registry.redhat.io/web-terminal/web-terminal-operator-bundle@sha256:cd8dec02fe8a1bfa3a1f6879223f4ba753edd6176f371bf9b250fcda3ffd970e_amd64",
+    "registry.redhat.io/web-terminal/web-terminal-tooling-rhel9@sha256:4cb5aff0dc2b231fca2b9b47458ca01a191f824c58241fa25a548825d9c9e53b_amd64"
+  ],
+  "full_text": "Red Hat Web Terminal Operator 1.13.0 has been released.\n\nThe Web Terminal provides a way to access a fully in-browser terminal emulator within the OpenShift Console. Command-line tools for interacting with the OpenShift cluster are pre-installed."
+}

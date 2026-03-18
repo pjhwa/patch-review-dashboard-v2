@@ -1,0 +1,30 @@
+{
+  "id": "ELBA-2025-20287-0",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "AppStream",
+  "title": "annobin bug fix and enhancement update",
+  "issuedDate": "2025-11-25T00:00:00Z",
+  "updatedDate": "2025-11-25T00:00:00Z",
+  "pubDate": "2025-11-25T00:00:00Z",
+  "dateStr": "2025-11-25",
+  "url": "https://linux.oracle.com/errata/ELBA-2025-20287-0.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 10.",
+  "description": "[12.99-1]\n- Annocheck: Improve detection of glibc static maths libraries.  (RHEL-107470)\n\n[12.98-1]\n- Rebase to 12.98.  (RHEL-105572)\n- Improve configure and meson files for consistent builds.\n- Annocheck: Delete the temporary debug info directory after the tests have finished.\n- Annocheck: Fix bugs in debug rpm location code.  Add more glibc exceptions.  (RHEL-95216)\n- Annocheck: Improve performance with multiple debug info files and multiple files to scan.  (#2366180)\n- Annocheck: Update heuristic for detecting gcc files to cope with gcc 15.  (#2365824)\n\n[12.93-3]\n- Annocheck: Fix requirement for annobin notes from LLVM/Clang (RHEL-93213)\n\n[12.93-2]\n- NVR bump in order to rebuild with LLVM 20.  (RHEL-82000)\n\n[12.93-1]\n- Annocheck: Fix test for GO revision.  (RHEL-56031)\n\n[12.92-2]\n- Spec file: Generate latest-annobin.tar.xz at prep phase (RHEL-83034)",
+  "affected_products": [
+    "Oracle Linux 10 for x86_64",
+    "Oracle Linux 10 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "annobin-plugin-gcc-12.99-1.el10.x86_64",
+    "annobin-docs-12.99-1.el10.noarch",
+    "annobin-plugin-llvm-12.99-1.el10.x86_64",
+    "annobin-annocheck-12.99-1.el10.x86_64",
+    "annobin-plugin-clang-12.99-1.el10.x86_64",
+    "annobin-libannocheck-12.99-1.el10.x86_64",
+    "annobin-12.99-1.el10.src"
+  ],
+  "full_text": "[12.99-1]\n- Annocheck: Improve detection of glibc static maths libraries.  (RHEL-107470)\n\n[12.98-1]\n- Rebase to 12.98.  (RHEL-105572)\n- Improve configure and meson files for consistent builds.\n- Annocheck: Delete the temporary debug info directory after the tests have finished.\n- Annocheck: Fix bugs in debug rpm location code.  Add more glibc exceptions.  (RHEL-95216)\n- Annocheck: Improve performance with multiple debug info files and multiple files to scan.  (#2366180)\n- Annocheck: Update heuristic for detecting gcc files to cope with gcc 15.  (#2365824)\n\n[12.93-3]\n- Annocheck: Fix requirement for annobin notes from LLVM/Clang (RHEL-93213)\n\n[12.93-2]\n- NVR bump in order to rebuild with LLVM 20.  (RHEL-82000)\n\n[12.93-1]\n- Annocheck: Fix test for GO revision.  (RHEL-56031)\n\n[12.92-2]\n- Spec file: Generate latest-annobin.tar.xz at prep phase (RHEL-83034)\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2025-20287-0.html"
+}

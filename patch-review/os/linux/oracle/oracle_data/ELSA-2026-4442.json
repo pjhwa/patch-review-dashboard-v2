@@ -1,0 +1,27 @@
+{
+  "id": "ELSA-2026-4442",
+  "vendor": "Oracle",
+  "type": "Security Advisory (ELSA)",
+  "kernel_type": "RHCK",
+  "title": " vim security update",
+  "issuedDate": "2026-03-12T00:00:00Z",
+  "updatedDate": "2026-03-12T00:00:00Z",
+  "pubDate": "2026-03-12T00:00:00Z",
+  "dateStr": "2026-03-12",
+  "url": "https://linux.oracle.com/errata/ELSA-2026-4442.html",
+  "severity": "Moderate",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 8.",
+  "description": "[8.0.1763-22.0.1]\n- Remove upstream references [Orabug: 31197557]\n- Added glibc-gconv-extra to common requires to provide ISO-8859-2 [Orabug: 34114984]\n\n[2:8.0.1763-22]\n- RHEL-147935 CVE-2026-25749 vim: Heap Overflow in Vim",
+  "affected_products": [
+    "Oracle Linux 8 for x86_64",
+    "Oracle Linux 8 for aarch64"
+  ],
+  "cves": [
+    "CVE-2026-25749"
+  ],
+  "packages": [
+    "vim-8.0.1763-22.0.1.el8_10.src",
+    "vim-minimal-8.0.1763-22.0.1.el8_10.x86_64"
+  ],
+  "full_text": "[8.0.1763-22.0.1]\n- Remove upstream references [Orabug: 31197557]\n- Added glibc-gconv-extra to common requires to provide ISO-8859-2 [Orabug: 34114984]\n\n[2:8.0.1763-22]\n- RHEL-147935 CVE-2026-25749 vim: Heap Overflow in Vim\n\nReferences:\nhttps://linux.oracle.com/errata/ELSA-2026-4442.html\nhttps://linux.oracle.com/cve/CVE-2026-25749.html"
+}

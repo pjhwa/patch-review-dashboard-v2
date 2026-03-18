@@ -1,0 +1,26 @@
+{
+  "id": "USN-8063-1",
+  "url": "https://ubuntu.com/security/notices/USN-8063-1",
+  "synopsis": "USN-8063-1: Protocol Buffers vulnerability",
+  "dateStr": "25 February 2026",
+  "overview": "Protocol Buffers could be made to consume resources if it received\nspecially crafted input.",
+  "description": "It was discovered that Protocol Buffers incorrectly handled recursion when\nthe Python google.protobuf.json_format.ParseDict() function is being used.\nAn attacker could possibly use this issue to cause Protocol Buffers to\nconsume resources, resulting in a denial of service.\n\n \n\n \n\n \n\nIt was discovered that Protocol Buffers incorrectly handled recursion when\nthe Python google.protobuf.json_format.ParseDict() function is being used.\nAn attacker could possibly use this issue to cause Protocol Buffers to\nconsume resources, resulting in a denial of service.",
+  "packages": [
+    "protobuf"
+  ],
+  "cves": [
+    "CVE-2026-0994"
+  ],
+  "affected_products": [
+    "25.10",
+    "24.04 LTS",
+    "22.04 LTS",
+    "Open side navigation"
+  ],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Ubuntu Security Notices\n\nUSN-8063-1\n\n \n\n \n\n \n\n \n\n \n\n \nUSN-8063-1: Protocol Buffers vulnerability\n\n \n\n \n\n \n\n \nPublication date\n\n \n\n \n\n \n25 February 2026\n\n \n\n \n\n \n\n \n\n \nOverview\n\n \n\n \n\n \nProtocol Buffers could be made to consume resources if it received\nspecially crafted input.\n\n \n\n \n\n \n\n \n\n \nReleases\n\n \n\n \n\n \n\n 25.10\n\n 24.04 LTS\n\n22.04 LTS\n\n \n\n \n\n \n\n \n\n \n\n \n\n Open side navigation\n \n\n \n\n \nPackages\n\n \n\n protobuf - protocol buffers data serialization library\n \n\n \n\n \nDetails\n\n \n\n \n\nIt was discovered that Protocol Buffers incorrectly handled recursion when\nthe Python google.protobuf.json_format.ParseDict() function is being used.\nAn attacker could possibly use this issue to cause Protocol Buffers to\nconsume resources, resulting in a denial of service.\n\n \n\n \n\n \n\nIt was discovered that Protocol Buffers incorrectly handled recursion when\nthe Python google.protobuf.json_format.ParseDict() function is being used.\nAn attacker could possibly use this issue to cause Protocol Buffers to\nconsume resources, resulting in a denial of service.\n\n \n\n \n\n \n\n \nUpdate instructions\n\n \n\n \n\n \n\n \n\nIn general, a standard system update will make all the necessary changes.\n\n Learn more about how to get the fixes.\n \n\n \n\n \n\n \n\n \nThe problem can be corrected by updating your system to the following package versions:\n\n \n\n \n\n \n\n \n\n Ubuntu Release\n Package Version\n \n\n 25.10\n\nquesting\n\n libprotobuf32t64 – \n\n3.21.12-11ubuntu3.1\n\n python3-protobuf – \n\n3.21.12-11ubuntu3.1\n\n \n\n 24.04\n\nLTS noble\n\n libprotobuf32t64 – \n\n3.21.12-8.2ubuntu0.3\n\n python3-protobuf – \n\n3.21.12-8.2ubuntu0.3\n\n \n\n 22.04\n\nLTS jammy\n\n libprotobuf23 – \n\n3.12.4-1ubuntu7.22.04.6\n\n python3-protobuf – \n\n3.12.4-1ubuntu7.22.04.6\n\n \n\nReduce your security exposure\n\n \n\n Ubuntu Pro provides ten-year security coverage to 25,000+ packages in Main and Universe repositories, and it is free for up to five machines.\n \n\n \n\n Get Ubuntu Pro\n \n\n \n\nReferences\n\n \n\n \n\n CVE-2026-0994\n \n\n \n\n \n\n CVE-2026-0994",
+  "title": "USN-8063-1: Protocol Buffers vulnerability | Ubuntu security notices | Ubuntu",
+  "pubDate": "2026-02-24T15:00:00.000Z",
+  "vendor": "Ubuntu"
+}

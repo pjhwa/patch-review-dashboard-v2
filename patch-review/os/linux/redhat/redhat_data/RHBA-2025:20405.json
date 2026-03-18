@@ -1,0 +1,62 @@
+{
+  "id": "RHBA-2025:20405",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: gdb bug fix and enhancement update",
+  "issuedDate": "2025-11-11T07:26:23Z",
+  "updatedDate": "2025-11-11T07:26:23Z",
+  "pubDate": "2025-11-11T07:26:23Z",
+  "dateStr": "2025-11-11",
+  "url": "https://access.redhat.com/errata/RHBA-2025:20405",
+  "severity": "None",
+  "overview": "An update for gdb is now available for Red Hat Enterprise Linux 10.",
+  "description": "For detailed information on changes in this release, see the Red Hat Enterprise Linux 10 Release Notes linked from the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux for IBM z Systems",
+    "Red Hat Enterprise Linux for x86_64 10 x86_64",
+    "Red Hat Enterprise Linux for ARM 64",
+    "Red Hat Enterprise Linux for Power, little endian"
+  ],
+  "cves": [],
+  "packages": [
+    "gdb-16.3-2.el10.src",
+    "gdb-16.3-2.el10.x86_64",
+    "gdb-debuginfo-16.3-2.el10.x86_64",
+    "gdb-debugsource-16.3-2.el10.x86_64",
+    "gdb-doc-16.3-2.el10.noarch",
+    "gdb-gdbserver-16.3-2.el10.x86_64",
+    "gdb-headless-16.3-2.el10.x86_64",
+    "gdb-minimal-16.3-2.el10.x86_64",
+    "gdb-16.3-2.el10.s390x",
+    "gdb-debuginfo-16.3-2.el10.s390x",
+    "gdb-debugsource-16.3-2.el10.s390x",
+    "gdb-gdbserver-16.3-2.el10.s390x",
+    "gdb-headless-16.3-2.el10.s390x",
+    "gdb-minimal-16.3-2.el10.s390x",
+    "gdb-16.3-2.el10.ppc64le",
+    "gdb-debuginfo-16.3-2.el10.ppc64le",
+    "gdb-debugsource-16.3-2.el10.ppc64le",
+    "gdb-gdbserver-16.3-2.el10.ppc64le",
+    "gdb-headless-16.3-2.el10.ppc64le",
+    "gdb-minimal-16.3-2.el10.ppc64le",
+    "gdb-16.3-2.el10.aarch64",
+    "gdb-debuginfo-16.3-2.el10.aarch64",
+    "gdb-debugsource-16.3-2.el10.aarch64",
+    "gdb-gdbserver-16.3-2.el10.aarch64",
+    "gdb-headless-16.3-2.el10.aarch64",
+    "gdb-minimal-16.3-2.el10.aarch64"
+  ],
+  "fixes": [
+    {
+      "id": "RHEL-91382",
+      "url": "https://issues.redhat.com/browse/RHEL-91382",
+      "description": "[RHEL10] Rebase gdb to 16.3"
+    },
+    {
+      "id": "RHEL-93581",
+      "url": "https://issues.redhat.com/browse/RHEL-93581",
+      "description": "breakpoint in vandps instruction causes register clobber"
+    }
+  ],
+  "full_text": "An update for gdb is now available for Red Hat Enterprise Linux 10.\n\nFor detailed information on changes in this release, see the Red Hat Enterprise Linux 10 Release Notes linked from the References section."
+}

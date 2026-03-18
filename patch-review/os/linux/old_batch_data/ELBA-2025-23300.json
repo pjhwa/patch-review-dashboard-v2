@@ -1,0 +1,26 @@
+{
+  "id": "ELBA-2025-23300",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2025-December/019373.html",
+  "synopsis": "[El-errata] ELBA-2025-23300 Oracle Linux 10 libwacom bug fix and enhancement update",
+  "dateStr": "2025-December",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Bug Fix Advisory ELBA-2025-23300",
+  "description": "[2.14.0-4]\n- Rearrange the dial leaders for the  Intuos Pro 3rd Gen (RHEL-122812)",
+  "affected_products": [
+    "Oracle Linux 10"
+  ],
+  "packages": [
+    "libwacom-2.14.0-4.el10_1.x86_64.rpm",
+    "libwacom-data-2.14.0-4.el10_1.noarch.rpm",
+    "libwacom-devel-2.14.0-4.el10_1.x86_64.rpm",
+    "libwacom-2.14.0-4.el10_1.aarch64.rpm",
+    "libwacom-data-2.14.0-4.el10_1.noarch.rpm",
+    "libwacom-devel-2.14.0-4.el10_1.aarch64.rpm"
+  ],
+  "cves": [],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Bug Fix Advisory ELBA-2025-23300\n\nhttp://linux.oracle.com/errata/ELBA-2025-23300.html\n\nThe following updated rpms for Oracle Linux 10 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\nlibwacom-2.14.0-4.el10_1.x86_64.rpm\nlibwacom-data-2.14.0-4.el10_1.noarch.rpm\nlibwacom-devel-2.14.0-4.el10_1.x86_64.rpm\n\naarch64:\nlibwacom-2.14.0-4.el10_1.aarch64.rpm\nlibwacom-data-2.14.0-4.el10_1.noarch.rpm\nlibwacom-devel-2.14.0-4.el10_1.aarch64.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol10/SRPMS-updates/libwacom-2.14.0-4.el10_1.src.rpm\n\n\n\nDescription of changes:\n\n[2.14.0-4]\n- Rearrange the dial leaders for the  Intuos Pro 3rd Gen (RHEL-122812)",
+  "vendor": "Oracle"
+}

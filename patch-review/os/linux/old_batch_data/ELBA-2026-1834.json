@@ -1,0 +1,34 @@
+{
+  "id": "ELBA-2026-1834",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2026-February/019678.html",
+  "synopsis": "[El-errata] ELBA-2026-1834 Oracle Linux 10 libnbd bug fix and enhancement update",
+  "dateStr": "2026-February",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Bug Fix Advisory ELBA-2026-1834",
+  "description": "[1.22.2-3]\n- Fix unsanitized hostnames in nbd+ssh URIs allow remote execution\n  resolves: RHEL-129311",
+  "affected_products": [
+    "Oracle Linux 10"
+  ],
+  "packages": [
+    "libnbd-1.22.2-3.el10_1.x86_64.rpm",
+    "libnbd-bash-completion-1.22.2-3.el10_1.noarch.rpm",
+    "libnbd-devel-1.22.2-3.el10_1.x86_64.rpm",
+    "nbdfuse-1.22.2-3.el10_1.x86_64.rpm",
+    "ocaml-libnbd-1.22.2-3.el10_1.x86_64.rpm",
+    "ocaml-libnbd-devel-1.22.2-3.el10_1.x86_64.rpm",
+    "python3-libnbd-1.22.2-3.el10_1.x86_64.rpm",
+    "libnbd-1.22.2-3.el10_1.aarch64.rpm",
+    "libnbd-bash-completion-1.22.2-3.el10_1.noarch.rpm",
+    "libnbd-devel-1.22.2-3.el10_1.aarch64.rpm",
+    "nbdfuse-1.22.2-3.el10_1.aarch64.rpm",
+    "ocaml-libnbd-1.22.2-3.el10_1.aarch64.rpm",
+    "ocaml-libnbd-devel-1.22.2-3.el10_1.aarch64.rpm",
+    "python3-libnbd-1.22.2-3.el10_1.aarch64.rpm"
+  ],
+  "cves": [],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Bug Fix Advisory ELBA-2026-1834\n\nhttp://linux.oracle.com/errata/ELBA-2026-1834.html\n\nThe following updated rpms for Oracle Linux 10 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\nlibnbd-1.22.2-3.el10_1.x86_64.rpm\nlibnbd-bash-completion-1.22.2-3.el10_1.noarch.rpm\nlibnbd-devel-1.22.2-3.el10_1.x86_64.rpm\nnbdfuse-1.22.2-3.el10_1.x86_64.rpm\nocaml-libnbd-1.22.2-3.el10_1.x86_64.rpm\nocaml-libnbd-devel-1.22.2-3.el10_1.x86_64.rpm\npython3-libnbd-1.22.2-3.el10_1.x86_64.rpm\n\naarch64:\nlibnbd-1.22.2-3.el10_1.aarch64.rpm\nlibnbd-bash-completion-1.22.2-3.el10_1.noarch.rpm\nlibnbd-devel-1.22.2-3.el10_1.aarch64.rpm\nnbdfuse-1.22.2-3.el10_1.aarch64.rpm\nocaml-libnbd-1.22.2-3.el10_1.aarch64.rpm\nocaml-libnbd-devel-1.22.2-3.el10_1.aarch64.rpm\npython3-libnbd-1.22.2-3.el10_1.aarch64.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol10/SRPMS-updates/libnbd-1.22.2-3.el10_1.src.rpm\n\n\n\nDescription of changes:\n\n[1.22.2-3]\n- Fix unsanitized hostnames in nbd+ssh URIs allow remote execution\n  resolves: RHEL-129311",
+  "vendor": "Oracle"
+}

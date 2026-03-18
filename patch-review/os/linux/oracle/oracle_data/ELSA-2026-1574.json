@@ -1,0 +1,43 @@
+{
+  "id": "ELSA-2026-1574",
+  "vendor": "Oracle",
+  "type": "Security Advisory (ELSA)",
+  "kernel_type": "AppStream",
+  "title": " gimp:2.8 security update",
+  "issuedDate": "2026-01-29T00:00:00Z",
+  "updatedDate": "2026-01-29T00:00:00Z",
+  "pubDate": "2026-01-29T00:00:00Z",
+  "dateStr": "2026-01-29",
+  "url": "https://linux.oracle.com/errata/ELSA-2026-1574.html",
+  "severity": "Important",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 8.",
+  "description": "gimp\n[2:2.8.22-26.4]\n- fix CVE-2025-14422\n\npygobject2\npygtk2\npython2-pycairo",
+  "affected_products": [
+    "Oracle Linux 8 for x86_64",
+    "Oracle Linux 8 for aarch64"
+  ],
+  "cves": [
+    "CVE-2025-14422"
+  ],
+  "packages": [
+    "python2-pycairo-1.16.3-7.module+el8.10.0+90497+ae78887f.src",
+    "pygobject2-2.28.7-5.module+el8.10.0+90497+ae78887f.src",
+    "gimp-2.8.22-26.module+el8.10.0+90778+ba4a24eb.4.src",
+    "pygtk2-2.24.0-25.module+el8.9.0+90151+46a7e4b5.src",
+    "pygtk2-doc-2.24.0-25.module+el8.9.0+90151+46a7e4b5.noarch",
+    "python2-cairo-1.16.3-7.module+el8.10.0+90497+ae78887f.x86_64",
+    "pygobject2-doc-2.28.7-5.module+el8.10.0+90497+ae78887f.x86_64",
+    "python2-cairo-devel-1.16.3-7.module+el8.10.0+90497+ae78887f.x86_64",
+    "pygobject2-codegen-2.28.7-5.module+el8.10.0+90497+ae78887f.x86_64",
+    "pygobject2-devel-2.28.7-5.module+el8.10.0+90497+ae78887f.x86_64",
+    "pygobject2-2.28.7-5.module+el8.10.0+90497+ae78887f.x86_64",
+    "gimp-2.8.22-26.module+el8.10.0+90778+ba4a24eb.4.x86_64",
+    "gimp-devel-2.8.22-26.module+el8.10.0+90778+ba4a24eb.4.x86_64",
+    "gimp-libs-2.8.22-26.module+el8.10.0+90778+ba4a24eb.4.x86_64",
+    "gimp-devel-tools-2.8.22-26.module+el8.10.0+90778+ba4a24eb.4.x86_64",
+    "pygtk2-devel-2.24.0-25.module+el8.9.0+90151+46a7e4b5.x86_64",
+    "pygtk2-2.24.0-25.module+el8.9.0+90151+46a7e4b5.x86_64",
+    "pygtk2-codegen-2.24.0-25.module+el8.9.0+90151+46a7e4b5.x86_64"
+  ],
+  "full_text": "gimp\n[2:2.8.22-26.4]\n- fix CVE-2025-14422\n\npygobject2\npygtk2\npython2-pycairo\n\nReferences:\nhttps://linux.oracle.com/errata/ELSA-2026-1574.html\nhttps://linux.oracle.com/cve/CVE-2025-14422.html"
+}

@@ -1,0 +1,29 @@
+{
+  "id": "USN-7793-5",
+  "vendor": "Canonical / Ubuntu",
+  "type": "Ubuntu Security Notice (USN)",
+  "title": "linux-gke vulnerabilities",
+  "issuedDate": "2025-10-08T09:00:30Z",
+  "updatedDate": "2026-02-10T04:50:10Z",
+  "pubDate": "2025-10-08T09:00:30Z",
+  "dateStr": "2025-10-08",
+  "url": "https://ubuntu.com/security/notices/USN-7793-5",
+  "severity": "None",
+  "overview": "linux-gke vulnerabilities",
+  "description": "Several security issues were discovered in the Linux kernel.\nAn attacker could possibly use these to compromise the system.\nThis update corrects flaws in the following subsystems:\n  - Packet sockets;\n  - Network traffic control;\n  - VMware vSockets driver;\n(CVE-2025-38477, CVE-2025-38617, CVE-2025-38618)\n",
+  "affected_products": [
+    "Ubuntu 22.04 LTS"
+  ],
+  "cves": [],
+  "packages": [
+    "linux-buildinfo-5.15.0-1090-gke-5.15.0-1090.96",
+    "linux-gke-headers-5.15.0-1090-5.15.0-1090.96",
+    "linux-gke-tools-5.15.0-1090-5.15.0-1090.96",
+    "linux-headers-5.15.0-1090-gke-5.15.0-1090.96",
+    "linux-image-unsigned-5.15.0-1090-gke-5.15.0-1090.96",
+    "linux-modules-5.15.0-1090-gke-5.15.0-1090.96",
+    "linux-modules-extra-5.15.0-1090-gke-5.15.0-1090.96",
+    "linux-tools-5.15.0-1090-gke-5.15.0-1090.96"
+  ],
+  "full_text": "Several security issues were discovered in the Linux kernel.\nAn attacker could possibly use these to compromise the system.\nThis update corrects flaws in the following subsystems:\n  - Packet sockets;\n  - Network traffic control;\n  - VMware vSockets driver;\n(CVE-2025-38477, CVE-2025-38617, CVE-2025-38618)\n"
+}

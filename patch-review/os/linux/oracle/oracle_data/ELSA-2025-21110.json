@@ -1,0 +1,35 @@
+{
+  "id": "ELSA-2025-21110",
+  "vendor": "Oracle",
+  "type": "Security Advisory (ELSA)",
+  "kernel_type": "AppStream",
+  "title": " bind security update",
+  "issuedDate": "2025-11-25T00:00:00Z",
+  "updatedDate": "2025-11-25T00:00:00Z",
+  "pubDate": "2025-11-25T00:00:00Z",
+  "dateStr": "2025-11-25",
+  "url": "https://linux.oracle.com/errata/ELSA-2025-21110.html",
+  "severity": "Important",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 9.",
+  "description": "[32:9.16.23-34.0.1.1]\n- Fix warning when changing device file permissions [Orabug: 36518580]\n\n[32:9.16.23-34.1]\n- Prevent cache poisoning due to weak PRNG (CVE-2025-40780)\n- Replace downstream fixes with upstream changes\n- Address various spoofing attacks (CVE-2025-40778)\n\n[32:9.16.23-34]\n- Fix failures in idna system test (RHEL-66172)\n\n[32:9.16.23-33]\n- logrotate: skip if empty and remove old variants (RHEL-113942)\n\n[32:9.16.23-32]\n- Decode IDN names on input in all situations in utilities (RHEL-66172)",
+  "affected_products": [
+    "Oracle Linux 9 for x86_64",
+    "Oracle Linux 9 for aarch64"
+  ],
+  "cves": [
+    "CVE-2025-40778",
+    "CVE-2025-40780"
+  ],
+  "packages": [
+    "bind-chroot-9.16.23-34.0.1.el9_7.1.x86_64",
+    "bind-utils-9.16.23-34.0.1.el9_7.1.x86_64",
+    "bind-dnssec-utils-9.16.23-34.0.1.el9_7.1.x86_64",
+    "bind-license-9.16.23-34.0.1.el9_7.1.noarch",
+    "bind-9.16.23-34.0.1.el9_7.1.src",
+    "bind-libs-9.16.23-34.0.1.el9_7.1.x86_64",
+    "python3-bind-9.16.23-34.0.1.el9_7.1.noarch",
+    "bind-dnssec-doc-9.16.23-34.0.1.el9_7.1.noarch",
+    "bind-9.16.23-34.0.1.el9_7.1.x86_64"
+  ],
+  "full_text": "[32:9.16.23-34.0.1.1]\n- Fix warning when changing device file permissions [Orabug: 36518580]\n\n[32:9.16.23-34.1]\n- Prevent cache poisoning due to weak PRNG (CVE-2025-40780)\n- Replace downstream fixes with upstream changes\n- Address various spoofing attacks (CVE-2025-40778)\n\n[32:9.16.23-34]\n- Fix failures in idna system test (RHEL-66172)\n\n[32:9.16.23-33]\n- logrotate: skip if empty and remove old variants (RHEL-113942)\n\n[32:9.16.23-32]\n- Decode IDN names on input in all situations in utilities (RHEL-66172)\n\nReferences:\nhttps://linux.oracle.com/errata/ELSA-2025-21110.html\nhttps://linux.oracle.com/cve/CVE-2025-40778.html\nhttps://linux.oracle.com/cve/CVE-2025-40780.html"
+}

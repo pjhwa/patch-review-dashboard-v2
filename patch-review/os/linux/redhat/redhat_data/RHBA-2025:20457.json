@@ -1,0 +1,30 @@
+{
+  "id": "RHBA-2025:20457",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: qatzip bug fix and enhancement update",
+  "issuedDate": "2025-11-11T07:26:36Z",
+  "updatedDate": "2025-11-11T07:26:36Z",
+  "pubDate": "2025-11-11T07:26:36Z",
+  "dateStr": "2025-11-11",
+  "url": "https://access.redhat.com/errata/RHBA-2025:20457",
+  "severity": "None",
+  "overview": "An update for qatzip is now available for Red Hat Enterprise Linux 10.",
+  "description": "For detailed information on changes in this release, see the Red Hat Enterprise Linux 10 Release Notes linked from the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux for x86_64 10 x86_64",
+    "Red Hat CodeReady Linux Builder for x86_64 10 x86_64"
+  ],
+  "cves": [],
+  "packages": [
+    "qatzip-1.3.1-1.el10.src",
+    "qatzip-1.3.1-1.el10.x86_64",
+    "qatzip-debuginfo-1.3.1-1.el10.x86_64",
+    "qatzip-debugsource-1.3.1-1.el10.x86_64",
+    "qatzip-libs-1.3.1-1.el10.x86_64",
+    "qatzip-libs-debuginfo-1.3.1-1.el10.x86_64",
+    "qatzip-devel-1.3.1-1.el10.x86_64"
+  ],
+  "fixes": [],
+  "full_text": "An update for qatzip is now available for Red Hat Enterprise Linux 10.\n\nFor detailed information on changes in this release, see the Red Hat Enterprise Linux 10 Release Notes linked from the References section."
+}

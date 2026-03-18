@@ -1,0 +1,36 @@
+{
+  "id": "USN-8004-1",
+  "vendor": "Canonical / Ubuntu",
+  "type": "Ubuntu Security Notice (USN)",
+  "title": "freerdp2 vulnerabilities",
+  "issuedDate": "2026-02-03T03:15:05Z",
+  "updatedDate": "2026-02-10T04:50:49Z",
+  "pubDate": "2026-02-03T03:15:05Z",
+  "dateStr": "2026-02-03",
+  "url": "https://ubuntu.com/security/notices/USN-8004-1",
+  "severity": "None",
+  "overview": "freerdp2 vulnerabilities",
+  "description": "Kim Dong Han discovered that FreeRDP did not correctly validate the size of\ncertain variables, which could cause a buffer overflow. An attacker could\npossibly use this issue to cause a denial of service or execute arbitrary\ncode.",
+  "affected_products": [
+    "Ubuntu 22.04 LTS"
+  ],
+  "cves": [],
+  "packages": [
+    "freerdp2-dev-2.6.1+dfsg1-3ubuntu2.8",
+    "freerdp2-shadow-x11-2.6.1+dfsg1-3ubuntu2.8",
+    "freerdp2-wayland-2.6.1+dfsg1-3ubuntu2.8",
+    "freerdp2-x11-2.6.1+dfsg1-3ubuntu2.8",
+    "libfreerdp-client2-2-2.6.1+dfsg1-3ubuntu2.8",
+    "libfreerdp-server2-2-2.6.1+dfsg1-3ubuntu2.8",
+    "libfreerdp-shadow-subsystem2-2-2.6.1+dfsg1-3ubuntu2.8",
+    "libfreerdp-shadow2-2-2.6.1+dfsg1-3ubuntu2.8",
+    "libfreerdp2-2-2.6.1+dfsg1-3ubuntu2.8",
+    "libuwac0-0-2.6.1+dfsg1-3ubuntu2.8",
+    "libuwac0-dev-2.6.1+dfsg1-3ubuntu2.8",
+    "libwinpr-tools2-2-2.6.1+dfsg1-3ubuntu2.8",
+    "libwinpr2-2-2.6.1+dfsg1-3ubuntu2.8",
+    "libwinpr2-dev-2.6.1+dfsg1-3ubuntu2.8",
+    "winpr-utils-2.6.1+dfsg1-3ubuntu2.8"
+  ],
+  "full_text": "Kim Dong Han discovered that FreeRDP did not correctly validate the size of\ncertain variables, which could cause a buffer overflow. An attacker could\npossibly use this issue to cause a denial of service or execute arbitrary\ncode."
+}

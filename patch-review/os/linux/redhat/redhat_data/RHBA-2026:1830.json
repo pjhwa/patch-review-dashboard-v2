@@ -1,0 +1,41 @@
+{
+  "id": "RHBA-2026:1830",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: dpdk bug fix and enhancement update",
+  "issuedDate": "2026-02-05T15:43:23Z",
+  "updatedDate": "2026-02-05T15:43:23Z",
+  "pubDate": "2026-02-05T15:43:23Z",
+  "dateStr": "2026-02-05",
+  "url": "https://access.redhat.com/errata/RHBA-2026:1830",
+  "severity": "None",
+  "overview": "An update for dpdk is now available for Red Hat Enterprise Linux 10.",
+  "description": "The dpdk packages provide the Data Plane Development Kit, which is a set of libraries and drivers for fast packet processing in the user space.Bug Fix(es) and Enhancement(s): Update DPDK to v24.11.3 [rhel-10.1.z] (JIRA:RHEL-118668)",
+  "affected_products": [
+    "Red Hat Enterprise Linux for ARM 64",
+    "Red Hat Enterprise Linux for x86_64 10 x86_64",
+    "Red Hat Enterprise Linux for Power, little endian"
+  ],
+  "cves": [],
+  "packages": [
+    "dpdk-24.11.3-1.el10_1.src",
+    "dpdk-24.11.3-1.el10_1.x86_64",
+    "dpdk-debuginfo-24.11.3-1.el10_1.x86_64",
+    "dpdk-debugsource-24.11.3-1.el10_1.x86_64",
+    "dpdk-devel-24.11.3-1.el10_1.x86_64",
+    "dpdk-doc-24.11.3-1.el10_1.noarch",
+    "dpdk-tools-24.11.3-1.el10_1.x86_64",
+    "dpdk-24.11.3-1.el10_1.ppc64le",
+    "dpdk-debuginfo-24.11.3-1.el10_1.ppc64le",
+    "dpdk-debugsource-24.11.3-1.el10_1.ppc64le",
+    "dpdk-devel-24.11.3-1.el10_1.ppc64le",
+    "dpdk-tools-24.11.3-1.el10_1.ppc64le",
+    "dpdk-24.11.3-1.el10_1.aarch64",
+    "dpdk-debuginfo-24.11.3-1.el10_1.aarch64",
+    "dpdk-debugsource-24.11.3-1.el10_1.aarch64",
+    "dpdk-devel-24.11.3-1.el10_1.aarch64",
+    "dpdk-tools-24.11.3-1.el10_1.aarch64"
+  ],
+  "fixes": [],
+  "full_text": "An update for dpdk is now available for Red Hat Enterprise Linux 10.\n\nThe dpdk packages provide the Data Plane Development Kit, which is a set of libraries and drivers for fast packet processing in the user space.Bug Fix(es) and Enhancement(s): Update DPDK to v24.11.3 [rhel-10.1.z] (JIRA:RHEL-118668)"
+}

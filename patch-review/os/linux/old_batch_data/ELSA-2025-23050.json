@@ -1,0 +1,40 @@
+{
+  "id": "ELSA-2025-23050",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2025-December/019255.html",
+  "synopsis": "[El-errata] ELSA-2025-23050 Important: Oracle Linux 10 tomcat security update",
+  "dateStr": "2025-December",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Security Advisory ELSA-2025-23050",
+  "description": "[1:10.1.36-3.1]\n- Resolves: RHEL-124494\n  tomcat: Directory traversal via rewrite with possible RCE (CVE-2025-55752)\n- Resolves: RHEL-91729\n  tomcat: Bypass of rules in Rewrite Valve (CVE-2025-31651)\n- Resolves: RHEL-132527\n  tomcat: Denial of service (CVE-2025-61795)",
+  "affected_products": [
+    "Oracle Linux 10"
+  ],
+  "packages": [
+    "tomcat-10.1.36-3.el10_1.1.noarch.rpm",
+    "tomcat-admin-webapps-10.1.36-3.el10_1.1.noarch.rpm",
+    "tomcat-docs-webapp-10.1.36-3.el10_1.1.noarch.rpm",
+    "tomcat-el-5.0-api-10.1.36-3.el10_1.1.noarch.rpm",
+    "tomcat-jsp-3.1-api-10.1.36-3.el10_1.1.noarch.rpm",
+    "tomcat-lib-10.1.36-3.el10_1.1.noarch.rpm",
+    "tomcat-servlet-6.0-api-10.1.36-3.el10_1.1.noarch.rpm",
+    "tomcat-webapps-10.1.36-3.el10_1.1.noarch.rpm",
+    "tomcat-10.1.36-3.el10_1.1.noarch.rpm",
+    "tomcat-admin-webapps-10.1.36-3.el10_1.1.noarch.rpm",
+    "tomcat-docs-webapp-10.1.36-3.el10_1.1.noarch.rpm",
+    "tomcat-el-5.0-api-10.1.36-3.el10_1.1.noarch.rpm",
+    "tomcat-jsp-3.1-api-10.1.36-3.el10_1.1.noarch.rpm",
+    "tomcat-lib-10.1.36-3.el10_1.1.noarch.rpm",
+    "tomcat-servlet-6.0-api-10.1.36-3.el10_1.1.noarch.rpm",
+    "tomcat-webapps-10.1.36-3.el10_1.1.noarch.rpm"
+  ],
+  "cves": [
+    "CVE-2025-31651",
+    "CVE-2025-55752",
+    "CVE-2025-61795"
+  ],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Security Advisory ELSA-2025-23050\n\nhttp://linux.oracle.com/errata/ELSA-2025-23050.html\n\nThe following updated rpms for Oracle Linux 10 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\ntomcat-10.1.36-3.el10_1.1.noarch.rpm\ntomcat-admin-webapps-10.1.36-3.el10_1.1.noarch.rpm\ntomcat-docs-webapp-10.1.36-3.el10_1.1.noarch.rpm\ntomcat-el-5.0-api-10.1.36-3.el10_1.1.noarch.rpm\ntomcat-jsp-3.1-api-10.1.36-3.el10_1.1.noarch.rpm\ntomcat-lib-10.1.36-3.el10_1.1.noarch.rpm\ntomcat-servlet-6.0-api-10.1.36-3.el10_1.1.noarch.rpm\ntomcat-webapps-10.1.36-3.el10_1.1.noarch.rpm\n\naarch64:\ntomcat-10.1.36-3.el10_1.1.noarch.rpm\ntomcat-admin-webapps-10.1.36-3.el10_1.1.noarch.rpm\ntomcat-docs-webapp-10.1.36-3.el10_1.1.noarch.rpm\ntomcat-el-5.0-api-10.1.36-3.el10_1.1.noarch.rpm\ntomcat-jsp-3.1-api-10.1.36-3.el10_1.1.noarch.rpm\ntomcat-lib-10.1.36-3.el10_1.1.noarch.rpm\ntomcat-servlet-6.0-api-10.1.36-3.el10_1.1.noarch.rpm\ntomcat-webapps-10.1.36-3.el10_1.1.noarch.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol10/SRPMS-updates/tomcat-10.1.36-3.el10_1.1.src.rpm\n\nRelated CVEs:\n\nCVE-2025-31651\nCVE-2025-55752\nCVE-2025-61795\n\n\n\n\nDescription of changes:\n\n[1:10.1.36-3.1]\n- Resolves: RHEL-124494\n  tomcat: Directory traversal via rewrite with possible RCE (CVE-2025-55752)\n- Resolves: RHEL-91729\n  tomcat: Bypass of rules in Rewrite Valve (CVE-2025-31651)\n- Resolves: RHEL-132527\n  tomcat: Denial of service (CVE-2025-61795)",
+  "vendor": "Oracle"
+}

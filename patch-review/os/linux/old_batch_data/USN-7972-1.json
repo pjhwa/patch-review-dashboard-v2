@@ -1,0 +1,26 @@
+{
+  "id": "USN-7972-1",
+  "url": "https://ubuntu.com/security/notices/USN-7972-1",
+  "synopsis": "USN-7972-1: OpenCC vulnerability",
+  "dateStr": "21 January 2026",
+  "overview": "OpenCC could be made to crash if it received specially crafted input.",
+  "description": "It was discovered that OpenCC incorrectly handled truncated UTF-8 input.\nAn attacker could possibly use this issue to cause OpenCC to crash,\nresulting in a denial of service.\n\n \n\n \n\n \n\nIt was discovered that OpenCC incorrectly handled truncated UTF-8 input.\nAn attacker could possibly use this issue to cause OpenCC to crash,\nresulting in a denial of service.",
+  "packages": [
+    "opencc"
+  ],
+  "cves": [
+    "CVE-2025-15536"
+  ],
+  "affected_products": [
+    "25.10",
+    "24.04 LTS",
+    "22.04 LTS",
+    "Open side navigation"
+  ],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Ubuntu Security Notices\n\nUSN-7972-1\n\n \n\n \n\n \n\n \n\n \n\n \nUSN-7972-1: OpenCC vulnerability\n\n \n\n \n\n \n\n \nPublication date\n\n \n\n \n\n \n21 January 2026\n\n \n\n \n\n \n\n \n\n \nOverview\n\n \n\n \n\n \nOpenCC could be made to crash if it received specially crafted input.\n\n \n\n \n\n \n\n \n\n \nReleases\n\n \n\n \n\n \n\n 25.10\n\n 24.04 LTS\n\n22.04 LTS\n\n \n\n \n\n \n\n \n\n \n\n \n\n Open side navigation\n \n\n \n\n \nPackages\n\n \n\n opencc - simplified-traditional Chinese conversion library\n \n\n \n\n \nDetails\n\n \n\n \n\nIt was discovered that OpenCC incorrectly handled truncated UTF-8 input.\nAn attacker could possibly use this issue to cause OpenCC to crash,\nresulting in a denial of service.\n\n \n\n \n\n \n\nIt was discovered that OpenCC incorrectly handled truncated UTF-8 input.\nAn attacker could possibly use this issue to cause OpenCC to crash,\nresulting in a denial of service.\n\n \n\n \n\n \n\n \nUpdate instructions\n\n \n\n \n\n \n\n \n\nIn general, a standard system update will make all the necessary changes.\n\n Learn more about how to get the fixes.\n \n\n \n\n \n\n \n\n \nThe problem can be corrected by updating your system to the following package versions:\n\n \n\n \n\n \n\n \n\n Ubuntu Release\n Package Version\n \n\n 25.10\n\nquesting\n\n libopencc1.1 – \n\n1.1.9+ds1-2ubuntu0.1\n\n opencc – \n\n1.1.9+ds1-2ubuntu0.1\n\n \n\n 24.04\n\nLTS noble\n\n libopencc1.1 – \n\n1.1.7+ds1-1ubuntu0.1\n\n opencc – \n\n1.1.7+ds1-1ubuntu0.1\n\n \n\n 22.04\n\nLTS jammy\n\n libopencc1.1 – \n\n1.1.3+ds1-3ubuntu3.1\n\n opencc – \n\n1.1.3+ds1-3ubuntu3.1\n\n \n\nReduce your security exposure\n\n \n\n Ubuntu Pro provides ten-year security coverage to 25,000+ packages in Main and Universe repositories, and it is free for up to five machines.\n \n\n \n\n Get Ubuntu Pro\n \n\n \n\nReferences\n\n \n\n \n\n CVE-2025-15536\n \n\n \n\n \n\n CVE-2025-15536",
+  "title": "USN-7972-1: OpenCC vulnerability | Ubuntu security notices | Ubuntu",
+  "pubDate": "2026-01-20T15:00:00.000Z",
+  "vendor": "Ubuntu"
+}

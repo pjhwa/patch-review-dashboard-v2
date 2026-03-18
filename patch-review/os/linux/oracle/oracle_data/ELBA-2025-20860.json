@@ -1,0 +1,25 @@
+{
+  "id": "ELBA-2025-20860",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "AppStream",
+  "title": "rear bug fix and enhancement update",
+  "issuedDate": "2025-11-17T00:00:00Z",
+  "updatedDate": "2025-11-17T00:00:00Z",
+  "pubDate": "2025-11-17T00:00:00Z",
+  "dateStr": "2025-11-17",
+  "url": "https://linux.oracle.com/errata/ELBA-2025-20860.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 9.",
+  "description": "[2.6-27.0.1]\n- Change OS_VENDOR to OracleServer\n\n[2.6-27]\n- add dependency on grub2-tools-extra and GRUB EFI modules on EFI machines\n- add dependency on syslinux-extlinux on x86\n- add initial support for aarch64 machines with UEFI\n- enhance the 300_map_disks.sh script to also print the disk sizes\n- support generation of ed25519 SSH host keys in the rescue image\n- create sshd home directory in the rescue image on systems upgraded from EL8\n- fix recovery of LUKS encrypted systems with multiple keyslots\n- fix PPC PReP Boot detection on GPT layouts\n- skip longhorn iscsi devices in disklayout.conf\n- error out if any unsupported OUTPUT used on s390x",
+  "affected_products": [
+    "Oracle Linux 9 for x86_64",
+    "Oracle Linux 9 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "rear-2.6-27.0.1.el9.x86_64",
+    "rear-2.6-27.0.1.el9.src"
+  ],
+  "full_text": "[2.6-27.0.1]\n- Change OS_VENDOR to OracleServer\n\n[2.6-27]\n- add dependency on grub2-tools-extra and GRUB EFI modules on EFI machines\n- add dependency on syslinux-extlinux on x86\n- add initial support for aarch64 machines with UEFI\n- enhance the 300_map_disks.sh script to also print the disk sizes\n- support generation of ed25519 SSH host keys in the rescue image\n- create sshd home directory in the rescue image on systems upgraded from EL8\n- fix recovery of LUKS encrypted systems with multiple keyslots\n- fix PPC PReP Boot detection on GPT layouts\n- skip longhorn iscsi devices in disklayout.conf\n- error out if any unsupported OUTPUT used on s390x\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2025-20860.html"
+}

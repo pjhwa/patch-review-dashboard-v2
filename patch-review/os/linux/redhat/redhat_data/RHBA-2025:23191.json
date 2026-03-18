@@ -1,0 +1,106 @@
+{
+  "id": "RHBA-2025:23191",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: scap-security-guide bug fix and enhancement update",
+  "issuedDate": "2025-12-15T11:51:09Z",
+  "updatedDate": "2025-12-15T11:51:09Z",
+  "pubDate": "2025-12-15T11:51:09Z",
+  "dateStr": "2025-12-15",
+  "url": "https://access.redhat.com/errata/RHBA-2025:23191",
+  "severity": "None",
+  "overview": "An update for scap-security-guide is now available for Red Hat Enterprise Linux 10.",
+  "description": "The SCAP Security Guide project provides a guide for configuration of the system from the final system's security point of view. The guidance is specified in the Security Content Automation Protocol (SCAP) format and constitutes a catalog of practical hardening advice, linked to government requirements where applicable. The project bridges the gap between generalized policy requirements and specific implementation guidelines.For detailed information on changes in this release, see the SCAP Security Guide release notes linked from the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux for x86_64 - Extended Update Support 10 x86_64",
+    "Red Hat Enterprise Linux for Power, little endian",
+    "Red Hat Enterprise Linux for ARM 64 - 4 years of updates",
+    "Red Hat Enterprise Linux for IBM z Systems - 4 years of updates",
+    "Red Hat Enterprise Linux for IBM z Systems",
+    "Red Hat Enterprise Linux for x86_64 - Update Services for SAP Solutions 10 x86_64",
+    "Red Hat Enterprise Linux for Power, little endian - Extended Update Support",
+    "Red Hat Enterprise Linux for IBM z Systems - Extended Update Support",
+    "Red Hat Enterprise Linux Server for Power LE - Update Services for SAP Solutions",
+    "Red Hat Enterprise Linux for x86_64 - 4 years of updates 10 x86_64",
+    "Red Hat Enterprise Linux Server - AUS",
+    "Red Hat Enterprise Linux for x86_64 10 x86_64",
+    "Red Hat Enterprise Linux for Power, little endian - 4 years of support",
+    "Red Hat Enterprise Linux for ARM 64 - Extended Update Support",
+    "Red Hat Enterprise Linux for ARM 64"
+  ],
+  "cves": [],
+  "packages": [
+    "scap-security-guide-0.1.79-2.el10.src",
+    "scap-security-guide-0.1.79-2.el10.noarch",
+    "scap-security-guide-doc-0.1.79-2.el10.noarch",
+    "scap-security-guide-0.1.79-1.el9.src",
+    "scap-security-guide-0.1.79-1.el9.noarch",
+    "scap-security-guide-doc-0.1.79-1.el9.noarch",
+    "scap-security-guide-0.1.79-1.el8.src",
+    "scap-security-guide-0.1.79-1.el8.noarch",
+    "scap-security-guide-doc-0.1.79-1.el8.noarch"
+  ],
+  "fixes": [
+    {
+      "id": "RHEL-102330",
+      "url": "https://issues.redhat.com/browse/RHEL-102330",
+      "description": "\"Ensure root path integrity\" implementation is not complete"
+    },
+    {
+      "id": "RHEL-102331",
+      "url": "https://issues.redhat.com/browse/RHEL-102331",
+      "description": "Rule \"Ensure events that modify the system's networkenvironment are collected\" is not handling /etc/NetworkManager"
+    },
+    {
+      "id": "RHEL-102334",
+      "url": "https://issues.redhat.com/browse/RHEL-102334",
+      "description": "Rule \"audit_rules_kernel_module_loading_create\" isn't filtering on \"auid!=unset\" and similar"
+    },
+    {
+      "id": "RHEL-104207",
+      "url": "https://issues.redhat.com/browse/RHEL-104207",
+      "description": "SCAP is considering rsyslog directives in RainerScript format as FAIL when multi-lined"
+    },
+    {
+      "id": "RHEL-111896",
+      "url": "https://issues.redhat.com/browse/RHEL-111896",
+      "description": "Rule xccdf_org.ssgproject.content_rule_sshd_use_approved_ciphers should not apply to RHEL8 as is"
+    },
+    {
+      "id": "RHEL-117141",
+      "url": "https://issues.redhat.com/browse/RHEL-117141",
+      "description": "Ansible systemd_service task is invalid on RHEL 9.0"
+    },
+    {
+      "id": "RHEL-118647",
+      "url": "https://issues.redhat.com/browse/RHEL-118647",
+      "description": "xccdf_org.ssgproject.content_rule_accounts_user_interactive_home_directory_defined fails when a user logged in once in cockpit"
+    },
+    {
+      "id": "RHEL-128593",
+      "url": "https://issues.redhat.com/browse/RHEL-128593",
+      "description": "Missing CIS Rule ?4.4.3.2.5 Ensure password maximum sequential characters is configured\" (CIS Server Level 1 v3.0.0 profile)"
+    },
+    {
+      "id": "RHEL-130242",
+      "url": "https://issues.redhat.com/browse/RHEL-130242",
+      "description": "Rebase scap-security-guide to the latest upstream version"
+    },
+    {
+      "id": "RHEL-130246",
+      "url": "https://issues.redhat.com/browse/RHEL-130246",
+      "description": "[RHEL9] Rebase scap-security-guide to the latest upstream version"
+    },
+    {
+      "id": "RHEL-130249",
+      "url": "https://issues.redhat.com/browse/RHEL-130249",
+      "description": "[RHEL8] Rebase scap-security-guide to the latest upstream version"
+    },
+    {
+      "id": "RHEL-79123",
+      "url": "https://issues.redhat.com/browse/RHEL-79123",
+      "description": "Remediatin script for xccdf_org.ssgproject.content_rule_ensure_logrotate_activated does not take effect"
+    }
+  ],
+  "full_text": "An update for scap-security-guide is now available for Red Hat Enterprise Linux 10.\n\nThe SCAP Security Guide project provides a guide for configuration of the system from the final system's security point of view. The guidance is specified in the Security Content Automation Protocol (SCAP) format and constitutes a catalog of practical hardening advice, linked to government requirements where applicable. The project bridges the gap between generalized policy requirements and specific implementation guidelines.For detailed information on changes in this release, see the SCAP Security Guide release notes linked from the References section."
+}

@@ -1,0 +1,65 @@
+{
+  "id": "RHBA-2025:20511",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: redhat-release bug fix and enhancement update",
+  "issuedDate": "2025-11-11T07:49:47Z",
+  "updatedDate": "2025-11-11T07:49:47Z",
+  "pubDate": "2025-11-11T07:49:47Z",
+  "dateStr": "2025-11-11",
+  "url": "https://access.redhat.com/errata/RHBA-2025:20511",
+  "severity": "None",
+  "overview": "An update for redhat-release is now available for Red Hat Enterprise Linux 10.",
+  "description": "For detailed information on changes in this release, see the Red Hat Enterprise Linux 9 Release Notes linked from the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux for ARM 64",
+    "Red Hat Enterprise Linux for x86_64 10 x86_64",
+    "Red Hat Enterprise Linux for Power, little endian",
+    "Red Hat CodeReady Linux Builder for Power, little endian",
+    "Red Hat CodeReady Linux Builder for x86_64 10 x86_64",
+    "Red Hat CodeReady Linux Builder for ARM 64",
+    "Red Hat Enterprise Linux for IBM z Systems",
+    "Red Hat CodeReady Linux Builder for IBM z Systems"
+  ],
+  "cves": [],
+  "packages": [
+    "redhat-release-9.7-0.6.el9.src",
+    "redhat-release-9.7-0.6.el9.x86_64",
+    "redhat-release-eula-9.7-0.6.el9.x86_64",
+    "redhat-release-9.7-0.6.el9.s390x",
+    "redhat-release-eula-9.7-0.6.el9.s390x",
+    "redhat-release-9.7-0.6.el9.ppc64le",
+    "redhat-release-eula-9.7-0.6.el9.ppc64le",
+    "redhat-release-9.7-0.6.el9.aarch64",
+    "redhat-release-eula-9.7-0.6.el9.aarch64",
+    "redhat-sb-certs-9.7-0.6.el9.noarch"
+  ],
+  "fixes": [
+    {
+      "id": "RHELBLD-16744",
+      "url": "https://issues.redhat.com/browse/RHELBLD-16744",
+      "description": "[redhat-release] [RHEL9.7] enable raid-check.timer"
+    },
+    {
+      "id": "RHELBLD-16967",
+      "url": "https://issues.redhat.com/browse/RHELBLD-16967",
+      "description": "[RHEL9][redhat-release] Add mpa_registration.service and qgs.service to systemd presets"
+    },
+    {
+      "id": "RHELBLD-17042",
+      "url": "https://issues.redhat.com/browse/RHELBLD-17042",
+      "description": "[RHEL9][redhat-release] provide system-release(releasever_major) and system-release(releasever_minor)"
+    },
+    {
+      "id": "RHELBLD-17388",
+      "url": "https://issues.redhat.com/browse/RHELBLD-17388",
+      "description": "redhat-release needs to be updated to include 800 series certs"
+    },
+    {
+      "id": "RHELBLD-17420",
+      "url": "https://issues.redhat.com/browse/RHELBLD-17420",
+      "description": "[rhel-9.7.0] [BLD] Update productIDs from beta --> GA"
+    }
+  ],
+  "full_text": "An update for redhat-release is now available for Red Hat Enterprise Linux 10.\n\nFor detailed information on changes in this release, see the Red Hat Enterprise Linux 9 Release Notes linked from the References section."
+}

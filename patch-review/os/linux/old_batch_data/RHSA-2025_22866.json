@@ -1,0 +1,22 @@
+{
+  "id": "RHSA-2025:22866",
+  "vendor": "Red Hat",
+  "url": "https://access.redhat.com/errata/RHSA-2025:22866",
+  "pubDate": "2025-12-09T08:34:00.000Z",
+  "dateStr": "2025-12-09",
+  "severity": "Important",
+  "title": "Red Hat Security Advisory: gimp security update",
+  "overview": "An update for gimp is now available for Red Hat Enterprise Linux 7 Extended Lifecycle Support.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "description": "An update for gimp is now available for Red Hat Enterprise Linux 7 Extended Lifecycle Support.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux Server (v. 7 ELS)",
+    "Red Hat Enterprise Linux Server Optional (v. 7 ELS)"
+  ],
+  "cves": [
+    "CVE-2025-10922",
+    "CVE-2025-10934"
+  ],
+  "packages": [],
+  "fixes": "",
+  "full_text": "Red Hat Security Advisory: gimp security update\n\nAn update for gimp is now available for Red Hat Enterprise Linux 7 Extended Lifecycle Support.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nAn update for gimp is now available for Red Hat Enterprise Linux 7 Extended Lifecycle Support.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nUpdated Packages:\ngimp-2.8.22-1.el7_9.4.src.rpm\ngimp-2.8.22-1.el7_9.4.x86_64.rpm\ngimp-debuginfo-2.8.22-1.el7_9.4.i686.rpm\ngimp-debuginfo-2.8.22-1.el7_9.4.x86_64.rpm\ngimp-devel-2.8.22-1.el7_9.4.i686.rpm\ngimp-devel-2.8.22-1.el7_9.4.x86_64.rpm\ngimp-devel-tools-2.8.22-1.el7_9.4.x86_64.rpm\ngimp-libs-2.8.22-1.el7_9.4.i686.rpm\ngimp-libs-2.8.22-1.el7_9.4.x86_64.rpm\ngimp-2.8.22-1.el7_9.4.s390x.rpm\ngimp-debuginfo-2.8.22-1.el7_9.4.s390.rpm\ngimp-debuginfo-2.8.22-1.el7_9.4.s390x.rpm\ngimp-devel-2.8.22-1.el7_9.4.s390.rpm\ngimp-devel-2.8.22-1.el7_9.4.s390x.rpm\ngimp-devel-tools-2.8.22-1.el7_9.4.s390x.rpm\ngimp-libs-2.8.22-1.el7_9.4.s390.rpm\ngimp-libs-2.8.22-1.el7_9.4.s390x.rpm\ngimp-2.8.22-1.el7_9.4.ppc64.rpm\ngimp-debuginfo-2.8.22-1.el7_9.4.ppc.rpm\ngimp-debuginfo-2.8.22-1.el7_9.4.ppc64.rpm\ngimp-devel-2.8.22-1.el7_9.4.ppc.rpm\ngimp-devel-2.8.22-1.el7_9.4.ppc64.rpm\ngimp-devel-tools-2.8.22-1.el7_9.4.ppc64.rpm\ngimp-libs-2.8.22-1.el7_9.4.ppc.rpm\ngimp-libs-2.8.22-1.el7_9.4.ppc64.rpm\ngimp-2.8.22-1.el7_9.4.ppc64le.rpm\ngimp-debuginfo-2.8.22-1.el7_9.4.ppc64le.rpm\ngimp-devel-2.8.22-1.el7_9.4.ppc64le.rpm\ngimp-devel-tools-2.8.22-1.el7_9.4.ppc64le.rpm\ngimp-libs-2.8.22-1.el7_9.4.ppc64le.rpm\n\nCVE-2025-10922: A heap-based buffer overflow vulnerability was discovered in GIMP’s DICOM (DCM) file parser. The flaw occurs because the application fails to properly validate the length of user-supplied data before copying it to a heap buffer. This can lead to arbitrary code execution when a user opens a specially crafted DCM image file.\n\nCVE-2025-10934: A heap-based buffer overflow in GIMP’s X Window Dump (XWD) file parser allows an attacker to craft a malicious XWD file (or a web page that triggers opening one) that can overflow a heap buffer during parsing and lead to remote code execution in the context of the GIMP process. The flaw is tracked as CVE-2025-10934 and was disclosed by Trend Micro’s Zero Day Initiative on 29 Oct 2025; GIMP has published a fix."
+}

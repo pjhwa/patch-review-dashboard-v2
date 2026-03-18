@@ -1,0 +1,49 @@
+{
+  "id": "RHBA-2025:20763",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: netavark bug fix and enhancement update",
+  "issuedDate": "2025-11-11T07:51:01Z",
+  "updatedDate": "2025-11-11T07:51:01Z",
+  "pubDate": "2025-11-11T07:51:01Z",
+  "dateStr": "2025-11-11",
+  "url": "https://access.redhat.com/errata/RHBA-2025:20763",
+  "severity": "None",
+  "overview": "An update for netavark is now available for Red Hat Enterprise Linux 10.",
+  "description": "For detailed information on changes in this release, see the Red Hat Enterprise Linux 9 Release Notes linked from the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux for x86_64 10 x86_64",
+    "Red Hat Enterprise Linux for ARM 64",
+    "Red Hat Enterprise Linux for Power, little endian",
+    "Red Hat Enterprise Linux for IBM z Systems"
+  ],
+  "cves": [],
+  "packages": [
+    "netavark-1.16.0-1.el9.src",
+    "netavark-1.16.0-1.el9.x86_64",
+    "netavark-debuginfo-1.16.0-1.el9.x86_64",
+    "netavark-debugsource-1.16.0-1.el9.x86_64",
+    "netavark-1.16.0-1.el9.s390x",
+    "netavark-debuginfo-1.16.0-1.el9.s390x",
+    "netavark-debugsource-1.16.0-1.el9.s390x",
+    "netavark-1.16.0-1.el9.ppc64le",
+    "netavark-debuginfo-1.16.0-1.el9.ppc64le",
+    "netavark-debugsource-1.16.0-1.el9.ppc64le",
+    "netavark-1.16.0-1.el9.aarch64",
+    "netavark-debuginfo-1.16.0-1.el9.aarch64",
+    "netavark-debugsource-1.16.0-1.el9.aarch64"
+  ],
+  "fixes": [
+    {
+      "id": "RHEL-89477",
+      "url": "https://issues.redhat.com/browse/RHEL-89477",
+      "description": "[netavark-1.16] rp_filter is set to 1 breaking asymetric routing in podman"
+    },
+    {
+      "id": "RHEL-94949",
+      "url": "https://issues.redhat.com/browse/RHEL-94949",
+      "description": "Update netavark for RHEL-9.7"
+    }
+  ],
+  "full_text": "An update for netavark is now available for Red Hat Enterprise Linux 10.\n\nFor detailed information on changes in this release, see the Red Hat Enterprise Linux 9 Release Notes linked from the References section."
+}

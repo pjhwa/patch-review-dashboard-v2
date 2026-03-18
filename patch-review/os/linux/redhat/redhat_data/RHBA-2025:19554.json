@@ -1,0 +1,38 @@
+{
+  "id": "RHBA-2025:19554",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: mdadm bug fix and enhancement update",
+  "issuedDate": "2025-11-04T00:02:52Z",
+  "updatedDate": "2025-11-04T00:02:52Z",
+  "pubDate": "2025-11-04T00:02:52Z",
+  "dateStr": "2025-11-04",
+  "url": "https://access.redhat.com/errata/RHBA-2025:19554",
+  "severity": "None",
+  "overview": "An update for mdadm is now available for Red Hat Enterprise Linux 10.",
+  "description": "The mdadm packages contain a utility for creating, managing, and monitoring Linux multiple disk (MD) devices.Bug Fix(es) and Enhancement(s): mdadm device name limit set to 127 (JIRA:RHEL-97802)  [8.10.z] Mounting an md device may fail during boot from mdadm's claim on the device not being released before systemd attempts to mount (JIRA:RHEL-59180)  [rhel8.10.z] Segmentation fault when running mdadm --assemble with --metadata specified (JIRA:RHEL-82267)",
+  "affected_products": [
+    "Red Hat Enterprise Linux for ARM 64",
+    "Red Hat Enterprise Linux for x86_64 10 x86_64",
+    "Red Hat Enterprise Linux for IBM z Systems",
+    "Red Hat Enterprise Linux for Power, little endian"
+  ],
+  "cves": [],
+  "packages": [
+    "mdadm-4.2-19.el8_10.src",
+    "mdadm-4.2-19.el8_10.x86_64",
+    "mdadm-debuginfo-4.2-19.el8_10.x86_64",
+    "mdadm-debugsource-4.2-19.el8_10.x86_64",
+    "mdadm-4.2-19.el8_10.s390x",
+    "mdadm-debuginfo-4.2-19.el8_10.s390x",
+    "mdadm-debugsource-4.2-19.el8_10.s390x",
+    "mdadm-4.2-19.el8_10.ppc64le",
+    "mdadm-debuginfo-4.2-19.el8_10.ppc64le",
+    "mdadm-debugsource-4.2-19.el8_10.ppc64le",
+    "mdadm-4.2-19.el8_10.aarch64",
+    "mdadm-debuginfo-4.2-19.el8_10.aarch64",
+    "mdadm-debugsource-4.2-19.el8_10.aarch64"
+  ],
+  "fixes": [],
+  "full_text": "An update for mdadm is now available for Red Hat Enterprise Linux 10.\n\nThe mdadm packages contain a utility for creating, managing, and monitoring Linux multiple disk (MD) devices.Bug Fix(es) and Enhancement(s): mdadm device name limit set to 127 (JIRA:RHEL-97802)  [8.10.z] Mounting an md device may fail during boot from mdadm's claim on the device not being released before systemd attempts to mount (JIRA:RHEL-59180)  [rhel8.10.z] Segmentation fault when running mdadm --assemble with --metadata specified (JIRA:RHEL-82267)"
+}

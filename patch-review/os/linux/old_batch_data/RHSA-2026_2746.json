@@ -1,0 +1,20 @@
+{
+  "id": "RHSA-2026:2746",
+  "vendor": "Red Hat",
+  "url": "https://access.redhat.com/errata/RHSA-2026:2746",
+  "pubDate": "2026-02-23T01:36:40.000Z",
+  "dateStr": "2026-02-23",
+  "severity": "Moderate",
+  "title": "Red Hat Security Advisory: Red Hat build of MicroShift 4.17.49 security update",
+  "overview": "Red Hat build of MicroShift release 4.17.49 is now available with updates\nto packages and images that include a security update.\n\nRed Hat Product Security has rated this update as having a security impact\nof Moderate. A Common Vulnerability Scoring System (CVSS) base score, which\ngives a detailed severity rating, is available for each vulnerability from\nthe CVE link(s) in the References section.",
+  "description": "Red Hat build of MicroShift release 4.17.49 is now available with updates\nto packages and images that include a security update.\n\nRed Hat Product Security has rated this update as having a security impact\nof Moderate. A Common Vulnerability Scoring System (CVSS) base score, which\ngives a detailed severity rating, is available for each vulnerability from\nthe CVE link(s) in the References section.",
+  "affected_products": [
+    "Red Hat OpenShift Container Platform 4.17"
+  ],
+  "cves": [
+    "CVE-2025-65637"
+  ],
+  "packages": [],
+  "fixes": "",
+  "full_text": "Red Hat Security Advisory: Red Hat build of MicroShift 4.17.49 security update\n\nRed Hat build of MicroShift release 4.17.49 is now available with updates\nto packages and images that include a security update.\n\nRed Hat Product Security has rated this update as having a security impact\nof Moderate. A Common Vulnerability Scoring System (CVSS) base score, which\ngives a detailed severity rating, is available for each vulnerability from\nthe CVE link(s) in the References section.\n\nRed Hat build of MicroShift release 4.17.49 is now available with updates\nto packages and images that include a security update.\n\nRed Hat Product Security has rated this update as having a security impact\nof Moderate. A Common Vulnerability Scoring System (CVSS) base score, which\ngives a detailed severity rating, is available for each vulnerability from\nthe CVE link(s) in the References section.\n\nUpdated Packages:\nmicroshift-4.17.49-202602161401.p0.g708a69a.assembly.4.17.49.el9.src.rpm\nmicroshift-4.17.49-202602161401.p0.g708a69a.assembly.4.17.49.el9.x86_64.rpm\nmicroshift-greenboot-4.17.49-202602161401.p0.g708a69a.assembly.4.17.49.el9.noarch.rpm\nmicroshift-low-latency-4.17.49-202602161401.p0.g708a69a.assembly.4.17.49.el9.noarch.rpm\nmicroshift-multus-4.17.49-202602161401.p0.g708a69a.assembly.4.17.49.el9.x86_64.rpm\nmicroshift-multus-release-info-4.17.49-202602161401.p0.g708a69a.assembly.4.17.49.el9.noarch.rpm\nmicroshift-networking-4.17.49-202602161401.p0.g708a69a.assembly.4.17.49.el9.x86_64.rpm\nmicroshift-olm-4.17.49-202602161401.p0.g708a69a.assembly.4.17.49.el9.x86_64.rpm\nmicroshift-olm-release-info-4.17.49-202602161401.p0.g708a69a.assembly.4.17.49.el9.noarch.rpm\nmicroshift-release-info-4.17.49-202602161401.p0.g708a69a.assembly.4.17.49.el9.noarch.rpm\nmicroshift-selinux-4.17.49-202602161401.p0.g708a69a.assembly.4.17.49.el9.noarch.rpm\nmicroshift-4.17.49-202602161401.p0.g708a69a.assembly.4.17.49.el9.aarch64.rpm\nmicroshift-multus-4.17.49-202602161401.p0.g708a69a.assembly.4.17.49.el9.aarch64.rpm\nmicroshift-networking-4.17.49-202602161401.p0.g708a69a.assembly.4.17.49.el9.aarch64.rpm\nmicroshift-olm-4.17.49-202602161401.p0.g708a69a.assembly.4.17.49.el9.aarch64.rpm\n\nCVE-2025-65637: A denial-of-service vulnerability in github.com/sirupsen/logrus occurs when Entry.Writer() processes a single-line payload larger than 64KB with no newline characters. Due to a limitation in Go’s internal bufio.Scanner, the read operation fails with a “token too long” error, causing the underlying writer pipe to close. In affected versions, this leaves the Writer interface unusable and can disrupt logging functionality, potentially degrading application availability."
+}

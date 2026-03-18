@@ -1,0 +1,34 @@
+{
+  "id": "RHBA-2025:20480",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: tomcat9 bug fix and enhancement update",
+  "issuedDate": "2025-11-11T07:26:41Z",
+  "updatedDate": "2025-11-11T07:26:41Z",
+  "pubDate": "2025-11-11T07:26:41Z",
+  "dateStr": "2025-11-11",
+  "url": "https://access.redhat.com/errata/RHBA-2025:20480",
+  "severity": "None",
+  "overview": "An update for tomcat9 is now available for Red Hat Enterprise Linux 10.",
+  "description": "For detailed information on changes in this release, see the Red Hat Enterprise Linux 10 Release Notes linked from the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux for x86_64 10 x86_64",
+    "Red Hat Enterprise Linux for ARM 64",
+    "Red Hat Enterprise Linux for Power, little endian",
+    "Red Hat Enterprise Linux for IBM z Systems"
+  ],
+  "cves": [],
+  "packages": [
+    "tomcat9-9.0.87-8.el10.src",
+    "tomcat9-9.0.87-8.el10.noarch",
+    "tomcat9-admin-webapps-9.0.87-8.el10.noarch",
+    "tomcat9-docs-webapp-9.0.87-8.el10.noarch",
+    "tomcat9-el-3.0-api-9.0.87-8.el10.noarch",
+    "tomcat9-jsp-2.3-api-9.0.87-8.el10.noarch",
+    "tomcat9-lib-9.0.87-8.el10.noarch",
+    "tomcat9-servlet-4.0-api-9.0.87-8.el10.noarch",
+    "tomcat9-webapps-9.0.87-8.el10.noarch"
+  ],
+  "fixes": [],
+  "full_text": "An update for tomcat9 is now available for Red Hat Enterprise Linux 10.\n\nFor detailed information on changes in this release, see the Red Hat Enterprise Linux 10 Release Notes linked from the References section."
+}

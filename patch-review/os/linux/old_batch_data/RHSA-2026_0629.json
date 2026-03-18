@@ -1,0 +1,21 @@
+{
+  "id": "RHSA-2026:0629",
+  "vendor": "Red Hat",
+  "url": "https://access.redhat.com/errata/RHSA-2026:0629",
+  "pubDate": "2026-01-14T19:31:51.000Z",
+  "dateStr": "2026-01-14",
+  "severity": "Important",
+  "title": "Red Hat Security Advisory: satellite/foreman-mcp-server-rhel9 container image available as a Technology Preview",
+  "overview": "A new satellite/foreman-mcp-server-rhel9 container image is now available as a Technology Preview in the Red Hat container registry.",
+  "description": "A new satellite/foreman-mcp-server-rhel9 container image is now available as a Technology Preview in the Red Hat container registry.",
+  "affected_products": [
+    "Red Hat Satellite 6.18"
+  ],
+  "cves": [
+    "CVE-2025-62706",
+    "CVE-2025-66416"
+  ],
+  "packages": [],
+  "fixes": "",
+  "full_text": "Red Hat Security Advisory: satellite/foreman-mcp-server-rhel9 container image available as a Technology Preview\n\nA new satellite/foreman-mcp-server-rhel9 container image is now available as a Technology Preview in the Red Hat container registry.\n\nA new satellite/foreman-mcp-server-rhel9 container image is now available as a Technology Preview in the Red Hat container registry.\n\n\n\nCVE-2025-62706: Authlib is a Python library which builds OAuth and OpenID Connect servers. Prior to version 1.6.5, Authlib’s JWE zip=DEF path performs unbounded DEFLATE decompression. A very small ciphertext can expand into tens or hundreds of megabytes on decrypt, allowing an attacker who can supply decryptable tokens to exhaust memory and CPU and cause denial of service. This issue has been patched in version 1.6.5. Workarounds for this issue involve rejecting or stripping zip=DEF for inbound JWEs at the application boundary, forking and add a bounded decompression guard via decompressobj().decompress(data, MAX_SIZE)) and returning an error when output exceeds a safe limit, or enforcing strict maximum token sizes and fail fast on oversized inputs; combine with rate limiting.\n\nCVE-2025-66416: The MCP Python SDK, called `mcp` on PyPI, is a Python implementation of the Model Context Protocol (MCP). Prior to version 1.23.0, tThe Model Context Protocol (MCP) Python SDK does not enable DNS rebinding protection by default for HTTP-based servers. When an HTTP-based MCP server is run on localhost without authentication using FastMCP with streamable HTTP or SSE transport, and has not configured TransportSecuritySettings, a malicious website could exploit DNS rebinding to bypass same-origin policy restrictions and send requests to the local MCP server. This could allow an attacker to invoke tools or access resources exposed by the MCP server on behalf of the user in those limited circumstances. Note that running HTTP-based MCP servers locally without authentication is not recommended per MCP security best practices. This issue does not affect servers using stdio transport. This vulnerability is fixed in 1.23.0."
+}

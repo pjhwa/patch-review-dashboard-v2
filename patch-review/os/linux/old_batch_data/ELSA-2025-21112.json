@@ -1,0 +1,31 @@
+{
+  "id": "ELSA-2025-21112",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2025-December/019388.html",
+  "synopsis": "[El-errata] New Ksplice updates for RHCK 9 (ELSA-2025-21112)",
+  "dateStr": "2025-December",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Synopsis: ELSA-2025-21112 can now be patched using Ksplice",
+  "description": "",
+  "affected_products": [],
+  "packages": [],
+  "cves": [
+    "CVE-2022-2978",
+    "CVE-2023-53331",
+    "CVE-2023-53373",
+    "CVE-2023-53494",
+    "CVE-2025-38566",
+    "CVE-2025-38571",
+    "CVE-2025-39702",
+    "CVE-2025-39718",
+    "CVE-2025-39819",
+    "CVE-2025-39841",
+    "CVE-2025-39855",
+    "CVE-2025-39975",
+    "CVE-2022-50087"
+  ],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Synopsis: ELSA-2025-21112 can now be patched using Ksplice\nCVEs: CVE-2022-2978 CVE-2023-53331 CVE-2023-53373 CVE-2023-53494 CVE-2025-38566 CVE-2025-38571 CVE-2025-39702 CVE-2025-39718 CVE-2025-39819 CVE-2025-39841 CVE-2025-39855 CVE-2025-39975\n\nUsers with Oracle Linux Premier Support can now use Ksplice to patch\nagainst the latest Oracle Linux Security Advisory, ELSA-2025-21112.\nMore information about this errata can be found at\nhttps://linux.oracle.com/errata/ELSA-2025-21112.html\n\nINSTALLING THE UPDATES\n\nWe recommend that all users of Ksplice Uptrack running RHCK 9 install\nthese updates.\n\nOn systems that have \"autoinstall = yes\" in /etc/uptrack/uptrack.conf,\nthese updates will be installed automatically and you do not need to\ntake any action.\n\nAlternatively, you can install these updates by running:\n\n# /usr/sbin/uptrack-upgrade -y\n\n\nDESCRIPTION\n\n* CVE-2022-2978: Denial-of-service when initializing inodes.\n\n* CVE-2023-53331: Kernel panic in Persistent store driver.\n\n* CVE-2023-53373: Use-after-free in Sequence Number IV Generator driver.\n\n* CVE-2023-53494: Use-after-free in XTS driver.\n\n* CVE-2025-38566: Remote denial-of-service in SUNRPC.\n\n* CVE-2025-38571: Use-after-free in NFS over TLS.\n\n* CVE-2025-39702: Non-constant MACs comparision time in IPv6 Segment Routing HMAC driver.\n\n* CVE-2025-39718: Out-of-bounds memory access in Virtual Socket protocol driver.\n\n* CVE-2025-39819: Reference count leak in SMB/CIFS client driver.\n\n* CVE-2025-39841: Use-after-free in Emulex LightPulse Fibre Channel driver.\n\n* CVE-2025-39855: Null pointer dereference in Intel(R) Ethernet Connection E800 Series driver.\n\n* CVE-2025-39975: Out-of-bounds memory access in SMB/CIFS client driver.\n\n* Note: Oracle has determined some CVEs are not applicable.\n\nThe kernel is not affected by the following CVEs\nsince the code under consideration is not compiled.\n\nCVE-2022-50087\n\n\nSUPPORT\n\nKsplice support is available at ksplice-support_ww at oracle.com.",
+  "vendor": "Oracle"
+}

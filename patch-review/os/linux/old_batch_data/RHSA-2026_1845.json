@@ -1,0 +1,21 @@
+{
+  "id": "RHSA-2026:1845",
+  "vendor": "Red Hat",
+  "url": "https://access.redhat.com/errata/RHSA-2026:1845",
+  "pubDate": "2026-02-03T16:03:10.000Z",
+  "dateStr": "2026-02-03",
+  "severity": "Important",
+  "title": "Red Hat Security Advisory: Red Hat build of Cryostat security update",
+  "overview": "An update is now available for the Red Hat build of Cryostat 4 on RHEL 9.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "description": "An update is now available for the Red Hat build of Cryostat 4 on RHEL 9.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "affected_products": [
+    "Cryostat 4 on RHEL 9"
+  ],
+  "cves": [
+    "CVE-2025-13465",
+    "CVE-2025-61729"
+  ],
+  "packages": [],
+  "fixes": "",
+  "full_text": "Red Hat Security Advisory: Red Hat build of Cryostat security update\n\nAn update is now available for the Red Hat build of Cryostat 4 on RHEL 9.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nAn update is now available for the Red Hat build of Cryostat 4 on RHEL 9.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\n\n\nCVE-2025-13465: A flaw was found in Lodash. A prototype pollution vulnerability in the _.unset and _.omit functions allows an attacker able to control property paths to delete methods from global prototypes. By removing essential functionalities, this can result in a denial of service.\n\nCVE-2025-61729: Within HostnameError.Error(), when constructing an error string, there is no limit to the number of hosts that will be printed out. Furthermore, the error string is constructed by repeated string concatenation, leading to quadratic runtime. Therefore, a certificate provided by a malicious actor can result in excessive resource consumption."
+}

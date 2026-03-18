@@ -1,0 +1,20 @@
+{
+  "id": "RHSA-2025:22652",
+  "vendor": "Red Hat",
+  "url": "https://access.redhat.com/errata/RHSA-2025:22652",
+  "pubDate": "2025-12-02T21:45:24.000Z",
+  "dateStr": "2025-12-02",
+  "severity": "Important",
+  "title": "Red Hat Security Advisory: Red Hat OpenShift Dev Spaces 3.23.1 Release.",
+  "overview": "Red Hat OpenShift Dev Spaces 3.23.1 has been released.",
+  "description": "Red Hat OpenShift Dev Spaces 3.23.1 has been released.",
+  "affected_products": [
+    "Red Hat OpenShift Dev Spaces (RHOSDS) 3.23"
+  ],
+  "cves": [
+    "CVE-2025-12548"
+  ],
+  "packages": [],
+  "fixes": "",
+  "full_text": "Red Hat Security Advisory: Red Hat OpenShift Dev Spaces 3.23.1 Release.\n\nRed Hat OpenShift Dev Spaces 3.23.1 has been released.\n\nRed Hat OpenShift Dev Spaces 3.23.1 has been released.\n\n\n\nCVE-2025-12548: A flaw was found in Eclipse Che che-machine-exec. This vulnerability allows unauthenticated remote arbitrary command execution and secret exfiltration (SSH keys, tokens, etc.) from other users' Developer Workspace containers, via an unauthenticated JSON-RPC / websocket API exposed on TCP port 3333."
+}

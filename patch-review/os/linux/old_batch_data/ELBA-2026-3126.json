@@ -1,0 +1,32 @@
+{
+  "id": "ELBA-2026-3126",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2026-February/019850.html",
+  "synopsis": "[El-errata] ELBA-2026-3126 Oracle Linux 8 389-ds:1.4 bug fix and enhancement update",
+  "dateStr": "2026-February",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Bug Fix Advisory ELBA-2026-3126",
+  "description": "[1.4.3.39-22]\n- Resolves: RHEL-148485 - Upgrading IDM to latest version: 389-ds-base and ipa-server breaks replication [rhel-8.10.z]\n\n[1.4.3.39-21]\n- Resolves: RHEL-141419 - (&(cn:dn:=groups)) no longer returns results [rhel-8.10.z]\n- Resolves: RHEL-140272 - ipa-healthcheck is complaining about missing or\n                          incorrectly configured system indexes. [rhel-8.10.z]",
+  "affected_products": [
+    "Oracle Linux 8"
+  ],
+  "packages": [
+    "389-ds-base-1.4.3.39-22.module+el8.10.0+90818+58a94ceb.x86_64.rpm",
+    "389-ds-base-devel-1.4.3.39-22.module+el8.10.0+90818+58a94ceb.x86_64.rpm",
+    "389-ds-base-legacy-tools-1.4.3.39-22.module+el8.10.0+90818+58a94ceb.x86_64.rpm",
+    "389-ds-base-libs-1.4.3.39-22.module+el8.10.0+90818+58a94ceb.x86_64.rpm",
+    "389-ds-base-snmp-1.4.3.39-22.module+el8.10.0+90818+58a94ceb.x86_64.rpm",
+    "python3-lib389-1.4.3.39-22.module+el8.10.0+90818+58a94ceb.noarch.rpm",
+    "389-ds-base-1.4.3.39-22.module+el8.10.0+90818+58a94ceb.aarch64.rpm",
+    "389-ds-base-devel-1.4.3.39-22.module+el8.10.0+90818+58a94ceb.aarch64.rpm",
+    "389-ds-base-legacy-tools-1.4.3.39-22.module+el8.10.0+90818+58a94ceb.aarch64.rpm",
+    "389-ds-base-libs-1.4.3.39-22.module+el8.10.0+90818+58a94ceb.aarch64.rpm",
+    "389-ds-base-snmp-1.4.3.39-22.module+el8.10.0+90818+58a94ceb.aarch64.rpm",
+    "python3-lib389-1.4.3.39-22.module+el8.10.0+90818+58a94ceb.noarch.rpm"
+  ],
+  "cves": [],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Bug Fix Advisory ELBA-2026-3126\n\nhttp://linux.oracle.com/errata/ELBA-2026-3126.html\n\nThe following updated rpms for Oracle Linux 8 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\n389-ds-base-1.4.3.39-22.module+el8.10.0+90818+58a94ceb.x86_64.rpm\n389-ds-base-devel-1.4.3.39-22.module+el8.10.0+90818+58a94ceb.x86_64.rpm\n389-ds-base-legacy-tools-1.4.3.39-22.module+el8.10.0+90818+58a94ceb.x86_64.rpm\n389-ds-base-libs-1.4.3.39-22.module+el8.10.0+90818+58a94ceb.x86_64.rpm\n389-ds-base-snmp-1.4.3.39-22.module+el8.10.0+90818+58a94ceb.x86_64.rpm\npython3-lib389-1.4.3.39-22.module+el8.10.0+90818+58a94ceb.noarch.rpm\n\naarch64:\n389-ds-base-1.4.3.39-22.module+el8.10.0+90818+58a94ceb.aarch64.rpm\n389-ds-base-devel-1.4.3.39-22.module+el8.10.0+90818+58a94ceb.aarch64.rpm\n389-ds-base-legacy-tools-1.4.3.39-22.module+el8.10.0+90818+58a94ceb.aarch64.rpm\n389-ds-base-libs-1.4.3.39-22.module+el8.10.0+90818+58a94ceb.aarch64.rpm\n389-ds-base-snmp-1.4.3.39-22.module+el8.10.0+90818+58a94ceb.aarch64.rpm\npython3-lib389-1.4.3.39-22.module+el8.10.0+90818+58a94ceb.noarch.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol8/SRPMS-updates/389-ds-base-1.4.3.39-22.module+el8.10.0+90818+58a94ceb.src.rpm\n\n\n\nDescription of changes:\n\n[1.4.3.39-22]\n- Resolves: RHEL-148485 - Upgrading IDM to latest version: 389-ds-base and ipa-server breaks replication [rhel-8.10.z]\n\n[1.4.3.39-21]\n- Resolves: RHEL-141419 - (&(cn:dn:=groups)) no longer returns results [rhel-8.10.z]\n- Resolves: RHEL-140272 - ipa-healthcheck is complaining about missing or\n                          incorrectly configured system indexes. [rhel-8.10.z]",
+  "vendor": "Oracle"
+}

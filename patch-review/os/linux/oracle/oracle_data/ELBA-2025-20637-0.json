@@ -1,0 +1,31 @@
+{
+  "id": "ELBA-2025-20637-0",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "AppStream",
+  "title": "valgrind bug fix and enhancement update",
+  "issuedDate": "2025-11-17T00:00:00Z",
+  "updatedDate": "2025-11-17T00:00:00Z",
+  "pubDate": "2025-11-17T00:00:00Z",
+  "dateStr": "2025-11-17",
+  "url": "https://linux.oracle.com/errata/ELBA-2025-20637-0.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 9.",
+  "description": "[3.25.1-3]\n- Add ppc64-strcmp-ld.patch\n- Add 0003-Add-several-missing-syscall-hooks-to-ppc64-linux.patch\n\n[3.25.1-2]\n- Add VALGRIND_3_25_BRANCH patches\n  - 0001-Prepare-NEWS-for-branch-3.25.x-fixes.patch\n  - 0002-Bug-503241-s390x-Support-z17-changes-to-the-NNPA-ins.patch\n\n[3.25.1-1]\n- Valgrind 3.25.1 final\n\n[3.25.0-1]\n- Valgrind 3.25.0 final\n\n[3.24.0-4]\n- Split main valgrind package into several subpackages:\n  - valgrind now contains just the core tools.\n  - valgrind-scripts contains the post-processing scripts for callgrind,\n    cachegrind, massif and dhat which depend on perl and python.\n  - valgrind-gdb contains the debuginfo client/server and (v)gdb support.\n  - valgrind-docs contains the man pages, html and pdf manual.\n- Adjust Requires/Recommends to subpackages can be installed independently.\n  - valgrind-devel now Recommends, instead of Requires, valgrind.\n  - valgrind-gdb Requires valgrind\n  - valgrind-scripts Recommends valgrind-gdb\n  - valgrind-gdb Recommends gdb",
+  "affected_products": [
+    "Oracle Linux 9 for x86_64",
+    "Oracle Linux 9 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "valgrind-3.25.1-3.el9.x86_64",
+    "valgrind-3.25.1-3.el9.i686",
+    "valgrind-docs-3.25.1-3.el9.x86_64",
+    "valgrind-scripts-3.25.1-3.el9.x86_64",
+    "valgrind-gdb-3.25.1-3.el9.x86_64",
+    "valgrind-devel-3.25.1-3.el9.i686",
+    "valgrind-devel-3.25.1-3.el9.x86_64",
+    "valgrind-3.25.1-3.el9.src"
+  ],
+  "full_text": "[3.25.1-3]\n- Add ppc64-strcmp-ld.patch\n- Add 0003-Add-several-missing-syscall-hooks-to-ppc64-linux.patch\n\n[3.25.1-2]\n- Add VALGRIND_3_25_BRANCH patches\n  - 0001-Prepare-NEWS-for-branch-3.25.x-fixes.patch\n  - 0002-Bug-503241-s390x-Support-z17-changes-to-the-NNPA-ins.patch\n\n[3.25.1-1]\n- Valgrind 3.25.1 final\n\n[3.25.0-1]\n- Valgrind 3.25.0 final\n\n[3.24.0-4]\n- Split main valgrind package into several subpackages:\n  - valgrind now contains just the core tools.\n  - valgrind-scripts contains the post-processing scripts for callgrind,\n    cachegrind, massif and dhat which depend on perl and python.\n  - valgrind-gdb contains the debuginfo client/server and (v)gdb support.\n  - valgrind-docs contains the man pages, html and pdf manual.\n- Adjust Requires/Recommends to subpackages can be installed independently.\n  - valgrind-devel now Recommends, instead of Requires, valgrind.\n  - valgrind-gdb Requires valgrind\n  - valgrind-scripts Recommends valgrind-gdb\n  - valgrind-gdb Recommends gdb\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2025-20637-0.html"
+}

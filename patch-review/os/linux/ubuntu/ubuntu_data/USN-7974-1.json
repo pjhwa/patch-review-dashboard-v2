@@ -1,0 +1,30 @@
+{
+  "id": "USN-7974-1",
+  "vendor": "Canonical / Ubuntu",
+  "type": "Ubuntu Security Notice (USN)",
+  "title": "libxml2 vulnerabilities",
+  "issuedDate": "2026-01-22T13:23:49Z",
+  "updatedDate": "2026-02-10T04:50:48Z",
+  "pubDate": "2026-01-22T13:23:49Z",
+  "dateStr": "2026-01-22",
+  "url": "https://ubuntu.com/security/notices/USN-7974-1",
+  "severity": "None",
+  "overview": "libxml2 vulnerabilities",
+  "description": "It was discovered that libxml2 incorrectly handled maliciously crafted SGML\ncatalog files. An attacker could possibly use this issue to cause libxml2\nto consume excessive resources, leading to a denial of service.\n(CVE-2025-8732)\n\nIt was discovered that libxml2 incorrectly handled recursive include\ndirectories with the RelaxNG parser. An attacker could possibly use this\nissue to cause libxml2 to consume excessive resources, leading to a denial\nof service. (CVE-2026-0989)\n\nNick Wellnhofer discovered that libxml2 incorrectly parsed catalogs with\nself-referencing URI delegates. An attacker could possibly use this issue\nto cause libxml2 to consume excessive resources, leading to a denial of\nservice. (CVE-2026-0990)\n\nNick Wellnhofer discovered that libxml2 inefficiently parsed catalogs\nlinked with repeating nextCatalog elements. An attacker could possibly use\nthis issue to cause libxml2 to use excessive resources, leading to a denial\nof service. (CVE-2026-0992)",
+  "affected_products": [
+    "Ubuntu 22.04 LTS",
+    "Ubuntu 24.04 LTS"
+  ],
+  "cves": [],
+  "packages": [
+    "libxml2-2.9.13+dfsg-1ubuntu0.11",
+    "libxml2-2.9.14+dfsg-1.3ubuntu3.7",
+    "libxml2-dev-2.9.13+dfsg-1ubuntu0.11",
+    "libxml2-dev-2.9.14+dfsg-1.3ubuntu3.7",
+    "libxml2-utils-2.9.13+dfsg-1ubuntu0.11",
+    "libxml2-utils-2.9.14+dfsg-1.3ubuntu3.7",
+    "python3-libxml2-2.9.13+dfsg-1ubuntu0.11",
+    "python3-libxml2-2.9.14+dfsg-1.3ubuntu3.7"
+  ],
+  "full_text": "It was discovered that libxml2 incorrectly handled maliciously crafted SGML\ncatalog files. An attacker could possibly use this issue to cause libxml2\nto consume excessive resources, leading to a denial of service.\n(CVE-2025-8732)\n\nIt was discovered that libxml2 incorrectly handled recursive include\ndirectories with the RelaxNG parser. An attacker could possibly use this\nissue to cause libxml2 to consume excessive resources, leading to a denial\nof service. (CVE-2026-0989)\n\nNick Wellnhofer discovered that libxml2 incorrectly parsed catalogs with\nself-referencing URI delegates. An attacker could possibly use this issue\nto cause libxml2 to consume excessive resources, leading to a denial of\nservice. (CVE-2026-0990)\n\nNick Wellnhofer discovered that libxml2 inefficiently parsed catalogs\nlinked with repeating nextCatalog elements. An attacker could possibly use\nthis issue to cause libxml2 to use excessive resources, leading to a denial\nof service. (CVE-2026-0992)"
+}

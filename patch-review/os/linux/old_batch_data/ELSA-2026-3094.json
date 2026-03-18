@@ -1,0 +1,34 @@
+{
+  "id": "ELSA-2026-3094",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2026-February/019828.html",
+  "synopsis": "[El-errata] ELSA-2026-3094 Important: Oracle Linux 10 protobuf security update",
+  "dateStr": "2026-February",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Security Advisory ELSA-2026-3094",
+  "description": "[3.19.6-15]\n- Fix CVE-2026-0994: nested Any messages bypassing recursion depth limits\n\n[3.19.6-14]\n- Disable tests during build that are flaky\n\n[3.19.6-13]\n- Rebuilt for tests directory\n\n[3.19.6-12]\n- Copy patch from c9s to make emacs dependency optional\n  Resolves: RHEL-93236",
+  "affected_products": [
+    "Oracle Linux 10"
+  ],
+  "packages": [
+    "protobuf-3.19.6-15.el10_1.x86_64.rpm",
+    "protobuf-compiler-3.19.6-15.el10_1.x86_64.rpm",
+    "protobuf-devel-3.19.6-15.el10_1.x86_64.rpm",
+    "protobuf-lite-3.19.6-15.el10_1.x86_64.rpm",
+    "protobuf-lite-devel-3.19.6-15.el10_1.x86_64.rpm",
+    "python3-protobuf-3.19.6-15.el10_1.x86_64.rpm",
+    "protobuf-3.19.6-15.el10_1.aarch64.rpm",
+    "protobuf-compiler-3.19.6-15.el10_1.aarch64.rpm",
+    "protobuf-devel-3.19.6-15.el10_1.aarch64.rpm",
+    "protobuf-lite-3.19.6-15.el10_1.aarch64.rpm",
+    "protobuf-lite-devel-3.19.6-15.el10_1.aarch64.rpm",
+    "python3-protobuf-3.19.6-15.el10_1.aarch64.rpm"
+  ],
+  "cves": [
+    "CVE-2026-0994"
+  ],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Security Advisory ELSA-2026-3094\n\nhttp://linux.oracle.com/errata/ELSA-2026-3094.html\n\nThe following updated rpms for Oracle Linux 10 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\nprotobuf-3.19.6-15.el10_1.x86_64.rpm\nprotobuf-compiler-3.19.6-15.el10_1.x86_64.rpm\nprotobuf-devel-3.19.6-15.el10_1.x86_64.rpm\nprotobuf-lite-3.19.6-15.el10_1.x86_64.rpm\nprotobuf-lite-devel-3.19.6-15.el10_1.x86_64.rpm\npython3-protobuf-3.19.6-15.el10_1.x86_64.rpm\n\naarch64:\nprotobuf-3.19.6-15.el10_1.aarch64.rpm\nprotobuf-compiler-3.19.6-15.el10_1.aarch64.rpm\nprotobuf-devel-3.19.6-15.el10_1.aarch64.rpm\nprotobuf-lite-3.19.6-15.el10_1.aarch64.rpm\nprotobuf-lite-devel-3.19.6-15.el10_1.aarch64.rpm\npython3-protobuf-3.19.6-15.el10_1.aarch64.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol10/SRPMS-updates/protobuf-3.19.6-15.el10_1.src.rpm\n\nRelated CVEs:\n\nCVE-2026-0994\n\n\n\n\nDescription of changes:\n\n[3.19.6-15]\n- Fix CVE-2026-0994: nested Any messages bypassing recursion depth limits\n\n[3.19.6-14]\n- Disable tests during build that are flaky\n\n[3.19.6-13]\n- Rebuilt for tests directory\n\n[3.19.6-12]\n- Copy patch from c9s to make emacs dependency optional\n  Resolves: RHEL-93236",
+  "vendor": "Oracle"
+}

@@ -1,0 +1,38 @@
+{
+  "id": "ELEA-2025-19574",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "AppStream",
+  "title": "mysql:8.4 bug fix and enhancement update",
+  "issuedDate": "2025-11-06T00:00:00Z",
+  "updatedDate": "2025-11-06T00:00:00Z",
+  "pubDate": "2025-11-06T00:00:00Z",
+  "dateStr": "2025-11-06",
+  "url": "https://linux.oracle.com/errata/ELEA-2025-19574.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 8.",
+  "description": "mecab\n[0.996-2.12]\n- Bump version for 'mysql' module rebuild\n  We are moving the 'mecab-devel' RPM from the 'buildroot' repo to the 'AppStream' repo\n- Resolves: #2180411\n\nmecab-ipadic\n[2.7.0.20070801-17.0.1]\n- Rename the LICENSE.Fedora to LICENSE.oracle\n\nmysql\n[8.4.6-1]\n- Rebase to 8.4.6",
+  "affected_products": [
+    "Oracle Linux 8 for x86_64",
+    "Oracle Linux 8 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "mecab-0.996-2.module+el8.10.0+90700+dfc34c39.src",
+    "mecab-ipadic-2.7.0.20070801-17.0.1.module+el8.10.0+90700+dfc34c39.src",
+    "mysql-8.4.6-1.module+el8.10.0+90700+dfc34c39.src",
+    "mysql-libs-8.4.6-1.module+el8.10.0+90700+dfc34c39.x86_64",
+    "mysql-8.4.6-1.module+el8.10.0+90700+dfc34c39.x86_64",
+    "mysql-server-8.4.6-1.module+el8.10.0+90700+dfc34c39.x86_64",
+    "mysql-test-8.4.6-1.module+el8.10.0+90700+dfc34c39.x86_64",
+    "mysql-devel-8.4.6-1.module+el8.10.0+90700+dfc34c39.x86_64",
+    "mecab-0.996-2.module+el8.10.0+90700+dfc34c39.x86_64",
+    "mecab-ipadic-2.7.0.20070801-17.0.1.module+el8.10.0+90700+dfc34c39.x86_64",
+    "mecab-devel-0.996-2.module+el8.10.0+90700+dfc34c39.x86_64",
+    "mecab-ipadic-EUCJP-2.7.0.20070801-17.0.1.module+el8.10.0+90700+dfc34c39.x86_64",
+    "mysql-errmsg-8.4.6-1.module+el8.10.0+90700+dfc34c39.noarch",
+    "mysql-test-data-8.4.6-1.module+el8.10.0+90700+dfc34c39.noarch",
+    "mysql-common-8.4.6-1.module+el8.10.0+90700+dfc34c39.noarch"
+  ],
+  "full_text": "mecab\n[0.996-2.12]\n- Bump version for 'mysql' module rebuild\n  We are moving the 'mecab-devel' RPM from the 'buildroot' repo to the 'AppStream' repo\n- Resolves: #2180411\n\nmecab-ipadic\n[2.7.0.20070801-17.0.1]\n- Rename the LICENSE.Fedora to LICENSE.oracle\n\nmysql\n[8.4.6-1]\n- Rebase to 8.4.6\n\nReferences:\nhttps://linux.oracle.com/errata/ELEA-2025-19574.html"
+}

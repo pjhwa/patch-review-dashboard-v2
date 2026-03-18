@@ -1,0 +1,30 @@
+{
+  "id": "RHBA-2025:23320",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: virt-v2v bug fix and enhancement update",
+  "issuedDate": "2025-12-18T10:48:13Z",
+  "updatedDate": "2025-12-18T10:48:13Z",
+  "pubDate": "2025-12-18T10:48:13Z",
+  "dateStr": "2025-12-18",
+  "url": "https://access.redhat.com/errata/RHBA-2025:23320",
+  "severity": "None",
+  "overview": "An update for virt-v2v is now available for Red Hat Enterprise Linux 10.",
+  "description": "Kernel-based Virtual Machine (KVM) offers a full virtualization solution forLinux on numerous hardware platforms. The virt:rhel module contains packageswhich provide user-space components used to run virtual machines using KVM.The packages also provide APIs for managing and interacting with the virtualized systems.Bug Fix(es) and Enhancement(s): Windows migration failed: mkdtemp: /Windows/Temp/ESP_XXXXXX: No such file or directory [rhel-9.7.z] (JIRA:RHEL-125120)  After migrating VM from vSphere, pnputil doesn't work properly and Driver Store appears broken [rhel-9.7.z] (JIRA:RHEL-128776)",
+  "affected_products": [
+    "Red Hat Enterprise Linux for x86_64 10 x86_64",
+    "Red Hat CodeReady Linux Builder for x86_64 10 x86_64"
+  ],
+  "cves": [],
+  "packages": [
+    "virt-v2v-2.7.1-18.el9_7.src",
+    "virt-v2v-2.7.1-18.el9_7.x86_64",
+    "virt-v2v-bash-completion-2.7.1-18.el9_7.noarch",
+    "virt-v2v-debuginfo-2.7.1-18.el9_7.x86_64",
+    "virt-v2v-debugsource-2.7.1-18.el9_7.x86_64",
+    "virt-v2v-man-pages-ja-2.7.1-18.el9_7.noarch",
+    "virt-v2v-man-pages-uk-2.7.1-18.el9_7.noarch"
+  ],
+  "fixes": [],
+  "full_text": "An update for virt-v2v is now available for Red Hat Enterprise Linux 10.\n\nKernel-based Virtual Machine (KVM) offers a full virtualization solution forLinux on numerous hardware platforms. The virt:rhel module contains packageswhich provide user-space components used to run virtual machines using KVM.The packages also provide APIs for managing and interacting with the virtualized systems.Bug Fix(es) and Enhancement(s): Windows migration failed: mkdtemp: /Windows/Temp/ESP_XXXXXX: No such file or directory [rhel-9.7.z] (JIRA:RHEL-125120)  After migrating VM from vSphere, pnputil doesn't work properly and Driver Store appears broken [rhel-9.7.z] (JIRA:RHEL-128776)"
+}

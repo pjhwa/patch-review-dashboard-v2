@@ -1,0 +1,23 @@
+{
+  "id": "USN-5376-5",
+  "url": "https://ubuntu.com/security/notices/USN-5376-5",
+  "synopsis": "USN-5376-5: Git regression",
+  "dateStr": "27 February 2026",
+  "overview": "USN-5376-4 introduced a regression in Git",
+  "description": "USN-5376-4 fixed a regression in Git. The update introduced a regression\nwhen specifying configuration includes due to additional restrictions. This\nupdate fixes the problem.\n\nWe apologize for the inconvenience.\n\nOriginal advisory details:\n\n俞晨东 discovered that Git incorrectly handled certain repository paths\n in platforms with multiple users support. An attacker could possibly use\n this issue to run arbitrary commands.\n\n \n\n \n\n \n\nUSN-5376-4 fixed a regression in Git. The update introduced a regression\nwhen specifying configuration includes due to additional restrictions. This\nupdate fixes the problem.\n\nWe apologize for the inconvenience.\n\nOriginal advisory details:\n\n俞晨东 discovered that Git incorrectly handled certain repository paths\n in platforms with multiple users support. An attacker could possibly use\n this issue to run arbitrary commands.",
+  "packages": [
+    "git"
+  ],
+  "cves": [],
+  "affected_products": [
+    "22.04 LTS",
+    "20.04 LTS",
+    "Open side navigation"
+  ],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Ubuntu Security Notices\n\nUSN-5376-5\n\n \n\n \n\n \n\n \n\n \n\n \nUSN-5376-5: Git regression\n\n \n\n \n\n \n\n \nPublication date\n\n \n\n \n\n \n27 February 2026\n\n \n\n \n\n \n\n \n\n \nOverview\n\n \n\n \n\n \nUSN-5376-4 introduced a regression in Git\n\n \n\n \n\n \n\n \n\n \nReleases\n\n \n\n \n\n \n\n 22.04 LTS\n\n20.04 LTS\n\n \n\n \n\n \n\n \n\n \n\n \n\n Open side navigation\n \n\n \n\n \nPackages\n\n \n\n git - fast, scalable, distributed revision control system\n \n\n \n\n \nDetails\n\n \n\n \n\nUSN-5376-4 fixed a regression in Git. The update introduced a regression\nwhen specifying configuration includes due to additional restrictions. This\nupdate fixes the problem.\n\nWe apologize for the inconvenience.\n\nOriginal advisory details:\n\n俞晨东 discovered that Git incorrectly handled certain repository paths\n in platforms with multiple users support. An attacker could possibly use\n this issue to run arbitrary commands.\n\n \n\n \n\n \n\nUSN-5376-4 fixed a regression in Git. The update introduced a regression\nwhen specifying configuration includes due to additional restrictions. This\nupdate fixes the problem.\n\nWe apologize for the inconvenience.\n\nOriginal advisory details:\n\n俞晨东 discovered that Git incorrectly handled certain repository paths\n in platforms with multiple users support. An attacker could possibly use\n this issue to run arbitrary commands.\n\n \n\n \n\n \n\n \nUpdate instructions\n\n \n\n \n\n \n\n \n\nIn general, a standard system update will make all the necessary changes.\n\n Learn more about how to get the fixes.\n \n\n \n\n \n\n \n\n \nThe problem can be corrected by updating your system to the following package versions:\n\n \n\n \n\n \n\n \n\n Ubuntu Release\n Package Version\n \n\n 22.04\n\nLTS jammy\n\n git – \n\n1:2.34.1-1ubuntu1.17\n\n \n\n 20.04\n\nLTS focal\n\n git – \n\n1:2.25.1-1ubuntu3.14+esm5\n\n  \n\nUbuntu Pro\n Fix available with Ubuntu Pro.\n\n \n\nReduce your security exposure\n\n \n\n Ubuntu Pro provides ten-year security coverage to 25,000+ packages in Main and Universe repositories, and it is free for up to five machines.\n \n\n \n\n Get Ubuntu Pro\n \n\n \n\nReferences\n\n \n\n \n\n https://launchpad.net/bugs/2142790",
+  "title": "USN-5376-5: Git regression | Ubuntu security notices | Ubuntu",
+  "pubDate": "2026-02-26T15:00:00.000Z",
+  "vendor": "Ubuntu"
+}

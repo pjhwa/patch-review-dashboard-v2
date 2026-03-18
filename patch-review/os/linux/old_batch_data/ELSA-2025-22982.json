@@ -1,0 +1,24 @@
+{
+  "id": "ELSA-2025-22982",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2025-December/019326.html",
+  "synopsis": "[El-errata] ELSA-2025-22982 Important: Oracle Linux 7 python-kdcproxy security update",
+  "dateStr": "2025-December",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Security Advisory ELSA-2025-22982",
+  "description": "[0.3.2-3.0.1]\n- Use DNS discovery for declared realms only (CVE-2025-59088) [Orabug: 38745300]\n- Fix DoS vulnerability based on unbounded TCP buffering (CVE-2025-59089)",
+  "affected_products": [
+    "Oracle Linux 7"
+  ],
+  "packages": [
+    "python-kdcproxy-0.3.2-3.0.1.el7.noarch.rpm"
+  ],
+  "cves": [
+    "CVE-2025-59088",
+    "CVE-2025-59089"
+  ],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Security Advisory ELSA-2025-22982\n\nhttp://linux.oracle.com/errata/ELSA-2025-22982.html\n\nThe following updated rpms for Oracle Linux 7 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\npython-kdcproxy-0.3.2-3.0.1.el7.noarch.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol7/SRPMS-updates/python-kdcproxy-0.3.2-3.0.1.el7.src.rpm\n\nRelated CVEs:\n\nCVE-2025-59088\nCVE-2025-59089\n\n\n\n\nDescription of changes:\n\n[0.3.2-3.0.1]\n- Use DNS discovery for declared realms only (CVE-2025-59088) [Orabug: 38745300]\n- Fix DoS vulnerability based on unbounded TCP buffering (CVE-2025-59089)",
+  "vendor": "Oracle"
+}

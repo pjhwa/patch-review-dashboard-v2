@@ -1,0 +1,26 @@
+{
+  "id": "USN-7806-1",
+  "vendor": "Canonical / Ubuntu",
+  "type": "Ubuntu Security Notice (USN)",
+  "title": "pam-u2f vulnerability",
+  "issuedDate": "2025-10-06T16:35:59Z",
+  "updatedDate": "2026-02-10T04:50:11Z",
+  "pubDate": "2025-10-06T16:35:59Z",
+  "dateStr": "2025-10-06",
+  "url": "https://ubuntu.com/security/notices/USN-7806-1",
+  "severity": "None",
+  "overview": "pam-u2f vulnerability",
+  "description": "It was discovered that PAM/U2F could allow for authentication bypass in\nsome configurations. An attacker could possibly use this issue to execute\narbitrary code or cause a denial of service.",
+  "affected_products": [
+    "Ubuntu 22.04 LTS",
+    "Ubuntu 24.04 LTS"
+  ],
+  "cves": [],
+  "packages": [
+    "libpam-u2f-1.1.0-1.1+deb12u1build0.22.04.1",
+    "libpam-u2f-1.1.0-1.1+deb12u1build0.24.04.1",
+    "pamu2fcfg-1.1.0-1.1+deb12u1build0.22.04.1",
+    "pamu2fcfg-1.1.0-1.1+deb12u1build0.24.04.1"
+  ],
+  "full_text": "It was discovered that PAM/U2F could allow for authentication bypass in\nsome configurations. An attacker could possibly use this issue to execute\narbitrary code or cause a denial of service."
+}

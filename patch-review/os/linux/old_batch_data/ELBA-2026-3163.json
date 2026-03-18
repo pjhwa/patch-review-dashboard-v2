@@ -1,0 +1,31 @@
+{
+  "id": "ELBA-2026-3163",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2026-February/019840.html",
+  "synopsis": "[El-errata] ELBA-2026-3163 Oracle Linux 10 opencryptoki bug fix and enhancement update",
+  "dateStr": "2026-February",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Bug Fix Advisory ELBA-2026-3163",
+  "description": "[3.25.0-5.1]\n- Fix unwrapping of attribute bound EC keys\n- Fix private secure key blob import\n  Resolves: RHEL-131645",
+  "affected_products": [
+    "Oracle Linux 10"
+  ],
+  "packages": [
+    "opencryptoki-3.25.0-5.el10_1.1.x86_64.rpm",
+    "opencryptoki-ccatok-3.25.0-5.el10_1.1.x86_64.rpm",
+    "opencryptoki-devel-3.25.0-5.el10_1.1.x86_64.rpm",
+    "opencryptoki-icsftok-3.25.0-5.el10_1.1.x86_64.rpm",
+    "opencryptoki-libs-3.25.0-5.el10_1.1.x86_64.rpm",
+    "opencryptoki-swtok-3.25.0-5.el10_1.1.x86_64.rpm",
+    "opencryptoki-3.25.0-5.el10_1.1.aarch64.rpm",
+    "opencryptoki-devel-3.25.0-5.el10_1.1.aarch64.rpm",
+    "opencryptoki-icsftok-3.25.0-5.el10_1.1.aarch64.rpm",
+    "opencryptoki-libs-3.25.0-5.el10_1.1.aarch64.rpm",
+    "opencryptoki-swtok-3.25.0-5.el10_1.1.aarch64.rpm"
+  ],
+  "cves": [],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Bug Fix Advisory ELBA-2026-3163\n\nhttp://linux.oracle.com/errata/ELBA-2026-3163.html\n\nThe following updated rpms for Oracle Linux 10 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\nopencryptoki-3.25.0-5.el10_1.1.x86_64.rpm\nopencryptoki-ccatok-3.25.0-5.el10_1.1.x86_64.rpm\nopencryptoki-devel-3.25.0-5.el10_1.1.x86_64.rpm\nopencryptoki-icsftok-3.25.0-5.el10_1.1.x86_64.rpm\nopencryptoki-libs-3.25.0-5.el10_1.1.x86_64.rpm\nopencryptoki-swtok-3.25.0-5.el10_1.1.x86_64.rpm\n\naarch64:\nopencryptoki-3.25.0-5.el10_1.1.aarch64.rpm\nopencryptoki-devel-3.25.0-5.el10_1.1.aarch64.rpm\nopencryptoki-icsftok-3.25.0-5.el10_1.1.aarch64.rpm\nopencryptoki-libs-3.25.0-5.el10_1.1.aarch64.rpm\nopencryptoki-swtok-3.25.0-5.el10_1.1.aarch64.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol10/SRPMS-updates/opencryptoki-3.25.0-5.el10_1.1.src.rpm\n\n\n\nDescription of changes:\n\n[3.25.0-5.1]\n- Fix unwrapping of attribute bound EC keys\n- Fix private secure key blob import\n  Resolves: RHEL-131645",
+  "vendor": "Oracle"
+}

@@ -1,0 +1,29 @@
+{
+  "id": "ELBA-2025-20535-0",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "RHCK",
+  "title": "dnf bug fix and enhancement update",
+  "issuedDate": "2025-11-17T00:00:00Z",
+  "updatedDate": "2025-11-17T00:00:00Z",
+  "pubDate": "2025-11-17T00:00:00Z",
+  "dateStr": "2025-11-17",
+  "url": "https://linux.oracle.com/errata/ELBA-2025-20535-0.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 9.",
+  "description": "[4.14.0-31.0.1]\n- Replaced bugzilla.oracle.com references [Orabug: 34202300]\n- Fixed python stack trace with updateinfo list cves command [Orabug: 32749660]\n- Replaced upstream bugzilla reporting reference. [Orabug: 32829849]\n\n[4.14.0-31]\n- Introduce ,  variables, shell-style\n  variable substitution (RHEL-65817)\n\n[4.14.0-30]\n- Mark transient transactions in DNF history (RHEL-84512)\n- Warn/disallow changes outside /usr, /etc with --transient (RHEL-84499)\n\n[4.14.0-29]\n- man page: don't mark mandatory option parameters as optional (RHEL-63958)\n\n[4.14.0-28]\n- Add dnf4 provides and symlink /usr/bin/dnf4 -> /usr/bin/dnf-3 (RHEL-82310)\n\n[4.14.0-27]\n- usage help: don't mark mandatory option parameters as optional (RHEL-63958)\n\n[4.14.0-26]\n- package: remote_location() takes basedir into account (RHEL-71125)",
+  "affected_products": [
+    "Oracle Linux 9 for x86_64",
+    "Oracle Linux 9 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "dnf-automatic-4.14.0-31.0.1.el9.noarch",
+    "dnf-4.14.0-31.0.1.el9.src",
+    "dnf-4.14.0-31.0.1.el9.noarch",
+    "dnf-data-4.14.0-31.0.1.el9.noarch",
+    "yum-4.14.0-31.0.1.el9.noarch",
+    "python3-dnf-4.14.0-31.0.1.el9.noarch"
+  ],
+  "full_text": "[4.14.0-31.0.1]\n- Replaced bugzilla.oracle.com references [Orabug: 34202300]\n- Fixed python stack trace with updateinfo list cves command [Orabug: 32749660]\n- Replaced upstream bugzilla reporting reference. [Orabug: 32829849]\n\n[4.14.0-31]\n- Introduce ,  variables, shell-style\n  variable substitution (RHEL-65817)\n\n[4.14.0-30]\n- Mark transient transactions in DNF history (RHEL-84512)\n- Warn/disallow changes outside /usr, /etc with --transient (RHEL-84499)\n\n[4.14.0-29]\n- man page: don't mark mandatory option parameters as optional (RHEL-63958)\n\n[4.14.0-28]\n- Add dnf4 provides and symlink /usr/bin/dnf4 -> /usr/bin/dnf-3 (RHEL-82310)\n\n[4.14.0-27]\n- usage help: don't mark mandatory option parameters as optional (RHEL-63958)\n\n[4.14.0-26]\n- package: remote_location() takes basedir into account (RHEL-71125)\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2025-20535-0.html"
+}

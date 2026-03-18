@@ -1,0 +1,42 @@
+{
+  "id": "RHSA-2025:23078",
+  "vendor": "Red Hat",
+  "type": "Security Advisory (RHSA)",
+  "title": "Red Hat Security Advisory: Red Hat AI Inference Server 3.2.2 (CUDA)",
+  "issuedDate": "2025-12-10T18:24:36+00:00",
+  "updatedDate": "2025-12-10T18:24:40+00:00",
+  "pubDate": "2025-12-10T18:24:36+00:00",
+  "dateStr": "2025-12-10",
+  "url": "https://access.redhat.com/errata/RHSA-2025:23078",
+  "severity": "Important",
+  "overview": "Red Hat AI Inference Server 3.2.2 (CUDA) is now available.",
+  "description": "Red Hat® AI Inference Server",
+  "affected_products": [],
+  "cves": [
+    "CVE-2023-48022",
+    "CVE-2023-52355",
+    "CVE-2023-52356",
+    "CVE-2024-56433",
+    "CVE-2025-5318",
+    "CVE-2025-6242",
+    "CVE-2025-6965",
+    "CVE-2025-8176",
+    "CVE-2025-9230",
+    "CVE-2025-9900",
+    "CVE-2025-22868",
+    "CVE-2025-22869",
+    "CVE-2025-52565",
+    "CVE-2025-53905",
+    "CVE-2025-53906",
+    "CVE-2025-59375",
+    "CVE-2025-59425",
+    "CVE-2025-62593",
+    "CVE-2025-62727",
+    "CVE-2025-66448"
+  ],
+  "packages": [
+    "registry.redhat.io/rhaiis/vllm-cuda-rhel9@sha256:bddcf7ab6d576572b6d60822c313ffebcd9869e4fde93e32ac327821f93cf32b_amd64",
+    "registry.redhat.io/rhaiis/vllm-cuda-rhel9@sha256:ec961e5acfde5c1ad0a7e0e2c86a0bf56b9bc46357fa124f9db6dff1006076ab_arm64"
+  ],
+  "full_text": "Red Hat AI Inference Server 3.2.2 (CUDA) is now available.\n\nRed Hat® AI Inference Server"
+}

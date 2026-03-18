@@ -1,0 +1,24 @@
+{
+  "id": "ELBA-2026-1835",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2026-February/019694.html",
+  "synopsis": "[El-errata] ELBA-2026-1835 Oracle Linux 10 virt-v2v bug fix and enhancement update",
+  "dateStr": "2026-February",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Bug Fix Advisory ELBA-2026-1835",
+  "description": "[2.8.1-16.0.1]\n- Replaced bugzilla.oracle.com references [Orabug: 34202300]\n- replaced upstream references [Orabug:34089586]\n\n[1:2.8.1-16]\n- Add --memsize and --smp options\n  resolves: RHEL-139153\n\n[1:2.8.1-15]\n- v2v can't convert guest with multiple windows OS on rhel10\n- Add runtime requires for nbdkit-1.44.1-3.el10_1\n  resolves: RHEL-137304\n\n[1:2.8.1-14]\n- Remove cache=none\n  resolves: RHEL-135750",
+  "affected_products": [
+    "Oracle Linux 10"
+  ],
+  "packages": [
+    "virt-v2v-2.8.1-16.0.1.el10_1.x86_64.rpm",
+    "virt-v2v-bash-completion-2.8.1-16.0.1.el10_1.noarch.rpm",
+    "virt-v2v-man-pages-ja-2.8.1-16.0.1.el10_1.noarch.rpm",
+    "virt-v2v-man-pages-uk-2.8.1-16.0.1.el10_1.noarch.rpm"
+  ],
+  "cves": [],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Bug Fix Advisory ELBA-2026-1835\n\nhttp://linux.oracle.com/errata/ELBA-2026-1835.html\n\nThe following updated rpms for Oracle Linux 10 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\nvirt-v2v-2.8.1-16.0.1.el10_1.x86_64.rpm\nvirt-v2v-bash-completion-2.8.1-16.0.1.el10_1.noarch.rpm\nvirt-v2v-man-pages-ja-2.8.1-16.0.1.el10_1.noarch.rpm\nvirt-v2v-man-pages-uk-2.8.1-16.0.1.el10_1.noarch.rpm\n\n\n\nSRPMS:\nhttp://oss.oracle.com/ol10/SRPMS-updates/virt-v2v-2.8.1-16.0.1.el10_1.src.rpm\n\n\n\nDescription of changes:\n\n[2.8.1-16.0.1]\n- Replaced bugzilla.oracle.com references [Orabug: 34202300]\n- replaced upstream references [Orabug:34089586]\n\n[1:2.8.1-16]\n- Add --memsize and --smp options\n  resolves: RHEL-139153\n\n[1:2.8.1-15]\n- v2v can't convert guest with multiple windows OS on rhel10\n- Add runtime requires for nbdkit-1.44.1-3.el10_1\n  resolves: RHEL-137304\n\n[1:2.8.1-14]\n- Remove cache=none\n  resolves: RHEL-135750",
+  "vendor": "Oracle"
+}

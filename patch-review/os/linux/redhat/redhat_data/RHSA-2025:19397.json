@@ -1,0 +1,41 @@
+{
+  "id": "RHSA-2025:19397",
+  "vendor": "Red Hat",
+  "type": "Security Advisory (RHSA)",
+  "title": "Red Hat Security Advisory: golang security update",
+  "issuedDate": "2025-11-03T01:42:52+00:00",
+  "updatedDate": "2025-11-03T01:42:52+00:00",
+  "pubDate": "2025-11-03T01:42:52+00:00",
+  "dateStr": "2025-11-03",
+  "url": "https://access.redhat.com/errata/RHSA-2025:19397",
+  "severity": "Moderate",
+  "overview": "An update for golang is now available for Red Hat Enterprise Linux 9.4 Extended Update Support.\n\nRed Hat Product Security has rated this update as having a security impact of Moderate. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "description": "The golang packages provide the Go programming language compiler.\n\nSecurity Fix(es):\n\n* database/sql: Postgres Scan Race Condition (CVE-2025-47907)\n\nFor more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux",
+    "Red Hat Enterprise Linux AppStream EUS (v.9.4)"
+  ],
+  "cves": [
+    "CVE-2025-47907"
+  ],
+  "packages": [
+    "go-toolset-0:1.21.13-11.el9_4.aarch64",
+    "golang-0:1.21.13-11.el9_4.aarch64",
+    "golang-bin-0:1.21.13-11.el9_4.aarch64",
+    "go-toolset-0:1.21.13-11.el9_4.ppc64le",
+    "golang-0:1.21.13-11.el9_4.ppc64le",
+    "golang-bin-0:1.21.13-11.el9_4.ppc64le",
+    "go-toolset-0:1.21.13-11.el9_4.x86_64",
+    "golang-0:1.21.13-11.el9_4.x86_64",
+    "golang-bin-0:1.21.13-11.el9_4.x86_64",
+    "go-toolset-0:1.21.13-11.el9_4.s390x",
+    "golang-0:1.21.13-11.el9_4.s390x",
+    "golang-bin-0:1.21.13-11.el9_4.s390x",
+    "golang-0:1.21.13-11.el9_4.src",
+    "golang-docs-0:1.21.13-11.el9_4.noarch",
+    "golang-misc-0:1.21.13-11.el9_4.noarch",
+    "golang-src-0:1.21.13-11.el9_4.noarch",
+    "golang-tests-0:1.21.13-11.el9_4.noarch"
+  ],
+  "full_text": "An update for golang is now available for Red Hat Enterprise Linux 9.4 Extended Update Support.\n\nRed Hat Product Security has rated this update as having a security impact of Moderate. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nThe golang packages provide the Go programming language compiler.\n\nSecurity Fix(es):\n\n* database/sql: Postgres Scan Race Condition (CVE-2025-47907)\n\nFor more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section."
+}

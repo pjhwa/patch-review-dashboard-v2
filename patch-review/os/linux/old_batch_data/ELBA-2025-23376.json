@@ -1,0 +1,22 @@
+{
+  "id": "ELBA-2025-23376",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2025-December/019312.html",
+  "synopsis": "[El-errata] ELBA-2025-23376 Oracle Linux 8 findutils bug fix and enhancement update",
+  "dateStr": "2025-December",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Bug Fix Advisory ELBA-2025-23376",
+  "description": "[1:4.6.0-24]\n- simplify leaf optimization for XFS (RHEL-109249)",
+  "affected_products": [
+    "Oracle Linux 8"
+  ],
+  "packages": [
+    "findutils-4.6.0-24.el8_10.x86_64.rpm",
+    "findutils-4.6.0-24.el8_10.aarch64.rpm"
+  ],
+  "cves": [],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Bug Fix Advisory ELBA-2025-23376\n\nhttp://linux.oracle.com/errata/ELBA-2025-23376.html\n\nThe following updated rpms for Oracle Linux 8 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\nfindutils-4.6.0-24.el8_10.x86_64.rpm\n\naarch64:\nfindutils-4.6.0-24.el8_10.aarch64.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol8/SRPMS-updates/findutils-4.6.0-24.el8_10.src.rpm\n\n\n\nDescription of changes:\n\n[1:4.6.0-24]\n- simplify leaf optimization for XFS (RHEL-109249)",
+  "vendor": "Oracle"
+}

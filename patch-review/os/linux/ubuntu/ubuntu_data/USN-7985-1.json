@@ -1,0 +1,32 @@
+{
+  "id": "USN-7985-1",
+  "vendor": "Canonical / Ubuntu",
+  "type": "Ubuntu Security Notice (USN)",
+  "title": "texlive-bin vulnerabilities",
+  "issuedDate": "2026-01-29T16:39:12Z",
+  "updatedDate": "2026-02-10T04:50:48Z",
+  "pubDate": "2026-01-29T16:39:12Z",
+  "dateStr": "2026-01-29",
+  "url": "https://ubuntu.com/security/notices/USN-7985-1",
+  "severity": "None",
+  "overview": "texlive-bin vulnerabilities",
+  "description": "Shin Ando discovered that the Xpdf toolkit embedded in TeX Live incorrectly\nhandled memory when decoding certain data streams. An attacker could\npossibly use this issue to cause TeX Live to crash, resulting in a denial\nof service, or execute arbitrary code. This issue only affected Ubuntu\n20.04 LTS and Ubuntu 22.04 LTS. (CVE-2022-24106, CVE-2022-24107)\n\nIt was discovered that TeX Live allowed documents to make arbitrary network\nrequests. If a user or automated system were tricked into opening a\nspecially crafted document, a remote attacker could possibly use this issue\nto exfiltrate sensitive information, or perform other network-related\nattacks. This issue only affected Ubuntu 16.04 LTS and Ubuntu 18.04 LTS.\n(CVE-2023-32668)\n\nIt was discovered that TeX Live incorrectly handled certain TrueType fonts.\nIf a user or automated system were tricked into opening a specially crafted\nTrueType font, a remote attacker could use this issue to cause TeX Live to\ncrash, resulting in a denial of service, or possibly execute arbitrary\ncode. This issue only affected Ubuntu 16.04 LTS and Ubuntu 18.04 LTS.\n(CVE-2024-25262)",
+  "affected_products": [
+    "Ubuntu 22.04 LTS"
+  ],
+  "cves": [],
+  "packages": [
+    "libkpathsea-dev-2021.20210626.59705-1ubuntu0.3",
+    "libkpathsea6-2021.20210626.59705-1ubuntu0.3",
+    "libptexenc-dev-2021.20210626.59705-1ubuntu0.3",
+    "libptexenc1-2021.20210626.59705-1ubuntu0.3",
+    "libsynctex-dev-2021.20210626.59705-1ubuntu0.3",
+    "libsynctex2-2021.20210626.59705-1ubuntu0.3",
+    "libtexlua53-2021.20210626.59705-1ubuntu0.3",
+    "libtexlua53-dev-2021.20210626.59705-1ubuntu0.3",
+    "libtexluajit-dev-2021.20210626.59705-1ubuntu0.3",
+    "libtexluajit2-2021.20210626.59705-1ubuntu0.3",
+    "texlive-binaries-2021.20210626.59705-1ubuntu0.3"
+  ],
+  "full_text": "Shin Ando discovered that the Xpdf toolkit embedded in TeX Live incorrectly\nhandled memory when decoding certain data streams. An attacker could\npossibly use this issue to cause TeX Live to crash, resulting in a denial\nof service, or execute arbitrary code. This issue only affected Ubuntu\n20.04 LTS and Ubuntu 22.04 LTS. (CVE-2022-24106, CVE-2022-24107)\n\nIt was discovered that TeX Live allowed documents to make arbitrary network\nrequests. If a user or automated system were tricked into opening a\nspecially crafted document, a remote attacker could possibly use this issue\nto exfiltrate sensitive information, or perform other network-related\nattacks. This issue only affected Ubuntu 16.04 LTS and Ubuntu 18.04 LTS.\n(CVE-2023-32668)\n\nIt was discovered that TeX Live incorrectly handled certain TrueType fonts.\nIf a user or automated system were tricked into opening a specially crafted\nTrueType font, a remote attacker could use this issue to cause TeX Live to\ncrash, resulting in a denial of service, or possibly execute arbitrary\ncode. This issue only affected Ubuntu 16.04 LTS and Ubuntu 18.04 LTS.\n(CVE-2024-25262)"
+}

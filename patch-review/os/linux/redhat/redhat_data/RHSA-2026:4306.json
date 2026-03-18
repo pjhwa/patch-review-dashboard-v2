@@ -1,0 +1,33 @@
+{
+  "id": "RHSA-2026:4306",
+  "vendor": "Red Hat",
+  "type": "Security Advisory (RHSA)",
+  "title": "Red Hat Security Advisory: mingw-libpng security update",
+  "issuedDate": "2026-03-11T11:23:12+00:00",
+  "updatedDate": "2026-03-11T11:23:12+00:00",
+  "pubDate": "2026-03-11T11:23:12+00:00",
+  "dateStr": "2026-03-11",
+  "url": "https://access.redhat.com/errata/RHSA-2026:4306",
+  "severity": "Important",
+  "overview": "An update for mingw-libpng is now available for Red Hat Enterprise Linux 8.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "description": "MinGW Windows Libpng library.\n\nSecurity Fix(es):\n\n* libpng: libpng: Information disclosure and denial of service via integer truncation in simplified write API (CVE-2026-22801)\n\n* libpng: libpng: Denial of service and information disclosure via heap buffer over-read in png_image_finish_read (CVE-2026-22695)\n\n* libpng: LIBPNG has a heap buffer overflow in png_set_quantize (CVE-2026-25646)\n\nFor more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux",
+    "Red Hat Enterprise Linux CRB (v. 8)"
+  ],
+  "cves": [
+    "CVE-2026-22695",
+    "CVE-2026-22801",
+    "CVE-2026-25646"
+  ],
+  "packages": [
+    "mingw-libpng-0:1.6.34-2.el8_10.src",
+    "mingw32-libpng-0:1.6.34-2.el8_10.noarch",
+    "mingw32-libpng-static-0:1.6.34-2.el8_10.noarch",
+    "mingw64-libpng-0:1.6.34-2.el8_10.noarch",
+    "mingw64-libpng-static-0:1.6.34-2.el8_10.noarch",
+    "mingw32-libpng-debuginfo-0:1.6.34-2.el8_10.noarch",
+    "mingw64-libpng-debuginfo-0:1.6.34-2.el8_10.noarch"
+  ],
+  "full_text": "An update for mingw-libpng is now available for Red Hat Enterprise Linux 8.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nMinGW Windows Libpng library.\n\nSecurity Fix(es):\n\n* libpng: libpng: Information disclosure and denial of service via integer truncation in simplified write API (CVE-2026-22801)\n\n* libpng: libpng: Denial of service and information disclosure via heap buffer over-read in png_image_finish_read (CVE-2026-22695)\n\n* libpng: LIBPNG has a heap buffer overflow in png_set_quantize (CVE-2026-25646)\n\nFor more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section."
+}

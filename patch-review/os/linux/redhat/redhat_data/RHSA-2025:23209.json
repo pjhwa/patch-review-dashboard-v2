@@ -1,0 +1,31 @@
+{
+  "id": "RHSA-2025:23209",
+  "vendor": "Red Hat",
+  "type": "Security Advisory (RHSA)",
+  "title": "Red Hat Security Advisory: Red Hat AI Inference Server 3.2.5 (TPU)",
+  "issuedDate": "2025-12-15T15:50:15+00:00",
+  "updatedDate": "2025-12-15T15:50:27+00:00",
+  "pubDate": "2025-12-15T15:50:15+00:00",
+  "dateStr": "2025-12-15",
+  "url": "https://access.redhat.com/errata/RHSA-2025:23209",
+  "severity": "Important",
+  "overview": "Red Hat AI Inference Server 3.2.5 (TPU) is now available.",
+  "description": "Red Hat® AI Inference Server",
+  "affected_products": [],
+  "cves": [
+    "CVE-2025-9230",
+    "CVE-2025-9714",
+    "CVE-2025-22868",
+    "CVE-2025-22869",
+    "CVE-2025-52565",
+    "CVE-2025-59375",
+    "CVE-2025-62164",
+    "CVE-2025-62372",
+    "CVE-2025-66448",
+    "CVE-2025-66506"
+  ],
+  "packages": [
+    "registry.redhat.io/rhaiis/vllm-tpu-rhel9@sha256:64796b48c68d31973a08e22c9530c39b1bc3ba9f376bbefa57643ef0fc857534_amd64"
+  ],
+  "full_text": "Red Hat AI Inference Server 3.2.5 (TPU) is now available.\n\nRed Hat® AI Inference Server"
+}

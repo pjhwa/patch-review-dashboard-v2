@@ -1,0 +1,25 @@
+{
+  "id": "ELSA-2025-21142",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2025-December/019205.html",
+  "synopsis": "[El-errata] ELSA-2025-21142 Important: Oracle Linux 10 python-kdcproxy security update",
+  "dateStr": "2025-December",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Security Advisory ELSA-2025-21142",
+  "description": "[1.0.0-19]\n- Use DNS discovery for declared realms only (CVE-2025-59088)\n  Resolves: RHEL-122777\n- Fix DoS vulnerability based on unbounded TCP buffering (CVE-2025-59089)\n  Resolves: RHEL-122776",
+  "affected_products": [
+    "Oracle Linux 10"
+  ],
+  "packages": [
+    "python3-kdcproxy-1.0.0-19.el10_1.noarch.rpm",
+    "python3-kdcproxy-1.0.0-19.el10_1.noarch.rpm"
+  ],
+  "cves": [
+    "CVE-2025-59088",
+    "CVE-2025-59089"
+  ],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Security Advisory ELSA-2025-21142\n\nhttp://linux.oracle.com/errata/ELSA-2025-21142.html\n\nThe following updated rpms for Oracle Linux 10 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\npython3-kdcproxy-1.0.0-19.el10_1.noarch.rpm\n\naarch64:\npython3-kdcproxy-1.0.0-19.el10_1.noarch.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol10/SRPMS-updates/python-kdcproxy-1.0.0-19.el10_1.src.rpm\n\nRelated CVEs:\n\nCVE-2025-59088\nCVE-2025-59089\n\n\n\n\nDescription of changes:\n\n[1.0.0-19]\n- Use DNS discovery for declared realms only (CVE-2025-59088)\n  Resolves: RHEL-122777\n- Fix DoS vulnerability based on unbounded TCP buffering (CVE-2025-59089)\n  Resolves: RHEL-122776",
+  "vendor": "Oracle"
+}

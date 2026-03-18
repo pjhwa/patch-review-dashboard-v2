@@ -1,0 +1,41 @@
+{
+  "id": "ELSA-2026-0312",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2026-January/019473.html",
+  "synopsis": "[El-errata] ELSA-2026-0312 Moderate: Oracle Linux 9 cups security update",
+  "dateStr": "2026-January",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Security Advisory ELSA-2026-0312",
+  "description": "[1:2.3.3op2-34.2]\n- fix use-after-free reported by OSH\n\n[1:2.3.3op2-34.1]\n- RHEL-129746 CVE-2025-58436 cups: Slow client communication leads to a possible DoS attack\n- RHEL-129738 CVE-2025-61915 cups: Local denial-of-service via cupsd.conf update and related issues",
+  "affected_products": [
+    "Oracle Linux 9"
+  ],
+  "packages": [
+    "cups-2.3.3op2-34.el9_7.2.x86_64.rpm",
+    "cups-client-2.3.3op2-34.el9_7.2.x86_64.rpm",
+    "cups-devel-2.3.3op2-34.el9_7.2.i686.rpm",
+    "cups-devel-2.3.3op2-34.el9_7.2.x86_64.rpm",
+    "cups-filesystem-2.3.3op2-34.el9_7.2.noarch.rpm",
+    "cups-ipptool-2.3.3op2-34.el9_7.2.x86_64.rpm",
+    "cups-libs-2.3.3op2-34.el9_7.2.i686.rpm",
+    "cups-libs-2.3.3op2-34.el9_7.2.x86_64.rpm",
+    "cups-lpd-2.3.3op2-34.el9_7.2.x86_64.rpm",
+    "cups-printerapp-2.3.3op2-34.el9_7.2.x86_64.rpm",
+    "cups-2.3.3op2-34.el9_7.2.aarch64.rpm",
+    "cups-client-2.3.3op2-34.el9_7.2.aarch64.rpm",
+    "cups-devel-2.3.3op2-34.el9_7.2.aarch64.rpm",
+    "cups-filesystem-2.3.3op2-34.el9_7.2.noarch.rpm",
+    "cups-ipptool-2.3.3op2-34.el9_7.2.aarch64.rpm",
+    "cups-libs-2.3.3op2-34.el9_7.2.aarch64.rpm",
+    "cups-lpd-2.3.3op2-34.el9_7.2.aarch64.rpm",
+    "cups-printerapp-2.3.3op2-34.el9_7.2.aarch64.rpm"
+  ],
+  "cves": [
+    "CVE-2025-58436",
+    "CVE-2025-61915"
+  ],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Security Advisory ELSA-2026-0312\n\nhttp://linux.oracle.com/errata/ELSA-2026-0312.html\n\nThe following updated rpms for Oracle Linux 9 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\ncups-2.3.3op2-34.el9_7.2.x86_64.rpm\ncups-client-2.3.3op2-34.el9_7.2.x86_64.rpm\ncups-devel-2.3.3op2-34.el9_7.2.i686.rpm\ncups-devel-2.3.3op2-34.el9_7.2.x86_64.rpm\ncups-filesystem-2.3.3op2-34.el9_7.2.noarch.rpm\ncups-ipptool-2.3.3op2-34.el9_7.2.x86_64.rpm\ncups-libs-2.3.3op2-34.el9_7.2.i686.rpm\ncups-libs-2.3.3op2-34.el9_7.2.x86_64.rpm\ncups-lpd-2.3.3op2-34.el9_7.2.x86_64.rpm\ncups-printerapp-2.3.3op2-34.el9_7.2.x86_64.rpm\n\naarch64:\ncups-2.3.3op2-34.el9_7.2.aarch64.rpm\ncups-client-2.3.3op2-34.el9_7.2.aarch64.rpm\ncups-devel-2.3.3op2-34.el9_7.2.aarch64.rpm\ncups-filesystem-2.3.3op2-34.el9_7.2.noarch.rpm\ncups-ipptool-2.3.3op2-34.el9_7.2.aarch64.rpm\ncups-libs-2.3.3op2-34.el9_7.2.aarch64.rpm\ncups-lpd-2.3.3op2-34.el9_7.2.aarch64.rpm\ncups-printerapp-2.3.3op2-34.el9_7.2.aarch64.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol9/SRPMS-updates/cups-2.3.3op2-34.el9_7.2.src.rpm\n\nRelated CVEs:\n\nCVE-2025-58436\nCVE-2025-61915\n\n\n\n\nDescription of changes:\n\n[1:2.3.3op2-34.2]\n- fix use-after-free reported by OSH\n\n[1:2.3.3op2-34.1]\n- RHEL-129746 CVE-2025-58436 cups: Slow client communication leads to a possible DoS attack\n- RHEL-129738 CVE-2025-61915 cups: Local denial-of-service via cupsd.conf update and related issues",
+  "vendor": "Oracle"
+}

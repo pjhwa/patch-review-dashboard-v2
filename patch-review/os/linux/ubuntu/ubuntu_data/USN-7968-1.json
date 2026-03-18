@@ -1,0 +1,42 @@
+{
+  "id": "USN-7968-1",
+  "vendor": "Canonical / Ubuntu",
+  "type": "Ubuntu Security Notice (USN)",
+  "title": "apache2 vulnerabilities",
+  "issuedDate": "2026-01-19T14:59:49Z",
+  "updatedDate": "2026-02-10T04:50:48Z",
+  "pubDate": "2026-01-19T14:59:49Z",
+  "dateStr": "2026-01-19",
+  "url": "https://ubuntu.com/security/notices/USN-7968-1",
+  "severity": "None",
+  "overview": "apache2 vulnerabilities",
+  "description": "It was discovered that the Apache HTTP Server incorrectly handled failed\nACME certificate renewals. This could result in renewal attempts to be\nrepeated without delays, possibly leading to a denial of service.\n(CVE-2025-55753)\n\nAnthony Parfenov discovered that the Apache HTTP Server would pass the\nquery string to cmd directives when configured with Server Side Includes\n(SSI) enabled and mod_cgid. An attacker could possibly use this issue to\nexecute arbitrary code. (CVE-2025-58098)\n\nMattias Åsander discovered that the Apache HTTP Server incorrectly\nneutralized certain environment variables. This could result in\nunexpectedly superseding variables calculated by the server for CGI\nprograms. (CVE-2025-65082)\n\nMattias Åsander discovered that the Apache HTTP Server incorrectly\nhandled AllowOverride FileInfo configurations when using mod_userdir with\nsuexec. An attacker with access to use the RequestHeader directive in\nhtaccess can cause some CGI scripts to run under an unexpected userid.\n(CVE-2025-66200)",
+  "affected_products": [
+    "Ubuntu 22.04 LTS",
+    "Ubuntu 24.04 LTS"
+  ],
+  "cves": [],
+  "packages": [
+    "apache2-2.4.52-1ubuntu4.18",
+    "apache2-2.4.58-1ubuntu8.10",
+    "apache2-bin-2.4.52-1ubuntu4.18",
+    "apache2-bin-2.4.58-1ubuntu8.10",
+    "apache2-data-2.4.52-1ubuntu4.18",
+    "apache2-data-2.4.58-1ubuntu8.10",
+    "apache2-dev-2.4.52-1ubuntu4.18",
+    "apache2-dev-2.4.58-1ubuntu8.10",
+    "apache2-ssl-dev-2.4.52-1ubuntu4.18",
+    "apache2-ssl-dev-2.4.58-1ubuntu8.10",
+    "apache2-suexec-custom-2.4.52-1ubuntu4.18",
+    "apache2-suexec-custom-2.4.58-1ubuntu8.10",
+    "apache2-suexec-pristine-2.4.52-1ubuntu4.18",
+    "apache2-suexec-pristine-2.4.58-1ubuntu8.10",
+    "apache2-utils-2.4.52-1ubuntu4.18",
+    "apache2-utils-2.4.58-1ubuntu8.10",
+    "libapache2-mod-md-2.4.52-1ubuntu4.18",
+    "libapache2-mod-md-2.4.58-1ubuntu8.10",
+    "libapache2-mod-proxy-uwsgi-2.4.52-1ubuntu4.18",
+    "libapache2-mod-proxy-uwsgi-2.4.58-1ubuntu8.10"
+  ],
+  "full_text": "It was discovered that the Apache HTTP Server incorrectly handled failed\nACME certificate renewals. This could result in renewal attempts to be\nrepeated without delays, possibly leading to a denial of service.\n(CVE-2025-55753)\n\nAnthony Parfenov discovered that the Apache HTTP Server would pass the\nquery string to cmd directives when configured with Server Side Includes\n(SSI) enabled and mod_cgid. An attacker could possibly use this issue to\nexecute arbitrary code. (CVE-2025-58098)\n\nMattias Åsander discovered that the Apache HTTP Server incorrectly\nneutralized certain environment variables. This could result in\nunexpectedly superseding variables calculated by the server for CGI\nprograms. (CVE-2025-65082)\n\nMattias Åsander discovered that the Apache HTTP Server incorrectly\nhandled AllowOverride FileInfo configurations when using mod_userdir with\nsuexec. An attacker with access to use the RequestHeader directive in\nhtaccess can cause some CGI scripts to run under an unexpected userid.\n(CVE-2025-66200)"
+}

@@ -1,0 +1,38 @@
+{
+  "id": "ELBA-2025-21304",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "AppStream",
+  "title": "dotnet10.0 update",
+  "issuedDate": "2025-11-24T00:00:00Z",
+  "updatedDate": "2025-11-24T00:00:00Z",
+  "pubDate": "2025-11-24T00:00:00Z",
+  "dateStr": "2025-11-24",
+  "url": "https://linux.oracle.com/errata/ELBA-2025-21304.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 8.",
+  "description": "[10.0.100-2.0.1]\n- Add support for Oracle Linux\n\n[10.0.100-2]\n- Fix version strings to remove -rtm in the built SDK\n- Related: RHEL-125747\n\n[10.0.100-1]\n- Update to .NET SDK 10.0.100 and Runtime 10.0.0\n- Resolves: RHEL-125747\n\n[10.0.100~rc.2.25502.107-0.10]\n- Update to .NET SDK 10.0.100-rc.2.25502.107 and Runtime 10.0.0-rc.2.25502.107\n- Resolves: RHEL-121301\n\n[10.0.100~preview.6.25358.103-0.9]\n- Disable bootstrap\n- Resolves: RHEL-114568\n\n[10.0.100~preview.6.25358.103-0.8]\n- Update to .NET 10 RC 1\n- Resolves: RHEL-114568\n\n[10.0.100~preview.6.25358.103-0.7]\n- Drop netstandard-targeting-pack-2.1, it's being removed by upstream in RC 1\n- Related: RHEL-98673\n\n[10.0.100~preview.6.25358.103-0.6]\n- Disable bootstrap\n- Resolves: RHEL-98673\n\n[10.0.100~preview.6.25358.103-0.5]\n- Initial commit on c9s\n- Resolves: RHEL-98673",
+  "affected_products": [
+    "Oracle Linux 8 for x86_64",
+    "Oracle Linux 8 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "dotnet-targeting-pack-10.0-10.0.0-2.0.1.el8_10.x86_64",
+    "aspnetcore-runtime-10.0-10.0.0-2.0.1.el8_10.x86_64",
+    "dotnet-sdk-10.0-10.0.100-2.0.1.el8_10.x86_64",
+    "dotnet-templates-10.0-10.0.100-2.0.1.el8_10.x86_64",
+    "dotnet-host-10.0.0-2.0.1.el8_10.x86_64",
+    "dotnet-10.0.100-2.0.1.el8_10.x86_64",
+    "dotnet-apphost-pack-10.0-10.0.0-2.0.1.el8_10.x86_64",
+    "dotnet-sdk-aot-10.0-10.0.100-2.0.1.el8_10.x86_64",
+    "dotnet-runtime-10.0-10.0.0-2.0.1.el8_10.x86_64",
+    "dotnet10.0-10.0.100-2.0.1.el8_10.src",
+    "dotnet-sdk-dbg-10.0-10.0.100-2.0.1.el8_10.x86_64",
+    "dotnet-runtime-dbg-10.0-10.0.0-2.0.1.el8_10.x86_64",
+    "aspnetcore-targeting-pack-10.0-10.0.0-2.0.1.el8_10.x86_64",
+    "aspnetcore-runtime-dbg-10.0-10.0.0-2.0.1.el8_10.x86_64",
+    "dotnet-hostfxr-10.0-10.0.0-2.0.1.el8_10.x86_64"
+  ],
+  "full_text": "[10.0.100-2.0.1]\n- Add support for Oracle Linux\n\n[10.0.100-2]\n- Fix version strings to remove -rtm in the built SDK\n- Related: RHEL-125747\n\n[10.0.100-1]\n- Update to .NET SDK 10.0.100 and Runtime 10.0.0\n- Resolves: RHEL-125747\n\n[10.0.100~rc.2.25502.107-0.10]\n- Update to .NET SDK 10.0.100-rc.2.25502.107 and Runtime 10.0.0-rc.2.25502.107\n- Resolves: RHEL-121301\n\n[10.0.100~preview.6.25358.103-0.9]\n- Disable bootstrap\n- Resolves: RHEL-114568\n\n[10.0.100~preview.6.25358.103-0.8]\n- Update to .NET 10 RC 1\n- Resolves: RHEL-114568\n\n[10.0.100~preview.6.25358.103-0.7]\n- Drop netstandard-targeting-pack-2.1, it's being removed by upstream in RC 1\n- Related: RHEL-98673\n\n[10.0.100~preview.6.25358.103-0.6]\n- Disable bootstrap\n- Resolves: RHEL-98673\n\n[10.0.100~preview.6.25358.103-0.5]\n- Initial commit on c9s\n- Resolves: RHEL-98673\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2025-21304.html"
+}

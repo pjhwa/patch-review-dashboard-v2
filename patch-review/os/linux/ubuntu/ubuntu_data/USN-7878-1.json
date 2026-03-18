@@ -1,0 +1,31 @@
+{
+  "id": "USN-7878-1",
+  "vendor": "Canonical / Ubuntu",
+  "type": "Ubuntu Security Notice (USN)",
+  "title": "cups-filters vulnerabilities",
+  "issuedDate": "2025-11-20T16:04:31Z",
+  "updatedDate": "2026-02-10T04:50:22Z",
+  "pubDate": "2025-11-20T16:04:31Z",
+  "dateStr": "2025-11-20",
+  "url": "https://ubuntu.com/security/notices/USN-7878-1",
+  "severity": "None",
+  "overview": "cups-filters vulnerabilities",
+  "description": "It was discovered that cups-filters incorrectly handled certain malformed\nTIFF image files. A remote attacker could use this issue to cause\ncups-filters to crash, resulting in a denial of service, or possibly\nexecute arbitrary code. This issue only affected Ubuntu 16.04 LTS,\nUbuntu 18.04 LTS, Ubuntu 20.04 LTS, and Ubuntu 22.04 LTS. (CVE-2025-57812)\n\nIt was discovered that cups-filters incorrectly handled certain malformed\nPDF document files. A remote attacker could use this issue to cause\ncups-filters to crash, resulting in a denial of service, or possibly\nexecute arbitrary code. This issue only affected Ubuntu 16.04 LTS,\nUbuntu 18.04 LTS, Ubuntu 20.04 LTS, and Ubuntu 22.04 LTS. (CVE-2025-64503)\n\nIt was discovered that cups-filters incorrectly handled certain malformed\nCUPS Raster files. A remote attacker could use this issue to cause\ncups-filters to crash, resulting in a denial of service, or possibly\nexecute arbitrary code. (CVE-2025-64524)",
+  "affected_products": [
+    "Ubuntu 22.04 LTS",
+    "Ubuntu 24.04 LTS"
+  ],
+  "cves": [],
+  "packages": [
+    "cups-browsed-1.28.15-0ubuntu1.5",
+    "cups-filters-1.28.15-0ubuntu1.5",
+    "cups-filters-2.0.0-0ubuntu4.1",
+    "cups-filters-core-drivers-1.28.15-0ubuntu1.5",
+    "cups-filters-core-drivers-2.0.0-0ubuntu4.1",
+    "libcupsfilters-dev-1.28.15-0ubuntu1.5",
+    "libcupsfilters1-1.28.15-0ubuntu1.5",
+    "libfontembed-dev-1.28.15-0ubuntu1.5",
+    "libfontembed1-1.28.15-0ubuntu1.5"
+  ],
+  "full_text": "It was discovered that cups-filters incorrectly handled certain malformed\nTIFF image files. A remote attacker could use this issue to cause\ncups-filters to crash, resulting in a denial of service, or possibly\nexecute arbitrary code. This issue only affected Ubuntu 16.04 LTS,\nUbuntu 18.04 LTS, Ubuntu 20.04 LTS, and Ubuntu 22.04 LTS. (CVE-2025-57812)\n\nIt was discovered that cups-filters incorrectly handled certain malformed\nPDF document files. A remote attacker could use this issue to cause\ncups-filters to crash, resulting in a denial of service, or possibly\nexecute arbitrary code. This issue only affected Ubuntu 16.04 LTS,\nUbuntu 18.04 LTS, Ubuntu 20.04 LTS, and Ubuntu 22.04 LTS. (CVE-2025-64503)\n\nIt was discovered that cups-filters incorrectly handled certain malformed\nCUPS Raster files. A remote attacker could use this issue to cause\ncups-filters to crash, resulting in a denial of service, or possibly\nexecute arbitrary code. (CVE-2025-64524)"
+}

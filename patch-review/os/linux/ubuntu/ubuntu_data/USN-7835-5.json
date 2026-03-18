@@ -1,0 +1,35 @@
+{
+  "id": "USN-7835-5",
+  "vendor": "Canonical / Ubuntu",
+  "type": "Ubuntu Security Notice (USN)",
+  "title": "linux-oracle-6.8 vulnerabilities",
+  "issuedDate": "2025-11-06T11:12:21Z",
+  "updatedDate": "2026-02-17T17:29:19Z",
+  "pubDate": "2025-11-06T11:12:21Z",
+  "dateStr": "2025-11-06",
+  "url": "https://ubuntu.com/security/notices/USN-7835-5",
+  "severity": "None",
+  "overview": "linux-oracle-6.8 vulnerabilities",
+  "description": "Several security issues were discovered in the Linux kernel.\nAn attacker could possibly use these to compromise the system.\nThis update corrects flaws in the following subsystems:\n  - ARM64 architecture;\n  - PowerPC architecture;\n  - x86 architecture;\n  - ACPI drivers;\n  - Ublk userspace block driver;\n  - Clock framework and drivers;\n  - GPU drivers;\n  - IIO subsystem;\n  - InfiniBand drivers;\n  - Media drivers;\n  - MemoryStick subsystem;\n  - Network drivers;\n  - NTB driver;\n  - PCI subsystem;\n  - Remote Processor subsystem;\n  - Thermal drivers;\n  - Virtio Host (VHOST) subsystem;\n  - 9P distributed file system;\n  - File systems infrastructure;\n  - JFS file system;\n  - Network file system (NFS) server daemon;\n  - NTFS3 file system;\n  - SMB network file system;\n  - Memory management;\n  - RDMA verbs API;\n  - Kernel fork() syscall;\n  - Tracing infrastructure;\n  - Watch queue notification mechanism;\n  - Asynchronous Transfer Mode (ATM) subsystem;\n  - Networking core;\n  - IPv4 networking;\n  - IPv6 networking;\n  - Netfilter;\n  - Network traffic control;\n  - SCTP protocol;\n  - TLS protocol;\n  - SoC Audio for Freescale CPUs drivers;\n(CVE-2025-39728, CVE-2025-23136, CVE-2025-22062, CVE-2025-22035,\nCVE-2025-22020, CVE-2025-22083, CVE-2025-22071, CVE-2025-22060,\nCVE-2025-22073, CVE-2025-22044, CVE-2025-22063, CVE-2025-22079,\nCVE-2025-22057, CVE-2025-22095, CVE-2025-39735, CVE-2025-39682,\nCVE-2025-22058, CVE-2025-22021, CVE-2025-22018, CVE-2025-22056,\nCVE-2025-22054, CVE-2025-22080, CVE-2025-22039, CVE-2025-22019,\nCVE-2025-22038, CVE-2025-22028, CVE-2023-53034, CVE-2024-58092,\nCVE-2025-38637, CVE-2025-22089, CVE-2025-40114, CVE-2025-22068,\nCVE-2025-37937, CVE-2025-22070, CVE-2025-22072, CVE-2025-22086,\nCVE-2025-22050, CVE-2025-22040, CVE-2025-22065, CVE-2025-38575,\nCVE-2025-22064, CVE-2025-22033, CVE-2025-22041, CVE-2025-22090,\nCVE-2025-22036, CVE-2025-23138, CVE-2025-22047, CVE-2025-38240,\nCVE-2025-22066, CVE-2025-22042, CVE-2025-38152, CVE-2025-22055,\nCVE-2025-22081, CVE-2025-22045, CVE-2025-22053, CVE-2025-22075,\nCVE-2025-22027, CVE-2025-22025, CVE-2025-22097)\n",
+  "affected_products": [
+    "Ubuntu 22.04 LTS"
+  ],
+  "cves": [],
+  "packages": [
+    "linux-buildinfo-6.8.0-1038-oracle-6.8.0-1038.39~22.04.1",
+    "linux-buildinfo-6.8.0-1038-oracle-64k-6.8.0-1038.39~22.04.1",
+    "linux-headers-6.8.0-1038-oracle-6.8.0-1038.39~22.04.1",
+    "linux-headers-6.8.0-1038-oracle-64k-6.8.0-1038.39~22.04.1",
+    "linux-image-unsigned-6.8.0-1038-oracle-6.8.0-1038.39~22.04.1",
+    "linux-image-unsigned-6.8.0-1038-oracle-64k-6.8.0-1038.39~22.04.1",
+    "linux-modules-6.8.0-1038-oracle-6.8.0-1038.39~22.04.1",
+    "linux-modules-6.8.0-1038-oracle-64k-6.8.0-1038.39~22.04.1",
+    "linux-modules-extra-6.8.0-1038-oracle-6.8.0-1038.39~22.04.1",
+    "linux-modules-extra-6.8.0-1038-oracle-64k-6.8.0-1038.39~22.04.1",
+    "linux-oracle-6.8-headers-6.8.0-1038-6.8.0-1038.39~22.04.1",
+    "linux-oracle-6.8-tools-6.8.0-1038-6.8.0-1038.39~22.04.1",
+    "linux-tools-6.8.0-1038-oracle-6.8.0-1038.39~22.04.1",
+    "linux-tools-6.8.0-1038-oracle-64k-6.8.0-1038.39~22.04.1"
+  ],
+  "full_text": "Several security issues were discovered in the Linux kernel.\nAn attacker could possibly use these to compromise the system.\nThis update corrects flaws in the following subsystems:\n  - ARM64 architecture;\n  - PowerPC architecture;\n  - x86 architecture;\n  - ACPI drivers;\n  - Ublk userspace block driver;\n  - Clock framework and drivers;\n  - GPU drivers;\n  - IIO subsystem;\n  - InfiniBand drivers;\n  - Media drivers;\n  - MemoryStick subsystem;\n  - Network drivers;\n  - NTB driver;\n  - PCI subsystem;\n  - Remote Processor subsystem;\n  - Thermal drivers;\n  - Virtio Host (VHOST) subsystem;\n  - 9P distributed file system;\n  - File systems infrastructure;\n  - JFS file system;\n  - Network file system (NFS) server daemon;\n  - NTFS3 file system;\n  - SMB network file system;\n  - Memory management;\n  - RDMA verbs API;\n  - Kernel fork() syscall;\n  - Tracing infrastructure;\n  - Watch queue notification mechanism;\n  - Asynchronous Transfer Mode (ATM) subsystem;\n  - Networking core;\n  - IPv4 networking;\n  - IPv6 networking;\n  - Netfilter;\n  - Network traffic control;\n  - SCTP protocol;\n  - TLS protocol;\n  - SoC Audio for Freescale CPUs drivers;\n(CVE-2025-39728, CVE-2025-23136, CVE-2025-22062, CVE-2025-22035,\nCVE-2025-22020, CVE-2025-22083, CVE-2025-22071, CVE-2025-22060,\nCVE-2025-22073, CVE-2025-22044, CVE-2025-22063, CVE-2025-22079,\nCVE-2025-22057, CVE-2025-22095, CVE-2025-39735, CVE-2025-39682,\nCVE-2025-22058, CVE-2025-22021, CVE-2025-22018, CVE-2025-22056,\nCVE-2025-22054, CVE-2025-22080, CVE-2025-22039, CVE-2025-22019,\nCVE-2025-22038, CVE-2025-22028, CVE-2023-53034, CVE-2024-58092,\nCVE-2025-38637, CVE-2025-22089, CVE-2025-40114, CVE-2025-22068,\nCVE-2025-37937, CVE-2025-22070, CVE-2025-22072, CVE-2025-22086,\nCVE-2025-22050, CVE-2025-22040, CVE-2025-22065, CVE-2025-38575,\nCVE-2025-22064, CVE-2025-22033, CVE-2025-22041, CVE-2025-22090,\nCVE-2025-22036, CVE-2025-23138, CVE-2025-22047, CVE-2025-38240,\nCVE-2025-22066, CVE-2025-22042, CVE-2025-38152, CVE-2025-22055,\nCVE-2025-22081, CVE-2025-22045, CVE-2025-22053, CVE-2025-22075,\nCVE-2025-22027, CVE-2025-22025, CVE-2025-22097)\n"
+}

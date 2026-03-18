@@ -1,0 +1,28 @@
+{
+  "id": "USN-7965-1",
+  "url": "https://ubuntu.com/security/notices/USN-7965-1",
+  "synopsis": "USN-7965-1: SimGear vulnerability",
+  "dateStr": "15 January 2026",
+  "overview": "SimGear could be made to run programs as an administrator if it opened a\nspecially crafted file.",
+  "description": "It was discovered that SimGear could be made to bypass the sandboxing of\nNasal scripts. An attacker could possibly use this issue to execute\narbitrary code.\n\n \n\n \n\n \n\nIt was discovered that SimGear could be made to bypass the sandboxing of\nNasal scripts. An attacker could possibly use this issue to execute\narbitrary code.",
+  "packages": [
+    "simgear"
+  ],
+  "cves": [
+    "CVE-2025-0781"
+  ],
+  "affected_products": [
+    "24.04 LTS",
+    "22.04 LTS",
+    "20.04 LTS",
+    "18.04 LTS",
+    "16.04 LTS",
+    "Open side navigation"
+  ],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Ubuntu Security Notices\n\nUSN-7965-1\n\n \n\n \n\n \n\n \n\n \n\n \nUSN-7965-1: SimGear vulnerability\n\n \n\n \n\n \n\n \nPublication date\n\n \n\n \n\n \n15 January 2026\n\n \n\n \n\n \n\n \n\n \nOverview\n\n \n\n \n\n \nSimGear could be made to run programs as an administrator if it opened a\nspecially crafted file.\n\n \n\n \n\n \n\n \n\n \nReleases\n\n \n\n \n\n \n\n 24.04 LTS\n\n22.04 LTS\n\n20.04 LTS\n\n18.04 LTS\n\n16.04 LTS\n\n \n\n \n\n \n\n \n\n \n\n \n\n Open side navigation\n \n\n \n\n \nPackages\n\n \n\n simgear - set of open-source libraries for assembling 3d simulations, games, and visualizations\n \n\n \n\n \nDetails\n\n \n\n \n\nIt was discovered that SimGear could be made to bypass the sandboxing of\nNasal scripts. An attacker could possibly use this issue to execute\narbitrary code.\n\n \n\n \n\n \n\nIt was discovered that SimGear could be made to bypass the sandboxing of\nNasal scripts. An attacker could possibly use this issue to execute\narbitrary code.\n\n \n\n \n\n \n\n \nUpdate instructions\n\n \n\n \n\n \n\n \n\nIn general, a standard system update will make all the necessary changes.\n\n Learn more about how to get the fixes.\n \n\n \n\n \n\n \n\n \nThe problem can be corrected by updating your system to the following package versions:\n\n \n\n \n\n \n\n \n\n Ubuntu Release\n Package Version\n \n\n 24.04\n\nLTS noble\n\n libsimgear-dev – \n\n1:2020.3.18+dfsg-2.1ubuntu0.1~esm1\n\n  \n\nUbuntu Pro\n Fix available with Ubuntu Pro via ESM Apps. A community fix might become publicly available in the future.\n\n \n\n \n\n 22.04\n\nLTS jammy\n\n libsimgear-dev – \n\n1:2020.3.6+dfsg-1ubuntu0.1~esm2\n\n  \n\nUbuntu Pro\n Fix available with Ubuntu Pro via ESM Apps. A community fix might become publicly available in the future.\n\n \n\n \n\n 20.04\n\nLTS focal\n\n libsimgear-dev – \n\n1:2019.1.1+dfsg-3ubuntu0.1~esm1\n\n  \n\nUbuntu Pro\n Fix available with Ubuntu Pro via ESM Apps. A community fix might become publicly available in the future.\n\n \n\n \n\n 18.04\n\nLTS bionic\n\n libsimgear-dev – \n\n1:2018.1.1+dfsg-1ubuntu0.1~esm1\n\n  \n\nUbuntu Pro\n Fix available with Ubuntu Pro via ESM Apps. A community fix might become publicly available in the future.\n\n \n\n \n\n 16.04\n\nLTS xenial\n\n libsimgear-dev – \n\n3.4.0-3ubuntu0.1~esm1\n\n  \n\nUbuntu Pro\n Fix available with Ubuntu Pro via ESM Apps. A community fix might become publicly available in the future.\n\n \n\n libsimgearcore3.4.0v5 – \n\n3.4.0-3ubuntu0.1~esm1\n\n  \n\nUbuntu Pro\n Fix available with Ubuntu Pro via ESM Apps. A community fix might become publicly available in the future.\n\n \n\n libsimgearscene3.4.0v5 – \n\n3.4.0-3ubuntu0.1~esm1\n\n  \n\nUbuntu Pro\n Fix available with Ubuntu Pro via ESM Apps. A community fix might become publicly available in the future.\n\n \n\n \n\nReduce your security exposure\n\n \n\n Ubuntu Pro provides ten-year security coverage to 25,000+ packages in Main and Universe repositories, and it is free for up to five machines.\n \n\n \n\n Get Ubuntu Pro\n \n\n \n\nReferences\n\n \n\n \n\n CVE-2025-0781\n \n\n \n\n \n\n CVE-2025-0781",
+  "title": "USN-7965-1: SimGear vulnerability | Ubuntu security notices | Ubuntu",
+  "pubDate": "2026-01-14T15:00:00.000Z",
+  "vendor": "Ubuntu"
+}

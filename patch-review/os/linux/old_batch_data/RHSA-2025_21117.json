@@ -1,0 +1,20 @@
+{
+  "id": "RHSA-2025:21117",
+  "vendor": "Red Hat",
+  "url": "https://access.redhat.com/errata/RHSA-2025:21117",
+  "pubDate": "2025-11-12T10:03:26.000Z",
+  "dateStr": "2025-11-12",
+  "severity": "Moderate",
+  "title": "Red Hat Security Advisory: RHOAI 3.0 - Red Hat OpenShift AI",
+  "overview": "Updated images are now available for Red Hat OpenShift AI.",
+  "description": "Updated images are now available for Red Hat OpenShift AI.",
+  "affected_products": [
+    "Red Hat OpenShift AI 3.0"
+  ],
+  "cves": [
+    "CVE-2025-12103"
+  ],
+  "packages": [],
+  "fixes": "",
+  "full_text": "Red Hat Security Advisory: RHOAI 3.0 - Red Hat OpenShift AI\n\nUpdated images are now available for Red Hat OpenShift AI.\n\nUpdated images are now available for Red Hat OpenShift AI.\n\n\n\nCVE-2025-12103: A flaw was found in Red Hat Openshift AI Service. The TrustyAI component is granting all service accounts and users on a cluster permissions to  get, list, watch any pod in any namespace on the cluster.\n\nTrustyAI is creating a role `trustyai-service-operator-lmeval-user-role` and a CRB `trustyai-service-operator-default-lmeval-user-rolebinding` which is being applied to `system:authenticated` making it so that every single user or service account can get a list of pods running in any namespace on the cluster \n\nAdditionally users can access all `persistentvolumeclaims` and `lmevaljobs`"
+}

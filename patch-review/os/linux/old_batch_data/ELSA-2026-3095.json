@@ -1,0 +1,39 @@
+{
+  "id": "ELSA-2026-3095",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2026-February/019821.html",
+  "synopsis": "[El-errata] ELSA-2026-3095 Important: Oracle Linux 9 protobuf security update",
+  "dateStr": "2026-February",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Security Advisory ELSA-2026-3095",
+  "description": "[3.14.0-17]\n- Fix CVE-2026-0994: nested Any messages bypassing recursion depth limits",
+  "affected_products": [
+    "Oracle Linux 9"
+  ],
+  "packages": [
+    "protobuf-3.14.0-17.el9_7.i686.rpm",
+    "protobuf-3.14.0-17.el9_7.x86_64.rpm",
+    "protobuf-compiler-3.14.0-17.el9_7.i686.rpm",
+    "protobuf-compiler-3.14.0-17.el9_7.x86_64.rpm",
+    "protobuf-devel-3.14.0-17.el9_7.i686.rpm",
+    "protobuf-devel-3.14.0-17.el9_7.x86_64.rpm",
+    "protobuf-lite-3.14.0-17.el9_7.i686.rpm",
+    "protobuf-lite-3.14.0-17.el9_7.x86_64.rpm",
+    "protobuf-lite-devel-3.14.0-17.el9_7.i686.rpm",
+    "protobuf-lite-devel-3.14.0-17.el9_7.x86_64.rpm",
+    "python3-protobuf-3.14.0-17.el9_7.noarch.rpm",
+    "protobuf-3.14.0-17.el9_7.aarch64.rpm",
+    "protobuf-compiler-3.14.0-17.el9_7.aarch64.rpm",
+    "protobuf-devel-3.14.0-17.el9_7.aarch64.rpm",
+    "protobuf-lite-3.14.0-17.el9_7.aarch64.rpm",
+    "protobuf-lite-devel-3.14.0-17.el9_7.aarch64.rpm",
+    "python3-protobuf-3.14.0-17.el9_7.noarch.rpm"
+  ],
+  "cves": [
+    "CVE-2026-0994"
+  ],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Security Advisory ELSA-2026-3095\n\nhttp://linux.oracle.com/errata/ELSA-2026-3095.html\n\nThe following updated rpms for Oracle Linux 9 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\nprotobuf-3.14.0-17.el9_7.i686.rpm\nprotobuf-3.14.0-17.el9_7.x86_64.rpm\nprotobuf-compiler-3.14.0-17.el9_7.i686.rpm\nprotobuf-compiler-3.14.0-17.el9_7.x86_64.rpm\nprotobuf-devel-3.14.0-17.el9_7.i686.rpm\nprotobuf-devel-3.14.0-17.el9_7.x86_64.rpm\nprotobuf-lite-3.14.0-17.el9_7.i686.rpm\nprotobuf-lite-3.14.0-17.el9_7.x86_64.rpm\nprotobuf-lite-devel-3.14.0-17.el9_7.i686.rpm\nprotobuf-lite-devel-3.14.0-17.el9_7.x86_64.rpm\npython3-protobuf-3.14.0-17.el9_7.noarch.rpm\n\naarch64:\nprotobuf-3.14.0-17.el9_7.aarch64.rpm\nprotobuf-compiler-3.14.0-17.el9_7.aarch64.rpm\nprotobuf-devel-3.14.0-17.el9_7.aarch64.rpm\nprotobuf-lite-3.14.0-17.el9_7.aarch64.rpm\nprotobuf-lite-devel-3.14.0-17.el9_7.aarch64.rpm\npython3-protobuf-3.14.0-17.el9_7.noarch.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol9/SRPMS-updates/protobuf-3.14.0-17.el9_7.src.rpm\n\nRelated CVEs:\n\nCVE-2026-0994\n\n\n\n\nDescription of changes:\n\n[3.14.0-17]\n- Fix CVE-2026-0994: nested Any messages bypassing recursion depth limits",
+  "vendor": "Oracle"
+}

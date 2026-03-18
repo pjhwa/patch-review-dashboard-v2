@@ -1,0 +1,21 @@
+{
+  "id": "RHSA-2025:21090",
+  "vendor": "Red Hat",
+  "url": "https://access.redhat.com/errata/RHSA-2025:21090",
+  "pubDate": "2025-11-12T08:03:19.000Z",
+  "dateStr": "2025-11-12",
+  "severity": "Important",
+  "title": "Red Hat Security Advisory: squid:4 security update",
+  "overview": "An update for the squid:4 module is now available for Red Hat Enterprise Linux 8.4 Advanced Mission Critical Update Support and Red Hat Enterprise Linux 8.4 Extended Update Support Long-Life Add-On.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "description": "An update for the squid:4 module is now available for Red Hat Enterprise Linux 8.4 Advanced Mission Critical Update Support and Red Hat Enterprise Linux 8.4 Extended Update Support Long-Life Add-On.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux AppStream AUS (v.8.4)",
+    "Red Hat Enterprise Linux AppStream EUS EXTENSION (v.8.4)"
+  ],
+  "cves": [
+    "CVE-2025-62168"
+  ],
+  "packages": [],
+  "fixes": "",
+  "full_text": "Red Hat Security Advisory: squid:4 security update\n\nAn update for the squid:4 module is now available for Red Hat Enterprise Linux 8.4 Advanced Mission Critical Update Support and Red Hat Enterprise Linux 8.4 Extended Update Support Long-Life Add-On.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nAn update for the squid:4 module is now available for Red Hat Enterprise Linux 8.4 Advanced Mission Critical Update Support and Red Hat Enterprise Linux 8.4 Extended Update Support Long-Life Add-On.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nUpdated Packages:\n36416a77.src.rpm\n1fc48abe.10.src.rpm\n36416a77.x86_64.rpm\n1fc48abe.10.x86_64.rpm\n\nCVE-2025-62168: A Information Disclosure vulnerability has been identified in the Squid web caching proxy. This flaw occurs when the application fails to properly redact sensitive Hypertext Transfer Protocol (HTTP) authentication credentials from an error response. A remote client can exploit this by triggering an error condition, which allows a malicious script to bypass browser security and disclose the username and password a trusted client uses for access. This directly compromises the security of internal application credentials and security tokens, especially when Squid is configured for backend load balancing."
+}

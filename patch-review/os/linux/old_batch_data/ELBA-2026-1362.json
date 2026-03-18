@@ -1,0 +1,33 @@
+{
+  "id": "ELBA-2026-1362",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2026-January/019615.html",
+  "synopsis": "[El-errata] ELBA-2026-1362 Oracle Linux 9 cmake bug fix and enhancement update",
+  "dateStr": "2026-January",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Bug Fix Advisory ELBA-2026-1362",
+  "description": "[3.26.5-3]\n- Make cmake-rpm-macros requires conditional on rpm-build",
+  "affected_products": [
+    "Oracle Linux 9"
+  ],
+  "packages": [
+    "cmake-3.26.5-3.el9_7.x86_64.rpm",
+    "cmake-data-3.26.5-3.el9_7.noarch.rpm",
+    "cmake-doc-3.26.5-3.el9_7.noarch.rpm",
+    "cmake-filesystem-3.26.5-3.el9_7.i686.rpm",
+    "cmake-filesystem-3.26.5-3.el9_7.x86_64.rpm",
+    "cmake-gui-3.26.5-3.el9_7.x86_64.rpm",
+    "cmake-rpm-macros-3.26.5-3.el9_7.noarch.rpm",
+    "cmake-3.26.5-3.el9_7.aarch64.rpm",
+    "cmake-data-3.26.5-3.el9_7.noarch.rpm",
+    "cmake-doc-3.26.5-3.el9_7.noarch.rpm",
+    "cmake-filesystem-3.26.5-3.el9_7.aarch64.rpm",
+    "cmake-gui-3.26.5-3.el9_7.aarch64.rpm",
+    "cmake-rpm-macros-3.26.5-3.el9_7.noarch.rpm"
+  ],
+  "cves": [],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Bug Fix Advisory ELBA-2026-1362\n\nhttp://linux.oracle.com/errata/ELBA-2026-1362.html\n\nThe following updated rpms for Oracle Linux 9 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\ncmake-3.26.5-3.el9_7.x86_64.rpm\ncmake-data-3.26.5-3.el9_7.noarch.rpm\ncmake-doc-3.26.5-3.el9_7.noarch.rpm\ncmake-filesystem-3.26.5-3.el9_7.i686.rpm\ncmake-filesystem-3.26.5-3.el9_7.x86_64.rpm\ncmake-gui-3.26.5-3.el9_7.x86_64.rpm\ncmake-rpm-macros-3.26.5-3.el9_7.noarch.rpm\n\naarch64:\ncmake-3.26.5-3.el9_7.aarch64.rpm\ncmake-data-3.26.5-3.el9_7.noarch.rpm\ncmake-doc-3.26.5-3.el9_7.noarch.rpm\ncmake-filesystem-3.26.5-3.el9_7.aarch64.rpm\ncmake-gui-3.26.5-3.el9_7.aarch64.rpm\ncmake-rpm-macros-3.26.5-3.el9_7.noarch.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol9/SRPMS-updates/cmake-3.26.5-3.el9_7.src.rpm\n\n\n\nDescription of changes:\n\n[3.26.5-3]\n- Make cmake-rpm-macros requires conditional on rpm-build",
+  "vendor": "Oracle"
+}

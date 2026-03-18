@@ -1,0 +1,26 @@
+{
+  "id": "ELBA-2025-20664-0",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "AppStream",
+  "title": "python-virt-firmware bug fix and enhancement update",
+  "issuedDate": "2025-11-17T00:00:00Z",
+  "updatedDate": "2025-11-17T00:00:00Z",
+  "pubDate": "2025-11-17T00:00:00Z",
+  "dateStr": "2025-11-17",
+  "url": "https://linux.oracle.com/errata/ELBA-2025-20664-0.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 9.",
+  "description": "[25.7.3-1.0.1]\n- Hide redhat reference in python-virt-firmware [Orabug: 36562018]\n\n[24.11-2]\n- backport bootctl fix for 99-uki-uefi-setup.install\n- Resolves: RHEL-84984",
+  "affected_products": [
+    "Oracle Linux 9 for x86_64",
+    "Oracle Linux 9 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "python-virt-firmware-25.7.3-1.0.1.el9.src",
+    "python3-virt-firmware-25.7.3-1.0.1.el9.noarch",
+    "uki-direct-25.7.3-1.0.1.el9.noarch"
+  ],
+  "full_text": "[25.7.3-1.0.1]\n- Hide redhat reference in python-virt-firmware [Orabug: 36562018]\n\n[24.11-2]\n- backport bootctl fix for 99-uki-uefi-setup.install\n- Resolves: RHEL-84984\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2025-20664-0.html"
+}

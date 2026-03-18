@@ -1,0 +1,30 @@
+{
+  "id": "RHSA-2025:23204",
+  "vendor": "Red Hat",
+  "url": "https://access.redhat.com/errata/RHSA-2025:23204",
+  "pubDate": "2025-12-15T15:38:04.000Z",
+  "dateStr": "2025-12-15",
+  "severity": "Important",
+  "title": "Red Hat Security Advisory: Red Hat AI Inference Server 3.2.5 (CUDA)",
+  "overview": "Red Hat AI Inference Server 3.2.5 (CUDA) is now available.",
+  "description": "Red Hat AI Inference Server 3.2.5 (CUDA) is now available.",
+  "affected_products": [
+    "Red Hat AI Inference Server 3.2"
+  ],
+  "cves": [
+    "CVE-2025-9230",
+    "CVE-2025-9714",
+    "CVE-2025-22868",
+    "CVE-2025-22869",
+    "CVE-2025-52565",
+    "CVE-2025-59375",
+    "CVE-2025-62164",
+    "CVE-2025-62372",
+    "CVE-2025-62593",
+    "CVE-2025-66448",
+    "CVE-2025-66506"
+  ],
+  "packages": [],
+  "fixes": "",
+  "full_text": "Red Hat Security Advisory: Red Hat AI Inference Server 3.2.5 (CUDA)\n\nRed Hat AI Inference Server 3.2.5 (CUDA) is now available.\n\nRed Hat AI Inference Server 3.2.5 (CUDA) is now available.\n\n\n\nCVE-2025-9230: Issue summary: An application trying to decrypt CMS messages encrypted using\npassword based encryption can trigger an out-of-bounds read and write.\n\nImpact summary: This out-of-bounds read may trigger a crash which leads to\nDenial of Service for an application. The out-of-bounds write can cause\na memory corruption which can have various consequences including\na Denial of Service or Execution of attacker-supplied code.\n\nAlthough the consequences of a successful exploit of this vulnerability\ncould be severe, the probability that the attacker would be able to\nperform it is low. Besides, password based (PWRI) encryption support in CMS\nmessages is very rarely used. For that reason the issue was assessed as\nModerate severity according to our Security Policy.\n\nThe FIPS modules in 3.5, 3.4, 3.3, 3.2, 3.1 and 3.0 are not affected by this\nissue, as the CMS implementation is outside the OpenSSL FIPS module\nboundary.\n\nCVE-2025-9714: A flaw was found in libxstl/libxml2. The 'exsltDynMapFunction' function in libexslt/dynamic.c does not contain a recursion depth check, which may cause an infinite loop via a specially crafted XSLT document while handling 'dyn:map()', leading to stack exhaustion and a local denial of service.\n\nCVE-2025-22868: A flaw was found in the `golang.org/x/oauth2/jws` package in the token parsing component. This vulnerability is made possible because of the use of `strings.Split(token, \".\")` to split JWT tokens, which can lead to excessive memory consumption when processing maliciously crafted tokens with a large number of `.` characters. An attacker could exploit this functionality by sending numerous malformed tokens and can trigger memory exhaustion and a Denial of Service.\n\nCVE-2025-22869: A flaw was found in the golang.org/x/crypto/ssh package. SSH clients and servers are vulnerable to increased resource consumption, possibly leading to memory exhaustion and a DoS. This can occur during key exchange when the other party is slow to respond during key exchange.\n\nCVE-2025-52565: A flaw was found in runc. CVE-2025-52565 is very similar in concept and application toCVE-2025-31133, except that it exploits a flaw in /dev/console\nbind-mounts. When creating the /dev/console bind-mount (to /dev/pts/$n), if an attacker replaces /dev/pts/$n with a symlink then runc will bind-mount the symlink target over /dev/console.\n\nCVE-2025-59375: A memory amplification vulnerability in libexpat allows attackers to trigger excessive dynamic memory allocations by submitting specially crafted XML input. A small input (~250 KiB) can cause the parser to allocate hundreds of megabytes, leading to denial-of-service (DoS) through memory exhaustion.\n\nCVE-2025-62164: A vulnerability in vLLM allows attackers to supply malicious serialized prompt-embedding tensors that are deserialized using torch.load() without validation. Due to PyTorch 2.8.0 disabling sparse-tensor integrity checks by default, a crafted tensor can bypass bounds checks and cause an out-of-bounds write during to_dense(), leading to a crash (DoS) and potentially remote code execution on the vLLM server.\n\nCVE-2025-62372: vLLM is an inference and serving engine for large language models (LLMs). From version 0.5.5 to before 0.11.1, users can crash the vLLM engine serving multimodal models by passing multimodal embedding inputs with correct ndim but incorrect shape (e.g. hidden dimension is wrong), regardless of whether the model is intended to support such inputs (as defined in the Supported Models page). This issue has been patched in version 0.11.1.\n\nCVE-2025-62593: Ray is an AI compute engine. Prior to version 2.52.0, developers working with Ray as a development tool can be exploited via a critical RCE vulnerability exploitable via Firefox and Safari. This vulnerability is due to an insufficient guard against browser-based attacks, as the current defense uses the User-Agent header starting with the string \"Mozilla\" as a defense mechanism. This defense is insufficient as the fetch specification allows the User-Agent header to be modified. Combined with a DNS rebinding attack against the browser, and this vulnerability is exploitable against a developer running Ray who inadvertently visits a malicious website, or is served a malicious advertisement (malvertising). This issue has been patched in version 2.52.0.\n\nCVE-2025-66448: A remote code execution vulnerability has been identified in vLLM. An attacker can exploit a weakness in the model loading process to silently fetch and run unauthorized, malicious Python code on the host system. This happens because the engine mistakenly executes code from a remote repository referenced in a model's configuration, even when explicit security measures are set to prevent it.\n\nCVE-2025-66506: A flaw was found in Fulcio, a free-to-use certificate authority. This vulnerability allows a denial of service (DoS) due to excessive memory allocation when processing a malicious OpenID Connect (OIDC) identity token containing numerous period characters."
+}

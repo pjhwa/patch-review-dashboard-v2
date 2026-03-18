@@ -1,0 +1,26 @@
+{
+  "id": "ELSA-2025-21030",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2025-December/019198.html",
+  "synopsis": "[El-errata] ELSA-2025-21030 Important: Oracle Linux 10 expat security update",
+  "dateStr": "2025-December",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Security Advisory ELSA-2025-21030",
+  "description": "[2.7.1-3]\n- Fix CVE-2025-59375 - backport allocation tracking improvements\n\n[2.7.1-2]\n- https://issues.redhat.com/browse/RHELMISC-13073",
+  "affected_products": [
+    "Oracle Linux 10"
+  ],
+  "packages": [
+    "expat-2.7.1-1.el10_1.3.x86_64.rpm",
+    "expat-devel-2.7.1-1.el10_1.3.x86_64.rpm",
+    "expat-2.7.1-1.el10_1.3.aarch64.rpm",
+    "expat-devel-2.7.1-1.el10_1.3.aarch64.rpm"
+  ],
+  "cves": [
+    "CVE-2025-59375"
+  ],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Security Advisory ELSA-2025-21030\n\nhttp://linux.oracle.com/errata/ELSA-2025-21030.html\n\nThe following updated rpms for Oracle Linux 10 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\nexpat-2.7.1-1.el10_1.3.x86_64.rpm\nexpat-devel-2.7.1-1.el10_1.3.x86_64.rpm\n\naarch64:\nexpat-2.7.1-1.el10_1.3.aarch64.rpm\nexpat-devel-2.7.1-1.el10_1.3.aarch64.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol10/SRPMS-updates/expat-2.7.1-1.el10_1.3.src.rpm\n\nRelated CVEs:\n\nCVE-2025-59375\n\n\n\n\nDescription of changes:\n\n[2.7.1-3]\n- Fix CVE-2025-59375 - backport allocation tracking improvements\n\n[2.7.1-2]\n- https://issues.redhat.com/browse/RHELMISC-13073",
+  "vendor": "Oracle"
+}

@@ -1,0 +1,20 @@
+{
+  "id": "RHSA-2026:0406",
+  "vendor": "Red Hat",
+  "url": "https://access.redhat.com/errata/RHSA-2026:0406",
+  "pubDate": "2026-01-08T19:34:46.000Z",
+  "dateStr": "2026-01-08",
+  "severity": "Critical",
+  "title": "Red Hat Security Advisory: Red Hat Ansible Automation Platform 2.4 Container Release Update",
+  "overview": "An update is now available for Red Hat Ansible Automation Platform 2.4",
+  "description": "An update is now available for Red Hat Ansible Automation Platform 2.4",
+  "affected_products": [
+    "Red Hat Ansible Automation Platform 2.4"
+  ],
+  "cves": [
+    "CVE-2025-68664"
+  ],
+  "packages": [],
+  "fixes": "",
+  "full_text": "Red Hat Security Advisory: Red Hat Ansible Automation Platform 2.4 Container Release Update\n\nAn update is now available for Red Hat Ansible Automation Platform 2.4\n\nAn update is now available for Red Hat Ansible Automation Platform 2.4\n\n\n\nCVE-2025-68664: A flaw was found in LangChain, a framework for building agents and LLM-powered applications. A remote attacker can exploit a serialization injection vulnerability in LangChain's `dumps()` and `dumpd()` functions. This occurs because the functions do not properly escape dictionaries containing the internal 'lc' key during serialization. When user-controlled data includes this key structure, it is incorrectly processed as a legitimate LangChain object during deserialization, potentially leading to arbitrary code execution."
+}

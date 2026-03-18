@@ -1,0 +1,30 @@
+{
+  "id": "RHBA-2026:0631",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: updated ubi8-minimal container image",
+  "issuedDate": "2026-01-14T19:57:21Z",
+  "updatedDate": "2026-01-14T19:57:21Z",
+  "pubDate": "2026-01-14T19:57:21Z",
+  "dateStr": "2026-01-14",
+  "url": "https://access.redhat.com/errata/RHBA-2026:0631",
+  "severity": "None",
+  "overview": "An update for updated is now available for Red Hat Enterprise Linux 10.",
+  "description": "The ubi8-minimal container image has been updated for Red Hat Enterprise Linux 8 to address the following security advisory: RHSA-2026:0337 (see References)Users of ubi8-minimal container images are advised to upgrade to these updated images, which contain backported patches to correct these security issues, fix these bugs and add these enhancements. Users of these images are also encouraged to rebuild all container images that depend on these images.You can find images updated by this advisory in Red Hat Container Catalog (see References).",
+  "affected_products": [
+    "Red Hat Enterprise Linux for Power, little endian",
+    "Red Hat Enterprise Linux for ARM 64",
+    "Red Hat Enterprise Linux for x86_64 10 x86_64",
+    "Red Hat Enterprise Linux for IBM z Systems"
+  ],
+  "cves": [],
+  "packages": [],
+  "fixes": [
+    {
+      "id": "BZ - 2396054",
+      "url": "https://bugzilla.redhat.com/show_bug.cgi?id=2396054",
+      "description": "CVE-2025-9230 openssl: Out-of-bounds read & write in RFC 3211 KEK Unwrap"
+    }
+  ],
+  "full_text": "An update for updated is now available for Red Hat Enterprise Linux 10.\n\nThe ubi8-minimal container image has been updated for Red Hat Enterprise Linux 8 to address the following security advisory: RHSA-2026:0337 (see References)Users of ubi8-minimal container images are advised to upgrade to these updated images, which contain backported patches to correct these security issues, fix these bugs and add these enhancements. Users of these images are also encouraged to rebuild all container images that depend on these images.You can find images updated by this advisory in Red Hat Container Catalog (see References)."
+}

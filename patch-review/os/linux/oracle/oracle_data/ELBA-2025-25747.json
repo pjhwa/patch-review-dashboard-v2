@@ -1,0 +1,25 @@
+{
+  "id": "ELBA-2025-25747",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "RHCK",
+  "title": " ocfs2-tools  bug fix update",
+  "issuedDate": "2025-11-06T00:00:00Z",
+  "updatedDate": "2025-11-06T00:00:00Z",
+  "pubDate": "2025-11-06T00:00:00Z",
+  "dateStr": "2025-11-06",
+  "url": "https://linux.oracle.com/errata/ELBA-2025-25747.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 10.",
+  "description": "[1.8.6-18.el10]\n- o2cb.init: fix ENOENT message in o2cb.init (Gautham Ananthakrishna)  [Orabug:\n  34263795]",
+  "affected_products": [
+    "Oracle Linux 10 for x86_64",
+    "Oracle Linux 10 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "ocfs2-tools-1.8.6-18.el10.x86_64",
+    "ocfs2-tools-1.8.6-18.el10.src"
+  ],
+  "full_text": "[1.8.6-18.el10]\n- o2cb.init: fix ENOENT message in o2cb.init (Gautham Ananthakrishna)  [Orabug:\n  34263795]\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2025-25747.html"
+}

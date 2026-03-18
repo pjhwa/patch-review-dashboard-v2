@@ -1,0 +1,24 @@
+{
+  "id": "USN-7958-1",
+  "vendor": "Canonical / Ubuntu",
+  "type": "Ubuntu Security Notice (USN)",
+  "title": "angular.js vulnerabilities",
+  "issuedDate": "2026-01-14T04:41:40Z",
+  "updatedDate": "2026-02-10T04:50:48Z",
+  "pubDate": "2026-01-14T04:41:40Z",
+  "dateStr": "2026-01-14",
+  "url": "https://ubuntu.com/security/notices/USN-7958-1",
+  "severity": "None",
+  "overview": "angular.js vulnerabilities",
+  "description": "It was discovered that AngularJS did not properly sanitize certain\n`xlink:href` attributes. A remote attacker could possibly use this issue\nto perform cross site scripting. This issue only affected Ubuntu 16.04\nLTS. (CVE-2019-14863)\n\nIt was discovered that AngularJS incorrectly handled certain regular\nexpressions. An attacker could possibly use this issue to cause AngularJS\nto consume resources, leading to a regular expression denial of service.\nThis issue only affected Ubuntu 20.04 LTS, Ubuntu 22.04 LTS, Ubuntu 24.04\nLTS and Ubuntu 25.04. (CVE-2022-25844)\n\nIt was discovered that AngularJS incorrectly handled certain regular\nexpressions. An attacker could possibly use this issue to cause AngularJS\nto consume resources, leading to a regular expression denial of service.\n(CVE-2023-26116, CVE-2023-26117)\n\nIt was discovered that AngularJS incorrectly handled certain regular\nexpressions. An attacker could possibly use this issue to cause AngularJS\nto consume resources, leading to a regular expression denial of service.\nThis issue only affected Ubuntu 18.04 LTS, Ubuntu 20.04 LTS, Ubuntu 22.04\nLTS, Ubuntu 24.04 LTS and Ubuntu 25.04. (CVE-2023-26118, CVE-2024-21490)\n\nIt was discovered that AngularJS did not properly sanitize certain inputs\nin HTML elements. A remote attacker could possibly use this issue to\nperform spoofing and obtain sensitive information. This issue only\naffected Ubuntu 18.04 LTS, Ubuntu 20.04 LTS, Ubuntu 22.04 LTS, Ubuntu\n24.04 LTS and Ubuntu 25.04. (CVE-2024-8372, CVE-2024-8373, CVE-2025-2336)\n\nIt was discovered that AngularJS did not properly sanitize certain inputs\nin HTML elements. A remote attacker could possibly use this issue to\nperform spoofing and obtain sensitive information. (CVE-2025-0716)",
+  "affected_products": [
+    "Ubuntu 22.04 LTS",
+    "Ubuntu 24.04 LTS"
+  ],
+  "cves": [],
+  "packages": [
+    "libjs-angularjs-1.8.2-2ubuntu0.1",
+    "libjs-angularjs-1.8.3-1ubuntu0.24.04.1"
+  ],
+  "full_text": "It was discovered that AngularJS did not properly sanitize certain\n`xlink:href` attributes. A remote attacker could possibly use this issue\nto perform cross site scripting. This issue only affected Ubuntu 16.04\nLTS. (CVE-2019-14863)\n\nIt was discovered that AngularJS incorrectly handled certain regular\nexpressions. An attacker could possibly use this issue to cause AngularJS\nto consume resources, leading to a regular expression denial of service.\nThis issue only affected Ubuntu 20.04 LTS, Ubuntu 22.04 LTS, Ubuntu 24.04\nLTS and Ubuntu 25.04. (CVE-2022-25844)\n\nIt was discovered that AngularJS incorrectly handled certain regular\nexpressions. An attacker could possibly use this issue to cause AngularJS\nto consume resources, leading to a regular expression denial of service.\n(CVE-2023-26116, CVE-2023-26117)\n\nIt was discovered that AngularJS incorrectly handled certain regular\nexpressions. An attacker could possibly use this issue to cause AngularJS\nto consume resources, leading to a regular expression denial of service.\nThis issue only affected Ubuntu 18.04 LTS, Ubuntu 20.04 LTS, Ubuntu 22.04\nLTS, Ubuntu 24.04 LTS and Ubuntu 25.04. (CVE-2023-26118, CVE-2024-21490)\n\nIt was discovered that AngularJS did not properly sanitize certain inputs\nin HTML elements. A remote attacker could possibly use this issue to\nperform spoofing and obtain sensitive information. This issue only\naffected Ubuntu 18.04 LTS, Ubuntu 20.04 LTS, Ubuntu 22.04 LTS, Ubuntu\n24.04 LTS and Ubuntu 25.04. (CVE-2024-8372, CVE-2024-8373, CVE-2025-2336)\n\nIt was discovered that AngularJS did not properly sanitize certain inputs\nin HTML elements. A remote attacker could possibly use this issue to\nperform spoofing and obtain sensitive information. (CVE-2025-0716)"
+}

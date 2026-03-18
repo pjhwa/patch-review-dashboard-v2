@@ -1,0 +1,33 @@
+{
+  "id": "ELBA-2025-21008",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2025-December/019170.html",
+  "synopsis": "[El-errata] ELBA-2025-21008 Oracle Linux 10 glib2 bug fix and enhancement update",
+  "dateStr": "2025-December",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Bug Fix Advisory ELBA-2025-21008",
+  "description": "[2.80.4-10]\n- Backport patch to prevent sending a serial of zero on overflow\n\n[2.80.4-9]\n- Sync the content of main.fmf from rhel9 to rhel10\n\n[2.80.4-8]\n- Add patches for CVE-2024-52533 and CVE-2025-4373\n\n[2.80.4-7]\n- Add new systemtap-sdt-dtrace to build deps\n\n[2.80.4-6]\n- Add patch to fix test failure with newer tzdata\n\n[2.80.4-5]\n- metadata preparation for RHIVOS RHELMISC-7537",
+  "affected_products": [
+    "Oracle Linux 10"
+  ],
+  "packages": [
+    "glib2-2.80.4-10.el10_1.x86_64.rpm",
+    "glib2-devel-2.80.4-10.el10_1.x86_64.rpm",
+    "glib2-doc-2.80.4-10.el10_1.x86_64.rpm",
+    "glib2-static-2.80.4-10.el10_1.x86_64.rpm",
+    "glib2-tests-2.80.4-10.el10_1.x86_64.rpm",
+    "glib2-2.80.4-10.el10_1.aarch64.rpm",
+    "glib2-devel-2.80.4-10.el10_1.aarch64.rpm",
+    "glib2-doc-2.80.4-10.el10_1.aarch64.rpm",
+    "glib2-static-2.80.4-10.el10_1.aarch64.rpm",
+    "glib2-tests-2.80.4-10.el10_1.aarch64.rpm"
+  ],
+  "cves": [
+    "CVE-2024-52533",
+    "CVE-2025-4373"
+  ],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Bug Fix Advisory ELBA-2025-21008\n\nhttp://linux.oracle.com/errata/ELBA-2025-21008.html\n\nThe following updated rpms for Oracle Linux 10 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\nglib2-2.80.4-10.el10_1.x86_64.rpm\nglib2-devel-2.80.4-10.el10_1.x86_64.rpm\nglib2-doc-2.80.4-10.el10_1.x86_64.rpm\nglib2-static-2.80.4-10.el10_1.x86_64.rpm\nglib2-tests-2.80.4-10.el10_1.x86_64.rpm\n\naarch64:\nglib2-2.80.4-10.el10_1.aarch64.rpm\nglib2-devel-2.80.4-10.el10_1.aarch64.rpm\nglib2-doc-2.80.4-10.el10_1.aarch64.rpm\nglib2-static-2.80.4-10.el10_1.aarch64.rpm\nglib2-tests-2.80.4-10.el10_1.aarch64.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol10/SRPMS-updates/glib2-2.80.4-10.el10_1.src.rpm\n\n\n\nDescription of changes:\n\n[2.80.4-10]\n- Backport patch to prevent sending a serial of zero on overflow\n\n[2.80.4-9]\n- Sync the content of main.fmf from rhel9 to rhel10\n\n[2.80.4-8]\n- Add patches for CVE-2024-52533 and CVE-2025-4373\n\n[2.80.4-7]\n- Add new systemtap-sdt-dtrace to build deps\n\n[2.80.4-6]\n- Add patch to fix test failure with newer tzdata\n\n[2.80.4-5]\n- metadata preparation for RHIVOS RHELMISC-7537",
+  "vendor": "Oracle"
+}

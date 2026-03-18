@@ -1,0 +1,31 @@
+{
+  "id": "ELSA-2026-0241",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2026-January/019466.html",
+  "synopsis": "[El-errata] ELSA-2026-0241 Important: Oracle Linux 8 libpng security update",
+  "dateStr": "2026-January",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Security Advisory ELSA-2026-0241",
+  "description": "[2:1.6.34-9]\n- CVE-2025-64720: buffer overflow (RHEL-131452)\n- CVE-2025-65018: heap buffer overflow (RHEL-131465)\n- CVE-2025-66293: out-of-bounds read in png_image_read_composite (RHEL-133226)\n\n[2:1.6.34-8]\n- Remove redundant fix for CVE-2017-12652\n\n[2:1.6.34-7]\n- Add upstream test suite and enable it in gating\n\n[2:1.6.34-6]\n- Fix CVE-2017-12652 (#1744871)",
+  "affected_products": [
+    "Oracle Linux 8"
+  ],
+  "packages": [
+    "libpng-1.6.34-9.el8_10.i686.rpm",
+    "libpng-1.6.34-9.el8_10.x86_64.rpm",
+    "libpng-devel-1.6.34-9.el8_10.i686.rpm",
+    "libpng-devel-1.6.34-9.el8_10.x86_64.rpm",
+    "libpng-1.6.34-9.el8_10.aarch64.rpm",
+    "libpng-devel-1.6.34-9.el8_10.aarch64.rpm"
+  ],
+  "cves": [
+    "CVE-2025-64720",
+    "CVE-2025-65018",
+    "CVE-2025-66293",
+    "CVE-2017-12652"
+  ],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Security Advisory ELSA-2026-0241\n\nhttp://linux.oracle.com/errata/ELSA-2026-0241.html\n\nThe following updated rpms for Oracle Linux 8 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\nlibpng-1.6.34-9.el8_10.i686.rpm\nlibpng-1.6.34-9.el8_10.x86_64.rpm\nlibpng-devel-1.6.34-9.el8_10.i686.rpm\nlibpng-devel-1.6.34-9.el8_10.x86_64.rpm\n\naarch64:\nlibpng-1.6.34-9.el8_10.aarch64.rpm\nlibpng-devel-1.6.34-9.el8_10.aarch64.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol8/SRPMS-updates/libpng-1.6.34-9.el8_10.src.rpm\n\nRelated CVEs:\n\nCVE-2025-64720\nCVE-2025-65018\nCVE-2025-66293\n\n\n\n\nDescription of changes:\n\n[2:1.6.34-9]\n- CVE-2025-64720: buffer overflow (RHEL-131452)\n- CVE-2025-65018: heap buffer overflow (RHEL-131465)\n- CVE-2025-66293: out-of-bounds read in png_image_read_composite (RHEL-133226)\n\n[2:1.6.34-8]\n- Remove redundant fix for CVE-2017-12652\n\n[2:1.6.34-7]\n- Add upstream test suite and enable it in gating\n\n[2:1.6.34-6]\n- Fix CVE-2017-12652 (#1744871)",
+  "vendor": "Oracle"
+}

@@ -1,0 +1,38 @@
+{
+  "id": "RHSA-2026:1623",
+  "vendor": "Red Hat",
+  "type": "Security Advisory (RHSA)",
+  "title": "Red Hat Security Advisory: kernel-rt security update",
+  "issuedDate": "2026-02-02T01:17:00+00:00",
+  "updatedDate": "2026-02-02T01:17:00+00:00",
+  "pubDate": "2026-02-02T01:17:00+00:00",
+  "dateStr": "2026-02-02",
+  "url": "https://access.redhat.com/errata/RHSA-2026:1623",
+  "severity": "Important",
+  "overview": "An update for kernel-rt is now available for Red Hat Enterprise Linux 7 Extended Lifecycle Support.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "description": "The kernel-rt packages provide the Real Time Linux Kernel, which enables fine-tuning for systems with extremely high determinism requirements.\n\nSecurity Fix(es):\n\n* kernel: e1000e: fix heap overflow in e1000_set_eeprom (CVE-2025-39898)\n\n* kernel: i40e: fix idx validation in config queues msg (CVE-2025-39971)\n\n* kernel: Linux kernel: vsock vulnerability may lead to memory corruption (CVE-2025-40248)\n\nFor more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux",
+    "Red Hat Enterprise Linux for Real Time (v. 7 ELS)"
+  ],
+  "cves": [
+    "CVE-2025-39898",
+    "CVE-2025-39971",
+    "CVE-2025-40248"
+  ],
+  "packages": [
+    "kernel-rt-0:3.10.0-1160.146.1.rt56.1298.el7.src",
+    "kernel-rt-0:3.10.0-1160.146.1.rt56.1298.el7.x86_64",
+    "kernel-rt-debug-0:3.10.0-1160.146.1.rt56.1298.el7.x86_64",
+    "kernel-rt-debug-devel-0:3.10.0-1160.146.1.rt56.1298.el7.x86_64",
+    "kernel-rt-devel-0:3.10.0-1160.146.1.rt56.1298.el7.x86_64",
+    "kernel-rt-trace-0:3.10.0-1160.146.1.rt56.1298.el7.x86_64",
+    "kernel-rt-trace-devel-0:3.10.0-1160.146.1.rt56.1298.el7.x86_64",
+    "kernel-rt-debug-debuginfo-0:3.10.0-1160.146.1.rt56.1298.el7.x86_64",
+    "kernel-rt-debuginfo-0:3.10.0-1160.146.1.rt56.1298.el7.x86_64",
+    "kernel-rt-debuginfo-common-x86_64-0:3.10.0-1160.146.1.rt56.1298.el7.x86_64",
+    "kernel-rt-trace-debuginfo-0:3.10.0-1160.146.1.rt56.1298.el7.x86_64",
+    "kernel-rt-doc-0:3.10.0-1160.146.1.rt56.1298.el7.noarch"
+  ],
+  "full_text": "An update for kernel-rt is now available for Red Hat Enterprise Linux 7 Extended Lifecycle Support.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nThe kernel-rt packages provide the Real Time Linux Kernel, which enables fine-tuning for systems with extremely high determinism requirements.\n\nSecurity Fix(es):\n\n* kernel: e1000e: fix heap overflow in e1000_set_eeprom (CVE-2025-39898)\n\n* kernel: i40e: fix idx validation in config queues msg (CVE-2025-39971)\n\n* kernel: Linux kernel: vsock vulnerability may lead to memory corruption (CVE-2025-40248)\n\nFor more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section."
+}

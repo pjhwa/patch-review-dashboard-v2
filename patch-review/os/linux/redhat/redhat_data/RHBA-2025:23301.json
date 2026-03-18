@@ -1,0 +1,60 @@
+{
+  "id": "RHBA-2025:23301",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: rust-coreos-installer bug fix and enhancement update",
+  "issuedDate": "2025-12-18T09:19:14Z",
+  "updatedDate": "2025-12-18T09:19:14Z",
+  "pubDate": "2025-12-18T09:19:14Z",
+  "dateStr": "2025-12-18",
+  "url": "https://access.redhat.com/errata/RHBA-2025:23301",
+  "severity": "None",
+  "overview": "An update for rust-coreos-installer is now available for Red Hat Enterprise Linux 10.",
+  "description": "coreos-installer installs Fedora CoreOS or RHEL CoreOS to bare-metal machines (or, occasionally, to virtual machines).Bug Fix(es) and Enhancement(s): [10.1.z] Backport https://github.com/coreos/coreos-installer/pull/1676 (JIRA:RHEL-127858)",
+  "affected_products": [
+    "Red Hat Enterprise Linux for IBM z Systems",
+    "Red Hat Enterprise Linux for ARM 64",
+    "Red Hat Enterprise Linux for Power, little endian",
+    "Red Hat Enterprise Linux for x86_64 10 x86_64"
+  ],
+  "cves": [],
+  "packages": [
+    "rust-coreos-installer-0.24.0-5.el10_1.src",
+    "coreos-installer-0.24.0-5.el10_1.x86_64",
+    "coreos-installer-bootinfra-0.24.0-5.el10_1.x86_64",
+    "coreos-installer-bootinfra-debuginfo-0.24.0-5.el10_1.x86_64",
+    "coreos-installer-debuginfo-0.24.0-5.el10_1.x86_64",
+    "coreos-installer-dracut-0.24.0-5.el10_1.x86_64",
+    "rust-coreos-installer-debuginfo-0.24.0-5.el10_1.x86_64",
+    "rust-coreos-installer-debugsource-0.24.0-5.el10_1.x86_64",
+    "coreos-installer-0.24.0-5.el10_1.s390x",
+    "coreos-installer-bootinfra-0.24.0-5.el10_1.s390x",
+    "coreos-installer-bootinfra-debuginfo-0.24.0-5.el10_1.s390x",
+    "coreos-installer-debuginfo-0.24.0-5.el10_1.s390x",
+    "coreos-installer-dracut-0.24.0-5.el10_1.s390x",
+    "rust-coreos-installer-debuginfo-0.24.0-5.el10_1.s390x",
+    "rust-coreos-installer-debugsource-0.24.0-5.el10_1.s390x",
+    "coreos-installer-0.24.0-5.el10_1.ppc64le",
+    "coreos-installer-bootinfra-0.24.0-5.el10_1.ppc64le",
+    "coreos-installer-bootinfra-debuginfo-0.24.0-5.el10_1.ppc64le",
+    "coreos-installer-debuginfo-0.24.0-5.el10_1.ppc64le",
+    "coreos-installer-dracut-0.24.0-5.el10_1.ppc64le",
+    "rust-coreos-installer-debuginfo-0.24.0-5.el10_1.ppc64le",
+    "rust-coreos-installer-debugsource-0.24.0-5.el10_1.ppc64le",
+    "coreos-installer-0.24.0-5.el10_1.aarch64",
+    "coreos-installer-bootinfra-0.24.0-5.el10_1.aarch64",
+    "coreos-installer-bootinfra-debuginfo-0.24.0-5.el10_1.aarch64",
+    "coreos-installer-debuginfo-0.24.0-5.el10_1.aarch64",
+    "coreos-installer-dracut-0.24.0-5.el10_1.aarch64",
+    "rust-coreos-installer-debuginfo-0.24.0-5.el10_1.aarch64",
+    "rust-coreos-installer-debugsource-0.24.0-5.el10_1.aarch64"
+  ],
+  "fixes": [
+    {
+      "id": "RHEL-127858",
+      "url": "https://issues.redhat.com/browse/RHEL-127858",
+      "description": "[10.1.z] Backport https://github.com/coreos/coreos-installer/pull/1676"
+    }
+  ],
+  "full_text": "An update for rust-coreos-installer is now available for Red Hat Enterprise Linux 10.\n\ncoreos-installer installs Fedora CoreOS or RHEL CoreOS to bare-metal machines (or, occasionally, to virtual machines).Bug Fix(es) and Enhancement(s): [10.1.z] Backport https://github.com/coreos/coreos-installer/pull/1676 (JIRA:RHEL-127858)"
+}

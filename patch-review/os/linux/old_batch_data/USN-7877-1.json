@@ -1,0 +1,27 @@
+{
+  "id": "USN-7877-1",
+  "url": "https://ubuntu.com/security/notices/USN-7877-1",
+  "synopsis": "USN-7877-1: libcupsfilters vulnerabilities",
+  "dateStr": "20 November 2025",
+  "overview": "Several security issues were fixed in libcupsfilters.",
+  "description": "It was discovered that libcupsfilters incorrectly handled certain malformed\nTIFF image files. A remote attacker could use this issue to cause\nlibcupsfilters to crash, resulting in a denial of service, or possibly\nexecute arbitrary code. (CVE-2025-57812)\n\nIt was discovered that libcupsfilters incorrectly handled certain malformed\nPDF document files. A remote attacker could use this issue to cause\nlibcupsfilters to crash, resulting in a denial of service, or possibly\nexecute arbitrary code. (CVE-2025-64503)\n\n \n\n \n\n \n\nIt was discovered that libcupsfilters incorrectly handled certain malformed\nTIFF image files. A remote attacker could use this issue to cause\nlibcupsfilters to crash, resulting in a denial of service, or possibly\nexecute arbitrary code. (CVE-2025-57812)\n\nIt was discovered that libcupsfilters incorrectly handled certain malformed\nPDF document files. A remote attacker could use this issue to cause\nlibcupsfilters to crash, resulting in a denial of service, or possibly\nexecute arbitrary code. (CVE-2025-64503)",
+  "packages": [
+    "libcupsfilters"
+  ],
+  "cves": [
+    "CVE-2025-64503",
+    "CVE-2025-57812"
+  ],
+  "affected_products": [
+    "25.10",
+    "25.04",
+    "24.04 LTS",
+    "Open side navigation"
+  ],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Ubuntu Security Notices\n\nUSN-7877-1\n\n \n\n \n\n \n\n \n\n \n\n \nUSN-7877-1: libcupsfilters vulnerabilities\n\n \n\n \n\n \n\n \nPublication date\n\n \n\n \n\n \n20 November 2025\n\n \n\n \n\n \n\n \n\n \nOverview\n\n \n\n \n\n \nSeveral security issues were fixed in libcupsfilters.\n\n \n\n \n\n \n\n \n\n \nReleases\n\n \n\n \n\n \n\n 25.10\n\n 25.04\n\n 24.04 LTS\n\n \n\n \n\n \n\n \n\n \n\n \n\n Open side navigation\n \n\n \n\n \nPackages\n\n \n\n libcupsfilters - OpenPrinting libcupsfilters\n \n\n \n\n \nDetails\n\n \n\n \n\nIt was discovered that libcupsfilters incorrectly handled certain malformed\nTIFF image files. A remote attacker could use this issue to cause\nlibcupsfilters to crash, resulting in a denial of service, or possibly\nexecute arbitrary code. (CVE-2025-57812)\n\nIt was discovered that libcupsfilters incorrectly handled certain malformed\nPDF document files. A remote attacker could use this issue to cause\nlibcupsfilters to crash, resulting in a denial of service, or possibly\nexecute arbitrary code. (CVE-2025-64503)\n\n \n\n \n\n \n\nIt was discovered that libcupsfilters incorrectly handled certain malformed\nTIFF image files. A remote attacker could use this issue to cause\nlibcupsfilters to crash, resulting in a denial of service, or possibly\nexecute arbitrary code. (CVE-2025-57812)\n\nIt was discovered that libcupsfilters incorrectly handled certain malformed\nPDF document files. A remote attacker could use this issue to cause\nlibcupsfilters to crash, resulting in a denial of service, or possibly\nexecute arbitrary code. (CVE-2025-64503)\n\n \n\n \n\n \n\n \nUpdate instructions\n\n \n\n \n\n \n\n \n\nIn general, a standard system update will make all the necessary changes.\n\n Learn more about how to get the fixes.\n \n\n \n\n \n\n \n\n \nThe problem can be corrected by updating your system to the following package versions:\n\n \n\n \n\n \n\n \n\n Ubuntu Release\n Package Version\n \n\n 25.10\n\nquesting\n\n libcupsfilters2t64 – \n\n2.1.1-0ubuntu3.1\n\n \n\n 25.04\n\nplucky\n\n libcupsfilters2t64 – \n\n2.1.1-0ubuntu2.1\n\n \n\n 24.04\n\nLTS noble\n\n libcupsfilters2t64 – \n\n2.0.0-0ubuntu7.2\n\n \n\nReduce your security exposure\n\n \n\n Ubuntu Pro provides ten-year security coverage to 25,000+ packages in Main and Universe repositories, and it is free for up to five machines.\n \n\n \n\n Get Ubuntu Pro\n \n\n \n\nReferences\n\n \n\n \n\n CVE-2025-64503\n \n\n \n\n CVE-2025-57812\n \n\n \n\n \n\n CVE-2025-64503\n \n\n CVE-2025-57812\n \n\n \n\n \nRelated notices\n\n \n\n \n\n USN-7878-1\n \n\n \n\n USN-7878-1",
+  "title": "USN-7877-1: libcupsfilters vulnerabilities | Ubuntu security notices | Ubuntu",
+  "pubDate": "2025-11-19T15:00:00.000Z",
+  "vendor": "Ubuntu"
+}

@@ -1,0 +1,29 @@
+{
+  "id": "ELSA-2026-0770",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2026-January/019560.html",
+  "synopsis": "[El-errata] ELSA-2026-0770 Important: Oracle Linux 10 gpsd security update",
+  "dateStr": "2026-January",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Security Advisory ELSA-2026-0770",
+  "description": "[1:3.26.1-1.0.1.el10_1.1]\n- Replace upstream reference [Orabug: 37033219]\n\n[1:3.26.1-1.el10_1.1]\n- fix buffer overflow in NMEA2000 driver (CVE-2025-67268)\n- fix integer underflow in handling of Navcom packets (CVE-2025-67269)",
+  "affected_products": [
+    "Oracle Linux 10"
+  ],
+  "packages": [
+    "gpsd-3.26.1-1.0.1.el10_1.1.x86_64.rpm",
+    "gpsd-clients-3.26.1-1.0.1.el10_1.1.x86_64.rpm",
+    "python3-gpsd-3.26.1-1.0.1.el10_1.1.x86_64.rpm",
+    "gpsd-3.26.1-1.0.1.el10_1.1.aarch64.rpm",
+    "gpsd-clients-3.26.1-1.0.1.el10_1.1.aarch64.rpm",
+    "python3-gpsd-3.26.1-1.0.1.el10_1.1.aarch64.rpm"
+  ],
+  "cves": [
+    "CVE-2025-67268",
+    "CVE-2025-67269"
+  ],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Security Advisory ELSA-2026-0770\n\nhttp://linux.oracle.com/errata/ELSA-2026-0770.html\n\nThe following updated rpms for Oracle Linux 10 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\ngpsd-3.26.1-1.0.1.el10_1.1.x86_64.rpm\ngpsd-clients-3.26.1-1.0.1.el10_1.1.x86_64.rpm\npython3-gpsd-3.26.1-1.0.1.el10_1.1.x86_64.rpm\n\naarch64:\ngpsd-3.26.1-1.0.1.el10_1.1.aarch64.rpm\ngpsd-clients-3.26.1-1.0.1.el10_1.1.aarch64.rpm\npython3-gpsd-3.26.1-1.0.1.el10_1.1.aarch64.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol10/SRPMS-updates/gpsd-3.26.1-1.0.1.el10_1.1.src.rpm\n\nRelated CVEs:\n\nCVE-2025-67268\nCVE-2025-67269\n\n\n\n\nDescription of changes:\n[1:3.26.1-1.0.1.el10_1.1]\n- Replace upstream reference [Orabug: 37033219]\n\n[1:3.26.1-1.el10_1.1]\n- fix buffer overflow in NMEA2000 driver (CVE-2025-67268)\n- fix integer underflow in handling of Navcom packets (CVE-2025-67269)",
+  "vendor": "Oracle"
+}

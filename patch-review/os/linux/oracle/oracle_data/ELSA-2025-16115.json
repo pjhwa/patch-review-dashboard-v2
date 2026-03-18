@@ -1,0 +1,30 @@
+{
+  "id": "ELSA-2025-16115",
+  "vendor": "Oracle",
+  "type": "Security Advisory (ELSA)",
+  "kernel_type": "RHCK",
+  "title": " gnutls security, bug fix, and enhancement update",
+  "issuedDate": "2025-09-19T00:00:00Z",
+  "updatedDate": "2025-09-19T00:00:00Z",
+  "pubDate": "2025-09-19T00:00:00Z",
+  "dateStr": "2025-09-19",
+  "url": "https://linux.oracle.com/errata/ELSA-2025-16115.html",
+  "severity": "Moderate",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 10.",
+  "description": "[3.8.9-9.14]\n- key_update: rework the rekeying logic (RHEL-107498)\n- Fix CVE-2025-6395, CVE-2025-32988, CVE-2025-32989, CVE-2025-32990",
+  "affected_products": [
+    "Oracle Linux 10 for x86_64",
+    "Oracle Linux 10 for aarch64"
+  ],
+  "cves": [
+    "CVE-2025-32988",
+    "CVE-2025-32989",
+    "CVE-2025-32990",
+    "CVE-2025-6395"
+  ],
+  "packages": [
+    "gnutls-3.8.9-9.el10_0.14.src",
+    "gnutls-3.8.9-9.el10_0.14.x86_64"
+  ],
+  "full_text": "[3.8.9-9.14]\n- key_update: rework the rekeying logic (RHEL-107498)\n- Fix CVE-2025-6395, CVE-2025-32988, CVE-2025-32989, CVE-2025-32990\n\nReferences:\nhttps://linux.oracle.com/errata/ELSA-2025-16115.html\nhttps://linux.oracle.com/cve/CVE-2025-32988.html\nhttps://linux.oracle.com/cve/CVE-2025-32989.html\nhttps://linux.oracle.com/cve/CVE-2025-32990.html\nhttps://linux.oracle.com/cve/CVE-2025-6395.html"
+}

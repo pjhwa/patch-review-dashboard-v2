@@ -1,0 +1,40 @@
+{
+  "id": "ELSA-2026-0921",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2026-January/019578.html",
+  "synopsis": "[El-errata] ELSA-2026-0921 Important: Oracle Linux 8 go-toolset:rhel8 security update",
+  "dateStr": "2026-January",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Security Advisory ELSA-2026-0921",
+  "description": "delve\n[1.25.2-1.0.1]\n- Disable DWARF compression which has issues (Alex Burmashev)\n\n[1.25.2-1]\n- Update to Delve 1.25.2 (Sync from CentOS Stream 9)\n- Related: RHEL-121223\n\ngolang\n[1.25.5-1]\n- Update to Go 1.25.5 (fips-1)\n- Resolves: RHEL-139365",
+  "affected_products": [
+    "Oracle Linux 8"
+  ],
+  "packages": [
+    "delve-1.25.2-1.0.1.module+el8.10.0+90715+2d4d8dfd.x86_64.rpm",
+    "golang-1.25.5-1.module+el8.10.0+90772+95994ed8.x86_64.rpm",
+    "golang-bin-1.25.5-1.module+el8.10.0+90772+95994ed8.x86_64.rpm",
+    "golang-docs-1.25.5-1.module+el8.10.0+90772+95994ed8.noarch.rpm",
+    "golang-misc-1.25.5-1.module+el8.10.0+90772+95994ed8.noarch.rpm",
+    "golang-race-1.25.5-1.module+el8.10.0+90772+95994ed8.x86_64.rpm",
+    "golang-src-1.25.5-1.module+el8.10.0+90772+95994ed8.noarch.rpm",
+    "golang-tests-1.25.5-1.module+el8.10.0+90772+95994ed8.noarch.rpm",
+    "go-toolset-1.25.5-1.module+el8.10.0+90772+95994ed8.x86_64.rpm",
+    "delve-1.25.2-1.0.1.module+el8.10.0+90715+2d4d8dfd.aarch64.rpm",
+    "golang-1.25.5-1.module+el8.10.0+90772+95994ed8.aarch64.rpm",
+    "golang-bin-1.25.5-1.module+el8.10.0+90772+95994ed8.aarch64.rpm",
+    "golang-docs-1.25.5-1.module+el8.10.0+90772+95994ed8.noarch.rpm",
+    "golang-misc-1.25.5-1.module+el8.10.0+90772+95994ed8.noarch.rpm",
+    "golang-race-1.25.5-1.module+el8.10.0+90772+95994ed8.aarch64.rpm",
+    "golang-src-1.25.5-1.module+el8.10.0+90772+95994ed8.noarch.rpm",
+    "golang-tests-1.25.5-1.module+el8.10.0+90772+95994ed8.noarch.rpm",
+    "go-toolset-1.25.5-1.module+el8.10.0+90772+95994ed8.aarch64.rpm"
+  ],
+  "cves": [
+    "CVE-2025-61729"
+  ],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Security Advisory ELSA-2026-0921\n\nhttp://linux.oracle.com/errata/ELSA-2026-0921.html\n\nThe following updated rpms for Oracle Linux 8 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\ndelve-1.25.2-1.0.1.module+el8.10.0+90715+2d4d8dfd.x86_64.rpm\ngolang-1.25.5-1.module+el8.10.0+90772+95994ed8.x86_64.rpm\ngolang-bin-1.25.5-1.module+el8.10.0+90772+95994ed8.x86_64.rpm\ngolang-docs-1.25.5-1.module+el8.10.0+90772+95994ed8.noarch.rpm\ngolang-misc-1.25.5-1.module+el8.10.0+90772+95994ed8.noarch.rpm\ngolang-race-1.25.5-1.module+el8.10.0+90772+95994ed8.x86_64.rpm\ngolang-src-1.25.5-1.module+el8.10.0+90772+95994ed8.noarch.rpm\ngolang-tests-1.25.5-1.module+el8.10.0+90772+95994ed8.noarch.rpm\ngo-toolset-1.25.5-1.module+el8.10.0+90772+95994ed8.x86_64.rpm\n\naarch64:\ndelve-1.25.2-1.0.1.module+el8.10.0+90715+2d4d8dfd.aarch64.rpm\ngolang-1.25.5-1.module+el8.10.0+90772+95994ed8.aarch64.rpm\ngolang-bin-1.25.5-1.module+el8.10.0+90772+95994ed8.aarch64.rpm\ngolang-docs-1.25.5-1.module+el8.10.0+90772+95994ed8.noarch.rpm\ngolang-misc-1.25.5-1.module+el8.10.0+90772+95994ed8.noarch.rpm\ngolang-race-1.25.5-1.module+el8.10.0+90772+95994ed8.aarch64.rpm\ngolang-src-1.25.5-1.module+el8.10.0+90772+95994ed8.noarch.rpm\ngolang-tests-1.25.5-1.module+el8.10.0+90772+95994ed8.noarch.rpm\ngo-toolset-1.25.5-1.module+el8.10.0+90772+95994ed8.aarch64.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol8/SRPMS-updates/delve-1.25.2-1.0.1.module+el8.10.0+90715+2d4d8dfd.src.rpm\nhttp://oss.oracle.com/ol8/SRPMS-updates/golang-1.25.5-1.module+el8.10.0+90772+95994ed8.src.rpm\n\nRelated CVEs:\n\nCVE-2025-61729\n\n\n\n\nDescription of changes:\n\ndelve\n[1.25.2-1.0.1]\n- Disable DWARF compression which has issues (Alex Burmashev)\n\n[1.25.2-1]\n- Update to Delve 1.25.2 (Sync from CentOS Stream 9)\n- Related: RHEL-121223\n\ngolang\n[1.25.5-1]\n- Update to Go 1.25.5 (fips-1)\n- Resolves: RHEL-139365",
+  "vendor": "Oracle"
+}

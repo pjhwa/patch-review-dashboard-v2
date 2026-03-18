@@ -1,0 +1,44 @@
+{
+  "id": "ELSA-2026-50095",
+  "vendor": "Oracle",
+  "type": "Security Advisory (ELSA)",
+  "kernel_type": "UEK",
+  "title": "Unbreakable Enterprise kernel security update",
+  "issuedDate": "2026-02-06T00:00:00Z",
+  "updatedDate": "2026-02-06T00:00:00Z",
+  "pubDate": "2026-02-06T00:00:00Z",
+  "dateStr": "2026-02-06",
+  "url": "https://linux.oracle.com/errata/ELSA-2026-50095.html",
+  "severity": "Important",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 8.",
+  "description": "[5.15.0-316.196.4.2]\n- xfrm: also call xfrm_state_delete_tunnel at destroy time for states that were never added (Sabrina Dubroca)  \n- usb: raw-gadget: cap raw_io transfer length to KMALLOC_MAX_SIZE (Gopi Krishna Menon)  \n- ext4: clear i_state_flags when alloc inode (Haibo Chen)  \n- ext4: align max orphan file size with e2fsprogs limit (Baokun Li)  \n- PM: runtime: Do not clear needs_force_resume with enabled runtime PM (Rafael J. Wysocki)  \n- net: enetc: fix build warning when PAGE_SIZE is greater than 128K (Wei Fang)  \n- net/sched: sch_cake: Fix incorrect qlen reduction in cake_drop (Xiang Mei)  \n- block: fix comment for op_is_zone_mgmt() to include RESET_ALL (shechenglong)  \n- fuse: fix readahead reclaim deadlock (Joanne Koong)  \n- i40e: validate ring_len parameter against hardware-specific values (Gregory Herrero)  \n- fs/ntfs3: fix mount failure for sparse runs in run_unpack() (Konstantin Komarov)  \n- xfrm: delete x->tunnel as we delete x (Sabrina Dubroca)  [Orabug: 38933003]  {CVE-2025-40215}\n- mptcp: fix race condition in mptcp_schedule_work() (Eric Dumazet)  [Orabug: 38932997]  {CVE-2025-40258}\n- mlx5: Fix default values in create CQ (Akiva Goldberger)  [Orabug: 38932992] \n- sunrpc: fix handling of server side tls alerts (Olga Kornievskaia)  [Orabug: 38932991]  {CVE-2025-38566}\n- sunrpc: fix client side handling of tls alerts (Olga Kornievskaia)  [Orabug: 38932988]  {CVE-2025-38571}",
+  "affected_products": [
+    "Oracle Linux 8 for x86_64",
+    "Oracle Linux 8 for aarch64"
+  ],
+  "cves": [
+    "CVE-2025-38566",
+    "CVE-2025-38571",
+    "CVE-2025-40215",
+    "CVE-2025-40258",
+    "CVE-2025-68209"
+  ],
+  "packages": [
+    "kernel-uek-container-5.15.0-316.196.4.2.el8uek.x86_64",
+    "kernel-uek-devel-5.15.0-316.196.4.2.el8uek.x86_64",
+    "kernel-uek-debug-modules-extra-5.15.0-316.196.4.2.el8uek.x86_64",
+    "kernel-uek-modules-5.15.0-316.196.4.2.el8uek.x86_64",
+    "kernel-uek-debug-core-5.15.0-316.196.4.2.el8uek.x86_64",
+    "kernel-uek-modules-extra-5.15.0-316.196.4.2.el8uek.x86_64",
+    "kernel-uek-debug-devel-5.15.0-316.196.4.2.el8uek.x86_64",
+    "kernel-uek-core-5.15.0-316.196.4.2.el8uek.x86_64",
+    "kernel-uek-doc-5.15.0-316.196.4.2.el8uek.noarch",
+    "kernel-uek-debug-modules-5.15.0-316.196.4.2.el8uek.x86_64",
+    "kernel-uek-5.15.0-316.196.4.2.el8uek.x86_64",
+    "kernel-uek-container-debug-5.15.0-316.196.4.2.el8uek.x86_64",
+    "kernel-uek-5.15.0-316.196.4.2.el8uek.src",
+    "kernel-uek-debug-5.15.0-316.196.4.2.el8uek.x86_64",
+    "bpftool-5.15.0-316.196.4.2.el8uek.x86_64"
+  ],
+  "full_text": "[5.15.0-316.196.4.2]\n- xfrm: also call xfrm_state_delete_tunnel at destroy time for states that were never added (Sabrina Dubroca)  \n- usb: raw-gadget: cap raw_io transfer length to KMALLOC_MAX_SIZE (Gopi Krishna Menon)  \n- ext4: clear i_state_flags when alloc inode (Haibo Chen)  \n- ext4: align max orphan file size with e2fsprogs limit (Baokun Li)  \n- PM: runtime: Do not clear needs_force_resume with enabled runtime PM (Rafael J. Wysocki)  \n- net: enetc: fix build warning when PAGE_SIZE is greater than 128K (Wei Fang)  \n- net/sched: sch_cake: Fix incorrect qlen reduction in cake_drop (Xiang Mei)  \n- block: fix comment for op_is_zone_mgmt() to include RESET_ALL (shechenglong)  \n- fuse: fix readahead reclaim deadlock (Joanne Koong)  \n- i40e: validate ring_len parameter against hardware-specific values (Gregory Herrero)  \n- fs/ntfs3: fix mount failure for sparse runs in run_unpack() (Konstantin Komarov)  \n- xfrm: delete x->tunnel as we delete x (Sabrina Dubroca)  [Orabug: 38933003]  {CVE-2025-40215}\n- mptcp: fix race condition in mptcp_schedule_work() (Eric Dumazet)  [Orabug: 38932997]  {CVE-2025-40258}\n- mlx5: Fix default values in create CQ (Akiva Goldberger)  [Orabug: 38932992] \n- sunrpc: fix handling of server side tls alerts (Olga Kornievskaia)  [Orabug: 38932991]  {CVE-2025-38566}\n- sunrpc: fix client side handling of tls alerts (Olga Kornievskaia)  [Orabug: 38932988]  {CVE-2025-38571}\n\nReferences:\nhttps://linux.oracle.com/errata/ELSA-2026-50095.html\nhttps://linux.oracle.com/cve/CVE-2025-38566.html\nhttps://linux.oracle.com/cve/CVE-2025-38571.html\nhttps://linux.oracle.com/cve/CVE-2025-40215.html\nhttps://linux.oracle.com/cve/CVE-2025-40258.html\nhttps://linux.oracle.com/cve/CVE-2025-68209.html"
+}

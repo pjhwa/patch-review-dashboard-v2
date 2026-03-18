@@ -1,0 +1,27 @@
+{
+  "id": "RHSA-2026:1176",
+  "vendor": "Red Hat",
+  "type": "Security Advisory (RHSA)",
+  "title": "Red Hat Security Advisory: cert-manager Operator for Red Hat OpenShift 1.18.1",
+  "issuedDate": "2026-01-26T10:17:05+00:00",
+  "updatedDate": "2026-01-26T10:17:19+00:00",
+  "pubDate": "2026-01-26T10:17:05+00:00",
+  "dateStr": "2026-01-26",
+  "url": "https://access.redhat.com/errata/RHSA-2026:1176",
+  "severity": "Important",
+  "overview": "cert-manager Operator for Red Hat OpenShift 1.18.1",
+  "description": "The cert-manager Operator for Red Hat OpenShift builds on top of Kubernetes, introducing certificate authorities\nand certificates as first-class resource types in the Kubernetes API. This makes it possible to provide\ncertificates-as-a-service to developers working within your Kubernetes cluster.",
+  "affected_products": [],
+  "cves": [
+    "CVE-2025-66418",
+    "CVE-2025-66471",
+    "CVE-2026-21441"
+  ],
+  "packages": [
+    "registry.redhat.io/cert-manager/cert-manager-operator-rhel9@sha256:57a1aea49d7cc275b37b8f52d602a3a9d1601ec6a21a3268dd4903566cb2e335_amd64",
+    "registry.redhat.io/cert-manager/cert-manager-operator-rhel9@sha256:224213f66e8654228eb5aacdecef18207aeebea9314f086194f8c9ca3904a8a9_s390x",
+    "registry.redhat.io/cert-manager/cert-manager-operator-rhel9@sha256:52e79d441ddb1d1de081220f3e71cd316d09a9eb7cccc80944be29ac4a84e187_ppc64le",
+    "registry.redhat.io/cert-manager/cert-manager-operator-rhel9@sha256:22f4e686a81fc809e70e3f73206ec221f8081e842243f173308dc1fbc7f02a3e_arm64"
+  ],
+  "full_text": "cert-manager Operator for Red Hat OpenShift 1.18.1\n\nThe cert-manager Operator for Red Hat OpenShift builds on top of Kubernetes, introducing certificate authorities\nand certificates as first-class resource types in the Kubernetes API. This makes it possible to provide\ncertificates-as-a-service to developers working within your Kubernetes cluster."
+}

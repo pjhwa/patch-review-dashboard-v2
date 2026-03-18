@@ -1,0 +1,20 @@
+{
+  "id": "RHSA-2025:22969",
+  "vendor": "Red Hat",
+  "url": "https://access.redhat.com/errata/RHSA-2025:22969",
+  "pubDate": "2025-12-09T18:20:01.000Z",
+  "dateStr": "2025-12-09",
+  "severity": "Important",
+  "title": "Red Hat Security Advisory: Red Hat OpenStack Platform 17.1 (libwebsockets) security update",
+  "overview": "An update for libwebsockets is now available for Red Hat OpenStack Platform\n17.1 (Wallaby).\n\nRed Hat Product Security has rated this update as having a security impact\nof Important. A Common Vulnerability Scoring System (CVSS) base score,\nwhich gives a detailed severity rating, is available for each vulnerability\nfrom the CVE link(s) in the References section.",
+  "description": "An update for libwebsockets is now available for Red Hat OpenStack Platform\n17.1 (Wallaby).\n\nRed Hat Product Security has rated this update as having a security impact\nof Important. A Common Vulnerability Scoring System (CVSS) base score,\nwhich gives a detailed severity rating, is available for each vulnerability\nfrom the CVE link(s) in the References section.",
+  "affected_products": [
+    "Red Hat OpenStack Platform 17.1"
+  ],
+  "cves": [
+    "CVE-2025-11678"
+  ],
+  "packages": [],
+  "fixes": "",
+  "full_text": "Red Hat Security Advisory: Red Hat OpenStack Platform 17.1 (libwebsockets) security update\n\nAn update for libwebsockets is now available for Red Hat OpenStack Platform\n17.1 (Wallaby).\n\nRed Hat Product Security has rated this update as having a security impact\nof Important. A Common Vulnerability Scoring System (CVSS) base score,\nwhich gives a detailed severity rating, is available for each vulnerability\nfrom the CVE link(s) in the References section.\n\nAn update for libwebsockets is now available for Red Hat OpenStack Platform\n17.1 (Wallaby).\n\nRed Hat Product Security has rated this update as having a security impact\nof Important. A Common Vulnerability Scoring System (CVSS) base score,\nwhich gives a detailed severity rating, is available for each vulnerability\nfrom the CVE link(s) in the References section.\n\nUpdated Packages:\nlibwebsockets-4.3.0-2.el9ost.src.rpm\nlibwebsockets-4.3.0-2.el9ost.x86_64.rpm\nlibwebsockets-debuginfo-4.3.0-2.el9ost.x86_64.rpm\nlibwebsockets-debugsource-4.3.0-2.el9ost.x86_64.rpm\nlibwebsockets-devel-debuginfo-4.3.0-2.el9ost.x86_64.rpm\n\nCVE-2025-11678: Stack-based Buffer Overflow in lws_adns_parse_label in warmcat libwebsockets allows, when the LWS_WITH_SYS_ASYNC_DNS flag is enabled during compilation, to overflow the label_stack, when the attacker is able to sniff a DNS request in order to craft a response with a matching id containing a label longer than the maximum."
+}

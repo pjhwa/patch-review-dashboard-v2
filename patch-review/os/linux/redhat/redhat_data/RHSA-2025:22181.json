@@ -1,0 +1,39 @@
+{
+  "id": "RHSA-2025:22181",
+  "vendor": "Red Hat",
+  "type": "Security Advisory (RHSA)",
+  "title": "Red Hat Security Advisory: golang security update",
+  "issuedDate": "2025-11-26T15:05:54+00:00",
+  "updatedDate": "2025-11-26T15:05:54+00:00",
+  "pubDate": "2025-11-26T15:05:54+00:00",
+  "dateStr": "2025-11-26",
+  "url": "https://access.redhat.com/errata/RHSA-2025:22181",
+  "severity": "Moderate",
+  "overview": "An update for golang is now available for Red Hat Enterprise Linux 9.2 Update Services for SAP Solutions.\n\nRed Hat Product Security has rated this update as having a security impact of Moderate. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "description": "The golang packages provide the Go programming language compiler.\n\nSecurity Fix(es):\n\n* os/exec: Unexpected paths returned from LookPath in os/exec (CVE-2025-47906)\n\n* golang: archive/tar: Unbounded allocation when parsing GNU sparse map (CVE-2025-58183)\n\nFor more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux",
+    "Red Hat Enterprise Linux AppStream E4S (v.9.2)"
+  ],
+  "cves": [
+    "CVE-2025-47906",
+    "CVE-2025-58183"
+  ],
+  "packages": [
+    "golang-0:1.19.13-20.el9_2.src",
+    "golang-0:1.19.13-20.el9_2.aarch64",
+    "golang-bin-0:1.19.13-20.el9_2.aarch64",
+    "golang-0:1.19.13-20.el9_2.ppc64le",
+    "golang-bin-0:1.19.13-20.el9_2.ppc64le",
+    "golang-0:1.19.13-20.el9_2.x86_64",
+    "golang-bin-0:1.19.13-20.el9_2.x86_64",
+    "golang-race-0:1.19.13-20.el9_2.x86_64",
+    "golang-0:1.19.13-20.el9_2.s390x",
+    "golang-bin-0:1.19.13-20.el9_2.s390x",
+    "golang-docs-0:1.19.13-20.el9_2.noarch",
+    "golang-misc-0:1.19.13-20.el9_2.noarch",
+    "golang-src-0:1.19.13-20.el9_2.noarch",
+    "golang-tests-0:1.19.13-20.el9_2.noarch"
+  ],
+  "full_text": "An update for golang is now available for Red Hat Enterprise Linux 9.2 Update Services for SAP Solutions.\n\nRed Hat Product Security has rated this update as having a security impact of Moderate. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nThe golang packages provide the Go programming language compiler.\n\nSecurity Fix(es):\n\n* os/exec: Unexpected paths returned from LookPath in os/exec (CVE-2025-47906)\n\n* golang: archive/tar: Unbounded allocation when parsing GNU sparse map (CVE-2025-58183)\n\nFor more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section."
+}

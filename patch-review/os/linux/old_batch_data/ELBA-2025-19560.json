@@ -1,0 +1,28 @@
+{
+  "id": "ELBA-2025-19560",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2025-November/018955.html",
+  "synopsis": "[El-errata] ELBA-2025-19560 Oracle Linux 10 ostree bug fix and enhancement update",
+  "dateStr": "2025-November",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Bug Fix Advisory ELBA-2025-19560",
+  "description": "[2025.2-1]\n- Rebase to ostree 2025.2 Backport\n  https://github.com/ostreedev/ostree/pull/3473 Backport\n  https://github.com/ostreedev/ostree/pull/3472\n\n[2025.1-2]\n- Add tmt smoke test",
+  "affected_products": [
+    "Oracle Linux 10"
+  ],
+  "packages": [
+    "ostree-2025.2-1.el10_0.x86_64.rpm",
+    "ostree-devel-2025.2-1.el10_0.x86_64.rpm",
+    "ostree-grub2-2025.2-1.el10_0.x86_64.rpm",
+    "ostree-libs-2025.2-1.el10_0.x86_64.rpm",
+    "ostree-2025.2-1.el10_0.aarch64.rpm",
+    "ostree-devel-2025.2-1.el10_0.aarch64.rpm",
+    "ostree-grub2-2025.2-1.el10_0.aarch64.rpm",
+    "ostree-libs-2025.2-1.el10_0.aarch64.rpm"
+  ],
+  "cves": [],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Bug Fix Advisory ELBA-2025-19560\n\nhttp://linux.oracle.com/errata/ELBA-2025-19560.html\n\nThe following updated rpms for Oracle Linux 10 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\nostree-2025.2-1.el10_0.x86_64.rpm\nostree-devel-2025.2-1.el10_0.x86_64.rpm\nostree-grub2-2025.2-1.el10_0.x86_64.rpm\nostree-libs-2025.2-1.el10_0.x86_64.rpm\n\naarch64:\nostree-2025.2-1.el10_0.aarch64.rpm\nostree-devel-2025.2-1.el10_0.aarch64.rpm\nostree-grub2-2025.2-1.el10_0.aarch64.rpm\nostree-libs-2025.2-1.el10_0.aarch64.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol10/SRPMS-updates/ostree-2025.2-1.el10_0.src.rpm\n\n\n\nDescription of changes:\n\n[2025.2-1]\n- Rebase to ostree 2025.2 Backport\n  https://github.com/ostreedev/ostree/pull/3473 Backport\n  https://github.com/ostreedev/ostree/pull/3472\n\n[2025.1-2]\n- Add tmt smoke test",
+  "vendor": "Oracle"
+}

@@ -1,0 +1,26 @@
+{
+  "id": "ELBA-2025-20431-0",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "AppStream",
+  "title": "linuxptp bug fix and enhancement update",
+  "issuedDate": "2025-11-25T00:00:00Z",
+  "updatedDate": "2025-11-25T00:00:00Z",
+  "pubDate": "2025-11-25T00:00:00Z",
+  "dateStr": "2025-11-25",
+  "url": "https://linux.oracle.com/errata/ELBA-2025-20431-0.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 10.",
+  "description": "[4.4-4]\n- fix unicast server to recover after port fault (RHEL-93497)\n\n[4.4-3]\n- add experimental option for external PPS in ts2phc automatic mode\n  (RHEL-89605)\n- add command to set external grandmaster properties (RHEL-91310)\n- refresh link status on faults (RHEL-89811)",
+  "affected_products": [
+    "Oracle Linux 10 for x86_64",
+    "Oracle Linux 10 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "linuxptp-4.4-4.el10.src",
+    "linuxptp-4.4-4.el10.x86_64",
+    "linuxptp-selinux-4.4-4.el10.noarch"
+  ],
+  "full_text": "[4.4-4]\n- fix unicast server to recover after port fault (RHEL-93497)\n\n[4.4-3]\n- add experimental option for external PPS in ts2phc automatic mode\n  (RHEL-89605)\n- add command to set external grandmaster properties (RHEL-91310)\n- refresh link status on faults (RHEL-89811)\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2025-20431-0.html"
+}

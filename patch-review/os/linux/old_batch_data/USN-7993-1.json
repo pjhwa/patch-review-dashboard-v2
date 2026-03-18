@@ -1,0 +1,25 @@
+{
+  "id": "USN-7993-1",
+  "url": "https://ubuntu.com/security/notices/USN-7993-1",
+  "synopsis": "USN-7993-1: libpng vulnerabilities",
+  "dateStr": "2 February 2026",
+  "overview": "libpng could be made to crash if it opened a specially crafted file.",
+  "description": "It was discovered that libpng incorrectly handled memory when processing\ncertain malformed PNG files. If a user or automated system were tricked\ninto opening a specially crafted PNG file, an attacker could use this issue\nto cause libpng to crash, resulting in a denial of service.\n\n \n\n \n\n \n\nIt was discovered that libpng incorrectly handled memory when processing\ncertain malformed PNG files. If a user or automated system were tricked\ninto opening a specially crafted PNG file, an attacker could use this issue\nto cause libpng to crash, resulting in a denial of service.",
+  "packages": [
+    "libpng1.6"
+  ],
+  "cves": [
+    "CVE-2025-28164",
+    "CVE-2025-28162"
+  ],
+  "affected_products": [
+    "24.04 LTS",
+    "Open side navigation"
+  ],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Ubuntu Security Notices\n\nUSN-7993-1\n\n \n\n \n\n \n\n \n\n \n\n \nUSN-7993-1: libpng vulnerabilities\n\n \n\n \n\n \n\n \nPublication date\n\n \n\n \n\n \n2 February 2026\n\n \n\n \n\n \n\n \n\n \nOverview\n\n \n\n \n\n \nlibpng could be made to crash if it opened a specially crafted file.\n\n \n\n \n\n \n\n \n\n \nReleases\n\n \n\n \n\n \n\n 24.04 LTS\n\n \n\n \n\n \n\n \n\n \n\n \n\n Open side navigation\n \n\n \n\n \nPackages\n\n \n\n libpng1.6 - PNG (Portable Network Graphics) file library\n \n\n \n\n \nDetails\n\n \n\n \n\nIt was discovered that libpng incorrectly handled memory when processing\ncertain malformed PNG files. If a user or automated system were tricked\ninto opening a specially crafted PNG file, an attacker could use this issue\nto cause libpng to crash, resulting in a denial of service.\n\n \n\n \n\n \n\nIt was discovered that libpng incorrectly handled memory when processing\ncertain malformed PNG files. If a user or automated system were tricked\ninto opening a specially crafted PNG file, an attacker could use this issue\nto cause libpng to crash, resulting in a denial of service.\n\n \n\n \n\n \n\n \nUpdate instructions\n\n \n\n \n\n \n\n \n\nIn general, a standard system update will make all the necessary changes.\n\n Learn more about how to get the fixes.\n \n\n \n\n \n\n \n\n \nThe problem can be corrected by updating your system to the following package versions:\n\n \n\n \n\n \n\n \n\n Ubuntu Release\n Package Version\n \n\n 24.04\n\nLTS noble\n\n libpng16-16t64 – \n\n1.6.43-5ubuntu0.4\n\n \n\nReduce your security exposure\n\n \n\n Ubuntu Pro provides ten-year security coverage to 25,000+ packages in Main and Universe repositories, and it is free for up to five machines.\n \n\n \n\n Get Ubuntu Pro\n \n\n \n\nReferences\n\n \n\n \n\n CVE-2025-28164\n \n\n \n\n CVE-2025-28162\n \n\n \n\n \n\n CVE-2025-28164\n \n\n CVE-2025-28162",
+  "title": "USN-7993-1: libpng vulnerabilities | Ubuntu security notices | Ubuntu",
+  "pubDate": "2026-02-01T15:00:00.000Z",
+  "vendor": "Ubuntu"
+}

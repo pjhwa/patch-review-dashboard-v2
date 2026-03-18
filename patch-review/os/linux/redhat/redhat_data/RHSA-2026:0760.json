@@ -1,0 +1,45 @@
+{
+  "id": "RHSA-2026:0760",
+  "vendor": "Red Hat",
+  "type": "Security Advisory (RHSA)",
+  "title": "Red Hat Security Advisory: kernel-rt security update",
+  "issuedDate": "2026-01-19T03:14:39+00:00",
+  "updatedDate": "2026-01-19T03:14:39+00:00",
+  "pubDate": "2026-01-19T03:14:39+00:00",
+  "dateStr": "2026-01-19",
+  "url": "https://access.redhat.com/errata/RHSA-2026:0760",
+  "severity": "Important",
+  "overview": "An update for kernel-rt is now available for Red Hat Enterprise Linux 8.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "description": "The kernel-rt packages provide the Real Time Linux Kernel, which enables fine-tuning for systems with extremely high determinism requirements.\n\nSecurity Fix(es):\n\n* kernel: smb: client: Fix use-after-free in cifs_fill_dirent (CVE-2025-38051)\n\n* kernel: smb: client: let recv_done verify data_offset, data_length and remaining_data_length (CVE-2025-39933)\n\n* kernel: drm/i915: mark requests for GuC virtual engines to avoid use-after-free (CVE-2023-53552)\n\n* kernel: drm/sched: Fix potential double free in drm_sched_job_add_resv_dependencies (CVE-2025-40096)\n\n* kernel: net: atlantic: fix fragment overflow handling in RX path (CVE-2025-68301)\n\nFor more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux",
+    "Red Hat Enterprise Linux NFV (v. 8)",
+    "Red Hat Enterprise Linux RT (v. 8)"
+  ],
+  "cves": [
+    "CVE-2023-53552",
+    "CVE-2025-38051",
+    "CVE-2025-39933",
+    "CVE-2025-40096",
+    "CVE-2025-68301"
+  ],
+  "packages": [
+    "kernel-rt-0:4.18.0-553.94.1.rt7.435.el8_10.src",
+    "kernel-rt-0:4.18.0-553.94.1.rt7.435.el8_10.x86_64",
+    "kernel-rt-core-0:4.18.0-553.94.1.rt7.435.el8_10.x86_64",
+    "kernel-rt-debug-0:4.18.0-553.94.1.rt7.435.el8_10.x86_64",
+    "kernel-rt-debug-core-0:4.18.0-553.94.1.rt7.435.el8_10.x86_64",
+    "kernel-rt-debug-devel-0:4.18.0-553.94.1.rt7.435.el8_10.x86_64",
+    "kernel-rt-debug-kvm-0:4.18.0-553.94.1.rt7.435.el8_10.x86_64",
+    "kernel-rt-debug-modules-0:4.18.0-553.94.1.rt7.435.el8_10.x86_64",
+    "kernel-rt-debug-modules-extra-0:4.18.0-553.94.1.rt7.435.el8_10.x86_64",
+    "kernel-rt-devel-0:4.18.0-553.94.1.rt7.435.el8_10.x86_64",
+    "kernel-rt-kvm-0:4.18.0-553.94.1.rt7.435.el8_10.x86_64",
+    "kernel-rt-modules-0:4.18.0-553.94.1.rt7.435.el8_10.x86_64",
+    "kernel-rt-modules-extra-0:4.18.0-553.94.1.rt7.435.el8_10.x86_64",
+    "kernel-rt-debug-debuginfo-0:4.18.0-553.94.1.rt7.435.el8_10.x86_64",
+    "kernel-rt-debuginfo-0:4.18.0-553.94.1.rt7.435.el8_10.x86_64",
+    "kernel-rt-debuginfo-common-x86_64-0:4.18.0-553.94.1.rt7.435.el8_10.x86_64"
+  ],
+  "full_text": "An update for kernel-rt is now available for Red Hat Enterprise Linux 8.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nThe kernel-rt packages provide the Real Time Linux Kernel, which enables fine-tuning for systems with extremely high determinism requirements.\n\nSecurity Fix(es):\n\n* kernel: smb: client: Fix use-after-free in cifs_fill_dirent (CVE-2025-38051)\n\n* kernel: smb: client: let recv_done verify data_offset, data_length and remaining_data_length (CVE-2025-39933)\n\n* kernel: drm/i915: mark requests for GuC virtual engines to avoid use-after-free (CVE-2023-53552)\n\n* kernel: drm/sched: Fix potential double free in drm_sched_job_add_resv_dependencies (CVE-2025-40096)\n\n* kernel: net: atlantic: fix fragment overflow handling in RX path (CVE-2025-68301)\n\nFor more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section."
+}

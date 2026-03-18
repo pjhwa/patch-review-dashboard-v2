@@ -1,0 +1,22 @@
+{
+  "id": "ELBA-2025-23303",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2025-December/019377.html",
+  "synopsis": "[El-errata] ELBA-2025-23303 Oracle Linux 10 man-pages bug fix and enhancement update",
+  "dateStr": "2025-December",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Bug Fix Advisory ELBA-2025-23303",
+  "description": "[6.06-12]\n- rtnetlink.7: Document metrics attributes (RTAX_*) (RHEL-86830)\n\n[6.06-11]\n- madvise(2): madvise can return EBUSY on MADV_SOFT_OFFLINE requests.\n  (RHEL-115501)\n\n[6.06-10]\n- Document RWF_ATOMIC, STATX_ATTR_WRITE_ATOMIC flags (RHEL-87647)\n\n[6.06-9]\n- Update gating.yaml",
+  "affected_products": [
+    "Oracle Linux 10"
+  ],
+  "packages": [
+    "man-pages-6.06-12.el10_1.noarch.rpm",
+    "man-pages-6.06-12.el10_1.noarch.rpm"
+  ],
+  "cves": [],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Bug Fix Advisory ELBA-2025-23303\n\nhttp://linux.oracle.com/errata/ELBA-2025-23303.html\n\nThe following updated rpms for Oracle Linux 10 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\nman-pages-6.06-12.el10_1.noarch.rpm\n\naarch64:\nman-pages-6.06-12.el10_1.noarch.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol10/SRPMS-updates/man-pages-6.06-12.el10_1.src.rpm\n\n\n\nDescription of changes:\n\n[6.06-12]\n- rtnetlink.7: Document metrics attributes (RTAX_*) (RHEL-86830)\n\n[6.06-11]\n- madvise(2): madvise can return EBUSY on MADV_SOFT_OFFLINE requests.\n  (RHEL-115501)\n\n[6.06-10]\n- Document RWF_ATOMIC, STATX_ATTR_WRITE_ATOMIC flags (RHEL-87647)\n\n[6.06-9]\n- Update gating.yaml",
+  "vendor": "Oracle"
+}

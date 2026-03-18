@@ -1,0 +1,25 @@
+{
+  "id": "ELBA-2026-50111",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "AppStream",
+  "title": " cloud-init  bug fix update",
+  "issuedDate": "2026-02-10T00:00:00Z",
+  "updatedDate": "2026-02-10T00:00:00Z",
+  "pubDate": "2026-02-10T00:00:00Z",
+  "dateStr": "2026-02-10",
+  "url": "https://linux.oracle.com/errata/ELBA-2026-50111.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 8.",
+  "description": "[23.4-7.0.3.el8_10.11]\n- Bypass network configuration determination if it already exists [Orabug: 38918000]",
+  "affected_products": [
+    "Oracle Linux 8 for x86_64",
+    "Oracle Linux 8 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "cloud-init-23.4-7.0.3.el8_10.11.src",
+    "cloud-init-23.4-7.0.3.el8_10.11.noarch"
+  ],
+  "full_text": "[23.4-7.0.3.el8_10.11]\n- Bypass network configuration determination if it already exists [Orabug: 38918000]\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2026-50111.html"
+}

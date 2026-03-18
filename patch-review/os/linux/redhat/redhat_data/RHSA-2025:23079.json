@@ -1,0 +1,41 @@
+{
+  "id": "RHSA-2025:23079",
+  "vendor": "Red Hat",
+  "type": "Security Advisory (RHSA)",
+  "title": "Red Hat Security Advisory: Red Hat AI Inference Server 3.2.2 (ROCm)",
+  "issuedDate": "2025-12-10T18:25:33+00:00",
+  "updatedDate": "2025-12-10T18:25:39+00:00",
+  "pubDate": "2025-12-10T18:25:33+00:00",
+  "dateStr": "2025-12-10",
+  "url": "https://access.redhat.com/errata/RHSA-2025:23079",
+  "severity": "Important",
+  "overview": "Red Hat AI Inference Server 3.2.2 (ROCm) is now available.",
+  "description": "Red Hat® AI Inference Server",
+  "affected_products": [],
+  "cves": [
+    "CVE-2023-48022",
+    "CVE-2023-52355",
+    "CVE-2023-52356",
+    "CVE-2024-56433",
+    "CVE-2025-5318",
+    "CVE-2025-6242",
+    "CVE-2025-6965",
+    "CVE-2025-8176",
+    "CVE-2025-9230",
+    "CVE-2025-9900",
+    "CVE-2025-22868",
+    "CVE-2025-22869",
+    "CVE-2025-52565",
+    "CVE-2025-53905",
+    "CVE-2025-53906",
+    "CVE-2025-59375",
+    "CVE-2025-59425",
+    "CVE-2025-62593",
+    "CVE-2025-62727",
+    "CVE-2025-66448"
+  ],
+  "packages": [
+    "registry.redhat.io/rhaiis/vllm-rocm-rhel9@sha256:7856bdb7ae0d643a7b9362c164d4d4fe3c0c7186f5fff73a7ae9835b3df52e57_amd64"
+  ],
+  "full_text": "Red Hat AI Inference Server 3.2.2 (ROCm) is now available.\n\nRed Hat® AI Inference Server"
+}

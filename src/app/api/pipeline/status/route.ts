@@ -4,7 +4,7 @@ import path from 'path';
 import { execSync } from 'child_process';
 
 export async function GET(request: Request) {
-    const linuxSkillDir = path.join(process.env.HOME || '/home/citec', '.openclaw/workspace/skills/patch-review/os/linux-v2');
+    const linuxSkillDir = path.join(process.env.HOME || '/home/citec', '.openclaw/workspace/skills/patch-review/os/linux');
     const statusFile = path.join(linuxSkillDir, 'pipeline_status.json');
     const logFile = path.join(linuxSkillDir, 'debug_collector.log');
 

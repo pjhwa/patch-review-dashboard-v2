@@ -1,0 +1,44 @@
+{
+  "id": "ELSA-2025-22096",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2025-December/019230.html",
+  "synopsis": "[El-errata] ELSA-2025-22096 Important: Oracle Linux 7 tigervnc security update",
+  "dateStr": "2025-December",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Security Advisory ELSA-2025-22096",
+  "description": "[1.8.0-33.0.9]\n- Fix CVE-2025-62229: xorg-x11-server: Use-after-free in XPresentNotify structures creation [Orabug: 38694278]\n- Fix CVE-2025-62230: xorg-x11-server: Use-after-free in Xkb client resource removal\n- Fix CVE-2025-62231: xorg-x11-server: Value overflow in Xkb extension XkbSetCompatMap()\n\n[1.8.0-33.0.7]\n- Fix CVE-2025-49175, CVE-2025-49176, CVE-2025-49178, CVE-2025-49179, CVE-2025-49180 [Orabug: 38157695]\n\n[1.8.0-33.0.5]\n- Fix CVE-2025-26594 xorg-x11-server Use-after-free of the root cursor [Orabug: 37712725]\n- Fix CVE-2025-26595 xorg-x11-server Buffer overflow in XkbVModMaskText()\n- Fix CVE-2025-26596 xorg-x11-server Heap overflow in XkbWriteKeySyms()\n- Fix CVE-2025-26597 xorg-x11-server Buffer overflow in XkbChangeTypesOfKey()\n- Fix CVE-2025-26598 xorg-x11-server Out-of-bounds write in CreatePointerBarrierClient()\n- Fix CVE-2025-26599 xorg-x11-server Use of uninitialized pointer in compRedirectWindow()\n- Fix CVE-2025-26600 xorg-x11-server Use-after-free in PlayReleasedEvents()\n- Fix CVE-2025-26601 xorg-x11-server Use-after-free in SyncInitTrigger()",
+  "affected_products": [
+    "Oracle Linux 7"
+  ],
+  "packages": [
+    "tigervnc-1.8.0-33.0.9.el7_9.x86_64.rpm",
+    "tigervnc-icons-1.8.0-33.0.9.el7_9.noarch.rpm",
+    "tigervnc-license-1.8.0-33.0.9.el7_9.noarch.rpm",
+    "tigervnc-server-1.8.0-33.0.9.el7_9.x86_64.rpm",
+    "tigervnc-server-applet-1.8.0-33.0.9.el7_9.noarch.rpm",
+    "tigervnc-server-minimal-1.8.0-33.0.9.el7_9.x86_64.rpm",
+    "tigervnc-server-module-1.8.0-33.0.9.el7_9.x86_64.rpm"
+  ],
+  "cves": [
+    "CVE-2025-62229",
+    "CVE-2025-62230",
+    "CVE-2025-62231",
+    "CVE-2025-49175",
+    "CVE-2025-49176",
+    "CVE-2025-49178",
+    "CVE-2025-49179",
+    "CVE-2025-49180",
+    "CVE-2025-26594",
+    "CVE-2025-26595",
+    "CVE-2025-26596",
+    "CVE-2025-26597",
+    "CVE-2025-26598",
+    "CVE-2025-26599",
+    "CVE-2025-26600",
+    "CVE-2025-26601"
+  ],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Security Advisory ELSA-2025-22096\n\nhttp://linux.oracle.com/errata/ELSA-2025-22096.html\n\nThe following updated rpms for Oracle Linux 7 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\ntigervnc-1.8.0-33.0.9.el7_9.x86_64.rpm\ntigervnc-icons-1.8.0-33.0.9.el7_9.noarch.rpm\ntigervnc-license-1.8.0-33.0.9.el7_9.noarch.rpm\ntigervnc-server-1.8.0-33.0.9.el7_9.x86_64.rpm\ntigervnc-server-applet-1.8.0-33.0.9.el7_9.noarch.rpm\ntigervnc-server-minimal-1.8.0-33.0.9.el7_9.x86_64.rpm\ntigervnc-server-module-1.8.0-33.0.9.el7_9.x86_64.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol7/SRPMS-updates/tigervnc-1.8.0-33.0.9.el7_9.src.rpm\n\nRelated CVEs:\n\nCVE-2025-62229\nCVE-2025-62230\nCVE-2025-62231\n\n\n\n\nDescription of changes:\n\n[1.8.0-33.0.9]\n- Fix CVE-2025-62229: xorg-x11-server: Use-after-free in XPresentNotify structures creation [Orabug: 38694278]\n- Fix CVE-2025-62230: xorg-x11-server: Use-after-free in Xkb client resource removal\n- Fix CVE-2025-62231: xorg-x11-server: Value overflow in Xkb extension XkbSetCompatMap()\n\n[1.8.0-33.0.7]\n- Fix CVE-2025-49175, CVE-2025-49176, CVE-2025-49178, CVE-2025-49179, CVE-2025-49180 [Orabug: 38157695]\n\n[1.8.0-33.0.5]\n- Fix CVE-2025-26594 xorg-x11-server Use-after-free of the root cursor [Orabug: 37712725]\n- Fix CVE-2025-26595 xorg-x11-server Buffer overflow in XkbVModMaskText()\n- Fix CVE-2025-26596 xorg-x11-server Heap overflow in XkbWriteKeySyms()\n- Fix CVE-2025-26597 xorg-x11-server Buffer overflow in XkbChangeTypesOfKey()\n- Fix CVE-2025-26598 xorg-x11-server Out-of-bounds write in CreatePointerBarrierClient()\n- Fix CVE-2025-26599 xorg-x11-server Use of uninitialized pointer in compRedirectWindow()\n- Fix CVE-2025-26600 xorg-x11-server Use-after-free in PlayReleasedEvents()\n- Fix CVE-2025-26601 xorg-x11-server Use-after-free in SyncInitTrigger()",
+  "vendor": "Oracle"
+}

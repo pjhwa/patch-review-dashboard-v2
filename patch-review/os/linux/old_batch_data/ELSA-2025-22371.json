@@ -1,0 +1,31 @@
+{
+  "id": "ELSA-2025-22371",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2025-December/019293.html",
+  "synopsis": "[El-errata] ELSA-2025-22371 Important: Oracle Linux 7 firefox security update",
+  "dateStr": "2025-December",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Security Advisory ELSA-2025-22371",
+  "description": "[140.5.0-1.0.1]\n- Update to 140.5.0 ESR [Orabug: 38708474][CVE-2025-13012][CVE-2025-13013]\n  [CVE-2025-13014][CVE-2025-13015][CVE-2025-13016][CVE-2025-13017]\n  [CVE-2025-13018][CVE-2025-13019][CVE-2025-13020]",
+  "affected_products": [
+    "Oracle Linux 7"
+  ],
+  "packages": [
+    "firefox-140.5.0-1.0.1.el7_9.x86_64.rpm"
+  ],
+  "cves": [
+    "CVE-2025-13012",
+    "CVE-2025-13013",
+    "CVE-2025-13014",
+    "CVE-2025-13015",
+    "CVE-2025-13016",
+    "CVE-2025-13017",
+    "CVE-2025-13018",
+    "CVE-2025-13019",
+    "CVE-2025-13020"
+  ],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Security Advisory ELSA-2025-22371\n\nhttp://linux.oracle.com/errata/ELSA-2025-22371.html\n\nThe following updated rpms for Oracle Linux 7 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\nfirefox-140.5.0-1.0.1.el7_9.x86_64.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol7/SRPMS-updates/firefox-140.5.0-1.0.1.el7_9.src.rpm\n\nRelated CVEs:\n\nCVE-2025-13012\nCVE-2025-13013\nCVE-2025-13014\nCVE-2025-13015\nCVE-2025-13016\nCVE-2025-13017\nCVE-2025-13018\nCVE-2025-13019\nCVE-2025-13020\n\n\n\n\nDescription of changes:\n\n[140.5.0-1.0.1]\n- Update to 140.5.0 ESR [Orabug: 38708474][CVE-2025-13012][CVE-2025-13013]\n  [CVE-2025-13014][CVE-2025-13015][CVE-2025-13016][CVE-2025-13017]\n  [CVE-2025-13018][CVE-2025-13019][CVE-2025-13020]",
+  "vendor": "Oracle"
+}

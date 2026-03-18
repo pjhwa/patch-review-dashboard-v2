@@ -1,0 +1,26 @@
+{
+  "id": "RHSA-2025:21885",
+  "vendor": "Red Hat",
+  "url": "https://access.redhat.com/errata/RHSA-2025:21885",
+  "pubDate": "2025-11-20T19:56:52.000Z",
+  "dateStr": "2025-11-20",
+  "severity": "Important",
+  "title": "Red Hat Security Advisory: OpenShift Compliance Operator bug fix and enhancement update",
+  "overview": "An updated OpenShift Compliance Operator image that fixes various bugs and adds new\nenhancements is now available for the Red Hat OpenShift Enterprise 4 catalog.",
+  "description": "An updated OpenShift Compliance Operator image that fixes various bugs and adds new\nenhancements is now available for the Red Hat OpenShift Enterprise 4 catalog.",
+  "affected_products": [
+    "Compliance Operator 1"
+  ],
+  "cves": [
+    "CVE-2024-12085",
+    "CVE-2025-5914",
+    "CVE-2025-6020",
+    "CVE-2025-6965",
+    "CVE-2025-7195",
+    "CVE-2025-7425",
+    "CVE-2025-8941"
+  ],
+  "packages": [],
+  "fixes": "",
+  "full_text": "Red Hat Security Advisory: OpenShift Compliance Operator bug fix and enhancement update\n\nAn updated OpenShift Compliance Operator image that fixes various bugs and adds new\nenhancements is now available for the Red Hat OpenShift Enterprise 4 catalog.\n\nAn updated OpenShift Compliance Operator image that fixes various bugs and adds new\nenhancements is now available for the Red Hat OpenShift Enterprise 4 catalog.\n\n\n\nCVE-2024-12085: A flaw was found in rsync which could be triggered when rsync compares file checksums. This flaw allows an attacker to manipulate the checksum length (s2length) to cause a comparison between a checksum and uninitialized memory and leak one byte of uninitialized stack data at a time.\n\nCVE-2025-5914: A vulnerability has been identified in the libarchive library, specifically within the archive_read_format_rar_seek_data() function. This flaw involves an integer overflow that can ultimately lead to a double-free condition. Exploiting a double-free vulnerability can result in memory corruption, enabling an attacker to execute arbitrary code or cause a denial-of-service condition.\n\nCVE-2025-6020: A flaw was found in linux-pam. The module pam_namespace may use access user-controlled paths without proper protection, allowing local users to elevate their privileges to root via multiple symlink attacks and race conditions.\n\nCVE-2025-6965: A memory corruption flaw was found in SQLite. Under specific conditions a query can be generated where the number of aggregate terms could exceed the number of columns available. This issue could lead to memory corruption and subsequent unintended behavior.\n\nCVE-2025-7195: Early versions of Operator-SDK provided an insecure method to allow operator containers to run in environments that used a random UID. Operator-SDK before 0.15.2 provided a script, user_setup, which modifies the permissions of the /etc/passwd file to 664 during build time. Developers who used Operator-SDK before 0.15.2 to scaffold their operator may still be impacted by this if the insecure user_setup script is still being used to build new container images. \n\nIn affected images, the /etc/passwd file is created during build time with group-writable permissions and a group ownership of root (gid=0). An attacker who can execute commands within an affected container, even as a non-root user, may be able to leverage their membership in the root group to modify the /etc/passwd file. This could allow the attacker to add a new user with any arbitrary UID, including UID 0, leading to full root privileges within the container.\n\nCVE-2025-7425: A flaw was found in libxslt where the attribute type, atype, flags are modified in a way that corrupts internal memory management. When XSLT functions, such as the key() process, result in tree fragments, this corruption prevents the proper cleanup of ID attributes. As a result, the system may access freed memory, causing crashes or enabling attackers to trigger heap corruption.\n\nCVE-2025-8941: A flaw was found in linux-pam. The pam_namespace module may improperly handle user-controlled paths, allowing local users to exploit symlink attacks and race conditions to elevate their privileges to root. This CVE provides a \"complete\" fix for CVE-2025-6020."
+}

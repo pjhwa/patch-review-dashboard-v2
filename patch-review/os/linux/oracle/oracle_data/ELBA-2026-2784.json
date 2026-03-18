@@ -1,0 +1,42 @@
+{
+  "id": "ELBA-2026-2784",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "AppStream",
+  "title": "mesa bug fix and enhancement update",
+  "issuedDate": "2026-02-17T00:00:00Z",
+  "updatedDate": "2026-02-17T00:00:00Z",
+  "pubDate": "2026-02-17T00:00:00Z",
+  "dateStr": "2026-02-17",
+  "url": "https://linux.oracle.com/errata/ELBA-2026-2784.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 9.",
+  "description": "[25.0.7-4]\n- Resolves: https://issues.redhat.com/browse/RHEL-138704",
+  "affected_products": [
+    "Oracle Linux 9 for x86_64",
+    "Oracle Linux 9 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "mesa-libEGL-devel-25.0.7-4.el9_7.i686",
+    "mesa-libEGL-devel-25.0.7-4.el9_7.x86_64",
+    "mesa-libEGL-25.0.7-4.el9_7.x86_64",
+    "mesa-libEGL-25.0.7-4.el9_7.i686",
+    "mesa-libxatracker-25.0.7-4.el9_7.x86_64",
+    "mesa-libxatracker-25.0.7-4.el9_7.i686",
+    "mesa-libGL-devel-25.0.7-4.el9_7.i686",
+    "mesa-libGL-devel-25.0.7-4.el9_7.x86_64",
+    "mesa-vulkan-drivers-25.0.7-4.el9_7.x86_64",
+    "mesa-vulkan-drivers-25.0.7-4.el9_7.i686",
+    "mesa-dri-drivers-25.0.7-4.el9_7.x86_64",
+    "mesa-dri-drivers-25.0.7-4.el9_7.i686",
+    "mesa-libgbm-25.0.7-4.el9_7.i686",
+    "mesa-libgbm-25.0.7-4.el9_7.x86_64",
+    "mesa-libGL-25.0.7-4.el9_7.x86_64",
+    "mesa-libGL-25.0.7-4.el9_7.i686",
+    "mesa-25.0.7-4.el9_7.src",
+    "mesa-filesystem-25.0.7-4.el9_7.x86_64",
+    "mesa-filesystem-25.0.7-4.el9_7.i686"
+  ],
+  "full_text": "[25.0.7-4]\n- Resolves: https://issues.redhat.com/browse/RHEL-138704\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2026-2784.html"
+}

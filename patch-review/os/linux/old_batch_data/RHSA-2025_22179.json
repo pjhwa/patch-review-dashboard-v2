@@ -1,0 +1,21 @@
+{
+  "id": "RHSA-2025:22179",
+  "vendor": "Red Hat",
+  "url": "https://access.redhat.com/errata/RHSA-2025:22179",
+  "pubDate": "2025-11-26T13:57:08.000Z",
+  "dateStr": "2025-11-26",
+  "severity": "Moderate",
+  "title": "Red Hat Security Advisory: RHSA 4.8.6 security and bug fix update",
+  "overview": "Updated images are now available for Red Hat Advanced Cluster Security\n(RHACS), which typically include new features, bug fixes, and/or\nsecurity patches.",
+  "description": "Updated images are now available for Red Hat Advanced Cluster Security\n(RHACS), which typically include new features, bug fixes, and/or\nsecurity patches.",
+  "affected_products": [
+    "Red Hat Advanced Cluster Security 4.8"
+  ],
+  "cves": [
+    "CVE-2025-9648",
+    "CVE-2025-47907"
+  ],
+  "packages": [],
+  "fixes": "",
+  "full_text": "Red Hat Security Advisory: RHSA 4.8.6 security and bug fix update\n\nUpdated images are now available for Red Hat Advanced Cluster Security\n(RHACS), which typically include new features, bug fixes, and/or\nsecurity patches.\n\nUpdated images are now available for Red Hat Advanced Cluster Security\n(RHACS), which typically include new features, bug fixes, and/or\nsecurity patches.\n\n\n\nCVE-2025-9648: A vulnerability in the CivetWeb library's function mg_handle_form_request allows remote attackers to trigger a denial of service (DoS) condition. By sending a specially crafted HTTP POST request containing a null byte in the payload, the server enters an infinite loop during form data parsing. Multiple malicious requests will result in complete CPU exhaustion and render the service unresponsive to further requests.\n\nThis issue was fixed in commit 782e189. This issue affects only the library, standalone executable pre-built by vendor is not affected.\n\nCVE-2025-47907: A flaw was found in database/sql. Concurrent queries can produce unexpected results when a query is cancelled during a Scan method call on returned Rows, creating a race condition. This vulnerability allows an attacker who can initiate and cancel queries to trigger this condition, possibly leading to inconsistent data being returned to the application."
+}

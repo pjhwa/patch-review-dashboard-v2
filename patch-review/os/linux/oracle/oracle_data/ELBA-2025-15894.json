@@ -1,0 +1,27 @@
+{
+  "id": "ELBA-2025-15894",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "AppStream",
+  "title": "libwacom bug fix and enhancement update",
+  "issuedDate": "2025-09-16T00:00:00Z",
+  "updatedDate": "2025-09-16T00:00:00Z",
+  "pubDate": "2025-09-16T00:00:00Z",
+  "dateStr": "2025-09-16",
+  "url": "https://linux.oracle.com/errata/ELBA-2025-15894.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 9.",
+  "description": "[1.12.1-5]\n- Rearrange the OSD buttons for the Intuos Pro 3rd Gen (RHEL-101881)\n- Use separate Ring/Ring2 assignments\n\n[1.12.1-4]\n- Add support for the Cintiq Pro 27 (RHEL-101886)\n- Add support for the Intuos Pro 3rd Gen series (RHEL-101881)",
+  "affected_products": [
+    "Oracle Linux 9 for x86_64",
+    "Oracle Linux 9 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "libwacom-data-1.12.1-5.el9_6.noarch",
+    "libwacom-1.12.1-5.el9_6.x86_64",
+    "libwacom-1.12.1-5.el9_6.i686",
+    "libwacom-1.12.1-5.el9_6.src"
+  ],
+  "full_text": "[1.12.1-5]\n- Rearrange the OSD buttons for the Intuos Pro 3rd Gen (RHEL-101881)\n- Use separate Ring/Ring2 assignments\n\n[1.12.1-4]\n- Add support for the Cintiq Pro 27 (RHEL-101886)\n- Add support for the Intuos Pro 3rd Gen series (RHEL-101881)\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2025-15894.html"
+}

@@ -1,0 +1,35 @@
+{
+  "id": "RHBA-2025:19952",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: ca-certificates bug fix and enhancement update",
+  "issuedDate": "2025-11-10T01:03:39Z",
+  "updatedDate": "2025-11-10T01:03:39Z",
+  "pubDate": "2025-11-10T01:03:39Z",
+  "dateStr": "2025-11-10",
+  "url": "https://access.redhat.com/errata/RHBA-2025:19952",
+  "severity": "None",
+  "overview": "An update for ca-certificates is now available for Red Hat Enterprise Linux 10.",
+  "description": "The ca-certificates package contains a set of Certificate Authority (CA) certificates chosen by the Mozilla Foundation for use with the Internet Public Key Infrastructure (PKI).Bug Fix(es) and Enhancement(s): ca-certificates: revert changes introduced by \"dropping od cert.pem\" change now postopend to RHEL-11 [rhel-10.0.z] (JIRA:RHEL-109484)  Annual 2025 ca-certificates update version 2.80 from NSS 3.114 for Firefox 140 and Microsoft v9.0.304 [rhel-10.0.z] (JIRA:RHEL-118488)",
+  "affected_products": [
+    "Red Hat Enterprise Linux for ARM 64 - 4 years of updates",
+    "Red Hat Enterprise Linux for Power, little endian - Extended Update Support",
+    "Red Hat Enterprise Linux for Power, little endian",
+    "Red Hat Enterprise Linux for Power, little endian - 4 years of support",
+    "Red Hat Enterprise Linux for ARM 64",
+    "Red Hat Enterprise Linux for x86_64 - 4 years of updates 10 x86_64",
+    "Red Hat Enterprise Linux for x86_64 - Extended Update Support 10 x86_64",
+    "Red Hat Enterprise Linux for IBM z Systems - Extended Update Support",
+    "Red Hat Enterprise Linux for IBM z Systems",
+    "Red Hat Enterprise Linux for IBM z Systems - 4 years of updates",
+    "Red Hat Enterprise Linux for x86_64 10 x86_64",
+    "Red Hat Enterprise Linux for ARM 64 - Extended Update Support"
+  ],
+  "cves": [],
+  "packages": [
+    "ca-certificates-2025.2.80_v9.0.305-102.el10_0.src",
+    "ca-certificates-2025.2.80_v9.0.305-102.el10_0.noarch"
+  ],
+  "fixes": [],
+  "full_text": "An update for ca-certificates is now available for Red Hat Enterprise Linux 10.\n\nThe ca-certificates package contains a set of Certificate Authority (CA) certificates chosen by the Mozilla Foundation for use with the Internet Public Key Infrastructure (PKI).Bug Fix(es) and Enhancement(s): ca-certificates: revert changes introduced by \"dropping od cert.pem\" change now postopend to RHEL-11 [rhel-10.0.z] (JIRA:RHEL-109484)  Annual 2025 ca-certificates update version 2.80 from NSS 3.114 for Firefox 140 and Microsoft v9.0.304 [rhel-10.0.z] (JIRA:RHEL-118488)"
+}

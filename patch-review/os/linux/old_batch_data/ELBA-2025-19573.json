@@ -1,0 +1,25 @@
+{
+  "id": "ELBA-2025-19573",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2025-November/018905.html",
+  "synopsis": "[El-errata] ELBA-2025-19573 Oracle Linux 8 lftp bug fix and enhancement update",
+  "dateStr": "2025-November",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Bug Fix Advisory ELBA-2025-19573",
+  "description": "[4.8.4-7]\n- Adding a timeout for TLS close\n- Resolves: RHEL-108115 - \"cannot seek on data source\" in TLS lftp sessions",
+  "affected_products": [
+    "Oracle Linux 8"
+  ],
+  "packages": [
+    "lftp-4.8.4-7.el8_10.i686.rpm",
+    "lftp-4.8.4-7.el8_10.x86_64.rpm",
+    "lftp-scripts-4.8.4-7.el8_10.noarch.rpm",
+    "lftp-4.8.4-7.el8_10.aarch64.rpm",
+    "lftp-scripts-4.8.4-7.el8_10.noarch.rpm"
+  ],
+  "cves": [],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Bug Fix Advisory ELBA-2025-19573\n\nhttp://linux.oracle.com/errata/ELBA-2025-19573.html\n\nThe following updated rpms for Oracle Linux 8 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\nlftp-4.8.4-7.el8_10.i686.rpm\nlftp-4.8.4-7.el8_10.x86_64.rpm\nlftp-scripts-4.8.4-7.el8_10.noarch.rpm\n\naarch64:\nlftp-4.8.4-7.el8_10.aarch64.rpm\nlftp-scripts-4.8.4-7.el8_10.noarch.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol8/SRPMS-updates/lftp-4.8.4-7.el8_10.src.rpm\n\n\n\nDescription of changes:\n\n[4.8.4-7]\n- Adding a timeout for TLS close\n- Resolves: RHEL-108115 - \"cannot seek on data source\" in TLS lftp sessions",
+  "vendor": "Oracle"
+}

@@ -1,0 +1,22 @@
+{
+  "id": "RHSA-2026:3892",
+  "vendor": "Red Hat",
+  "type": "Security Advisory (RHSA)",
+  "title": "Red Hat Security Advisory: Red Hat JBoss Enterprise Application Platform 8.0.12 security update",
+  "issuedDate": "2026-03-05T13:34:15+00:00",
+  "updatedDate": "2026-03-05T13:34:15+00:00",
+  "pubDate": "2026-03-05T13:34:15+00:00",
+  "dateStr": "2026-03-05",
+  "url": "https://access.redhat.com/errata/RHSA-2026:3892",
+  "severity": "Important",
+  "overview": "A security update is now available for Red Hat JBoss Enterprise Application Platform 8.0. Red Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "description": "Red Hat JBoss Enterprise Application Platform 8 is a platform for Java applications based on the WildFly application runtime. This release of Red Hat JBoss Enterprise Application Platform 8.0.12 serves as a replacement for Red Hat JBoss Enterprise Application Platform 8.0.11, and includes bug fixes and enhancements. See the Red Hat JBoss Enterprise Application Platform 8.0.12 Release Notes for information about the most significant bug fixes and enhancements included in this release.\n\nSecurity Fix(es):\n\n* undertow-core: Undertow HTTP Server Fails to Reject Malformed Host Headers\nLeading to Potential Cache Poisoning and SSRF [eap-8.0.z] (CVE-2025-12543)\n\n* undertow-core: Undertow MadeYouReset HTTP/2 DDoS Vulnerability (CVE-2025-9784)\n\n* undertow: OutOfMemory when parsing form data encoding with\napplication/x-www-form-urlencoded [eap-8.0.z] (CVE-2024-3884)\n\nFor more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section.",
+  "affected_products": [],
+  "cves": [
+    "CVE-2024-3884",
+    "CVE-2025-9784",
+    "CVE-2025-12543"
+  ],
+  "packages": [],
+  "full_text": "A security update is now available for Red Hat JBoss Enterprise Application Platform 8.0. Red Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nRed Hat JBoss Enterprise Application Platform 8 is a platform for Java applications based on the WildFly application runtime. This release of Red Hat JBoss Enterprise Application Platform 8.0.12 serves as a replacement for Red Hat JBoss Enterprise Application Platform 8.0.11, and includes bug fixes and enhancements. See the Red Hat JBoss Enterprise Application Platform 8.0.12 Release Notes for information about the most significant bug fixes and enhancements included in this release.\n\nSecurity Fix(es):\n\n* undertow-core: Undertow HTTP Server Fails to Reject Malformed Host Headers\nLeading to Potential Cache Poisoning and SSRF [eap-8.0.z] (CVE-2025-12543)\n\n* undertow-core: Undertow MadeYouReset HTTP/2 DDoS Vulnerability (CVE-2025-9784)\n\n* undertow: OutOfMemory when parsing form data encoding with\napplication/x-www-form-urlencoded [eap-8.0.z] (CVE-2024-3884)\n\nFor more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section."
+}

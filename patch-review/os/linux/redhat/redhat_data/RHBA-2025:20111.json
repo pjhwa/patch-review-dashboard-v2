@@ -1,0 +1,83 @@
+{
+  "id": "RHBA-2025:20111",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: python3.12 bug fix and enhancement update",
+  "issuedDate": "2025-11-11T07:25:08Z",
+  "updatedDate": "2025-11-11T07:25:08Z",
+  "pubDate": "2025-11-11T07:25:08Z",
+  "dateStr": "2025-11-11",
+  "url": "https://access.redhat.com/errata/RHBA-2025:20111",
+  "severity": "None",
+  "overview": "An update for python3.12 is now available for Red Hat Enterprise Linux 10.",
+  "description": "For detailed information on changes in this release, see the Red Hat Enterprise Linux 10 Release Notes linked from the References section.",
+  "affected_products": [
+    "Red Hat CodeReady Linux Builder for Power, little endian",
+    "Red Hat CodeReady Linux Builder for IBM z Systems",
+    "Red Hat Enterprise Linux for IBM z Systems",
+    "Red Hat Enterprise Linux for Power, little endian",
+    "Red Hat CodeReady Linux Builder for x86_64 10 x86_64",
+    "Red Hat Enterprise Linux for ARM 64",
+    "Red Hat Enterprise Linux for x86_64 10 x86_64",
+    "Red Hat CodeReady Linux Builder for ARM 64"
+  ],
+  "cves": [],
+  "packages": [
+    "python3.12-3.12.11-3.el10.src",
+    "python-unversioned-command-3.12.11-3.el10.noarch",
+    "python3-3.12.11-3.el10.x86_64",
+    "python3-devel-3.12.11-3.el10.x86_64",
+    "python3-libs-3.12.11-3.el10.x86_64",
+    "python3-tkinter-3.12.11-3.el10.x86_64",
+    "python3.12-debuginfo-3.12.11-3.el10.x86_64",
+    "python3.12-debugsource-3.12.11-3.el10.x86_64",
+    "python3-3.12.11-3.el10.s390x",
+    "python3-devel-3.12.11-3.el10.s390x",
+    "python3-libs-3.12.11-3.el10.s390x",
+    "python3-tkinter-3.12.11-3.el10.s390x",
+    "python3.12-debuginfo-3.12.11-3.el10.s390x",
+    "python3.12-debugsource-3.12.11-3.el10.s390x",
+    "python3-3.12.11-3.el10.ppc64le",
+    "python3-devel-3.12.11-3.el10.ppc64le",
+    "python3-libs-3.12.11-3.el10.ppc64le",
+    "python3-tkinter-3.12.11-3.el10.ppc64le",
+    "python3.12-debuginfo-3.12.11-3.el10.ppc64le",
+    "python3.12-debugsource-3.12.11-3.el10.ppc64le",
+    "python3-3.12.11-3.el10.aarch64",
+    "python3-devel-3.12.11-3.el10.aarch64",
+    "python3-libs-3.12.11-3.el10.aarch64",
+    "python3-tkinter-3.12.11-3.el10.aarch64",
+    "python3.12-debuginfo-3.12.11-3.el10.aarch64",
+    "python3.12-debugsource-3.12.11-3.el10.aarch64",
+    "python3-debug-3.12.11-3.el10.x86_64",
+    "python3-idle-3.12.11-3.el10.x86_64",
+    "python3-test-3.12.11-3.el10.x86_64",
+    "python3-debug-3.12.11-3.el10.ppc64le",
+    "python3-idle-3.12.11-3.el10.ppc64le",
+    "python3-test-3.12.11-3.el10.ppc64le",
+    "python3-debug-3.12.11-3.el10.aarch64",
+    "python3-idle-3.12.11-3.el10.aarch64",
+    "python3-test-3.12.11-3.el10.aarch64",
+    "python3-debug-3.12.11-3.el10.s390x",
+    "python3-idle-3.12.11-3.el10.s390x",
+    "python3-test-3.12.11-3.el10.s390x"
+  ],
+  "fixes": [
+    {
+      "id": "RHEL-86605",
+      "url": "https://issues.redhat.com/browse/RHEL-86605",
+      "description": "RHEL 10: Update to Python 3.12.10"
+    },
+    {
+      "id": "RHEL-67040",
+      "url": "https://issues.redhat.com/browse/RHEL-67040",
+      "description": "annocheck 'hardened' test fails for /usr/lib64/libpython3.12.so.1.0 on x86_64 due to missing -fcf-protection"
+    },
+    {
+      "id": "RHEL-84196",
+      "url": "https://issues.redhat.com/browse/RHEL-84196",
+      "description": "annocheck 'hardened' test fails for /usr/lib64/libpython3.12.so.1.0 on aarch64 due to missing -mbranch-protection=standard"
+    }
+  ],
+  "full_text": "An update for python3.12 is now available for Red Hat Enterprise Linux 10.\n\nFor detailed information on changes in this release, see the Red Hat Enterprise Linux 10 Release Notes linked from the References section."
+}

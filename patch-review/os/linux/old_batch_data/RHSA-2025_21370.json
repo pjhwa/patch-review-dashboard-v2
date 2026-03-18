@@ -1,0 +1,24 @@
+{
+  "id": "RHSA-2025:21370",
+  "vendor": "Red Hat",
+  "url": "https://access.redhat.com/errata/RHSA-2025:21370",
+  "pubDate": "2025-11-13T17:51:13.000Z",
+  "dateStr": "2025-11-13",
+  "severity": "Moderate",
+  "title": "Red Hat Security Advisory: Red Hat build of Keycloak 26.4.4 Security Update",
+  "overview": "New Red Hat build of Keycloak 26.4.4 packages are available from the Customer Portal",
+  "description": "New Red Hat build of Keycloak 26.4.4 packages are available from the Customer Portal",
+  "affected_products": [
+    "Red Hat build of Keycloak 26.4.4"
+  ],
+  "cves": [
+    "CVE-2025-10939",
+    "CVE-2025-11538",
+    "CVE-2025-12110",
+    "CVE-2025-12150",
+    "CVE-2025-12390"
+  ],
+  "packages": [],
+  "fixes": "",
+  "full_text": "Red Hat Security Advisory: Red Hat build of Keycloak 26.4.4 Security Update\n\nNew Red Hat build of Keycloak 26.4.4 packages are available from the Customer Portal\n\nNew Red Hat build of Keycloak 26.4.4 packages are available from the Customer Portal\n\n\n\nCVE-2025-10939: A flaw was found in Keycloak. The Keycloak guides recommend to not expose /admin path to the outside in case the installation is using a proxy. The issue occurs at least via ha-proxy, as it can be tricked to using relative/non-normalized paths to access the /admin application path relative to /realms which is expected to be exposed.\n\nCVE-2025-11538: A vulnerability exists in Keycloak's server distribution where enabling debug mode (--debug <port>) insecurely defaults to binding the Java Debug Wire Protocol (JDWP) port to all network interfaces (0.0.0.0). This exposes the debug port to the local network, allowing an attacker on the same network segment to attach a remote debugger and achieve remote code execution within the Keycloak Java virtual machine.\n\nCVE-2025-12110: A flaw was found in Keycloak. An offline session continues to be valid when the offline_access scope is removed from the client. The refresh token is accepted and you can continue to request new tokens for the session. As it can lead to a situation where an administrator removes the scope, and assumes that offline sessions are no longer available, but they are.\n\nCVE-2025-12150: A flaw was found in Keycloak’s WebAuthn registration component. This vulnerability allows an attacker to bypass the configured attestation policy and register untrusted or forged authenticators via submission of an attestation object with fmt: \"none\", even when the realm is configured to require direct attestation. This can lead to weakened authentication integrity and unauthorized authenticator registration.\n\nCVE-2025-12390: A flaw was found in Keycloak. In Keycloak where a user can accidentally get access to another user's session if both use the same device and browser. This happens because Keycloak sometimes reuses session identifiers and doesn’t clean up properly during logout when browser cookies are missing. As a result, one user may receive tokens that belong to another user."
+}

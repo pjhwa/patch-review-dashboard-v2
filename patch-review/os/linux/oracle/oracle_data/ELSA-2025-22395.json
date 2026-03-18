@@ -1,0 +1,48 @@
+{
+  "id": "ELSA-2025-22395",
+  "vendor": "Oracle",
+  "type": "Security Advisory (ELSA)",
+  "kernel_type": "RHCK",
+  "title": " kernel security update",
+  "issuedDate": "2025-12-05T00:00:00Z",
+  "updatedDate": "2025-12-05T00:00:00Z",
+  "pubDate": "2025-12-05T00:00:00Z",
+  "dateStr": "2025-12-05",
+  "url": "https://linux.oracle.com/errata/ELSA-2025-22395.html",
+  "severity": "Important",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 10.",
+  "description": "[6.12.0-124.16.1]\n- Add new Oracle Linux Driver Signing (key 1) certificate [Orabug: 37985782]\n- Disable UKI signing [Orabug: 36571828]\n- Update Oracle Linux certificates (Kevin Lyons)\n- Disable signing for aarch64 (Ilya Okomin)\n- Oracle Linux RHCK Module Signing Key was added to the kernel trusted keys list (olkmod_signing_key.pem) [Orabug: 29539237]\n- Update x509.genkey [Orabug: 24817676]\n- Conflict with shim-ia32 and shim-x64 <= 15.3-1.0.5]\n- Remove upstream reference during boot (Kevin Lyons) [Orabug: 34729535]\n- Add Oracle Linux IMA certificates\n- Update module name for cryptographic module [Orabug: 37400433]\n- Clean git history at setup stage\n\n[6.12.0-124.16.1]\n- bpf: Fix metadata_dst leak __bpf_redirect_neigh_v{4,6} (Xin Long) [RHEL-125759]\n- mm/memory-failure: fix VM_BUG_ON_PAGE(PagePoisoned(page)) when unpoison memory (CKI Backport Bot) [RHEL-119161] {CVE-2025-39883}\n\n[6.12.0-124.15.1]\n- nfsd: handle get_client_locked() failure in nfsd4_setclientid_confirm() (CKI Backport Bot) [RHEL-125623] {CVE-2025-38724}\n- wifi: mt76: free pending offchannel tx frames on wcid cleanup (Jose Ignacio Tornos Martinez) [RHEL-123070]\n- wifi: mt76: do not add non-sta wcid entries to the poll list (Jose Ignacio Tornos Martinez) [RHEL-123070]\n- wifi: mt76: fix linked list corruption (Jose Ignacio Tornos Martinez) [RHEL-123070] {CVE-2025-39918}\n\n[6.12.0-124.14.1]\n- ublk: make sure ubq->canceling is set when queue is frozen (Ming Lei) [RHEL-99436] {CVE-2025-22068}\n- e1000e: fix heap overflow in e1000_set_eeprom (Corinna Vinschen) [RHEL-123127] {CVE-2025-39898}\n- i40e: add mask to apply valid bits for itr_idx (Michal Schmidt) [RHEL-123811]\n- i40e: add max boundary check for VF filters (Michal Schmidt) [RHEL-123811] {CVE-2025-39968}\n- i40e: fix validation of VF state in get resources (Michal Schmidt) [RHEL-123811] {CVE-2025-39969}\n- i40e: fix input validation logic for action_meta (Michal Schmidt) [RHEL-123811] {CVE-2025-39970}\n- i40e: fix idx validation in config queues msg (Michal Schmidt) [RHEL-123811] {CVE-2025-39971}\n- i40e: fix idx validation in i40e_validate_queue_map (Michal Schmidt) [RHEL-123811] {CVE-2025-39972}\n- i40e: add validation for ring_len param (Michal Schmidt) [RHEL-123811] {CVE-2025-39973}\n- nvme-multipath: Skip nr_active increments in RETRY disposition (Ewan D. Milne) [RHEL-123689]",
+  "affected_products": [
+    "Oracle Linux 10 for x86_64",
+    "Oracle Linux 10 for aarch64"
+  ],
+  "cves": [
+    "CVE-2025-22068",
+    "CVE-2025-38724",
+    "CVE-2025-39883",
+    "CVE-2025-39898",
+    "CVE-2025-39918",
+    "CVE-2025-39971"
+  ],
+  "packages": [
+    "kernel-modules-core-6.12.0-124.16.1.el10_1.x86_64",
+    "kernel-modules-6.12.0-124.16.1.el10_1.x86_64",
+    "kernel-6.12.0-124.16.1.el10_1.src",
+    "kernel-core-6.12.0-124.16.1.el10_1.x86_64",
+    "kernel-tools-libs-6.12.0-124.16.1.el10_1.x86_64",
+    "kernel-debug-core-6.12.0-124.16.1.el10_1.x86_64",
+    "kernel-modules-extra-matched-6.12.0-124.16.1.el10_1.x86_64",
+    "kernel-debug-modules-extra-6.12.0-124.16.1.el10_1.x86_64",
+    "kernel-debug-modules-6.12.0-124.16.1.el10_1.x86_64",
+    "kernel-debug-6.12.0-124.16.1.el10_1.x86_64",
+    "kernel-abi-stablelists-6.12.0-124.16.1.el10_1.noarch",
+    "kernel-tools-6.12.0-124.16.1.el10_1.x86_64",
+    "kernel-modules-extra-6.12.0-124.16.1.el10_1.x86_64",
+    "kernel-uki-virt-6.12.0-124.16.1.el10_1.x86_64",
+    "kernel-uki-virt-addons-6.12.0-124.16.1.el10_1.x86_64",
+    "kernel-6.12.0-124.16.1.el10_1.x86_64",
+    "kernel-debug-uki-virt-6.12.0-124.16.1.el10_1.x86_64",
+    "kernel-debug-modules-core-6.12.0-124.16.1.el10_1.x86_64"
+  ],
+  "full_text": "[6.12.0-124.16.1]\n- Add new Oracle Linux Driver Signing (key 1) certificate [Orabug: 37985782]\n- Disable UKI signing [Orabug: 36571828]\n- Update Oracle Linux certificates (Kevin Lyons)\n- Disable signing for aarch64 (Ilya Okomin)\n- Oracle Linux RHCK Module Signing Key was added to the kernel trusted keys list (olkmod_signing_key.pem) [Orabug: 29539237]\n- Update x509.genkey [Orabug: 24817676]\n- Conflict with shim-ia32 and shim-x64 <= 15.3-1.0.5]\n- Remove upstream reference during boot (Kevin Lyons) [Orabug: 34729535]\n- Add Oracle Linux IMA certificates\n- Update module name for cryptographic module [Orabug: 37400433]\n- Clean git history at setup stage\n\n[6.12.0-124.16.1]\n- bpf: Fix metadata_dst leak __bpf_redirect_neigh_v{4,6} (Xin Long) [RHEL-125759]\n- mm/memory-failure: fix VM_BUG_ON_PAGE(PagePoisoned(page)) when unpoison memory (CKI Backport Bot) [RHEL-119161] {CVE-2025-39883}\n\n[6.12.0-124.15.1]\n- nfsd: handle get_client_locked() failure in nfsd4_setclientid_confirm() (CKI Backport Bot) [RHEL-125623] {CVE-2025-38724}\n- wifi: mt76: free pending offchannel tx frames on wcid cleanup (Jose Ignacio Tornos Martinez) [RHEL-123070]\n- wifi: mt76: do not add non-sta wcid entries to the poll list (Jose Ignacio Tornos Martinez) [RHEL-123070]\n- wifi: mt76: fix linked list corruption (Jose Ignacio Tornos Martinez) [RHEL-123070] {CVE-2025-39918}\n\n[6.12.0-124.14.1]\n- ublk: make sure ubq->canceling is set when queue is frozen (Ming Lei) [RHEL-99436] {CVE-2025-22068}\n- e1000e: fix heap overflow in e1000_set_eeprom (Corinna Vinschen) [RHEL-123127] {CVE-2025-39898}\n- i40e: add mask to apply valid bits for itr_idx (Michal Schmidt) [RHEL-123811]\n- i40e: add max boundary check for VF filters (Michal Schmidt) [RHEL-123811] {CVE-2025-39968}\n- i40e: fix validation of VF state in get resources (Michal Schmidt) [RHEL-123811] {CVE-2025-39969}\n- i40e: fix input validation logic for action_meta (Michal Schmidt) [RHEL-123811] {CVE-2025-39970}\n- i40e: fix idx validation in config queues msg (Michal Schmidt) [RHEL-123811] {CVE-2025-39971}\n- i40e: fix idx validation in i40e_validate_queue_map (Michal Schmidt) [RHEL-123811] {CVE-2025-39972}\n- i40e: add validation for ring_len param (Michal Schmidt) [RHEL-123811] {CVE-2025-39973}\n- nvme-multipath: Skip nr_active increments in RETRY disposition (Ewan D. Milne) [RHEL-123689]\n\nReferences:\nhttps://linux.oracle.com/errata/ELSA-2025-22395.html\nhttps://linux.oracle.com/cve/CVE-2025-22068.html\nhttps://linux.oracle.com/cve/CVE-2025-38724.html\nhttps://linux.oracle.com/cve/CVE-2025-39883.html\nhttps://linux.oracle.com/cve/CVE-2025-39898.html\nhttps://linux.oracle.com/cve/CVE-2025-39918.html\nhttps://linux.oracle.com/cve/CVE-2025-39971.html"
+}

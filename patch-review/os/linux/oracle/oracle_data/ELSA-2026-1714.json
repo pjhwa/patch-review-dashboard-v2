@@ -1,0 +1,28 @@
+{
+  "id": "ELSA-2026-1714",
+  "vendor": "Oracle",
+  "type": "Security Advisory (ELSA)",
+  "kernel_type": "AppStream",
+  "title": " wireshark security update",
+  "issuedDate": "2026-02-02T00:00:00Z",
+  "updatedDate": "2026-02-02T00:00:00Z",
+  "pubDate": "2026-02-02T00:00:00Z",
+  "dateStr": "2026-02-02",
+  "url": "https://linux.oracle.com/errata/ELSA-2026-1714.html",
+  "severity": "Moderate",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 10.",
+  "description": "[4.4.2-4.0.1.el10_1.2]\n- Fix post script to not fail during initial installation [Orabug: 37565359]\n\n[1:4.4.2-4.2]\n- Resolves: RHEL-136916 - NULL Pointer Dereference in Wireshark (CVE-2025-9817)\n\n[1:4.4.2-4.1]\n- Resolves: RHEL-130425 - Access of Uninitialized Pointer in Wireshark",
+  "affected_products": [
+    "Oracle Linux 10 for x86_64",
+    "Oracle Linux 10 for aarch64"
+  ],
+  "cves": [
+    "CVE-2025-9817"
+  ],
+  "packages": [
+    "wireshark-cli-4.4.2-4.0.1.el10_1.2.x86_64",
+    "wireshark-4.4.2-4.0.1.el10_1.2.src",
+    "wireshark-4.4.2-4.0.1.el10_1.2.x86_64"
+  ],
+  "full_text": "[4.4.2-4.0.1.el10_1.2]\n- Fix post script to not fail during initial installation [Orabug: 37565359]\n\n[1:4.4.2-4.2]\n- Resolves: RHEL-136916 - NULL Pointer Dereference in Wireshark (CVE-2025-9817)\n\n[1:4.4.2-4.1]\n- Resolves: RHEL-130425 - Access of Uninitialized Pointer in Wireshark\n\nReferences:\nhttps://linux.oracle.com/errata/ELSA-2026-1714.html\nhttps://linux.oracle.com/cve/CVE-2025-9817.html"
+}

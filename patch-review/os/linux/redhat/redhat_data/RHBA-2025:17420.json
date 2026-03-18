@@ -1,0 +1,60 @@
+{
+  "id": "RHBA-2025:17420",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: gnome-shell-extensions bug fix and enhancement update",
+  "issuedDate": "2025-10-07T04:37:32Z",
+  "updatedDate": "2025-10-07T04:37:32Z",
+  "pubDate": "2025-10-07T04:37:32Z",
+  "dateStr": "2025-10-07",
+  "url": "https://access.redhat.com/errata/RHBA-2025:17420",
+  "severity": "None",
+  "overview": "An update for gnome-shell-extensions is now available for Red Hat Enterprise Linux 10.",
+  "description": "GNOME Shell extensions allow for modifying the default GNOME Shell interface and its parts, such as window management and application launching. Bug Fix(es) and Enhancement(s): attempting to get application urgency to work correctly. Code has been working correctly on RHEL 6, code will not work correctly on RHEL 8.10  (JIRA:RHEL-76834)  [RFE] make available an option to tune the dash-to panel extension for the \"1 pixel boundary\" (JIRA:RHEL-28818)",
+  "affected_products": [
+    "Red Hat Enterprise Linux for ARM 64",
+    "Red Hat Enterprise Linux for Power, little endian",
+    "Red Hat Enterprise Linux for x86_64 10 x86_64",
+    "Red Hat Enterprise Linux for IBM z Systems"
+  ],
+  "cves": [],
+  "packages": [
+    "gnome-shell-extensions-3.32.1-44.el8_10.src",
+    "gnome-classic-session-3.32.1-44.el8_10.noarch",
+    "gnome-shell-extension-apps-menu-3.32.1-44.el8_10.noarch",
+    "gnome-shell-extension-auto-move-windows-3.32.1-44.el8_10.noarch",
+    "gnome-shell-extension-classification-banner-3.32.1-44.el8_10.noarch",
+    "gnome-shell-extension-common-3.32.1-44.el8_10.noarch",
+    "gnome-shell-extension-custom-menu-3.32.1-44.el8_10.noarch",
+    "gnome-shell-extension-dash-to-dock-3.32.1-44.el8_10.noarch",
+    "gnome-shell-extension-dash-to-panel-3.32.1-44.el8_10.noarch",
+    "gnome-shell-extension-desktop-icons-3.32.1-44.el8_10.noarch",
+    "gnome-shell-extension-disable-screenshield-3.32.1-44.el8_10.noarch",
+    "gnome-shell-extension-drive-menu-3.32.1-44.el8_10.noarch",
+    "gnome-shell-extension-gesture-inhibitor-3.32.1-44.el8_10.noarch",
+    "gnome-shell-extension-heads-up-display-3.32.1-44.el8_10.noarch",
+    "gnome-shell-extension-horizontal-workspaces-3.32.1-44.el8_10.noarch",
+    "gnome-shell-extension-launch-new-instance-3.32.1-44.el8_10.noarch",
+    "gnome-shell-extension-native-window-placement-3.32.1-44.el8_10.noarch",
+    "gnome-shell-extension-no-hot-corner-3.32.1-44.el8_10.noarch",
+    "gnome-shell-extension-panel-favorites-3.32.1-44.el8_10.noarch",
+    "gnome-shell-extension-places-menu-3.32.1-44.el8_10.noarch",
+    "gnome-shell-extension-screenshot-window-sizer-3.32.1-44.el8_10.noarch",
+    "gnome-shell-extension-systemMonitor-3.32.1-44.el8_10.noarch",
+    "gnome-shell-extension-top-icons-3.32.1-44.el8_10.noarch",
+    "gnome-shell-extension-updates-dialog-3.32.1-44.el8_10.noarch",
+    "gnome-shell-extension-user-theme-3.32.1-44.el8_10.noarch",
+    "gnome-shell-extension-window-grouper-3.32.1-44.el8_10.noarch",
+    "gnome-shell-extension-window-list-3.32.1-44.el8_10.noarch",
+    "gnome-shell-extension-windowsNavigator-3.32.1-44.el8_10.noarch",
+    "gnome-shell-extension-workspace-indicator-3.32.1-44.el8_10.noarch"
+  ],
+  "fixes": [
+    {
+      "id": "RHEL-76834",
+      "url": "https://issues.redhat.com/browse/RHEL-76834",
+      "description": "attempting to get application urgency to work correctly. Code has been working correctly on RHEL 6, code will not work correctly on RHEL 8.10"
+    }
+  ],
+  "full_text": "An update for gnome-shell-extensions is now available for Red Hat Enterprise Linux 10.\n\nGNOME Shell extensions allow for modifying the default GNOME Shell interface and its parts, such as window management and application launching. Bug Fix(es) and Enhancement(s): attempting to get application urgency to work correctly. Code has been working correctly on RHEL 6, code will not work correctly on RHEL 8.10  (JIRA:RHEL-76834)  [RFE] make available an option to tune the dash-to panel extension for the \"1 pixel boundary\" (JIRA:RHEL-28818)"
+}

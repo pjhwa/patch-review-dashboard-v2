@@ -1,0 +1,30 @@
+{
+  "id": "ELSA-2025-20034",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2025-November/018999.html",
+  "synopsis": "[El-errata] ELSA-2025-20034-0 Important: Oracle Linux 8 libtiff security update",
+  "dateStr": "2025-November",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Security Advisory ELSA-2025-20034-0",
+  "description": "[4.0.9-36]\n- fix CVE-2025-8176: prevent skipping first line in tiffdither and\n  tiffmedian tools (RHEL-120230)",
+  "affected_products": [
+    "Oracle Linux 8"
+  ],
+  "packages": [
+    "libtiff-4.0.9-36.el8_10.i686.rpm",
+    "libtiff-4.0.9-36.el8_10.x86_64.rpm",
+    "libtiff-devel-4.0.9-36.el8_10.i686.rpm",
+    "libtiff-devel-4.0.9-36.el8_10.x86_64.rpm",
+    "libtiff-tools-4.0.9-36.el8_10.x86_64.rpm",
+    "libtiff-4.0.9-36.el8_10.aarch64.rpm",
+    "libtiff-devel-4.0.9-36.el8_10.aarch64.rpm",
+    "libtiff-tools-4.0.9-36.el8_10.aarch64.rpm"
+  ],
+  "cves": [
+    "CVE-2025-8176"
+  ],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Security Advisory ELSA-2025-20034-0\n\nhttp://linux.oracle.com/errata/ELSA-2025-20034-0.html\n\nThe following updated rpms for Oracle Linux 8 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\nlibtiff-4.0.9-36.el8_10.i686.rpm\nlibtiff-4.0.9-36.el8_10.x86_64.rpm\nlibtiff-devel-4.0.9-36.el8_10.i686.rpm\nlibtiff-devel-4.0.9-36.el8_10.x86_64.rpm\nlibtiff-tools-4.0.9-36.el8_10.x86_64.rpm\n\naarch64:\nlibtiff-4.0.9-36.el8_10.aarch64.rpm\nlibtiff-devel-4.0.9-36.el8_10.aarch64.rpm\nlibtiff-tools-4.0.9-36.el8_10.aarch64.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol8/SRPMS-updates/libtiff-4.0.9-36.el8_10.src.rpm\n\nRelated CVEs:\n\nCVE-2025-8176\n\n\n\n\nDescription of changes:\n\n[4.0.9-36]\n- fix CVE-2025-8176: prevent skipping first line in tiffdither and\n  tiffmedian tools (RHEL-120230)",
+  "vendor": "Oracle"
+}

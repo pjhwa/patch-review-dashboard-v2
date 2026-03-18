@@ -1,0 +1,27 @@
+{
+  "id": "ELSA-2026-3477",
+  "vendor": "Oracle",
+  "type": "Security Advisory (ELSA)",
+  "title": " gnutls security update",
+  "issuedDate": "2026-03-02T00:00:00Z",
+  "updatedDate": "2026-03-02T00:00:00Z",
+  "pubDate": "2026-03-02T00:00:00Z",
+  "dateStr": "2026-03-02",
+  "url": "https://linux.oracle.com/errata/ELSA-2026-3477.html",
+  "severity": "Moderate",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 10.",
+  "description": "[3.8.10-3]\n- Fix CVE-2025-9820, CVE-2025-14831, drop unused patches\n- Fix PKCS#11 token initialization label overflow (CVE-2025-9820)\n- Fix name constraint processing performance issue (CVE-2025-14831)\n- Drop unused patches",
+  "affected_products": [
+    "Oracle Linux 10 for x86_64",
+    "Oracle Linux 10 for aarch64"
+  ],
+  "cves": [
+    "CVE-2025-14831",
+    "CVE-2025-9820"
+  ],
+  "packages": [
+    "gnutls-3.8.10-3.el10_1.src",
+    "gnutls-3.8.10-3.el10_1.x86_64"
+  ],
+  "full_text": "[3.8.10-3]\n- Fix CVE-2025-9820, CVE-2025-14831, drop unused patches\n- Fix PKCS#11 token initialization label overflow (CVE-2025-9820)\n- Fix name constraint processing performance issue (CVE-2025-14831)\n- Drop unused patches\n\nReferences:\nhttps://linux.oracle.com/errata/ELSA-2026-3477.html\nhttps://linux.oracle.com/cve/CVE-2025-14831.html\nhttps://linux.oracle.com/cve/CVE-2025-9820.html"
+}

@@ -38,7 +38,7 @@ export async function POST(request: Request) {
 
             // Always clean up stale session locks and temp manual inputs
             await execPromise(`rm -f ~/.openclaw/agents/main/sessions/*.lock || true`);
-            await execPromise(`rm -f ~/.openclaw/workspace/skills/patch-review/os/linux-v2/manual_review_input_*.json || true`);
+            await execPromise(`rm -f ~/.openclaw/workspace/skills/patch-review/os/linux/manual_review_input_*.json || true`);
         } catch (cleanupError) {
             console.error("Warning: Stalled cleanup failed (non-fatal):", cleanupError);
         }

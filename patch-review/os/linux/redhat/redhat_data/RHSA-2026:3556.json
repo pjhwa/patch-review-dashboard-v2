@@ -1,0 +1,33 @@
+{
+  "id": "RHSA-2026:3556",
+  "vendor": "Red Hat",
+  "type": "Security Advisory (RHSA)",
+  "title": "Red Hat Security Advisory: Red Hat OpenShift Service Mesh 2.6.14",
+  "issuedDate": "2026-03-02T16:52:33+00:00",
+  "updatedDate": "2026-03-02T16:53:16+00:00",
+  "pubDate": "2026-03-02T16:52:33+00:00",
+  "dateStr": "2026-03-02",
+  "url": "https://access.redhat.com/errata/RHSA-2026:3556",
+  "severity": "Important",
+  "overview": "Red Hat OpenShift Service Mesh 2.6.14\n\nThis update has a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "description": "Red Hat OpenShift Service Mesh 2.6.14, which is based on the open source Istio project, addresses a variety of problems in a microservice architecture by creating a centralized point of control in an application.\n\nSecurity Fix(es):\n\n* proxyv2-rhel9: Unexpected session resumption in crypto/tls (CVE-2025-68121)\n\n* proxyv2-rhel9: Potential code smuggling via doc comments in cmd/cgo (CVE-2025-61732)\n\n* proxyv2-rhel9: cmd/go: Arbitrary file write via malicious pkg-config directive (CVE-2025-61731)\n\n* proxyv2-rhel9: Memory exhaustion in query parameter parsing in net/url (CVE-2025-61726)\n\n* proxyv2-rhel9: Excessive CPU consumption when building archive index in archive/zip (CVE-2025-61728)",
+  "affected_products": [],
+  "cves": [
+    "CVE-2025-61726",
+    "CVE-2025-61728",
+    "CVE-2025-61731",
+    "CVE-2025-61732",
+    "CVE-2025-68121"
+  ],
+  "packages": [
+    "registry.redhat.io/openshift-service-mesh/istio-must-gather-rhel9@sha256:53ad217917241b2a4b87cb81e54cb4f2618cede3c20613acec84939a639a4514_amd64",
+    "registry.redhat.io/openshift-service-mesh/proxyv2-rhel9@sha256:f49b0ec7e087153e981b53d90a1eb32155f703c59c0e3ba9cd1427dd3defcf7d_amd64",
+    "registry.redhat.io/openshift-service-mesh/istio-must-gather-rhel9@sha256:25c1cd1facbe56ad4974d8c66a6bfb64cf982d244ff22e857a0333a39ea818e0_arm64",
+    "registry.redhat.io/openshift-service-mesh/proxyv2-rhel9@sha256:efd2df1b504c10b74f5960eab43edd126f36ae4adccbc61c881e08e64c758e2d_arm64",
+    "registry.redhat.io/openshift-service-mesh/istio-must-gather-rhel9@sha256:a168ca48217a77eb0f770779e33d5d71a313efb3cb06d01eb4050e5d04a47864_ppc64le",
+    "registry.redhat.io/openshift-service-mesh/proxyv2-rhel9@sha256:14dcee73384f17ebe545788b8cf1dceec3492ddd77d6b82157dbc5076cfaaa91_ppc64le",
+    "registry.redhat.io/openshift-service-mesh/istio-must-gather-rhel9@sha256:94e7ae70d26390f684b96b620f2f0d4375e6a447885ba481454a760f14f4d77e_s390x",
+    "registry.redhat.io/openshift-service-mesh/proxyv2-rhel9@sha256:47cab522c64f29015b2b675db01ddb8311f1f86633a6172f5bdb5236ddc71110_s390x"
+  ],
+  "full_text": "Red Hat OpenShift Service Mesh 2.6.14\n\nThis update has a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nRed Hat OpenShift Service Mesh 2.6.14, which is based on the open source Istio project, addresses a variety of problems in a microservice architecture by creating a centralized point of control in an application.\n\nSecurity Fix(es):\n\n* proxyv2-rhel9: Unexpected session resumption in crypto/tls (CVE-2025-68121)\n\n* proxyv2-rhel9: Potential code smuggling via doc comments in cmd/cgo (CVE-2025-61732)\n\n* proxyv2-rhel9: cmd/go: Arbitrary file write via malicious pkg-config directive (CVE-2025-61731)\n\n* proxyv2-rhel9: Memory exhaustion in query parameter parsing in net/url (CVE-2025-61726)\n\n* proxyv2-rhel9: Excessive CPU consumption when building archive index in archive/zip (CVE-2025-61728)"
+}

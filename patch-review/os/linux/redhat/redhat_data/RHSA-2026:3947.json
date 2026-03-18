@@ -1,0 +1,27 @@
+{
+  "id": "RHSA-2026:3947",
+  "vendor": "Red Hat",
+  "type": "Security Advisory (RHSA)",
+  "title": "Red Hat Security Advisory: Red Hat build of Keycloak 26.4.10 Update",
+  "issuedDate": "2026-03-05T19:07:56+00:00",
+  "updatedDate": "2026-03-05T19:07:56+00:00",
+  "pubDate": "2026-03-05T19:07:56+00:00",
+  "dateStr": "2026-03-05",
+  "url": "https://access.redhat.com/errata/RHSA-2026:3947",
+  "severity": "Important",
+  "overview": "New Red Hat build of Keycloak 26.4.10 packages are available from the Customer Portal",
+  "description": "Red Hat build of Keycloak 26.4.10 is a standalone server, based on the Keycloak project, that provides authentication and standards-based single sign-on capabilities for web and mobile applications.\n\nSecurity fixes:\n* Keycloak SAML broker: Authentication bypass due to disabled SAML client completing IdP-initiated login (CVE-2026-3047)\n* Improper Enforcement of Disabled Identity Provider in IdentityBrokerService (Authentication Bypass) (CVE-2026-3009)\n* Unauthorized authentication via disabled SAML Identity Provider (CVE-2026-2603)\n* Unauthorized access via improper validation of encrypted SAML assertions (CVE-2026-2092)\n* Missing Check on Disabled Client for Docker Registry Protocol (CVE-2026-2733)\n* Denial of Service due to excessive SAMLRequest decompression (CVE-2026-2575)\n* Keycloak SAML brokering: Response delay due to unchecked NotOnOrAfter in SubjectConfirmationData (CVE-2026-1190)\n* Keycloak Authorization Header Parsing Leading to Potential Security Control Bypass (CVE-2026-0707)",
+  "affected_products": [],
+  "cves": [
+    "CVE-2026-0707",
+    "CVE-2026-1190",
+    "CVE-2026-2092",
+    "CVE-2026-2575",
+    "CVE-2026-2603",
+    "CVE-2026-2733",
+    "CVE-2026-3009",
+    "CVE-2026-3047"
+  ],
+  "packages": [],
+  "full_text": "New Red Hat build of Keycloak 26.4.10 packages are available from the Customer Portal\n\nRed Hat build of Keycloak 26.4.10 is a standalone server, based on the Keycloak project, that provides authentication and standards-based single sign-on capabilities for web and mobile applications.\n\nSecurity fixes:\n* Keycloak SAML broker: Authentication bypass due to disabled SAML client completing IdP-initiated login (CVE-2026-3047)\n* Improper Enforcement of Disabled Identity Provider in IdentityBrokerService (Authentication Bypass) (CVE-2026-3009)\n* Unauthorized authentication via disabled SAML Identity Provider (CVE-2026-2603)\n* Unauthorized access via improper validation of encrypted SAML assertions (CVE-2026-2092)\n* Missing Check on Disabled Client for Docker Registry Protocol (CVE-2026-2733)\n* Denial of Service due to excessive SAMLRequest decompression (CVE-2026-2575)\n* Keycloak SAML brokering: Response delay due to unchecked NotOnOrAfter in SubjectConfirmationData (CVE-2026-1190)\n* Keycloak Authorization Header Parsing Leading to Potential Security Control Bypass (CVE-2026-0707)"
+}

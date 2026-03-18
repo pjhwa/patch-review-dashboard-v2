@@ -1,0 +1,44 @@
+{
+  "id": "RHBA-2025:20676",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: crun bug fix and enhancement update",
+  "issuedDate": "2025-11-11T07:50:47Z",
+  "updatedDate": "2025-11-11T07:50:47Z",
+  "pubDate": "2025-11-11T07:50:47Z",
+  "dateStr": "2025-11-11",
+  "url": "https://access.redhat.com/errata/RHBA-2025:20676",
+  "severity": "None",
+  "overview": "An update for crun is now available for Red Hat Enterprise Linux 10.",
+  "description": "For detailed information on changes in this release, see the Red Hat Enterprise Linux 9 Release Notes linked from the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux for x86_64 10 x86_64",
+    "Red Hat Enterprise Linux for ARM 64",
+    "Red Hat Enterprise Linux for Power, little endian",
+    "Red Hat Enterprise Linux for IBM z Systems"
+  ],
+  "cves": [],
+  "packages": [
+    "crun-1.23-1.el9.src",
+    "crun-1.23-1.el9.x86_64",
+    "crun-debuginfo-1.23-1.el9.x86_64",
+    "crun-debugsource-1.23-1.el9.x86_64",
+    "crun-1.23-1.el9.s390x",
+    "crun-debuginfo-1.23-1.el9.s390x",
+    "crun-debugsource-1.23-1.el9.s390x",
+    "crun-1.23-1.el9.ppc64le",
+    "crun-debuginfo-1.23-1.el9.ppc64le",
+    "crun-debugsource-1.23-1.el9.ppc64le",
+    "crun-1.23-1.el9.aarch64",
+    "crun-debuginfo-1.23-1.el9.aarch64",
+    "crun-debugsource-1.23-1.el9.aarch64"
+  ],
+  "fixes": [
+    {
+      "id": "RHEL-86639",
+      "url": "https://issues.redhat.com/browse/RHEL-86639",
+      "description": "Package crun for RHEL9.7"
+    }
+  ],
+  "full_text": "An update for crun is now available for Red Hat Enterprise Linux 10.\n\nFor detailed information on changes in this release, see the Red Hat Enterprise Linux 9 Release Notes linked from the References section."
+}

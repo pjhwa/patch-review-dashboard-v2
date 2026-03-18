@@ -1,0 +1,34 @@
+{
+  "id": "ELBA-2025-23155",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2026-January/019535.html",
+  "synopsis": "[El-errata] ELBA-2025-23155 Oracle Linux 7 ipa bug fix and enhancement update",
+  "dateStr": "2026-January",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Bug Fix Advisory ELBA-2025-23155",
+  "description": "[4.6.8-5.0.7.el7_9.17]\n- Fixes ELBA-2025-23155 kdb: do not fail if canonical principal is missing [Orabug: 38761213]\n\n[4.6.8-5.0.5.el7_9.17]\n- Fixes  CVE-2025-7493 Enforce uniqueness across krbprincipalname\n- and krbcanonicalname [Orabug: 38520120]\n\n[4.6.8-5.0.3.el7_9.17]\n- Fix privilege escalation from host to domain vulnerability\n- CVE-2025-4404 [Orabug: 38085890]",
+  "affected_products": [
+    "Oracle Linux 7"
+  ],
+  "packages": [
+    "ipa-client-4.6.8-5.0.7.el7_9.17.x86_64.rpm",
+    "ipa-client-common-4.6.8-5.0.7.el7_9.17.noarch.rpm",
+    "ipa-common-4.6.8-5.0.7.el7_9.17.noarch.rpm",
+    "ipa-python-compat-4.6.8-5.0.7.el7_9.17.noarch.rpm",
+    "ipa-server-4.6.8-5.0.7.el7_9.17.x86_64.rpm",
+    "ipa-server-common-4.6.8-5.0.7.el7_9.17.noarch.rpm",
+    "ipa-server-dns-4.6.8-5.0.7.el7_9.17.noarch.rpm",
+    "ipa-server-trust-ad-4.6.8-5.0.7.el7_9.17.x86_64.rpm",
+    "python2-ipaclient-4.6.8-5.0.7.el7_9.17.noarch.rpm",
+    "python2-ipalib-4.6.8-5.0.7.el7_9.17.noarch.rpm",
+    "python2-ipaserver-4.6.8-5.0.7.el7_9.17.noarch.rpm"
+  ],
+  "cves": [
+    "CVE-2025-7493",
+    "CVE-2025-4404"
+  ],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Bug Fix Advisory ELBA-2025-23155\n\nhttp://linux.oracle.com/errata/ELBA-2025-23155.html\n\nThe following updated rpms for Oracle Linux 7 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\nipa-client-4.6.8-5.0.7.el7_9.17.x86_64.rpm\nipa-client-common-4.6.8-5.0.7.el7_9.17.noarch.rpm\nipa-common-4.6.8-5.0.7.el7_9.17.noarch.rpm\nipa-python-compat-4.6.8-5.0.7.el7_9.17.noarch.rpm\nipa-server-4.6.8-5.0.7.el7_9.17.x86_64.rpm\nipa-server-common-4.6.8-5.0.7.el7_9.17.noarch.rpm\nipa-server-dns-4.6.8-5.0.7.el7_9.17.noarch.rpm\nipa-server-trust-ad-4.6.8-5.0.7.el7_9.17.x86_64.rpm\npython2-ipaclient-4.6.8-5.0.7.el7_9.17.noarch.rpm\npython2-ipalib-4.6.8-5.0.7.el7_9.17.noarch.rpm\npython2-ipaserver-4.6.8-5.0.7.el7_9.17.noarch.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol7/SRPMS-updates/ipa-4.6.8-5.0.7.el7_9.17.src.rpm\n\n\n\nDescription of changes:\n\n[4.6.8-5.0.7.el7_9.17]\n- Fixes ELBA-2025-23155 kdb: do not fail if canonical principal is missing [Orabug: 38761213]\n\n[4.6.8-5.0.5.el7_9.17]\n- Fixes  CVE-2025-7493 Enforce uniqueness across krbprincipalname\n- and krbcanonicalname [Orabug: 38520120]\n\n[4.6.8-5.0.3.el7_9.17]\n- Fix privilege escalation from host to domain vulnerability\n- CVE-2025-4404 [Orabug: 38085890]",
+  "vendor": "Oracle"
+}

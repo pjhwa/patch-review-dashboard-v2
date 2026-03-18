@@ -1,0 +1,20 @@
+{
+  "id": "RHSA-2026:2375",
+  "vendor": "Red Hat",
+  "url": "https://access.redhat.com/errata/RHSA-2026:2375",
+  "pubDate": "2026-02-09T22:06:53.000Z",
+  "dateStr": "2026-02-09",
+  "severity": "Important",
+  "title": "Red Hat Security Advisory: Red Hat Web Terminal Operator 1.15.0 release.",
+  "overview": "Red Hat Web Terminal Operator 1.15.0 has been released.",
+  "description": "Red Hat Web Terminal Operator 1.15.0 has been released.",
+  "affected_products": [
+    "Red Hat Web Terminal 1.15"
+  ],
+  "cves": [
+    "CVE-2025-61729"
+  ],
+  "packages": [],
+  "fixes": "",
+  "full_text": "Red Hat Security Advisory: Red Hat Web Terminal Operator 1.15.0 release.\n\nRed Hat Web Terminal Operator 1.15.0 has been released.\n\nRed Hat Web Terminal Operator 1.15.0 has been released.\n\n\n\nCVE-2025-61729: Within HostnameError.Error(), when constructing an error string, there is no limit to the number of hosts that will be printed out. Furthermore, the error string is constructed by repeated string concatenation, leading to quadratic runtime. Therefore, a certificate provided by a malicious actor can result in excessive resource consumption."
+}

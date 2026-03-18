@@ -1,0 +1,41 @@
+{
+  "id": "RHBA-2025:16680",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: irqbalance bug fix and enhancement update",
+  "issuedDate": "2025-09-25T06:10:05Z",
+  "updatedDate": "2025-09-25T06:10:05Z",
+  "pubDate": "2025-09-25T06:10:05Z",
+  "dateStr": "2025-09-25",
+  "url": "https://access.redhat.com/errata/RHBA-2025:16680",
+  "severity": "None",
+  "overview": "An update for irqbalance is now available for Red Hat Enterprise Linux 10.",
+  "description": "The irqbalance packages provide a daemon that evenly distributes the interrupt request (IRQ) load across multiple CPUs for enhanced performance.Bug Fix(es) and Enhancement(s): On a Single Node OpenShift with Telco DU configuration irqbalance.service fails with buffer overflow detected [rhel-9.6.z] (JIRA:RHEL-91476)",
+  "affected_products": [
+    "Red Hat Enterprise Linux for ARM 64",
+    "Red Hat Enterprise Linux Server for Power LE - Update Services for SAP Solutions",
+    "Red Hat Enterprise Linux for x86_64 10 x86_64",
+    "Red Hat Enterprise Linux for x86_64 - Extended Update Support 10 x86_64",
+    "Red Hat Enterprise Linux for ARM 64 - 4 years of updates",
+    "Red Hat Enterprise Linux for Power, little endian",
+    "Red Hat Enterprise Linux for x86_64 - Update Services for SAP Solutions 10 x86_64",
+    "Red Hat Enterprise Linux for ARM 64 - Extended Update Support",
+    "Red Hat Enterprise Linux for Power, little endian - Extended Update Support",
+    "Red Hat Enterprise Linux Server - AUS"
+  ],
+  "cves": [],
+  "packages": [
+    "irqbalance-1.9.4-2.el9_6.2.src",
+    "irqbalance-1.9.4-2.el9_6.2.x86_64",
+    "irqbalance-debuginfo-1.9.4-2.el9_6.2.x86_64",
+    "irqbalance-debugsource-1.9.4-2.el9_6.2.x86_64",
+    "irqbalance-1.9.4-2.el9_6.2.ppc64le",
+    "irqbalance-debuginfo-1.9.4-2.el9_6.2.ppc64le",
+    "irqbalance-debugsource-1.9.4-2.el9_6.2.ppc64le",
+    "irqbalance-1.9.4-2.el9_6.2.aarch64",
+    "irqbalance-debuginfo-1.9.4-2.el9_6.2.aarch64",
+    "irqbalance-debugsource-1.9.4-2.el9_6.2.aarch64"
+  ],
+  "fixes": [],
+  "full_text": "An update for irqbalance is now available for Red Hat Enterprise Linux 10.\n\nThe irqbalance packages provide a daemon that evenly distributes the interrupt request (IRQ) load across multiple CPUs for enhanced performance.Bug Fix(es) and Enhancement(s): On a Single Node OpenShift with Telco DU configuration irqbalance.service fails with buffer overflow detected [rhel-9.6.z] (JIRA:RHEL-91476)"
+}

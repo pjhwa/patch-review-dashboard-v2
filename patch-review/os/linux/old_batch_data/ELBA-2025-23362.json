@@ -1,0 +1,26 @@
+{
+  "id": "ELBA-2025-23362",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2025-December/019389.html",
+  "synopsis": "[El-errata] ELBA-2025-23362 Oracle Linux 8 gnome-autoar bug fix and enhancement update",
+  "dateStr": "2025-December",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Bug Fix Advisory ELBA-2025-23362",
+  "description": "[0.2.3-3]\n- Ship gnome-autoar-devel in CRB",
+  "affected_products": [
+    "Oracle Linux 8"
+  ],
+  "packages": [
+    "gnome-autoar-0.2.3-3.el8_10.i686.rpm",
+    "gnome-autoar-0.2.3-3.el8_10.x86_64.rpm",
+    "gnome-autoar-devel-0.2.3-3.el8_10.i686.rpm",
+    "gnome-autoar-devel-0.2.3-3.el8_10.x86_64.rpm",
+    "gnome-autoar-0.2.3-3.el8_10.aarch64.rpm",
+    "gnome-autoar-devel-0.2.3-3.el8_10.aarch64.rpm"
+  ],
+  "cves": [],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Bug Fix Advisory ELBA-2025-23362\n\nhttp://linux.oracle.com/errata/ELBA-2025-23362.html\n\nThe following updated rpms for Oracle Linux 8 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\ngnome-autoar-0.2.3-3.el8_10.i686.rpm\ngnome-autoar-0.2.3-3.el8_10.x86_64.rpm\ngnome-autoar-devel-0.2.3-3.el8_10.i686.rpm\ngnome-autoar-devel-0.2.3-3.el8_10.x86_64.rpm\n\naarch64:\ngnome-autoar-0.2.3-3.el8_10.aarch64.rpm\ngnome-autoar-devel-0.2.3-3.el8_10.aarch64.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol8/SRPMS-updates/gnome-autoar-0.2.3-3.el8_10.src.rpm\n\n\n\nDescription of changes:\n\n[0.2.3-3]\n- Ship gnome-autoar-devel in CRB",
+  "vendor": "Oracle"
+}

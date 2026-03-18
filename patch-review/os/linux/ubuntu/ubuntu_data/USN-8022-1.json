@@ -1,0 +1,24 @@
+{
+  "id": "USN-8022-1",
+  "vendor": "Canonical / Ubuntu",
+  "type": "Ubuntu Security Notice (USN)",
+  "title": "expat vulnerabilities",
+  "issuedDate": "2026-02-10T15:26:23Z",
+  "updatedDate": "2026-02-10T15:26:23Z",
+  "pubDate": "2026-02-10T15:26:23Z",
+  "dateStr": "2026-02-10",
+  "url": "https://ubuntu.com/security/notices/USN-8022-1",
+  "severity": "None",
+  "overview": "expat vulnerabilities",
+  "description": "It was discovered that Expat incorrectly handled memory when parsing certain\nXML files. An attacker could possibly use this issue to cause a denial of\nservice. This issue was only addressed in Ubuntu 25.10. (CVE-2025-59375)\n\nIt was discovered that Expat incorrectly handled the initialization of parsers\nfor external entities. An attacker could possibly use this issue to cause a\ndenial of service. (CVE-2026-24515)\n\nIt was discovered that Expat incorrectly handled integer calculations when\nallocating memory for XML tags. An attacker could possibly use this issue to\ncause a denial of service or execute arbitrary code. (CVE-2026-25210)",
+  "affected_products": [
+    "Ubuntu 22.04 LTS"
+  ],
+  "cves": [],
+  "packages": [
+    "expat-2.4.7-1ubuntu0.7",
+    "libexpat1-2.4.7-1ubuntu0.7",
+    "libexpat1-dev-2.4.7-1ubuntu0.7"
+  ],
+  "full_text": "It was discovered that Expat incorrectly handled memory when parsing certain\nXML files. An attacker could possibly use this issue to cause a denial of\nservice. This issue was only addressed in Ubuntu 25.10. (CVE-2025-59375)\n\nIt was discovered that Expat incorrectly handled the initialization of parsers\nfor external entities. An attacker could possibly use this issue to cause a\ndenial of service. (CVE-2026-24515)\n\nIt was discovered that Expat incorrectly handled integer calculations when\nallocating memory for XML tags. An attacker could possibly use this issue to\ncause a denial of service or execute arbitrary code. (CVE-2026-25210)"
+}

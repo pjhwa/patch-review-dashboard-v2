@@ -1,0 +1,151 @@
+{
+  "id": "RHBA-2025:20379",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: virt-v2v bug fix and enhancement update",
+  "issuedDate": "2025-11-11T07:26:17Z",
+  "updatedDate": "2025-11-11T07:26:17Z",
+  "pubDate": "2025-11-11T07:26:17Z",
+  "dateStr": "2025-11-11",
+  "url": "https://access.redhat.com/errata/RHBA-2025:20379",
+  "severity": "None",
+  "overview": "An update for virt-v2v is now available for Red Hat Enterprise Linux 10.",
+  "description": "For detailed information on changes in this release, see the Red Hat Enterprise Linux 10 Release Notes linked from the References section.",
+  "affected_products": [
+    "Red Hat CodeReady Linux Builder for x86_64 10 x86_64",
+    "Red Hat Enterprise Linux for x86_64 10 x86_64"
+  ],
+  "cves": [],
+  "packages": [
+    "virt-v2v-2.8.1-10.el10_1.src",
+    "virt-v2v-2.8.1-10.el10_1.x86_64",
+    "virt-v2v-bash-completion-2.8.1-10.el10_1.noarch",
+    "virt-v2v-debuginfo-2.8.1-10.el10_1.x86_64",
+    "virt-v2v-debugsource-2.8.1-10.el10_1.x86_64",
+    "virt-v2v-man-pages-ja-2.8.1-10.el10_1.noarch",
+    "virt-v2v-man-pages-uk-2.8.1-10.el10_1.noarch"
+  ],
+  "fixes": [
+    {
+      "id": "RHEL-81735",
+      "url": "https://issues.redhat.com/browse/RHEL-81735",
+      "description": "Rebase virt-v2v in RHEL 10.1"
+    },
+    {
+      "id": "RHEL-55732",
+      "url": "https://issues.redhat.com/browse/RHEL-55732",
+      "description": "v2v can't convert the guest if?info \"add_dracutmodules+=\" network-legacy \" is added to network-legacy.conf [rhel-10.0]"
+    },
+    {
+      "id": "RHEL-83288",
+      "url": "https://issues.redhat.com/browse/RHEL-83288",
+      "description": "virt-builder, virt-v2v & other tools with -v and --install causes dnf5 error [rhel-10.1]"
+    },
+    {
+      "id": "RHEL-85514",
+      "url": "https://issues.redhat.com/browse/RHEL-85514",
+      "description": "Print blkhash of converted image in virt-v2v debugging output [10.1]"
+    },
+    {
+      "id": "RHEL-86088",
+      "url": "https://issues.redhat.com/browse/RHEL-86088",
+      "description": "There is no nbdcopy info in v2v debug log since virt-v2v version 2.7.1-2 [rhel-10.1]"
+    },
+    {
+      "id": "RHEL-88544",
+      "url": "https://issues.redhat.com/browse/RHEL-88544",
+      "description": "virt-v2v-inspector is failing on snapshots of running VMs [rhel-10.1]"
+    },
+    {
+      "id": "RHEL-88860",
+      "url": "https://issues.redhat.com/browse/RHEL-88860",
+      "description": "Remove usage of nbdkit-cacheextents-filter [rhel-10.1]"
+    },
+    {
+      "id": "RHEL-88862",
+      "url": "https://issues.redhat.com/browse/RHEL-88862",
+      "description": "Print better mountpoint stats in debug output [rhel-10.1]"
+    },
+    {
+      "id": "RHEL-88864",
+      "url": "https://issues.redhat.com/browse/RHEL-88864",
+      "description": "Add virt-v2v -io vddk-noextents=true so we can test noextents [rhel-10.1]"
+    },
+    {
+      "id": "RHEL-88867",
+      "url": "https://issues.redhat.com/browse/RHEL-88867",
+      "description": "Remove several ancient, deprecated options [rhel-10.1]"
+    },
+    {
+      "id": "RHEL-89993",
+      "url": "https://issues.redhat.com/browse/RHEL-89993",
+      "description": "Add possible roots to the virt-v2v-inspector output [rhel-10.1]"
+    },
+    {
+      "id": "RHEL-81680",
+      "url": "https://issues.redhat.com/browse/RHEL-81680",
+      "description": "Converting a SUSE VM will fail if the kernel-source package is installed in the source VM [rhel-10]"
+    },
+    {
+      "id": "RHEL-95365",
+      "url": "https://issues.redhat.com/browse/RHEL-95365",
+      "description": "virt-v2v fails to convert XFS guest with dirty filesystem"
+    },
+    {
+      "id": "RHEL-70854",
+      "url": "https://issues.redhat.com/browse/RHEL-70854",
+      "description": "v2v can't convert win11-efi-secure guest with vtpm: \"Activation of partially decrypted BITLK device is not supported\" [rhel-10.0]"
+    },
+    {
+      "id": "RHEL-97600",
+      "url": "https://issues.redhat.com/browse/RHEL-97600",
+      "description": "Virt-v2v fails to convert some guests with libguestfs error: e2fsck"
+    },
+    {
+      "id": "RHEL-99313",
+      "url": "https://issues.redhat.com/browse/RHEL-99313",
+      "description": "Improve the error info when converting a guest with less than 100 inodes by virt-v2v"
+    },
+    {
+      "id": "RHEL-99745",
+      "url": "https://issues.redhat.com/browse/RHEL-99745",
+      "description": "Improve info about guest must not be running or must be shut down in virt-v2v related man page [rhel-10.1]"
+    },
+    {
+      "id": "RHEL-101599",
+      "url": "https://issues.redhat.com/browse/RHEL-101599",
+      "description": "RFE: Allow -o kubevirt disks to be specified"
+    },
+    {
+      "id": "RHEL-102619",
+      "url": "https://issues.redhat.com/browse/RHEL-102619",
+      "description": "Remove vddk-noextents option [rhel-10.1]"
+    },
+    {
+      "id": "RHEL-102734",
+      "url": "https://issues.redhat.com/browse/RHEL-102734",
+      "description": "virt-v2v can't convert guest with multiple disks from VMware since nbdkit-1.44.0-1"
+    },
+    {
+      "id": "RHEL-104018",
+      "url": "https://issues.redhat.com/browse/RHEL-104018",
+      "description": "Log the version of libnbd / nbdcopy in virt-v2v output"
+    },
+    {
+      "id": "RHEL-109130",
+      "url": "https://issues.redhat.com/browse/RHEL-109130",
+      "description": "virt-v2v won't do selinux relabel correctly across filesystem boundaries [rhel-10.1]"
+    },
+    {
+      "id": "RHEL-108991",
+      "url": "https://issues.redhat.com/browse/RHEL-108991",
+      "description": "RFE: Set boot order for Linux BIOS guests based on grub location [rhel-10.1]"
+    },
+    {
+      "id": "RHEL-110742",
+      "url": "https://issues.redhat.com/browse/RHEL-110742",
+      "description": "RFE: Set boot order for guests in -o kubevirt output mode [rhel-10.1]"
+    }
+  ],
+  "full_text": "An update for virt-v2v is now available for Red Hat Enterprise Linux 10.\n\nFor detailed information on changes in this release, see the Red Hat Enterprise Linux 10 Release Notes linked from the References section."
+}

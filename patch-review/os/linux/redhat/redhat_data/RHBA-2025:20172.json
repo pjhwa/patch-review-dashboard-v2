@@ -1,0 +1,59 @@
+{
+  "id": "RHBA-2025:20172",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: mdadm bug fix and enhancement update",
+  "issuedDate": "2025-11-11T07:25:19Z",
+  "updatedDate": "2025-11-11T07:25:19Z",
+  "pubDate": "2025-11-11T07:25:19Z",
+  "dateStr": "2025-11-11",
+  "url": "https://access.redhat.com/errata/RHBA-2025:20172",
+  "severity": "None",
+  "overview": "An update for mdadm is now available for Red Hat Enterprise Linux 10.",
+  "description": "For detailed information on changes in this release, see the Red Hat Enterprise Linux 10 Release Notes linked from the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux for ARM 64",
+    "Red Hat Enterprise Linux for x86_64 10 x86_64",
+    "Red Hat Enterprise Linux for Power, little endian",
+    "Red Hat Enterprise Linux for IBM z Systems"
+  ],
+  "cves": [],
+  "packages": [
+    "mdadm-4.4-2.el10.src",
+    "mdadm-4.4-2.el10.x86_64",
+    "mdadm-debuginfo-4.4-2.el10.x86_64",
+    "mdadm-debugsource-4.4-2.el10.x86_64",
+    "mdadm-4.4-2.el10.s390x",
+    "mdadm-debuginfo-4.4-2.el10.s390x",
+    "mdadm-debugsource-4.4-2.el10.s390x",
+    "mdadm-4.4-2.el10.ppc64le",
+    "mdadm-debuginfo-4.4-2.el10.ppc64le",
+    "mdadm-debugsource-4.4-2.el10.ppc64le",
+    "mdadm-4.4-2.el10.aarch64",
+    "mdadm-debuginfo-4.4-2.el10.aarch64",
+    "mdadm-debugsource-4.4-2.el10.aarch64"
+  ],
+  "fixes": [
+    {
+      "id": "RHEL-72803",
+      "url": "https://issues.redhat.com/browse/RHEL-72803",
+      "description": "[rhel10.1] Update mdadm to latest upstream"
+    },
+    {
+      "id": "RHEL-88791",
+      "url": "https://issues.redhat.com/browse/RHEL-88791",
+      "description": "[rhel10.1] Allow RAID0 to be created with v0.90 metadata"
+    },
+    {
+      "id": "RHEL-88793",
+      "url": "https://issues.redhat.com/browse/RHEL-88793",
+      "description": "[rhel10.1] mdadm: bitmap file is not supported"
+    },
+    {
+      "id": "RHEL-92288",
+      "url": "https://issues.redhat.com/browse/RHEL-92288",
+      "description": "[rhel10.1] mdadm: Grow command fails when updating chunk size"
+    }
+  ],
+  "full_text": "An update for mdadm is now available for Red Hat Enterprise Linux 10.\n\nFor detailed information on changes in this release, see the Red Hat Enterprise Linux 10 Release Notes linked from the References section."
+}

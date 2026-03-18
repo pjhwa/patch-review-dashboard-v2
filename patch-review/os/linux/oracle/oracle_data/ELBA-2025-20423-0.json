@@ -1,0 +1,34 @@
+{
+  "id": "ELBA-2025-20423-0",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "AppStream",
+  "title": "delve and golang bug fix and enhancement update",
+  "issuedDate": "2025-11-25T00:00:00Z",
+  "updatedDate": "2025-11-25T00:00:00Z",
+  "pubDate": "2025-11-25T00:00:00Z",
+  "dateStr": "2025-11-25",
+  "url": "https://linux.oracle.com/errata/ELBA-2025-20423-0.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 10.",
+  "description": "delve\n[1.24.1-2.0.1]\n- Disable DWARF compression which has issues (Alex Burmashev)\n\n[1.24.1-2]\n- Rebuild without changes\n\ngolang\n[1.24.6-1]\n- Update to Go 1.24.6\n\n[1.24.4-3]\n- Re enable debuginfo in toolchain binaries\n\n[1.24.4-2]\n- Add LD_FLAGS for stripping binaries",
+  "affected_products": [
+    "Oracle Linux 10 for x86_64",
+    "Oracle Linux 10 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "delve-1.24.1-2.0.1.el10.src",
+    "golang-misc-1.24.6-1.el10.noarch",
+    "delve-1.24.1-2.0.1.el10.x86_64",
+    "golang-1.24.6-1.el10.x86_64",
+    "golang-docs-1.24.6-1.el10.noarch",
+    "golang-tests-1.24.6-1.el10.noarch",
+    "golang-race-1.24.6-1.el10.x86_64",
+    "golang-src-1.24.6-1.el10.noarch",
+    "golang-bin-1.24.6-1.el10.x86_64",
+    "go-toolset-1.24.6-1.el10.x86_64",
+    "golang-1.24.6-1.el10.src"
+  ],
+  "full_text": "delve\n[1.24.1-2.0.1]\n- Disable DWARF compression which has issues (Alex Burmashev)\n\n[1.24.1-2]\n- Rebuild without changes\n\ngolang\n[1.24.6-1]\n- Update to Go 1.24.6\n\n[1.24.4-3]\n- Re enable debuginfo in toolchain binaries\n\n[1.24.4-2]\n- Add LD_FLAGS for stripping binaries\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2025-20423-0.html"
+}

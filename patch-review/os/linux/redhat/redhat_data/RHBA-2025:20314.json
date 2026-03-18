@@ -1,0 +1,61 @@
+{
+  "id": "RHBA-2025:20314",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: lorax bug fix and enhancement update",
+  "issuedDate": "2025-11-11T07:26:03Z",
+  "updatedDate": "2025-11-11T07:26:03Z",
+  "pubDate": "2025-11-11T07:26:03Z",
+  "dateStr": "2025-11-11",
+  "url": "https://access.redhat.com/errata/RHBA-2025:20314",
+  "severity": "None",
+  "overview": "An update for lorax is now available for Red Hat Enterprise Linux 10.",
+  "description": "For detailed information on changes in this release, see the Red Hat Enterprise Linux 10 Release Notes linked from the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux for IBM z Systems",
+    "Red Hat Enterprise Linux for Power, little endian",
+    "Red Hat Enterprise Linux for ARM 64",
+    "Red Hat Enterprise Linux for x86_64 10 x86_64"
+  ],
+  "cves": [],
+  "packages": [
+    "lorax-40.5.13-1.el10.src",
+    "lorax-40.5.13-1.el10.x86_64",
+    "lorax-docs-40.5.13-1.el10.x86_64",
+    "lorax-lmc-novirt-40.5.13-1.el10.x86_64",
+    "lorax-lmc-virt-40.5.13-1.el10.x86_64",
+    "lorax-templates-generic-40.5.13-1.el10.x86_64",
+    "lorax-40.5.13-1.el10.s390x",
+    "lorax-docs-40.5.13-1.el10.s390x",
+    "lorax-lmc-novirt-40.5.13-1.el10.s390x",
+    "lorax-lmc-virt-40.5.13-1.el10.s390x",
+    "lorax-templates-generic-40.5.13-1.el10.s390x",
+    "lorax-40.5.13-1.el10.ppc64le",
+    "lorax-docs-40.5.13-1.el10.ppc64le",
+    "lorax-lmc-novirt-40.5.13-1.el10.ppc64le",
+    "lorax-templates-generic-40.5.13-1.el10.ppc64le",
+    "lorax-40.5.13-1.el10.aarch64",
+    "lorax-docs-40.5.13-1.el10.aarch64",
+    "lorax-lmc-novirt-40.5.13-1.el10.aarch64",
+    "lorax-lmc-virt-40.5.13-1.el10.aarch64",
+    "lorax-templates-generic-40.5.13-1.el10.aarch64"
+  ],
+  "fixes": [
+    {
+      "id": "RHEL-83202",
+      "url": "https://issues.redhat.com/browse/RHEL-83202",
+      "description": "[mkksiso] Kernel command line modifcations are not present when booting from USB in UEFI mode"
+    },
+    {
+      "id": "RHEL-83519",
+      "url": "https://issues.redhat.com/browse/RHEL-83519",
+      "description": "livemedia-creator fails to build images due to missing permissions in CPIO appended to initrd"
+    },
+    {
+      "id": "RHEL-80789",
+      "url": "https://issues.redhat.com/browse/RHEL-80789",
+      "description": "[RHEL-10.1] Sync lorax-templates-rhel and lorax-templates-generic"
+    }
+  ],
+  "full_text": "An update for lorax is now available for Red Hat Enterprise Linux 10.\n\nFor detailed information on changes in this release, see the Red Hat Enterprise Linux 10 Release Notes linked from the References section."
+}

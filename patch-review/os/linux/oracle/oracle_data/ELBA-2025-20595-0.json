@@ -1,0 +1,25 @@
+{
+  "id": "ELBA-2025-20595-0",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "RHCK",
+  "title": "hwdata bug fix and enhancement update",
+  "issuedDate": "2025-11-17T00:00:00Z",
+  "updatedDate": "2025-11-17T00:00:00Z",
+  "pubDate": "2025-11-17T00:00:00Z",
+  "dateStr": "2025-11-17",
+  "url": "https://linux.oracle.com/errata/ELBA-2025-20595-0.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 9.",
+  "description": "[0.348-9.20]\n- Update pci, usb and vendor ids\n  Resolves: RHEL-78358\n\n[0.348-9.19]\n- Update pci, usb and vendor ids\n  Resolves: RHEL-78355",
+  "affected_products": [
+    "Oracle Linux 9 for x86_64",
+    "Oracle Linux 9 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "hwdata-0.348-9.20.el9.src",
+    "hwdata-0.348-9.20.el9.noarch"
+  ],
+  "full_text": "[0.348-9.20]\n- Update pci, usb and vendor ids\n  Resolves: RHEL-78358\n\n[0.348-9.19]\n- Update pci, usb and vendor ids\n  Resolves: RHEL-78355\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2025-20595-0.html"
+}

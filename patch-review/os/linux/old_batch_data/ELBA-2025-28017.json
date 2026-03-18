@@ -1,0 +1,25 @@
+{
+  "id": "ELBA-2025-28017",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2025-November/019126.html",
+  "synopsis": "[El-errata] ELBA-2025-28017 Oracle Linux 8 leapp-repository bug fix update",
+  "dateStr": "2025-November",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Bug Fix Advisory ELBA-2025-28017",
+  "description": "[0.20.0-2.0.28]\n- Implemented versionlock inhibitor [Orabug: 38645486]\n- Implemented fix for not enough space error message [Orabug: 35406933]\n\n[0.20.0-2.0.27]\n- Update aarch64 problematic package list [Orabug: 38658490]\n- Support OL9.7 as a target upgrade path [Orabug: 38640752]\n\n[0.20.0-2.0.25]\n- Add additional mappings for OL9 upgrade [Orabug: 38640419]\n- Add additional problematic i686 package [Orabug: 38544332]\n- Update supported RHCK version [Orabug: 38640727]\n- Add mappings for mysql 8.4 stream [Orabug: 38644271]\n\n[0.20.0-2.0.24]\n- Import special selinux module for double upgrade case [Orabug: 38285113]\n\n[0.20.0-2.0.23]\n- Implement support and mapping for UEKR8 repository [JIRA: LEAPP-3]\n\n[0.20.0-2.0.22]\n- Set Oracle Linux 9.6 as upgrade target [Orabug: 37839808]\n- Add alert for problematic aarch64 package [Orabug: 37953148]\n\n[0.20.0-2.0.21]\n- Produce alert on additional i686 problematic packages [Orabug: 37792372] [Orabug: 37809864]\n- Add additional mappings for OL9 upgrade [Orabug: 37792090] [Orabug: 37803309]\n\n[0.20.0-2.0.20]\n- Pre-set enabled repos variable [JIRA: OLDIS-43582], [JIRA: OLDIS-43583]\n\n[0.20.0-2.0.19]\n- Update conditions for OSMH upgrade [JIRA: OLDIS-43582], [JIRA: OLDIS-43583]\n\n[0.20.0-2.0.18]\n- Implemented Inhibitor for Oracle-ebs-server-R12-Preinstall [Orabug: 37096058]",
+  "affected_products": [
+    "Oracle Linux 8",
+    "Oracle Linux 9"
+  ],
+  "packages": [
+    "leapp-upgrade-el8toel9-0.20.0-2.0.28.el8.noarch.rpm",
+    "leapp-upgrade-el8toel9-deps-0.20.0-2.0.28.el8.noarch.rpm",
+    "leapp-upgrade-el8toel9-0.20.0-2.0.28.el8.noarch.rpm",
+    "leapp-upgrade-el8toel9-deps-0.20.0-2.0.28.el8.noarch.rpm"
+  ],
+  "cves": [],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Bug Fix Advisory ELBA-2025-28017\n\nhttp://linux.oracle.com/errata/ELBA-2025-28017.html\n\nThe following updated rpms for Oracle Linux 8 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\nleapp-upgrade-el8toel9-0.20.0-2.0.28.el8.noarch.rpm\nleapp-upgrade-el8toel9-deps-0.20.0-2.0.28.el8.noarch.rpm\n\naarch64:\nleapp-upgrade-el8toel9-0.20.0-2.0.28.el8.noarch.rpm\nleapp-upgrade-el8toel9-deps-0.20.0-2.0.28.el8.noarch.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol8/SRPMS-updates/leapp-repository-0.20.0-2.0.28.el8.src.rpm\n\n\n\nDescription of changes:\n\n[0.20.0-2.0.28]\n- Implemented versionlock inhibitor [Orabug: 38645486]\n- Implemented fix for not enough space error message [Orabug: 35406933]\n\n[0.20.0-2.0.27]\n- Update aarch64 problematic package list [Orabug: 38658490]\n- Support OL9.7 as a target upgrade path [Orabug: 38640752]\n\n[0.20.0-2.0.25]\n- Add additional mappings for OL9 upgrade [Orabug: 38640419]\n- Add additional problematic i686 package [Orabug: 38544332]\n- Update supported RHCK version [Orabug: 38640727]\n- Add mappings for mysql 8.4 stream [Orabug: 38644271]\n\n[0.20.0-2.0.24]\n- Import special selinux module for double upgrade case [Orabug: 38285113]\n\n[0.20.0-2.0.23]\n- Implement support and mapping for UEKR8 repository [JIRA: LEAPP-3]\n\n[0.20.0-2.0.22]\n- Set Oracle Linux 9.6 as upgrade target [Orabug: 37839808]\n- Add alert for problematic aarch64 package [Orabug: 37953148]\n\n[0.20.0-2.0.21]\n- Produce alert on additional i686 problematic packages [Orabug: 37792372] [Orabug: 37809864]\n- Add additional mappings for OL9 upgrade [Orabug: 37792090] [Orabug: 37803309]\n\n[0.20.0-2.0.20]\n- Pre-set enabled repos variable [JIRA: OLDIS-43582], [JIRA: OLDIS-43583]\n\n[0.20.0-2.0.19]\n- Update conditions for OSMH upgrade [JIRA: OLDIS-43582], [JIRA: OLDIS-43583]\n\n[0.20.0-2.0.18]\n- Implemented Inhibitor for Oracle-ebs-server-R12-Preinstall [Orabug: 37096058]",
+  "vendor": "Oracle"
+}

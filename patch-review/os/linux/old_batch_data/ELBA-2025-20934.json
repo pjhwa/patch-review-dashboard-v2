@@ -1,0 +1,26 @@
+{
+  "id": "ELBA-2025-20934",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2025-November/019112.html",
+  "synopsis": "[El-errata] ELBA-2025-20934 Oracle Linux 9 osbuild-composer bug fix and enhancement update",
+  "dateStr": "2025-November",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Bug Fix Advisory ELBA-2025-20934",
+  "description": "[149-2.0.1]\n- Add missing dependency over dracut-config-rescue for image-installer [ORABUG: 38587453]\n- Switch to UEKR8 repositories for OL9.6 [Orabug: 37962207]\n- Add support to create OpenScap images [JIRA: OLDIS-35301]\n- Simplify repository names [JIRA: OLDIS-35893]\n- Refactor patches to fix some naming and set a correct kernel for Oracle Linux [Orabug: 37253643]\n- Support using OCI variables inside built images [JIRA: OLDIS-35302]\n- Support using repository definitons with OCI variables [JIRA: OLDIS-38657]\n- Update repositories to contain OCI variables\n- Remove image types Minimal-raw and wsl [JIRA: OLDIS-38123]\n- Increase default /boot size to 1GB [Orabug: 36827079]\n- Add support for OCI hybrid images [JIRA: OLDIS-33593]\n- enable aarch64 OCI image builds [JIRA: OLDIS-33593]\n- support for building OL8/9 images on Oracle Linux 9 [Orabug: 36400619]\n\n[149-2]\n- Add missing BSI OpenSCAP profile to the allowlist\n  Resolves: RHEL-121525",
+  "affected_products": [
+    "Oracle Linux 9"
+  ],
+  "packages": [
+    "osbuild-composer-149-2.0.1.el9_7.x86_64.rpm",
+    "osbuild-composer-core-149-2.0.1.el9_7.x86_64.rpm",
+    "osbuild-composer-worker-149-2.0.1.el9_7.x86_64.rpm",
+    "osbuild-composer-149-2.0.1.el9_7.aarch64.rpm",
+    "osbuild-composer-core-149-2.0.1.el9_7.aarch64.rpm",
+    "osbuild-composer-worker-149-2.0.1.el9_7.aarch64.rpm"
+  ],
+  "cves": [],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Bug Fix Advisory ELBA-2025-20934\n\nhttp://linux.oracle.com/errata/ELBA-2025-20934.html\n\nThe following updated rpms for Oracle Linux 9 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\nosbuild-composer-149-2.0.1.el9_7.x86_64.rpm\nosbuild-composer-core-149-2.0.1.el9_7.x86_64.rpm\nosbuild-composer-worker-149-2.0.1.el9_7.x86_64.rpm\n\naarch64:\nosbuild-composer-149-2.0.1.el9_7.aarch64.rpm\nosbuild-composer-core-149-2.0.1.el9_7.aarch64.rpm\nosbuild-composer-worker-149-2.0.1.el9_7.aarch64.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol9/SRPMS-updates/osbuild-composer-149-2.0.1.el9_7.src.rpm\n\n\n\nDescription of changes:\n\n[149-2.0.1]\n- Add missing dependency over dracut-config-rescue for image-installer [ORABUG: 38587453]\n- Switch to UEKR8 repositories for OL9.6 [Orabug: 37962207]\n- Add support to create OpenScap images [JIRA: OLDIS-35301]\n- Simplify repository names [JIRA: OLDIS-35893]\n- Refactor patches to fix some naming and set a correct kernel for Oracle Linux [Orabug: 37253643]\n- Support using OCI variables inside built images [JIRA: OLDIS-35302]\n- Support using repository definitons with OCI variables [JIRA: OLDIS-38657]\n- Update repositories to contain OCI variables\n- Remove image types Minimal-raw and wsl [JIRA: OLDIS-38123]\n- Increase default /boot size to 1GB [Orabug: 36827079]\n- Add support for OCI hybrid images [JIRA: OLDIS-33593]\n- enable aarch64 OCI image builds [JIRA: OLDIS-33593]\n- support for building OL8/9 images on Oracle Linux 9 [Orabug: 36400619]\n\n[149-2]\n- Add missing BSI OpenSCAP profile to the allowlist\n  Resolves: RHEL-121525",
+  "vendor": "Oracle"
+}

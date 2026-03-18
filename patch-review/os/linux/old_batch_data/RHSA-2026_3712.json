@@ -1,0 +1,30 @@
+{
+  "id": "RHSA-2026:3712",
+  "vendor": "Red Hat",
+  "url": "https://access.redhat.com/errata/RHSA-2026:3712",
+  "pubDate": "2026-03-04T07:12:04.000Z",
+  "dateStr": "2026-03-04",
+  "severity": "Important",
+  "title": "Red Hat Security Advisory: Red Hat OpenShift Pipelines Release 1.15.4",
+  "overview": "The 1.15.4 GA release of Red Hat OpenShift Pipelines Operator..\nFor more details see [product documentation](https://docs.redhat.com/en/documentation/red_hat_openshift_pipelines).",
+  "description": "The 1.15.4 GA release of Red Hat OpenShift Pipelines Operator..\nFor more details see [product documentation](https://docs.redhat.com/en/documentation/red_hat_openshift_pipelines).",
+  "affected_products": [
+    "Red Hat OpenShift Pipelines 1.15"
+  ],
+  "cves": [
+    "CVE-2024-37890",
+    "CVE-2025-6545",
+    "CVE-2025-6547",
+    "CVE-2025-9287",
+    "CVE-2025-9288",
+    "CVE-2025-12816",
+    "CVE-2025-13465",
+    "CVE-2025-15284",
+    "CVE-2025-66031",
+    "CVE-2025-66506",
+    "CVE-2025-66564"
+  ],
+  "packages": [],
+  "fixes": "",
+  "full_text": "Red Hat Security Advisory: Red Hat OpenShift Pipelines Release 1.15.4\n\nThe 1.15.4 GA release of Red Hat OpenShift Pipelines Operator..\nFor more details see [product documentation](https://docs.redhat.com/en/documentation/red_hat_openshift_pipelines).\n\nThe 1.15.4 GA release of Red Hat OpenShift Pipelines Operator..\nFor more details see [product documentation](https://docs.redhat.com/en/documentation/red_hat_openshift_pipelines).\n\n\n\nCVE-2024-37890: A flaw was found in the Node.js WebSocket library (ws). A request with several headers exceeding the 'server.maxHeadersCount' threshold could be used to crash a ws server, leading to a denial of service.\n\nCVE-2025-6545: A flaw was found in the npm pbkdf2 library, allowing signature spoofing. When executing in javascript engines other than Nodejs or Nodejs when importing pbkdf2/browser, certain algorithms will silently fail and return invalid data. The return values are predictable, which undermines the security guarantees of the package.\n\nCVE-2025-6547: A flaw was found in the npm pbkdf2 library, allowing signature spoofing. Under specific use cases, pbkdf2 may return static keys. This issue only occurs when running the library on Node.js.\n\nCVE-2025-9287: An improper input validation vulnerability was found in the cipher-base npm package. Missing input type checks in the polyfill of the Node.js `createHash` function result in invalid value calculations, hanging and rewinding the hash state, including turning a tagged hash into an untagged hash, for malicious JSON-stringifyable inputs.\n\nCVE-2025-9288: A vulnerability was found in sha.js, where the hashing implementation does not perform sufficient input type validation. The .update() function accepts arbitrary objects, including those with crafted length properties, which can alter the internal state machine of the hashing process. This flaw may result in unexpected behavior such as rewinding the hash state, producing inconsistent digest outputs, or entering invalid processing loops. The issue was introduced due to the reliance on JavaScript object coercion rules rather than enforcing strict buffer or string inputs.\n\nCVE-2025-12816: A flaw was found in node-forge. This vulnerability allows unauthenticated attackers to bypass downstream cryptographic verifications and security decisions via crafting ASN.1 (Abstract Syntax Notation One) structures to desynchronize schema validations, yielding a semantic divergence.\n\nCVE-2025-13465: A flaw was found in Lodash. A prototype pollution vulnerability in the _.unset and _.omit functions allows an attacker able to control property paths to delete methods from global prototypes. By removing essential functionalities, this can result in a denial of service.\n\nCVE-2025-15284: A flaw was found in qs, a module used for parsing query strings. A remote attacker can exploit an improper input validation vulnerability by sending specially crafted HTTP requests that use bracket notation (e.g., `a[]=value`). This bypasses the `arrayLimit` option, which is designed to limit the size of parsed arrays and prevent resource exhaustion. Successful exploitation can lead to memory exhaustion, causing a Denial of Service (DoS) where the application crashes or becomes unresponsive, making the service unavailable to users.\n\nCVE-2025-66031: Forge (also called `node-forge`) is a native implementation of Transport Layer Security in JavaScript. An Uncontrolled Recursion vulnerability in node-forge versions 1.3.1 and below enables remote, unauthenticated attackers to craft deep ASN.1 structures that trigger unbounded recursive parsing. This leads to a Denial-of-Service (DoS) via stack exhaustion when parsing untrusted DER inputs. This issue has been patched in version 1.3.2.\n\nCVE-2025-66506: A flaw was found in Fulcio, a free-to-use certificate authority. This vulnerability allows a denial of service (DoS) due to excessive memory allocation when processing a malicious OpenID Connect (OIDC) identity token containing numerous period characters.\n\nCVE-2025-66564: A flaw was found in Sigstore Timestamp Authority. This vulnerability allows a denial of service via excessive memory allocation when processing a specially crafted Object Identifier or Content-Type header."
+}

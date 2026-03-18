@@ -1,0 +1,26 @@
+{
+  "id": "ELBA-2025-20651-0",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "AppStream",
+  "title": "guestfs-tools bug fix and enhancement update",
+  "issuedDate": "2025-11-17T00:00:00Z",
+  "updatedDate": "2025-11-17T00:00:00Z",
+  "pubDate": "2025-11-17T00:00:00Z",
+  "dateStr": "2025-11-17",
+  "url": "https://linux.oracle.com/errata/ELBA-2025-20651-0.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 9.",
+  "description": "[1.52.2-6]\n- Update guestfs-tools firstboot.bat to match virt-v2v\n  resolves: RHEL-109521\n\n[1.52.2-5]\n- builder: Update link to templates to use https\n  resolves: RHEL-94874",
+  "affected_products": [
+    "Oracle Linux 9 for x86_64",
+    "Oracle Linux 9 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "guestfs-tools-1.52.2-6.el9.src",
+    "virt-win-reg-1.52.2-6.el9.noarch",
+    "guestfs-tools-1.52.2-6.el9.x86_64"
+  ],
+  "full_text": "[1.52.2-6]\n- Update guestfs-tools firstboot.bat to match virt-v2v\n  resolves: RHEL-109521\n\n[1.52.2-5]\n- builder: Update link to templates to use https\n  resolves: RHEL-94874\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2025-20651-0.html"
+}

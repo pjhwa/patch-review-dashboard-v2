@@ -1,0 +1,20 @@
+{
+  "id": "RHSA-2025:23236",
+  "vendor": "Red Hat",
+  "url": "https://access.redhat.com/errata/RHSA-2025:23236",
+  "pubDate": "2025-12-16T01:34:50.000Z",
+  "dateStr": "2025-12-16",
+  "severity": "Important",
+  "title": "Red Hat Security Advisory: Red Hat Lightspeed (formerly Insights) for Runtimes 1.0.0: new RHEL 9 container image security update",
+  "overview": "New Red Hat Lightspeed (formerly Insights) for Runtimes on RHEL 9 container images are now available.\n\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "description": "New Red Hat Lightspeed (formerly Insights) for Runtimes on RHEL 9 container images are now available.\n\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "affected_products": [
+    "Red Hat Lightspeed (formerly Insights) for Runtimes 1.0"
+  ],
+  "cves": [
+    "CVE-2025-11393"
+  ],
+  "packages": [],
+  "fixes": "",
+  "full_text": "Red Hat Security Advisory: Red Hat Lightspeed (formerly Insights) for Runtimes 1.0.0: new RHEL 9 container image security update\n\nNew Red Hat Lightspeed (formerly Insights) for Runtimes on RHEL 9 container images are now available.\n\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nNew Red Hat Lightspeed (formerly Insights) for Runtimes on RHEL 9 container images are now available.\n\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\n\n\nCVE-2025-11393: A flaw was found in runtimes-inventory-rhel8-operator. An internal proxy component is incorrectly configured. Because of this flaw, the proxy attaches the cluster's main administrative credentials to any command it receives, instead of only the specific reports it is supposed to handle.\n\nThis allows a standard user within the cluster to send unauthorized commands to the management platform, effectively acting with the full permissions of the cluster administrator. This could lead to unauthorized changes to the cluster's configuration or status on the Red Hat platform."
+}

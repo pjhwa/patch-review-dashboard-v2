@@ -1,0 +1,27 @@
+{
+  "id": "ELBA-2025-20109-0",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "RHCK",
+  "title": "device-mapper-multipath bug fix and enhancement update",
+  "issuedDate": "2025-11-25T00:00:00Z",
+  "updatedDate": "2025-11-25T00:00:00Z",
+  "pubDate": "2025-11-25T00:00:00Z",
+  "dateStr": "2025-11-25",
+  "url": "https://linux.oracle.com/errata/ELBA-2025-20109-0.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 10.",
+  "description": "[0.9.9-12]\nAdd 0034-libmultipath-fix-crash-in-print_foreign_topology.patch\n  * Fixes RHEL-107436 ('Running multipath -ll on system with 'enable_foreign\n    nvme' results in segfault')\nResolves: RHEL-107436\n\n[0.9.9-11]\n- Add 0033-multipath-tools-add-HPE-MSA-Gen7-2070-2072-to-hwtabl.patch\n  * Fixes RHEL-103112 ('Update multipath builtin config to add new\n    device defaults [rhel-10]')\n- Resolves: RHEL-103112\n\n[0.9.9-10]\n- Migrate gating tests from STI to tmt\n- Related: RHEL-82535\n\n[0.9.9-9]\n- Add 0030-multipathd-monitor-new-multipath-dev-even-if-we-can-.patch\n- Add 0031-libmultipath-add-helper-function-check_path_wwid_cha.patch\n- Add 0032-multipathd-re-add-paths-skipped-because-they-were-of.patch\n  * Fixes RHEL-82535 ('multipathd does not monitor multipath devices\n    created externally while there are offline paths.')\n- Resolves: RHEL-82535\n\n[0.9.9-8]\n- Fix multipath_conf_syntax OSCI test.\n- Related: RHEL-82180\n\n[0.9.9-7]\n- Add 0018-multipath-tools-move-DEFAULT_SOCKET-definition-into-.patch\n- Add 0019-multipath-tools-add-helper-mpath_fill_sockaddr__.patch\n- Add 0020-libmpathutil-add-support-for-Unix-pathname-sockets.patch\n- Add 0021-libmpathutil-move-systemd_listen_fds-support-into-mu.patch\n- Add 0022-multipathd-make-uxsock_listen-take-a-pointer-to-fd.patch\n- Add 0023-multipathd-allow-receiving-two-socket-fds-from-syste.patch\n- Add 0024-multipathd-listen-on-pathname-and-abstract-socket-by.patch\n- Add 0025-libmpathcmd-try-both-abstract-and-pathname-sockets.patch\n- Add 0026-libmpathcmd-honor-MULTIPATH_SOCKET_NAME-environment-.patch\n- Add 0027-multipathd-honor-MULTIPATH_SOCKET_NAME-environment-v.patch\n- Add 0028-multipath-clean-up-find_multipaths-documentation.patch\n- Add 0029-multipathd-Add-multipathd-man-page-section-about-soc.patch\n  * Fixes RHEL-82180 ('RFE: Enable multipathd to communicate with a\n    process in another network namespace')\n- Resolves: RHEL-82180",
+  "affected_products": [
+    "Oracle Linux 10 for x86_64",
+    "Oracle Linux 10 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "device-mapper-multipath-0.9.9-12.el10_1.src",
+    "device-mapper-multipath-0.9.9-12.el10_1.x86_64",
+    "kpartx-0.9.9-12.el10_1.x86_64",
+    "device-mapper-multipath-libs-0.9.9-12.el10_1.x86_64"
+  ],
+  "full_text": "[0.9.9-12]\nAdd 0034-libmultipath-fix-crash-in-print_foreign_topology.patch\n  * Fixes RHEL-107436 ('Running multipath -ll on system with 'enable_foreign\n    nvme' results in segfault')\nResolves: RHEL-107436\n\n[0.9.9-11]\n- Add 0033-multipath-tools-add-HPE-MSA-Gen7-2070-2072-to-hwtabl.patch\n  * Fixes RHEL-103112 ('Update multipath builtin config to add new\n    device defaults [rhel-10]')\n- Resolves: RHEL-103112\n\n[0.9.9-10]\n- Migrate gating tests from STI to tmt\n- Related: RHEL-82535\n\n[0.9.9-9]\n- Add 0030-multipathd-monitor-new-multipath-dev-even-if-we-can-.patch\n- Add 0031-libmultipath-add-helper-function-check_path_wwid_cha.patch\n- Add 0032-multipathd-re-add-paths-skipped-because-they-were-of.patch\n  * Fixes RHEL-82535 ('multipathd does not monitor multipath devices\n    created externally while there are offline paths.')\n- Resolves: RHEL-82535\n\n[0.9.9-8]\n- Fix multipath_conf_syntax OSCI test.\n- Related: RHEL-82180\n\n[0.9.9-7]\n- Add 0018-multipath-tools-move-DEFAULT_SOCKET-definition-into-.patch\n- Add 0019-multipath-tools-add-helper-mpath_fill_sockaddr__.patch\n- Add 0020-libmpathutil-add-support-for-Unix-pathname-sockets.patch\n- Add 0021-libmpathutil-move-systemd_listen_fds-support-into-mu.patch\n- Add 0022-multipathd-make-uxsock_listen-take-a-pointer-to-fd.patch\n- Add 0023-multipathd-allow-receiving-two-socket-fds-from-syste.patch\n- Add 0024-multipathd-listen-on-pathname-and-abstract-socket-by.patch\n- Add 0025-libmpathcmd-try-both-abstract-and-pathname-sockets.patch\n- Add 0026-libmpathcmd-honor-MULTIPATH_SOCKET_NAME-environment-.patch\n- Add 0027-multipathd-honor-MULTIPATH_SOCKET_NAME-environment-v.patch\n- Add 0028-multipath-clean-up-find_multipaths-documentation.patch\n- Add 0029-multipathd-Add-multipathd-man-page-section-about-soc.patch\n  * Fixes RHEL-82180 ('RFE: Enable multipathd to communicate with a\n    process in another network namespace')\n- Resolves: RHEL-82180\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2025-20109-0.html"
+}

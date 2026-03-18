@@ -1,0 +1,25 @@
+{
+  "id": "ELBA-2025-20136-0",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "RHCK",
+  "title": "kdump-utils bug fix and enhancement update",
+  "issuedDate": "2025-11-25T00:00:00Z",
+  "updatedDate": "2025-11-25T00:00:00Z",
+  "pubDate": "2025-11-25T00:00:00Z",
+  "dateStr": "2025-11-25",
+  "url": "https://linux.oracle.com/errata/ELBA-2025-20136-0.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 10.",
+  "description": "[1.0.54-7.0.2]\n- Add device by UUID if FIPS is enabled [Orabug: 38569585]\n\n[1.0.54-7.0.1]\n- Disable transparent_hugepage for aarch64 [Orabug: 37867172]\n- Do not use squash-erofs on UEK kernels [Orabug: 37737510]\n- Port OL9 patches to OL10 [Orabug: 37600072]\n  arm64: skip memory integrity checks in purgatory [Orabug: 30822387]\n  disable iommu for kdump [Orabug: 30832988]\n  append no_timer_check for xen guest kdump [Orabug: 30928441]\n  kdump: Skip LVM private devices [Orabug: 33822070]\n  Update UEK reserved sizes [Orabug: 34663083]\n  handle xen_netfront in dracut module setup [Orabug: 35615400]\n  kdumpctl: check if FIPS is enabled [Orabug: 35982140]\n- Include support for virt-what [Orabug: 36517679]\n\n[1.0.54-7]\n- sysconfig: disable kfence in kdump kernel\n\n[1.0.54-6]\n- sysconfig: disable kfence in kdump kernel\n\n[1.0.54-5]\n- sysconfig: disable kfence in kdump kernel\n\n[1.0.54-4]\n- Support dumping to NVMe/TCP configured using NVMe Boot Firmware Table\n\n[1.0.54-3]\n- mkdumprd: replace lz4hc with lzma for better compression in squash image\n\n[1.0.54-2]\n- kdumpctl: check and generate /etc/vconsole.conf\n\n[1.0.54-1]\n- Rebase to upstream 1.0.54",
+  "affected_products": [
+    "Oracle Linux 10 for x86_64",
+    "Oracle Linux 10 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "kdump-utils-1.0.54-7.0.2.el10.src",
+    "kdump-utils-1.0.54-7.0.2.el10.x86_64"
+  ],
+  "full_text": "[1.0.54-7.0.2]\n- Add device by UUID if FIPS is enabled [Orabug: 38569585]\n\n[1.0.54-7.0.1]\n- Disable transparent_hugepage for aarch64 [Orabug: 37867172]\n- Do not use squash-erofs on UEK kernels [Orabug: 37737510]\n- Port OL9 patches to OL10 [Orabug: 37600072]\n  arm64: skip memory integrity checks in purgatory [Orabug: 30822387]\n  disable iommu for kdump [Orabug: 30832988]\n  append no_timer_check for xen guest kdump [Orabug: 30928441]\n  kdump: Skip LVM private devices [Orabug: 33822070]\n  Update UEK reserved sizes [Orabug: 34663083]\n  handle xen_netfront in dracut module setup [Orabug: 35615400]\n  kdumpctl: check if FIPS is enabled [Orabug: 35982140]\n- Include support for virt-what [Orabug: 36517679]\n\n[1.0.54-7]\n- sysconfig: disable kfence in kdump kernel\n\n[1.0.54-6]\n- sysconfig: disable kfence in kdump kernel\n\n[1.0.54-5]\n- sysconfig: disable kfence in kdump kernel\n\n[1.0.54-4]\n- Support dumping to NVMe/TCP configured using NVMe Boot Firmware Table\n\n[1.0.54-3]\n- mkdumprd: replace lz4hc with lzma for better compression in squash image\n\n[1.0.54-2]\n- kdumpctl: check and generate /etc/vconsole.conf\n\n[1.0.54-1]\n- Rebase to upstream 1.0.54\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2025-20136-0.html"
+}

@@ -1,0 +1,20 @@
+{
+  "id": "ELSA-2026-2721",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2026-February/019805.html",
+  "synopsis": "[El-errata] New Ksplice updates for RHCK 10 (ELSA-2026-2721)",
+  "dateStr": "2026-February",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Synopsis: ELSA-2026-2721 can now be patched using Ksplice",
+  "description": "",
+  "affected_products": [],
+  "packages": [],
+  "cves": [
+    "CVE-2025-40141",
+    "CVE-2025-68349"
+  ],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Synopsis: ELSA-2026-2721 can now be patched using Ksplice\nCVEs: CVE-2025-40141 CVE-2025-68349\n\nUsers with Oracle Linux Premier Support can now use Ksplice to patch\nagainst the latest Oracle Linux Security Advisory, ELSA-2026-2721.\nMore information about this errata can be found at\nhttps://linux.oracle.com/errata/ELSA-2026-2721.html\n\nINSTALLING THE UPDATES\n\nWe recommend that all users of Ksplice Uptrack running RHCK 10 install\nthese updates.\n\nOn systems that have \"autoinstall = yes\" in /etc/uptrack/uptrack.conf,\nthese updates will be installed automatically and you do not need to\ntake any action.\n\nAlternatively, you can install these updates by running:\n\n# /usr/sbin/uptrack-upgrade -y\n\n\nDESCRIPTION\n\n* CVE-2025-40141: Use-after-free in Bluetooth Low Energy (LE) features driver.\n\n* CVE-2025-68349: Null pointer dereference in NFS client for NFSv4.1 driver.\n\nSUPPORT\n\nKsplice support is available at ksplice-support_ww at oracle.com.",
+  "vendor": "Oracle"
+}

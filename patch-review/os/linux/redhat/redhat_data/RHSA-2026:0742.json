@@ -1,0 +1,43 @@
+{
+  "id": "RHSA-2026:0742",
+  "vendor": "Red Hat",
+  "type": "Security Advisory (RHSA)",
+  "title": "Red Hat Security Advisory: Red Hat JBoss Enterprise Application Platform 7.1.13 on RHEL 7 security update",
+  "issuedDate": "2026-01-19T00:15:08+00:00",
+  "updatedDate": "2026-01-19T00:15:08+00:00",
+  "pubDate": "2026-01-19T00:15:08+00:00",
+  "dateStr": "2026-01-19",
+  "url": "https://access.redhat.com/errata/RHSA-2026:0742",
+  "severity": "Critical",
+  "overview": "A security update is now available for Red Hat JBoss Enterprise Application Platform 7.1 for Red Hat Enterprise Linux 7.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "description": "Red Hat JBoss Enterprise Application Platform 7 is a platform for Java applications based on the WildFly application runtime. This release of Red Hat JBoss Enterprise Application Platform 7.1.13 serves as a replacement for Red Hat JBoss Enterprise Application Platform 7.1.12, and includes bug fixes and enhancements. See the Red Hat JBoss Enterprise Application Platform 7.1.13 Release Notes for information about the most significant bug fixes and enhancements included in this release.\n\nSecurity Fix(es):\n\n* jackson-core: jackson-core Potential StackoverflowError [eap-7.1.z] (CVE-2025-52999)\n\n* netty-codec-http2: Netty MadeYouReset HTTP/2 DDoS Vulnerability [eap-7.1.z] (CVE-2025-55163)\n\nFor more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section.",
+  "affected_products": [],
+  "cves": [
+    "CVE-2025-52999",
+    "CVE-2025-55163"
+  ],
+  "packages": [
+    "eap7-undertow-0:1.4.18-18.SP16_redhat_00001.1.ep7.el7.src",
+    "eap7-netty-0:4.1.63-3.Final_redhat_00004.1.ep7.el7.src",
+    "eap7-jackson-core-0:2.8.11-3.redhat_00004.1.ep7.el7.src",
+    "eap7-jackson-module-jaxb-annotations-0:2.8.11-3.redhat_00004.1.ep7.el7.src",
+    "eap7-jackson-modules-java8-0:2.8.11-2.redhat_00004.1.ep7.el7.src",
+    "eap7-jackson-jaxrs-providers-0:2.8.11-3.redhat_00004.1.ep7.el7.src",
+    "eap7-jackson-annotations-0:2.8.11-2.redhat_00004.1.ep7.el7.src",
+    "eap7-wildfly-0:7.1.13-6.GA_redhat_00002.1.ep7.el7.src",
+    "eap7-undertow-0:1.4.18-18.SP16_redhat_00001.1.ep7.el7.noarch",
+    "eap7-netty-0:4.1.63-3.Final_redhat_00004.1.ep7.el7.noarch",
+    "eap7-netty-all-0:4.1.63-3.Final_redhat_00004.1.ep7.el7.noarch",
+    "eap7-jackson-core-0:2.8.11-3.redhat_00004.1.ep7.el7.noarch",
+    "eap7-jackson-module-jaxb-annotations-0:2.8.11-3.redhat_00004.1.ep7.el7.noarch",
+    "eap7-jackson-datatype-jdk8-0:2.8.11-2.redhat_00004.1.ep7.el7.noarch",
+    "eap7-jackson-datatype-jsr310-0:2.8.11-2.redhat_00004.1.ep7.el7.noarch",
+    "eap7-jackson-modules-java8-0:2.8.11-2.redhat_00004.1.ep7.el7.noarch",
+    "eap7-jackson-jaxrs-base-0:2.8.11-3.redhat_00004.1.ep7.el7.noarch",
+    "eap7-jackson-jaxrs-json-provider-0:2.8.11-3.redhat_00004.1.ep7.el7.noarch",
+    "eap7-jackson-annotations-0:2.8.11-2.redhat_00004.1.ep7.el7.noarch",
+    "eap7-wildfly-0:7.1.13-6.GA_redhat_00002.1.ep7.el7.noarch",
+    "eap7-wildfly-modules-0:7.1.13-6.GA_redhat_00002.1.ep7.el7.noarch"
+  ],
+  "full_text": "A security update is now available for Red Hat JBoss Enterprise Application Platform 7.1 for Red Hat Enterprise Linux 7.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nRed Hat JBoss Enterprise Application Platform 7 is a platform for Java applications based on the WildFly application runtime. This release of Red Hat JBoss Enterprise Application Platform 7.1.13 serves as a replacement for Red Hat JBoss Enterprise Application Platform 7.1.12, and includes bug fixes and enhancements. See the Red Hat JBoss Enterprise Application Platform 7.1.13 Release Notes for information about the most significant bug fixes and enhancements included in this release.\n\nSecurity Fix(es):\n\n* jackson-core: jackson-core Potential StackoverflowError [eap-7.1.z] (CVE-2025-52999)\n\n* netty-codec-http2: Netty MadeYouReset HTTP/2 DDoS Vulnerability [eap-7.1.z] (CVE-2025-55163)\n\nFor more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section."
+}

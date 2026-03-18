@@ -1,0 +1,36 @@
+{
+  "id": "ELSA-2026-4463",
+  "vendor": "Oracle",
+  "type": "Security Advisory (ELSA)",
+  "kernel_type": "AppStream",
+  "title": " python3.12 security update",
+  "issuedDate": "2026-03-12T00:00:00Z",
+  "updatedDate": "2026-03-12T00:00:00Z",
+  "pubDate": "2026-03-12T00:00:00Z",
+  "dateStr": "2026-03-12",
+  "url": "https://linux.oracle.com/errata/ELSA-2026-4463.html",
+  "severity": "Moderate",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 8.",
+  "description": "[3.12.12-3]\n- Security fixes for CVE-2026-0865, CVE-2025-15366, CVE-2025-15367 and CVE-2026-1299\nResolves: RHEL-143065\nResolves: RHEL-143122\nResolves: RHEL-144862",
+  "affected_products": [
+    "Oracle Linux 8 for x86_64",
+    "Oracle Linux 8 for aarch64"
+  ],
+  "cves": [
+    "CVE-2025-15366",
+    "CVE-2025-15367",
+    "CVE-2026-0865",
+    "CVE-2026-1299"
+  ],
+  "packages": [
+    "python3.12-tkinter-3.12.12-3.el8_10.x86_64",
+    "python3.12-libs-3.12.12-3.el8_10.i686",
+    "python3.12-libs-3.12.12-3.el8_10.x86_64",
+    "python3.12-devel-3.12.12-3.el8_10.i686",
+    "python3.12-devel-3.12.12-3.el8_10.x86_64",
+    "python3.12-rpm-macros-3.12.12-3.el8_10.noarch",
+    "python3.12-3.12.12-3.el8_10.x86_64",
+    "python3.12-3.12.12-3.el8_10.src"
+  ],
+  "full_text": "[3.12.12-3]\n- Security fixes for CVE-2026-0865, CVE-2025-15366, CVE-2025-15367 and CVE-2026-1299\nResolves: RHEL-143065\nResolves: RHEL-143122\nResolves: RHEL-144862\n\nReferences:\nhttps://linux.oracle.com/errata/ELSA-2026-4463.html\nhttps://linux.oracle.com/cve/CVE-2025-15366.html\nhttps://linux.oracle.com/cve/CVE-2025-15367.html\nhttps://linux.oracle.com/cve/CVE-2026-0865.html\nhttps://linux.oracle.com/cve/CVE-2026-1299.html"
+}

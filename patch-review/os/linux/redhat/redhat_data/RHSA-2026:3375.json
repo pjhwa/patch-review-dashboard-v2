@@ -1,0 +1,48 @@
+{
+  "id": "RHSA-2026:3375",
+  "vendor": "Red Hat",
+  "type": "Security Advisory (RHSA)",
+  "title": "Red Hat Security Advisory: kernel-rt security update",
+  "issuedDate": "2026-02-25T19:01:32+00:00",
+  "updatedDate": "2026-02-25T19:01:32+00:00",
+  "pubDate": "2026-02-25T19:01:32+00:00",
+  "dateStr": "2026-02-25",
+  "url": "https://access.redhat.com/errata/RHSA-2026:3375",
+  "severity": "Moderate",
+  "overview": "An update for kernel-rt is now available for Red Hat Enterprise Linux 9.0 Update Services for SAP Solutions.\n\nRed Hat Product Security has rated this update as having a security impact of Moderate. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "description": "The kernel-rt packages provide the Real Time Linux Kernel, which enables fine-tuning for systems with extremely high determinism requirements.\n\nSecurity Fix(es):\n\n* kernel: RDMA/core: Fix \"KASAN: slab-use-after-free Read in ib_register_device\" problem (CVE-2025-38022)\n\n* kernel: Linux kernel: Memory corruption in Squashfs due to incorrect block size calculation (CVE-2025-38415)\n\n* kernel: Linux kernel: Denial of Service via out-of-bounds read in USB configuration parsing (CVE-2025-39760)\n\n* kernel: smb: client: let recv_done verify data_offset, data_length and remaining_data_length (CVE-2025-39933)\n\n* kernel: Linux kernel: Use-after-free in proc_readdir_de() can lead to privilege escalation or denial of service. (CVE-2025-40271)\n\n* kernel: Linux kernel ALSA USB audio driver: Buffer overflow leading to information disclosure and denial of service (CVE-2025-40269)\n\n* kernel: ip6_vti: fix slab-use-after-free in decode_session6 (CVE-2023-53821)\n\n* kernel: NFSv4/pNFS: Clear NFS_INO_LAYOUTCOMMIT in pnfs_mark_layout_stateid_invalid (CVE-2025-68349)\n\nFor more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux",
+    "Red Hat Enterprise Linux NFV E4S (v.9.0)",
+    "Red Hat Enterprise Linux Real Time E4S (v.9.0)"
+  ],
+  "cves": [
+    "CVE-2023-53821",
+    "CVE-2025-38022",
+    "CVE-2025-38415",
+    "CVE-2025-39760",
+    "CVE-2025-39933",
+    "CVE-2025-40269",
+    "CVE-2025-40271",
+    "CVE-2025-68349"
+  ],
+  "packages": [
+    "kernel-rt-0:5.14.0-70.167.1.rt21.239.el9_0.src",
+    "kernel-rt-0:5.14.0-70.167.1.rt21.239.el9_0.x86_64",
+    "kernel-rt-core-0:5.14.0-70.167.1.rt21.239.el9_0.x86_64",
+    "kernel-rt-debug-0:5.14.0-70.167.1.rt21.239.el9_0.x86_64",
+    "kernel-rt-debug-core-0:5.14.0-70.167.1.rt21.239.el9_0.x86_64",
+    "kernel-rt-debug-devel-0:5.14.0-70.167.1.rt21.239.el9_0.x86_64",
+    "kernel-rt-debug-kvm-0:5.14.0-70.167.1.rt21.239.el9_0.x86_64",
+    "kernel-rt-debug-modules-0:5.14.0-70.167.1.rt21.239.el9_0.x86_64",
+    "kernel-rt-debug-modules-extra-0:5.14.0-70.167.1.rt21.239.el9_0.x86_64",
+    "kernel-rt-devel-0:5.14.0-70.167.1.rt21.239.el9_0.x86_64",
+    "kernel-rt-kvm-0:5.14.0-70.167.1.rt21.239.el9_0.x86_64",
+    "kernel-rt-modules-0:5.14.0-70.167.1.rt21.239.el9_0.x86_64",
+    "kernel-rt-modules-extra-0:5.14.0-70.167.1.rt21.239.el9_0.x86_64",
+    "kernel-rt-debug-debuginfo-0:5.14.0-70.167.1.rt21.239.el9_0.x86_64",
+    "kernel-rt-debuginfo-0:5.14.0-70.167.1.rt21.239.el9_0.x86_64",
+    "kernel-rt-debuginfo-common-x86_64-0:5.14.0-70.167.1.rt21.239.el9_0.x86_64"
+  ],
+  "full_text": "An update for kernel-rt is now available for Red Hat Enterprise Linux 9.0 Update Services for SAP Solutions.\n\nRed Hat Product Security has rated this update as having a security impact of Moderate. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nThe kernel-rt packages provide the Real Time Linux Kernel, which enables fine-tuning for systems with extremely high determinism requirements.\n\nSecurity Fix(es):\n\n* kernel: RDMA/core: Fix \"KASAN: slab-use-after-free Read in ib_register_device\" problem (CVE-2025-38022)\n\n* kernel: Linux kernel: Memory corruption in Squashfs due to incorrect block size calculation (CVE-2025-38415)\n\n* kernel: Linux kernel: Denial of Service via out-of-bounds read in USB configuration parsing (CVE-2025-39760)\n\n* kernel: smb: client: let recv_done verify data_offset, data_length and remaining_data_length (CVE-2025-39933)\n\n* kernel: Linux kernel: Use-after-free in proc_readdir_de() can lead to privilege escalation or denial of service. (CVE-2025-40271)\n\n* kernel: Linux kernel ALSA USB audio driver: Buffer overflow leading to information disclosure and denial of service (CVE-2025-40269)\n\n* kernel: ip6_vti: fix slab-use-after-free in decode_session6 (CVE-2023-53821)\n\n* kernel: NFSv4/pNFS: Clear NFS_INO_LAYOUTCOMMIT in pnfs_mark_layout_stateid_invalid (CVE-2025-68349)\n\nFor more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section."
+}

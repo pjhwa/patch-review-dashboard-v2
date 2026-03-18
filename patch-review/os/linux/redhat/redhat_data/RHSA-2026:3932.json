@@ -1,0 +1,38 @@
+{
+  "id": "RHSA-2026:3932",
+  "vendor": "Red Hat",
+  "type": "Security Advisory (RHSA)",
+  "title": "Red Hat Security Advisory: git-lfs security update",
+  "issuedDate": "2026-03-05T16:08:17+00:00",
+  "updatedDate": "2026-03-05T16:08:17+00:00",
+  "pubDate": "2026-03-05T16:08:17+00:00",
+  "dateStr": "2026-03-05",
+  "url": "https://access.redhat.com/errata/RHSA-2026:3932",
+  "severity": "Important",
+  "overview": "An update for git-lfs is now available for Red Hat Enterprise Linux 9.0 Update Services for SAP Solutions.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "description": "Git Large File Storage (LFS) replaces large files such as audio samples, videos, datasets, and graphics with text pointers inside Git, while storing the file contents on a remote server.\n\nSecurity Fix(es):\n\n* crypto/x509: golang: Denial of Service due to excessive resource consumption via crafted certificate (CVE-2025-61729)\n\n* golang: net/url: Memory exhaustion in query parameter parsing in net/url (CVE-2025-61726)\n\nFor more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux",
+    "Red Hat Enterprise Linux AppStream E4S (v.9.0)"
+  ],
+  "cves": [
+    "CVE-2025-61726",
+    "CVE-2025-61729"
+  ],
+  "packages": [
+    "git-lfs-0:2.13.3-5.el9_0.6.src",
+    "git-lfs-0:2.13.3-5.el9_0.6.aarch64",
+    "git-lfs-debugsource-0:2.13.3-5.el9_0.6.aarch64",
+    "git-lfs-debuginfo-0:2.13.3-5.el9_0.6.aarch64",
+    "git-lfs-0:2.13.3-5.el9_0.6.ppc64le",
+    "git-lfs-debugsource-0:2.13.3-5.el9_0.6.ppc64le",
+    "git-lfs-debuginfo-0:2.13.3-5.el9_0.6.ppc64le",
+    "git-lfs-0:2.13.3-5.el9_0.6.x86_64",
+    "git-lfs-debugsource-0:2.13.3-5.el9_0.6.x86_64",
+    "git-lfs-debuginfo-0:2.13.3-5.el9_0.6.x86_64",
+    "git-lfs-0:2.13.3-5.el9_0.6.s390x",
+    "git-lfs-debugsource-0:2.13.3-5.el9_0.6.s390x",
+    "git-lfs-debuginfo-0:2.13.3-5.el9_0.6.s390x"
+  ],
+  "full_text": "An update for git-lfs is now available for Red Hat Enterprise Linux 9.0 Update Services for SAP Solutions.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nGit Large File Storage (LFS) replaces large files such as audio samples, videos, datasets, and graphics with text pointers inside Git, while storing the file contents on a remote server.\n\nSecurity Fix(es):\n\n* crypto/x509: golang: Denial of Service due to excessive resource consumption via crafted certificate (CVE-2025-61729)\n\n* golang: net/url: Memory exhaustion in query parameter parsing in net/url (CVE-2025-61726)\n\nFor more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section."
+}

@@ -1,0 +1,26 @@
+{
+  "id": "ELBA-2025-23307",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2025-December/019378.html",
+  "synopsis": "[El-errata] ELBA-2025-23307 Oracle Linux 10 librepo bug fix and enhancement update",
+  "dateStr": "2025-December",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Bug Fix Advisory ELBA-2025-23307",
+  "description": "[1.18.0-6]\n- Test for: Fix input termination for pgpParsePkts (RHEL-125130)",
+  "affected_products": [
+    "Oracle Linux 10"
+  ],
+  "packages": [
+    "librepo-1.18.0-6.el10_1.x86_64.rpm",
+    "librepo-devel-1.18.0-6.el10_1.x86_64.rpm",
+    "python3-librepo-1.18.0-6.el10_1.x86_64.rpm",
+    "librepo-1.18.0-6.el10_1.aarch64.rpm",
+    "librepo-devel-1.18.0-6.el10_1.aarch64.rpm",
+    "python3-librepo-1.18.0-6.el10_1.aarch64.rpm"
+  ],
+  "cves": [],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Bug Fix Advisory ELBA-2025-23307\n\nhttp://linux.oracle.com/errata/ELBA-2025-23307.html\n\nThe following updated rpms for Oracle Linux 10 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\nlibrepo-1.18.0-6.el10_1.x86_64.rpm\nlibrepo-devel-1.18.0-6.el10_1.x86_64.rpm\npython3-librepo-1.18.0-6.el10_1.x86_64.rpm\n\naarch64:\nlibrepo-1.18.0-6.el10_1.aarch64.rpm\nlibrepo-devel-1.18.0-6.el10_1.aarch64.rpm\npython3-librepo-1.18.0-6.el10_1.aarch64.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol10/SRPMS-updates/librepo-1.18.0-6.el10_1.src.rpm\n\n\n\nDescription of changes:\n\n[1.18.0-6]\n- Test for: Fix input termination for pgpParsePkts (RHEL-125130)",
+  "vendor": "Oracle"
+}

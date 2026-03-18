@@ -1,0 +1,29 @@
+{
+  "id": "ELBA-2025-20301-0",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "AppStream",
+  "title": "papers bug fix and enhancement update",
+  "issuedDate": "2025-11-25T00:00:00Z",
+  "updatedDate": "2025-11-25T00:00:00Z",
+  "pubDate": "2025-11-25T00:00:00Z",
+  "dateStr": "2025-11-25",
+  "url": "https://linux.oracle.com/errata/ELBA-2025-20301-0.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 10.",
+  "description": "[47.0-6.git5de8d26c]\n- Fix showing of help",
+  "affected_products": [
+    "Oracle Linux 10 for x86_64",
+    "Oracle Linux 10 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "papers-nautilus-47.0-6.git5de8d26c.el10.x86_64",
+    "papers-47.0-6.git5de8d26c.el10.x86_64",
+    "papers-thumbnailer-47.0-6.git5de8d26c.el10.x86_64",
+    "papers-libs-47.0-6.git5de8d26c.el10.x86_64",
+    "papers-47.0-6.git5de8d26c.el10.src",
+    "papers-previewer-47.0-6.git5de8d26c.el10.x86_64"
+  ],
+  "full_text": "[47.0-6.git5de8d26c]\n- Fix showing of help\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2025-20301-0.html"
+}

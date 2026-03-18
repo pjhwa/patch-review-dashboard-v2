@@ -1,0 +1,20 @@
+{
+  "id": "RHSA-2026:0074",
+  "vendor": "Red Hat",
+  "url": "https://access.redhat.com/errata/RHSA-2026:0074",
+  "pubDate": "2026-01-05T18:00:45.000Z",
+  "dateStr": "2026-01-05",
+  "severity": "Important",
+  "title": "Red Hat Security Advisory: httpd security update",
+  "overview": "An update for httpd is now available for Red Hat Enterprise Linux 6 Extended Lifecycle Support  - EXTENSION.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "description": "An update for httpd is now available for Red Hat Enterprise Linux 6 Extended Lifecycle Support  - EXTENSION.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux Server -EXTENSION(v. 6 ELS-EXTENSION)"
+  ],
+  "cves": [
+    "CVE-2025-58098"
+  ],
+  "packages": [],
+  "fixes": "",
+  "full_text": "Red Hat Security Advisory: httpd security update\n\nAn update for httpd is now available for Red Hat Enterprise Linux 6 Extended Lifecycle Support  - EXTENSION.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nAn update for httpd is now available for Red Hat Enterprise Linux 6 Extended Lifecycle Support  - EXTENSION.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nUpdated Packages:\nhttpd-2.2.15-71.el6_10.2.src.rpm\nhttpd-2.2.15-71.el6_10.2.x86_64.rpm\nhttpd-debuginfo-2.2.15-71.el6_10.2.i686.rpm\nhttpd-debuginfo-2.2.15-71.el6_10.2.x86_64.rpm\nhttpd-devel-2.2.15-71.el6_10.2.i686.rpm\nhttpd-devel-2.2.15-71.el6_10.2.x86_64.rpm\nhttpd-manual-2.2.15-71.el6_10.2.noarch.rpm\nhttpd-tools-2.2.15-71.el6_10.2.x86_64.rpm\nmod_ssl-2.2.15-71.el6_10.2.x86_64.rpm\nhttpd-2.2.15-71.el6_10.2.i686.rpm\nhttpd-tools-2.2.15-71.el6_10.2.i686.rpm\nmod_ssl-2.2.15-71.el6_10.2.i686.rpm\nhttpd-2.2.15-71.el6_10.2.s390x.rpm\nhttpd-debuginfo-2.2.15-71.el6_10.2.s390.rpm\nhttpd-debuginfo-2.2.15-71.el6_10.2.s390x.rpm\nhttpd-devel-2.2.15-71.el6_10.2.s390.rpm\nhttpd-devel-2.2.15-71.el6_10.2.s390x.rpm\nhttpd-tools-2.2.15-71.el6_10.2.s390x.rpm\nmod_ssl-2.2.15-71.el6_10.2.s390x.rpm\n\nCVE-2025-58098: Apache HTTP Server 2.4.65 and earlier with Server Side Includes (SSI) enabled and mod_cgid (but not mod_cgi) passes the shell-escaped query string to #exec cmd=\"...\" directives.\n\nThis issue affects Apache HTTP Server before 2.4.66.\n\nUsers are recommended to upgrade to version 2.4.66, which fixes the issue."
+}

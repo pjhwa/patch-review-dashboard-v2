@@ -1,0 +1,29 @@
+{
+  "id": "ELBA-2025-20273-0",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "AppStream",
+  "title": "emacs bug fix and enhancement update",
+  "issuedDate": "2025-11-25T00:00:00Z",
+  "updatedDate": "2025-11-25T00:00:00Z",
+  "pubDate": "2025-11-25T00:00:00Z",
+  "dateStr": "2025-11-25",
+  "url": "https://linux.oracle.com/errata/ELBA-2025-20273-0.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 10.",
+  "description": "[1:29.4-12]\n- Fix flymake tests with GCC 14\n\n[1:29.4-11]\n- Pong and Tetris are excluded",
+  "affected_products": [
+    "Oracle Linux 10 for x86_64",
+    "Oracle Linux 10 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "emacs-29.4-12.el10.src",
+    "emacs-29.4-12.el10.x86_64",
+    "emacs-nw-29.4-12.el10.x86_64",
+    "emacs-lucid-29.4-12.el10.x86_64",
+    "emacs-common-29.4-12.el10.x86_64",
+    "emacs-filesystem-29.4-12.el10.noarch"
+  ],
+  "full_text": "[1:29.4-12]\n- Fix flymake tests with GCC 14\n\n[1:29.4-11]\n- Pong and Tetris are excluded\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2025-20273-0.html"
+}

@@ -1,0 +1,24 @@
+{
+  "id": "USN-7903-1",
+  "vendor": "Canonical / Ubuntu",
+  "type": "Ubuntu Security Notice (USN)",
+  "title": "python-django vulnerabilities",
+  "issuedDate": "2025-12-02T15:14:35Z",
+  "updatedDate": "2026-02-10T04:50:36Z",
+  "pubDate": "2025-12-02T15:14:35Z",
+  "dateStr": "2025-12-02",
+  "url": "https://ubuntu.com/security/notices/USN-7903-1",
+  "severity": "None",
+  "overview": "python-django vulnerabilities",
+  "description": "It was discovered that Django incorrectly handled certain characters in the\nFilteredRelation object. An attacker could possibly use this issue to\nexecute arbitrary SQL commands. This issue only affected Ubuntu 20.04 LTS,\nUbuntu 22.04 LTS, Ubuntu 24.04 LTS, Ubuntu 25.04, and Ubuntu 25.10.\n(CVE-2025-13372)\n\nSeokchan Yoon discovered that Django inefficiently handled deserialization\nof XML objects. An attacker could possibly use this issue to cause Django\nto use excessive resources, causing a denial of service. (CVE-2025-64460)",
+  "affected_products": [
+    "Ubuntu 22.04 LTS",
+    "Ubuntu 24.04 LTS"
+  ],
+  "cves": [],
+  "packages": [
+    "python3-django-2:3.2.12-2ubuntu1.24",
+    "python3-django-3:4.2.11-1ubuntu1.13"
+  ],
+  "full_text": "It was discovered that Django incorrectly handled certain characters in the\nFilteredRelation object. An attacker could possibly use this issue to\nexecute arbitrary SQL commands. This issue only affected Ubuntu 20.04 LTS,\nUbuntu 22.04 LTS, Ubuntu 24.04 LTS, Ubuntu 25.04, and Ubuntu 25.10.\n(CVE-2025-13372)\n\nSeokchan Yoon discovered that Django inefficiently handled deserialization\nof XML objects. An attacker could possibly use this issue to cause Django\nto use excessive resources, causing a denial of service. (CVE-2025-64460)"
+}

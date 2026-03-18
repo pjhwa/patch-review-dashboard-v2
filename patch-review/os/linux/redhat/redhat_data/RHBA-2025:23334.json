@@ -1,0 +1,38 @@
+{
+  "id": "RHBA-2025:23334",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: runc bug fix and enhancement update",
+  "issuedDate": "2025-12-18T10:48:16Z",
+  "updatedDate": "2025-12-18T10:48:16Z",
+  "pubDate": "2025-12-18T10:48:16Z",
+  "dateStr": "2025-12-18",
+  "url": "https://access.redhat.com/errata/RHBA-2025:23334",
+  "severity": "None",
+  "overview": "An update for runc is now available for Red Hat Enterprise Linux 10.",
+  "description": "The runC tool is a lightweight, portable implementation of the Open Container Format (OCF) that provides container runtime.Bug Fix(es) and Enhancement(s): Bump to runc v1.2.9 or v1.3.4 to get CVE and regression fixes. [rhel-9.7.z] (JIRA:RHEL-132800)",
+  "affected_products": [
+    "Red Hat Enterprise Linux for ARM 64",
+    "Red Hat Enterprise Linux for x86_64 10 x86_64",
+    "Red Hat Enterprise Linux for Power, little endian",
+    "Red Hat Enterprise Linux for IBM z Systems"
+  ],
+  "cves": [],
+  "packages": [
+    "runc-1.4.0-1.el9_7.src",
+    "runc-1.4.0-1.el9_7.x86_64",
+    "runc-debuginfo-1.4.0-1.el9_7.x86_64",
+    "runc-debugsource-1.4.0-1.el9_7.x86_64",
+    "runc-1.4.0-1.el9_7.s390x",
+    "runc-debuginfo-1.4.0-1.el9_7.s390x",
+    "runc-debugsource-1.4.0-1.el9_7.s390x",
+    "runc-1.4.0-1.el9_7.ppc64le",
+    "runc-debuginfo-1.4.0-1.el9_7.ppc64le",
+    "runc-debugsource-1.4.0-1.el9_7.ppc64le",
+    "runc-1.4.0-1.el9_7.aarch64",
+    "runc-debuginfo-1.4.0-1.el9_7.aarch64",
+    "runc-debugsource-1.4.0-1.el9_7.aarch64"
+  ],
+  "fixes": [],
+  "full_text": "An update for runc is now available for Red Hat Enterprise Linux 10.\n\nThe runC tool is a lightweight, portable implementation of the Open Container Format (OCF) that provides container runtime.Bug Fix(es) and Enhancement(s): Bump to runc v1.2.9 or v1.3.4 to get CVE and regression fixes. [rhel-9.7.z] (JIRA:RHEL-132800)"
+}

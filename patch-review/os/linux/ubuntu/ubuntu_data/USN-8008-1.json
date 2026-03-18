@@ -1,0 +1,22 @@
+{
+  "id": "USN-8008-1",
+  "vendor": "Canonical / Ubuntu",
+  "type": "Ubuntu Security Notice (USN)",
+  "title": "python-keystonemiddleware vulnerability",
+  "issuedDate": "2026-02-03T13:06:07Z",
+  "updatedDate": "2026-02-10T04:50:49Z",
+  "pubDate": "2026-02-03T13:06:07Z",
+  "dateStr": "2026-02-03",
+  "url": "https://ubuntu.com/security/notices/USN-8008-1",
+  "severity": "None",
+  "overview": "python-keystonemiddleware vulnerability",
+  "description": "Grzegorz Grasza discovered that the Keystone Middleware incorrectly\nsanitized authentication headers before processing OAuth 2.0 tokens. An\nattacker could possibly use this issue to escalate privileges or\nimpersonate other users.",
+  "affected_products": [
+    "Ubuntu 24.04 LTS"
+  ],
+  "cves": [],
+  "packages": [
+    "python3-keystonemiddleware-10.6.0-0ubuntu1.1"
+  ],
+  "full_text": "Grzegorz Grasza discovered that the Keystone Middleware incorrectly\nsanitized authentication headers before processing OAuth 2.0 tokens. An\nattacker could possibly use this issue to escalate privileges or\nimpersonate other users."
+}

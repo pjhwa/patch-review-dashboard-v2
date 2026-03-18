@@ -1,0 +1,50 @@
+{
+  "id": "RHSA-2025:19268",
+  "vendor": "Red Hat",
+  "type": "Security Advisory (RHSA)",
+  "title": "Red Hat Security Advisory: kernel-rt security update",
+  "issuedDate": "2025-10-29T15:15:40+00:00",
+  "updatedDate": "2025-10-29T15:15:40+00:00",
+  "pubDate": "2025-10-29T15:15:40+00:00",
+  "dateStr": "2025-10-29",
+  "url": "https://access.redhat.com/errata/RHSA-2025:19268",
+  "severity": "Moderate",
+  "overview": "An update for kernel-rt is now available for Red Hat Enterprise Linux 9.0 Update Services for SAP Solutions.\n\nRed Hat Product Security has rated this update as having a security impact of Moderate. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "description": "The kernel-rt packages provide the Real Time Linux Kernel, which enables fine-tuning for systems with extremely high determinism requirements.\n\nSecurity Fix(es):\n\n* kernel: net: usb: smsc75xx: Limit packet length to skb->len (CVE-2023-53125)\n\n* kernel: ASoC: SOF: Intel: hda: Fix potential buffer overflow by snprintf() (CVE-2022-50050)\n\n* kernel: mptcp: do not queue data on closed subflows (CVE-2022-50070)\n\n* kernel: RDMA/irdma: Fix a window for use-after-free (CVE-2022-50137)\n\n* kernel: KVM: SVM: Don't BUG if userspace injects an interrupt with GIF=0 (CVE-2022-50228)\n\n* kernel: HID: core: Harden s32ton() against conversion to 0 bits (CVE-2025-38556)\n\n* kernel: eventpoll: Fix semi-unbounded recursion (CVE-2025-38614)\n\n* kernel: tls: separate no-async decryption request handling from async (CVE-2024-58240)\n\n* kernel: ALSA: hda/ca0132: Fix buffer overflow in add_tuning_control (CVE-2025-39751)\n\n* kernel: crypto: seqiv - Handle EBUSY correctly (CVE-2023-53373)\n\nFor more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux",
+    "Red Hat Enterprise Linux NFV E4S (v.9.0)",
+    "Red Hat Enterprise Linux Real Time E4S (v.9.0)"
+  ],
+  "cves": [
+    "CVE-2022-50050",
+    "CVE-2022-50070",
+    "CVE-2022-50137",
+    "CVE-2022-50228",
+    "CVE-2023-53125",
+    "CVE-2023-53373",
+    "CVE-2024-58240",
+    "CVE-2025-38556",
+    "CVE-2025-38614",
+    "CVE-2025-39751"
+  ],
+  "packages": [
+    "kernel-rt-0:5.14.0-70.151.1.rt21.223.el9_0.src",
+    "kernel-rt-0:5.14.0-70.151.1.rt21.223.el9_0.x86_64",
+    "kernel-rt-core-0:5.14.0-70.151.1.rt21.223.el9_0.x86_64",
+    "kernel-rt-debug-0:5.14.0-70.151.1.rt21.223.el9_0.x86_64",
+    "kernel-rt-debug-core-0:5.14.0-70.151.1.rt21.223.el9_0.x86_64",
+    "kernel-rt-debug-devel-0:5.14.0-70.151.1.rt21.223.el9_0.x86_64",
+    "kernel-rt-debug-kvm-0:5.14.0-70.151.1.rt21.223.el9_0.x86_64",
+    "kernel-rt-debug-modules-0:5.14.0-70.151.1.rt21.223.el9_0.x86_64",
+    "kernel-rt-debug-modules-extra-0:5.14.0-70.151.1.rt21.223.el9_0.x86_64",
+    "kernel-rt-devel-0:5.14.0-70.151.1.rt21.223.el9_0.x86_64",
+    "kernel-rt-kvm-0:5.14.0-70.151.1.rt21.223.el9_0.x86_64",
+    "kernel-rt-modules-0:5.14.0-70.151.1.rt21.223.el9_0.x86_64",
+    "kernel-rt-modules-extra-0:5.14.0-70.151.1.rt21.223.el9_0.x86_64",
+    "kernel-rt-debug-debuginfo-0:5.14.0-70.151.1.rt21.223.el9_0.x86_64",
+    "kernel-rt-debuginfo-0:5.14.0-70.151.1.rt21.223.el9_0.x86_64",
+    "kernel-rt-debuginfo-common-x86_64-0:5.14.0-70.151.1.rt21.223.el9_0.x86_64"
+  ],
+  "full_text": "An update for kernel-rt is now available for Red Hat Enterprise Linux 9.0 Update Services for SAP Solutions.\n\nRed Hat Product Security has rated this update as having a security impact of Moderate. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nThe kernel-rt packages provide the Real Time Linux Kernel, which enables fine-tuning for systems with extremely high determinism requirements.\n\nSecurity Fix(es):\n\n* kernel: net: usb: smsc75xx: Limit packet length to skb->len (CVE-2023-53125)\n\n* kernel: ASoC: SOF: Intel: hda: Fix potential buffer overflow by snprintf() (CVE-2022-50050)\n\n* kernel: mptcp: do not queue data on closed subflows (CVE-2022-50070)\n\n* kernel: RDMA/irdma: Fix a window for use-after-free (CVE-2022-50137)\n\n* kernel: KVM: SVM: Don't BUG if userspace injects an interrupt with GIF=0 (CVE-2022-50228)\n\n* kernel: HID: core: Harden s32ton() against conversion to 0 bits (CVE-2025-38556)\n\n* kernel: eventpoll: Fix semi-unbounded recursion (CVE-2025-38614)\n\n* kernel: tls: separate no-async decryption request handling from async (CVE-2024-58240)\n\n* kernel: ALSA: hda/ca0132: Fix buffer overflow in add_tuning_control (CVE-2025-39751)\n\n* kernel: crypto: seqiv - Handle EBUSY correctly (CVE-2023-53373)\n\nFor more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section."
+}

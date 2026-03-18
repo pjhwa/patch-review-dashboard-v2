@@ -1,0 +1,36 @@
+{
+  "id": "ELBA-2026-3809",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "AppStream",
+  "title": "nss bug fix and enhancement update",
+  "issuedDate": "2026-03-05T00:00:00Z",
+  "updatedDate": "2026-03-05T00:00:00Z",
+  "pubDate": "2026-03-05T00:00:00Z",
+  "dateStr": "2026-03-05",
+  "url": "https://linux.oracle.com/errata/ELBA-2026-3809.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 10.",
+  "description": "[3.112.0-8]\n- fix incomplete ml-kem pct patch.\n\n[3.112.0-7]\n- fix regression in -5 bug fix\n\n[3.112.0-6]\n- fix a null in ml-dsa pkcs12 decode\n- fix return code in ml-kem pct\n\n[3.112.0-5]\n- fips update\n-   Fix indicators for the new post-quantum algorithms\n-   Fix the ML-KEM Self-tests\n-   Fix the ML-KEM zeroizaiton\n-   Add partial public validation before OAEP\n- bug fixes\n-   add CKA_SEED to private attributes so they are updated on password change.\n-   mark CKA_PARAMETER_SET as CK_ULONG when storing into the database\n-   fix unrefrence read in leancrypto.",
+  "affected_products": [
+    "Oracle Linux 10 for x86_64",
+    "Oracle Linux 10 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "nss-devel-3.112.0-8.el10_0.x86_64",
+    "nss-softokn-freebl-3.112.0-8.el10_0.x86_64",
+    "nss-sysinit-3.112.0-8.el10_0.x86_64",
+    "nss-softokn-freebl-devel-3.112.0-8.el10_0.x86_64",
+    "nss-softokn-3.112.0-8.el10_0.x86_64",
+    "nss-3.112.0-8.el10_0.x86_64",
+    "nspr-devel-4.36.0-8.el10_0.x86_64",
+    "nss-softokn-devel-3.112.0-8.el10_0.x86_64",
+    "nss-3.112.0-8.el10_0.src",
+    "nss-util-3.112.0-8.el10_0.x86_64",
+    "nss-tools-3.112.0-8.el10_0.x86_64",
+    "nss-util-devel-3.112.0-8.el10_0.x86_64",
+    "nspr-4.36.0-8.el10_0.x86_64"
+  ],
+  "full_text": "[3.112.0-8]\n- fix incomplete ml-kem pct patch.\n\n[3.112.0-7]\n- fix regression in -5 bug fix\n\n[3.112.0-6]\n- fix a null in ml-dsa pkcs12 decode\n- fix return code in ml-kem pct\n\n[3.112.0-5]\n- fips update\n-   Fix indicators for the new post-quantum algorithms\n-   Fix the ML-KEM Self-tests\n-   Fix the ML-KEM zeroizaiton\n-   Add partial public validation before OAEP\n- bug fixes\n-   add CKA_SEED to private attributes so they are updated on password change.\n-   mark CKA_PARAMETER_SET as CK_ULONG when storing into the database\n-   fix unrefrence read in leancrypto.\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2026-3809.html"
+}

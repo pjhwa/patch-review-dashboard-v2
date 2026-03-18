@@ -1,0 +1,69 @@
+{
+  "id": "RHBA-2025:20515",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: kexec-tools bug fix and enhancement update",
+  "issuedDate": "2025-11-11T07:49:47Z",
+  "updatedDate": "2025-11-11T07:49:47Z",
+  "pubDate": "2025-11-11T07:49:47Z",
+  "dateStr": "2025-11-11",
+  "url": "https://access.redhat.com/errata/RHBA-2025:20515",
+  "severity": "None",
+  "overview": "An update for kexec-tools is now available for Red Hat Enterprise Linux 10.",
+  "description": "For detailed information on changes in this release, see the Red Hat Enterprise Linux 9 Release Notes linked from the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux for ARM 64",
+    "Red Hat Enterprise Linux for Power, little endian",
+    "Red Hat Enterprise Linux for IBM z Systems",
+    "Red Hat Enterprise Linux for x86_64 10 x86_64"
+  ],
+  "cves": [],
+  "packages": [
+    "kexec-tools-2.0.29-10.el9.src",
+    "kexec-tools-2.0.29-10.el9.x86_64",
+    "kexec-tools-debuginfo-2.0.29-10.el9.x86_64",
+    "kexec-tools-debugsource-2.0.29-10.el9.x86_64",
+    "kexec-tools-2.0.29-10.el9.s390x",
+    "kexec-tools-debuginfo-2.0.29-10.el9.s390x",
+    "kexec-tools-debugsource-2.0.29-10.el9.s390x",
+    "kexec-tools-2.0.29-10.el9.ppc64le",
+    "kexec-tools-debuginfo-2.0.29-10.el9.ppc64le",
+    "kexec-tools-debugsource-2.0.29-10.el9.ppc64le",
+    "kexec-tools-2.0.29-10.el9.aarch64",
+    "kexec-tools-debuginfo-2.0.29-10.el9.aarch64",
+    "kexec-tools-debugsource-2.0.29-10.el9.aarch64"
+  ],
+  "fixes": [
+    {
+      "id": "RHEL-69568",
+      "url": "https://issues.redhat.com/browse/RHEL-69568",
+      "description": "[RHEL-9]A user-specified crashkernel will be overwritten in background"
+    },
+    {
+      "id": "RHEL-19064",
+      "url": "https://issues.redhat.com/browse/RHEL-19064",
+      "description": "[RHEL-9][Azure] kdump fails to generate vmcore when reserve 192MB memory"
+    },
+    {
+      "id": "RHEL-83645",
+      "url": "https://issues.redhat.com/browse/RHEL-83645",
+      "description": "Vmcore dumping to remote fs failed because of kernel panic caused by insufficient crashkernel"
+    },
+    {
+      "id": "RHEL-84470",
+      "url": "https://issues.redhat.com/browse/RHEL-84470",
+      "description": "Missing an .RE tag in kdump.conf"
+    },
+    {
+      "id": "RHEL-79413",
+      "url": "https://issues.redhat.com/browse/RHEL-79413",
+      "description": "[RHEL-9] For VMs created from KVM Guest Image, kdump initramfs size are larger than normal."
+    },
+    {
+      "id": "RHEL-103429",
+      "url": "https://issues.redhat.com/browse/RHEL-103429",
+      "description": "[RHEL-9] Disable Kfence in kdump kernel"
+    }
+  ],
+  "full_text": "An update for kexec-tools is now available for Red Hat Enterprise Linux 10.\n\nFor detailed information on changes in this release, see the Red Hat Enterprise Linux 9 Release Notes linked from the References section."
+}

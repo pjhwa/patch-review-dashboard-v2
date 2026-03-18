@@ -1,0 +1,25 @@
+{
+  "id": "RHSA-2026:3884",
+  "vendor": "Red Hat",
+  "url": "https://access.redhat.com/errata/RHSA-2026:3884",
+  "pubDate": "2026-03-05T12:07:11.000Z",
+  "dateStr": "2026-03-05",
+  "severity": "Important",
+  "title": "Red Hat Security Advisory: Red Hat OpenShift GitOps v1.19.2 security update",
+  "overview": "Important: Red Hat OpenShift GitOps v1.19.2 security update",
+  "description": "Important: Red Hat OpenShift GitOps v1.19.2 security update",
+  "affected_products": [
+    "Red Hat OpenShift GitOps 1.19"
+  ],
+  "cves": [
+    "CVE-2025-13465",
+    "CVE-2025-61726",
+    "CVE-2025-61728",
+    "CVE-2025-61729",
+    "CVE-2025-68121",
+    "CVE-2026-21441"
+  ],
+  "packages": [],
+  "fixes": "",
+  "full_text": "Red Hat Security Advisory: Red Hat OpenShift GitOps v1.19.2 security update\n\nImportant: Red Hat OpenShift GitOps v1.19.2 security update\n\nImportant: Red Hat OpenShift GitOps v1.19.2 security update\n\n\n\nCVE-2025-13465: A flaw was found in Lodash. A prototype pollution vulnerability in the _.unset and _.omit functions allows an attacker able to control property paths to delete methods from global prototypes. By removing essential functionalities, this can result in a denial of service.\n\nCVE-2025-61726: A flaw was found in the net/url package in the Go standard library. The package does not enforce a limit on the number of unique query parameters it parses. A Go application using the net/http.Request.ParseForm method will try to process all parameters provided in the request. A specially crafted HTTP request containing a massive number of query parameters will cause the application to consume an excessive amount of memory, eventually causing the application to crash or become unresponsive, resulting in a denial of service.\n\nCVE-2025-61728: A flaw was found in the archive/zip package in the Go standard library. A super-linear file name indexing algorithm is used in the first time a file in an archive is opened. A crafted zip archive containing a specific arrangement of file names can cause an excessive CPU and memory consumption. A Go application processing a malicious archive can become unresponsive or crash, resulting in a denial of service.\n\nCVE-2025-61729: Within HostnameError.Error(), when constructing an error string, there is no limit to the number of hosts that will be printed out. Furthermore, the error string is constructed by repeated string concatenation, leading to quadratic runtime. Therefore, a certificate provided by a malicious actor can result in excessive resource consumption.\n\nCVE-2025-68121: During session resumption in crypto/tls, if the underlying Config has its ClientCAs or RootCAs fields mutated between the initial handshake and the resumed handshake, the resumed handshake may succeed when it should have failed. This may happen when a user calls Config.Clone and mutates the returned Config, or uses Config.GetConfigForClient. This can cause a client to resume a session with a server that it would not have resumed with during the initial handshake, or cause a server to resume a session with a client that it would not have resumed with during the initial handshake.\n\nCVE-2026-21441: urllib3 is an HTTP client library for Python. urllib3's streaming API is designed for the efficient handling of large HTTP responses by reading the content in chunks, rather than loading the entire response body into memory at once. urllib3 can perform decoding or decompression based on the HTTP `Content-Encoding` header (e.g., `gzip`, `deflate`, `br`, or `zstd`). When using the streaming API, the library decompresses only the necessary bytes, enabling partial content consumption. Starting in version 1.22 and prior to version 2.6.3, for HTTP redirect responses, the library would read the entire response body to drain the connection and decompress the content unnecessarily. This decompression occurred even before any read methods were called, and configured read limits did not restrict the amount of decompressed data. As a result, there was no safeguard against decompression bombs. A malicious server could exploit this to trigger excessive resource consumption on the client. Applications and libraries are affected when they stream content from untrusted sources by setting `preload_content=False` when they do not disable redirects. Users should upgrade to at least urllib3 v2.6.3, in which the library does not decode content of redirect responses when `preload_content=False`. If upgrading is not immediately possible, disable redirects by setting `redirect=False` for requests to untrusted source."
+}

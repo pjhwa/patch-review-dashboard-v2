@@ -1,0 +1,30 @@
+{
+  "id": "ELSA-2025-20943",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2025-November/019123.html",
+  "synopsis": "[El-errata] ELSA-2025-20943 Moderate: Oracle Linux 9 libssh security update",
+  "dateStr": "2025-November",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Security Advisory ELSA-2025-20943",
+  "description": "[0.10.4-15]\n- Bump spec to make the 9.7 NVR higher than the 9.6 one\n\n[0.10.4-14]\n- Fix CVE-2025-5318\n  Resolves: RHEL-111732",
+  "affected_products": [
+    "Oracle Linux 9"
+  ],
+  "packages": [
+    "libssh-0.10.4-15.el9_7.i686.rpm",
+    "libssh-0.10.4-15.el9_7.x86_64.rpm",
+    "libssh-config-0.10.4-15.el9_7.noarch.rpm",
+    "libssh-devel-0.10.4-15.el9_7.i686.rpm",
+    "libssh-devel-0.10.4-15.el9_7.x86_64.rpm",
+    "libssh-0.10.4-15.el9_7.aarch64.rpm",
+    "libssh-config-0.10.4-15.el9_7.noarch.rpm",
+    "libssh-devel-0.10.4-15.el9_7.aarch64.rpm"
+  ],
+  "cves": [
+    "CVE-2025-5318"
+  ],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Security Advisory ELSA-2025-20943\n\nhttp://linux.oracle.com/errata/ELSA-2025-20943.html\n\nThe following updated rpms for Oracle Linux 9 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\nlibssh-0.10.4-15.el9_7.i686.rpm\nlibssh-0.10.4-15.el9_7.x86_64.rpm\nlibssh-config-0.10.4-15.el9_7.noarch.rpm\nlibssh-devel-0.10.4-15.el9_7.i686.rpm\nlibssh-devel-0.10.4-15.el9_7.x86_64.rpm\n\naarch64:\nlibssh-0.10.4-15.el9_7.aarch64.rpm\nlibssh-config-0.10.4-15.el9_7.noarch.rpm\nlibssh-devel-0.10.4-15.el9_7.aarch64.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol9/SRPMS-updates/libssh-0.10.4-15.el9_7.src.rpm\n\nRelated CVEs:\n\nCVE-2025-5318\n\n\n\n\nDescription of changes:\n[0.10.4-15]\n- Bump spec to make the 9.7 NVR higher than the 9.6 one\n\n[0.10.4-14]\n- Fix CVE-2025-5318\n  Resolves: RHEL-111732",
+  "vendor": "Oracle"
+}

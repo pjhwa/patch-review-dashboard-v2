@@ -1,0 +1,27 @@
+{
+  "id": "RHBA-2025:23303",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: man-pages bug fix and enhancement update",
+  "issuedDate": "2025-12-18T09:19:14Z",
+  "updatedDate": "2025-12-18T09:19:14Z",
+  "pubDate": "2025-12-18T09:19:14Z",
+  "dateStr": "2025-12-18",
+  "url": "https://access.redhat.com/errata/RHBA-2025:23303",
+  "severity": "None",
+  "overview": "An update for man-pages is now available for Red Hat Enterprise Linux 10.",
+  "description": "The man-pages package provides man (manual) pages from the Linux Documentation Project (LDP).Bug Fix(es) and Enhancement(s): man-pages: Add update for RWF_ATOMIC [rhel-10] (JIRA:RHEL-87647)  man-pages: Errata work on RHEL-10.1.Z (2025:155154) (JIRA:RHEL-120495)  man-page: madvise(2) can return -EBUSY on MADV_SOFT_OFFLINE requests [rhel-10.1.z] (JIRA:RHEL-115501)  man-pages: The rto_min route attribute does not take effect unless \"lock\" is also set (JIRA:RHEL-86830)",
+  "affected_products": [
+    "Red Hat Enterprise Linux for Power, little endian",
+    "Red Hat Enterprise Linux for ARM 64",
+    "Red Hat Enterprise Linux for IBM z Systems",
+    "Red Hat Enterprise Linux for x86_64 10 x86_64"
+  ],
+  "cves": [],
+  "packages": [
+    "man-pages-6.06-12.el10_1.src",
+    "man-pages-6.06-12.el10_1.noarch"
+  ],
+  "fixes": [],
+  "full_text": "An update for man-pages is now available for Red Hat Enterprise Linux 10.\n\nThe man-pages package provides man (manual) pages from the Linux Documentation Project (LDP).Bug Fix(es) and Enhancement(s): man-pages: Add update for RWF_ATOMIC [rhel-10] (JIRA:RHEL-87647)  man-pages: Errata work on RHEL-10.1.Z (2025:155154) (JIRA:RHEL-120495)  man-page: madvise(2) can return -EBUSY on MADV_SOFT_OFFLINE requests [rhel-10.1.z] (JIRA:RHEL-115501)  man-pages: The rto_min route attribute does not take effect unless \"lock\" is also set (JIRA:RHEL-86830)"
+}

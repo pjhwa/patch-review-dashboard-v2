@@ -1,0 +1,49 @@
+{
+  "id": "RHBA-2025:20393",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: stalld bug fix and enhancement update",
+  "issuedDate": "2025-11-11T07:26:20Z",
+  "updatedDate": "2025-11-11T07:26:20Z",
+  "pubDate": "2025-11-11T07:26:20Z",
+  "dateStr": "2025-11-11",
+  "url": "https://access.redhat.com/errata/RHBA-2025:20393",
+  "severity": "None",
+  "overview": "An update for stalld is now available for Red Hat Enterprise Linux 10.",
+  "description": "For detailed information on changes in this release, see the Red Hat Enterprise Linux 10 Release Notes linked from the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux for IBM z Systems",
+    "Red Hat Enterprise Linux for x86_64 10 x86_64",
+    "Red Hat Enterprise Linux for ARM 64",
+    "Red Hat Enterprise Linux for Power, little endian"
+  ],
+  "cves": [],
+  "packages": [
+    "stalld-1.20.4-1.el10.src",
+    "stalld-1.20.4-1.el10.x86_64",
+    "stalld-debuginfo-1.20.4-1.el10.x86_64",
+    "stalld-debugsource-1.20.4-1.el10.x86_64",
+    "stalld-1.20.4-1.el10.s390x",
+    "stalld-debuginfo-1.20.4-1.el10.s390x",
+    "stalld-debugsource-1.20.4-1.el10.s390x",
+    "stalld-1.20.4-1.el10.ppc64le",
+    "stalld-debuginfo-1.20.4-1.el10.ppc64le",
+    "stalld-debugsource-1.20.4-1.el10.ppc64le",
+    "stalld-1.20.4-1.el10.aarch64",
+    "stalld-debuginfo-1.20.4-1.el10.aarch64",
+    "stalld-debugsource-1.20.4-1.el10.aarch64"
+  ],
+  "fixes": [
+    {
+      "id": "RHEL-73883",
+      "url": "https://issues.redhat.com/browse/RHEL-73883",
+      "description": "Have stalld detect that it's running on a dl-server capable kernel"
+    },
+    {
+      "id": "RHEL-109112",
+      "url": "https://issues.redhat.com/browse/RHEL-109112",
+      "description": "[RHEL-10] Stalld 1.19.8+ doesn't set sched_fifo in systemd unit file"
+    }
+  ],
+  "full_text": "An update for stalld is now available for Red Hat Enterprise Linux 10.\n\nFor detailed information on changes in this release, see the Red Hat Enterprise Linux 10 Release Notes linked from the References section."
+}

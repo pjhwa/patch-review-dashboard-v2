@@ -1,0 +1,35 @@
+{
+  "id": "RHBA-2025:16431",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: redhat-rpm-config bug fix and enhancement update",
+  "issuedDate": "2025-09-23T07:44:03Z",
+  "updatedDate": "2025-09-23T07:44:03Z",
+  "pubDate": "2025-09-23T07:44:03Z",
+  "dateStr": "2025-09-23",
+  "url": "https://access.redhat.com/errata/RHBA-2025:16431",
+  "severity": "None",
+  "overview": "An update for redhat-rpm-config is now available for Red Hat Enterprise Linux 10.",
+  "description": "The redhat-rpm-config package is used during the build of RPM packages to apply various default distribution options determined by Red Hat. Also, redhat-rpm-config provides a few Red Hat RPM macro customizations, such as those used during the building of Driver Update packages.Bug Fix(es) and Enhancement(s):  _hardening_linker_errors macro accidentally dropped in commit fda90b0a420d46b3c98463492db31dbdb886f56b [rhel-10.0.z] (JIRA:RHEL-91949)",
+  "affected_products": [
+    "Red Hat Enterprise Linux for IBM z Systems - 4 years of updates",
+    "Red Hat Enterprise Linux for ARM 64 - Extended Update Support",
+    "Red Hat Enterprise Linux for x86_64 - Extended Update Support 10 x86_64",
+    "Red Hat Enterprise Linux for x86_64 - 4 years of updates 10 x86_64",
+    "Red Hat Enterprise Linux for IBM z Systems - Extended Update Support",
+    "Red Hat Enterprise Linux for Power, little endian",
+    "Red Hat Enterprise Linux for ARM 64 - 4 years of updates",
+    "Red Hat Enterprise Linux for Power, little endian - 4 years of support",
+    "Red Hat Enterprise Linux for ARM 64",
+    "Red Hat Enterprise Linux for IBM z Systems",
+    "Red Hat Enterprise Linux for x86_64 10 x86_64",
+    "Red Hat Enterprise Linux for Power, little endian - Extended Update Support"
+  ],
+  "cves": [],
+  "packages": [
+    "redhat-rpm-config-289-1.el10_0.1.src",
+    "redhat-rpm-config-289-1.el10_0.1.noarch"
+  ],
+  "fixes": [],
+  "full_text": "An update for redhat-rpm-config is now available for Red Hat Enterprise Linux 10.\n\nThe redhat-rpm-config package is used during the build of RPM packages to apply various default distribution options determined by Red Hat. Also, redhat-rpm-config provides a few Red Hat RPM macro customizations, such as those used during the building of Driver Update packages.Bug Fix(es) and Enhancement(s):  _hardening_linker_errors macro accidentally dropped in commit fda90b0a420d46b3c98463492db31dbdb886f56b [rhel-10.0.z] (JIRA:RHEL-91949)"
+}

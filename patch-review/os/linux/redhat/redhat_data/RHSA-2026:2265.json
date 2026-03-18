@@ -1,0 +1,37 @@
+{
+  "id": "RHSA-2026:2265",
+  "vendor": "Red Hat",
+  "type": "Security Advisory (RHSA)",
+  "title": "Red Hat Security Advisory: golang-github-openprinting-ipp-usb security update",
+  "issuedDate": "2026-02-09T05:56:42+00:00",
+  "updatedDate": "2026-02-09T05:56:42+00:00",
+  "pubDate": "2026-02-09T05:56:42+00:00",
+  "dateStr": "2026-02-09",
+  "url": "https://access.redhat.com/errata/RHSA-2026:2265",
+  "severity": "Important",
+  "overview": "An update for golang-github-openprinting-ipp-usb is now available for Red Hat Enterprise Linux 10.0 Extended Update Support.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "description": "HTTP reverse proxy, backed by IPP-over-USB connection to device. It enables\n driverless support for USB devices capable of using IPP-over-USB protocol.\n\nSecurity Fix(es):\n\n* crypto/x509: golang: Denial of Service due to excessive resource consumption via crafted certificate (CVE-2025-61729)\n\nFor more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux",
+    "Red Hat Enterprise Linux AppStream EUS (v. 10.0)"
+  ],
+  "cves": [
+    "CVE-2025-61729"
+  ],
+  "packages": [
+    "golang-github-openprinting-ipp-usb-0:0.9.27-3.el10_0.1.src",
+    "ipp-usb-0:0.9.27-3.el10_0.1.aarch64",
+    "golang-github-openprinting-ipp-usb-debugsource-0:0.9.27-3.el10_0.1.aarch64",
+    "ipp-usb-debuginfo-0:0.9.27-3.el10_0.1.aarch64",
+    "ipp-usb-0:0.9.27-3.el10_0.1.ppc64le",
+    "golang-github-openprinting-ipp-usb-debugsource-0:0.9.27-3.el10_0.1.ppc64le",
+    "ipp-usb-debuginfo-0:0.9.27-3.el10_0.1.ppc64le",
+    "ipp-usb-0:0.9.27-3.el10_0.1.s390x",
+    "golang-github-openprinting-ipp-usb-debugsource-0:0.9.27-3.el10_0.1.s390x",
+    "ipp-usb-debuginfo-0:0.9.27-3.el10_0.1.s390x",
+    "ipp-usb-0:0.9.27-3.el10_0.1.x86_64",
+    "golang-github-openprinting-ipp-usb-debugsource-0:0.9.27-3.el10_0.1.x86_64",
+    "ipp-usb-debuginfo-0:0.9.27-3.el10_0.1.x86_64"
+  ],
+  "full_text": "An update for golang-github-openprinting-ipp-usb is now available for Red Hat Enterprise Linux 10.0 Extended Update Support.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nHTTP reverse proxy, backed by IPP-over-USB connection to device. It enables\n driverless support for USB devices capable of using IPP-over-USB protocol.\n\nSecurity Fix(es):\n\n* crypto/x509: golang: Denial of Service due to excessive resource consumption via crafted certificate (CVE-2025-61729)\n\nFor more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section."
+}

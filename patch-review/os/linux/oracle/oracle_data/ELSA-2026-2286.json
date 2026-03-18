@@ -1,0 +1,39 @@
+{
+  "id": "ELSA-2026-2286",
+  "vendor": "Oracle",
+  "type": "Security Advisory (ELSA)",
+  "kernel_type": "AppStream",
+  "title": " thunderbird security update",
+  "issuedDate": "2026-02-09T00:00:00Z",
+  "updatedDate": "2026-02-09T00:00:00Z",
+  "pubDate": "2026-02-09T00:00:00Z",
+  "dateStr": "2026-02-09",
+  "url": "https://linux.oracle.com/errata/ELSA-2026-2286.html",
+  "severity": "Important",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 10.",
+  "description": "[140.7.0-1.0.1]\n- Add Oracle prefs\n\n[140.7.0-1]\n- Update to 140.7.0 ESR",
+  "affected_products": [
+    "Oracle Linux 10 for x86_64",
+    "Oracle Linux 10 for aarch64"
+  ],
+  "cves": [
+    "CVE-2025-14327",
+    "CVE-2026-0877",
+    "CVE-2026-0878",
+    "CVE-2026-0879",
+    "CVE-2026-0880",
+    "CVE-2026-0882",
+    "CVE-2026-0883",
+    "CVE-2026-0884",
+    "CVE-2026-0885",
+    "CVE-2026-0886",
+    "CVE-2026-0887",
+    "CVE-2026-0890",
+    "CVE-2026-0891"
+  ],
+  "packages": [
+    "thunderbird-140.7.0-1.0.1.el10_1.src",
+    "thunderbird-140.7.0-1.0.1.el10_1.x86_64"
+  ],
+  "full_text": "[140.7.0-1.0.1]\n- Add Oracle prefs\n\n[140.7.0-1]\n- Update to 140.7.0 ESR\n\nReferences:\nhttps://linux.oracle.com/errata/ELSA-2026-2286.html\nhttps://linux.oracle.com/cve/CVE-2025-14327.html\nhttps://linux.oracle.com/cve/CVE-2026-0877.html\nhttps://linux.oracle.com/cve/CVE-2026-0878.html\nhttps://linux.oracle.com/cve/CVE-2026-0879.html\nhttps://linux.oracle.com/cve/CVE-2026-0880.html\nhttps://linux.oracle.com/cve/CVE-2026-0882.html\nhttps://linux.oracle.com/cve/CVE-2026-0883.html\nhttps://linux.oracle.com/cve/CVE-2026-0884.html\nhttps://linux.oracle.com/cve/CVE-2026-0885.html\nhttps://linux.oracle.com/cve/CVE-2026-0886.html\nhttps://linux.oracle.com/cve/CVE-2026-0887.html\nhttps://linux.oracle.com/cve/CVE-2026-0890.html\nhttps://linux.oracle.com/cve/CVE-2026-0891.html"
+}

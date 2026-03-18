@@ -1,0 +1,20 @@
+{
+  "id": "RHSA-2025:20532",
+  "vendor": "Red Hat",
+  "url": "https://access.redhat.com/errata/RHSA-2025:20532",
+  "pubDate": "2025-11-11T08:55:23.000Z",
+  "dateStr": "2025-11-11",
+  "severity": "Moderate",
+  "title": "Red Hat Security Advisory: grub2 security update",
+  "overview": "An update for grub2 is now available for Red Hat Enterprise Linux 9.\n\nRed Hat Product Security has rated this update as having a security impact of Moderate. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "description": "An update for grub2 is now available for Red Hat Enterprise Linux 9.\n\nRed Hat Product Security has rated this update as having a security impact of Moderate. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux BaseOS (v. 9)"
+  ],
+  "cves": [
+    "CVE-2024-45777"
+  ],
+  "packages": [],
+  "fixes": "",
+  "full_text": "Red Hat Security Advisory: grub2 security update\n\nAn update for grub2 is now available for Red Hat Enterprise Linux 9.\n\nRed Hat Product Security has rated this update as having a security impact of Moderate. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nAn update for grub2 is now available for Red Hat Enterprise Linux 9.\n\nRed Hat Product Security has rated this update as having a security impact of Moderate. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nUpdated Packages:\ngrub2-2.06-114.el9_7.src.rpm\ngrub2-common-2.06-114.el9_7.noarch.rpm\ngrub2-debuginfo-2.06-114.el9_7.x86_64.rpm\ngrub2-debugsource-2.06-114.el9_7.x86_64.rpm\ngrub2-efi-aa64-modules-2.06-114.el9_7.noarch.rpm\ngrub2-efi-x64-2.06-114.el9_7.x86_64.rpm\ngrub2-efi-x64-cdboot-2.06-114.el9_7.x86_64.rpm\ngrub2-efi-x64-modules-2.06-114.el9_7.noarch.rpm\ngrub2-emu-debuginfo-2.06-114.el9_7.x86_64.rpm\ngrub2-pc-2.06-114.el9_7.x86_64.rpm\ngrub2-pc-modules-2.06-114.el9_7.noarch.rpm\ngrub2-tools-2.06-114.el9_7.x86_64.rpm\ngrub2-tools-debuginfo-2.06-114.el9_7.x86_64.rpm\ngrub2-tools-efi-2.06-114.el9_7.x86_64.rpm\ngrub2-tools-efi-debuginfo-2.06-114.el9_7.x86_64.rpm\ngrub2-tools-extra-2.06-114.el9_7.x86_64.rpm\ngrub2-tools-extra-debuginfo-2.06-114.el9_7.x86_64.rpm\ngrub2-tools-minimal-2.06-114.el9_7.x86_64.rpm\ngrub2-tools-minimal-debuginfo-2.06-114.el9_7.x86_64.rpm\ngrub2-debuginfo-2.06-114.el9_7.ppc64le.rpm\ngrub2-debugsource-2.06-114.el9_7.ppc64le.rpm\ngrub2-ppc64le-2.06-114.el9_7.ppc64le.rpm\ngrub2-ppc64le-modules-2.06-114.el9_7.noarch.rpm\ngrub2-tools-2.06-114.el9_7.ppc64le.rpm\ngrub2-tools-debuginfo-2.06-114.el9_7.ppc64le.rpm\ngrub2-tools-extra-2.06-114.el9_7.ppc64le.rpm\ngrub2-tools-extra-debuginfo-2.06-114.el9_7.ppc64le.rpm\ngrub2-tools-minimal-2.06-114.el9_7.ppc64le.rpm\ngrub2-tools-minimal-debuginfo-2.06-114.el9_7.ppc64le.rpm\ngrub2-debuginfo-2.06-114.el9_7.aarch64.rpm\ngrub2-debugsource-2.06-114.el9_7.aarch64.rpm\ngrub2-efi-aa64-2.06-114.el9_7.aarch64.rpm\ngrub2-efi-aa64-cdboot-2.06-114.el9_7.aarch64.rpm\ngrub2-emu-debuginfo-2.06-114.el9_7.aarch64.rpm\ngrub2-tools-2.06-114.el9_7.aarch64.rpm\ngrub2-tools-debuginfo-2.06-114.el9_7.aarch64.rpm\ngrub2-tools-extra-2.06-114.el9_7.aarch64.rpm\ngrub2-tools-extra-debuginfo-2.06-114.el9_7.aarch64.rpm\ngrub2-tools-minimal-2.06-114.el9_7.aarch64.rpm\ngrub2-tools-minimal-debuginfo-2.06-114.el9_7.aarch64.rpm\n\nCVE-2024-45777: A flaw was found in grub2. The calculation of the translation buffer when reading a language .mo file in grub_gettext_getstr_from_position() may overflow, leading to a Out-of-bound write. This issue can be leveraged by an attacker to overwrite grub2's sensitive heap data, eventually leading to the circumvention of secure boot protections."
+}

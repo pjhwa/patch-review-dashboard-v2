@@ -1,0 +1,25 @@
+{
+  "id": "ELBA-2025-20856",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "AppStream",
+  "title": "logwatch bug fix and enhancement update",
+  "issuedDate": "2025-11-17T00:00:00Z",
+  "updatedDate": "2025-11-17T00:00:00Z",
+  "pubDate": "2025-11-17T00:00:00Z",
+  "dateStr": "2025-11-17",
+  "url": "https://linux.oracle.com/errata/ELBA-2025-20856.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 9.",
+  "description": "* Mon Aug 04 2025 Pavel Simovec <psimovec@redhat.com>\n- Add support for zstd-compressed log files\n- Resolves: RHEL-97021",
+  "affected_products": [
+    "Oracle Linux 9 for x86_64",
+    "Oracle Linux 9 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "logwatch-7.5.5-8.el9.src",
+    "logwatch-7.5.5-8.el9.noarch"
+  ],
+  "full_text": "* Mon Aug 04 2025 Pavel Simovec <psimovec@redhat.com>\n- Add support for zstd-compressed log files\n- Resolves: RHEL-97021\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2025-20856.html"
+}

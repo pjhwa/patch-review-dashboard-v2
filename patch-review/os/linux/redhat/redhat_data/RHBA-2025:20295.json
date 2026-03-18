@@ -1,0 +1,45 @@
+{
+  "id": "RHBA-2025:20295",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: ibus-anthy bug fix and enhancement update",
+  "issuedDate": "2025-11-11T07:25:59Z",
+  "updatedDate": "2025-11-11T07:25:59Z",
+  "pubDate": "2025-11-11T07:25:59Z",
+  "dateStr": "2025-11-11",
+  "url": "https://access.redhat.com/errata/RHBA-2025:20295",
+  "severity": "None",
+  "overview": "An update for ibus-anthy is now available for Red Hat Enterprise Linux 10.",
+  "description": "For detailed information on changes in this release, see the Red Hat Enterprise Linux 10.1 Release Notes linked from the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux for IBM z Systems",
+    "Red Hat Enterprise Linux for ARM 64",
+    "Red Hat Enterprise Linux for x86_64 10 x86_64",
+    "Red Hat Enterprise Linux for Power, little endian"
+  ],
+  "cves": [],
+  "packages": [
+    "ibus-anthy-1.5.17-1.el10.src",
+    "ibus-anthy-1.5.17-1.el10.x86_64",
+    "ibus-anthy-debuginfo-1.5.17-1.el10.x86_64",
+    "ibus-anthy-debugsource-1.5.17-1.el10.x86_64",
+    "ibus-anthy-python-1.5.17-1.el10.noarch",
+    "ibus-anthy-1.5.17-1.el10.s390x",
+    "ibus-anthy-debuginfo-1.5.17-1.el10.s390x",
+    "ibus-anthy-debugsource-1.5.17-1.el10.s390x",
+    "ibus-anthy-1.5.17-1.el10.ppc64le",
+    "ibus-anthy-debuginfo-1.5.17-1.el10.ppc64le",
+    "ibus-anthy-debugsource-1.5.17-1.el10.ppc64le",
+    "ibus-anthy-1.5.17-1.el10.aarch64",
+    "ibus-anthy-debuginfo-1.5.17-1.el10.aarch64",
+    "ibus-anthy-debugsource-1.5.17-1.el10.aarch64"
+  ],
+  "fixes": [
+    {
+      "id": "RHEL-83560",
+      "url": "https://issues.redhat.com/browse/RHEL-83560",
+      "description": "ibus-anthy fails to build in 2025"
+    }
+  ],
+  "full_text": "An update for ibus-anthy is now available for Red Hat Enterprise Linux 10.\n\nFor detailed information on changes in this release, see the Red Hat Enterprise Linux 10.1 Release Notes linked from the References section."
+}

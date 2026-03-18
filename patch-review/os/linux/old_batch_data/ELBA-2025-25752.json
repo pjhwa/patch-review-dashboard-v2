@@ -1,0 +1,22 @@
+{
+  "id": "ELBA-2025-25752",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2025-November/019001.html",
+  "synopsis": "[El-errata] ELBA-2025-25752 Oracle Linux 9 oraclelinux-developer-release-el9 bug fix update",
+  "dateStr": "2025-November",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Bug Fix Advisory ELBA-2025-25752",
+  "description": "[1.0-3]\n- Add UEKR8 Developer Preview repository",
+  "affected_products": [
+    "Oracle Linux 9"
+  ],
+  "packages": [
+    "oraclelinux-developer-release-el9-1.0-3.el9.x86_64.rpm",
+    "oraclelinux-developer-release-el9-1.0-3.el9.aarch64.rpm"
+  ],
+  "cves": [],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Bug Fix Advisory ELBA-2025-25752\n\nhttp://linux.oracle.com/errata/ELBA-2025-25752.html\n\nThe following updated rpms for Oracle Linux 9 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\noraclelinux-developer-release-el9-1.0-3.el9.x86_64.rpm\n\naarch64:\noraclelinux-developer-release-el9-1.0-3.el9.aarch64.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol9/SRPMS-updates/oraclelinux-developer-release-el9-1.0-3.el9.src.rpm\n\n\n\nDescription of changes:\n\n[1.0-3]\n- Add UEKR8 Developer Preview repository",
+  "vendor": "Oracle"
+}

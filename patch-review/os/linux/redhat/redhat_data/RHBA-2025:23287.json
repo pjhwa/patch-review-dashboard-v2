@@ -1,0 +1,36 @@
+{
+  "id": "RHBA-2025:23287",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: maven bug fix and enhancement update",
+  "issuedDate": "2025-12-18T09:19:12Z",
+  "updatedDate": "2025-12-18T09:19:12Z",
+  "pubDate": "2025-12-18T09:19:12Z",
+  "dateStr": "2025-12-18",
+  "url": "https://access.redhat.com/errata/RHBA-2025:23287",
+  "severity": "None",
+  "overview": "An update for maven is now available for Red Hat Enterprise Linux 10.",
+  "description": "Maven is a software project management and comprehension tool. Based on the concept of a project object model (POM), Maven can manage a project's build, reporting and documentation from a central piece of information.Bug Fix(es) and Enhancement(s): sub-package maven-openjdk25 (JIRA:RHEL-96002)",
+  "affected_products": [
+    "Red Hat Enterprise Linux for ARM 64",
+    "Red Hat Enterprise Linux for IBM z Systems",
+    "Red Hat CodeReady Linux Builder for ARM 64",
+    "Red Hat Enterprise Linux for x86_64 10 x86_64",
+    "Red Hat CodeReady Linux Builder for IBM z Systems",
+    "Red Hat CodeReady Linux Builder for x86_64 10 x86_64",
+    "Red Hat Enterprise Linux for Power, little endian",
+    "Red Hat CodeReady Linux Builder for Power, little endian"
+  ],
+  "cves": [],
+  "packages": [
+    "maven-3.9.9-3.el10_1.src",
+    "maven-3.9.9-3.el10_1.noarch",
+    "maven-lib-3.9.9-3.el10_1.noarch",
+    "maven-openjdk21-3.9.9-3.el10_1.noarch",
+    "maven-openjdk25-3.9.9-3.el10_1.noarch",
+    "maven-javadoc-3.9.9-3.el10_1.noarch",
+    "maven-unbound-3.9.9-3.el10_1.noarch"
+  ],
+  "fixes": [],
+  "full_text": "An update for maven is now available for Red Hat Enterprise Linux 10.\n\nMaven is a software project management and comprehension tool. Based on the concept of a project object model (POM), Maven can manage a project's build, reporting and documentation from a central piece of information.Bug Fix(es) and Enhancement(s): sub-package maven-openjdk25 (JIRA:RHEL-96002)"
+}

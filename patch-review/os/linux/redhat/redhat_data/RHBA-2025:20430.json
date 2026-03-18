@@ -1,0 +1,38 @@
+{
+  "id": "RHBA-2025:20430",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: wsl-setup bug fix and enhancement update",
+  "issuedDate": "2025-11-11T07:26:31Z",
+  "updatedDate": "2025-11-11T07:26:31Z",
+  "pubDate": "2025-11-11T07:26:31Z",
+  "dateStr": "2025-11-11",
+  "url": "https://access.redhat.com/errata/RHBA-2025:20430",
+  "severity": "None",
+  "overview": "An update for wsl-setup is now available for Red Hat Enterprise Linux 10.",
+  "description": "For detailed information on changes in this release, see the Red Hat Enterprise Linux 10 Release Notes linked from the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux for ARM 64",
+    "Red Hat Enterprise Linux for x86_64 10 x86_64",
+    "Red Hat Enterprise Linux for IBM z Systems",
+    "Red Hat Enterprise Linux for Power, little endian"
+  ],
+  "cves": [],
+  "packages": [
+    "wsl-setup-1.0.1-9.el10.src",
+    "wsl-setup-1.0.1-9.el10.noarch"
+  ],
+  "fixes": [
+    {
+      "id": "RHEL-99103",
+      "url": "https://issues.redhat.com/browse/RHEL-99103",
+      "description": "Add wsl-setup to RHEL10"
+    },
+    {
+      "id": "RHEL-102375",
+      "url": "https://issues.redhat.com/browse/RHEL-102375",
+      "description": "[RHEL10][CS10] wsl-setup fails when options are passed to it"
+    }
+  ],
+  "full_text": "An update for wsl-setup is now available for Red Hat Enterprise Linux 10.\n\nFor detailed information on changes in this release, see the Red Hat Enterprise Linux 10 Release Notes linked from the References section."
+}

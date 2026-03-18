@@ -1,0 +1,27 @@
+{
+  "id": "ELSA-2025-23745",
+  "vendor": "Oracle",
+  "type": "Security Advisory (ELSA)",
+  "kernel_type": "AppStream",
+  "title": " git-lfs security update",
+  "issuedDate": "2025-12-21T00:00:00Z",
+  "updatedDate": "2025-12-21T00:00:00Z",
+  "pubDate": "2025-12-21T00:00:00Z",
+  "dateStr": "2025-12-21",
+  "url": "https://linux.oracle.com/errata/ELSA-2025-23745.html",
+  "severity": "Important",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 8.",
+  "description": "[3.4.1-6]\n- Backport CVE-2025-26625 fixes\n- Resolves: RHEL-122423",
+  "affected_products": [
+    "Oracle Linux 8 for x86_64",
+    "Oracle Linux 8 for aarch64"
+  ],
+  "cves": [
+    "CVE-2025-26625"
+  ],
+  "packages": [
+    "git-lfs-3.4.1-6.el8_10.src",
+    "git-lfs-3.4.1-6.el8_10.x86_64"
+  ],
+  "full_text": "[3.4.1-6]\n- Backport CVE-2025-26625 fixes\n- Resolves: RHEL-122423\n\nReferences:\nhttps://linux.oracle.com/errata/ELSA-2025-23745.html\nhttps://linux.oracle.com/cve/CVE-2025-26625.html"
+}

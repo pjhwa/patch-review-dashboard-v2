@@ -1,0 +1,26 @@
+{
+  "id": "USN-8071-1",
+  "url": "https://ubuntu.com/security/notices/USN-8071-1",
+  "synopsis": "USN-8071-1: NSS vulnerability",
+  "dateStr": "4 March 2026",
+  "overview": "NSS could be made to crash or run programs if it received specially crafted\nnetwork traffic.",
+  "description": "It was discovered that NSS incorrectly handled memory when performing\ncertain GHASH operations. A remote attacker could use this issue to cause\nNSS to crash, resulting in a denial of service, or possibly execute\narbitrary code.\n\n \n\n \n\n \n\nIt was discovered that NSS incorrectly handled memory when performing\ncertain GHASH operations. A remote attacker could use this issue to cause\nNSS to crash, resulting in a denial of service, or possibly execute\narbitrary code.",
+  "packages": [
+    "nss"
+  ],
+  "cves": [
+    "CVE-2026-2781"
+  ],
+  "affected_products": [
+    "25.10",
+    "24.04 LTS",
+    "22.04 LTS",
+    "Open side navigation"
+  ],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Ubuntu Security Notices\n\nUSN-8071-1\n\n \n\n \n\n \n\n \n\n \n\n \nUSN-8071-1: NSS vulnerability\n\n \n\n \n\n \n\n \nPublication date\n\n \n\n \n\n \n4 March 2026\n\n \n\n \n\n \n\n \n\n \nOverview\n\n \n\n \n\n \nNSS could be made to crash or run programs if it received specially crafted\nnetwork traffic.\n\n \n\n \n\n \n\n \n\n \nReleases\n\n \n\n \n\n \n\n 25.10\n\n 24.04 LTS\n\n22.04 LTS\n\n \n\n \n\n \n\n \n\n \n\n \n\n Open side navigation\n \n\n \n\n \nPackages\n\n \n\n nss - Network Security Service library\n \n\n \n\n \nDetails\n\n \n\n \n\nIt was discovered that NSS incorrectly handled memory when performing\ncertain GHASH operations. A remote attacker could use this issue to cause\nNSS to crash, resulting in a denial of service, or possibly execute\narbitrary code.\n\n \n\n \n\n \n\nIt was discovered that NSS incorrectly handled memory when performing\ncertain GHASH operations. A remote attacker could use this issue to cause\nNSS to crash, resulting in a denial of service, or possibly execute\narbitrary code.\n\n \n\n \n\n \n\n \nUpdate instructions\n\n \n\n \n\n \n\n \n\nIn general, a standard system update will make all the necessary changes.\n\n Learn more about how to get the fixes.\n \n\n \n\n \n\n \n\n \nThe problem can be corrected by updating your system to the following package versions:\n\n \n\n \n\n \n\n \n\n Ubuntu Release\n Package Version\n \n\n 25.10\n\nquesting\n\n libnss3 – \n\n2:3.114-1ubuntu0.1\n\n \n\n 24.04\n\nLTS noble\n\n libnss3 – \n\n2:3.98-1ubuntu0.1\n\n \n\n 22.04\n\nLTS jammy\n\n libnss3 – \n\n2:3.98-0ubuntu0.22.04.3\n\n \n\nReduce your security exposure\n\n \n\n Ubuntu Pro provides ten-year security coverage to 25,000+ packages in Main and Universe repositories, and it is free for up to five machines.\n \n\n \n\n Get Ubuntu Pro\n \n\n \n\nReferences\n\n \n\n \n\n CVE-2026-2781\n \n\n \n\n \n\n CVE-2026-2781",
+  "title": "USN-8071-1: NSS vulnerability | Ubuntu security notices | Ubuntu",
+  "pubDate": "2026-03-03T15:00:00.000Z",
+  "vendor": "Ubuntu"
+}

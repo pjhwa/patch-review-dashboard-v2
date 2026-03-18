@@ -1,0 +1,81 @@
+{
+  "id": "RHBA-2025:20278",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: mutter bug fix and enhancement update",
+  "issuedDate": "2025-11-11T07:25:56Z",
+  "updatedDate": "2025-11-11T07:25:56Z",
+  "pubDate": "2025-11-11T07:25:56Z",
+  "dateStr": "2025-11-11",
+  "url": "https://access.redhat.com/errata/RHBA-2025:20278",
+  "severity": "None",
+  "overview": "An update for mutter is now available for Red Hat Enterprise Linux 10.",
+  "description": "For detailed information on changes in this release, see the Red Hat Enterprise Linux 10 Release Notes linked from the References section.",
+  "affected_products": [
+    "Red Hat CodeReady Linux Builder for x86_64 10 x86_64",
+    "Red Hat CodeReady Linux Builder for ARM 64",
+    "Red Hat CodeReady Linux Builder for IBM z Systems",
+    "Red Hat Enterprise Linux for IBM z Systems",
+    "Red Hat CodeReady Linux Builder for Power, little endian",
+    "Red Hat Enterprise Linux for ARM 64",
+    "Red Hat Enterprise Linux for x86_64 10 x86_64",
+    "Red Hat Enterprise Linux for Power, little endian"
+  ],
+  "cves": [],
+  "packages": [
+    "mutter-47.5-13.el10.src",
+    "mutter-47.5-13.el10.x86_64",
+    "mutter-common-47.5-13.el10.noarch",
+    "mutter-debuginfo-47.5-13.el10.x86_64",
+    "mutter-debugsource-47.5-13.el10.x86_64",
+    "mutter-devel-debuginfo-47.5-13.el10.x86_64",
+    "mutter-tests-debuginfo-47.5-13.el10.x86_64",
+    "mutter-47.5-13.el10.s390x",
+    "mutter-debuginfo-47.5-13.el10.s390x",
+    "mutter-debugsource-47.5-13.el10.s390x",
+    "mutter-devel-debuginfo-47.5-13.el10.s390x",
+    "mutter-tests-debuginfo-47.5-13.el10.s390x",
+    "mutter-47.5-13.el10.ppc64le",
+    "mutter-debuginfo-47.5-13.el10.ppc64le",
+    "mutter-debugsource-47.5-13.el10.ppc64le",
+    "mutter-devel-debuginfo-47.5-13.el10.ppc64le",
+    "mutter-tests-debuginfo-47.5-13.el10.ppc64le",
+    "mutter-47.5-13.el10.aarch64",
+    "mutter-debuginfo-47.5-13.el10.aarch64",
+    "mutter-debugsource-47.5-13.el10.aarch64",
+    "mutter-devel-debuginfo-47.5-13.el10.aarch64",
+    "mutter-tests-debuginfo-47.5-13.el10.aarch64",
+    "mutter-devel-47.5-13.el10.x86_64",
+    "mutter-devel-47.5-13.el10.ppc64le",
+    "mutter-devel-47.5-13.el10.aarch64",
+    "mutter-devel-47.5-13.el10.s390x"
+  ],
+  "fixes": [
+    {
+      "id": "RHEL-82072",
+      "url": "https://issues.redhat.com/browse/RHEL-82072",
+      "description": "Backport org.freedesktop.a11y.A11yManager from upstream"
+    },
+    {
+      "id": "RHEL-84702",
+      "url": "https://issues.redhat.com/browse/RHEL-84702",
+      "description": "Backport the pre-configure hooks in mutter for GNOME 47"
+    },
+    {
+      "id": "RHEL-84842",
+      "url": "https://issues.redhat.com/browse/RHEL-84842",
+      "description": "Gnome Shell  dumped core after monitor hotplug"
+    },
+    {
+      "id": "RHEL-108048",
+      "url": "https://issues.redhat.com/browse/RHEL-108048",
+      "description": "Introduce gdctl utility"
+    },
+    {
+      "id": "RHEL-32668",
+      "url": "https://issues.redhat.com/browse/RHEL-32668",
+      "description": "Rebuild mutter to fix rendering on s390x"
+    }
+  ],
+  "full_text": "An update for mutter is now available for Red Hat Enterprise Linux 10.\n\nFor detailed information on changes in this release, see the Red Hat Enterprise Linux 10 Release Notes linked from the References section."
+}

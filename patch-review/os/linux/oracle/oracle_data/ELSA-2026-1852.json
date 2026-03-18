@@ -1,0 +1,46 @@
+{
+  "id": "ELSA-2026-1852",
+  "vendor": "Oracle",
+  "type": "Security Advisory (ELSA)",
+  "title": " util-linux security update",
+  "issuedDate": "2026-02-04T00:00:00Z",
+  "updatedDate": "2026-02-04T00:00:00Z",
+  "pubDate": "2026-02-04T00:00:00Z",
+  "dateStr": "2026-02-04",
+  "url": "https://linux.oracle.com/errata/ELSA-2026-1852.html",
+  "severity": "Moderate",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 8.",
+  "description": "[2.32.1-48.0.1]\n- Orabug 35995159 - report lost loop device\n\n[2.32.1-48]\n- fix RHEL-134296 - libblkid: use snprintf() instead of sprintf()\n- fix RHEL-133946 - login-utils: fix setpwnam() buffer use [CVE-2025-14104]",
+  "affected_products": [
+    "Oracle Linux 8 for x86_64",
+    "Oracle Linux 8 for aarch64"
+  ],
+  "cves": [
+    "CVE-2025-14104"
+  ],
+  "packages": [
+    "util-linux-2.32.1-48.0.1.el8_10.src",
+    "libfdisk-devel-2.32.1-48.0.1.el8_10.x86_64",
+    "libuuid-devel-2.32.1-48.0.1.el8_10.i686",
+    "libblkid-devel-2.32.1-48.0.1.el8_10.i686",
+    "libsmartcols-devel-2.32.1-48.0.1.el8_10.i686",
+    "libfdisk-devel-2.32.1-48.0.1.el8_10.i686",
+    "libsmartcols-devel-2.32.1-48.0.1.el8_10.x86_64",
+    "util-linux-user-2.32.1-48.0.1.el8_10.x86_64",
+    "libfdisk-2.32.1-48.0.1.el8_10.i686",
+    "uuidd-2.32.1-48.0.1.el8_10.x86_64",
+    "libsmartcols-2.32.1-48.0.1.el8_10.i686",
+    "libuuid-2.32.1-48.0.1.el8_10.x86_64",
+    "libfdisk-2.32.1-48.0.1.el8_10.x86_64",
+    "libblkid-devel-2.32.1-48.0.1.el8_10.x86_64",
+    "libuuid-devel-2.32.1-48.0.1.el8_10.x86_64",
+    "util-linux-2.32.1-48.0.1.el8_10.x86_64",
+    "libblkid-2.32.1-48.0.1.el8_10.x86_64",
+    "libsmartcols-2.32.1-48.0.1.el8_10.x86_64",
+    "libblkid-2.32.1-48.0.1.el8_10.i686",
+    "libuuid-2.32.1-48.0.1.el8_10.i686",
+    "libmount-2.32.1-48.0.1.el8_10.x86_64",
+    "libmount-2.32.1-48.0.1.el8_10.i686"
+  ],
+  "full_text": "[2.32.1-48.0.1]\n- Orabug 35995159 - report lost loop device\n\n[2.32.1-48]\n- fix RHEL-134296 - libblkid: use snprintf() instead of sprintf()\n- fix RHEL-133946 - login-utils: fix setpwnam() buffer use [CVE-2025-14104]\n\nReferences:\nhttps://linux.oracle.com/errata/ELSA-2026-1852.html\nhttps://linux.oracle.com/cve/CVE-2025-14104.html"
+}

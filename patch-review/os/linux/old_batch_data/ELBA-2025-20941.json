@@ -1,0 +1,22 @@
+{
+  "id": "ELBA-2025-20941",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2025-November/019115.html",
+  "synopsis": "[El-errata] ELBA-2025-20941 Oracle Linux 9 at bug fix and enhancement update",
+  "dateStr": "2025-November",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Bug Fix Advisory ELBA-2025-20941",
+  "description": "[3.1.23-13]\n- Use systemd-tmpfiles for /var/spool/at directories\n- Resolves: RHEL-110319",
+  "affected_products": [
+    "Oracle Linux 9"
+  ],
+  "packages": [
+    "at-3.1.23-13.el9_7.x86_64.rpm",
+    "at-3.1.23-13.el9_7.aarch64.rpm"
+  ],
+  "cves": [],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Bug Fix Advisory ELBA-2025-20941\n\nhttp://linux.oracle.com/errata/ELBA-2025-20941.html\n\nThe following updated rpms for Oracle Linux 9 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\nat-3.1.23-13.el9_7.x86_64.rpm\n\naarch64:\nat-3.1.23-13.el9_7.aarch64.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol9/SRPMS-updates/at-3.1.23-13.el9_7.src.rpm\n\n\n\nDescription of changes:\n\n[3.1.23-13]\n- Use systemd-tmpfiles for /var/spool/at directories\n- Resolves: RHEL-110319",
+  "vendor": "Oracle"
+}

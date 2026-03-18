@@ -1,0 +1,37 @@
+{
+  "id": "ELBA-2025-20360-0",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "AppStream",
+  "title": "systemtap bug fix and enhancement update",
+  "issuedDate": "2025-11-25T00:00:00Z",
+  "updatedDate": "2025-11-25T00:00:00Z",
+  "pubDate": "2025-11-25T00:00:00Z",
+  "dateStr": "2025-11-25",
+  "url": "https://linux.oracle.com/errata/ELBA-2025-20360-0.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 10.",
+  "description": "[5.3-3b.0.1]\n- set kernel name to kernel-uek if detected uek booting [OraBug: 29033323]\n\n[5.3-3]\n- RHEL-95272\n\n[5.3-2]\n- RHEL-RHEL-89808: stap-server log owned by root\n\n[5.3-1]\n- Upstream release, see wiki page below for detailed notes.\n  https://sourceware.org/systemtap/wiki/SystemTapReleases",
+  "affected_products": [
+    "Oracle Linux 10 for x86_64",
+    "Oracle Linux 10 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "systemtap-runtime-java-5.3-3b.0.1.el10.x86_64",
+    "systemtap-runtime-virtguest-5.3-3b.0.1.el10.x86_64",
+    "systemtap-runtime-python3-5.3-3b.0.1.el10.x86_64",
+    "systemtap-exporter-5.3-3b.0.1.el10.x86_64",
+    "systemtap-initscript-5.3-3b.0.1.el10.x86_64",
+    "systemtap-sdt-dtrace-5.3-3b.0.1.el10.x86_64",
+    "systemtap-sdt-devel-5.3-3b.0.1.el10.x86_64",
+    "systemtap-5.3-3b.0.1.el10.src",
+    "systemtap-devel-5.3-3b.0.1.el10.x86_64",
+    "systemtap-server-5.3-3b.0.1.el10.x86_64",
+    "systemtap-5.3-3b.0.1.el10.x86_64",
+    "systemtap-runtime-virthost-5.3-3b.0.1.el10.x86_64",
+    "systemtap-client-5.3-3b.0.1.el10.x86_64",
+    "systemtap-runtime-5.3-3b.0.1.el10.x86_64"
+  ],
+  "full_text": "[5.3-3b.0.1]\n- set kernel name to kernel-uek if detected uek booting [OraBug: 29033323]\n\n[5.3-3]\n- RHEL-95272\n\n[5.3-2]\n- RHEL-RHEL-89808: stap-server log owned by root\n\n[5.3-1]\n- Upstream release, see wiki page below for detailed notes.\n  https://sourceware.org/systemtap/wiki/SystemTapReleases\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2025-20360-0.html"
+}

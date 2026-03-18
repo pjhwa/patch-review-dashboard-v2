@@ -1,0 +1,32 @@
+{
+  "id": "ELBA-2025-20452-0",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "AppStream",
+  "title": "subversion bug fix and enhancement update",
+  "issuedDate": "2025-11-25T00:00:00Z",
+  "updatedDate": "2025-11-25T00:00:00Z",
+  "pubDate": "2025-11-25T00:00:00Z",
+  "dateStr": "2025-11-25",
+  "url": "https://linux.oracle.com/errata/ELBA-2025-20452-0.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 10.",
+  "description": "[1.14.5-3]\n- mod_dav_svn: inherit DavBasePath from mod_dav\n  Resolves: RHEL-105424\n\n[1.14.5-2]\n- update to 1.14.5 (#2331047)\n- use %autosetup\n- enable tests by default again\n- conditionalize Ruby tests (Yaakov Selkowitz)\n\n[1.14.4-1]\n- Rebase to version 1.14.4\n- Resolves: rhbz#2317222",
+  "affected_products": [
+    "Oracle Linux 10 for x86_64",
+    "Oracle Linux 10 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "mod_dav_svn-1.14.5-3.el10.x86_64",
+    "subversion-devel-1.14.5-3.el10.x86_64",
+    "subversion-tools-1.14.5-3.el10.x86_64",
+    "python3-subversion-1.14.5-3.el10.x86_64",
+    "subversion-1.14.5-3.el10.x86_64",
+    "subversion-perl-1.14.5-3.el10.x86_64",
+    "subversion-1.14.5-3.el10.src",
+    "subversion-gnome-1.14.5-3.el10.x86_64",
+    "subversion-libs-1.14.5-3.el10.x86_64"
+  ],
+  "full_text": "[1.14.5-3]\n- mod_dav_svn: inherit DavBasePath from mod_dav\n  Resolves: RHEL-105424\n\n[1.14.5-2]\n- update to 1.14.5 (#2331047)\n- use %autosetup\n- enable tests by default again\n- conditionalize Ruby tests (Yaakov Selkowitz)\n\n[1.14.4-1]\n- Rebase to version 1.14.4\n- Resolves: rhbz#2317222\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2025-20452-0.html"
+}

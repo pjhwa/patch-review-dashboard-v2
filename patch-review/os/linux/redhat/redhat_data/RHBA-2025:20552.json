@@ -1,0 +1,43 @@
+{
+  "id": "RHBA-2025:20552",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: linux-firmware bug fix and enhancement update",
+  "issuedDate": "2025-11-11T07:49:54Z",
+  "updatedDate": "2025-11-11T07:49:54Z",
+  "pubDate": "2025-11-11T07:49:54Z",
+  "dateStr": "2025-11-11",
+  "url": "https://access.redhat.com/errata/RHBA-2025:20552",
+  "severity": "None",
+  "overview": "An update for linux-firmware is now available for Red Hat Enterprise Linux 10.",
+  "description": "For detailed information on changes in this release, see the Red Hat Enterprise Linux 9 Release Notes linked from the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux for x86_64 10 x86_64",
+    "Red Hat Enterprise Linux for IBM z Systems",
+    "Red Hat Enterprise Linux for ARM 64",
+    "Red Hat Enterprise Linux for Power, little endian"
+  ],
+  "cves": [],
+  "packages": [
+    "linux-firmware-20250812-155.el9.src",
+    "iwl100-firmware-39.31.5.1-155.el9.noarch",
+    "iwl1000-firmware-39.31.5.1-155.el9.noarch",
+    "iwl105-firmware-18.168.6.1-155.el9.noarch",
+    "iwl135-firmware-18.168.6.1-155.el9.noarch",
+    "iwl2000-firmware-18.168.6.1-155.el9.noarch",
+    "iwl2030-firmware-18.168.6.1-155.el9.noarch",
+    "iwl3160-firmware-25.30.13.0-155.el9.noarch",
+    "iwl5000-firmware-8.83.5.1_1-155.el9.noarch",
+    "iwl5150-firmware-8.24.2.2-155.el9.noarch",
+    "iwl6000g2a-firmware-18.168.6.1-155.el9.noarch",
+    "iwl6000g2b-firmware-18.168.6.1-155.el9.noarch",
+    "iwl6050-firmware-41.28.5.1-155.el9.noarch",
+    "iwl7260-firmware-25.30.13.0-155.el9.noarch",
+    "libertas-sd8787-firmware-20250812-155.el9.noarch",
+    "linux-firmware-20250812-155.el9.noarch",
+    "linux-firmware-whence-20250812-155.el9.noarch",
+    "netronome-firmware-20250812-155.el9.noarch"
+  ],
+  "fixes": [],
+  "full_text": "An update for linux-firmware is now available for Red Hat Enterprise Linux 10.\n\nFor detailed information on changes in this release, see the Red Hat Enterprise Linux 9 Release Notes linked from the References section."
+}

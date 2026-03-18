@@ -1,0 +1,26 @@
+{
+  "id": "ELBA-2025-23380",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "title": "coreutils bug fix and enhancement update",
+  "issuedDate": "2025-12-18T00:00:00Z",
+  "updatedDate": "2025-12-18T00:00:00Z",
+  "pubDate": "2025-12-18T00:00:00Z",
+  "dateStr": "2025-12-18",
+  "url": "https://linux.oracle.com/errata/ELBA-2025-23380.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 8.",
+  "description": "[8.30-16.0.1]\n- clean up empty file if cp is failed [Orabug 15973168]\n- df --local: recognize afs, auristorfs, and smb3 as remote fs (#1798030)\n- fix formatting of sha512sum(1) man page (#1688744)\n\n[8.30-16]\n- fix du being killed by SIGABRT on mutating xfs systems (RHEL-124174)",
+  "affected_products": [
+    "Oracle Linux 8 for x86_64",
+    "Oracle Linux 8 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "coreutils-common-8.30-16.0.1.el8_10.x86_64",
+    "coreutils-8.30-16.0.1.el8_10.x86_64",
+    "coreutils-single-8.30-16.0.1.el8_10.x86_64",
+    "coreutils-8.30-16.0.1.el8_10.src"
+  ],
+  "full_text": "[8.30-16.0.1]\n- clean up empty file if cp is failed [Orabug 15973168]\n- df --local: recognize afs, auristorfs, and smb3 as remote fs (#1798030)\n- fix formatting of sha512sum(1) man page (#1688744)\n\n[8.30-16]\n- fix du being killed by SIGABRT on mutating xfs systems (RHEL-124174)\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2025-23380.html"
+}

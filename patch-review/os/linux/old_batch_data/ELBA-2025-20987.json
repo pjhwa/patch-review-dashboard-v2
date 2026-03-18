@@ -1,0 +1,28 @@
+{
+  "id": "ELBA-2025-20987",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2025-December/019171.html",
+  "synopsis": "[El-errata] ELBA-2025-20987 Oracle Linux 10 ostree bug fix and enhancement update",
+  "dateStr": "2025-December",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Bug Fix Advisory ELBA-2025-20987",
+  "description": "[2025.6-1]\n- Rebase to 2025.6",
+  "affected_products": [
+    "Oracle Linux 10"
+  ],
+  "packages": [
+    "ostree-2025.6-1.el10_1.x86_64.rpm",
+    "ostree-devel-2025.6-1.el10_1.x86_64.rpm",
+    "ostree-grub2-2025.6-1.el10_1.x86_64.rpm",
+    "ostree-libs-2025.6-1.el10_1.x86_64.rpm",
+    "ostree-2025.6-1.el10_1.aarch64.rpm",
+    "ostree-devel-2025.6-1.el10_1.aarch64.rpm",
+    "ostree-grub2-2025.6-1.el10_1.aarch64.rpm",
+    "ostree-libs-2025.6-1.el10_1.aarch64.rpm"
+  ],
+  "cves": [],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Bug Fix Advisory ELBA-2025-20987\n\nhttp://linux.oracle.com/errata/ELBA-2025-20987.html\n\nThe following updated rpms for Oracle Linux 10 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\nostree-2025.6-1.el10_1.x86_64.rpm\nostree-devel-2025.6-1.el10_1.x86_64.rpm\nostree-grub2-2025.6-1.el10_1.x86_64.rpm\nostree-libs-2025.6-1.el10_1.x86_64.rpm\n\naarch64:\nostree-2025.6-1.el10_1.aarch64.rpm\nostree-devel-2025.6-1.el10_1.aarch64.rpm\nostree-grub2-2025.6-1.el10_1.aarch64.rpm\nostree-libs-2025.6-1.el10_1.aarch64.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol10/SRPMS-updates/ostree-2025.6-1.el10_1.src.rpm\n\n\n\nDescription of changes:\n\n[2025.6-1]\n- Rebase to 2025.6",
+  "vendor": "Oracle"
+}

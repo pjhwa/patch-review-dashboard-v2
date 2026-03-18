@@ -1,0 +1,57 @@
+{
+  "id": "RHBA-2025:20417",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: toolbox bug fix and enhancement update",
+  "issuedDate": "2025-11-11T07:26:27Z",
+  "updatedDate": "2025-11-11T07:26:27Z",
+  "pubDate": "2025-11-11T07:26:27Z",
+  "dateStr": "2025-11-11",
+  "url": "https://access.redhat.com/errata/RHBA-2025:20417",
+  "severity": "None",
+  "overview": "An update for toolbox is now available for Red Hat Enterprise Linux 10.",
+  "description": "For detailed information on changes in this release, see the Red Hat Enterprise Linux 10 Release Notes linked from the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux for IBM z Systems",
+    "Red Hat CodeReady Linux Builder for Power, little endian",
+    "Red Hat Enterprise Linux for x86_64 10 x86_64",
+    "Red Hat Enterprise Linux for ARM 64",
+    "Red Hat Enterprise Linux for Power, little endian",
+    "Red Hat CodeReady Linux Builder for IBM z Systems",
+    "Red Hat CodeReady Linux Builder for x86_64 10 x86_64",
+    "Red Hat CodeReady Linux Builder for ARM 64"
+  ],
+  "cves": [],
+  "packages": [
+    "toolbox-0.2-2.el10.src",
+    "toolbox-0.2-2.el10.x86_64",
+    "toolbox-debuginfo-0.2-2.el10.x86_64",
+    "toolbox-debugsource-0.2-2.el10.x86_64",
+    "toolbox-0.2-2.el10.s390x",
+    "toolbox-debuginfo-0.2-2.el10.s390x",
+    "toolbox-debugsource-0.2-2.el10.s390x",
+    "toolbox-0.2-2.el10.ppc64le",
+    "toolbox-debuginfo-0.2-2.el10.ppc64le",
+    "toolbox-debugsource-0.2-2.el10.ppc64le",
+    "toolbox-0.2-2.el10.aarch64",
+    "toolbox-debuginfo-0.2-2.el10.aarch64",
+    "toolbox-debugsource-0.2-2.el10.aarch64",
+    "toolbox-tests-0.2-2.el10.x86_64",
+    "toolbox-tests-0.2-2.el10.ppc64le",
+    "toolbox-tests-0.2-2.el10.aarch64",
+    "toolbox-tests-0.2-2.el10.s390x"
+  ],
+  "fixes": [
+    {
+      "id": "RHEL-95210",
+      "url": "https://issues.redhat.com/browse/RHEL-95210",
+      "description": "Rebase to 0.1.2"
+    },
+    {
+      "id": "RHEL-97099",
+      "url": "https://issues.redhat.com/browse/RHEL-97099",
+      "description": "Missing 'Requires: flatpak-session-helper'"
+    }
+  ],
+  "full_text": "An update for toolbox is now available for Red Hat Enterprise Linux 10.\n\nFor detailed information on changes in this release, see the Red Hat Enterprise Linux 10 Release Notes linked from the References section."
+}

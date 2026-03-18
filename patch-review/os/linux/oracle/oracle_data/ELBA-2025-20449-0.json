@@ -1,0 +1,29 @@
+{
+  "id": "ELBA-2025-20449-0",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "AppStream",
+  "title": "dnsconfd bug fix and enhancement update",
+  "issuedDate": "2025-11-25T00:00:00Z",
+  "updatedDate": "2025-11-25T00:00:00Z",
+  "pubDate": "2025-11-25T00:00:00Z",
+  "dateStr": "2025-11-25",
+  "url": "https://linux.oracle.com/errata/ELBA-2025-20449-0.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 10.",
+  "description": "[1.7.3-2]\n- Rebuild because of infrastructure problems\n- Resolves: RHEL-92412\n- Resolves: RHEL-88534\n- Resolves: RHEL-81709\n\n[1.7.3-1]\n- Rebase to 1.7.3\n- Resolves: RHEL-92412\n- Resolves: RHEL-88534\n- Resolves: RHEL-81709",
+  "affected_products": [
+    "Oracle Linux 10 for x86_64",
+    "Oracle Linux 10 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "dnsconfd-selinux-1.7.3-2.el10.noarch",
+    "dnsconfd-micro-1.7.3-2.el10.x86_64",
+    "dnsconfd-1.7.3-2.el10.src",
+    "dnsconfd-dracut-1.7.3-2.el10.x86_64",
+    "dnsconfd-1.7.3-2.el10.x86_64",
+    "dnsconfd-unbound-1.7.3-2.el10.noarch"
+  ],
+  "full_text": "[1.7.3-2]\n- Rebuild because of infrastructure problems\n- Resolves: RHEL-92412\n- Resolves: RHEL-88534\n- Resolves: RHEL-81709\n\n[1.7.3-1]\n- Rebase to 1.7.3\n- Resolves: RHEL-92412\n- Resolves: RHEL-88534\n- Resolves: RHEL-81709\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2025-20449-0.html"
+}

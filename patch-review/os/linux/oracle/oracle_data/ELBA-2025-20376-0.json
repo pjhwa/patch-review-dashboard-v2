@@ -1,0 +1,25 @@
+{
+  "id": "ELBA-2025-20376-0",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "AppStream",
+  "title": "stratis-cli bug fix and enhancement update",
+  "issuedDate": "2025-11-25T00:00:00Z",
+  "updatedDate": "2025-11-25T00:00:00Z",
+  "pubDate": "2025-11-25T00:00:00Z",
+  "dateStr": "2025-11-25",
+  "url": "https://linux.oracle.com/errata/ELBA-2025-20376-0.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 10.",
+  "description": "[3.8.1-1]\n- Update to 3.8.1\n  Resolves: RHEL-71912",
+  "affected_products": [
+    "Oracle Linux 10 for x86_64",
+    "Oracle Linux 10 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "stratis-cli-3.8.1-1.el10.src",
+    "stratis-cli-3.8.1-1.el10.noarch"
+  ],
+  "full_text": "[3.8.1-1]\n- Update to 3.8.1\n  Resolves: RHEL-71912\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2025-20376-0.html"
+}

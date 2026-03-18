@@ -1,0 +1,22 @@
+{
+  "id": "RHSA-2026:2951",
+  "vendor": "Red Hat",
+  "url": "https://access.redhat.com/errata/RHSA-2026:2951",
+  "pubDate": "2026-02-18T14:15:26.000Z",
+  "dateStr": "2026-02-18",
+  "severity": "Important",
+  "title": "Red Hat Security Advisory: Red Hat OpenShift API for Data Protection",
+  "overview": "A new version of OpenShift API for Data Protection (OADP) is now available.",
+  "description": "A new version of OpenShift API for Data Protection (OADP) is now available.",
+  "affected_products": [
+    "OpenShift API for Data Protection 1.4"
+  ],
+  "cves": [
+    "CVE-2025-47907",
+    "CVE-2025-52881",
+    "CVE-2025-61729"
+  ],
+  "packages": [],
+  "fixes": "",
+  "full_text": "Red Hat Security Advisory: Red Hat OpenShift API for Data Protection\n\nA new version of OpenShift API for Data Protection (OADP) is now available.\n\nA new version of OpenShift API for Data Protection (OADP) is now available.\n\n\n\nCVE-2025-47907: A flaw was found in database/sql. Concurrent queries can produce unexpected results when a query is cancelled during a Scan method call on returned Rows, creating a race condition. This vulnerability allows an attacker who can initiate and cancel queries to trigger this condition, possibly leading to inconsistent data being returned to the application.\n\nCVE-2025-52881: A flaw was found in runc. This attack is a more sophisticated variant of CVE-2019-16884, which was a flaw that allowed an attacker to trick runc into writing the LSM process labels for a container process into a dummy tmpfs file and thus not apply the correct LSM labels to the container process. The mitigation applied for CVE-2019-16884 was fairly limited and effectively only caused runc to verify that when we write LSM labels that those labels are actual procfs files.\n\nCVE-2025-61729: Within HostnameError.Error(), when constructing an error string, there is no limit to the number of hosts that will be printed out. Furthermore, the error string is constructed by repeated string concatenation, leading to quadratic runtime. Therefore, a certificate provided by a malicious actor can result in excessive resource consumption."
+}

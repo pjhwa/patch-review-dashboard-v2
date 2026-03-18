@@ -1,0 +1,21 @@
+{
+  "id": "RHSA-2026:2852",
+  "vendor": "Red Hat",
+  "url": "https://access.redhat.com/errata/RHSA-2026:2852",
+  "pubDate": "2026-02-17T23:04:21.000Z",
+  "dateStr": "2026-02-17",
+  "severity": "Important",
+  "title": "Red Hat Security Advisory: OpenShift Security Profiles Operator bug fix and enhancement update",
+  "overview": "An updated OpenShift Security Profiles Operator image that fixes various bugs and adds new\nenhancements is now available for the Red Hat OpenShift Enterprise 4 catalog.",
+  "description": "An updated OpenShift Security Profiles Operator image that fixes various bugs and adds new\nenhancements is now available for the Red Hat OpenShift Enterprise 4 catalog.",
+  "affected_products": [
+    "OpenShift Security Profiles Operator 1"
+  ],
+  "cves": [
+    "CVE-2025-66506",
+    "CVE-2025-66564"
+  ],
+  "packages": [],
+  "fixes": "",
+  "full_text": "Red Hat Security Advisory: OpenShift Security Profiles Operator bug fix and enhancement update\n\nAn updated OpenShift Security Profiles Operator image that fixes various bugs and adds new\nenhancements is now available for the Red Hat OpenShift Enterprise 4 catalog.\n\nAn updated OpenShift Security Profiles Operator image that fixes various bugs and adds new\nenhancements is now available for the Red Hat OpenShift Enterprise 4 catalog.\n\n\n\nCVE-2025-66506: A flaw was found in Fulcio, a free-to-use certificate authority. This vulnerability allows a denial of service (DoS) due to excessive memory allocation when processing a malicious OpenID Connect (OIDC) identity token containing numerous period characters.\n\nCVE-2025-66564: A flaw was found in Sigstore Timestamp Authority. This vulnerability allows a denial of service via excessive memory allocation when processing a specially crafted Object Identifier or Content-Type header."
+}

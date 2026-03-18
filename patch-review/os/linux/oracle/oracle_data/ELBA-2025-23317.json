@@ -1,0 +1,36 @@
+{
+  "id": "ELBA-2025-23317",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "AppStream",
+  "title": "nodejs:24 bug fix and enhancement update",
+  "issuedDate": "2025-12-22T00:00:00Z",
+  "updatedDate": "2025-12-22T00:00:00Z",
+  "pubDate": "2025-12-22T00:00:00Z",
+  "dateStr": "2025-12-22",
+  "url": "https://linux.oracle.com/errata/ELBA-2025-23317.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 9.",
+  "description": "nodejs\n[1:24.4.1-7]\n- Add patch to prevent fips usage segfault\n\n[1:24.4.1-6]\n- Rename nodejs-npm back to npm\n\n[1:24.4.1-5]\n- Make nodejs-npm provide npm as well\n\n[1:24.4.1-4]\n- Remove sqlite extension test\n\n[1:24.4.1-3]\n- Switch to compilation using gcc-toolset-12\n\n[1:24.4.1-2]\n- Remove parallel-installable bits\n\n* Fri Aug 01 2025 Jan Stanek <jstanek@redhat.com>\n- Import package from c10s\n\nnodejs-nodemon\n[3.0.3-3]\n- Keep BR on just npm\n\n[3.0.3-2]\n- Fix BR for nodejs-npm\n\nnodejs-packaging\n[2021.06-5]\n- nodejs.req to properly detect bundled deps",
+  "affected_products": [
+    "Oracle Linux 9 for x86_64",
+    "Oracle Linux 9 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "nodejs-packaging-2021.06-5.module+el9.7.0+90729+d7e7aa54.noarch",
+    "nodejs-packaging-bundler-2021.06-5.module+el9.7.0+90729+d7e7aa54.noarch",
+    "npm-11.4.2-1.24.4.1.7.module+el9.7.0+90708+1a6713ab.noarch",
+    "nodejs-nodemon-3.0.3-3.module+el9.7.0+90708+1a6713ab.noarch",
+    "nodejs-docs-24.4.1-7.module+el9.7.0+90708+1a6713ab.noarch",
+    "nodejs-packaging-2021.06-5.module+el9.7.0+90729+d7e7aa54.src",
+    "nodejs-24.4.1-7.module+el9.7.0+90708+1a6713ab.src",
+    "nodejs-nodemon-3.0.3-3.module+el9.7.0+90708+1a6713ab.src",
+    "nodejs-devel-24.4.1-7.module+el9.7.0+90708+1a6713ab.x86_64",
+    "nodejs-full-i18n-24.4.1-7.module+el9.7.0+90708+1a6713ab.x86_64",
+    "nodejs-libs-24.4.1-7.module+el9.7.0+90708+1a6713ab.x86_64",
+    "nodejs-24.4.1-7.module+el9.7.0+90708+1a6713ab.x86_64",
+    "v8-13.6-devel-13.6.233.10-1.24.4.1.7.module+el9.7.0+90708+1a6713ab.x86_64"
+  ],
+  "full_text": "nodejs\n[1:24.4.1-7]\n- Add patch to prevent fips usage segfault\n\n[1:24.4.1-6]\n- Rename nodejs-npm back to npm\n\n[1:24.4.1-5]\n- Make nodejs-npm provide npm as well\n\n[1:24.4.1-4]\n- Remove sqlite extension test\n\n[1:24.4.1-3]\n- Switch to compilation using gcc-toolset-12\n\n[1:24.4.1-2]\n- Remove parallel-installable bits\n\n* Fri Aug 01 2025 Jan Stanek <jstanek@redhat.com>\n- Import package from c10s\n\nnodejs-nodemon\n[3.0.3-3]\n- Keep BR on just npm\n\n[3.0.3-2]\n- Fix BR for nodejs-npm\n\nnodejs-packaging\n[2021.06-5]\n- nodejs.req to properly detect bundled deps\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2025-23317.html"
+}

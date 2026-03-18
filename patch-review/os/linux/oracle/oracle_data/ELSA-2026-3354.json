@@ -1,0 +1,28 @@
+{
+  "id": "ELSA-2026-3354",
+  "vendor": "Oracle",
+  "type": "Security Advisory (ELSA)",
+  "kernel_type": "AppStream",
+  "title": " python-pyasn1 security update",
+  "issuedDate": "2026-02-25T00:00:00Z",
+  "updatedDate": "2026-02-25T00:00:00Z",
+  "pubDate": "2026-02-25T00:00:00Z",
+  "dateStr": "2026-02-25",
+  "url": "https://linux.oracle.com/errata/ELSA-2026-3354.html",
+  "severity": "Important",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 10.",
+  "description": "[0.6.2-1]\n- Update to 0.6.2\n- Update modules to 0.4.2\n  Resolves: RHEL-148142",
+  "affected_products": [
+    "Oracle Linux 10 for x86_64",
+    "Oracle Linux 10 for aarch64"
+  ],
+  "cves": [
+    "CVE-2026-23490"
+  ],
+  "packages": [
+    "python3-pyasn1-0.6.2-1.el10_1.noarch",
+    "python3-pyasn1-modules-0.6.2-1.el10_1.noarch",
+    "python-pyasn1-0.6.2-1.el10_1.src"
+  ],
+  "full_text": "[0.6.2-1]\n- Update to 0.6.2\n- Update modules to 0.4.2\n  Resolves: RHEL-148142\n\nReferences:\nhttps://linux.oracle.com/errata/ELSA-2026-3354.html\nhttps://linux.oracle.com/cve/CVE-2026-23490.html"
+}

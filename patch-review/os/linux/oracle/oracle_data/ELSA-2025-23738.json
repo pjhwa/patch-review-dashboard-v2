@@ -1,0 +1,27 @@
+{
+  "id": "ELSA-2025-23738",
+  "vendor": "Oracle",
+  "type": "Security Advisory (ELSA)",
+  "kernel_type": "AppStream",
+  "title": " mod_md security update",
+  "issuedDate": "2025-12-21T00:00:00Z",
+  "updatedDate": "2025-12-21T00:00:00Z",
+  "pubDate": "2025-12-21T00:00:00Z",
+  "dateStr": "2025-12-21",
+  "url": "https://linux.oracle.com/errata/ELSA-2025-23738.html",
+  "severity": "Important",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 10.",
+  "description": "[1:2.4.26-4]\n- Resolves: RHEL-134483 - httpd: Apache HTTP Server: mod_md (ACME), unintended\n  retry intervals (CVE-2025-55753)",
+  "affected_products": [
+    "Oracle Linux 10 for x86_64",
+    "Oracle Linux 10 for aarch64"
+  ],
+  "cves": [
+    "CVE-2025-55753"
+  ],
+  "packages": [
+    "mod_md-2.4.26-4.el10_1.src",
+    "mod_md-2.4.26-4.el10_1.x86_64"
+  ],
+  "full_text": "[1:2.4.26-4]\n- Resolves: RHEL-134483 - httpd: Apache HTTP Server: mod_md (ACME), unintended\n  retry intervals (CVE-2025-55753)\n\nReferences:\nhttps://linux.oracle.com/errata/ELSA-2025-23738.html\nhttps://linux.oracle.com/cve/CVE-2025-55753.html"
+}

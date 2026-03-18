@@ -1,0 +1,30 @@
+{
+  "id": "ELBA-2025-20167-0",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "RHCK",
+  "title": "lvm2 bug fix and enhancement update",
+  "issuedDate": "2025-11-25T00:00:00Z",
+  "updatedDate": "2025-11-25T00:00:00Z",
+  "pubDate": "2025-11-25T00:00:00Z",
+  "dateStr": "2025-11-25",
+  "url": "https://linux.oracle.com/errata/ELBA-2025-20167-0.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 10.",
+  "description": "[2.03.32-3]\n- Respin.\n\n[2.03.32-2]\n- Fix vgremove hanging immediately after lockstart.\n- Add repair option for RAID volumes with too many transiently failed devices.\n\n[2.03.32-1]\n- Update to upstream version 2.03.32.\n- See WHATS_NEW and WHATS_NEW_DM for more information.",
+  "affected_products": [
+    "Oracle Linux 10 for x86_64",
+    "Oracle Linux 10 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "device-mapper-libs-1.02.206-3.el10.x86_64",
+    "device-mapper-event-1.02.206-3.el10.x86_64",
+    "lvm2-2.03.32-3.el10.src",
+    "device-mapper-1.02.206-3.el10.x86_64",
+    "lvm2-2.03.32-3.el10.x86_64",
+    "lvm2-libs-2.03.32-3.el10.x86_64",
+    "device-mapper-event-libs-1.02.206-3.el10.x86_64"
+  ],
+  "full_text": "[2.03.32-3]\n- Respin.\n\n[2.03.32-2]\n- Fix vgremove hanging immediately after lockstart.\n- Add repair option for RAID volumes with too many transiently failed devices.\n\n[2.03.32-1]\n- Update to upstream version 2.03.32.\n- See WHATS_NEW and WHATS_NEW_DM for more information.\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2025-20167-0.html"
+}

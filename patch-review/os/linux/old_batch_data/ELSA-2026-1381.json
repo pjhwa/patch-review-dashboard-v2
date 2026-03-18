@@ -1,0 +1,28 @@
+{
+  "id": "ELSA-2026-1381",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2026-January/019621.html",
+  "synopsis": "[El-errata] ELSA-2026-1381 Moderate: Oracle Linux 9 osbuild-composer security update",
+  "dateStr": "2026-January",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Security Advisory ELSA-2026-1381",
+  "description": "[149-3.0.1]\n- Add missing dependency over dracut-config-rescue for image-installer [ORABUG: 38587453]\n- Switch to UEKR8 repositories for OL9.6 [Orabug: 37962207]\n- Add support to create OpenScap images [JIRA: OLDIS-35301]\n- Simplify repository names [JIRA: OLDIS-35893]\n- Refactor patches to fix some naming and set a correct kernel for Oracle Linux [Orabug: 37253643]\n- Support using OCI variables inside built images [JIRA: OLDIS-35302]\n- Support using repository definitons with OCI variables [JIRA: OLDIS-38657]\n- Update repositories to contain OCI variables\n- Remove image types Minimal-raw and wsl [JIRA: OLDIS-38123]\n- Increase default /boot size to 1GB [Orabug: 36827079]\n- Add support for OCI hybrid images [JIRA: OLDIS-33593]\n- enable aarch64 OCI image builds [JIRA: OLDIS-33593]\n- support for building OL8/9 images on Oracle Linux 9 [Orabug: 36400619]\n\n[149-3]\n- Rebuilt to fix:\n  - CVE-2025-58183\n  - RHEL-125705",
+  "affected_products": [
+    "Oracle Linux 9"
+  ],
+  "packages": [
+    "osbuild-composer-149-3.0.1.el9_7.x86_64.rpm",
+    "osbuild-composer-core-149-3.0.1.el9_7.x86_64.rpm",
+    "osbuild-composer-worker-149-3.0.1.el9_7.x86_64.rpm",
+    "osbuild-composer-149-3.0.1.el9_7.aarch64.rpm",
+    "osbuild-composer-core-149-3.0.1.el9_7.aarch64.rpm",
+    "osbuild-composer-worker-149-3.0.1.el9_7.aarch64.rpm"
+  ],
+  "cves": [
+    "CVE-2025-58183"
+  ],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Security Advisory ELSA-2026-1381\n\nhttp://linux.oracle.com/errata/ELSA-2026-1381.html\n\nThe following updated rpms for Oracle Linux 9 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\nosbuild-composer-149-3.0.1.el9_7.x86_64.rpm\nosbuild-composer-core-149-3.0.1.el9_7.x86_64.rpm\nosbuild-composer-worker-149-3.0.1.el9_7.x86_64.rpm\n\naarch64:\nosbuild-composer-149-3.0.1.el9_7.aarch64.rpm\nosbuild-composer-core-149-3.0.1.el9_7.aarch64.rpm\nosbuild-composer-worker-149-3.0.1.el9_7.aarch64.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol9/SRPMS-updates/osbuild-composer-149-3.0.1.el9_7.src.rpm\n\nRelated CVEs:\n\nCVE-2025-58183\n\n\n\n\nDescription of changes:\n\n[149-3.0.1]\n- Add missing dependency over dracut-config-rescue for image-installer [ORABUG: 38587453]\n- Switch to UEKR8 repositories for OL9.6 [Orabug: 37962207]\n- Add support to create OpenScap images [JIRA: OLDIS-35301]\n- Simplify repository names [JIRA: OLDIS-35893]\n- Refactor patches to fix some naming and set a correct kernel for Oracle Linux [Orabug: 37253643]\n- Support using OCI variables inside built images [JIRA: OLDIS-35302]\n- Support using repository definitons with OCI variables [JIRA: OLDIS-38657]\n- Update repositories to contain OCI variables\n- Remove image types Minimal-raw and wsl [JIRA: OLDIS-38123]\n- Increase default /boot size to 1GB [Orabug: 36827079]\n- Add support for OCI hybrid images [JIRA: OLDIS-33593]\n- enable aarch64 OCI image builds [JIRA: OLDIS-33593]\n- support for building OL8/9 images on Oracle Linux 9 [Orabug: 36400619]\n\n[149-3]\n- Rebuilt to fix:\n  - CVE-2025-58183\n  - RHEL-125705",
+  "vendor": "Oracle"
+}

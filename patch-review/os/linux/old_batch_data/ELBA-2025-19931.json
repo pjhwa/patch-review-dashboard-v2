@@ -1,0 +1,44 @@
+{
+  "id": "ELBA-2025-19931",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2025-November/019015.html",
+  "synopsis": "[El-errata] ELBA-2025-19931-1 Oracle Linux 8 kernel bug fix update",
+  "dateStr": "2025-November",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Bug Fix Advisory ELBA-2025-19931-1",
+  "description": "[4.18.0-553.83.1.0.1]\n- scsi: core: Restrict legal sdev_state transitions via sysfs (Uday Shankar) [Orabug: 37778230]\n\n[4.18.0-553.83.1]\n- Update Oracle Linux certificates (Kevin Lyons)\n- Disable signing for aarch64 (Ilya Okomin)\n- Oracle Linux RHCK Module Signing Key was added to the kernel trusted keys list (olkmod_signing_key.pem) [Orabug: 29539237]\n- Update x509.genkey [Orabug: 24817676]\n- Conflict with shim-ia32 and shim-x64 <= 15.3-1.0.3\n- Remove upstream reference during boot (Kevin Lyons) [Orabug: 34750652]\n- Add new Oracle Linux Driver Signing (key 1) certificate [Orabug: 37985772]\n\n[4.18.0-553.83.1]\n- fs: fix UAF/GPF bug in nilfs_mdt_destroy (Abhi Das) [RHEL-116658] {CVE-2022-50367}\n- redhat/configs: Enable CONFIG_MITIGATION_VMSCAPE for x86_64 (Waiman Long) [RHEL-114285]\n- x86/vmscape: Add old Intel CPUs to affected list (Waiman Long) [RHEL-114285] {CVE-2025-40300}\n- x86/vmscape: Warn when STIBP is disabled with SMT (Waiman Long) [RHEL-114285] {CVE-2025-40300}\n- x86/bugs: Move cpu_bugs_smt_update() down (Waiman Long) [RHEL-114285] {CVE-2025-40300}\n- x86/vmscape: Enable the mitigation (Waiman Long) [RHEL-114285] {CVE-2025-40300}\n- x86/vmscape: Add conditional IBPB mitigation (Waiman Long) [RHEL-114285] {CVE-2025-40300}\n- x86/vmscape: Enumerate VMSCAPE bug (Waiman Long) [RHEL-114285] {CVE-2025-40300}\n- Documentation/hw-vuln: Add VMSCAPE documentation (Waiman Long) [RHEL-114285] {CVE-2025-40300}\n- i40e: fix Jumbo Frame support after iPXE boot (Mohammad Heib) [RHEL-121781]\n- i40e: Report MFS in decimal base instead of hex (Mohammad Heib) [RHEL-121781]\n- i40e: Fix unexpected MFS warning message (Mohammad Heib) [RHEL-121781]\n- bitfield: Add FIELD_MODIFY() helper (Mohammad Heib) [RHEL-121781]\n- bitops: Add non-atomic bitops for pointers (Mohammad Heib) [RHEL-121781]\n- qed/qede: Fix scheduling while atomic (CKI Backport Bot) [RHEL-9757]\n- fanotify: add watchdog for permission events (Miklos Szeredi) [RHEL-123215]\n- jiffies: Cast to unsigned long in secs_to_jiffies() conversion (Miklos Szeredi) [RHEL-123215]\n- jiffies: Define secs_to_jiffies() (Miklos Szeredi) [RHEL-123215]\n- s390/pci: Fix __pcilg_mio_inuser() inline assembly (Mete Durlu) [RHEL-105611]\n- mm: zswap: fix missing folio cleanup in writeback race path (Aristeu Rozanski) [RHEL-116239] {CVE-2023-53178}\n- mm: fix zswap writeback race condition (Aristeu Rozanski) [RHEL-116239] {CVE-2023-53178}",
+  "affected_products": [
+    "Oracle Linux 8"
+  ],
+  "packages": [
+    "bpftool-4.18.0-553.83.1.0.1.el8_10.x86_64.rpm",
+    "kernel-4.18.0-553.83.1.0.1.el8_10.x86_64.rpm",
+    "kernel-abi-stablelists-4.18.0-553.83.1.0.1.el8_10.noarch.rpm",
+    "kernel-core-4.18.0-553.83.1.0.1.el8_10.x86_64.rpm",
+    "kernel-cross-headers-4.18.0-553.83.1.0.1.el8_10.x86_64.rpm",
+    "kernel-debug-4.18.0-553.83.1.0.1.el8_10.x86_64.rpm",
+    "kernel-debug-core-4.18.0-553.83.1.0.1.el8_10.x86_64.rpm",
+    "kernel-debug-devel-4.18.0-553.83.1.0.1.el8_10.x86_64.rpm",
+    "kernel-debug-modules-4.18.0-553.83.1.0.1.el8_10.x86_64.rpm",
+    "kernel-debug-modules-extra-4.18.0-553.83.1.0.1.el8_10.x86_64.rpm",
+    "kernel-devel-4.18.0-553.83.1.0.1.el8_10.x86_64.rpm",
+    "kernel-doc-4.18.0-553.83.1.0.1.el8_10.noarch.rpm",
+    "kernel-headers-4.18.0-553.83.1.0.1.el8_10.x86_64.rpm",
+    "kernel-modules-4.18.0-553.83.1.0.1.el8_10.x86_64.rpm",
+    "kernel-modules-extra-4.18.0-553.83.1.0.1.el8_10.x86_64.rpm",
+    "kernel-tools-4.18.0-553.83.1.0.1.el8_10.x86_64.rpm",
+    "kernel-tools-libs-4.18.0-553.83.1.0.1.el8_10.x86_64.rpm",
+    "kernel-tools-libs-devel-4.18.0-553.83.1.0.1.el8_10.x86_64.rpm",
+    "perf-4.18.0-553.83.1.0.1.el8_10.x86_64.rpm",
+    "python3-perf-4.18.0-553.83.1.0.1.el8_10.x86_64.rpm"
+  ],
+  "cves": [
+    "CVE-2022-50367",
+    "CVE-2025-40300",
+    "CVE-2023-53178"
+  ],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Bug Fix Advisory ELBA-2025-19931-1\n\nhttp://linux.oracle.com/errata/ELBA-2025-19931-1.html\n\nThe following updated rpms for Oracle Linux 8 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\nbpftool-4.18.0-553.83.1.0.1.el8_10.x86_64.rpm\nkernel-4.18.0-553.83.1.0.1.el8_10.x86_64.rpm\nkernel-abi-stablelists-4.18.0-553.83.1.0.1.el8_10.noarch.rpm\nkernel-core-4.18.0-553.83.1.0.1.el8_10.x86_64.rpm\nkernel-cross-headers-4.18.0-553.83.1.0.1.el8_10.x86_64.rpm\nkernel-debug-4.18.0-553.83.1.0.1.el8_10.x86_64.rpm\nkernel-debug-core-4.18.0-553.83.1.0.1.el8_10.x86_64.rpm\nkernel-debug-devel-4.18.0-553.83.1.0.1.el8_10.x86_64.rpm\nkernel-debug-modules-4.18.0-553.83.1.0.1.el8_10.x86_64.rpm\nkernel-debug-modules-extra-4.18.0-553.83.1.0.1.el8_10.x86_64.rpm\nkernel-devel-4.18.0-553.83.1.0.1.el8_10.x86_64.rpm\nkernel-doc-4.18.0-553.83.1.0.1.el8_10.noarch.rpm\nkernel-headers-4.18.0-553.83.1.0.1.el8_10.x86_64.rpm\nkernel-modules-4.18.0-553.83.1.0.1.el8_10.x86_64.rpm\nkernel-modules-extra-4.18.0-553.83.1.0.1.el8_10.x86_64.rpm\nkernel-tools-4.18.0-553.83.1.0.1.el8_10.x86_64.rpm\nkernel-tools-libs-4.18.0-553.83.1.0.1.el8_10.x86_64.rpm\nkernel-tools-libs-devel-4.18.0-553.83.1.0.1.el8_10.x86_64.rpm\nperf-4.18.0-553.83.1.0.1.el8_10.x86_64.rpm\npython3-perf-4.18.0-553.83.1.0.1.el8_10.x86_64.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol8/SRPMS-updates/kernel-4.18.0-553.83.1.0.1.el8_10.src.rpm\n\n\n\nDescription of changes:\n\n[4.18.0-553.83.1.0.1]\n- scsi: core: Restrict legal sdev_state transitions via sysfs (Uday Shankar) [Orabug: 37778230]\n\n[4.18.0-553.83.1]\n- Update Oracle Linux certificates (Kevin Lyons)\n- Disable signing for aarch64 (Ilya Okomin)\n- Oracle Linux RHCK Module Signing Key was added to the kernel trusted keys list (olkmod_signing_key.pem) [Orabug: 29539237]\n- Update x509.genkey [Orabug: 24817676]\n- Conflict with shim-ia32 and shim-x64 <= 15.3-1.0.3\n- Remove upstream reference during boot (Kevin Lyons) [Orabug: 34750652]\n- Add new Oracle Linux Driver Signing (key 1) certificate [Orabug: 37985772]\n\n[4.18.0-553.83.1]\n- fs: fix UAF/GPF bug in nilfs_mdt_destroy (Abhi Das) [RHEL-116658] {CVE-2022-50367}\n- redhat/configs: Enable CONFIG_MITIGATION_VMSCAPE for x86_64 (Waiman Long) [RHEL-114285]\n- x86/vmscape: Add old Intel CPUs to affected list (Waiman Long) [RHEL-114285] {CVE-2025-40300}\n- x86/vmscape: Warn when STIBP is disabled with SMT (Waiman Long) [RHEL-114285] {CVE-2025-40300}\n- x86/bugs: Move cpu_bugs_smt_update() down (Waiman Long) [RHEL-114285] {CVE-2025-40300}\n- x86/vmscape: Enable the mitigation (Waiman Long) [RHEL-114285] {CVE-2025-40300}\n- x86/vmscape: Add conditional IBPB mitigation (Waiman Long) [RHEL-114285] {CVE-2025-40300}\n- x86/vmscape: Enumerate VMSCAPE bug (Waiman Long) [RHEL-114285] {CVE-2025-40300}\n- Documentation/hw-vuln: Add VMSCAPE documentation (Waiman Long) [RHEL-114285] {CVE-2025-40300}\n- i40e: fix Jumbo Frame support after iPXE boot (Mohammad Heib) [RHEL-121781]\n- i40e: Report MFS in decimal base instead of hex (Mohammad Heib) [RHEL-121781]\n- i40e: Fix unexpected MFS warning message (Mohammad Heib) [RHEL-121781]\n- bitfield: Add FIELD_MODIFY() helper (Mohammad Heib) [RHEL-121781]\n- bitops: Add non-atomic bitops for pointers (Mohammad Heib) [RHEL-121781]\n- qed/qede: Fix scheduling while atomic (CKI Backport Bot) [RHEL-9757]\n- fanotify: add watchdog for permission events (Miklos Szeredi) [RHEL-123215]\n- jiffies: Cast to unsigned long in secs_to_jiffies() conversion (Miklos Szeredi) [RHEL-123215]\n- jiffies: Define secs_to_jiffies() (Miklos Szeredi) [RHEL-123215]\n- s390/pci: Fix __pcilg_mio_inuser() inline assembly (Mete Durlu) [RHEL-105611]\n- mm: zswap: fix missing folio cleanup in writeback race path (Aristeu Rozanski) [RHEL-116239] {CVE-2023-53178}\n- mm: fix zswap writeback race condition (Aristeu Rozanski) [RHEL-116239] {CVE-2023-53178}",
+  "vendor": "Oracle"
+}

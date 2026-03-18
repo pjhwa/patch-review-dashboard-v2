@@ -1,0 +1,21 @@
+{
+  "id": "RHSA-2026:3751",
+  "vendor": "Red Hat",
+  "url": "https://access.redhat.com/errata/RHSA-2026:3751",
+  "pubDate": "2026-03-04T15:00:31.000Z",
+  "dateStr": "2026-03-04",
+  "severity": "Moderate",
+  "title": "Red Hat Security Advisory: Red Hat Developer Hub 1.9.0 release.",
+  "overview": "Red Hat Developer Hub 1.9.0 has been released.",
+  "description": "Red Hat Developer Hub 1.9.0 has been released.",
+  "affected_products": [
+    "Red Hat Developer Hub 1.9"
+  ],
+  "cves": [
+    "CVE-2024-53382",
+    "CVE-2025-13033"
+  ],
+  "packages": [],
+  "fixes": "",
+  "full_text": "Red Hat Security Advisory: Red Hat Developer Hub 1.9.0 release.\n\nRed Hat Developer Hub 1.9.0 has been released.\n\nRed Hat Developer Hub 1.9.0 has been released.\n\n\n\nCVE-2024-53382: A flaw was found in the prism-autoloader plugin of the Prism library. The prism-autoloader plugin uses `document.currentScript` as the base URL for dynamically loading other dependencies and, in certain circumstances, can be vulnerable to a DOM Clobbering attack. This issue could lead to Cross-site scripting (XSS) attacks on web pages that embed Prism and allow users to inject scriptless HTML elements, such as an `img` tag with a controlled `name` attribute.\n\nCVE-2025-13033: A vulnerability was identified in the email parsing library due to improper handling of specially formatted recipient email addresses. An attacker can exploit this flaw by crafting a recipient address that embeds an external address within quotes. This causes the application to misdirect the email to the attacker's external address instead of the intended internal recipient. This could lead to a significant data leak of sensitive information and allow an attacker to bypass security filters and access controls."
+}

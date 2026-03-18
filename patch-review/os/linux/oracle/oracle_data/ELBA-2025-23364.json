@@ -1,0 +1,31 @@
+{
+  "id": "ELBA-2025-23364",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "AppStream",
+  "title": "nodejs:20 bug fix and enhancement update",
+  "issuedDate": "2026-01-05T00:00:00Z",
+  "updatedDate": "2026-01-05T00:00:00Z",
+  "pubDate": "2026-01-05T00:00:00Z",
+  "dateStr": "2026-01-05",
+  "url": "https://linux.oracle.com/errata/ELBA-2025-23364.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 8.",
+  "description": "nodejs\n[1:20.19.5-1]\n- Update to version 20.19.5\n   Resolves: RHEL-100423\n\n[1:20.19.2-1]\n- Update to version 20.19.2\n   Fixes: CVE-2025-23166\n   Resolves: RHEL-91595 RHEL-89598 RHEL-92854\n\n[1:20.19.1-1]\n- Update to version 20.19.1\n  Resolves: RHEL-78763\n\n[1:20.18.2-4]\n- Update c-ares to 1.34.5 to address CVE-2025-31498\n\n[1:20.18.2-3]\n- Remove obsolete lua pretransaction script from spec file\n  Resolves: RHEL-81125\n\n[1:20.18.2-2]\n- Disable npm's update-notifier\n  Resolves: RHEL-81077\n\n[1:20.18.2-1]\n- Update to version 20.18.2\n  Fixes: CVE-2025-23083 CVE-2025-23085 CVE-2025-22150\n  Resolves: RHEL-76001 RHEL-76146\n\n[1:20.16.0-1]\n- Update to 20.16.0\n  Fixes: CVE-2024-36137 CVE-2024-22018 CVE-2024-22020\n\n[1:20.12.2-2]\n- Backport nghttp2 patch for CVE-2024-28182\n\n[1:20.12.2-1]\n- Rebase to version 20.12.0\n  Addresses CVE-2024-27983 CVE-2024-27982 CVE-2024-22025 (node)\n  Addresses CVE-2024-25629 (c-ares)\n\nnodejs-nodemon\n[3.0.1-1]\n- Rebase to 3.0.1\n- Resolves: CVE-2022-25883\n\n[2.0.20-2]\n- Patch bundled glob-parent\n- Resolves: CVE-2021-35065\n\n[2.0.20-1]\n- Rebase to 2.0.20\n  Resolves: CVE-2022-3517\n\n[2.0.19-1]\n- Rebase to 2.0.19\n  Resolves: CVE-2022-33987\n\n[2.0.15-1]\n- Resolves: RHBZ#2005419\n- Resolves CVE-2020-28469\n- Rebase to newest version\n- Change source to npmjs.com\n\n[2.0.7-1]\n- Resolves: RHBZ#1953991\n- Update to 2.0.7 to resolve CVE-2020-28469\n\n[2.0.3-1]\n- Updated\n\n[1.18.3-1]\n- Resolves: #1615413\n- Updated\n- bundled\n\n[1.11.0-2]\n- rh-nodejs8 rebuild\n\n[1.11.0-1]\n- Updated with script",
+  "affected_products": [
+    "Oracle Linux 8 for x86_64",
+    "Oracle Linux 8 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "nodejs-nodemon-3.0.1-1.module+el8.10.0+90743+b61054a8.noarch",
+    "nodejs-20.19.5-1.module+el8.10.0+90743+b61054a8.src",
+    "nodejs-nodemon-3.0.1-1.module+el8.10.0+90743+b61054a8.src",
+    "nodejs-docs-20.19.5-1.module+el8.10.0+90743+b61054a8.noarch",
+    "npm-10.8.2-1.20.19.5.1.module+el8.10.0+90743+b61054a8.x86_64",
+    "nodejs-20.19.5-1.module+el8.10.0+90743+b61054a8.x86_64",
+    "nodejs-devel-20.19.5-1.module+el8.10.0+90743+b61054a8.x86_64",
+    "nodejs-full-i18n-20.19.5-1.module+el8.10.0+90743+b61054a8.x86_64"
+  ],
+  "full_text": "nodejs\n[1:20.19.5-1]\n- Update to version 20.19.5\n   Resolves: RHEL-100423\n\n[1:20.19.2-1]\n- Update to version 20.19.2\n   Fixes: CVE-2025-23166\n   Resolves: RHEL-91595 RHEL-89598 RHEL-92854\n\n[1:20.19.1-1]\n- Update to version 20.19.1\n  Resolves: RHEL-78763\n\n[1:20.18.2-4]\n- Update c-ares to 1.34.5 to address CVE-2025-31498\n\n[1:20.18.2-3]\n- Remove obsolete lua pretransaction script from spec file\n  Resolves: RHEL-81125\n\n[1:20.18.2-2]\n- Disable npm's update-notifier\n  Resolves: RHEL-81077\n\n[1:20.18.2-1]\n- Update to version 20.18.2\n  Fixes: CVE-2025-23083 CVE-2025-23085 CVE-2025-22150\n  Resolves: RHEL-76001 RHEL-76146\n\n[1:20.16.0-1]\n- Update to 20.16.0\n  Fixes: CVE-2024-36137 CVE-2024-22018 CVE-2024-22020\n\n[1:20.12.2-2]\n- Backport nghttp2 patch for CVE-2024-28182\n\n[1:20.12.2-1]\n- Rebase to version 20.12.0\n  Addresses CVE-2024-27983 CVE-2024-27982 CVE-2024-22025 (node)\n  Addresses CVE-2024-25629 (c-ares)\n\nnodejs-nodemon\n[3.0.1-1]\n- Rebase to 3.0.1\n- Resolves: CVE-2022-25883\n\n[2.0.20-2]\n- Patch bundled glob-parent\n- Resolves: CVE-2021-35065\n\n[2.0.20-1]\n- Rebase to 2.0.20\n  Resolves: CVE-2022-3517\n\n[2.0.19-1]\n- Rebase to 2.0.19\n  Resolves: CVE-2022-33987\n\n[2.0.15-1]\n- Resolves: RHBZ#2005419\n- Resolves CVE-2020-28469\n- Rebase to newest version\n- Change source to npmjs.com\n\n[2.0.7-1]\n- Resolves: RHBZ#1953991\n- Update to 2.0.7 to resolve CVE-2020-28469\n\n[2.0.3-1]\n- Updated\n\n[1.18.3-1]\n- Resolves: #1615413\n- Updated\n- bundled\n\n[1.11.0-2]\n- rh-nodejs8 rebuild\n\n[1.11.0-1]\n- Updated with script\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2025-23364.html"
+}

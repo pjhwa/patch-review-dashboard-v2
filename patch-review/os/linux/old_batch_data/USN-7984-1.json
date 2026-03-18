@@ -1,0 +1,29 @@
+{
+  "id": "USN-7984-1",
+  "url": "https://ubuntu.com/security/notices/USN-7984-1",
+  "synopsis": "USN-7984-1: Pagure vulnerabilities",
+  "dateStr": "29 January 2026",
+  "overview": "Several security issues were fixed in Pagure.",
+  "description": "Thomas Chauchefoin discovered that Pagure incorrectly handled symbolic\nlinks in Git repositories. A remote attacker could possibly use this\nissue to cause Pagure to expose files outside the intended repository\nboundaries. (CVE-2024-4981)\n\nThomas Chauchefoin discovered that Pagure did not properly sanitize path\ninputs. A remote attacker could possibly use this issue to read arbitrary\nfiles. (CVE-2024-4982)\n\nThomas Chauchefoin discovered that Pagure incorrectly handled symbolic\nlinks during repository archiving. A remote attacker could possibly use\nthis issue to disclose local files on the server. (CVE-2024-47515)\n\nThomas Chauchefoin discovered that Pagure incorrectly handled certain\ninputs. A remote attacker could possibly use this issue to execute\narbitrary code on the server. (\n \n\n \n\n \n\nThomas Chauchefoin discovered that Pagure incorrectly handled symbolic\nlinks in Git repositories. A remote attacker could possibly use this\nissue to cause Pagure to expose files outside the intended repository\nboundaries. (CVE-2024-4981)\n\nThomas Chauchefoin discovered that Pagure did not properly sanitize path\ninputs. A remote attacker could possibly use this issue to read arbitrary\nfiles. (CVE-2024-4982)\n\nThomas Chauchefoin discovered that Pagure incorrectly handled symbolic\nlinks during repository archiving. A remote attacker could possibly use\nthis issue to disclose local files on the server. (CVE-2024-47515)\n\nThomas Chauchefoin discovered that Pagure incorrectly handled certain\ninputs. A remote attacker could possibly use this issue to execute\narbitrary code on the server. (CVE-2024-47516)\n\n \n\nShow more\n Show less",
+  "packages": [
+    "pagure"
+  ],
+  "cves": [
+    "CVE-2024-4982",
+    "CVE-2024-4981",
+    "CVE-2024-47516",
+    "CVE-2024-47515"
+  ],
+  "affected_products": [
+    "24.04 LTS",
+    "22.04 LTS",
+    "20.04 LTS",
+    "Open side navigation"
+  ],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Ubuntu Security Notices\n\nUSN-7984-1\n\n \n\n \n\n \n\n \n\n \n\n \nUSN-7984-1: Pagure vulnerabilities\n\n \n\n \n\n \n\n \nPublication date\n\n \n\n \n\n \n29 January 2026\n\n \n\n \n\n \n\n \n\n \nOverview\n\n \n\n \n\n \nSeveral security issues were fixed in Pagure.\n\n \n\n \n\n \n\n \n\n \nReleases\n\n \n\n \n\n \n\n 24.04 LTS\n\n22.04 LTS\n\n20.04 LTS\n\n \n\n \n\n \n\n \n\n \n\n \n\n Open side navigation\n \n\n \n\n \nPackages\n\n \n\n pagure - A git-centered forge using pygit2\n \n\n \n\n \nDetails\n\n \n\n \n\nThomas Chauchefoin discovered that Pagure incorrectly handled symbolic\nlinks in Git repositories. A remote attacker could possibly use this\nissue to cause Pagure to expose files outside the intended repository\nboundaries. (CVE-2024-4981)\n\nThomas Chauchefoin discovered that Pagure did not properly sanitize path\ninputs. A remote attacker could possibly use this issue to read arbitrary\nfiles. (CVE-2024-4982)\n\nThomas Chauchefoin discovered that Pagure incorrectly handled symbolic\nlinks during repository archiving. A remote attacker could possibly use\nthis issue to disclose local files on the server. (CVE-2024-47515)\n\nThomas Chauchefoin discovered that Pagure incorrectly handled certain\ninputs. A remote attacker could possibly use this issue to execute\narbitrary code on the server. (\n \n\n \n\n \n\nThomas Chauchefoin discovered that Pagure incorrectly handled symbolic\nlinks in Git repositories. A remote attacker could possibly use this\nissue to cause Pagure to expose files outside the intended repository\nboundaries. (CVE-2024-4981)\n\nThomas Chauchefoin discovered that Pagure did not properly sanitize path\ninputs. A remote attacker could possibly use this issue to read arbitrary\nfiles. (CVE-2024-4982)\n\nThomas Chauchefoin discovered that Pagure incorrectly handled symbolic\nlinks during repository archiving. A remote attacker could possibly use\nthis issue to disclose local files on the server. (CVE-2024-47515)\n\nThomas Chauchefoin discovered that Pagure incorrectly handled certain\ninputs. A remote attacker could possibly use this issue to execute\narbitrary code on the server. (CVE-2024-47516)\n\n \n\nShow more\n Show less\n\n \n\n \nUpdate instructions\n\n \n\n \n\n \n\n \n\nIn general, a standard system update will make all the necessary changes.\n\n Learn more about how to get the fixes.\n \n\n \n\n \n\n \n\n \nThe problem can be corrected by updating your system to the following package versions:\n\n \n\n \n\n \n\n \n\n Ubuntu Release\n Package Version\n \n\n 24.04\n\nLTS noble\n\n pagure – \n\n5.11.3+dfsg-2.1ubuntu0.2\n\n \n\n 22.04\n\nLTS jammy\n\n pagure – \n\n5.11.3+dfsg-1ubuntu0.1\n\n \n\n 20.04\n\nLTS focal\n\n pagure – \n\n5.8.1+dfsg-3ubuntu0.1~esm1\n\n  \n\nUbuntu Pro\n Fix available with Ubuntu Pro via ESM Apps. A community fix might become publicly available in the future.\n\n \n\n \n\nReduce your security exposure\n\n \n\n Ubuntu Pro provides ten-year security coverage to 25,000+ packages in Main and Universe repositories, and it is free for up to five machines.\n \n\n \n\n Get Ubuntu Pro\n \n\n \n\nReferences\n\n \n\n \n\n CVE-2024-4982\n \n\n \n\n CVE-2024-4981\n \n\n \n\n CVE-2024-47516\n \n\n \n\n CVE-2024-47515\n \n\n \n\n \n\n CVE-2024-4982\n \n\n CVE-2024-4981\n \n\n CVE-2024-47516\n \n\n CVE-2024-47515",
+  "title": "USN-7984-1: Pagure vulnerabilities | Ubuntu security notices | Ubuntu",
+  "pubDate": "2026-01-28T15:00:00.000Z",
+  "vendor": "Ubuntu"
+}

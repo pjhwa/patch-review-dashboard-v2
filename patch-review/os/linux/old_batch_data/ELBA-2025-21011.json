@@ -1,0 +1,24 @@
+{
+  "id": "ELBA-2025-21011",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2025-December/019175.html",
+  "synopsis": "[El-errata] ELBA-2025-21011 Oracle Linux 10 libnftnl bug fix and enhancement update",
+  "dateStr": "2025-December",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Bug Fix Advisory ELBA-2025-21011",
+  "description": "[[1.2.8-4.el10]]\n- udata: Introduce NFTNL_UDATA_TABLE_NFT{VER,BLD} (Phil Sutter) [RHEL-113823]",
+  "affected_products": [
+    "Oracle Linux 10"
+  ],
+  "packages": [
+    "libnftnl-1.2.8-4.el10_1.x86_64.rpm",
+    "libnftnl-devel-1.2.8-4.el10_1.x86_64.rpm",
+    "libnftnl-1.2.8-4.el10_1.aarch64.rpm",
+    "libnftnl-devel-1.2.8-4.el10_1.aarch64.rpm"
+  ],
+  "cves": [],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Bug Fix Advisory ELBA-2025-21011\n\nhttp://linux.oracle.com/errata/ELBA-2025-21011.html\n\nThe following updated rpms for Oracle Linux 10 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\nlibnftnl-1.2.8-4.el10_1.x86_64.rpm\nlibnftnl-devel-1.2.8-4.el10_1.x86_64.rpm\n\naarch64:\nlibnftnl-1.2.8-4.el10_1.aarch64.rpm\nlibnftnl-devel-1.2.8-4.el10_1.aarch64.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol10/SRPMS-updates/libnftnl-1.2.8-4.el10_1.src.rpm\n\n\n\nDescription of changes:\n\n[[1.2.8-4.el10]]\n- udata: Introduce NFTNL_UDATA_TABLE_NFT{VER,BLD} (Phil Sutter) [RHEL-113823]",
+  "vendor": "Oracle"
+}

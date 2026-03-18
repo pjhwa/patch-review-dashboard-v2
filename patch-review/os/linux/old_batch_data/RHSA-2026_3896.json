@@ -1,0 +1,22 @@
+{
+  "id": "RHSA-2026:3896",
+  "vendor": "Red Hat",
+  "url": "https://access.redhat.com/errata/RHSA-2026:3896",
+  "pubDate": "2026-03-05T14:46:07.000Z",
+  "dateStr": "2026-03-05",
+  "severity": "Important",
+  "title": "Red Hat Security Advisory: postgresql:15 security update",
+  "overview": "An update for the postgresql:15 module is now available for Red Hat Enterprise Linux 9.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "description": "An update for the postgresql:15 module is now available for Red Hat Enterprise Linux 9.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux AppStream (v. 9)"
+  ],
+  "cves": [
+    "CVE-2026-2004",
+    "CVE-2026-2005",
+    "CVE-2026-2006"
+  ],
+  "packages": [],
+  "fixes": "",
+  "full_text": "Red Hat Security Advisory: postgresql:15 security update\n\nAn update for the postgresql:15 module is now available for Red Hat Enterprise Linux 9.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nAn update for the postgresql:15 module is now available for Red Hat Enterprise Linux 9.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nUpdated Packages:\nf5585c78.src.rpm\naeb9ec60.src.rpm\nef6a2953.src.rpm\nf5585c78.x86_64.rpm\naeb9ec60.x86_64.rpm\nef6a2953.x86_64.rpm\nef6a2953.noarch.rpm\nf5585c78.s390x.rpm\naeb9ec60.s390x.rpm\nef6a2953.s390x.rpm\nf5585c78.ppc64le.rpm\naeb9ec60.ppc64le.rpm\nef6a2953.ppc64le.rpm\nf5585c78.aarch64.rpm\naeb9ec60.aarch64.rpm\nef6a2953.aarch64.rpm\n\nCVE-2026-2004: Missing validation of type of input in PostgreSQL intarray extension selectivity estimator function allows an object creator to execute arbitrary code as the operating system user running the database.  Versions before PostgreSQL 18.2, 17.8, 16.12, 15.16, and 14.21 are affected.\n\nCVE-2026-2005: Heap buffer overflow in PostgreSQL pgcrypto allows a ciphertext provider to execute arbitrary code as the operating system user running the database.  Versions before PostgreSQL 18.2, 17.8, 16.12, 15.16, and 14.21 are affected.\n\nCVE-2026-2006: Missing validation of multibyte character length in PostgreSQL text manipulation allows a database user to issue crafted queries that achieve a buffer overrun.  That suffices to execute arbitrary code as the operating system user running the database.  Versions before PostgreSQL 18.2, 17.8, 16.12, 15.16, and 14.21 are affected."
+}

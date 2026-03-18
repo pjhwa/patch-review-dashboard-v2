@@ -1,0 +1,33 @@
+{
+  "id": "ELSA-2026-3067",
+  "vendor": "Oracle",
+  "type": "Security Advisory (ELSA)",
+  "kernel_type": "AppStream",
+  "title": " freerdp security update",
+  "issuedDate": "2026-02-23T00:00:00Z",
+  "updatedDate": "2026-02-23T00:00:00Z",
+  "pubDate": "2026-02-23T00:00:00Z",
+  "dateStr": "2026-02-23",
+  "url": "https://linux.oracle.com/errata/ELSA-2026-3067.html",
+  "severity": "Important",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 9.",
+  "description": "[2:2.11.7-1.2]\n- Backport several CVE fixes\n  Resolves: RHEL-148847, RHEL-148887, RHEL-149020",
+  "affected_products": [
+    "Oracle Linux 9 for x86_64",
+    "Oracle Linux 9 for aarch64"
+  ],
+  "cves": [
+    "CVE-2026-22855",
+    "CVE-2026-22858",
+    "CVE-2026-22859"
+  ],
+  "packages": [
+    "libwinpr-2.11.7-1.el9_7.2.x86_64",
+    "libwinpr-2.11.7-1.el9_7.2.i686",
+    "freerdp-2.11.7-1.el9_7.2.x86_64",
+    "freerdp-libs-2.11.7-1.el9_7.2.x86_64",
+    "freerdp-libs-2.11.7-1.el9_7.2.i686",
+    "freerdp-2.11.7-1.el9_7.2.src"
+  ],
+  "full_text": "[2:2.11.7-1.2]\n- Backport several CVE fixes\n  Resolves: RHEL-148847, RHEL-148887, RHEL-149020\n\nReferences:\nhttps://linux.oracle.com/errata/ELSA-2026-3067.html\nhttps://linux.oracle.com/cve/CVE-2026-22855.html\nhttps://linux.oracle.com/cve/CVE-2026-22858.html\nhttps://linux.oracle.com/cve/CVE-2026-22859.html"
+}

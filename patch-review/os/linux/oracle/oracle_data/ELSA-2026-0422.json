@@ -1,0 +1,30 @@
+{
+  "id": "ELSA-2026-0422",
+  "vendor": "Oracle",
+  "type": "Security Advisory (ELSA)",
+  "kernel_type": "AppStream",
+  "title": " libsoup security update",
+  "issuedDate": "2026-01-12T00:00:00Z",
+  "updatedDate": "2026-01-12T00:00:00Z",
+  "pubDate": "2026-01-12T00:00:00Z",
+  "dateStr": "2026-01-12",
+  "url": "https://linux.oracle.com/errata/ELSA-2026-0422.html",
+  "severity": "Important",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 9.",
+  "description": "[2.72.0-12.3]\n- Fix patch for CVE-2025-14523 to handle comparison case-insensitively\n\n[2.72.0-12.2]\n- Backport patch for CVE-2025-14523\n\n[2.72.0-12.1]\n- Backport patch for CVE-2025-4945 and CVE-2025-11021",
+  "affected_products": [
+    "Oracle Linux 9 for x86_64",
+    "Oracle Linux 9 for aarch64"
+  ],
+  "cves": [
+    "CVE-2025-14523"
+  ],
+  "packages": [
+    "libsoup-2.72.0-12.el9_7.3.x86_64",
+    "libsoup-2.72.0-12.el9_7.3.i686",
+    "libsoup-devel-2.72.0-12.el9_7.3.x86_64",
+    "libsoup-devel-2.72.0-12.el9_7.3.i686",
+    "libsoup-2.72.0-12.el9_7.3.src"
+  ],
+  "full_text": "[2.72.0-12.3]\n- Fix patch for CVE-2025-14523 to handle comparison case-insensitively\n\n[2.72.0-12.2]\n- Backport patch for CVE-2025-14523\n\n[2.72.0-12.1]\n- Backport patch for CVE-2025-4945 and CVE-2025-11021\n\nReferences:\nhttps://linux.oracle.com/errata/ELSA-2026-0422.html\nhttps://linux.oracle.com/cve/CVE-2025-14523.html"
+}

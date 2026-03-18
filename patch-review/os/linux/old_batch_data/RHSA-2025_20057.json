@@ -1,0 +1,20 @@
+{
+  "id": "RHSA-2025:20057",
+  "vendor": "Red Hat",
+  "url": "https://access.redhat.com/errata/RHSA-2025:20057",
+  "pubDate": "2025-11-10T20:47:44.000Z",
+  "dateStr": "2025-11-10",
+  "severity": "Important",
+  "title": "Red Hat Security Advisory: Red Hat JBoss Enterprise Application Platform 7.4.23 security update",
+  "overview": "A security update is now available for Red Hat JBoss Enterprise Application Platform 7.4.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "description": "A security update is now available for Red Hat JBoss Enterprise Application Platform 7.4.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "affected_products": [
+    "Red Hat JBoss Enterprise Application Platform 7"
+  ],
+  "cves": [
+    "CVE-2024-7254"
+  ],
+  "packages": [],
+  "fixes": "",
+  "full_text": "Red Hat Security Advisory: Red Hat JBoss Enterprise Application Platform 7.4.23 security update\n\nA security update is now available for Red Hat JBoss Enterprise Application Platform 7.4.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nA security update is now available for Red Hat JBoss Enterprise Application Platform 7.4.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\n\n\nCVE-2024-7254: A flaw was found in Protocol Buffers (protobuf). This issue can allows an attacker to cause a StackOverflow via parsing untrusted Protocol Buffers data containing arbitrarily nested SGROUP tags, leading to unbounded recursion."
+}

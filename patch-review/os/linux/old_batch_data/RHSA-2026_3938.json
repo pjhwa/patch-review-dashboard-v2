@@ -1,0 +1,21 @@
+{
+  "id": "RHSA-2026:3938",
+  "vendor": "Red Hat",
+  "url": "https://access.redhat.com/errata/RHSA-2026:3938",
+  "pubDate": "2026-03-05T19:05:37.000Z",
+  "dateStr": "2026-03-05",
+  "severity": "Moderate",
+  "title": "Red Hat Security Advisory: nfs-utils security update",
+  "overview": "An update for nfs-utils is now available for Red Hat Enterprise Linux 8.\n\nRed Hat Product Security has rated this update as having a security impact of Moderate. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "description": "An update for nfs-utils is now available for Red Hat Enterprise Linux 8.\n\nRed Hat Product Security has rated this update as having a security impact of Moderate. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux BaseOS (v. 8)",
+    "Red Hat Enterprise Linux CRB (v. 8)"
+  ],
+  "cves": [
+    "CVE-2025-12801"
+  ],
+  "packages": [],
+  "fixes": "",
+  "full_text": "Red Hat Security Advisory: nfs-utils security update\n\nAn update for nfs-utils is now available for Red Hat Enterprise Linux 8.\n\nRed Hat Product Security has rated this update as having a security impact of Moderate. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nAn update for nfs-utils is now available for Red Hat Enterprise Linux 8.\n\nRed Hat Product Security has rated this update as having a security impact of Moderate. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nUpdated Packages:\nnfs-utils-2.3.3-68.el8_10.src.rpm\nlibnfsidmap-2.3.3-68.el8_10.i686.rpm\nlibnfsidmap-2.3.3-68.el8_10.x86_64.rpm\nlibnfsidmap-debuginfo-2.3.3-68.el8_10.i686.rpm\nlibnfsidmap-debuginfo-2.3.3-68.el8_10.x86_64.rpm\nnfs-utils-2.3.3-68.el8_10.x86_64.rpm\nnfs-utils-debuginfo-2.3.3-68.el8_10.i686.rpm\nnfs-utils-debuginfo-2.3.3-68.el8_10.x86_64.rpm\nnfs-utils-debugsource-2.3.3-68.el8_10.i686.rpm\nnfs-utils-debugsource-2.3.3-68.el8_10.x86_64.rpm\nlibnfsidmap-2.3.3-68.el8_10.s390x.rpm\nlibnfsidmap-debuginfo-2.3.3-68.el8_10.s390x.rpm\nnfs-utils-2.3.3-68.el8_10.s390x.rpm\nnfs-utils-debuginfo-2.3.3-68.el8_10.s390x.rpm\nnfs-utils-debugsource-2.3.3-68.el8_10.s390x.rpm\nlibnfsidmap-2.3.3-68.el8_10.ppc64le.rpm\nlibnfsidmap-debuginfo-2.3.3-68.el8_10.ppc64le.rpm\nnfs-utils-2.3.3-68.el8_10.ppc64le.rpm\nnfs-utils-debuginfo-2.3.3-68.el8_10.ppc64le.rpm\nnfs-utils-debugsource-2.3.3-68.el8_10.ppc64le.rpm\nlibnfsidmap-2.3.3-68.el8_10.aarch64.rpm\nlibnfsidmap-debuginfo-2.3.3-68.el8_10.aarch64.rpm\nnfs-utils-2.3.3-68.el8_10.aarch64.rpm\nnfs-utils-debuginfo-2.3.3-68.el8_10.aarch64.rpm\nnfs-utils-debugsource-2.3.3-68.el8_10.aarch64.rpm\nlibnfsidmap-devel-2.3.3-68.el8_10.i686.rpm\nlibnfsidmap-devel-2.3.3-68.el8_10.x86_64.rpm\nlibnfsidmap-devel-2.3.3-68.el8_10.ppc64le.rpm\nlibnfsidmap-devel-2.3.3-68.el8_10.aarch64.rpm\nlibnfsidmap-devel-2.3.3-68.el8_10.s390x.rpm\n\nCVE-2025-12801: A vulnerability was recently discovered in the rpc.mountd daemon in the nfs-utils package for Linux, that allows a NFSv3 client to escalate the\nprivileges assigned to it in the /etc/exports file at mount time. In particular, it allows the client to access any subdirectory or subtree of an exported directory, regardless of the set file permissions, and regardless of any 'root_squash' or 'all_squash' attributes that would normally be expected to apply to that client."
+}

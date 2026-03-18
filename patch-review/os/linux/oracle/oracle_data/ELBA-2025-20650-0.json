@@ -1,0 +1,33 @@
+{
+  "id": "ELBA-2025-20650-0",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "AppStream",
+  "title": "libguestfs bug fix and enhancement update",
+  "issuedDate": "2025-11-17T00:00:00Z",
+  "updatedDate": "2025-11-17T00:00:00Z",
+  "pubDate": "2025-11-17T00:00:00Z",
+  "dateStr": "2025-11-17",
+  "url": "https://linux.oracle.com/errata/ELBA-2025-20650-0.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 9.",
+  "description": "[1.54.0-11.0.1]\n- Add btrfs-progs to the packages installed in the appliance [Orabug: 34137448]\n- Replace upstream references from a description tag\n- Fix build on Oracle Linux [Orabug: 29319324]\n- Set DISTRO_ORACLE_LINUX correspeonding to ol\n\n[1:1.54.0-11]\n- Ignore blank disks in Windows drive mapping\n  resolves: RHEL-108803\n\n[1:1.54.0-9]\n- Generate correct osinfo for SLES >= 15\n  resolves: RHEL-95791",
+  "affected_products": [
+    "Oracle Linux 9 for x86_64",
+    "Oracle Linux 9 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "libguestfs-1.54.0-11.0.1.el9.x86_64",
+    "python3-libguestfs-1.54.0-11.0.1.el9.x86_64",
+    "libguestfs-inspect-icons-1.54.0-11.0.1.el9.noarch",
+    "libguestfs-rsync-1.54.0-11.0.1.el9.x86_64",
+    "libguestfs-rescue-1.54.0-11.0.1.el9.x86_64",
+    "libguestfs-xfs-1.54.0-11.0.1.el9.x86_64",
+    "libguestfs-bash-completion-1.54.0-11.0.1.el9.noarch",
+    "libguestfs-appliance-1.54.0-11.0.1.el9.x86_64",
+    "libguestfs-1.54.0-11.0.1.el9.src",
+    "perl-Sys-Guestfs-1.54.0-11.0.1.el9.x86_64"
+  ],
+  "full_text": "[1.54.0-11.0.1]\n- Add btrfs-progs to the packages installed in the appliance [Orabug: 34137448]\n- Replace upstream references from a description tag\n- Fix build on Oracle Linux [Orabug: 29319324]\n- Set DISTRO_ORACLE_LINUX correspeonding to ol\n\n[1:1.54.0-11]\n- Ignore blank disks in Windows drive mapping\n  resolves: RHEL-108803\n\n[1:1.54.0-9]\n- Generate correct osinfo for SLES >= 15\n  resolves: RHEL-95791\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2025-20650-0.html"
+}

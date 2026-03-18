@@ -1,0 +1,43 @@
+{
+  "id": "ELSA-2026-2421",
+  "vendor": "Oracle",
+  "type": "Security Advisory (ELSA)",
+  "kernel_type": "AppStream",
+  "title": " nodejs:22 security update",
+  "issuedDate": "2026-02-12T00:00:00Z",
+  "updatedDate": "2026-02-12T00:00:00Z",
+  "pubDate": "2026-02-12T00:00:00Z",
+  "dateStr": "2026-02-12",
+  "url": "https://linux.oracle.com/errata/ELSA-2026-2421.html",
+  "severity": "Important",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 8.",
+  "description": "nodejs\n[1:22.22.0-1]\n- Update to 22.22.0\n  Resolves: RHEL-118152\n\nnodejs-nodemon\n[3.0.1-1]\n- Exclude ix86 arches from building.\n  Related: RHEL-35991\n\nnodejs-packaging\n[2021.06-4]\n- Exclude ix86 arches from building.\n  Related: RHEL-35991",
+  "affected_products": [
+    "Oracle Linux 8 for x86_64",
+    "Oracle Linux 8 for aarch64"
+  ],
+  "cves": [
+    "CVE-2025-55130",
+    "CVE-2025-55131",
+    "CVE-2025-55132",
+    "CVE-2025-59465",
+    "CVE-2025-59466",
+    "CVE-2026-21637"
+  ],
+  "packages": [
+    "nodejs-nodemon-3.0.1-1.module+el8.10.0+90677+9c05a177.src",
+    "nodejs-22.22.0-1.module+el8.10.0+90783+325ded07.src",
+    "nodejs-packaging-2021.06-4.module+el8.10.0+90783+325ded07.src",
+    "nodejs-libs-22.22.0-1.module+el8.10.0+90783+325ded07.x86_64",
+    "npm-10.9.4-1.22.22.0.1.module+el8.10.0+90783+325ded07.x86_64",
+    "nodejs-22.22.0-1.module+el8.10.0+90783+325ded07.x86_64",
+    "nodejs-devel-22.22.0-1.module+el8.10.0+90783+325ded07.x86_64",
+    "nodejs-full-i18n-22.22.0-1.module+el8.10.0+90783+325ded07.x86_64",
+    "v8-12.4-devel-12.4.254.21-1.22.22.0.1.module+el8.10.0+90783+325ded07.x86_64",
+    "nodejs-nodemon-3.0.1-1.module+el8.10.0+90677+9c05a177.noarch",
+    "nodejs-docs-22.22.0-1.module+el8.10.0+90783+325ded07.noarch",
+    "nodejs-packaging-2021.06-4.module+el8.10.0+90783+325ded07.noarch",
+    "nodejs-packaging-bundler-2021.06-4.module+el8.10.0+90783+325ded07.noarch"
+  ],
+  "full_text": "nodejs\n[1:22.22.0-1]\n- Update to 22.22.0\n  Resolves: RHEL-118152\n\nnodejs-nodemon\n[3.0.1-1]\n- Exclude ix86 arches from building.\n  Related: RHEL-35991\n\nnodejs-packaging\n[2021.06-4]\n- Exclude ix86 arches from building.\n  Related: RHEL-35991\n\nReferences:\nhttps://linux.oracle.com/errata/ELSA-2026-2421.html\nhttps://linux.oracle.com/cve/CVE-2025-55130.html\nhttps://linux.oracle.com/cve/CVE-2025-55131.html\nhttps://linux.oracle.com/cve/CVE-2025-55132.html\nhttps://linux.oracle.com/cve/CVE-2025-59465.html\nhttps://linux.oracle.com/cve/CVE-2025-59466.html\nhttps://linux.oracle.com/cve/CVE-2026-21637.html"
+}

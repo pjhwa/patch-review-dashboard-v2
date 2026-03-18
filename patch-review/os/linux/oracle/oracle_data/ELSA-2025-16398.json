@@ -1,0 +1,46 @@
+{
+  "id": "ELSA-2025-16398",
+  "vendor": "Oracle",
+  "type": "Security Advisory (ELSA)",
+  "kernel_type": "RHCK",
+  "title": " kernel security update",
+  "issuedDate": "2025-09-23T00:00:00Z",
+  "updatedDate": "2025-09-23T00:00:00Z",
+  "pubDate": "2025-09-23T00:00:00Z",
+  "dateStr": "2025-09-23",
+  "url": "https://linux.oracle.com/errata/ELSA-2025-16398.html",
+  "severity": "Moderate",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 9.",
+  "description": "[5.14.0-570.46.1.0.1_6.OL9]\n- nvme-pci: remove two deallocate zeroes quirks [Orabug: 37756650]\n- Disable UKI signing [Orabug: 36571828]\n- Update Oracle Linux certificates (Kevin Lyons)\n- Disable signing for aarch64 (Ilya Okomin)\n- Oracle Linux RHCK Module Signing Key was added to the kernel trusted keys list (olkmod_signing_key.pem) [Orabug: 29539237]\n- Update x509.genkey [Orabug: 24817676]\n- Conflict with shim-ia32 and shim-x64 <= 15.3-1.0.5\n- Remove upstream reference during boot (Kevin Lyons) [Orabug: 34729535]\n- Add Oracle Linux IMA certificates\n- Add new Oracle Linux Driver Signing (key 1) certificate [Orabug: 37985764]\n\n[5.14.0-570.46.1_6]\n- net: usb: smsc75xx: Move packet length check to prevent kernel panic in skb_pull (CKI Backport Bot) [RHEL-112246] {CVE-2023-53125}\n- net: usb: smsc75xx: Limit packet length to skb->len (CKI Backport Bot) [RHEL-112246] {CVE-2023-53125}\n- s390/sclp: Fix SCCB present check (CKI Backport Bot) [RHEL-113558] {CVE-2025-39694}\n- use uniform permission checks for all mount propagation changes (Ian Kent) [RHEL-107301] {CVE-2025-38498}\n- do_change_type(): refuse to operate on unmounted/not ours mounts (Ian Kent) [RHEL-107301] {CVE-2025-38498}\n- usb: dwc3: gadget: check that event count does not exceed event buffer length (CKI Backport Bot) [RHEL-107649] {CVE-2025-37810}\n\n[5.14.0-570.45.1_6]\n- tunnels: Accept PACKET_HOST in skb_tunnel_check_pmtu(). (Adrian Moreno) [RHEL-113279]\n- igc: fix lock order in igc_ptp_reset (CKI Backport Bot) [RHEL-108118]\n- igc: add lock preventing multiple simultaneous PTM transactions (CKI Backport Bot) [RHEL-108118]\n- igc: cleanup PTP module if probe fails (CKI Backport Bot) [RHEL-108118]\n- igc: handle the IGC_PTP_ENABLED flag correctly (CKI Backport Bot) [RHEL-108118]\n- igc: move ktime snapshot into PTM retry loop (CKI Backport Bot) [RHEL-108118]\n- igc: increase wait time before retrying PTM (CKI Backport Bot) [RHEL-108118]\n- igc: fix PTM cycle trigger logic (CKI Backport Bot) [RHEL-108118]\n- ice: use fixed adapter index for E825C embedded devices (CKI Backport Bot) [RHEL-111766]\n- ice: use DSN instead of PCI BDF for ice_adapter index (CKI Backport Bot) [RHEL-111766]",
+  "affected_products": [
+    "Oracle Linux 9 for x86_64",
+    "Oracle Linux 9 for aarch64"
+  ],
+  "cves": [
+    "CVE-2023-53125",
+    "CVE-2025-37810",
+    "CVE-2025-38498",
+    "CVE-2025-39694"
+  ],
+  "packages": [
+    "kernel-debug-5.14.0-570.46.1.0.1.el9_6.x86_64",
+    "kernel-debug-core-5.14.0-570.46.1.0.1.el9_6.x86_64",
+    "kernel-debug-uki-virt-5.14.0-570.46.1.0.1.el9_6.x86_64",
+    "kernel-modules-extra-5.14.0-570.46.1.0.1.el9_6.x86_64",
+    "kernel-uki-virt-addons-5.14.0-570.46.1.0.1.el9_6.x86_64",
+    "kernel-debug-modules-5.14.0-570.46.1.0.1.el9_6.x86_64",
+    "python3-perf-5.14.0-570.46.1.0.1.el9_6.x86_64",
+    "kernel-debug-modules-extra-5.14.0-570.46.1.0.1.el9_6.x86_64",
+    "kernel-tools-libs-5.14.0-570.46.1.0.1.el9_6.x86_64",
+    "kernel-5.14.0-570.46.1.0.1.el9_6.x86_64",
+    "kernel-abi-stablelists-5.14.0-570.46.1.0.1.el9_6.noarch",
+    "kernel-modules-core-5.14.0-570.46.1.0.1.el9_6.x86_64",
+    "kernel-5.14.0-570.46.1.0.1.el9_6.src",
+    "kernel-uki-virt-5.14.0-570.46.1.0.1.el9_6.x86_64",
+    "kernel-tools-5.14.0-570.46.1.0.1.el9_6.x86_64",
+    "kernel-debug-modules-core-5.14.0-570.46.1.0.1.el9_6.x86_64",
+    "kernel-core-5.14.0-570.46.1.0.1.el9_6.x86_64",
+    "kernel-modules-5.14.0-570.46.1.0.1.el9_6.x86_64"
+  ],
+  "full_text": "[5.14.0-570.46.1.0.1_6.OL9]\n- nvme-pci: remove two deallocate zeroes quirks [Orabug: 37756650]\n- Disable UKI signing [Orabug: 36571828]\n- Update Oracle Linux certificates (Kevin Lyons)\n- Disable signing for aarch64 (Ilya Okomin)\n- Oracle Linux RHCK Module Signing Key was added to the kernel trusted keys list (olkmod_signing_key.pem) [Orabug: 29539237]\n- Update x509.genkey [Orabug: 24817676]\n- Conflict with shim-ia32 and shim-x64 <= 15.3-1.0.5\n- Remove upstream reference during boot (Kevin Lyons) [Orabug: 34729535]\n- Add Oracle Linux IMA certificates\n- Add new Oracle Linux Driver Signing (key 1) certificate [Orabug: 37985764]\n\n[5.14.0-570.46.1_6]\n- net: usb: smsc75xx: Move packet length check to prevent kernel panic in skb_pull (CKI Backport Bot) [RHEL-112246] {CVE-2023-53125}\n- net: usb: smsc75xx: Limit packet length to skb->len (CKI Backport Bot) [RHEL-112246] {CVE-2023-53125}\n- s390/sclp: Fix SCCB present check (CKI Backport Bot) [RHEL-113558] {CVE-2025-39694}\n- use uniform permission checks for all mount propagation changes (Ian Kent) [RHEL-107301] {CVE-2025-38498}\n- do_change_type(): refuse to operate on unmounted/not ours mounts (Ian Kent) [RHEL-107301] {CVE-2025-38498}\n- usb: dwc3: gadget: check that event count does not exceed event buffer length (CKI Backport Bot) [RHEL-107649] {CVE-2025-37810}\n\n[5.14.0-570.45.1_6]\n- tunnels: Accept PACKET_HOST in skb_tunnel_check_pmtu(). (Adrian Moreno) [RHEL-113279]\n- igc: fix lock order in igc_ptp_reset (CKI Backport Bot) [RHEL-108118]\n- igc: add lock preventing multiple simultaneous PTM transactions (CKI Backport Bot) [RHEL-108118]\n- igc: cleanup PTP module if probe fails (CKI Backport Bot) [RHEL-108118]\n- igc: handle the IGC_PTP_ENABLED flag correctly (CKI Backport Bot) [RHEL-108118]\n- igc: move ktime snapshot into PTM retry loop (CKI Backport Bot) [RHEL-108118]\n- igc: increase wait time before retrying PTM (CKI Backport Bot) [RHEL-108118]\n- igc: fix PTM cycle trigger logic (CKI Backport Bot) [RHEL-108118]\n- ice: use fixed adapter index for E825C embedded devices (CKI Backport Bot) [RHEL-111766]\n- ice: use DSN instead of PCI BDF for ice_adapter index (CKI Backport Bot) [RHEL-111766]\n\nReferences:\nhttps://linux.oracle.com/errata/ELSA-2025-16398.html\nhttps://linux.oracle.com/cve/CVE-2023-53125.html\nhttps://linux.oracle.com/cve/CVE-2025-37810.html\nhttps://linux.oracle.com/cve/CVE-2025-38498.html\nhttps://linux.oracle.com/cve/CVE-2025-39694.html"
+}

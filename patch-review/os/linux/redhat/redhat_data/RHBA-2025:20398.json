@@ -1,0 +1,56 @@
+{
+  "id": "RHBA-2025:20398",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: guestfs-tools bug fix and enhancement update",
+  "issuedDate": "2025-11-11T07:26:21Z",
+  "updatedDate": "2025-11-11T07:26:21Z",
+  "pubDate": "2025-11-11T07:26:21Z",
+  "dateStr": "2025-11-11",
+  "url": "https://access.redhat.com/errata/RHBA-2025:20398",
+  "severity": "None",
+  "overview": "An update for guestfs-tools is now available for Red Hat Enterprise Linux 10.",
+  "description": "For detailed information on changes in this release, see the Red Hat Enterprise Linux 10 Release Notes linked from the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux for IBM z Systems",
+    "Red Hat Enterprise Linux for x86_64 10 x86_64",
+    "Red Hat Enterprise Linux for ARM 64"
+  ],
+  "cves": [],
+  "packages": [
+    "guestfs-tools-1.54.0-3.el10.src",
+    "guestfs-tools-1.54.0-3.el10.x86_64",
+    "guestfs-tools-debuginfo-1.54.0-3.el10.x86_64",
+    "guestfs-tools-debugsource-1.54.0-3.el10.x86_64",
+    "virt-win-reg-1.54.0-3.el10.noarch",
+    "guestfs-tools-1.54.0-3.el10.s390x",
+    "guestfs-tools-debuginfo-1.54.0-3.el10.s390x",
+    "guestfs-tools-debugsource-1.54.0-3.el10.s390x",
+    "guestfs-tools-1.54.0-3.el10.aarch64",
+    "guestfs-tools-debuginfo-1.54.0-3.el10.aarch64",
+    "guestfs-tools-debugsource-1.54.0-3.el10.aarch64"
+  ],
+  "fixes": [
+    {
+      "id": "RHEL-81734",
+      "url": "https://issues.redhat.com/browse/RHEL-81734",
+      "description": "Rebase guestfs-tools in RHEL 10.1"
+    },
+    {
+      "id": "RHEL-83201",
+      "url": "https://issues.redhat.com/browse/RHEL-83201",
+      "description": "virt-builder, virt-v2v & other tools with -v and --install causes dnf5 error [rhel-10.1]"
+    },
+    {
+      "id": "RHEL-94873",
+      "url": "https://issues.redhat.com/browse/RHEL-94873",
+      "description": "Need to update uri to https:// for conf file in /etc/virt-builder/repos.d [rhel-10.1]"
+    },
+    {
+      "id": "RHEL-109129",
+      "url": "https://issues.redhat.com/browse/RHEL-109129",
+      "description": "virt-customize won't do selinux relabel correctly across filesystem boundaries [rhel-10.1]"
+    }
+  ],
+  "full_text": "An update for guestfs-tools is now available for Red Hat Enterprise Linux 10.\n\nFor detailed information on changes in this release, see the Red Hat Enterprise Linux 10 Release Notes linked from the References section."
+}

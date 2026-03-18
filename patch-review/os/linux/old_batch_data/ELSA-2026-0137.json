@@ -1,0 +1,50 @@
+{
+  "id": "ELSA-2026-0137",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2026-January/019456.html",
+  "synopsis": "[El-errata] ELSA-2026-0137 Important: Oracle Linux 9 mariadb security update",
+  "dateStr": "2026-January",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Security Advisory ELSA-2026-0137",
+  "description": "[3:10.5.29-3]\n- Release bump for rebuild",
+  "affected_products": [
+    "Oracle Linux 9"
+  ],
+  "packages": [
+    "mariadb-10.5.29-3.el9_7.x86_64.rpm",
+    "mariadb-backup-10.5.29-3.el9_7.x86_64.rpm",
+    "mariadb-common-10.5.29-3.el9_7.x86_64.rpm",
+    "mariadb-devel-10.5.29-3.el9_7.x86_64.rpm",
+    "mariadb-embedded-10.5.29-3.el9_7.x86_64.rpm",
+    "mariadb-embedded-devel-10.5.29-3.el9_7.x86_64.rpm",
+    "mariadb-errmsg-10.5.29-3.el9_7.x86_64.rpm",
+    "mariadb-gssapi-server-10.5.29-3.el9_7.x86_64.rpm",
+    "mariadb-oqgraph-engine-10.5.29-3.el9_7.x86_64.rpm",
+    "mariadb-pam-10.5.29-3.el9_7.x86_64.rpm",
+    "mariadb-server-10.5.29-3.el9_7.x86_64.rpm",
+    "mariadb-server-galera-10.5.29-3.el9_7.x86_64.rpm",
+    "mariadb-server-utils-10.5.29-3.el9_7.x86_64.rpm",
+    "mariadb-test-10.5.29-3.el9_7.x86_64.rpm",
+    "mariadb-10.5.29-3.el9_7.aarch64.rpm",
+    "mariadb-backup-10.5.29-3.el9_7.aarch64.rpm",
+    "mariadb-common-10.5.29-3.el9_7.aarch64.rpm",
+    "mariadb-devel-10.5.29-3.el9_7.aarch64.rpm",
+    "mariadb-embedded-10.5.29-3.el9_7.aarch64.rpm",
+    "mariadb-embedded-devel-10.5.29-3.el9_7.aarch64.rpm",
+    "mariadb-errmsg-10.5.29-3.el9_7.aarch64.rpm",
+    "mariadb-gssapi-server-10.5.29-3.el9_7.aarch64.rpm",
+    "mariadb-oqgraph-engine-10.5.29-3.el9_7.aarch64.rpm",
+    "mariadb-pam-10.5.29-3.el9_7.aarch64.rpm",
+    "mariadb-server-10.5.29-3.el9_7.aarch64.rpm",
+    "mariadb-server-galera-10.5.29-3.el9_7.aarch64.rpm",
+    "mariadb-server-utils-10.5.29-3.el9_7.aarch64.rpm",
+    "mariadb-test-10.5.29-3.el9_7.aarch64.rpm"
+  ],
+  "cves": [
+    "CVE-2025-13699"
+  ],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Security Advisory ELSA-2026-0137\n\nhttp://linux.oracle.com/errata/ELSA-2026-0137.html\n\nThe following updated rpms for Oracle Linux 9 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\nmariadb-10.5.29-3.el9_7.x86_64.rpm\nmariadb-backup-10.5.29-3.el9_7.x86_64.rpm\nmariadb-common-10.5.29-3.el9_7.x86_64.rpm\nmariadb-devel-10.5.29-3.el9_7.x86_64.rpm\nmariadb-embedded-10.5.29-3.el9_7.x86_64.rpm\nmariadb-embedded-devel-10.5.29-3.el9_7.x86_64.rpm\nmariadb-errmsg-10.5.29-3.el9_7.x86_64.rpm\nmariadb-gssapi-server-10.5.29-3.el9_7.x86_64.rpm\nmariadb-oqgraph-engine-10.5.29-3.el9_7.x86_64.rpm\nmariadb-pam-10.5.29-3.el9_7.x86_64.rpm\nmariadb-server-10.5.29-3.el9_7.x86_64.rpm\nmariadb-server-galera-10.5.29-3.el9_7.x86_64.rpm\nmariadb-server-utils-10.5.29-3.el9_7.x86_64.rpm\nmariadb-test-10.5.29-3.el9_7.x86_64.rpm\n\naarch64:\nmariadb-10.5.29-3.el9_7.aarch64.rpm\nmariadb-backup-10.5.29-3.el9_7.aarch64.rpm\nmariadb-common-10.5.29-3.el9_7.aarch64.rpm\nmariadb-devel-10.5.29-3.el9_7.aarch64.rpm\nmariadb-embedded-10.5.29-3.el9_7.aarch64.rpm\nmariadb-embedded-devel-10.5.29-3.el9_7.aarch64.rpm\nmariadb-errmsg-10.5.29-3.el9_7.aarch64.rpm\nmariadb-gssapi-server-10.5.29-3.el9_7.aarch64.rpm\nmariadb-oqgraph-engine-10.5.29-3.el9_7.aarch64.rpm\nmariadb-pam-10.5.29-3.el9_7.aarch64.rpm\nmariadb-server-10.5.29-3.el9_7.aarch64.rpm\nmariadb-server-galera-10.5.29-3.el9_7.aarch64.rpm\nmariadb-server-utils-10.5.29-3.el9_7.aarch64.rpm\nmariadb-test-10.5.29-3.el9_7.aarch64.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol9/SRPMS-updates/mariadb-10.5.29-3.el9_7.src.rpm\n\nRelated CVEs:\n\nCVE-2025-13699\n\n\n\n\nDescription of changes:\n\n[3:10.5.29-3]\n- Release bump for rebuild",
+  "vendor": "Oracle"
+}

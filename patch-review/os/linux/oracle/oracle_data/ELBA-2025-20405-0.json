@@ -1,0 +1,29 @@
+{
+  "id": "ELBA-2025-20405-0",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "AppStream",
+  "title": "gdb bug fix and enhancement update",
+  "issuedDate": "2025-11-25T00:00:00Z",
+  "updatedDate": "2025-11-25T00:00:00Z",
+  "pubDate": "2025-11-25T00:00:00Z",
+  "dateStr": "2025-11-25",
+  "url": "https://linux.oracle.com/errata/ELBA-2025-20405-0.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 10.",
+  "description": "[16.3-2.0.1]\nMerge Oracle patches for ol10-u1\n  Reviewed-by: Jose E. Marchesi <jose.marchesi@oracle.com>\n  Oracle history:\n  June-27-2025 Claudiu Zissulescu <claudiu.zissulescu-ianculescu@oracle.com> - 14.2-4.1.0.1\n  -  Merge Oracle patches for ol10-u0\n     Reviewed-by: Jose E. Marchesi <jose.marchesi@oracle.com>\n  May-28-2025 Claudiu Zissulescu <claudiu.zissulescu-ianculescu@oracle.com> - 14.2-4.1.0.1\n  - Merge Oracle patches for ol10-u0\n    Reviewed-by: Jose E. Marchesi <jose.marchesi@oracle.com>\n  Mar-05-2025 Claudiu Zissulescu <claudiu.zissulescu-ianculescu@oracle.com> - 14.2-4.0.1\n  - Merge Oracle patches for ol10-u0\n    Reviewed-by: Jose E. Marchesi <jose.marchesi@oracle.com>\n  Jan-23-2025 Claudiu Zissulescu <claudiu.zissulescu-ianculescu@oracle.com> - 14.2-3.0.1\n  - Merge Oracle patches for ol10-u0\n    Reviewed-by: Jose E. Marchesi <jose.marchesi@oracle.com>\n  - OraBug 35407694 Interrupting pstack with ctrl+c  prompts for a kill even if process is not spawned by gdb\n    Reviewed-by: Jose E. Marchesi <jose.marchesi@oracle.com>\n  - OraBug 36055910 Support RDTSCP in RECORD/REPLAY in interpreter mode (record full)\n    Reviewed-by: Jose E. Marchesi <jose.marchesi@oracle.com>\n\n[16.3-2.el10]\n- Backport fixes to decoding AMD64 instructions\n  Resolves: RHEL-93581\n\n[16.3-1.el10]\n- Rebase RHEL10 GDB to 16.3\n  Resolves: RHEL-56897\n  Resolves: RHEL-91382\n\n* Wed May 28 2025 Andrew Burgess <aburgess@redhat.com>\n- Remove 32-bit ARM support for RHEL 10+.  This is not a RHEL\n  supported target, so lets drop this target.  Retain for older RHEL\n  versions, as well as Fedora.\n\n[16.3-1]\n- Rebase to FSF GDB 16.3.\n  Deleted: gdb-rhbz2354997-gstack-drop-readnever.patch\n\n[16.2-3]\n- Backport 'Fix gstack issues' from upstream.\n  (Keith Seitz, RH BZ 2354997)\n\n[16.2-2]\n- Bump the release number.\n\n[16.2-1]\n- Rebase to FSF GDB 16.2.\n  Dropped:  gdb-backport-buildid-related-changes.patch\n            gdb-catchpoint-re-set.patch\n            gdb-remove-qnx-neutrino-support.patch\n  Modified: gdb-add-rpm-suggestion-script.patch\n\n* Thu Jan 23 2025 Alexandra Hajkova <ahajkova@redhat.com>\n- Remove upstreamed gdb-6.3-gstack-20050411.patch.\n\n* Fri Jan 17 2025 Guinevere Larsen <guinevere@redhat.com>\n- remove gdb-test-bt-cfi-without-die.patch.  This test has been\n  accepted upstream and will make its way back to testing with\n  the GDB 17 release.",
+  "affected_products": [
+    "Oracle Linux 10 for x86_64",
+    "Oracle Linux 10 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "gdb-doc-16.3-2.0.1.el10.noarch",
+    "gdb-minimal-16.3-2.0.1.el10.x86_64",
+    "gdb-16.3-2.0.1.el10.src",
+    "gdb-headless-16.3-2.0.1.el10.x86_64",
+    "gdb-gdbserver-16.3-2.0.1.el10.x86_64",
+    "gdb-16.3-2.0.1.el10.x86_64"
+  ],
+  "full_text": "[16.3-2.0.1]\nMerge Oracle patches for ol10-u1\n  Reviewed-by: Jose E. Marchesi <jose.marchesi@oracle.com>\n  Oracle history:\n  June-27-2025 Claudiu Zissulescu <claudiu.zissulescu-ianculescu@oracle.com> - 14.2-4.1.0.1\n  -  Merge Oracle patches for ol10-u0\n     Reviewed-by: Jose E. Marchesi <jose.marchesi@oracle.com>\n  May-28-2025 Claudiu Zissulescu <claudiu.zissulescu-ianculescu@oracle.com> - 14.2-4.1.0.1\n  - Merge Oracle patches for ol10-u0\n    Reviewed-by: Jose E. Marchesi <jose.marchesi@oracle.com>\n  Mar-05-2025 Claudiu Zissulescu <claudiu.zissulescu-ianculescu@oracle.com> - 14.2-4.0.1\n  - Merge Oracle patches for ol10-u0\n    Reviewed-by: Jose E. Marchesi <jose.marchesi@oracle.com>\n  Jan-23-2025 Claudiu Zissulescu <claudiu.zissulescu-ianculescu@oracle.com> - 14.2-3.0.1\n  - Merge Oracle patches for ol10-u0\n    Reviewed-by: Jose E. Marchesi <jose.marchesi@oracle.com>\n  - OraBug 35407694 Interrupting pstack with ctrl+c  prompts for a kill even if process is not spawned by gdb\n    Reviewed-by: Jose E. Marchesi <jose.marchesi@oracle.com>\n  - OraBug 36055910 Support RDTSCP in RECORD/REPLAY in interpreter mode (record full)\n    Reviewed-by: Jose E. Marchesi <jose.marchesi@oracle.com>\n\n[16.3-2.el10]\n- Backport fixes to decoding AMD64 instructions\n  Resolves: RHEL-93581\n\n[16.3-1.el10]\n- Rebase RHEL10 GDB to 16.3\n  Resolves: RHEL-56897\n  Resolves: RHEL-91382\n\n* Wed May 28 2025 Andrew Burgess <aburgess@redhat.com>\n- Remove 32-bit ARM support for RHEL 10+.  This is not a RHEL\n  supported target, so lets drop this target.  Retain for older RHEL\n  versions, as well as Fedora.\n\n[16.3-1]\n- Rebase to FSF GDB 16.3.\n  Deleted: gdb-rhbz2354997-gstack-drop-readnever.patch\n\n[16.2-3]\n- Backport 'Fix gstack issues' from upstream.\n  (Keith Seitz, RH BZ 2354997)\n\n[16.2-2]\n- Bump the release number.\n\n[16.2-1]\n- Rebase to FSF GDB 16.2.\n  Dropped:  gdb-backport-buildid-related-changes.patch\n            gdb-catchpoint-re-set.patch\n            gdb-remove-qnx-neutrino-support.patch\n  Modified: gdb-add-rpm-suggestion-script.patch\n\n* Thu Jan 23 2025 Alexandra Hajkova <ahajkova@redhat.com>\n- Remove upstreamed gdb-6.3-gstack-20050411.patch.\n\n* Fri Jan 17 2025 Guinevere Larsen <guinevere@redhat.com>\n- remove gdb-test-bt-cfi-without-die.patch.  This test has been\n  accepted upstream and will make its way back to testing with\n  the GDB 17 release.\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2025-20405-0.html"
+}

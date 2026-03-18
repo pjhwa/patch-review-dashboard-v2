@@ -1,0 +1,25 @@
+{
+  "id": "ELBA-2025-20645-0",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "AppStream",
+  "title": "container-selinux bug fix and enhancement update",
+  "issuedDate": "2025-11-17T00:00:00Z",
+  "updatedDate": "2025-11-17T00:00:00Z",
+  "pubDate": "2025-11-17T00:00:00Z",
+  "dateStr": "2025-11-17",
+  "url": "https://linux.oracle.com/errata/ELBA-2025-20645-0.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 9.",
+  "description": "[4:2.240.0-1]\n- update to https://github.com/containers/container-selinux/releases/tag/v2.240.0\n- Related: RHEL-80816\n\n[4:2.239.0-1]\n- update to https://github.com/containers/container-selinux/releases/tag/v2.239.0\n- Related: RHEL-80816\n\n[4:2.238.0-1]\n- update to https://github.com/containers/container-selinux/releases/tag/v2.238.0\n- Related: RHEL-80816",
+  "affected_products": [
+    "Oracle Linux 9 for x86_64",
+    "Oracle Linux 9 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "container-selinux-2.240.0-1.el9.src",
+    "container-selinux-2.240.0-1.el9.noarch"
+  ],
+  "full_text": "[4:2.240.0-1]\n- update to https://github.com/containers/container-selinux/releases/tag/v2.240.0\n- Related: RHEL-80816\n\n[4:2.239.0-1]\n- update to https://github.com/containers/container-selinux/releases/tag/v2.239.0\n- Related: RHEL-80816\n\n[4:2.238.0-1]\n- update to https://github.com/containers/container-selinux/releases/tag/v2.238.0\n- Related: RHEL-80816\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2025-20645-0.html"
+}

@@ -1,0 +1,33 @@
+{
+  "id": "RHSA-2026:1248",
+  "vendor": "Red Hat",
+  "type": "Security Advisory (RHSA)",
+  "title": "Red Hat Security Advisory: MTV RHEL9 Images",
+  "issuedDate": "2026-01-26T18:31:11+00:00",
+  "updatedDate": "2026-01-26T18:31:36+00:00",
+  "pubDate": "2026-01-26T18:31:11+00:00",
+  "dateStr": "2026-01-26",
+  "url": "https://access.redhat.com/errata/RHSA-2026:1248",
+  "severity": "Important",
+  "overview": "Updated Release packages that fix several bugs and add various enhancements are now available.",
+  "description": "Migration Toolkit for Virtualization Images",
+  "affected_products": [],
+  "cves": [
+    "CVE-2025-12816",
+    "CVE-2025-66031"
+  ],
+  "packages": [
+    "registry.redhat.io/migration-toolkit-virtualization/mtv-api-rhel9@sha256:487ad1c29aa180f6f76a74b87c285363aedcf87dadf00bde599a2ebf3790156d_amd64",
+    "registry.redhat.io/migration-toolkit-virtualization/mtv-console-plugin-rhel9@sha256:5d385ba67a8d8158790da4511586c190a24a194e2ccb10fcb7182b658a59c624_amd64",
+    "registry.redhat.io/migration-toolkit-virtualization/mtv-controller-rhel9@sha256:14619f0de60c7891791301fb7e76c047568d0e88b6013e2023bf1a7fbae71a32_amd64",
+    "registry.redhat.io/migration-toolkit-virtualization/mtv-rhel9-operator@sha256:b2493c389b48661df00e07d78f5af247f7a8254b88ed0d2cf6c29813bb63d802_amd64",
+    "registry.redhat.io/migration-toolkit-virtualization/mtv-operator-bundle@sha256:f744b3832d6f2232b9dd605ff0ca8934acf279e8f065150d0a170104b290271e_amd64",
+    "registry.redhat.io/migration-toolkit-virtualization/mtv-openstack-populator-rhel9@sha256:22534de48fae928bfce581b6d893318c94530646d9bebf05b280abfcd1bed7dc_amd64",
+    "registry.redhat.io/migration-toolkit-virtualization/mtv-ova-provider-server-rhel9@sha256:b5ee12762ea91d7eda83b5e28badc751d1813d09e7b962a2b6d6e3be46b99ecd_amd64",
+    "registry.redhat.io/migration-toolkit-virtualization/mtv-populator-controller-rhel9@sha256:3272d2ec42f5bb575940b8c9b1704e7d8e79a702f6e46d8378e08f1a1177fa15_amd64",
+    "registry.redhat.io/migration-toolkit-virtualization/mtv-validation-rhel9@sha256:45f60e1dbd38452d10c49fe21e679b3847c4837a624a4ea8f6f90cf3c74ab236_amd64",
+    "registry.redhat.io/migration-toolkit-virtualization/mtv-virt-v2v-rhel9@sha256:8fabdc787bbda9a68c11c3a5cfbd6a7c4a71946ad04df996ab5480203f5858ab_amd64",
+    "registry.redhat.io/migration-toolkit-virtualization/mtv-vsphere-xcopy-volume-populator-rhel9@sha256:39994efa887e6269f26710c85939dc00241fa898a52db5d6d34f4bf8ca87c39d_amd64"
+  ],
+  "full_text": "Updated Release packages that fix several bugs and add various enhancements are now available.\n\nMigration Toolkit for Virtualization Images"
+}

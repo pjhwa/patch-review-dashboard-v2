@@ -1,0 +1,21 @@
+{
+  "id": "RHSA-2026:0770",
+  "vendor": "Red Hat",
+  "url": "https://access.redhat.com/errata/RHSA-2026:0770",
+  "pubDate": "2026-01-19T05:57:44.000Z",
+  "dateStr": "2026-01-19",
+  "severity": "Important",
+  "title": "Red Hat Security Advisory: gpsd security update",
+  "overview": "An update for gpsd is now available for Red Hat Enterprise Linux 10.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "description": "An update for gpsd is now available for Red Hat Enterprise Linux 10.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux AppStream (v. 10)"
+  ],
+  "cves": [
+    "CVE-2025-67268",
+    "CVE-2025-67269"
+  ],
+  "packages": [],
+  "fixes": "",
+  "full_text": "Red Hat Security Advisory: gpsd security update\n\nAn update for gpsd is now available for Red Hat Enterprise Linux 10.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nAn update for gpsd is now available for Red Hat Enterprise Linux 10.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nUpdated Packages:\ngpsd-3.26.1-1.el10_1.1.src.rpm\ngpsd-3.26.1-1.el10_1.1.x86_64.rpm\ngpsd-clients-3.26.1-1.el10_1.1.x86_64.rpm\ngpsd-clients-debuginfo-3.26.1-1.el10_1.1.x86_64.rpm\ngpsd-debuginfo-3.26.1-1.el10_1.1.x86_64.rpm\ngpsd-debugsource-3.26.1-1.el10_1.1.x86_64.rpm\npython3-gpsd-3.26.1-1.el10_1.1.x86_64.rpm\npython3-gpsd-debuginfo-3.26.1-1.el10_1.1.x86_64.rpm\ngpsd-3.26.1-1.el10_1.1.s390x.rpm\ngpsd-clients-3.26.1-1.el10_1.1.s390x.rpm\ngpsd-clients-debuginfo-3.26.1-1.el10_1.1.s390x.rpm\ngpsd-debuginfo-3.26.1-1.el10_1.1.s390x.rpm\ngpsd-debugsource-3.26.1-1.el10_1.1.s390x.rpm\npython3-gpsd-3.26.1-1.el10_1.1.s390x.rpm\npython3-gpsd-debuginfo-3.26.1-1.el10_1.1.s390x.rpm\ngpsd-3.26.1-1.el10_1.1.ppc64le.rpm\ngpsd-clients-3.26.1-1.el10_1.1.ppc64le.rpm\ngpsd-clients-debuginfo-3.26.1-1.el10_1.1.ppc64le.rpm\ngpsd-debuginfo-3.26.1-1.el10_1.1.ppc64le.rpm\ngpsd-debugsource-3.26.1-1.el10_1.1.ppc64le.rpm\npython3-gpsd-3.26.1-1.el10_1.1.ppc64le.rpm\npython3-gpsd-debuginfo-3.26.1-1.el10_1.1.ppc64le.rpm\ngpsd-3.26.1-1.el10_1.1.aarch64.rpm\ngpsd-clients-3.26.1-1.el10_1.1.aarch64.rpm\ngpsd-clients-debuginfo-3.26.1-1.el10_1.1.aarch64.rpm\ngpsd-debuginfo-3.26.1-1.el10_1.1.aarch64.rpm\ngpsd-debugsource-3.26.1-1.el10_1.1.aarch64.rpm\npython3-gpsd-3.26.1-1.el10_1.1.aarch64.rpm\npython3-gpsd-debuginfo-3.26.1-1.el10_1.1.aarch64.rpm\n\nCVE-2025-67268: A flaw was found in gpsd. The hnd_129540 function, responsible for handling NMEA2000 PGN 129540 (GNSS Satellites in View) packets, fails to properly validate the user-supplied satellite count. A remote attacker can exploit this by sending a specially crafted packet with an excessive satellite count, leading to a heap-based out-of-bounds write. This memory corruption can result in a Denial of Service (DoS) and potentially allow for arbitrary code execution.\n\nCVE-2025-67269: A flaw was found in gpsd. A remote attacker can exploit this vulnerability by sending a specially crafted NAVCOM packet. When parsing the packet, an error in calculating the payload length can cause the system to attempt to process an extremely large amount of data. This leads to excessive CPU utilization, resulting in a Denial of Service (DoS) condition where the system becomes unresponsive."
+}

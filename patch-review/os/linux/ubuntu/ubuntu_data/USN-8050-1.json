@@ -1,0 +1,28 @@
+{
+  "id": "USN-8050-1",
+  "vendor": "Canonical / Ubuntu",
+  "type": "Ubuntu Security Notice (USN)",
+  "title": "trafficserver vulnerability",
+  "issuedDate": "2026-02-18T13:49:15Z",
+  "updatedDate": "2026-02-18T13:49:15Z",
+  "pubDate": "2026-02-18T13:49:15Z",
+  "dateStr": "2026-02-18",
+  "url": "https://ubuntu.com/security/notices/USN-8050-1",
+  "severity": "None",
+  "overview": "trafficserver vulnerability",
+  "description": "Masakazu Kitajo discovered that Apache Traffic Server did not properly\nhandle the Valid Host header field. An attacker could possibly use this\nissue to cause a denial of service (DoS).",
+  "affected_products": [
+    "Ubuntu 22.04 LTS",
+    "Ubuntu 24.04 LTS"
+  ],
+  "cves": [],
+  "packages": [
+    "trafficserver-9.1.1+ds-2ubuntu0.1",
+    "trafficserver-9.2.3+ds-1+deb12u1ubuntu0.1",
+    "trafficserver-dev-9.1.1+ds-2ubuntu0.1",
+    "trafficserver-dev-9.2.3+ds-1+deb12u1ubuntu0.1",
+    "trafficserver-experimental-plugins-9.1.1+ds-2ubuntu0.1",
+    "trafficserver-experimental-plugins-9.2.3+ds-1+deb12u1ubuntu0.1"
+  ],
+  "full_text": "Masakazu Kitajo discovered that Apache Traffic Server did not properly\nhandle the Valid Host header field. An attacker could possibly use this\nissue to cause a denial of service (DoS)."
+}

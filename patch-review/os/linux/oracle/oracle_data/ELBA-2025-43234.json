@@ -1,0 +1,24 @@
+{
+  "id": "ELBA-2025-43234",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "AppStream",
+  "title": " psutils  bug fix update",
+  "issuedDate": "2025-12-24T00:00:00Z",
+  "updatedDate": "2025-12-24T00:00:00Z",
+  "pubDate": "2025-12-24T00:00:00Z",
+  "dateStr": "2025-12-24",
+  "url": "https://linux.oracle.com/errata/ELBA-2025-43234.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 10.",
+  "description": "psutils\n[2.10-4]\n- Rebuilt for https://fedoraproject.org/wiki/Fedora_40_Mass_Rebuild\n\n[2.10-3]\n- Rebuilt for https://fedoraproject.org/wiki/Fedora_40_Mass_Rebuild\n\n[2.10-2]\n- Rebuilt for https://fedoraproject.org/wiki/Fedora_39_Mass_Rebuild\n\n[2.10-1]\n- 2.10 bump\n- resolves: rhbz#2173614\n\n[2.09-1]\n- 2.09 bump\n- resolves: rhbz#2035916\n\n[2.07-4]\n- Rebuilt for https://fedoraproject.org/wiki/Fedora_38_Mass_Rebuild\n\n[2.07-3]\n- Rebuilt for https://fedoraproject.org/wiki/Fedora_37_Mass_Rebuild\n\nlibpaper\n[1:2.1.1-7]\n- Bump release for October 2024 mass rebuild:\n  Resolves: RHEL-64018\n\n[1:2.1.1-6]\n- Bump release for June 2024 mass rebuild\n\n[1:2.1.1-5]\n- remove gnulib dependency and use bundled one\n\n[1:2.1.1-4]\n- RHEL-33500 - apply hardening ldflags for localepaper\n\n[1:2.1.1-3]\n- Rebuilt for https://fedoraproject.org/wiki/Fedora_40_Mass_Rebuild\n\n[1:2.1.1-2]\n- Rebuilt for https://fedoraproject.org/wiki/Fedora_40_Mass_Rebuild\n\n[1:2.1.1-1]\n- 2.1.1\n\n[1:2.1.0-2]\n- Rebuilt for https://fedoraproject.org/wiki/Fedora_39_Mass_Rebuild\n\n[1:2.1.0-1]\n- update to 2.1.0\n\n[1:2.0.10-1]\n- update to 2.0.10",
+  "affected_products": [
+    "Oracle Linux 10 for x86_64",
+    "Oracle Linux 10 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "libpaper-2.1.1-7.el10.src"
+  ],
+  "full_text": "psutils\n[2.10-4]\n- Rebuilt for https://fedoraproject.org/wiki/Fedora_40_Mass_Rebuild\n\n[2.10-3]\n- Rebuilt for https://fedoraproject.org/wiki/Fedora_40_Mass_Rebuild\n\n[2.10-2]\n- Rebuilt for https://fedoraproject.org/wiki/Fedora_39_Mass_Rebuild\n\n[2.10-1]\n- 2.10 bump\n- resolves: rhbz#2173614\n\n[2.09-1]\n- 2.09 bump\n- resolves: rhbz#2035916\n\n[2.07-4]\n- Rebuilt for https://fedoraproject.org/wiki/Fedora_38_Mass_Rebuild\n\n[2.07-3]\n- Rebuilt for https://fedoraproject.org/wiki/Fedora_37_Mass_Rebuild\n\nlibpaper\n[1:2.1.1-7]\n- Bump release for October 2024 mass rebuild:\n  Resolves: RHEL-64018\n\n[1:2.1.1-6]\n- Bump release for June 2024 mass rebuild\n\n[1:2.1.1-5]\n- remove gnulib dependency and use bundled one\n\n[1:2.1.1-4]\n- RHEL-33500 - apply hardening ldflags for localepaper\n\n[1:2.1.1-3]\n- Rebuilt for https://fedoraproject.org/wiki/Fedora_40_Mass_Rebuild\n\n[1:2.1.1-2]\n- Rebuilt for https://fedoraproject.org/wiki/Fedora_40_Mass_Rebuild\n\n[1:2.1.1-1]\n- 2.1.1\n\n[1:2.1.0-2]\n- Rebuilt for https://fedoraproject.org/wiki/Fedora_39_Mass_Rebuild\n\n[1:2.1.0-1]\n- update to 2.1.0\n\n[1:2.0.10-1]\n- update to 2.0.10\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2025-43234.html"
+}

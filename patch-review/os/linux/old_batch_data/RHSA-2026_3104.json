@@ -1,0 +1,20 @@
+{
+  "id": "RHSA-2026:3104",
+  "vendor": "Red Hat",
+  "url": "https://access.redhat.com/errata/RHSA-2026:3104",
+  "pubDate": "2026-02-23T17:13:34.000Z",
+  "dateStr": "2026-02-23",
+  "severity": "Important",
+  "title": "Red Hat Security Advisory: Red Hat OpenShift Service Mesh 3.0.8",
+  "overview": "Red Hat OpenShift Service Mesh 3.0.8\n\nThis update has a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "description": "Red Hat OpenShift Service Mesh 3.0.8\n\nThis update has a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "affected_products": [
+    "Red Hat OpenShift Service Mesh 3"
+  ],
+  "cves": [
+    "CVE-2025-61729"
+  ],
+  "packages": [],
+  "fixes": "",
+  "full_text": "Red Hat Security Advisory: Red Hat OpenShift Service Mesh 3.0.8\n\nRed Hat OpenShift Service Mesh 3.0.8\n\nThis update has a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nRed Hat OpenShift Service Mesh 3.0.8\n\nThis update has a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\n\n\nCVE-2025-61729: Within HostnameError.Error(), when constructing an error string, there is no limit to the number of hosts that will be printed out. Furthermore, the error string is constructed by repeated string concatenation, leading to quadratic runtime. Therefore, a certificate provided by a malicious actor can result in excessive resource consumption."
+}

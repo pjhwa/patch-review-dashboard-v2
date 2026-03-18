@@ -1,0 +1,52 @@
+[
+  {
+    "IssueID": "USN-8049-1",
+    "Component": "nova",
+    "Version": "3:25.2.1-0ubuntu2.10",
+    "Vendor": "Ubuntu",
+    "Date": "2026-02-16",
+    "Criticality": "Critical",
+    "Description": "Nova incorrectly called qemu-img without a format restriction when resizing disks, allowing an attacker to destroy data on the host system.",
+    "KoreanDescription": "Nova가 디스크 크기 조정 시 qemu-img를 포맷 제한 없이 호출하여 공격자가 호스트 시스템의 데이터를 파괴할 수 있는 취약점."
+  },
+  {
+    "IssueID": "USN-8056-1",
+    "Component": "u-boot",
+    "Version": "2022.01+dfsg-2ubuntu2.7",
+    "Vendor": "Ubuntu",
+    "Date": "2026-02-22",
+    "Criticality": "Critical",
+    "Description": "U-Boot had multiple vulnerabilities including memory disclosure via DHCP responses, and code execution or crashes via crafted squashfs/EXT4 file systems, leading to boot failures or system compromise.",
+    "KoreanDescription": "U-Boot의 DHCP 응답 처리 오류로 인한 메모리 정보 유출 및 squashfs/EXT4 파일 시스템 처리 오류로 인한 코드 실행 또는 크래시 가능성으로 부팅 실패 및 시스템 손상 위험."
+  },
+  {
+    "IssueID": "USN-8068-1",
+    "Component": "intel-microcode",
+    "Version": "3.20260210.0ubuntu0.22.04.1",
+    "Vendor": "Ubuntu",
+    "Date": "2026-03-02",
+    "Criticality": "Critical",
+    "Description": "Intel processors mishandled microcode flow, allowing a local authenticated user to escalate privileges.",
+    "KoreanDescription": "Intel 프로세서의 마이크로코드 흐름 처리 오류로 인해 로컬 인증 사용자가 권한을 상승시킬 수 있는 취약점."
+  },
+  {
+    "IssueID": "USN-8065-1",
+    "Component": "authlib",
+    "Version": "0.15.5-1ubuntu0.1~esm1",
+    "Vendor": "Ubuntu",
+    "Date": "2026-02-24",
+    "Criticality": "Critical",
+    "Description": "Authlib had multiple flaws in JWT and OAuth handling allowing authentication bypass, privilege escalation, replay attacks, CSRF, and denial of service.",
+    "KoreanDescription": "Authlib의 JWT 및 OAuth 처리 여러 결함으로 인한 인증 우회, 권한 상승, Replay 공격, CSRF 및 서비스 거부 취약점."
+  },
+  {
+    "IssueID": "USN-8062-1",
+    "Component": "curl",
+    "Version": "7.81.0-1ubuntu1.22",
+    "Vendor": "Ubuntu",
+    "Date": "2026-02-24",
+    "Criticality": "Critical",
+    "Description": "curl had multiple vulnerabilities including cookie mishandling, improper WebSocket handling, certificate validation failures, and SSH host key validation issues, leading to potential denial of service, information disclosure, cache poisoning, arbitrary file writes, man-in-the-middle attacks, and credential theft.",
+    "KoreanDescription": "curl의 쿠키 처리 오류, WebSocket 처리 부적절, 인증서 검증 실패, SSH 호스트 키 검증 미흠 등 여러 취약점으로 인해 서비스 거부, 정보 유출, 캐시 오염, 임의 파일 쓰기, 중간자 공격, 자격 증명 탈취 가능성."
+  }
+]

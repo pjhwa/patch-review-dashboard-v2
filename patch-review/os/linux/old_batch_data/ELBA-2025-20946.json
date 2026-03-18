@@ -1,0 +1,38 @@
+{
+  "id": "ELBA-2025-20946",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2025-November/019117.html",
+  "synopsis": "[El-errata] ELBA-2025-20946 Oracle Linux 9 dnf-plugins-core bug fix and enhancement update",
+  "dateStr": "2025-November",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Bug Fix Advisory ELBA-2025-20946",
+  "description": "[4.3.0-24.0.1]\n- Added kernel uek and uek core into needs restart list [Orabug: 35860693]\n- Update upstream references [Orabug: 35378252]\n- Update upstream references [Orabug: 35366472]\n- repoclosure - raise exception for typos in repository name [Orabug: 33074226]\n\n[4.3.0-24]\n- Rename dnf4-multisig(8) manual page to dnf-multisig(8) (RHEL-117134)",
+  "affected_products": [
+    "Oracle Linux 9"
+  ],
+  "packages": [
+    "dnf-plugins-core-4.3.0-24.0.1.el9_7.noarch.rpm",
+    "python3-dnf-plugin-leaves-4.3.0-24.0.1.el9_7.noarch.rpm",
+    "python3-dnf-plugin-modulesync-4.3.0-24.0.1.el9_7.noarch.rpm",
+    "python3-dnf-plugin-multisig-4.3.0-24.0.1.el9_7.noarch.rpm",
+    "python3-dnf-plugin-post-transaction-actions-4.3.0-24.0.1.el9_7.noarch.rpm",
+    "python3-dnf-plugin-show-leaves-4.3.0-24.0.1.el9_7.noarch.rpm",
+    "python3-dnf-plugin-versionlock-4.3.0-24.0.1.el9_7.noarch.rpm",
+    "python3-dnf-plugins-core-4.3.0-24.0.1.el9_7.noarch.rpm",
+    "yum-utils-4.3.0-24.0.1.el9_7.noarch.rpm",
+    "dnf-plugins-core-4.3.0-24.0.1.el9_7.noarch.rpm",
+    "python3-dnf-plugin-leaves-4.3.0-24.0.1.el9_7.noarch.rpm",
+    "python3-dnf-plugin-modulesync-4.3.0-24.0.1.el9_7.noarch.rpm",
+    "python3-dnf-plugin-multisig-4.3.0-24.0.1.el9_7.noarch.rpm",
+    "python3-dnf-plugin-post-transaction-actions-4.3.0-24.0.1.el9_7.noarch.rpm",
+    "python3-dnf-plugin-show-leaves-4.3.0-24.0.1.el9_7.noarch.rpm",
+    "python3-dnf-plugin-versionlock-4.3.0-24.0.1.el9_7.noarch.rpm",
+    "python3-dnf-plugins-core-4.3.0-24.0.1.el9_7.noarch.rpm",
+    "yum-utils-4.3.0-24.0.1.el9_7.noarch.rpm"
+  ],
+  "cves": [],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Bug Fix Advisory ELBA-2025-20946\n\nhttp://linux.oracle.com/errata/ELBA-2025-20946.html\n\nThe following updated rpms for Oracle Linux 9 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\ndnf-plugins-core-4.3.0-24.0.1.el9_7.noarch.rpm\npython3-dnf-plugin-leaves-4.3.0-24.0.1.el9_7.noarch.rpm\npython3-dnf-plugin-modulesync-4.3.0-24.0.1.el9_7.noarch.rpm\npython3-dnf-plugin-multisig-4.3.0-24.0.1.el9_7.noarch.rpm\npython3-dnf-plugin-post-transaction-actions-4.3.0-24.0.1.el9_7.noarch.rpm\npython3-dnf-plugin-show-leaves-4.3.0-24.0.1.el9_7.noarch.rpm\npython3-dnf-plugin-versionlock-4.3.0-24.0.1.el9_7.noarch.rpm\npython3-dnf-plugins-core-4.3.0-24.0.1.el9_7.noarch.rpm\nyum-utils-4.3.0-24.0.1.el9_7.noarch.rpm\n\naarch64:\ndnf-plugins-core-4.3.0-24.0.1.el9_7.noarch.rpm\npython3-dnf-plugin-leaves-4.3.0-24.0.1.el9_7.noarch.rpm\npython3-dnf-plugin-modulesync-4.3.0-24.0.1.el9_7.noarch.rpm\npython3-dnf-plugin-multisig-4.3.0-24.0.1.el9_7.noarch.rpm\npython3-dnf-plugin-post-transaction-actions-4.3.0-24.0.1.el9_7.noarch.rpm\npython3-dnf-plugin-show-leaves-4.3.0-24.0.1.el9_7.noarch.rpm\npython3-dnf-plugin-versionlock-4.3.0-24.0.1.el9_7.noarch.rpm\npython3-dnf-plugins-core-4.3.0-24.0.1.el9_7.noarch.rpm\nyum-utils-4.3.0-24.0.1.el9_7.noarch.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol9/SRPMS-updates/dnf-plugins-core-4.3.0-24.0.1.el9_7.src.rpm\n\n\n\nDescription of changes:\n\n[4.3.0-24.0.1]\n- Added kernel uek and uek core into needs restart list [Orabug: 35860693]\n- Update upstream references [Orabug: 35378252]\n- Update upstream references [Orabug: 35366472]\n- repoclosure - raise exception for typos in repository name [Orabug: 33074226]\n\n[4.3.0-24]\n- Rename dnf4-multisig(8) manual page to dnf-multisig(8) (RHEL-117134)",
+  "vendor": "Oracle"
+}

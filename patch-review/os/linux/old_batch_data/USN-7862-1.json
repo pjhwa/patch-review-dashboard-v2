@@ -1,0 +1,41 @@
+{
+  "id": "USN-7862-1",
+  "url": "https://ubuntu.com/security/notices/USN-7862-1",
+  "synopsis": "USN-7862-1: Linux kernel vulnerability",
+  "dateStr": "6 November 2025",
+  "overview": "The system could be made to expose sensitive information.",
+  "description": "Jean-Claude Graf, Sandro Rüegge, Ali Hajiabadi, and Kaveh Razavi discovered\nthat the Linux kernel contained insufficient branch predictor isolation\nbetween a guest and a userspace hypervisor for certain processors. This\nflaw is known as VMSCAPE. An attacker in a guest VM could possibly use this\nto expose sensitive information from the host OS.\n\n \n\n \n\n \n\nJean-Claude Graf, Sandro Rüegge, Ali Hajiabadi, and Kaveh Razavi discovered\nthat the Linux kernel contained insufficient branch predictor isolation\nbetween a guest and a userspace hypervisor for certain processors. This\nflaw is known as VMSCAPE. An attacker in a guest VM could possibly use this\nto expose sensitive information from the host OS.",
+  "packages": [
+    "linux",
+    "linux",
+    "linux",
+    "linux",
+    "linux",
+    "linux",
+    "linux",
+    "linux",
+    "linux",
+    "linux",
+    "linux",
+    "linux",
+    "linux",
+    "linux",
+    "linux",
+    "linux",
+    "linux"
+  ],
+  "cves": [
+    "CVE-2025-40300"
+  ],
+  "affected_products": [
+    "22.04 LTS",
+    "20.04 LTS",
+    "Open side navigation"
+  ],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Ubuntu Security Notices\n\nUSN-7862-1\n\n \n\n \n\n \n\n \n\n \n\n \nUSN-7862-1: Linux kernel vulnerability\n\n \n\n \n\n \n\n \nPublication date\n\n \n\n \n\n \n6 November 2025\n\n \n\n \n\n \n\n \n\n \nOverview\n\n \n\n \n\n \nThe system could be made to expose sensitive information.\n\n \n\n \n\n \n\n \n\n \nReleases\n\n \n\n \n\n \n\n 22.04 LTS\n\n20.04 LTS\n\n \n\n \n\n \n\n \n\n \n\n \n\n Open side navigation\n \n\n \n\n \nPackages\n\n \n\n linux - Linux kernel\n \n\n linux-aws - Linux kernel for Amazon Web Services (AWS) systems\n \n\n linux-aws-5.15 - Linux kernel for Amazon Web Services (AWS) systems\n \n\n linux-gcp - Linux kernel for Google Cloud Platform (GCP) systems\n \n\n linux-gcp-5.15 - Linux kernel for Google Cloud Platform (GCP) systems\n \n\n linux-gke - Linux kernel for Google Container Engine (GKE) systems\n \n\n linux-gkeop - Linux kernel for Google Container Engine (GKE) systems\n \n\n linux-hwe-5.15 - Linux hardware enablement (HWE) kernel\n \n\n linux-ibm - Linux kernel for IBM cloud systems\n \n\n linux-ibm-5.15 - Linux kernel for IBM cloud systems\n \n\n linux-intel-iotg - Linux kernel for Intel IoT platforms\n \n\n linux-intel-iotg-5.15 - Linux kernel for Intel IoT platforms\n \n\n linux-lowlatency - Linux low latency kernel\n \n\n linux-lowlatency-hwe-5.15 - Linux low latency kernel\n \n\n linux-nvidia - Linux kernel for NVIDIA systems\n \n\n linux-oracle - Linux kernel for Oracle Cloud systems\n \n\n linux-oracle-5.15 - Linux kernel for Oracle Cloud systems\n \n\n \n\n \nDetails\n\n \n\n \n\nJean-Claude Graf, Sandro Rüegge, Ali Hajiabadi, and Kaveh Razavi discovered\nthat the Linux kernel contained insufficient branch predictor isolation\nbetween a guest and a userspace hypervisor for certain processors. This\nflaw is known as VMSCAPE. An attacker in a guest VM could possibly use this\nto expose sensitive information from the host OS.\n\n \n\n \n\n \n\nJean-Claude Graf, Sandro Rüegge, Ali Hajiabadi, and Kaveh Razavi discovered\nthat the Linux kernel contained insufficient branch predictor isolation\nbetween a guest and a userspace hypervisor for certain processors. This\nflaw is known as VMSCAPE. An attacker in a guest VM could possibly use this\nto expose sensitive information from the host OS.\n\n \n\n \n\n \n\n \nUpdate instructions\n\n \n\n \n\n \n\n \n\nAfter a standard system update you need to reboot your computer to make\nall the necessary changes.\n\n Learn more about how to get the fixes.\n \n\n \n\n \n\n \n\n \nATTENTION: Due to an unavoidable ABI change the kernel updates have\nbeen given a new version number, which requires you to recompile and\nreinstall all third party kernel modules you might have installed.\nUnless you manually uninstalled the standard kernel metapackages\n(e.g. linux-generic, linux-generic-lts-RELEASE, linux-virtual,\nlinux-powerpc), a standard system upgrade will automatically perform\nthis as well.\n\n \n\n \n\n \nThe problem can be corrected by updating your system to the following package versions:\n\n \n\n \n\n \n\n \n\n Ubuntu Release\n Package Version\n \n\n 22.04\n\nLTS jammy\n\n linux-image-5.15.0-1079-gkeop – \n\n5.15.0-1079.87\n\n linux-image-5.15.0-1090-ibm – \n\n5.15.0-1090.93\n\n linux-image-5.15.0-1091-intel-iotg – \n\n5.15.0-1091.97\n\n linux-image-5.15.0-1091-nvidia – \n\n5.15.0-1091.92\n\n linux-image-5.15.0-1091-nvidia-lowlatency – \n\n5.15.0-1091.92\n\n linux-image-5.15.0-1092-gke – \n\n5.15.0-1092.98\n\n linux-image-5.15.0-1093-oracle – \n\n5.15.0-1093.99\n\n linux-image-5.15.0-1096-aws – \n\n5.15.0-1096.103\n\n linux-image-5.15.0-1096-aws-64k – \n\n5.15.0-1096.103\n\n linux-image-5.15.0-1096-gcp – \n\n5.15.0-1096.105\n\n linux-image-5.15.0-161-generic – \n\n5.15.0-161.171\n\n linux-image-5.15.0-161-generic-64k – \n\n5.15.0-161.171\n\n linux-image-5.15.0-161-generic-lpae – \n\n5.15.0-161.171\n\n linux-image-5.15.0-161-lowlatency – \n\n5.15.0-161.171\n\n linux-image-5.15.0-161-lowlatency-64k – \n\n5.15.0-161.171\n\n linux-image-aws-5.15 – \n\n5.15.0.1096.99\n\n linux-image-aws-64k-5.15 – \n\n5.15.0.1096.99\n\n linux-image-aws-64k-lts-22.04 – \n\n5.15.0.1096.99\n\n linux-image-aws-lts-22.04 – \n\n5.15.0.1096.99\n\n linux-image-gcp-5.15 – \n\n5.15.0.1096.92\n\n linux-image-gcp-lts-22.04 – \n\n5.15.0.1096.92\n\n linux-image-generic – \n\n5.15.0.161.157\n\n linux-image-generic-5.15 – \n\n5.15.0.161.157\n\n linux-image-generic-64k – \n\n5.15.0.161.157\n\n linux-image-generic-64k-5.15 – \n\n5.15.0.161.157\n\n linux-image-generic-lpae – \n\n5.15.0.161.157\n\n linux-image-generic-lpae-5.15 – \n\n5.15.0.161.157\n\n linux-image-gke – \n\n5.15.0.1092.91\n\n linux-image-gke-5.15 – \n\n5.15.0.1092.91\n\n linux-image-gkeop – \n\n5.15.0.1079.78\n\n linux-image-gkeop-5.15 – \n\n5.15.0.1079.78\n\n linux-image-ibm – \n\n5.15.0.1090.86\n\n linux-image-ibm-5.15 – \n\n5.15.0.1090.86\n\n linux-image-intel-iotg – \n\n5.15.0.1091.91\n\n linux-image-intel-iotg-5.15 – \n\n5.15.0.1091.91\n\n linux-image-lowlatency – \n\n5.15.0.161.139\n\n linux-image-lowlatency-5.15 – \n\n5.15.0.161.139\n\n linux-image-lowlatency-64k – \n\n5.15.0.161.139\n\n linux-image-lowlatency-64k-5.15 – \n\n5.15.0.161.139\n\n linux-image-nvidia – \n\n5.15.0.1091.91\n\n linux-image-nvidia-5.15 – \n\n5.15.0.1091.91\n\n linux-image-nvidia-lowlatency – \n\n5.15.0.1091.91\n\n linux-image-nvidia-lowlatency-5.15 – \n\n5.15.0.1091.91\n\n linux-image-oracle-5.15 – \n\n5.15.0.1093.89\n\n linux-image-oracle-lts-22.04 – \n\n5.15.0.1093.89\n\n linux-image-virtual – \n\n5.15.0.161.157\n\n linux-image-virtual-5.15 – \n\n5.15.0.161.157\n\n \n\n 20.04\n\nLTS focal\n\n linux-image-5.15.0-1090-ibm – \n\n5.15.0-1090.93~20.04.1\n\n  \n\nUbuntu Pro\n Fix available with Ubuntu Pro.\n\n linux-image-5.15.0-1091-intel-iotg – \n\n5.15.0-1091.97~20.04.1\n\n  \n\nUbuntu Pro\n Fix available with Ubuntu Pro.\n\n linux-image-5.15.0-1093-oracle – \n\n5.15.0-1093.99~20.04.1\n\n  \n\nUbuntu Pro\n Fix available with Ubuntu Pro.\n\n linux-image-5.15.0-1096-aws – \n\n5.15.0-1096.103~20.04.1\n\n  \n\nUbuntu Pro\n Fix available with Ubuntu Pro.\n\n linux-image-5.15.0-1096-gcp – \n\n5.15.0-1096.105~20.04.1\n\n  \n\nUbuntu Pro\n Fix available with Ubuntu Pro.\n\n linux-image-5.15.0-161-generic – \n\n5.15.0-161.171~20.04.1\n\n  \n\nUbuntu Pro\n Fix available with Ubuntu Pro.\n\n linux-image-5.15.0-161-generic-64k – \n\n5.15.0-161.171~20.04.1\n\n  \n\nUbuntu Pro\n Fix available with Ubuntu Pro.\n\n linux-image-5.15.0-161-generic-lpae – \n\n5.15.0-161.171~20.04.1\n\n  \n\nUbuntu Pro\n Fix ",
+  "title": "USN-7862-1: Linux kernel vulnerability | Ubuntu security notices | Ubuntu",
+  "pubDate": "2025-11-05T15:00:00.000Z",
+  "vendor": "Ubuntu"
+}

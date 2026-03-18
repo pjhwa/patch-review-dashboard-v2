@@ -1,0 +1,32 @@
+{
+  "id": "ELSA-2025-21936",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2025-December/019214.html",
+  "synopsis": "[El-errata] ELSA-2025-21936 Important: Oracle Linux 10 valkey security update",
+  "dateStr": "2025-December",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Security Advisory ELSA-2025-21936",
+  "description": "[8.0.6-2]\n- rebase to 8.0.6 for CVE-2025-49844 CVE-2025-46817 CVE-2025-46818 CVE-2025-46819\n\n[8.0.4-3]\n- fix ImageMode: ensure ownership of /etc/valkey\n\n[8.0.4-2]\n- fix ImageMode: add tmpfiles.d entries for directories below /var\n\n[8.0.4-1]\n- rebase to 8.0.4 for CVE-2025-27151 CVE-2025-48367 and CVE-2025-32023\n\n[8.0.3.1]\n- rebase to 8.0.3\n\n[8.0.2.1]\n- rebase to 8.0.2\n  Resolves: RHEL-73273\n\n[7.2.6-2]\n- Bump release for October 2024 mass rebuild:\n  Resolves: RHEL-64018\n\n[7.2.6.1]\n- rebase to 7.2.6\n- merge limit.conf in main service files\n- drop /etc/sysconfig/valkey\n- rename compat package\n- fix working dir\n- partially enable upstream test suite\n\n[7.2.5-4]\n- Bump release for June 2024 mass rebuild\n\n[7.2.5-3]\n- remove version_no_tilde code",
+  "affected_products": [
+    "Oracle Linux 10"
+  ],
+  "packages": [
+    "valkey-8.0.6-2.el10_1.x86_64.rpm",
+    "valkey-devel-8.0.6-2.el10_1.x86_64.rpm",
+    "valkey-8.0.6-2.el10_1.aarch64.rpm",
+    "valkey-devel-8.0.6-2.el10_1.aarch64.rpm"
+  ],
+  "cves": [
+    "CVE-2025-46817",
+    "CVE-2025-46818",
+    "CVE-2025-46819",
+    "CVE-2025-49844",
+    "CVE-2025-27151",
+    "CVE-2025-48367",
+    "CVE-2025-32023"
+  ],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Security Advisory ELSA-2025-21936\n\nhttp://linux.oracle.com/errata/ELSA-2025-21936.html\n\nThe following updated rpms for Oracle Linux 10 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\nvalkey-8.0.6-2.el10_1.x86_64.rpm\nvalkey-devel-8.0.6-2.el10_1.x86_64.rpm\n\naarch64:\nvalkey-8.0.6-2.el10_1.aarch64.rpm\nvalkey-devel-8.0.6-2.el10_1.aarch64.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol10/SRPMS-updates/valkey-8.0.6-2.el10_1.src.rpm\n\nRelated CVEs:\n\nCVE-2025-46817\nCVE-2025-46818\nCVE-2025-46819\nCVE-2025-49844\n\n\n\n\nDescription of changes:\n\n[8.0.6-2]\n- rebase to 8.0.6 for CVE-2025-49844 CVE-2025-46817 CVE-2025-46818 CVE-2025-46819\n\n[8.0.4-3]\n- fix ImageMode: ensure ownership of /etc/valkey\n\n[8.0.4-2]\n- fix ImageMode: add tmpfiles.d entries for directories below /var\n\n[8.0.4-1]\n- rebase to 8.0.4 for CVE-2025-27151 CVE-2025-48367 and CVE-2025-32023\n\n[8.0.3.1]\n- rebase to 8.0.3\n\n[8.0.2.1]\n- rebase to 8.0.2\n  Resolves: RHEL-73273\n\n[7.2.6-2]\n- Bump release for October 2024 mass rebuild:\n  Resolves: RHEL-64018\n\n[7.2.6.1]\n- rebase to 7.2.6\n- merge limit.conf in main service files\n- drop /etc/sysconfig/valkey\n- rename compat package\n- fix working dir\n- partially enable upstream test suite\n\n[7.2.5-4]\n- Bump release for June 2024 mass rebuild\n\n[7.2.5-3]\n- remove version_no_tilde code",
+  "vendor": "Oracle"
+}

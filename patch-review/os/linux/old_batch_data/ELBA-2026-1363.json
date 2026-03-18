@@ -1,0 +1,24 @@
+{
+  "id": "ELBA-2026-1363",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2026-January/019617.html",
+  "synopsis": "[El-errata] ELBA-2026-1363 Oracle Linux 9 virt-v2v bug fix and enhancement update",
+  "dateStr": "2026-January",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Bug Fix Advisory ELBA-2026-1363",
+  "description": "[2.7.1-19.0.1]\n- Replaced bugzilla.oracle.com references [Orabug: 34202300]\n- replaced upstream references [Orabug:34089586]\n\n[1:2.7.1-19]\n- Remove cache=none\n  resolves: RHEL-135832",
+  "affected_products": [
+    "Oracle Linux 9"
+  ],
+  "packages": [
+    "virt-v2v-2.7.1-19.0.1.el9_7.x86_64.rpm",
+    "virt-v2v-bash-completion-2.7.1-19.0.1.el9_7.noarch.rpm",
+    "virt-v2v-man-pages-ja-2.7.1-19.0.1.el9_7.noarch.rpm",
+    "virt-v2v-man-pages-uk-2.7.1-19.0.1.el9_7.noarch.rpm"
+  ],
+  "cves": [],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Bug Fix Advisory ELBA-2026-1363\n\nhttp://linux.oracle.com/errata/ELBA-2026-1363.html\n\nThe following updated rpms for Oracle Linux 9 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\nvirt-v2v-2.7.1-19.0.1.el9_7.x86_64.rpm\nvirt-v2v-bash-completion-2.7.1-19.0.1.el9_7.noarch.rpm\nvirt-v2v-man-pages-ja-2.7.1-19.0.1.el9_7.noarch.rpm\nvirt-v2v-man-pages-uk-2.7.1-19.0.1.el9_7.noarch.rpm\n\n\n\nSRPMS:\nhttp://oss.oracle.com/ol9/SRPMS-updates/virt-v2v-2.7.1-19.0.1.el9_7.src.rpm\n\n\n\nDescription of changes:\n\n[2.7.1-19.0.1]\n- Replaced bugzilla.oracle.com references [Orabug: 34202300]\n- replaced upstream references [Orabug:34089586]\n\n[1:2.7.1-19]\n- Remove cache=none\n  resolves: RHEL-135832",
+  "vendor": "Oracle"
+}

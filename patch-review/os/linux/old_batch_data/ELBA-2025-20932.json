@@ -1,0 +1,42 @@
+{
+  "id": "ELBA-2025-20932",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2025-November/019133.html",
+  "synopsis": "[El-errata] ELBA-2025-20932 Oracle Linux 9 bind bug fix and enhancement update",
+  "dateStr": "2025-November",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Bug Fix Advisory ELBA-2025-20932",
+  "description": "[9.16.23-33.0.1]\n- Fix warning when changing device file permissions [Orabug: 36518580]\n\n[32:9.16.23-33]\n- logrotate: skip if empty and remove old variants (RHEL-113942)",
+  "affected_products": [
+    "Oracle Linux 9"
+  ],
+  "packages": [
+    "bind-9.16.23-33.0.1.el9_7.x86_64.rpm",
+    "bind-chroot-9.16.23-33.0.1.el9_7.x86_64.rpm",
+    "bind-devel-9.16.23-33.0.1.el9_7.i686.rpm",
+    "bind-devel-9.16.23-33.0.1.el9_7.x86_64.rpm",
+    "bind-dnssec-doc-9.16.23-33.0.1.el9_7.noarch.rpm",
+    "bind-dnssec-utils-9.16.23-33.0.1.el9_7.x86_64.rpm",
+    "bind-doc-9.16.23-33.0.1.el9_7.noarch.rpm",
+    "bind-libs-9.16.23-33.0.1.el9_7.i686.rpm",
+    "bind-libs-9.16.23-33.0.1.el9_7.x86_64.rpm",
+    "bind-license-9.16.23-33.0.1.el9_7.noarch.rpm",
+    "bind-utils-9.16.23-33.0.1.el9_7.x86_64.rpm",
+    "python3-bind-9.16.23-33.0.1.el9_7.noarch.rpm",
+    "bind-9.16.23-33.0.1.el9_7.aarch64.rpm",
+    "bind-chroot-9.16.23-33.0.1.el9_7.aarch64.rpm",
+    "bind-devel-9.16.23-33.0.1.el9_7.aarch64.rpm",
+    "bind-dnssec-doc-9.16.23-33.0.1.el9_7.noarch.rpm",
+    "bind-dnssec-utils-9.16.23-33.0.1.el9_7.aarch64.rpm",
+    "bind-doc-9.16.23-33.0.1.el9_7.noarch.rpm",
+    "bind-libs-9.16.23-33.0.1.el9_7.aarch64.rpm",
+    "bind-license-9.16.23-33.0.1.el9_7.noarch.rpm",
+    "bind-utils-9.16.23-33.0.1.el9_7.aarch64.rpm",
+    "python3-bind-9.16.23-33.0.1.el9_7.noarch.rpm"
+  ],
+  "cves": [],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Bug Fix Advisory ELBA-2025-20932\n\nhttp://linux.oracle.com/errata/ELBA-2025-20932.html\n\nThe following updated rpms for Oracle Linux 9 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\nbind-9.16.23-33.0.1.el9_7.x86_64.rpm\nbind-chroot-9.16.23-33.0.1.el9_7.x86_64.rpm\nbind-devel-9.16.23-33.0.1.el9_7.i686.rpm\nbind-devel-9.16.23-33.0.1.el9_7.x86_64.rpm\nbind-dnssec-doc-9.16.23-33.0.1.el9_7.noarch.rpm\nbind-dnssec-utils-9.16.23-33.0.1.el9_7.x86_64.rpm\nbind-doc-9.16.23-33.0.1.el9_7.noarch.rpm\nbind-libs-9.16.23-33.0.1.el9_7.i686.rpm\nbind-libs-9.16.23-33.0.1.el9_7.x86_64.rpm\nbind-license-9.16.23-33.0.1.el9_7.noarch.rpm\nbind-utils-9.16.23-33.0.1.el9_7.x86_64.rpm\npython3-bind-9.16.23-33.0.1.el9_7.noarch.rpm\n\naarch64:\nbind-9.16.23-33.0.1.el9_7.aarch64.rpm\nbind-chroot-9.16.23-33.0.1.el9_7.aarch64.rpm\nbind-devel-9.16.23-33.0.1.el9_7.aarch64.rpm\nbind-dnssec-doc-9.16.23-33.0.1.el9_7.noarch.rpm\nbind-dnssec-utils-9.16.23-33.0.1.el9_7.aarch64.rpm\nbind-doc-9.16.23-33.0.1.el9_7.noarch.rpm\nbind-libs-9.16.23-33.0.1.el9_7.aarch64.rpm\nbind-license-9.16.23-33.0.1.el9_7.noarch.rpm\nbind-utils-9.16.23-33.0.1.el9_7.aarch64.rpm\npython3-bind-9.16.23-33.0.1.el9_7.noarch.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol9/SRPMS-updates/bind-9.16.23-33.0.1.el9_7.src.rpm\n\n\n\nDescription of changes:\n\n[9.16.23-33.0.1]\n- Fix warning when changing device file permissions [Orabug: 36518580]\n\n[32:9.16.23-33]\n- logrotate: skip if empty and remove old variants (RHEL-113942)",
+  "vendor": "Oracle"
+}

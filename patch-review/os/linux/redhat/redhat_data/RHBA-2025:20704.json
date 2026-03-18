@@ -1,0 +1,57 @@
+{
+  "id": "RHBA-2025:20704",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: gnome-shell-extensions bug fix and enhancement update",
+  "issuedDate": "2025-11-11T07:50:52Z",
+  "updatedDate": "2025-11-11T07:50:52Z",
+  "pubDate": "2025-11-11T07:50:52Z",
+  "dateStr": "2025-11-11",
+  "url": "https://access.redhat.com/errata/RHBA-2025:20704",
+  "severity": "None",
+  "overview": "An update for gnome-shell-extensions is now available for Red Hat Enterprise Linux 10.",
+  "description": "For detailed information on changes in this release, see the Red Hat Enterprise Linux 9 Release Notes linked from the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux for IBM z Systems",
+    "Red Hat Enterprise Linux for Power, little endian",
+    "Red Hat Enterprise Linux for ARM 64",
+    "Red Hat Enterprise Linux for x86_64 10 x86_64"
+  ],
+  "cves": [],
+  "packages": [
+    "gnome-shell-extensions-40.7-28.el9.src",
+    "gnome-classic-session-40.7-28.el9.noarch",
+    "gnome-shell-extension-apps-menu-40.7-28.el9.noarch",
+    "gnome-shell-extension-auto-move-windows-40.7-28.el9.noarch",
+    "gnome-shell-extension-classification-banner-40.7-28.el9.noarch",
+    "gnome-shell-extension-common-40.7-28.el9.noarch",
+    "gnome-shell-extension-custom-menu-40.7-28.el9.noarch",
+    "gnome-shell-extension-dash-to-dock-40.7-28.el9.noarch",
+    "gnome-shell-extension-dash-to-panel-40.7-28.el9.noarch",
+    "gnome-shell-extension-desktop-icons-40.7-28.el9.noarch",
+    "gnome-shell-extension-drive-menu-40.7-28.el9.noarch",
+    "gnome-shell-extension-gesture-inhibitor-40.7-28.el9.noarch",
+    "gnome-shell-extension-heads-up-display-40.7-28.el9.noarch",
+    "gnome-shell-extension-launch-new-instance-40.7-28.el9.noarch",
+    "gnome-shell-extension-move-notifications-40.7-28.el9.noarch",
+    "gnome-shell-extension-native-window-placement-40.7-28.el9.noarch",
+    "gnome-shell-extension-panel-favorites-40.7-28.el9.noarch",
+    "gnome-shell-extension-places-menu-40.7-28.el9.noarch",
+    "gnome-shell-extension-screenshot-window-sizer-40.7-28.el9.noarch",
+    "gnome-shell-extension-systemMonitor-40.7-28.el9.noarch",
+    "gnome-shell-extension-top-icons-40.7-28.el9.noarch",
+    "gnome-shell-extension-updates-dialog-40.7-28.el9.noarch",
+    "gnome-shell-extension-user-theme-40.7-28.el9.noarch",
+    "gnome-shell-extension-window-list-40.7-28.el9.noarch",
+    "gnome-shell-extension-windowsNavigator-40.7-28.el9.noarch",
+    "gnome-shell-extension-workspace-indicator-40.7-28.el9.noarch"
+  ],
+  "fixes": [
+    {
+      "id": "RHEL-95787",
+      "url": "https://issues.redhat.com/browse/RHEL-95787",
+      "description": "RHEL 9.6 classic mode windows list bar colors wrong"
+    }
+  ],
+  "full_text": "An update for gnome-shell-extensions is now available for Red Hat Enterprise Linux 10.\n\nFor detailed information on changes in this release, see the Red Hat Enterprise Linux 9 Release Notes linked from the References section."
+}

@@ -1,0 +1,38 @@
+{
+  "id": "RHBA-2025:20483",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: rust-podman-sequoia bug fix and enhancement update",
+  "issuedDate": "2025-11-11T07:26:41Z",
+  "updatedDate": "2025-11-11T07:26:41Z",
+  "pubDate": "2025-11-11T07:26:41Z",
+  "dateStr": "2025-11-11",
+  "url": "https://access.redhat.com/errata/RHBA-2025:20483",
+  "severity": "None",
+  "overview": "An update for rust-podman-sequoia is now available for Red Hat Enterprise Linux 10.",
+  "description": "For detailed information on changes in this release, see the Red Hat Enterprise Linux 10 Release Notes linked from the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux for x86_64 10 x86_64",
+    "Red Hat Enterprise Linux for ARM 64",
+    "Red Hat Enterprise Linux for Power, little endian",
+    "Red Hat Enterprise Linux for IBM z Systems"
+  ],
+  "cves": [],
+  "packages": [
+    "rust-podman-sequoia-0.2.0-1.el10.src",
+    "podman-sequoia-0.2.0-1.el10.x86_64",
+    "podman-sequoia-debuginfo-0.2.0-1.el10.x86_64",
+    "rust-podman-sequoia-debugsource-0.2.0-1.el10.x86_64",
+    "podman-sequoia-0.2.0-1.el10.s390x",
+    "podman-sequoia-debuginfo-0.2.0-1.el10.s390x",
+    "rust-podman-sequoia-debugsource-0.2.0-1.el10.s390x",
+    "podman-sequoia-0.2.0-1.el10.ppc64le",
+    "podman-sequoia-debuginfo-0.2.0-1.el10.ppc64le",
+    "rust-podman-sequoia-debugsource-0.2.0-1.el10.ppc64le",
+    "podman-sequoia-0.2.0-1.el10.aarch64",
+    "podman-sequoia-debuginfo-0.2.0-1.el10.aarch64",
+    "rust-podman-sequoia-debugsource-0.2.0-1.el10.aarch64"
+  ],
+  "fixes": [],
+  "full_text": "An update for rust-podman-sequoia is now available for Red Hat Enterprise Linux 10.\n\nFor detailed information on changes in this release, see the Red Hat Enterprise Linux 10 Release Notes linked from the References section."
+}

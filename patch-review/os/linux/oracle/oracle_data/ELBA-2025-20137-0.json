@@ -1,0 +1,29 @@
+{
+  "id": "ELBA-2025-20137-0",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "RHCK",
+  "title": "cyrus-sasl bug fix and enhancement update",
+  "issuedDate": "2025-11-25T00:00:00Z",
+  "updatedDate": "2025-11-25T00:00:00Z",
+  "pubDate": "2025-11-25T00:00:00Z",
+  "dateStr": "2025-11-25",
+  "url": "https://linux.oracle.com/errata/ELBA-2025-20137-0.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 10.",
+  "description": "[2.1.28-29]\n- Add missing definition for gdbm_db_file\n  Resolves: RHEL-101552\n\n[2.1.28-28]\n- Remove debug log spam in digestmd5 plugin",
+  "affected_products": [
+    "Oracle Linux 10 for x86_64",
+    "Oracle Linux 10 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "cyrus-sasl-2.1.28-29.el10.x86_64",
+    "cyrus-sasl-plain-2.1.28-29.el10.x86_64",
+    "cyrus-sasl-lib-2.1.28-29.el10.x86_64",
+    "cyrus-sasl-gssapi-2.1.28-29.el10.x86_64",
+    "cyrus-sasl-2.1.28-29.el10.src",
+    "cyrus-sasl-scram-2.1.28-29.el10.x86_64"
+  ],
+  "full_text": "[2.1.28-29]\n- Add missing definition for gdbm_db_file\n  Resolves: RHEL-101552\n\n[2.1.28-28]\n- Remove debug log spam in digestmd5 plugin\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2025-20137-0.html"
+}

@@ -10,7 +10,7 @@ export async function GET(request: Request, props: { params: Promise<{ id: strin
         const productId = searchParams.get('productId');
 
         // Path should match the directory structure of the linuxSkillDir
-        const linuxSkillDir = path.join(process.env.HOME || '/home/citec', '.openclaw/workspace/skills/patch-review/os/linux-v2');
+        const linuxSkillDir = path.join(process.env.HOME || '/home/citec', '.openclaw/workspace/skills/patch-review/os/linux');
         const archiveFilePath = path.join(linuxSkillDir, 'archive', id, 'patch_review_ai_report.json');
 
         // Check if file exists

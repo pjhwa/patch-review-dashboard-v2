@@ -1,0 +1,40 @@
+{
+  "id": "ELSA-2025-21815",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2025-November/019084.html",
+  "synopsis": "[El-errata] ELSA-2025-21815 Moderate: Oracle Linux 9 delve and golang security update",
+  "dateStr": "2025-November",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Security Advisory ELSA-2025-21815",
+  "description": "golang\n[1.25.3-1]\n- Update to Go 1.25.3\n- Resolves: RHEL-121220\n\n[1.25.1-1]\n- Update to Go 1.25.1\n- Resolves: RHEL-116850\n\n[1.25.0-2]\n- Revert DWARF5 defaults\n- Add elf5 to rpminspect.yaml\n- Related: RHEL-109557\n\n[1.25.0-1]\n- Update to Go 1.25.0\n- Set GOAMD64 to v2 to align with new architecture baselines\n- Modify the modify_go.env.patch to reflect GOAMD64 baseline version change to v2\n- Resolves: RHEL-109557",
+  "affected_products": [
+    "Oracle Linux 9"
+  ],
+  "packages": [
+    "delve-1.25.2-1.0.1.el9_7.x86_64.rpm",
+    "go-toolset-1.25.3-1.el9_7.x86_64.rpm",
+    "golang-1.25.3-1.el9_7.x86_64.rpm",
+    "golang-bin-1.25.3-1.el9_7.x86_64.rpm",
+    "golang-docs-1.25.3-1.el9_7.noarch.rpm",
+    "golang-misc-1.25.3-1.el9_7.noarch.rpm",
+    "golang-race-1.25.3-1.el9_7.x86_64.rpm",
+    "golang-src-1.25.3-1.el9_7.noarch.rpm",
+    "golang-tests-1.25.3-1.el9_7.noarch.rpm",
+    "delve-1.25.2-1.0.1.el9_7.aarch64.rpm",
+    "go-toolset-1.25.3-1.el9_7.aarch64.rpm",
+    "golang-1.25.3-1.el9_7.aarch64.rpm",
+    "golang-bin-1.25.3-1.el9_7.aarch64.rpm",
+    "golang-docs-1.25.3-1.el9_7.noarch.rpm",
+    "golang-misc-1.25.3-1.el9_7.noarch.rpm",
+    "golang-race-1.25.3-1.el9_7.aarch64.rpm",
+    "golang-src-1.25.3-1.el9_7.noarch.rpm",
+    "golang-tests-1.25.3-1.el9_7.noarch.rpm"
+  ],
+  "cves": [
+    "CVE-2025-58183"
+  ],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Security Advisory ELSA-2025-21815\n\nhttp://linux.oracle.com/errata/ELSA-2025-21815.html\n\nThe following updated rpms for Oracle Linux 9 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\ndelve-1.25.2-1.0.1.el9_7.x86_64.rpm\ngo-toolset-1.25.3-1.el9_7.x86_64.rpm\ngolang-1.25.3-1.el9_7.x86_64.rpm\ngolang-bin-1.25.3-1.el9_7.x86_64.rpm\ngolang-docs-1.25.3-1.el9_7.noarch.rpm\ngolang-misc-1.25.3-1.el9_7.noarch.rpm\ngolang-race-1.25.3-1.el9_7.x86_64.rpm\ngolang-src-1.25.3-1.el9_7.noarch.rpm\ngolang-tests-1.25.3-1.el9_7.noarch.rpm\n\naarch64:\ndelve-1.25.2-1.0.1.el9_7.aarch64.rpm\ngo-toolset-1.25.3-1.el9_7.aarch64.rpm\ngolang-1.25.3-1.el9_7.aarch64.rpm\ngolang-bin-1.25.3-1.el9_7.aarch64.rpm\ngolang-docs-1.25.3-1.el9_7.noarch.rpm\ngolang-misc-1.25.3-1.el9_7.noarch.rpm\ngolang-race-1.25.3-1.el9_7.aarch64.rpm\ngolang-src-1.25.3-1.el9_7.noarch.rpm\ngolang-tests-1.25.3-1.el9_7.noarch.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol9/SRPMS-updates/delve-1.25.2-1.0.1.el9_7.src.rpm\nhttp://oss.oracle.com/ol9/SRPMS-updates/golang-1.25.3-1.el9_7.src.rpm\n\nRelated CVEs:\n\nCVE-2025-58183\n\n\n\n\nDescription of changes:\n\ngolang\n[1.25.3-1]\n- Update to Go 1.25.3\n- Resolves: RHEL-121220\n\n[1.25.1-1]\n- Update to Go 1.25.1\n- Resolves: RHEL-116850\n\n[1.25.0-2]\n- Revert DWARF5 defaults\n- Add elf5 to rpminspect.yaml\n- Related: RHEL-109557\n\n[1.25.0-1]\n- Update to Go 1.25.0\n- Set GOAMD64 to v2 to align with new architecture baselines\n- Modify the modify_go.env.patch to reflect GOAMD64 baseline version change to v2\n- Resolves: RHEL-109557",
+  "vendor": "Oracle"
+}

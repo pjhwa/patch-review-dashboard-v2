@@ -1,0 +1,27 @@
+{
+  "id": "ELBA-2025-20321-0",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "AppStream",
+  "title": "python-rpm-macros bug fix and enhancement update",
+  "issuedDate": "2025-11-25T00:00:00Z",
+  "updatedDate": "2025-11-25T00:00:00Z",
+  "pubDate": "2025-11-25T00:00:00Z",
+  "dateStr": "2025-11-25",
+  "url": "https://linux.oracle.com/errata/ELBA-2025-20321-0.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 10.",
+  "description": "[3.12-10]\n- Add brp script to modify .dist-info/INSTALLER file\n- Resolves: RHEL-86802\n\n* Tue Oct 29 2024 Troy Dawson <tdawson@redhat.com>\n- Bump release for October 2024 mass rebuild:\n  Resolves: RHEL-64018\n\n[3.12-8.1]\n- %python_extras_subpkg: Add option -a to include BuildArch: noarch\n\n[3.12-8]\n- Bump release for June 2024 mass rebuild\n\n[3.12-7]\n- %py3_test_envvars: Only set  if not already set\n\n[3.12-6]\n- Rebuilt for https://fedoraproject.org/wiki/Fedora_40_Mass_Rebuild\n\n[3.12-5]\n- Fix python macro memoizing to account for changing %__python3\n\n[3.12-4]\n- Remove %py3_build_egg and %py3_install_egg macros.\n\n[3.12-3]\n- Declare the license as an SPDX expression\n\n[3.12-2]\n- Rebuilt for https://fedoraproject.org/wiki/Fedora_39_Mass_Rebuild",
+  "affected_products": [
+    "Oracle Linux 10 for x86_64",
+    "Oracle Linux 10 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "python3-rpm-macros-3.12-10.el10.noarch",
+    "python-rpm-macros-3.12-10.el10.src",
+    "python-rpm-macros-3.12-10.el10.noarch",
+    "python-srpm-macros-3.12-10.el10.noarch"
+  ],
+  "full_text": "[3.12-10]\n- Add brp script to modify .dist-info/INSTALLER file\n- Resolves: RHEL-86802\n\n* Tue Oct 29 2024 Troy Dawson <tdawson@redhat.com>\n- Bump release for October 2024 mass rebuild:\n  Resolves: RHEL-64018\n\n[3.12-8.1]\n- %python_extras_subpkg: Add option -a to include BuildArch: noarch\n\n[3.12-8]\n- Bump release for June 2024 mass rebuild\n\n[3.12-7]\n- %py3_test_envvars: Only set  if not already set\n\n[3.12-6]\n- Rebuilt for https://fedoraproject.org/wiki/Fedora_40_Mass_Rebuild\n\n[3.12-5]\n- Fix python macro memoizing to account for changing %__python3\n\n[3.12-4]\n- Remove %py3_build_egg and %py3_install_egg macros.\n\n[3.12-3]\n- Declare the license as an SPDX expression\n\n[3.12-2]\n- Rebuilt for https://fedoraproject.org/wiki/Fedora_39_Mass_Rebuild\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2025-20321-0.html"
+}

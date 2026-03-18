@@ -1,0 +1,38 @@
+{
+  "id": "RHBA-2025:20645",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: container-selinux bug fix and enhancement update",
+  "issuedDate": "2025-11-11T07:50:41Z",
+  "updatedDate": "2025-11-11T07:50:41Z",
+  "pubDate": "2025-11-11T07:50:41Z",
+  "dateStr": "2025-11-11",
+  "url": "https://access.redhat.com/errata/RHBA-2025:20645",
+  "severity": "None",
+  "overview": "An update for container-selinux is now available for Red Hat Enterprise Linux 10.",
+  "description": "For detailed information on changes in this release, see the Red Hat Enterprise Linux 9 Release Notes linked from the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux for x86_64 10 x86_64",
+    "Red Hat Enterprise Linux for IBM z Systems",
+    "Red Hat Enterprise Linux for ARM 64",
+    "Red Hat Enterprise Linux for Power, little endian"
+  ],
+  "cves": [],
+  "packages": [
+    "container-selinux-2.240.0-1.el9.src",
+    "container-selinux-2.240.0-1.el9.noarch"
+  ],
+  "fixes": [
+    {
+      "id": "RHEL-80473",
+      "url": "https://issues.redhat.com/browse/RHEL-80473",
+      "description": "update container-selinux for RHEL9.7"
+    },
+    {
+      "id": "RHEL-85433",
+      "url": "https://issues.redhat.com/browse/RHEL-85433",
+      "description": "SELinux container_logreader_t cannot watch /var/log symlinks - [RHEL 9.7]"
+    }
+  ],
+  "full_text": "An update for container-selinux is now available for Red Hat Enterprise Linux 10.\n\nFor detailed information on changes in this release, see the Red Hat Enterprise Linux 9 Release Notes linked from the References section."
+}

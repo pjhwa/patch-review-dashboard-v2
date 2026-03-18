@@ -1,0 +1,24 @@
+{
+  "id": "ELBA-2025-21005",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2025-December/019163.html",
+  "synopsis": "[El-errata] ELBA-2025-21005 Oracle Linux 10 passt bug fix and enhancement update",
+  "dateStr": "2025-December",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Bug Fix Advisory ELBA-2025-21005",
+  "description": "[0^20250512.g8ec1341-4]\n- Resolves: RHEL-123415 RHEL-123424\n\n[0^20250512.g8ec1341-2]\n- Resolves: RHEL-106425\n\n[0^20250512.g8ec1341-1]\n- Resolves: RHEL-84285\n\n[0^20250320.g32f6212-1]\n- Resolves: RHEL-84285\n\n[0^20250217.ga1e48a0-1]\n- Resolves: RHEL-79788\n\n[0^20250121.g4f2c8e7-3]\n- Resolves: RHEL-75657\n\n[0^20250121.g4f2c8e7-1]\n- Resolves: RHEL-75657\n\n[0^20241121.g238c69f-1]\n- Resolves: RHEL-67556\n\n[0^20240806.gee36266-3]\n- Bump release for October 2024 mass rebuild:\n  Resolves: RHEL-64018\n\n[0^20240806-gee36266-2]\n- Resolves: RHEL-54269",
+  "affected_products": [
+    "Oracle Linux 10"
+  ],
+  "packages": [
+    "passt-0^20250512.g8ec1341-4.el10_1.x86_64.rpm",
+    "passt-selinux-0^20250512.g8ec1341-4.el10_1.noarch.rpm",
+    "passt-0^20250512.g8ec1341-4.el10_1.aarch64.rpm",
+    "passt-selinux-0^20250512.g8ec1341-4.el10_1.noarch.rpm"
+  ],
+  "cves": [],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Bug Fix Advisory ELBA-2025-21005\n\nhttp://linux.oracle.com/errata/ELBA-2025-21005.html\n\nThe following updated rpms for Oracle Linux 10 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\npasst-0^20250512.g8ec1341-4.el10_1.x86_64.rpm\npasst-selinux-0^20250512.g8ec1341-4.el10_1.noarch.rpm\n\naarch64:\npasst-0^20250512.g8ec1341-4.el10_1.aarch64.rpm\npasst-selinux-0^20250512.g8ec1341-4.el10_1.noarch.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol10/SRPMS-updates/passt-0^20250512.g8ec1341-4.el10_1.src.rpm\n\n\n\nDescription of changes:\n\n[0^20250512.g8ec1341-4]\n- Resolves: RHEL-123415 RHEL-123424\n\n[0^20250512.g8ec1341-2]\n- Resolves: RHEL-106425\n\n[0^20250512.g8ec1341-1]\n- Resolves: RHEL-84285\n\n[0^20250320.g32f6212-1]\n- Resolves: RHEL-84285\n\n[0^20250217.ga1e48a0-1]\n- Resolves: RHEL-79788\n\n[0^20250121.g4f2c8e7-3]\n- Resolves: RHEL-75657\n\n[0^20250121.g4f2c8e7-1]\n- Resolves: RHEL-75657\n\n[0^20241121.g238c69f-1]\n- Resolves: RHEL-67556\n\n[0^20240806.gee36266-3]\n- Bump release for October 2024 mass rebuild:\n  Resolves: RHEL-64018\n\n[0^20240806-gee36266-2]\n- Resolves: RHEL-54269",
+  "vendor": "Oracle"
+}

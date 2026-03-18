@@ -1,0 +1,27 @@
+{
+  "id": "ELBA-2025-20732",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "AppStream",
+  "title": "ansible-freeipa bug fix and enhancement update",
+  "issuedDate": "2025-11-17T00:00:00Z",
+  "updatedDate": "2025-11-17T00:00:00Z",
+  "pubDate": "2025-11-17T00:00:00Z",
+  "dateStr": "2025-11-17",
+  "url": "https://linux.oracle.com/errata/ELBA-2025-20732.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 9.",
+  "description": "[1.15.1-1]\n- Update to version 1.15.1\n  Resolves: RHEL-104652\n- ipaclient: client_dns has new statestore arg with IPA change e6445b8\n  Resolves: RHEL-106558\n\n[1.15.0-1]\n- Update to version 1.15.0\n  Resolves: RHEL-104652\n- ipaclient: Fix AttributeError by defaulting dns_over_tls to False\n  Resolves: RHEL-92844\n- Provide compatibility for AAH naming\n  Resolves: RHEL-94769\n- Ensure ipaidrange required parameters are correct on recent versions of IPA\n  Resolves: RHEL-79820\n- Add support for DNS-over-TLS for ipaclient, ipareplica and ipaserver roles\n  Resolves: RHEL-78636\n\n[1.14.6-1]\n- Update to version 1.14.6\n- Fix CA certificates iteration in ipaclient role\n  Resolves: RHEL-88206",
+  "affected_products": [
+    "Oracle Linux 9 for x86_64",
+    "Oracle Linux 9 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "ansible-freeipa-1.15.1-1.el9.src",
+    "ansible-freeipa-collection-1.15.1-1.el9.noarch",
+    "ansible-freeipa-tests-1.15.1-1.el9.noarch",
+    "ansible-freeipa-1.15.1-1.el9.noarch"
+  ],
+  "full_text": "[1.15.1-1]\n- Update to version 1.15.1\n  Resolves: RHEL-104652\n- ipaclient: client_dns has new statestore arg with IPA change e6445b8\n  Resolves: RHEL-106558\n\n[1.15.0-1]\n- Update to version 1.15.0\n  Resolves: RHEL-104652\n- ipaclient: Fix AttributeError by defaulting dns_over_tls to False\n  Resolves: RHEL-92844\n- Provide compatibility for AAH naming\n  Resolves: RHEL-94769\n- Ensure ipaidrange required parameters are correct on recent versions of IPA\n  Resolves: RHEL-79820\n- Add support for DNS-over-TLS for ipaclient, ipareplica and ipaserver roles\n  Resolves: RHEL-78636\n\n[1.14.6-1]\n- Update to version 1.14.6\n- Fix CA certificates iteration in ipaclient role\n  Resolves: RHEL-88206\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2025-20732.html"
+}

@@ -1,0 +1,28 @@
+{
+  "id": "USN-7928-5",
+  "vendor": "Canonical / Ubuntu",
+  "type": "Ubuntu Security Notice (USN)",
+  "title": "linux-kvm vulnerabilities",
+  "issuedDate": "2026-01-09T19:20:36Z",
+  "updatedDate": "2026-02-10T04:50:47Z",
+  "pubDate": "2026-01-09T19:20:36Z",
+  "dateStr": "2026-01-09",
+  "url": "https://ubuntu.com/security/notices/USN-7928-5",
+  "severity": "None",
+  "overview": "linux-kvm vulnerabilities",
+  "description": "Several security issues were discovered in the Linux kernel.\nAn attacker could possibly use these to compromise the system.\nThis update corrects flaws in the following subsystems:\n  - Cryptographic API;\n  - Media drivers;\n  - Network drivers;\n  - AFS file system;\n  - F2FS file system;\n  - Tracing infrastructure;\n  - Netfilter;\n(CVE-2022-49390, CVE-2024-47691, CVE-2024-50067, CVE-2024-53090,\nCVE-2024-53218, CVE-2025-21855, CVE-2025-39964, CVE-2025-39993,\nCVE-2025-40018)\n",
+  "affected_products": [
+    "Ubuntu 22.04 LTS"
+  ],
+  "cves": [],
+  "packages": [
+    "linux-buildinfo-5.15.0-1090-kvm-5.15.0-1090.95",
+    "linux-headers-5.15.0-1090-kvm-5.15.0-1090.95",
+    "linux-image-unsigned-5.15.0-1090-kvm-5.15.0-1090.95",
+    "linux-kvm-headers-5.15.0-1090-5.15.0-1090.95",
+    "linux-kvm-tools-5.15.0-1090-5.15.0-1090.95",
+    "linux-modules-5.15.0-1090-kvm-5.15.0-1090.95",
+    "linux-tools-5.15.0-1090-kvm-5.15.0-1090.95"
+  ],
+  "full_text": "Several security issues were discovered in the Linux kernel.\nAn attacker could possibly use these to compromise the system.\nThis update corrects flaws in the following subsystems:\n  - Cryptographic API;\n  - Media drivers;\n  - Network drivers;\n  - AFS file system;\n  - F2FS file system;\n  - Tracing infrastructure;\n  - Netfilter;\n(CVE-2022-49390, CVE-2024-47691, CVE-2024-50067, CVE-2024-53090,\nCVE-2024-53218, CVE-2025-21855, CVE-2025-39964, CVE-2025-39993,\nCVE-2025-40018)\n"
+}

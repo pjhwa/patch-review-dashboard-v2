@@ -1,0 +1,27 @@
+{
+  "id": "ELSA-2025-21002",
+  "vendor": "Oracle",
+  "type": "Security Advisory (ELSA)",
+  "kernel_type": "AppStream",
+  "title": " squid security update",
+  "issuedDate": "2025-12-02T00:00:00Z",
+  "updatedDate": "2025-12-02T00:00:00Z",
+  "pubDate": "2025-12-02T00:00:00Z",
+  "dateStr": "2025-12-02",
+  "url": "https://linux.oracle.com/errata/ELSA-2025-21002.html",
+  "severity": "Important",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 10.",
+  "description": "[7:6.10-6.1]\n- Resolves: RHEL-122480 - CVE-2025-62168 squid: Squid vulnerable to information\n  disclosure via authentication credential leakage in error handling\n\n[7:6.10-6]\n- Resolves: RHEL-86817 - \"TCP connection to XX.XX.XX.XX/XXXX failed\" message is\n  output frequently on RHEL10",
+  "affected_products": [
+    "Oracle Linux 10 for x86_64",
+    "Oracle Linux 10 for aarch64"
+  ],
+  "cves": [
+    "CVE-2025-62168"
+  ],
+  "packages": [
+    "squid-6.10-6.el10_1.1.x86_64",
+    "squid-6.10-6.el10_1.1.src"
+  ],
+  "full_text": "[7:6.10-6.1]\n- Resolves: RHEL-122480 - CVE-2025-62168 squid: Squid vulnerable to information\n  disclosure via authentication credential leakage in error handling\n\n[7:6.10-6]\n- Resolves: RHEL-86817 - \"TCP connection to XX.XX.XX.XX/XXXX failed\" message is\n  output frequently on RHEL10\n\nReferences:\nhttps://linux.oracle.com/errata/ELSA-2025-21002.html\nhttps://linux.oracle.com/cve/CVE-2025-62168.html"
+}

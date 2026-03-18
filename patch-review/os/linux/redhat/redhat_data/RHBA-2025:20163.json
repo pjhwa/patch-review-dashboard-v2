@@ -1,0 +1,60 @@
+{
+  "id": "RHBA-2025:20163",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: ledmon bug fix and enhancement update",
+  "issuedDate": "2025-11-11T07:25:18Z",
+  "updatedDate": "2025-11-11T07:25:18Z",
+  "pubDate": "2025-11-11T07:25:18Z",
+  "dateStr": "2025-11-11",
+  "url": "https://access.redhat.com/errata/RHBA-2025:20163",
+  "severity": "None",
+  "overview": "An update for ledmon is now available for Red Hat Enterprise Linux 10.",
+  "description": "For detailed information on changes in this release, see the Red Hat Enterprise Linux 10.1 Release Notes linked from the References section.",
+  "affected_products": [
+    "Red Hat CodeReady Linux Builder for Power, little endian",
+    "Red Hat Enterprise Linux for IBM z Systems",
+    "Red Hat CodeReady Linux Builder for ARM 64",
+    "Red Hat Enterprise Linux for x86_64 10 x86_64",
+    "Red Hat Enterprise Linux for Power, little endian",
+    "Red Hat Enterprise Linux for ARM 64",
+    "Red Hat CodeReady Linux Builder for IBM z Systems",
+    "Red Hat CodeReady Linux Builder for x86_64 10 x86_64"
+  ],
+  "cves": [],
+  "packages": [
+    "ledmon-1.1.0-2.el10.src",
+    "ledmon-1.1.0-2.el10.x86_64",
+    "ledmon-debuginfo-1.1.0-2.el10.x86_64",
+    "ledmon-debugsource-1.1.0-2.el10.x86_64",
+    "ledmon-libs-1.1.0-2.el10.x86_64",
+    "ledmon-libs-debuginfo-1.1.0-2.el10.x86_64",
+    "ledmon-1.1.0-2.el10.s390x",
+    "ledmon-debuginfo-1.1.0-2.el10.s390x",
+    "ledmon-debugsource-1.1.0-2.el10.s390x",
+    "ledmon-libs-1.1.0-2.el10.s390x",
+    "ledmon-libs-debuginfo-1.1.0-2.el10.s390x",
+    "ledmon-1.1.0-2.el10.ppc64le",
+    "ledmon-debuginfo-1.1.0-2.el10.ppc64le",
+    "ledmon-debugsource-1.1.0-2.el10.ppc64le",
+    "ledmon-libs-1.1.0-2.el10.ppc64le",
+    "ledmon-libs-debuginfo-1.1.0-2.el10.ppc64le",
+    "ledmon-1.1.0-2.el10.aarch64",
+    "ledmon-debuginfo-1.1.0-2.el10.aarch64",
+    "ledmon-debugsource-1.1.0-2.el10.aarch64",
+    "ledmon-libs-1.1.0-2.el10.aarch64",
+    "ledmon-libs-debuginfo-1.1.0-2.el10.aarch64",
+    "ledmon-devel-1.1.0-2.el10.x86_64",
+    "ledmon-devel-1.1.0-2.el10.ppc64le",
+    "ledmon-devel-1.1.0-2.el10.aarch64",
+    "ledmon-devel-1.1.0-2.el10.s390x"
+  ],
+  "fixes": [
+    {
+      "id": "RHEL-90182",
+      "url": "https://issues.redhat.com/browse/RHEL-90182",
+      "description": "RHEL10 ledctl locate_off command error due to ledmon code bug on version 1.1.0"
+    }
+  ],
+  "full_text": "An update for ledmon is now available for Red Hat Enterprise Linux 10.\n\nFor detailed information on changes in this release, see the Red Hat Enterprise Linux 10.1 Release Notes linked from the References section."
+}

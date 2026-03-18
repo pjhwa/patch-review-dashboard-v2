@@ -1,0 +1,23 @@
+{
+  "id": "ELSA-2026-0752",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2026-January/019547.html",
+  "synopsis": "[El-errata] ELSA-2026-0752 Important: Oracle Linux 9 jmc security update",
+  "dateStr": "2026-January",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Security Advisory ELSA-2026-0752",
+  "description": "[8.2.0-4]\n- Bump LZ4 Version to 1.10.2. Related: RHEL-135478",
+  "affected_products": [
+    "Oracle Linux 9"
+  ],
+  "packages": [
+    "jmc-8.2.0-18.el9_7.2.x86_64.rpm"
+  ],
+  "cves": [
+    "CVE-2025-66566"
+  ],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Security Advisory ELSA-2026-0752\n\nhttp://linux.oracle.com/errata/ELSA-2026-0752.html\n\nThe following updated rpms for Oracle Linux 9 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\njmc-8.2.0-18.el9_7.2.x86_64.rpm\n\n\n\nSRPMS:\nhttp://oss.oracle.com/ol9/SRPMS-updates/jmc-8.2.0-18.el9_7.2.src.rpm\n\nRelated CVEs:\n\nCVE-2025-66566\n\n\n\n\nDescription of changes:\n\n[8.2.0-4]\n- Bump LZ4 Version to 1.10.2. Related: RHEL-135478",
+  "vendor": "Oracle"
+}

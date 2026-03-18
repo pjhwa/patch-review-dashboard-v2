@@ -1,0 +1,32 @@
+{
+  "id": "ELBA-2025-20981",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "AppStream",
+  "title": "keylime bug fix and enhancement update",
+  "issuedDate": "2025-12-02T00:00:00Z",
+  "updatedDate": "2025-12-02T00:00:00Z",
+  "pubDate": "2025-12-02T00:00:00Z",
+  "dateStr": "2025-12-02",
+  "url": "https://linux.oracle.com/errata/ELBA-2025-20981.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 10.",
+  "description": "[7.12.1-14]\n- Properly fix malformed TPM certificates workaround\n\n[7.12.1-13]\n- Avoid opening /dev/stdout when printing\n\n[7.12.1-12]\n- Fix malformed TPM certificates workaround",
+  "affected_products": [
+    "Oracle Linux 10 for x86_64",
+    "Oracle Linux 10 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "keylime-tenant-7.12.1-11.el10_1.2.x86_64",
+    "python3-keylime-7.12.1-11.el10_1.2.x86_64",
+    "keylime-tools-7.12.1-11.el10_1.2.x86_64",
+    "keylime-base-7.12.1-11.el10_1.2.x86_64",
+    "keylime-registrar-7.12.1-11.el10_1.2.x86_64",
+    "keylime-7.12.1-11.el10_1.2.src",
+    "keylime-verifier-7.12.1-11.el10_1.2.x86_64",
+    "keylime-7.12.1-11.el10_1.2.x86_64",
+    "keylime-selinux-7.12.1-11.el10_1.2.noarch"
+  ],
+  "full_text": "[7.12.1-14]\n- Properly fix malformed TPM certificates workaround\n\n[7.12.1-13]\n- Avoid opening /dev/stdout when printing\n\n[7.12.1-12]\n- Fix malformed TPM certificates workaround\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2025-20981.html"
+}

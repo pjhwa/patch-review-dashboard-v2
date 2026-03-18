@@ -1,0 +1,49 @@
+{
+  "id": "RHBA-2025:20871",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: ksh bug fix and enhancement update",
+  "issuedDate": "2025-11-11T07:51:24Z",
+  "updatedDate": "2025-11-11T07:51:24Z",
+  "pubDate": "2025-11-11T07:51:24Z",
+  "dateStr": "2025-11-11",
+  "url": "https://access.redhat.com/errata/RHBA-2025:20871",
+  "severity": "None",
+  "overview": "An update for ksh is now available for Red Hat Enterprise Linux 10.",
+  "description": "For detailed information on changes in this release, see the Red Hat Enterprise Linux 9 Release Notes linked from the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux for Power, little endian",
+    "Red Hat Enterprise Linux for x86_64 10 x86_64",
+    "Red Hat Enterprise Linux for ARM 64",
+    "Red Hat Enterprise Linux for IBM z Systems"
+  ],
+  "cves": [],
+  "packages": [
+    "ksh-1.0.6-14.el9.src",
+    "ksh-1.0.6-14.el9.x86_64",
+    "ksh-debuginfo-1.0.6-14.el9.x86_64",
+    "ksh-debugsource-1.0.6-14.el9.x86_64",
+    "ksh-1.0.6-14.el9.s390x",
+    "ksh-debuginfo-1.0.6-14.el9.s390x",
+    "ksh-debugsource-1.0.6-14.el9.s390x",
+    "ksh-1.0.6-14.el9.ppc64le",
+    "ksh-debuginfo-1.0.6-14.el9.ppc64le",
+    "ksh-debugsource-1.0.6-14.el9.ppc64le",
+    "ksh-1.0.6-14.el9.aarch64",
+    "ksh-debuginfo-1.0.6-14.el9.aarch64",
+    "ksh-debugsource-1.0.6-14.el9.aarch64"
+  ],
+  "fixes": [
+    {
+      "id": "RHEL-74464",
+      "url": "https://issues.redhat.com/browse/RHEL-74464",
+      "description": "ksh consumes a single CPU fully and beeps in loop when pressing the Up Arrow key"
+    },
+    {
+      "id": "RHEL-83283",
+      "url": "https://issues.redhat.com/browse/RHEL-83283",
+      "description": "ksh93 segfault without TERM"
+    }
+  ],
+  "full_text": "An update for ksh is now available for Red Hat Enterprise Linux 10.\n\nFor detailed information on changes in this release, see the Red Hat Enterprise Linux 9 Release Notes linked from the References section."
+}

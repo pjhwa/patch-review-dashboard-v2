@@ -1,0 +1,40 @@
+{
+  "id": "RHSA-2026:3969",
+  "vendor": "Red Hat",
+  "type": "Security Advisory (RHSA)",
+  "title": "Red Hat Security Advisory: libpng15 security update",
+  "issuedDate": "2026-03-09T01:35:17+00:00",
+  "updatedDate": "2026-03-09T01:35:17+00:00",
+  "pubDate": "2026-03-09T01:35:17+00:00",
+  "dateStr": "2026-03-09",
+  "url": "https://access.redhat.com/errata/RHSA-2026:3969",
+  "severity": "Important",
+  "overview": "An update for libpng15 is now available for Red Hat Enterprise Linux 9.4 Extended Update Support.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "description": "The libpng15 package provides libpng 1.5, an older version of the libpng. library for manipulating PNG (Portable Network Graphics) image format files. This version should be used only if you are unable to use the current version of libpng.\n\nSecurity Fix(es):\n\n* libpng: LIBPNG has a heap buffer overflow in png_set_quantize (CVE-2026-25646)\n\nFor more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux",
+    "Red Hat Enterprise Linux AppStream EUS (v.9.4)"
+  ],
+  "cves": [
+    "CVE-2026-25646"
+  ],
+  "packages": [
+    "libpng15-0:1.5.30-14.el9_4.1.src",
+    "libpng15-0:1.5.30-14.el9_4.1.aarch64",
+    "libpng15-debugsource-0:1.5.30-14.el9_4.1.aarch64",
+    "libpng15-debuginfo-0:1.5.30-14.el9_4.1.aarch64",
+    "libpng15-0:1.5.30-14.el9_4.1.ppc64le",
+    "libpng15-debugsource-0:1.5.30-14.el9_4.1.ppc64le",
+    "libpng15-debuginfo-0:1.5.30-14.el9_4.1.ppc64le",
+    "libpng15-0:1.5.30-14.el9_4.1.i686",
+    "libpng15-debugsource-0:1.5.30-14.el9_4.1.i686",
+    "libpng15-debuginfo-0:1.5.30-14.el9_4.1.i686",
+    "libpng15-0:1.5.30-14.el9_4.1.x86_64",
+    "libpng15-debugsource-0:1.5.30-14.el9_4.1.x86_64",
+    "libpng15-debuginfo-0:1.5.30-14.el9_4.1.x86_64",
+    "libpng15-0:1.5.30-14.el9_4.1.s390x",
+    "libpng15-debugsource-0:1.5.30-14.el9_4.1.s390x",
+    "libpng15-debuginfo-0:1.5.30-14.el9_4.1.s390x"
+  ],
+  "full_text": "An update for libpng15 is now available for Red Hat Enterprise Linux 9.4 Extended Update Support.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nThe libpng15 package provides libpng 1.5, an older version of the libpng. library for manipulating PNG (Portable Network Graphics) image format files. This version should be used only if you are unable to use the current version of libpng.\n\nSecurity Fix(es):\n\n* libpng: LIBPNG has a heap buffer overflow in png_set_quantize (CVE-2026-25646)\n\nFor more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section."
+}

@@ -1,0 +1,21 @@
+{
+  "id": "RHSA-2026:1872",
+  "vendor": "Red Hat",
+  "url": "https://access.redhat.com/errata/RHSA-2026:1872",
+  "pubDate": "2026-02-04T04:47:19.000Z",
+  "dateStr": "2026-02-04",
+  "severity": "Important",
+  "title": "Red Hat Security Advisory: Red Hat JBoss Enterprise Application Platform 8.1.4 security update",
+  "overview": "A security update is now available for Red Hat JBoss Enterprise Application Platform 8.1. Red Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "description": "A security update is now available for Red Hat JBoss Enterprise Application Platform 8.1. Red Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "affected_products": [
+    "Red Hat JBoss Enterprise Application Platform 8.1"
+  ],
+  "cves": [
+    "CVE-2025-12183",
+    "CVE-2025-66566"
+  ],
+  "packages": [],
+  "fixes": "",
+  "full_text": "Red Hat Security Advisory: Red Hat JBoss Enterprise Application Platform 8.1.4 security update\n\nA security update is now available for Red Hat JBoss Enterprise Application Platform 8.1. Red Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nA security update is now available for Red Hat JBoss Enterprise Application Platform 8.1. Red Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\n\n\nCVE-2025-12183: A flaw was found in lz4-java. This vulnerability allows remote attackers to cause denial of service (DoS) and read adjacent memory via untrusted compressed input. This vulnerability affects only programs using the unsafe LZ4_decompress_fast API, known as the \"fast\" decompressor.\n\nCVE-2025-66566: A flaw was found in lz4-java. This vulnerability allows disclosure of sensitive data via crafted compressed input due to insufficient clearing of the output buffer in Java-based decompressor implementations."
+}

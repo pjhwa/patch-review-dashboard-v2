@@ -1,0 +1,27 @@
+{
+  "id": "ELSA-2026-3341",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2026-February/019856.html",
+  "synopsis": "[El-errata] ELSA-2026-3341 Important: Oracle Linux 9 containernetworking-plugins security update",
+  "dateStr": "2026-February",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Security Advisory ELSA-2026-3341",
+  "description": "[1:1.7.1-3]\n- Rebuild for new golang to address CVE-2025-61726\n- Resolves: RHEL-146859\n\n[1:1.7.1-2]\n- rebuild for CVE-2025-22871\n- Resolves: RHEL-90030",
+  "affected_products": [
+    "Oracle Linux 9"
+  ],
+  "packages": [
+    "containernetworking-plugins-1.7.1-3.el9_7.x86_64.rpm",
+    "containernetworking-plugins-1.7.1-3.el9_7.aarch64.rpm"
+  ],
+  "cves": [
+    "CVE-2025-61726",
+    "CVE-2025-61729",
+    "CVE-2025-68121",
+    "CVE-2025-22871"
+  ],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Security Advisory ELSA-2026-3341\n\nhttp://linux.oracle.com/errata/ELSA-2026-3341.html\n\nThe following updated rpms for Oracle Linux 9 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\ncontainernetworking-plugins-1.7.1-3.el9_7.x86_64.rpm\n\naarch64:\ncontainernetworking-plugins-1.7.1-3.el9_7.aarch64.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol9/SRPMS-updates/containernetworking-plugins-1.7.1-3.el9_7.src.rpm\n\nRelated CVEs:\n\nCVE-2025-61726\nCVE-2025-61729\nCVE-2025-68121\n\n\n\n\nDescription of changes:\n\n[1:1.7.1-3]\n- Rebuild for new golang to address CVE-2025-61726\n- Resolves: RHEL-146859\n\n[1:1.7.1-2]\n- rebuild for CVE-2025-22871\n- Resolves: RHEL-90030",
+  "vendor": "Oracle"
+}

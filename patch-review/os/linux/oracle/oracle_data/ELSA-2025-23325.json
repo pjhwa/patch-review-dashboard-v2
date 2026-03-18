@@ -1,0 +1,31 @@
+{
+  "id": "ELSA-2025-23325",
+  "vendor": "Oracle",
+  "type": "Security Advisory (ELSA)",
+  "kernel_type": "AppStream",
+  "title": " podman security update",
+  "issuedDate": "2025-12-18T00:00:00Z",
+  "updatedDate": "2025-12-18T00:00:00Z",
+  "pubDate": "2025-12-18T00:00:00Z",
+  "dateStr": "2025-12-18",
+  "url": "https://linux.oracle.com/errata/ELSA-2025-23325.html",
+  "severity": "Moderate",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 9.",
+  "description": "[5.6.0-9.0.1]\n- Add devices on container startup, not on creation\n- overlay: Put should ignore ENINVAL for Unmount [Orabug: 36234694]\n- Drop nmap-ncat requirement and skip ignore-socket test case [Orabug: 34117404]\n\n[6:5.6.0-9]\n- update to the latest content of https://github.com/containers/podman/tree/v5.6-rhel\n  (https://github.com/containers/podman/commit/3bf5313)\n- fixes 'run 1.2.x upgrade throws error while using nocopy volume mount filesystem option - [RHEL 9.7]'\n- Resolves: RHEL-132531\n\n[6:5.6.0-8]\n- rebuild for golang-1.25.3\n- Resolves: RHEL-125711",
+  "affected_products": [
+    "Oracle Linux 9 for x86_64",
+    "Oracle Linux 9 for aarch64"
+  ],
+  "cves": [
+    "CVE-2025-58183"
+  ],
+  "packages": [
+    "podman-remote-5.6.0-9.0.1.el9_7.x86_64",
+    "podman-plugins-5.6.0-9.0.1.el9_7.x86_64",
+    "podman-tests-5.6.0-9.0.1.el9_7.x86_64",
+    "podman-docker-5.6.0-9.0.1.el9_7.noarch",
+    "podman-5.6.0-9.0.1.el9_7.src",
+    "podman-5.6.0-9.0.1.el9_7.x86_64"
+  ],
+  "full_text": "[5.6.0-9.0.1]\n- Add devices on container startup, not on creation\n- overlay: Put should ignore ENINVAL for Unmount [Orabug: 36234694]\n- Drop nmap-ncat requirement and skip ignore-socket test case [Orabug: 34117404]\n\n[6:5.6.0-9]\n- update to the latest content of https://github.com/containers/podman/tree/v5.6-rhel\n  (https://github.com/containers/podman/commit/3bf5313)\n- fixes 'run 1.2.x upgrade throws error while using nocopy volume mount filesystem option - [RHEL 9.7]'\n- Resolves: RHEL-132531\n\n[6:5.6.0-8]\n- rebuild for golang-1.25.3\n- Resolves: RHEL-125711\n\nReferences:\nhttps://linux.oracle.com/errata/ELSA-2025-23325.html\nhttps://linux.oracle.com/cve/CVE-2025-58183.html"
+}

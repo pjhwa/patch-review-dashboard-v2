@@ -1,0 +1,40 @@
+{
+  "id": "USN-7884-1",
+  "vendor": "Canonical / Ubuntu",
+  "type": "Ubuntu Security Notice (USN)",
+  "title": "openjdk-25 vulnerabilities",
+  "issuedDate": "2025-11-24T12:08:12Z",
+  "updatedDate": "2026-02-10T04:50:36Z",
+  "pubDate": "2025-11-24T12:08:12Z",
+  "dateStr": "2025-11-24",
+  "url": "https://ubuntu.com/security/notices/USN-7884-1",
+  "severity": "None",
+  "overview": "openjdk-25 vulnerabilities",
+  "description": "Jinfeng Guo discovered that the Security component of OpenJDK 25 did not\ncorrectly handle certain representations of encoded strings. An\nunauthenticated remote attacker could possibly use this issue to modify\nfiles or leak sensitive information. (CVE-2025-53057)\n\nDarius Bohni discovered that the JAXP component of OpenJDK 25 was\nvulnerable to a XML External Entity (XEE) attack. An unauthenticated remote\nattacker could possibly use this issue to modify files or leak sensitive\ninformation. (CVE-2025-53066)\n\nYakov Shafranovich discovered that the Libraries component of OpenJDK 21\ncontained an issue where certain Strings built with StringBuilder returned\nan incorrect result for String.equals() checks.  An unauthenticated remote\nattacker could possibly use this issue to update, insert, or delete\naccessible data. (CVE-2025-61748)\n\nIn addition to security fixes, the updated packages contain bug fixes, new\nfeatures, and possibly incompatible changes.\n\nPlease see the following for more information:\nhttps://openjdk.org/groups/vulnerability/advisories/2025-10-21",
+  "affected_products": [
+    "Ubuntu 22.04 LTS",
+    "Ubuntu 24.04 LTS"
+  ],
+  "cves": [],
+  "packages": [
+    "openjdk-25-demo-25.0.1+8-1~22.04",
+    "openjdk-25-demo-25.0.1+8-1~24.04",
+    "openjdk-25-jdk-25.0.1+8-1~22.04",
+    "openjdk-25-jdk-25.0.1+8-1~24.04",
+    "openjdk-25-jdk-headless-25.0.1+8-1~22.04",
+    "openjdk-25-jdk-headless-25.0.1+8-1~24.04",
+    "openjdk-25-jre-25.0.1+8-1~22.04",
+    "openjdk-25-jre-25.0.1+8-1~24.04",
+    "openjdk-25-jre-headless-25.0.1+8-1~22.04",
+    "openjdk-25-jre-headless-25.0.1+8-1~24.04",
+    "openjdk-25-jre-zero-25.0.1+8-1~22.04",
+    "openjdk-25-jre-zero-25.0.1+8-1~24.04",
+    "openjdk-25-jvmci-jdk-25.0.1+8-1~22.04",
+    "openjdk-25-jvmci-jdk-25.0.1+8-1~24.04",
+    "openjdk-25-source-25.0.1+8-1~22.04",
+    "openjdk-25-source-25.0.1+8-1~24.04",
+    "openjdk-25-testsupport-25.0.1+8-1~22.04",
+    "openjdk-25-testsupport-25.0.1+8-1~24.04"
+  ],
+  "full_text": "Jinfeng Guo discovered that the Security component of OpenJDK 25 did not\ncorrectly handle certain representations of encoded strings. An\nunauthenticated remote attacker could possibly use this issue to modify\nfiles or leak sensitive information. (CVE-2025-53057)\n\nDarius Bohni discovered that the JAXP component of OpenJDK 25 was\nvulnerable to a XML External Entity (XEE) attack. An unauthenticated remote\nattacker could possibly use this issue to modify files or leak sensitive\ninformation. (CVE-2025-53066)\n\nYakov Shafranovich discovered that the Libraries component of OpenJDK 21\ncontained an issue where certain Strings built with StringBuilder returned\nan incorrect result for String.equals() checks.  An unauthenticated remote\nattacker could possibly use this issue to update, insert, or delete\naccessible data. (CVE-2025-61748)\n\nIn addition to security fixes, the updated packages contain bug fixes, new\nfeatures, and possibly incompatible changes.\n\nPlease see the following for more information:\nhttps://openjdk.org/groups/vulnerability/advisories/2025-10-21"
+}

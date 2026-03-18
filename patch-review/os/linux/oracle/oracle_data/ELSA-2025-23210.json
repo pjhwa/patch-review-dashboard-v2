@@ -1,0 +1,33 @@
+{
+  "id": "ELSA-2025-23210",
+  "vendor": "Oracle",
+  "type": "Security Advisory (ELSA)",
+  "kernel_type": "AppStream",
+  "title": " keylime security update",
+  "issuedDate": "2025-12-16T00:00:00Z",
+  "updatedDate": "2025-12-16T00:00:00Z",
+  "pubDate": "2025-12-16T00:00:00Z",
+  "dateStr": "2025-12-16",
+  "url": "https://linux.oracle.com/errata/ELSA-2025-23210.html",
+  "severity": "Important",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 9.",
+  "description": "[7.12.1-11.3]\n- Registrar allows identity takeover via duplicate UUID registration\n  Resolves: RHEL-130760\n\n[7.12.1-11.2]\n- Properly fix the malformed certificate workaround\n  Resolves: RHEL-111244",
+  "affected_products": [
+    "Oracle Linux 9 for x86_64",
+    "Oracle Linux 9 for aarch64"
+  ],
+  "cves": [
+    "CVE-2025-13609"
+  ],
+  "packages": [
+    "keylime-registrar-7.12.1-11.el9_7.3.x86_64",
+    "keylime-base-7.12.1-11.el9_7.3.x86_64",
+    "keylime-7.12.1-11.el9_7.3.x86_64",
+    "python3-keylime-7.12.1-11.el9_7.3.x86_64",
+    "keylime-selinux-7.12.1-11.el9_7.3.noarch",
+    "keylime-verifier-7.12.1-11.el9_7.3.x86_64",
+    "keylime-7.12.1-11.el9_7.3.src",
+    "keylime-tenant-7.12.1-11.el9_7.3.x86_64"
+  ],
+  "full_text": "[7.12.1-11.3]\n- Registrar allows identity takeover via duplicate UUID registration\n  Resolves: RHEL-130760\n\n[7.12.1-11.2]\n- Properly fix the malformed certificate workaround\n  Resolves: RHEL-111244\n\nReferences:\nhttps://linux.oracle.com/errata/ELSA-2025-23210.html\nhttps://linux.oracle.com/cve/CVE-2025-13609.html"
+}

@@ -1,0 +1,30 @@
+{
+  "id": "ELSA-2026-1720",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2026-February/019775.html",
+  "synopsis": "[El-errata] ELSA-2026-1720 Moderate: Oracle Linux 7 openssl security update",
+  "dateStr": "2026-February",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Security Advisory ELSA-2026-1720",
+  "description": "[1:1.0.2k-26.0.1]\n- Fixes CVE-2025-9230 Fix incorrect check of unwrapped key size [Orabug: 38916245]",
+  "affected_products": [
+    "Oracle Linux 7"
+  ],
+  "packages": [
+    "openssl-1.0.2k-26.0.1.el7_9.x86_64.rpm",
+    "openssl-devel-1.0.2k-26.0.1.el7_9.i686.rpm",
+    "openssl-devel-1.0.2k-26.0.1.el7_9.x86_64.rpm",
+    "openssl-libs-1.0.2k-26.0.1.el7_9.i686.rpm",
+    "openssl-libs-1.0.2k-26.0.1.el7_9.x86_64.rpm",
+    "openssl-perl-1.0.2k-26.0.1.el7_9.x86_64.rpm",
+    "openssl-static-1.0.2k-26.0.1.el7_9.i686.rpm",
+    "openssl-static-1.0.2k-26.0.1.el7_9.x86_64.rpm"
+  ],
+  "cves": [
+    "CVE-2025-9230"
+  ],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Security Advisory ELSA-2026-1720\n\nhttp://linux.oracle.com/errata/ELSA-2026-1720.html\n\nThe following updated rpms for Oracle Linux 7 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\nopenssl-1.0.2k-26.0.1.el7_9.x86_64.rpm\nopenssl-devel-1.0.2k-26.0.1.el7_9.i686.rpm\nopenssl-devel-1.0.2k-26.0.1.el7_9.x86_64.rpm\nopenssl-libs-1.0.2k-26.0.1.el7_9.i686.rpm\nopenssl-libs-1.0.2k-26.0.1.el7_9.x86_64.rpm\nopenssl-perl-1.0.2k-26.0.1.el7_9.x86_64.rpm\nopenssl-static-1.0.2k-26.0.1.el7_9.i686.rpm\nopenssl-static-1.0.2k-26.0.1.el7_9.x86_64.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol7/SRPMS-updates/openssl-1.0.2k-26.0.1.el7_9.src.rpm\n\nRelated CVEs:\n\nCVE-2025-9230\n\n\n\n\nDescription of changes:\n\n[1:1.0.2k-26.0.1]\n- Fixes CVE-2025-9230 Fix incorrect check of unwrapped key size [Orabug: 38916245]",
+  "vendor": "Oracle"
+}

@@ -1,0 +1,28 @@
+{
+  "id": "ELBA-2025-20751",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "AppStream",
+  "title": "gstreamer1-plugins-bad-free bug fix and enhancement update",
+  "issuedDate": "2025-11-17T00:00:00Z",
+  "updatedDate": "2025-11-17T00:00:00Z",
+  "pubDate": "2025-11-17T00:00:00Z",
+  "dateStr": "2025-11-17",
+  "url": "https://linux.oracle.com/errata/ELBA-2025-20751.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 9.",
+  "description": "[1.22.12-4]\n- fix for CVE-2025-3887\n  Resolves: RHEL-93059",
+  "affected_products": [
+    "Oracle Linux 9 for x86_64",
+    "Oracle Linux 9 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "gstreamer1-plugins-bad-free-1.22.12-4.el9.i686",
+    "gstreamer1-plugins-bad-free-1.22.12-4.el9.x86_64",
+    "gstreamer1-plugins-bad-free-libs-1.22.12-4.el9.i686",
+    "gstreamer1-plugins-bad-free-libs-1.22.12-4.el9.x86_64",
+    "gstreamer1-plugins-bad-free-1.22.12-4.el9.src"
+  ],
+  "full_text": "[1.22.12-4]\n- fix for CVE-2025-3887\n  Resolves: RHEL-93059\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2025-20751.html"
+}

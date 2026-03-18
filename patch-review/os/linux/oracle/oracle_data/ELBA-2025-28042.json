@@ -1,0 +1,26 @@
+{
+  "id": "ELBA-2025-28042",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "AppStream",
+  "title": " passt  bug fix update",
+  "issuedDate": "2025-12-09T00:00:00Z",
+  "updatedDate": "2025-12-09T00:00:00Z",
+  "pubDate": "2025-12-09T00:00:00Z",
+  "dateStr": "2025-12-09",
+  "url": "https://linux.oracle.com/errata/ELBA-2025-28042.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 9.",
+  "description": "[0^20250512.g8ec1341-2.0.1]\n- tcp: Cast operands of sequence comparison macros to uint32_t before using them\n- tcp: Don't consider FIN flags with mismatching sequence\n\n[0^20250512.g8ec1341-2]\n- Resolves: RHEL-106326\n\n[0^20250512.g8ec1341-1]\n- Resolves: RHEL-84283\n\n[0^20250320.g32f6212-1]\n- Resolves: RHEL-84283\n\n[0^20250217.ga1e48a0-1]\n- Resolves: RHEL-79787\n\n[0^20250121.g4f2c8e7-3]\n- Resolves: RHEL-75654\n\n[0^20250121.g4f2c8e7-1]\n- Resolves: RHEL-75654\n\n[0^20241121.g238c69f-1]\n- Resolves: RHEL-65502\n\n[0^20240806-gee36266-2]\n- Resolves: RHEL-54268\n\n[0^20240806.gee36266-1]\n- Resolves: RHEL-53189",
+  "affected_products": [
+    "Oracle Linux 9 for x86_64",
+    "Oracle Linux 9 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "passt-0^20250512.g8ec1341-2.0.1.el9.x86_64",
+    "passt-selinux-0^20250512.g8ec1341-2.0.1.el9.noarch",
+    "passt-0^20250512.g8ec1341-2.0.1.el9.src"
+  ],
+  "full_text": "[0^20250512.g8ec1341-2.0.1]\n- tcp: Cast operands of sequence comparison macros to uint32_t before using them\n- tcp: Don't consider FIN flags with mismatching sequence\n\n[0^20250512.g8ec1341-2]\n- Resolves: RHEL-106326\n\n[0^20250512.g8ec1341-1]\n- Resolves: RHEL-84283\n\n[0^20250320.g32f6212-1]\n- Resolves: RHEL-84283\n\n[0^20250217.ga1e48a0-1]\n- Resolves: RHEL-79787\n\n[0^20250121.g4f2c8e7-3]\n- Resolves: RHEL-75654\n\n[0^20250121.g4f2c8e7-1]\n- Resolves: RHEL-75654\n\n[0^20241121.g238c69f-1]\n- Resolves: RHEL-65502\n\n[0^20240806-gee36266-2]\n- Resolves: RHEL-54268\n\n[0^20240806.gee36266-1]\n- Resolves: RHEL-53189\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2025-28042.html"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "ELBA-2025-20647-0",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "AppStream",
+  "title": "tigervnc bug fix and enhancement update",
+  "issuedDate": "2025-11-17T00:00:00Z",
+  "updatedDate": "2025-11-17T00:00:00Z",
+  "pubDate": "2025-11-17T00:00:00Z",
+  "dateStr": "2025-11-17",
+  "url": "https://linux.oracle.com/errata/ELBA-2025-20647-0.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 9.",
+  "description": "[1.15.0-5]\n- Fix CVE-2025-49175: xorg-x11-server: Out-of-Bounds Read in X Rendering Extension Animated Cursors\n  Resolves: RHEL-97284\n\n- Fix CVE-2025-49176: xorg-x11-server: Integer Overflow in Big Requests Extension\n  Resolves: RHEL-97303\n\n- Fix CVE-2025-49178: xorg-x11-server: Unprocessed Client Request Due to Bytes to Ignore\n  Resolves: RHEL-97379\n\n- Fix CVE-2025-49179: xorg-x11-server: Integer overflow in X Record extension\n  Resolves: RHEL-97414\n\n- Fix CVE-2025-49180: xorg-x11-server: Integer Overflow in X Resize, Rotate and Reflect (RandR) Extension\n  Resolves: RHEL-97429\n\n[1.15.0-4]\n- Fix broken authentication with x0vncserver\n  Resolves: RHEL-93573\n\n[1.15.0-3]\n- Only warn about 8 characters limit, but let it proceed\n  Resolves: RHEL-89432\n\n[1.15.0-2]\n- Fix inetd mode not working\n  Resolves: RHEL-86511\n\n[1.15.0-1]\n- 1.15.0\n  Resolves: RHEL-78617\n- Add SELinux policy rules allowing to access /proc/sys/fs/nr_open\n  Resolves: RHEL-77973\n- Add SELinux policy rules allowing to create directories under /root\n  Resolves: RHEL-77975\n- Fix CVE-2025-26594 xorg-x11-server Use-after-free of the root cursor\n  Resolves: RHEL-80208\n- Fix CVE-2025-26595 xorg-x11-server Buffer overflow in XkbVModMaskText()\n  Resolves: RHEL-80189\n- Fix CVE-2025-26596 xorg-x11-server Heap overflow in XkbWriteKeySyms()\n  Resolves: RHEL-80194\n- Fix CVE-2025-26597 xorg-x11-server Buffer overflow in XkbChangeTypesOfKey()\n  Resolves: RHEL-80196\n- Fix CVE-2025-26598 xorg-x11-server Out-of-bounds write in CreatePointerBarrierClient()\n  Resolves: RHEL-80197\n- Fix CVE-2025-26599 xorg-x11-server Use of uninitialized pointer in compRedirectWindow()\n  Resolves: RHEL-80206\n- Fix CVE-2025-26600 xorg-x11-server Use-after-free in PlayReleasedEvents()\n  Resolves: RHEL-80205\n- Fix CVE-2025-26601 xorg-x11-server Use-after-free in SyncInitTrigger()\n  Resolves: RHEL-80209",
+  "affected_products": [
+    "Oracle Linux 9 for x86_64",
+    "Oracle Linux 9 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "tigervnc-icons-1.15.0-5.el9.noarch",
+    "tigervnc-server-minimal-1.15.0-5.el9.x86_64",
+    "tigervnc-1.15.0-5.el9.x86_64",
+    "tigervnc-server-1.15.0-5.el9.x86_64",
+    "tigervnc-license-1.15.0-5.el9.noarch",
+    "tigervnc-1.15.0-5.el9.src",
+    "tigervnc-selinux-1.15.0-5.el9.noarch",
+    "tigervnc-server-module-1.15.0-5.el9.x86_64"
+  ],
+  "full_text": "[1.15.0-5]\n- Fix CVE-2025-49175: xorg-x11-server: Out-of-Bounds Read in X Rendering Extension Animated Cursors\n  Resolves: RHEL-97284\n\n- Fix CVE-2025-49176: xorg-x11-server: Integer Overflow in Big Requests Extension\n  Resolves: RHEL-97303\n\n- Fix CVE-2025-49178: xorg-x11-server: Unprocessed Client Request Due to Bytes to Ignore\n  Resolves: RHEL-97379\n\n- Fix CVE-2025-49179: xorg-x11-server: Integer overflow in X Record extension\n  Resolves: RHEL-97414\n\n- Fix CVE-2025-49180: xorg-x11-server: Integer Overflow in X Resize, Rotate and Reflect (RandR) Extension\n  Resolves: RHEL-97429\n\n[1.15.0-4]\n- Fix broken authentication with x0vncserver\n  Resolves: RHEL-93573\n\n[1.15.0-3]\n- Only warn about 8 characters limit, but let it proceed\n  Resolves: RHEL-89432\n\n[1.15.0-2]\n- Fix inetd mode not working\n  Resolves: RHEL-86511\n\n[1.15.0-1]\n- 1.15.0\n  Resolves: RHEL-78617\n- Add SELinux policy rules allowing to access /proc/sys/fs/nr_open\n  Resolves: RHEL-77973\n- Add SELinux policy rules allowing to create directories under /root\n  Resolves: RHEL-77975\n- Fix CVE-2025-26594 xorg-x11-server Use-after-free of the root cursor\n  Resolves: RHEL-80208\n- Fix CVE-2025-26595 xorg-x11-server Buffer overflow in XkbVModMaskText()\n  Resolves: RHEL-80189\n- Fix CVE-2025-26596 xorg-x11-server Heap overflow in XkbWriteKeySyms()\n  Resolves: RHEL-80194\n- Fix CVE-2025-26597 xorg-x11-server Buffer overflow in XkbChangeTypesOfKey()\n  Resolves: RHEL-80196\n- Fix CVE-2025-26598 xorg-x11-server Out-of-bounds write in CreatePointerBarrierClient()\n  Resolves: RHEL-80197\n- Fix CVE-2025-26599 xorg-x11-server Use of uninitialized pointer in compRedirectWindow()\n  Resolves: RHEL-80206\n- Fix CVE-2025-26600 xorg-x11-server Use-after-free in PlayReleasedEvents()\n  Resolves: RHEL-80205\n- Fix CVE-2025-26601 xorg-x11-server Use-after-free in SyncInitTrigger()\n  Resolves: RHEL-80209\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2025-20647-0.html"
+}

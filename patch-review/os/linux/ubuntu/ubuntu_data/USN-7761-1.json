@@ -1,0 +1,26 @@
+{
+  "id": "USN-7761-1",
+  "vendor": "Canonical / Ubuntu",
+  "type": "Ubuntu Security Notice (USN)",
+  "title": "pam vulnerability",
+  "issuedDate": "2025-09-22T14:06:26Z",
+  "updatedDate": "2026-02-10T04:49:49Z",
+  "pubDate": "2025-09-22T14:06:26Z",
+  "dateStr": "2025-09-22",
+  "url": "https://ubuntu.com/security/notices/USN-7761-1",
+  "severity": "None",
+  "overview": "pam vulnerability",
+  "description": "It was discovered that the PAM pam_access module incorrectly parsed\ncertain rules as hostnames. An attacker could possibly use this issue to\nspoof hostnames and bypass access restrictions.",
+  "affected_products": [
+    "Ubuntu 24.04 LTS"
+  ],
+  "cves": [],
+  "packages": [
+    "libpam-modules-1.5.3-5ubuntu5.5",
+    "libpam-modules-bin-1.5.3-5ubuntu5.5",
+    "libpam-runtime-1.5.3-5ubuntu5.5",
+    "libpam0g-1.5.3-5ubuntu5.5",
+    "libpam0g-dev-1.5.3-5ubuntu5.5"
+  ],
+  "full_text": "It was discovered that the PAM pam_access module incorrectly parsed\ncertain rules as hostnames. An attacker could possibly use this issue to\nspoof hostnames and bypass access restrictions."
+}

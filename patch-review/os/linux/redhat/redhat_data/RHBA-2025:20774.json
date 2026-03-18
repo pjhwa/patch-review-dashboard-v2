@@ -1,0 +1,33 @@
+{
+  "id": "RHBA-2025:20774",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: osinfo-db bug fix and enhancement update",
+  "issuedDate": "2025-11-11T07:51:03Z",
+  "updatedDate": "2025-11-11T07:51:03Z",
+  "pubDate": "2025-11-11T07:51:03Z",
+  "dateStr": "2025-11-11",
+  "url": "https://access.redhat.com/errata/RHBA-2025:20774",
+  "severity": "None",
+  "overview": "An update for osinfo-db is now available for Red Hat Enterprise Linux 10.",
+  "description": "For detailed information on changes in this release, see the Red Hat Enterprise Linux 9.7 Release Notes linked from the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux for IBM z Systems",
+    "Red Hat Enterprise Linux for x86_64 10 x86_64",
+    "Red Hat Enterprise Linux for ARM 64",
+    "Red Hat Enterprise Linux for Power, little endian"
+  ],
+  "cves": [],
+  "packages": [
+    "osinfo-db-20250606-1.el9.src",
+    "osinfo-db-20250606-1.el9.noarch"
+  ],
+  "fixes": [
+    {
+      "id": "RHEL-95251",
+      "url": "https://issues.redhat.com/browse/RHEL-95251",
+      "description": "Rebase osinfo-db to latest version for RHEL 9.7"
+    }
+  ],
+  "full_text": "An update for osinfo-db is now available for Red Hat Enterprise Linux 10.\n\nFor detailed information on changes in this release, see the Red Hat Enterprise Linux 9.7 Release Notes linked from the References section."
+}

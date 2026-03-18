@@ -1,0 +1,43 @@
+{
+  "id": "ELSA-2026-2781",
+  "vendor": "Oracle",
+  "type": "Security Advisory (ELSA)",
+  "kernel_type": "AppStream",
+  "title": " nodejs:24 security update",
+  "issuedDate": "2026-02-17T00:00:00Z",
+  "updatedDate": "2026-02-17T00:00:00Z",
+  "pubDate": "2026-02-17T00:00:00Z",
+  "dateStr": "2026-02-17",
+  "url": "https://linux.oracle.com/errata/ELSA-2026-2781.html",
+  "severity": "Important",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 9.",
+  "description": "nodejs\n[1:24.13.0-1]\n- Update to version 24.13.0\n\nnodejs-nodemon\n[3.0.3-3]\n- Keep BR on just npm\n\n[3.0.3-2]\n- Fix BR for nodejs-npm\n\nnodejs-packaging\n[2021.06-6]\n- Properly handle @group/package deps in nodejs-symlink-deps\n  Resolves: RHEL-121581\n\n[2021.06-5]\n- nodejs.req to properly detect bundled deps",
+  "affected_products": [
+    "Oracle Linux 9 for x86_64",
+    "Oracle Linux 9 for aarch64"
+  ],
+  "cves": [
+    "CVE-2025-55130",
+    "CVE-2025-55131",
+    "CVE-2025-55132",
+    "CVE-2025-59465",
+    "CVE-2025-59466",
+    "CVE-2026-21637"
+  ],
+  "packages": [
+    "nodejs-full-i18n-24.13.0-1.module+el9.7.0+90805+68a1aa93.x86_64",
+    "v8-13.6-devel-13.6.233.17-1.24.13.0.1.module+el9.7.0+90805+68a1aa93.x86_64",
+    "nodejs-libs-24.13.0-1.module+el9.7.0+90805+68a1aa93.x86_64",
+    "nodejs-24.13.0-1.module+el9.7.0+90805+68a1aa93.x86_64",
+    "nodejs-devel-24.13.0-1.module+el9.7.0+90805+68a1aa93.x86_64",
+    "nodejs-packaging-bundler-2021.06-6.module+el9.7.0+90805+68a1aa93.noarch",
+    "npm-11.6.2-1.24.13.0.1.module+el9.7.0+90805+68a1aa93.noarch",
+    "nodejs-nodemon-3.0.3-3.module+el9.7.0+90805+68a1aa93.noarch",
+    "nodejs-docs-24.13.0-1.module+el9.7.0+90805+68a1aa93.noarch",
+    "nodejs-packaging-2021.06-6.module+el9.7.0+90805+68a1aa93.noarch",
+    "nodejs-packaging-2021.06-6.module+el9.7.0+90805+68a1aa93.src",
+    "nodejs-nodemon-3.0.3-3.module+el9.7.0+90805+68a1aa93.src",
+    "nodejs-24.13.0-1.module+el9.7.0+90805+68a1aa93.src"
+  ],
+  "full_text": "nodejs\n[1:24.13.0-1]\n- Update to version 24.13.0\n\nnodejs-nodemon\n[3.0.3-3]\n- Keep BR on just npm\n\n[3.0.3-2]\n- Fix BR for nodejs-npm\n\nnodejs-packaging\n[2021.06-6]\n- Properly handle @group/package deps in nodejs-symlink-deps\n  Resolves: RHEL-121581\n\n[2021.06-5]\n- nodejs.req to properly detect bundled deps\n\nReferences:\nhttps://linux.oracle.com/errata/ELSA-2026-2781.html\nhttps://linux.oracle.com/cve/CVE-2025-55130.html\nhttps://linux.oracle.com/cve/CVE-2025-55131.html\nhttps://linux.oracle.com/cve/CVE-2025-55132.html\nhttps://linux.oracle.com/cve/CVE-2025-59465.html\nhttps://linux.oracle.com/cve/CVE-2025-59466.html\nhttps://linux.oracle.com/cve/CVE-2026-21637.html"
+}

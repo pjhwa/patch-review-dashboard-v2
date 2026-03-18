@@ -1,0 +1,24 @@
+{
+  "id": "USN-8078-1",
+  "url": "https://ubuntu.com/security/notices/USN-8078-1",
+  "synopsis": "USN-8078-1: Zutty vulnerability",
+  "dateStr": "5 March 2026",
+  "overview": "Zutty could be made to execute arbitrary commands.",
+  "description": "Carter Sande discovered that Zutty did not correctly echo invalid input to\nthe console on DECRQSS. An attacker could possibly use this issue to\nexecute arbitrary commands.\n\n \n\n \n\n \n\nCarter Sande discovered that Zutty did not correctly echo invalid input to\nthe console on DECRQSS. An attacker could possibly use this issue to\nexecute arbitrary commands.",
+  "packages": [
+    "zutty"
+  ],
+  "cves": [
+    "CVE-2022-41138"
+  ],
+  "affected_products": [
+    "22.04 LTS",
+    "Open side navigation"
+  ],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Ubuntu Security Notices\n\nUSN-8078-1\n\n \n\n \n\n \n\n \n\n \n\n \nUSN-8078-1: Zutty vulnerability\n\n \n\n \n\n \n\n \nPublication date\n\n \n\n \n\n \n5 March 2026\n\n \n\n \n\n \n\n \n\n \nOverview\n\n \n\n \n\n \nZutty could be made to execute arbitrary commands.\n\n \n\n \n\n \n\n \n\n \nReleases\n\n \n\n \n\n \n\n 22.04 LTS\n\n \n\n \n\n \n\n \n\n \n\n \n\n Open side navigation\n \n\n \n\n \nPackages\n\n \n\n zutty - X terminal emulator\n \n\n \n\n \nDetails\n\n \n\n \n\nCarter Sande discovered that Zutty did not correctly echo invalid input to\nthe console on DECRQSS. An attacker could possibly use this issue to\nexecute arbitrary commands.\n\n \n\n \n\n \n\nCarter Sande discovered that Zutty did not correctly echo invalid input to\nthe console on DECRQSS. An attacker could possibly use this issue to\nexecute arbitrary commands.\n\n \n\n \n\n \n\n \nUpdate instructions\n\n \n\n \n\n \n\n \n\nIn general, a standard system update will make all the necessary changes.\n\n Learn more about how to get the fixes.\n \n\n \n\n \n\n \n\n \nThe problem can be corrected by updating your system to the following package versions:\n\n \n\n \n\n \n\n \n\n Ubuntu Release\n Package Version\n \n\n 22.04\n\nLTS jammy\n\n zutty – \n\n0.11.2.20220109.192032+dfsg1-1ubuntu0.1~esm1\n\n  \n\nUbuntu Pro\n Fix available with Ubuntu Pro via ESM Apps. A community fix might become publicly available in the future.\n\n \n\n \n\nReduce your security exposure\n\n \n\n Ubuntu Pro provides ten-year security coverage to 25,000+ packages in Main and Universe repositories, and it is free for up to five machines.\n \n\n \n\n Get Ubuntu Pro\n \n\n \n\nReferences\n\n \n\n \n\n CVE-2022-41138\n \n\n \n\n \n\n CVE-2022-41138",
+  "title": "USN-8078-1: Zutty vulnerability | Ubuntu security notices | Ubuntu",
+  "pubDate": "2026-03-04T15:00:00.000Z",
+  "vendor": "Ubuntu"
+}

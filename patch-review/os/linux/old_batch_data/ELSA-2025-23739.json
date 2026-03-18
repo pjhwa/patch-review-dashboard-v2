@@ -1,0 +1,24 @@
+{
+  "id": "ELSA-2025-23739",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2025-December/019394.html",
+  "synopsis": "[El-errata] ELSA-2025-23739 Important: Oracle Linux 9 mod_md security update",
+  "dateStr": "2025-December",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Security Advisory ELSA-2025-23739",
+  "description": "[1:2.4.26-1.1]\n- Resolves: RHEL-134496 - httpd: Apache HTTP Server: mod_md (ACME), unintended\n  retry intervals (CVE-2025-55753)",
+  "affected_products": [
+    "Oracle Linux 9"
+  ],
+  "packages": [
+    "mod_md-2.4.26-1.el9_7.1.x86_64.rpm",
+    "mod_md-2.4.26-1.el9_7.1.aarch64.rpm"
+  ],
+  "cves": [
+    "CVE-2025-55753"
+  ],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Security Advisory ELSA-2025-23739\n\nhttp://linux.oracle.com/errata/ELSA-2025-23739.html\n\nThe following updated rpms for Oracle Linux 9 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\nmod_md-2.4.26-1.el9_7.1.x86_64.rpm\n\naarch64:\nmod_md-2.4.26-1.el9_7.1.aarch64.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol9/SRPMS-updates/mod_md-2.4.26-1.el9_7.1.src.rpm\n\nRelated CVEs:\n\nCVE-2025-55753\n\n\n\n\nDescription of changes:\n\n[1:2.4.26-1.1]\n- Resolves: RHEL-134496 - httpd: Apache HTTP Server: mod_md (ACME), unintended\n  retry intervals (CVE-2025-55753)",
+  "vendor": "Oracle"
+}

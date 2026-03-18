@@ -1,0 +1,24 @@
+{
+  "id": "USN-7918-1",
+  "vendor": "Canonical / Ubuntu",
+  "type": "Ubuntu Security Notice (USN)",
+  "title": "netty vulnerabilities",
+  "issuedDate": "2025-12-09T20:14:18Z",
+  "updatedDate": "2026-02-10T04:50:46Z",
+  "pubDate": "2025-12-09T20:14:18Z",
+  "dateStr": "2025-12-09",
+  "url": "https://ubuntu.com/security/notices/USN-7918-1",
+  "severity": "None",
+  "overview": "netty vulnerabilities",
+  "description": "Jeppe Bonde Weikop discovered that Netty incorrectly parsed HTTP\nmessages. When Netty is used with certain reverse proxies, a\nremote attacker could possibly use this issue to perform HTTP request\nsmuggling attacks. (CVE-2025-58056)\n\nJonas Konrad discovered that Netty did not properly manage memory when\ndecoding compressed data. A remote attacker could possibly use this\nissue to cause Netty to consume excessive memory, resulting in a denial\nof service. This issue was only addressed in Ubuntu 18.04 LTS, Ubuntu\n20.04 LTS, Ubuntu 22.04 LTS, Ubuntu 24.04 LTS, Ubuntu 25.04, and\nUbuntu 25.10. (CVE-2025-58057)",
+  "affected_products": [
+    "Ubuntu 22.04 LTS",
+    "Ubuntu 24.04 LTS"
+  ],
+  "cves": [],
+  "packages": [
+    "libnetty-java-1:4.1.48-4+deb11u2ubuntu0.1",
+    "libnetty-java-1:4.1.48-9ubuntu0.1"
+  ],
+  "full_text": "Jeppe Bonde Weikop discovered that Netty incorrectly parsed HTTP\nmessages. When Netty is used with certain reverse proxies, a\nremote attacker could possibly use this issue to perform HTTP request\nsmuggling attacks. (CVE-2025-58056)\n\nJonas Konrad discovered that Netty did not properly manage memory when\ndecoding compressed data. A remote attacker could possibly use this\nissue to cause Netty to consume excessive memory, resulting in a denial\nof service. This issue was only addressed in Ubuntu 18.04 LTS, Ubuntu\n20.04 LTS, Ubuntu 22.04 LTS, Ubuntu 24.04 LTS, Ubuntu 25.04, and\nUbuntu 25.10. (CVE-2025-58057)"
+}

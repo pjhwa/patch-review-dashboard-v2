@@ -1,0 +1,70 @@
+{
+  "id": "RHBA-2025:20300",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: gtk4 bug fix and enhancement update",
+  "issuedDate": "2025-11-11T07:26:00Z",
+  "updatedDate": "2025-11-11T07:26:00Z",
+  "pubDate": "2025-11-11T07:26:00Z",
+  "dateStr": "2025-11-11",
+  "url": "https://access.redhat.com/errata/RHBA-2025:20300",
+  "severity": "None",
+  "overview": "An update for gtk4 is now available for Red Hat Enterprise Linux 10.",
+  "description": "For detailed information on changes in this release, see the Red Hat Enterprise Linux 10.1 Release Notes linked from the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux for Power, little endian",
+    "Red Hat Enterprise Linux for x86_64 10 x86_64",
+    "Red Hat CodeReady Linux Builder for Power, little endian",
+    "Red Hat CodeReady Linux Builder for IBM z Systems",
+    "Red Hat CodeReady Linux Builder for ARM 64",
+    "Red Hat Enterprise Linux for IBM z Systems",
+    "Red Hat CodeReady Linux Builder for x86_64 10 x86_64",
+    "Red Hat Enterprise Linux for ARM 64"
+  ],
+  "cves": [],
+  "packages": [
+    "gtk4-4.16.7-4.el10.src",
+    "gtk4-4.16.7-4.el10.x86_64",
+    "gtk4-debuginfo-4.16.7-4.el10.x86_64",
+    "gtk4-debugsource-4.16.7-4.el10.x86_64",
+    "gtk4-devel-4.16.7-4.el10.x86_64",
+    "gtk4-devel-debuginfo-4.16.7-4.el10.x86_64",
+    "gtk4-devel-tools-debuginfo-4.16.7-4.el10.x86_64",
+    "gtk4-4.16.7-4.el10.s390x",
+    "gtk4-debuginfo-4.16.7-4.el10.s390x",
+    "gtk4-debugsource-4.16.7-4.el10.s390x",
+    "gtk4-devel-4.16.7-4.el10.s390x",
+    "gtk4-devel-debuginfo-4.16.7-4.el10.s390x",
+    "gtk4-devel-tools-debuginfo-4.16.7-4.el10.s390x",
+    "gtk4-4.16.7-4.el10.ppc64le",
+    "gtk4-debuginfo-4.16.7-4.el10.ppc64le",
+    "gtk4-debugsource-4.16.7-4.el10.ppc64le",
+    "gtk4-devel-4.16.7-4.el10.ppc64le",
+    "gtk4-devel-debuginfo-4.16.7-4.el10.ppc64le",
+    "gtk4-devel-tools-debuginfo-4.16.7-4.el10.ppc64le",
+    "gtk4-4.16.7-4.el10.aarch64",
+    "gtk4-debuginfo-4.16.7-4.el10.aarch64",
+    "gtk4-debugsource-4.16.7-4.el10.aarch64",
+    "gtk4-devel-4.16.7-4.el10.aarch64",
+    "gtk4-devel-debuginfo-4.16.7-4.el10.aarch64",
+    "gtk4-devel-tools-debuginfo-4.16.7-4.el10.aarch64",
+    "gtk4-devel-docs-4.16.7-4.el10.noarch",
+    "gtk4-devel-tools-4.16.7-4.el10.x86_64",
+    "gtk4-devel-tools-4.16.7-4.el10.ppc64le",
+    "gtk4-devel-tools-4.16.7-4.el10.aarch64",
+    "gtk4-devel-tools-4.16.7-4.el10.s390x"
+  ],
+  "fixes": [
+    {
+      "id": "RHEL-40609",
+      "url": "https://issues.redhat.com/browse/RHEL-40609",
+      "description": "Can not type server address, focus goes to search widget"
+    },
+    {
+      "id": "RHEL-65308",
+      "url": "https://issues.redhat.com/browse/RHEL-65308",
+      "description": "Provide way to disable \"Insert Emoji\" context menu entry in GTK4 applications"
+    }
+  ],
+  "full_text": "An update for gtk4 is now available for Red Hat Enterprise Linux 10.\n\nFor detailed information on changes in this release, see the Red Hat Enterprise Linux 10.1 Release Notes linked from the References section."
+}

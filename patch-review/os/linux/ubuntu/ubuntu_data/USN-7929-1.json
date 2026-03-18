@@ -1,0 +1,24 @@
+{
+  "id": "USN-7929-1",
+  "vendor": "Canonical / Ubuntu",
+  "type": "Ubuntu Security Notice (USN)",
+  "title": "usbmuxd vulnerability",
+  "issuedDate": "2025-12-15T12:54:55Z",
+  "updatedDate": "2026-02-10T04:50:47Z",
+  "pubDate": "2025-12-15T12:54:55Z",
+  "dateStr": "2025-12-15",
+  "url": "https://ubuntu.com/security/notices/USN-7929-1",
+  "severity": "None",
+  "overview": "usbmuxd vulnerability",
+  "description": "It was discovered that usbmuxd incorrectly handled certain paths received\nwith the SavePairRecord command. A local attacker could possibly use this\nissue to delete and write files named *.plist in arbitrary locations.",
+  "affected_products": [
+    "Ubuntu 22.04 LTS",
+    "Ubuntu 24.04 LTS"
+  ],
+  "cves": [],
+  "packages": [
+    "usbmuxd-1.1.1-2ubuntu0.1",
+    "usbmuxd-1.1.1-5~exp3ubuntu2.1"
+  ],
+  "full_text": "It was discovered that usbmuxd incorrectly handled certain paths received\nwith the SavePairRecord command. A local attacker could possibly use this\nissue to delete and write files named *.plist in arbitrary locations."
+}

@@ -1,0 +1,60 @@
+{
+  "id": "RHBA-2025:20208",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: libsemanage bug fix and enhancement update",
+  "issuedDate": "2025-11-11T07:25:26Z",
+  "updatedDate": "2025-11-11T07:25:26Z",
+  "pubDate": "2025-11-11T07:25:26Z",
+  "dateStr": "2025-11-11",
+  "url": "https://access.redhat.com/errata/RHBA-2025:20208",
+  "severity": "None",
+  "overview": "An update for libsemanage is now available for Red Hat Enterprise Linux 10.",
+  "description": "For detailed information on changes in this release, see the Red Hat Enterprise Linux 10 Release Notes linked from the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux for Power, little endian",
+    "Red Hat Enterprise Linux for x86_64 10 x86_64",
+    "Red Hat Enterprise Linux for ARM 64",
+    "Red Hat CodeReady Linux Builder for Power, little endian",
+    "Red Hat CodeReady Linux Builder for IBM z Systems",
+    "Red Hat CodeReady Linux Builder for x86_64 10 x86_64",
+    "Red Hat Enterprise Linux for IBM z Systems",
+    "Red Hat CodeReady Linux Builder for ARM 64"
+  ],
+  "cves": [],
+  "packages": [
+    "libsemanage-3.9-1.el10.src",
+    "libsemanage-3.9-1.el10.x86_64",
+    "libsemanage-debuginfo-3.9-1.el10.x86_64",
+    "libsemanage-debugsource-3.9-1.el10.x86_64",
+    "python3-libsemanage-3.9-1.el10.x86_64",
+    "python3-libsemanage-debuginfo-3.9-1.el10.x86_64",
+    "libsemanage-3.9-1.el10.s390x",
+    "libsemanage-debuginfo-3.9-1.el10.s390x",
+    "libsemanage-debugsource-3.9-1.el10.s390x",
+    "python3-libsemanage-3.9-1.el10.s390x",
+    "python3-libsemanage-debuginfo-3.9-1.el10.s390x",
+    "libsemanage-3.9-1.el10.ppc64le",
+    "libsemanage-debuginfo-3.9-1.el10.ppc64le",
+    "libsemanage-debugsource-3.9-1.el10.ppc64le",
+    "python3-libsemanage-3.9-1.el10.ppc64le",
+    "python3-libsemanage-debuginfo-3.9-1.el10.ppc64le",
+    "libsemanage-3.9-1.el10.aarch64",
+    "libsemanage-debuginfo-3.9-1.el10.aarch64",
+    "libsemanage-debugsource-3.9-1.el10.aarch64",
+    "python3-libsemanage-3.9-1.el10.aarch64",
+    "python3-libsemanage-debuginfo-3.9-1.el10.aarch64",
+    "libsemanage-devel-3.9-1.el10.x86_64",
+    "libsemanage-devel-3.9-1.el10.ppc64le",
+    "libsemanage-devel-3.9-1.el10.aarch64",
+    "libsemanage-devel-3.9-1.el10.s390x"
+  ],
+  "fixes": [
+    {
+      "id": "RHEL-104006",
+      "url": "https://issues.redhat.com/browse/RHEL-104006",
+      "description": "Rebase SELinux userspace to 3.9 release"
+    }
+  ],
+  "full_text": "An update for libsemanage is now available for Red Hat Enterprise Linux 10.\n\nFor detailed information on changes in this release, see the Red Hat Enterprise Linux 10 Release Notes linked from the References section."
+}

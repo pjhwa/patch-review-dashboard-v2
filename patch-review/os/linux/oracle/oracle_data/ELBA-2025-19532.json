@@ -1,0 +1,25 @@
+{
+  "id": "ELBA-2025-19532",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "RHCK",
+  "title": "cifs-utils bug fix update",
+  "issuedDate": "2025-11-03T00:00:00Z",
+  "updatedDate": "2025-11-03T00:00:00Z",
+  "pubDate": "2025-11-03T00:00:00Z",
+  "dateStr": "2025-11-03",
+  "url": "https://linux.oracle.com/errata/ELBA-2025-19532.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 9.",
+  "description": "[7.2-2]\n- resolves: RHEL-80179 - Fix autorelease\n\n[7.2-1]\n- resolves: RHEL-80179 - Update to version 7.2",
+  "affected_products": [
+    "Oracle Linux 9 for x86_64",
+    "Oracle Linux 9 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "cifs-utils-7.2-0.el9_6.2.x86_64",
+    "cifs-utils-7.2-0.el9_6.2.src"
+  ],
+  "full_text": "[7.2-2]\n- resolves: RHEL-80179 - Fix autorelease\n\n[7.2-1]\n- resolves: RHEL-80179 - Update to version 7.2\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2025-19532.html"
+}

@@ -1,0 +1,25 @@
+{
+  "id": "ELBA-2025-20356-0",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "AppStream",
+  "title": "yggdrasil bug fix and enhancement update",
+  "issuedDate": "2025-11-25T00:00:00Z",
+  "updatedDate": "2025-11-25T00:00:00Z",
+  "pubDate": "2025-11-25T00:00:00Z",
+  "dateStr": "2025-11-25",
+  "url": "https://linux.oracle.com/errata/ELBA-2025-20356-0.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 10.",
+  "description": "[0.4.8-2]\n- Remove gomodulemode export from spec file\n\n[0.4.8-1]\n- Update yggdrasil to 0.4.8\n\n[0.4.7-2]\n- Enable tier1 functional gating tests\n\n[0.4.7-1]\n- Update yggdrasil to 0.4.7\n\n[0.4.6-1]\n- Update yggdrasil to 0.4.6",
+  "affected_products": [
+    "Oracle Linux 10 for x86_64",
+    "Oracle Linux 10 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "yggdrasil-0.4.8-2.el10.src",
+    "yggdrasil-0.4.8-2.el10.x86_64"
+  ],
+  "full_text": "[0.4.8-2]\n- Remove gomodulemode export from spec file\n\n[0.4.8-1]\n- Update yggdrasil to 0.4.8\n\n[0.4.7-2]\n- Enable tier1 functional gating tests\n\n[0.4.7-1]\n- Update yggdrasil to 0.4.7\n\n[0.4.6-1]\n- Update yggdrasil to 0.4.6\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2025-20356-0.html"
+}

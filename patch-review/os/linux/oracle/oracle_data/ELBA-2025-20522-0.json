@@ -1,0 +1,28 @@
+{
+  "id": "ELBA-2025-20522-0",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "RHCK",
+  "title": "device-mapper-multipath bug fix and enhancement update",
+  "issuedDate": "2025-11-17T00:00:00Z",
+  "updatedDate": "2025-11-17T00:00:00Z",
+  "pubDate": "2025-11-17T00:00:00Z",
+  "dateStr": "2025-11-17",
+  "url": "https://linux.oracle.com/errata/ELBA-2025-20522-0.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 9.",
+  "description": "[0.8.7-39]\n- Add 0145-multipath-tools-add-DellEMC-ME4-PowerVault-ME4-to-ha.patch\n- Add 0146-multipath-tools-add-HPE-as-vendor-for-OPEN-XP8-array.patch\n- Add 0147-multipath-tools-add-HP-HSVX740-to-hwtable.patch\n- Add 0148-multipath-tools-add-DellEMC-ME5-PowerVault-ME5-to-ha.patch\n- Add 0149-multipath-tools-add-HPE-MSA-Gen7-2070-2072-to-hwtabl.patch\n  * Fixes RHEL-103109 ('Update multipath builtin config to add new\n    device defaults')\n- Resolves: RHEL-103109\n\n[0.8.7-38]\n- Add 0142-multipathd-monitor-new-multipath-dev-even-if-we-can-.patch\n- Add 0143-libmultipath-add-helper-function-check_path_wwid_cha.patch\n- Add 0144-multipathd-re-add-paths-skipped-because-they-were-of.patch\n  * Fixes RHEL-82534 ('multipathd does not monitor multipath devices\n    created externally while there are offline paths.')\n- Resolves: RHEL-82534\n\n[0.8.7-37]\n- Add 0140-multipath-clean-up-find_multipaths-value-names.patch\n- Add 0141-multipathd-Add-multipathd-man-page-section-about-soc.patch\n  * Fixes RHEL-82307 ('There is no man page for RFE: Enable multipathd\n    to communicate with a process in another network namespace')\n- Fix multipath_conf_syntax OSCI test.\n- Resolves: RHEL-82307\n\n[0.8.7-36]\n- Add 0128-multipath-tools-move-DEFAULT_SOCKET-definition-into-.patch\n- Add 0129-multipath-tools-add-helper-mpath_fill_sockaddr__.patch\n- Add 0130-libmpathutil-add-support-for-Unix-pathname-sockets.patch\n- Add 0131-libmpathutil-move-systemd_listen_fds-support-into-mu.patch\n- Add 0132-multipathd-move-uxsock_trigger-to-uxlsnr.c.patch\n- Add 0133-multipathd-uxlsnr-use-symbolic-values-for-pollfd-ind.patch\n- Add 0134-multipathd-make-uxsock_listen-take-a-pointer-to-fd.patch\n- Add 0135-multipathd-allow-receiving-two-socket-fds-from-syste.patch\n- Add 0136-multipathd-listen-on-pathname-and-abstract-socket-by.patch\n- Add 0137-libmpathcmd-try-both-abstract-and-pathname-sockets.patch\n- Add 0138-libmpathcmd-honor-MULTIPATH_SOCKET_NAME-environment-.patch\n- Add 0139-multipathd-honor-MULTIPATH_SOCKET_NAME-environment-v.patch\n  * Fixes RHEL-78758 ('RFE: Enable multipathd to communicate with a\n    process in another network namespace')\n- Resolves: RHEL-78758",
+  "affected_products": [
+    "Oracle Linux 9 for x86_64",
+    "Oracle Linux 9 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "device-mapper-multipath-0.8.7-39.el9.x86_64",
+    "device-mapper-multipath-0.8.7-39.el9.src",
+    "device-mapper-multipath-libs-0.8.7-39.el9.i686",
+    "device-mapper-multipath-libs-0.8.7-39.el9.x86_64",
+    "kpartx-0.8.7-39.el9.x86_64"
+  ],
+  "full_text": "[0.8.7-39]\n- Add 0145-multipath-tools-add-DellEMC-ME4-PowerVault-ME4-to-ha.patch\n- Add 0146-multipath-tools-add-HPE-as-vendor-for-OPEN-XP8-array.patch\n- Add 0147-multipath-tools-add-HP-HSVX740-to-hwtable.patch\n- Add 0148-multipath-tools-add-DellEMC-ME5-PowerVault-ME5-to-ha.patch\n- Add 0149-multipath-tools-add-HPE-MSA-Gen7-2070-2072-to-hwtabl.patch\n  * Fixes RHEL-103109 ('Update multipath builtin config to add new\n    device defaults')\n- Resolves: RHEL-103109\n\n[0.8.7-38]\n- Add 0142-multipathd-monitor-new-multipath-dev-even-if-we-can-.patch\n- Add 0143-libmultipath-add-helper-function-check_path_wwid_cha.patch\n- Add 0144-multipathd-re-add-paths-skipped-because-they-were-of.patch\n  * Fixes RHEL-82534 ('multipathd does not monitor multipath devices\n    created externally while there are offline paths.')\n- Resolves: RHEL-82534\n\n[0.8.7-37]\n- Add 0140-multipath-clean-up-find_multipaths-value-names.patch\n- Add 0141-multipathd-Add-multipathd-man-page-section-about-soc.patch\n  * Fixes RHEL-82307 ('There is no man page for RFE: Enable multipathd\n    to communicate with a process in another network namespace')\n- Fix multipath_conf_syntax OSCI test.\n- Resolves: RHEL-82307\n\n[0.8.7-36]\n- Add 0128-multipath-tools-move-DEFAULT_SOCKET-definition-into-.patch\n- Add 0129-multipath-tools-add-helper-mpath_fill_sockaddr__.patch\n- Add 0130-libmpathutil-add-support-for-Unix-pathname-sockets.patch\n- Add 0131-libmpathutil-move-systemd_listen_fds-support-into-mu.patch\n- Add 0132-multipathd-move-uxsock_trigger-to-uxlsnr.c.patch\n- Add 0133-multipathd-uxlsnr-use-symbolic-values-for-pollfd-ind.patch\n- Add 0134-multipathd-make-uxsock_listen-take-a-pointer-to-fd.patch\n- Add 0135-multipathd-allow-receiving-two-socket-fds-from-syste.patch\n- Add 0136-multipathd-listen-on-pathname-and-abstract-socket-by.patch\n- Add 0137-libmpathcmd-try-both-abstract-and-pathname-sockets.patch\n- Add 0138-libmpathcmd-honor-MULTIPATH_SOCKET_NAME-environment-.patch\n- Add 0139-multipathd-honor-MULTIPATH_SOCKET_NAME-environment-v.patch\n  * Fixes RHEL-78758 ('RFE: Enable multipathd to communicate with a\n    process in another network namespace')\n- Resolves: RHEL-78758\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2025-20522-0.html"
+}

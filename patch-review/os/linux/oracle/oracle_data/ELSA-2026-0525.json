@@ -1,0 +1,40 @@
+{
+  "id": "ELSA-2026-0525",
+  "vendor": "Oracle",
+  "type": "Security Advisory (ELSA)",
+  "kernel_type": "AppStream",
+  "title": " postgresql16 security update",
+  "issuedDate": "2026-01-13T00:00:00Z",
+  "updatedDate": "2026-01-13T00:00:00Z",
+  "pubDate": "2026-01-13T00:00:00Z",
+  "dateStr": "2026-01-13",
+  "url": "https://linux.oracle.com/errata/ELSA-2026-0525.html",
+  "severity": "Moderate",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 10.",
+  "description": "[16.11-1.0.1]\n- Replace upstream reference [Orabug: 37044148]\n\n[16.11-1]\n- Update to 16.11\n\n[16.10-3]\n- Add tmpfiles.d configuration for PostgreSQL 16\n- Ensures proper directory permissions for /var/lib/pgsql\n\n[16.10-2]\n- Add OpenSSL support to upgrade_configure function\n- This ensures upgrade server is compiled with OpenSSL support\n- Required for SSL/TLS connections during database upgrades",
+  "affected_products": [
+    "Oracle Linux 10 for x86_64",
+    "Oracle Linux 10 for aarch64"
+  ],
+  "cves": [
+    "CVE-2025-12818"
+  ],
+  "packages": [
+    "postgresql-contrib-16.11-1.0.1.el10_1.x86_64",
+    "postgresql-test-16.11-1.0.1.el10_1.x86_64",
+    "postgresql16-16.11-1.0.1.el10_1.src",
+    "postgresql-private-libs-16.11-1.0.1.el10_1.x86_64",
+    "postgresql-upgrade-devel-16.11-1.0.1.el10_1.x86_64",
+    "postgresql-16.11-1.0.1.el10_1.x86_64",
+    "postgresql-server-16.11-1.0.1.el10_1.x86_64",
+    "postgresql-static-16.11-1.0.1.el10_1.x86_64",
+    "postgresql-plpython3-16.11-1.0.1.el10_1.x86_64",
+    "postgresql-private-devel-16.11-1.0.1.el10_1.x86_64",
+    "postgresql-plperl-16.11-1.0.1.el10_1.x86_64",
+    "postgresql-pltcl-16.11-1.0.1.el10_1.x86_64",
+    "postgresql-upgrade-16.11-1.0.1.el10_1.x86_64",
+    "postgresql-server-devel-16.11-1.0.1.el10_1.x86_64",
+    "postgresql-docs-16.11-1.0.1.el10_1.x86_64"
+  ],
+  "full_text": "[16.11-1.0.1]\n- Replace upstream reference [Orabug: 37044148]\n\n[16.11-1]\n- Update to 16.11\n\n[16.10-3]\n- Add tmpfiles.d configuration for PostgreSQL 16\n- Ensures proper directory permissions for /var/lib/pgsql\n\n[16.10-2]\n- Add OpenSSL support to upgrade_configure function\n- This ensures upgrade server is compiled with OpenSSL support\n- Required for SSL/TLS connections during database upgrades\n\nReferences:\nhttps://linux.oracle.com/errata/ELSA-2026-0525.html\nhttps://linux.oracle.com/cve/CVE-2025-12818.html"
+}

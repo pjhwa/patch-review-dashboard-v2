@@ -1,0 +1,30 @@
+{
+  "id": "RHBA-2025:20102",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: numatop bug fix and enhancement update",
+  "issuedDate": "2025-11-11T07:25:06Z",
+  "updatedDate": "2025-11-11T07:25:06Z",
+  "pubDate": "2025-11-11T07:25:06Z",
+  "dateStr": "2025-11-11",
+  "url": "https://access.redhat.com/errata/RHBA-2025:20102",
+  "severity": "None",
+  "overview": "An update for numatop is now available for Red Hat Enterprise Linux 10.",
+  "description": "For detailed information on changes in this release, see the Red Hat Enterprise Linux 10.1 Release Notes linked from the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux for Power, little endian",
+    "Red Hat Enterprise Linux for x86_64 10 x86_64"
+  ],
+  "cves": [],
+  "packages": [
+    "numatop-2.4-4.el10.src",
+    "numatop-2.4-4.el10.x86_64",
+    "numatop-debuginfo-2.4-4.el10.x86_64",
+    "numatop-debugsource-2.4-4.el10.x86_64",
+    "numatop-2.4-4.el10.ppc64le",
+    "numatop-debuginfo-2.4-4.el10.ppc64le",
+    "numatop-debugsource-2.4-4.el10.ppc64le"
+  ],
+  "fixes": [],
+  "full_text": "An update for numatop is now available for Red Hat Enterprise Linux 10.\n\nFor detailed information on changes in this release, see the Red Hat Enterprise Linux 10.1 Release Notes linked from the References section."
+}

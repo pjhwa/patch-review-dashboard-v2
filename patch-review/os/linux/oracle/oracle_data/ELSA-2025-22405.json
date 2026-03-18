@@ -1,0 +1,49 @@
+{
+  "id": "ELSA-2025-22405",
+  "vendor": "Oracle",
+  "type": "Security Advisory (ELSA)",
+  "kernel_type": "RHCK",
+  "title": " kernel security update",
+  "issuedDate": "2025-12-01T00:00:00Z",
+  "updatedDate": "2025-12-01T00:00:00Z",
+  "pubDate": "2025-12-01T00:00:00Z",
+  "dateStr": "2025-12-01",
+  "url": "https://linux.oracle.com/errata/ELSA-2025-22405.html",
+  "severity": "Important",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 9.",
+  "description": "[5.14.0-611.11.1]\n- Disable UKI signing [Orabug: 36571828]\n- Update Oracle Linux certificates (Kevin Lyons)\n- Disable signing for aarch64 (Ilya Okomin)\n- Oracle Linux RHCK Module Signing Key was added to the kernel trusted keys list (olkmod_signing_key.pem) [Orabug: 29539237]\n- Update x509.genkey [Orabug: 24817676]\n- Conflict with shim-ia32 and shim-x64 <= 15.3-1.0.5]\n- Remove upstream reference during boot (Kevin Lyons) [Orabug: 34729535]\n- Add Oracle Linux IMA certificates\n- Add new Oracle Linux Driver Signing (key 1) certificate [Orabug: 37985764]\n\n[5.14.0-611.11.1]\n- tcp: Don't call reqsk_fastopen_remove() in tcp_conn_request(). (Antoine Tenart) [RHEL-120668]\n- tcp: Clear tcp_sk(sk)->fastopen_rsk in tcp_disconnect(). (Antoine Tenart) [RHEL-120668] {CVE-2025-39955}\n- Bluetooth: MGMT: fix crash in set_mesh_sync and set_mesh_complete (CKI Backport Bot) [RHEL-122892] {CVE-2025-39981}\n- Bluetooth: MGMT: Fix sparse errors (CKI Backport Bot) [RHEL-122892] {CVE-2025-39981}\n- Bluetooth: MGMT: Fix possible UAFs (CKI Backport Bot) [RHEL-122892] {CVE-2025-39981}\n- Bluetooth: hci_sync: fix set_local_name race condition (CKI Backport Bot) [RHEL-122892] {CVE-2025-39981}\n- Bluetooth: MGMT: set_mesh: update LE scan interval and window (CKI Backport Bot) [RHEL-122892] {CVE-2025-39981}\n- Bluetooth: MGMT: Protect mgmt_pending list with its own lock (CKI Backport Bot) [RHEL-122892] {CVE-2025-39981}\n- Bluetooth: MGMT: Fix UAF on mgmt_remove_adv_monitor_complete (CKI Backport Bot) [RHEL-122892] {CVE-2025-39981}\n- wifi: mt76: free pending offchannel tx frames on wcid cleanup (Jose Ignacio Tornos Martinez) [RHEL-123064]\n- wifi: mt76: do not add non-sta wcid entries to the poll list (Jose Ignacio Tornos Martinez) [RHEL-123064]\n- wifi: mt76: fix linked list corruption (Jose Ignacio Tornos Martinez) [RHEL-123064] {CVE-2025-39918}\n\n[5.14.0-611.10.1]\n- ice: ice_adapter: release xa entry on adapter allocation failure (CKI Backport Bot) [RHEL-128469] {CVE-2025-40185}\n- iommu/vt-d: Disallow dirty tracking if incoherent page walk (Eder Zulian) [RHEL-125478] {CVE-2025-40058}\n- e1000e: fix heap overflow in e1000_set_eeprom (Corinna Vinschen) [RHEL-123111] {CVE-2025-39898}\n- nfsd: handle get_client_locked() failure in nfsd4_setclientid_confirm() (CKI Backport Bot) [RHEL-125604] {CVE-2025-38724}\n- wifi: cfg80211: fix use-after-free in cmp_bss() (CKI Backport Bot) [RHEL-122874] {CVE-2025-39864}\n- platform/x86/intel: power-domains: Use topology_logical_package_id() for package ID (Jay Shin) [RHEL-116680]",
+  "affected_products": [
+    "Oracle Linux 9 for x86_64",
+    "Oracle Linux 9 for aarch64"
+  ],
+  "cves": [
+    "CVE-2025-38724",
+    "CVE-2025-39864",
+    "CVE-2025-39898",
+    "CVE-2025-39918",
+    "CVE-2025-39955",
+    "CVE-2025-39981",
+    "CVE-2025-40058",
+    "CVE-2025-40185"
+  ],
+  "packages": [
+    "kernel-core-5.14.0-611.11.1.el9_7.x86_64",
+    "kernel-modules-5.14.0-611.11.1.el9_7.x86_64",
+    "kernel-5.14.0-611.11.1.el9_7.x86_64",
+    "kernel-debug-uki-virt-5.14.0-611.11.1.el9_7.x86_64",
+    "kernel-uki-virt-addons-5.14.0-611.11.1.el9_7.x86_64",
+    "kernel-debug-5.14.0-611.11.1.el9_7.x86_64",
+    "kernel-debug-core-5.14.0-611.11.1.el9_7.x86_64",
+    "kernel-5.14.0-611.11.1.el9_7.src",
+    "kernel-debug-modules-core-5.14.0-611.11.1.el9_7.x86_64",
+    "kernel-tools-5.14.0-611.11.1.el9_7.x86_64",
+    "kernel-tools-libs-5.14.0-611.11.1.el9_7.x86_64",
+    "kernel-modules-core-5.14.0-611.11.1.el9_7.x86_64",
+    "kernel-debug-modules-extra-5.14.0-611.11.1.el9_7.x86_64",
+    "kernel-debug-modules-5.14.0-611.11.1.el9_7.x86_64",
+    "kernel-abi-stablelists-5.14.0-611.11.1.el9_7.noarch",
+    "kernel-modules-extra-5.14.0-611.11.1.el9_7.x86_64",
+    "kernel-uki-virt-5.14.0-611.11.1.el9_7.x86_64"
+  ],
+  "full_text": "[5.14.0-611.11.1]\n- Disable UKI signing [Orabug: 36571828]\n- Update Oracle Linux certificates (Kevin Lyons)\n- Disable signing for aarch64 (Ilya Okomin)\n- Oracle Linux RHCK Module Signing Key was added to the kernel trusted keys list (olkmod_signing_key.pem) [Orabug: 29539237]\n- Update x509.genkey [Orabug: 24817676]\n- Conflict with shim-ia32 and shim-x64 <= 15.3-1.0.5]\n- Remove upstream reference during boot (Kevin Lyons) [Orabug: 34729535]\n- Add Oracle Linux IMA certificates\n- Add new Oracle Linux Driver Signing (key 1) certificate [Orabug: 37985764]\n\n[5.14.0-611.11.1]\n- tcp: Don't call reqsk_fastopen_remove() in tcp_conn_request(). (Antoine Tenart) [RHEL-120668]\n- tcp: Clear tcp_sk(sk)->fastopen_rsk in tcp_disconnect(). (Antoine Tenart) [RHEL-120668] {CVE-2025-39955}\n- Bluetooth: MGMT: fix crash in set_mesh_sync and set_mesh_complete (CKI Backport Bot) [RHEL-122892] {CVE-2025-39981}\n- Bluetooth: MGMT: Fix sparse errors (CKI Backport Bot) [RHEL-122892] {CVE-2025-39981}\n- Bluetooth: MGMT: Fix possible UAFs (CKI Backport Bot) [RHEL-122892] {CVE-2025-39981}\n- Bluetooth: hci_sync: fix set_local_name race condition (CKI Backport Bot) [RHEL-122892] {CVE-2025-39981}\n- Bluetooth: MGMT: set_mesh: update LE scan interval and window (CKI Backport Bot) [RHEL-122892] {CVE-2025-39981}\n- Bluetooth: MGMT: Protect mgmt_pending list with its own lock (CKI Backport Bot) [RHEL-122892] {CVE-2025-39981}\n- Bluetooth: MGMT: Fix UAF on mgmt_remove_adv_monitor_complete (CKI Backport Bot) [RHEL-122892] {CVE-2025-39981}\n- wifi: mt76: free pending offchannel tx frames on wcid cleanup (Jose Ignacio Tornos Martinez) [RHEL-123064]\n- wifi: mt76: do not add non-sta wcid entries to the poll list (Jose Ignacio Tornos Martinez) [RHEL-123064]\n- wifi: mt76: fix linked list corruption (Jose Ignacio Tornos Martinez) [RHEL-123064] {CVE-2025-39918}\n\n[5.14.0-611.10.1]\n- ice: ice_adapter: release xa entry on adapter allocation failure (CKI Backport Bot) [RHEL-128469] {CVE-2025-40185}\n- iommu/vt-d: Disallow dirty tracking if incoherent page walk (Eder Zulian) [RHEL-125478] {CVE-2025-40058}\n- e1000e: fix heap overflow in e1000_set_eeprom (Corinna Vinschen) [RHEL-123111] {CVE-2025-39898}\n- nfsd: handle get_client_locked() failure in nfsd4_setclientid_confirm() (CKI Backport Bot) [RHEL-125604] {CVE-2025-38724}\n- wifi: cfg80211: fix use-after-free in cmp_bss() (CKI Backport Bot) [RHEL-122874] {CVE-2025-39864}\n- platform/x86/intel: power-domains: Use topology_logical_package_id() for package ID (Jay Shin) [RHEL-116680]\n\nReferences:\nhttps://linux.oracle.com/errata/ELSA-2025-22405.html\nhttps://linux.oracle.com/cve/CVE-2025-38724.html\nhttps://linux.oracle.com/cve/CVE-2025-39864.html\nhttps://linux.oracle.com/cve/CVE-2025-39898.html\nhttps://linux.oracle.com/cve/CVE-2025-39918.html\nhttps://linux.oracle.com/cve/CVE-2025-39955.html\nhttps://linux.oracle.com/cve/CVE-2025-39981.html\nhttps://linux.oracle.com/cve/CVE-2025-40058.html\nhttps://linux.oracle.com/cve/CVE-2025-40185.html"
+}

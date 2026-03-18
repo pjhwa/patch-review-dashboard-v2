@@ -1,0 +1,22 @@
+{
+  "id": "USN-7784-1",
+  "vendor": "Canonical / Ubuntu",
+  "type": "Ubuntu Security Notice (USN)",
+  "title": "ruby-rack vulnerability",
+  "issuedDate": "2025-09-29T15:09:24Z",
+  "updatedDate": "2026-02-10T04:50:09Z",
+  "pubDate": "2025-09-29T15:09:24Z",
+  "dateStr": "2025-09-29",
+  "url": "https://ubuntu.com/security/notices/USN-7784-1",
+  "severity": "None",
+  "overview": "ruby-rack vulnerability",
+  "description": "It was discovered that Rack incorrectly handled limiting the amount of\nparameters. An attacker could possibly use this issue to bypass the\nparams_limit value, leading to a denial of service.",
+  "affected_products": [
+    "Ubuntu 24.04 LTS"
+  ],
+  "cves": [],
+  "packages": [
+    "ruby-rack-2.2.7-1ubuntu0.4"
+  ],
+  "full_text": "It was discovered that Rack incorrectly handled limiting the amount of\nparameters. An attacker could possibly use this issue to bypass the\nparams_limit value, leading to a denial of service."
+}

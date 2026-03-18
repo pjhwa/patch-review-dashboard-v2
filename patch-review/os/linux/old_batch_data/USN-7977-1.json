@@ -1,0 +1,29 @@
+{
+  "id": "USN-7977-1",
+  "url": "https://ubuntu.com/security/notices/USN-7977-1",
+  "synopsis": "USN-7977-1: Git LFS vulnerabilities",
+  "dateStr": "26 January 2026",
+  "overview": "Several security issues were fixed in Git LFS.",
+  "description": "Ryota K discovered that Git LFS may leak login credentials in certain\ninstances due to failing to check for URL-encoded characters. An\nattacker could possibly use this issue to learn sensitive information.\n(CVE-2024-53263)\n\nIt was discovered that Git LFS could have its git lfs checkout and\ngit lfs pull commands abused to write to any file on a user’s\nsystem. An attacker could possibly use this issue to execute arbitrary\ncode. This issue was only addressed in Ubuntu 24.04 LTS and\nUbuntu 25.10. (CVE-2025-26625)\n\n \n\n \n\n \n\nRyota K discovered that Git LFS may leak login credentials in certain\ninstances due to failing to check for URL-encoded characters. An\nattacker could possibly use this issue to learn sensitive information.\n(CVE-2024-53263)\n\nIt was discovered that Git LFS could have its git lfs checkout and\ngit lfs pull commands abused to write to any file on a user’s\nsystem. An attacker could possibly use this issue to execute arbitrary\ncode. This issue was only addressed in Ubuntu 24.04 LTS and\nUbuntu 25.10. (CVE-2025-26625)",
+  "packages": [
+    "git"
+  ],
+  "cves": [
+    "CVE-2025-26625",
+    "CVE-2024-53263"
+  ],
+  "affected_products": [
+    "25.10",
+    "24.04 LTS",
+    "22.04 LTS",
+    "20.04 LTS",
+    "18.04 LTS",
+    "Open side navigation"
+  ],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Ubuntu Security Notices\n\nUSN-7977-1\n\n \n\n \n\n \n\n \n\n \n\n \nUSN-7977-1: Git LFS vulnerabilities\n\n \n\n \n\n \n\n \nPublication date\n\n \n\n \n\n \n26 January 2026\n\n \n\n \n\n \n\n \n\n \nOverview\n\n \n\n \n\n \nSeveral security issues were fixed in Git LFS.\n\n \n\n \n\n \n\n \n\n \nReleases\n\n \n\n \n\n \n\n 25.10\n\n 24.04 LTS\n\n22.04 LTS\n\n20.04 LTS\n\n18.04 LTS\n\n \n\n \n\n \n\n \n\n \n\n \n\n Open side navigation\n \n\n \n\n \nPackages\n\n \n\n git-lfs - Command line extension and spec for managing large files with Git\n \n\n \n\n \nDetails\n\n \n\n \n\nRyota K discovered that Git LFS may leak login credentials in certain\ninstances due to failing to check for URL-encoded characters. An\nattacker could possibly use this issue to learn sensitive information.\n(CVE-2024-53263)\n\nIt was discovered that Git LFS could have its git lfs checkout and\ngit lfs pull commands abused to write to any file on a user’s\nsystem. An attacker could possibly use this issue to execute arbitrary\ncode. This issue was only addressed in Ubuntu 24.04 LTS and\nUbuntu 25.10. (CVE-2025-26625)\n\n \n\n \n\n \n\nRyota K discovered that Git LFS may leak login credentials in certain\ninstances due to failing to check for URL-encoded characters. An\nattacker could possibly use this issue to learn sensitive information.\n(CVE-2024-53263)\n\nIt was discovered that Git LFS could have its git lfs checkout and\ngit lfs pull commands abused to write to any file on a user’s\nsystem. An attacker could possibly use this issue to execute arbitrary\ncode. This issue was only addressed in Ubuntu 24.04 LTS and\nUbuntu 25.10. (CVE-2025-26625)\n\n \n\n \n\n \n\n \nUpdate instructions\n\n \n\n \n\n \n\n \n\nIn general, a standard system update will make all the necessary changes.\n\n Learn more about how to get the fixes.\n \n\n \n\n \n\n \n\n \nThe problem can be corrected by updating your system to the following package versions:\n\n \n\n \n\n \n\n \n\n Ubuntu Release\n Package Version\n \n\n 25.10\n\nquesting\n\n git-lfs – \n\n3.6.1-1ubuntu0.1\n\n golang-github-git-lfs-git-lfs-dev – \n\n3.6.1-1ubuntu0.1\n\n \n\n 24.04\n\nLTS noble\n\n git-lfs – \n\n3.4.1-1ubuntu0.3+esm2\n\n  \n\nUbuntu Pro\n Fix available with Ubuntu Pro via ESM Apps. A community fix might become publicly available in the future.\n\n \n\n golang-github-git-lfs-git-lfs-dev – \n\n3.4.1-1ubuntu0.3+esm2\n\n  \n\nUbuntu Pro\n Fix available with Ubuntu Pro via ESM Apps. A community fix might become publicly available in the future.\n\n \n\n \n\n 22.04\n\nLTS jammy\n\n git-lfs – \n\n3.0.2-1ubuntu0.3+esm2\n\n  \n\nUbuntu Pro\n Fix available with Ubuntu Pro via ESM Apps. A community fix might become publicly available in the future.\n\n \n\n golang-github-git-lfs-git-lfs-dev – \n\n3.0.2-1ubuntu0.3+esm2\n\n  \n\nUbuntu Pro\n Fix available with Ubuntu Pro via ESM Apps. A community fix might become publicly available in the future.\n\n \n\n \n\n 20.04\n\nLTS focal\n\n git-lfs – \n\n2.9.2-1ubuntu0.1~esm2\n\n  \n\nUbuntu Pro\n Fix available with Ubuntu Pro via ESM Apps. A community fix might become publicly available in the future.\n\n \n\n \n\n 18.04\n\nLTS bionic\n\n git-lfs – \n\n2.3.4-1ubuntu0.1~esm1\n\n  \n\nUbuntu Pro\n Fix available with Ubuntu Pro via ESM Apps. A community fix might become publicly available in the future.\n\n \n\n \n\nReduce your security exposure\n\n \n\n Ubuntu Pro provides ten-year security coverage to 25,000+ packages in Main and Universe repositories, and it is free for up to five machines.\n \n\n \n\n Get Ubuntu Pro\n \n\n \n\nReferences\n\n \n\n \n\n CVE-2025-26625\n \n\n \n\n CVE-2024-53263\n \n\n \n\n \n\n CVE-2025-26625\n \n\n CVE-2024-53263",
+  "title": "USN-7977-1: Git LFS vulnerabilities | Ubuntu security notices | Ubuntu",
+  "pubDate": "2026-01-25T15:00:00.000Z",
+  "vendor": "Ubuntu"
+}

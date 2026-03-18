@@ -1,0 +1,37 @@
+{
+  "id": "ELSA-2026-0914",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2026-January/019566.html",
+  "synopsis": "[El-errata] ELSA-2026-0914 Important: Oracle Linux 9 gimp security update",
+  "dateStr": "2026-January",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Security Advisory ELSA-2026-0914",
+  "description": "[2:3.0.4-1.2]\n- fix CVE-2025-14422\n- fix CVE-2025-14423\n- fix CVE-2025-14424\n- fix CVE-2025-14425\n\n[2:3.0.4-1.1]\n- fix CVE-2025-10920\n- fix CVE-2025-10921\n- fix CVE-2025-10922\n- fix CVE-2025-10923\n- fix CVE-2025-10924\n- fix CVE-2025-10925\n- fix CVE-2025-10934",
+  "affected_products": [
+    "Oracle Linux 9"
+  ],
+  "packages": [
+    "gimp-3.0.4-1.el9_7.2.x86_64.rpm",
+    "gimp-libs-3.0.4-1.el9_7.2.i686.rpm",
+    "gimp-libs-3.0.4-1.el9_7.2.x86_64.rpm",
+    "gimp-3.0.4-1.el9_7.2.aarch64.rpm",
+    "gimp-libs-3.0.4-1.el9_7.2.aarch64.rpm"
+  ],
+  "cves": [
+    "CVE-2025-14422",
+    "CVE-2025-14423",
+    "CVE-2025-14424",
+    "CVE-2025-14425",
+    "CVE-2025-10920",
+    "CVE-2025-10921",
+    "CVE-2025-10922",
+    "CVE-2025-10923",
+    "CVE-2025-10924",
+    "CVE-2025-10925",
+    "CVE-2025-10934"
+  ],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Security Advisory ELSA-2026-0914\n\nhttp://linux.oracle.com/errata/ELSA-2026-0914.html\n\nThe following updated rpms for Oracle Linux 9 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\ngimp-3.0.4-1.el9_7.2.x86_64.rpm\ngimp-libs-3.0.4-1.el9_7.2.i686.rpm\ngimp-libs-3.0.4-1.el9_7.2.x86_64.rpm\n\naarch64:\ngimp-3.0.4-1.el9_7.2.aarch64.rpm\ngimp-libs-3.0.4-1.el9_7.2.aarch64.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol9/SRPMS-updates/gimp-3.0.4-1.el9_7.2.src.rpm\n\nRelated CVEs:\n\nCVE-2025-14422\nCVE-2025-14423\nCVE-2025-14424\nCVE-2025-14425\n\n\n\n\nDescription of changes:\n\n[2:3.0.4-1.2]\n- fix CVE-2025-14422\n- fix CVE-2025-14423\n- fix CVE-2025-14424\n- fix CVE-2025-14425\n\n[2:3.0.4-1.1]\n- fix CVE-2025-10920\n- fix CVE-2025-10921\n- fix CVE-2025-10922\n- fix CVE-2025-10923\n- fix CVE-2025-10924\n- fix CVE-2025-10925\n- fix CVE-2025-10934",
+  "vendor": "Oracle"
+}

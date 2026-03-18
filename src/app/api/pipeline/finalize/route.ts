@@ -21,7 +21,7 @@ export async function POST(req: Request) {
         let outputCsvPath: string;
 
         if (productId === 'redhat' || productId === 'oracle' || productId === 'ubuntu') {
-            const linuxV2Dir = path.join(workspacePath, 'skills/patch-review/os/linux-v2');
+            const linuxV2Dir = path.join(workspacePath, 'skills/patch-review/os/linux');
             sourceJsonPath = path.join(linuxV2Dir, `patch_review_ai_report_${productId}.json`);
             outputCsvPath = path.join(linuxV2Dir, `final_approved_patches_${productId}.csv`);
         } else {

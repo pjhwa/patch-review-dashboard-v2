@@ -1,0 +1,35 @@
+{
+  "id": "ELBA-2025-20989",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "AppStream",
+  "title": ".NET 8.0 bug fix and enhancement update",
+  "issuedDate": "2025-12-02T00:00:00Z",
+  "updatedDate": "2025-12-02T00:00:00Z",
+  "pubDate": "2025-12-02T00:00:00Z",
+  "dateStr": "2025-12-02",
+  "url": "https://linux.oracle.com/errata/ELBA-2025-20989.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 10.",
+  "description": "[8.0.121-2.0.1]\n- Add support for Oracle Linux\n\n[8.0.121-2]\n- Update to .NET SDK 8.0.121 and Runtime 8.0.21\n- Resolves: RHEL-116869\n\n[8.0.120-2]\n- Update to .NET SDK 8.0.120 and Runtime 8.0.20\n- Resolves: RHEL-112262\n\n[8.0.119-2]\n- Update to .NET SDK 8.0.119 and Runtime 8.0.19\n- Resolves: RHEL-106721\n\n[8.0.118-2]\n- Update to .NET SDK 8.0.118 and Runtime 8.0.18\n- Resolves: RHEL-100594\n\n[8.0.117-2]\n- Update to .NET SDK 8.0.117 and Runtime 8.0.17\n- Resolves: RHEL-94416\n\n[8.0.116-2]\n- Update to .NET SDK 8.0.116 and Runtime 8.0.16\n- Resolves: RHEL-89447\n\n[8.0.115-2]\n- Update to .NET SDK 8.0.115 and Runtime 8.0.15\n- Resolves: RHEL-85275\n\n[8.0.114-2]\n- Update to .NET SDK 8.0.114 and Runtime 8.0.14\n- Resolves: RHEL-81643\n\n[8.0.113-2]\n- Update to .NET SDK 8.0.113 and Runtime 8.0.13\n- Resolves: RHEL-76900",
+  "affected_products": [
+    "Oracle Linux 10 for x86_64",
+    "Oracle Linux 10 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "aspnetcore-runtime-dbg-8.0-8.0.21-2.0.1.el10_1.x86_64",
+    "aspnetcore-targeting-pack-8.0-8.0.21-2.0.1.el10_1.x86_64",
+    "dotnet-hostfxr-8.0-8.0.21-2.0.1.el10_1.x86_64",
+    "dotnet-runtime-dbg-8.0-8.0.21-2.0.1.el10_1.x86_64",
+    "dotnet-runtime-8.0-8.0.21-2.0.1.el10_1.x86_64",
+    "dotnet-templates-8.0-8.0.121-2.0.1.el10_1.x86_64",
+    "dotnet-apphost-pack-8.0-8.0.21-2.0.1.el10_1.x86_64",
+    "dotnet-sdk-dbg-8.0-8.0.121-2.0.1.el10_1.x86_64",
+    "dotnet8.0-8.0.121-2.0.1.el10_1.src",
+    "dotnet-targeting-pack-8.0-8.0.21-2.0.1.el10_1.x86_64",
+    "dotnet-sdk-8.0-8.0.121-2.0.1.el10_1.x86_64",
+    "aspnetcore-runtime-8.0-8.0.21-2.0.1.el10_1.x86_64"
+  ],
+  "full_text": "[8.0.121-2.0.1]\n- Add support for Oracle Linux\n\n[8.0.121-2]\n- Update to .NET SDK 8.0.121 and Runtime 8.0.21\n- Resolves: RHEL-116869\n\n[8.0.120-2]\n- Update to .NET SDK 8.0.120 and Runtime 8.0.20\n- Resolves: RHEL-112262\n\n[8.0.119-2]\n- Update to .NET SDK 8.0.119 and Runtime 8.0.19\n- Resolves: RHEL-106721\n\n[8.0.118-2]\n- Update to .NET SDK 8.0.118 and Runtime 8.0.18\n- Resolves: RHEL-100594\n\n[8.0.117-2]\n- Update to .NET SDK 8.0.117 and Runtime 8.0.17\n- Resolves: RHEL-94416\n\n[8.0.116-2]\n- Update to .NET SDK 8.0.116 and Runtime 8.0.16\n- Resolves: RHEL-89447\n\n[8.0.115-2]\n- Update to .NET SDK 8.0.115 and Runtime 8.0.15\n- Resolves: RHEL-85275\n\n[8.0.114-2]\n- Update to .NET SDK 8.0.114 and Runtime 8.0.14\n- Resolves: RHEL-81643\n\n[8.0.113-2]\n- Update to .NET SDK 8.0.113 and Runtime 8.0.13\n- Resolves: RHEL-76900\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2025-20989.html"
+}

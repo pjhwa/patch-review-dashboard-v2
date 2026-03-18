@@ -1,0 +1,24 @@
+{
+  "id": "ELSA-2025-21002",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2025-December/019193.html",
+  "synopsis": "[El-errata] ELSA-2025-21002 Important: Oracle Linux 10 squid security update",
+  "dateStr": "2025-December",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Security Advisory ELSA-2025-21002",
+  "description": "[7:6.10-6.1]\n- Resolves: RHEL-122480 - CVE-2025-62168 squid: Squid vulnerable to information\n  disclosure via authentication credential leakage in error handling\n\n[7:6.10-6]\n- Resolves: RHEL-86817 - ”TCP connection to XX.XX.XX.XX/XXXX failed” message is\n  output frequently on RHEL10",
+  "affected_products": [
+    "Oracle Linux 10"
+  ],
+  "packages": [
+    "squid-6.10-6.el10_1.1.x86_64.rpm",
+    "squid-6.10-6.el10_1.1.aarch64.rpm"
+  ],
+  "cves": [
+    "CVE-2025-62168"
+  ],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Security Advisory ELSA-2025-21002\n\nhttp://linux.oracle.com/errata/ELSA-2025-21002.html\n\nThe following updated rpms for Oracle Linux 10 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\nsquid-6.10-6.el10_1.1.x86_64.rpm\n\naarch64:\nsquid-6.10-6.el10_1.1.aarch64.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol10/SRPMS-updates/squid-6.10-6.el10_1.1.src.rpm\n\nRelated CVEs:\n\nCVE-2025-62168\n\n\n\n\nDescription of changes:\n\n[7:6.10-6.1]\n- Resolves: RHEL-122480 - CVE-2025-62168 squid: Squid vulnerable to information\n  disclosure via authentication credential leakage in error handling\n\n[7:6.10-6]\n- Resolves: RHEL-86817 - ”TCP connection to XX.XX.XX.XX/XXXX failed” message is\n  output frequently on RHEL10",
+  "vendor": "Oracle"
+}

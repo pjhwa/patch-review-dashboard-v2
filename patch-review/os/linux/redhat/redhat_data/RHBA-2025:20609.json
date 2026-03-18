@@ -1,0 +1,47 @@
+{
+  "id": "RHBA-2025:20609",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: opensc bug fix and enhancement update",
+  "issuedDate": "2025-11-11T07:50:04Z",
+  "updatedDate": "2025-11-11T07:50:04Z",
+  "pubDate": "2025-11-11T07:50:04Z",
+  "dateStr": "2025-11-11",
+  "url": "https://access.redhat.com/errata/RHBA-2025:20609",
+  "severity": "None",
+  "overview": "An update for opensc is now available for Red Hat Enterprise Linux 10.",
+  "description": "For detailed information on changes in this release, see the Red Hat Enterprise Linux 9 Release Notes linked from the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux for Power, little endian",
+    "Red Hat Enterprise Linux for x86_64 10 x86_64",
+    "Red Hat Enterprise Linux for IBM z Systems",
+    "Red Hat Enterprise Linux for ARM 64"
+  ],
+  "cves": [],
+  "packages": [
+    "opensc-0.23.0-6.el9.src",
+    "opensc-0.23.0-6.el9.i686",
+    "opensc-0.23.0-6.el9.x86_64",
+    "opensc-debuginfo-0.23.0-6.el9.i686",
+    "opensc-debuginfo-0.23.0-6.el9.x86_64",
+    "opensc-debugsource-0.23.0-6.el9.i686",
+    "opensc-debugsource-0.23.0-6.el9.x86_64",
+    "opensc-0.23.0-6.el9.s390x",
+    "opensc-debuginfo-0.23.0-6.el9.s390x",
+    "opensc-debugsource-0.23.0-6.el9.s390x",
+    "opensc-0.23.0-6.el9.ppc64le",
+    "opensc-debuginfo-0.23.0-6.el9.ppc64le",
+    "opensc-debugsource-0.23.0-6.el9.ppc64le",
+    "opensc-0.23.0-6.el9.aarch64",
+    "opensc-debuginfo-0.23.0-6.el9.aarch64",
+    "opensc-debugsource-0.23.0-6.el9.aarch64"
+  ],
+  "fixes": [
+    {
+      "id": "RHEL-96029",
+      "url": "https://issues.redhat.com/browse/RHEL-96029",
+      "description": "Upstream test test-pkcs11-tool-sign-verify.sh fails"
+    }
+  ],
+  "full_text": "An update for opensc is now available for Red Hat Enterprise Linux 10.\n\nFor detailed information on changes in this release, see the Red Hat Enterprise Linux 9 Release Notes linked from the References section."
+}

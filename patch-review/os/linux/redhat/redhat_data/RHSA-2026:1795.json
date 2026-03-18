@@ -1,0 +1,42 @@
+{
+  "id": "RHSA-2026:1795",
+  "vendor": "Red Hat",
+  "type": "Security Advisory (RHSA)",
+  "title": "Red Hat Security Advisory: resource-agents security update",
+  "issuedDate": "2026-02-03T07:28:32+00:00",
+  "updatedDate": "2026-02-03T07:28:32+00:00",
+  "pubDate": "2026-02-03T07:28:32+00:00",
+  "dateStr": "2026-02-03",
+  "url": "https://access.redhat.com/errata/RHSA-2026:1795",
+  "severity": "Important",
+  "overview": "An update for resource-agents is now available for Red Hat Enterprise Linux 7 Extended Lifecycle Support.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "description": "The resource-agents packages provide the Pacemaker and RGManager service managers with a set of scripts. These scripts interface with several services to allow operating in a high-availability (HA) environment.\n\nSecurity Fix(es):\n\n* urllib3: urllib3 Streaming API improperly handles highly compressed data (CVE-2025-66471)\n\nFor more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux",
+    "Red Hat Enterprise Linux Server HighAvailability (v. 7 ELS)",
+    "Red Hat Enterprise Linux Server ResilientStorage (v. 7 ELS)",
+    "Red Hat Enterprise Linux Server for SAP ELS (v. 7)",
+    "Red Hat Enterprise Linux Server for SAPHANA ELS (v. 7)"
+  ],
+  "cves": [
+    "CVE-2025-66471"
+  ],
+  "packages": [
+    "resource-agents-0:4.1.1-61.el7_9.22.x86_64",
+    "resource-agents-aliyun-0:4.1.1-61.el7_9.22.x86_64",
+    "resource-agents-gcp-0:4.1.1-61.el7_9.22.x86_64",
+    "resource-agents-debuginfo-0:4.1.1-61.el7_9.22.x86_64",
+    "resource-agents-sap-hana-0:4.1.1-61.el7_9.22.x86_64",
+    "resource-agents-sap-hana-scaleout-0:0.164.0-6.el7_9.22.x86_64",
+    "resource-agents-sap-0:4.1.1-61.el7_9.22.x86_64",
+    "sap-cluster-connector-0:3.0.1-37.el7_9.22.x86_64",
+    "resource-agents-0:4.1.1-61.el7_9.22.ppc64le",
+    "resource-agents-debuginfo-0:4.1.1-61.el7_9.22.ppc64le",
+    "resource-agents-sap-hana-0:4.1.1-61.el7_9.22.ppc64le",
+    "resource-agents-sap-hana-scaleout-0:0.164.0-6.el7_9.22.ppc64le",
+    "resource-agents-sap-0:4.1.1-61.el7_9.22.ppc64le",
+    "sap-cluster-connector-0:3.0.1-37.el7_9.22.ppc64le",
+    "resource-agents-0:4.1.1-61.el7_9.22.src"
+  ],
+  "full_text": "An update for resource-agents is now available for Red Hat Enterprise Linux 7 Extended Lifecycle Support.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nThe resource-agents packages provide the Pacemaker and RGManager service managers with a set of scripts. These scripts interface with several services to allow operating in a high-availability (HA) environment.\n\nSecurity Fix(es):\n\n* urllib3: urllib3 Streaming API improperly handles highly compressed data (CVE-2025-66471)\n\nFor more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section."
+}

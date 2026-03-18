@@ -1,0 +1,26 @@
+{
+  "id": "USN-7926-1",
+  "url": "https://ubuntu.com/security/notices/USN-7926-1",
+  "synopsis": "USN-7926-1: OpenStack Keystone vulnerabilities",
+  "dateStr": "11 December 2025",
+  "overview": "Several security issues were fixed in OpenStack Keystone.",
+  "description": "Kay discovered that OpenStack Keystone incorrectly handled the ec2tokens\nand s3tokens APIs. A remote attacker could possibly use this issue to\nobtain unauthorized access and escalate privileges. (CVE-2025-65073)\n\nIt was discovered that OpenStack Keystone only validated the first 72\nbytes of an application secret. An attacker could possibly use this issue\nto bypass password complexity. (CVE-2021-3563)\n\nIt was discovered that OpenStack Keystone had a time lag before a token\nshould be revoked by the security policy. A remote administrator could use\nthis issue to maintain access for longer than expected. (CVE-2022-2447)\n\n \n\n \n\n \n\nKay discovered that OpenStack Keystone incorrectly handled the ec2tokens\nand s3tokens APIs. A remote attacker could possibly use this issue to\nobtain unauthorized access and escalate privileges. (CVE-2025-65073)\n\nIt was discovered that OpenStack Keystone only validated the first 72\nbytes of an application secret. An attacker could possibly use this issue\nto bypass password complexity. (CVE-2021-3563)\n\nIt was discovered that OpenStack Keystone had a time lag before a token\nshould be revoked by the security policy. A remote administrator could use\nthis issue to maintain access for longer than expected. (CVE-2022-2447)",
+  "packages": [
+    "keystone"
+  ],
+  "cves": [
+    "CVE-2025-65073",
+    "CVE-2022-2447",
+    "CVE-2021-3563"
+  ],
+  "affected_products": [
+    "22.04 LTS",
+    "Open side navigation"
+  ],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Ubuntu Security Notices\n\nUSN-7926-1\n\n \n\n \n\n \n\n \n\n \n\n \nUSN-7926-1: OpenStack Keystone vulnerabilities\n\n \n\n \n\n \n\n \nPublication date\n\n \n\n \n\n \n11 December 2025\n\n \n\n \n\n \n\n \n\n \nOverview\n\n \n\n \n\n \nSeveral security issues were fixed in OpenStack Keystone.\n\n \n\n \n\n \n\n \n\n \nReleases\n\n \n\n \n\n \n\n 22.04 LTS\n\n \n\n \n\n \n\n \n\n \n\n \n\n Open side navigation\n \n\n \n\n \nPackages\n\n \n\n keystone - OpenStack identity service\n \n\n \n\n \nDetails\n\n \n\n \n\nKay discovered that OpenStack Keystone incorrectly handled the ec2tokens\nand s3tokens APIs. A remote attacker could possibly use this issue to\nobtain unauthorized access and escalate privileges. (CVE-2025-65073)\n\nIt was discovered that OpenStack Keystone only validated the first 72\nbytes of an application secret. An attacker could possibly use this issue\nto bypass password complexity. (CVE-2021-3563)\n\nIt was discovered that OpenStack Keystone had a time lag before a token\nshould be revoked by the security policy. A remote administrator could use\nthis issue to maintain access for longer than expected. (CVE-2022-2447)\n\n \n\n \n\n \n\nKay discovered that OpenStack Keystone incorrectly handled the ec2tokens\nand s3tokens APIs. A remote attacker could possibly use this issue to\nobtain unauthorized access and escalate privileges. (CVE-2025-65073)\n\nIt was discovered that OpenStack Keystone only validated the first 72\nbytes of an application secret. An attacker could possibly use this issue\nto bypass password complexity. (CVE-2021-3563)\n\nIt was discovered that OpenStack Keystone had a time lag before a token\nshould be revoked by the security policy. A remote administrator could use\nthis issue to maintain access for longer than expected. (CVE-2022-2447)\n\n \n\n \n\n \n\n \nUpdate instructions\n\n \n\n \n\n \n\n \n\nIn general, a standard system update will make all the necessary changes.\n\n Learn more about how to get the fixes.\n \n\n \n\n \n\n \n\n \nThe problem can be corrected by updating your system to the following package versions:\n\n \n\n \n\n \n\n \n\n Ubuntu Release\n Package Version\n \n\n 22.04\n\nLTS jammy\n\n keystone – \n\n2:21.0.1-0ubuntu2.1\n\n python3-keystone – \n\n2:21.0.1-0ubuntu2.1\n\n \n\nReduce your security exposure\n\n \n\n Ubuntu Pro provides ten-year security coverage to 25,000+ packages in Main and Universe repositories, and it is free for up to five machines.\n \n\n \n\n Get Ubuntu Pro\n \n\n \n\nReferences\n\n \n\n \n\n CVE-2025-65073\n \n\n \n\n CVE-2022-2447\n \n\n \n\n CVE-2021-3563\n \n\n \n\n \n\n CVE-2025-65073\n \n\n CVE-2022-2447\n \n\n CVE-2021-3563",
+  "title": "USN-7926-1: OpenStack Keystone vulnerabilities | Ubuntu security notices | Ubuntu",
+  "pubDate": "2025-12-10T15:00:00.000Z",
+  "vendor": "Ubuntu"
+}

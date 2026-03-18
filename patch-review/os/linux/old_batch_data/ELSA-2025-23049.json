@@ -1,0 +1,39 @@
+{
+  "id": "ELSA-2025-23049",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2025-December/019238.html",
+  "synopsis": "[El-errata] ELSA-2025-23049 Important: Oracle Linux 9 tomcat security update",
+  "dateStr": "2025-December",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Security Advisory ELSA-2025-23049",
+  "description": "[1:9.0.87-6.1]\n- Resolves: RHEL-124518\n  tomcat: Directory traversal via rewrite with possible RCE (CVE-2025-55752)\n- Resolves: RHEL-91753\n  tomcat: Bypass of rules in Rewrite Valve (CVE-2025-31651)",
+  "affected_products": [
+    "Oracle Linux 9"
+  ],
+  "packages": [
+    "tomcat-9.0.87-6.el9_7.1.noarch.rpm",
+    "tomcat-admin-webapps-9.0.87-6.el9_7.1.noarch.rpm",
+    "tomcat-docs-webapp-9.0.87-6.el9_7.1.noarch.rpm",
+    "tomcat-el-3.0-api-9.0.87-6.el9_7.1.noarch.rpm",
+    "tomcat-jsp-2.3-api-9.0.87-6.el9_7.1.noarch.rpm",
+    "tomcat-lib-9.0.87-6.el9_7.1.noarch.rpm",
+    "tomcat-servlet-4.0-api-9.0.87-6.el9_7.1.noarch.rpm",
+    "tomcat-webapps-9.0.87-6.el9_7.1.noarch.rpm",
+    "tomcat-9.0.87-6.el9_7.1.noarch.rpm",
+    "tomcat-admin-webapps-9.0.87-6.el9_7.1.noarch.rpm",
+    "tomcat-docs-webapp-9.0.87-6.el9_7.1.noarch.rpm",
+    "tomcat-el-3.0-api-9.0.87-6.el9_7.1.noarch.rpm",
+    "tomcat-jsp-2.3-api-9.0.87-6.el9_7.1.noarch.rpm",
+    "tomcat-lib-9.0.87-6.el9_7.1.noarch.rpm",
+    "tomcat-servlet-4.0-api-9.0.87-6.el9_7.1.noarch.rpm",
+    "tomcat-webapps-9.0.87-6.el9_7.1.noarch.rpm"
+  ],
+  "cves": [
+    "CVE-2025-31651",
+    "CVE-2025-55752"
+  ],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Security Advisory ELSA-2025-23049\n\nhttp://linux.oracle.com/errata/ELSA-2025-23049.html\n\nThe following updated rpms for Oracle Linux 9 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\ntomcat-9.0.87-6.el9_7.1.noarch.rpm\ntomcat-admin-webapps-9.0.87-6.el9_7.1.noarch.rpm\ntomcat-docs-webapp-9.0.87-6.el9_7.1.noarch.rpm\ntomcat-el-3.0-api-9.0.87-6.el9_7.1.noarch.rpm\ntomcat-jsp-2.3-api-9.0.87-6.el9_7.1.noarch.rpm\ntomcat-lib-9.0.87-6.el9_7.1.noarch.rpm\ntomcat-servlet-4.0-api-9.0.87-6.el9_7.1.noarch.rpm\ntomcat-webapps-9.0.87-6.el9_7.1.noarch.rpm\n\naarch64:\ntomcat-9.0.87-6.el9_7.1.noarch.rpm\ntomcat-admin-webapps-9.0.87-6.el9_7.1.noarch.rpm\ntomcat-docs-webapp-9.0.87-6.el9_7.1.noarch.rpm\ntomcat-el-3.0-api-9.0.87-6.el9_7.1.noarch.rpm\ntomcat-jsp-2.3-api-9.0.87-6.el9_7.1.noarch.rpm\ntomcat-lib-9.0.87-6.el9_7.1.noarch.rpm\ntomcat-servlet-4.0-api-9.0.87-6.el9_7.1.noarch.rpm\ntomcat-webapps-9.0.87-6.el9_7.1.noarch.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol9/SRPMS-updates/tomcat-9.0.87-6.el9_7.1.src.rpm\n\nRelated CVEs:\n\nCVE-2025-31651\nCVE-2025-55752\n\n\n\n\nDescription of changes:\n\n[1:9.0.87-6.1]\n- Resolves: RHEL-124518\n  tomcat: Directory traversal via rewrite with possible RCE (CVE-2025-55752)\n- Resolves: RHEL-91753\n  tomcat: Bypass of rules in Rewrite Valve (CVE-2025-31651)",
+  "vendor": "Oracle"
+}

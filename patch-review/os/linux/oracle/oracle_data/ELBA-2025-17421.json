@@ -1,0 +1,31 @@
+{
+  "id": "ELBA-2025-17421",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "AppStream",
+  "title": "protobuf bug fix and enhancement update",
+  "issuedDate": "2025-10-07T00:00:00Z",
+  "updatedDate": "2025-10-07T00:00:00Z",
+  "pubDate": "2025-10-07T00:00:00Z",
+  "dateStr": "2025-10-07",
+  "url": "https://linux.oracle.com/errata/ELBA-2025-17421.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 8.",
+  "description": "[3.5.0-17]\n- Rebuild\n\n[3.5.0-16]\n- Rebuild for changes to test setup",
+  "affected_products": [
+    "Oracle Linux 8 for x86_64",
+    "Oracle Linux 8 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "protobuf-3.5.0-17.el8_10.i686",
+    "protobuf-3.5.0-17.el8_10.x86_64",
+    "python3-protobuf-3.5.0-17.el8_10.noarch",
+    "protobuf-lite-3.5.0-17.el8_10.x86_64",
+    "protobuf-lite-3.5.0-17.el8_10.i686",
+    "protobuf-compiler-3.5.0-17.el8_10.i686",
+    "protobuf-compiler-3.5.0-17.el8_10.x86_64",
+    "protobuf-3.5.0-17.el8_10.src"
+  ],
+  "full_text": "[3.5.0-17]\n- Rebuild\n\n[3.5.0-16]\n- Rebuild for changes to test setup\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2025-17421.html"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "ELSA-2025-15900",
+  "vendor": "Oracle",
+  "type": "Security Advisory (ELSA)",
+  "kernel_type": "AppStream",
+  "title": " podman security update",
+  "issuedDate": "2025-09-16T00:00:00Z",
+  "updatedDate": "2025-09-16T00:00:00Z",
+  "pubDate": "2025-09-16T00:00:00Z",
+  "dateStr": "2025-09-16",
+  "url": "https://linux.oracle.com/errata/ELSA-2025-15900.html",
+  "severity": "Important",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 9.",
+  "description": "[5.4.0-13.0.1]\n- Fix a potential deadlock during podman cp [Orabug: 38252957]\n- Add devices on container startup, not on creation\n- overlay: Put should ignore ENINVAL for Unmount [Orabug: 36234694]\n- Drop nmap-ncat requirement and skip ignore-socket test case [Orabug: 34117404]\n\n[5:5.4.0-13]\n- update to the latest content of https://github.com/containers/podman/tree/v5.4-rhel\n  (https://github.com/containers/podman/commit/b0d88c7)\n- fixes 'CVE-2025-9566 podman: Podman kube play command may overwrite host files [rhel-9.6.z]'\n- Resolves: RHEL-113152",
+  "affected_products": [
+    "Oracle Linux 9 for x86_64",
+    "Oracle Linux 9 for aarch64"
+  ],
+  "cves": [
+    "CVE-2025-9566"
+  ],
+  "packages": [
+    "podman-5.4.0-13.0.1.el9_6.x86_64",
+    "podman-docker-5.4.0-13.0.1.el9_6.noarch",
+    "podman-plugins-5.4.0-13.0.1.el9_6.x86_64",
+    "podman-5.4.0-13.0.1.el9_6.src",
+    "podman-tests-5.4.0-13.0.1.el9_6.x86_64",
+    "podman-remote-5.4.0-13.0.1.el9_6.x86_64"
+  ],
+  "full_text": "[5.4.0-13.0.1]\n- Fix a potential deadlock during podman cp [Orabug: 38252957]\n- Add devices on container startup, not on creation\n- overlay: Put should ignore ENINVAL for Unmount [Orabug: 36234694]\n- Drop nmap-ncat requirement and skip ignore-socket test case [Orabug: 34117404]\n\n[5:5.4.0-13]\n- update to the latest content of https://github.com/containers/podman/tree/v5.4-rhel\n  (https://github.com/containers/podman/commit/b0d88c7)\n- fixes 'CVE-2025-9566 podman: Podman kube play command may overwrite host files [rhel-9.6.z]'\n- Resolves: RHEL-113152\n\nReferences:\nhttps://linux.oracle.com/errata/ELSA-2025-15900.html\nhttps://linux.oracle.com/cve/CVE-2025-9566.html"
+}

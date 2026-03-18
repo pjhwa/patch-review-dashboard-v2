@@ -1,0 +1,28 @@
+{
+  "id": "ELSA-2025-23139",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2025-December/019258.html",
+  "synopsis": "[El-errata] ELSA-2025-23139 Moderate: Oracle Linux 10 libsoup3 security update",
+  "dateStr": "2025-December",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Security Advisory ELSA-2025-23139",
+  "description": "[3.6.5-7]\n- Add patch for CVE-2025-12105",
+  "affected_products": [
+    "Oracle Linux 10"
+  ],
+  "packages": [
+    "libsoup3-3.6.5-3.el10_1.7.x86_64.rpm",
+    "libsoup3-devel-3.6.5-3.el10_1.7.x86_64.rpm",
+    "libsoup3-doc-3.6.5-3.el10_1.7.noarch.rpm",
+    "libsoup3-3.6.5-3.el10_1.7.aarch64.rpm",
+    "libsoup3-devel-3.6.5-3.el10_1.7.aarch64.rpm",
+    "libsoup3-doc-3.6.5-3.el10_1.7.noarch.rpm"
+  ],
+  "cves": [
+    "CVE-2025-12105"
+  ],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Security Advisory ELSA-2025-23139\n\nhttp://linux.oracle.com/errata/ELSA-2025-23139.html\n\nThe following updated rpms for Oracle Linux 10 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\nlibsoup3-3.6.5-3.el10_1.7.x86_64.rpm\nlibsoup3-devel-3.6.5-3.el10_1.7.x86_64.rpm\nlibsoup3-doc-3.6.5-3.el10_1.7.noarch.rpm\n\naarch64:\nlibsoup3-3.6.5-3.el10_1.7.aarch64.rpm\nlibsoup3-devel-3.6.5-3.el10_1.7.aarch64.rpm\nlibsoup3-doc-3.6.5-3.el10_1.7.noarch.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol10/SRPMS-updates/libsoup3-3.6.5-3.el10_1.7.src.rpm\n\nRelated CVEs:\n\nCVE-2025-12105\n\n\n\n\nDescription of changes:\n\n[3.6.5-7]\n- Add patch for CVE-2025-12105",
+  "vendor": "Oracle"
+}

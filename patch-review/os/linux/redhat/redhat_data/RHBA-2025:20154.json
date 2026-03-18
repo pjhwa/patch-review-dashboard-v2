@@ -1,0 +1,56 @@
+{
+  "id": "RHBA-2025:20154",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: libuser bug fix and enhancement update",
+  "issuedDate": "2025-11-11T07:25:16Z",
+  "updatedDate": "2025-11-11T07:25:16Z",
+  "pubDate": "2025-11-11T07:25:16Z",
+  "dateStr": "2025-11-11",
+  "url": "https://access.redhat.com/errata/RHBA-2025:20154",
+  "severity": "None",
+  "overview": "An update for libuser is now available for Red Hat Enterprise Linux 10.",
+  "description": "For detailed information on changes in this release, see the Red Hat Enterprise Linux 10.1 Release Notes linked from the References section.",
+  "affected_products": [
+    "Red Hat CodeReady Linux Builder for Power, little endian",
+    "Red Hat Enterprise Linux for IBM z Systems",
+    "Red Hat CodeReady Linux Builder for ARM 64",
+    "Red Hat Enterprise Linux for ARM 64",
+    "Red Hat Enterprise Linux for x86_64 10 x86_64",
+    "Red Hat Enterprise Linux for Power, little endian",
+    "Red Hat CodeReady Linux Builder for IBM z Systems",
+    "Red Hat CodeReady Linux Builder for x86_64 10 x86_64"
+  ],
+  "cves": [],
+  "packages": [
+    "libuser-0.64-11.el10.src",
+    "libuser-0.64-11.el10.x86_64",
+    "libuser-debuginfo-0.64-11.el10.x86_64",
+    "libuser-debugsource-0.64-11.el10.x86_64",
+    "python3-libuser-debuginfo-0.64-11.el10.x86_64",
+    "libuser-0.64-11.el10.s390x",
+    "libuser-debuginfo-0.64-11.el10.s390x",
+    "libuser-debugsource-0.64-11.el10.s390x",
+    "python3-libuser-debuginfo-0.64-11.el10.s390x",
+    "libuser-0.64-11.el10.ppc64le",
+    "libuser-debuginfo-0.64-11.el10.ppc64le",
+    "libuser-debugsource-0.64-11.el10.ppc64le",
+    "python3-libuser-debuginfo-0.64-11.el10.ppc64le",
+    "libuser-0.64-11.el10.aarch64",
+    "libuser-debuginfo-0.64-11.el10.aarch64",
+    "libuser-debugsource-0.64-11.el10.aarch64",
+    "python3-libuser-debuginfo-0.64-11.el10.aarch64",
+    "libuser-devel-0.64-11.el10.x86_64",
+    "libuser-devel-0.64-11.el10.ppc64le",
+    "libuser-devel-0.64-11.el10.aarch64",
+    "libuser-devel-0.64-11.el10.s390x"
+  ],
+  "fixes": [
+    {
+      "id": "RHEL-85247",
+      "url": "https://issues.redhat.com/browse/RHEL-85247",
+      "description": "libuser: Failing test Sanity/do-not-break-symlinks in image mode"
+    }
+  ],
+  "full_text": "An update for libuser is now available for Red Hat Enterprise Linux 10.\n\nFor detailed information on changes in this release, see the Red Hat Enterprise Linux 10.1 Release Notes linked from the References section."
+}

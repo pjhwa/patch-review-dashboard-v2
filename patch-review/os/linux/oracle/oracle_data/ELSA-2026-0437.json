@@ -1,0 +1,28 @@
+{
+  "id": "ELSA-2026-0437",
+  "vendor": "Oracle",
+  "type": "Security Advisory (ELSA)",
+  "kernel_type": "AppStream",
+  "title": " buildah security update",
+  "issuedDate": "2026-01-12T00:00:00Z",
+  "updatedDate": "2026-01-12T00:00:00Z",
+  "pubDate": "2026-01-12T00:00:00Z",
+  "dateStr": "2026-01-12",
+  "url": "https://linux.oracle.com/errata/ELSA-2026-0437.html",
+  "severity": "Important",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 9.",
+  "description": "[1.41.8-1.0.1]\n- Drop nmap-ncat requirement and skip ignore-socket test case [Orabug: 34117178]\n\n[2:1.41.8-1]\n- update to the latest content of https://github.com/containers/buildah/tree/release-1.41\n  (https://github.com/containers/buildah/commit/f85ff89)\n- fixes 'CVE-2025-47913 buildah: golang.org/x/crypto/ssh/agent: SSH client panic due to unexpected SSH_AGENT_SUCCESS [rhel-9.7.z]'\n- Resolves: RHEL-134792\n\n[2:1.41.7-1]\n- update to the latest content of https://github.com/containers/buildah/tree/release-1.41\n  (https://github.com/containers/buildah/commit/e363f79)\n- fixes 'Bump to runc v1.2.9 or v1.3.4 to get CVE and regression fixes - Buildah [rhel-9.7.z]'\n- Resolves: RHEL-132846",
+  "affected_products": [
+    "Oracle Linux 9 for x86_64",
+    "Oracle Linux 9 for aarch64"
+  ],
+  "cves": [
+    "CVE-2025-47913"
+  ],
+  "packages": [
+    "buildah-1.41.8-1.0.1.el9_7.src",
+    "buildah-tests-1.41.8-1.0.1.el9_7.x86_64",
+    "buildah-1.41.8-1.0.1.el9_7.x86_64"
+  ],
+  "full_text": "[1.41.8-1.0.1]\n- Drop nmap-ncat requirement and skip ignore-socket test case [Orabug: 34117178]\n\n[2:1.41.8-1]\n- update to the latest content of https://github.com/containers/buildah/tree/release-1.41\n  (https://github.com/containers/buildah/commit/f85ff89)\n- fixes 'CVE-2025-47913 buildah: golang.org/x/crypto/ssh/agent: SSH client panic due to unexpected SSH_AGENT_SUCCESS [rhel-9.7.z]'\n- Resolves: RHEL-134792\n\n[2:1.41.7-1]\n- update to the latest content of https://github.com/containers/buildah/tree/release-1.41\n  (https://github.com/containers/buildah/commit/e363f79)\n- fixes 'Bump to runc v1.2.9 or v1.3.4 to get CVE and regression fixes - Buildah [rhel-9.7.z]'\n- Resolves: RHEL-132846\n\nReferences:\nhttps://linux.oracle.com/errata/ELSA-2026-0437.html\nhttps://linux.oracle.com/cve/CVE-2025-47913.html"
+}

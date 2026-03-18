@@ -1,0 +1,20 @@
+{
+  "id": "RHSA-2026:3102",
+  "vendor": "Red Hat",
+  "url": "https://access.redhat.com/errata/RHSA-2026:3102",
+  "pubDate": "2026-02-23T16:31:20.000Z",
+  "dateStr": "2026-02-23",
+  "severity": "Moderate",
+  "title": "Red Hat Security Advisory: AMQ Clients 2026.Q1",
+  "overview": "An update is now available for Red Hat AMQ Clients\n\nRed Hat Product Security has rated this update as having an impact of\nModerate.\nA Common Vulnerability Scoring System (CVSS) base score, which gives a detailed\nseverity rating, is available for each vulnerability from the CVE link(s) in the\nReferences section.",
+  "description": "An update is now available for Red Hat AMQ Clients\n\nRed Hat Product Security has rated this update as having an impact of\nModerate.\nA Common Vulnerability Scoring System (CVSS) base score, which gives a detailed\nseverity rating, is available for each vulnerability from the CVE link(s) in the\nReferences section.",
+  "affected_products": [
+    "AMQ Clients 2026.Q1"
+  ],
+  "cves": [
+    "CVE-2025-58056"
+  ],
+  "packages": [],
+  "fixes": "",
+  "full_text": "Red Hat Security Advisory: AMQ Clients 2026.Q1\n\nAn update is now available for Red Hat AMQ Clients\n\nRed Hat Product Security has rated this update as having an impact of\nModerate.\nA Common Vulnerability Scoring System (CVSS) base score, which gives a detailed\nseverity rating, is available for each vulnerability from the CVE link(s) in the\nReferences section.\n\nAn update is now available for Red Hat AMQ Clients\n\nRed Hat Product Security has rated this update as having an impact of\nModerate.\nA Common Vulnerability Scoring System (CVSS) base score, which gives a detailed\nseverity rating, is available for each vulnerability from the CVE link(s) in the\nReferences section.\n\n\n\nCVE-2025-58056: A flaw in Netty’s HTTP/1.1 chunked encoding parser allows newline (LF) characters in chunk extensions to be incorrectly treated as the end of the chunk-size line instead of requiring the proper CRLF sequence. This discrepancy can be exploited in rare cases where a reverse proxy interprets the same input differently, potentially enabling HTTP request smuggling attacks such as bypassing access controls or corrupting responses."
+}

@@ -1,0 +1,37 @@
+{
+  "id": "ELSA-2026-2706",
+  "vendor": "Oracle",
+  "type": "Security Advisory (ELSA)",
+  "kernel_type": "AppStream",
+  "title": " golang security update",
+  "issuedDate": "2026-02-16T00:00:00Z",
+  "updatedDate": "2026-02-16T00:00:00Z",
+  "pubDate": "2026-02-16T00:00:00Z",
+  "dateStr": "2026-02-16",
+  "url": "https://linux.oracle.com/errata/ELSA-2026-2706.html",
+  "severity": "Important",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 10.",
+  "description": "[1.25.7-1]\n- Rebase to latest rhel-10-main (170a5b7e084)",
+  "affected_products": [
+    "Oracle Linux 10 for x86_64",
+    "Oracle Linux 10 for aarch64"
+  ],
+  "cves": [
+    "CVE-2025-61726",
+    "CVE-2025-61728",
+    "CVE-2025-61732",
+    "CVE-2025-68121"
+  ],
+  "packages": [
+    "golang-misc-1.25.7-1.el10_1.noarch",
+    "golang-1.25.7-1.el10_1.src",
+    "golang-race-1.25.7-1.el10_1.x86_64",
+    "golang-src-1.25.7-1.el10_1.noarch",
+    "golang-docs-1.25.7-1.el10_1.noarch",
+    "golang-bin-1.25.7-1.el10_1.x86_64",
+    "go-toolset-1.25.7-1.el10_1.x86_64",
+    "golang-1.25.7-1.el10_1.x86_64",
+    "golang-tests-1.25.7-1.el10_1.noarch"
+  ],
+  "full_text": "[1.25.7-1]\n- Rebase to latest rhel-10-main (170a5b7e084)\n\nReferences:\nhttps://linux.oracle.com/errata/ELSA-2026-2706.html\nhttps://linux.oracle.com/cve/CVE-2025-61726.html\nhttps://linux.oracle.com/cve/CVE-2025-61728.html\nhttps://linux.oracle.com/cve/CVE-2025-61732.html\nhttps://linux.oracle.com/cve/CVE-2025-68121.html"
+}

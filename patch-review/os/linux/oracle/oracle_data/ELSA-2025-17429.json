@@ -1,0 +1,31 @@
+{
+  "id": "ELSA-2025-17429",
+  "vendor": "Oracle",
+  "type": "Security Advisory (ELSA)",
+  "kernel_type": "AppStream",
+  "title": " open-vm-tools security update",
+  "issuedDate": "2025-10-07T00:00:00Z",
+  "updatedDate": "2025-10-07T00:00:00Z",
+  "pubDate": "2025-10-07T00:00:00Z",
+  "dateStr": "2025-10-07",
+  "url": "https://linux.oracle.com/errata/ELSA-2025-17429.html",
+  "severity": "Important",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 10.",
+  "description": "[12.5.0-1.0.1.el10_0.1]\n- Fix spaces in vmware udev rule for scsi devices [Orabug: 24461968]\n- Fix vmware udev rule in 99-vmware-scsi-timeout.rules file. [Orabug: 22815019]\n- Increase timeout for scsi devices on VMWare guests by adding a udev rule. [Orabug: 21819156]\n\n[12.5.0-1.el10_0.1]\n- ovt-Address-CVE-2025-41244.patch [RHEL-117381]\n- Resolves: RHEL-117381\n  ([CISA Major Incident] CVE-2025-41244 open-vm-tools: Local privilege escalation in open-vm-tools [rhel-10.0.z])",
+  "affected_products": [
+    "Oracle Linux 10 for x86_64",
+    "Oracle Linux 10 for aarch64"
+  ],
+  "cves": [
+    "CVE-2025-41244"
+  ],
+  "packages": [
+    "open-vm-tools-salt-minion-12.5.0-1.0.1.el10_0.1.x86_64",
+    "open-vm-tools-12.5.0-1.0.1.el10_0.1.src",
+    "open-vm-tools-desktop-12.5.0-1.0.1.el10_0.1.x86_64",
+    "open-vm-tools-test-12.5.0-1.0.1.el10_0.1.x86_64",
+    "open-vm-tools-sdmp-12.5.0-1.0.1.el10_0.1.x86_64",
+    "open-vm-tools-12.5.0-1.0.1.el10_0.1.x86_64"
+  ],
+  "full_text": "[12.5.0-1.0.1.el10_0.1]\n- Fix spaces in vmware udev rule for scsi devices [Orabug: 24461968]\n- Fix vmware udev rule in 99-vmware-scsi-timeout.rules file. [Orabug: 22815019]\n- Increase timeout for scsi devices on VMWare guests by adding a udev rule. [Orabug: 21819156]\n\n[12.5.0-1.el10_0.1]\n- ovt-Address-CVE-2025-41244.patch [RHEL-117381]\n- Resolves: RHEL-117381\n  ([CISA Major Incident] CVE-2025-41244 open-vm-tools: Local privilege escalation in open-vm-tools [rhel-10.0.z])\n\nReferences:\nhttps://linux.oracle.com/errata/ELSA-2025-17429.html\nhttps://linux.oracle.com/cve/CVE-2025-41244.html"
+}

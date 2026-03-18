@@ -1,0 +1,31 @@
+{
+  "id": "ELSA-2025-21916",
+  "vendor": "Oracle",
+  "type": "Security Advisory (ELSA)",
+  "kernel_type": "AppStream",
+  "title": " valkey security update",
+  "issuedDate": "2025-11-25T00:00:00Z",
+  "updatedDate": "2025-11-25T00:00:00Z",
+  "pubDate": "2025-11-25T00:00:00Z",
+  "dateStr": "2025-11-25",
+  "url": "https://linux.oracle.com/errata/ELSA-2025-21916.html",
+  "severity": "Important",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 9.",
+  "description": "[8.0.6-2]\n- rebase to 8.0.6 for CVE-2025-49844 CVE-2025-46817 CVE-2025-46818 CVE-2025-46819",
+  "affected_products": [
+    "Oracle Linux 9 for x86_64",
+    "Oracle Linux 9 for aarch64"
+  ],
+  "cves": [
+    "CVE-2025-46817",
+    "CVE-2025-46818",
+    "CVE-2025-46819",
+    "CVE-2025-49844"
+  ],
+  "packages": [
+    "valkey-devel-8.0.6-2.el9_7.x86_64",
+    "valkey-8.0.6-2.el9_7.x86_64",
+    "valkey-8.0.6-2.el9_7.src"
+  ],
+  "full_text": "[8.0.6-2]\n- rebase to 8.0.6 for CVE-2025-49844 CVE-2025-46817 CVE-2025-46818 CVE-2025-46819\n\nReferences:\nhttps://linux.oracle.com/errata/ELSA-2025-21916.html\nhttps://linux.oracle.com/cve/CVE-2025-46817.html\nhttps://linux.oracle.com/cve/CVE-2025-46818.html\nhttps://linux.oracle.com/cve/CVE-2025-46819.html\nhttps://linux.oracle.com/cve/CVE-2025-49844.html"
+}

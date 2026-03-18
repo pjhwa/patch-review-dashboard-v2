@@ -1,0 +1,46 @@
+{
+  "id": "ELBA-2026-0759",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2026-January/019584.html",
+  "synopsis": "[El-errata] ELBA-2026-0759-1 Oracle Linux 8 kernel bug fix update",
+  "dateStr": "2026-January",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Bug Fix Advisory ELBA-2026-0759-1",
+  "description": "[4.18.0-553.94.1.0.1]\n- scsi: core: Restrict legal sdev_state transitions via sysfs (Uday Shankar) [Orabug: 37778230]\n\n[4.18.0-553.94.1]\n- Update Oracle Linux certificates (Kevin Lyons)\n- Disable signing for aarch64 (Ilya Okomin)\n- Oracle Linux RHCK Module Signing Key was added to the kernel trusted keys list (olkmod_signing_key.pem) [Orabug: 29539237]\n- Update x509.genkey [Orabug: 24817676]\n- Conflict with shim-ia32 and shim-x64 <= 15.3-1.0.3\n- Remove upstream reference during boot (Kevin Lyons) [Orabug: 34750652]\n- Add new Oracle Linux Driver Signing (key 1) certificate [Orabug: 37985772]\n\n[4.18.0-553.94.1]\n- net: atlantic: fix fragment overflow handling in RX path (CKI Backport Bot) [RHEL-139482] {CVE-2025-68301}\n- smb: client: let recv_done verify data_offset, data_length and remaining_data_length (Paulo Alcantara) [RHEL-131387] {CVE-2025-39933}\n- smb: client: Fix use-after-free in cifs_fill_dirent (CKI Backport Bot) [RHEL-134369] {CVE-2025-38051}\n\n[4.18.0-553.93.1]\n- mm: compaction: update the COMPACT[STALL|FAIL] events properly (Lucas Oakley) [RHEL-132449]\n- drm/sched: Fix potential double free in drm_sched_job_add_resv_dependencies (Mika Penttilä) [RHEL-125456] {CVE-2025-40096}\n- drm/i915: mark requests for GuC virtual engines to avoid use-after-free (CKI Backport Bot) [RHEL-124682] {CVE-2023-53552}",
+  "affected_products": [
+    "Oracle Linux 8"
+  ],
+  "packages": [
+    "bpftool-4.18.0-553.94.1.0.1.el8_10.x86_64.rpm",
+    "kernel-4.18.0-553.94.1.0.1.el8_10.x86_64.rpm",
+    "kernel-abi-stablelists-4.18.0-553.94.1.0.1.el8_10.noarch.rpm",
+    "kernel-core-4.18.0-553.94.1.0.1.el8_10.x86_64.rpm",
+    "kernel-cross-headers-4.18.0-553.94.1.0.1.el8_10.x86_64.rpm",
+    "kernel-debug-4.18.0-553.94.1.0.1.el8_10.x86_64.rpm",
+    "kernel-debug-core-4.18.0-553.94.1.0.1.el8_10.x86_64.rpm",
+    "kernel-debug-devel-4.18.0-553.94.1.0.1.el8_10.x86_64.rpm",
+    "kernel-debug-modules-4.18.0-553.94.1.0.1.el8_10.x86_64.rpm",
+    "kernel-debug-modules-extra-4.18.0-553.94.1.0.1.el8_10.x86_64.rpm",
+    "kernel-devel-4.18.0-553.94.1.0.1.el8_10.x86_64.rpm",
+    "kernel-doc-4.18.0-553.94.1.0.1.el8_10.noarch.rpm",
+    "kernel-headers-4.18.0-553.94.1.0.1.el8_10.x86_64.rpm",
+    "kernel-modules-4.18.0-553.94.1.0.1.el8_10.x86_64.rpm",
+    "kernel-modules-extra-4.18.0-553.94.1.0.1.el8_10.x86_64.rpm",
+    "kernel-tools-4.18.0-553.94.1.0.1.el8_10.x86_64.rpm",
+    "kernel-tools-libs-4.18.0-553.94.1.0.1.el8_10.x86_64.rpm",
+    "kernel-tools-libs-devel-4.18.0-553.94.1.0.1.el8_10.x86_64.rpm",
+    "perf-4.18.0-553.94.1.0.1.el8_10.x86_64.rpm",
+    "python3-perf-4.18.0-553.94.1.0.1.el8_10.x86_64.rpm"
+  ],
+  "cves": [
+    "CVE-2025-68301",
+    "CVE-2025-39933",
+    "CVE-2025-38051",
+    "CVE-2025-40096",
+    "CVE-2023-53552"
+  ],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Bug Fix Advisory ELBA-2026-0759-1\n\nhttp://linux.oracle.com/errata/ELBA-2026-0759-1.html\n\nThe following updated rpms for Oracle Linux 8 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\nbpftool-4.18.0-553.94.1.0.1.el8_10.x86_64.rpm\nkernel-4.18.0-553.94.1.0.1.el8_10.x86_64.rpm\nkernel-abi-stablelists-4.18.0-553.94.1.0.1.el8_10.noarch.rpm\nkernel-core-4.18.0-553.94.1.0.1.el8_10.x86_64.rpm\nkernel-cross-headers-4.18.0-553.94.1.0.1.el8_10.x86_64.rpm\nkernel-debug-4.18.0-553.94.1.0.1.el8_10.x86_64.rpm\nkernel-debug-core-4.18.0-553.94.1.0.1.el8_10.x86_64.rpm\nkernel-debug-devel-4.18.0-553.94.1.0.1.el8_10.x86_64.rpm\nkernel-debug-modules-4.18.0-553.94.1.0.1.el8_10.x86_64.rpm\nkernel-debug-modules-extra-4.18.0-553.94.1.0.1.el8_10.x86_64.rpm\nkernel-devel-4.18.0-553.94.1.0.1.el8_10.x86_64.rpm\nkernel-doc-4.18.0-553.94.1.0.1.el8_10.noarch.rpm\nkernel-headers-4.18.0-553.94.1.0.1.el8_10.x86_64.rpm\nkernel-modules-4.18.0-553.94.1.0.1.el8_10.x86_64.rpm\nkernel-modules-extra-4.18.0-553.94.1.0.1.el8_10.x86_64.rpm\nkernel-tools-4.18.0-553.94.1.0.1.el8_10.x86_64.rpm\nkernel-tools-libs-4.18.0-553.94.1.0.1.el8_10.x86_64.rpm\nkernel-tools-libs-devel-4.18.0-553.94.1.0.1.el8_10.x86_64.rpm\nperf-4.18.0-553.94.1.0.1.el8_10.x86_64.rpm\npython3-perf-4.18.0-553.94.1.0.1.el8_10.x86_64.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol8/SRPMS-updates/kernel-4.18.0-553.94.1.0.1.el8_10.src.rpm\n\n\n\nDescription of changes:\n\n[4.18.0-553.94.1.0.1]\n- scsi: core: Restrict legal sdev_state transitions via sysfs (Uday Shankar) [Orabug: 37778230]\n\n[4.18.0-553.94.1]\n- Update Oracle Linux certificates (Kevin Lyons)\n- Disable signing for aarch64 (Ilya Okomin)\n- Oracle Linux RHCK Module Signing Key was added to the kernel trusted keys list (olkmod_signing_key.pem) [Orabug: 29539237]\n- Update x509.genkey [Orabug: 24817676]\n- Conflict with shim-ia32 and shim-x64 <= 15.3-1.0.3\n- Remove upstream reference during boot (Kevin Lyons) [Orabug: 34750652]\n- Add new Oracle Linux Driver Signing (key 1) certificate [Orabug: 37985772]\n\n[4.18.0-553.94.1]\n- net: atlantic: fix fragment overflow handling in RX path (CKI Backport Bot) [RHEL-139482] {CVE-2025-68301}\n- smb: client: let recv_done verify data_offset, data_length and remaining_data_length (Paulo Alcantara) [RHEL-131387] {CVE-2025-39933}\n- smb: client: Fix use-after-free in cifs_fill_dirent (CKI Backport Bot) [RHEL-134369] {CVE-2025-38051}\n\n[4.18.0-553.93.1]\n- mm: compaction: update the COMPACT[STALL|FAIL] events properly (Lucas Oakley) [RHEL-132449]\n- drm/sched: Fix potential double free in drm_sched_job_add_resv_dependencies (Mika Penttilä) [RHEL-125456] {CVE-2025-40096}\n- drm/i915: mark requests for GuC virtual engines to avoid use-after-free (CKI Backport Bot) [RHEL-124682] {CVE-2023-53552}",
+  "vendor": "Oracle"
+}

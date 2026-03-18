@@ -1,0 +1,33 @@
+{
+  "id": "ELSA-2025-16823",
+  "vendor": "Oracle",
+  "type": "Security Advisory (ELSA)",
+  "kernel_type": "RHCK",
+  "title": " openssh security update",
+  "issuedDate": "2025-09-26T00:00:00Z",
+  "updatedDate": "2025-09-26T00:00:00Z",
+  "pubDate": "2025-09-26T00:00:00Z",
+  "dateStr": "2025-09-26",
+  "url": "https://linux.oracle.com/errata/ELSA-2025-16823.html",
+  "severity": "Moderate",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 8.",
+  "description": "[8.0p1-26.0.1]\n- Update upstream references [Orabug: 36587718]\n\n[8.0p1-26]\n- Fix missing invalid error code checks in OpenSSH. It prevents\n  a MITM attack when VerifyHostKeyDNS is on (CVE-2025-26465)\n  Resolves: RHEL-109228",
+  "affected_products": [
+    "Oracle Linux 8 for x86_64",
+    "Oracle Linux 8 for aarch64"
+  ],
+  "cves": [
+    "CVE-2025-26465"
+  ],
+  "packages": [
+    "openssh-ldap-8.0p1-26.0.1.el8_10.x86_64",
+    "openssh-8.0p1-26.0.1.el8_10.src",
+    "openssh-clients-8.0p1-26.0.1.el8_10.x86_64",
+    "openssh-cavs-8.0p1-26.0.1.el8_10.x86_64",
+    "openssh-server-8.0p1-26.0.1.el8_10.x86_64",
+    "openssh-keycat-8.0p1-26.0.1.el8_10.x86_64",
+    "pam_ssh_agent_auth-0.10.3-7.26.0.1.el8_10.x86_64",
+    "openssh-8.0p1-26.0.1.el8_10.x86_64"
+  ],
+  "full_text": "[8.0p1-26.0.1]\n- Update upstream references [Orabug: 36587718]\n\n[8.0p1-26]\n- Fix missing invalid error code checks in OpenSSH. It prevents\n  a MITM attack when VerifyHostKeyDNS is on (CVE-2025-26465)\n  Resolves: RHEL-109228\n\nReferences:\nhttps://linux.oracle.com/errata/ELSA-2025-16823.html\nhttps://linux.oracle.com/cve/CVE-2025-26465.html"
+}

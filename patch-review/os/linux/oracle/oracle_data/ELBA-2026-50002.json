@@ -1,0 +1,25 @@
+{
+  "id": "ELBA-2026-50002",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "AppStream",
+  "title": " crash  bug fix update",
+  "issuedDate": "2026-01-06T00:00:00Z",
+  "updatedDate": "2026-01-06T00:00:00Z",
+  "pubDate": "2026-01-06T00:00:00Z",
+  "dateStr": "2026-01-06",
+  "url": "https://linux.oracle.com/errata/ELBA-2026-50002.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 8.",
+  "description": "[9.0.1-1.0.1]\n- Update crash tool to latest version 9.0.1 [Orabug: 38801299]",
+  "affected_products": [
+    "Oracle Linux 8 for x86_64",
+    "Oracle Linux 8 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "crash-9.0.1-1.0.1.el8.x86_64",
+    "crash-9.0.1-1.0.1.el8.src"
+  ],
+  "full_text": "[9.0.1-1.0.1]\n- Update crash tool to latest version 9.0.1 [Orabug: 38801299]\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2026-50002.html"
+}

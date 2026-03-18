@@ -1,0 +1,55 @@
+{
+  "id": "RHBA-2025:20798",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: xdp-tools bug fix and enhancement update",
+  "issuedDate": "2025-11-11T07:51:08Z",
+  "updatedDate": "2025-11-11T07:51:08Z",
+  "pubDate": "2025-11-11T07:51:08Z",
+  "dateStr": "2025-11-11",
+  "url": "https://access.redhat.com/errata/RHBA-2025:20798",
+  "severity": "None",
+  "overview": "An update for xdp-tools is now available for Red Hat Enterprise Linux 10.",
+  "description": "For detailed information on changes in this release, see the Red Hat Enterprise Linux 9 Release Notes linked from the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux for ARM 64",
+    "Red Hat Enterprise Linux for x86_64 10 x86_64",
+    "Red Hat CodeReady Linux Builder for IBM z Systems",
+    "Red Hat Enterprise Linux for IBM z Systems",
+    "Red Hat Enterprise Linux for Power, little endian",
+    "Red Hat CodeReady Linux Builder for Power, little endian",
+    "Red Hat CodeReady Linux Builder for ARM 64",
+    "Red Hat CodeReady Linux Builder for x86_64 10 x86_64"
+  ],
+  "cves": [],
+  "packages": [
+    "xdp-tools-1.5.5-1.el9.src",
+    "libxdp-1.5.5-1.el9.i686",
+    "libxdp-1.5.5-1.el9.x86_64",
+    "xdp-tools-1.5.5-1.el9.x86_64",
+    "libxdp-1.5.5-1.el9.s390x",
+    "xdp-tools-1.5.5-1.el9.s390x",
+    "libxdp-1.5.5-1.el9.ppc64le",
+    "xdp-tools-1.5.5-1.el9.ppc64le",
+    "libxdp-1.5.5-1.el9.aarch64",
+    "xdp-tools-1.5.5-1.el9.aarch64",
+    "libxdp-devel-1.5.5-1.el9.i686",
+    "libxdp-devel-1.5.5-1.el9.x86_64",
+    "libxdp-static-1.5.5-1.el9.i686",
+    "libxdp-static-1.5.5-1.el9.x86_64",
+    "libxdp-devel-1.5.5-1.el9.ppc64le",
+    "libxdp-static-1.5.5-1.el9.ppc64le",
+    "libxdp-devel-1.5.5-1.el9.aarch64",
+    "libxdp-static-1.5.5-1.el9.aarch64",
+    "libxdp-devel-1.5.5-1.el9.s390x",
+    "libxdp-static-1.5.5-1.el9.s390x"
+  ],
+  "fixes": [
+    {
+      "id": "RHEL-85699",
+      "url": "https://issues.redhat.com/browse/RHEL-85699",
+      "description": "xdp-tools FTBFS when using LLVM-20 [rhel-9.7]"
+    }
+  ],
+  "full_text": "An update for xdp-tools is now available for Red Hat Enterprise Linux 10.\n\nFor detailed information on changes in this release, see the Red Hat Enterprise Linux 9 Release Notes linked from the References section."
+}

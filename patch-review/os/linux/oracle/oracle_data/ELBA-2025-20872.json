@@ -1,0 +1,30 @@
+{
+  "id": "ELBA-2025-20872",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "AppStream",
+  "title": "udisks2 bug fix and enhancement update",
+  "issuedDate": "2025-11-17T00:00:00Z",
+  "updatedDate": "2025-11-17T00:00:00Z",
+  "pubDate": "2025-11-17T00:00:00Z",
+  "dateStr": "2025-11-17",
+  "url": "https://linux.oracle.com/errata/ELBA-2025-20872.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 9.",
+  "description": "[2.9.4-12.0.1]\n- Enable btrfs support for OL supported arches [Orabug: 37464632]\n\n[2.9.4-12]\n- udiskslinuxmanager: Add lower bounds check to fd_index (CVE-2025-8067) (RHEL-109413)",
+  "affected_products": [
+    "Oracle Linux 9 for x86_64",
+    "Oracle Linux 9 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "udisks2-lsm-2.9.4-12.0.1.el9_7.x86_64",
+    "udisks2-2.9.4-12.0.1.el9_7.x86_64",
+    "udisks2-iscsi-2.9.4-12.0.1.el9_7.x86_64",
+    "libudisks2-2.9.4-12.0.1.el9_7.x86_64",
+    "libudisks2-2.9.4-12.0.1.el9_7.i686",
+    "udisks2-lvm2-2.9.4-12.0.1.el9_7.x86_64",
+    "udisks2-2.9.4-12.0.1.el9_7.src"
+  ],
+  "full_text": "[2.9.4-12.0.1]\n- Enable btrfs support for OL supported arches [Orabug: 37464632]\n\n[2.9.4-12]\n- udiskslinuxmanager: Add lower bounds check to fd_index (CVE-2025-8067) (RHEL-109413)\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2025-20872.html"
+}

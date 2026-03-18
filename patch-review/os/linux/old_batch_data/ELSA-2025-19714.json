@@ -1,0 +1,29 @@
+{
+  "id": "ELSA-2025-19714",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2025-November/018910.html",
+  "synopsis": "[El-errata] ELSA-2025-19714 Important: Oracle Linux 8 libsoup security update",
+  "dateStr": "2025-November",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Security Advisory ELSA-2025-19714",
+  "description": "[2.62.3-10]\n- Backport patch for CVE-2025-4945 and CVE-2025-11021",
+  "affected_products": [
+    "Oracle Linux 8"
+  ],
+  "packages": [
+    "libsoup-2.62.3-10.el8_10.i686.rpm",
+    "libsoup-2.62.3-10.el8_10.x86_64.rpm",
+    "libsoup-devel-2.62.3-10.el8_10.i686.rpm",
+    "libsoup-devel-2.62.3-10.el8_10.x86_64.rpm",
+    "libsoup-2.62.3-10.el8_10.aarch64.rpm",
+    "libsoup-devel-2.62.3-10.el8_10.aarch64.rpm"
+  ],
+  "cves": [
+    "CVE-2025-4945",
+    "CVE-2025-11021"
+  ],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Security Advisory ELSA-2025-19714\n\nhttp://linux.oracle.com/errata/ELSA-2025-19714.html\n\nThe following updated rpms for Oracle Linux 8 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\nlibsoup-2.62.3-10.el8_10.i686.rpm\nlibsoup-2.62.3-10.el8_10.x86_64.rpm\nlibsoup-devel-2.62.3-10.el8_10.i686.rpm\nlibsoup-devel-2.62.3-10.el8_10.x86_64.rpm\n\naarch64:\nlibsoup-2.62.3-10.el8_10.aarch64.rpm\nlibsoup-devel-2.62.3-10.el8_10.aarch64.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol8/SRPMS-updates/libsoup-2.62.3-10.el8_10.src.rpm\n\nRelated CVEs:\n\nCVE-2025-4945\nCVE-2025-11021\n\n\n\n\nDescription of changes:\n\n[2.62.3-10]\n- Backport patch for CVE-2025-4945 and CVE-2025-11021",
+  "vendor": "Oracle"
+}

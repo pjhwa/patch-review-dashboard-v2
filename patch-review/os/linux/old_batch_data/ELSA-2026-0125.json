@@ -1,0 +1,28 @@
+{
+  "id": "ELSA-2026-0125",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2026-January/019462.html",
+  "synopsis": "[El-errata] ELSA-2026-0125 Important: Oracle Linux 8 mingw-libpng security update",
+  "dateStr": "2026-January",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Security Advisory ELSA-2026-0125",
+  "description": "[1.6.34-1]\n- Rebase to version 1.6.34\n- Fix the following CVEs\n  CVE-2025-64720 CVE-2025-65018 CVE-2025-66293\n- Resolves: RHEL-131458\n- Resolves: RHEL-131471\n- Resolves: RHEL-133229",
+  "affected_products": [
+    "Oracle Linux 8"
+  ],
+  "packages": [
+    "mingw32-libpng-1.6.34-1.el8_10.noarch.rpm",
+    "mingw32-libpng-static-1.6.34-1.el8_10.noarch.rpm",
+    "mingw64-libpng-1.6.34-1.el8_10.noarch.rpm",
+    "mingw64-libpng-static-1.6.34-1.el8_10.noarch.rpm"
+  ],
+  "cves": [
+    "CVE-2025-64720",
+    "CVE-2025-65018",
+    "CVE-2025-66293"
+  ],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Security Advisory ELSA-2026-0125\n\nhttp://linux.oracle.com/errata/ELSA-2026-0125.html\n\nThe following updated rpms for Oracle Linux 8 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\nmingw32-libpng-1.6.34-1.el8_10.noarch.rpm\nmingw32-libpng-static-1.6.34-1.el8_10.noarch.rpm\nmingw64-libpng-1.6.34-1.el8_10.noarch.rpm\nmingw64-libpng-static-1.6.34-1.el8_10.noarch.rpm\n\n\n\nSRPMS:\nhttp://oss.oracle.com/ol8/SRPMS-updates/mingw-libpng-1.6.34-1.el8_10.src.rpm\n\nRelated CVEs:\n\nCVE-2025-64720\nCVE-2025-65018\nCVE-2025-66293\n\n\n\n\nDescription of changes:\n\n[1.6.34-1]\n- Rebase to version 1.6.34\n- Fix the following CVEs\n  CVE-2025-64720 CVE-2025-65018 CVE-2025-66293\n- Resolves: RHEL-131458\n- Resolves: RHEL-131471\n- Resolves: RHEL-133229",
+  "vendor": "Oracle"
+}

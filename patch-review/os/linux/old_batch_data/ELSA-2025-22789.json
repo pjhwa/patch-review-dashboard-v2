@@ -1,0 +1,51 @@
+{
+  "id": "ELSA-2025-22789",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2025-December/019221.html",
+  "synopsis": "[El-errata] ELSA-2025-22789 Important: Oracle Linux 8 webkit2gtk3 security update",
+  "dateStr": "2025-December",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Security Advisory ELSA-2025-22789",
+  "description": "[2.50.3-1]\n- Update to 2.50.3",
+  "affected_products": [
+    "Oracle Linux 8"
+  ],
+  "packages": [
+    "webkit2gtk3-2.50.3-1.el8_10.i686.rpm",
+    "webkit2gtk3-2.50.3-1.el8_10.x86_64.rpm",
+    "webkit2gtk3-devel-2.50.3-1.el8_10.i686.rpm",
+    "webkit2gtk3-devel-2.50.3-1.el8_10.x86_64.rpm",
+    "webkit2gtk3-jsc-2.50.3-1.el8_10.i686.rpm",
+    "webkit2gtk3-jsc-2.50.3-1.el8_10.x86_64.rpm",
+    "webkit2gtk3-jsc-devel-2.50.3-1.el8_10.i686.rpm",
+    "webkit2gtk3-jsc-devel-2.50.3-1.el8_10.x86_64.rpm",
+    "webkit2gtk3-2.50.3-1.el8_10.aarch64.rpm",
+    "webkit2gtk3-devel-2.50.3-1.el8_10.aarch64.rpm",
+    "webkit2gtk3-jsc-2.50.3-1.el8_10.aarch64.rpm",
+    "webkit2gtk3-jsc-devel-2.50.3-1.el8_10.aarch64.rpm"
+  ],
+  "cves": [
+    "CVE-2023-43000",
+    "CVE-2025-13502",
+    "CVE-2025-13947",
+    "CVE-2025-43392",
+    "CVE-2025-43419",
+    "CVE-2025-43421",
+    "CVE-2025-43425",
+    "CVE-2025-43427",
+    "CVE-2025-43429",
+    "CVE-2025-43430",
+    "CVE-2025-43431",
+    "CVE-2025-43432",
+    "CVE-2025-43434",
+    "CVE-2025-43440",
+    "CVE-2025-43443",
+    "CVE-2025-43458",
+    "CVE-2025-43480",
+    "CVE-2025-66287"
+  ],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Security Advisory ELSA-2025-22789\n\nhttp://linux.oracle.com/errata/ELSA-2025-22789.html\n\nThe following updated rpms for Oracle Linux 8 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\nwebkit2gtk3-2.50.3-1.el8_10.i686.rpm\nwebkit2gtk3-2.50.3-1.el8_10.x86_64.rpm\nwebkit2gtk3-devel-2.50.3-1.el8_10.i686.rpm\nwebkit2gtk3-devel-2.50.3-1.el8_10.x86_64.rpm\nwebkit2gtk3-jsc-2.50.3-1.el8_10.i686.rpm\nwebkit2gtk3-jsc-2.50.3-1.el8_10.x86_64.rpm\nwebkit2gtk3-jsc-devel-2.50.3-1.el8_10.i686.rpm\nwebkit2gtk3-jsc-devel-2.50.3-1.el8_10.x86_64.rpm\n\naarch64:\nwebkit2gtk3-2.50.3-1.el8_10.aarch64.rpm\nwebkit2gtk3-devel-2.50.3-1.el8_10.aarch64.rpm\nwebkit2gtk3-jsc-2.50.3-1.el8_10.aarch64.rpm\nwebkit2gtk3-jsc-devel-2.50.3-1.el8_10.aarch64.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol8/SRPMS-updates/webkit2gtk3-2.50.3-1.el8_10.src.rpm\n\nRelated CVEs:\n\nCVE-2023-43000\nCVE-2025-13502\nCVE-2025-13947\nCVE-2025-43392\nCVE-2025-43419\nCVE-2025-43421\nCVE-2025-43425\nCVE-2025-43427\nCVE-2025-43429\nCVE-2025-43430\nCVE-2025-43431\nCVE-2025-43432\nCVE-2025-43434\nCVE-2025-43440\nCVE-2025-43443\nCVE-2025-43458\nCVE-2025-43480\nCVE-2025-66287\n\n\n\n\nDescription of changes:\n\n[2.50.3-1]\n- Update to 2.50.3",
+  "vendor": "Oracle"
+}

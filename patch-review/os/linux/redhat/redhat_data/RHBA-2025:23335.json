@@ -1,0 +1,38 @@
+{
+  "id": "RHBA-2025:23335",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: squid bug fix and enhancement update",
+  "issuedDate": "2025-12-18T10:48:16Z",
+  "updatedDate": "2025-12-18T10:48:16Z",
+  "pubDate": "2025-12-18T10:48:16Z",
+  "dateStr": "2025-12-18",
+  "url": "https://access.redhat.com/errata/RHBA-2025:23335",
+  "severity": "None",
+  "overview": "An update for squid is now available for Red Hat Enterprise Linux 10.",
+  "description": "Squid is a high-performance proxy caching server for web clients, supporting FTP, and HTTP data objects.Bug Fix(es) and Enhancement(s): \"ICAP_ERR_OTHER/408\" occurs in icap.log when downloading a file on RHEL9 [rhel-9.7.z] (JIRA:RHEL-131797)",
+  "affected_products": [
+    "Red Hat Enterprise Linux for ARM 64",
+    "Red Hat Enterprise Linux for x86_64 10 x86_64",
+    "Red Hat Enterprise Linux for Power, little endian",
+    "Red Hat Enterprise Linux for IBM z Systems"
+  ],
+  "cves": [],
+  "packages": [
+    "squid-5.5-22.el9_7.2.src",
+    "squid-5.5-22.el9_7.2.x86_64",
+    "squid-debuginfo-5.5-22.el9_7.2.x86_64",
+    "squid-debugsource-5.5-22.el9_7.2.x86_64",
+    "squid-5.5-22.el9_7.2.s390x",
+    "squid-debuginfo-5.5-22.el9_7.2.s390x",
+    "squid-debugsource-5.5-22.el9_7.2.s390x",
+    "squid-5.5-22.el9_7.2.ppc64le",
+    "squid-debuginfo-5.5-22.el9_7.2.ppc64le",
+    "squid-debugsource-5.5-22.el9_7.2.ppc64le",
+    "squid-5.5-22.el9_7.2.aarch64",
+    "squid-debuginfo-5.5-22.el9_7.2.aarch64",
+    "squid-debugsource-5.5-22.el9_7.2.aarch64"
+  ],
+  "fixes": [],
+  "full_text": "An update for squid is now available for Red Hat Enterprise Linux 10.\n\nSquid is a high-performance proxy caching server for web clients, supporting FTP, and HTTP data objects.Bug Fix(es) and Enhancement(s): \"ICAP_ERR_OTHER/408\" occurs in icap.log when downloading a file on RHEL9 [rhel-9.7.z] (JIRA:RHEL-131797)"
+}

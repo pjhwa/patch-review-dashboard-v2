@@ -1,0 +1,42 @@
+{
+  "id": "RHSA-2026:0761",
+  "vendor": "Red Hat",
+  "type": "Security Advisory (RHSA)",
+  "title": "Red Hat Security Advisory: Red Hat build of Cryostat security update",
+  "issuedDate": "2026-01-19T03:34:11+00:00",
+  "updatedDate": "2026-01-19T03:34:11+00:00",
+  "pubDate": "2026-01-19T03:34:11+00:00",
+  "dateStr": "2026-01-19",
+  "url": "https://access.redhat.com/errata/RHSA-2026:0761",
+  "severity": "Important",
+  "overview": "An update is now available for the Red Hat build of Cryostat 4 on RHEL 9.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "description": "An update is now available for the Red Hat build of Cryostat 4 on RHEL 9.\n\nSecurity Fix(es):\n\n* lz4-java: Information Disclosure via Insufficient Output Buffer Clearing (CVE-2025-66566)\n* qs: Denial of Service via improper input validation in array parsing (CVE-2025-15284)\n\nFor more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section.",
+  "affected_products": [],
+  "cves": [
+    "CVE-2025-15284",
+    "CVE-2025-66566"
+  ],
+  "packages": [
+    "cryostat/cryostat-agent-init-rhel9@sha256:47f169436c4a6e40c8e829af7e753e481b5e672ca24b59971a2914807e968bc7_amd64",
+    "cryostat/cryostat-db-rhel9@sha256:58a80ea179c75c8cfba9c1171930c647f8b1da4f6720925166ba88debb562f68_amd64",
+    "cryostat/cryostat-grafana-dashboard-rhel9@sha256:449cdba9e4b8d185a14530cb4877532a6e8dccbd9892862f03caffd3255e7d4d_amd64",
+    "cryostat/cryostat-openshift-console-plugin-rhel9@sha256:d5052b06326f477548bc4e5d0b941040dd8263e5f1d431dca86cc1d19cdfb227_amd64",
+    "cryostat/cryostat-reports-rhel9@sha256:3ba64d19551ff3ebfe9fd9939e0fd338135addb278c29f32c6d3dbdfba72c682_amd64",
+    "cryostat/cryostat-rhel9@sha256:89580204b1fb3c1df3fcccb6b22cf47f4b5a7f76cc779984274c72b24c9d0f37_amd64",
+    "cryostat/cryostat-operator-bundle@sha256:3990bc1d5cdbba8a52bfd6e22811d056b122e3d0e423eb9fd6480ac02f56a8bc_amd64",
+    "cryostat/cryostat-rhel9-operator@sha256:9e066a2c850468e029b0b0c78857a96d71f4ed005a1b29b903f47dcd74e308ce_amd64",
+    "cryostat/cryostat-storage-rhel9@sha256:e421d42889a7f26d7023c6d13cf24f299a76967fa3c89bf7a7aaa226fe5fd5fb_amd64",
+    "cryostat/jfr-datasource-rhel9@sha256:3ba904612846ada1e6fc3d48e35c33642b93030a41dd148e7fac998ba59ab960_amd64",
+    "cryostat/cryostat-agent-init-rhel9@sha256:85f9a6db86ade5099c06d162d6affcd65f117f8449e3f18df628a89ba90e7eb1_arm64",
+    "cryostat/cryostat-db-rhel9@sha256:5abe74e5e4e6c0272cb013786441d99f3c182f56e120f8db68bfa2288a2b0741_arm64",
+    "cryostat/cryostat-grafana-dashboard-rhel9@sha256:30742c883d8b607beace385e79829d3e954b222e973ebda2ebbe80d05b89df4a_arm64",
+    "cryostat/cryostat-openshift-console-plugin-rhel9@sha256:42ad2b45f4837a3a7145bb5465193c0fbd0f9a19cd084319ae3cec2c044d7749_arm64",
+    "cryostat/cryostat-reports-rhel9@sha256:0dc529cfd1c5b62bab2b45a002029260ee1add496bf771ddf430d7f2388a3a3c_arm64",
+    "cryostat/cryostat-rhel9@sha256:b15d84cdd4f637461f3776b3170f80f330da4fffede49aec08bae13031e3d89a_arm64",
+    "cryostat/cryostat-operator-bundle@sha256:bde9b20b5563b1f76e64adfd16325158dd4d6a3d7f5cc6bb114c11e6bdf8d863_arm64",
+    "cryostat/cryostat-rhel9-operator@sha256:1faf17c23b013dff6ef9967fb12c35df9cb44c816ad2422ddf028006c35ee003_arm64",
+    "cryostat/cryostat-storage-rhel9@sha256:2309b2886630d23f88c169d53a0213547d1ad42d337c77332dcb279ee31c6c3f_arm64",
+    "cryostat/jfr-datasource-rhel9@sha256:3e9168fa43bfd9af8c55c73b45359c06ad65cd22d10770ba5c75fe83d0c5f948_arm64"
+  ],
+  "full_text": "An update is now available for the Red Hat build of Cryostat 4 on RHEL 9.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nAn update is now available for the Red Hat build of Cryostat 4 on RHEL 9.\n\nSecurity Fix(es):\n\n* lz4-java: Information Disclosure via Insufficient Output Buffer Clearing (CVE-2025-66566)\n* qs: Denial of Service via improper input validation in array parsing (CVE-2025-15284)\n\nFor more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section."
+}

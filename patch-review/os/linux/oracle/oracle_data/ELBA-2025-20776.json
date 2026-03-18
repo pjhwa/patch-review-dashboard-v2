@@ -1,0 +1,31 @@
+{
+  "id": "ELBA-2025-20776",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "AppStream",
+  "title": "java-1.8.0-openjdk bug fix and enhancement update",
+  "issuedDate": "2025-11-17T00:00:00Z",
+  "updatedDate": "2025-11-17T00:00:00Z",
+  "pubDate": "2025-11-17T00:00:00Z",
+  "dateStr": "2025-11-17",
+  "url": "https://linux.oracle.com/errata/ELBA-2025-20776.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 9.",
+  "description": "* Wed Sep 24 2025 Kevin Lyons <kevin.x.lyons@oracle.com4 - 1:1.8.0.462.b08-4.0.1\n- Add Oracle vendor bug URL [Orabug: 34340155]\n\n[1:1.8.0.462.b08-4]\n- Bump rpmrelease for CentOS build\n- Remove obsolete hack to hardcode newer portable version on RHEL\n- Related: RHEL-101648\n- Related: RHEL-102312\n- Related: RHEL-97496",
+  "affected_products": [
+    "Oracle Linux 9 for x86_64",
+    "Oracle Linux 9 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "java-1.8.0-openjdk-headless-1.8.0.462.b08-4.0.1.el9.x86_64",
+    "java-1.8.0-openjdk-demo-1.8.0.462.b08-4.0.1.el9.x86_64",
+    "java-1.8.0-openjdk-devel-1.8.0.462.b08-4.0.1.el9.x86_64",
+    "java-1.8.0-openjdk-1.8.0.462.b08-4.0.1.el9.x86_64",
+    "java-1.8.0-openjdk-src-1.8.0.462.b08-4.0.1.el9.x86_64",
+    "java-1.8.0-openjdk-javadoc-1.8.0.462.b08-4.0.1.el9.noarch",
+    "java-1.8.0-openjdk-javadoc-zip-1.8.0.462.b08-4.0.1.el9.noarch",
+    "java-1.8.0-openjdk-1.8.0.462.b08-4.0.1.el9.src"
+  ],
+  "full_text": "* Wed Sep 24 2025 Kevin Lyons <kevin.x.lyons@oracle.com4 - 1:1.8.0.462.b08-4.0.1\n- Add Oracle vendor bug URL [Orabug: 34340155]\n\n[1:1.8.0.462.b08-4]\n- Bump rpmrelease for CentOS build\n- Remove obsolete hack to hardcode newer portable version on RHEL\n- Related: RHEL-101648\n- Related: RHEL-102312\n- Related: RHEL-97496\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2025-20776.html"
+}

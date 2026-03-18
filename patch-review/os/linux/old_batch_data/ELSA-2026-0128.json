@@ -1,0 +1,42 @@
+{
+  "id": "ELSA-2026-0128",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2026-January/019448.html",
+  "synopsis": "[El-errata] ELSA-2026-0128 Moderate: Oracle Linux 10 poppler security update",
+  "dateStr": "2026-January",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Security Advisory ELSA-2026-0128",
+  "description": "[24.02.0-7]\n- Check bitmap in combine()\n- Resolves: RHEL-131783, RHEL-131782",
+  "affected_products": [
+    "Oracle Linux 10"
+  ],
+  "packages": [
+    "poppler-24.02.0-7.el10_1.x86_64.rpm",
+    "poppler-cpp-24.02.0-7.el10_1.x86_64.rpm",
+    "poppler-cpp-devel-24.02.0-7.el10_1.x86_64.rpm",
+    "poppler-devel-24.02.0-7.el10_1.x86_64.rpm",
+    "poppler-glib-24.02.0-7.el10_1.x86_64.rpm",
+    "poppler-glib-devel-24.02.0-7.el10_1.x86_64.rpm",
+    "poppler-glib-doc-24.02.0-7.el10_1.noarch.rpm",
+    "poppler-qt6-24.02.0-7.el10_1.x86_64.rpm",
+    "poppler-qt6-devel-24.02.0-7.el10_1.x86_64.rpm",
+    "poppler-utils-24.02.0-7.el10_1.x86_64.rpm",
+    "poppler-24.02.0-7.el10_1.aarch64.rpm",
+    "poppler-cpp-24.02.0-7.el10_1.aarch64.rpm",
+    "poppler-cpp-devel-24.02.0-7.el10_1.aarch64.rpm",
+    "poppler-devel-24.02.0-7.el10_1.aarch64.rpm",
+    "poppler-glib-24.02.0-7.el10_1.aarch64.rpm",
+    "poppler-glib-devel-24.02.0-7.el10_1.aarch64.rpm",
+    "poppler-glib-doc-24.02.0-7.el10_1.noarch.rpm",
+    "poppler-qt6-24.02.0-7.el10_1.aarch64.rpm",
+    "poppler-qt6-devel-24.02.0-7.el10_1.aarch64.rpm",
+    "poppler-utils-24.02.0-7.el10_1.aarch64.rpm"
+  ],
+  "cves": [
+    "CVE-2025-32365"
+  ],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Security Advisory ELSA-2026-0128\n\nhttp://linux.oracle.com/errata/ELSA-2026-0128.html\n\nThe following updated rpms for Oracle Linux 10 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\npoppler-24.02.0-7.el10_1.x86_64.rpm\npoppler-cpp-24.02.0-7.el10_1.x86_64.rpm\npoppler-cpp-devel-24.02.0-7.el10_1.x86_64.rpm\npoppler-devel-24.02.0-7.el10_1.x86_64.rpm\npoppler-glib-24.02.0-7.el10_1.x86_64.rpm\npoppler-glib-devel-24.02.0-7.el10_1.x86_64.rpm\npoppler-glib-doc-24.02.0-7.el10_1.noarch.rpm\npoppler-qt6-24.02.0-7.el10_1.x86_64.rpm\npoppler-qt6-devel-24.02.0-7.el10_1.x86_64.rpm\npoppler-utils-24.02.0-7.el10_1.x86_64.rpm\n\naarch64:\npoppler-24.02.0-7.el10_1.aarch64.rpm\npoppler-cpp-24.02.0-7.el10_1.aarch64.rpm\npoppler-cpp-devel-24.02.0-7.el10_1.aarch64.rpm\npoppler-devel-24.02.0-7.el10_1.aarch64.rpm\npoppler-glib-24.02.0-7.el10_1.aarch64.rpm\npoppler-glib-devel-24.02.0-7.el10_1.aarch64.rpm\npoppler-glib-doc-24.02.0-7.el10_1.noarch.rpm\npoppler-qt6-24.02.0-7.el10_1.aarch64.rpm\npoppler-qt6-devel-24.02.0-7.el10_1.aarch64.rpm\npoppler-utils-24.02.0-7.el10_1.aarch64.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol10/SRPMS-updates/poppler-24.02.0-7.el10_1.src.rpm\n\nRelated CVEs:\n\nCVE-2025-32365\n\n\n\n\nDescription of changes:\n\n[24.02.0-7]\n- Check bitmap in combine()\n- Resolves: RHEL-131783, RHEL-131782",
+  "vendor": "Oracle"
+}

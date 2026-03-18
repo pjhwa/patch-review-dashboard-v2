@@ -1,0 +1,44 @@
+{
+  "id": "RHBA-2025:20910",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: python-websockets bug fix and enhancement update",
+  "issuedDate": "2025-11-11T11:47:27Z",
+  "updatedDate": "2025-11-11T11:47:27Z",
+  "pubDate": "2025-11-11T11:47:27Z",
+  "dateStr": "2025-11-11",
+  "url": "https://access.redhat.com/errata/RHBA-2025:20910",
+  "severity": "None",
+  "overview": "An update for python-websockets is now available for Red Hat Enterprise Linux 10.",
+  "description": "Python is an interpreted, interactive, object-oriented programming language, which includes modules, classes, exceptions, very high level dynamic data types and dynamic typing. Python supports interfaces to many system calls and libraries, as well as to various windowing systems.Bug Fix(es) and Enhancement(s): [RFE] Update python-websockets package to the newest upstream version (JIRA:RHEL-113034)",
+  "affected_products": [
+    "Red Hat Enterprise Linux for Power, little endian",
+    "Red Hat Enterprise Linux for IBM z Systems",
+    "Red Hat Enterprise Linux for x86_64 10 x86_64",
+    "Red Hat Enterprise Linux for ARM 64"
+  ],
+  "cves": [],
+  "packages": [
+    "python-websockets-14.2-1.el9_7.src",
+    "python-websockets-debugsource-14.2-1.el9_7.x86_64",
+    "python3-websockets-14.2-1.el9_7.x86_64",
+    "python3-websockets-debuginfo-14.2-1.el9_7.x86_64",
+    "python-websockets-debugsource-14.2-1.el9_7.s390x",
+    "python3-websockets-14.2-1.el9_7.s390x",
+    "python3-websockets-debuginfo-14.2-1.el9_7.s390x",
+    "python-websockets-debugsource-14.2-1.el9_7.ppc64le",
+    "python3-websockets-14.2-1.el9_7.ppc64le",
+    "python3-websockets-debuginfo-14.2-1.el9_7.ppc64le",
+    "python-websockets-debugsource-14.2-1.el9_7.aarch64",
+    "python3-websockets-14.2-1.el9_7.aarch64",
+    "python3-websockets-debuginfo-14.2-1.el9_7.aarch64"
+  ],
+  "fixes": [
+    {
+      "id": "RHEL-113034",
+      "url": "https://issues.redhat.com/browse/RHEL-113034",
+      "description": "[RFE] Update python-websockets package to the newest upstream version"
+    }
+  ],
+  "full_text": "An update for python-websockets is now available for Red Hat Enterprise Linux 10.\n\nPython is an interpreted, interactive, object-oriented programming language, which includes modules, classes, exceptions, very high level dynamic data types and dynamic typing. Python supports interfaces to many system calls and libraries, as well as to various windowing systems.Bug Fix(es) and Enhancement(s): [RFE] Update python-websockets package to the newest upstream version (JIRA:RHEL-113034)"
+}

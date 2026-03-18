@@ -1,0 +1,25 @@
+{
+  "id": "ELBA-2025-20352-0",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "AppStream",
+  "title": "cockpit-machines bug fix and enhancement update",
+  "issuedDate": "2025-11-25T00:00:00Z",
+  "updatedDate": "2025-11-25T00:00:00Z",
+  "pubDate": "2025-11-25T00:00:00Z",
+  "dateStr": "2025-11-25",
+  "url": "https://linux.oracle.com/errata/ELBA-2025-20352-0.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 10.",
+  "description": "[337-1.0.1]\n- Replace upstream references [Orabug: 34340088]\n\n[337-1]\nBug fixes and translation updates\n\n[336-2]\n- Rebuilt for https://fedoraproject.org/wiki/Fedora_43_Mass_Rebuild\n\n[336-1]\n- Graphical VNC and serial consoles improvements\n- Control VNC console resizing and scaling\n- Bug fixes and translation updates\n\n[335-1]\n- Bug fixes and translation updates\n\n[334-1]\n- Bug fixes and translation updates\n\n[333-1]\n- Virtual network interfaces can now select source mode\n- Bug fixes and translation updates\n\n[332-1]\n- The 'shareable' attribute of disks is no longer modified by Cockpit\n- Bug fixes and translation updates\n\n[331-1]\n- Translation updates\n- Bug fixes\n\n[330-1]\n- Upgraded to Patternfly 6",
+  "affected_products": [
+    "Oracle Linux 10 for x86_64",
+    "Oracle Linux 10 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "cockpit-machines-337-1.0.1.el10.src",
+    "cockpit-machines-337-1.0.1.el10.noarch"
+  ],
+  "full_text": "[337-1.0.1]\n- Replace upstream references [Orabug: 34340088]\n\n[337-1]\nBug fixes and translation updates\n\n[336-2]\n- Rebuilt for https://fedoraproject.org/wiki/Fedora_43_Mass_Rebuild\n\n[336-1]\n- Graphical VNC and serial consoles improvements\n- Control VNC console resizing and scaling\n- Bug fixes and translation updates\n\n[335-1]\n- Bug fixes and translation updates\n\n[334-1]\n- Bug fixes and translation updates\n\n[333-1]\n- Virtual network interfaces can now select source mode\n- Bug fixes and translation updates\n\n[332-1]\n- The 'shareable' attribute of disks is no longer modified by Cockpit\n- Bug fixes and translation updates\n\n[331-1]\n- Translation updates\n- Bug fixes\n\n[330-1]\n- Upgraded to Patternfly 6\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2025-20352-0.html"
+}

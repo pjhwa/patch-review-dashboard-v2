@@ -1,0 +1,38 @@
+{
+  "id": "RHBA-2025:20587",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: man-pages bug fix and enhancement update",
+  "issuedDate": "2025-11-11T07:50:00Z",
+  "updatedDate": "2025-11-11T07:50:00Z",
+  "pubDate": "2025-11-11T07:50:00Z",
+  "dateStr": "2025-11-11",
+  "url": "https://access.redhat.com/errata/RHBA-2025:20587",
+  "severity": "None",
+  "overview": "An update for man-pages is now available for Red Hat Enterprise Linux 10.",
+  "description": "For detailed information on changes in this release, see the Red Hat Enterprise Linux 9 Release Notes linked from the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux for Power, little endian",
+    "Red Hat Enterprise Linux for ARM 64",
+    "Red Hat Enterprise Linux for IBM z Systems",
+    "Red Hat Enterprise Linux for x86_64 10 x86_64"
+  ],
+  "cves": [],
+  "packages": [
+    "man-pages-6.04-7.el9.src",
+    "man-pages-6.04-7.el9.noarch"
+  ],
+  "fixes": [
+    {
+      "id": "RHEL-101595",
+      "url": "https://issues.redhat.com/browse/RHEL-101595",
+      "description": "man-pages: Remove POSIX manual pages"
+    },
+    {
+      "id": "RHEL-101596",
+      "url": "https://issues.redhat.com/browse/RHEL-101596",
+      "description": "man-pages: Prep for using Platform Tools patch management tooling [rhel-9]"
+    }
+  ],
+  "full_text": "An update for man-pages is now available for Red Hat Enterprise Linux 10.\n\nFor detailed information on changes in this release, see the Red Hat Enterprise Linux 9 Release Notes linked from the References section."
+}

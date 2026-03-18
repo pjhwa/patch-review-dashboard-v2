@@ -1,0 +1,27 @@
+{
+  "id": "RHSA-2026:2710",
+  "vendor": "Red Hat",
+  "type": "Security Advisory (RHSA)",
+  "title": "Red Hat Security Advisory: python3.12-wheel security update",
+  "issuedDate": "2026-02-16T10:46:56+00:00",
+  "updatedDate": "2026-02-16T10:46:56+00:00",
+  "pubDate": "2026-02-16T10:46:56+00:00",
+  "dateStr": "2026-02-16",
+  "url": "https://access.redhat.com/errata/RHSA-2026:2710",
+  "severity": "Important",
+  "overview": "An update for python3.12-wheel is now available for Red Hat Enterprise Linux 9.6 Extended Update Support.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "description": "Python is an interpreted, interactive, object-oriented programming language, which includes modules, classes, exceptions, very high level dynamic data types and dynamic typing. Python supports interfaces to many system calls and libraries, as well as to various windowing systems.\n\nSecurity Fix(es):\n\n* wheel: wheel: Privilege Escalation or Arbitrary Code Execution via malicious wheel file unpacking (CVE-2026-24049)\n\nFor more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux",
+    "Red Hat Enterprise Linux AppStream EUS (v.9.6)"
+  ],
+  "cves": [
+    "CVE-2026-24049"
+  ],
+  "packages": [
+    "python3.12-wheel-0:0.41.2-3.el9_6.1.src",
+    "python3.12-wheel-0:0.41.2-3.el9_6.1.noarch",
+    "python3.12-wheel-wheel-0:0.41.2-3.el9_6.1.noarch"
+  ],
+  "full_text": "An update for python3.12-wheel is now available for Red Hat Enterprise Linux 9.6 Extended Update Support.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nPython is an interpreted, interactive, object-oriented programming language, which includes modules, classes, exceptions, very high level dynamic data types and dynamic typing. Python supports interfaces to many system calls and libraries, as well as to various windowing systems.\n\nSecurity Fix(es):\n\n* wheel: wheel: Privilege Escalation or Arbitrary Code Execution via malicious wheel file unpacking (CVE-2026-24049)\n\nFor more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section."
+}

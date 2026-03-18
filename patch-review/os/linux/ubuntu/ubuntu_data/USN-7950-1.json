@@ -1,0 +1,22 @@
+{
+  "id": "USN-7950-1",
+  "vendor": "Canonical / Ubuntu",
+  "type": "Ubuntu Security Notice (USN)",
+  "title": "python-tornado vulnerabilities",
+  "issuedDate": "2026-01-08T18:39:42Z",
+  "updatedDate": "2026-02-10T04:50:47Z",
+  "pubDate": "2026-01-08T18:39:42Z",
+  "dateStr": "2026-01-08",
+  "url": "https://ubuntu.com/security/notices/USN-7950-1",
+  "severity": "None",
+  "overview": "python-tornado vulnerabilities",
+  "description": "It was discovered that Tornado incorrectly handled special characters in\nHTTP headers. An attacker could possibly use this issue to execute a cross-\nsite scripting (XSS) attack. This issue only affected Ubuntu 20.04 LTS,\nUbuntu 22.04 LTS, Ubuntu 24.04 LTS, Ubuntu 25.04, and Ubuntu 25.10.\n(CVE-2025-67724)\n\nIt was discovered that Tornado incorrectly handled repeated HTTP headers.\nAn attacker could possibly use this issue to cause Tornado to use excessive\nresources, causing a denial of service. (CVE-2025-67725)\n\nIt was discovered that Tornado incorrectly handled parsing of certain HTTP\nheader values. An attacker could possibly use this issue to cause Tornado\nto use excessive resources, causing a denial of service. (CVE-2025-67726)",
+  "affected_products": [
+    "Ubuntu 24.04 LTS"
+  ],
+  "cves": [],
+  "packages": [
+    "python3-tornado-6.4.0-1ubuntu0.4"
+  ],
+  "full_text": "It was discovered that Tornado incorrectly handled special characters in\nHTTP headers. An attacker could possibly use this issue to execute a cross-\nsite scripting (XSS) attack. This issue only affected Ubuntu 20.04 LTS,\nUbuntu 22.04 LTS, Ubuntu 24.04 LTS, Ubuntu 25.04, and Ubuntu 25.10.\n(CVE-2025-67724)\n\nIt was discovered that Tornado incorrectly handled repeated HTTP headers.\nAn attacker could possibly use this issue to cause Tornado to use excessive\nresources, causing a denial of service. (CVE-2025-67725)\n\nIt was discovered that Tornado incorrectly handled parsing of certain HTTP\nheader values. An attacker could possibly use this issue to cause Tornado\nto use excessive resources, causing a denial of service. (CVE-2025-67726)"
+}

@@ -1,0 +1,37 @@
+{
+  "id": "RHSA-2025:15727",
+  "vendor": "Red Hat",
+  "type": "Security Advisory (RHSA)",
+  "title": "Red Hat Security Advisory: mod_http2 security update",
+  "issuedDate": "2025-09-15T01:29:19+00:00",
+  "updatedDate": "2025-09-15T01:29:19+00:00",
+  "pubDate": "2025-09-15T01:29:19+00:00",
+  "dateStr": "2025-09-15",
+  "url": "https://access.redhat.com/errata/RHSA-2025:15727",
+  "severity": "Moderate",
+  "overview": "An update for mod_http2 is now available for Red Hat Enterprise Linux 9.4 Extended Update Support.\n\nRed Hat Product Security has rated this update as having a security impact of Moderate. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "description": "The mod_h2 Apache httpd module implements the HTTP2 protocol (h2+h2c) on top of libnghttp2 for httpd 2.4 servers.\n\nSecurity Fix(es):\n\n* httpd: mod_proxy_http2: untrusted input from a client causes an assertion to fail in the Apache mod_proxy_http2 module (CVE-2025-49630)\n\nFor more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux",
+    "Red Hat Enterprise Linux AppStream EUS (v.9.4)"
+  ],
+  "cves": [
+    "CVE-2025-49630"
+  ],
+  "packages": [
+    "mod_http2-0:2.0.26-2.el9_4.2.src",
+    "mod_http2-0:2.0.26-2.el9_4.2.aarch64",
+    "mod_http2-debugsource-0:2.0.26-2.el9_4.2.aarch64",
+    "mod_http2-debuginfo-0:2.0.26-2.el9_4.2.aarch64",
+    "mod_http2-0:2.0.26-2.el9_4.2.ppc64le",
+    "mod_http2-debugsource-0:2.0.26-2.el9_4.2.ppc64le",
+    "mod_http2-debuginfo-0:2.0.26-2.el9_4.2.ppc64le",
+    "mod_http2-0:2.0.26-2.el9_4.2.x86_64",
+    "mod_http2-debugsource-0:2.0.26-2.el9_4.2.x86_64",
+    "mod_http2-debuginfo-0:2.0.26-2.el9_4.2.x86_64",
+    "mod_http2-0:2.0.26-2.el9_4.2.s390x",
+    "mod_http2-debugsource-0:2.0.26-2.el9_4.2.s390x",
+    "mod_http2-debuginfo-0:2.0.26-2.el9_4.2.s390x"
+  ],
+  "full_text": "An update for mod_http2 is now available for Red Hat Enterprise Linux 9.4 Extended Update Support.\n\nRed Hat Product Security has rated this update as having a security impact of Moderate. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nThe mod_h2 Apache httpd module implements the HTTP2 protocol (h2+h2c) on top of libnghttp2 for httpd 2.4 servers.\n\nSecurity Fix(es):\n\n* httpd: mod_proxy_http2: untrusted input from a client causes an assertion to fail in the Apache mod_proxy_http2 module (CVE-2025-49630)\n\nFor more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section."
+}

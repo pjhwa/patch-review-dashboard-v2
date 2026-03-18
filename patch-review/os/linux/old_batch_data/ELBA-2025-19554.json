@@ -1,0 +1,22 @@
+{
+  "id": "ELBA-2025-19554",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2025-November/018898.html",
+  "synopsis": "[El-errata] ELBA-2025-19554 Oracle Linux 8 mdadm bug fix and enhancement update",
+  "dateStr": "2025-November",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Bug Fix Advisory ELBA-2025-19554",
+  "description": "[4.2-19.0.1]\n- mdadm: Fix IMSM Raid assembly after disk link failure and reboot [Orabug: 37608049]\n- mdmon: imsm: fix metadata corruption when managing new array [Orabug: 37419014]\n- Fix socket connection failure when mdmon runs in foreground mode. [Orabug: 36077756]\n- Fixed deletion issue for symlink when device is opened [Orabug: 36228608]\n- Prevent duplicate uuid device to replace existing one in udev [Orabug: 35987487]\n- Prevent duplicate label to replace existing one in udev [Orabug: 34898273]\n\n[4.2-19]\n- alloc superblock in Assemble\n- Resolves: RHEL-82267\n\n[4.2-18]\n- increase md device name number limit\n- Resolves: RHEL-97802\n\n[4.2-17]\n- enable sync file for udev rules\n- Resolves: RHEL-59180",
+  "affected_products": [
+    "Oracle Linux 8"
+  ],
+  "packages": [
+    "mdadm-4.2-19.0.1.el8_10.x86_64.rpm",
+    "mdadm-4.2-19.0.1.el8_10.aarch64.rpm"
+  ],
+  "cves": [],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Bug Fix Advisory ELBA-2025-19554\n\nhttp://linux.oracle.com/errata/ELBA-2025-19554.html\n\nThe following updated rpms for Oracle Linux 8 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\nmdadm-4.2-19.0.1.el8_10.x86_64.rpm\n\naarch64:\nmdadm-4.2-19.0.1.el8_10.aarch64.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol8/SRPMS-updates/mdadm-4.2-19.0.1.el8_10.src.rpm\n\n\n\nDescription of changes:\n\n[4.2-19.0.1]\n- mdadm: Fix IMSM Raid assembly after disk link failure and reboot [Orabug: 37608049]\n- mdmon: imsm: fix metadata corruption when managing new array [Orabug: 37419014]\n- Fix socket connection failure when mdmon runs in foreground mode. [Orabug: 36077756]\n- Fixed deletion issue for symlink when device is opened [Orabug: 36228608]\n- Prevent duplicate uuid device to replace existing one in udev [Orabug: 35987487]\n- Prevent duplicate label to replace existing one in udev [Orabug: 34898273]\n\n[4.2-19]\n- alloc superblock in Assemble\n- Resolves: RHEL-82267\n\n[4.2-18]\n- increase md device name number limit\n- Resolves: RHEL-97802\n\n[4.2-17]\n- enable sync file for udev rules\n- Resolves: RHEL-59180",
+  "vendor": "Oracle"
+}

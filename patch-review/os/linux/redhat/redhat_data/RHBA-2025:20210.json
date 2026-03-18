@@ -1,0 +1,60 @@
+{
+  "id": "RHBA-2025:20210",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: setools bug fix and enhancement update",
+  "issuedDate": "2025-11-11T07:25:26Z",
+  "updatedDate": "2025-11-11T07:25:26Z",
+  "pubDate": "2025-11-11T07:25:26Z",
+  "dateStr": "2025-11-11",
+  "url": "https://access.redhat.com/errata/RHBA-2025:20210",
+  "severity": "None",
+  "overview": "An update for setools is now available for Red Hat Enterprise Linux 10.",
+  "description": "For detailed information on changes in this release, see the Red Hat Enterprise Linux 10 Release Notes linked from the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux for Power, little endian",
+    "Red Hat Enterprise Linux for x86_64 10 x86_64",
+    "Red Hat Enterprise Linux for ARM 64",
+    "Red Hat Enterprise Linux for IBM z Systems"
+  ],
+  "cves": [],
+  "packages": [
+    "setools-4.5.1-5.el10.src",
+    "python3-setools-4.5.1-5.el10.x86_64",
+    "python3-setools-debuginfo-4.5.1-5.el10.x86_64",
+    "setools-4.5.1-5.el10.x86_64",
+    "setools-console-4.5.1-5.el10.x86_64",
+    "setools-console-analyses-4.5.1-5.el10.x86_64",
+    "setools-debugsource-4.5.1-5.el10.x86_64",
+    "setools-gui-4.5.1-5.el10.x86_64",
+    "python3-setools-4.5.1-5.el10.s390x",
+    "python3-setools-debuginfo-4.5.1-5.el10.s390x",
+    "setools-4.5.1-5.el10.s390x",
+    "setools-console-4.5.1-5.el10.s390x",
+    "setools-console-analyses-4.5.1-5.el10.s390x",
+    "setools-debugsource-4.5.1-5.el10.s390x",
+    "setools-gui-4.5.1-5.el10.s390x",
+    "python3-setools-4.5.1-5.el10.ppc64le",
+    "python3-setools-debuginfo-4.5.1-5.el10.ppc64le",
+    "setools-4.5.1-5.el10.ppc64le",
+    "setools-console-4.5.1-5.el10.ppc64le",
+    "setools-console-analyses-4.5.1-5.el10.ppc64le",
+    "setools-debugsource-4.5.1-5.el10.ppc64le",
+    "setools-gui-4.5.1-5.el10.ppc64le",
+    "python3-setools-4.5.1-5.el10.aarch64",
+    "python3-setools-debuginfo-4.5.1-5.el10.aarch64",
+    "setools-4.5.1-5.el10.aarch64",
+    "setools-console-4.5.1-5.el10.aarch64",
+    "setools-console-analyses-4.5.1-5.el10.aarch64",
+    "setools-debugsource-4.5.1-5.el10.aarch64",
+    "setools-gui-4.5.1-5.el10.aarch64"
+  ],
+  "fixes": [
+    {
+      "id": "RHEL-104006",
+      "url": "https://issues.redhat.com/browse/RHEL-104006",
+      "description": "Rebase SELinux userspace to 3.9 release"
+    }
+  ],
+  "full_text": "An update for setools is now available for Red Hat Enterprise Linux 10.\n\nFor detailed information on changes in this release, see the Red Hat Enterprise Linux 10 Release Notes linked from the References section."
+}

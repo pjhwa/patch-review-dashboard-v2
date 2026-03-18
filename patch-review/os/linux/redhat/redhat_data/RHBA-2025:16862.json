@@ -1,0 +1,33 @@
+{
+  "id": "RHBA-2025:16862",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: mysql-selinux bug fix and enhancement update",
+  "issuedDate": "2025-09-29T01:01:35Z",
+  "updatedDate": "2025-09-29T01:01:35Z",
+  "pubDate": "2025-09-29T01:01:35Z",
+  "dateStr": "2025-09-29",
+  "url": "https://access.redhat.com/errata/RHBA-2025:16862",
+  "severity": "None",
+  "overview": "An update for mysql-selinux is now available for Red Hat Enterprise Linux 10.",
+  "description": "SELinux policy modules for MySQL and MariaDB packages.Bug Fix(es) and Enhancement(s): RFE: fixup for SELinux rules for upstream MariaDB and upstream MySQL packages [rhel-8.10.z] (JIRA:RHEL-104203)",
+  "affected_products": [
+    "Red Hat Enterprise Linux for x86_64 10 x86_64",
+    "Red Hat Enterprise Linux for ARM 64",
+    "Red Hat Enterprise Linux for IBM z Systems",
+    "Red Hat Enterprise Linux for Power, little endian"
+  ],
+  "cves": [],
+  "packages": [
+    "mysql-selinux-1.0.14-1.el8_10.src",
+    "mysql-selinux-1.0.14-1.el8_10.noarch"
+  ],
+  "fixes": [
+    {
+      "id": "RHEL-104203",
+      "url": "https://issues.redhat.com/browse/RHEL-104203",
+      "description": "RFE: fixup for SELinux rules for upstream MariaDB and upstream MySQL packages [rhel-8.10.z]"
+    }
+  ],
+  "full_text": "An update for mysql-selinux is now available for Red Hat Enterprise Linux 10.\n\nSELinux policy modules for MySQL and MariaDB packages.Bug Fix(es) and Enhancement(s): RFE: fixup for SELinux rules for upstream MariaDB and upstream MySQL packages [rhel-8.10.z] (JIRA:RHEL-104203)"
+}

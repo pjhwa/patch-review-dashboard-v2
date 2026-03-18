@@ -1,0 +1,27 @@
+{
+  "id": "ELSA-2026-0750",
+  "vendor": "Oracle",
+  "type": "Security Advisory (ELSA)",
+  "title": " net-snmp security update",
+  "issuedDate": "2026-01-19T00:00:00Z",
+  "updatedDate": "2026-01-19T00:00:00Z",
+  "pubDate": "2026-01-19T00:00:00Z",
+  "dateStr": "2026-01-19",
+  "url": "https://linux.oracle.com/errata/ELSA-2026-0750.html",
+  "severity": "Important",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 8.",
+  "description": "[5.8-33.0.1]\n- fix error index value when snmpget is used a proxy pass [Orabug: 34905643]\n\n[1:5.8-33]\n- fix out of bound access (RHEL-137501)\n- perl modern auth enablement (RHEL-137310)",
+  "affected_products": [
+    "Oracle Linux 8 for x86_64",
+    "Oracle Linux 8 for aarch64"
+  ],
+  "cves": [
+    "CVE-2025-68615"
+  ],
+  "packages": [
+    "net-snmp-libs-5.8-33.0.1.el8_10.x86_64",
+    "net-snmp-libs-5.8-33.0.1.el8_10.i686",
+    "net-snmp-5.8-33.0.1.el8_10.src"
+  ],
+  "full_text": "[5.8-33.0.1]\n- fix error index value when snmpget is used a proxy pass [Orabug: 34905643]\n\n[1:5.8-33]\n- fix out of bound access (RHEL-137501)\n- perl modern auth enablement (RHEL-137310)\n\nReferences:\nhttps://linux.oracle.com/errata/ELSA-2026-0750.html\nhttps://linux.oracle.com/cve/CVE-2025-68615.html"
+}

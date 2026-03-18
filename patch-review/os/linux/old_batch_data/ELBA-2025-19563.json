@@ -1,0 +1,30 @@
+{
+  "id": "ELBA-2025-19563",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2025-November/018958.html",
+  "synopsis": "[El-errata] ELBA-2025-19563 Oracle Linux 10 nmstate bug fix and enhancement update",
+  "dateStr": "2025-November",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Bug Fix Advisory ELBA-2025-19563",
+  "description": "[2.2.54-1]\n- Upgrade to 2.2.54.\n- Support matching interface via PCI address. RHEL-121112\n- Fix OVSDB query failure on database bigger than 20KiB. RHEL-121993\n\n[2.2.52-1]\n- Upgrade to 2.2.52\n- Support interface alternative names. RHEL-110779\n- Support IPv4 forwarding. RHEL-110788\n- Support IPSec leftsendcert option. RHEL-110635",
+  "affected_products": [
+    "Oracle Linux 10"
+  ],
+  "packages": [
+    "nmstate-2.2.54-1.el10_0.x86_64.rpm",
+    "nmstate-devel-2.2.54-1.el10_0.x86_64.rpm",
+    "nmstate-libs-2.2.54-1.el10_0.x86_64.rpm",
+    "nmstate-static-2.2.54-1.el10_0.x86_64.rpm",
+    "python3-libnmstate-2.2.54-1.el10_0.x86_64.rpm",
+    "nmstate-2.2.54-1.el10_0.aarch64.rpm",
+    "nmstate-devel-2.2.54-1.el10_0.aarch64.rpm",
+    "nmstate-libs-2.2.54-1.el10_0.aarch64.rpm",
+    "nmstate-static-2.2.54-1.el10_0.aarch64.rpm",
+    "python3-libnmstate-2.2.54-1.el10_0.aarch64.rpm"
+  ],
+  "cves": [],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Bug Fix Advisory ELBA-2025-19563\n\nhttp://linux.oracle.com/errata/ELBA-2025-19563.html\n\nThe following updated rpms for Oracle Linux 10 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\nnmstate-2.2.54-1.el10_0.x86_64.rpm\nnmstate-devel-2.2.54-1.el10_0.x86_64.rpm\nnmstate-libs-2.2.54-1.el10_0.x86_64.rpm\nnmstate-static-2.2.54-1.el10_0.x86_64.rpm\npython3-libnmstate-2.2.54-1.el10_0.x86_64.rpm\n\naarch64:\nnmstate-2.2.54-1.el10_0.aarch64.rpm\nnmstate-devel-2.2.54-1.el10_0.aarch64.rpm\nnmstate-libs-2.2.54-1.el10_0.aarch64.rpm\nnmstate-static-2.2.54-1.el10_0.aarch64.rpm\npython3-libnmstate-2.2.54-1.el10_0.aarch64.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol10/SRPMS-updates/nmstate-2.2.54-1.el10_0.src.rpm\n\n\n\nDescription of changes:\n\n[2.2.54-1]\n- Upgrade to 2.2.54.\n- Support matching interface via PCI address. RHEL-121112\n- Fix OVSDB query failure on database bigger than 20KiB. RHEL-121993\n\n[2.2.52-1]\n- Upgrade to 2.2.52\n- Support interface alternative names. RHEL-110779\n- Support IPv4 forwarding. RHEL-110788\n- Support IPSec leftsendcert option. RHEL-110635",
+  "vendor": "Oracle"
+}

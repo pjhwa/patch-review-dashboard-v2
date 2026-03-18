@@ -1,0 +1,39 @@
+{
+  "id": "ELBA-2025-20641-0",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "AppStream",
+  "title": "rust bug fix and enhancement update",
+  "issuedDate": "2025-11-17T00:00:00Z",
+  "updatedDate": "2025-11-17T00:00:00Z",
+  "pubDate": "2025-11-17T00:00:00Z",
+  "dateStr": "2025-11-17",
+  "url": "https://linux.oracle.com/errata/ELBA-2025-20641-0.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 9.",
+  "description": "[1.88.0-1]\n- Update to Rust 1.88.0\n\n[1.87.0-1]\n- Update to 1.87.0\n\n[1.86.0-2]\n- Temporarily skip PGO on RHEL ppc64le\n\n[1.86.0-1]\n- Update to 1.86.0\n\n[1.85.0-1]\n- Update to 1.85.0",
+  "affected_products": [
+    "Oracle Linux 9 for x86_64",
+    "Oracle Linux 9 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "rust-std-static-1.88.0-1.el9.i686",
+    "rust-std-static-1.88.0-1.el9.x86_64",
+    "rust-doc-1.88.0-1.el9.x86_64",
+    "rust-lldb-1.88.0-1.el9.noarch",
+    "rust-analyzer-1.88.0-1.el9.x86_64",
+    "rust-debugger-common-1.88.0-1.el9.noarch",
+    "rust-src-1.88.0-1.el9.noarch",
+    "rust-1.88.0-1.el9.src",
+    "rust-gdb-1.88.0-1.el9.noarch",
+    "cargo-1.88.0-1.el9.x86_64",
+    "rust-std-static-wasm32-unknown-unknown-1.88.0-1.el9.noarch",
+    "rustfmt-1.88.0-1.el9.x86_64",
+    "clippy-1.88.0-1.el9.x86_64",
+    "rust-std-static-wasm32-wasip1-1.88.0-1.el9.noarch",
+    "rust-1.88.0-1.el9.x86_64",
+    "rust-toolset-1.88.0-1.el9.noarch"
+  ],
+  "full_text": "[1.88.0-1]\n- Update to Rust 1.88.0\n\n[1.87.0-1]\n- Update to 1.87.0\n\n[1.86.0-2]\n- Temporarily skip PGO on RHEL ppc64le\n\n[1.86.0-1]\n- Update to 1.86.0\n\n[1.85.0-1]\n- Update to 1.85.0\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2025-20641-0.html"
+}

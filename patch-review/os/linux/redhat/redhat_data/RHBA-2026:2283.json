@@ -1,0 +1,24 @@
+{
+  "id": "RHBA-2026:2283",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: kmod-amdgpu bug fix and enhancement update",
+  "issuedDate": "2026-02-09T09:00:49Z",
+  "updatedDate": "2026-02-09T09:00:49Z",
+  "pubDate": "2026-02-09T09:00:49Z",
+  "dateStr": "2026-02-09",
+  "url": "https://access.redhat.com/errata/RHBA-2026:2283",
+  "severity": "None",
+  "overview": "An update for kmod-amdgpu is now available for Red Hat Enterprise Linux 10.",
+  "description": "This package provides a kernel module for AMD GPUs that contains the latest changes backported from the upstream Linux kernel.Bug Fix(es) and Enhancement(s): Please consider including kmod-amdgpu in RHEL 10.1 Extensions (JIRA:RHEL-146903)",
+  "affected_products": [
+    "Red Hat Enterprise Linux for x86_64 10 x86_64"
+  ],
+  "cves": [],
+  "packages": [
+    "kmod-amdgpu-6.12.0-124.35.1.el10_1.src",
+    "kmod-amdgpu-6.12.0-124.35.1.el10_1.x86_64"
+  ],
+  "fixes": [],
+  "full_text": "An update for kmod-amdgpu is now available for Red Hat Enterprise Linux 10.\n\nThis package provides a kernel module for AMD GPUs that contains the latest changes backported from the upstream Linux kernel.Bug Fix(es) and Enhancement(s): Please consider including kmod-amdgpu in RHEL 10.1 Extensions (JIRA:RHEL-146903)"
+}

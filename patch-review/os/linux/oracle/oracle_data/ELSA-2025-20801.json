@@ -1,0 +1,31 @@
+{
+  "id": "ELSA-2025-20801",
+  "vendor": "Oracle",
+  "type": "Security Advisory (ELSA)",
+  "kernel_type": "AppStream",
+  "title": " libtiff security update",
+  "issuedDate": "2025-11-17T00:00:00Z",
+  "updatedDate": "2025-11-17T00:00:00Z",
+  "pubDate": "2025-11-17T00:00:00Z",
+  "dateStr": "2025-11-17",
+  "url": "https://linux.oracle.com/errata/ELSA-2025-20801.html",
+  "severity": "Moderate",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 9.",
+  "description": "[4.4.0-15]\n- backport documentation change for CVE-2023-52355 (RHEL-17328)\n\n[4.4.0-14]\n- fix CVE-2023-52356: libtiff could crash in TIFFReadRGBATileExt when parsing crafted tiff file (RHEL-17337)",
+  "affected_products": [
+    "Oracle Linux 9 for x86_64",
+    "Oracle Linux 9 for aarch64"
+  ],
+  "cves": [
+    "CVE-2023-52355",
+    "CVE-2023-52356"
+  ],
+  "packages": [
+    "libtiff-4.4.0-15.el9.src",
+    "libtiff-4.4.0-15.el9.i686",
+    "libtiff-4.4.0-15.el9.x86_64",
+    "libtiff-devel-4.4.0-15.el9.i686",
+    "libtiff-devel-4.4.0-15.el9.x86_64"
+  ],
+  "full_text": "[4.4.0-15]\n- backport documentation change for CVE-2023-52355 (RHEL-17328)\n\n[4.4.0-14]\n- fix CVE-2023-52356: libtiff could crash in TIFFReadRGBATileExt when parsing crafted tiff file (RHEL-17337)\n\nReferences:\nhttps://linux.oracle.com/errata/ELSA-2025-20801.html\nhttps://linux.oracle.com/cve/CVE-2023-52355.html\nhttps://linux.oracle.com/cve/CVE-2023-52356.html"
+}

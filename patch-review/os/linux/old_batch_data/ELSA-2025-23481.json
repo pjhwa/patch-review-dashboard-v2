@@ -1,0 +1,39 @@
+{
+  "id": "ELSA-2025-23481",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2025-December/019330.html",
+  "synopsis": "[El-errata] ELSA-2025-23481 Moderate: Oracle Linux 8 openssh security update",
+  "dateStr": "2025-December",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Security Advisory ELSA-2025-23481",
+  "description": "[8.0p1-27.0.1]\n- Update upstream references [Orabug: 36587718]\n\n[8.0p1-27]\n- CVE-2025-61984: Reject usernames with control characters\n  Resolves: RHEL-128400\n- CVE-2025-61985: Reject URL-strings with NULL characters\n  Resolves: RHEL-128390",
+  "affected_products": [
+    "Oracle Linux 8"
+  ],
+  "packages": [
+    "openssh-8.0p1-27.0.1.el8_10.x86_64.rpm",
+    "openssh-askpass-8.0p1-27.0.1.el8_10.x86_64.rpm",
+    "openssh-cavs-8.0p1-27.0.1.el8_10.x86_64.rpm",
+    "openssh-clients-8.0p1-27.0.1.el8_10.x86_64.rpm",
+    "openssh-keycat-8.0p1-27.0.1.el8_10.x86_64.rpm",
+    "openssh-ldap-8.0p1-27.0.1.el8_10.x86_64.rpm",
+    "openssh-server-8.0p1-27.0.1.el8_10.x86_64.rpm",
+    "pam_ssh_agent_auth-0.10.3-7.27.0.1.el8_10.x86_64.rpm",
+    "openssh-8.0p1-27.0.1.el8_10.aarch64.rpm",
+    "openssh-askpass-8.0p1-27.0.1.el8_10.aarch64.rpm",
+    "openssh-cavs-8.0p1-27.0.1.el8_10.aarch64.rpm",
+    "openssh-clients-8.0p1-27.0.1.el8_10.aarch64.rpm",
+    "openssh-keycat-8.0p1-27.0.1.el8_10.aarch64.rpm",
+    "openssh-ldap-8.0p1-27.0.1.el8_10.aarch64.rpm",
+    "openssh-server-8.0p1-27.0.1.el8_10.aarch64.rpm",
+    "pam_ssh_agent_auth-0.10.3-7.27.0.1.el8_10.aarch64.rpm"
+  ],
+  "cves": [
+    "CVE-2025-61984",
+    "CVE-2025-61985"
+  ],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Security Advisory ELSA-2025-23481\n\nhttp://linux.oracle.com/errata/ELSA-2025-23481.html\n\nThe following updated rpms for Oracle Linux 8 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\nopenssh-8.0p1-27.0.1.el8_10.x86_64.rpm\nopenssh-askpass-8.0p1-27.0.1.el8_10.x86_64.rpm\nopenssh-cavs-8.0p1-27.0.1.el8_10.x86_64.rpm\nopenssh-clients-8.0p1-27.0.1.el8_10.x86_64.rpm\nopenssh-keycat-8.0p1-27.0.1.el8_10.x86_64.rpm\nopenssh-ldap-8.0p1-27.0.1.el8_10.x86_64.rpm\nopenssh-server-8.0p1-27.0.1.el8_10.x86_64.rpm\npam_ssh_agent_auth-0.10.3-7.27.0.1.el8_10.x86_64.rpm\n\naarch64:\nopenssh-8.0p1-27.0.1.el8_10.aarch64.rpm\nopenssh-askpass-8.0p1-27.0.1.el8_10.aarch64.rpm\nopenssh-cavs-8.0p1-27.0.1.el8_10.aarch64.rpm\nopenssh-clients-8.0p1-27.0.1.el8_10.aarch64.rpm\nopenssh-keycat-8.0p1-27.0.1.el8_10.aarch64.rpm\nopenssh-ldap-8.0p1-27.0.1.el8_10.aarch64.rpm\nopenssh-server-8.0p1-27.0.1.el8_10.aarch64.rpm\npam_ssh_agent_auth-0.10.3-7.27.0.1.el8_10.aarch64.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol8/SRPMS-updates/openssh-8.0p1-27.0.1.el8_10.src.rpm\n\nRelated CVEs:\n\nCVE-2025-61984\nCVE-2025-61985\n\n\n\n\nDescription of changes:\n\n[8.0p1-27.0.1]\n- Update upstream references [Orabug: 36587718]\n\n[8.0p1-27]\n- CVE-2025-61984: Reject usernames with control characters\n  Resolves: RHEL-128400\n- CVE-2025-61985: Reject URL-strings with NULL characters\n  Resolves: RHEL-128390",
+  "vendor": "Oracle"
+}

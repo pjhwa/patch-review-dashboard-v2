@@ -1,0 +1,31 @@
+{
+  "id": "ELSA-2026-0052",
+  "vendor": "Oracle",
+  "type": "Security Advisory (ELSA)",
+  "kernel_type": "AppStream",
+  "title": " gcc-toolset-14-binutils security update",
+  "issuedDate": "2026-01-05T00:00:00Z",
+  "updatedDate": "2026-01-05T00:00:00Z",
+  "pubDate": "2026-01-05T00:00:00Z",
+  "dateStr": "2026-01-05",
+  "url": "https://linux.oracle.com/errata/ELSA-2026-0052.html",
+  "severity": "Moderate",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 9.",
+  "description": "[2.41-5.1]\n- Fix a potential illegal memory access when linking a corrupt input file.  (RHEL-130669)",
+  "affected_products": [
+    "Oracle Linux 9 for x86_64",
+    "Oracle Linux 9 for aarch64"
+  ],
+  "cves": [
+    "CVE-2025-11083"
+  ],
+  "packages": [
+    "gcc-toolset-14-binutils-2.41-5.el9_7.1.x86_64",
+    "gcc-toolset-14-binutils-gprofng-2.41-5.el9_7.1.x86_64",
+    "gcc-toolset-14-binutils-gold-2.41-5.el9_7.1.x86_64",
+    "gcc-toolset-14-binutils-2.41-5.el9_7.1.src",
+    "gcc-toolset-14-binutils-devel-2.41-5.el9_7.1.i686",
+    "gcc-toolset-14-binutils-devel-2.41-5.el9_7.1.x86_64"
+  ],
+  "full_text": "[2.41-5.1]\n- Fix a potential illegal memory access when linking a corrupt input file.  (RHEL-130669)\n\nReferences:\nhttps://linux.oracle.com/errata/ELSA-2026-0052.html\nhttps://linux.oracle.com/cve/CVE-2025-11083.html"
+}

@@ -1,0 +1,37 @@
+{
+  "id": "ELSA-2025-23034",
+  "vendor": "Oracle",
+  "type": "Security Advisory (ELSA)",
+  "kernel_type": "AppStream",
+  "title": " firefox security update",
+  "issuedDate": "2025-12-10T00:00:00Z",
+  "updatedDate": "2025-12-10T00:00:00Z",
+  "pubDate": "2025-12-10T00:00:00Z",
+  "dateStr": "2025-12-10",
+  "url": "https://linux.oracle.com/errata/ELSA-2025-23034.html",
+  "severity": "Important",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 9.",
+  "description": "[140.6.0-1.0.1]\n- Fix firefox-oracle-default-prefs.js for new nss [Orabug: 37079773]\n- Add firefox-oracle-default-prefs.js and remove the corresponding Red Hat file\n\n[140.6.0]\n- Add debranding patches (Mustafa Gezen)\n- Add OpenELA default preferences (Louis Abel)\n\n[140.6.0-1]\n- Update to 140.6.0 ESR",
+  "affected_products": [
+    "Oracle Linux 9 for x86_64",
+    "Oracle Linux 9 for aarch64"
+  ],
+  "cves": [
+    "CVE-2025-14321",
+    "CVE-2025-14322",
+    "CVE-2025-14323",
+    "CVE-2025-14324",
+    "CVE-2025-14325",
+    "CVE-2025-14328",
+    "CVE-2025-14329",
+    "CVE-2025-14330",
+    "CVE-2025-14331",
+    "CVE-2025-14333"
+  ],
+  "packages": [
+    "firefox-140.6.0-1.0.1.el9_7.x86_64",
+    "firefox-x11-140.6.0-1.0.1.el9_7.x86_64",
+    "firefox-140.6.0-1.0.1.el9_7.src"
+  ],
+  "full_text": "[140.6.0-1.0.1]\n- Fix firefox-oracle-default-prefs.js for new nss [Orabug: 37079773]\n- Add firefox-oracle-default-prefs.js and remove the corresponding Red Hat file\n\n[140.6.0]\n- Add debranding patches (Mustafa Gezen)\n- Add OpenELA default preferences (Louis Abel)\n\n[140.6.0-1]\n- Update to 140.6.0 ESR\n\nReferences:\nhttps://linux.oracle.com/errata/ELSA-2025-23034.html\nhttps://linux.oracle.com/cve/CVE-2025-14321.html\nhttps://linux.oracle.com/cve/CVE-2025-14322.html\nhttps://linux.oracle.com/cve/CVE-2025-14323.html\nhttps://linux.oracle.com/cve/CVE-2025-14324.html\nhttps://linux.oracle.com/cve/CVE-2025-14325.html\nhttps://linux.oracle.com/cve/CVE-2025-14328.html\nhttps://linux.oracle.com/cve/CVE-2025-14329.html\nhttps://linux.oracle.com/cve/CVE-2025-14330.html\nhttps://linux.oracle.com/cve/CVE-2025-14331.html\nhttps://linux.oracle.com/cve/CVE-2025-14333.html"
+}

@@ -1,0 +1,28 @@
+{
+  "id": "USN-7862-3",
+  "vendor": "Canonical / Ubuntu",
+  "type": "Ubuntu Security Notice (USN)",
+  "title": "linux-xilinx-zynqmp vulnerability",
+  "issuedDate": "2025-11-13T14:47:04Z",
+  "updatedDate": "2026-02-10T04:50:21Z",
+  "pubDate": "2025-11-13T14:47:04Z",
+  "dateStr": "2025-11-13",
+  "url": "https://ubuntu.com/security/notices/USN-7862-3",
+  "severity": "None",
+  "overview": "linux-xilinx-zynqmp vulnerability",
+  "description": "Jean-Claude Graf, Sandro Rüegge, Ali Hajiabadi, and Kaveh Razavi discovered\nthat the Linux kernel contained insufficient branch predictor isolation\nbetween a guest and a userspace hypervisor for certain processors. This\nflaw is known as VMSCAPE. An attacker in a guest VM could possibly use this\nto expose sensitive information from the host OS.\n",
+  "affected_products": [
+    "Ubuntu 22.04 LTS"
+  ],
+  "cves": [],
+  "packages": [
+    "linux-buildinfo-5.15.0-1060-xilinx-zynqmp-5.15.0-1060.64",
+    "linux-headers-5.15.0-1060-xilinx-zynqmp-5.15.0-1060.64",
+    "linux-image-5.15.0-1060-xilinx-zynqmp-5.15.0-1060.64",
+    "linux-modules-5.15.0-1060-xilinx-zynqmp-5.15.0-1060.64",
+    "linux-tools-5.15.0-1060-xilinx-zynqmp-5.15.0-1060.64",
+    "linux-xilinx-zynqmp-headers-5.15.0-1060-5.15.0-1060.64",
+    "linux-xilinx-zynqmp-tools-5.15.0-1060-5.15.0-1060.64"
+  ],
+  "full_text": "Jean-Claude Graf, Sandro Rüegge, Ali Hajiabadi, and Kaveh Razavi discovered\nthat the Linux kernel contained insufficient branch predictor isolation\nbetween a guest and a userspace hypervisor for certain processors. This\nflaw is known as VMSCAPE. An attacker in a guest VM could possibly use this\nto expose sensitive information from the host OS.\n"
+}

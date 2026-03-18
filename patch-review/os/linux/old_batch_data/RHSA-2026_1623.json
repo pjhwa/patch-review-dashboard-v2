@@ -1,0 +1,22 @@
+{
+  "id": "RHSA-2026:1623",
+  "vendor": "Red Hat",
+  "url": "https://access.redhat.com/errata/RHSA-2026:1623",
+  "pubDate": "2026-02-02T01:17:00.000Z",
+  "dateStr": "2026-02-02",
+  "severity": "Important",
+  "title": "Red Hat Security Advisory: kernel-rt security update",
+  "overview": "An update for kernel-rt is now available for Red Hat Enterprise Linux 7 Extended Lifecycle Support.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "description": "An update for kernel-rt is now available for Red Hat Enterprise Linux 7 Extended Lifecycle Support.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux for Real Time (v. 7 ELS)"
+  ],
+  "cves": [
+    "CVE-2025-39898",
+    "CVE-2025-39971",
+    "CVE-2025-40248"
+  ],
+  "packages": [],
+  "fixes": "",
+  "full_text": "Red Hat Security Advisory: kernel-rt security update\n\nAn update for kernel-rt is now available for Red Hat Enterprise Linux 7 Extended Lifecycle Support.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nAn update for kernel-rt is now available for Red Hat Enterprise Linux 7 Extended Lifecycle Support.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nUpdated Packages:\nkernel-rt-3.10.0-1160.146.1.rt56.1298.el7.src.rpm\nkernel-rt-3.10.0-1160.146.1.rt56.1298.el7.x86_64.rpm\nkernel-rt-debug-3.10.0-1160.146.1.rt56.1298.el7.x86_64.rpm\nkernel-rt-debug-debuginfo-3.10.0-1160.146.1.rt56.1298.el7.x86_64.rpm\nkernel-rt-debug-devel-3.10.0-1160.146.1.rt56.1298.el7.x86_64.rpm\nkernel-rt-debuginfo-3.10.0-1160.146.1.rt56.1298.el7.x86_64.rpm\nkernel-rt-debuginfo-common-x86_64-3.10.0-1160.146.1.rt56.1298.el7.x86_64.rpm\nkernel-rt-devel-3.10.0-1160.146.1.rt56.1298.el7.x86_64.rpm\nkernel-rt-doc-3.10.0-1160.146.1.rt56.1298.el7.noarch.rpm\nkernel-rt-trace-3.10.0-1160.146.1.rt56.1298.el7.x86_64.rpm\nkernel-rt-trace-debuginfo-3.10.0-1160.146.1.rt56.1298.el7.x86_64.rpm\nkernel-rt-trace-devel-3.10.0-1160.146.1.rt56.1298.el7.x86_64.rpm\n\nCVE-2025-39898: No description is available for this CVE.\n\nCVE-2025-39971: In the Linux kernel, the following vulnerability has been resolved:\n\ni40e: fix idx validation in config queues msg\n\nEnsure idx is within range of active/initialized TCs when iterating over\nvf->ch[idx] in i40e_vc_config_queues_msg().\n\nCVE-2025-40248: A flaw was found in the Linux kernel's `vsock` component. This vulnerability occurs when a `connect()` operation on an already established socket is interrupted by a signal or timeout, causing the system to mishandle the socket's state. This incorrect handling can lead to a race condition, potentially resulting in memory corruption, such as a use-after-free or null-pointer dereference. A local attacker could exploit this to cause a denial of service or potentially escalate privileges."
+}

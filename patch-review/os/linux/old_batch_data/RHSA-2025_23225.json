@@ -1,0 +1,26 @@
+{
+  "id": "RHSA-2025:23225",
+  "vendor": "Red Hat",
+  "url": "https://access.redhat.com/errata/RHSA-2025:23225",
+  "pubDate": "2025-12-15T21:46:21.000Z",
+  "dateStr": "2025-12-15",
+  "severity": "Critical",
+  "title": "Red Hat Security Advisory: Red Hat OpenShift Dev Spaces 3.25.0 Release.",
+  "overview": "Red Hat OpenShift Dev Spaces 3.25.0 has been released.",
+  "description": "Red Hat OpenShift Dev Spaces 3.25.0 has been released.",
+  "affected_products": [
+    "Red Hat OpenShift Dev Spaces (RHOSDS) 3.25"
+  ],
+  "cves": [
+    "CVE-2024-4067",
+    "CVE-2025-55247",
+    "CVE-2025-55248",
+    "CVE-2025-55315",
+    "CVE-2025-55752",
+    "CVE-2025-61927",
+    "CVE-2025-66516"
+  ],
+  "packages": [],
+  "fixes": "",
+  "full_text": "Red Hat Security Advisory: Red Hat OpenShift Dev Spaces 3.25.0 Release.\n\nRed Hat OpenShift Dev Spaces 3.25.0 has been released.\n\nRed Hat OpenShift Dev Spaces 3.25.0 has been released.\n\n\n\nCVE-2024-4067: A flaw was found in the NPM package `micromatch` where it is vulnerable to a regular expression denial of service (ReDoS). The issue occurs in `micromatch.braces()` in `index.js` because the pattern `.*` will readily match anything. By passing a malicious payload, the pattern matching will keep backtracking to the input while it doesn't find the closing bracket. As the input size increases, the consumption time will also increase until it causes the application to hang or slow down. There was a merged fix but further testing shows the issue persists. This issue should be mitigated by using a safe pattern that won't start backtracking the regular expression due to greedy matching.\n\nCVE-2025-55247: A flaw was found in MSBuild’s temporary directory handling on Linux where predictable, non-randomized temporary paths are used. Local users can create or manipulate those paths before MSBuild runs, causing build failures or unexpected behavior and resulting in denial of service for build operations.\n\nCVE-2025-55248: A flaw exists in certain .NET builds  where a man-in-the-middle (MITM) attacker can prevent or downgrade TLS between a client and an SMTP server. This may cause the client to send credentials or message data over an unencrypted connection, exposing sensitive information to the attacker.\n\nCVE-2025-55315: A flaw was found in ASP.NET Core’s HTTP request handling that leads to inconsistent interpretation of specially crafted HTTP requests. This mismatch can be abused by an authorized network attacker to smuggle or manipulate request boundaries, allowing bypass of security controls or unintended forwarding of request data.\n\nCVE-2025-55752: A directory traversal vulnerability in Apache Tomcat caused by improper URL normalization during request rewriting. When specific rewrite rules are used, an attacker could craft a malicious request to bypass access restrictions and reach protected directories such as /WEB-INF/ or /META-INF/. If HTTP PUT requests are also enabled, this flaw could allow the upload of malicious files, potentially leading to remote code execution.\n\nCVE-2025-61927: Happy DOM is a JavaScript implementation of a web browser without its graphical user interface. Happy DOM v19 and lower contains a security vulnerability that puts the owner system at the risk of RCE (Remote Code Execution) attacks. A Node.js VM Context is not an isolated environment, and if the user runs untrusted JavaScript code within the Happy DOM VM Context, it may escape the VM and get access to process level functionality. It seems like what the attacker can get control over depends on if the process is using ESM or CommonJS. With CommonJS the attacker can get hold of the `require()` function to import modules. Happy DOM has JavaScript evaluation enabled by default. This may not be obvious to the consumer of Happy DOM and can potentially put the user at risk if untrusted code is executed within the environment. Version 20.0.0 patches the issue by changing JavaScript evaluation to be disabled by default.\n\nCVE-2025-66516: A XML External Entity (XXE) injection vulnerability was found in the Apache Tika framework's PDF parsing functionality. It could allow a remote, unauthenticated attacker to exploit the system by providing a specially crafted PDF containing an XFA (XML Forms Architecture) file. This flaw could lead to sensitive information disclosure or, potentially, Remote Code Execution (RCE) on the server. The issue affects multiple Tika modules, including tika-core, tika-pdf-module, and tika-parsers, within the version ranges 1.13 through 3.2.1.\n\nThis CVE expands on the scope of CVE-2025-54988 to clarify that the root cause and required fix reside in the tika-core module, regardless of which parser module is used."
+}

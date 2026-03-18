@@ -1,0 +1,25 @@
+{
+  "id": "ELBA-2025-20750",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "AppStream",
+  "title": "stalld bug fix and enhancement update",
+  "issuedDate": "2025-11-17T00:00:00Z",
+  "updatedDate": "2025-11-17T00:00:00Z",
+  "pubDate": "2025-11-17T00:00:00Z",
+  "dateStr": "2025-11-17",
+  "url": "https://linux.oracle.com/errata/ELBA-2025-20750.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 9.",
+  "description": "[1.20.4-1]\n- Rebase to stalld-1.20.4\n- Remove duplicated ExecStart entry from the stalld.service file\nResolves: RHEL-108827\n\n[1.20.3-1]\n- Rebase to stalld-1.20.3\n- Make systemd start stalld with the SCHED_FIFO:10 priority\nResolves: RHEL-109088\n\n[1.20.2]\n- Rebase to stalld-1.20.2\nResolves: RHEL-96213 RHEL-96227 RHEL-104106",
+  "affected_products": [
+    "Oracle Linux 9 for x86_64",
+    "Oracle Linux 9 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "stalld-1.20.4-1.el9.x86_64",
+    "stalld-1.20.4-1.el9.src"
+  ],
+  "full_text": "[1.20.4-1]\n- Rebase to stalld-1.20.4\n- Remove duplicated ExecStart entry from the stalld.service file\nResolves: RHEL-108827\n\n[1.20.3-1]\n- Rebase to stalld-1.20.3\n- Make systemd start stalld with the SCHED_FIFO:10 priority\nResolves: RHEL-109088\n\n[1.20.2]\n- Rebase to stalld-1.20.2\nResolves: RHEL-96213 RHEL-96227 RHEL-104106\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2025-20750.html"
+}

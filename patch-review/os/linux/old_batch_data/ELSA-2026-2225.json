@@ -1,0 +1,38 @@
+{
+  "id": "ELSA-2026-2225",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2026-February/019729.html",
+  "synopsis": "[El-errata] ELSA-2026-2225 Critical: Oracle Linux 10 keylime security update",
+  "dateStr": "2026-February",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Security Advisory ELSA-2026-2225",
+  "description": "[7.12.1-16]\n- CVE-2026-1709: Registrar authentication bypass\n\n[7.12.1-15]\n- Registrar allows identity takeover via duplicate UUID registration\n\n[7.12.1-14]\n- Properly fix malformed TPM certificates workaround\n\n[7.12.1-13]\n- Avoid opening /dev/stdout when printing\n\n[7.12.1-12]\n- Fix malformed TPM certificates workaround",
+  "affected_products": [
+    "Oracle Linux 10"
+  ],
+  "packages": [
+    "keylime-7.12.1-11.el10_1.4.x86_64.rpm",
+    "keylime-base-7.12.1-11.el10_1.4.x86_64.rpm",
+    "keylime-registrar-7.12.1-11.el10_1.4.x86_64.rpm",
+    "keylime-selinux-7.12.1-11.el10_1.4.noarch.rpm",
+    "keylime-tenant-7.12.1-11.el10_1.4.x86_64.rpm",
+    "keylime-tools-7.12.1-11.el10_1.4.x86_64.rpm",
+    "keylime-verifier-7.12.1-11.el10_1.4.x86_64.rpm",
+    "python3-keylime-7.12.1-11.el10_1.4.x86_64.rpm",
+    "keylime-7.12.1-11.el10_1.4.aarch64.rpm",
+    "keylime-base-7.12.1-11.el10_1.4.aarch64.rpm",
+    "keylime-registrar-7.12.1-11.el10_1.4.aarch64.rpm",
+    "keylime-selinux-7.12.1-11.el10_1.4.noarch.rpm",
+    "keylime-tenant-7.12.1-11.el10_1.4.aarch64.rpm",
+    "keylime-tools-7.12.1-11.el10_1.4.aarch64.rpm",
+    "keylime-verifier-7.12.1-11.el10_1.4.aarch64.rpm",
+    "python3-keylime-7.12.1-11.el10_1.4.aarch64.rpm"
+  ],
+  "cves": [
+    "CVE-2026-1709"
+  ],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Security Advisory ELSA-2026-2225\n\nhttp://linux.oracle.com/errata/ELSA-2026-2225.html\n\nThe following updated rpms for Oracle Linux 10 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\nkeylime-7.12.1-11.el10_1.4.x86_64.rpm\nkeylime-base-7.12.1-11.el10_1.4.x86_64.rpm\nkeylime-registrar-7.12.1-11.el10_1.4.x86_64.rpm\nkeylime-selinux-7.12.1-11.el10_1.4.noarch.rpm\nkeylime-tenant-7.12.1-11.el10_1.4.x86_64.rpm\nkeylime-tools-7.12.1-11.el10_1.4.x86_64.rpm\nkeylime-verifier-7.12.1-11.el10_1.4.x86_64.rpm\npython3-keylime-7.12.1-11.el10_1.4.x86_64.rpm\n\naarch64:\nkeylime-7.12.1-11.el10_1.4.aarch64.rpm\nkeylime-base-7.12.1-11.el10_1.4.aarch64.rpm\nkeylime-registrar-7.12.1-11.el10_1.4.aarch64.rpm\nkeylime-selinux-7.12.1-11.el10_1.4.noarch.rpm\nkeylime-tenant-7.12.1-11.el10_1.4.aarch64.rpm\nkeylime-tools-7.12.1-11.el10_1.4.aarch64.rpm\nkeylime-verifier-7.12.1-11.el10_1.4.aarch64.rpm\npython3-keylime-7.12.1-11.el10_1.4.aarch64.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol10/SRPMS-updates/keylime-7.12.1-11.el10_1.4.src.rpm\n\nRelated CVEs:\n\nCVE-2026-1709\n\n\n\n\nDescription of changes:\n\n[7.12.1-16]\n- CVE-2026-1709: Registrar authentication bypass\n\n[7.12.1-15]\n- Registrar allows identity takeover via duplicate UUID registration\n\n[7.12.1-14]\n- Properly fix malformed TPM certificates workaround\n\n[7.12.1-13]\n- Avoid opening /dev/stdout when printing\n\n[7.12.1-12]\n- Fix malformed TPM certificates workaround",
+  "vendor": "Oracle"
+}

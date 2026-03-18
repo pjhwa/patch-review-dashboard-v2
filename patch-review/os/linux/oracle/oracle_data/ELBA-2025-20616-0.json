@@ -1,0 +1,25 @@
+{
+  "id": "ELBA-2025-20616-0",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "RHCK",
+  "title": "bubblewrap bug fix and enhancement update",
+  "issuedDate": "2025-11-17T00:00:00Z",
+  "updatedDate": "2025-11-17T00:00:00Z",
+  "pubDate": "2025-11-17T00:00:00Z",
+  "dateStr": "2025-11-17",
+  "url": "https://linux.oracle.com/errata/ELBA-2025-20616-0.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 9.",
+  "description": "[0.6.3-1]\n- Rebase to 0.6.3 which is supported upstream\n  This release also includes the fix for CVE-2024-42472\n  Fixes: #RHEL-56797",
+  "affected_products": [
+    "Oracle Linux 9 for x86_64",
+    "Oracle Linux 9 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "bubblewrap-0.6.3-1.el9.x86_64",
+    "bubblewrap-0.6.3-1.el9.src"
+  ],
+  "full_text": "[0.6.3-1]\n- Rebase to 0.6.3 which is supported upstream\n  This release also includes the fix for CVE-2024-42472\n  Fixes: #RHEL-56797\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2025-20616-0.html"
+}

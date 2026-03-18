@@ -1,0 +1,52 @@
+{
+  "id": "RHBA-2025:20790",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: dpdk bug fix and enhancement update",
+  "issuedDate": "2025-11-11T07:51:06Z",
+  "updatedDate": "2025-11-11T07:51:06Z",
+  "pubDate": "2025-11-11T07:51:06Z",
+  "dateStr": "2025-11-11",
+  "url": "https://access.redhat.com/errata/RHBA-2025:20790",
+  "severity": "None",
+  "overview": "An update for dpdk is now available for Red Hat Enterprise Linux 10.",
+  "description": "For detailed information on changes in this release, see the Red Hat Enterprise Linux 9 Release Notes linked from the References section.",
+  "affected_products": [
+    "Red Hat Enterprise Linux for Power, little endian",
+    "Red Hat Enterprise Linux for x86_64 10 x86_64",
+    "Red Hat Enterprise Linux for ARM 64"
+  ],
+  "cves": [],
+  "packages": [
+    "dpdk-24.11.2-3.el9.src",
+    "dpdk-24.11.2-3.el9.x86_64",
+    "dpdk-debuginfo-24.11.2-3.el9.x86_64",
+    "dpdk-debugsource-24.11.2-3.el9.x86_64",
+    "dpdk-devel-24.11.2-3.el9.x86_64",
+    "dpdk-doc-24.11.2-3.el9.noarch",
+    "dpdk-tools-24.11.2-3.el9.x86_64",
+    "dpdk-24.11.2-3.el9.ppc64le",
+    "dpdk-debuginfo-24.11.2-3.el9.ppc64le",
+    "dpdk-debugsource-24.11.2-3.el9.ppc64le",
+    "dpdk-devel-24.11.2-3.el9.ppc64le",
+    "dpdk-tools-24.11.2-3.el9.ppc64le",
+    "dpdk-24.11.2-3.el9.aarch64",
+    "dpdk-debuginfo-24.11.2-3.el9.aarch64",
+    "dpdk-debugsource-24.11.2-3.el9.aarch64",
+    "dpdk-devel-24.11.2-3.el9.aarch64",
+    "dpdk-tools-24.11.2-3.el9.aarch64"
+  ],
+  "fixes": [
+    {
+      "id": "RHEL-93856",
+      "url": "https://issues.redhat.com/browse/RHEL-93856",
+      "description": "DPDK application for MLX require NET_ADMIN"
+    },
+    {
+      "id": "RHEL-109612",
+      "url": "https://issues.redhat.com/browse/RHEL-109612",
+      "description": "Enable DPDK mlx5 poll mode driver on ARM [rhel-9]"
+    }
+  ],
+  "full_text": "An update for dpdk is now available for Red Hat Enterprise Linux 10.\n\nFor detailed information on changes in this release, see the Red Hat Enterprise Linux 9 Release Notes linked from the References section."
+}

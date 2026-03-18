@@ -1,0 +1,24 @@
+{
+  "id": "USN-7778-1",
+  "vendor": "Canonical / Ubuntu",
+  "type": "Ubuntu Security Notice (USN)",
+  "title": "node-sha.js vulnerability",
+  "issuedDate": "2025-09-25T19:48:43Z",
+  "updatedDate": "2026-02-10T04:50:09Z",
+  "pubDate": "2025-09-25T19:48:43Z",
+  "dateStr": "2025-09-25",
+  "url": "https://ubuntu.com/security/notices/USN-7778-1",
+  "severity": "None",
+  "overview": "node-sha.js vulnerability",
+  "description": "Nikita Skovoroda discovered that sha.js did not properly handle\ncertain inputs. An attacker could possibly use this issue to manipulate\nthe internal state of hash functions, resulting in hash collisions,\ndenial of service, or other unspecified impact.",
+  "affected_products": [
+    "Ubuntu 22.04 LTS",
+    "Ubuntu 24.04 LTS"
+  ],
+  "cves": [],
+  "packages": [
+    "node-sha.js-2.4.11+~2.4.0-1ubuntu0.1",
+    "node-sha.js-2.4.11+~2.4.0-2+deb13u1build0.24.04.1"
+  ],
+  "full_text": "Nikita Skovoroda discovered that sha.js did not properly handle\ncertain inputs. An attacker could possibly use this issue to manipulate\nthe internal state of hash functions, resulting in hash collisions,\ndenial of service, or other unspecified impact."
+}

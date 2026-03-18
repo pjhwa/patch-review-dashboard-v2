@@ -1,0 +1,47 @@
+{
+  "id": "ELSA-2025-23732",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2025-December/019421.html",
+  "synopsis": "[El-errata] ELSA-2025-23732 Important: Oracle Linux 8 httpd:2.4 security update",
+  "dateStr": "2025-December",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Security Advisory ELSA-2025-23732",
+  "description": "mod_md\n[1:2.0.8-8.2]\n- Resolves: RHEL-134487 - httpd:2.4/httpd: Apache HTTP Server: mod_md (ACME),\n  unintended retry intervals (CVE-2025-55753)\n\n[1:2.0.8-8]\n- Resolves: #1832844 - mod_md does not work with ACME server that does not\n  provide keyChange or revokeCert resources\n\n[1:2.0.8-7]\n- Resolves: #1747912 - add a2md(1) documentation\n\n[1:2.0.8-6]\n- Resolves: #1781263 - mod_md ACMEv1 crash\n\n[1:2.0.8-5]\n- Resolves: #1747898 - add mod_md package\n\n[1:2.0.8-4]\n- require mod_ssl, update package description\n\n[1:2.0.8-3]\n- rebuild against 2.4.41\n\n[1:2.0.8-2]\n- Rebuilt for https://fedoraproject.org/wiki/Fedora_31_Mass_Rebuild\n\n[1:2.0.8-1]\n- update to 2.0.8\n\n[2.0.3-1]\n- Initial import (#1719248).",
+  "affected_products": [
+    "Oracle Linux 8"
+  ],
+  "packages": [
+    "httpd-2.4.37-65.0.1.module+el8.10.0+90740+3332f30e.7.x86_64.rpm",
+    "httpd-devel-2.4.37-65.0.1.module+el8.10.0+90740+3332f30e.7.x86_64.rpm",
+    "httpd-filesystem-2.4.37-65.0.1.module+el8.10.0+90740+3332f30e.7.noarch.rpm",
+    "httpd-manual-2.4.37-65.0.1.module+el8.10.0+90740+3332f30e.7.noarch.rpm",
+    "httpd-tools-2.4.37-65.0.1.module+el8.10.0+90740+3332f30e.7.x86_64.rpm",
+    "mod_http2-1.15.7-10.module+el8.10.0+90652+bef864ba.4.x86_64.rpm",
+    "mod_ldap-2.4.37-65.0.1.module+el8.10.0+90740+3332f30e.7.x86_64.rpm",
+    "mod_md-2.0.8-8.module+el8.10.0+90740+3332f30e.2.x86_64.rpm",
+    "mod_proxy_html-2.4.37-65.0.1.module+el8.10.0+90740+3332f30e.7.x86_64.rpm",
+    "mod_session-2.4.37-65.0.1.module+el8.10.0+90740+3332f30e.7.x86_64.rpm",
+    "mod_ssl-2.4.37-65.0.1.module+el8.10.0+90740+3332f30e.7.x86_64.rpm",
+    "httpd-2.4.37-65.0.1.module+el8.10.0+90740+3332f30e.7.aarch64.rpm",
+    "httpd-devel-2.4.37-65.0.1.module+el8.10.0+90740+3332f30e.7.aarch64.rpm",
+    "httpd-filesystem-2.4.37-65.0.1.module+el8.10.0+90740+3332f30e.7.noarch.rpm",
+    "httpd-manual-2.4.37-65.0.1.module+el8.10.0+90740+3332f30e.7.noarch.rpm",
+    "httpd-tools-2.4.37-65.0.1.module+el8.10.0+90740+3332f30e.7.aarch64.rpm",
+    "mod_http2-1.15.7-10.module+el8.10.0+90652+bef864ba.4.aarch64.rpm",
+    "mod_ldap-2.4.37-65.0.1.module+el8.10.0+90740+3332f30e.7.aarch64.rpm",
+    "mod_md-2.0.8-8.module+el8.10.0+90740+3332f30e.2.aarch64.rpm",
+    "mod_proxy_html-2.4.37-65.0.1.module+el8.10.0+90740+3332f30e.7.aarch64.rpm",
+    "mod_session-2.4.37-65.0.1.module+el8.10.0+90740+3332f30e.7.aarch64.rpm",
+    "mod_ssl-2.4.37-65.0.1.module+el8.10.0+90740+3332f30e.7.aarch64.rpm"
+  ],
+  "cves": [
+    "CVE-2025-55753",
+    "CVE-2025-58098",
+    "CVE-2025-65082",
+    "CVE-2025-66200"
+  ],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Security Advisory ELSA-2025-23732\n\nhttp://linux.oracle.com/errata/ELSA-2025-23732.html\n\nThe following updated rpms for Oracle Linux 8 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\nhttpd-2.4.37-65.0.1.module+el8.10.0+90740+3332f30e.7.x86_64.rpm\nhttpd-devel-2.4.37-65.0.1.module+el8.10.0+90740+3332f30e.7.x86_64.rpm\nhttpd-filesystem-2.4.37-65.0.1.module+el8.10.0+90740+3332f30e.7.noarch.rpm\nhttpd-manual-2.4.37-65.0.1.module+el8.10.0+90740+3332f30e.7.noarch.rpm\nhttpd-tools-2.4.37-65.0.1.module+el8.10.0+90740+3332f30e.7.x86_64.rpm\nmod_http2-1.15.7-10.module+el8.10.0+90652+bef864ba.4.x86_64.rpm\nmod_ldap-2.4.37-65.0.1.module+el8.10.0+90740+3332f30e.7.x86_64.rpm\nmod_md-2.0.8-8.module+el8.10.0+90740+3332f30e.2.x86_64.rpm\nmod_proxy_html-2.4.37-65.0.1.module+el8.10.0+90740+3332f30e.7.x86_64.rpm\nmod_session-2.4.37-65.0.1.module+el8.10.0+90740+3332f30e.7.x86_64.rpm\nmod_ssl-2.4.37-65.0.1.module+el8.10.0+90740+3332f30e.7.x86_64.rpm\n\naarch64:\nhttpd-2.4.37-65.0.1.module+el8.10.0+90740+3332f30e.7.aarch64.rpm\nhttpd-devel-2.4.37-65.0.1.module+el8.10.0+90740+3332f30e.7.aarch64.rpm\nhttpd-filesystem-2.4.37-65.0.1.module+el8.10.0+90740+3332f30e.7.noarch.rpm\nhttpd-manual-2.4.37-65.0.1.module+el8.10.0+90740+3332f30e.7.noarch.rpm\nhttpd-tools-2.4.37-65.0.1.module+el8.10.0+90740+3332f30e.7.aarch64.rpm\nmod_http2-1.15.7-10.module+el8.10.0+90652+bef864ba.4.aarch64.rpm\nmod_ldap-2.4.37-65.0.1.module+el8.10.0+90740+3332f30e.7.aarch64.rpm\nmod_md-2.0.8-8.module+el8.10.0+90740+3332f30e.2.aarch64.rpm\nmod_proxy_html-2.4.37-65.0.1.module+el8.10.0+90740+3332f30e.7.aarch64.rpm\nmod_session-2.4.37-65.0.1.module+el8.10.0+90740+3332f30e.7.aarch64.rpm\nmod_ssl-2.4.37-65.0.1.module+el8.10.0+90740+3332f30e.7.aarch64.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol8/SRPMS-updates/httpd-2.4.37-65.0.1.module+el8.10.0+90740+3332f30e.7.src.rpm\nhttp://oss.oracle.com/ol8/SRPMS-updates/mod_http2-1.15.7-10.module+el8.10.0+90652+bef864ba.4.src.rpm\nhttp://oss.oracle.com/ol8/SRPMS-updates/mod_md-2.0.8-8.module+el8.10.0+90740+3332f30e.2.src.rpm\n\nRelated CVEs:\n\nCVE-2025-55753\nCVE-2025-58098\nCVE-2025-65082\nCVE-2025-66200\n\n\n\n\nDescription of changes:\n\nmod_md\n[1:2.0.8-8.2]\n- Resolves: RHEL-134487 - httpd:2.4/httpd: Apache HTTP Server: mod_md (ACME),\n  unintended retry intervals (CVE-2025-55753)\n\n[1:2.0.8-8]\n- Resolves: #1832844 - mod_md does not work with ACME server that does not\n  provide keyChange or revokeCert resources\n\n[1:2.0.8-7]\n- Resolves: #1747912 - add a2md(1) documentation\n\n[1:2.0.8-6]\n- Resolves: #1781263 - mod_md ACMEv1 crash\n\n[1:2.0.8-5]\n- Resolves: #1747898 - add mod_md package\n\n[1:2.0.8-4]\n- require mod_ssl, update package description\n\n[1:2.0.8-3]\n- rebuild against 2.4.41\n\n[1:2.0.8-2]\n- Rebuilt for https://fedoraproject.org/wiki/Fedora_31_Mass_Rebuild\n\n[1:2.0.8-1]\n- update to 2.0.8\n\n[2.0.3-1]\n- Initial import (#1719248).",
+  "vendor": "Oracle"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "ELSA-2026-2627",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2026-February/019777.html",
+  "synopsis": "[El-errata] ELSA-2026-2627 Moderate: Oracle Linux 8 gcc-toolset-14-binutils security update",
+  "dateStr": "2026-February",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Security Advisory ELSA-2026-2627",
+  "description": "[2.41-3.1]\n- Fix a potential illegal memory access when linking a corrupt input file.  (RHEL-130636)\n\n* Thu Feb 20 2025 Nick Clifton  <nickc at redhat.com>\n- Backport fixes for PR 32082 and PR 32153 in order to fix the PR 20267 linker tests.\n\n[2.41-3]\n- NVR Bump to allow rebuilding with GTS-14 gcc.  (RHEL-53519)\n\n[2.41-2]\n- Fix s390x testsuite errors to allow building for RHEL-8.  (RHEL-30410)\n\n[2.41-1]\n- Initial import of upstream 2.41 release with patches from Fedora 40.  (RHEL-30410)",
+  "affected_products": [
+    "Oracle Linux 8"
+  ],
+  "packages": [
+    "gcc-toolset-14-binutils-2.41-4.el8_10.1.x86_64.rpm",
+    "gcc-toolset-14-binutils-devel-2.41-4.el8_10.1.i686.rpm",
+    "gcc-toolset-14-binutils-devel-2.41-4.el8_10.1.x86_64.rpm",
+    "gcc-toolset-14-binutils-gold-2.41-4.el8_10.1.x86_64.rpm",
+    "gcc-toolset-14-binutils-gprofng-2.41-4.el8_10.1.x86_64.rpm",
+    "gcc-toolset-14-binutils-2.41-4.el8_10.1.aarch64.rpm",
+    "gcc-toolset-14-binutils-devel-2.41-4.el8_10.1.aarch64.rpm",
+    "gcc-toolset-14-binutils-gold-2.41-4.el8_10.1.aarch64.rpm",
+    "gcc-toolset-14-binutils-gprofng-2.41-4.el8_10.1.aarch64.rpm"
+  ],
+  "cves": [
+    "CVE-2025-11083"
+  ],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Security Advisory ELSA-2026-2627\n\nhttp://linux.oracle.com/errata/ELSA-2026-2627.html\n\nThe following updated rpms for Oracle Linux 8 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\ngcc-toolset-14-binutils-2.41-4.el8_10.1.x86_64.rpm\ngcc-toolset-14-binutils-devel-2.41-4.el8_10.1.i686.rpm\ngcc-toolset-14-binutils-devel-2.41-4.el8_10.1.x86_64.rpm\ngcc-toolset-14-binutils-gold-2.41-4.el8_10.1.x86_64.rpm\ngcc-toolset-14-binutils-gprofng-2.41-4.el8_10.1.x86_64.rpm\n\naarch64:\ngcc-toolset-14-binutils-2.41-4.el8_10.1.aarch64.rpm\ngcc-toolset-14-binutils-devel-2.41-4.el8_10.1.aarch64.rpm\ngcc-toolset-14-binutils-gold-2.41-4.el8_10.1.aarch64.rpm\ngcc-toolset-14-binutils-gprofng-2.41-4.el8_10.1.aarch64.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol8/SRPMS-updates/gcc-toolset-14-binutils-2.41-4.el8_10.1.src.rpm\n\nRelated CVEs:\n\nCVE-2025-11083\n\n\n\n\nDescription of changes:\n\n[2.41-3.1]\n- Fix a potential illegal memory access when linking a corrupt input file.  (RHEL-130636)\n\n* Thu Feb 20 2025 Nick Clifton  <nickc at redhat.com>\n- Backport fixes for PR 32082 and PR 32153 in order to fix the PR 20267 linker tests.\n\n[2.41-3]\n- NVR Bump to allow rebuilding with GTS-14 gcc.  (RHEL-53519)\n\n[2.41-2]\n- Fix s390x testsuite errors to allow building for RHEL-8.  (RHEL-30410)\n\n[2.41-1]\n- Initial import of upstream 2.41 release with patches from Fedora 40.  (RHEL-30410)",
+  "vendor": "Oracle"
+}

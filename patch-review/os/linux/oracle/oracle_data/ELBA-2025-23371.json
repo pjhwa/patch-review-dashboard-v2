@@ -1,0 +1,26 @@
+{
+  "id": "ELBA-2025-23371",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "AppStream",
+  "title": "nmap bug fix and enhancement update",
+  "issuedDate": "2025-12-18T00:00:00Z",
+  "updatedDate": "2025-12-18T00:00:00Z",
+  "pubDate": "2025-12-18T00:00:00Z",
+  "dateStr": "2025-12-18",
+  "url": "https://linux.oracle.com/errata/ELBA-2025-23371.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 8.",
+  "description": "[2:7.92-2]\n- Resolves: RHEL-40632 - Nmap scans fail with enic driver",
+  "affected_products": [
+    "Oracle Linux 8 for x86_64",
+    "Oracle Linux 8 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "nmap-7.92-2.el8_10.x86_64",
+    "nmap-ncat-7.92-2.el8_10.x86_64",
+    "nmap-7.92-2.el8_10.src"
+  ],
+  "full_text": "[2:7.92-2]\n- Resolves: RHEL-40632 - Nmap scans fail with enic driver\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2025-23371.html"
+}

@@ -1,0 +1,28 @@
+{
+  "id": "ELBA-2026-1354",
+  "url": "https://oss.oracle.com/pipermail/el-errata/2026-January/019624.html",
+  "synopsis": "[El-errata] ELBA-2026-1354 Oracle Linux 9 dpdk bug fix and enhancement update",
+  "dateStr": "2026-January",
+  "type": "Mailing List Announcement",
+  "severity": "",
+  "overview": "Oracle Linux Bug Fix Advisory ELBA-2026-1354",
+  "description": "[24.11.3-1]\n- Rebase to 24.11.3 (RHEL-121231)",
+  "affected_products": [
+    "Oracle Linux 9"
+  ],
+  "packages": [
+    "dpdk-24.11.3-1.el9_7.x86_64.rpm",
+    "dpdk-devel-24.11.3-1.el9_7.x86_64.rpm",
+    "dpdk-doc-24.11.3-1.el9_7.noarch.rpm",
+    "dpdk-tools-24.11.3-1.el9_7.x86_64.rpm",
+    "dpdk-24.11.3-1.el9_7.aarch64.rpm",
+    "dpdk-devel-24.11.3-1.el9_7.aarch64.rpm",
+    "dpdk-doc-24.11.3-1.el9_7.noarch.rpm",
+    "dpdk-tools-24.11.3-1.el9_7.aarch64.rpm"
+  ],
+  "cves": [],
+  "fixes": "",
+  "notes": "",
+  "full_text": "Oracle Linux Bug Fix Advisory ELBA-2026-1354\n\nhttp://linux.oracle.com/errata/ELBA-2026-1354.html\n\nThe following updated rpms for Oracle Linux 9 have been uploaded to the Unbreakable Linux Network:\n\nx86_64:\ndpdk-24.11.3-1.el9_7.x86_64.rpm\ndpdk-devel-24.11.3-1.el9_7.x86_64.rpm\ndpdk-doc-24.11.3-1.el9_7.noarch.rpm\ndpdk-tools-24.11.3-1.el9_7.x86_64.rpm\n\naarch64:\ndpdk-24.11.3-1.el9_7.aarch64.rpm\ndpdk-devel-24.11.3-1.el9_7.aarch64.rpm\ndpdk-doc-24.11.3-1.el9_7.noarch.rpm\ndpdk-tools-24.11.3-1.el9_7.aarch64.rpm\n\n\nSRPMS:\nhttp://oss.oracle.com/ol9/SRPMS-updates/dpdk-24.11.3-1.el9_7.src.rpm\n\n\n\nDescription of changes:\n\n[24.11.3-1]\n- Rebase to 24.11.3 (RHEL-121231)",
+  "vendor": "Oracle"
+}

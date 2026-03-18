@@ -1,0 +1,71 @@
+{
+  "id": "RHBA-2025:20523",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: ima-evm-utils bug fix and enhancement update",
+  "issuedDate": "2025-11-11T07:49:49Z",
+  "updatedDate": "2025-11-11T07:49:49Z",
+  "pubDate": "2025-11-11T07:49:49Z",
+  "dateStr": "2025-11-11",
+  "url": "https://access.redhat.com/errata/RHBA-2025:20523",
+  "severity": "None",
+  "overview": "An update for ima-evm-utils is now available for Red Hat Enterprise Linux 10.",
+  "description": "For detailed information on changes in this release, see the Red Hat Enterprise Linux 9 Release Notes linked from the References section.",
+  "affected_products": [
+    "Red Hat CodeReady Linux Builder for Power, little endian",
+    "Red Hat Enterprise Linux for x86_64 10 x86_64",
+    "Red Hat CodeReady Linux Builder for ARM 64",
+    "Red Hat CodeReady Linux Builder for x86_64 10 x86_64",
+    "Red Hat CodeReady Linux Builder for IBM z Systems",
+    "Red Hat Enterprise Linux for Power, little endian",
+    "Red Hat Enterprise Linux for IBM z Systems",
+    "Red Hat Enterprise Linux for ARM 64"
+  ],
+  "cves": [],
+  "packages": [
+    "ima-evm-utils-1.6.2-2.el9.src",
+    "ima-evm-utils-1.6.2-2.el9.i686",
+    "ima-evm-utils-1.6.2-2.el9.x86_64",
+    "ima-evm-utils-debuginfo-1.6.2-2.el9.i686",
+    "ima-evm-utils-debuginfo-1.6.2-2.el9.x86_64",
+    "ima-evm-utils-debugsource-1.6.2-2.el9.i686",
+    "ima-evm-utils-debugsource-1.6.2-2.el9.x86_64",
+    "ima-evm-utils-1.6.2-2.el9.s390x",
+    "ima-evm-utils-debuginfo-1.6.2-2.el9.s390x",
+    "ima-evm-utils-debugsource-1.6.2-2.el9.s390x",
+    "ima-evm-utils-1.6.2-2.el9.ppc64le",
+    "ima-evm-utils-debuginfo-1.6.2-2.el9.ppc64le",
+    "ima-evm-utils-debugsource-1.6.2-2.el9.ppc64le",
+    "ima-evm-utils-1.6.2-2.el9.aarch64",
+    "ima-evm-utils-debuginfo-1.6.2-2.el9.aarch64",
+    "ima-evm-utils-debugsource-1.6.2-2.el9.aarch64",
+    "ima-evm-utils-devel-1.6.2-2.el9.i686",
+    "ima-evm-utils-devel-1.6.2-2.el9.x86_64",
+    "ima-evm-utils-devel-1.6.2-2.el9.ppc64le",
+    "ima-evm-utils-devel-1.6.2-2.el9.aarch64",
+    "ima-evm-utils-devel-1.6.2-2.el9.s390x"
+  ],
+  "fixes": [
+    {
+      "id": "RHEL-74293",
+      "url": "https://issues.redhat.com/browse/RHEL-74293",
+      "description": "ima-setup failed to load IMA key after reboot on s390x"
+    },
+    {
+      "id": "RHEL-82793",
+      "url": "https://issues.redhat.com/browse/RHEL-82793",
+      "description": "RHEL9 Update ima-evm-utils to upstream release 1.6.2"
+    },
+    {
+      "id": "RHEL-105471",
+      "url": "https://issues.redhat.com/browse/RHEL-105471",
+      "description": "RHEL9 - ima-add-sigs add IMA signatures that fail verification"
+    },
+    {
+      "id": "RHEL-82797",
+      "url": "https://issues.redhat.com/browse/RHEL-82797",
+      "description": "Drop the old version of libimaevm.so"
+    }
+  ],
+  "full_text": "An update for ima-evm-utils is now available for Red Hat Enterprise Linux 10.\n\nFor detailed information on changes in this release, see the Red Hat Enterprise Linux 9 Release Notes linked from the References section."
+}

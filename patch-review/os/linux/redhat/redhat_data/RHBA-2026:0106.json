@@ -1,0 +1,42 @@
+{
+  "id": "RHBA-2026:0106",
+  "vendor": "Red Hat",
+  "type": "Bug Fix Advisory (RHBA)",
+  "title": "Red Hat Bug Fix Advisory: open-vm-tools bug fix and enhancement update",
+  "issuedDate": "2026-01-06T06:26:17Z",
+  "updatedDate": "2026-01-06T06:26:17Z",
+  "pubDate": "2026-01-06T06:26:17Z",
+  "dateStr": "2026-01-06",
+  "url": "https://access.redhat.com/errata/RHBA-2026:0106",
+  "severity": "None",
+  "overview": "An update for open-vm-tools is now available for Red Hat Enterprise Linux 10.",
+  "description": "The Open Virtual Machine Tools are the open source implementation of the VMware Tools. They are a set of guest operating system virtualization components that enhance performance and user experience of virtual machines.Bug Fix(es) and Enhancement(s): Cloud-init receives TERM signal from PID 1 in the middle of running user data [rhel-10.1.z] (JIRA:RHEL-114958)",
+  "affected_products": [
+    "Red Hat Enterprise Linux for ARM 64",
+    "Red Hat Enterprise Linux for x86_64 10 x86_64"
+  ],
+  "cves": [],
+  "packages": [
+    "open-vm-tools-13.0.0-1.el10_1.2.src",
+    "open-vm-tools-13.0.0-1.el10_1.2.x86_64",
+    "open-vm-tools-debuginfo-13.0.0-1.el10_1.2.x86_64",
+    "open-vm-tools-debugsource-13.0.0-1.el10_1.2.x86_64",
+    "open-vm-tools-desktop-13.0.0-1.el10_1.2.x86_64",
+    "open-vm-tools-desktop-debuginfo-13.0.0-1.el10_1.2.x86_64",
+    "open-vm-tools-salt-minion-13.0.0-1.el10_1.2.x86_64",
+    "open-vm-tools-sdmp-13.0.0-1.el10_1.2.x86_64",
+    "open-vm-tools-sdmp-debuginfo-13.0.0-1.el10_1.2.x86_64",
+    "open-vm-tools-test-13.0.0-1.el10_1.2.x86_64",
+    "open-vm-tools-test-debuginfo-13.0.0-1.el10_1.2.x86_64",
+    "open-vm-tools-13.0.0-1.el10_1.2.aarch64",
+    "open-vm-tools-debuginfo-13.0.0-1.el10_1.2.aarch64",
+    "open-vm-tools-debugsource-13.0.0-1.el10_1.2.aarch64",
+    "open-vm-tools-desktop-13.0.0-1.el10_1.2.aarch64",
+    "open-vm-tools-desktop-debuginfo-13.0.0-1.el10_1.2.aarch64",
+    "open-vm-tools-sdmp-debuginfo-13.0.0-1.el10_1.2.aarch64",
+    "open-vm-tools-test-13.0.0-1.el10_1.2.aarch64",
+    "open-vm-tools-test-debuginfo-13.0.0-1.el10_1.2.aarch64"
+  ],
+  "fixes": [],
+  "full_text": "An update for open-vm-tools is now available for Red Hat Enterprise Linux 10.\n\nThe Open Virtual Machine Tools are the open source implementation of the VMware Tools. They are a set of guest operating system virtualization components that enhance performance and user experience of virtual machines.Bug Fix(es) and Enhancement(s): Cloud-init receives TERM signal from PID 1 in the middle of running user data [rhel-10.1.z] (JIRA:RHEL-114958)"
+}

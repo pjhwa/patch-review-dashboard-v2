@@ -1,0 +1,20 @@
+{
+  "id": "RHSA-2026:3402",
+  "vendor": "Red Hat",
+  "url": "https://access.redhat.com/errata/RHSA-2026:3402",
+  "pubDate": "2026-03-03T09:24:45.000Z",
+  "dateStr": "2026-03-03",
+  "severity": "Important",
+  "title": "Red Hat Security Advisory: OpenShift Container Platform 4.21.4 bug fix and security update",
+  "overview": "Red Hat OpenShift Container Platform release 4.21.4 is now available with updates to packages and images that fix several bugs and add enhancements.\n\n This release includes a security update for Red Hat OpenShift Container Platform 4.21.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "description": "Red Hat OpenShift Container Platform release 4.21.4 is now available with updates to packages and images that fix several bugs and add enhancements.\n\n This release includes a security update for Red Hat OpenShift Container Platform 4.21.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.",
+  "affected_products": [
+    "Red Hat OpenShift Container Platform 4.21"
+  ],
+  "cves": [
+    "CVE-2026-22797"
+  ],
+  "packages": [],
+  "fixes": "",
+  "full_text": "Red Hat Security Advisory: OpenShift Container Platform 4.21.4 bug fix and security update\n\nRed Hat OpenShift Container Platform release 4.21.4 is now available with updates to packages and images that fix several bugs and add enhancements.\n\n This release includes a security update for Red Hat OpenShift Container Platform 4.21.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\nRed Hat OpenShift Container Platform release 4.21.4 is now available with updates to packages and images that fix several bugs and add enhancements.\n\n This release includes a security update for Red Hat OpenShift Container Platform 4.21.\n\nRed Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.\n\n\n\nCVE-2026-22797: A flaw was found in OpenStack keystonemiddleware. The external_oauth2_token middleware fails to properly sanitize incoming authentication headers. An authenticated attacker can exploit this by sending forged identity headers, such as X-Is-Admin-Project, X-Roles, or X-User-Id. This can lead to privilege escalation or impersonation of other users within the system."
+}

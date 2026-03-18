@@ -1,0 +1,31 @@
+{
+  "id": "ELSA-2026-0337",
+  "vendor": "Oracle",
+  "type": "Security Advisory (ELSA)",
+  "title": " openssl security update",
+  "issuedDate": "2026-01-08T00:00:00Z",
+  "updatedDate": "2026-01-08T00:00:00Z",
+  "pubDate": "2026-01-08T00:00:00Z",
+  "dateStr": "2026-01-08",
+  "url": "https://linux.oracle.com/errata/ELSA-2026-0337.html",
+  "severity": "Moderate",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 8.",
+  "description": "[1:1.1.1k-14]\n- Backport fix for Out-of-bounds read & write in RFC 3211 KEK Unwrap\n  Fix CVE-2025-9230\n  Resolves: RHEL-128613\n- Fix bug for ticket_lifetime_hint exceed issue\n  Resolves: RHEL-119891",
+  "affected_products": [
+    "Oracle Linux 8 for x86_64",
+    "Oracle Linux 8 for aarch64"
+  ],
+  "cves": [
+    "CVE-2025-9230"
+  ],
+  "packages": [
+    "openssl-libs-1.1.1k-14.el8_10.x86_64",
+    "openssl-1.1.1k-14.el8_10.src",
+    "openssl-libs-1.1.1k-14.el8_10.i686",
+    "openssl-devel-1.1.1k-14.el8_10.i686",
+    "openssl-devel-1.1.1k-14.el8_10.x86_64",
+    "openssl-perl-1.1.1k-14.el8_10.x86_64",
+    "openssl-1.1.1k-14.el8_10.x86_64"
+  ],
+  "full_text": "[1:1.1.1k-14]\n- Backport fix for Out-of-bounds read & write in RFC 3211 KEK Unwrap\n  Fix CVE-2025-9230\n  Resolves: RHEL-128613\n- Fix bug for ticket_lifetime_hint exceed issue\n  Resolves: RHEL-119891\n\nReferences:\nhttps://linux.oracle.com/errata/ELSA-2026-0337.html\nhttps://linux.oracle.com/cve/CVE-2025-9230.html"
+}

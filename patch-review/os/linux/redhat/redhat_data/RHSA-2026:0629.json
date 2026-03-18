@@ -1,0 +1,23 @@
+{
+  "id": "RHSA-2026:0629",
+  "vendor": "Red Hat",
+  "type": "Security Advisory (RHSA)",
+  "title": "Red Hat Security Advisory: satellite/foreman-mcp-server-rhel9 container image available as a Technology Preview",
+  "issuedDate": "2026-01-14T19:31:51+00:00",
+  "updatedDate": "2026-01-14T19:31:59+00:00",
+  "pubDate": "2026-01-14T19:31:51+00:00",
+  "dateStr": "2026-01-14",
+  "url": "https://access.redhat.com/errata/RHSA-2026:0629",
+  "severity": "Important",
+  "overview": "A new satellite/foreman-mcp-server-rhel9 container image is now available as a Technology Preview in the Red Hat container registry.",
+  "description": "Satellite provides a container image that you can use to run an MCP server locally.  The MCP server for Satellite is designed for advanced reporting and data analysis that leverages  AI capabilities.  You can use it to generate dynamic and comprehensive reports from your Satellite inventory. ",
+  "affected_products": [],
+  "cves": [
+    "CVE-2025-62706",
+    "CVE-2025-66416"
+  ],
+  "packages": [
+    "registry.redhat.io/satellite/foreman-mcp-server-rhel9@sha256:1d79cdb237d1d245131c9daea04ddf1c056551ab18e422b4ea4f63cf438c1212_amd64"
+  ],
+  "full_text": "A new satellite/foreman-mcp-server-rhel9 container image is now available as a Technology Preview in the Red Hat container registry.\n\nSatellite provides a container image that you can use to run an MCP server locally.  The MCP server for Satellite is designed for advanced reporting and data analysis that leverages  AI capabilities.  You can use it to generate dynamic and comprehensive reports from your Satellite inventory. "
+}

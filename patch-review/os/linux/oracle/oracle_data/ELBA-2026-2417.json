@@ -1,0 +1,25 @@
+{
+  "id": "ELBA-2026-2417",
+  "vendor": "Oracle",
+  "type": "Bug Fix Advisory (ELBA)",
+  "kernel_type": "AppStream",
+  "title": "gnome-settings-daemon bug fix and enhancement update",
+  "issuedDate": "2026-02-10T00:00:00Z",
+  "updatedDate": "2026-02-10T00:00:00Z",
+  "pubDate": "2026-02-10T00:00:00Z",
+  "dateStr": "2026-02-10",
+  "url": "https://linux.oracle.com/errata/ELBA-2026-2417.html",
+  "severity": "None",
+  "overview": "An update for Oracle Linux is now available for Oracle Linux 8.",
+  "description": "[3.32.0-22]\n- Debounce mount checks in Low Disk Space monitoring\n  Resolves: RHEL-127805",
+  "affected_products": [
+    "Oracle Linux 8 for x86_64",
+    "Oracle Linux 8 for aarch64"
+  ],
+  "cves": [],
+  "packages": [
+    "gnome-settings-daemon-3.32.0-22.el8_10.src",
+    "gnome-settings-daemon-3.32.0-22.el8_10.x86_64"
+  ],
+  "full_text": "[3.32.0-22]\n- Debounce mount checks in Low Disk Space monitoring\n  Resolves: RHEL-127805\n\nReferences:\nhttps://linux.oracle.com/errata/ELBA-2026-2417.html"
+}
