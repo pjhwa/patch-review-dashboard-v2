@@ -1,0 +1,1604 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Patch Review Dashboard v2 — 심층 아키텍처</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0a0e1a;color:#e2e8f0;font-family:'Segoe UI',system-ui,sans-serif;min-height:100vh}
+:root{--blue:#3b82f6;--green:#10b981;--amber:#f59e0b;--purple:#8b5cf6;--red:#ef4444;--cyan:#06b6d4;--card:#111827;--card2:#1f2937;--border:#374151;--text:#e2e8f0;--muted:#9ca3af}
+a{color:var(--blue);text-decoration:none}
+.header{background:linear-gradient(135deg,#0f172a 0%,#1e1b4b 50%,#0f172a 100%);padding:32px 24px;border-bottom:1px solid #1e3a5f;text-align:center;position:relative;overflow:hidden}
+.header::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(59,130,246,0.15) 0%,transparent 70%)}
+.header h1{font-size:2.2rem;font-weight:800;background:linear-gradient(135deg,#60a5fa,#a78bfa,#34d399);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;position:relative}
+.header p{color:#94a3b8;margin-top:8px;font-size:1rem;position:relative}
+.header-badges{display:flex;gap:8px;justify-content:center;margin-top:12px;flex-wrap:wrap;position:relative}
+.badge{padding:4px 12px;border-radius:20px;font-size:0.75rem;font-weight:600;border:1px solid}
+.badge-blue{background:rgba(59,130,246,0.15);color:#93c5fd;border-color:rgba(59,130,246,0.3)}
+.badge-green{background:rgba(16,185,129,0.15);color:#6ee7b7;border-color:rgba(16,185,129,0.3)}
+.badge-amber{background:rgba(245,158,11,0.15);color:#fcd34d;border-color:rgba(245,158,11,0.3)}
+.badge-purple{background:rgba(139,92,246,0.15);color:#c4b5fd;border-color:rgba(139,92,246,0.3)}
+.badge-cyan{background:rgba(6,182,212,0.15);color:#67e8f9;border-color:rgba(6,182,212,0.3)}
+.badge-red{background:rgba(239,68,68,0.15);color:#fca5a5;border-color:rgba(239,68,68,0.3)}
+.tab-nav{background:#0d1117;border-bottom:1px solid var(--border);display:flex;overflow-x:auto;gap:2px;padding:0 16px;position:sticky;top:0;z-index:100}
+.tab-nav::-webkit-scrollbar{height:3px}
+.tab-nav::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px}
+.tab-btn{padding:14px 20px;font-size:0.85rem;font-weight:600;color:var(--muted);background:transparent;border:none;border-bottom:3px solid transparent;cursor:pointer;white-space:nowrap;transition:all .2s}
+.tab-btn:hover{color:var(--text);background:rgba(255,255,255,0.04)}
+.tab-btn.active{color:#60a5fa;border-bottom-color:#3b82f6;background:rgba(59,130,246,0.08)}
+.tab-content{display:none;padding:32px 24px;max-width:1400px;margin:0 auto;animation:fadeIn .3s ease}
+.tab-content.active{display:block}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:24px;margin-bottom:20px}
+.card-sm{background:var(--card2);border:1px solid var(--border);border-radius:8px;padding:16px}
+.card h2{font-size:1.2rem;font-weight:700;margin-bottom:16px;display:flex;align-items:center;gap:8px}
+.card h3{font-size:1rem;font-weight:600;margin-bottom:12px;color:#93c5fd}
+.section-title{font-size:1.5rem;font-weight:700;margin-bottom:24px;color:#f1f5f9;display:flex;align-items:center;gap:10px}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:20px}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+.grid4{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
+.stat-box{background:var(--card2);border:1px solid var(--border);border-radius:10px;padding:20px;text-align:center}
+.stat-num{font-size:2.5rem;font-weight:800;line-height:1}
+.stat-label{color:var(--muted);font-size:0.85rem;margin-top:6px}
+.pipeline-stages{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin:20px 0}
+.stage-node{background:var(--card2);border:2px solid var(--border);border-radius:10px;padding:14px 18px;cursor:pointer;transition:all .2s;min-width:120px;text-align:center}
+.stage-node:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,0.4)}
+.stage-node.s0{border-color:#6366f1;color:#a5b4fc}
+.stage-node.s1{border-color:#06b6d4;color:#67e8f9}
+.stage-node.s2{border-color:#8b5cf6;color:#c4b5fd}
+.stage-node.s3{border-color:#f59e0b;color:#fcd34d}
+.stage-node.s4{border-color:#10b981;color:#6ee7b7}
+.stage-node.s5{border-color:#ef4444;color:#fca5a5}
+.stage-node .stage-num{font-size:1.4rem;font-weight:800}
+.stage-node .stage-name{font-size:0.75rem;font-weight:600;margin-top:4px}
+.arrow{color:var(--muted);font-size:1.5rem;display:flex;align-items:center}
+.stage-detail{display:none;margin-top:16px;animation:fadeIn .3s ease}
+.stage-detail.open{display:block}
+.code-block{background:#0d1117;border:1px solid #1f2937;border-radius:8px;padding:16px;font-family:'Courier New',monospace;font-size:0.8rem;overflow-x:auto;line-height:1.6;margin:8px 0}
+.code-block .kw{color:#ff79c6}
+.code-block .fn{color:#50fa7b}
+.code-block .str{color:#f1fa8c}
+.code-block .cm{color:#6272a4}
+.code-block .num{color:#bd93f9}
+.code-block .var{color:#8be9fd}
+.data-table{width:100%;border-collapse:collapse;font-size:0.85rem}
+.data-table th{background:#1f2937;padding:10px 14px;text-align:left;font-weight:600;color:#93c5fd;border-bottom:2px solid var(--border)}
+.data-table td{padding:10px 14px;border-bottom:1px solid #1f2937;vertical-align:top}
+.data-table tr:last-child td{border-bottom:none}
+.data-table tr:hover td{background:rgba(255,255,255,0.03)}
+.timeline{position:relative;padding-left:32px}
+.timeline::before{content:'';position:absolute;left:10px;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,#3b82f6,#8b5cf6,#10b981)}
+.tl-item{position:relative;margin-bottom:24px}
+.tl-dot{position:absolute;left:-27px;top:4px;width:12px;height:12px;border-radius:50%;border:2px solid}
+.tl-time{font-size:0.8rem;color:var(--muted);font-family:monospace;font-weight:600}
+.tl-title{font-weight:600;margin:2px 0}
+.tl-desc{font-size:0.85rem;color:#94a3b8;margin-top:4px}
+.tier-diagram{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px}
+.tier{border-radius:12px;padding:20px;border:1px solid}
+.tier-frontend{background:rgba(59,130,246,0.08);border-color:rgba(59,130,246,0.3)}
+.tier-backend{background:rgba(139,92,246,0.08);border-color:rgba(139,92,246,0.3)}
+.tier-data{background:rgba(16,185,129,0.08);border-color:rgba(16,185,129,0.3)}
+.tier h3{font-size:0.9rem;font-weight:700;margin-bottom:12px}
+.tier ul{list-style:none;font-size:0.82rem;color:#94a3b8}
+.tier ul li{padding:4px 0;border-bottom:1px solid rgba(255,255,255,0.05)}
+.tier ul li::before{content:'› ';color:inherit}
+.flow-row{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:8px 0}
+.flow-box{background:var(--card2);border:1px solid var(--border);border-radius:6px;padding:8px 14px;font-size:0.82rem;font-weight:500}
+.flow-box.blue{background:rgba(59,130,246,0.15);border-color:rgba(59,130,246,0.4);color:#93c5fd}
+.flow-box.green{background:rgba(16,185,129,0.15);border-color:rgba(16,185,129,0.4);color:#6ee7b7}
+.flow-box.amber{background:rgba(245,158,11,0.15);border-color:rgba(245,158,11,0.4);color:#fcd34d}
+.flow-box.purple{background:rgba(139,92,246,0.15);border-color:rgba(139,92,246,0.4);color:#c4b5fd}
+.flow-box.red{background:rgba(239,68,68,0.15);border-color:rgba(239,68,68,0.4);color:#fca5a5}
+.flow-box.cyan{background:rgba(6,182,212,0.15);border-color:rgba(6,182,212,0.4);color:#67e8f9}
+.collapsible-header{background:var(--card2);border:1px solid var(--border);border-radius:8px;padding:14px 18px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;transition:background .2s;user-select:none}
+.collapsible-header:hover{background:#252d3d}
+.collapsible-body{display:none;background:#0d1117;border:1px solid var(--border);border-top:none;border-radius:0 0 8px 8px;padding:16px}
+.collapsible-body.open{display:block}
+.caret{transition:transform .2s;display:inline-block}
+.caret.open{transform:rotate(90deg)}
+.product-card{background:var(--card2);border:1px solid var(--border);border-radius:10px;padding:18px;transition:all .2s}
+.product-card:hover{border-color:var(--blue);transform:translateY(-2px)}
+.product-card .prod-name{font-weight:700;font-size:1rem;margin-bottom:4px}
+.product-card .prod-id{font-family:monospace;font-size:0.75rem;color:var(--muted)}
+.product-card .prod-tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}
+.rag-pi{background:rgba(59,130,246,0.15);color:#93c5fd;border:1px solid rgba(59,130,246,0.3);padding:3px 8px;border-radius:4px;font-size:0.7rem;font-weight:600}
+.rag-fh{background:rgba(139,92,246,0.15);color:#c4b5fd;border:1px solid rgba(139,92,246,0.3);padding:3px 8px;border-radius:4px;font-size:0.7rem;font-weight:600}
+.rag-both{background:rgba(245,158,11,0.15);color:#fcd34d;border:1px solid rgba(245,158,11,0.3);padding:3px 8px;border-radius:4px;font-size:0.7rem;font-weight:600}
+.schema-field{display:flex;gap:12px;padding:8px 0;border-bottom:1px solid #1f2937;font-size:0.85rem}
+.schema-field:last-child{border-bottom:none}
+.field-name{font-family:monospace;color:#67e8f9;min-width:180px;font-weight:600}
+.field-type{color:#c4b5fd;min-width:80px}
+.field-desc{color:#94a3b8}
+.tech-item{background:var(--card2);border:1px solid var(--border);border-radius:8px;padding:12px 16px;display:flex;align-items:center;gap:12px}
+.tech-icon{width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;font-weight:700;flex-shrink:0}
+.tech-name{font-weight:600;font-size:0.9rem}
+.tech-desc{font-size:0.78rem;color:var(--muted)}
+.circular-flow{display:grid;grid-template-columns:1fr;gap:12px;max-width:700px;margin:0 auto}
+.cf-step{display:flex;gap:16px;align-items:flex-start}
+.cf-num{background:linear-gradient(135deg,#3b82f6,#8b5cf6);color:#fff;border-radius:50%;width:32px;height:32px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:0.9rem;flex-shrink:0;margin-top:2px}
+.cf-content{flex:1}
+.cf-title{font-weight:600;font-size:0.9rem}
+.cf-desc{font-size:0.82rem;color:#94a3b8;margin-top:4px}
+.cf-connector{width:2px;background:linear-gradient(to bottom,#3b82f6,#8b5cf6);height:20px;margin:4px 0 4px 15px}
+.info-box{border-left:3px solid;padding:12px 16px;border-radius:0 8px 8px 0;margin:12px 0;font-size:0.85rem}
+.info-blue{background:rgba(59,130,246,0.08);border-color:#3b82f6;color:#bfdbfe}
+.info-amber{background:rgba(245,158,11,0.08);border-color:#f59e0b;color:#fde68a}
+.info-red{background:rgba(239,68,68,0.08);border-color:#ef4444;color:#fecaca}
+.info-green{background:rgba(16,185,129,0.08);border-color:#10b981;color:#a7f3d0}
+.info-purple{background:rgba(139,92,246,0.08);border-color:#8b5cf6;color:#ddd6fe}
+.route-item{display:flex;gap:12px;padding:8px 0;border-bottom:1px solid #1f2937;align-items:flex-start;font-size:0.83rem}
+.route-method{font-family:monospace;font-weight:700;min-width:44px;font-size:0.75rem;padding:2px 6px;border-radius:4px;text-align:center}
+.method-get{background:rgba(16,185,129,0.2);color:#6ee7b7}
+.method-post{background:rgba(59,130,246,0.2);color:#93c5fd}
+.method-delete{background:rgba(239,68,68,0.2);color:#fca5a5}
+.route-path{font-family:monospace;color:#67e8f9;min-width:280px}
+.route-desc{color:#94a3b8}
+@media(max-width:768px){
+  .tier-diagram{grid-template-columns:1fr}
+  .pipeline-stages{flex-direction:column;align-items:flex-start}
+  .tab-btn{padding:12px 14px;font-size:0.8rem}
+  .header h1{font-size:1.5rem}
+  .grid2,.grid3,.grid4{grid-template-columns:1fr}
+}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.5}}
+.animate-pulse{animation:pulse 2s ease-in-out infinite}
+.chip{display:inline-flex;align-items:center;gap:4px;padding:3px 10px;border-radius:20px;font-size:0.72rem;font-weight:600}
+.chip-blue{background:rgba(59,130,246,0.2);color:#93c5fd}
+.chip-green{background:rgba(16,185,129,0.2);color:#6ee7b7}
+.chip-amber{background:rgba(245,158,11,0.2);color:#fcd34d}
+.chip-red{background:rgba(239,68,68,0.2);color:#fca5a5}
+.chip-purple{background:rgba(139,92,246,0.2);color:#c4b5fd}
+.chip-cyan{background:rgba(6,182,212,0.2);color:#67e8f9}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>⚡ Patch Review Dashboard v2</h1>
+  <p>심층 아키텍처 참조 — 엔터프라이즈 IT 인프라를 위한 자동화 보안 패치 검토 시스템</p>
+  <div class="header-badges">
+    <span class="badge badge-blue">Next.js 16 App Router</span>
+    <span class="badge badge-green">TypeScript</span>
+    <span class="badge badge-amber">BullMQ + Redis</span>
+    <span class="badge badge-purple">OpenClaw AI</span>
+    <span class="badge badge-cyan">Prisma + SQLite WAL</span>
+    <span class="badge badge-blue">포트 3001</span>
+    <span class="badge badge-green">9개 제품</span>
+    <span class="badge badge-purple">5단계 파이프라인</span>
+  </div>
+</div>
+
+<nav class="tab-nav" id="tabNav">
+  <button class="tab-btn active" onclick="showTab('t1',this)">1. 전체 그림</button>
+  <button class="tab-btn" onclick="showTab('t2',this)">2. 데이터 수집</button>
+  <button class="tab-btn" onclick="showTab('t3',this)">3. 5단계 파이프라인</button>
+  <button class="tab-btn" onclick="showTab('t4',this)">4. AI 리뷰 시스템</button>
+  <button class="tab-btn" onclick="showTab('t5',this)">5. 관리자 검토 &amp; 피드백</button>
+  <button class="tab-btn" onclick="showTab('t6',this)">6. 데이터베이스 &amp; 아키텍처</button>
+  <button class="tab-btn" onclick="showTab('t7',this)">7. 제품 레지스트리</button>
+</nav>
+
+<!-- ============================================================ TAB 1 ============================================================ -->
+<div id="t1" class="tab-content active">
+  <div class="section-title">🌐 전체 그림 — 시스템 개요</div>
+
+  <div class="grid4" style="margin-bottom:24px">
+    <div class="stat-box"><div class="stat-num" style="color:#60a5fa">9</div><div class="stat-label">활성 제품</div></div>
+    <div class="stat-box"><div class="stat-num" style="color:#34d399">4</div><div class="stat-label">카테고리</div></div>
+    <div class="stat-box"><div class="stat-num" style="color:#a78bfa">5</div><div class="stat-label">파이프라인 단계</div></div>
+    <div class="stat-box"><div class="stat-num" style="color:#fbbf24">28+</div><div class="stat-label">API 라우트</div></div>
+  </div>
+
+  <div class="card">
+    <h2>🏗️ 3계층 아키텍처</h2>
+    <div class="tier-diagram">
+      <div class="tier tier-frontend">
+        <h3 style="color:#60a5fa">프론트엔드 계층</h3>
+        <ul>
+          <li>Next.js 16 SSR 페이지</li>
+          <li>카테고리 카드 대시보드</li>
+          <li>제품 상세 페이지</li>
+          <li>아카이브 페이지</li>
+          <li>ProductGrid 컴포넌트</li>
+          <li>SSE 로그 스트리밍</li>
+          <li>Tailwind CSS + shadcn/ui</li>
+          <li>React Server Components</li>
+        </ul>
+      </div>
+      <div class="tier tier-backend">
+        <h3 style="color:#a78bfa">백엔드 계층</h3>
+        <ul>
+          <li>28+ Next.js API 라우트</li>
+          <li>BullMQ Worker (queue.ts 954줄)</li>
+          <li>제품 레지스트리 (products-registry.ts)</li>
+          <li>자동 아카이브 서비스</li>
+          <li>OpenClaw AI (자식 프로세스)</li>
+          <li>Python 전처리 스크립트</li>
+          <li>Cron 작업 스케줄러</li>
+          <li>SSE 이벤트 에미터</li>
+        </ul>
+      </div>
+      <div class="tier tier-data">
+        <h3 style="color:#34d399">데이터 계층</h3>
+        <ul>
+          <li>SQLite + Prisma ORM (WAL 모드)</li>
+          <li>Redis + BullMQ 큐</li>
+          <li>ChromaDB 벡터 스토어</li>
+          <li>JSON 파일 저장소 (원시 패치)</li>
+          <li>user_exclusion_feedback.json</li>
+          <li>patches_for_llm_review_*.json</li>
+          <li>분기별 아카이브 파일</li>
+          <li>SKILL.md 프롬프트 파일</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>🔄 데이터 흐름 다이어그램</h2>
+    <div style="overflow-x:auto">
+      <div style="min-width:800px;padding:16px 0">
+        <div style="text-align:center;margin-bottom:8px;font-size:0.75rem;color:var(--muted);font-weight:600;letter-spacing:1px">데이터 수집 레이어</div>
+        <div class="flow-row" style="justify-content:center">
+          <div class="flow-box cyan">벤더 API / 보안 권고</div>
+          <div class="arrow">→</div>
+          <div class="flow-box cyan">Python 수집 스크립트</div>
+          <div class="arrow">→</div>
+          <div class="flow-box cyan">원시 JSON 파일</div>
+          <div class="arrow">→</div>
+          <div class="flow-box cyan">RawPatch 테이블</div>
+        </div>
+        <div style="text-align:center;margin:12px 0;color:#374151;font-size:1.2rem">↓</div>
+        <div style="text-align:center;margin-bottom:8px;font-size:0.75rem;color:var(--muted);font-weight:600;letter-spacing:1px">전처리 레이어</div>
+        <div class="flow-row" style="justify-content:center">
+          <div class="flow-box blue">patch_preprocessing.py</div>
+          <div class="arrow">→</div>
+          <div class="flow-box blue">patches_for_llm_review_*.json</div>
+          <div class="arrow">→</div>
+          <div class="flow-box blue">PreprocessedPatch 테이블</div>
+        </div>
+        <div style="text-align:center;margin:12px 0;color:#374151;font-size:1.2rem">↓</div>
+        <div style="text-align:center;margin-bottom:8px;font-size:0.75rem;color:var(--muted);font-weight:600;letter-spacing:1px">AI 리뷰 레이어</div>
+        <div class="flow-row" style="justify-content:center">
+          <div class="flow-box amber">RAG 쿼리 (ChromaDB)</div>
+          <div class="arrow">→</div>
+          <div class="flow-box amber">OpenClaw AI 에이전트</div>
+          <div class="arrow">→</div>
+          <div class="flow-box amber">Zod 검증 JSON</div>
+          <div class="arrow">→</div>
+          <div class="flow-box amber">ReviewedPatch 테이블</div>
+        </div>
+        <div style="text-align:center;margin:12px 0;color:#374151;font-size:1.2rem">↓</div>
+        <div style="text-align:center;margin-bottom:8px;font-size:0.75rem;color:var(--muted);font-weight:600;letter-spacing:1px">관리자 검토 레이어</div>
+        <div class="flow-row" style="justify-content:center">
+          <div class="flow-box green">대시보드 UI</div>
+          <div class="arrow">→</div>
+          <div class="flow-box green">관리자 검토 + 피드백</div>
+          <div class="arrow">→</div>
+          <div class="flow-box green">CSV 내보내기 (UTF-8 BOM)</div>
+          <div class="arrow">↺</div>
+          <div class="flow-box purple">ChromaDB (RAG 피드백 루프)</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid2">
+    <div class="card">
+      <h2>📦 제품 카테고리</h2>
+      <div style="display:flex;flex-direction:column;gap:12px">
+        <div class="card-sm">
+          <div style="color:#60a5fa;font-weight:700;margin-bottom:8px">🖥️ OS (4개 제품)</div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap">
+            <span class="chip chip-blue">RHEL</span>
+            <span class="chip chip-blue">Oracle Linux</span>
+            <span class="chip chip-blue">Ubuntu</span>
+            <span class="chip chip-blue">Windows Server</span>
+          </div>
+        </div>
+        <div class="card-sm">
+          <div style="color:#34d399;font-weight:700;margin-bottom:8px">🗄️ 데이터베이스 (3개 제품)</div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap">
+            <span class="chip chip-green">MariaDB</span>
+            <span class="chip chip-green">SQL Server</span>
+            <span class="chip chip-green">PostgreSQL</span>
+          </div>
+        </div>
+        <div class="card-sm">
+          <div style="color:#f59e0b;font-weight:700;margin-bottom:8px">💾 스토리지 (1개 제품)</div>
+          <span class="chip chip-amber">Ceph</span>
+        </div>
+        <div class="card-sm">
+          <div style="color:#a78bfa;font-weight:700;margin-bottom:8px">⚡ 가상화 (1개 제품)</div>
+          <span class="chip chip-purple">VMware vSphere</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>🛠️ 기술 스택</h2>
+      <div style="display:flex;flex-direction:column;gap:8px">
+        <div class="tech-item">
+          <div class="tech-icon" style="background:rgba(0,0,0,0.5);color:#60a5fa">N</div>
+          <div><div class="tech-name">Next.js 16</div><div class="tech-desc">App Router, SSR, API Routes, RSC</div></div>
+        </div>
+        <div class="tech-item">
+          <div class="tech-icon" style="background:rgba(59,130,246,0.2);color:#60a5fa">TS</div>
+          <div><div class="tech-name">TypeScript</div><div class="tech-desc">엄격 모드, Zod 스키마 검증</div></div>
+        </div>
+        <div class="tech-item">
+          <div class="tech-icon" style="background:rgba(16,185,129,0.2);color:#34d399">Pr</div>
+          <div><div class="tech-name">Prisma + SQLite</div><div class="tech-desc">WAL 모드, 전역 싱글턴, 5개 모델</div></div>
+        </div>
+        <div class="tech-item">
+          <div class="tech-icon" style="background:rgba(239,68,68,0.2);color:#f87171">BQ</div>
+          <div><div class="tech-name">BullMQ + Redis</div><div class="tech-desc">작업 큐, 파이프라인 워커 (954줄)</div></div>
+        </div>
+        <div class="tech-item">
+          <div class="tech-icon" style="background:rgba(139,92,246,0.2);color:#a78bfa">AI</div>
+          <div><div class="tech-name">OpenClaw AI CLI</div><div class="tech-desc">자식 프로세스 실행, agent:main, JSON 모드</div></div>
+        </div>
+        <div class="tech-item">
+          <div class="tech-icon" style="background:rgba(245,158,11,0.2);color:#fbbf24">Py</div>
+          <div><div class="tech-name">Python 스크립트</div><div class="tech-desc">전처리, ChromaDB RAG, query_rag.py</div></div>
+        </div>
+        <div class="tech-item">
+          <div class="tech-icon" style="background:rgba(6,182,212,0.2);color:#22d3ee">TW</div>
+          <div><div class="tech-name">Tailwind CSS + shadcn/ui</div><div class="tech-desc">컴포넌트 라이브러리, 다크 테마</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>🚀 배포 정보</h2>
+    <div class="grid3">
+      <div class="card-sm">
+        <div class="tech-name" style="margin-bottom:6px">경로</div>
+        <code style="color:#67e8f9;font-size:0.82rem">/home/citec/patch-review-dashboard-v2/</code>
+      </div>
+      <div class="card-sm">
+        <div class="tech-name" style="margin-bottom:6px">포트</div>
+        <code style="color:#6ee7b7;font-size:0.82rem">3001</code>
+      </div>
+      <div class="card-sm">
+        <div class="tech-name" style="margin-bottom:6px">프로세스 관리자</div>
+        <code style="color:#fcd34d;font-size:0.82rem">pm2-citec.service (systemd)</code>
+      </div>
+      <div class="card-sm">
+        <div class="tech-name" style="margin-bottom:6px">빌드 스크립트</div>
+        <code style="color:#67e8f9;font-size:0.82rem">build.sh / build_server.sh</code>
+      </div>
+      <div class="card-sm">
+        <div class="tech-name" style="margin-bottom:6px">재시작 스크립트</div>
+        <code style="color:#6ee7b7;font-size:0.82rem">restart.sh</code>
+      </div>
+      <div class="card-sm">
+        <div class="tech-name" style="margin-bottom:6px">Cron 로그</div>
+        <code style="color:#fcd34d;font-size:0.82rem">/home/citec/patch_collector_cron.log</code>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ TAB 2 ============================================================ -->
+<div id="t2" class="tab-content">
+  <div class="section-title">📅 데이터 수집 — Cron 스케줄 &amp; 흐름</div>
+
+  <div class="card">
+    <h2>🕐 분기별 수집 타임라인</h2>
+    <div class="info-blue info-box"><strong>매년 3월, 6월, 9월, 12월의 세 번째 일요일</strong>에 실행됩니다. Cron 조건: <code>test $(date +%w) -eq 0</code>으로 15~21일 사이에서 일요일 실행을 보장합니다.</div>
+    <div style="margin-top:20px">
+      <div class="timeline">
+        <div class="tl-item">
+          <div class="tl-dot" style="background:#ef4444;border-color:#ef4444"></div>
+          <div class="tl-time">02:00</div>
+          <div class="tl-title">SQL Server 수집</div>
+          <div class="tl-desc">스크립트: <code>run_sqlserver_collector.sh</code> — Microsoft 보안 업데이트 카탈로그에서 수집. Windows/SQLServer는 교차 버전 비교를 위해 aiBatchSize=15 사용.</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot" style="background:#f97316;border-color:#f97316"></div>
+          <div class="tl-time">03:00</div>
+          <div class="tl-title">Windows Server 수집</div>
+          <div class="tl-desc">스크립트: <code>run_windows_collector.sh</code> — Windows Server 패치 수집. 전처리에서 그룹핑 제거 + aiBatchSize 방식 사용 (교훈35).</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot" style="background:#eab308;border-color:#eab308"></div>
+          <div class="tl-time">04:00</div>
+          <div class="tl-title">VMware vSphere 수집</div>
+          <div class="tl-desc">스크립트: <code>run_vsphere_collector.sh</code> — VMware 보안 권고 (VMSA) 수집. vSphere는 DB 입수 시 <code>createMany</code> 대신 개별 <code>create</code> 호출 사용.</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot" style="background:#10b981;border-color:#10b981"></div>
+          <div class="tl-time">05:00</div>
+          <div class="tl-title">PostgreSQL 수집</div>
+          <div class="tl-desc">스크립트: <code>run_pgsql_collector.sh</code> — PostgreSQL 보안 권고 수집. 파일 접두사: <code>PGSL-</code> (원시 데이터 파일 접두사 규칙).</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot" style="background:#3b82f6;border-color:#3b82f6"></div>
+          <div class="tl-time">06:00</div>
+          <div class="tl-title">Linux (RHEL / Oracle Linux / Ubuntu)</div>
+          <div class="tl-desc">스크립트: <code>run_collectors_cron.sh</code> — 세 가지 Linux 배포판을 병렬로 수집. 180일 수집 기간. 검토 기간: 90~180일 (커널: 0~180일).</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot" style="background:#8b5cf6;border-color:#8b5cf6"></div>
+          <div class="tl-time">08:00</div>
+          <div class="tl-title">MariaDB 수집</div>
+          <div class="tl-desc">스크립트: <code>run_collectors_cron.sh</code> — MariaDB 보안 릴리스 수집. file-hiding + prompt-injection (both) RAG 전략 사용.</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot" style="background:#06b6d4;border-color:#06b6d4"></div>
+          <div class="tl-time">10:00</div>
+          <div class="tl-title">Ceph 수집</div>
+          <div class="tl-desc">스크립트: <code>run_collectors_cron.sh</code> — Ceph 스토리지 보안 권고 수집. 한국어 Excel 호환성을 위해 csvBOM=true 사용.</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot" style="background:#6b7280;border-color:#6b7280"></div>
+          <div class="tl-time">00:00 (1월/4월/7월/10월 1일)</div>
+          <div class="tl-title">분기별 자동 아카이브</div>
+          <div class="tl-desc">POST <code>/api/archive/quarterly/cron</code> — 확정된 모든 ReviewedPatch 레코드를 분기별 아카이브 파일로 스냅샷.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>📋 Cron 표현식 상세</h2>
+    <div class="code-block">
+<span class="cm"># 표준 분기별 cron 패턴 (3/6/9/12월 세 번째 일요일 02:00~10:00 실행)</span>
+<span class="str">0 2 15-21 3,6,9,12 * test $(date +%w) -eq 0 && /home/citec/run_sqlserver_collector.sh</span>
+<span class="str">0 3 15-21 3,6,9,12 * test $(date +%w) -eq 0 && /home/citec/run_windows_collector.sh</span>
+<span class="str">0 4 15-21 3,6,9,12 * test $(date +%w) -eq 0 && /home/citec/run_vsphere_collector.sh</span>
+<span class="str">0 5 15-21 3,6,9,12 * test $(date +%w) -eq 0 && /home/citec/run_pgsql_collector.sh</span>
+<span class="str">0 6 15-21 3,6,9,12 * test $(date +%w) -eq 0 && /home/citec/run_collectors_cron.sh  <span class="cm"># Linux</span></span>
+<span class="str">0 8 15-21 3,6,9,12 * test $(date +%w) -eq 0 && /home/citec/run_collectors_cron.sh  <span class="cm"># MariaDB</span></span>
+<span class="str">0 10 15-21 3,6,9,12 * test $(date +%w) -eq 0 && /home/citec/run_collectors_cron.sh <span class="cm"># Ceph</span></span>
+
+<span class="cm"># 분기별 아카이브 (1월/4월/7월/10월 1일 자정)</span>
+<span class="str">0 0 1 1,4,7,10 * curl -X POST http://localhost:3001/api/archive/quarterly/cron</span>
+
+<span class="cm"># 모든 수집기 로그:</span>
+<span class="cm"># /home/citec/patch_collector_cron.log</span>
+    </div>
+    <div class="info-amber info-box"><code>test $(date +%w) -eq 0</code> 트릭: cron은 "월의 n번째 요일"을 기본 지원하지 않습니다. 15~21일 매일 실행되지만 일요일(0번째 날)인 경우에만 실제 실행됩니다.</div>
+  </div>
+
+  <div class="grid2">
+    <div class="card">
+      <h2>🔄 수집 흐름 다이어그램</h2>
+      <div style="display:flex;flex-direction:column;gap:8px">
+        <div class="flow-box cyan" style="text-align:center">벤더 보안 권고 소스</div>
+        <div style="text-align:center;color:var(--muted)">↓ HTTP/API 요청</div>
+        <div class="flow-box cyan" style="text-align:center">Python 수집 스크립트</div>
+        <div style="text-align:center;color:var(--muted)">↓ 정규화 + 저장</div>
+        <div class="flow-box blue" style="text-align:center">원시 JSON 파일 (벤더별)</div>
+        <div style="text-align:center;color:var(--muted)">↓ 파이프라인 트리거</div>
+        <div class="flow-box blue" style="text-align:center">patch_preprocessing.py / windows_preprocessing.py</div>
+        <div style="text-align:center;color:var(--muted)">↓ 구조화 출력</div>
+        <div class="flow-box amber" style="text-align:center">patches_for_llm_review_{vendor}.json</div>
+        <div style="text-align:center;color:var(--muted)">↓ Prisma upsert</div>
+        <div class="flow-box green" style="text-align:center">PreprocessedPatch 테이블 (SQLite)</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>📊 수집 파라미터</h2>
+      <table class="data-table">
+        <thead><tr><th>제품</th><th>--days</th><th>검토 기간</th></tr></thead>
+        <tbody>
+          <tr><td>RHEL</td><td>180</td><td>90~180일 (커널: 0~180일)</td></tr>
+          <tr><td>Oracle Linux</td><td>180</td><td>90~180일 (커널: 0~180일)</td></tr>
+          <tr><td>Ubuntu</td><td>180</td><td>90~180일 (커널: 0~180일)</td></tr>
+          <tr><td>Windows Server</td><td>180</td><td>--days_end 90</td></tr>
+          <tr><td>SQL Server</td><td>180</td><td>--days_end 90</td></tr>
+          <tr><td>MariaDB</td><td>180</td><td>표준</td></tr>
+          <tr><td>PostgreSQL</td><td>180</td><td>표준</td></tr>
+          <tr><td>Ceph</td><td>180</td><td>표준</td></tr>
+          <tr><td>VMware vSphere</td><td>180</td><td>표준</td></tr>
+        </tbody>
+      </table>
+      <div class="info-green info-box" style="margin-top:12px">Linux 검토 날짜 기간 정책 (교훈34): 180일 수집, 단 90~180일 경과 패치만 검토 (커널 패키지 예외 — 0~180일 전체 검토)</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>📁 주요 파일 경로</h2>
+    <div class="grid3">
+      <div class="card-sm">
+        <div style="color:var(--muted);font-size:0.75rem;margin-bottom:6px">전처리 출력</div>
+        <code style="font-size:0.8rem;color:#67e8f9">patches_for_llm_review_{vendor}.json</code>
+      </div>
+      <div class="card-sm">
+        <div style="color:var(--muted);font-size:0.75rem;margin-bottom:6px">RAG 피드백 소스</div>
+        <code style="font-size:0.8rem;color:#67e8f9">user_exclusion_feedback.json</code>
+      </div>
+      <div class="card-sm">
+        <div style="color:var(--muted);font-size:0.75rem;margin-bottom:6px">RAG 스크립트 (cwd: os/linux/)</div>
+        <code style="font-size:0.8rem;color:#67e8f9">os/linux/query_rag.py</code>
+      </div>
+      <div class="card-sm">
+        <div style="color:var(--muted);font-size:0.75rem;margin-bottom:6px">분기별 아카이브 위치</div>
+        <code style="font-size:0.8rem;color:#6ee7b7">~/.openclaw/workspace/skills/patch-review/quarterly-archive/{Q1-2026}/</code>
+      </div>
+      <div class="card-sm">
+        <div style="color:var(--muted);font-size:0.75rem;margin-bottom:6px">아카이브 파일</div>
+        <code style="font-size:0.8rem;color:#6ee7b7">metadata.json + patches.json</code>
+      </div>
+      <div class="card-sm">
+        <div style="color:var(--muted);font-size:0.75rem;margin-bottom:6px">Cron 로그</div>
+        <code style="font-size:0.8rem;color:#fcd34d">/home/citec/patch_collector_cron.log</code>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ TAB 3 ============================================================ -->
+<div id="t3" class="tab-content">
+  <div class="section-title">⚙️ 5단계 파이프라인 — runProductPipeline</div>
+
+  <div class="card">
+    <h2>🔷 파이프라인 개요 — 단계를 클릭하여 상세 보기</h2>
+    <div class="pipeline-stages">
+      <div class="stage-node s0" onclick="toggleStage('d0')">
+        <div class="stage-num">0</div>
+        <div class="stage-name">디스패치</div>
+      </div>
+      <div class="arrow">→</div>
+      <div class="stage-node s1" onclick="toggleStage('d1')">
+        <div class="stage-num">1</div>
+        <div class="stage-name">전처리</div>
+      </div>
+      <div class="arrow">→</div>
+      <div class="stage-node s2" onclick="toggleStage('d2')">
+        <div class="stage-num">2</div>
+        <div class="stage-name">RAG 설정</div>
+      </div>
+      <div class="arrow">→</div>
+      <div class="stage-node s3" onclick="toggleStage('d3')">
+        <div class="stage-num">3</div>
+        <div class="stage-name">AI 리뷰 루프</div>
+      </div>
+      <div class="arrow">→</div>
+      <div class="stage-node s4" onclick="toggleStage('d4')">
+        <div class="stage-num">4</div>
+        <div class="stage-name">DB 입수</div>
+      </div>
+      <div class="arrow">→</div>
+      <div class="stage-node s5" onclick="toggleStage('d5')">
+        <div class="stage-num">5</div>
+        <div class="stage-name">패스스루</div>
+      </div>
+    </div>
+
+    <!-- Stage 0 -->
+    <div id="d0" class="stage-detail">
+      <div class="card-sm" style="border-color:#6366f1">
+        <h3 style="color:#a5b4fc">0단계: 디스패치</h3>
+        <div class="flow-row">
+          <div class="flow-box blue">UI 버튼 클릭</div><div class="arrow">→</div>
+          <div class="flow-box blue">POST /api/pipeline/{product}/run</div><div class="arrow">→</div>
+          <div class="flow-box blue">pipelineQueue.add(jobName, {isRetry, isAiOnly})</div>
+        </div>
+        <div class="flow-row" style="margin-top:8px">
+          <div class="flow-box purple">{jobId} 반환</div><div class="arrow">→</div>
+          <div class="flow-box purple">클라이언트 SSE 연결</div><div class="arrow">→</div>
+          <div class="flow-box purple">GET /api/pipeline/stream?jobId=...</div>
+        </div>
+        <div class="code-block" style="margin-top:12px">
+<span class="cm">// POST /api/pipeline/{product}/run</span>
+<span class="kw">const</span> <span class="var">job</span> = <span class="kw">await</span> pipelineQueue.<span class="fn">add</span>(jobName, {
+  productId,
+  isRetry: <span class="kw">false</span>,
+  isAiOnly: <span class="kw">false</span>   <span class="cm">// true이면 전처리 건너뜀</span>
+});
+<span class="kw">return</span> { jobId: <span class="var">job</span>.id };
+
+<span class="cm">// 클라이언트는 실시간 로그 스트리밍을 위해 SSE 연결</span>
+<span class="cm">// GET /api/pipeline/stream?jobId={jobId}</span>
+        </div>
+        <div class="info-purple info-box">BullMQ 워커 (queue.ts — 954줄)가 작업을 처리합니다. withOpenClawLock은 <code>/tmp/openclaw_execution.lock</code>의 디렉토리 뮤텍스를 통해 AI 호출이 한 번에 하나만 실행되도록 보장합니다.</div>
+      </div>
+    </div>
+
+    <!-- Stage 1 -->
+    <div id="d1" class="stage-detail">
+      <div class="card-sm" style="border-color:#06b6d4">
+        <h3 style="color:#67e8f9">1단계: 전처리 (Python)</h3>
+        <div class="info-amber info-box"><code>isAiOnly=true</code>이면 전체 건너뜁니다. 전처리 스크립트가 없으면 파이프라인이 즉시 실패합니다 (폴백 없음).</div>
+        <div class="code-block">
+<span class="cm"># 표준 Linux 전처리기</span>
+python3 patch_preprocessing.py --vendor redhat --days <span class="num">180</span>
+python3 patch_preprocessing.py --vendor oracle --days <span class="num">180</span>
+python3 patch_preprocessing.py --vendor ubuntu --days <span class="num">180</span>
+
+<span class="cm"># Windows / SQL Server 전처리기 (날짜 범위 포함)</span>
+python3 windows_preprocessing.py --days <span class="num">180</span> --days_end <span class="num">90</span>
+
+<span class="cm"># 출력: patches_for_llm_review_{vendor}.json</span>
+        </div>
+        <div style="margin-top:12px">
+          <div style="font-weight:600;margin-bottom:8px;color:#94a3b8">로그 태그 패턴 (대시보드 카운트 업데이트 트리거):</div>
+          <div class="code-block">[REDHAT-PREPROCESS_DONE] count=42
+[ORACLE-PREPROCESS_DONE] count=17
+[UBUNTU-PREPROCESS_DONE] count=23</div>
+        </div>
+        <div style="margin-top:12px">
+          <div style="font-weight:600;margin-bottom:8px;color:#94a3b8">정규화 단계:</div>
+          <ul style="list-style:none;font-size:0.85rem;color:#94a3b8;display:flex;flex-direction:column;gap:6px">
+            <li>▸ 수집기 출력의 원시 JSON 파싱</li>
+            <li>▸ 날짜 범위 필터링 적용 (180일 수집, 90~180일 검토)</li>
+            <li>▸ 커널 예외: 커널 패키지는 전체 0~180일 범위 검토</li>
+            <li>▸ 필드를 LLM 친화적 형식으로 정규화</li>
+            <li>▸ Prisma upsert를 통해 PreprocessedPatch 테이블에 저장</li>
+            <li>▸ [VENDOR-PREPROCESS_DONE] count= 로그 태그 발행</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stage 2 -->
+    <div id="d2" class="stage-detail">
+      <div class="card-sm" style="border-color:#8b5cf6">
+        <h3 style="color:#c4b5fd">2단계: RAG 제외 설정 (2가지 전략)</h3>
+        <div class="grid2" style="margin-bottom:12px">
+          <div class="card-sm" style="background:#0d1117">
+            <div style="font-weight:700;color:#93c5fd;margin-bottom:8px">전략 A: prompt-injection</div>
+            <div style="font-size:0.82rem;color:#94a3b8">적용 대상: RHEL, Oracle, Ubuntu, vSphere (및 2026-03-19 기준 모든 제품)</div>
+            <ul style="font-size:0.82rem;color:#94a3b8;list-style:none;margin-top:8px;display:flex;flex-direction:column;gap:4px">
+              <li>▸ <code>os/linux/query_rag.py</code> 실행으로 ChromaDB 쿼리</li>
+              <li>▸ 소스: <code>user_exclusion_feedback.json</code></li>
+              <li>▸ AI 프롬프트에 CRITICAL INSTRUCTION 블록 삽입</li>
+              <li>▸ cwd는 항상 <code>os/linux/</code>로 고정 (공유 RAG 디렉토리)</li>
+            </ul>
+          </div>
+          <div class="card-sm" style="background:#0d1117">
+            <div style="font-weight:700;color:#fcd34d;margin-bottom:8px">전략 B: file-hiding</div>
+            <div style="font-size:0.82rem;color:#94a3b8">적용 대상: Windows, Ceph, MariaDB, SQL Server, PostgreSQL</div>
+            <ul style="font-size:0.82rem;color:#94a3b8;list-style:none;margin-top:8px;display:flex;flex-direction:column;gap:4px">
+              <li>▸ AI 실행 전: <code>normalized/</code> → <code>normalized_hidden/</code>으로 이름 변경</li>
+              <li>▸ AI 실행 전: <code>patches_for_llm_review_*.json</code> → <code>*.hidden</code>으로 이름 변경</li>
+              <li>▸ AI 실행 후: 원래 이름으로 복원 (예외 발생 시에도 — finally 블록)</li>
+              <li>▸ 목적: OpenClaw가 이전 검토 파일을 읽지 못하도록 방지 (편향 방지)</li>
+            </ul>
+          </div>
+        </div>
+        <div class="info-blue info-box">조합 전략 <code>type: 'both'</code>는 file-hiding을 먼저 적용한 후 prompt-injection을 적용합니다. Windows, Ceph, MariaDB, SQL Server, PostgreSQL 모두 <code>type: 'both'</code> 사용.</div>
+        <div class="code-block" style="margin-top:12px">
+<span class="cm">// query_rag.py 호출 (cwd는 항상 os/linux/)</span>
+python3 os/linux/query_rag.py \
+  --query <span class="str">"security patch exclusion reasons"</span> \
+  --n_results <span class="num">10</span>
+
+<span class="cm">// 결과는 CRITICAL INSTRUCTION 블록으로 프롬프트에 삽입</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stage 3 -->
+    <div id="d3" class="stage-detail">
+      <div class="card-sm" style="border-color:#f59e0b">
+        <h3 style="color:#fcd34d">3단계: AI 리뷰 루프 (runAiReviewLoop)</h3>
+        <div class="code-block">
+<span class="cm">// 배치 루프: 배치당 5개 패치 (aiBatchSize로 설정 가능)</span>
+<span class="cm">// Windows: aiBatchSize=15 (교차 버전 비교를 위해 12개 패치를 1개 배치로)</span>
+<span class="kw">for</span> (<span class="kw">const</span> <span class="var">batch</span> <span class="kw">of</span> batches) {
+  <span class="cm">// 1단계: 세션 정리</span>
+  <span class="fn">cleanupSessions</span>();  <span class="cm">// sessions.json + .lock + .jsonl 파일 삭제</span>
+
+  <span class="cm">// 2단계: 프롬프트 빌드</span>
+  <span class="kw">const</span> <span class="var">prompt</span> = <span class="fn">buildPrompt</span>(skillDir, batchSize, prunedBatch);
+
+  <span class="cm">// 3단계: OpenClaw AI 실행</span>
+  <span class="fn">openclaw</span> agent:main --json --timeout <span class="num">1800</span> \
+    --session-id {unique} -m {prompt}
+
+  <span class="cm">// 4단계: JSON 추출</span>
+  <span class="kw">const</span> <span class="var">raw</span> = <span class="fn">extractJsonArray</span>(output);  <span class="cm">// 코드 펜스 제거</span>
+
+  <span class="cm">// 5단계: Zod 검증</span>
+  <span class="kw">const</span> <span class="var">result</span> = ReviewItemSchema.<span class="fn">parse</span>(<span class="var">raw</span>);
+
+  <span class="cm">// 6단계: 실패 시 → 최대 2회 재시도</span>
+  <span class="cm">// Zod 오류를 재시도 프롬프트에 삽입</span>
+
+  <span class="cm">// 7단계: 배치 성공 시 → 중간 DB 저장 (충돌 복구)</span>
+}
+        </div>
+        <div class="grid2" style="margin-top:12px">
+          <div class="card-sm" style="background:#0d1117">
+            <div style="font-weight:600;color:#fcd34d;margin-bottom:6px">prunePatch (모든 제품)</div>
+            <ul style="font-size:0.82rem;color:#94a3b8;list-style:none;display:flex;flex-direction:column;gap:4px">
+              <li>▸ URL → [URL] 치환</li>
+              <li>▸ 텍스트를 5000자로 잘라내기</li>
+            </ul>
+          </div>
+          <div class="card-sm" style="background:#0d1117">
+            <div style="font-weight:600;color:#67e8f9;margin-bottom:6px">prunePatchLinux (Linux 전용)</div>
+            <ul style="font-size:0.82rem;color:#94a3b8;list-style:none;display:flex;flex-direction:column;gap:4px">
+              <li>▸ 위 모든 처리 포함, 추가로:</li>
+              <li>▸ 배열 필드 (packages, cves 등) 최대 15개로 제한</li>
+            </ul>
+          </div>
+        </div>
+        <div class="info-red info-box" style="margin-top:12px"><strong>gateway closed (1000):</strong> 즉시 거부하지 않음 — 전체 응답을 기다립니다. 추출된 JSON이 유효하지 않은 경우에만 재시도 진입. (교훈16)</div>
+        <div class="info-amber info-box"><strong>속도 제한 (429):</strong> <code>/tmp/.rate_limit_{productId}</code> 파일 생성 → 다음 실행에서 재시작 모드 진입 (전처리 건너뜀, 완료된 배치 건너뜀)</div>
+        <div class="info-red info-box"><strong>세션 정리 필수 (교훈17):</strong> 배치 간 컨텍스트 오염 방지를 위해 각 배치 전에 <code>sessions.json</code>을 반드시 삭제해야 합니다.</div>
+      </div>
+    </div>
+
+    <!-- Stage 4 -->
+    <div id="d4" class="stage-detail">
+      <div class="card-sm" style="border-color:#10b981">
+        <h3 style="color:#6ee7b7">4단계: DB 입수 (ingestToDb)</h3>
+        <div class="code-block">
+<span class="cm">// resume/aiOnly가 아닌 경우: 기존 레코드 먼저 삭제</span>
+<span class="kw">await</span> prisma.reviewedPatch.<span class="fn">deleteMany</span>({ where: { productId } });
+
+<span class="cm">// 필터 제외: decision='Exclude' 또는 criticality가 [moderate, medium, low]</span>
+<span class="cm">// 이 패치들은 ReviewedPatch에 입수되지 않음</span>
+<span class="kw">const</span> <span class="var">toInsert</span> = results.<span class="fn">filter</span>(r =>
+  r.decision !== <span class="str">'Exclude'</span> &&
+  ![<span class="str">'moderate'</span>, <span class="str">'medium'</span>, <span class="str">'low'</span>].<span class="fn">includes</span>(r.criticality)
+);
+
+<span class="cm">// 입수 (대부분의 제품은 createMany)</span>
+<span class="kw">await</span> prisma.reviewedPatch.<span class="fn">createMany</span>({ data: toInsert });
+
+<span class="cm">// vSphere 예외: 개별 create() 호출 사용</span>
+<span class="kw">for</span> (<span class="kw">const</span> <span class="var">item</span> <span class="kw">of</span> toInsert) {
+  <span class="kw">await</span> prisma.reviewedPatch.<span class="fn">create</span>({ data: <span class="var">item</span> });
+}
+        </div>
+        <div class="info-purple info-box"><strong>ReviewedPatch.issueId는 @unique</strong> — DB 레벨에서 중복 제거를 강제합니다. 동일한 issueId가 두 번 나타나면 두 번째 upsert는 정상적으로 실패합니다.</div>
+      </div>
+    </div>
+
+    <!-- Stage 5 -->
+    <div id="d5" class="stage-detail">
+      <div class="card-sm" style="border-color:#ef4444">
+        <h3 style="color:#fca5a5">5단계: 패스스루 안전망 (runPassthrough)</h3>
+        <div class="code-block">
+<span class="cm">// PreprocessedPatch에 있지만 ReviewedPatch에 없는 패치 찾기</span>
+<span class="kw">const</span> <span class="var">missing</span> = <span class="kw">await</span> prisma.preprocessedPatch.<span class="fn">findMany</span>({
+  where: { productId, issueId: { notIn: reviewedIds } }
+});
+
+<span class="cm">// 기본값으로 입수 (안전망)</span>
+<span class="kw">await</span> prisma.reviewedPatch.<span class="fn">createMany</span>({
+  data: <span class="var">missing</span>.<span class="fn">map</span>(p => ({
+    ...p,
+    criticality: <span class="str">'Important'</span>,
+    decision: <span class="str">'Pending'</span>
+  }))
+});
+        </div>
+        <div class="info-blue info-box">패스스루는 Windows와 SQL Server에서 비활성화됩니다 (<code>passthrough.enabled=false</code>). 이 제품들은 버전 그룹 방식을 사용하여 모든 패치를 하나의 큰 배치로 검토합니다.</div>
+        <table class="data-table" style="margin-top:12px">
+          <thead><tr><th>제품</th><th>패스스루</th><th>이유</th></tr></thead>
+          <tbody>
+            <tr><td>RHEL, Oracle, Ubuntu</td><td class="chip chip-green">활성화</td><td>표준 Linux 흐름</td></tr>
+            <tr><td>Windows Server</td><td class="chip chip-red">비활성화</td><td>버전 그룹 방식</td></tr>
+            <tr><td>SQL Server</td><td class="chip chip-red">비활성화</td><td>버전 그룹 방식</td></tr>
+            <tr><td>Ceph, MariaDB, PostgreSQL, vSphere</td><td class="chip chip-green">활성화</td><td>표준 흐름</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>🔒 withOpenClawLock — 동시성 제어</h2>
+    <div class="code-block">
+<span class="cm">// 디렉토리 뮤텍스 — 동시 AI 호출 방지</span>
+<span class="cm">// 잠금 파일: /tmp/openclaw_execution.lock</span>
+<span class="kw">async function</span> <span class="fn">withOpenClawLock</span>&lt;T&gt;(fn: () =&gt; Promise&lt;T&gt;): Promise&lt;T&gt; {
+  <span class="kw">const</span> <span class="var">lock</span> = <span class="kw">await</span> <span class="fn">acquireLock</span>(<span class="str">'/tmp/openclaw_execution.lock'</span>);
+  <span class="kw">try</span> {
+    <span class="kw">return await</span> <span class="fn">fn</span>();
+  } <span class="kw">finally</span> {
+    <span class="fn">releaseLock</span>(<span class="var">lock</span>);
+  }
+}
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ TAB 4 ============================================================ -->
+<div id="t4" class="tab-content">
+  <div class="section-title">🤖 AI 리뷰 시스템 — 심층 분석</div>
+
+  <div class="grid2">
+    <div class="card">
+      <h2>⚡ OpenClaw AI 에이전트</h2>
+      <div class="code-block">
+<span class="cm"># 전체 호출 시그니처</span>
+openclaw agent:main \
+  --json \
+  --timeout <span class="num">1800</span> \
+  --session-id {unique-per-batch} \
+  -m {prompt-string}
+      </div>
+      <ul style="list-style:none;font-size:0.85rem;color:#94a3b8;margin-top:12px;display:flex;flex-direction:column;gap:6px">
+        <li><span style="color:#6ee7b7">▸ --json</span>: JSON 전용 출력 모드 강제</li>
+        <li><span style="color:#6ee7b7">▸ --timeout 1800</span>: 배치당 30분 타임아웃</li>
+        <li><span style="color:#6ee7b7">▸ --session-id {unique}</span>: 배치 간 오염 방지를 위해 배치별 고유값</li>
+        <li><span style="color:#6ee7b7">▸ -m {prompt}</span>: RAG 컨텍스트를 포함한 전체 프롬프트 문자열</li>
+        <li><span style="color:#fcd34d">▸ queue.ts 워커에 의해 자식 프로세스로 실행됨</span></li>
+        <li><span style="color:#fcd34d">▸ withOpenClawLock (디렉토리 뮤텍스)으로 보호됨</span></li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>📚 SKILL.md 요구사항</h2>
+      <div class="info-blue info-box">validate-registry.js가 모든 SKILL.md 파일을 검증합니다. 각 제품은 <code>## 4.</code> 섹션을 포함하는 100줄 이상의 SKILL.md가 있어야 합니다 (교훈15).</div>
+      <div style="display:flex;flex-direction:column;gap:8px;margin-top:12px">
+        <div class="collapsible-header" onclick="toggleCollapsible(this)">
+          <span>SKILL.md 필수 섹션</span><span class="caret">▶</span>
+        </div>
+        <div class="collapsible-body">
+          <ul style="list-style:none;font-size:0.85rem;color:#94a3b8;display:flex;flex-direction:column;gap:6px">
+            <li>▸ <strong style="color:#93c5fd">## 1.</strong> 제품 개요 및 컨텍스트</li>
+            <li>▸ <strong style="color:#93c5fd">## 2.</strong> 입력 형식 명세</li>
+            <li>▸ <strong style="color:#93c5fd">## 3.</strong> 출력 형식 요구사항</li>
+            <li>▸ <strong style="color:#93c5fd">## 4.</strong> 포함/제외 기준, 출력 형식, 일반 규칙, 환각 방지 (필수)</li>
+            <li>▸ 최소 100줄 이상</li>
+            <li>▸ faq 필드 제거됨 (교훈14) — 출력 스키마에 FAQ 섹션 없음</li>
+          </ul>
+        </div>
+      </div>
+      <div class="code-block" style="margin-top:12px">
+<span class="cm">// buildPrompt 패턴 (skillDirRelative 공유 + buildPrompt 분리)</span>
+<span class="kw">const</span> <span class="var">skillDir</span> = path.<span class="fn">join</span>(skillDirRelative, productId);
+<span class="kw">const</span> <span class="var">prompt</span> = <span class="fn">buildPrompt</span>(skillDir, batchSize, prunedBatch);
+<span class="cm">// ↑ skillDirRelative는 제품 간 공유, buildPrompt는 제품별 분리</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>✅ Zod 검증 스키마 — ReviewItemSchema</h2>
+    <div class="schema-field"><span class="field-name">IssueID</span><span class="field-type">string</span><span class="field-desc">패치/권고의 고유 식별자 (ReviewedPatch.issueId @unique에 매핑)</span></div>
+    <div class="schema-field"><span class="field-name">Component</span><span class="field-type">string</span><span class="field-desc">영향받는 소프트웨어 컴포넌트 (예: "kernel", "openssl", "glibc")</span></div>
+    <div class="schema-field"><span class="field-name">Version</span><span class="field-type">string</span><span class="field-desc">제품의 영향받는 버전</span></div>
+    <div class="schema-field"><span class="field-name">Vendor</span><span class="field-type">string</span><span class="field-desc">벤더명 (예: "Red Hat", "Microsoft", "VMware")</span></div>
+    <div class="schema-field"><span class="field-name">Date</span><span class="field-type">string</span><span class="field-desc">권고/패치 릴리스 날짜 (ISO 형식)</span></div>
+    <div class="schema-field"><span class="field-name">Criticality</span><span class="field-type">enum</span><span class="field-desc">Important | Moderate | Low | Critical — DB 입수 여부 결정</span></div>
+    <div class="schema-field"><span class="field-name">Description</span><span class="field-type">string</span><span class="field-desc">취약점/패치의 영어 설명</span></div>
+    <div class="schema-field"><span class="field-name">KoreanDescription</span><span class="field-type">string</span><span class="field-desc">관리자 대시보드 표시를 위한 한국어 번역</span></div>
+    <div class="schema-field"><span class="field-name">Decision</span><span class="field-type">enum</span><span class="field-desc">Include | Exclude | Pending — AI의 초기 권고</span></div>
+    <div class="schema-field"><span class="field-name">Reason</span><span class="field-type">string</span><span class="field-desc">Include/Exclude/Pending 결정에 대한 근거</span></div>
+    <div class="schema-field"><span class="field-name">OsVersion</span><span class="field-type">string?</span><span class="field-desc">OS 버전 패스스루 필드 (전처리 중 추출되어 최종 출력으로 전달)</span></div>
+    <div class="info-amber info-box" style="margin-top:12px">DB 입수 시 적용되는 필터: <code>decision='Exclude'</code> 또는 <code>criticality가 [moderate, medium, low]</code>인 패치는 ReviewedPatch 테이블에 삽입되지 않습니다.</div>
+  </div>
+
+  <div class="card">
+    <h2>🔄 오류 처리 &amp; 재시도 로직</h2>
+    <div class="grid2">
+      <div class="card-sm">
+        <div style="font-weight:700;color:#fca5a5;margin-bottom:8px">Gateway Closed (코드 1000)</div>
+        <ul style="font-size:0.82rem;color:#94a3b8;list-style:none;display:flex;flex-direction:column;gap:4px">
+          <li>▸ 즉시 거부하지 않음 (교훈16)</li>
+          <li>▸ 전체 AI 응답이 완료될 때까지 대기</li>
+          <li>▸ 추출된 JSON이 유효하지 않은 경우에만 재시도</li>
+          <li>▸ 유효한 JSON → gateway가 닫혀도 허용</li>
+        </ul>
+      </div>
+      <div class="card-sm">
+        <div style="font-weight:700;color:#fcd34d;margin-bottom:8px">속도 제한 (HTTP 429)</div>
+        <ul style="font-size:0.82rem;color:#94a3b8;list-style:none;display:flex;flex-direction:column;gap:4px">
+          <li>▸ <code>/tmp/.rate_limit_{productId}</code> 파일 생성</li>
+          <li>▸ 다음 파이프라인 실행 시 속도 제한 파일 감지</li>
+          <li>▸ 자동으로 재시작 모드 진입</li>
+          <li>▸ 전처리 + 완료된 배치 건너뜀</li>
+        </ul>
+      </div>
+      <div class="card-sm">
+        <div style="font-weight:700;color:#a78bfa;margin-bottom:8px">Zod 검증 실패</div>
+        <ul style="font-size:0.82rem;color:#94a3b8;list-style:none;display:flex;flex-direction:column;gap:4px">
+          <li>▸ 배치당 최대 2회 재시도</li>
+          <li>▸ Zod 오류 메시지를 재시도 프롬프트에 삽입</li>
+          <li>▸ AI에게 출력 형식 수정 요청</li>
+          <li>▸ 2회 실패 후 → 패스스루 안전망</li>
+        </ul>
+      </div>
+      <div class="card-sm">
+        <div style="font-weight:700;color:#67e8f9;margin-bottom:8px">충돌 복구</div>
+        <ul style="font-size:0.82rem;color:#94a3b8;list-style:none;display:flex;flex-direction:column;gap:4px">
+          <li>▸ 각 배치 완료 후 중간 DB 저장</li>
+          <li>▸ 재시작 모드에서 완료된 배치 건너뜀</li>
+          <li>▸ 충돌 시에도 진행 상황 보존</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>🧠 RAG 시스템 — ChromaDB 벡터 스토어</h2>
+    <div class="grid2">
+      <div>
+        <div class="flow-row" style="flex-direction:column;align-items:flex-start;gap:8px">
+          <div class="flow-box purple" style="width:100%">관리자가 제외 피드백 제공</div>
+          <div style="color:var(--muted);padding-left:8px">↓ 저장됨</div>
+          <div class="flow-box purple" style="width:100%">UserFeedback 테이블 + user_exclusion_feedback.json</div>
+          <div style="color:var(--muted);padding-left:8px">↓ 임베딩됨</div>
+          <div class="flow-box blue" style="width:100%">ChromaDB 벡터 임베딩</div>
+          <div style="color:var(--muted);padding-left:8px">↓ 쿼리됨</div>
+          <div class="flow-box blue" style="width:100%">os/linux/query_rag.py (cwd: os/linux/)</div>
+          <div style="color:var(--muted);padding-left:8px">↓ 삽입됨</div>
+          <div class="flow-box amber" style="width:100%">AI 프롬프트의 CRITICAL INSTRUCTION 블록</div>
+        </div>
+      </div>
+      <div>
+        <div class="code-block">
+<span class="cm"># query_rag.py 호출</span>
+<span class="cm"># 참고: cwd는 항상 os/linux/로 고정</span>
+<span class="cm"># 검토 중인 제품과 관계없이 (교훈36)</span>
+python3 os/linux/query_rag.py \
+  --query <span class="str">"exclusion reason"</span> \
+  --product {productId} \
+  --n_results <span class="num">10</span>
+
+<span class="cm"># RAG 전략 변경 2026-03-19:</span>
+<span class="cm"># 이제 모든 제품에 적용 (Linux만이 아님)</span>
+<span class="cm"># type 'both' = file-hiding + prompt-injection</span>
+        </div>
+        <div class="info-green info-box">ChromaDB 벡터 스토어는 모든 제품에서 공유됩니다. cwd가 <code>os/linux/</code>로 고정된 것은 의도적 설계입니다 — RAG 데이터베이스가 그곳에 위치하며 모든 제품 유형에 대해 쿼리됩니다.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>🙈 File-Hiding 전략 — 편향 방지</h2>
+    <div class="code-block">
+<span class="cm">// AI 리뷰 전 (이전 검토 파일 숨김)</span>
+fs.<span class="fn">renameSync</span>(<span class="str">'normalized/'</span>, <span class="str">'normalized_hidden/'</span>);
+fs.<span class="fn">renameSync</span>(
+  <span class="str">`patches_for_llm_review_${vendor}.json`</span>,
+  <span class="str">`patches_for_llm_review_${vendor}.json.hidden`</span>
+);
+
+<span class="kw">try</span> {
+  <span class="cm">// AI 리뷰 실행</span>
+  <span class="kw">await</span> <span class="fn">runAiReviewLoop</span>(...);
+} <span class="kw">finally</span> {
+  <span class="cm">// 항상 복원 — AI가 예외를 던져도</span>
+  fs.<span class="fn">renameSync</span>(<span class="str">'normalized_hidden/'</span>, <span class="str">'normalized/'</span>);
+  fs.<span class="fn">renameSync</span>(
+    <span class="str">`patches_for_llm_review_${vendor}.json.hidden`</span>,
+    <span class="str">`patches_for_llm_review_${vendor}.json`</span>
+  );
+}
+    </div>
+    <div class="info-amber info-box">목적: OpenClaw 에이전트는 파일 읽기 도구를 가지고 있습니다. 숨김 처리 없이는 이전 분기의 검토 파일을 읽어 같은 결정을 내릴 수 있습니다. File-hiding은 새로운 독립적 평가를 강제합니다.</div>
+  </div>
+</div>
+
+<!-- ============================================================ TAB 5 ============================================================ -->
+<div id="t5" class="tab-content">
+  <div class="section-title">👤 관리자 검토 &amp; 피드백 루프</div>
+
+  <div class="card">
+    <h2>📋 관리자 검토 워크플로우 — 단계별</h2>
+    <div class="circular-flow">
+      <div class="cf-step">
+        <div class="cf-num">1</div>
+        <div class="cf-content">
+          <div class="cf-title">파이프라인 실행</div>
+          <div class="cf-desc">관리자가 대시보드에서 파이프라인을 트리거합니다. BullMQ가 작업을 처리합니다. SSE를 통해 실시간 로그 확인. AI가 할당한 심각도와 결정으로 패치가 ReviewedPatch 테이블에 나타납니다.</div>
+        </div>
+      </div>
+      <div class="cf-connector"></div>
+      <div class="cf-step">
+        <div class="cf-num">2</div>
+        <div class="cf-content">
+          <div class="cf-title">대시보드에서 패치 검토</div>
+          <div class="cf-desc">관리자가 제품 상세 페이지를 확인합니다. 필터 테이블 (심각도, 결정, 컴포넌트별). 각 패치에 표시: IssueID, 컴포넌트, 버전, 심각도, AI 결정, 한국어 설명, 이유.</div>
+        </div>
+      </div>
+      <div class="cf-connector"></div>
+      <div class="cf-step">
+        <div class="cf-num">3</div>
+        <div class="cf-content">
+          <div class="cf-title">제외 피드백 제공</div>
+          <div class="cf-desc">관리자가 제외 패턴 패치를 표시합니다. 피드백 텍스트는 향후 실행에서 유사한 패치가 제외되어야 하는 이유를 설명합니다. UserFeedback 테이블과 user_exclusion_feedback.json에 저장됩니다.</div>
+        </div>
+      </div>
+      <div class="cf-connector"></div>
+      <div class="cf-step">
+        <div class="cf-num">4</div>
+        <div class="cf-content">
+          <div class="cf-title">피드백 → ChromaDB</div>
+          <div class="cf-desc">user_exclusion_feedback.json이 ChromaDB 벡터 스토어에 임베딩됩니다. 향후 RAG 쿼리가 의미적으로 유사한 과거 제외 사례를 검색합니다. 순환 피드백 루프가 시간이 지남에 따라 개선됩니다.</div>
+        </div>
+      </div>
+      <div class="cf-connector"></div>
+      <div class="cf-step">
+        <div class="cf-num">5</div>
+        <div class="cf-content">
+          <div class="cf-title">확정 — CSV 생성</div>
+          <div class="cf-desc">관리자가 확정 버튼을 클릭합니다. POST /api/pipeline/{product}/finalize가 final_approved_patches_{product}.csv를 생성합니다. 비Linux 제품은 한국어 Excel 텍스트 호환성을 위해 UTF-8 BOM (csvBOM=true) 사용.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid2">
+    <div class="card">
+      <h2>🔄 순환 피드백 루프</h2>
+      <div style="display:grid;grid-template-columns:1fr;gap:8px;padding:8px">
+        <div style="display:flex;gap:8px;align-items:center">
+          <div class="flow-box green" style="flex:1;text-align:center">관리자 제외 피드백</div>
+        </div>
+        <div style="text-align:center;color:var(--muted)">↓</div>
+        <div class="flow-box blue" style="text-align:center">UserFeedback DB + user_exclusion_feedback.json</div>
+        <div style="text-align:center;color:var(--muted)">↓</div>
+        <div class="flow-box purple" style="text-align:center">ChromaDB 벡터 임베딩</div>
+        <div style="text-align:center;color:var(--muted)">↓</div>
+        <div class="flow-box purple" style="text-align:center">query_rag.py → RAG 제외 프롬프트</div>
+        <div style="text-align:center;color:var(--muted)">↓</div>
+        <div class="flow-box amber" style="text-align:center">AI 리뷰 (더 스마트한 제외)</div>
+        <div style="text-align:center;color:var(--muted)">↓</div>
+        <div class="flow-box green" style="text-align:center">필터링된 패치 → 관리자 검토</div>
+        <div style="text-align:center;color:var(--muted)">↓ 더 많은 피드백</div>
+        <div style="text-align:center;color:#60a5fa;font-weight:700">↺ 시간이 지남에 따라 개선됨</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>📄 CSV 확정</h2>
+      <div class="code-block">
+<span class="cm">// POST /api/pipeline/{product}/finalize</span>
+<span class="cm">// 생성: final_approved_patches_{product}.csv</span>
+
+<span class="cm">// 한국어 Excel 호환성을 위한 CSV BOM 처리</span>
+<span class="kw">const</span> <span class="var">BOM</span> = <span class="str">'\uFEFF'</span>;  <span class="cm">// UTF-8 BOM</span>
+<span class="kw">const</span> <span class="var">csvContent</span> = product.csvBOM
+  ? BOM + csvData   <span class="cm">// 비Linux 제품</span>
+  : csvData;        <span class="cm">// Linux 제품 (BOM 없음)</span>
+      </div>
+      <div class="info-green info-box" style="margin-top:12px">csvBOM=false: RHEL, Oracle Linux, Ubuntu (Linux 제품)<br>csvBOM=true: Windows, Ceph, MariaDB, SQL Server, PostgreSQL, vSphere</div>
+      <div style="margin-top:12px">
+        <div class="collapsible-header" onclick="toggleCollapsible(this)">
+          <span>getIncompleteProducts() — 분기별 아카이브 확인</span><span class="caret">▶</span>
+        </div>
+        <div class="collapsible-body">
+          <div class="code-block">
+<span class="cm">// finalCsvFile이 없는 제품 확인</span>
+<span class="cm">// 분기별 아카이브에 모든 제품이 준비되었는지 확인하는 데 사용</span>
+<span class="kw">function</span> <span class="fn">getIncompleteProducts</span>() {
+  <span class="kw">return</span> products.<span class="fn">filter</span>(p =>
+    !p.finalCsvFile || !fs.<span class="fn">existsSync</span>(p.finalCsvFile)
+  );
+}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>📦 분기별 아카이브</h2>
+    <div class="grid2">
+      <div>
+        <div class="info-blue info-box">아카이브는 cron을 통해 각 분기 첫째 날 자동으로 트리거되거나 대시보드에서 수동으로 트리거됩니다.</div>
+        <div style="margin-top:12px;font-size:0.85rem;color:#94a3b8">
+          <div style="font-weight:600;color:#e2e8f0;margin-bottom:8px">아카이브 위치:</div>
+          <code style="color:#67e8f9">~/.openclaw/workspace/skills/patch-review/quarterly-archive/{Q1-2026}/</code>
+          <div style="margin-top:12px;font-weight:600;color:#e2e8f0;margin-bottom:8px">아카이브 파일:</div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap">
+            <span class="chip chip-blue">metadata.json</span>
+            <span class="chip chip-green">patches.json (전체 ReviewedPatch 스냅샷)</span>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="collapsible-header" onclick="toggleCollapsible(this)">
+          <span>아카이브 .gitignore 주의사항 (교훈22)</span><span class="caret">▶</span>
+        </div>
+        <div class="collapsible-body">
+          <div class="info-amber info-box">중요: .gitignore의 <code>**/archive</code>는 <code>src/app/api/archive</code> 라우트 디렉토리와 충돌할 수 있습니다. API 라우트를 실수로 gitignore하지 않으려면 특정 경로를 사용해야 합니다.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ TAB 6 ============================================================ -->
+<div id="t6" class="tab-content">
+  <div class="section-title">🗄️ 데이터베이스 &amp; 아키텍처</div>
+
+  <div class="card">
+    <h2>📊 Prisma 스키마 — 5개 모델</h2>
+    <div style="display:flex;flex-direction:column;gap:16px">
+
+      <div class="collapsible-header" onclick="toggleCollapsible(this)" style="border-color:#06b6d4">
+        <span style="color:#67e8f9">모델: RawPatch — 수집기에서 캐시된 원시 JSON</span><span class="caret">▶</span>
+      </div>
+      <div class="collapsible-body">
+        <div class="code-block">
+model RawPatch {
+  id         Int      @id @default(autoincrement())
+  productId  String
+  issueId    String
+  rawJson    String   <span class="cm">// 수집기의 전체 원시 JSON</span>
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+  @@unique([productId, issueId])
+}
+        </div>
+      </div>
+
+      <div class="collapsible-header" onclick="toggleCollapsible(this)" style="border-color:#3b82f6">
+        <span style="color:#93c5fd">모델: PreprocessedPatch — Python으로 정규화된 패치</span><span class="caret">▶</span>
+      </div>
+      <div class="collapsible-body">
+        <div class="code-block">
+model PreprocessedPatch {
+  id           Int      @id @default(autoincrement())
+  productId    String
+  issueId      String
+  component    String
+  version      String
+  vendor       String
+  date         String
+  description  String
+  osVersion    String?  <span class="cm">// 패스스루 필드</span>
+  rawData      String   <span class="cm">// LLM용 정규화된 JSON</span>
+  createdAt    DateTime @default(now())
+  @@unique([productId, issueId])
+}
+        </div>
+      </div>
+
+      <div class="collapsible-header" onclick="toggleCollapsible(this)" style="border-color:#10b981">
+        <span style="color:#6ee7b7">모델: ReviewedPatch — AI+관리자 최종 승인 패치</span><span class="caret">▶</span>
+      </div>
+      <div class="collapsible-body">
+        <div class="code-block">
+model ReviewedPatch {
+  id                Int      @id @default(autoincrement())
+  productId         String
+  issueId           String   @unique  <span class="cm">// 중복 제거 키</span>
+  component         String
+  version           String
+  vendor            String
+  date              String
+  criticality       String   <span class="cm">// Important|Critical|Moderate|Low</span>
+  description       String
+  koreanDescription String
+  decision          String   <span class="cm">// Include|Exclude|Pending</span>
+  reason            String
+  osVersion         String?
+  finalCsvFile      String?  <span class="cm">// 내보낸 CSV 경로</span>
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+}
+        </div>
+        <div class="info-amber info-box">issueId는 @unique — 중복 패치 ID를 방지합니다. 입수 시 필터: Exclude + moderate/medium/low 심각도 패치는 여기에 저장되지 않습니다.</div>
+      </div>
+
+      <div class="collapsible-header" onclick="toggleCollapsible(this)" style="border-color:#8b5cf6">
+        <span style="color:#c4b5fd">모델: UserFeedback — 관리자 제외 피드백 (RAG 소스)</span><span class="caret">▶</span>
+      </div>
+      <div class="collapsible-body">
+        <div class="code-block">
+model UserFeedback {
+  id          Int      @id @default(autoincrement())
+  productId   String
+  issueId     String
+  feedbackType String  <span class="cm">// 'exclude' | 'include'</span>
+  reason      String   <span class="cm">// 관리자 설명 — RAG에 사용</span>
+  createdAt   DateTime @default(now())
+}
+<span class="cm">// 또한 다음에 기록됨: user_exclusion_feedback.json (ChromaDB용)</span>
+        </div>
+      </div>
+
+      <div class="collapsible-header" onclick="toggleCollapsible(this)" style="border-color:#f59e0b">
+        <span style="color:#fcd34d">모델: PipelineRun — 파이프라인 실행 메타데이터/감사</span><span class="caret">▶</span>
+      </div>
+      <div class="collapsible-body">
+        <div class="code-block">
+model PipelineRun {
+  id          Int      @id @default(autoincrement())
+  productId   String
+  jobId       String
+  status      String   <span class="cm">// running|completed|failed</span>
+  isRetry     Boolean  @default(false)
+  isAiOnly    Boolean  @default(false)
+  startedAt   DateTime @default(now())
+  completedAt DateTime?
+  errorMsg    String?
+}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid2">
+    <div class="card">
+      <h2>⚡ SQLite WAL 모드</h2>
+      <div class="code-block">
+<span class="cm">// Prisma 싱글턴 (HMR 중복 방지)</span>
+<span class="kw">const</span> <span class="var">globalWithPrisma</span> = global <span class="kw">as typeof</span> global & {
+  prisma: PrismaClient | undefined
+};
+<span class="kw">export const</span> <span class="var">prisma</span> =
+  globalWithPrisma.prisma ?? <span class="kw">new</span> <span class="fn">PrismaClient</span>();
+<span class="kw">if</span> (process.env.NODE_ENV !== <span class="str">'production'</span>)
+  globalWithPrisma.prisma = prisma;
+
+<span class="cm">// WAL 모드는 파이프라인 쓰기 중 대시보드 읽기를 허용</span>
+<span class="cm">// PRAGMA journal_mode=WAL;</span>
+      </div>
+      <div class="info-green info-box">WAL (Write-Ahead Log) 모드는 파이프라인 실행 중에도 동시 읽기를 허용합니다. WAL 없이는 AI 리뷰 쓰기 중 SQLite가 데이터베이스를 잠가 대시보드를 차단합니다.</div>
+    </div>
+
+    <div class="card">
+      <h2>🏛️ 제품 레지스트리 아키텍처</h2>
+      <div class="code-block">
+<span class="cm">// products-registry.ts — 중앙 제품 설정</span>
+<span class="kw">interface</span> <span class="var">ProductConfig</span> {
+  id: string;
+  name: string;
+  category: <span class="str">'os'</span> | <span class="str">'database'</span> | <span class="str">'storage'</span> | <span class="str">'virtualization'</span>;
+  ragStrategy: <span class="str">'prompt-injection'</span> | <span class="str">'both'</span>;
+  passthrough: { enabled: boolean };
+  csvBOM: boolean;
+  aiBatchSize: number;
+  skillDirRelative: string;
+  preprocessScript: string;
+  vendor: string;
+}
+<span class="cm">// 9개의 활성 제품이 여기 등록됨</span>
+<span class="cm">// validate-registry.js가 모든 설정 + SKILL.md 파일 검증</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>🛤️ API 라우트 — 전체 목록 (28+)</h2>
+    <div style="column-count:1">
+      <div style="font-weight:600;color:#94a3b8;font-size:0.8rem;margin-bottom:8px;letter-spacing:1px">파이프라인 라우트</div>
+      <div class="route-item"><span class="route-method method-post">POST</span><span class="route-path">/api/pipeline/{product}/run</span><span class="route-desc">BullMQ에 파이프라인 작업 디스패치</span></div>
+      <div class="route-item"><span class="route-method method-get">GET</span><span class="route-path">/api/pipeline/stream?jobId=...</span><span class="route-desc">SSE 실시간 로그 스트리밍</span></div>
+      <div class="route-item"><span class="route-method method-get">GET</span><span class="route-path">/api/pipeline/{product}/status</span><span class="route-desc">현재 파이프라인 실행 상태</span></div>
+      <div class="route-item"><span class="route-method method-post">POST</span><span class="route-path">/api/pipeline/{product}/finalize</span><span class="route-desc">final_approved_patches_{product}.csv 생성</span></div>
+      <div class="route-item"><span class="route-method method-post">POST</span><span class="route-path">/api/pipeline/{product}/retry</span><span class="route-desc">isRetry=true로 실패한 파이프라인 재시도</span></div>
+
+      <div style="font-weight:600;color:#94a3b8;font-size:0.8rem;margin:16px 0 8px;letter-spacing:1px">패치 데이터 라우트</div>
+      <div class="route-item"><span class="route-method method-get">GET</span><span class="route-path">/api/patches/{product}</span><span class="route-desc">제품의 모든 ReviewedPatch 레코드 조회</span></div>
+      <div class="route-item"><span class="route-method method-get">GET</span><span class="route-path">/api/patches/{product}/{issueId}</span><span class="route-desc">단일 패치 상세 조회</span></div>
+      <div class="route-item"><span class="route-method method-post">POST</span><span class="route-path">/api/patches/{product}/{issueId}/decision</span><span class="route-desc">관리자 패치 결정 업데이트</span></div>
+      <div class="route-item"><span class="route-method method-delete">DEL</span><span class="route-path">/api/patches/{product}</span><span class="route-desc">제품의 모든 패치 삭제</span></div>
+
+      <div style="font-weight:600;color:#94a3b8;font-size:0.8rem;margin:16px 0 8px;letter-spacing:1px">피드백 라우트</div>
+      <div class="route-item"><span class="route-method method-post">POST</span><span class="route-path">/api/feedback/{product}</span><span class="route-desc">관리자 제외 피드백 제출</span></div>
+      <div class="route-item"><span class="route-method method-get">GET</span><span class="route-path">/api/feedback/{product}</span><span class="route-desc">제품의 피드백 이력 조회</span></div>
+      <div class="route-item"><span class="route-method method-delete">DEL</span><span class="route-path">/api/feedback/{product}/{id}</span><span class="route-desc">피드백 항목 삭제</span></div>
+
+      <div style="font-weight:600;color:#94a3b8;font-size:0.8rem;margin:16px 0 8px;letter-spacing:1px">아카이브 라우트</div>
+      <div class="route-item"><span class="route-method method-post">POST</span><span class="route-path">/api/archive/quarterly/cron</span><span class="route-desc">분기 시작 시 cron에 의해 트리거됨</span></div>
+      <div class="route-item"><span class="route-method method-post">POST</span><span class="route-path">/api/archive/quarterly</span><span class="route-desc">수동 분기별 아카이브 트리거</span></div>
+      <div class="route-item"><span class="route-method method-get">GET</span><span class="route-path">/api/archive/quarterly</span><span class="route-desc">사용 가능한 분기별 아카이브 목록</span></div>
+      <div class="route-item"><span class="route-method method-get">GET</span><span class="route-path">/api/archive/quarterly/{quarter}</span><span class="route-desc">특정 분기 아카이브 데이터 조회</span></div>
+
+      <div style="font-weight:600;color:#94a3b8;font-size:0.8rem;margin:16px 0 8px;letter-spacing:1px">대시보드 라우트</div>
+      <div class="route-item"><span class="route-method method-get">GET</span><span class="route-path">/api/dashboard/stats</span><span class="route-desc">모든 제품의 집계 통계</span></div>
+      <div class="route-item"><span class="route-method method-get">GET</span><span class="route-path">/api/dashboard/products</span><span class="route-desc">상태 포함 제품 레지스트리</span></div>
+      <div class="route-item"><span class="route-method method-get">GET</span><span class="route-path">/api/products</span><span class="route-desc">등록된 모든 제품 목록</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ TAB 7 ============================================================ -->
+<div id="t7" class="tab-content">
+  <div class="section-title">📦 제품 레지스트리 — 전체 9개 제품</div>
+
+  <div class="card">
+    <h2>🖥️ OS 카테고리 (4개 제품)</h2>
+    <div class="grid2">
+      <div class="product-card">
+        <div class="prod-name">Red Hat Enterprise Linux</div>
+        <div class="prod-id">id: redhat</div>
+        <div class="prod-tags">
+          <span class="rag-pi">prompt-injection</span>
+          <span class="chip chip-green">패스스루: 활성화</span>
+          <span class="chip chip-cyan">csvBOM: 없음</span>
+          <span class="chip chip-blue">aiBatchSize: 5</span>
+        </div>
+        <div style="font-size:0.8rem;color:#94a3b8;margin-top:10px">
+          벤더: Red Hat | 180일 수집 | 커널 예외: 0~180일 검토 | BOM 없음 (Linux UTF-8 네이티브)
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="prod-name">Oracle Linux</div>
+        <div class="prod-id">id: oracle</div>
+        <div class="prod-tags">
+          <span class="rag-pi">prompt-injection</span>
+          <span class="chip chip-green">패스스루: 활성화</span>
+          <span class="chip chip-cyan">csvBOM: 없음</span>
+          <span class="chip chip-blue">aiBatchSize: 5</span>
+        </div>
+        <div style="font-size:0.8rem;color:#94a3b8;margin-top:10px">
+          벤더: Oracle | RHEL과 동일한 Linux 90~180일 기간 정책
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="prod-name">Ubuntu Linux</div>
+        <div class="prod-id">id: ubuntu</div>
+        <div class="prod-tags">
+          <span class="rag-pi">prompt-injection</span>
+          <span class="chip chip-green">패스스루: 활성화</span>
+          <span class="chip chip-cyan">csvBOM: 없음</span>
+          <span class="chip chip-blue">aiBatchSize: 5</span>
+        </div>
+        <div style="font-size:0.8rem;color:#94a3b8;margin-top:10px">
+          벤더: Canonical | Ubuntu Security Notices (USN)
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="prod-name">Windows Server</div>
+        <div class="prod-id">id: windows</div>
+        <div class="prod-tags">
+          <span class="rag-both">both (file-hiding + PI)</span>
+          <span class="chip chip-red">패스스루: 비활성화</span>
+          <span class="chip chip-amber">csvBOM: 있음</span>
+          <span class="chip chip-purple">aiBatchSize: 15</span>
+        </div>
+        <div style="font-size:0.8rem;color:#94a3b8;margin-top:10px">
+          벤더: Microsoft | --days_end 90 | 교차 버전 비교를 위해 12개 패치를 1개 배치로 | 버전 그룹 방식 (패스스루 없음)
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>🗄️ 데이터베이스 카테고리 (3개 제품)</h2>
+    <div class="grid3">
+      <div class="product-card">
+        <div class="prod-name">MariaDB</div>
+        <div class="prod-id">id: mariadb</div>
+        <div class="prod-tags">
+          <span class="rag-both">both</span>
+          <span class="chip chip-green">패스스루: 활성화</span>
+          <span class="chip chip-amber">csvBOM: 있음</span>
+          <span class="chip chip-blue">aiBatchSize: 5</span>
+        </div>
+        <div style="font-size:0.8rem;color:#94a3b8;margin-top:8px">MariaDB 보안 권고. run_collectors_cron.sh를 통해 08:00에 수집.</div>
+      </div>
+      <div class="product-card">
+        <div class="prod-name">SQL Server</div>
+        <div class="prod-id">id: sqlserver</div>
+        <div class="prod-tags">
+          <span class="rag-both">both</span>
+          <span class="chip chip-red">패스스루: 비활성화</span>
+          <span class="chip chip-amber">csvBOM: 있음</span>
+          <span class="chip chip-blue">aiBatchSize: 5</span>
+        </div>
+        <div style="font-size:0.8rem;color:#94a3b8;margin-top:8px">Microsoft SQL Server. 수집기는 02:00에 실행. 파일 접두사: 없음. 버전 그룹 방식.</div>
+      </div>
+      <div class="product-card">
+        <div class="prod-name">PostgreSQL</div>
+        <div class="prod-id">id: pgsql</div>
+        <div class="prod-tags">
+          <span class="rag-both">both</span>
+          <span class="chip chip-green">패스스루: 활성화</span>
+          <span class="chip chip-amber">csvBOM: 있음</span>
+          <span class="chip chip-blue">aiBatchSize: 5</span>
+        </div>
+        <div style="font-size:0.8rem;color:#94a3b8;margin-top:8px">PostgreSQL 보안 권고. 원시 데이터 파일 접두사: <code>PGSL-</code> (pgsql 규칙). 수집기 05:00.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid2">
+    <div class="card">
+      <h2>💾 스토리지 카테고리 (1개 제품)</h2>
+      <div class="product-card">
+        <div class="prod-name">Ceph</div>
+        <div class="prod-id">id: ceph</div>
+        <div class="prod-tags">
+          <span class="rag-both">both (file-hiding + PI)</span>
+          <span class="chip chip-green">패스스루: 활성화</span>
+          <span class="chip chip-amber">csvBOM: 있음</span>
+          <span class="chip chip-blue">aiBatchSize: 5</span>
+        </div>
+        <div style="font-size:0.8rem;color:#94a3b8;margin-top:10px">
+          Ceph 스토리지 보안 권고. run_collectors_cron.sh를 통해 10:00에 수집 (수집 기간 중 마지막). 한국어 Excel 출력을 위해 csvBOM=true.
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>⚡ 가상화 카테고리 (1개 제품)</h2>
+      <div class="product-card">
+        <div class="prod-name">VMware vSphere</div>
+        <div class="prod-id">id: vsphere</div>
+        <div class="prod-tags">
+          <span class="rag-pi">prompt-injection</span>
+          <span class="chip chip-green">패스스루: 활성화</span>
+          <span class="chip chip-amber">csvBOM: 있음</span>
+          <span class="chip chip-blue">aiBatchSize: 5</span>
+        </div>
+        <div style="font-size:0.8rem;color:#94a3b8;margin-top:10px">
+          VMware 보안 권고 (VMSA). 수집기 04:00. 특이사항: vSphere 데이터 형식 차이로 인해 DB 입수 시 <code>createMany()</code> 대신 개별 <code>create()</code> 호출 사용.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>📊 제품 비교 테이블</h2>
+    <div style="overflow-x:auto">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>제품명</th>
+            <th>카테고리</th>
+            <th>RAG 전략</th>
+            <th>패스스루</th>
+            <th>csvBOM</th>
+            <th>aiBatchSize</th>
+            <th>수집 시간</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>redhat</code></td>
+            <td>Red Hat Enterprise Linux</td>
+            <td><span class="chip chip-blue">OS</span></td>
+            <td><span class="rag-pi">prompt-injection</span></td>
+            <td><span class="chip chip-green">활성화</span></td>
+            <td><span class="chip chip-cyan">없음</span></td>
+            <td>5</td>
+            <td>06:00</td>
+          </tr>
+          <tr>
+            <td><code>oracle</code></td>
+            <td>Oracle Linux</td>
+            <td><span class="chip chip-blue">OS</span></td>
+            <td><span class="rag-pi">prompt-injection</span></td>
+            <td><span class="chip chip-green">활성화</span></td>
+            <td><span class="chip chip-cyan">없음</span></td>
+            <td>5</td>
+            <td>06:00</td>
+          </tr>
+          <tr>
+            <td><code>ubuntu</code></td>
+            <td>Ubuntu Linux</td>
+            <td><span class="chip chip-blue">OS</span></td>
+            <td><span class="rag-pi">prompt-injection</span></td>
+            <td><span class="chip chip-green">활성화</span></td>
+            <td><span class="chip chip-cyan">없음</span></td>
+            <td>5</td>
+            <td>06:00</td>
+          </tr>
+          <tr>
+            <td><code>windows</code></td>
+            <td>Windows Server</td>
+            <td><span class="chip chip-blue">OS</span></td>
+            <td><span class="rag-both">both</span></td>
+            <td><span class="chip chip-red">비활성화</span></td>
+            <td><span class="chip chip-amber">있음</span></td>
+            <td>15</td>
+            <td>03:00</td>
+          </tr>
+          <tr>
+            <td><code>mariadb</code></td>
+            <td>MariaDB</td>
+            <td><span class="chip chip-green">DB</span></td>
+            <td><span class="rag-both">both</span></td>
+            <td><span class="chip chip-green">활성화</span></td>
+            <td><span class="chip chip-amber">있음</span></td>
+            <td>5</td>
+            <td>08:00</td>
+          </tr>
+          <tr>
+            <td><code>sqlserver</code></td>
+            <td>SQL Server</td>
+            <td><span class="chip chip-green">DB</span></td>
+            <td><span class="rag-both">both</span></td>
+            <td><span class="chip chip-red">비활성화</span></td>
+            <td><span class="chip chip-amber">있음</span></td>
+            <td>5</td>
+            <td>02:00</td>
+          </tr>
+          <tr>
+            <td><code>pgsql</code></td>
+            <td>PostgreSQL</td>
+            <td><span class="chip chip-green">DB</span></td>
+            <td><span class="rag-both">both</span></td>
+            <td><span class="chip chip-green">활성화</span></td>
+            <td><span class="chip chip-amber">있음</span></td>
+            <td>5</td>
+            <td>05:00</td>
+          </tr>
+          <tr>
+            <td><code>ceph</code></td>
+            <td>Ceph</td>
+            <td><span class="chip chip-amber">스토리지</span></td>
+            <td><span class="rag-both">both</span></td>
+            <td><span class="chip chip-green">활성화</span></td>
+            <td><span class="chip chip-amber">있음</span></td>
+            <td>5</td>
+            <td>10:00</td>
+          </tr>
+          <tr>
+            <td><code>vsphere</code></td>
+            <td>VMware vSphere</td>
+            <td><span class="chip chip-purple">가상화</span></td>
+            <td><span class="rag-pi">prompt-injection</span></td>
+            <td><span class="chip chip-green">활성화</span></td>
+            <td><span class="chip chip-amber">있음</span></td>
+            <td>5</td>
+            <td>04:00</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>🔑 주요 교훈 &amp; 규칙</h2>
+    <div class="grid2">
+      <div class="card-sm">
+        <div style="font-weight:600;color:#fcd34d;margin-bottom:8px">파일 명명 규칙</div>
+        <ul style="font-size:0.82rem;color:#94a3b8;list-style:none;display:flex;flex-direction:column;gap:4px">
+          <li>▸ pgsql 원시 파일 접두사: <code>PGSL-</code></li>
+          <li>▸ 전처리 출력: <code>patches_for_llm_review_{vendor}.json</code></li>
+          <li>▸ 최종 CSV: <code>final_approved_patches_{product}.csv</code></li>
+          <li>▸ 숨김 파일: <code>*.json.hidden</code>, <code>normalized_hidden/</code></li>
+          <li>▸ 속도 제한 플래그: <code>/tmp/.rate_limit_{productId}</code></li>
+          <li>▸ 뮤텍스 잠금: <code>/tmp/openclaw_execution.lock</code></li>
+        </ul>
+      </div>
+      <div class="card-sm">
+        <div style="font-weight:600;color:#67e8f9;margin-bottom:8px">핵심 교훈 (메모리에서)</div>
+        <ul style="font-size:0.82rem;color:#94a3b8;list-style:none;display:flex;flex-direction:column;gap:4px">
+          <li>▸ 각 배치 전 sessions.json 반드시 삭제 (교훈17)</li>
+          <li>▸ gateway closed → 즉시 거부 금지 (교훈16)</li>
+          <li>▸ preprocessedPatchMapper 필드명 JSON과 일치 필수 (교훈21)</li>
+          <li>▸ SKILL.md는 100줄 이상이어야 함 (교훈15)</li>
+          <li>▸ 스키마에서 faq 필드 제거됨 (교훈14)</li>
+          <li>▸ rebase conflict marker 완전 제거 검증 (교훈27)</li>
+          <li>▸ spec rawDataFilePrefix는 실제 파일과 일치해야 함 (교훈30)</li>
+          <li>▸ Windows/Ceph/MariaDB/PGSQL/SQLServer에 RAG type 'both' (교훈36)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div style="text-align:center;padding:32px;color:var(--muted);font-size:0.8rem;border-top:1px solid var(--border);margin-top:32px">
+  Patch Review Dashboard v2 — 아키텍처 참조 | 생성일: 2026-03-19 | 포트 3001 | /home/citec/patch-review-dashboard-v2/
+</div>
+
+<script>
+function showTab(id, btn) {
+  document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  btn.classList.add('active');
+}
+
+function toggleStage(id) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  const isOpen = el.classList.contains('open');
+  document.querySelectorAll('.stage-detail').forEach(d => d.classList.remove('open'));
+  if (!isOpen) el.classList.add('open');
+}
+
+function toggleCollapsible(header) {
+  const body = header.nextElementSibling;
+  const caret = header.querySelector('.caret');
+  const isOpen = body.classList.contains('open');
+  body.classList.toggle('open', !isOpen);
+  if (caret) caret.classList.toggle('open', !isOpen);
+}
+</script>
+</body>
+</html>

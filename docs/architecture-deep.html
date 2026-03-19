@@ -1,0 +1,1635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Patch Review Dashboard v2 — Deep Architecture</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0a0e1a;color:#e2e8f0;font-family:'Segoe UI',system-ui,sans-serif;min-height:100vh}
+:root{--blue:#3b82f6;--green:#10b981;--amber:#f59e0b;--purple:#8b5cf6;--red:#ef4444;--cyan:#06b6d4;--card:#111827;--card2:#1f2937;--border:#374151;--text:#e2e8f0;--muted:#9ca3af}
+a{color:var(--blue);text-decoration:none}
+/* HEADER */
+.header{background:linear-gradient(135deg,#0f172a 0%,#1e1b4b 50%,#0f172a 100%);padding:32px 24px;border-bottom:1px solid #1e3a5f;text-align:center;position:relative;overflow:hidden}
+.header::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(59,130,246,0.15) 0%,transparent 70%)}
+.header h1{font-size:2.2rem;font-weight:800;background:linear-gradient(135deg,#60a5fa,#a78bfa,#34d399);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;position:relative}
+.header p{color:#94a3b8;margin-top:8px;font-size:1rem;position:relative}
+.header-badges{display:flex;gap:8px;justify-content:center;margin-top:12px;flex-wrap:wrap;position:relative}
+.badge{padding:4px 12px;border-radius:20px;font-size:0.75rem;font-weight:600;border:1px solid}
+.badge-blue{background:rgba(59,130,246,0.15);color:#93c5fd;border-color:rgba(59,130,246,0.3)}
+.badge-green{background:rgba(16,185,129,0.15);color:#6ee7b7;border-color:rgba(16,185,129,0.3)}
+.badge-amber{background:rgba(245,158,11,0.15);color:#fcd34d;border-color:rgba(245,158,11,0.3)}
+.badge-purple{background:rgba(139,92,246,0.15);color:#c4b5fd;border-color:rgba(139,92,246,0.3)}
+.badge-cyan{background:rgba(6,182,212,0.15);color:#67e8f9;border-color:rgba(6,182,212,0.3)}
+.badge-red{background:rgba(239,68,68,0.15);color:#fca5a5;border-color:rgba(239,68,68,0.3)}
+/* TABS */
+.tab-nav{background:#0d1117;border-bottom:1px solid var(--border);display:flex;overflow-x:auto;gap:2px;padding:0 16px;position:sticky;top:0;z-index:100}
+.tab-nav::-webkit-scrollbar{height:3px}
+.tab-nav::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px}
+.tab-btn{padding:14px 20px;font-size:0.85rem;font-weight:600;color:var(--muted);background:transparent;border:none;border-bottom:3px solid transparent;cursor:pointer;white-space:nowrap;transition:all .2s}
+.tab-btn:hover{color:var(--text);background:rgba(255,255,255,0.04)}
+.tab-btn.active{color:#60a5fa;border-bottom-color:#3b82f6;background:rgba(59,130,246,0.08)}
+.tab-content{display:none;padding:32px 24px;max-width:1400px;margin:0 auto;animation:fadeIn .3s ease}
+.tab-content.active{display:block}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+/* CARDS */
+.card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:24px;margin-bottom:20px}
+.card-sm{background:var(--card2);border:1px solid var(--border);border-radius:8px;padding:16px}
+.card h2{font-size:1.2rem;font-weight:700;margin-bottom:16px;display:flex;align-items:center;gap:8px}
+.card h3{font-size:1rem;font-weight:600;margin-bottom:12px;color:#93c5fd}
+.section-title{font-size:1.5rem;font-weight:700;margin-bottom:24px;color:#f1f5f9;display:flex;align-items:center;gap:10px}
+/* GRID */
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:20px}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+.grid4{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
+/* STAT BOXES */
+.stat-box{background:var(--card2);border:1px solid var(--border);border-radius:10px;padding:20px;text-align:center}
+.stat-num{font-size:2.5rem;font-weight:800;line-height:1}
+.stat-label{color:var(--muted);font-size:0.85rem;margin-top:6px}
+/* FLOW / PIPELINE */
+.pipeline-stages{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin:20px 0}
+.stage-node{background:var(--card2);border:2px solid var(--border);border-radius:10px;padding:14px 18px;cursor:pointer;transition:all .2s;min-width:120px;text-align:center}
+.stage-node:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,0.4)}
+.stage-node.s0{border-color:#6366f1;color:#a5b4fc}
+.stage-node.s1{border-color:#06b6d4;color:#67e8f9}
+.stage-node.s2{border-color:#8b5cf6;color:#c4b5fd}
+.stage-node.s3{border-color:#f59e0b;color:#fcd34d}
+.stage-node.s4{border-color:#10b981;color:#6ee7b7}
+.stage-node.s5{border-color:#ef4444;color:#fca5a5}
+.stage-node .stage-num{font-size:1.4rem;font-weight:800}
+.stage-node .stage-name{font-size:0.75rem;font-weight:600;margin-top:4px}
+.arrow{color:var(--muted);font-size:1.5rem;display:flex;align-items:center}
+.stage-detail{display:none;margin-top:16px;animation:fadeIn .3s ease}
+.stage-detail.open{display:block}
+/* CODE */
+.code-block{background:#0d1117;border:1px solid #1f2937;border-radius:8px;padding:16px;font-family:'Courier New',monospace;font-size:0.8rem;overflow-x:auto;line-height:1.6;margin:8px 0}
+.code-block .kw{color:#ff79c6}
+.code-block .fn{color:#50fa7b}
+.code-block .str{color:#f1fa8c}
+.code-block .cm{color:#6272a4}
+.code-block .num{color:#bd93f9}
+.code-block .var{color:#8be9fd}
+/* TABLE */
+.data-table{width:100%;border-collapse:collapse;font-size:0.85rem}
+.data-table th{background:#1f2937;padding:10px 14px;text-align:left;font-weight:600;color:#93c5fd;border-bottom:2px solid var(--border)}
+.data-table td{padding:10px 14px;border-bottom:1px solid #1f2937;vertical-align:top}
+.data-table tr:last-child td{border-bottom:none}
+.data-table tr:hover td{background:rgba(255,255,255,0.03)}
+/* TIMELINE */
+.timeline{position:relative;padding-left:32px}
+.timeline::before{content:'';position:absolute;left:10px;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,#3b82f6,#8b5cf6,#10b981)}
+.tl-item{position:relative;margin-bottom:24px}
+.tl-dot{position:absolute;left:-27px;top:4px;width:12px;height:12px;border-radius:50%;border:2px solid}
+.tl-time{font-size:0.8rem;color:var(--muted);font-family:monospace;font-weight:600}
+.tl-title{font-weight:600;margin:2px 0}
+.tl-desc{font-size:0.85rem;color:#94a3b8;margin-top:4px}
+/* TIER DIAGRAM */
+.tier-diagram{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px}
+.tier{border-radius:12px;padding:20px;border:1px solid}
+.tier-frontend{background:rgba(59,130,246,0.08);border-color:rgba(59,130,246,0.3)}
+.tier-backend{background:rgba(139,92,246,0.08);border-color:rgba(139,92,246,0.3)}
+.tier-data{background:rgba(16,185,129,0.08);border-color:rgba(16,185,129,0.3)}
+.tier h3{font-size:0.9rem;font-weight:700;margin-bottom:12px}
+.tier ul{list-style:none;font-size:0.82rem;color:#94a3b8}
+.tier ul li{padding:4px 0;border-bottom:1px solid rgba(255,255,255,0.05)}
+.tier ul li::before{content:'› ';color:inherit}
+/* FLOW BOXES */
+.flow-row{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:8px 0}
+.flow-box{background:var(--card2);border:1px solid var(--border);border-radius:6px;padding:8px 14px;font-size:0.82rem;font-weight:500}
+.flow-box.blue{background:rgba(59,130,246,0.15);border-color:rgba(59,130,246,0.4);color:#93c5fd}
+.flow-box.green{background:rgba(16,185,129,0.15);border-color:rgba(16,185,129,0.4);color:#6ee7b7}
+.flow-box.amber{background:rgba(245,158,11,0.15);border-color:rgba(245,158,11,0.4);color:#fcd34d}
+.flow-box.purple{background:rgba(139,92,246,0.15);border-color:rgba(139,92,246,0.4);color:#c4b5fd}
+.flow-box.red{background:rgba(239,68,68,0.15);border-color:rgba(239,68,68,0.4);color:#fca5a5}
+.flow-box.cyan{background:rgba(6,182,212,0.15);border-color:rgba(6,182,212,0.4);color:#67e8f9}
+.fa{font-size:1.1rem}
+/* COLLAPSIBLE */
+.collapsible-header{background:var(--card2);border:1px solid var(--border);border-radius:8px;padding:14px 18px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;transition:background .2s;user-select:none}
+.collapsible-header:hover{background:#252d3d}
+.collapsible-body{display:none;background:#0d1117;border:1px solid var(--border);border-top:none;border-radius:0 0 8px 8px;padding:16px}
+.collapsible-body.open{display:block}
+.caret{transition:transform .2s;display:inline-block}
+.caret.open{transform:rotate(90deg)}
+/* PRODUCT CARDS */
+.product-card{background:var(--card2);border:1px solid var(--border);border-radius:10px;padding:18px;transition:all .2s}
+.product-card:hover{border-color:var(--blue);transform:translateY(-2px)}
+.product-card .prod-name{font-weight:700;font-size:1rem;margin-bottom:4px}
+.product-card .prod-id{font-family:monospace;font-size:0.75rem;color:var(--muted)}
+.product-card .prod-tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}
+/* RAG STRATEGY BADGES */
+.rag-pi{background:rgba(59,130,246,0.15);color:#93c5fd;border:1px solid rgba(59,130,246,0.3);padding:3px 8px;border-radius:4px;font-size:0.7rem;font-weight:600}
+.rag-fh{background:rgba(139,92,246,0.15);color:#c4b5fd;border:1px solid rgba(139,92,246,0.3);padding:3px 8px;border-radius:4px;font-size:0.7rem;font-weight:600}
+.rag-both{background:rgba(245,158,11,0.15);color:#fcd34d;border:1px solid rgba(245,158,11,0.3);padding:3px 8px;border-radius:4px;font-size:0.7rem;font-weight:600}
+/* ZOD SCHEMA */
+.schema-field{display:flex;gap:12px;padding:8px 0;border-bottom:1px solid #1f2937;font-size:0.85rem}
+.schema-field:last-child{border-bottom:none}
+.field-name{font-family:monospace;color:#67e8f9;min-width:180px;font-weight:600}
+.field-type{color:#c4b5fd;min-width:80px}
+.field-desc{color:#94a3b8}
+/* TECH STACK */
+.tech-item{background:var(--card2);border:1px solid var(--border);border-radius:8px;padding:12px 16px;display:flex;align-items:center;gap:12px}
+.tech-icon{width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;font-weight:700;flex-shrink:0}
+.tech-name{font-weight:600;font-size:0.9rem}
+.tech-desc{font-size:0.78rem;color:var(--muted)}
+/* CIRCULAR FLOW */
+.circular-flow{display:grid;grid-template-columns:1fr;gap:12px;max-width:700px;margin:0 auto}
+.cf-step{display:flex;gap:16px;align-items:flex-start}
+.cf-num{background:linear-gradient(135deg,#3b82f6,#8b5cf6);color:#fff;border-radius:50%;width:32px;height:32px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:0.9rem;flex-shrink:0;margin-top:2px}
+.cf-content{flex:1}
+.cf-title{font-weight:600;font-size:0.9rem}
+.cf-desc{font-size:0.82rem;color:#94a3b8;margin-top:4px}
+.cf-connector{width:2px;background:linear-gradient(to bottom,#3b82f6,#8b5cf6);height:20px;margin:4px 0 4px 15px}
+/* INFO BOX */
+.info-box{border-left:3px solid;padding:12px 16px;border-radius:0 8px 8px 0;margin:12px 0;font-size:0.85rem}
+.info-blue{background:rgba(59,130,246,0.08);border-color:#3b82f6;color:#bfdbfe}
+.info-amber{background:rgba(245,158,11,0.08);border-color:#f59e0b;color:#fde68a}
+.info-red{background:rgba(239,68,68,0.08);border-color:#ef4444;color:#fecaca}
+.info-green{background:rgba(16,185,129,0.08);border-color:#10b981;color:#a7f3d0}
+.info-purple{background:rgba(139,92,246,0.08);border-color:#8b5cf6;color:#ddd6fe}
+/* API ROUTES */
+.route-item{display:flex;gap:12px;padding:8px 0;border-bottom:1px solid #1f2937;align-items:flex-start;font-size:0.83rem}
+.route-method{font-family:monospace;font-weight:700;min-width:44px;font-size:0.75rem;padding:2px 6px;border-radius:4px;text-align:center}
+.method-get{background:rgba(16,185,129,0.2);color:#6ee7b7}
+.method-post{background:rgba(59,130,246,0.2);color:#93c5fd}
+.method-delete{background:rgba(239,68,68,0.2);color:#fca5a5}
+.route-path{font-family:monospace;color:#67e8f9;min-width:280px}
+.route-desc{color:#94a3b8}
+/* WINDOW BARS */
+.window-bar{background:var(--card2);border-radius:8px 8px 0 0;padding:8px 14px;display:flex;align-items:center;gap:8px;border:1px solid var(--border);border-bottom:none}
+.win-dot{width:10px;height:10px;border-radius:50%}
+/* RESPONSIVE */
+@media(max-width:768px){
+  .tier-diagram{grid-template-columns:1fr}
+  .pipeline-stages{flex-direction:column;align-items:flex-start}
+  .tab-btn{padding:12px 14px;font-size:0.8rem}
+  .header h1{font-size:1.5rem}
+  .grid2,.grid3,.grid4{grid-template-columns:1fr}
+}
+/* ANIMATIONS */
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.5}}
+@keyframes slideRight{from{width:0}to{width:100%}}
+.animate-pulse{animation:pulse 2s ease-in-out infinite}
+.chip{display:inline-flex;align-items:center;gap:4px;padding:3px 10px;border-radius:20px;font-size:0.72rem;font-weight:600}
+.chip-blue{background:rgba(59,130,246,0.2);color:#93c5fd}
+.chip-green{background:rgba(16,185,129,0.2);color:#6ee7b7}
+.chip-amber{background:rgba(245,158,11,0.2);color:#fcd34d}
+.chip-red{background:rgba(239,68,68,0.2);color:#fca5a5}
+.chip-purple{background:rgba(139,92,246,0.2);color:#c4b5fd}
+.chip-cyan{background:rgba(6,182,212,0.2);color:#67e8f9}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>⚡ Patch Review Dashboard v2</h1>
+  <p>Deep Architecture Reference — Automated Security Patch Review System for Enterprise IT Infrastructure</p>
+  <div class="header-badges">
+    <span class="badge badge-blue">Next.js 16 App Router</span>
+    <span class="badge badge-green">TypeScript</span>
+    <span class="badge badge-amber">BullMQ + Redis</span>
+    <span class="badge badge-purple">OpenClaw AI</span>
+    <span class="badge badge-cyan">Prisma + SQLite WAL</span>
+    <span class="badge badge-blue">Port 3001</span>
+    <span class="badge badge-green">9 Products</span>
+    <span class="badge badge-purple">5-Stage Pipeline</span>
+  </div>
+</div>
+
+<nav class="tab-nav" id="tabNav">
+  <button class="tab-btn active" onclick="showTab('t1',this)">1. Big Picture</button>
+  <button class="tab-btn" onclick="showTab('t2',this)">2. Data Collection</button>
+  <button class="tab-btn" onclick="showTab('t3',this)">3. 5-Stage Pipeline</button>
+  <button class="tab-btn" onclick="showTab('t4',this)">4. AI Review System</button>
+  <button class="tab-btn" onclick="showTab('t5',this)">5. Admin Review &amp; Feedback</button>
+  <button class="tab-btn" onclick="showTab('t6',this)">6. Database &amp; Architecture</button>
+  <button class="tab-btn" onclick="showTab('t7',this)">7. Product Registry</button>
+</nav>
+
+<!-- ============================================================ TAB 1 ============================================================ -->
+<div id="t1" class="tab-content active">
+  <div class="section-title">🌐 Big Picture — System Overview</div>
+
+  <div class="grid4" style="margin-bottom:24px">
+    <div class="stat-box"><div class="stat-num" style="color:#60a5fa">9</div><div class="stat-label">Active Products</div></div>
+    <div class="stat-box"><div class="stat-num" style="color:#34d399">4</div><div class="stat-label">Categories</div></div>
+    <div class="stat-box"><div class="stat-num" style="color:#a78bfa">5</div><div class="stat-label">Pipeline Stages</div></div>
+    <div class="stat-box"><div class="stat-num" style="color:#fbbf24">28+</div><div class="stat-label">API Routes</div></div>
+  </div>
+
+  <div class="card">
+    <h2>🏗️ 3-Tier Architecture</h2>
+    <div class="tier-diagram">
+      <div class="tier tier-frontend">
+        <h3 style="color:#60a5fa">Frontend Tier</h3>
+        <ul>
+          <li>Next.js 16 SSR Pages</li>
+          <li>Category Cards Dashboard</li>
+          <li>Product Detail Pages</li>
+          <li>Archive Pages</li>
+          <li>ProductGrid Component</li>
+          <li>SSE Log Streaming</li>
+          <li>Tailwind CSS + shadcn/ui</li>
+          <li>React Server Components</li>
+        </ul>
+      </div>
+      <div class="tier tier-backend">
+        <h3 style="color:#a78bfa">Backend Tier</h3>
+        <ul>
+          <li>28+ Next.js API Routes</li>
+          <li>BullMQ Worker (queue.ts 954 lines)</li>
+          <li>Product Registry (products-registry.ts)</li>
+          <li>Auto-Archive Service</li>
+          <li>OpenClaw AI (spawned process)</li>
+          <li>Python Preprocessing Scripts</li>
+          <li>Cron Job Scheduler</li>
+          <li>SSE Event Emitter</li>
+        </ul>
+      </div>
+      <div class="tier tier-data">
+        <h3 style="color:#34d399">Data Tier</h3>
+        <ul>
+          <li>SQLite + Prisma ORM (WAL mode)</li>
+          <li>Redis + BullMQ Queues</li>
+          <li>ChromaDB Vector Store</li>
+          <li>JSON file store (raw patches)</li>
+          <li>user_exclusion_feedback.json</li>
+          <li>patches_for_llm_review_*.json</li>
+          <li>Quarterly Archive Files</li>
+          <li>SKILL.md prompt files</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>🔄 Animated Data Flow</h2>
+    <div style="overflow-x:auto">
+      <div style="min-width:800px;padding:16px 0">
+        <!-- Row 1: Collection -->
+        <div style="text-align:center;margin-bottom:8px;font-size:0.75rem;color:var(--muted);font-weight:600;letter-spacing:1px">DATA COLLECTION LAYER</div>
+        <div class="flow-row" style="justify-content:center">
+          <div class="flow-box cyan">Vendor APIs / Security Advisories</div>
+          <div class="arrow">→</div>
+          <div class="flow-box cyan">Python Collector Scripts</div>
+          <div class="arrow">→</div>
+          <div class="flow-box cyan">Raw JSON Files</div>
+          <div class="arrow">→</div>
+          <div class="flow-box cyan">RawPatch Table</div>
+        </div>
+        <div style="text-align:center;margin:12px 0;color:#374151;font-size:1.2rem">↓</div>
+        <!-- Row 2: Preprocessing -->
+        <div style="text-align:center;margin-bottom:8px;font-size:0.75rem;color:var(--muted);font-weight:600;letter-spacing:1px">PREPROCESSING LAYER</div>
+        <div class="flow-row" style="justify-content:center">
+          <div class="flow-box blue">patch_preprocessing.py</div>
+          <div class="arrow">→</div>
+          <div class="flow-box blue">patches_for_llm_review_*.json</div>
+          <div class="arrow">→</div>
+          <div class="flow-box blue">PreprocessedPatch Table</div>
+        </div>
+        <div style="text-align:center;margin:12px 0;color:#374151;font-size:1.2rem">↓</div>
+        <!-- Row 3: AI Review -->
+        <div style="text-align:center;margin-bottom:8px;font-size:0.75rem;color:var(--muted);font-weight:600;letter-spacing:1px">AI REVIEW LAYER</div>
+        <div class="flow-row" style="justify-content:center">
+          <div class="flow-box amber">RAG Query (ChromaDB)</div>
+          <div class="arrow">→</div>
+          <div class="flow-box amber">OpenClaw AI Agent</div>
+          <div class="arrow">→</div>
+          <div class="flow-box amber">Zod Validated JSON</div>
+          <div class="arrow">→</div>
+          <div class="flow-box amber">ReviewedPatch Table</div>
+        </div>
+        <div style="text-align:center;margin:12px 0;color:#374151;font-size:1.2rem">↓</div>
+        <!-- Row 4: Admin -->
+        <div style="text-align:center;margin-bottom:8px;font-size:0.75rem;color:var(--muted);font-weight:600;letter-spacing:1px">ADMIN REVIEW LAYER</div>
+        <div class="flow-row" style="justify-content:center">
+          <div class="flow-box green">Dashboard UI</div>
+          <div class="arrow">→</div>
+          <div class="flow-box green">Admin Review + Feedback</div>
+          <div class="arrow">→</div>
+          <div class="flow-box green">CSV Export (UTF-8 BOM)</div>
+          <div class="arrow">↺</div>
+          <div class="flow-box purple">ChromaDB (RAG feedback loop)</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid2">
+    <div class="card">
+      <h2>📦 Product Categories</h2>
+      <div style="display:flex;flex-direction:column;gap:12px">
+        <div class="card-sm">
+          <div style="color:#60a5fa;font-weight:700;margin-bottom:8px">🖥️ OS (4 products)</div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap">
+            <span class="chip chip-blue">RHEL</span>
+            <span class="chip chip-blue">Oracle Linux</span>
+            <span class="chip chip-blue">Ubuntu</span>
+            <span class="chip chip-blue">Windows Server</span>
+          </div>
+        </div>
+        <div class="card-sm">
+          <div style="color:#34d399;font-weight:700;margin-bottom:8px">🗄️ Database (3 products)</div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap">
+            <span class="chip chip-green">MariaDB</span>
+            <span class="chip chip-green">SQL Server</span>
+            <span class="chip chip-green">PostgreSQL</span>
+          </div>
+        </div>
+        <div class="card-sm">
+          <div style="color:#f59e0b;font-weight:700;margin-bottom:8px">💾 Storage (1 product)</div>
+          <span class="chip chip-amber">Ceph</span>
+        </div>
+        <div class="card-sm">
+          <div style="color:#a78bfa;font-weight:700;margin-bottom:8px">⚡ Virtualization (1 product)</div>
+          <span class="chip chip-purple">VMware vSphere</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>🛠️ Technology Stack</h2>
+      <div style="display:flex;flex-direction:column;gap:8px">
+        <div class="tech-item">
+          <div class="tech-icon" style="background:rgba(0,0,0,0.5);color:#60a5fa">N</div>
+          <div><div class="tech-name">Next.js 16</div><div class="tech-desc">App Router, SSR, API Routes, RSC</div></div>
+        </div>
+        <div class="tech-item">
+          <div class="tech-icon" style="background:rgba(59,130,246,0.2);color:#60a5fa">TS</div>
+          <div><div class="tech-name">TypeScript</div><div class="tech-desc">Strict mode, Zod schema validation</div></div>
+        </div>
+        <div class="tech-item">
+          <div class="tech-icon" style="background:rgba(16,185,129,0.2);color:#34d399">Pr</div>
+          <div><div class="tech-name">Prisma + SQLite</div><div class="tech-desc">WAL mode, global singleton, 5 models</div></div>
+        </div>
+        <div class="tech-item">
+          <div class="tech-icon" style="background:rgba(239,68,68,0.2);color:#f87171">BQ</div>
+          <div><div class="tech-name">BullMQ + Redis</div><div class="tech-desc">Job queue, pipeline worker (954 lines)</div></div>
+        </div>
+        <div class="tech-item">
+          <div class="tech-icon" style="background:rgba(139,92,246,0.2);color:#a78bfa">AI</div>
+          <div><div class="tech-name">OpenClaw AI CLI</div><div class="tech-desc">Spawned process, agent:main, JSON mode</div></div>
+        </div>
+        <div class="tech-item">
+          <div class="tech-icon" style="background:rgba(245,158,11,0.2);color:#fbbf24">Py</div>
+          <div><div class="tech-name">Python Scripts</div><div class="tech-desc">Preprocessing, ChromaDB RAG, query_rag.py</div></div>
+        </div>
+        <div class="tech-item">
+          <div class="tech-icon" style="background:rgba(6,182,212,0.2);color:#22d3ee">TW</div>
+          <div><div class="tech-name">Tailwind CSS + shadcn/ui</div><div class="tech-desc">Component library, dark theme</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>🚀 Deployment</h2>
+    <div class="grid3">
+      <div class="card-sm">
+        <div class="tech-name" style="margin-bottom:6px">Path</div>
+        <code style="color:#67e8f9;font-size:0.82rem">/home/citec/patch-review-dashboard-v2/</code>
+      </div>
+      <div class="card-sm">
+        <div class="tech-name" style="margin-bottom:6px">Port</div>
+        <code style="color:#6ee7b7;font-size:0.82rem">3001</code>
+      </div>
+      <div class="card-sm">
+        <div class="tech-name" style="margin-bottom:6px">Process Manager</div>
+        <code style="color:#fcd34d;font-size:0.82rem">pm2-citec.service (systemd)</code>
+      </div>
+      <div class="card-sm">
+        <div class="tech-name" style="margin-bottom:6px">Build Script</div>
+        <code style="color:#67e8f9;font-size:0.82rem">build.sh / build_server.sh</code>
+      </div>
+      <div class="card-sm">
+        <div class="tech-name" style="margin-bottom:6px">Restart Script</div>
+        <code style="color:#6ee7b7;font-size:0.82rem">restart.sh</code>
+      </div>
+      <div class="card-sm">
+        <div class="tech-name" style="margin-bottom:6px">Cron Log</div>
+        <code style="color:#fcd34d;font-size:0.82rem">/home/citec/patch_collector_cron.log</code>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ TAB 2 ============================================================ -->
+<div id="t2" class="tab-content">
+  <div class="section-title">📅 Data Collection — Cron Schedule &amp; Flow</div>
+
+  <div class="card">
+    <h2>🕐 Quarterly Collection Timeline</h2>
+    <div class="info-blue info-box">Runs on the <strong>3rd Sunday of March, June, September, December</strong> each year. Cron condition: <code>test $(date +%w) -eq 0</code> ensures Sunday execution within the 15–21 day window.</div>
+    <div style="margin-top:20px">
+      <div class="timeline">
+        <div class="tl-item">
+          <div class="tl-dot" style="background:#ef4444;border-color:#ef4444"></div>
+          <div class="tl-time">02:00</div>
+          <div class="tl-title">SQL Server Collection</div>
+          <div class="tl-desc">Script: <code>run_sqlserver_collector.sh</code> — Collects from Microsoft security update catalog. Windows/SQLServer use aiBatchSize=15 for cross-version comparison.</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot" style="background:#f97316;border-color:#f97316"></div>
+          <div class="tl-time">03:00</div>
+          <div class="tl-title">Windows Server Collection</div>
+          <div class="tl-desc">Script: <code>run_windows_collector.sh</code> — Windows Server patches. Preprocessing uses grouping removal + aiBatchSize approach (교훈35).</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot" style="background:#eab308;border-color:#eab308"></div>
+          <div class="tl-time">04:00</div>
+          <div class="tl-title">VMware vSphere Collection</div>
+          <div class="tl-desc">Script: <code>run_vsphere_collector.sh</code> — VMware security advisories (VMSA). vSphere uses individual <code>create</code> instead of <code>createMany</code> for DB ingest.</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot" style="background:#10b981;border-color:#10b981"></div>
+          <div class="tl-time">05:00</div>
+          <div class="tl-title">PostgreSQL Collection</div>
+          <div class="tl-desc">Script: <code>run_pgsql_collector.sh</code> — PostgreSQL security advisories. File prefix: <code>PGSL-</code> (raw data file prefix convention).</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot" style="background:#3b82f6;border-color:#3b82f6"></div>
+          <div class="tl-time">06:00</div>
+          <div class="tl-title">Linux (RHEL / Oracle Linux / Ubuntu)</div>
+          <div class="tl-desc">Script: <code>run_collectors_cron.sh</code> — All three Linux distributions collected in parallel. 180-day collection window. Review window: 90–180 days (kernel: 0–180 days).</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot" style="background:#8b5cf6;border-color:#8b5cf6"></div>
+          <div class="tl-time">08:00</div>
+          <div class="tl-title">MariaDB Collection</div>
+          <div class="tl-desc">Script: <code>run_collectors_cron.sh</code> — MariaDB security releases. Uses file-hiding + prompt-injection (both) RAG strategy.</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot" style="background:#06b6d4;border-color:#06b6d4"></div>
+          <div class="tl-time">10:00</div>
+          <div class="tl-title">Ceph Collection</div>
+          <div class="tl-desc">Script: <code>run_collectors_cron.sh</code> — Ceph storage security advisories. csvBOM=true for Korean Excel compatibility.</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot" style="background:#6b7280;border-color:#6b7280"></div>
+          <div class="tl-time">00:00 (Jan/Apr/Jul/Oct 1st)</div>
+          <div class="tl-title">Auto Quarterly Archive</div>
+          <div class="tl-desc">POST <code>/api/archive/quarterly/cron</code> — Snapshots all finalized ReviewedPatch records into quarterly archive files.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>📋 Cron Expression Details</h2>
+    <div class="code-block">
+<span class="cm"># Standard quarterly cron pattern (runs 02:00–10:00 on 3rd Sunday of Mar/Jun/Sep/Dec)</span>
+<span class="str">0 2 15-21 3,6,9,12 * test $(date +%w) -eq 0 && /home/citec/run_sqlserver_collector.sh</span>
+<span class="str">0 3 15-21 3,6,9,12 * test $(date +%w) -eq 0 && /home/citec/run_windows_collector.sh</span>
+<span class="str">0 4 15-21 3,6,9,12 * test $(date +%w) -eq 0 && /home/citec/run_vsphere_collector.sh</span>
+<span class="str">0 5 15-21 3,6,9,12 * test $(date +%w) -eq 0 && /home/citec/run_pgsql_collector.sh</span>
+<span class="str">0 6 15-21 3,6,9,12 * test $(date +%w) -eq 0 && /home/citec/run_collectors_cron.sh  <span class="cm"># Linux</span></span>
+<span class="str">0 8 15-21 3,6,9,12 * test $(date +%w) -eq 0 && /home/citec/run_collectors_cron.sh  <span class="cm"># MariaDB</span></span>
+<span class="str">0 10 15-21 3,6,9,12 * test $(date +%w) -eq 0 && /home/citec/run_collectors_cron.sh <span class="cm"># Ceph</span></span>
+
+<span class="cm"># Quarterly archive (1st of Jan/Apr/Jul/Oct at midnight)</span>
+<span class="str">0 0 1 1,4,7,10 * curl -X POST http://localhost:3001/api/archive/quarterly/cron</span>
+
+<span class="cm"># All collector logs:</span>
+<span class="cm"># /home/citec/patch_collector_cron.log</span>
+    </div>
+    <div class="info-amber info-box">The <code>test $(date +%w) -eq 0</code> trick: cron doesn't support "nth weekday of month" natively. This runs the cron daily on days 15–21 but only executes if it's Sunday (day 0).</div>
+  </div>
+
+  <div class="grid2">
+    <div class="card">
+      <h2>🔄 Collection Flow Diagram</h2>
+      <div style="display:flex;flex-direction:column;gap:8px">
+        <div class="flow-box cyan" style="text-align:center">Vendor Security Advisory Sources</div>
+        <div style="text-align:center;color:var(--muted)">↓ HTTP/API fetch</div>
+        <div class="flow-box cyan" style="text-align:center">Python Collector Scripts</div>
+        <div style="text-align:center;color:var(--muted)">↓ normalize + save</div>
+        <div class="flow-box blue" style="text-align:center">Raw JSON Files (by vendor)</div>
+        <div style="text-align:center;color:var(--muted)">↓ pipeline triggered</div>
+        <div class="flow-box blue" style="text-align:center">patch_preprocessing.py / windows_preprocessing.py</div>
+        <div style="text-align:center;color:var(--muted)">↓ structured output</div>
+        <div class="flow-box amber" style="text-align:center">patches_for_llm_review_{vendor}.json</div>
+        <div style="text-align:center;color:var(--muted)">↓ Prisma upsert</div>
+        <div class="flow-box green" style="text-align:center">PreprocessedPatch Table (SQLite)</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>📊 Collection Parameters</h2>
+      <table class="data-table">
+        <thead><tr><th>Product</th><th>--days</th><th>Review Window</th></tr></thead>
+        <tbody>
+          <tr><td>RHEL</td><td>180</td><td>90–180 days (kernel: 0–180)</td></tr>
+          <tr><td>Oracle Linux</td><td>180</td><td>90–180 days (kernel: 0–180)</td></tr>
+          <tr><td>Ubuntu</td><td>180</td><td>90–180 days (kernel: 0–180)</td></tr>
+          <tr><td>Windows Server</td><td>180</td><td>--days_end 90</td></tr>
+          <tr><td>SQL Server</td><td>180</td><td>--days_end 90</td></tr>
+          <tr><td>MariaDB</td><td>180</td><td>Standard</td></tr>
+          <tr><td>PostgreSQL</td><td>180</td><td>Standard</td></tr>
+          <tr><td>Ceph</td><td>180</td><td>Standard</td></tr>
+          <tr><td>VMware vSphere</td><td>180</td><td>Standard</td></tr>
+        </tbody>
+      </table>
+      <div class="info-green info-box" style="margin-top:12px">Linux review date window policy (교훈34): 180-day collection, but only patches aged 90–180 days are reviewed (kernel packages exempt — all 0–180 days reviewed)</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>📁 Key File Paths</h2>
+    <div class="grid3">
+      <div class="card-sm">
+        <div style="color:var(--muted);font-size:0.75rem;margin-bottom:6px">Preprocessing Output</div>
+        <code style="font-size:0.8rem;color:#67e8f9">patches_for_llm_review_{vendor}.json</code>
+      </div>
+      <div class="card-sm">
+        <div style="color:var(--muted);font-size:0.75rem;margin-bottom:6px">RAG Feedback Source</div>
+        <code style="font-size:0.8rem;color:#67e8f9">user_exclusion_feedback.json</code>
+      </div>
+      <div class="card-sm">
+        <div style="color:var(--muted);font-size:0.75rem;margin-bottom:6px">RAG Script (cwd: os/linux/)</div>
+        <code style="font-size:0.8rem;color:#67e8f9">os/linux/query_rag.py</code>
+      </div>
+      <div class="card-sm">
+        <div style="color:var(--muted);font-size:0.75rem;margin-bottom:6px">Quarterly Archive Location</div>
+        <code style="font-size:0.8rem;color:#6ee7b7">~/.openclaw/workspace/skills/patch-review/quarterly-archive/{Q1-2026}/</code>
+      </div>
+      <div class="card-sm">
+        <div style="color:var(--muted);font-size:0.75rem;margin-bottom:6px">Archive Files</div>
+        <code style="font-size:0.8rem;color:#6ee7b7">metadata.json + patches.json</code>
+      </div>
+      <div class="card-sm">
+        <div style="color:var(--muted);font-size:0.75rem;margin-bottom:6px">Cron Log</div>
+        <code style="font-size:0.8rem;color:#fcd34d">/home/citec/patch_collector_cron.log</code>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ TAB 3 ============================================================ -->
+<div id="t3" class="tab-content">
+  <div class="section-title">⚙️ 5-Stage Pipeline — runProductPipeline</div>
+
+  <div class="card">
+    <h2>🔷 Pipeline Overview — Click a Stage to Expand</h2>
+    <div class="pipeline-stages">
+      <div class="stage-node s0" onclick="toggleStage('d0')">
+        <div class="stage-num">0</div>
+        <div class="stage-name">Dispatch</div>
+      </div>
+      <div class="arrow">→</div>
+      <div class="stage-node s1" onclick="toggleStage('d1')">
+        <div class="stage-num">1</div>
+        <div class="stage-name">Preprocessing</div>
+      </div>
+      <div class="arrow">→</div>
+      <div class="stage-node s2" onclick="toggleStage('d2')">
+        <div class="stage-num">2</div>
+        <div class="stage-name">RAG Setup</div>
+      </div>
+      <div class="arrow">→</div>
+      <div class="stage-node s3" onclick="toggleStage('d3')">
+        <div class="stage-num">3</div>
+        <div class="stage-name">AI Review Loop</div>
+      </div>
+      <div class="arrow">→</div>
+      <div class="stage-node s4" onclick="toggleStage('d4')">
+        <div class="stage-num">4</div>
+        <div class="stage-name">DB Ingest</div>
+      </div>
+      <div class="arrow">→</div>
+      <div class="stage-node s5" onclick="toggleStage('d5')">
+        <div class="stage-num">5</div>
+        <div class="stage-name">Passthrough</div>
+      </div>
+    </div>
+
+    <!-- Stage 0 -->
+    <div id="d0" class="stage-detail">
+      <div class="card-sm" style="border-color:#6366f1">
+        <h3 style="color:#a5b4fc">Stage 0: Dispatch</h3>
+        <div class="flow-row">
+          <div class="flow-box blue">UI Button Click</div><div class="arrow">→</div>
+          <div class="flow-box blue">POST /api/pipeline/{product}/run</div><div class="arrow">→</div>
+          <div class="flow-box blue">pipelineQueue.add(jobName, {isRetry, isAiOnly})</div>
+        </div>
+        <div class="flow-row" style="margin-top:8px">
+          <div class="flow-box purple">Returns {jobId}</div><div class="arrow">→</div>
+          <div class="flow-box purple">Client opens SSE</div><div class="arrow">→</div>
+          <div class="flow-box purple">GET /api/pipeline/stream?jobId=...</div>
+        </div>
+        <div class="code-block" style="margin-top:12px">
+<span class="cm">// POST /api/pipeline/{product}/run</span>
+<span class="kw">const</span> <span class="var">job</span> = <span class="kw">await</span> pipelineQueue.<span class="fn">add</span>(jobName, {
+  productId,
+  isRetry: <span class="kw">false</span>,
+  isAiOnly: <span class="kw">false</span>   <span class="cm">// skip preprocessing if true</span>
+});
+<span class="kw">return</span> { jobId: <span class="var">job</span>.id };
+
+<span class="cm">// Client opens SSE for real-time log streaming</span>
+<span class="cm">// GET /api/pipeline/stream?jobId={jobId}</span>
+        </div>
+        <div class="info-purple info-box">BullMQ Worker (queue.ts — 954 lines) processes the job. withOpenClawLock ensures only one AI call runs at a time via directory mutex at <code>/tmp/openclaw_execution.lock</code></div>
+      </div>
+    </div>
+
+    <!-- Stage 1 -->
+    <div id="d1" class="stage-detail">
+      <div class="card-sm" style="border-color:#06b6d4">
+        <h3 style="color:#67e8f9">Stage 1: Preprocessing (Python)</h3>
+        <div class="info-amber info-box">Skipped entirely if <code>isAiOnly=true</code>. If preprocessing script is missing, pipeline fails IMMEDIATELY (no fallback).</div>
+        <div class="code-block">
+<span class="cm"># Standard Linux preprocessor</span>
+python3 patch_preprocessing.py --vendor redhat --days <span class="num">180</span>
+python3 patch_preprocessing.py --vendor oracle --days <span class="num">180</span>
+python3 patch_preprocessing.py --vendor ubuntu --days <span class="num">180</span>
+
+<span class="cm"># Windows / SQL Server preprocessor (with date window)</span>
+python3 windows_preprocessing.py --days <span class="num">180</span> --days_end <span class="num">90</span>
+
+<span class="cm"># Output: patches_for_llm_review_{vendor}.json</span>
+        </div>
+        <div style="margin-top:12px">
+          <div style="font-weight:600;margin-bottom:8px;color:#94a3b8">Log Tag Pattern (triggers dashboard count update):</div>
+          <div class="code-block">[REDHAT-PREPROCESS_DONE] count=42
+[ORACLE-PREPROCESS_DONE] count=17
+[UBUNTU-PREPROCESS_DONE] count=23</div>
+        </div>
+        <div style="margin-top:12px">
+          <div style="font-weight:600;margin-bottom:8px;color:#94a3b8">Normalization Steps:</div>
+          <ul style="list-style:none;font-size:0.85rem;color:#94a3b8;display:flex;flex-direction:column;gap:6px">
+            <li>▸ Parse raw JSON from collector output</li>
+            <li>▸ Apply date window filtering (180 days collection, 90–180 review)</li>
+            <li>▸ Kernel exception: kernel packages reviewed for full 0–180 day range</li>
+            <li>▸ Normalize fields to LLM-friendly format</li>
+            <li>▸ Store to PreprocessedPatch table via Prisma upsert</li>
+            <li>▸ Emit [VENDOR-PREPROCESS_DONE] count= log tag</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stage 2 -->
+    <div id="d2" class="stage-detail">
+      <div class="card-sm" style="border-color:#8b5cf6">
+        <h3 style="color:#c4b5fd">Stage 2: RAG Exclusion Setup (2 Strategies)</h3>
+        <div class="grid2" style="margin-bottom:12px">
+          <div class="card-sm" style="background:#0d1117">
+            <div style="font-weight:700;color:#93c5fd;margin-bottom:8px">Strategy A: prompt-injection</div>
+            <div style="font-size:0.82rem;color:#94a3b8">Applied to: RHEL, Oracle, Ubuntu, vSphere (and all others as of 2026-03-19)</div>
+            <ul style="font-size:0.82rem;color:#94a3b8;list-style:none;margin-top:8px;display:flex;flex-direction:column;gap:4px">
+              <li>▸ Runs <code>os/linux/query_rag.py</code> to query ChromaDB</li>
+              <li>▸ Source: <code>user_exclusion_feedback.json</code></li>
+              <li>▸ Injects CRITICAL INSTRUCTION block into AI prompt</li>
+              <li>▸ cwd always fixed to <code>os/linux/</code> (shared RAG directory)</li>
+            </ul>
+          </div>
+          <div class="card-sm" style="background:#0d1117">
+            <div style="font-weight:700;color:#fcd34d;margin-bottom:8px">Strategy B: file-hiding</div>
+            <div style="font-size:0.82rem;color:#94a3b8">Applied to: Windows, Ceph, MariaDB, SQL Server, PostgreSQL</div>
+            <ul style="font-size:0.82rem;color:#94a3b8;list-style:none;margin-top:8px;display:flex;flex-direction:column;gap:4px">
+              <li>▸ Before AI: rename <code>normalized/</code> → <code>normalized_hidden/</code></li>
+              <li>▸ Before AI: rename <code>patches_for_llm_review_*.json</code> → <code>*.hidden</code></li>
+              <li>▸ After AI: restore original names (even on exception — finally block)</li>
+              <li>▸ Purpose: prevent OpenClaw from reading previous review files (bias prevention)</li>
+            </ul>
+          </div>
+        </div>
+        <div class="info-blue info-box">Combined strategy <code>type: 'both'</code> applies file-hiding first, then prompt-injection. Products: Windows, Ceph, MariaDB, SQL Server, PostgreSQL all use <code>type: 'both'</code>.</div>
+        <div class="code-block" style="margin-top:12px">
+<span class="cm">// query_rag.py invocation (cwd always os/linux/)</span>
+python3 os/linux/query_rag.py \
+  --query <span class="str">"security patch exclusion reasons"</span> \
+  --n_results <span class="num">10</span>
+
+<span class="cm">// Result injected as CRITICAL INSTRUCTION block into prompt</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stage 3 -->
+    <div id="d3" class="stage-detail">
+      <div class="card-sm" style="border-color:#f59e0b">
+        <h3 style="color:#fcd34d">Stage 3: AI Review Loop (runAiReviewLoop)</h3>
+        <div class="code-block">
+<span class="cm">// Batch loop: 5 patches per batch (configurable via aiBatchSize)</span>
+<span class="cm">// Windows: aiBatchSize=15 (all 12 patches in 1 batch for cross-version comparison)</span>
+<span class="kw">for</span> (<span class="kw">const</span> <span class="var">batch</span> <span class="kw">of</span> batches) {
+  <span class="cm">// Step 1: Cleanup sessions</span>
+  <span class="fn">cleanupSessions</span>();  <span class="cm">// delete sessions.json + .lock + .jsonl files</span>
+
+  <span class="cm">// Step 2: Build prompt</span>
+  <span class="kw">const</span> <span class="var">prompt</span> = <span class="fn">buildPrompt</span>(skillDir, batchSize, prunedBatch);
+
+  <span class="cm">// Step 3: Invoke OpenClaw AI</span>
+  <span class="fn">openclaw</span> agent:main --json --timeout <span class="num">1800</span> \
+    --session-id {unique} -m {prompt}
+
+  <span class="cm">// Step 4: Extract JSON</span>
+  <span class="kw">const</span> <span class="var">raw</span> = <span class="fn">extractJsonArray</span>(output);  <span class="cm">// remove code fences</span>
+
+  <span class="cm">// Step 5: Zod validation</span>
+  <span class="kw">const</span> <span class="var">result</span> = ReviewItemSchema.<span class="fn">parse</span>(<span class="var">raw</span>);
+
+  <span class="cm">// Step 6: On failure → up to 2 retries</span>
+  <span class="cm">// Zod error injected into retry prompt</span>
+
+  <span class="cm">// Step 7: On batch success → intermediate DB save (crash recovery)</span>
+}
+        </div>
+        <div class="grid2" style="margin-top:12px">
+          <div class="card-sm" style="background:#0d1117">
+            <div style="font-weight:600;color:#fcd34d;margin-bottom:6px">prunePatch (all products)</div>
+            <ul style="font-size:0.82rem;color:#94a3b8;list-style:none;display:flex;flex-direction:column;gap:4px">
+              <li>▸ URL → [URL] replacement</li>
+              <li>▸ Text truncated to 5000 chars</li>
+            </ul>
+          </div>
+          <div class="card-sm" style="background:#0d1117">
+            <div style="font-weight:600;color:#67e8f9;margin-bottom:6px">prunePatchLinux (Linux only)</div>
+            <ul style="font-size:0.82rem;color:#94a3b8;list-style:none;display:flex;flex-direction:column;gap:4px">
+              <li>▸ All above, plus:</li>
+              <li>▸ Array fields (packages, cves, etc.) limited to max 15 items</li>
+            </ul>
+          </div>
+        </div>
+        <div class="info-red info-box" style="margin-top:12px"><strong>gateway closed (1000):</strong> Does NOT immediately reject — waits for full response. Only enters retry if the extracted JSON is invalid. (교훈16)</div>
+        <div class="info-amber info-box"><strong>Rate limit (429):</strong> Creates <code>/tmp/.rate_limit_{productId}</code> file → next run enters resume mode (skips preprocessing, skips completed batches)</div>
+        <div class="info-red info-box"><strong>Sessions cleanup is CRITICAL (교훈17):</strong> <code>sessions.json</code> MUST be deleted before each batch to prevent context contamination between batches.</div>
+      </div>
+    </div>
+
+    <!-- Stage 4 -->
+    <div id="d4" class="stage-detail">
+      <div class="card-sm" style="border-color:#10b981">
+        <h3 style="color:#6ee7b7">Stage 4: DB Ingest (ingestToDb)</h3>
+        <div class="code-block">
+<span class="cm">// If not resume/aiOnly: DELETE existing records first</span>
+<span class="kw">await</span> prisma.reviewedPatch.<span class="fn">deleteMany</span>({ where: { productId } });
+
+<span class="cm">// Filter out: decision='Exclude' OR criticality in [moderate, medium, low]</span>
+<span class="cm">// These are NOT inserted to ReviewedPatch</span>
+<span class="kw">const</span> <span class="var">toInsert</span> = results.<span class="fn">filter</span>(r =>
+  r.decision !== <span class="str">'Exclude'</span> &&
+  ![<span class="str">'moderate'</span>, <span class="str">'medium'</span>, <span class="str">'low'</span>].<span class="fn">includes</span>(r.criticality)
+);
+
+<span class="cm">// Insert (createMany for most products)</span>
+<span class="kw">await</span> prisma.reviewedPatch.<span class="fn">createMany</span>({ data: toInsert });
+
+<span class="cm">// vSphere exception: uses individual create() calls</span>
+<span class="kw">for</span> (<span class="kw">const</span> <span class="var">item</span> <span class="kw">of</span> toInsert) {
+  <span class="kw">await</span> prisma.reviewedPatch.<span class="fn">create</span>({ data: <span class="var">item</span> });
+}
+        </div>
+        <div class="info-purple info-box"><strong>ReviewedPatch.issueId is @unique</strong> — this enforces deduplication at the DB level. If the same issueId appears twice, the second upsert will fail gracefully.</div>
+      </div>
+    </div>
+
+    <!-- Stage 5 -->
+    <div id="d5" class="stage-detail">
+      <div class="card-sm" style="border-color:#ef4444">
+        <h3 style="color:#fca5a5">Stage 5: Passthrough Safety Net (runPassthrough)</h3>
+        <div class="code-block">
+<span class="cm">// Find patches in PreprocessedPatch NOT yet in ReviewedPatch</span>
+<span class="kw">const</span> <span class="var">missing</span> = <span class="kw">await</span> prisma.preprocessedPatch.<span class="fn">findMany</span>({
+  where: { productId, issueId: { notIn: reviewedIds } }
+});
+
+<span class="cm">// Insert with default values (safety net)</span>
+<span class="kw">await</span> prisma.reviewedPatch.<span class="fn">createMany</span>({
+  data: <span class="var">missing</span>.<span class="fn">map</span>(p => ({
+    ...p,
+    criticality: <span class="str">'Important'</span>,
+    decision: <span class="str">'Pending'</span>
+  }))
+});
+        </div>
+        <div class="info-blue info-box">Passthrough is disabled (<code>passthrough.enabled=false</code>) for Windows and SQL Server, which use the version-group approach — all patches reviewed together in one large batch.</div>
+        <table class="data-table" style="margin-top:12px">
+          <thead><tr><th>Product</th><th>Passthrough</th><th>Reason</th></tr></thead>
+          <tbody>
+            <tr><td>RHEL, Oracle, Ubuntu</td><td class="chip chip-green">Enabled</td><td>Standard Linux flow</td></tr>
+            <tr><td>Windows Server</td><td class="chip chip-red">Disabled</td><td>Version-group approach</td></tr>
+            <tr><td>SQL Server</td><td class="chip chip-red">Disabled</td><td>Version-group approach</td></tr>
+            <tr><td>Ceph, MariaDB, PostgreSQL, vSphere</td><td class="chip chip-green">Enabled</td><td>Standard flow</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>🔒 withOpenClawLock — Concurrency Control</h2>
+    <div class="code-block">
+<span class="cm">// Directory mutex — prevents concurrent AI calls</span>
+<span class="cm">// Lock file: /tmp/openclaw_execution.lock</span>
+<span class="kw">async function</span> <span class="fn">withOpenClawLock</span>&lt;T&gt;(fn: () =&gt; Promise&lt;T&gt;): Promise&lt;T&gt; {
+  <span class="kw">const</span> <span class="var">lock</span> = <span class="kw">await</span> <span class="fn">acquireLock</span>(<span class="str">'/tmp/openclaw_execution.lock'</span>);
+  <span class="kw">try</span> {
+    <span class="kw">return await</span> <span class="fn">fn</span>();
+  } <span class="kw">finally</span> {
+    <span class="fn">releaseLock</span>(<span class="var">lock</span>);
+  }
+}
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ TAB 4 ============================================================ -->
+<div id="t4" class="tab-content">
+  <div class="section-title">🤖 AI Review System — Deep Dive</div>
+
+  <div class="grid2">
+    <div class="card">
+      <h2>⚡ OpenClaw AI Agent</h2>
+      <div class="code-block">
+<span class="cm"># Full invocation signature</span>
+openclaw agent:main \
+  --json \
+  --timeout <span class="num">1800</span> \
+  --session-id {unique-per-batch} \
+  -m {prompt-string}
+      </div>
+      <ul style="list-style:none;font-size:0.85rem;color:#94a3b8;margin-top:12px;display:flex;flex-direction:column;gap:6px">
+        <li><span style="color:#6ee7b7">▸ --json</span>: Forces JSON-only output mode</li>
+        <li><span style="color:#6ee7b7">▸ --timeout 1800</span>: 30-minute timeout per batch</li>
+        <li><span style="color:#6ee7b7">▸ --session-id {unique}</span>: Unique per batch to prevent cross-batch contamination</li>
+        <li><span style="color:#6ee7b7">▸ -m {prompt}</span>: Full prompt string including RAG context</li>
+        <li><span style="color:#fcd34d">▸ Spawned as child process by queue.ts worker</span></li>
+        <li><span style="color:#fcd34d">▸ Protected by withOpenClawLock (directory mutex)</span></li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>📚 SKILL.md Requirements</h2>
+      <div class="info-blue info-box">validate-registry.js validates all SKILL.md files. Each product must have a SKILL.md with 100+ lines (교훈15) containing a <code>## 4.</code> section.</div>
+      <div style="display:flex;flex-direction:column;gap:8px;margin-top:12px">
+        <div class="collapsible-header" onclick="toggleCollapsible(this)">
+          <span>SKILL.md Required Sections</span><span class="caret">▶</span>
+        </div>
+        <div class="collapsible-body">
+          <ul style="list-style:none;font-size:0.85rem;color:#94a3b8;display:flex;flex-direction:column;gap:6px">
+            <li>▸ <strong style="color:#93c5fd">## 1.</strong> Product overview and context</li>
+            <li>▸ <strong style="color:#93c5fd">## 2.</strong> Input format specification</li>
+            <li>▸ <strong style="color:#93c5fd">## 3.</strong> Output format requirements</li>
+            <li>▸ <strong style="color:#93c5fd">## 4.</strong> Inclusion/exclusion criteria, output format, general rules, hallucination prevention (MANDATORY)</li>
+            <li>▸ Minimum 100 lines total</li>
+            <li>▸ faq field removed (교훈14) — no FAQ section in output schema</li>
+          </ul>
+        </div>
+      </div>
+      <div class="code-block" style="margin-top:12px">
+<span class="cm">// buildPrompt pattern (skillDirRelative shared + buildPrompt separated)</span>
+<span class="kw">const</span> <span class="var">skillDir</span> = path.<span class="fn">join</span>(skillDirRelative, productId);
+<span class="kw">const</span> <span class="var">prompt</span> = <span class="fn">buildPrompt</span>(skillDir, batchSize, prunedBatch);
+<span class="cm">// ↑ skillDirRelative shared across products, buildPrompt separated per-product</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>✅ Zod Validation Schema — ReviewItemSchema</h2>
+    <div class="schema-field"><span class="field-name">IssueID</span><span class="field-type">string</span><span class="field-desc">Unique identifier for the patch/advisory (maps to ReviewedPatch.issueId @unique)</span></div>
+    <div class="schema-field"><span class="field-name">Component</span><span class="field-type">string</span><span class="field-desc">Affected software component (e.g., "kernel", "openssl", "glibc")</span></div>
+    <div class="schema-field"><span class="field-name">Version</span><span class="field-type">string</span><span class="field-desc">Affected version(s) of the product</span></div>
+    <div class="schema-field"><span class="field-name">Vendor</span><span class="field-type">string</span><span class="field-desc">Vendor name (e.g., "Red Hat", "Microsoft", "VMware")</span></div>
+    <div class="schema-field"><span class="field-name">Date</span><span class="field-type">string</span><span class="field-desc">Advisory/patch release date (ISO format)</span></div>
+    <div class="schema-field"><span class="field-name">Criticality</span><span class="field-type">enum</span><span class="field-desc">Important | Moderate | Low | Critical — determines if patch is DB-inserted</span></div>
+    <div class="schema-field"><span class="field-name">Description</span><span class="field-type">string</span><span class="field-desc">English description of the vulnerability/patch</span></div>
+    <div class="schema-field"><span class="field-name">KoreanDescription</span><span class="field-type">string</span><span class="field-desc">Korean translation for admin dashboard display</span></div>
+    <div class="schema-field"><span class="field-name">Decision</span><span class="field-type">enum</span><span class="field-desc">Include | Exclude | Pending — AI's initial recommendation</span></div>
+    <div class="schema-field"><span class="field-name">Reason</span><span class="field-type">string</span><span class="field-desc">Justification for the Include/Exclude/Pending decision</span></div>
+    <div class="schema-field"><span class="field-name">OsVersion</span><span class="field-type">string?</span><span class="field-desc">OS version passthrough field (extracted during preprocessing, passed through to final output)</span></div>
+    <div class="info-amber info-box" style="margin-top:12px">Filters applied at DB ingest: patches with <code>decision='Exclude'</code> OR <code>criticality in [moderate, medium, low]</code> are NOT inserted to ReviewedPatch table.</div>
+  </div>
+
+  <div class="card">
+    <h2>🔄 Error Handling &amp; Retry Logic</h2>
+    <div class="grid2">
+      <div class="card-sm">
+        <div style="font-weight:700;color:#fca5a5;margin-bottom:8px">Gateway Closed (code 1000)</div>
+        <ul style="font-size:0.82rem;color:#94a3b8;list-style:none;display:flex;flex-direction:column;gap:4px">
+          <li>▸ Does NOT immediately reject (교훈16)</li>
+          <li>▸ Waits for full AI response to complete</li>
+          <li>▸ Only enters retry if extracted JSON is invalid</li>
+          <li>▸ Valid JSON → accepted even if gateway closes</li>
+        </ul>
+      </div>
+      <div class="card-sm">
+        <div style="font-weight:700;color:#fcd34d;margin-bottom:8px">Rate Limit (HTTP 429)</div>
+        <ul style="font-size:0.82rem;color:#94a3b8;list-style:none;display:flex;flex-direction:column;gap:4px">
+          <li>▸ Creates <code>/tmp/.rate_limit_{productId}</code></li>
+          <li>▸ Next pipeline run detects rate limit file</li>
+          <li>▸ Enters resume mode automatically</li>
+          <li>▸ Skips preprocessing + completed batches</li>
+        </ul>
+      </div>
+      <div class="card-sm">
+        <div style="font-weight:700;color:#a78bfa;margin-bottom:8px">Zod Validation Failure</div>
+        <ul style="font-size:0.82rem;color:#94a3b8;list-style:none;display:flex;flex-direction:column;gap:4px">
+          <li>▸ Up to 2 retries per batch</li>
+          <li>▸ Zod error message injected into retry prompt</li>
+          <li>▸ AI asked to correct its output format</li>
+          <li>▸ After 2 failures → passthrough safety net</li>
+        </ul>
+      </div>
+      <div class="card-sm">
+        <div style="font-weight:700;color:#67e8f9;margin-bottom:8px">Crash Recovery</div>
+        <ul style="font-size:0.82rem;color:#94a3b8;list-style:none;display:flex;flex-direction:column;gap:4px">
+          <li>▸ Intermediate DB save after each batch</li>
+          <li>▸ Resume mode skips completed batches</li>
+          <li>▸ Progress preserved across crashes</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>🧠 RAG System — ChromaDB Vector Store</h2>
+    <div class="grid2">
+      <div>
+        <div class="flow-row" style="flex-direction:column;align-items:flex-start;gap:8px">
+          <div class="flow-box purple" style="width:100%">Admin provides exclusion feedback</div>
+          <div style="color:var(--muted);padding-left:8px">↓ stored to</div>
+          <div class="flow-box purple" style="width:100%">UserFeedback table + user_exclusion_feedback.json</div>
+          <div style="color:var(--muted);padding-left:8px">↓ embedded into</div>
+          <div class="flow-box blue" style="width:100%">ChromaDB vector embeddings</div>
+          <div style="color:var(--muted);padding-left:8px">↓ queried by</div>
+          <div class="flow-box blue" style="width:100%">os/linux/query_rag.py (cwd: os/linux/)</div>
+          <div style="color:var(--muted);padding-left:8px">↓ injected as</div>
+          <div class="flow-box amber" style="width:100%">CRITICAL INSTRUCTION block in AI prompt</div>
+        </div>
+      </div>
+      <div>
+        <div class="code-block">
+<span class="cm"># query_rag.py invocation</span>
+<span class="cm"># Note: cwd is ALWAYS fixed to os/linux/</span>
+<span class="cm"># regardless of product being reviewed (교훈36)</span>
+python3 os/linux/query_rag.py \
+  --query <span class="str">"exclusion reason"</span> \
+  --product {productId} \
+  --n_results <span class="num">10</span>
+
+<span class="cm"># RAG strategy changed 2026-03-19:</span>
+<span class="cm"># Now applies to ALL products (not just Linux)</span>
+<span class="cm"># type 'both' = file-hiding + prompt-injection</span>
+        </div>
+        <div class="info-green info-box">The ChromaDB vector store is shared across all products. The cwd being fixed to <code>os/linux/</code> is by design — the RAG database lives there and is queried for all product types.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>🙈 File-Hiding Strategy — Bias Prevention</h2>
+    <div class="code-block">
+<span class="cm">// Before AI review (hide previous review files)</span>
+fs.<span class="fn">renameSync</span>(<span class="str">'normalized/'</span>, <span class="str">'normalized_hidden/'</span>);
+fs.<span class="fn">renameSync</span>(
+  <span class="str">`patches_for_llm_review_${vendor}.json`</span>,
+  <span class="str">`patches_for_llm_review_${vendor}.json.hidden`</span>
+);
+
+<span class="kw">try</span> {
+  <span class="cm">// Run AI review</span>
+  <span class="kw">await</span> <span class="fn">runAiReviewLoop</span>(...);
+} <span class="kw">finally</span> {
+  <span class="cm">// ALWAYS restore — even if AI throws exception</span>
+  fs.<span class="fn">renameSync</span>(<span class="str">'normalized_hidden/'</span>, <span class="str">'normalized/'</span>);
+  fs.<span class="fn">renameSync</span>(
+    <span class="str">`patches_for_llm_review_${vendor}.json.hidden`</span>,
+    <span class="str">`patches_for_llm_review_${vendor}.json`</span>
+  );
+}
+    </div>
+    <div class="info-amber info-box">Purpose: OpenClaw agent has file-reading tools. Without hiding, it could read the previous quarter's review files and be biased toward the same decisions. File-hiding forces fresh evaluation.</div>
+  </div>
+</div>
+
+<!-- ============================================================ TAB 5 ============================================================ -->
+<div id="t5" class="tab-content">
+  <div class="section-title">👤 Admin Review &amp; Feedback Loop</div>
+
+  <div class="card">
+    <h2>📋 Admin Review Workflow — Step by Step</h2>
+    <div class="circular-flow">
+      <div class="cf-step">
+        <div class="cf-num">1</div>
+        <div class="cf-content">
+          <div class="cf-title">Pipeline Runs</div>
+          <div class="cf-desc">Admin triggers pipeline from dashboard. BullMQ processes job. Real-time logs via SSE. Patches appear in ReviewedPatch table with AI-assigned criticality and decision.</div>
+        </div>
+      </div>
+      <div class="cf-connector"></div>
+      <div class="cf-step">
+        <div class="cf-num">2</div>
+        <div class="cf-content">
+          <div class="cf-title">Review Patches on Dashboard</div>
+          <div class="cf-desc">Admin views product detail page. Table with filters (by criticality, decision, component). Each patch shows: IssueID, Component, Version, Criticality, AI Decision, Korean Description, Reason.</div>
+        </div>
+      </div>
+      <div class="cf-connector"></div>
+      <div class="cf-step">
+        <div class="cf-num">3</div>
+        <div class="cf-content">
+          <div class="cf-title">Provide Exclusion Feedback</div>
+          <div class="cf-desc">Admin marks patches for exclusion patterns. Feedback text explains why similar patches should be excluded in future runs. Stored in UserFeedback table AND user_exclusion_feedback.json.</div>
+        </div>
+      </div>
+      <div class="cf-connector"></div>
+      <div class="cf-step">
+        <div class="cf-num">4</div>
+        <div class="cf-content">
+          <div class="cf-title">Feedback → ChromaDB</div>
+          <div class="cf-desc">user_exclusion_feedback.json is embedded into ChromaDB vector store. Future RAG queries retrieve semantically similar past exclusions. Circular feedback loop improves over time.</div>
+        </div>
+      </div>
+      <div class="cf-connector"></div>
+      <div class="cf-step">
+        <div class="cf-num">5</div>
+        <div class="cf-content">
+          <div class="cf-title">Finalize — Generate CSV</div>
+          <div class="cf-desc">Admin clicks Finalize. POST /api/pipeline/{product}/finalize generates final_approved_patches_{product}.csv. Non-Linux products use UTF-8 BOM (csvBOM=true) for Excel Korean text compatibility.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid2">
+    <div class="card">
+      <h2>🔄 Circular Feedback Loop</h2>
+      <div style="display:grid;grid-template-columns:1fr;gap:8px;padding:8px">
+        <div style="display:flex;gap:8px;align-items:center">
+          <div class="flow-box green" style="flex:1;text-align:center">Admin exclusion feedback</div>
+        </div>
+        <div style="text-align:center;color:var(--muted)">↓</div>
+        <div class="flow-box blue" style="text-align:center">UserFeedback DB + user_exclusion_feedback.json</div>
+        <div style="text-align:center;color:var(--muted)">↓</div>
+        <div class="flow-box purple" style="text-align:center">ChromaDB vector embeddings</div>
+        <div style="text-align:center;color:var(--muted)">↓</div>
+        <div class="flow-box purple" style="text-align:center">query_rag.py → RAG exclusion prompt</div>
+        <div style="text-align:center;color:var(--muted)">↓</div>
+        <div class="flow-box amber" style="text-align:center">AI review (smarter exclusions)</div>
+        <div style="text-align:center;color:var(--muted)">↓</div>
+        <div class="flow-box green" style="text-align:center">Filtered patches → admin review</div>
+        <div style="text-align:center;color:var(--muted)">↓ more feedback</div>
+        <div style="text-align:center;color:#60a5fa;font-weight:700">↺ Loop improves over time</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>📄 CSV Finalization</h2>
+      <div class="code-block">
+<span class="cm">// POST /api/pipeline/{product}/finalize</span>
+<span class="cm">// Generates: final_approved_patches_{product}.csv</span>
+
+<span class="cm">// CSV BOM handling for Korean Excel compatibility</span>
+<span class="kw">const</span> <span class="var">BOM</span> = <span class="str">'\uFEFF'</span>;  <span class="cm">// UTF-8 BOM</span>
+<span class="kw">const</span> <span class="var">csvContent</span> = product.csvBOM
+  ? BOM + csvData   <span class="cm">// non-Linux products</span>
+  : csvData;        <span class="cm">// Linux products (no BOM)</span>
+      </div>
+      <div class="info-green info-box" style="margin-top:12px">csvBOM=false: RHEL, Oracle Linux, Ubuntu (Linux products)<br>csvBOM=true: Windows, Ceph, MariaDB, SQL Server, PostgreSQL, vSphere</div>
+      <div style="margin-top:12px">
+        <div class="collapsible-header" onclick="toggleCollapsible(this)">
+          <span>getIncompleteProducts() — Quarterly Archive Check</span><span class="caret">▶</span>
+        </div>
+        <div class="collapsible-body">
+          <div class="code-block">
+<span class="cm">// Checks which products don't have finalCsvFile yet</span>
+<span class="cm">// Used to determine if all products are ready for quarterly archive</span>
+<span class="kw">function</span> <span class="fn">getIncompleteProducts</span>() {
+  <span class="kw">return</span> products.<span class="fn">filter</span>(p =>
+    !p.finalCsvFile || !fs.<span class="fn">existsSync</span>(p.finalCsvFile)
+  );
+}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>📦 Quarterly Archive</h2>
+    <div class="grid2">
+      <div>
+        <div class="info-blue info-box">Archive triggered automatically on 1st day of each quarter via cron OR manually from dashboard.</div>
+        <div style="margin-top:12px;font-size:0.85rem;color:#94a3b8">
+          <div style="font-weight:600;color:#e2e8f0;margin-bottom:8px">Archive Location:</div>
+          <code style="color:#67e8f9">~/.openclaw/workspace/skills/patch-review/quarterly-archive/{Q1-2026}/</code>
+          <div style="margin-top:12px;font-weight:600;color:#e2e8f0;margin-bottom:8px">Archive Files:</div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap">
+            <span class="chip chip-blue">metadata.json</span>
+            <span class="chip chip-green">patches.json (full ReviewedPatch snapshot)</span>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="collapsible-header" onclick="toggleCollapsible(this)">
+          <span>Archive .gitignore Caveat (교훈22)</span><span class="caret">▶</span>
+        </div>
+        <div class="collapsible-body">
+          <div class="info-amber info-box">Important: <code>**/archive</code> in .gitignore can conflict with <code>src/app/api/archive</code> route directory. Must use specific paths to avoid accidentally gitignoring the API route.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ TAB 6 ============================================================ -->
+<div id="t6" class="tab-content">
+  <div class="section-title">🗄️ Database &amp; Architecture</div>
+
+  <div class="card">
+    <h2>📊 Prisma Schema — 5 Models</h2>
+    <div style="display:flex;flex-direction:column;gap:16px">
+
+      <div class="collapsible-header" onclick="toggleCollapsible(this)" style="border-color:#06b6d4">
+        <span style="color:#67e8f9">Model: RawPatch — Cached raw JSON from collectors</span><span class="caret">▶</span>
+      </div>
+      <div class="collapsible-body">
+        <div class="code-block">
+model RawPatch {
+  id         Int      @id @default(autoincrement())
+  productId  String
+  issueId    String
+  rawJson    String   <span class="cm">// full raw JSON from collector</span>
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+  @@unique([productId, issueId])
+}
+        </div>
+      </div>
+
+      <div class="collapsible-header" onclick="toggleCollapsible(this)" style="border-color:#3b82f6">
+        <span style="color:#93c5fd">Model: PreprocessedPatch — Python-normalized patches</span><span class="caret">▶</span>
+      </div>
+      <div class="collapsible-body">
+        <div class="code-block">
+model PreprocessedPatch {
+  id           Int      @id @default(autoincrement())
+  productId    String
+  issueId      String
+  component    String
+  version      String
+  vendor       String
+  date         String
+  description  String
+  osVersion    String?  <span class="cm">// passthrough field</span>
+  rawData      String   <span class="cm">// normalized JSON for LLM</span>
+  createdAt    DateTime @default(now())
+  @@unique([productId, issueId])
+}
+        </div>
+      </div>
+
+      <div class="collapsible-header" onclick="toggleCollapsible(this)" style="border-color:#10b981">
+        <span style="color:#6ee7b7">Model: ReviewedPatch — AI+Admin final approved patches</span><span class="caret">▶</span>
+      </div>
+      <div class="collapsible-body">
+        <div class="code-block">
+model ReviewedPatch {
+  id                Int      @id @default(autoincrement())
+  productId         String
+  issueId           String   @unique  <span class="cm">// deduplication key</span>
+  component         String
+  version           String
+  vendor            String
+  date              String
+  criticality       String   <span class="cm">// Important|Critical|Moderate|Low</span>
+  description       String
+  koreanDescription String
+  decision          String   <span class="cm">// Include|Exclude|Pending</span>
+  reason            String
+  osVersion         String?
+  finalCsvFile      String?  <span class="cm">// path to exported CSV</span>
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+}
+        </div>
+        <div class="info-amber info-box">issueId is @unique — ensures no duplicate patch IDs. Filters at ingest: Exclude + moderate/medium/low criticality patches are NOT stored here.</div>
+      </div>
+
+      <div class="collapsible-header" onclick="toggleCollapsible(this)" style="border-color:#8b5cf6">
+        <span style="color:#c4b5fd">Model: UserFeedback — Admin exclusion feedback (RAG source)</span><span class="caret">▶</span>
+      </div>
+      <div class="collapsible-body">
+        <div class="code-block">
+model UserFeedback {
+  id          Int      @id @default(autoincrement())
+  productId   String
+  issueId     String
+  feedbackType String  <span class="cm">// 'exclude' | 'include'</span>
+  reason      String   <span class="cm">// admin's explanation — used for RAG</span>
+  createdAt   DateTime @default(now())
+}
+<span class="cm">// Also written to: user_exclusion_feedback.json (for ChromaDB)</span>
+        </div>
+      </div>
+
+      <div class="collapsible-header" onclick="toggleCollapsible(this)" style="border-color:#f59e0b">
+        <span style="color:#fcd34d">Model: PipelineRun — Pipeline execution metadata/audit</span><span class="caret">▶</span>
+      </div>
+      <div class="collapsible-body">
+        <div class="code-block">
+model PipelineRun {
+  id          Int      @id @default(autoincrement())
+  productId   String
+  jobId       String
+  status      String   <span class="cm">// running|completed|failed</span>
+  isRetry     Boolean  @default(false)
+  isAiOnly    Boolean  @default(false)
+  startedAt   DateTime @default(now())
+  completedAt DateTime?
+  errorMsg    String?
+}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid2">
+    <div class="card">
+      <h2>⚡ SQLite WAL Mode</h2>
+      <div class="code-block">
+<span class="cm">// Prisma singleton (prevents HMR duplicates)</span>
+<span class="kw">const</span> <span class="var">globalWithPrisma</span> = global <span class="kw">as typeof</span> global & {
+  prisma: PrismaClient | undefined
+};
+<span class="kw">export const</span> <span class="var">prisma</span> =
+  globalWithPrisma.prisma ?? <span class="kw">new</span> <span class="fn">PrismaClient</span>();
+<span class="kw">if</span> (process.env.NODE_ENV !== <span class="str">'production'</span>)
+  globalWithPrisma.prisma = prisma;
+
+<span class="cm">// WAL mode enables dashboard reads during pipeline writes</span>
+<span class="cm">// PRAGMA journal_mode=WAL;</span>
+      </div>
+      <div class="info-green info-box">WAL (Write-Ahead Log) mode allows concurrent reads during pipeline execution. Without WAL, SQLite would lock the database during AI review writes, blocking the dashboard.</div>
+    </div>
+
+    <div class="card">
+      <h2>🏛️ Product Registry Architecture</h2>
+      <div class="code-block">
+<span class="cm">// products-registry.ts — central product config</span>
+<span class="kw">interface</span> <span class="var">ProductConfig</span> {
+  id: string;
+  name: string;
+  category: <span class="str">'os'</span> | <span class="str">'database'</span> | <span class="str">'storage'</span> | <span class="str">'virtualization'</span>;
+  ragStrategy: <span class="str">'prompt-injection'</span> | <span class="str">'both'</span>;
+  passthrough: { enabled: boolean };
+  csvBOM: boolean;
+  aiBatchSize: number;
+  skillDirRelative: string;
+  preprocessScript: string;
+  vendor: string;
+}
+<span class="cm">// 9 active products registered here</span>
+<span class="cm">// validate-registry.js validates all configs + SKILL.md files</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>🛤️ API Routes — Complete List (28+)</h2>
+    <div style="column-count:1">
+      <div style="font-weight:600;color:#94a3b8;font-size:0.8rem;margin-bottom:8px;letter-spacing:1px">PIPELINE ROUTES</div>
+      <div class="route-item"><span class="route-method method-post">POST</span><span class="route-path">/api/pipeline/{product}/run</span><span class="route-desc">Dispatch pipeline job to BullMQ</span></div>
+      <div class="route-item"><span class="route-method method-get">GET</span><span class="route-path">/api/pipeline/stream?jobId=...</span><span class="route-desc">SSE real-time log streaming</span></div>
+      <div class="route-item"><span class="route-method method-get">GET</span><span class="route-path">/api/pipeline/{product}/status</span><span class="route-desc">Current pipeline run status</span></div>
+      <div class="route-item"><span class="route-method method-post">POST</span><span class="route-path">/api/pipeline/{product}/finalize</span><span class="route-desc">Generate final_approved_patches_{product}.csv</span></div>
+      <div class="route-item"><span class="route-method method-post">POST</span><span class="route-path">/api/pipeline/{product}/retry</span><span class="route-desc">Retry failed pipeline with isRetry=true</span></div>
+
+      <div style="font-weight:600;color:#94a3b8;font-size:0.8rem;margin:16px 0 8px;letter-spacing:1px">PATCH DATA ROUTES</div>
+      <div class="route-item"><span class="route-method method-get">GET</span><span class="route-path">/api/patches/{product}</span><span class="route-desc">Get all ReviewedPatch records for product</span></div>
+      <div class="route-item"><span class="route-method method-get">GET</span><span class="route-path">/api/patches/{product}/{issueId}</span><span class="route-desc">Get single patch detail</span></div>
+      <div class="route-item"><span class="route-method method-post">POST</span><span class="route-path">/api/patches/{product}/{issueId}/decision</span><span class="route-desc">Admin updates patch decision</span></div>
+      <div class="route-item"><span class="route-method method-delete">DEL</span><span class="route-path">/api/patches/{product}</span><span class="route-desc">Clear all patches for product</span></div>
+
+      <div style="font-weight:600;color:#94a3b8;font-size:0.8rem;margin:16px 0 8px;letter-spacing:1px">FEEDBACK ROUTES</div>
+      <div class="route-item"><span class="route-method method-post">POST</span><span class="route-path">/api/feedback/{product}</span><span class="route-desc">Submit admin exclusion feedback</span></div>
+      <div class="route-item"><span class="route-method method-get">GET</span><span class="route-path">/api/feedback/{product}</span><span class="route-desc">Get feedback history for product</span></div>
+      <div class="route-item"><span class="route-method method-delete">DEL</span><span class="route-path">/api/feedback/{product}/{id}</span><span class="route-desc">Delete a feedback entry</span></div>
+
+      <div style="font-weight:600;color:#94a3b8;font-size:0.8rem;margin:16px 0 8px;letter-spacing:1px">ARCHIVE ROUTES</div>
+      <div class="route-item"><span class="route-method method-post">POST</span><span class="route-path">/api/archive/quarterly/cron</span><span class="route-desc">Triggered by cron on quarter start</span></div>
+      <div class="route-item"><span class="route-method method-post">POST</span><span class="route-path">/api/archive/quarterly</span><span class="route-desc">Manual quarterly archive trigger</span></div>
+      <div class="route-item"><span class="route-method method-get">GET</span><span class="route-path">/api/archive/quarterly</span><span class="route-desc">List available quarterly archives</span></div>
+      <div class="route-item"><span class="route-method method-get">GET</span><span class="route-path">/api/archive/quarterly/{quarter}</span><span class="route-desc">Get specific quarter archive data</span></div>
+
+      <div style="font-weight:600;color:#94a3b8;font-size:0.8rem;margin:16px 0 8px;letter-spacing:1px">DASHBOARD ROUTES</div>
+      <div class="route-item"><span class="route-method method-get">GET</span><span class="route-path">/api/dashboard/stats</span><span class="route-desc">Aggregate stats for all products</span></div>
+      <div class="route-item"><span class="route-method method-get">GET</span><span class="route-path">/api/dashboard/products</span><span class="route-desc">Product registry with status</span></div>
+      <div class="route-item"><span class="route-method method-get">GET</span><span class="route-path">/api/products</span><span class="route-desc">All registered products list</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ TAB 7 ============================================================ -->
+<div id="t7" class="tab-content">
+  <div class="section-title">📦 Product Registry — All 9 Products</div>
+
+  <div class="card">
+    <h2>🖥️ OS Category (4 products)</h2>
+    <div class="grid2">
+      <div class="product-card">
+        <div class="prod-name">Red Hat Enterprise Linux</div>
+        <div class="prod-id">id: redhat</div>
+        <div class="prod-tags">
+          <span class="rag-pi">prompt-injection</span>
+          <span class="chip chip-green">passthrough: yes</span>
+          <span class="chip chip-cyan">csvBOM: no</span>
+          <span class="chip chip-blue">aiBatchSize: 5</span>
+        </div>
+        <div style="font-size:0.8rem;color:#94a3b8;margin-top:10px">
+          Vendor: Red Hat | 180-day collection | Kernel exception: 0-180 day review | No BOM (Linux UTF-8 native)
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="prod-name">Oracle Linux</div>
+        <div class="prod-id">id: oracle</div>
+        <div class="prod-tags">
+          <span class="rag-pi">prompt-injection</span>
+          <span class="chip chip-green">passthrough: yes</span>
+          <span class="chip chip-cyan">csvBOM: no</span>
+          <span class="chip chip-blue">aiBatchSize: 5</span>
+        </div>
+        <div style="font-size:0.8rem;color:#94a3b8;margin-top:10px">
+          Vendor: Oracle | Same Linux 90-180 day window policy as RHEL
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="prod-name">Ubuntu Linux</div>
+        <div class="prod-id">id: ubuntu</div>
+        <div class="prod-tags">
+          <span class="rag-pi">prompt-injection</span>
+          <span class="chip chip-green">passthrough: yes</span>
+          <span class="chip chip-cyan">csvBOM: no</span>
+          <span class="chip chip-blue">aiBatchSize: 5</span>
+        </div>
+        <div style="font-size:0.8rem;color:#94a3b8;margin-top:10px">
+          Vendor: Canonical | Ubuntu Security Notices (USN)
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="prod-name">Windows Server</div>
+        <div class="prod-id">id: windows</div>
+        <div class="prod-tags">
+          <span class="rag-both">both (file-hiding + PI)</span>
+          <span class="chip chip-red">passthrough: no</span>
+          <span class="chip chip-amber">csvBOM: yes</span>
+          <span class="chip chip-purple">aiBatchSize: 15</span>
+        </div>
+        <div style="font-size:0.8rem;color:#94a3b8;margin-top:10px">
+          Vendor: Microsoft | --days_end 90 | All 12 patches in 1 batch for cross-version comparison | Version-group approach (no passthrough)
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>🗄️ Database Category (3 products)</h2>
+    <div class="grid3">
+      <div class="product-card">
+        <div class="prod-name">MariaDB</div>
+        <div class="prod-id">id: mariadb</div>
+        <div class="prod-tags">
+          <span class="rag-both">both</span>
+          <span class="chip chip-green">passthrough: yes</span>
+          <span class="chip chip-amber">csvBOM: yes</span>
+          <span class="chip chip-blue">aiBatchSize: 5</span>
+        </div>
+        <div style="font-size:0.8rem;color:#94a3b8;margin-top:8px">MariaDB Security advisories. Collected via run_collectors_cron.sh at 08:00.</div>
+      </div>
+      <div class="product-card">
+        <div class="prod-name">SQL Server</div>
+        <div class="prod-id">id: sqlserver</div>
+        <div class="prod-tags">
+          <span class="rag-both">both</span>
+          <span class="chip chip-red">passthrough: no</span>
+          <span class="chip chip-amber">csvBOM: yes</span>
+          <span class="chip chip-blue">aiBatchSize: 5</span>
+        </div>
+        <div style="font-size:0.8rem;color:#94a3b8;margin-top:8px">Microsoft SQL Server. Collector runs at 02:00. File prefix: no special prefix. Version-group approach.</div>
+      </div>
+      <div class="product-card">
+        <div class="prod-name">PostgreSQL</div>
+        <div class="prod-id">id: pgsql</div>
+        <div class="prod-tags">
+          <span class="rag-both">both</span>
+          <span class="chip chip-green">passthrough: yes</span>
+          <span class="chip chip-amber">csvBOM: yes</span>
+          <span class="chip chip-blue">aiBatchSize: 5</span>
+        </div>
+        <div style="font-size:0.8rem;color:#94a3b8;margin-top:8px">PostgreSQL security advisories. Raw data file prefix: <code>PGSL-</code> (교훈 pgsql convention). Collector at 05:00.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid2">
+    <div class="card">
+      <h2>💾 Storage Category (1 product)</h2>
+      <div class="product-card">
+        <div class="prod-name">Ceph</div>
+        <div class="prod-id">id: ceph</div>
+        <div class="prod-tags">
+          <span class="rag-both">both (file-hiding + PI)</span>
+          <span class="chip chip-green">passthrough: yes</span>
+          <span class="chip chip-amber">csvBOM: yes</span>
+          <span class="chip chip-blue">aiBatchSize: 5</span>
+        </div>
+        <div style="font-size:0.8rem;color:#94a3b8;margin-top:10px">
+          Ceph storage security advisories. Collected via run_collectors_cron.sh at 10:00 (last in collection window). csvBOM=true for Korean Excel output.
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>⚡ Virtualization Category (1 product)</h2>
+      <div class="product-card">
+        <div class="prod-name">VMware vSphere</div>
+        <div class="prod-id">id: vsphere</div>
+        <div class="prod-tags">
+          <span class="rag-pi">prompt-injection</span>
+          <span class="chip chip-green">passthrough: yes</span>
+          <span class="chip chip-amber">csvBOM: yes</span>
+          <span class="chip chip-blue">aiBatchSize: 5</span>
+        </div>
+        <div style="font-size:0.8rem;color:#94a3b8;margin-top:10px">
+          VMware Security Advisories (VMSA). Collector at 04:00. Special: uses individual <code>create()</code> instead of <code>createMany()</code> for DB ingest due to vSphere data format differences.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>📊 Product Comparison Table</h2>
+    <div style="overflow-x:auto">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Product Name</th>
+            <th>Category</th>
+            <th>RAG Strategy</th>
+            <th>Passthrough</th>
+            <th>csvBOM</th>
+            <th>aiBatchSize</th>
+            <th>Collector Time</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>redhat</code></td>
+            <td>Red Hat Enterprise Linux</td>
+            <td><span class="chip chip-blue">OS</span></td>
+            <td><span class="rag-pi">prompt-injection</span></td>
+            <td><span class="chip chip-green">yes</span></td>
+            <td><span class="chip chip-cyan">no</span></td>
+            <td>5</td>
+            <td>06:00</td>
+          </tr>
+          <tr>
+            <td><code>oracle</code></td>
+            <td>Oracle Linux</td>
+            <td><span class="chip chip-blue">OS</span></td>
+            <td><span class="rag-pi">prompt-injection</span></td>
+            <td><span class="chip chip-green">yes</span></td>
+            <td><span class="chip chip-cyan">no</span></td>
+            <td>5</td>
+            <td>06:00</td>
+          </tr>
+          <tr>
+            <td><code>ubuntu</code></td>
+            <td>Ubuntu Linux</td>
+            <td><span class="chip chip-blue">OS</span></td>
+            <td><span class="rag-pi">prompt-injection</span></td>
+            <td><span class="chip chip-green">yes</span></td>
+            <td><span class="chip chip-cyan">no</span></td>
+            <td>5</td>
+            <td>06:00</td>
+          </tr>
+          <tr>
+            <td><code>windows</code></td>
+            <td>Windows Server</td>
+            <td><span class="chip chip-blue">OS</span></td>
+            <td><span class="rag-both">both</span></td>
+            <td><span class="chip chip-red">no</span></td>
+            <td><span class="chip chip-amber">yes</span></td>
+            <td>15</td>
+            <td>03:00</td>
+          </tr>
+          <tr>
+            <td><code>mariadb</code></td>
+            <td>MariaDB</td>
+            <td><span class="chip chip-green">DB</span></td>
+            <td><span class="rag-both">both</span></td>
+            <td><span class="chip chip-green">yes</span></td>
+            <td><span class="chip chip-amber">yes</span></td>
+            <td>5</td>
+            <td>08:00</td>
+          </tr>
+          <tr>
+            <td><code>sqlserver</code></td>
+            <td>SQL Server</td>
+            <td><span class="chip chip-green">DB</span></td>
+            <td><span class="rag-both">both</span></td>
+            <td><span class="chip chip-red">no</span></td>
+            <td><span class="chip chip-amber">yes</span></td>
+            <td>5</td>
+            <td>02:00</td>
+          </tr>
+          <tr>
+            <td><code>pgsql</code></td>
+            <td>PostgreSQL</td>
+            <td><span class="chip chip-green">DB</span></td>
+            <td><span class="rag-both">both</span></td>
+            <td><span class="chip chip-green">yes</span></td>
+            <td><span class="chip chip-amber">yes</span></td>
+            <td>5</td>
+            <td>05:00</td>
+          </tr>
+          <tr>
+            <td><code>ceph</code></td>
+            <td>Ceph</td>
+            <td><span class="chip chip-amber">Storage</span></td>
+            <td><span class="rag-both">both</span></td>
+            <td><span class="chip chip-green">yes</span></td>
+            <td><span class="chip chip-amber">yes</span></td>
+            <td>5</td>
+            <td>10:00</td>
+          </tr>
+          <tr>
+            <td><code>vsphere</code></td>
+            <td>VMware vSphere</td>
+            <td><span class="chip chip-purple">Virt</span></td>
+            <td><span class="rag-pi">prompt-injection</span></td>
+            <td><span class="chip chip-green">yes</span></td>
+            <td><span class="chip chip-amber">yes</span></td>
+            <td>5</td>
+            <td>04:00</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>🔑 Key Lessons &amp; Conventions</h2>
+    <div class="grid2">
+      <div class="card-sm">
+        <div style="font-weight:600;color:#fcd34d;margin-bottom:8px">File Naming Conventions</div>
+        <ul style="font-size:0.82rem;color:#94a3b8;list-style:none;display:flex;flex-direction:column;gap:4px">
+          <li>▸ pgsql raw file prefix: <code>PGSL-</code></li>
+          <li>▸ Preprocessing output: <code>patches_for_llm_review_{vendor}.json</code></li>
+          <li>▸ Final CSV: <code>final_approved_patches_{product}.csv</code></li>
+          <li>▸ Hidden files: <code>*.json.hidden</code>, <code>normalized_hidden/</code></li>
+          <li>▸ Rate limit flag: <code>/tmp/.rate_limit_{productId}</code></li>
+          <li>▸ Mutex lock: <code>/tmp/openclaw_execution.lock</code></li>
+        </ul>
+      </div>
+      <div class="card-sm">
+        <div style="font-weight:600;color:#67e8f9;margin-bottom:8px">Critical Lessons (from Memory)</div>
+        <ul style="font-size:0.82rem;color:#94a3b8;list-style:none;display:flex;flex-direction:column;gap:4px">
+          <li>▸ sessions.json MUST be deleted before each batch (교훈17)</li>
+          <li>▸ gateway closed → no immediate reject (교훈16)</li>
+          <li>▸ preprocessedPatchMapper fields must match JSON (교훈21)</li>
+          <li>▸ SKILL.md must be 100+ lines (교훈15)</li>
+          <li>▸ faq field removed from schema (교훈14)</li>
+          <li>▸ rebase conflict markers must be fully removed (교훈27)</li>
+          <li>▸ spec rawDataFilePrefix must match real files (교훈30)</li>
+          <li>▸ RAG type 'both' for Windows/Ceph/MariaDB/PGSQL/SQLServer (교훈36)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div style="text-align:center;padding:32px;color:var(--muted);font-size:0.8rem;border-top:1px solid var(--border);margin-top:32px">
+  Patch Review Dashboard v2 — Architecture Reference | Generated 2026-03-19 | Port 3001 | /home/citec/patch-review-dashboard-v2/
+</div>
+
+<script>
+function showTab(id, btn) {
+  document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  btn.classList.add('active');
+}
+
+function toggleStage(id) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  const isOpen = el.classList.contains('open');
+  // Close all
+  document.querySelectorAll('.stage-detail').forEach(d => d.classList.remove('open'));
+  if (!isOpen) el.classList.add('open');
+}
+
+function toggleCollapsible(header) {
+  const body = header.nextElementSibling;
+  const caret = header.querySelector('.caret');
+  const isOpen = body.classList.contains('open');
+  body.classList.toggle('open', !isOpen);
+  if (caret) caret.classList.toggle('open', !isOpen);
+}
+</script>
+</body>
+</html>
