@@ -314,7 +314,7 @@ export function ProductDetailClient({ categoryId, productId, dict }: { categoryI
 
                                                 {(patch.url || patch.ref_url) && (
                                                     <div className="mt-2 pt-2 border-t border-white/5">
-                                                        <p className="text-xs text-white/40 uppercase tracking-wider mb-1">URL</p>
+                                                        <p className="text-xs text-white/40 uppercase tracking-wider mb-1">{dict?.dashboard?.productDetail?.urlLabel || "URL"}</p>
                                                         <a href={patch.url || patch.ref_url} target="_blank" rel="noreferrer" className="text-sm text-blue-400 hover:text-blue-300 transition-colors break-all">
                                                             {patch.url || patch.ref_url}
                                                         </a>
@@ -427,7 +427,7 @@ export function ProductDetailClient({ categoryId, productId, dict }: { categoryI
                                                         {(patch.osVersion || patch.OsVersion) && (
                                                             <div>
                                                                 <p className="text-xs text-white/40 uppercase tracking-wider mb-1">{dict.dashboard.productDetail.osVersionLabel}</p>
-                                                                <p className="text-sm font-light text-blue-100 font-medium">{patch.osVersion || patch.OsVersion || 'Unknown'}</p>
+                                                                <p className="text-sm font-light text-blue-100 font-medium">{patch.osVersion || patch.OsVersion || dict?.dashboard?.productDetail?.unknown || 'Unknown'}</p>
                                                             </div>
                                                         )}
                                                         <div>
@@ -449,14 +449,14 @@ export function ProductDetailClient({ categoryId, productId, dict }: { categoryI
                                                             </div>
                                                         )}
                                                         <div>
-                                                            <p className="text-xs text-white/40 uppercase tracking-wider mb-1">URL</p>
+                                                            <p className="text-xs text-white/40 uppercase tracking-wider mb-1">{dict?.dashboard?.productDetail?.urlLabel || "URL"}</p>
                                                             {patch.Url || patch.url || patch.ref_url ? (
                                                                 <a href={patch.Url || patch.url || patch.ref_url} target="_blank" rel="noopener noreferrer" className="text-sm font-light text-blue-400 hover:text-blue-300 hover:underline flex items-center gap-1 group">
-                                                                    View Advisory
+                                                                    {dict?.dashboard?.productDetail?.viewAdvisory || "View Advisory"}
                                                                     <svg className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
                                                                 </a>
                                                             ) : (
-                                                                <p className="text-sm font-light text-white/50">N/A</p>
+                                                                <p className="text-sm font-light text-white/50">{dict?.dashboard?.productDetail?.notAvailable || "N/A"}</p>
                                                             )}
                                                         </div>
                                                     </div>
@@ -526,7 +526,7 @@ export function ProductDetailClient({ categoryId, productId, dict }: { categoryI
                                                         .then(d => { if (d.triggered) console.log(`[Auto-Archive] Created: ${d.quarter} (${d.totalPatches} patches)`); })
                                                         .catch(e => console.warn('[Auto-Archive] check failed:', e));
                                                 } else {
-                                                    alert("Failed to finalize. See console.");
+                                                    alert(dict?.dashboard?.productDetail?.finalizeFailed || "Failed to finalize. See console.");
                                                     console.error(await res.text());
                                                 }
                                             } catch (e) {

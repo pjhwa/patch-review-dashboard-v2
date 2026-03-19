@@ -37,7 +37,7 @@ export function ProductGrid({ categoryId, products, dict }: { categoryId: string
                 const data = await res.json();
                 if (data.hasActiveJob && data.jobId) {
                     setIsRunning(true);
-                    setResultMsg(`Pipeline active (Progress: ${data.progress || 0}%)`);
+                    setResultMsg((dict?.dashboard?.productGrid?.pipelineActiveMsg || "Pipeline active (Progress: {progress}%)").replace('{progress}', String(data.progress || 0)));
                     connectToStream(data.jobId);
                 }
             } catch (e) {
@@ -72,8 +72,11 @@ export function ProductGrid({ categoryId, products, dict }: { categoryId: string
                         CEPH: 'Ceph', MARIADB: 'MariaDB', WINDOWS: 'Windows Server',
                         SQLSERVER: 'SQL Server', VSPHERE: 'VMware vSphere', PGSQL: 'PostgreSQL',
                     };
-                    const label = (tagName && productLabel[tagName]) ? productLabel[tagName] : '전처리';
-                    setResultMsg(cnt ? `✅ ${label} 전처리 완료 (${cnt}개 패치). AI 리뷰 진행 중...` : `✅ ${label} 전처리 완료. AI 리뷰 진행 중...`);
+                    const label = (tagName && productLabel[tagName]) ? productLabel[tagName] : (dict?.dashboard?.productGrid?.preprocessLabel || 'Preprocessing');
+                    const doneMsg = cnt
+                        ? (dict?.dashboard?.productGrid?.preprocessDoneWithCount || "✅ {label} Preprocessing Complete ({count} patches). AI Review in progress...").replace('{label}', label).replace('{count}', cnt)
+                        : (dict?.dashboard?.productGrid?.preprocessDone || "✅ {label} Preprocessing Complete. AI Review in progress...").replace('{label}', label);
+                    setResultMsg(doneMsg);
                     router.refresh();
                 } else if (streamData.log.includes('[RESUME]')) {
                     setResultMsg(`🔁 ${streamData.log.replace(/\[\w+-RESUME\]|\[RESUME\]/, '').trim()}`);
@@ -85,7 +88,7 @@ export function ProductGrid({ categoryId, products, dict }: { categoryId: string
                 } else if (streamData.log.includes('[AI Analysis]') || streamData.log.includes('[SKIP]')) {
                     setResultMsg(`🤖 ${streamData.log}`);
                 } else if (streamData.log.includes('All tasks completed successfully')) {
-                    setResultMsg('✅ 파이프라인 전체 완료!');
+                    setResultMsg(dict?.dashboard?.productGrid?.pipelineAllDone || '✅ All Pipeline Tasks Complete!');
                 }
                 setLogTail(prev => {
                     const newLogs = prev.split('\n');
@@ -96,7 +99,7 @@ export function ProductGrid({ categoryId, products, dict }: { categoryId: string
             }
 
             if (streamData.status === 'completed') {
-                setResultMsg("Pipeline successfully finished!");
+                setResultMsg(dict?.dashboard?.productGrid?.pipelineFinished || "Pipeline successfully finished!");
                 setIsRunning(false);
                 setIsQueueing(false);
                 source.close();
@@ -104,7 +107,7 @@ export function ProductGrid({ categoryId, products, dict }: { categoryId: string
                 router.refresh();
             } else if (streamData.status === 'failed' || streamData.status === 'error') {
                 const errMsg = streamData.message || streamData.log || "Unknown error";
-                setResultMsg(`❌ Pipeline Failed: ${errMsg}`);
+                setResultMsg(`${dict?.dashboard?.productGrid?.pipelineFailed || "❌ Pipeline Failed: "}${errMsg}`);
                 if (streamData.message) setLogTail(prev => prev + "\n" + streamData.message);
                 setIsRunning(false);
                 setIsQueueing(false);
@@ -115,9 +118,9 @@ export function ProductGrid({ categoryId, products, dict }: { categoryId: string
                     setResultMsg(streamData.message);
                 } else if (!streamData.log) {
                     if (streamData.status === 'active') {
-                        setResultMsg(`Pipeline active (Progress: ${streamData.progress || 0}%)`);
+                        setResultMsg((dict?.dashboard?.productGrid?.pipelineActiveMsg || "Pipeline active (Progress: {progress}%)").replace('{progress}', String(streamData.progress || 0)));
                     } else if (streamData.status === 'waiting') {
-                        setResultMsg(`Job queued... Waiting for worker...`);
+                        setResultMsg(dict?.dashboard?.productGrid?.jobQueued || "Job queued... Waiting for worker...");
                     }
                 }
             }
@@ -125,7 +128,7 @@ export function ProductGrid({ categoryId, products, dict }: { categoryId: string
 
         source.onerror = (error) => {
             console.error("SSE Error:", error);
-            setResultMsg("Lost connection to pipeline stream.");
+            setResultMsg(dict?.dashboard?.productGrid?.connectionLost || "Lost connection to pipeline stream.");
             setIsRunning(false);
             setIsQueueing(false);
             source.close();
@@ -176,7 +179,7 @@ export function ProductGrid({ categoryId, products, dict }: { categoryId: string
 
             const data = await res.json();
             if (!res.ok || !data.jobId) {
-                setResultMsg(data.error || "Execution failed to queue.");
+                setResultMsg(data.error || dict?.dashboard?.productGrid?.executionFailed || "Execution failed to queue.");
                 setIsRunning(false);
                 return;
             }
@@ -184,7 +187,7 @@ export function ProductGrid({ categoryId, products, dict }: { categoryId: string
             connectToStream(data.jobId);
 
         } catch (error) {
-            setResultMsg("Failed to connect to execution queue.");
+            setResultMsg(dict?.dashboard?.productGrid?.connectionFailed || "Failed to connect to execution queue.");
             setIsRunning(false);
             setIsQueueing(false);
         }
@@ -208,11 +211,11 @@ export function ProductGrid({ categoryId, products, dict }: { categoryId: string
                 a.click();
                 window.URL.revokeObjectURL(url);
             } else {
-                alert("No finalized CSV available to download yet. Please ensure the review is marked as complete.");
+                alert(dict?.dashboard?.productGrid?.noCSVAvailable || "No finalized CSV available to download yet. Please ensure the review is marked as complete.");
             }
         } catch (e) {
             console.error("Failed to download CSV", e);
-            alert("Error downloading CSV.");
+            alert(dict?.dashboard?.productGrid?.csvDownloadError || "Error downloading CSV.");
         } finally {
             setIsDownloading(false);
         }
@@ -285,19 +288,19 @@ export function ProductGrid({ categoryId, products, dict }: { categoryId: string
                         <div className="text-sm text-white/60 space-y-4 mb-6">
                             {!confirmDialog.isRetry && !confirmDialog.isAiOnly && lastCompletedAt && (
                                 <div className="p-3 bg-red-500/10 border border-red-500/20 rounded text-red-400">
-                                    <strong className="block mb-1">{dict?.dashboard?.productGrid?.recentExecutionDetected || "최근 실행 기록이 존재합니다."}</strong>
-                                    마지막 실행 시간: {new Date(lastCompletedAt).toLocaleString()}. 새로 실행하면 현재의 진행 상태(Preprocessed, AI Reviewed 카운트)가 `0`으로 초기화됩니다.
+                                    <strong className="block mb-1">{dict?.dashboard?.productGrid?.recentExecutionDetected || "Recent Execution Detected!"}</strong>
+                                    {(dict?.dashboard?.productGrid?.recentExecutionWarning || "Last run time: {time}. Running again will reset the current pipeline progress (Preprocessed, AI Reviewed counts) to 0.").replace('{time}', new Date(lastCompletedAt).toLocaleString())}
                                 </div>
                             )}
 
                             {confirmDialog.isAiOnly ? (
-                                <p>이미 전처리된 패치 목록을 바탕으로 AI 리뷰만 단독으로 재수행합니다.</p>
+                                <p>{dict?.dashboard?.productGrid?.aiOnlyDesc || "Runs only the LLM Impact Analysis using existing preprocessed patches."}</p>
                             ) : (!confirmDialog.isRetry ? (
-                                <p>데이터 수집(Data Collection)은 이제 백그라운드 리눅스 Cron 작업으로 별도 수행됩니다.<br />파이프라인을 실행하면 **수집되어 있는 파일들을 바탕으로 전처리 작업부터 AI 리뷰까지 새로 진행**합니다.</p>
+                                <p>{dict?.dashboard?.productGrid?.freshStartDesc || "Running the pipeline will perform preprocessing and AI review from scratch based on currently collected files."}</p>
                             ) : (
-                                <p>과거 실패했던 파이프라인 단계를 다시 재시도합니다.</p>
+                                <p>{dict?.dashboard?.productGrid?.retryDesc || "Retries the previously failed pipeline stages."}</p>
                             ))}
-                            <p className="font-medium text-white/80">정말로 파이프라인 진행을 시작하시겠습니까?</p>
+                            <p className="font-medium text-white/80">{dict?.dashboard?.productGrid?.proceedAsk || "Do you wish to proceed?"}</p>
                         </div>
 
                         <div className="flex justify-end gap-3">
@@ -313,7 +316,7 @@ export function ProductGrid({ categoryId, products, dict }: { categoryId: string
                                 disabled={isQueueing}
                                 className="px-4 py-2 rounded bg-emerald-500/20 text-emerald-400 hover:bg-emerald-500/30 border border-emerald-500/30 transition-colors text-sm font-medium disabled:opacity-50"
                             >
-                                {isQueueing ? "Queueing..." : confirmDialog.isAiOnly ? (dict?.dashboard?.productGrid?.yesAiOnlyBtn || "Yes, AI Only") : (confirmDialog.isRetry ? (dict?.dashboard?.productGrid?.yesRetryBtn || "Retry") : (dict?.dashboard?.productGrid?.yesStartFreshBtn || "Yes, Queue Job"))}
+                                {isQueueing ? (dict?.dashboard?.productGrid?.queueing || "Queueing...") : confirmDialog.isAiOnly ? (dict?.dashboard?.productGrid?.yesAiOnlyBtn || "Yes, AI Only") : (confirmDialog.isRetry ? (dict?.dashboard?.productGrid?.yesRetryBtn || "Retry") : (dict?.dashboard?.productGrid?.yesStartFreshBtn || "Yes, Queue Job"))}
                             </button>
                         </div>
                     </div>
