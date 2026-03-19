@@ -39,11 +39,12 @@ export interface ProductConfig {
     aiBatchSize?: number;
 
     ragExclusion?: {
-        // 'file-hiding': AI 호출 전 normalized/ 디렉토리와 패치 파일을 임시로 숨김 (Ceph, Windows 등)
+        // 'file-hiding': AI 호출 전 normalized/ 디렉토리와 패치 파일을 임시로 숨김 (file-hiding 전용)
         // 'prompt-injection': query_rag.py로 제외 규칙을 조회해 프롬프트에 직접 삽입 (Linux)
-        type: 'file-hiding' | 'prompt-injection';
+        // 'both': file-hiding + prompt-injection 동시 적용 (비Linux 제품 권장)
+        type: 'file-hiding' | 'prompt-injection' | 'both';
         normalizedDirName?: string;      // file-hiding 시 숨길 디렉토리 (skillDir 기준 상대 경로)
-        queryScript?: string;            // prompt-injection 시 실행할 RAG 조회 스크립트
+        queryScript?: string;            // prompt-injection 시 실행할 RAG 조회 스크립트 (os/linux/ 기준 파일명)
         queryTextSampleSize?: number;    // RAG 쿼리에 사용할 샘플 패치 수
     };
 
@@ -235,8 +236,10 @@ export const PRODUCT_REGISTRY: ProductConfig[] = [
         aiBatchValidation: 'exact',
         aiBatchSize: 15,
         ragExclusion: {
-            type: 'file-hiding',
+            type: 'both',
             normalizedDirName: 'windows_data/normalized',
+            queryScript: 'query_rag.py',
+            queryTextSampleSize: 3,
         },
         passthrough: {
             // AI가 모든 개별 패치를 검토하고 Exclude 결정을 내리므로 passthrough 불필요
@@ -282,8 +285,10 @@ export const PRODUCT_REGISTRY: ProductConfig[] = [
         aiVersionGrouped: false,
         aiBatchValidation: 'exact',
         ragExclusion: {
-            type: 'file-hiding',
+            type: 'both',
             normalizedDirName: 'ceph_data/normalized',
+            queryScript: 'query_rag.py',
+            queryTextSampleSize: 3,
         },
         passthrough: {
             enabled: true,
@@ -328,8 +333,10 @@ export const PRODUCT_REGISTRY: ProductConfig[] = [
         aiVersionGrouped: false,
         aiBatchValidation: 'exact',
         ragExclusion: {
-            type: 'file-hiding',
+            type: 'both',
             normalizedDirName: 'mariadb_data/normalized',
+            queryScript: 'query_rag.py',
+            queryTextSampleSize: 3,
         },
         passthrough: {
             enabled: true,
@@ -374,8 +381,10 @@ export const PRODUCT_REGISTRY: ProductConfig[] = [
         aiVersionGrouped: true,
         aiBatchValidation: 'nonEmpty',
         ragExclusion: {
-            type: 'file-hiding',
+            type: 'both',
             normalizedDirName: 'sql_data/normalized',
+            queryScript: 'query_rag.py',
+            queryTextSampleSize: 3,
         },
         passthrough: {
             enabled: false,
@@ -420,8 +429,10 @@ export const PRODUCT_REGISTRY: ProductConfig[] = [
         aiVersionGrouped: false,
         aiBatchValidation: 'exact',
         ragExclusion: {
-            type: 'file-hiding',
+            type: 'both',
             normalizedDirName: 'pgsql_data/normalized',
+            queryScript: 'query_rag.py',
+            queryTextSampleSize: 3,
         },
         passthrough: {
             enabled: true,
@@ -465,6 +476,11 @@ export const PRODUCT_REGISTRY: ProductConfig[] = [
         aiComponentDefault: 'vsphere',
         aiVersionGrouped: false,
         aiBatchValidation: 'exact',
+        ragExclusion: {
+            type: 'prompt-injection',
+            queryScript: 'query_rag.py',
+            queryTextSampleSize: 3,
+        },
         passthrough: {
             enabled: true,
             fallbackCriticality: 'Important',

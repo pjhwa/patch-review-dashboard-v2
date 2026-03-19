@@ -99,6 +99,7 @@
   .rag-badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 0.65rem; font-weight: 600; margin-top: 6px; }
   .rag-prompt { background: #1e3a5f; color: #93c5fd; }
   .rag-file { background: #064e3b; color: #6ee7b7; }
+  .rag-both { background: #2e1065; color: #c4b5fd; }
   .rag-none { background: #1e293b; color: #64748b; }
 
   /* ── SECTION 5: API Routes ── */
@@ -335,32 +336,32 @@
   </div>
 
   <div class="card" style="margin-top:24px;">
-    <div class="card-title">RAG Exclusion Strategies (Prompt Injection Prevention)</div>
-    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-top:8px;">
+    <div class="card-title">RAG Exclusion Strategies — All Products (Unified)</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:8px;">
       <div class="worker-box">
-        <div class="worker-box-title" style="color:#60a5fa;">Prompt Injection Strategy</div>
+        <div class="worker-box-title" style="color:#60a5fa;">Prompt Injection Strategy (All 9 Products)</div>
         <div style="font-size:0.78rem;color:#94a3b8;line-height:1.6;">
-          <strong style="color:#e2e8f0;">Products:</strong> Red Hat, Oracle, Ubuntu<br>
-          Samples 3 lines from similar historical patches using <code>query_rag.py</code>
-          and injects them into prompt as "examples to ignore"
+          <strong style="color:#e2e8f0;">Products:</strong> All 9 products<br>
+          Queries <code>query_rag.py</code> (shared in <code>os/linux/</code>) against
+          <code>user_exclusion_feedback.json</code> and injects past admin-marked exclusions
+          into the prompt as a <code>CRITICAL INSTRUCTION</code> block.
+          AI automatically applies historical exclusion rules to similar patches.
         </div>
       </div>
       <div class="worker-box">
-        <div class="worker-box-title" style="color:#34d399;">File Hiding Strategy</div>
+        <div class="worker-box-title" style="color:#34d399;">File Hiding Strategy (Non-Linux, alongside Prompt Injection)</div>
         <div style="font-size:0.78rem;color:#94a3b8;line-height:1.6;">
           <strong style="color:#e2e8f0;">Products:</strong> Windows, Ceph, MariaDB, SQL Server, PostgreSQL<br>
-          Hides patch JSON file from workspace directory,
-          forces AI to use only inline <code>[BATCH DATA]</code>
+          Additionally hides <code>normalized/</code> dir and patch JSON file before AI call
+          to prevent OpenClaw from reading previous review data via file tools.
+          Files are restored after the AI loop. Both strategies run together (<code>type: 'both'</code>).
         </div>
       </div>
-      <div class="worker-box">
-        <div class="worker-box-title" style="color:#64748b;">No Strategy</div>
-        <div style="font-size:0.78rem;color:#94a3b8;line-height:1.6;">
-          <strong style="color:#e2e8f0;">Products:</strong> VMware vSphere<br>
-          Relies on clear prompt boundaries and
-          generic instruction set without RAG exclusion
-        </div>
-      </div>
+    </div>
+    <div style="margin-top:10px;font-size:0.75rem;color:#64748b;line-height:1.6;">
+      <strong style="color:#94a3b8;">Strategy types:</strong>
+      <code>prompt-injection</code> — Linux (Red Hat, Oracle, Ubuntu) &amp; VMware vSphere &nbsp;|&nbsp;
+      <code>both</code> — Windows, Ceph, MariaDB, SQL Server, PostgreSQL (file-hiding + prompt-injection)
     </div>
   </div>
 </div>
@@ -727,7 +728,7 @@
         <strong>Vendor:</strong> "Windows Server"<br>
         <strong>Skill:</strong> os/windows/
       </div>
-      <span class="rag-badge rag-file">RAG: File Hiding</span>
+      <span class="rag-badge rag-both">RAG: Both (File Hiding + Prompt Injection)</span>
     </div>
 
     <div class="product-card cat-db">
@@ -738,7 +739,7 @@
         <strong>Vendor:</strong> "MariaDB"<br>
         <strong>Skill:</strong> database/mariadb/
       </div>
-      <span class="rag-badge rag-file">RAG: File Hiding</span>
+      <span class="rag-badge rag-both">RAG: Both (File Hiding + Prompt Injection)</span>
     </div>
 
     <div class="product-card cat-db">
@@ -749,7 +750,7 @@
         <strong>Vendor:</strong> "SQL Server"<br>
         <strong>Skill:</strong> database/sqlserver/
       </div>
-      <span class="rag-badge rag-file">RAG: File Hiding</span>
+      <span class="rag-badge rag-both">RAG: Both (File Hiding + Prompt Injection)</span>
     </div>
 
     <div class="product-card cat-db">
@@ -760,7 +761,7 @@
         <strong>Vendor:</strong> "PostgreSQL"<br>
         <strong>Skill:</strong> database/pgsql/
       </div>
-      <span class="rag-badge rag-file">RAG: File Hiding</span>
+      <span class="rag-badge rag-both">RAG: Both (File Hiding + Prompt Injection)</span>
     </div>
 
     <div class="product-card cat-storage">
@@ -771,7 +772,7 @@
         <strong>Vendor:</strong> "Ceph"<br>
         <strong>Skill:</strong> storage/ceph/
       </div>
-      <span class="rag-badge rag-file">RAG: File Hiding</span>
+      <span class="rag-badge rag-both">RAG: Both (File Hiding + Prompt Injection)</span>
     </div>
 
     <div class="product-card cat-virt">
@@ -782,7 +783,7 @@
         <strong>Vendor:</strong> "VMware vSphere"<br>
         <strong>Skill:</strong> virtualization/vsphere/
       </div>
-      <span class="rag-badge rag-none">RAG: None</span>
+      <span class="rag-badge rag-prompt">RAG: Prompt Injection</span>
     </div>
   </div>
 </div>

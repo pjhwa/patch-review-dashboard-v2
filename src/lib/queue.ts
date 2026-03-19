@@ -271,12 +271,17 @@ async function runAiReviewLoop(
         if (fs.existsSync(productCfg.rateLimitFlag)) fs.unlinkSync(productCfg.rateLimitFlag);
     }
 
-    // RAG 제외 규칙 주입 (Linux: prompt-injection 방식).
+    // RAG 제외 규칙 주입 (prompt-injection 방식 — 전 제품 공통).
     // 사용자가 수동 피드백으로 등록한 '제외 패치' 목록을 RAG DB에서 조회해
     // 프롬프트에 직접 포함시켜 AI가 유사 패치를 자동으로 Exclude 처리하도록 유도한다.
+    // query_rag.py와 user_exclusion_feedback.json은 항상 os/linux/ 공유 디렉토리에 존재한다.
     let ragExclusions = '';
-    if (isLinux && productCfg.ragExclusion?.type === 'prompt-injection' && productCfg.ragExclusion.queryScript) {
+    const ragType = productCfg.ragExclusion?.type;
+    if ((ragType === 'prompt-injection' || ragType === 'both') && productCfg.ragExclusion?.queryScript) {
         const runStepSync = util.promisify(require('child_process').exec);
+        // query_rag.py와 피드백 파일은 항상 os/linux/ 공유 디렉토리에서 실행
+        const sharedRagDir = path.join(process.env.HOME || '/home/citec', '.openclaw/workspace/skills/patch-review/os/linux');
+        const queryScriptPath = path.join(sharedRagDir, productCfg.ragExclusion.queryScript);
         try {
             let queryTextContext = 'security updates';
             if (patches.length > 0) {
@@ -284,7 +289,7 @@ async function runAiReviewLoop(
                 queryTextContext = patches.slice(0, sampleSize).map((p: any) => p.Description || p.description || p.id || '').join(' ');
             }
             const escapedQuery = queryTextContext.replace(/"/g, '\\"').replace(/\n/g, ' ');
-            const ragResult = await runStepSync(`python3 ${productCfg.ragExclusion.queryScript} "${escapedQuery}"`, { cwd: skillDir });
+            const ragResult = await runStepSync(`python3 ${queryScriptPath} "${escapedQuery}"`, { cwd: sharedRagDir });
             if (ragResult.stdout) {
                 const retrievedItems = JSON.parse(ragResult.stdout);
                 if (Array.isArray(retrievedItems) && retrievedItems.length > 0) {
@@ -298,18 +303,17 @@ async function runAiReviewLoop(
         }
     }
 
-    // RAG 제외 규칙 적용 (file-hiding 방식).
-    // Ceph, MariaDB, Windows 등은 normalized/ 디렉토리와 patches_for_llm_review_*.json을
-    // AI 호출 전에 임시로 이름을 바꿔 숨긴다. openclaw의 RAG 검색이 이 파일들을 읽어
-    // 오래된 컨텍스트를 기반으로 잘못된 응답을 생성하는 문제를 방지한다.
+    // RAG 제외 규칙 적용 (file-hiding 방식 — type: 'file-hiding' 또는 'both').
+    // normalized/ 디렉토리와 patches_for_llm_review_*.json을 AI 호출 전에 임시로 숨긴다.
+    // openclaw의 파일 도구가 이전 리뷰 데이터에 접근해 편향된 결과를 생성하는 것을 방지한다.
     // AI 루프 종료 후 반드시 원래 이름으로 복원한다.
     let normalizedDir: string | null = null;
     let hiddenNormalizedDir: string | null = null;
     let patchesFilePath: string | null = null;
     let hiddenPatchesFilePath: string | null = null;
 
-    if (productCfg.ragExclusion?.type === 'file-hiding') {
-        if (productCfg.ragExclusion.normalizedDirName) {
+    if (ragType === 'file-hiding' || ragType === 'both') {
+        if (productCfg.ragExclusion?.normalizedDirName) {
             normalizedDir = path.join(skillDir, productCfg.ragExclusion.normalizedDirName);
             hiddenNormalizedDir = normalizedDir + '_hidden';
             try { if (fs.existsSync(normalizedDir)) fs.renameSync(normalizedDir, hiddenNormalizedDir); } catch (e) {}

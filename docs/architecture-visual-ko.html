@@ -120,6 +120,7 @@
   .rag-badge { display: inline-block; padding: 3px 9px; border-radius: 4px; font-size: 0.65rem; font-weight: 600; margin-top: 8px; }
   .rag-prompt { background: #dbeafe; color: #1d4ed8; }
   .rag-file { background: #d1fae5; color: #065f46; }
+  .rag-both { background: #ede9fe; color: #5b21b6; }
   .rag-none { background: #f1f5f9; color: #64748b; }
 
   /* ── SECTION 5: API Routes ── */
@@ -344,31 +345,32 @@
   </div>
 
   <div class="card" style="margin-top:24px;">
-    <div class="card-title">RAG 제외 전략 (프롬프트 인젝션 방지)</div>
-    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-top:8px;">
+    <div class="card-title">RAG 제외 전략 — 전 제품 통합 적용</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:8px;">
       <div class="worker-box" style="border-top:3px solid #3b82f6;">
-        <div class="worker-box-title" style="color:#2563eb;">프롬프트 인젝션 전략</div>
+        <div class="worker-box-title" style="color:#2563eb;">프롬프트 인젝션 전략 (9개 전 제품)</div>
         <div style="font-size:0.78rem;color:#475569;line-height:1.7;">
-          <strong>적용 제품:</strong> Red Hat, Oracle, Ubuntu<br>
-          <code>query_rag.py</code>로 유사 패치 3줄을 샘플링하여 "무시할 예시"로 프롬프트에 주입.
-          AI가 현재 배치 데이터만을 기반으로 판단하도록 유도.
+          <strong>적용 제품:</strong> 전 제품(9개)<br>
+          <code>os/linux/</code>에 위치한 공유 <code>query_rag.py</code>가
+          <code>user_exclusion_feedback.json</code>에서 관리자가 등록한 과거 배제 이력을 조회하여
+          <code>CRITICAL INSTRUCTION</code> 블록으로 AI 프롬프트에 주입.
+          AI가 유사 패치를 자동으로 배제 처리하도록 유도.
         </div>
       </div>
       <div class="worker-box" style="border-top:3px solid #10b981;">
-        <div class="worker-box-title" style="color:#059669;">파일 숨김 전략</div>
+        <div class="worker-box-title" style="color:#059669;">파일 숨김 전략 (비Linux 제품, 프롬프트 인젝션과 병행)</div>
         <div style="font-size:0.78rem;color:#475569;line-height:1.7;">
           <strong>적용 제품:</strong> Windows, Ceph, MariaDB, SQL Server, PostgreSQL<br>
-          워크스페이스에서 패치 JSON 파일을 숨겨 AI가 인라인 <code>[BATCH DATA]</code>만 참조하도록 강제.
+          AI 호출 전 <code>normalized/</code> 디렉토리와 패치 JSON 파일을 임시로 숨겨
+          OpenClaw가 이전 리뷰 데이터를 파일 도구로 읽지 못하게 방지.
+          AI 루프 종료 후 복원. 프롬프트 인젝션과 함께 <code>type: 'both'</code>로 적용.
         </div>
       </div>
-      <div class="worker-box" style="border-top:3px solid #94a3b8;">
-        <div class="worker-box-title" style="color:#64748b;">전략 없음</div>
-        <div style="font-size:0.78rem;color:#475569;line-height:1.7;">
-          <strong>적용 제품:</strong> VMware vSphere<br>
-          명확한 프롬프트 경계만 활용.
-          RAG 제외 없이 범용 지시 세트에 의존.
-        </div>
-      </div>
+    </div>
+    <div style="margin-top:10px;font-size:0.75rem;color:#64748b;line-height:1.6;">
+      <strong>전략 유형:</strong>
+      <code>prompt-injection</code> — Linux 3종(Red Hat, Oracle, Ubuntu) &amp; VMware vSphere &nbsp;|&nbsp;
+      <code>both</code> — Windows, Ceph, MariaDB, SQL Server, PostgreSQL (파일 숨김 + 프롬프트 인젝션)
     </div>
   </div>
 </div>
@@ -735,7 +737,7 @@
         <strong>벤더 키:</strong> "Windows Server"<br>
         <strong>스킬 경로:</strong> os/windows/
       </div>
-      <span class="rag-badge rag-file">RAG: 파일 숨김</span>
+      <span class="rag-badge rag-both">RAG: 파일 숨김 + 프롬프트 인젝션</span>
     </div>
 
     <div class="product-card cat-db">
@@ -746,7 +748,7 @@
         <strong>벤더 키:</strong> "MariaDB"<br>
         <strong>스킬 경로:</strong> database/mariadb/
       </div>
-      <span class="rag-badge rag-file">RAG: 파일 숨김</span>
+      <span class="rag-badge rag-both">RAG: 파일 숨김 + 프롬프트 인젝션</span>
     </div>
 
     <div class="product-card cat-db">
@@ -757,7 +759,7 @@
         <strong>벤더 키:</strong> "SQL Server"<br>
         <strong>스킬 경로:</strong> database/sqlserver/
       </div>
-      <span class="rag-badge rag-file">RAG: 파일 숨김</span>
+      <span class="rag-badge rag-both">RAG: 파일 숨김 + 프롬프트 인젝션</span>
     </div>
 
     <div class="product-card cat-db">
@@ -768,7 +770,7 @@
         <strong>벤더 키:</strong> "PostgreSQL"<br>
         <strong>스킬 경로:</strong> database/pgsql/
       </div>
-      <span class="rag-badge rag-file">RAG: 파일 숨김</span>
+      <span class="rag-badge rag-both">RAG: 파일 숨김 + 프롬프트 인젝션</span>
     </div>
 
     <div class="product-card cat-storage">
@@ -779,7 +781,7 @@
         <strong>벤더 키:</strong> "Ceph"<br>
         <strong>스킬 경로:</strong> storage/ceph/
       </div>
-      <span class="rag-badge rag-file">RAG: 파일 숨김</span>
+      <span class="rag-badge rag-both">RAG: 파일 숨김 + 프롬프트 인젝션</span>
     </div>
 
     <div class="product-card cat-virt">
@@ -790,7 +792,7 @@
         <strong>벤더 키:</strong> "VMware vSphere"<br>
         <strong>스킬 경로:</strong> virtualization/vsphere/
       </div>
-      <span class="rag-badge rag-none">RAG: 없음</span>
+      <span class="rag-badge rag-prompt">RAG: 프롬프트 인젝션</span>
     </div>
   </div>
 </div>
