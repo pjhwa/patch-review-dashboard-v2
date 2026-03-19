@@ -1,0 +1,9 @@
+server {
+	listen 80 default_server;
+	listen [::]:80 default_server;
+
+	server_name _;
+
+	# Redirect port 80 to port 3001 (Next.js app)
+	return 301 http://$host:3001$request_uri;
+}
