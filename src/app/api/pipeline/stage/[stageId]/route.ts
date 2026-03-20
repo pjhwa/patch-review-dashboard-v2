@@ -26,6 +26,7 @@ export async function GET(request: Request, props: { params: Promise<{ stageId: 
         else if (productId === 'sqlserver') targetVendor = 'SQL Server';
         else if (productId === 'vsphere') targetVendor = 'VMware vSphere';
         else if (productId === 'pgsql') targetVendor = 'PostgreSQL';
+        else if (productId === 'jboss_eap') targetVendor = 'JBoss EAP';
 
         if (stageId === 'preprocessed') {
             const whereClause = targetVendor ? { vendor: targetVendor } : {};

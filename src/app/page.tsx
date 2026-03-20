@@ -9,7 +9,7 @@ import { cookies } from "next/headers";
 // active: false인 카테고리는 클릭 불가 상태로 표시된다.
 const CATEGORIES: { id: string, count: string | number, active: boolean, icon: any }[] = [
   { id: 'os', count: 124, active: true, icon: Server },
-  { id: 'middleware', count: 0, active: false, icon: Component },
+  { id: 'middleware', count: 0, active: true, icon: Component },
   { id: 'database', count: 0, active: true, icon: DatabaseZap },
   { id: 'network', count: 0, active: false, icon: Network },
   { id: 'storage', count: 0, active: true, icon: HardDrive },
@@ -32,10 +32,12 @@ export default async function Home() {
   let storageReviewCountSum: string | number = "0/1"; // Default fallback
   let databaseReviewCountSum: string | number = "0/4"; // Default fallback
   let virtualizationReviewCountSum: string | number = "0/1"; // Default fallback
+  let middlewareReviewCountSum: string | number = "0/1"; // Default fallback
   let osCustomDesc = '';
   let storageCustomDesc = '';
   let databaseCustomDesc = '';
   let virtualizationCustomDesc = '';
+  let middlewareCustomDesc = '';
 
   // Statistics Aggregation Variables
   let totalCollected = 0;
@@ -120,6 +122,20 @@ export default async function Home() {
       virtualizationCustomDesc = `${dict.dashboard.productsReviewed}${patchRatioStr}`;
     }
 
+    // Fetch Middleware Products Data
+    const middlewareRes = await fetch(`${baseUrl}/api/products?category=middleware`, { cache: 'no-store' });
+    if (middlewareRes.ok) {
+      const prodData = await middlewareRes.json();
+      const products = prodData.products || [];
+      const activeProducts = products.filter((p: any) => p.active);
+      const completedProducts = activeProducts.filter((p: any) => p.isReviewCompleted);
+
+      const catApproved = aggregateStats(products);
+      middlewareReviewCountSum = `${completedProducts.length}/${products.length}`;
+      const patchRatioStr = catApproved > 0 ? ` | ${catApproved} ${dict.dashboard.patchesReviewed}` : '';
+      middlewareCustomDesc = `${dict.dashboard.productsReviewed}${patchRatioStr}`;
+    }
+
     // Fetch Archives Data for Stats (quarterly archives)
     const arcRes = await fetch(`${baseUrl}/api/archive/quarterly`, { cache: 'no-store' });
     if (arcRes.ok) {
@@ -151,6 +167,8 @@ export default async function Home() {
       return { ...cat, name, count: databaseReviewCountSum, customDesc: databaseCustomDesc };
     } else if (cat.id === 'virtualization') {
       return { ...cat, name, count: virtualizationReviewCountSum, customDesc: virtualizationCustomDesc };
+    } else if (cat.id === 'middleware') {
+      return { ...cat, name, count: middlewareReviewCountSum, customDesc: middlewareCustomDesc };
     }
     return { ...cat, name };
   });

@@ -10,7 +10,7 @@ export async function GET(request: Request) {
     const { searchParams } = new URL(request.url);
     const category = searchParams.get('category');
 
-    if (category !== 'os' && category !== 'storage' && category !== 'database' && category !== 'virtualization') {
+    if (category !== 'os' && category !== 'storage' && category !== 'database' && category !== 'virtualization' && category !== 'middleware') {
         return NextResponse.json({ products: [] });
     }
 
@@ -255,6 +255,57 @@ export async function GET(request: Request) {
         return NextResponse.json({ products: databaseProducts });
     }
     // ==================== END DATABASE ====================
+
+    // ==================== MIDDLEWARE / JBOSS EAP CATEGORY ====================
+    if (category === 'middleware') {
+        const jbossEapSkillDir = path.join(process.env.HOME || '/home/citec', '.openclaw/workspace/skills/patch-review/middleware/jboss_eap');
+        const jbossEapDataDir = path.join(jbossEapSkillDir, 'jboss_eap_data');
+
+        const countJbossJsonFiles = (dirPath: string): number => {
+            if (fs.existsSync(dirPath)) {
+                try {
+                    return fs.readdirSync(dirPath).filter((f: string) =>
+                        (f.startsWith('RHSA-') || f.startsWith('RHBA-')) && f.endsWith('.json')
+                    ).length;
+                } catch { return 0; }
+            }
+            return 0;
+        };
+
+        const jbossEapCollected = countJbossJsonFiles(jbossEapDataDir);
+
+        let jbossEapPreprocessed = 0;
+        let jbossEapReviewed = 0;
+        try {
+            jbossEapPreprocessed = await prisma.preprocessedPatch.count({ where: { vendor: 'JBoss EAP' } });
+            jbossEapReviewed = await prisma.reviewedPatch.count({ where: { vendor: 'JBoss EAP' } });
+        } catch (e) { }
+
+        const jbossEapFinalCsv = path.join(jbossEapSkillDir, 'final_approved_patches_jboss_eap.csv');
+        let jbossEapApproved = 0;
+        let jbossEapIsReviewCompleted = false;
+        if (fs.existsSync(jbossEapFinalCsv)) {
+            try {
+                const content = fs.readFileSync(jbossEapFinalCsv, 'utf-8');
+                const parsed = Papa.parse(content, { header: true, skipEmptyLines: true });
+                jbossEapApproved = parsed.data ? parsed.data.length : 0;
+                jbossEapIsReviewCompleted = true;
+            } catch { jbossEapIsReviewCompleted = true; }
+        }
+
+        const middlewareProducts = [
+            {
+                id: 'jboss_eap',
+                name: 'JBoss EAP',
+                stages: { collected: jbossEapCollected, preprocessed: jbossEapPreprocessed, reviewed: jbossEapReviewed, approved: jbossEapApproved },
+                active: true,
+                isReviewCompleted: jbossEapIsReviewCompleted,
+            },
+        ];
+
+        return NextResponse.json({ products: middlewareProducts });
+    }
+    // ==================== END MIDDLEWARE ====================
 
     const linuxSkillDir = path.join(process.env.HOME || '/home/citec', '.openclaw/workspace/skills/patch-review/os/linux');
 

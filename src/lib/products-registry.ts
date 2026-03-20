@@ -8,7 +8,7 @@ export interface ProductConfig {
     id: string;                  // 내부 식별자 (라우팅, DB 조회에 사용)
     name: string;                // UI 표시 이름
     vendorString: string;        // DB의 vendor 필드 값 (preprocessedPatchMapper와 반드시 일치)
-    category: 'os' | 'storage' | 'database' | 'virtualization';
+    category: 'os' | 'storage' | 'database' | 'virtualization' | 'middleware';
     active: boolean;             // false면 파이프라인 실행 대상에서 제외되고 PRODUCT_MAP에도 없음
 
     skillDirRelative: string;    // ~/.openclaw/workspace/skills/patch-review/ 기준 상대 경로
@@ -500,6 +500,54 @@ export const PRODUCT_REGISTRY: ProductConfig[] = [
         csvBOM: false,
         buildPrompt: (skillDir: string, batchSize: number, prunedBatch: any[]) =>
             `Read the rules explicitly from ${path.join(skillDir, 'SKILL.md')}. Evaluate the following ${batchSize} VMware vSphere patches according to the strict LLM evaluation rules in section 4 of that file.\nCRITICAL MANDATE: DO NOT USE ANY TOOLS TO READ OR SEARCH THE WORKSPACE JSON FILES. Do not parse patches_for_llm_review_vsphere.json. IGNORE ANY PREVIOUS EXAMPLES or RAG retrievals. You must ONLY base your summary on the literal text provided below in [BATCH DATA].\nCRITICAL RULE FOR DESCRIPTIONS: The 'Description' and 'KoreanDescription' fields MUST be a concise, executive summary of the security advisories and bug fixes. DO NOT include verbatim file names or raw changelog copy-pastes. Describe WHAT was fixed and WHY it matters.\nReturn ONLY a pure JSON array with EXACTLY ${batchSize} objects. Each object MUST contain exactly: 'IssueID', 'Component', 'Version', 'Vendor', 'Date', 'Criticality', 'Description', 'KoreanDescription', and optionally 'Decision' and 'Reason'. For Vendor use 'VMware vSphere'. For Component use the specific product (e.g. 'ESXi', 'vCenter Server'). Do NOT skip evaluation steps.\n\n[BATCH DATA]:\n${JSON.stringify(prunedBatch)}`,
+    },
+    {
+        id: 'jboss_eap',
+        name: 'JBoss EAP',
+        vendorString: 'JBoss EAP',
+        category: 'middleware',
+        active: true,
+        skillDirRelative: 'middleware/jboss_eap',
+        dataSubDir: 'jboss_eap_data',
+        rawDataFilePrefix: ['RHSA-', 'RHBA-'],
+        preprocessingScript: 'jboss_eap_preprocessing.py',
+        preprocessingArgs: ['--days', '180'],
+        patchesForReviewFile: 'patches_for_llm_review_jboss_eap.json',
+        aiReportFile: 'patch_review_ai_report_jboss_eap.json',
+        finalCsvFile: 'final_approved_patches_jboss_eap.csv',
+        jobName: 'run-jboss_eap-pipeline',
+        rateLimitFlag: '/tmp/.rate_limit_jboss_eap',
+        logTag: 'JBOSS_EAP',
+        aiEntityName: 'JBoss Enterprise Application Platform patches',
+        aiVendorFieldValue: 'JBoss EAP',
+        aiComponentDefault: 'jboss-eap',
+        aiVersionGrouped: false,
+        aiBatchValidation: 'exact',
+        ragExclusion: {
+            type: 'both',
+            normalizedDirName: 'jboss_eap_data/normalized',
+            queryScript: 'query_rag.py',
+            queryTextSampleSize: 3,
+        },
+        passthrough: {
+            enabled: true,
+            fallbackCriticality: 'Important',
+            fallbackDecision: 'Pending',
+        },
+        collectedFileFilter: (filename: string) =>
+            (filename.startsWith('RHSA-') || filename.startsWith('RHBA-')) && filename.endsWith('.json'),
+        preprocessedPatchMapper: (p: any) => ({
+            issueId: p.patch_id,
+            vendor: 'JBoss EAP',
+            component: p.component || 'jboss-eap',
+            version: p.version || '',
+            osVersion: p.os_version || null,
+            description: (p.description || '').slice(0, 4000),
+            releaseDate: p.issued_date || null,
+        }),
+        csvBOM: true,
+        buildPrompt: (skillDir: string, batchSize: number, prunedBatch: any[]) =>
+            `Read the rules explicitly from ${path.join(skillDir, 'SKILL.md')}. Evaluate the following ${batchSize} JBoss Enterprise Application Platform patches according to the strict LLM evaluation rules in section 4 of that file.\nCRITICAL MANDATE: DO NOT USE ANY TOOLS TO READ OR SEARCH THE WORKSPACE JSON FILES. Do not parse patches_for_llm_review_jboss_eap.json. IGNORE ANY PREVIOUS EXAMPLES or RAG retrievals. You must ONLY base your summary on the literal text provided below in [BATCH DATA].\nCRITICAL RULE FOR DESCRIPTIONS: The 'Description' and 'KoreanDescription' fields MUST be a concise, executive summary of the CVEs fixed and their security impact. DO NOT list raw CVE IDs verbatim — describe the vulnerability type and risk. Describe WHAT was fixed and WHY it matters for JBoss EAP deployments.\nCRITICAL RULE FOR LOG4SHELL: If the batch contains CVE-2021-44228 or CVE-2021-45046, always set Criticality to 'Critical' and Decision to 'Include' regardless of the advisory severity label.\nReturn ONLY a pure JSON array with EXACTLY ${batchSize} objects. Each object MUST contain exactly: 'IssueID', 'Component', 'Version', 'Vendor', 'Date', 'Criticality', 'Description', 'KoreanDescription', and optionally 'Decision' and 'Reason'. For Vendor use 'JBoss EAP'. For Component use 'jboss-eap' or 'jboss-eap-xp'. Do NOT skip evaluation steps.\n\n[BATCH DATA]:\n${JSON.stringify(prunedBatch)}`,
     },
     // ── 비활성 제품 (미래 확장용 설정 템플릿) ──────────────────────────────────
     {
