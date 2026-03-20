@@ -1,5 +1,20 @@
 # Patch Review Board Dashboard - 기술 문서 인덱스
 
+## Canonical AI Knowledge Layer (docs_canonical/)
+
+AI 에이전트는 작업 전 아래 문서를 먼저 읽어야 합니다.
+
+| 문서 | 설명 |
+|------|------|
+| [REPO_MAP](docs_canonical/REPO_MAP.md) | 레포 구조, 지원 제품, 주요 진입점, 의존성 |
+| [ARCHITECTURE](docs_canonical/ARCHITECTURE.md) | 시스템 설계, 파이프라인 5단계, DB 스키마, API 라우트 |
+| [WORKFLOWS](docs_canonical/WORKFLOWS.md) | 개발/빌드/배포/운영자 워크플로우, 신규 제품 추가 절차 |
+| [STYLEGUIDE](docs_canonical/STYLEGUIDE.md) | 코딩 컨벤션, 네이밍, 주요 패턴, 안티패턴 |
+| [TESTING](docs_canonical/TESTING.md) | Registry 검증, 빌드 검증, 수동 E2E 테스트 |
+| [TASKS](docs_canonical/TASKS.md) | 현재 백로그, 확장 대상 제품, 완료된 이니셔티브 |
+
+---
+
 ## 개요
 
 Patch Review Board Dashboard는 분기별 권고 패치 검토 작업을 중앙에서 관제하고 자동화하는 컴플라이언스 운영 플랫폼입니다. BullMQ 작업 큐, 중앙 제품 레지스트리, OpenClaw AI 에이전트를 기반으로 9개 제품군의 패치를 자동 수집·분석·검토합니다.
