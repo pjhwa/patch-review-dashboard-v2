@@ -156,14 +156,14 @@ export default async function Home() {
   });
 
   return (
-    <div className="min-h-screen bg-[#050505] p-6 lg:p-12 font-sans selection:bg-white/20">
+    <div className="min-h-screen bg-background p-6 lg:p-12 font-sans selection:bg-primary/20">
       <div className="max-w-7xl mx-auto space-y-12 animate-in fade-in duration-700">
 
         {/* Header Section */}
         <header className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
           <div>
-            <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-white/90">{dict.dashboard.title}</h1>
-            <p className="text-white/50 text-sm md:text-base mt-2">{dict.dashboard.subtitle}</p>
+            <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-foreground/90">{dict.dashboard.title}</h1>
+            <p className="text-foreground/50 text-sm md:text-base mt-2">{dict.dashboard.subtitle}</p>
           </div>
           <div className="flex items-center gap-3">
             <span className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 shadow-[0_0_15px_rgba(16,185,129,0.1)]">
@@ -173,19 +173,19 @@ export default async function Home() {
               </span>
               <span className="text-xs font-semibold text-emerald-400 uppercase tracking-widest">{dict.dashboard.pipelineActive}</span>
             </span>
-            <Badge variant="outline" className="border-white/10 text-white/50 hover:bg-white/10 px-4 py-1.5 font-medium transition-colors">
+            <Badge variant="outline" className="border-foreground/10 text-foreground/50 hover:bg-foreground/10 px-4 py-1.5 font-medium transition-colors">
               {pipeline?.quarter || "Q1 2026"}
             </Badge>
           </div>
         </header>
 
         {/* Global Statistics Section Wrapped in a Panel */}
-        <section className="relative p-6 md:p-8 rounded-2xl border border-white/10 bg-gradient-to-b from-white/[0.04] to-transparent overflow-hidden shadow-2xl">
+        <section className="relative p-6 md:p-8 rounded-2xl border border-border bg-gradient-to-b from-foreground/[0.03] to-transparent overflow-hidden shadow-2xl">
           <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-emerald-500/5 rounded-full blur-[120px] -mr-48 -mt-48 pointer-events-none"></div>
 
           <div className="flex flex-col gap-8 relative z-10">
             <div className="flex items-center justify-between">
-              <h2 className="text-lg md:text-xl font-bold text-white/90 flex items-center gap-3 tracking-wide">
+              <h2 className="text-lg md:text-xl font-bold text-foreground/90 flex items-center gap-3 tracking-wide">
                 <div className="p-2 rounded-lg bg-emerald-500/10 border border-emerald-500/20">
                   <Activity className="w-5 h-5 text-emerald-400" />
                 </div>
@@ -204,8 +204,8 @@ export default async function Home() {
 
         {/* Categories Separator */}
         <div className="flex items-center gap-6 pt-4">
-          <h2 className="text-sm font-semibold text-white/50 uppercase tracking-[0.2em]">{dict.dashboard.categoriesConfig}</h2>
-          <div className="h-px flex-1 bg-gradient-to-r from-white/10 to-transparent"></div>
+          <h2 className="text-sm font-semibold text-foreground/50 uppercase tracking-[0.2em]">{dict.dashboard.categoriesConfig}</h2>
+          <div className="h-px flex-1 bg-gradient-to-r from-foreground/10 to-transparent"></div>
         </div>
 
         {/* Categories Grid */}
@@ -230,16 +230,16 @@ export default async function Home() {
 
 function StatCard({ title, value, description, icon: Icon, colorClass }: { title: string, value: number, description: string, icon: any, colorClass: string }) {
   return (
-    <Card className="relative overflow-hidden border-white/[0.04] bg-[#0A0A0A] transition-all duration-300 hover:border-white/10 hover:bg-white/[0.02]">
+    <Card className="relative overflow-hidden border-border bg-card transition-all duration-300 hover:border-foreground/20 hover:bg-foreground/[0.02]">
       <CardHeader className="pb-2 flex flex-row items-center justify-between">
-        <CardTitle className="text-xs font-semibold text-white/60 uppercase tracking-wider">{title}</CardTitle>
-        <div className={`p-2 rounded-lg bg-white/[0.03] ${colorClass}`}>
+        <CardTitle className="text-xs font-semibold text-foreground/60 uppercase tracking-wider">{title}</CardTitle>
+        <div className={`p-2 rounded-lg bg-foreground/[0.05] ${colorClass}`}>
           <Icon className="w-4 h-4 opacity-80" />
         </div>
       </CardHeader>
       <CardContent>
-        <div className="text-4xl font-light tracking-tighter text-white mb-2">{value.toLocaleString()}</div>
-        <p className="text-[10px] text-white/30 uppercase tracking-wide">{description}</p>
+        <div className="text-4xl font-light tracking-tighter text-foreground mb-2">{value.toLocaleString()}</div>
+        <p className="text-[10px] text-foreground/40 uppercase tracking-wide">{description}</p>
       </CardContent>
     </Card>
   );
@@ -247,17 +247,17 @@ function StatCard({ title, value, description, icon: Icon, colorClass }: { title
 
 function CategoryCard({ title, value, desc, active, Icon }: { title: string, value: string, desc: string, active: boolean, Icon: any }) {
   return (
-    <Card className={`group relative overflow-hidden cursor-pointer border-white/[0.06] bg-[#0d0d0d] transition-all duration-500 ${active ? 'hover:-translate-y-1 hover:border-emerald-500/30 hover:bg-white/[0.04] hover:shadow-[0_10px_40px_-10px_rgba(16,185,129,0.1)]' : 'opacity-40 grayscale hover:opacity-60'}`}>
+    <Card className={`group relative overflow-hidden cursor-pointer border-border bg-card transition-all duration-500 ${active ? 'hover:-translate-y-1 hover:border-emerald-500/30 hover:bg-foreground/[0.04] hover:shadow-[0_10px_40px_-10px_rgba(16,185,129,0.1)]' : 'opacity-40 grayscale hover:opacity-60'}`}>
       <div className={`absolute top-0 right-0 w-32 h-32 rounded-full blur-[50px] -mr-16 -mt-16 pointer-events-none transition-opacity duration-500 ${active ? 'bg-emerald-500/10 opacity-0 group-hover:opacity-100' : 'bg-transparent'}`}></div>
       <CardHeader className="pb-3 flex flex-row items-center gap-3">
-        <div className={`p-2.5 rounded-xl border ${active ? 'bg-emerald-500/10 border-emerald-500/20 text-emerald-400' : 'bg-white/5 border-white/10 text-white/40'}`}>
+        <div className={`p-2.5 rounded-xl border ${active ? 'bg-emerald-500/10 border-emerald-500/20 text-emerald-500' : 'bg-foreground/5 border-foreground/10 text-foreground/40'}`}>
           <Icon className="w-5 h-5" />
         </div>
-        <CardTitle className="text-sm font-semibold text-white/80 tracking-wide">{title}</CardTitle>
+        <CardTitle className="text-sm font-semibold text-foreground/80 tracking-wide">{title}</CardTitle>
       </CardHeader>
       <CardContent>
-        <div className="text-3xl font-light tracking-tighter text-white/90">{value}</div>
-        <p className="text-xs text-white/40 mt-2 font-mono">{desc}</p>
+        <div className="text-3xl font-light tracking-tighter text-foreground/90">{value}</div>
+        <p className="text-xs text-foreground/50 mt-2 font-mono">{desc}</p>
       </CardContent>
     </Card>
   );

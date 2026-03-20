@@ -167,12 +167,12 @@ export function ProductDetailClient({ categoryId, productId, dict }: { categoryI
     return (
         <div className="space-y-6 animate-in fade-in duration-500">
             <div className="flex items-center gap-4">
-                <Link href={`/category/${categoryId}`} className="p-2 rounded-full border border-white/5 bg-white/[0.02] hover:bg-white/10 hover:border-white/20 transition-all">
-                    <ArrowLeft className="w-5 h-5 text-white/70" />
+                <Link href={`/category/${categoryId}`} className="p-2 rounded-full border border-foreground/5 bg-foreground/[0.02] hover:bg-foreground/10 hover:border-foreground/20 transition-all">
+                    <ArrowLeft className="w-5 h-5 text-foreground/70" />
                 </Link>
                 <div>
-                    <h1 className="text-3xl font-bold tracking-tight text-white/90">{title}</h1>
-                    <p className="text-white/50 text-sm mt-1 mb-2">{dict.dashboard.productDetail.subtitle}</p>
+                    <h1 className="text-3xl font-bold tracking-tight text-foreground/90">{title}</h1>
+                    <p className="text-foreground/50 text-sm mt-1 mb-2">{dict.dashboard.productDetail.subtitle}</p>
                 </div>
             </div>
 
@@ -187,12 +187,12 @@ export function ProductDetailClient({ categoryId, productId, dict }: { categoryI
             )}
 
             {loading ? (
-                <div className="flex items-center gap-3 text-emerald-400 p-8 border border-white/5 rounded-xl bg-[#080808]">
+                <div className="flex items-center gap-3 text-emerald-400 p-8 border border-foreground/5 rounded-xl bg-card">
                     <Loader2 className="w-5 h-5 animate-spin" /> {dict.dashboard.productDetail.fetching}
                 </div>
             ) : (
                 <Tabs defaultValue="preprocessed" className="w-full">
-                    <TabsList className="bg-black border border-white/10 mb-6 p-1 h-auto">
+                    <TabsList className="bg-card border border-foreground/10 mb-6 p-1 h-auto">
                         <TabsTrigger value="preprocessed" className="data-[state=active]:bg-emerald-500/20 data-[state=active]:text-emerald-400 px-6 py-2">
                             {dict.dashboard.productDetail.tabPreprocessed}
                         </TabsTrigger>
@@ -202,11 +202,11 @@ export function ProductDetailClient({ categoryId, productId, dict }: { categoryI
                     </TabsList>
 
                     <TabsContent value="preprocessed" className="mt-0">
-                        <div className="bg-[#0a0a0a] border border-white/10 rounded-xl p-6 shadow-xl">
+                        <div className="bg-card border border-foreground/10 rounded-xl p-6 shadow-xl">
                             <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
                                 <div>
-                                    <h3 className="text-xl font-light text-white mb-2">{dict.dashboard.productDetail.preprocessedTitle}</h3>
-                                    <p className="text-white/40 text-sm mb-0">{dict.dashboard.productDetail.preprocessedDesc}</p>
+                                    <h3 className="text-xl font-light text-foreground mb-2">{dict.dashboard.productDetail.preprocessedTitle}</h3>
+                                    <p className="text-foreground/40 text-sm mb-0">{dict.dashboard.productDetail.preprocessedDesc}</p>
                                 </div>
                                 <div className="relative w-full md:w-72">
                                     <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -214,7 +214,7 @@ export function ProductDetailClient({ categoryId, productId, dict }: { categoryI
                                     </div>
                                     <input
                                         type="text"
-                                        className="block w-full pl-10 pr-3 py-2 border border-white/10 rounded-lg bg-black/50 text-white placeholder-white/30 focus:outline-none focus:ring-1 focus:ring-emerald-500 focus:border-emerald-500 sm:text-sm transition-colors"
+                                        className="block w-full pl-10 pr-3 py-2 border border-foreground/10 rounded-lg bg-card/80 text-foreground placeholder:text-foreground/30 focus:outline-none focus:ring-1 focus:ring-emerald-500 focus:border-emerald-500 sm:text-sm transition-colors"
                                         placeholder={dict.dashboard.productDetail.searchPlaceholder}
                                         value={preprocessedSearchQuery}
                                         onChange={(e) => setPreprocessedSearchQuery(e.target.value)}
@@ -238,7 +238,7 @@ export function ProductDetailClient({ categoryId, productId, dict }: { categoryI
                                         }
 
                                         return (
-                                            <div key={idx} className={`p-5 rounded-xl border transition-colors flex flex-col gap-3 ${isApproved ? 'bg-blue-500/10 border-blue-500/30' : 'bg-white/[0.02] border-white/5 hover:bg-white/[0.04]'}`}>
+                                            <div key={idx} className={`p-5 rounded-xl border transition-colors flex flex-col gap-3 ${isApproved ? 'bg-blue-500/10 border-blue-500/30' : 'bg-foreground/[0.02] border-foreground/5 hover:bg-foreground/[0.04]'}`}>
                                                 <div className="flex items-start justify-between">
                                                     <div className="flex items-center gap-3">
                                                         <h4 className={`text-base font-medium ${isApproved ? 'text-blue-300' : 'text-emerald-300'}`}>
@@ -252,7 +252,7 @@ export function ProductDetailClient({ categoryId, productId, dict }: { categoryI
                                                         )}
                                                     </div>
                                                     <div className="flex items-center gap-3">
-                                                        <span className={`text-xs px-2.5 py-1 border rounded-full font-mono ${isApproved ? 'bg-blue-950/50 border-blue-500/20 text-blue-400' : 'bg-white/5 border-white/10 text-white/60'}`}>
+                                                        <span className={`text-xs px-2.5 py-1 border rounded-full font-mono ${isApproved ? 'bg-blue-500/10 border-blue-500/30 text-blue-600 dark:text-blue-400' : 'bg-muted border-border text-muted-foreground'}`}>
                                                             {patch.vendor || patch.Type || dict.dashboard.productDetail.update}
                                                         </span>
                                                         <div className="flex items-center space-x-2">
@@ -261,43 +261,43 @@ export function ProductDetailClient({ categoryId, productId, dict }: { categoryI
                                                                 checked={localExclusions[patchId]?.excluded !== true}
                                                                 onChange={(e) => toggleExclusion(patchId, !e.target.checked)}
                                                                 id={`request-review-${patchId}`}
-                                                                className="w-4 h-4 rounded border-white/20 bg-black/50 text-emerald-500 focus:ring-emerald-500/50 focus:ring-offset-0 disabled:opacity-50"
+                                                                className="w-4 h-4 rounded border-foreground/20 bg-card/80 text-emerald-500 focus:ring-emerald-500/50 focus:ring-offset-0 disabled:opacity-50"
                                                             />
-                                                            <label htmlFor={`request-review-${patchId}`} className="text-sm font-medium text-white/80 cursor-pointer">
+                                                            <label htmlFor={`request-review-${patchId}`} className="text-sm font-medium text-foreground/80 cursor-pointer">
                                                                 {dict.dashboard.productDetail.requestReview}
                                                             </label>
                                                         </div>
                                                     </div>
                                                 </div>
 
-                                                <div className="grid grid-cols-2 lg:grid-cols-5 gap-4 py-3 border-t border-white/5 mt-1">
+                                                <div className="grid grid-cols-2 lg:grid-cols-5 gap-4 py-3 border-t border-foreground/5 mt-1">
                                                     {(patch.osVersion || patch.os_version) && (
                                                         <div>
-                                                            <p className="text-xs text-white/40 uppercase tracking-wider mb-1">{dict.dashboard.productDetail.osVersionLabel}</p>
+                                                            <p className="text-xs text-foreground/40 uppercase tracking-wider mb-1">{dict.dashboard.productDetail.osVersionLabel}</p>
                                                             <p className="text-sm font-light text-emerald-100 font-medium">{patch.osVersion || patch.os_version}</p>
                                                         </div>
                                                     )}
                                                     {patch.component && (
                                                         <div>
-                                                            <p className="text-xs text-white/40 uppercase tracking-wider mb-1">{dict.dashboard.productDetail.component}</p>
-                                                            <p className="text-sm font-light text-white/80">{patch.component}</p>
+                                                            <p className="text-xs text-foreground/40 uppercase tracking-wider mb-1">{dict.dashboard.productDetail.component}</p>
+                                                            <p className="text-sm font-light text-foreground/80">{patch.component}</p>
                                                         </div>
                                                     )}
                                                     {(patch.version || patch.specific_version) && (
                                                         <div>
-                                                            <p className="text-xs text-white/40 uppercase tracking-wider mb-1">{dict.dashboard.productDetail.version}</p>
-                                                            <p className="text-sm font-light text-white/80">{patch.version || patch.specific_version}</p>
+                                                            <p className="text-xs text-foreground/40 uppercase tracking-wider mb-1">{dict.dashboard.productDetail.version}</p>
+                                                            <p className="text-sm font-light text-foreground/80">{patch.version || patch.specific_version}</p>
                                                         </div>
                                                     )}
                                                     {(patch.date || patch.releaseDate) && (
                                                         <div>
-                                                            <p className="text-xs text-white/40 uppercase tracking-wider mb-1">{dict.dashboard.productDetail.releaseDate}</p>
-                                                            <p className="text-sm font-light text-white/80">{patch.date || patch.releaseDate}</p>
+                                                            <p className="text-xs text-foreground/40 uppercase tracking-wider mb-1">{dict.dashboard.productDetail.releaseDate}</p>
+                                                            <p className="text-sm font-light text-foreground/80">{patch.date || patch.releaseDate}</p>
                                                         </div>
                                                     )}
                                                     {patch.summary && (
-                                                        <div className="col-span-2 lg:col-span-5 border-t border-white/5 pt-2 mt-1">
-                                                            <p className="text-xs text-white/40 uppercase tracking-wider mb-1">{dict.dashboard.productDetail.description}</p>
+                                                        <div className="col-span-2 lg:col-span-5 border-t border-foreground/5 pt-2 mt-1">
+                                                            <p className="text-xs text-foreground/40 uppercase tracking-wider mb-1">{dict.dashboard.productDetail.description}</p>
                                                             <p className="text-xs font-mono text-emerald-300/80 max-w-full truncate" title={patch.summary}>{patch.summary}</p>
                                                         </div>
                                                     )}
@@ -305,16 +305,16 @@ export function ProductDetailClient({ categoryId, productId, dict }: { categoryI
 
                                                 {(patch.description || patch.Description || patch.diff_content) && (
                                                     <div className="mt-1 space-y-2">
-                                                        <p className="text-xs text-white/40 uppercase tracking-wider mb-0">{dict.dashboard.productDetail.description}</p>
-                                                        <p className="text-sm text-white/70 font-light leading-relaxed whitespace-pre-line line-clamp-3 hover:line-clamp-none transition-all cursor-pointer">
+                                                        <p className="text-xs text-foreground/40 uppercase tracking-wider mb-0">{dict.dashboard.productDetail.description}</p>
+                                                        <p className="text-sm text-foreground/70 font-light leading-relaxed whitespace-pre-line line-clamp-3 hover:line-clamp-none transition-all cursor-pointer">
                                                             {patch.description || patch.Description || patch.diff_content}
                                                         </p>
                                                     </div>
                                                 )}
 
                                                 {(patch.url || patch.ref_url) && (
-                                                    <div className="mt-2 pt-2 border-t border-white/5">
-                                                        <p className="text-xs text-white/40 uppercase tracking-wider mb-1">{dict?.dashboard?.productDetail?.urlLabel || "URL"}</p>
+                                                    <div className="mt-2 pt-2 border-t border-foreground/5">
+                                                        <p className="text-xs text-foreground/40 uppercase tracking-wider mb-1">{dict?.dashboard?.productDetail?.urlLabel || "URL"}</p>
                                                         <a href={patch.url || patch.ref_url} target="_blank" rel="noreferrer" className="text-sm text-blue-400 hover:text-blue-300 transition-colors break-all">
                                                             {patch.url || patch.ref_url}
                                                         </a>
@@ -325,7 +325,7 @@ export function ProductDetailClient({ categoryId, productId, dict }: { categoryI
                                     })}
                                 </div>
                             ) : (
-                                <div className="p-12 text-center text-white/30 border border-dashed border-white/10 rounded-lg bg-black/50">
+                                <div className="p-12 text-center text-foreground/30 border border-dashed border-foreground/10 rounded-lg bg-background/50">
                                     {dict.dashboard.productDetail.noData}
                                 </div>
                             )}
@@ -333,9 +333,9 @@ export function ProductDetailClient({ categoryId, productId, dict }: { categoryI
                     </TabsContent>
 
                     <TabsContent value="reviewed" className="mt-0 space-y-4">
-                        <div className="bg-[#0a0a0a] border border-white/10 rounded-xl p-6 shadow-xl">
-                            <h3 className="text-xl font-light text-white mb-2">{dict.dashboard.productDetail.reviewTitle}</h3>
-                            <p className="text-white/40 text-sm mb-8">{dict.dashboard.productDetail.reviewDesc}</p>
+                        <div className="bg-card border border-foreground/10 rounded-xl p-6 shadow-xl">
+                            <h3 className="text-xl font-light text-foreground mb-2">{dict.dashboard.productDetail.reviewTitle}</h3>
+                            <p className="text-foreground/40 text-sm mb-8">{dict.dashboard.productDetail.reviewDesc}</p>
 
                             {reviewedData?.data && Array.isArray(reviewedData.data) ? (
                                 <div className="space-y-6">
@@ -346,21 +346,21 @@ export function ProductDetailClient({ categoryId, productId, dict }: { categoryI
                                         const isSavedLocally = feedbacks.some(f => f.issueId === issueId && f.reason === localExclusions[issueId]?.reason);
 
                                         return (
-                                            <div key={idx} className={`p-6 rounded-xl border flex flex-col gap-3 transition-colors ${isExcludedLocally ? 'bg-black border-dashed border-red-500/30' : isCritical ? 'bg-red-500/5 border-red-500/20 shadow-[0_0_15px_-3px_rgba(239,68,68,0.1)]' : 'bg-white/[0.02] border-white/5'}`}>
+                                            <div key={idx} className={`p-6 rounded-xl border flex flex-col gap-3 transition-colors ${isExcludedLocally ? 'bg-background border-dashed border-red-500/30' : isCritical ? 'bg-red-500/5 border-red-500/20 shadow-[0_0_15px_-3px_rgba(239,68,68,0.1)]' : 'bg-foreground/[0.02] border-foreground/5'}`}>
                                                 <div className="flex items-start justify-between">
                                                     <div className="flex items-center gap-3 flex-wrap">
                                                         {isCritical ? <AlertTriangle className="w-5 h-5 text-red-400 flex-shrink-0" /> : <CheckCircle2 className="w-5 h-5 text-emerald-400 flex-shrink-0" />}
                                                         <h4 className={`text-lg font-medium ${isExcludedLocally ? 'text-zinc-500 line-through' : isCritical ? 'text-red-400' : 'text-emerald-400'}`}>
                                                             {issueId}
                                                         </h4>
-                                                        <label className="flex items-center gap-2 ml-4 px-3 py-1 bg-black/40 border border-white/10 rounded-full cursor-pointer hover:bg-white/5 transition-colors">
+                                                        <label className="flex items-center gap-2 ml-4 px-3 py-1 bg-foreground/[0.04] border border-foreground/10 rounded-full cursor-pointer hover:bg-foreground/5 transition-colors">
                                                             <input
                                                                 type="checkbox"
                                                                 className="accent-red-500 cursor-pointer w-4 h-4"
                                                                 checked={isExcludedLocally || false}
                                                                 onChange={(e) => toggleExclusion(issueId, e.target.checked)}
                                                             />
-                                                            <span className="text-xs text-white/60">{dict.dashboard.feedback.exclude}</span>
+                                                            <span className="text-xs text-foreground/60">{dict.dashboard.feedback.exclude}</span>
                                                         </label>
                                                     </div>
                                                     <span className={`text-xs px-3 py-1 font-medium rounded-full ${isExcludedLocally ? 'bg-zinc-800 text-zinc-400' : isCritical ? 'bg-red-500/20 text-red-300 border border-red-500/30' : 'bg-emerald-500/10 text-emerald-300 border border-emerald-500/20'}`}>
@@ -380,7 +380,7 @@ export function ProductDetailClient({ categoryId, productId, dict }: { categoryI
                                                             <div className="md:col-span-1">
                                                                 <label className="text-xs text-red-300/80 mb-1.5 block font-medium">{dict.dashboard.feedback.categoryLabel}</label>
                                                                 <select
-                                                                    className="w-full bg-black/80 border border-red-500/30 rounded-lg px-4 py-2.5 text-sm text-white focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500/50 transition-all cursor-pointer"
+                                                                    className="w-full bg-card/80 border border-red-500/30 rounded-lg px-4 py-2.5 text-sm text-foreground focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500/50 transition-all cursor-pointer"
                                                                     value={localExclusions[issueId]?.category || ''}
                                                                     onChange={(e) => updateExclusionData(issueId, { category: e.target.value })}
                                                                 >
@@ -397,13 +397,13 @@ export function ProductDetailClient({ categoryId, productId, dict }: { categoryI
                                                                 <div className="flex gap-3 flex-1">
                                                                     <input
                                                                         type="text"
-                                                                        className="flex-1 bg-black/80 border border-red-500/30 rounded-lg px-4 py-2.5 text-sm text-white focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500/50 transition-all"
+                                                                        className="flex-1 bg-card/80 border border-red-500/30 rounded-lg px-4 py-2.5 text-sm text-foreground focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500/50 transition-all"
                                                                         placeholder={dict.dashboard.feedback.detailPlaceholder}
                                                                         value={localExclusions[issueId]?.detail || ''}
                                                                         onChange={(e) => updateExclusionData(issueId, { detail: e.target.value })}
                                                                     />
                                                                     <button
-                                                                        className="px-6 py-2.5 bg-red-600 hover:bg-red-500 text-white font-medium rounded-lg text-sm transition-colors flex items-center gap-2 disabled:opacity-50 disabled:bg-zinc-800 disabled:text-zinc-500 border border-red-500 disabled:border-zinc-700 shadow-[0_0_15px_rgba(239,68,68,0.4)] disabled:shadow-none whitespace-nowrap"
+                                                                        className="px-6 py-2.5 bg-red-600 hover:bg-red-500 text-foreground font-medium rounded-lg text-sm transition-colors flex items-center gap-2 disabled:opacity-50 disabled:bg-zinc-800 disabled:text-zinc-500 border border-red-500 disabled:border-zinc-700 shadow-[0_0_15px_rgba(239,68,68,0.4)] disabled:shadow-none whitespace-nowrap"
                                                                         onClick={() => handleSaveFeedback(issueId, patch.Description || patch['Patch Description'] || patch.PatchDescription || "Unknown")}
                                                                         disabled={!localExclusions[issueId]?.category || !localExclusions[issueId]?.detail || isSavedLocally || savingId === issueId}
                                                                     >
@@ -413,7 +413,7 @@ export function ProductDetailClient({ categoryId, productId, dict }: { categoryI
                                                             </div>
                                                         </div>
 
-                                                        <div className="flex items-start gap-2 mt-2 bg-black/40 p-3 rounded-lg border border-red-500/20 text-xs text-white/70 leading-relaxed">
+                                                        <div className="flex items-start gap-2 mt-2 bg-background/60 p-3 rounded-lg border border-red-500/20 text-xs text-foreground/70 leading-relaxed">
                                                             <Info className="w-4 h-4 text-red-400 flex-shrink-0 mt-0.5" />
                                                             <p>
                                                                 <strong className="text-red-300 font-semibold">{dict.dashboard.feedback.contextMatters}</strong> {dict.dashboard.feedback.contextDesc}
@@ -423,47 +423,47 @@ export function ProductDetailClient({ categoryId, productId, dict }: { categoryI
                                                 )}
 
                                                 <div className={`transition-opacity duration-300 ${isExcludedLocally ? 'opacity-40 grayscale pointer-events-none' : 'opacity-100'}`}>
-                                                    <div className="grid grid-cols-2 lg:grid-cols-6 gap-4 mt-2 py-3 border-y border-white/5">
+                                                    <div className="grid grid-cols-2 lg:grid-cols-6 gap-4 mt-2 py-3 border-y border-foreground/5">
                                                         {(patch.osVersion || patch.OsVersion) && (
                                                             <div>
-                                                                <p className="text-xs text-white/40 uppercase tracking-wider mb-1">{dict.dashboard.productDetail.osVersionLabel}</p>
+                                                                <p className="text-xs text-foreground/40 uppercase tracking-wider mb-1">{dict.dashboard.productDetail.osVersionLabel}</p>
                                                                 <p className="text-sm font-light text-blue-100 font-medium">{patch.osVersion || patch.OsVersion || dict?.dashboard?.productDetail?.unknown || 'Unknown'}</p>
                                                             </div>
                                                         )}
                                                         <div>
-                                                            <p className="text-xs text-white/40 uppercase tracking-wider mb-1">{dict.dashboard.productDetail.component}</p>
-                                                            <p className="text-sm font-light text-white/80">{patch.Component}</p>
+                                                            <p className="text-xs text-foreground/40 uppercase tracking-wider mb-1">{dict.dashboard.productDetail.component}</p>
+                                                            <p className="text-sm font-light text-foreground/80">{patch.Component}</p>
                                                         </div>
                                                         <div>
-                                                            <p className="text-xs text-white/40 uppercase tracking-wider mb-1">{dict.dashboard.productDetail.version}</p>
-                                                            <p className="text-sm font-light text-white/80 max-w-[150px] truncate" title={patch.Version || patch.version}>{patch.Version || patch.version}</p>
+                                                            <p className="text-xs text-foreground/40 uppercase tracking-wider mb-1">{dict.dashboard.productDetail.version}</p>
+                                                            <p className="text-sm font-light text-foreground/80 max-w-[150px] truncate" title={patch.Version || patch.version}>{patch.Version || patch.version}</p>
                                                         </div>
                                                         <div>
-                                                            <p className="text-xs text-white/40 uppercase tracking-wider mb-1">{dict.dashboard.productDetail.vendorId}</p>
-                                                            <p className="text-sm font-light text-white/80">{patch.Vendor}</p>
+                                                            <p className="text-xs text-foreground/40 uppercase tracking-wider mb-1">{dict.dashboard.productDetail.vendorId}</p>
+                                                            <p className="text-sm font-light text-foreground/80">{patch.Vendor}</p>
                                                         </div>
                                                         {(patch.Date || patch.date || patch.releaseDate) && (
                                                             <div>
-                                                                <p className="text-xs text-white/40 uppercase tracking-wider mb-1">{dict.dashboard.productDetail.releaseDate}</p>
-                                                                <p className="text-sm font-light text-white/80">{patch.Date || patch.date || patch.releaseDate}</p>
+                                                                <p className="text-xs text-foreground/40 uppercase tracking-wider mb-1">{dict.dashboard.productDetail.releaseDate}</p>
+                                                                <p className="text-sm font-light text-foreground/80">{patch.Date || patch.date || patch.releaseDate}</p>
                                                             </div>
                                                         )}
                                                         <div>
-                                                            <p className="text-xs text-white/40 uppercase tracking-wider mb-1">{dict?.dashboard?.productDetail?.urlLabel || "URL"}</p>
+                                                            <p className="text-xs text-foreground/40 uppercase tracking-wider mb-1">{dict?.dashboard?.productDetail?.urlLabel || "URL"}</p>
                                                             {patch.Url || patch.url || patch.ref_url ? (
                                                                 <a href={patch.Url || patch.url || patch.ref_url} target="_blank" rel="noopener noreferrer" className="text-sm font-light text-blue-400 hover:text-blue-300 hover:underline flex items-center gap-1 group">
                                                                     {dict?.dashboard?.productDetail?.viewAdvisory || "View Advisory"}
                                                                     <svg className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
                                                                 </a>
                                                             ) : (
-                                                                <p className="text-sm font-light text-white/50">{dict?.dashboard?.productDetail?.notAvailable || "N/A"}</p>
+                                                                <p className="text-sm font-light text-foreground/50">{dict?.dashboard?.productDetail?.notAvailable || "N/A"}</p>
                                                             )}
                                                         </div>
                                                     </div>
                                                     <div className="mt-2 space-y-4">
                                                         <div>
-                                                            <p className="text-xs text-white/40 uppercase tracking-wider mb-1">{dict.dashboard.productDetail.description}</p>
-                                                            <p className="text-sm text-white/70 font-light leading-relaxed">{patch.Description || patch['Patch Description'] || patch.PatchDescription}</p>
+                                                            <p className="text-xs text-foreground/40 uppercase tracking-wider mb-1">{dict.dashboard.productDetail.description}</p>
+                                                            <p className="text-sm text-foreground/70 font-light leading-relaxed">{patch.Description || patch['Patch Description'] || patch.PatchDescription}</p>
                                                         </div>
                                                         {(patch.KoreanDescription || patch['한글 설명']) && (
                                                             <div className="p-4 bg-blue-500/10 rounded-lg border border-blue-500/20">
@@ -481,14 +481,14 @@ export function ProductDetailClient({ categoryId, productId, dict }: { categoryI
                                     })}
                                 </div>
                             ) : (
-                                <div className="p-12 text-center text-white/30 border border-dashed border-white/10 rounded-lg bg-black/50">
+                                <div className="p-12 text-center text-foreground/30 border border-dashed border-foreground/10 rounded-lg bg-background/50">
                                     {dict.dashboard.productDetail.noData}
                                     <br /><span className="text-xs mt-2 block">{dict.dashboard.productDetail.noDataSub}</span>
                                 </div>
                             )}
 
                             {reviewedData?.data && Array.isArray(reviewedData.data) && reviewedData.data.length > 0 && (
-                                <div className="mt-8 pt-6 border-t border-white/10 flex justify-end">
+                                <div className="mt-8 pt-6 border-t border-foreground/10 flex justify-end">
                                     <button
                                         onClick={async () => {
                                             setIsFinalizing(true);

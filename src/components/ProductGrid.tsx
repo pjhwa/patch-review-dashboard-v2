@@ -264,14 +264,14 @@ export function ProductGrid({ categoryId, products, dict }: { categoryId: string
                             <button
                                 onClick={handleDownloadCSV}
                                 disabled={isDownloading}
-                                className="px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white text-xs font-semibold rounded-lg transition-colors ml-4 shadow-[0_0_15px_rgba(59,130,246,0.5)] disabled:opacity-50 flex items-center gap-2 border border-blue-500"
+                                className="px-4 py-2 bg-blue-600 hover:bg-blue-500 text-foreground text-xs font-semibold rounded-lg transition-colors ml-4 shadow-[0_0_15px_rgba(59,130,246,0.5)] disabled:opacity-50 flex items-center gap-2 border border-blue-500"
                             >
                                 {isDownloading ? (dict?.dashboard?.productGrid?.generating || "Generating...") : (dict?.dashboard?.productGrid?.downloadCsvBtn || "Download Final CSR")}
                             </button>
                         )}
                     </div>
                     {logTail && (
-                        <div className="mt-2 p-3 bg-black/40 rounded border border-white/5 font-mono text-xs text-white/60 whitespace-pre-wrap leading-tight overflow-x-auto max-h-64 overflow-y-auto">
+                        <div className="mt-2 p-3 bg-foreground/[0.04] rounded border border-foreground/5 font-mono text-xs text-foreground/60 whitespace-pre-wrap leading-tight overflow-x-auto max-h-64 overflow-y-auto">
                             {logTail}
                         </div>
                     )}
@@ -279,13 +279,13 @@ export function ProductGrid({ categoryId, products, dict }: { categoryId: string
             )}
 
             {confirmDialog.isOpen && (
-                <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
-                    <div className="bg-[#111] border border-white/10 rounded-xl p-6 max-w-md w-full shadow-2xl">
-                        <h3 className="text-lg font-medium text-white mb-4">
+                <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-foreground/60 backdrop-blur-sm">
+                    <div className="bg-card border border-foreground/10 rounded-xl p-6 max-w-md w-full shadow-2xl">
+                        <h3 className="text-lg font-medium text-foreground mb-4">
                             {confirmDialog.isAiOnly ? (dict?.dashboard?.productGrid?.aiOnlyTitle || "Run AI Analysis Only") : (confirmDialog.isRetry ? (dict?.dashboard?.productGrid?.retryTitle || "Retry Failed Collection") : (dict?.dashboard?.productGrid?.startCollectionTitle || "Run Full Pipeline"))}
                         </h3>
 
-                        <div className="text-sm text-white/60 space-y-4 mb-6">
+                        <div className="text-sm text-foreground/60 space-y-4 mb-6">
                             {!confirmDialog.isRetry && !confirmDialog.isAiOnly && lastCompletedAt && (
                                 <div className="p-3 bg-red-500/10 border border-red-500/20 rounded text-red-400">
                                     <strong className="block mb-1">{dict?.dashboard?.productGrid?.recentExecutionDetected || "Recent Execution Detected!"}</strong>
@@ -300,14 +300,14 @@ export function ProductGrid({ categoryId, products, dict }: { categoryId: string
                             ) : (
                                 <p>{dict?.dashboard?.productGrid?.retryDesc || "Retries the previously failed pipeline stages."}</p>
                             ))}
-                            <p className="font-medium text-white/80">{dict?.dashboard?.productGrid?.proceedAsk || "Do you wish to proceed?"}</p>
+                            <p className="font-medium text-foreground/80">{dict?.dashboard?.productGrid?.proceedAsk || "Do you wish to proceed?"}</p>
                         </div>
 
                         <div className="flex justify-end gap-3">
                             <button
                                 onClick={() => !isQueueing && setConfirmDialog({ isOpen: false, productId: null, isRetry: false, isAiOnly: false })}
                                 disabled={isQueueing}
-                                className="px-4 py-2 rounded bg-white/5 hover:bg-white/10 text-white transition-colors text-sm disabled:opacity-50"
+                                className="px-4 py-2 rounded bg-foreground/5 hover:bg-foreground/10 text-foreground transition-colors text-sm disabled:opacity-50"
                             >
                                 {dict?.dashboard?.productGrid?.cancelBtn || "Cancel"}
                             </button>

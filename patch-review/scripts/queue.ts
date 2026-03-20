@@ -189,7 +189,7 @@ export function startWorker() {
                             let parsedJson: any = null;
                             for (let attempt = 1; attempt <= MAX_AI_RETRIES + 1; attempt++) {
                                 try {
-                                    const rawAiOutput = await withOpenClawLock(async (msg) => await job.log(msg), async () => {
+                                    const rawAiOutput = await withOpenClawLock(async (msg) => { await job.log(msg); }, async () => {
                                         const sessionsDir = path.join(process.env.HOME || '/home/citec', '.openclaw/agents/main/sessions');
                                         if (fs.existsSync(sessionsDir)) {
                                             const oldFiles = fs.readdirSync(sessionsDir).filter((f: string) => f.endsWith('.lock') || f.includes('.jsonl'));
@@ -250,10 +250,8 @@ export function startWorker() {
                         try {
                             await prisma.preprocessedPatch.deleteMany({ where: { vendor: 'Ceph' } });
                             for (const p of cephPatchesRaw) {
-                                await prisma.preprocessedPatch.upsert({
-                                    where: { issueId: p.patch_id },
-                                    update: { vendor: 'Ceph', component: p.component || 'ceph', version: p.version || '', osVersion: p.os_version || null, description: (p.description || '').slice(0, 4000), releaseDate: p.issued_date || null },
-                                    create: { issueId: p.patch_id, vendor: 'Ceph', component: p.component || 'ceph', version: p.version || '', osVersion: p.os_version || null, description: (p.description || '').slice(0, 4000), releaseDate: p.issued_date || null },
+                                await prisma.preprocessedPatch.create({
+                                    data: { issueId: p.patch_id, vendor: 'Ceph', component: p.component || 'ceph', version: p.version || '', osVersion: p.os_version || null, description: (p.description || '').slice(0, 4000), releaseDate: p.issued_date || null },
                                 });
                             }
                             await job.log(`[CEPH-DB] Preprocessed ${cephPatchesRaw.length} patches ingested.`);
@@ -418,7 +416,7 @@ export function startWorker() {
 
                         for (let attempt = 1; attempt <= MAX_AI_RETRIES + 1; attempt++) {
                             try {
-                                const rawAiOutput = await withOpenClawLock(async (msg) => await job.log(msg), async () => {
+                                const rawAiOutput = await withOpenClawLock(async (msg) => { await job.log(msg); }, async () => {
                                     const sessionsDir = path.join(process.env.HOME || '/home/citec', '.openclaw/agents/main/sessions');
                                     if (fs.existsSync(sessionsDir)) {
                                         const oldFiles = fs.readdirSync(sessionsDir).filter((f: string) => f.endsWith('.lock') || f.includes('.jsonl'));

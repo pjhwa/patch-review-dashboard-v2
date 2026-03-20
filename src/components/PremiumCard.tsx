@@ -12,31 +12,31 @@ export function PremiumCard({
 }) {
 
     return (
-        <Card className={`relative overflow-hidden border-white/[0.06] bg-white/[0.02] backdrop-blur-xl transition-all duration-300 ${active ? 'hover:-translate-y-1 hover:border-white/20 hover:bg-white/[0.05] hover:shadow-[0_0_30px_-5px_rgba(255,255,255,0.05)]' : 'opacity-50 grayscale'}`}>
+        <Card className={`relative overflow-hidden border-border bg-card backdrop-blur-xl transition-all duration-300 ${active ? 'hover:-translate-y-1 hover:border-foreground/20 hover:bg-foreground/[0.04] hover:shadow-[0_0_30px_-5px_rgba(0,0,0,0.08)]' : 'opacity-50 grayscale'}`}>
             <Link href={active ? href : "#"} className={`block group ${active ? 'cursor-pointer' : 'cursor-default'}`}>
                 <CardHeader className="pb-2">
-                    <CardTitle className="text-sm font-medium text-white/70 uppercase tracking-wider group-hover:text-white transition-colors">{title}</CardTitle>
+                    <CardTitle className="text-sm font-medium text-foreground/70 uppercase tracking-wider group-hover:text-foreground transition-colors">{title}</CardTitle>
                 </CardHeader>
                 <CardContent>
                     {stages ? (
                         <div className="grid grid-cols-3 gap-2 mt-2 mb-4">
                             <div className="flex flex-col">
-                                <span className="text-xs text-white/40 mb-1">{dict?.dashboard?.premiumCard?.collected || 'Collected'}</span>
-                                <span className="text-2xl font-light tracking-tighter text-white/80">{stages.collected}</span>
+                                <span className="text-xs text-foreground/40 mb-1">{dict?.dashboard?.premiumCard?.collected || 'Collected'}</span>
+                                <span className="text-2xl font-light tracking-tighter text-foreground/80">{stages.collected}</span>
                             </div>
-                            <div className="flex flex-col border-l border-white/5 pl-2">
-                                <span className="text-xs text-white/40 mb-1">{dict?.dashboard?.premiumCard?.preprocessed || 'Preprocessed'}</span>
-                                <span className="text-2xl font-light tracking-tighter text-emerald-400/80">{stages.preprocessed}</span>
+                            <div className="flex flex-col border-l border-foreground/5 pl-2">
+                                <span className="text-xs text-foreground/40 mb-1">{dict?.dashboard?.premiumCard?.preprocessed || 'Preprocessed'}</span>
+                                <span className="text-2xl font-light tracking-tighter text-emerald-500/80">{stages.preprocessed}</span>
                             </div>
-                            <div className="flex flex-col border-l border-white/5 pl-2">
-                                <span className="text-xs text-white/40 mb-1">{isReviewCompleted ? (dict?.dashboard?.premiumCard?.approved || 'Approved') : (dict?.dashboard?.premiumCard?.reviewed || 'Reviewed')}</span>
-                                <span className={`text-2xl font-light tracking-tighter ${isReviewCompleted ? 'text-emerald-400/80 drop-shadow-[0_0_10px_rgba(16,185,129,0.5)]' : 'text-blue-400/80'}`}>
+                            <div className="flex flex-col border-l border-foreground/5 pl-2">
+                                <span className="text-xs text-foreground/40 mb-1">{isReviewCompleted ? (dict?.dashboard?.premiumCard?.approved || 'Approved') : (dict?.dashboard?.premiumCard?.reviewed || 'Reviewed')}</span>
+                                <span className={`text-2xl font-light tracking-tighter ${isReviewCompleted ? 'text-emerald-500/80 drop-shadow-[0_0_10px_rgba(16,185,129,0.5)]' : 'text-blue-500/80'}`}>
                                     {isReviewCompleted && stages.approved !== undefined ? stages.approved : stages.reviewed}
                                 </span>
                             </div>
                         </div>
                     ) : (
-                        <div className="text-xs text-white/40 mt-1 mb-4">{dict?.dashboard?.premiumCard?.noData || 'No data available'}</div>
+                        <div className="text-xs text-foreground/40 mt-1 mb-4">{dict?.dashboard?.premiumCard?.noData || 'No data available'}</div>
                     )}
                 </CardContent>
             </Link>
