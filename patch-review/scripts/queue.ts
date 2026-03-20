@@ -25,7 +25,7 @@ export function startWorker() {
     new Worker('patch-pipeline', async (job: Job) => {
         return new Promise((resolve, reject) => {
             console.log(`Starting pipeline job ${job.id} (name: ${job.name})`);
-            const linuxV2Dir = path.join(process.env.HOME || '/home/citec', '.openclaw/workspace/skills/patch-review/os/linux-v2');
+            const linuxV2Dir = path.join(process.env.HOME || '/home/citec', '.openclaw/workspace/skills/patch-review/os/linux');
             const cephSkillDir = path.join(process.env.HOME || '/home/citec', '.openclaw/workspace/skills/patch-review/storage/ceph');
 
             async function withOpenClawLock(jobLog: (msg: string) => Promise<void>, fn: () => Promise<any>): Promise<any> {
@@ -189,7 +189,7 @@ export function startWorker() {
                             let parsedJson: any = null;
                             for (let attempt = 1; attempt <= MAX_AI_RETRIES + 1; attempt++) {
                                 try {
-                                    const rawAiOutput = await withOpenClawLock(async (msg) => await job.log(msg), async () => {
+                                    const rawAiOutput = await withOpenClawLock(async (msg) => { await job.log(msg); }, async () => {
                                         const sessionsDir = path.join(process.env.HOME || '/home/citec', '.openclaw/agents/main/sessions');
                                         if (fs.existsSync(sessionsDir)) {
                                             const oldFiles = fs.readdirSync(sessionsDir).filter((f: string) => f.endsWith('.lock') || f.includes('.jsonl'));
@@ -250,10 +250,8 @@ export function startWorker() {
                         try {
                             await prisma.preprocessedPatch.deleteMany({ where: { vendor: 'Ceph' } });
                             for (const p of cephPatchesRaw) {
-                                await prisma.preprocessedPatch.upsert({
-                                    where: { issueId: p.patch_id },
-                                    update: { vendor: 'Ceph', component: p.component || 'ceph', version: p.version || '', osVersion: p.os_version || null, description: (p.description || '').slice(0, 4000), releaseDate: p.issued_date || null },
-                                    create: { issueId: p.patch_id, vendor: 'Ceph', component: p.component || 'ceph', version: p.version || '', osVersion: p.os_version || null, description: (p.description || '').slice(0, 4000), releaseDate: p.issued_date || null },
+                                await prisma.preprocessedPatch.create({
+                                    data: { issueId: p.patch_id, vendor: 'Ceph', component: p.component || 'ceph', version: p.version || '', osVersion: p.os_version || null, description: (p.description || '').slice(0, 4000), releaseDate: p.issued_date || null },
                                 });
                             }
                             await job.log(`[CEPH-DB] Preprocessed ${cephPatchesRaw.length} patches ingested.`);
@@ -281,6 +279,227 @@ export function startWorker() {
                     }
                     // ============================================================
                     // END CEPH PIPELINE BRANCH
+                    // ============================================================
+
+                    // ============================================================
+                    // PRODUCT_REGISTRY GENERIC PIPELINE BRANCH
+                    // Handles all active registry products except Ceph (above) and
+                    // Linux OS products (redhat/oracle/ubuntu) which use the
+                    // Linux fallthrough pipeline below.
+                    // ============================================================
+                    if (job.name !== 'manual-review') {
+                        const { PRODUCT_REGISTRY } = require('@/lib/products-registry');
+                        const LINUX_PRODUCT_IDS = new Set(['redhat', 'oracle', 'ubuntu']);
+                        const registryProduct = (PRODUCT_REGISTRY as any[]).find(
+                            (p: any) => p.jobName === job.name && p.active && !LINUX_PRODUCT_IDS.has(p.id)
+                        );
+
+                        if (registryProduct) {
+                            const patchReviewBase = path.join(process.env.HOME || '/home/citec', '.openclaw/workspace/skills/patch-review');
+                            const skillDir = path.join(patchReviewBase, registryProduct.skillDirRelative);
+                            const patchesFilePath = path.join(skillDir, registryProduct.patchesForReviewFile);
+                            const outputReportPath = path.join(skillDir, registryProduct.aiReportFile);
+                            const TAG = registryProduct.logTag;
+
+                            const runProductStream = async (command: string, args: string[], progressMap: any = {}, overrideOpts: any = {}, suppressLog: boolean = false): Promise<any> => {
+                                return new Promise((res, rej) => {
+                                    let fullStdout = '';
+                                    let isRej = false;
+                                    const p = spawn(command, args, { cwd: skillDir, shell: false, ...overrideOpts });
+                                    p.stdout.on('data', async (data: any) => {
+                                        const chunk = data.toString();
+                                        fullStdout += chunk;
+                                        const lines = chunk.split('\n');
+                                        for (const line of lines) {
+                                            if (line.trim()) {
+                                                if (!suppressLog) job.log(line).catch(() => { });
+                                                for (const [keyword, prog] of Object.entries(progressMap)) {
+                                                    if (line.includes(keyword)) job.updateProgress(prog as number).catch(() => { });
+                                                }
+                                            }
+                                        }
+                                    });
+                                    p.stderr.on('data', (data: any) => {
+                                        const errText = data.toString();
+                                        job.log(`ERROR: ${errText}`).catch(() => { });
+                                        if (errText.includes('rate limit')) { isRej = true; rej(new Error('AI_REVIEW_FAILED: API Rate Limit Error')); }
+                                        else if (errText.includes('timeout') || errText.includes('gateway closed')) { isRej = true; rej(new Error('AI_REVIEW_FAILED: OpenClaw timed out.')); }
+                                    });
+                                    p.on('close', (code: number | null) => {
+                                        if (!isRej) { code === 0 ? res(fullStdout) : rej(new Error(`Command ${command} failed with code ${code}`)); }
+                                    });
+                                });
+                            };
+
+                            // Step 1: Preprocessing
+                            if (!isAiOnly) {
+                                await job.updateProgress(10);
+                                await job.log(`[${TAG}] Starting preprocessing...`);
+                                await runProductStream('python3', [registryProduct.preprocessingScript, ...registryProduct.preprocessingArgs]);
+                                await job.updateProgress(40);
+                                await job.log(`[${TAG}] Preprocessing complete.`);
+                            } else {
+                                await job.updateProgress(40);
+                                await job.log(`[${TAG}] AI-Only mode. Skipping preprocessing.`);
+                            }
+
+                            // Step 2: AI Review Loop
+                            const { ReviewSchema } = require('@/lib/schema');
+                            const MAX_AI_RETRIES = 2;
+                            let finalReviewedPatches: any[] = [];
+                            let patchesRaw: any[] = [];
+                            try {
+                                patchesRaw = JSON.parse(fs.readFileSync(patchesFilePath, 'utf-8'));
+                            } catch (e) {
+                                await job.log(`[${TAG}] ERROR: Could not read patches file: ${patchesFilePath}`);
+                            }
+
+                            const prunePatchProduct = (obj: any): any => {
+                                if (!obj) return obj;
+                                const copy = JSON.parse(JSON.stringify(obj));
+                                const pruneText = (text: string, maxLen: number) => {
+                                    if (typeof text !== 'string') return text;
+                                    let pruned = text.replace(/https?:\/\/[^\s"'<>\\]+/g, '[URL]');
+                                    return pruned.length > maxLen ? pruned.slice(0, maxLen) + '...[TRUNCATED]' : pruned;
+                                };
+                                const traverse = (o: any) => {
+                                    if (Array.isArray(o)) { for (let i = 0; i < o.length; i++) { if (typeof o[i] === 'object') traverse(o[i]); else if (typeof o[i] === 'string') o[i] = pruneText(o[i], 3000); } }
+                                    else if (typeof o === 'object' && o !== null) { for (const key of Object.keys(o)) { if (typeof o[key] === 'string') o[key] = pruneText(o[key], 5000); else if (typeof o[key] === 'object') traverse(o[key]); } }
+                                };
+                                traverse(copy);
+                                return copy;
+                            };
+
+                            await job.updateProgress(50);
+                            await job.log(`[${TAG}] Sequentially evaluating ${patchesRaw.length} patches...`);
+
+                            const BATCH_SIZE = registryProduct.aiBatchSize || 5;
+                            for (let i = 0; i < patchesRaw.length; i += BATCH_SIZE) {
+                                const batch = patchesRaw.slice(i, i + BATCH_SIZE);
+                                const actualBatchSize = batch.length;
+                                const batchNames = batch.map((p: any) => p.patch_id || p.id || 'Unknown').join(', ');
+                                const batchIndex = Math.floor(i / BATCH_SIZE) + 1;
+                                const totalBatches = Math.ceil(patchesRaw.length / BATCH_SIZE);
+                                await job.log(`[${TAG}] Batch ${batchIndex}/${totalBatches} (${actualBatchSize}): ${batchNames}`);
+
+                                const prunedBatch = batch.map((p: any) => prunePatchProduct(p));
+                                let prompt = registryProduct.buildPrompt(skillDir, actualBatchSize, prunedBatch);
+                                let parsedJson: any = null;
+
+                                for (let attempt = 1; attempt <= MAX_AI_RETRIES + 1; attempt++) {
+                                    try {
+                                        const rawAiOutput = await withOpenClawLock(async (msg) => { await job.log(msg); }, async () => {
+                                            const sessionsDir = path.join(process.env.HOME || '/home/citec', '.openclaw/agents/main/sessions');
+                                            if (fs.existsSync(sessionsDir)) {
+                                                const oldFiles = fs.readdirSync(sessionsDir).filter((f: string) => f.endsWith('.lock') || f.includes('.jsonl'));
+                                                for (const lf of oldFiles) fs.rmSync(path.join(sessionsDir, lf), { force: true });
+                                            }
+                                            return await runProductStream('/home/citec/.nvm/versions/node/v22.22.0/bin/openclaw',
+                                                ['agent', '--agent', 'main', '--json', '--session-id', `${registryProduct.id}_${job.id}_batch_${batchIndex}_${attempt}`, '-m', prompt],
+                                                {}, { shell: false, cwd: skillDir }, true
+                                            );
+                                        });
+
+                                        const extractJsonArray = (text: string): any => {
+                                            const stripped = text.replace(/```(?:json)?\s*/g, '').replace(/```/g, '');
+                                            const match = stripped.match(/\[\s*\{[\s\S]*?\}\s*\]/);
+                                            if (!match) return null;
+                                            return JSON.parse(match[0]);
+                                        };
+
+                                        const openclawWrapper = JSON.parse(rawAiOutput);
+                                        const payloads = openclawWrapper?.result?.payloads || [];
+                                        const textContents = payloads.map((p: any) => p.text).join('\n');
+
+                                        if (textContents.toLowerCase().includes('rate limit')) throw new Error('AI_REVIEW_FAILED: Rate Limit');
+                                        parsedJson = extractJsonArray(textContents);
+                                        if (!parsedJson) throw new Error('No JSON array in AI output');
+                                        if (!Array.isArray(parsedJson) || (registryProduct.aiBatchValidation === 'exact' && parsedJson.length !== actualBatchSize)) {
+                                            throw new Error(`Expected array of length ${actualBatchSize}, got ${Array.isArray(parsedJson) ? parsedJson.length : 'non-array'}`);
+                                        }
+
+                                        for (const item of parsedJson) {
+                                            const validation = ReviewSchema.safeParse(item);
+                                            if (!validation.success) {
+                                                const errorDetails = validation.error.errors.map((err: any) => `${err.path.join('.')}: ${err.message}`).join(', ');
+                                                throw new Error(`Zod Validation Failed: ${errorDetails}`);
+                                            }
+                                            finalReviewedPatches.push(item);
+                                        }
+                                        break;
+                                    } catch (err: any) {
+                                        if (err.message.includes('AI_REVIEW_FAILED')) throw err;
+                                        if (attempt <= MAX_AI_RETRIES) {
+                                            prompt += `\n\nPrevious attempt failed. Fix: ${err.message}\nReturn ONLY a JSON array with EXACTLY ${actualBatchSize} objects.`;
+                                            await job.log(`  -> Attempt ${attempt} failed for batch ${batchIndex}, retrying...`);
+                                        } else {
+                                            await job.log(`[SKIP] Batch ${batchIndex} permanently failed.`);
+                                        }
+                                    }
+                                }
+                                await job.updateProgress(50 + Math.floor(((i + actualBatchSize) / patchesRaw.length) * 40));
+                            }
+
+                            // Save AI report
+                            fs.writeFileSync(outputReportPath, JSON.stringify(finalReviewedPatches, null, 2));
+                            await job.log(`[${TAG}] AI review complete. ${finalReviewedPatches.length} patches reviewed.`);
+
+                            // Step 3: DB Ingestion
+                            try {
+                                await prisma.preprocessedPatch.deleteMany({ where: { vendor: registryProduct.vendorString } });
+                                for (const p of patchesRaw) {
+                                    const mapped = registryProduct.preprocessedPatchMapper(p);
+                                    await prisma.preprocessedPatch.create({ data: mapped });
+                                }
+                                await job.log(`[${TAG}] Preprocessed ${patchesRaw.length} patches ingested.`);
+
+                                await prisma.reviewedPatch.deleteMany({ where: { vendor: registryProduct.vendorString } });
+                                for (const item of finalReviewedPatches) {
+                                    const issueId = item.IssueID || item.id || 'Unknown';
+                                    try {
+                                        await prisma.reviewedPatch.upsert({
+                                            where: { issueId },
+                                            update: { vendor: registryProduct.vendorString, component: item.Component || registryProduct.aiComponentDefault, version: item.Version || '', osVersion: item.OsVersion || null, criticality: item.Criticality || 'Unknown', description: item.Description || '', koreanDescription: item.KoreanDescription || item.Description || '', decision: item.Decision || 'Done', reason: item.Reason || null, pipelineRunId: String(job.id) },
+                                            create: { issueId, vendor: registryProduct.vendorString, component: item.Component || registryProduct.aiComponentDefault, version: item.Version || '', osVersion: item.OsVersion || null, criticality: item.Criticality || 'Unknown', description: item.Description || '', koreanDescription: item.KoreanDescription || item.Description || '', decision: item.Decision || 'Done', reason: item.Reason || null, pipelineRunId: String(job.id) },
+                                        });
+                                    } catch (e) { await job.log(`[${TAG}] Upsert failed for ${issueId}`); }
+                                }
+                                await job.log(`[${TAG}] Reviewed patches ingested: ${finalReviewedPatches.length}`);
+                            } catch (dbErr: any) {
+                                await job.log(`[${TAG}] DB ingestion error: ${dbErr.message}`);
+                            }
+
+                            // Step 4: Passthrough (fill ReviewedPatch for AI-skipped patches)
+                            if (registryProduct.passthrough?.enabled) {
+                                try {
+                                    const aiIssuedIds = new Set(finalReviewedPatches.map((d: any) => (d.IssueID || d.id || '').toString()));
+                                    const missingPatches = await prisma.preprocessedPatch.findMany({
+                                        where: { vendor: registryProduct.vendorString, issueId: { notIn: Array.from(aiIssuedIds) } }
+                                    });
+                                    if (missingPatches.length > 0) {
+                                        await job.log(`[${TAG}] Passthrough: inserting ${missingPatches.length} AI-skipped patches.`);
+                                        for (const pp of missingPatches) {
+                                            await prisma.reviewedPatch.upsert({
+                                                where: { issueId: pp.issueId },
+                                                update: { vendor: pp.vendor, osVersion: pp.osVersion || null, component: pp.component || registryProduct.aiComponentDefault, version: pp.version || '', criticality: registryProduct.passthrough.fallbackCriticality, description: pp.description || '', koreanDescription: pp.description || '', decision: registryProduct.passthrough.fallbackDecision, pipelineRunId: String(job.id) },
+                                                create: { issueId: pp.issueId, vendor: pp.vendor, osVersion: pp.osVersion || null, component: pp.component || registryProduct.aiComponentDefault, version: pp.version || '', criticality: registryProduct.passthrough.fallbackCriticality, description: pp.description || '', koreanDescription: pp.description || '', decision: registryProduct.passthrough.fallbackDecision, pipelineRunId: String(job.id) },
+                                            });
+                                        }
+                                        await job.log(`[${TAG}] Passthrough done.`);
+                                    }
+                                } catch (ptErr: any) {
+                                    await job.log(`[${TAG}] Passthrough error: ${ptErr.message}`);
+                                }
+                            }
+
+                            await job.updateProgress(100);
+                            await job.log(`[${TAG}] All tasks completed successfully.`);
+                            resolve(`${registryProduct.name} pipeline success`);
+                            return;
+                        }
+                    }
+                    // ============================================================
+                    // END PRODUCT_REGISTRY GENERIC PIPELINE BRANCH
                     // ============================================================
 
                     if (job.name === 'manual-review') {
@@ -418,7 +637,7 @@ export function startWorker() {
 
                         for (let attempt = 1; attempt <= MAX_AI_RETRIES + 1; attempt++) {
                             try {
-                                const rawAiOutput = await withOpenClawLock(async (msg) => await job.log(msg), async () => {
+                                const rawAiOutput = await withOpenClawLock(async (msg) => { await job.log(msg); }, async () => {
                                     const sessionsDir = path.join(process.env.HOME || '/home/citec', '.openclaw/agents/main/sessions');
                                     if (fs.existsSync(sessionsDir)) {
                                         const oldFiles = fs.readdirSync(sessionsDir).filter((f: string) => f.endsWith('.lock') || f.includes('.jsonl'));
