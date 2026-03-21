@@ -227,4 +227,60 @@ Linux 제품의 경우 활성 Linux 벤더 전체(redhat + oracle + ubuntu)의 C
 - `ReviewedPatch`에 없는 패치에 대해서만 AI 재실행
 - 이미 리뷰된 패치 건너뜀 (DB 중복 쓰기 방지)
 
+---
+
+## 파이프라인 관리 스크립트 (`pipeline-ctl.sh`)
+
+### 개요
+
+`pipeline-ctl.sh`는 파이프라인 운영 자동화를 위한 관리 CLI입니다.
+BullMQ 큐·openclaw 프로세스·Redis 상태를 직접 제어하며, 장애 상황에서 안전하게 복구합니다.
+
+```bash
+# 사용법
+./pipeline-ctl.sh <command> [options]
+```
+
+| 명령 | 설명 |
+|------|------|
+| `status` | AI 프로세스·lock·큐·DB·pm2 상태 한눈에 조회 |
+| `kill` | openclaw 프로세스 종료 + stale lock 해제 |
+| `reset` | kill + BullMQ 큐 삭제 + DB(PreprocessedPatch, ReviewedPatch) 초기화 |
+| `restart` | reset + pm2 재시작 |
+| `start-all` | 전체 13개 제품 파이프라인 일괄 enqueue |
+| `start <id>` | 특정 제품만 enqueue (예: `start mysql`) |
+| `recover` | restart + start-all (장애 복구 원스톱) |
+
+### 주요 설계 결정
+
+**`start-all`은 API route를 우회해 BullMQ에 직접 enqueue한다.**
+각 제품의 `/api/pipeline/<product>/run` route는 큐에 기존 job이 있으면 전체 flush 후 자신만 추가하는 로직을 포함한다.
+여러 제품을 순서대로 호출하면 마지막 제품만 큐에 남는 문제가 발생한다.
+→ `.mjs` 스크립트를 동적 생성해 BullMQ에 직접 추가함으로써 이 문제를 우회한다.
+
+### stale lock 자동 감지 (`withOpenClawLock`)
+
+pm2 재시작·`kill -9` 등으로 openclaw가 강제 종료되면 `/tmp/openclaw_execution.lock` 디렉토리가 잔류한다.
+다음 배치가 lock 획득을 시도할 때 무한 대기(Waiting for lock) 상태가 된다.
+
+**수정 사항 (`src/lib/queue.ts`)**:
+- lock 획득 시 `pid` 파일에 현재 프로세스 PID 기록
+- EEXIST 발생 시 저장된 PID에 `signal 0` 전송으로 생사 확인
+- PID가 죽었으면 stale lock으로 판단하고 자동 제거 후 즉시 재획득
+
+### 장애 시나리오별 대응
+
+| 증상 | 원인 | 해결 |
+|------|------|------|
+| `Waiting for another AI process...` 무한 반복 | pm2 재시작 후 orphan openclaw가 lock 점유 | `./pipeline-ctl.sh kill` (또는 자동 감지로 해소) |
+| 파이프라인이 시작 후 바로 멈춤 | BullMQ 큐에 stale job 잔류 | `./pipeline-ctl.sh reset` |
+| 전체 데이터 초기화 후 재실행 필요 | 수동 요청 또는 데이터 이상 | `./pipeline-ctl.sh recover` |
+| 특정 제품만 재실행 | AI 리뷰 실패 또는 데이터 갱신 | `./pipeline-ctl.sh start <product_id>` |
+
+### 전체 파이프라인 실행 주의사항
+
+- **API route로 개별 제품 순차 호출 금지**: 각 route가 큐를 flush하므로 마지막 제품만 남음
+- **`start-all` 전 반드시 `kill` 또는 `reset` 선행**: orphan 프로세스 없는 클린 상태 보장
+- **BullMQ 큐 concurrency=1**: job은 항상 1개씩 순차 처리되며, AI lock 경합 없음
+
 이는 UI의 **"AI만 실행"** 버튼과 동일하며, 해당 버튼은 작업 페이로드에 `isAiOnly: true`를 명시적으로 설정합니다.

@@ -27,15 +27,37 @@ let workerStarted = false;
 // 한 번에 하나의 AI 호출만 실행되도록 보장한다.
 // 파일이 아닌 디렉토리로 락을 구현하는 이유: mkdir은 OS 레벨에서 원자적(atomic)으로 동작해
 // 파일 생성보다 경쟁 조건(race condition)이 발생할 가능성이 없다.
+// PID 파일을 lock 디렉토리 안에 기록해 프로세스 종료(pm2 재시작, 강제 kill) 후 남은
+// 고아 lock을 자동으로 감지하고 제거한다.
 async function withOpenClawLock(jobLog: (msg: string) => Promise<any>, fn: () => Promise<any>): Promise<any> {
     const lockDir = '/tmp/openclaw_execution.lock';
+    const pidFile = `${lockDir}/pid`;
     let loggedWaiting = false;
     while (true) {
         try {
             fs.mkdirSync(lockDir);
+            // lock 획득 성공 — 현재 PID 기록
+            fs.writeFileSync(pidFile, String(process.pid));
             break;
         } catch (err: any) {
             if (err.code === 'EEXIST') {
+                // 고아 lock 감지: PID 파일이 없거나 해당 프로세스가 죽었으면 stale lock으로 판단
+                try {
+                    const storedPid = parseInt(fs.readFileSync(pidFile, 'utf8').trim(), 10);
+                    if (!isNaN(storedPid)) {
+                        try {
+                            process.kill(storedPid, 0); // 프로세스 생존 여부만 확인 (signal 0)
+                        } catch {
+                            // 프로세스가 존재하지 않음 → stale lock 제거 후 재시도
+                            fs.rmSync(lockDir, { recursive: true, force: true });
+                            continue;
+                        }
+                    }
+                } catch {
+                    // PID 파일 읽기 실패 → stale lock으로 간주하고 제거
+                    try { fs.rmSync(lockDir, { recursive: true, force: true }); } catch {}
+                    continue;
+                }
                 if (!loggedWaiting) {
                     await jobLog("Waiting for another AI process to finish (OpenClaw Global Lock)...");
                     loggedWaiting = true;
@@ -46,7 +68,7 @@ async function withOpenClawLock(jobLog: (msg: string) => Promise<any>, fn: () =>
             }
         }
     }
-    try { return await fn(); } finally { try { fs.rmdirSync(lockDir, { recursive: true }); } catch(e) {} }
+    try { return await fn(); } finally { try { fs.rmSync(lockDir, { recursive: true, force: true }); } catch(e) {} }
 }
 
 // AI 컨텍스트 토큰 한도를 초과하지 않도록 패치 데이터를 정리하는 범용 pruner.

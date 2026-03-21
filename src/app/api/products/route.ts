@@ -227,6 +227,42 @@ export async function GET(request: Request) {
             } catch { pgsqlIsReviewCompleted = true; }
         }
 
+        // --- MySQL ---
+        const mysqlSkillDir = path.join(process.env.HOME || '/home/citec', '.openclaw/workspace/skills/patch-review/database/mysql');
+        const mysqlDataDir = path.join(mysqlSkillDir, 'mysql_data');
+
+        const countMysqlJsonFiles = (dirPath: string): number => {
+            if (fs.existsSync(dirPath)) {
+                try {
+                    return fs.readdirSync(dirPath).filter((f: string) =>
+                        f.startsWith('MYSQ-') && f.endsWith('.json')
+                    ).length;
+                } catch { return 0; }
+            }
+            return 0;
+        };
+
+        const mysqlCollected = countMysqlJsonFiles(mysqlDataDir);
+
+        let mysqlPreprocessed = 0;
+        let mysqlReviewed = 0;
+        try {
+            mysqlPreprocessed = await prisma.preprocessedPatch.count({ where: { vendor: 'MySQL Community' } });
+            mysqlReviewed = await prisma.reviewedPatch.count({ where: { vendor: 'MySQL Community' } });
+        } catch (e) { }
+
+        const mysqlFinalCsv = path.join(mysqlSkillDir, 'final_approved_patches_mysql.csv');
+        let mysqlApproved = 0;
+        let mysqlIsReviewCompleted = false;
+        if (fs.existsSync(mysqlFinalCsv)) {
+            try {
+                const content = fs.readFileSync(mysqlFinalCsv, 'utf-8');
+                const parsed = Papa.parse(content, { header: true, skipEmptyLines: true });
+                mysqlApproved = parsed.data ? parsed.data.length : 0;
+                mysqlIsReviewCompleted = true;
+            } catch { mysqlIsReviewCompleted = true; }
+        }
+
         const databaseProducts = [
             {
                 id: 'mariadb',
@@ -249,7 +285,13 @@ export async function GET(request: Request) {
                 active: true,
                 isReviewCompleted: pgsqlIsReviewCompleted,
             },
-            { id: 'mysql', name: 'MySQL', stages: null, active: false, isReviewCompleted: false },
+            {
+                id: 'mysql',
+                name: 'MySQL Community',
+                stages: { collected: mysqlCollected, preprocessed: mysqlPreprocessed, reviewed: mysqlReviewed, approved: mysqlApproved },
+                active: true,
+                isReviewCompleted: mysqlIsReviewCompleted,
+            },
         ];
 
         return NextResponse.json({ products: databaseProducts });
@@ -293,6 +335,78 @@ export async function GET(request: Request) {
             } catch { jbossEapIsReviewCompleted = true; }
         }
 
+        // --- Apache Tomcat ---
+        const tomcatSkillDir = path.join(process.env.HOME || '/home/citec', '.openclaw/workspace/skills/patch-review/middleware/tomcat');
+        const tomcatDataDir = path.join(tomcatSkillDir, 'tomcat_data');
+
+        const countTomcatJsonFiles = (dirPath: string): number => {
+            if (fs.existsSync(dirPath)) {
+                try {
+                    return fs.readdirSync(dirPath).filter((f: string) =>
+                        f.startsWith('TOMC-') && f.endsWith('.json')
+                    ).length;
+                } catch { return 0; }
+            }
+            return 0;
+        };
+
+        const tomcatCollected = countTomcatJsonFiles(tomcatDataDir);
+
+        let tomcatPreprocessed = 0;
+        let tomcatReviewed = 0;
+        try {
+            tomcatPreprocessed = await prisma.preprocessedPatch.count({ where: { vendor: 'Apache Tomcat' } });
+            tomcatReviewed = await prisma.reviewedPatch.count({ where: { vendor: 'Apache Tomcat' } });
+        } catch (e) { }
+
+        const tomcatFinalCsv = path.join(tomcatSkillDir, 'final_approved_patches_tomcat.csv');
+        let tomcatApproved = 0;
+        let tomcatIsReviewCompleted = false;
+        if (fs.existsSync(tomcatFinalCsv)) {
+            try {
+                const content = fs.readFileSync(tomcatFinalCsv, 'utf-8');
+                const parsed = Papa.parse(content, { header: true, skipEmptyLines: true });
+                tomcatApproved = parsed.data ? parsed.data.length : 0;
+                tomcatIsReviewCompleted = true;
+            } catch { tomcatIsReviewCompleted = true; }
+        }
+
+        // --- WildFly ---
+        const wildflySkillDir = path.join(process.env.HOME || '/home/citec', '.openclaw/workspace/skills/patch-review/middleware/wildfly');
+        const wildflyDataDir = path.join(wildflySkillDir, 'wildfly_data');
+
+        const countWildflyJsonFiles = (dirPath: string): number => {
+            if (fs.existsSync(dirPath)) {
+                try {
+                    return fs.readdirSync(dirPath).filter((f: string) =>
+                        f.startsWith('WFLY-') && f.endsWith('.json')
+                    ).length;
+                } catch { return 0; }
+            }
+            return 0;
+        };
+
+        const wildflyCollected = countWildflyJsonFiles(wildflyDataDir);
+
+        let wildflyPreprocessed = 0;
+        let wildflyReviewed = 0;
+        try {
+            wildflyPreprocessed = await prisma.preprocessedPatch.count({ where: { vendor: 'WildFly' } });
+            wildflyReviewed = await prisma.reviewedPatch.count({ where: { vendor: 'WildFly' } });
+        } catch (e) { }
+
+        const wildflyFinalCsv = path.join(wildflySkillDir, 'final_approved_patches_wildfly.csv');
+        let wildflyApproved = 0;
+        let wildflyIsReviewCompleted = false;
+        if (fs.existsSync(wildflyFinalCsv)) {
+            try {
+                const content = fs.readFileSync(wildflyFinalCsv, 'utf-8');
+                const parsed = Papa.parse(content, { header: true, skipEmptyLines: true });
+                wildflyApproved = parsed.data ? parsed.data.length : 0;
+                wildflyIsReviewCompleted = true;
+            } catch { wildflyIsReviewCompleted = true; }
+        }
+
         const middlewareProducts = [
             {
                 id: 'jboss_eap',
@@ -300,6 +414,20 @@ export async function GET(request: Request) {
                 stages: { collected: jbossEapCollected, preprocessed: jbossEapPreprocessed, reviewed: jbossEapReviewed, approved: jbossEapApproved },
                 active: true,
                 isReviewCompleted: jbossEapIsReviewCompleted,
+            },
+            {
+                id: 'tomcat',
+                name: 'Apache Tomcat',
+                stages: { collected: tomcatCollected, preprocessed: tomcatPreprocessed, reviewed: tomcatReviewed, approved: tomcatApproved },
+                active: true,
+                isReviewCompleted: tomcatIsReviewCompleted,
+            },
+            {
+                id: 'wildfly',
+                name: 'WildFly',
+                stages: { collected: wildflyCollected, preprocessed: wildflyPreprocessed, reviewed: wildflyReviewed, approved: wildflyApproved },
+                active: true,
+                isReviewCompleted: wildflyIsReviewCompleted,
             },
         ];
 
