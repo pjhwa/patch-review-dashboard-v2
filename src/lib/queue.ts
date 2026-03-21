@@ -695,6 +695,10 @@ export function startWorker() {
                         job.name === 'run-pgsql-pipeline' ? 'pgsql' :
                         job.name === 'run-vsphere-pipeline' ? 'vsphere' :
                         job.name === 'run-windows-pipeline' ? 'windows' :
+                        job.name === 'run-jboss_eap-pipeline' ? 'jboss_eap' :
+                        job.name === 'run-tomcat-pipeline' ? 'tomcat' :
+                        job.name === 'run-wildfly-pipeline' ? 'wildfly' :
+                        job.name === 'run-mysql-pipeline' ? 'mysql' :
                         job.name === 'run-redhat-pipeline' ? 'redhat' :
                         job.name === 'run-oracle-pipeline' ? 'oracle' :
                         job.name === 'run-ubuntu-pipeline' ? 'ubuntu' :
