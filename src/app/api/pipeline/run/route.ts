@@ -66,12 +66,6 @@ export async function POST(request: Request) {
             console.log(`Enqueued ${jobName} (jobId: ${job.id})`);
         }
 
-        // Fallback: if no known providers, fall back to legacy run-pipeline for manual-review compatibility
-        if (jobs.length === 0) {
-            const job = await pipelineQueue.add('run-pipeline', { providers, isRetry, isAiOnly });
-            jobs.push({ provider: 'legacy', jobId: job.id });
-        }
-
         return NextResponse.json({
             success: true,
             message: "Pipeline added to queue",

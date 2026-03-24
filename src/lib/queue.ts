@@ -389,7 +389,7 @@ async function runAiReviewLoop(
                 });
 
                 const openclawWrapper = JSON.parse(rawAiOutput);
-                const payloads = openclawWrapper?.result?.payloads || [];
+                const payloads = openclawWrapper?.payloads || [];
                 const textContents = payloads.map((p: any) => p.text).join('\n');
 
                 if (textContents.toLowerCase().includes('rate limit')) throw new Error('AI_REVIEW_FAILED: Rate Limit');
@@ -470,9 +470,9 @@ async function runAiReviewLoop(
                     } else {
                         prompt += `\n\nPrevious attempt failed. Fix this error and resubmit: ${err.message}\nReturn ONLY a JSON array with EXACTLY ${actualBatchSize} objects.`;
                     }
-                    await job.log(`  -> Attempt ${attempt} failed for batch ${batchIndex}, retrying...`);
+                    await job.log(`  -> Attempt ${attempt} failed for batch ${batchIndex}, retrying... Error: ${err.message}`);
                 } else {
-                    await job.log(`[SKIP] Batch ${batchIndex} permanently failed after ${MAX_AI_RETRIES} retries.`);
+                    await job.log(`[SKIP] Batch ${batchIndex} permanently failed after ${MAX_AI_RETRIES} retries. Error: ${err.message}`);
                 }
             }
         }
@@ -729,15 +729,6 @@ export function startWorker() {
                     } else if (isAiOnly || isResumeMode) {
                         await job.updateProgress(5);
                         await job.log("Skipping collection and preprocessing (AI-Only/Resume mode).");
-                    } else {
-                        // 2. Preprocessing (legacy run-pipeline for manual-review fallback)
-                        await job.updateProgress(10);
-                        await job.log("[PIPELINE] Starting patch preprocessing & pruning...");
-                        await runStream('python3', ['patch_preprocessing.py', '--days', '180']);
-                        // Count how many preprocessed patches were just inserted
-                        const ppCount = await prisma.preprocessedPatch.count();
-                        await job.updateProgress(50);
-                        await job.log(`[PREPROCESS_DONE] count=${ppCount}`);
                     }
 
                     // 3. RAG Injection
@@ -841,7 +832,7 @@ Do NOT perform any web scraping. Do NOT use tools to write to files, simply outp
                                 });
 
                                 const openclawWrapper = JSON.parse(rawAiOutput);
-                                const payloads = openclawWrapper?.result?.payloads || [];
+                                const payloads = openclawWrapper?.payloads || [];
                                 const textContents = payloads.map((p: any) => p.text).join('\n');
 
                                 if (textContents.toLowerCase().includes('rate limit')) throw new Error("AI_REVIEW_FAILED: API Rate Limit Error");
