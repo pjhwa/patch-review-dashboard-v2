@@ -57,6 +57,7 @@ next-env.d.ts
 !src/app/api/archive
 !src/app/category/*/archive
 **/venv
+**/shared-venv
 
 # Patch Data (Prevent massive JSON pushes, allow only samples)
 *_data/*
