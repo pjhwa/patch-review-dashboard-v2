@@ -3,7 +3,7 @@
 // 카테고리 페이지의 제품 목록 및 파이프라인 실행 컨트롤 컴포넌트.
 // SSE(Server-Sent Events)로 파이프라인 로그를 실시간 스트리밍하며,
 // 실행 확인 다이얼로그를 통해 Fresh Start / AI Only / Retry 3가지 모드를 지원한다.
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useRouter } from 'next/navigation';
 import { PremiumCard } from "@/components/PremiumCard";
 
@@ -17,16 +17,19 @@ export function ProductGrid({ categoryId, products, dict }: { categoryId: string
     const [isDownloading, setIsDownloading] = useState(false);
     const [isQueueing, setIsQueueing] = useState(false);
     const [activeEventSource, setActiveEventSource] = useState<EventSource | null>(null);
+    // ref로 최신 EventSource를 추적해 stale closure 없이 즉시 닫을 수 있도록 한다.
+    const activeEventSourceRef = useRef<EventSource | null>(null);
     const router = useRouter();
 
     // 컴포넌트 언마운트 시 열려있는 SSE 연결을 닫아 메모리 누수를 방지한다.
     useEffect(() => {
         return () => {
-            if (activeEventSource) {
-                activeEventSource.close();
+            if (activeEventSourceRef.current) {
+                activeEventSourceRef.current.close();
+                activeEventSourceRef.current = null;
             }
         };
-    }, [activeEventSource]);
+    }, []);
 
     // 페이지 최초 로드 시 이미 실행 중인 파이프라인 잡이 있으면 SSE 스트림에 자동으로 재연결한다.
     // 사용자가 페이지를 새로고침해도 진행 상황을 계속 볼 수 있다.
@@ -36,7 +39,8 @@ export function ProductGrid({ categoryId, products, dict }: { categoryId: string
                 const res = await fetch('/api/pipeline');
                 const data = await res.json();
                 if (data.hasActiveJob && data.jobId) {
-                    setRunningProductId(data.provider || null);
+                    // 유저가 이미 버튼을 눌러 runningProductId가 설정된 경우 덮어쓰지 않는다.
+                    setRunningProductId(prev => prev ?? (data.provider || null));
                     setResultMsg((dict?.dashboard?.productGrid?.pipelineActiveMsg || "Pipeline active (Progress: {progress}%)").replace('{progress}', String(data.progress || 0)));
                     connectToStream(data.jobId);
                 }
@@ -52,7 +56,13 @@ export function ProductGrid({ categoryId, products, dict }: { categoryId: string
     // 로그 태그(PREPROCESS_DONE, RESUME, SKIP-RESUME 등)를 감지해 사용자 친화적인 메시지로 변환한다.
     // 로그 버퍼(logTail)는 최근 30줄로 제한해 화면이 너무 길어지는 것을 방지한다.
     const connectToStream = (jobId: string) => {
+        // 이전 SSE 연결이 살아있으면 즉시 닫아 stale 이벤트로 인한 상태 오염을 방지한다.
+        if (activeEventSourceRef.current) {
+            activeEventSourceRef.current.close();
+            activeEventSourceRef.current = null;
+        }
         const source = new EventSource(`/api/pipeline/stream?jobId=${jobId}`);
+        activeEventSourceRef.current = source;
         setActiveEventSource(source);
 
         source.onmessage = (event) => {
@@ -103,6 +113,7 @@ export function ProductGrid({ categoryId, products, dict }: { categoryId: string
                 setRunningProductId(null);
                 setIsQueueing(false);
                 source.close();
+                activeEventSourceRef.current = null;
                 setActiveEventSource(null);
                 router.refresh();
             } else if (streamData.status === 'failed' || streamData.status === 'error') {
@@ -112,6 +123,7 @@ export function ProductGrid({ categoryId, products, dict }: { categoryId: string
                 setRunningProductId(null);
                 setIsQueueing(false);
                 source.close();
+                activeEventSourceRef.current = null;
                 setActiveEventSource(null);
             } else {
                 if (streamData.message && !streamData.log?.includes('PREPROCESS_DONE')) {
@@ -132,6 +144,7 @@ export function ProductGrid({ categoryId, products, dict }: { categoryId: string
             setRunningProductId(null);
             setIsQueueing(false);
             source.close();
+            activeEventSourceRef.current = null;
             setActiveEventSource(null);
         };
     };
@@ -190,6 +203,7 @@ export function ProductGrid({ categoryId, products, dict }: { categoryId: string
             if (!res.ok || !data.jobId) {
                 setResultMsg(data.error || dict?.dashboard?.productGrid?.executionFailed || "Execution failed to queue.");
                 setRunningProductId(null);
+                setIsQueueing(false);
                 return;
             }
 
@@ -243,7 +257,7 @@ export function ProductGrid({ categoryId, products, dict }: { categoryId: string
                         href={`/category/${categoryId}/${prod.id}`}
                         categoryId={categoryId}
                         productId={prod.id}
-                        isRunning={runningProductId === prod.id}
+                        isRunning={!!runningProductId && runningProductId === prod.id}
                         isReviewCompleted={prod.isReviewCompleted}
                         onRunPipeline={() => requestRunPipeline(prod.id, false, false)}
                         onRunAiOnly={() => requestRunPipeline(prod.id, false, true)}
