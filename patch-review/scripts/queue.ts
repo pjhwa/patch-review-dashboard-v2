@@ -196,7 +196,7 @@ export function startWorker() {
                                             for (const lf of oldFiles) fs.rmSync(path.join(sessionsDir, lf), { force: true });
                                         }
                                         return await runCephStream('/home/citec/.nvm/versions/node/v22.22.0/bin/openclaw',
-                                            ['agent', '--local', '--agent', 'main', '--json', '--session-id', `ceph_${job.id}_batch_${batchIndex}_${attempt}`, '-m', prompt],
+                                            ['agent', '--agent', 'main', '--json', '--session-id', `ceph_${job.id}_batch_${batchIndex}_${attempt}`, '-m', prompt],
                                             {}, { shell: false, cwd: cephSkillDir }, true
                                         );
                                     });
@@ -395,7 +395,7 @@ export function startWorker() {
                                                 for (const lf of oldFiles) fs.rmSync(path.join(sessionsDir, lf), { force: true });
                                             }
                                             return await runProductStream('/home/citec/.nvm/versions/node/v22.22.0/bin/openclaw',
-                                                ['agent', '--local', '--agent', 'main', '--json', '--session-id', `${registryProduct.id}_${job.id}_batch_${batchIndex}_${attempt}`, '-m', prompt],
+                                                ['agent', '--agent', 'main', '--json', '--session-id', `${registryProduct.id}_${job.id}_batch_${batchIndex}_${attempt}`, '-m', prompt],
                                                 {}, { shell: false, cwd: skillDir }, true
                                             );
                                         });
@@ -644,7 +644,7 @@ export function startWorker() {
                                         for (const lf of oldFiles) fs.rmSync(path.join(sessionsDir, lf), { force: true });
                                     }
                                     return await runStream('/home/citec/.nvm/versions/node/v22.22.0/bin/openclaw',
-                                        ['agent', '--local', '--agent', 'main', '--json', '--session-id', `os_${job.id}_batch_${batchIndex}_${attempt}`, '-m', currentPrompt],
+                                        ['agent', '--agent', 'main', '--json', '--session-id', `os_${job.id}_batch_${batchIndex}_${attempt}`, '-m', currentPrompt],
                                         {}, { shell: false }, true
                                     );
                                 });
