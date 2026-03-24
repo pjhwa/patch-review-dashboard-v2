@@ -955,10 +955,19 @@ Do NOT perform any web scraping. Do NOT use tools to write to files, simply outp
 
                     // 6. Passthrough: ensure ALL preprocessed patches appear in ReviewedPatch.
                     // The AI's SKILL.md criteria may filter out vendors.  We fill the gaps here.
+                    // manual-review는 선택된 패치만 재리뷰하는 것이므로 passthrough 불필요 — 건너뜀.
+                    // run-pipeline (레거시) 경로는 Linux 전용이므로 vendor 범위를 Linux 3종으로 제한.
                     try {
                         const aiIssuedIds = new Set(data.map((d: any) => (d.IssueID || d.id || '').toString()));
+                        if (job.name === 'manual-review') {
+                            // 선택적 재리뷰이므로 passthrough 생략
+                            await job.log('[PASSTHROUGH] Skipped for manual-review job.');
+                        } else {
                         const missingPatches = await prisma.preprocessedPatch.findMany({
-                            where: { issueId: { notIn: Array.from(aiIssuedIds) } }
+                            where: {
+                                vendor: { in: ['Red Hat', 'Oracle', 'Ubuntu'] },
+                                issueId: { notIn: Array.from(aiIssuedIds) }
+                            }
                         });
                         if (missingPatches.length > 0) {
                             await job.log(`[PASSTHROUGH] AI skipped ${missingPatches.length} patches – ingesting them directly.`);
@@ -992,6 +1001,7 @@ Do NOT perform any web scraping. Do NOT use tools to write to files, simply outp
                             }
                             await job.log(`[PASSTHROUGH] Ingested ${missingPatches.length} passthrough patches.`);
                         }
+                        } // end else (non-manual-review)
                     } catch (ptErr: any) {
                         await job.log(`[PASSTHROUGH WARNING] ${ptErr.message}`);
                     }

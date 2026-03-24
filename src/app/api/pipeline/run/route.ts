@@ -30,7 +30,7 @@ export async function POST(request: Request) {
             if (waitingJobs > 0) {
                 // waiting 상태로 멈춘 잡만 제거. active 잡은 실행 중일 수 있으므로 건드리지 않음.
                 console.log(`Found ${waitingJobs} stuck waiting jobs. Clearing queue...`);
-                await execPromise(`redis-cli keys "bull:patch-pipeline:*" | xargs -r redis-cli del`);
+                await pipelineQueue.clean(0, 1000, 'wait');
             } else if (activeJobs > 0) {
                 console.log(`${activeJobs} active job(s) detected — withOpenClawLock handles stale lock cleanup automatically.`);
             }

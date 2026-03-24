@@ -20,7 +20,7 @@ export async function POST(request: Request) {
 
             if (waitingJobs > 0) {
                 console.log(`[TOMCAT] Found ${waitingJobs} stuck waiting jobs. Clearing queue...`);
-                await execPromise(`redis-cli keys "bull:patch-pipeline:*" | xargs -r redis-cli del`);
+                await pipelineQueue.clean(0, 1000, 'wait');
             } else if (activeJobs > 0) {
                 console.log(`[TOMCAT] ${activeJobs} active job(s) detected — withOpenClawLock handles stale lock cleanup automatically.`);
             }
