@@ -2,7 +2,8 @@
 # WildFly Collector Cron Wrapper (venv 지원 + 로그 기록)
 
 PROJECT_DIR="/home/citec/.openclaw/workspace/skills/patch-review/middleware/wildfly"
-VENV_PYTHON="$PROJECT_DIR/venv/bin/python"
+SHARED_VENV="/home/citec/.openclaw/workspace/skills/patch-review/shared-venv"
+VENV_PYTHON="$SHARED_VENV/bin/python"
 SCRIPT="$PROJECT_DIR/wildfly_collector.py"
 LOG="$PROJECT_DIR/cron_wildfly.log"
 
@@ -14,7 +15,7 @@ if [ -x "$VENV_PYTHON" ]; then
     "$VENV_PYTHON" "$SCRIPT" >> "$LOG" 2>&1
     EXIT_CODE=$?
 else
-    echo "[$(date)] venv 없음! (venv/bin/python 미발견)" >> "$LOG"
+    echo "[$(date)] shared-venv 없음! ($SHARED_VENV/bin/python 미발견)" >> "$LOG"
     EXIT_CODE=1
 fi
 

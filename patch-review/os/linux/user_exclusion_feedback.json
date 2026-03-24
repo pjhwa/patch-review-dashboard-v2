@@ -106,5 +106,41 @@
     "description": "Critical remote code execution in GitHub Actions workflow due to unsanitized branch name interpolation, allowing arbitrary command execution with repository write permissions.",
     "reason": "[Other] Ceph의 코드에 대한 보안 패치가 아니라 Gtihub Actions workflow에 대한 내용이다.",
     "dateExcluded": "2026-03-11T09:27:42.420Z"
+  },
+  {
+    "issueId": "RHBA-2026:2789",
+    "description": "An update for linux-firmware is now available for Red Hat Enterprise Linux 10.\n\nThe linux-firmware packages contain all of the firmware files that are required by various devices to operate.Bug Fix(es) and Enhancement(s): Update linux-firmware to latest upstream [rhel-9.7.z] (JIRA:RHEL-145523)",
+    "reason": "[Other] linux-firmware 는 사용하지 않음",
+    "dateExcluded": "2026-03-23T03:53:00.050Z"
+  },
+  {
+    "issueId": "RHBA-2026:2785",
+    "description": "An update for libvirt is now available for Red Hat Enterprise Linux 10.\n\nKernel-based Virtual Machine (KVM) offers a full virtualization solution forLinux on numerous hardware platforms. The virt:rhel module contains packageswhich provide user-space components used to run virtual machines using KVM.The packages also provide APIs for managing and interacting with the virtualized systems.Bug Fix(es) and Enhancement(s): Hyperv feature validation is too tight for i440fx machine type [rhel-9.7.z] (JIRA:RHEL-140916)",
+    "reason": "[Other] libvirt 는 RHEL 에서 사용하지 않음. ",
+    "dateExcluded": "2026-03-23T03:53:30.279Z"
+  },
+  {
+    "issueId": "RHBA-2026:2777",
+    "description": "An update for qemu-kvm is now available for Red Hat Enterprise Linux 10.\n\nKernel-based Virtual Machine (KVM) is a full virtualization solution for Linux on a variety of architectures. The qemu-kvm packages provide the user-space component for running virtual machines that use KVM.Bug Fix(es) and Enhancement(s): [RHEL 9]snp guest fail to boot with hugepage [rhel-9.7.z] (JIRA:RHEL-129551)  scsi-block: Error policy is ignored for host_status errors [rhel-9.7.z] (JIRA:RHEL-130209)  The VM hit io error when do S3-PR integration on the pass-through  failover multipath device [rhel-9.7.z] (JIRA:RHEL-133302)  Live migration after workload update fails with operation failed: guest CPU doesn't match specification: missing features: pdcm [rhel-9] (JIRA:RHEL-135451)",
+    "reason": "[Other] NOT USED ",
+    "dateExcluded": "2026-03-23T03:53:43.329Z"
+  },
+  {
+    "issueId": "RHBA-2026:1085",
+    "description": "An update for shim is now available for Red Hat Enterprise Linux 10.\n\nThe shim package contains a first-stage UEFI boot loader that handles chaining to a trusted full boot loader under secure boot environments.Bug Fix(es) and Enhancement(s): shim 8_10 release needs to be bumped to match 8_9 to fix broken update path (JIRA:RHEL-113358)  Leapp IPU 8.10>9.7 fails due to an invalid signature for the kernel (JIRA:RHEL-126741)",
+    "reason": "[Other] NOT USED",
+    "dateExcluded": "2026-03-23T03:53:52.901Z"
+  },
+  {
+    "issueId": "RHBA-2026:0886",
+    "description": "An update for lvm2 is now available for Red Hat Enterprise Linux 10.\n\nThe lvm2 packages include complete support for handling read and write operations on physical volumes, creating volume groups from one or more physical volumes, and creating one or more logical volumes in volume groups.Bug Fix(es) and Enhancement(s): RHEL 8.10 after upgrade lvraid1 LV's that had intergity before now fail to setup integrity.  (JIRA:RHEL-118797)",
+    "reason": "[Other] we do not recommend this package",
+    "dateExcluded": "2026-03-23T03:54:31.178Z"
+  },
+  {
+    "issueId": "RHBA-2026:3809",
+    "description": "Critical bug fix for NSS database password update corrupting ML-DSA cryptographic seed. FIPS compliance updates.",
+    "reason": "[Other] we do not recommend this package",
+    "dateExcluded": "2026-03-23T03:54:46.304Z"
   }
 ]
