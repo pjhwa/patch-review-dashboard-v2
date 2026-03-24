@@ -18,10 +18,11 @@ export async function POST(request: Request) {
             const activeJobs = await pipelineQueue.getActiveCount();
             const waitingJobs = await pipelineQueue.getWaitingCount();
 
-            if (activeJobs > 0 || waitingJobs > 0) {
-                console.log(`[MARIADB] Found ${activeJobs} active and ${waitingJobs} waiting jobs. Cleaning stalled queue...`);
+            if (waitingJobs > 0) {
+                console.log(`[MARIADB] Found ${waitingJobs} stuck waiting jobs. Clearing queue...`);
                 await execPromise(`redis-cli keys "bull:patch-pipeline:*" | xargs -r redis-cli del`);
-                await execPromise(`pkill -9 -f "openclaw" || true`);
+            } else if (activeJobs > 0) {
+                console.log(`[MARIADB] ${activeJobs} active job(s) detected — withOpenClawLock handles stale lock cleanup automatically.`);
             }
 
             await execPromise(`rm -f ~/.openclaw/agents/main/sessions/*.lock || true`);

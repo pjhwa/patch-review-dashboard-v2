@@ -23,6 +23,10 @@ const PRODUCTS = [
     { id: 'sqlserver', skillDirRelative: 'database/sqlserver',    preprocessingScript: 'sqlserver_preprocessing.py', jobName: 'run-sqlserver-pipeline', rateLimitFlag: '/tmp/.rate_limit_sqlserver', passthrough: false, ragType: 'file-hiding',      normalizedDirName: 'sql_data/normalized' },
     { id: 'pgsql',     skillDirRelative: 'database/pgsql',        preprocessingScript: 'pgsql_preprocessing.py',   jobName: 'run-pgsql-pipeline',     rateLimitFlag: '/tmp/.rate_limit_pgsql',     passthrough: true,  ragType: 'file-hiding',      normalizedDirName: 'pgsql_data/normalized' },
     { id: 'vsphere',   skillDirRelative: 'virtualization/vsphere', preprocessingScript: 'vsphere_preprocessing.py', jobName: 'run-vsphere-pipeline',  rateLimitFlag: '/tmp/.rate_limit_vsphere',   passthrough: true,  ragType: undefined },
+    { id: 'jboss_eap', skillDirRelative: 'middleware/jboss_eap',  preprocessingScript: 'jboss_eap_preprocessing.py', jobName: 'run-jboss_eap-pipeline', rateLimitFlag: '/tmp/.rate_limit_jboss_eap', passthrough: true,  ragType: 'both',         normalizedDirName: 'jboss_eap_data/normalized', queryScript: 'query_rag.py' },
+    { id: 'tomcat',    skillDirRelative: 'middleware/tomcat',      preprocessingScript: 'tomcat_preprocessing.py',    jobName: 'run-tomcat-pipeline',    rateLimitFlag: '/tmp/.rate_limit_tomcat',    passthrough: true,  ragType: 'both',         normalizedDirName: 'tomcat_data/normalized',   queryScript: 'query_rag.py' },
+    { id: 'wildfly',   skillDirRelative: 'middleware/wildfly',     preprocessingScript: 'wildfly_preprocessing.py',   jobName: 'run-wildfly-pipeline',   rateLimitFlag: '/tmp/.rate_limit_wildfly',   passthrough: true,  ragType: 'both',         normalizedDirName: 'wildfly_data/normalized',  queryScript: 'query_rag.py' },
+    { id: 'mysql',     skillDirRelative: 'database/mysql',         preprocessingScript: 'mysql_preprocessing.py',     jobName: 'run-mysql-pipeline',     rateLimitFlag: '/tmp/.rate_limit_mysql',     passthrough: true,  ragType: 'both',         normalizedDirName: 'mysql_data/normalized',    queryScript: 'query_rag.py' },
 ];
 
 let passCount = 0;
@@ -74,11 +78,20 @@ for (const cfg of PRODUCTS) {
     }
 
     // 4. RAG exclusion consistency
-    if (cfg.ragType === 'file-hiding') {
+    if (cfg.ragType === 'file-hiding' || cfg.ragType === 'both') {
         if (cfg.normalizedDirName) {
-            pass(cfg.id, `ragExclusion file-hiding: ${cfg.normalizedDirName}`);
+            pass(cfg.id, `ragExclusion ${cfg.ragType}: normalizedDir=${cfg.normalizedDirName}`);
         } else {
-            fail(cfg.id, 'ragExclusion file-hiding but normalizedDirName missing');
+            fail(cfg.id, `ragExclusion ${cfg.ragType} but normalizedDirName missing`);
+        }
+        if (cfg.ragType === 'both') {
+            // query_rag.py는 공유 os/linux/ 디렉토리에 있음
+            const sharedQueryPath = path.join(SKILLS_BASE, 'os/linux', cfg.queryScript || 'query_rag.py');
+            if (fs.existsSync(sharedQueryPath)) {
+                pass(cfg.id, `ragExclusion both: shared queryScript exists`);
+            } else {
+                fail(cfg.id, 'ragExclusion both: shared queryScript missing', sharedQueryPath);
+            }
         }
     } else if (cfg.ragType === 'prompt-injection') {
         const queryPath = path.join(skillDir, cfg.queryScript);

@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { prisma } from '@/lib/db';
+import { PRODUCT_REGISTRY, getSkillDir } from '@/lib/products-registry';
 import fs from 'fs';
 import path from 'path';
 
@@ -22,54 +23,57 @@ export async function POST(req: NextRequest) {
             return NextResponse.json({ success: false, error: 'Missing confirmation string. Send { confirm: "RESET" }' }, { status: 400 });
         }
 
+        // 해당 카테고리의 활성 제품만 대상으로 한다
+        const categoryProducts = PRODUCT_REGISTRY.filter(p => p.active && p.category === categoryId);
+        if (categoryProducts.length === 0) {
+            return NextResponse.json({ success: false, error: `Unknown or empty category: ${categoryId}` }, { status: 400 });
+        }
+
+        const vendorStrings = categoryProducts.map(p => p.vendorString);
         const results: Record<string, number | string> = {};
 
-        // --- 1. Delete SQLite records ---
-        const deletedRaw = await prisma.rawPatch.deleteMany({});
+        // --- 1. Delete SQLite records (해당 카테고리 vendor만) ---
+        const deletedRaw = await prisma.rawPatch.deleteMany({
+            where: { vendor: { in: vendorStrings } },
+        });
         results.rawPatchesDeleted = deletedRaw.count;
 
-        const deletedReviewed = await prisma.reviewedPatch.deleteMany({});
+        const deletedReviewed = await prisma.reviewedPatch.deleteMany({
+            where: { vendor: { in: vendorStrings } },
+        });
         results.reviewedPatchesDeleted = deletedReviewed.count;
 
-        const deletedPreprocessed = await prisma.preprocessedPatch.deleteMany({});
+        const deletedPreprocessed = await prisma.preprocessedPatch.deleteMany({
+            where: { vendor: { in: vendorStrings } },
+        });
         results.preprocessedPatchesDeleted = deletedPreprocessed.count;
 
-        // --- 2. Wipe raw batch_data files ---
-        const linuxV2Dir = path.join(process.env.HOME || '/home/citec', '.openclaw/workspace/skills/patch-review/os/linux');
-        const batchDataDir = path.join(linuxV2Dir, 'batch_data');
-
+        // --- 2. Delete intermediate/output files (제품별 skillDir 기준) ---
         let filesDeleted = 0;
-        if (fs.existsSync(batchDataDir)) {
-            const files = fs.readdirSync(batchDataDir).filter(f => f.endsWith('.json'));
-            for (const file of files) {
-                fs.unlinkSync(path.join(batchDataDir, file));
-                filesDeleted++;
+        for (const prod of categoryProducts) {
+            const skillDir = getSkillDir(prod);
+            const filesToDelete = [
+                prod.patchesForReviewFile,
+                prod.aiReportFile,
+                prod.finalCsvFile,
+                'collection_checkpoint.json',
+                'debug_collector.log',
+            ];
+            for (const fname of filesToDelete) {
+                const fpath = path.join(skillDir, fname);
+                if (fs.existsSync(fpath)) {
+                    fs.unlinkSync(fpath);
+                    filesDeleted++;
+                }
             }
         }
-        results.batchDataFilesDeleted = filesDeleted;
+        results.filesDeleted = filesDeleted;
 
-        // --- 3. Delete intermediate/output files ---
-        const filesToDelete = [
-            'patches_for_llm_review.json',
-            'patch_review_ai_report.json',
-            'collection_checkpoint.json',
-            'debug_collector.log',
-        ];
-        let extraFilesDeleted = 0;
-        for (const fname of filesToDelete) {
-            const fpath = path.join(linuxV2Dir, fname);
-            if (fs.existsSync(fpath)) {
-                fs.unlinkSync(fpath);
-                extraFilesDeleted++;
-            }
-        }
-        results.extraFilesDeleted = extraFilesDeleted;
-
-        console.log(`[RESET] Category "${categoryId}" reset complete. Results:`, results);
+        console.log(`[RESET] Category "${categoryId}" (vendors: ${vendorStrings.join(', ')}) reset complete.`, results);
 
         return NextResponse.json({
             success: true,
-            message: `All data for category "${categoryId}" has been reset. The next pipeline run will start a fresh full collection.`,
+            message: `Category "${categoryId}" reset complete (${vendorStrings.join(', ')}).`,
             results,
         });
     } catch (error: any) {

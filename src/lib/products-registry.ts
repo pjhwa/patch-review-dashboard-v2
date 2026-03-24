@@ -12,7 +12,6 @@ export interface ProductConfig {
     active: boolean;             // false면 파이프라인 실행 대상에서 제외되고 PRODUCT_MAP에도 없음
 
     skillDirRelative: string;    // ~/.openclaw/workspace/skills/patch-review/ 기준 상대 경로
-    dataSubDir: string;          // skillDir 아래 원시 수집 데이터 디렉토리
     rawDataFilePrefix: string[]; // 수집 파일 식별용 prefix (예: ['RHSA-', 'RHBA-'])
 
     preprocessingScript: string; // Python 전처리 스크립트 파일명
@@ -78,7 +77,7 @@ export const PRODUCT_REGISTRY: ProductConfig[] = [
         category: 'os',
         active: true,
         skillDirRelative: 'os/linux',
-        dataSubDir: 'redhat_data',
+
         rawDataFilePrefix: ['RHSA-', 'RHBA-'],
         preprocessingScript: 'patch_preprocessing.py',
         preprocessingArgs: ['--vendor', 'redhat', '--days', '90'],
@@ -125,7 +124,7 @@ export const PRODUCT_REGISTRY: ProductConfig[] = [
         category: 'os',
         active: true,
         skillDirRelative: 'os/linux',
-        dataSubDir: 'oracle_data',
+
         rawDataFilePrefix: ['ELSA-'],
         preprocessingScript: 'patch_preprocessing.py',
         preprocessingArgs: ['--vendor', 'oracle', '--days', '90'],
@@ -172,7 +171,7 @@ export const PRODUCT_REGISTRY: ProductConfig[] = [
         category: 'os',
         active: true,
         skillDirRelative: 'os/linux',
-        dataSubDir: 'ubuntu_data',
+
         rawDataFilePrefix: ['USN-'],
         preprocessingScript: 'patch_preprocessing.py',
         preprocessingArgs: ['--vendor', 'ubuntu', '--days', '90'],
@@ -219,7 +218,7 @@ export const PRODUCT_REGISTRY: ProductConfig[] = [
         category: 'os',
         active: true,
         skillDirRelative: 'os/windows',
-        dataSubDir: 'windows_data',
+
         rawDataFilePrefix: ['WIN-'],
         preprocessingScript: 'windows_preprocessing.py',
         preprocessingArgs: ['--days', '180', '--days_end', '90'],
@@ -269,7 +268,7 @@ export const PRODUCT_REGISTRY: ProductConfig[] = [
         category: 'storage',
         active: true,
         skillDirRelative: 'storage/ceph',
-        dataSubDir: 'ceph_data',
+
         rawDataFilePrefix: ['GHSA-', 'REDMINE-'],
         preprocessingScript: 'ceph_preprocessing.py',
         preprocessingArgs: ['--days', '180'],
@@ -317,7 +316,6 @@ export const PRODUCT_REGISTRY: ProductConfig[] = [
         category: 'database',
         active: true,
         skillDirRelative: 'database/mariadb',
-        dataSubDir: 'mariadb_data',
         rawDataFilePrefix: ['RHSA-', 'RHBA-'],
         preprocessingScript: 'mariadb_preprocessing.py',
         preprocessingArgs: ['--days', '180'],
@@ -365,7 +363,6 @@ export const PRODUCT_REGISTRY: ProductConfig[] = [
         category: 'database',
         active: true,
         skillDirRelative: 'database/sqlserver',
-        dataSubDir: 'sql_data',
         rawDataFilePrefix: ['SQLU-'],
         preprocessingScript: 'sqlserver_preprocessing.py',
         preprocessingArgs: ['--days', '180', '--days_end', '90'],
@@ -413,7 +410,6 @@ export const PRODUCT_REGISTRY: ProductConfig[] = [
         category: 'database',
         active: true,
         skillDirRelative: 'database/pgsql',
-        dataSubDir: 'pgsql_data',
         rawDataFilePrefix: ['PGSL-'],
         preprocessingScript: 'pgsql_preprocessing.py',
         preprocessingArgs: ['--days', '180'],
@@ -461,7 +457,6 @@ export const PRODUCT_REGISTRY: ProductConfig[] = [
         category: 'virtualization',
         active: true,
         skillDirRelative: 'virtualization/vsphere',
-        dataSubDir: 'vsphere_data',
         rawDataFilePrefix: ['VSPH-'],
         preprocessingScript: 'vsphere_preprocessing.py',
         preprocessingArgs: ['--days', '180'],
@@ -508,7 +503,6 @@ export const PRODUCT_REGISTRY: ProductConfig[] = [
         category: 'middleware',
         active: true,
         skillDirRelative: 'middleware/jboss_eap',
-        dataSubDir: 'jboss_eap_data',
         rawDataFilePrefix: ['RHSA-', 'RHBA-'],
         preprocessingScript: 'jboss_eap_preprocessing.py',
         preprocessingArgs: ['--days', '180'],
@@ -556,7 +550,6 @@ export const PRODUCT_REGISTRY: ProductConfig[] = [
         category: 'middleware',
         active: true,
         skillDirRelative: 'middleware/tomcat',
-        dataSubDir: 'tomcat_data',
         rawDataFilePrefix: ['TOMC-'],
         preprocessingScript: 'tomcat_preprocessing.py',
         preprocessingArgs: ['--days', '180'],
@@ -604,7 +597,6 @@ export const PRODUCT_REGISTRY: ProductConfig[] = [
         category: 'middleware',
         active: true,
         skillDirRelative: 'middleware/wildfly',
-        dataSubDir: 'wildfly_data',
         rawDataFilePrefix: ['WFLY-'],
         preprocessingScript: 'wildfly_preprocessing.py',
         preprocessingArgs: ['--days', '180'],
@@ -652,7 +644,6 @@ export const PRODUCT_REGISTRY: ProductConfig[] = [
         category: 'database',
         active: true,
         skillDirRelative: 'database/mysql',
-        dataSubDir: 'mysql_data',
         rawDataFilePrefix: ['MYSQ-'],
         preprocessingScript: 'mysql_preprocessing.py',
         preprocessingArgs: ['--days', '180'],

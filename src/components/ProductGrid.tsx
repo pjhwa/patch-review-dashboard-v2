@@ -161,17 +161,26 @@ export function ProductGrid({ categoryId, products, dict }: { categoryId: string
         else if (categoryId === 'database') {
             if (productId === 'sqlserver') pipelineRunUrl = '/api/pipeline/sqlserver/run';
             else if (productId === 'pgsql') pipelineRunUrl = '/api/pipeline/pgsql/run';
+            else if (productId === 'mysql') pipelineRunUrl = '/api/pipeline/mysql/run';
             else pipelineRunUrl = '/api/pipeline/mariadb/run';
         }
         else if (productId === 'windows') pipelineRunUrl = '/api/pipeline/windows/run';
         else if (categoryId === 'virtualization') pipelineRunUrl = '/api/pipeline/vsphere/run';
+        else if (categoryId === 'middleware') {
+            if (productId === 'tomcat') pipelineRunUrl = '/api/pipeline/tomcat/run';
+            else if (productId === 'wildfly') pipelineRunUrl = '/api/pipeline/wildfly/run';
+            else pipelineRunUrl = '/api/pipeline/jboss_eap/run';
+        }
+
+        // middleware 제품은 body에 providers 배열 불필요 (각 run route가 productId 고정)
+        const isSimpleBody = categoryId === 'storage' || categoryId === 'virtualization' || categoryId === 'middleware';
 
         try {
             const res = await fetch(pipelineRunUrl, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(
-                    (categoryId === 'storage' || categoryId === 'virtualization')
+                    isSimpleBody
                         ? { isRetry, isAiOnly }
                         : { providers: [productId], isRetry, isAiOnly }
                 )
