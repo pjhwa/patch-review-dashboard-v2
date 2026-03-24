@@ -80,7 +80,7 @@ export const PRODUCT_REGISTRY: ProductConfig[] = [
 
         rawDataFilePrefix: ['RHSA-', 'RHBA-'],
         preprocessingScript: 'patch_preprocessing.py',
-        preprocessingArgs: ['--vendor', 'redhat', '--days', '90'],
+        preprocessingArgs: ['--vendor', 'redhat', '--days', '180'],
         patchesForReviewFile: 'patches_for_llm_review_redhat.json',
         aiReportFile: 'patch_review_ai_report_redhat.json',
         finalCsvFile: 'final_approved_patches_redhat.csv',
@@ -127,7 +127,7 @@ export const PRODUCT_REGISTRY: ProductConfig[] = [
 
         rawDataFilePrefix: ['ELSA-'],
         preprocessingScript: 'patch_preprocessing.py',
-        preprocessingArgs: ['--vendor', 'oracle', '--days', '90'],
+        preprocessingArgs: ['--vendor', 'oracle', '--days', '180'],
         patchesForReviewFile: 'patches_for_llm_review_oracle.json',
         aiReportFile: 'patch_review_ai_report_oracle.json',
         finalCsvFile: 'final_approved_patches_oracle.csv',
@@ -174,7 +174,7 @@ export const PRODUCT_REGISTRY: ProductConfig[] = [
 
         rawDataFilePrefix: ['USN-'],
         preprocessingScript: 'patch_preprocessing.py',
-        preprocessingArgs: ['--vendor', 'ubuntu', '--days', '90'],
+        preprocessingArgs: ['--vendor', 'ubuntu', '--days', '180'],
         patchesForReviewFile: 'patches_for_llm_review_ubuntu.json',
         aiReportFile: 'patch_review_ai_report_ubuntu.json',
         finalCsvFile: 'final_approved_patches_ubuntu.csv',
