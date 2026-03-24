@@ -354,9 +354,9 @@ def get_best_rpm_match(pkgs, comp):
 
 def is_system_critical(vendor, component, text):
     comp = component.lower()
-
+    
     if "ovirt 4.5" in text.lower(): return False
-
+    
     # Rule 2: Strict Whitelist (RHEL/Ubuntu/Oracle)
     for bad in EXCLUDED_PACKAGES_EXPLICIT:
         if bad == comp or (f"{bad}-" in comp): return False
@@ -368,26 +368,9 @@ def is_system_critical(vendor, component, text):
     if "kernel" in comp and "texlive" not in comp: return True
     return False
 
-# Kernel-related component prefixes for dual-window filtering
-KERNEL_RELATED_PREFIXES = ["kernel", "linux-image", "linux-firmware", "microcode"]
-
-def is_kernel_related(component):
-    """Returns True if the component is kernel or kernel-related (subject to dual-window rules)."""
-    comp_lower = component.lower()
-    for prefix in KERNEL_RELATED_PREFIXES:
-        if comp_lower == prefix or comp_lower.startswith(prefix + "-") or comp_lower.startswith(prefix + "_"):
-            return True
-    return False
-
-def is_critical_severity(severity):
-    """Returns True if severity is Critical."""
-    if not severity:
-        return False
-    return "critical" in severity.lower()
-
 def preprocess_patches():
     parser = argparse.ArgumentParser(description="Pre-process collected patches for AI review.")
-    parser.add_argument('--days', type=int, default=180, help="Total lookback period in days (default: 180). Kernel patches from the first half (early window) are subject to stricter filtering.")
+    parser.add_argument('--days', type=int, default=90, help="Number of days to look back for analysis.")
     parser.add_argument('--vendor', type=str, default=None,
                         help="Vendor to process: 'redhat', 'oracle', or 'ubuntu'. If not set, processes all vendors.")
     args = parser.parse_args()
@@ -402,11 +385,8 @@ def preprocess_patches():
         active_dirs = JSON_DIRS
         output_file = OUTPUT_FILE
 
-    now = datetime.now()
-    cutoff_early = now - timedelta(days=args.days)   # 6 months ago (early window start)
-    cutoff_recent = now - timedelta(days=90)          # 3 months ago (recent window start)
-    print(f"[PREPROCESS] Kernel dual-window: early={cutoff_early.strftime('%Y-%m-%d')}~{cutoff_recent.strftime('%Y-%m-%d')}, recent={cutoff_recent.strftime('%Y-%m-%d')}~{now.strftime('%Y-%m-%d')}")
-    print(f"[PREPROCESS] Non-kernel patches: recent window only ({cutoff_recent.strftime('%Y-%m-%d')} ~ now)")
+    cutoff_date = datetime.now() - timedelta(days=args.days)
+    print(f"[PREPROCESS] Filter cutoff: Processing patches strictly newer than {cutoff_date.strftime('%Y-%m-%d')} ({args.days} days)")
 
     print("Loading data from directories...")
 
@@ -465,7 +445,6 @@ def preprocess_patches():
                     summary = title # Fallback
             
             # --- DATE WINDOW FILTERING ---
-            window_type = 'recent'  # default; updated below if parsed successfully
             try:
                 # Basic parsing try if formatting matches YYYY-MM-DD or YYYY-MM
                 if len(date_str) == 10:
@@ -474,16 +453,13 @@ def preprocess_patches():
                     pub_dt = datetime.strptime(date_str, "%Y-%m")
                 else:
                     pub_dt = datetime.now() # Fallback for malformed
-
-                # Check timeframe: reject anything older than the early cutoff (6 months)
-                if pub_dt < cutoff_early:
-                    dropped_audit_log.append({ 'Patch ID': patch_id, 'Vendor': vendor, 'Drop Reason': 'Outside Target Window', 'Details': f"Date: {date_str} (Cutoff: {cutoff_early.strftime('%Y-%m-%d')})" })
+                
+                # Check timeframe
+                if pub_dt < cutoff_date:
+                    dropped_audit_log.append({ 'Patch ID': patch_id, 'Vendor': vendor, 'Drop Reason': 'Outside Target Window', 'Details': f"Date: {date_str} (Cutoff: {cutoff_date.strftime('%Y-%m-%d')})" })
                     continue
-
-                # Classify into early (6m~3m) or recent (3m~now)
-                window_type = 'recent' if pub_dt >= cutoff_recent else 'early'
             except Exception as e:
-                # If we absolutely can't parse it, we give it the benefit of the doubt (treat as recent)
+                # If we absolutely can't parse it, we give it the benefit of the doubt
                 pass
                 
             # --- EXCLUSION FILTERS ---
@@ -653,10 +629,9 @@ def preprocess_patches():
                 'specific_version': specific_ver,
                 'summary': summary,
                 'severity': data.get('severity', ''),
-                'diff_content': diff_content,
+                'diff_content': diff_content, 
                 'full_text': full_text + " " + title,
-                'ref_url': data.get('url', ''),
-                'window_type': window_type,  # 'recent' (0~90d) or 'early' (90~180d)
+                'ref_url': data.get('url', '')
             })
 
         except Exception as e:
@@ -670,32 +645,15 @@ def preprocess_patches():
         if not is_system_critical(p['vendor'], p['component'], p['full_text']):
             dropped_audit_log.append({ 'Patch ID': p['id'], 'Vendor': p['vendor'], 'Drop Reason': 'Not System Critical', 'Details': f"Component '{p['component']}' is not in the whitelist or matches an explicit blacklist" })
             continue
-
-        # --- Kernel dual-window rules ---
-        if is_kernel_related(p['component']):
-            # Both windows: kernel patches must be Critical severity only
-            if not is_critical_severity(p['severity']):
-                dropped_audit_log.append({ 'Patch ID': p['id'], 'Vendor': p['vendor'], 'Drop Reason': 'Kernel Non-Critical', 'Details': f"Kernel component '{p['component']}' severity '{p['severity']}' is below Critical threshold (window: {p['window_type']})" })
-                continue
-        else:
-            # Non-kernel patches: only the recent window (last 3 months)
-            if p['window_type'] == 'early':
-                dropped_audit_log.append({ 'Patch ID': p['id'], 'Vendor': p['vendor'], 'Drop Reason': 'Non-Kernel Early Window', 'Details': f"Non-kernel component '{p['component']}' excluded from early window (6m~3m)" })
-                continue
-
         pruned_list.append(p)
-
+        
     print(f"Pruned Candidates: {len(pruned_list)}")
 
     # --- Step 3: Aggregation ---
     grouped = {}
     for p in pruned_list:
-        # Kernel patches: group by (vendor, component, window_type) to keep early/recent separate
-        # Non-kernel patches: group by (vendor, component) — recent window only
-        if is_kernel_related(p['component']):
-            key = (p['vendor'], p['component'], p['window_type'])
-        else:
-            key = (p['vendor'], p['component'])
+        # Group by Vendor + Component (e.g. ('Oracle', 'kernel-uek-ol8'))
+        key = (p['vendor'], p['component'])
         if key not in grouped: grouped[key] = []
         grouped[key].append(p)
 
@@ -726,10 +684,7 @@ def preprocess_patches():
         
         latest['review_instructions'] = f"Analyze this '{latest['component']}' patch ({review_note}). Check for System Hang, Data Loss, Boot Fail, or Critical Security. Merge insights from {len(history_context)} previous patches."
         latest['patch_name_suggestion'] = latest['specific_version'] if latest['specific_version'] else latest['component']
-        # Ensure window_type is always present (kernel: 'recent'/'early', non-kernel: 'recent')
-        if 'window_type' not in latest:
-            latest['window_type'] = key[2] if len(key) == 3 else 'recent'
-
+        
         final_candidates.append(latest)
         
     print(f"Final Candidates for LLM: {len(final_candidates)}")
