@@ -1,59 +1,60 @@
-# ☁️ Virtualization Patch Guidelines
+# Virtualization Patch Guidelines
 
 > **Domain**: Infrastructure / Virtualization
 > **Scope**: VMware, Citrix, Cloud Management
 
 This directory contains the job instructions for AI Agents to perform quarterly patch analysis for virtualization platforms and cloud management tools.
 
-## 📋 Target Products Scope
+## Target Products Scope
 
-The following virtualization products are within the scope of the Patch Review Board:
+### Active Products
+- **VMware vSphere** -- `vsphere/` | VMware Security Advisories (VMSA) for ESXi and vCenter Server
 
-### VMware by Broadcom
-- **Compute Virtualization**:
-    - vSphere ESXi
-    - vSphere Replication
-- **Management**:
-    - vSphere vCenter Server
-    - Aria (formerly vRealize Suite)
-- **Storage & Networking**:
-    - vSAN (Virtual SAN)
-    - NSX (Network Virtualization)
-- **BC/DR**:
-    - VMware Live Site Recovery (formerly Site Recovery Manager / SRM)
+### Planned (Not Yet Implemented)
 
-### Citrix
-- **Citrix Hypervisor** (formerly XenServer)
-- **XenCenter** (Management Console)
+#### VMware by Broadcom (extended)
+- vSAN (Virtual SAN)
+- NSX (Network Virtualization)
+- Aria (formerly vRealize Suite)
+- VMware Live Site Recovery (formerly SRM)
+
+#### Citrix
+- Citrix Hypervisor (formerly XenServer)
+- XenCenter (Management Console)
 
 ---
 
-## 📄 Available Instructions
+## Available Instructions
 
-| File | Description | Target Agent |
+| Product | Description | Agent Instructions |
 | :--- | :--- | :--- |
-| *TBD* | *Instructions for Hypervisor patching are under development.* | - |
+| **VMware vSphere** | VMware Security Advisories for ESXi and vCenter | [`vsphere/SKILL.md`](vsphere/SKILL.md) |
+| *VMware vSAN / NSX* | *Under development* | *TBD* |
+| *Citrix Hypervisor* | *Under development* | *TBD* |
 
 ---
 
-## 🎯 Patch Review Methodology (Automated Pipeline)
+## Patch Review Methodology (Automated Pipeline)
 
-The AI Agent evaluates patches using a highly structured, automated 4-step pipeline designed to filter out noise and focus purely on critical infrastructure impact.
+The AI Agent evaluates patches using a highly structured, automated **5-step pipeline** designed to filter out noise and focus purely on critical infrastructure impact.
 
 ### 1. Data Collection (Ingestion)
-Automated scrapers pull the latest security and bugfix advisories directly from vendor sources. This stage handles pagination, retries, and normalizes the raw data into JSON format.
+Per-product scrapers (`*_collector.py`) pull the latest VMware Security Advisories (VMSA) from vendor sources. Collection window: **180 days**. Raw data is normalized into JSON under each product's skill directory.
 
 ### 2. Preprocessing & Pruning (Signal Extraction)
-The chaotic raw data is computationally filtered against a **Strict Whitelist** of core system components. Non-critical packages, End-of-Life (EOL) versions, and unrelated updates are aggressively pruned. Multiple updates for the same component are aggregated to provide a clean history.
+Per-product preprocessing scripts (`*_preprocessing.py`) filter raw data against a **Strict Whitelist** of core hypervisor and management components. EOL versions and low-severity advisories are pruned. Related advisories are aggregated.
 
-### 3. Impact Analysis (LLM Intelligent Review)
-The AI Agent performs a deep contextual analysis on the pruned dataset. Patches are selected for the final report *only* if they prevent catastrophic failures. The Agent evaluates based on:
-1.  **System/Service Stability** 🛑: Fixes for Hangs, Deadlocks, or Boot/Service Failures.
-2.  **Data Integrity** 💾: Fixes for Data Loss (DL), Data Corruption, or Unavailability.
-3.  **Security** 🔒: Mitigation of Critical vulnerabilities (RCE, Privilege Escalation).
-4.  **Hardware/Failover** 🔄: Resolving High Availability (HA) split-brains or hardware faults.
+### 3. RAG-Augmented AI Review (LLM Intelligent Review)
+Historical exclusion feedback is injected via `query_rag.py` before invoking the AI Agent. The Agent selects patches *only* if they prevent catastrophic failures:
+1. **System/Service Stability**: Fixes for ESXi/vCenter Hangs, Deadlocks, or PSOD.
+2. **Data Integrity**: Fixes for VM data loss, vSAN corruption, or storage I/O errors.
+3. **Security**: Critical vulnerabilities (VM Escape, Privilege Escalation, RCE via VMSA).
+4. **Hardware/Failover**: Resolving HA/DRS failover or vSAN cluster issues.
 
 *Minor bug fixes and non-critical security patches are actively excluded.*
 
-### 4. Final Report Generation
-The Agent synthesizes the critical insights into a standardized `patch_review_final_report.csv`. This final artifact enforces strict version mapping and generates executive dual-language (English/Korean) summaries, ready for immediate deployment review by the operations team.
+### 4. DB Ingestion
+Reviewed patches are upserted into the dashboard database. Passthrough patches are also recorded with a `passthrough` flag.
+
+### 5. Report Export
+Per-product CSV (`final_approved_patches_<product>.csv`) with dual-language (English/Korean) summaries for operations team review.
