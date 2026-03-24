@@ -383,7 +383,7 @@ async function runAiReviewLoop(
                 const rawAiOutput = await withOpenClawLock(async (msg) => await job.log(msg), async () => {
                     cleanupSessions();
                     return await runStream('/home/citec/.nvm/versions/node/v22.22.0/bin/openclaw',
-                        ['agent', '--agent', 'main', '--json', '--timeout', '1800', '--session-id', `${productCfg.id}_${job.id}_batch_${batchIndex}_${attempt}`, '-m', prompt],
+                        ['agent', '--local', '--agent', 'main', '--json', '--timeout', '1800', '--session-id', `${productCfg.id}_${job.id}_batch_${batchIndex}_${attempt}`, '-m', prompt],
                         {}, { shell: false, cwd: skillDir }, true
                     );
                 });
@@ -835,7 +835,7 @@ Do NOT perform any web scraping. Do NOT use tools to write to files, simply outp
                                         for (const lf of lockFiles) fs.rmSync(path.join(sessionsDir, lf), { force: true });
                                     }
                                     return await runStream('/home/citec/.nvm/versions/node/v22.22.0/bin/openclaw',
-                                        ['agent', '--agent', 'main', '--json', '--timeout', '1800', '--session-id', `os_${job.id}_batch_${batchIndex}_${attempt}`, '-m', currentPrompt],
+                                        ['agent', '--local', '--agent', 'main', '--json', '--timeout', '1800', '--session-id', `os_${job.id}_batch_${batchIndex}_${attempt}`, '-m', currentPrompt],
                                         {}, { shell: false }, true
                                     );
                                 });
