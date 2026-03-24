@@ -728,8 +728,13 @@ def preprocess_patches():
             inserted = 0
             skipped = 0
 
-            # Fetch the set of already-stored issueIds to avoid duplicates
-            cursor.execute("DELETE FROM PreprocessedPatch")
+            # Delete only the vendor-specific records to avoid wiping other products' data
+            if vendor_arg:
+                vendor_map = {'redhat': 'Red Hat', 'oracle': 'Oracle', 'ubuntu': 'Ubuntu'}
+                vendor_str = vendor_map.get(vendor_arg, vendor_arg)
+                cursor.execute("DELETE FROM PreprocessedPatch WHERE vendor = ?", (vendor_str,))
+            else:
+                cursor.execute("DELETE FROM PreprocessedPatch")
             
             for p in final_candidates:
                 issue_id = p.get('id', 'Unknown')

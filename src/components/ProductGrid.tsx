@@ -8,7 +8,7 @@ import { useRouter } from 'next/navigation';
 import { PremiumCard } from "@/components/PremiumCard";
 
 export function ProductGrid({ categoryId, products, dict }: { categoryId: string, products: any[], dict: any }) {
-    const [isRunning, setIsRunning] = useState(false);
+    const [runningProductId, setRunningProductId] = useState<string | null>(null);
     const [resultMsg, setResultMsg] = useState("");
     const [logTail, setLogTail] = useState("");
     const [lastCompletedAt, setLastCompletedAt] = useState<string | null>(null);
@@ -36,7 +36,7 @@ export function ProductGrid({ categoryId, products, dict }: { categoryId: string
                 const res = await fetch('/api/pipeline');
                 const data = await res.json();
                 if (data.hasActiveJob && data.jobId) {
-                    setIsRunning(true);
+                    setRunningProductId(data.provider || null);
                     setResultMsg((dict?.dashboard?.productGrid?.pipelineActiveMsg || "Pipeline active (Progress: {progress}%)").replace('{progress}', String(data.progress || 0)));
                     connectToStream(data.jobId);
                 }
@@ -100,7 +100,7 @@ export function ProductGrid({ categoryId, products, dict }: { categoryId: string
 
             if (streamData.status === 'completed') {
                 setResultMsg(dict?.dashboard?.productGrid?.pipelineFinished || "Pipeline successfully finished!");
-                setIsRunning(false);
+                setRunningProductId(null);
                 setIsQueueing(false);
                 source.close();
                 setActiveEventSource(null);
@@ -109,7 +109,7 @@ export function ProductGrid({ categoryId, products, dict }: { categoryId: string
                 const errMsg = streamData.message || streamData.log || "Unknown error";
                 setResultMsg(`${dict?.dashboard?.productGrid?.pipelineFailed || "❌ Pipeline Failed: "}${errMsg}`);
                 if (streamData.message) setLogTail(prev => prev + "\n" + streamData.message);
-                setIsRunning(false);
+                setRunningProductId(null);
                 setIsQueueing(false);
                 source.close();
                 setActiveEventSource(null);
@@ -129,7 +129,7 @@ export function ProductGrid({ categoryId, products, dict }: { categoryId: string
         source.onerror = (error) => {
             console.error("SSE Error:", error);
             setResultMsg(dict?.dashboard?.productGrid?.connectionLost || "Lost connection to pipeline stream.");
-            setIsRunning(false);
+            setRunningProductId(null);
             setIsQueueing(false);
             source.close();
             setActiveEventSource(null);
@@ -150,7 +150,7 @@ export function ProductGrid({ categoryId, products, dict }: { categoryId: string
     const handleRunSharedPipeline = async (productId: string, isRetry: boolean = false, isAiOnly: boolean = false) => {
         if (isQueueing) return;
         setIsQueueing(true);
-        setIsRunning(true);
+        setRunningProductId(productId);
         setResultMsg(dict?.dashboard?.productGrid?.initiatingPipeline || "Initiating Pipeline Queue...");
         setLogTail("");
 
@@ -189,7 +189,7 @@ export function ProductGrid({ categoryId, products, dict }: { categoryId: string
             const data = await res.json();
             if (!res.ok || !data.jobId) {
                 setResultMsg(data.error || dict?.dashboard?.productGrid?.executionFailed || "Execution failed to queue.");
-                setIsRunning(false);
+                setRunningProductId(null);
                 return;
             }
 
@@ -197,7 +197,7 @@ export function ProductGrid({ categoryId, products, dict }: { categoryId: string
 
         } catch (error) {
             setResultMsg(dict?.dashboard?.productGrid?.connectionFailed || "Failed to connect to execution queue.");
-            setIsRunning(false);
+            setRunningProductId(null);
             setIsQueueing(false);
         }
     };
@@ -243,7 +243,7 @@ export function ProductGrid({ categoryId, products, dict }: { categoryId: string
                         href={`/category/${categoryId}/${prod.id}`}
                         categoryId={categoryId}
                         productId={prod.id}
-                        isRunning={isRunning && prod.active}
+                        isRunning={runningProductId === prod.id}
                         isReviewCompleted={prod.isReviewCompleted}
                         onRunPipeline={() => requestRunPipeline(prod.id, false, false)}
                         onRunAiOnly={() => requestRunPipeline(prod.id, false, true)}
@@ -257,11 +257,11 @@ export function ProductGrid({ categoryId, products, dict }: { categoryId: string
                     <div className="flex justify-between items-center">
                         <div className="flex-col">
                             <p className="text-sm text-emerald-400 font-medium">{resultMsg || dict?.dashboard?.productGrid?.idlePipeline || "Idle"}</p>
-                            {!isRunning && lastCompletedAt && (
+                            {!runningProductId && lastCompletedAt && (
                                 <p className="text-xs text-emerald-500/80 mt-1">{dict?.dashboard?.productGrid?.lastRun || "Last Run: "}{new Date(lastCompletedAt).toLocaleString()}</p>
                             )}
                         </div>
-                        {!isRunning && failureCount > 0 && (
+                        {!runningProductId && failureCount > 0 && (
                             <button
                                 onClick={() => requestRunPipeline('ubuntu', true)}
                                 className="px-3 py-1 bg-emerald-500/20 hover:bg-emerald-500/40 border border-emerald-500/40 text-emerald-100 text-xs rounded transition-colors"
@@ -269,7 +269,7 @@ export function ProductGrid({ categoryId, products, dict }: { categoryId: string
                                 {dict?.dashboard?.productGrid?.retryFailed || "Retry Failed"} ({failureCount})
                             </button>
                         )}
-                        {!isRunning && lastCompletedAt && (
+                        {!runningProductId && lastCompletedAt && (
                             <button
                                 onClick={handleDownloadCSV}
                                 disabled={isDownloading}

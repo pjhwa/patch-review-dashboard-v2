@@ -12,11 +12,15 @@ export async function GET() {
         const job = activeJob || waitingJob;
 
         if (job) {
+            // Derive productId from job data (OS products) or job name (other products)
+            const provider = job.data?.providers?.[0] ||
+                (job.name?.match(/^run-([a-zA-Z0-9_]+)-pipeline$/)?.[1] ?? null);
             return NextResponse.json({
                 hasActiveJob: true,
                 jobId: job.id,
                 status: activeJob ? 'active' : 'waiting',
-                progress: job.progress || 0
+                progress: job.progress || 0,
+                provider,
             });
         }
 
