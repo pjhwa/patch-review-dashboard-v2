@@ -2,6 +2,8 @@ import re
 import csv
 import os
 import json
+import sqlite3
+import uuid
 from datetime import datetime, timedelta
 import glob
 import argparse
@@ -171,6 +173,39 @@ def preprocess_patches():
         
     print(f"Saved review packet to {OUTPUT_FILE}")
     print(f"Audit log saved to {AUDIT_LOG_FILE}")
-    
+
+    # --- Save to SQLite Database (for immediate dashboard count display) ---
+    db_path = os.path.expanduser("~/patch-review-dashboard-v2/prisma/patch-review.db")
+    if os.path.exists(db_path):
+        try:
+            conn = sqlite3.connect(db_path, timeout=20.0)
+            cursor = conn.cursor()
+            run_id = str(uuid.uuid4())
+            cursor.execute("DELETE FROM PreprocessedPatch WHERE vendor = 'MariaDB'")
+            for p in processed_list:
+                cursor.execute('''
+                    INSERT INTO PreprocessedPatch
+                      (id, vendor, issueId, osVersion, component, version, severity, releaseDate, description, url, isReviewed, pipelineRunId, collectedAt)
+                    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, datetime('now'))
+                ''', (
+                    str(uuid.uuid4()),
+                    'MariaDB',
+                    p.get('patch_id', 'Unknown'),
+                    p.get('os_version', '') or 'Unknown',
+                    p.get('component', 'mariadb'),
+                    p.get('version', '') or 'Unknown',
+                    p.get('severity', ''),
+                    p.get('date', ''),
+                    p.get('summary', ''),
+                    p.get('ref_url', ''),
+                    False,
+                    run_id
+                ))
+            conn.commit()
+            conn.close()
+            print(f"[DB] Saved {len(processed_list)} preprocessed patches to SQLite.")
+        except Exception as e:
+            print(f"[DB WARNING] Failed to save to SQLite: {e}")
+
 if __name__ == "__main__":
     preprocess_patches()

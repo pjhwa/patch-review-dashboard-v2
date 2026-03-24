@@ -1,6 +1,8 @@
 import csv
 import os
 import json
+import sqlite3
+import uuid
 from datetime import datetime, timedelta
 import glob
 import argparse
@@ -206,6 +208,40 @@ def preprocess_patches():
         json.dump(processed_list, out, ensure_ascii=False, indent=2)
 
     print(f"[PREPROCESS] Output: {len(processed_list)} patches -> {OUTPUT_FILE}")
+
+    # --- Save to SQLite Database (for immediate dashboard count display) ---
+    db_path = os.path.expanduser("~/patch-review-dashboard-v2/prisma/patch-review.db")
+    if os.path.exists(db_path):
+        try:
+            conn = sqlite3.connect(db_path, timeout=20.0)
+            cursor = conn.cursor()
+            run_id = str(uuid.uuid4())
+            cursor.execute("DELETE FROM PreprocessedPatch WHERE vendor = 'VMware vSphere'")
+            for p in processed_list:
+                cursor.execute('''
+                    INSERT INTO PreprocessedPatch
+                      (id, vendor, issueId, osVersion, component, version, severity, releaseDate, description, url, isReviewed, pipelineRunId, collectedAt)
+                    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, datetime('now'))
+                ''', (
+                    str(uuid.uuid4()),
+                    'VMware vSphere',
+                    p.get('patch_id', 'Unknown'),
+                    None,
+                    p.get('product', 'vsphere'),
+                    p.get('product', '') or '',
+                    p.get('severity', ''),
+                    p.get('published', ''),
+                    p.get('description', ''),
+                    p.get('url', ''),
+                    False,
+                    run_id
+                ))
+            conn.commit()
+            conn.close()
+            print(f"[DB] Saved {len(processed_list)} preprocessed patches to SQLite.")
+        except Exception as e:
+            print(f"[DB WARNING] Failed to save to SQLite: {e}")
+
     return len(processed_list)
 
 if __name__ == '__main__':
