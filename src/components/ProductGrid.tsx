@@ -33,6 +33,7 @@ export function ProductGrid({ categoryId, products, dict }: { categoryId: string
 
     // 페이지 최초 로드 시 이미 실행 중인 파이프라인 잡이 있으면 SSE 스트림에 자동으로 재연결한다.
     // 사용자가 페이지를 새로고침해도 진행 상황을 계속 볼 수 있다.
+    // 추가로 5초마다 폴링해서 SSE 연결이 끊어진 경우에도 스피너 고착을 방지한다.
     useEffect(() => {
         const checkActiveJob = async () => {
             try {
@@ -43,12 +44,20 @@ export function ProductGrid({ categoryId, products, dict }: { categoryId: string
                     setRunningProductId(prev => prev ?? (data.provider || null));
                     setResultMsg((dict?.dashboard?.productGrid?.pipelineActiveMsg || "Pipeline active (Progress: {progress}%)").replace('{progress}', String(data.progress || 0)));
                     connectToStream(data.jobId);
+                } else if (!data.hasActiveJob) {
+                    // 큐가 idle 상태인데 스피너가 남아있으면 (SSE 연결 끊김 등) 자동으로 해제한다.
+                    setRunningProductId(prev => {
+                        if (prev !== null) setIsQueueing(false);
+                        return null;
+                    });
                 }
             } catch (e) {
                 console.error("Failed to check active job", e);
             }
         };
         checkActiveJob();
+        const pollInterval = setInterval(checkActiveJob, 5000);
+        return () => clearInterval(pollInterval);
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 

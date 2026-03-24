@@ -74,8 +74,17 @@ debug_*.py
 debug_*.log
 test_*.log
 cron_*.log
-cookie.txt
+**/cookie.txt
 *.bak
 collection_checkpoint.json
 best_practice_report.csv
 failed_ai_text.txt
+
+# Sensitive credentials — never commit these
+**/.env
+**/.env.*
+**/credentials.json
+**/secrets.json
+**/*.secret
+**/api_key*.txt
+**/token*.txt
