@@ -43,17 +43,28 @@ export async function POST(request: Request) {
         }
         // -----------------------------
 
-        if (!isAiOnly) {
-            // Instantly clear the DB so the Dashboard counters drop to 0.
-            // Even on retries, we must clear the DB to prevent orphaned records in ReviewedPatch
-            await prisma.preprocessedPatch.deleteMany({});
-            await prisma.reviewedPatch.deleteMany({});
-        }
-
         // Determine which providers to enqueue
         const providerList: string[] = Array.isArray(providers) && providers.length > 0
             ? providers
             : ['redhat', 'oracle', 'ubuntu'];
+
+        // vendor별 매핑 — deleteMany는 해당 제품 vendor만 삭제해야 다른 제품 데이터를 건드리지 않음
+        const PROVIDER_TO_VENDOR: Record<string, string> = {
+            redhat: 'Red Hat',
+            oracle: 'Oracle',
+            ubuntu: 'Ubuntu',
+        };
+
+        if (!isAiOnly) {
+            // 실행 대상 vendor만 삭제 — WHERE 없는 deleteMany({})는 전 제품 데이터를 삭제하므로 금지
+            for (const provider of providerList) {
+                const vendor = PROVIDER_TO_VENDOR[provider];
+                if (vendor) {
+                    await prisma.preprocessedPatch.deleteMany({ where: { vendor } });
+                    await prisma.reviewedPatch.deleteMany({ where: { vendor } });
+                }
+            }
+        }
 
         // Enqueue one job per provider (redhat/oracle/ubuntu each get separate jobs)
         const linuxProviders = providerList.filter(p => PROVIDER_TO_JOB[p]);
