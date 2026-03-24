@@ -46,7 +46,11 @@ POST /api/pipeline/ceph/run        (Ceph)
 POST /api/pipeline/mariadb/run     (MariaDB)
 POST /api/pipeline/sqlserver/run   (SQL Server)
 POST /api/pipeline/pgsql/run       (PostgreSQL)
+POST /api/pipeline/mysql/run       (MySQL Community)
 POST /api/pipeline/vsphere/run     (VMware vSphere)
+POST /api/pipeline/jboss_eap/run   (JBoss EAP)
+POST /api/pipeline/tomcat/run      (Apache Tomcat)
+POST /api/pipeline/wildfly/run     (WildFly)
 ```
 
 Request body:
@@ -103,10 +107,10 @@ This triggers a `router.refresh()` in the dashboard to show updated stage counts
 
 Before AI review begins, the worker applies the product's RAG exclusion strategy to prevent the AI from re-reviewing previously excluded patches.
 
-### Strategy 1: Prompt-Injection (Linux products)
-Used by: Red Hat, Oracle Linux, Ubuntu
+### Strategy 1: Prompt-Injection (Linux, vSphere)
+Used by: Red Hat, Oracle Linux, Ubuntu, VMware vSphere
 
-1. Calls `query_rag.py` in the skill directory with the current patches as input
+1. Calls `query_rag.py` in the `os/linux/` shared directory (fixed cwd for all products)
 2. Retrieves `UserFeedback` records (past admin exclusion reasons) based on similarity
 3. Injects a `CRITICAL INSTRUCTION: ... EXCLUDED PATCHES ...` block into every AI batch prompt
 
@@ -115,17 +119,15 @@ prompt = buildPrompt(skillDir, batchSize, prunedBatch)
        + "\n\nCRITICAL INSTRUCTION: ... [exclusion context from query_rag.py]"
 ```
 
-### Strategy 2: File-Hiding (Windows, Ceph, MariaDB, SQL Server, PostgreSQL)
-Used by most non-Linux products
+### Strategy 2: Both (Windows, Ceph, MariaDB, SQL Server, PostgreSQL, MySQL, JBoss EAP, Tomcat, WildFly)
+Used by non-Linux products with normalized data directories
 
-1. Renames `<dataSubDir>/normalized/` → `<dataSubDir>/normalized_hidden/`
-2. Renames `patches_for_llm_review_<vendor>.json` → `patches_for_llm_review_<vendor>.json.hidden`
-3. After AI review completes, restores both to original names
+These products use **both** file-hiding AND prompt-injection:
 
-This prevents the OpenClaw agent from accessing previously reviewed files via its workspace tools.
+1. **File-hiding**: Renames `<dataSubDir>/normalized/` → `<dataSubDir>/normalized_hidden/` and renames `patches_for_llm_review_<vendor>.json` → `patches_for_llm_review_<vendor>.json.hidden` before AI runs, restoring them afterward
+2. **Prompt-injection**: Also calls `query_rag.py` (cwd: `os/linux/`) to inject past exclusion context
 
-### No RAG (VMware vSphere)
-VMware vSphere has no `ragExclusion` configured — the AI reviews all preprocessed patches fresh each run.
+This prevents the OpenClaw agent from accessing previously reviewed files via its workspace tools, while also injecting historical exclusion context.
 
 ---
 

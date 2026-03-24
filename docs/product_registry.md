@@ -29,13 +29,12 @@ interface ProductConfig {
   id: string;                    // 'redhat', 'oracle', 'mariadb', etc.
   name: string;                  // Display name: 'Red Hat Enterprise Linux'
   vendorString: string;          // DB vendor field: 'Red Hat', 'MariaDB'
-  category: 'os' | 'storage' | 'database' | 'virtualization';
+  category: 'os' | 'storage' | 'database' | 'virtualization' | 'middleware';
   active: boolean;               // false = inactive placeholder
 
   // ── File System Layout ────────────────────────────────────
   skillDirRelative: string;      // Relative to ~/.openclaw/workspace/skills/patch-review/
                                  // e.g. 'os/linux', 'database/mariadb'
-  dataSubDir: string;            // e.g. 'redhat_data', 'mariadb_data'
   rawDataFilePrefix: string[];   // Filename prefixes: ['RHSA-', 'RHBA-'], ['ELSA-']
   preprocessingScript: string;   // e.g. 'patch_preprocessing.py'
   preprocessingArgs: string[];   // e.g. ['--vendor', 'redhat', '--days', '90']
@@ -94,12 +93,16 @@ interface ProductConfig {
 | `redhat` | Red Hat Enterprise Linux | os | `os/linux` | `run-redhat-pipeline` | prompt-injection | ✅ | ❌ |
 | `oracle` | Oracle Linux | os | `os/linux` | `run-oracle-pipeline` | prompt-injection | ✅ | ❌ |
 | `ubuntu` | Ubuntu Linux | os | `os/linux` | `run-ubuntu-pipeline` | prompt-injection | ✅ | ❌ |
-| `windows` | Windows Server | os | `os/windows` | `run-windows-pipeline` | file-hiding | ❌ | ✅ |
-| `ceph` | Ceph | storage | `storage/ceph` | `run-ceph-pipeline` | file-hiding | ✅ | ✅ |
-| `mariadb` | MariaDB | database | `database/mariadb` | `run-mariadb-pipeline` | file-hiding | ✅ | ✅ |
-| `sqlserver` | SQL Server | database | `database/sqlserver` | `run-sqlserver-pipeline` | file-hiding | ❌ | ✅ |
-| `pgsql` | PostgreSQL | database | `database/pgsql` | `run-pgsql-pipeline` | file-hiding | ✅ | ✅ |
-| `vsphere` | VMware vSphere | virtualization | `virtualization/vsphere` | `run-vsphere-pipeline` | none | ✅ | ✅ |
+| `windows` | Windows Server | os | `os/windows` | `run-windows-pipeline` | both | ❌ | ✅ |
+| `ceph` | Ceph | storage | `storage/ceph` | `run-ceph-pipeline` | both | ✅ | ✅ |
+| `mariadb` | MariaDB | database | `database/mariadb` | `run-mariadb-pipeline` | both | ✅ | ✅ |
+| `sqlserver` | SQL Server | database | `database/sqlserver` | `run-sqlserver-pipeline` | both | ❌ | ✅ |
+| `pgsql` | PostgreSQL | database | `database/pgsql` | `run-pgsql-pipeline` | both | ✅ | ✅ |
+| `mysql` | MySQL Community | database | `database/mysql` | `run-mysql-pipeline` | both | ✅ | ✅ |
+| `vsphere` | VMware vSphere | virtualization | `virtualization/vsphere` | `run-vsphere-pipeline` | prompt-injection | ✅ | ❌ |
+| `jboss_eap` | JBoss EAP | middleware | `middleware/jboss_eap` | `run-jboss_eap-pipeline` | both | ✅ | ✅ |
+| `tomcat` | Apache Tomcat | middleware | `middleware/tomcat` | `run-tomcat-pipeline` | both | ✅ | ✅ |
+| `wildfly` | WildFly | middleware | `middleware/wildfly` | `run-wildfly-pipeline` | both | ✅ | ✅ |
 
 ---
 
@@ -129,7 +132,7 @@ const skillDir = getSkillDir(PRODUCT_MAP['mariadb']);
 
 ## RAG Exclusion Details
 
-### Prompt-Injection (Linux: redhat, oracle, ubuntu)
+### Prompt-Injection (redhat, oracle, ubuntu, vsphere)
 
 The `query_rag.py` script is invoked before each AI batch. It:
 1. Takes the current batch's patch summaries as input
@@ -144,7 +147,7 @@ Do NOT include them in your output under any circumstances:
 ...
 ```
 
-### File-Hiding (Windows, Ceph, MariaDB, SQL Server, PostgreSQL)
+### Both (Windows, Ceph, MariaDB, SQL Server, PostgreSQL, MySQL, JBoss EAP, Tomcat, WildFly)
 
 Before the AI runs:
 ```
@@ -160,7 +163,7 @@ After the AI completes, both are restored to their original names. This prevents
 
 The passthrough safety net exists because AI agents can skip patches during a run — due to context limits, rate limiting, or retries being exhausted. Without passthrough, those patches would silently disappear from the dashboard.
 
-**Enabled for:** redhat, oracle, ubuntu, ceph, mariadb, pgsql, vsphere
+**Enabled for:** redhat, oracle, ubuntu, ceph, mariadb, pgsql, mysql, vsphere, jboss_eap, tomcat, wildfly
 **Disabled for:** windows, sqlserver — because version-grouping requires AI to make the selection; automatic passthrough would insert meaningless group-level entries
 
 When enabled, after `ingestToDb()` completes:

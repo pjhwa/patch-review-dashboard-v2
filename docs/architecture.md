@@ -39,7 +39,7 @@ graph TD
 
 ## 2. Central Product Registry
 
-The v2 architecture's core innovation is `src/lib/products-registry.ts`. This single file defines a `ProductConfig` interface and an array of 9 active products (`PRODUCT_REGISTRY`). Every part of the system that needs product-specific information reads it from this registry.
+The v2 architecture's core innovation is `src/lib/products-registry.ts`. This single file defines a `ProductConfig` interface and an array of 13 active products (`PRODUCT_REGISTRY`). Every part of the system that needs product-specific information reads it from this registry.
 
 **Before (v1):** Product-specific strings, paths, and logic were duplicated across 9+ files. Adding a new product required editing all of them.
 
@@ -48,7 +48,7 @@ The v2 architecture's core innovation is `src/lib/products-registry.ts`. This si
 ```
 src/lib/products-registry.ts
   └─ ProductConfig interface      (38 typed fields)
-  └─ PRODUCT_REGISTRY array       (9 active + 2 inactive placeholders)
+  └─ PRODUCT_REGISTRY array       (13 active + 2 inactive placeholders)
   └─ PRODUCT_MAP                  (keyed by product id, active only)
   └─ getSkillDir(cfg)             (resolves ~/.openclaw/.../patch-review/...)
 ```
@@ -143,7 +143,11 @@ Each product category has dedicated endpoints:
 | MariaDB | `POST /api/pipeline/mariadb/run` | `POST /api/pipeline/mariadb/finalize` |
 | SQL Server | `POST /api/pipeline/sqlserver/run` | `POST /api/pipeline/sqlserver/finalize` |
 | PostgreSQL | `POST /api/pipeline/pgsql/run` | `POST /api/pipeline/pgsql/finalize` |
+| MySQL | `POST /api/pipeline/mysql/run` | `POST /api/pipeline/mysql/finalize` |
 | VMware vSphere | `POST /api/pipeline/vsphere/run` | `POST /api/pipeline/vsphere/finalize` |
+| JBoss EAP | `POST /api/pipeline/jboss_eap/run` | `POST /api/pipeline/jboss_eap/finalize` |
+| Apache Tomcat | `POST /api/pipeline/tomcat/run` | `POST /api/pipeline/tomcat/finalize` |
+| WildFly | `POST /api/pipeline/wildfly/run` | `POST /api/pipeline/wildfly/finalize` |
 
 ### Shared operational endpoints
 
@@ -165,7 +169,7 @@ Each product category has dedicated endpoints:
 src/
   app/
     page.tsx                    — Root: redirects to /category/os
-    category/[categoryId]/      — Category page (OS / Database / Storage / Virtualization)
+    category/[categoryId]/      — Category page (OS / Database / Storage / Virtualization / Middleware)
       [productId]/
         page.tsx                — Server component: loads product data
         ClientPage.tsx          — Client: patch review table, finalize action

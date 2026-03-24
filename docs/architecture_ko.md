@@ -39,7 +39,7 @@ graph TD
 
 ## 2. 중앙 제품 레지스트리
 
-v2 아키텍처의 핵심 혁신은 `src/lib/products-registry.ts`입니다. 이 단일 파일이 9개 활성 제품의 모든 설정 정보를 정의합니다. 모든 라우트 핸들러, BullMQ 워커, 익스포트 API, 대시보드 UI가 이 레지스트리에서 제품 정보를 읽습니다.
+v2 아키텍처의 핵심 혁신은 `src/lib/products-registry.ts`입니다. 이 단일 파일이 13개 활성 제품의 모든 설정 정보를 정의합니다. 모든 라우트 핸들러, BullMQ 워커, 익스포트 API, 대시보드 UI가 이 레지스트리에서 제품 정보를 읽습니다.
 
 **v1 문제**: 제품별 문자열, 경로, 로직이 9개+ 파일에 분산되어 있었음. 신규 제품 추가 시 전체 파일 수동 편집 필요 → 누락 시 버그 발생 (예: SQL Server가 MariaDB finalize 엔드포인트를 사용하는 문제)
 
@@ -48,7 +48,7 @@ v2 아키텍처의 핵심 혁신은 `src/lib/products-registry.ts`입니다. 이
 ```
 src/lib/products-registry.ts
   └─ ProductConfig 인터페이스  (38개 타입 필드)
-  └─ PRODUCT_REGISTRY 배열    (활성 9개 + 비활성 플레이스홀더)
+  └─ PRODUCT_REGISTRY 배열    (활성 13개 + 비활성 플레이스홀더)
   └─ PRODUCT_MAP              (id 키 기반, 활성 제품만)
   └─ getSkillDir(cfg)         (~/.openclaw/.../patch-review/... 경로 해석)
 ```
@@ -142,7 +142,11 @@ Prisma ORM으로 관리, SQLite 백엔드: `prisma/patch-review.db`
 | MariaDB | `POST /api/pipeline/mariadb/run` | `POST /api/pipeline/mariadb/finalize` |
 | SQL Server | `POST /api/pipeline/sqlserver/run` | `POST /api/pipeline/sqlserver/finalize` |
 | PostgreSQL | `POST /api/pipeline/pgsql/run` | `POST /api/pipeline/pgsql/finalize` |
+| MySQL | `POST /api/pipeline/mysql/run` | `POST /api/pipeline/mysql/finalize` |
 | VMware vSphere | `POST /api/pipeline/vsphere/run` | `POST /api/pipeline/vsphere/finalize` |
+| JBoss EAP | `POST /api/pipeline/jboss_eap/run` | `POST /api/pipeline/jboss_eap/finalize` |
+| Apache Tomcat | `POST /api/pipeline/tomcat/run` | `POST /api/pipeline/tomcat/finalize` |
+| WildFly | `POST /api/pipeline/wildfly/run` | `POST /api/pipeline/wildfly/finalize` |
 
 ### 공유 운영 엔드포인트
 
@@ -164,7 +168,7 @@ Prisma ORM으로 관리, SQLite 백엔드: `prisma/patch-review.db`
 src/
   app/
     page.tsx                    — 루트: /category/os로 리다이렉트
-    category/[categoryId]/      — 카테고리 페이지 (OS / Database / Storage / Virtualization)
+    category/[categoryId]/      — 카테고리 페이지 (OS / Database / Storage / Virtualization / Middleware)
       [productId]/
         page.tsx                — 서버 컴포넌트: 제품 데이터 로드
         ClientPage.tsx          — 클라이언트: 패치 리뷰 테이블, 완료 처리

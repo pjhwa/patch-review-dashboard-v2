@@ -34,7 +34,7 @@ Patch Review Dashboard V2는 현대적이고 분리된 아키텍처를 기반으
 ### BullMQ v5
 - **선택 이유**: v1의 `child_process.spawn()` + `pipeline_status.json` 파일 잠금 방식을 대체. 신뢰성 있는 작업 큐잉, 동시성 제어, 재시작 후 작업 유지, 로그 스트리밍 제공.
 - **큐 이름**: `patch-pipeline`
-- **작업 이름**: 제품당 1개 — `run-redhat-pipeline`, `run-oracle-pipeline`, `run-ubuntu-pipeline`, `run-windows-pipeline`, `run-ceph-pipeline`, `run-mariadb-pipeline`, `run-sqlserver-pipeline`, `run-pgsql-pipeline`, `run-vsphere-pipeline`
+- **작업 이름**: 제품당 1개 — `run-redhat-pipeline`, `run-oracle-pipeline`, `run-ubuntu-pipeline`, `run-windows-pipeline`, `run-ceph-pipeline`, `run-mariadb-pipeline`, `run-sqlserver-pipeline`, `run-pgsql-pipeline`, `run-mysql-pipeline`, `run-vsphere-pipeline`, `run-jboss_eap-pipeline`, `run-tomcat-pipeline`, `run-wildfly-pipeline`
 - **워커**: `src/lib/queue.ts`의 단일 워커가 `PRODUCT_MAP` 조회를 통해 모든 작업 처리
 
 ### ioredis v5

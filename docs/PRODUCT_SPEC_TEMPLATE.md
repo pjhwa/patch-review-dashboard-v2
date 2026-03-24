@@ -12,7 +12,7 @@
 | productId | `(예: mysql, mongodb, almalinux)` |
 | name | `(예: MySQL, MongoDB, AlmaLinux)` |
 | vendorString | `(DB vendor 필드에 들어갈 정확한 문자열, 예: 'MySQL', 'Oracle')` |
-| category | `os` / `storage` / `database` / `virtualization` |
+| category | `os` / `storage` / `database` / `virtualization` / `middleware` |
 | skillDirRelative | `(예: database/mysql, os/linux)` |
 | active | `true` / `false` |
 
@@ -130,10 +130,9 @@
     id: 'PRODUCT_ID',
     name: 'Product Full Name',
     vendorString: 'Vendor String',
-    category: 'database',  // os | storage | database | virtualization
+    category: 'database',  // os | storage | database | virtualization | middleware
     active: true,
     skillDirRelative: 'database/PRODUCT_ID',
-    dataSubDir: 'PRODUCT_ID_data',
     rawDataFilePrefix: ['PREFIX-'],
     preprocessingScript: 'PRODUCT_ID_preprocessing.py',
     preprocessingArgs: ['--days', '180'],

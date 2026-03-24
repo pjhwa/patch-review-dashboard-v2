@@ -46,7 +46,11 @@ POST /api/pipeline/ceph/run        (Ceph)
 POST /api/pipeline/mariadb/run     (MariaDB)
 POST /api/pipeline/sqlserver/run   (SQL Server)
 POST /api/pipeline/pgsql/run       (PostgreSQL)
+POST /api/pipeline/mysql/run       (MySQL Community)
 POST /api/pipeline/vsphere/run     (VMware vSphere)
+POST /api/pipeline/jboss_eap/run   (JBoss EAP)
+POST /api/pipeline/tomcat/run      (Apache Tomcat)
+POST /api/pipeline/wildfly/run     (WildFly)
 ```
 
 요청 본문:
@@ -100,24 +104,21 @@ GET /api/pipeline/stream?jobId=<jobId>
 
 AI 리뷰 전에 이전에 배제된 패치가 재검토되지 않도록 제품별 RAG 배제 전략 적용.
 
-### 전략 1: 프롬프트 주입 (Linux 제품)
-적용 대상: Red Hat, Oracle Linux, Ubuntu
+### 전략 1: 프롬프트 주입 (Linux, vSphere)
+적용 대상: Red Hat, Oracle Linux, Ubuntu, VMware vSphere
 
-1. 스킬 디렉터리의 `query_rag.py`를 현재 패치 입력으로 호출
+1. `os/linux/` 공유 디렉터리의 `query_rag.py`를 현재 패치 입력으로 호출 (cwd 고정)
 2. 유사도 기반으로 `UserFeedback` 레코드 (과거 관리자 배제 사유) 검색
 3. 모든 AI 배치 프롬프트에 `CRITICAL INSTRUCTION: ... 배제된 패치 목록 ...` 블록 주입
 
-### 전략 2: 파일 숨김 (Windows, Ceph, MariaDB, SQL Server, PostgreSQL)
-대부분의 비Linux 제품에 적용
+### 전략 2: 두 방식 병용 (Windows, Ceph, MariaDB, SQL Server, PostgreSQL, MySQL, JBoss EAP, Tomcat, WildFly)
 
-1. `<dataSubDir>/normalized/` → `<dataSubDir>/normalized_hidden/`로 이름 변경
-2. `patches_for_llm_review_<vendor>.json` → `..._hidden`으로 이름 변경
-3. AI 리뷰 완료 후 두 파일/디렉터리를 원래 이름으로 복원
+이 제품들은 **파일 숨김 + 프롬프트 주입**을 모두 사용합니다:
 
-OpenClaw 에이전트가 워크스페이스 도구를 통해 이전에 리뷰된 파일에 접근하여 편향이 발생하는 것을 방지합니다.
+1. **파일 숨김**: `<dataSubDir>/normalized/` → `<dataSubDir>/normalized_hidden/`로 이름 변경하고 `patches_for_llm_review_<vendor>.json` → `..._hidden`으로 이름 변경 (AI 완료 후 복원)
+2. **프롬프트 주입**: `query_rag.py` (cwd: `os/linux/`)로 과거 배제 이력도 주입
 
-### RAG 없음 (VMware vSphere)
-vSphere는 `ragExclusion` 설정 없음 — 매 실행마다 전처리된 패치 전체를 새로 검토.
+파일 숨김은 OpenClaw 에이전트가 워크스페이스 도구로 이전 파일에 접근하는 것을 방지하고, 프롬프트 주입은 과거 관리자 피드백을 AI 판단에 반영합니다.
 
 ---
 

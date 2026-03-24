@@ -48,11 +48,11 @@ This forces OpenClaw to start each batch with a completely clean context. The on
 
 ## 3. RAG Exclusion
 
-### Strategy 1: Prompt-Injection (Red Hat, Oracle, Ubuntu)
+### Strategy 1: Prompt-Injection (Red Hat, Oracle, Ubuntu, VMware vSphere)
 
 Before the first batch:
 
-1. `query_rag.py` is called with the current session's patch summaries as input
+1. `query_rag.py` is called with the current session's patch summaries as input (cwd: `os/linux/` shared directory)
 2. It queries the `UserFeedback` table for similar past exclusion decisions
 3. Returns an exclusion context block: a list of patch IDs and admin reasoning
 
@@ -64,11 +64,13 @@ based on prior review cycles. Do NOT include them in your review output:
 - ELSA-2024:5678 | Component: dbus | Reason: Not applicable to containerized workloads
 ```
 
-**Why not file-hiding for Linux?** Linux preprocessed data uses a `prompt-injection` strategy because the `query_rag.py` script provides similarity-based exclusion that is more nuanced than simply hiding files.
+**Why not file-hiding for Linux/vSphere?** These products have no `normalized/` directory structure. They use `prompt-injection` exclusively, which provides similarity-based exclusion from historical admin feedback.
 
-### Strategy 2: File-Hiding (Windows, Ceph, MariaDB, SQL Server, PostgreSQL)
+### Strategy 2: Both (Windows, Ceph, MariaDB, SQL Server, PostgreSQL, MySQL, JBoss EAP, Tomcat, WildFly)
 
-Before AI runs:
+These products use both file-hiding AND prompt-injection.
+
+**File-hiding** — Before AI runs:
 ```python
 os.rename(normalized_dir, normalized_dir + "_hidden")
 os.rename(patches_file, patches_file + ".hidden")
@@ -80,11 +82,9 @@ os.rename(normalized_dir + "_hidden", normalized_dir)
 os.rename(patches_file + ".hidden", patches_file)
 ```
 
-**Why?** OpenClaw's `agent:main` has access to the workspace file system via tools. Without hiding the normalized data directory, the agent might read previously processed files and include or exclude patches based on stale data.
+**Prompt-injection** — Also calls `query_rag.py` (cwd: `os/linux/`) to inject historical exclusion context before each batch.
 
-### No RAG (VMware vSphere)
-
-vSphere has no `ragExclusion` configured. The AI reviews all preprocessed patches fresh each pipeline run.
+**Why both?** File-hiding prevents the OpenClaw agent from reading previously processed files via workspace tools. Prompt-injection additionally injects admin feedback from prior review cycles to prevent re-recommending already-excluded patches.
 
 ---
 
@@ -207,7 +207,7 @@ When the AI API returns a 429 rate limit response:
 
 After the AI loop completes, `runPassthrough()` ensures no patches are lost.
 
-**Who gets passthrough**: All products except Windows Server and SQL Server (which use version-grouping — auto-insertion of incomplete groups would be misleading).
+**Who gets passthrough**: All products except Windows Server and SQL Server (which use version-grouping — auto-insertion of incomplete groups would be misleading). Active passthrough products: redhat, oracle, ubuntu, ceph, mariadb, pgsql, mysql, vsphere, jboss_eap, tomcat, wildfly.
 
 **What it does**:
 1. Compares `PreprocessedPatch` (all preprocessed patches for this vendor) against `aiReviewedIds` (patches the AI actually reviewed this run)

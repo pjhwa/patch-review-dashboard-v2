@@ -35,7 +35,7 @@ The Patch Review Dashboard V2 is built on a modern, decoupled stack. This docume
 ### BullMQ v5
 - **Why**: Replaces the v1 `child_process.spawn()` + `pipeline_status.json` file-lock approach. BullMQ provides reliable job queuing, concurrency control, job persistence across restarts, and log streaming.
 - **Queue name**: `patch-pipeline`
-- **Job names**: one per product — `run-redhat-pipeline`, `run-oracle-pipeline`, `run-ubuntu-pipeline`, `run-windows-pipeline`, `run-ceph-pipeline`, `run-mariadb-pipeline`, `run-sqlserver-pipeline`, `run-pgsql-pipeline`, `run-vsphere-pipeline`
+- **Job names**: one per product — `run-redhat-pipeline`, `run-oracle-pipeline`, `run-ubuntu-pipeline`, `run-windows-pipeline`, `run-ceph-pipeline`, `run-mariadb-pipeline`, `run-sqlserver-pipeline`, `run-pgsql-pipeline`, `run-mysql-pipeline`, `run-vsphere-pipeline`, `run-jboss_eap-pipeline`, `run-tomcat-pipeline`, `run-wildfly-pipeline`
 - **Worker**: single worker in `src/lib/queue.ts` handles all job names via `PRODUCT_MAP` lookup
 
 ### ioredis v5

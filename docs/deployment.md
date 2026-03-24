@@ -142,7 +142,7 @@ pnpm prisma studio   # Opens database GUI at http://localhost:5555
 
 ## Step 7: Validate the Product Registry
 
-Before first run, verify all 9 products are correctly configured:
+Before first run, verify all 13 products are correctly configured:
 
 ```bash
 node scripts/validate-registry.js
@@ -158,7 +158,7 @@ Expected output:
   ✅ [redhat] SKILL.md: 280 lines (≥100)
   ...
 
-Validation: 69 passed, 0 failed
+Validation: 105 passed, 0 failed
 
 ✅ All checks passed!
 ```
@@ -276,9 +276,14 @@ Or change the port in `package.json`:
                 ├── database/
                 │   ├── mariadb/
                 │   ├── sqlserver/
-                │   └── pgsql/
+                │   ├── pgsql/
+                │   └── mysql/
                 ├── storage/ceph/
-                └── virtualization/vsphere/
+                ├── virtualization/vsphere/
+                └── middleware/
+                    ├── jboss_eap/
+                    ├── tomcat/
+                    └── wildfly/
 ```
 
 ---
