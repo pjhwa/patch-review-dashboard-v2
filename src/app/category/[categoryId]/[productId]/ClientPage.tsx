@@ -135,6 +135,29 @@ export function ProductDetailClient({ categoryId, productId, dict }: { categoryI
         });
     };
 
+    const getSeverityInfo = (patch: any): { label: string; isHeuristic: boolean } => {
+        const raw = patch.severity || patch.Severity || '';
+        const EMPTY_VALS = ['none', 'n/a', '', 'unknown'];
+        if (raw && !EMPTY_VALS.includes(raw.toLowerCase())) return { label: raw, isHeuristic: false };
+
+        // Heuristic: derive from description/id keywords
+        const text = ((patch.description || patch.Description || patch.summary || '') + ' ' + (patch.issueId || patch.id || '')).toLowerCase();
+        if (/critical|remote code execution|\brce\b|unauthenticated|zero.day|zero day/.test(text)) return { label: 'Critical', isHeuristic: true };
+        if (/important|high|privilege escalation|elevation of privilege|authentication bypass/.test(text)) return { label: 'Important', isHeuristic: true };
+        if (/moderate|medium/.test(text)) return { label: 'Moderate', isHeuristic: true };
+        if (/low|informational/.test(text)) return { label: 'Low', isHeuristic: true };
+        return { label: 'Unknown', isHeuristic: true };
+    };
+
+    const severityBadgeClass = (label: string) => {
+        const l = label.toLowerCase();
+        if (l === 'critical') return 'bg-red-500/20 border-red-500/40 text-red-400';
+        if (l === 'important' || l === 'high') return 'bg-orange-500/20 border-orange-500/40 text-orange-400';
+        if (l === 'moderate' || l === 'medium') return 'bg-yellow-500/20 border-yellow-500/40 text-yellow-400';
+        if (l === 'low') return 'bg-blue-500/20 border-blue-500/40 text-blue-400';
+        return 'bg-foreground/10 border-foreground/20 text-foreground/50';
+    };
+
     const title = productId === 'redhat' ? "Red Hat Enterprise Linux"
         : productId === 'oracle' ? "Oracle Linux"
             : productId === 'ubuntu' ? "Ubuntu Linux"
@@ -237,6 +260,8 @@ export function ProductDetailClient({ categoryId, productId, dict }: { categoryI
                                             });
                                         }
 
+                                        const { label: sevLabel, isHeuristic: sevHeuristic } = getSeverityInfo(patch);
+
                                         return (
                                             <div key={idx} className={`p-5 rounded-xl border transition-colors flex flex-col gap-3 ${isApproved ? 'bg-blue-500/10 border-blue-500/30' : 'bg-foreground/[0.02] border-foreground/5 hover:bg-foreground/[0.04]'}`}>
                                                 <div className="flex items-start justify-between">
@@ -244,6 +269,9 @@ export function ProductDetailClient({ categoryId, productId, dict }: { categoryI
                                                         <h4 className={`text-base font-medium ${isApproved ? 'text-blue-300' : 'text-emerald-300'}`}>
                                                             {patchId}
                                                         </h4>
+                                                        <span className={`text-[10px] px-2 py-0.5 rounded-full border font-semibold uppercase tracking-wider ${severityBadgeClass(sevLabel)}`} title={sevHeuristic ? 'Heuristic estimate' : 'From vendor data'}>
+                                                            {sevLabel}{sevHeuristic ? ` ${dict?.dashboard?.productDetail?.severityHeuristic || '(est.)'}` : ''}
+                                                        </span>
                                                         {isApproved && (
                                                             <div className="flex items-center gap-1.5 px-2 py-0.5 bg-blue-500/20 text-blue-300 border border-blue-500/40 rounded-full shadow-[0_0_10px_rgba(59,130,246,0.2)]">
                                                                 <BrainCircuit className="w-3 h-3" />
