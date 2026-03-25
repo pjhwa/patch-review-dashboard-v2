@@ -386,6 +386,36 @@ def is_kernel_related(component):
             return True
     return False
 
+EMPTY_SEVERITY_VALS_FOR_INFERENCE = {"", "none", "n/a", "unknown", "null"}
+
+def infer_severity_from_text(text):
+    """
+    Keyword-based severity inference for vendors without formal severity labels (Ubuntu, Oracle).
+    Returns inferred severity string ('Critical', 'Important', 'Moderate', 'Low') or 'Unknown'.
+    Applied post-filtering so it does not affect drop logic.
+    """
+    t = (text or '').lower()
+    if re.search(
+        r'remote code execution|(?<!\w)rce(?!\w)|unauthenticated remote|zero.day|zero day'
+        r'|container escape|privilege escalation|elevation of privilege|authentication bypass'
+        r'|out.of.bounds write|heap overflow|use.after.free|arbitrary code execution'
+        r'|gain.*root|root.*privilege|hypervisor escape',
+        t
+    ):
+        return 'Critical'
+    if re.search(
+        r'denial.of.service|memory corruption|buffer overflow|local attacker.*privilege'
+        r'|privilege.*local attacker|unauthorized access|hypervisor|virtual machine escape'
+        r'|arbitrary.*execut|execut.*arbitrary|code.*execut|execut.*code',
+        t
+    ):
+        return 'Important'
+    if re.search(r'\bmoderate\b|\bmedium\b', t):
+        return 'Moderate'
+    if re.search(r'\blow\b|\binformational\b', t):
+        return 'Low'
+    return 'Unknown'
+
 def is_critical_severity(severity):
     """Returns True if severity is Critical."""
     if not severity:
@@ -849,8 +879,16 @@ def preprocess_patches():
         if 'window_type' not in latest:
             latest['window_type'] = key[3] if len(key) == 4 else 'recent'
 
+        # Infer severity for vendors without formal labels (Ubuntu / Oracle)
+        if latest['vendor'] in ('Ubuntu', 'Oracle'):
+            sev = (latest.get('severity') or '').strip().lower()
+            if sev in EMPTY_SEVERITY_VALS_FOR_INFERENCE:
+                latest['severity'] = infer_severity_from_text(
+                    latest.get('full_text', '') + ' ' + latest.get('summary', '')
+                )
+
         final_candidates.append(latest)
-        
+
     print(f"Final Candidates for LLM: {len(final_candidates)}")
     
     with open(output_file, 'w', encoding='utf-8') as f:
