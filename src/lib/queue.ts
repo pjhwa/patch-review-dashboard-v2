@@ -771,6 +771,18 @@ export function startWorker() {
                     let patchesRaw: any[] = [];
                     try { patchesRaw = JSON.parse(fs.readFileSync(patchesPath, 'utf-8')); } catch (e) { }
 
+                    // Determine vendor-specific SKILL.md for this manual review batch.
+                    // Oracle/Ubuntu have their own vendor SKILL.md; fall back to redhat if unknown.
+                    const MANUAL_VENDOR_TO_DIR: Record<string, string> = {
+                        'Red Hat': 'redhat',
+                        'Oracle': 'oracle',
+                        'Ubuntu': 'ubuntu',
+                    };
+                    const firstPatchVendor = patchesRaw[0]?.vendor || job.data.patches?.[0]?.vendor || '';
+                    const manualVendorDir = MANUAL_VENDOR_TO_DIR[firstPatchVendor] || 'redhat';
+                    const manualSkillMdPath = path.join(linuxSkillDir, manualVendorDir, 'SKILL.md');
+                    await job.log(`[Manual Review] SKILL.md: ${manualVendorDir}/SKILL.md (vendor: ${firstPatchVendor || 'unknown → redhat'})`);
+
                     const alreadyReviewed = new Set<string>();
                     if (isResumeMode) {
                         try {
@@ -811,7 +823,7 @@ export function startWorker() {
                         await job.log(`[AI Analysis] Processing batch ${batchIndex}/${totalBatches} (${actualBatchSize} patches): ${batchNames}`);
 
                         const prunedBatch = batch.map((p: any) => prunePatchLinux(p));
-                        let basePrompt = `Read the rules explicitly from ${path.join(linuxSkillDir, 'SKILL.md')}. Evaluate the following ${actualBatchSize} PATCHES exactly according to the strict LLM evaluation rules detailed in section 4 of that file.
+                        let basePrompt = `Read the rules explicitly from ${manualSkillMdPath}. Evaluate the following ${actualBatchSize} PATCHES exactly according to the strict LLM evaluation rules detailed in section 3 of that file.
 CRITICAL MANDATE: IGNORE ANY PAST RETRIEVED MEMORIES OR PREVIOUS SUMMARIES. BASE ASSESSMENTS SOLELY ON THE [PATCH DATA] BELOW.
 Do NOT perform any web scraping. Do NOT use tools to write to files, simply output the text directly. Return ONLY a pure JSON array containing EXACTLY ${actualBatchSize} objects. The object MUST contain exactly: 'IssueID', 'Component', 'Version', 'Vendor', 'Date', 'Criticality', 'Description', 'KoreanDescription', and optionally 'Decision' and 'Reason'. Do not skip Step 4.\\n\\n[BATCH DATA TO EVALUATE]:\\n${JSON.stringify(prunedBatch)}`;
                         basePrompt += ragExclusions;
