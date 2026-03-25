@@ -96,11 +96,11 @@ Output your final review decision for ALL candidates strictly as a JSON array na
 ```json
 [
   {
-    "IssueID": "USN-7851-2",
+    "IssueID": "USN-7851-2-2204",
     "Component": "runc",
-    "Version": "1.3.3-0ubuntu1~24.04.3",
+    "Version": "1.3.3-0ubuntu1~22.04.3",
     "Vendor": "Ubuntu",
-    "OsVersion": "22.04 LTS, 24.04 LTS",
+    "OsVersion": "22.04 LTS",
     "Date": "2026-02-14",
     "Criticality": "Critical",
     "Description": "Resolves container escape vulnerabilities in runc allowing host compromise.",
@@ -112,7 +112,8 @@ Output your final review decision for ALL candidates strictly as a JSON array na
 ```
 
 **Content Guidelines (CRITICAL):**
-- **OsVersion**: MUST be populated from the JSON `os_version` field. Preserve as a single string (e.g., `"22.04 LTS, 24.04 LTS"`). **Do NOT create multiple rows** for a single patch.
+- **IssueID**: MUST be returned exactly as given in the input `id` field (e.g., `"USN-7851-2-2204"`). The `-2204` / `-2404` suffix identifies the Ubuntu LTS version. Do NOT strip or alter this suffix.
+- **OsVersion**: MUST be populated from the JSON `os_version` field. Each input entry targets a single LTS version (e.g., `"22.04 LTS"`). Return that single value as-is. Do NOT combine multiple LTS versions into one row.
 - **Reference**: MUST be populated with the `ref_url` (or `url`) field from source JSON. Do NOT leave as "Unknown".
 - **Version**: YOU MUST USE THE EXACT VALUE FROM THE `specific_version` FIELD. NEVER output `"Unknown"`, `"1.1.x"`, or placeholder strings.
 
@@ -139,11 +140,11 @@ Exclude a patch if:
 Return ONLY a pure JSON array. Each object must have exactly these fields:
 ```json
 {
-  "IssueID": "USN-7851-2",
+  "IssueID": "USN-7851-2-2204",
   "Component": "runc (or specific component name)",
   "Version": "exact version from specific_version field",
   "Vendor": "Ubuntu",
-  "OsVersion": "22.04 LTS, 24.04 LTS",
+  "OsVersion": "22.04 LTS",
   "Date": "YYYY-MM-DD",
   "Criticality": "Critical | High | Moderate | Low",
   "Description": "1-2 sentence English executive summary",
@@ -155,10 +156,10 @@ Return ONLY a pure JSON array. Each object must have exactly these fields:
 
 ### 3.4 General Rules
 - Return EXACTLY the same number of objects as input patches in the batch.
+- For `IssueID` field: return the `id` value from the input EXACTLY, including the `-2204` / `-2404` OS version suffix. Do NOT strip the suffix.
 - For `Vendor` field: use exactly `"Ubuntu"` (not "Canonical").
 - For `Version` field: ALWAYS use the exact value from `specific_version` field. NEVER output "Unknown" or placeholder strings.
-- For `OsVersion` field: preserve the `os_version` field as-is (e.g., `"22.04 LTS, 24.04 LTS"`).
-- Do NOT create multiple JSON objects for one USN (even if it covers multiple LTS releases).
+- For `OsVersion` field: return the `os_version` field as-is. Each entry is already per-LTS-version (e.g., `"22.04 LTS"`). Do NOT combine or expand.
 - Do NOT include raw package filenames, CVE ID lists, or changelog copy-pastes in descriptions.
 - Do NOT make up CVE numbers or version numbers.
 

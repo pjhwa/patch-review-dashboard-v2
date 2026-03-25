@@ -58,6 +58,13 @@ SYSTEM_CORE_COMPONENTS = [
 # 14.04 LTS: expired 2019-04 | 16.04 LTS: expired 2021-04 | 18.04 LTS: expired 2023-04 | 20.04 LTS: expired 2025-05
 UBUNTU_EOL_LTS_VERSIONS = {"14.04 LTS", "16.04 LTS", "18.04 LTS", "20.04 LTS"}
 
+# Suffix map for Ubuntu LTS versions (used to generate per-OS-version IDs, e.g. USN-8060-1-2204)
+LTS_SUFFIX_MAP = {
+    "22.04 LTS": "2204",
+    "24.04 LTS": "2404",
+    "26.04 LTS": "2604",
+}
+
 EXCLUDED_PACKAGES_EXPLICIT = [
     "firefox", "thunderbird", "libreoffice", "evolution", 
     "gimp", "inkscape", "cups", "avahi", "bluez", "pulseaudio", "pipewire",
@@ -392,6 +399,56 @@ def is_critical_or_important_severity(severity):
     sev_lower = severity.lower()
     return "critical" in sev_lower or "important" in sev_lower
 
+def extract_ubuntu_pkg_version(packages, component, lts_ver, all_lts_versions):
+    """Extract the specific package version for a given Ubuntu LTS version.
+
+    Strategy 1 (backport): packages backported to an older LTS carry a version suffix
+    like '~22.04.1'. If a package matching the component has that suffix, use it.
+
+    Strategy 2 (native): packages without any '~XX.XX.' suffix are 'native' to their
+    release. When a USN covers multiple releases, each release typically ships its own
+    version of the package (e.g. binutils 2.38 for 22.04, 2.42 for 24.04). We sort the
+    native candidates by version string and map them to the sorted LTS list so that the
+    older LTS gets the lower version.
+    """
+    ver_tag = lts_ver.replace(" LTS", "")       # "22.04"
+    backport_marker = f"~{ver_tag}."             # "~22.04."
+    comp_lower = component.lower()
+
+    # Pass 1: explicit backport suffix
+    for pkg in packages:
+        pkg_str = str(pkg)
+        if backport_marker not in pkg_str:
+            continue
+        pkg_lower = pkg_str.lower()
+        if pkg_lower.startswith("linux-image") or pkg_lower.startswith(comp_lower):
+            m = re.search(r'-(\d[\w.+:~-]*)$', pkg_str)
+            if m:
+                return m.group(1)
+
+    # Pass 2: native packages (no '~' in version string)
+    native_candidates = []
+    for pkg in packages:
+        pkg_str = str(pkg)
+        if "~" in pkg_str:
+            continue
+        pkg_lower = pkg_str.lower()
+        if pkg_lower.startswith("linux-image") or pkg_lower.startswith(comp_lower):
+            m = re.search(r'-(\d[\w.+:~-]*)$', pkg_str)
+            if m:
+                native_candidates.append((pkg_str, m.group(1)))
+
+    if native_candidates:
+        native_candidates.sort()  # lower version first → older Ubuntu release
+        sorted_lts = sorted(all_lts_versions)
+        try:
+            idx = sorted_lts.index(lts_ver)
+            return native_candidates[min(idx, len(native_candidates) - 1)][1]
+        except (ValueError, IndexError):
+            return native_candidates[0][1]
+
+    return ""
+
 def preprocess_patches():
     parser = argparse.ArgumentParser(description="Pre-process collected patches for AI review.")
     parser.add_argument('--days', type=int, default=180, help="Total lookback period in days (default: 180). Kernel patches from the first half (early window) are subject to stricter filtering.")
@@ -634,6 +691,7 @@ def preprocess_patches():
             elif isinstance(affected_products, str):
                 search_text = affected_products
 
+            ubuntu_split_done = False
             if vendor == "Ubuntu":
                 # Find all "XX.XX LTS" patterns strictly from affected_products
                 lts_matches = re.findall(r"(\d{2}\.\d{2} LTS)", search_text)
@@ -641,32 +699,56 @@ def preprocess_patches():
                     active_lts = [v for v in sorted(set(lts_matches)) if v not in UBUNTU_EOL_LTS_VERSIONS]
                     dist_versions = active_lts
                     os_version_val = ", ".join(active_lts)
-            
+                    if active_lts:
+                        ubuntu_pkgs = data.get("packages", [])
+                        for lts_ver in active_lts:
+                            lts_suffix = LTS_SUFFIX_MAP.get(lts_ver, lts_ver.replace(" LTS", "").replace(".", ""))
+                            split_id = f"{patch_id}-{lts_suffix}"
+                            split_ver = extract_ubuntu_pkg_version(ubuntu_pkgs, component, lts_ver, active_lts) or specific_ver
+                            raw_list.append({
+                                'id': split_id,
+                                'original_id': patch_id,
+                                'vendor': vendor,
+                                'dist_version': lts_ver,
+                                'os_version': lts_ver,
+                                'date': date_str,
+                                'component': component,
+                                'specific_version': split_ver,
+                                'summary': summary,
+                                'severity': data.get('severity', ''),
+                                'diff_content': diff_content,
+                                'full_text': full_text + " " + title,
+                                'ref_url': data.get('url', ''),
+                                'window_type': window_type,
+                            })
+                        ubuntu_split_done = True
+
             elif vendor == "Oracle":
                 ol_matches = re.findall(r'Oracle Linux (\d+)', search_text, re.IGNORECASE)
                 if ol_matches:
                     ol_vers = sorted(set(ol_matches))
                     os_version_val = ", ".join([f"OL{v}" for v in ol_vers])
-            
+
             elif vendor == "Red Hat":
                 os_version_val = format_redhat_os_versions(data.get('affected_products', []))
 
-            raw_list.append({
-                'id': patch_id,
-                'original_id': patch_id,
-                'vendor': vendor,
-                'dist_version': dist_versions[0] if dist_versions else os_version_val,
-                'os_version': os_version_val,
-                'date': date_str,
-                'component': component,
-                'specific_version': specific_ver,
-                'summary': summary,
-                'severity': data.get('severity', ''),
-                'diff_content': diff_content,
-                'full_text': full_text + " " + title,
-                'ref_url': data.get('url', ''),
-                'window_type': window_type,  # 'recent' (0~90d) or 'early' (90~180d)
-            })
+            if not ubuntu_split_done:
+                raw_list.append({
+                    'id': patch_id,
+                    'original_id': patch_id,
+                    'vendor': vendor,
+                    'dist_version': dist_versions[0] if dist_versions else os_version_val,
+                    'os_version': os_version_val,
+                    'date': date_str,
+                    'component': component,
+                    'specific_version': specific_ver,
+                    'summary': summary,
+                    'severity': data.get('severity', ''),
+                    'diff_content': diff_content,
+                    'full_text': full_text + " " + title,
+                    'ref_url': data.get('url', ''),
+                    'window_type': window_type,  # 'recent' (0~90d) or 'early' (90~180d)
+                })
 
         except Exception as e:
             print(f"Error reading {json_path}: {e}")

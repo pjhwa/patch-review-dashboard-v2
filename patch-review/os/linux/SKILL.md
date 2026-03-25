@@ -139,9 +139,9 @@ Do NOT wrap the output in any markdown code blocks, just output the raw JSON arr
 ```json
 [
   {
-    "id": "USN-7851-2",
+    "id": "USN-7851-2-2204",
     "vendor": "Ubuntu",
-    "OsVersion": "22.04 LTS, 24.04 LTS",
+    "OsVersion": "22.04 LTS",
     "distVersion": "22.04 LTS",
     "component": "runc",
     "version": "1.3.3-0ubuntu1~24.04.3",
@@ -159,8 +159,9 @@ Do NOT wrap the output in any markdown code blocks, just output the raw JSON arr
 **Content Guidelines (CRITICAL):**
 - **OsVersion**:
     - **MUST** be populated with the specific OS version from the JSON `os_version` field.
-    - If a patch covers multiple distributions, they will be combined in the source field. Preserve them as a single string (e.g. `"22.04 LTS, 24.04 LTS"` or `"RHEL 8, RHEL 9"`).
-    - **Do NOT create multiple rows** for a single patch. Output exactly one JSON object per input advisory!
+    - For Red Hat / Oracle: a patch may cover multiple versions combined in `os_version` (e.g. `"RHEL 8, RHEL 9"`). Preserve as a single string.
+    - For Ubuntu: each input entry is already split per LTS version (e.g. `"22.04 LTS"`). Return that single value. Do NOT combine or expand.
+    - **Do NOT create multiple rows** for a single input entry. Output exactly one JSON object per input item.
 - **Dist Version**:
     - **MUST** be populated with the primary OS version from the JSON `dist_version` field.
 - **Ubuntu Variant-Specific USNs**: Some USNs only cover a specific kernel variant (FIPS, GCP, NVIDIA, Tegra). Verify the `Releases` section in the advisory `full_text`.
@@ -236,7 +237,7 @@ Exclude a patch if:
 Return ONLY a pure JSON array. Each object must have exactly these fields:
 ```json
 {
-  "IssueID": "RHSA-2026-1234 or USN-7851-2 or ELSA-2026-0001",
+  "IssueID": "RHSA-2026-1234 or USN-7851-2-2204 or ELSA-2026-0001",
   "Component": "kernel (or specific component name)",
   "Version": "exact version from specific_version field",
   "Vendor": "Red Hat | Oracle | Ubuntu",
@@ -265,7 +266,7 @@ Return ONLY a pure JSON array. Each object must have exactly these fields:
 - NEVER say "See the following advisory" — write actual content.
 - NEVER output generic descriptions like "Security update for kernel".
 - If `specific_version` is empty, use the latest version from `history` array.
-- For multi-distribution patches, combine OS versions as a single comma-separated string.
+- For Ubuntu: do NOT strip the `-2204` / `-2404` OS version suffix from `IssueID`. Return it exactly as given in the input `id` field.
 
 ## 5. Output Validation Rules
 
@@ -305,5 +306,6 @@ Before submitting your JSON response, verify:
 - **Vendor value**: `"Ubuntu"` (not "Canonical").
 - **LTS ONLY**: Only include patches affecting LTS versions (24.04, 22.04, 20.04). Skip 25.10, 24.10.
 - **Variant USNs**: Some USNs cover FIPS, GCP, NVIDIA, or Tegra kernels only. Include if relevant to server environments.
-- **IssueID format**: `"USN-7851-2"`.
-- **Version**: Use `specific_version` or the version from the `packages` array for the target LTS release.
+- **IssueID format**: `"USN-7851-2-2204"` (original USN ID + `-XXYY` OS version suffix). The suffix identifies the target LTS: `2204` = 22.04 LTS, `2404` = 24.04 LTS. Return this full ID as-is; do NOT strip the suffix.
+- **Per-OS-version entries**: Each USN is split into one entry per active LTS version during preprocessing. A USN covering both 22.04 and 24.04 appears as two separate input items (`USN-7851-2-2204`, `USN-7851-2-2404`). Treat each independently.
+- **Version**: Use `specific_version` field (already extracted for this specific LTS version) exactly.
