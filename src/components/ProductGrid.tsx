@@ -19,6 +19,8 @@ export function ProductGrid({ categoryId, products, dict }: { categoryId: string
     const [activeEventSource, setActiveEventSource] = useState<EventSource | null>(null);
     // ref로 최신 EventSource를 추적해 stale closure 없이 즉시 닫을 수 있도록 한다.
     const activeEventSourceRef = useRef<EventSource | null>(null);
+    // 현재 SSE 연결 중인 jobId를 추적해 동일 jobId로 중복 재연결을 방지한다.
+    const activeJobIdRef = useRef<string | null>(null);
     const router = useRouter();
 
     // 컴포넌트 언마운트 시 열려있는 SSE 연결을 닫아 메모리 누수를 방지한다.
@@ -43,7 +45,10 @@ export function ProductGrid({ categoryId, products, dict }: { categoryId: string
                     // 유저가 이미 버튼을 눌러 runningProductId가 설정된 경우 덮어쓰지 않는다.
                     setRunningProductId(prev => prev ?? (data.provider || null));
                     setResultMsg((dict?.dashboard?.productGrid?.pipelineActiveMsg || "Pipeline active (Progress: {progress}%)").replace('{progress}', String(data.progress || 0)));
-                    connectToStream(data.jobId);
+                    // 이미 동일 jobId로 SSE 연결 중이면 재연결하지 않는다 (로그 중복 방지).
+                    if (activeJobIdRef.current !== data.jobId) {
+                        connectToStream(data.jobId);
+                    }
                 } else if (!data.hasActiveJob) {
                     // 큐가 idle 상태인데 스피너가 남아있으면 (SSE 연결 끊김 등) 자동으로 해제한다.
                     setRunningProductId(prev => {
@@ -70,6 +75,7 @@ export function ProductGrid({ categoryId, products, dict }: { categoryId: string
             activeEventSourceRef.current.close();
             activeEventSourceRef.current = null;
         }
+        activeJobIdRef.current = jobId;
         const source = new EventSource(`/api/pipeline/stream?jobId=${jobId}`);
         activeEventSourceRef.current = source;
         setActiveEventSource(source);
@@ -123,6 +129,7 @@ export function ProductGrid({ categoryId, products, dict }: { categoryId: string
                 setIsQueueing(false);
                 source.close();
                 activeEventSourceRef.current = null;
+                activeJobIdRef.current = null;
                 setActiveEventSource(null);
                 router.refresh();
             } else if (streamData.status === 'failed' || streamData.status === 'error') {
@@ -133,6 +140,7 @@ export function ProductGrid({ categoryId, products, dict }: { categoryId: string
                 setIsQueueing(false);
                 source.close();
                 activeEventSourceRef.current = null;
+                activeJobIdRef.current = null;
                 setActiveEventSource(null);
             } else {
                 if (streamData.message && !streamData.log?.includes('PREPROCESS_DONE')) {
@@ -154,6 +162,7 @@ export function ProductGrid({ categoryId, products, dict }: { categoryId: string
             setIsQueueing(false);
             source.close();
             activeEventSourceRef.current = null;
+            activeJobIdRef.current = null;
             setActiveEventSource(null);
         };
     };

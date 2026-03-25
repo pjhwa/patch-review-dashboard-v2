@@ -112,6 +112,7 @@ export const PRODUCT_REGISTRY: ProductConfig[] = [
             osVersion: p.os_version || null,
             description: (p.summary || p.description || '').slice(0, 4000),
             releaseDate: p.date || null,
+            url: p.ref_url || null,
         }),
         csvBOM: false,
         buildPrompt: (skillDir: string, batchSize: number, prunedBatch: any[]) =>
@@ -159,6 +160,7 @@ export const PRODUCT_REGISTRY: ProductConfig[] = [
             osVersion: p.os_version || null,
             description: (p.summary || p.description || '').slice(0, 4000),
             releaseDate: p.date || null,
+            url: p.ref_url || null,
         }),
         csvBOM: false,
         buildPrompt: (skillDir: string, batchSize: number, prunedBatch: any[]) =>
@@ -206,6 +208,7 @@ export const PRODUCT_REGISTRY: ProductConfig[] = [
             osVersion: p.os_version || null,
             description: (p.summary || p.description || '').slice(0, 4000),
             releaseDate: p.date || null,
+            url: p.ref_url || null,
         }),
         csvBOM: false,
         buildPrompt: (skillDir: string, batchSize: number, prunedBatch: any[]) =>
@@ -256,6 +259,7 @@ export const PRODUCT_REGISTRY: ProductConfig[] = [
             osVersion: p.os_version || null,
             description: (p.description || '').slice(0, 4000),
             releaseDate: p.issued_date || null,
+            url: p.url || null,
         }),
         csvBOM: true,
         buildPrompt: (skillDir: string, batchSize: number, prunedBatch: any[]) =>
@@ -304,6 +308,7 @@ export const PRODUCT_REGISTRY: ProductConfig[] = [
             osVersion: p.os_version || null,
             description: (p.description || '').slice(0, 4000),
             releaseDate: p.issued_date || null,
+            url: p.url || null,
         }),
         csvBOM: false,
         buildPrompt: (skillDir: string, batchSize: number, prunedBatch: any[]) =>
@@ -351,6 +356,7 @@ export const PRODUCT_REGISTRY: ProductConfig[] = [
             osVersion: p.os_version || null,
             description: (p.description || '').slice(0, 4000),
             releaseDate: p.issued_date || null,
+            url: p.ref_url || null,
         }),
         csvBOM: true,
         buildPrompt: (skillDir: string, batchSize: number, prunedBatch: any[]) =>
@@ -398,6 +404,7 @@ export const PRODUCT_REGISTRY: ProductConfig[] = [
             osVersion: p.os_version || null,
             description: (p.description || '').slice(0, 4000),
             releaseDate: p.issued_date || null,
+            url: p.url || null,
         }),
         csvBOM: true,
         buildPrompt: (skillDir: string, batchSize: number, prunedBatch: any[]) =>
@@ -445,6 +452,7 @@ export const PRODUCT_REGISTRY: ProductConfig[] = [
             osVersion: p.os_version || null,
             description: (p.description || '').slice(0, 4000),
             releaseDate: p.issued_date || null,
+            url: p.ref_url || null,
         }),
         csvBOM: false,
         buildPrompt: (skillDir: string, batchSize: number, prunedBatch: any[]) =>
@@ -491,6 +499,7 @@ export const PRODUCT_REGISTRY: ProductConfig[] = [
             osVersion: null,
             description: (p.description || '').slice(0, 4000),
             releaseDate: p.published || null,
+            url: p.url || null,
         }),
         csvBOM: false,
         buildPrompt: (skillDir: string, batchSize: number, prunedBatch: any[]) =>
@@ -538,6 +547,7 @@ export const PRODUCT_REGISTRY: ProductConfig[] = [
             osVersion: p.os_version || null,
             description: (p.description || '').slice(0, 4000),
             releaseDate: p.issued_date || null,
+            url: p.ref_url || null,
         }),
         csvBOM: true,
         buildPrompt: (skillDir: string, batchSize: number, prunedBatch: any[]) =>
@@ -585,6 +595,7 @@ export const PRODUCT_REGISTRY: ProductConfig[] = [
             osVersion: p.os_version || null,
             description: (p.description || '').slice(0, 4000),
             releaseDate: p.issued_date || null,
+            url: p.ref_url || null,
         }),
         csvBOM: false,
         buildPrompt: (skillDir: string, batchSize: number, prunedBatch: any[]) =>
@@ -632,6 +643,7 @@ export const PRODUCT_REGISTRY: ProductConfig[] = [
             osVersion: p.os_version || null,
             description: (p.description || '').slice(0, 4000),
             releaseDate: p.issued_date || null,
+            url: p.ref_url || null,
         }),
         csvBOM: false,
         buildPrompt: (skillDir: string, batchSize: number, prunedBatch: any[]) =>
@@ -679,6 +691,7 @@ export const PRODUCT_REGISTRY: ProductConfig[] = [
             osVersion: p.os_version || null,
             description: (p.description || '').slice(0, 4000),
             releaseDate: p.issued_date || null,
+            url: p.ref_url || null,
         }),
         csvBOM: false,
         buildPrompt: (skillDir: string, batchSize: number, prunedBatch: any[]) =>
