@@ -129,6 +129,7 @@
 
 /* Light mode: boost muted text opacity so low-alpha variants stay legible on white */
 @layer utilities {
+  :root:not(.dark) .text-foreground\/60 { color: oklch(0.34 0 0); } /* ~#4D4D4D, 6.3:1 */
   :root:not(.dark) .text-foreground\/50 { color: oklch(0.32 0 0); } /* ~#474747 */
   :root:not(.dark) .text-foreground\/40 { color: oklch(0.38 0 0); } /* ~#555555 */
   :root:not(.dark) .text-foreground\/30 { color: oklch(0.44 0 0); } /* ~#636363 */

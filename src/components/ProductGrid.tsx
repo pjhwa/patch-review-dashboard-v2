@@ -288,7 +288,7 @@ export function ProductGrid({ categoryId, products, dict }: { categoryId: string
                 <div className="p-4 border border-emerald-500/20 bg-emerald-500/10 rounded-lg">
                     <div className="flex justify-between items-center">
                         <div className="flex-col">
-                            <p className="text-sm text-emerald-400 font-medium">{resultMsg || dict?.dashboard?.productGrid?.idlePipeline || "Idle"}</p>
+                            <p className="text-sm text-emerald-700 dark:text-emerald-400 font-medium">{resultMsg || dict?.dashboard?.productGrid?.idlePipeline || "Idle"}</p>
                             {!runningProductId && lastCompletedAt && (
                                 <p className="text-xs text-emerald-500/80 mt-1">{dict?.dashboard?.productGrid?.lastRun || "Last Run: "}{new Date(lastCompletedAt).toLocaleString()}</p>
                             )}
@@ -296,7 +296,7 @@ export function ProductGrid({ categoryId, products, dict }: { categoryId: string
                         {!runningProductId && failureCount > 0 && (
                             <button
                                 onClick={() => requestRunPipeline('ubuntu', true)}
-                                className="px-3 py-1 bg-emerald-500/20 hover:bg-emerald-500/40 border border-emerald-500/40 text-emerald-100 text-xs rounded transition-colors"
+                                className="px-3 py-1 bg-emerald-500/20 hover:bg-emerald-500/40 border border-emerald-500/40 text-emerald-700 dark:text-emerald-100 text-xs rounded transition-colors"
                             >
                                 {dict?.dashboard?.productGrid?.retryFailed || "Retry Failed"} ({failureCount})
                             </button>
@@ -328,7 +328,7 @@ export function ProductGrid({ categoryId, products, dict }: { categoryId: string
 
                         <div className="text-sm text-foreground/60 space-y-4 mb-6">
                             {!confirmDialog.isRetry && !confirmDialog.isAiOnly && lastCompletedAt && (
-                                <div className="p-3 bg-red-500/10 border border-red-500/20 rounded text-red-400">
+                                <div className="p-3 bg-red-500/10 border border-red-500/20 rounded text-red-700 dark:text-red-400">
                                     <strong className="block mb-1">{dict?.dashboard?.productGrid?.recentExecutionDetected || "Recent Execution Detected!"}</strong>
                                     {(dict?.dashboard?.productGrid?.recentExecutionWarning || "Last run time: {time}. Running again will reset the current pipeline progress (Preprocessed, AI Reviewed counts) to 0.").replace('{time}', new Date(lastCompletedAt).toLocaleString())}
                                 </div>
@@ -355,7 +355,7 @@ export function ProductGrid({ categoryId, products, dict }: { categoryId: string
                             <button
                                 onClick={confirmRun}
                                 disabled={isQueueing}
-                                className="px-4 py-2 rounded bg-emerald-500/20 text-emerald-400 hover:bg-emerald-500/30 border border-emerald-500/30 transition-colors text-sm font-medium disabled:opacity-50"
+                                className="px-4 py-2 rounded bg-emerald-500/20 text-emerald-700 dark:text-emerald-400 hover:bg-emerald-500/30 border border-emerald-500/30 transition-colors text-sm font-medium disabled:opacity-50"
                             >
                                 {isQueueing ? (dict?.dashboard?.productGrid?.queueing || "Queueing...") : confirmDialog.isAiOnly ? (dict?.dashboard?.productGrid?.yesAiOnlyBtn || "Yes, AI Only") : (confirmDialog.isRetry ? (dict?.dashboard?.productGrid?.yesRetryBtn || "Retry") : (dict?.dashboard?.productGrid?.yesStartFreshBtn || "Yes, Queue Job"))}
                             </button>

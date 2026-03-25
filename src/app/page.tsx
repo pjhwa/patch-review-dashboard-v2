@@ -189,7 +189,7 @@ export default async function Home() {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
               </span>
-              <span className="text-xs font-semibold text-emerald-400 uppercase tracking-widest">{dict.dashboard.pipelineActive}</span>
+              <span className="text-xs font-semibold text-emerald-700 dark:text-emerald-400 uppercase tracking-widest">{dict.dashboard.pipelineActive}</span>
             </span>
             <Badge variant="outline" className="border-foreground/10 text-foreground/50 hover:bg-foreground/10 px-4 py-1.5 font-medium transition-colors">
               {pipeline?.quarter || "Q1 2026"}
@@ -205,17 +205,17 @@ export default async function Home() {
             <div className="flex items-center justify-between">
               <h2 className="text-lg md:text-xl font-bold text-foreground/90 flex items-center gap-3 tracking-wide">
                 <div className="p-2 rounded-lg bg-emerald-500/10 border border-emerald-500/20">
-                  <Activity className="w-5 h-5 text-emerald-400" />
+                  <Activity className="w-5 h-5 text-emerald-700 dark:text-emerald-400" />
                 </div>
                 {dict.dashboard.globalOverview}
               </h2>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-              <StatCard title={dict.dashboard.stats.collectedTitle} value={totalCollected} icon={Database} description={dict.dashboard.stats.collectedDesc} colorClass="text-blue-400" />
-              <StatCard title={dict.dashboard.stats.reviewedTitle} value={totalReviewed} icon={Bot} description={dict.dashboard.stats.reviewedDesc} colorClass="text-purple-400" />
-              <StatCard title={dict.dashboard.stats.approvedTitle} value={totalApproved} icon={CheckCircle} description={dict.dashboard.stats.approvedDesc} colorClass="text-emerald-400" />
-              <StatCard title={dict.dashboard.stats.archivesTitle} value={archiveCount} icon={Archive} description={dict.dashboard.stats.archivesDesc} colorClass="text-amber-400" />
+              <StatCard title={dict.dashboard.stats.collectedTitle} value={totalCollected} icon={Database} description={dict.dashboard.stats.collectedDesc} colorClass="text-blue-700 dark:text-blue-400" />
+              <StatCard title={dict.dashboard.stats.reviewedTitle} value={totalReviewed} icon={Bot} description={dict.dashboard.stats.reviewedDesc} colorClass="text-purple-700 dark:text-purple-400" />
+              <StatCard title={dict.dashboard.stats.approvedTitle} value={totalApproved} icon={CheckCircle} description={dict.dashboard.stats.approvedDesc} colorClass="text-emerald-700 dark:text-emerald-400" />
+              <StatCard title={dict.dashboard.stats.archivesTitle} value={archiveCount} icon={Archive} description={dict.dashboard.stats.archivesDesc} colorClass="text-amber-700 dark:text-amber-400" />
             </div>
           </div>
         </section>

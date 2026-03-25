@@ -48,7 +48,7 @@ export function PremiumCard({
                             <button
                                 onClick={onRunPipeline}
                                 disabled={isRunning}
-                                className="text-xs px-2 py-1 rounded flex items-center gap-1 bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-400 border border-emerald-500/20 transition-colors z-10 relative disabled:opacity-50 disabled:cursor-not-allowed"
+                                className="text-xs px-2 py-1 rounded flex items-center gap-1 bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-700 dark:text-emerald-400 border border-emerald-500/20 transition-colors z-10 relative disabled:opacity-50 disabled:cursor-not-allowed"
                             >
                                 {isRunning && <Loader2 className="w-3 h-3 animate-spin" />}
                                 {dict?.dashboard?.premiumCard?.runPipeline || 'Run Pipeline'}
@@ -57,7 +57,7 @@ export function PremiumCard({
                                 <button
                                     onClick={onRunAiOnly}
                                     disabled={isRunning}
-                                    className="text-xs px-2 py-1 rounded flex items-center gap-1 bg-blue-500/10 hover:bg-blue-500/20 text-blue-400 border border-blue-500/20 transition-colors z-10 relative disabled:opacity-50 disabled:cursor-not-allowed"
+                                    className="text-xs px-2 py-1 rounded flex items-center gap-1 bg-blue-500/10 hover:bg-blue-500/20 text-blue-700 dark:text-blue-400 border border-blue-500/20 transition-colors z-10 relative disabled:opacity-50 disabled:cursor-not-allowed"
                                 >
                                     {isRunning && <Loader2 className="w-3 h-3 animate-spin" />}
                                     {dict?.dashboard?.premiumCard?.runAiOnly || 'Run AI Review'}
@@ -65,7 +65,7 @@ export function PremiumCard({
                             )}
                         </div>
                         {isReviewCompleted && (
-                            <div className="flex items-center gap-1.5 px-2.5 py-1 bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 rounded-full shadow-[0_0_10px_rgba(16,185,129,0.1)] relative z-10">
+                            <div className="flex items-center gap-1.5 px-2.5 py-1 bg-emerald-500/10 border border-emerald-500/20 text-emerald-700 dark:text-emerald-400 rounded-full shadow-[0_0_10px_rgba(16,185,129,0.1)] relative z-10">
                                 <CheckCircle2 className="w-3.5 h-3.5" />
                                 <span className="text-[10px] font-bold uppercase tracking-wider">{dict?.dashboard?.premiumCard?.reviewCompleted || 'Review Completed'}</span>
                             </div>

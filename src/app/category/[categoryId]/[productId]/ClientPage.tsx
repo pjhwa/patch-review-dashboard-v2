@@ -151,10 +151,10 @@ export function ProductDetailClient({ categoryId, productId, dict }: { categoryI
 
     const severityBadgeClass = (label: string) => {
         const l = label.toLowerCase();
-        if (l === 'critical') return 'bg-red-500/20 border-red-500/40 text-red-400';
-        if (l === 'important' || l === 'high') return 'bg-orange-500/20 border-orange-500/40 text-orange-400';
-        if (l === 'moderate' || l === 'medium') return 'bg-yellow-500/20 border-yellow-500/40 text-yellow-400';
-        if (l === 'low') return 'bg-blue-500/20 border-blue-500/40 text-blue-400';
+        if (l === 'critical') return 'bg-red-500/20 border-red-500/40 text-red-700 dark:text-red-400';
+        if (l === 'important' || l === 'high') return 'bg-orange-500/20 border-orange-500/40 text-orange-700 dark:text-orange-400';
+        if (l === 'moderate' || l === 'medium') return 'bg-yellow-500/20 border-yellow-500/40 text-yellow-800 dark:text-yellow-400';
+        if (l === 'low') return 'bg-blue-500/20 border-blue-500/40 text-blue-700 dark:text-blue-400';
         return 'bg-foreground/10 border-foreground/20 text-foreground/50';
     };
 
@@ -200,26 +200,26 @@ export function ProductDetailClient({ categoryId, productId, dict }: { categoryI
             </div>
 
             {finalizeSuccess && (
-                <div className="bg-emerald-500/10 border border-emerald-500/20 text-emerald-300 px-6 py-4 rounded-xl flex items-center gap-3 animate-in slide-in-from-top-4 shadow-[0_0_20px_rgba(16,185,129,0.1)]">
+                <div className="bg-emerald-500/10 border border-emerald-500/20 text-emerald-700 dark:text-emerald-300 px-6 py-4 rounded-xl flex items-center gap-3 animate-in slide-in-from-top-4 shadow-[0_0_20px_rgba(16,185,129,0.1)]">
                     <CheckCircle2 className="w-6 h-6" />
                     <div>
-                        <p className="font-semibold text-emerald-200">{dict.dashboard.feedback.reviewFinalized}</p>
+                        <p className="font-semibold text-emerald-800 dark:text-emerald-200">{dict.dashboard.feedback.reviewFinalized}</p>
                         <p className="text-sm opacity-80 mt-0.5">{dict.dashboard.feedback.reviewFinalizedDesc}</p>
                     </div>
                 </div>
             )}
 
             {loading ? (
-                <div className="flex items-center gap-3 text-emerald-400 p-8 border border-foreground/5 rounded-xl bg-card">
+                <div className="flex items-center gap-3 text-emerald-700 dark:text-emerald-400 p-8 border border-foreground/5 rounded-xl bg-card">
                     <Loader2 className="w-5 h-5 animate-spin" /> {dict.dashboard.productDetail.fetching}
                 </div>
             ) : (
                 <Tabs defaultValue="preprocessed" className="w-full">
                     <TabsList className="bg-card border border-foreground/10 mb-6 p-1 h-auto">
-                        <TabsTrigger value="preprocessed" className="data-[state=active]:bg-emerald-500/20 data-[state=active]:text-emerald-400 px-6 py-2">
+                        <TabsTrigger value="preprocessed" className="data-[state=active]:bg-emerald-500/20 data-[state=active]:text-emerald-700 dark:data-[state=active]:text-emerald-400 px-6 py-2">
                             {dict.dashboard.productDetail.tabPreprocessed}
                         </TabsTrigger>
-                        <TabsTrigger value="reviewed" className="data-[state=active]:bg-blue-500/20 data-[state=active]:text-blue-400 px-6 py-2">
+                        <TabsTrigger value="reviewed" className="data-[state=active]:bg-blue-500/20 data-[state=active]:text-blue-700 dark:data-[state=active]:text-blue-400 px-6 py-2">
                             {dict.dashboard.productDetail.tabReviewed}
                         </TabsTrigger>
                     </TabsList>
@@ -266,14 +266,14 @@ export function ProductDetailClient({ categoryId, productId, dict }: { categoryI
                                             <div key={idx} className={`p-5 rounded-xl border transition-colors flex flex-col gap-3 ${isApproved ? 'bg-blue-500/10 border-blue-500/30' : 'bg-foreground/[0.02] border-foreground/5 hover:bg-foreground/[0.04]'}`}>
                                                 <div className="flex items-start justify-between">
                                                     <div className="flex items-center gap-3">
-                                                        <h4 className={`text-base font-medium ${isApproved ? 'text-blue-300' : 'text-emerald-300'}`}>
+                                                        <h4 className={`text-base font-medium ${isApproved ? 'text-blue-700 dark:text-blue-300' : 'text-emerald-700 dark:text-emerald-300'}`}>
                                                             {patchId}
                                                         </h4>
                                                         <span className={`text-[10px] px-2 py-0.5 rounded-full border font-semibold uppercase tracking-wider ${severityBadgeClass(sevLabel)}`} title={sevHeuristic ? 'Heuristic estimate' : 'From vendor data'}>
                                                             {sevLabel}{sevHeuristic ? ` ${dict?.dashboard?.productDetail?.severityHeuristic || '(est.)'}` : ''}
                                                         </span>
                                                         {isApproved && (
-                                                            <div className="flex items-center gap-1.5 px-2 py-0.5 bg-blue-500/20 text-blue-300 border border-blue-500/40 rounded-full shadow-[0_0_10px_rgba(59,130,246,0.2)]">
+                                                            <div className="flex items-center gap-1.5 px-2 py-0.5 bg-blue-500/20 text-blue-700 dark:text-blue-300 border border-blue-500/40 rounded-full shadow-[0_0_10px_rgba(59,130,246,0.2)]">
                                                                 <BrainCircuit className="w-3 h-3" />
                                                                 <span className="text-[10px] uppercase font-bold tracking-wider">{dict.dashboard.feedback.aiRecommended}</span>
                                                             </div>
@@ -302,7 +302,7 @@ export function ProductDetailClient({ categoryId, productId, dict }: { categoryI
                                                     {(patch.osVersion || patch.os_version) && (
                                                         <div>
                                                             <p className="text-xs text-foreground/40 uppercase tracking-wider mb-1">{dict.dashboard.productDetail.osVersionLabel}</p>
-                                                            <p className="text-sm font-light text-emerald-100 font-medium">{patch.osVersion || patch.os_version}</p>
+                                                            <p className="text-sm font-light text-emerald-700 dark:text-emerald-100 font-medium">{patch.osVersion || patch.os_version}</p>
                                                         </div>
                                                     )}
                                                     {patch.component && (
@@ -326,7 +326,7 @@ export function ProductDetailClient({ categoryId, productId, dict }: { categoryI
                                                     {patch.summary && (
                                                         <div className="col-span-2 lg:col-span-5 border-t border-foreground/5 pt-2 mt-1">
                                                             <p className="text-xs text-foreground/40 uppercase tracking-wider mb-1">{dict.dashboard.productDetail.description}</p>
-                                                            <p className="text-xs font-mono text-emerald-300/80 max-w-full truncate" title={patch.summary}>{patch.summary}</p>
+                                                            <p className="text-xs font-mono text-emerald-700 dark:text-emerald-300/80 max-w-full truncate" title={patch.summary}>{patch.summary}</p>
                                                         </div>
                                                     )}
                                                 </div>
@@ -343,7 +343,7 @@ export function ProductDetailClient({ categoryId, productId, dict }: { categoryI
                                                 {(patch.url || patch.ref_url) && (
                                                     <div className="mt-2 pt-2 border-t border-foreground/5">
                                                         <p className="text-xs text-foreground/40 uppercase tracking-wider mb-1">{dict?.dashboard?.productDetail?.urlLabel || "URL"}</p>
-                                                        <a href={patch.url || patch.ref_url} target="_blank" rel="noreferrer" className="text-sm text-blue-400 hover:text-blue-300 transition-colors break-all">
+                                                        <a href={patch.url || patch.ref_url} target="_blank" rel="noreferrer" className="text-sm text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 transition-colors break-all">
                                                             {patch.url || patch.ref_url}
                                                         </a>
                                                     </div>
@@ -377,8 +377,8 @@ export function ProductDetailClient({ categoryId, productId, dict }: { categoryI
                                             <div key={idx} className={`p-6 rounded-xl border flex flex-col gap-3 transition-colors ${isExcludedLocally ? 'bg-background border-dashed border-red-500/30' : isCritical ? 'bg-red-500/5 border-red-500/20 shadow-[0_0_15px_-3px_rgba(239,68,68,0.1)]' : 'bg-foreground/[0.02] border-foreground/5'}`}>
                                                 <div className="flex items-start justify-between">
                                                     <div className="flex items-center gap-3 flex-wrap">
-                                                        {isCritical ? <AlertTriangle className="w-5 h-5 text-red-400 flex-shrink-0" /> : <CheckCircle2 className="w-5 h-5 text-emerald-400 flex-shrink-0" />}
-                                                        <h4 className={`text-lg font-medium ${isExcludedLocally ? 'text-zinc-500 line-through' : isCritical ? 'text-red-400' : 'text-emerald-400'}`}>
+                                                        {isCritical ? <AlertTriangle className="w-5 h-5 text-red-600 dark:text-red-400 flex-shrink-0" /> : <CheckCircle2 className="w-5 h-5 text-emerald-700 dark:text-emerald-400 flex-shrink-0" />}
+                                                        <h4 className={`text-lg font-medium ${isExcludedLocally ? 'text-zinc-500 line-through' : isCritical ? 'text-red-700 dark:text-red-400' : 'text-emerald-700 dark:text-emerald-400'}`}>
                                                             {issueId}
                                                         </h4>
                                                         <label className="flex items-center gap-2 ml-4 px-3 py-1 bg-foreground/[0.04] border border-foreground/10 rounded-full cursor-pointer hover:bg-foreground/5 transition-colors">
@@ -391,7 +391,7 @@ export function ProductDetailClient({ categoryId, productId, dict }: { categoryI
                                                             <span className="text-xs text-foreground/60">{dict.dashboard.feedback.exclude}</span>
                                                         </label>
                                                     </div>
-                                                    <span className={`text-xs px-3 py-1 font-medium rounded-full ${isExcludedLocally ? 'bg-zinc-800 text-zinc-400' : isCritical ? 'bg-red-500/20 text-red-300 border border-red-500/30' : 'bg-emerald-500/10 text-emerald-300 border border-emerald-500/20'}`}>
+                                                    <span className={`text-xs px-3 py-1 font-medium rounded-full ${isExcludedLocally ? 'bg-zinc-200 text-zinc-700 dark:bg-zinc-800 dark:text-zinc-400' : isCritical ? 'bg-red-500/20 text-red-700 dark:text-red-300 border border-red-500/30' : 'bg-emerald-500/10 text-emerald-700 dark:text-emerald-300 border border-emerald-500/20'}`}>
                                                         {patch.Criticality ? (dict.dashboard.productDetail.criticalityMap[patch.Criticality.toLowerCase()] || patch.Criticality) : dict.dashboard.productDetail.normal}
                                                     </span>
                                                 </div>
@@ -455,7 +455,7 @@ export function ProductDetailClient({ categoryId, productId, dict }: { categoryI
                                                         {(patch.osVersion || patch.OsVersion) && (
                                                             <div>
                                                                 <p className="text-xs text-foreground/40 uppercase tracking-wider mb-1">{dict.dashboard.productDetail.osVersionLabel}</p>
-                                                                <p className="text-sm font-light text-blue-100 font-medium">{patch.osVersion || patch.OsVersion || dict?.dashboard?.productDetail?.unknown || 'Unknown'}</p>
+                                                                <p className="text-sm font-light text-blue-700 dark:text-blue-100 font-medium">{patch.osVersion || patch.OsVersion || dict?.dashboard?.productDetail?.unknown || 'Unknown'}</p>
                                                             </div>
                                                         )}
                                                         <div>
@@ -479,7 +479,7 @@ export function ProductDetailClient({ categoryId, productId, dict }: { categoryI
                                                         <div>
                                                             <p className="text-xs text-foreground/40 uppercase tracking-wider mb-1">{dict?.dashboard?.productDetail?.urlLabel || "URL"}</p>
                                                             {patch.Url || patch.url || patch.ref_url ? (
-                                                                <a href={patch.Url || patch.url || patch.ref_url} target="_blank" rel="noopener noreferrer" className="text-sm font-light text-blue-400 hover:text-blue-300 hover:underline flex items-center gap-1 group">
+                                                                <a href={patch.Url || patch.url || patch.ref_url} target="_blank" rel="noopener noreferrer" className="text-sm font-light text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 hover:underline flex items-center gap-1 group">
                                                                     {dict?.dashboard?.productDetail?.viewAdvisory || "View Advisory"}
                                                                     <svg className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
                                                                 </a>
@@ -495,11 +495,11 @@ export function ProductDetailClient({ categoryId, productId, dict }: { categoryI
                                                         </div>
                                                         {(patch.KoreanDescription || patch['한글 설명']) && (
                                                             <div className="p-4 bg-blue-500/10 rounded-lg border border-blue-500/20">
-                                                                <p className="text-[10px] text-blue-400/80 font-semibold uppercase tracking-widest mb-2 flex items-center gap-2">
+                                                                <p className="text-[10px] text-blue-700 dark:text-blue-400/80 font-semibold uppercase tracking-widest mb-2 flex items-center gap-2">
                                                                     <span className="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse"></span>
                                                                     {dict.dashboard.productDetail.aiTranslation}
                                                                 </p>
-                                                                <p className="text-sm text-blue-100 font-medium leading-relaxed">{patch.KoreanDescription || patch['한글 설명']}</p>
+                                                                <p className="text-sm text-blue-800 dark:text-blue-100 font-medium leading-relaxed">{patch.KoreanDescription || patch['한글 설명']}</p>
                                                             </div>
                                                         )}
                                                     </div>
@@ -565,7 +565,7 @@ export function ProductDetailClient({ categoryId, productId, dict }: { categoryI
                                         }}
                                         disabled={isFinalizing || isDone}
                                         className={`font-semibold py-3 px-8 rounded-xl transition-all flex items-center gap-3 ${isDone
-                                            ? "bg-emerald-600/30 text-emerald-300 border border-emerald-500/50 cursor-not-allowed shadow-[0_0_15px_rgba(16,185,129,0.2)]"
+                                            ? "bg-emerald-600/30 text-emerald-800 dark:text-emerald-300 border border-emerald-500/50 cursor-not-allowed shadow-[0_0_15px_rgba(16,185,129,0.2)]"
                                             : "bg-blue-600 hover:bg-blue-500 text-white shadow-[0_0_20px_rgba(59,130,246,0.5)] disabled:opacity-50 disabled:shadow-none"
                                             }`}
                                     >
