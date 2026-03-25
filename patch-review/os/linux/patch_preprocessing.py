@@ -408,7 +408,9 @@ def is_severity_ok_for_window(vendor, severity, window_type):
     (UEK errata, USN notices without formal severity ratings).
     For these vendors, absent severity means 'Unknown' — not Low — so pass through to AI review.
     """
-    if not severity:
+    # Treat string "None", "none", "n/a", "unknown" as absent severity
+    EMPTY_SEVERITY_VALS = {"", "none", "n/a", "unknown", "null"}
+    if not severity or severity.strip().lower() in EMPTY_SEVERITY_VALS:
         # Oracle/Ubuntu: no severity ≠ low severity — AI will assess from full_text and CVEs
         return vendor in ("Oracle", "Ubuntu")
     if window_type == 'early':
