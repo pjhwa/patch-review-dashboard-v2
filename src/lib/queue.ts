@@ -720,6 +720,109 @@ export function startWorker() {
                     // END PRODUCT PIPELINE BRANCHES
                     // ============================================================
 
+                    // ============================================================
+                    // PRODUCT-AWARE MANUAL REVIEW  (manual-review-{productId})
+                    // 담당자가 전처리 목록에서 수동 선택한 패치를 AI로 검토해
+                    // ReviewedPatch에 추가한다. 기존 레코드는 삭제하지 않고 upsert만 수행.
+                    // ============================================================
+                    if (job.name.startsWith('manual-review-')) {
+                        const manualProductId = job.name.replace('manual-review-', '');
+                        const manualCfg = PRODUCT_MAP[manualProductId];
+                        if (!manualCfg) {
+                            reject(new Error(`[MANUAL-REVIEW] Unknown productId: ${manualProductId}`));
+                            return;
+                        }
+                        try {
+                            await job.updateProgress(5);
+                            const patchList: any[] = job.data.patches || [];
+                            await job.log(`[MANUAL-REVIEW] Starting manual AI review for ${manualCfg.name}: ${patchList.length} patches selected by operator.`);
+
+                            if (patchList.length === 0) {
+                                await job.log('[MANUAL-REVIEW] No patches to review. Done.');
+                                await job.updateProgress(100);
+                                resolve('manual-review: no patches');
+                                return;
+                            }
+
+                            const manualSkillDir = getSkillDir(manualCfg);
+                            const manualRunStream = makeStreamRunner(manualSkillDir, job);
+                            const manualIsLinux = manualCfg.id === 'redhat' || manualCfg.id === 'oracle' || manualCfg.id === 'ubuntu';
+
+                            await job.log(`[MANUAL-REVIEW] Running AI review loop (skill: ${manualSkillDir})...`);
+                            const manualReviewed = await runAiReviewLoop(job, manualCfg, manualSkillDir, manualRunStream, patchList, false, manualIsLinux);
+
+                            // Build lookup map for hallucination filtering
+                            const manualIssueIds: string[] = patchList.map((p: any) => p.id || p.issueId).filter(Boolean);
+                            const manualPrePatches = await prisma.preprocessedPatch.findMany({
+                                where: { issueId: { in: manualIssueIds } },
+                                select: { issueId: true, osVersion: true, vendor: true }
+                            });
+                            const manualPreMap = new Map(manualPrePatches.map((p: any) => [p.issueId, p]));
+
+                            let manualIngestedCount = 0;
+                            for (const item of manualReviewed) {
+                                const issueId = item.IssueID || item.id || 'Unknown';
+                                if (!manualPreMap.has(issueId)) {
+                                    await job.log(`[MANUAL-REVIEW-SKIP] Hallucinated issueId not in preprocessed: ${issueId}`);
+                                    continue;
+                                }
+                                const meta: any = manualPreMap.get(issueId) || {};
+                                try {
+                                    await prisma.reviewedPatch.upsert({
+                                        where: { issueId },
+                                        update: {
+                                            vendor: item.Vendor || manualCfg.vendorString,
+                                            osVersion: item.OsVersion || item.osVersion || meta.osVersion || null,
+                                            component: item.Component || manualCfg.aiComponentDefault,
+                                            version: item.Version || '',
+                                            criticality: item.Criticality || 'Important',
+                                            description: item.Description || '',
+                                            koreanDescription: item.KoreanDescription || item.Description || '',
+                                            decision: item.Decision === 'Exclude' ? 'Done' : (item.Decision || 'Done'),
+                                            reason: item.Reason || null,
+                                            pipelineRunId: String(job.id)
+                                        },
+                                        create: {
+                                            issueId,
+                                            vendor: item.Vendor || manualCfg.vendorString,
+                                            osVersion: item.OsVersion || item.osVersion || meta.osVersion || null,
+                                            component: item.Component || manualCfg.aiComponentDefault,
+                                            version: item.Version || '',
+                                            criticality: item.Criticality || 'Important',
+                                            description: item.Description || '',
+                                            koreanDescription: item.KoreanDescription || item.Description || '',
+                                            decision: item.Decision === 'Exclude' ? 'Done' : (item.Decision || 'Done'),
+                                            reason: item.Reason || null,
+                                            pipelineRunId: String(job.id)
+                                        }
+                                    });
+                                    manualIngestedCount++;
+                                } catch (e) {
+                                    await job.log(`[MANUAL-REVIEW-DB] Upsert failed for ${issueId}`);
+                                }
+                            }
+
+                            // Clear isAiReviewRequested for processed patches
+                            if (manualIssueIds.length > 0) {
+                                await prisma.preprocessedPatch.updateMany({
+                                    where: { issueId: { in: manualIssueIds } },
+                                    data: { isAiReviewRequested: false }
+                                });
+                            }
+
+                            await job.updateProgress(100);
+                            await job.log(`[MANUAL-REVIEW-PIPELINE] Manual AI review done. ${manualIngestedCount}/${manualReviewed.length} patches ingested into ReviewedPatch.`);
+                            resolve(`${manualCfg.name} manual-review success`);
+                        } catch (e: any) {
+                            await job.log(`[MANUAL-REVIEW] CRITICAL ERROR: ${e.message}`);
+                            reject(e);
+                        }
+                        return;
+                    }
+                    // ============================================================
+                    // END PRODUCT-AWARE MANUAL REVIEW
+                    // ============================================================
+
                     const rateLimitFlagFile = path.join('/tmp', '.rate_limit_os');
                     const isResumeMode = (isAiOnly || isRetry) && fs.existsSync(rateLimitFlagFile);
 

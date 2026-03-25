@@ -16,6 +16,9 @@ export function ProductDetailClient({ categoryId, productId, dict }: { categoryI
     const [finalizeSuccess, setFinalizeSuccess] = useState(false);
     const [isDone, setIsDone] = useState(false);
     const [preprocessedSearchQuery, setPreprocessedSearchQuery] = useState("");
+    const [manualReviewRequests, setManualReviewRequests] = useState<Record<string, boolean>>({});
+    const [isManualReviewing, setIsManualReviewing] = useState(false);
+    const [manualReviewStatus, setManualReviewStatus] = useState<'idle' | 'done' | 'error'>('idle');
 
     useEffect(() => {
         const fetchData = async () => {
@@ -29,6 +32,17 @@ export function ProductDetailClient({ categoryId, productId, dict }: { categoryI
 
                 const pJson = await pRes.json();
                 setPreprocessedData(pJson);
+
+                // Initialize manual review selections from DB isAiReviewRequested flags
+                const rawPatches = pJson.data || pJson;
+                if (Array.isArray(rawPatches)) {
+                    const initRequests: Record<string, boolean> = {};
+                    rawPatches.forEach((p: any) => {
+                        const id = p.issueId || p.id || p.original_id || p.Name;
+                        if (id && p.isAiReviewRequested) initRequests[id] = true;
+                    });
+                    setManualReviewRequests(initRequests);
+                }
 
                 const rJson = await rRes.json();
                 setReviewedData(rJson);
@@ -60,6 +74,33 @@ export function ProductDetailClient({ categoryId, productId, dict }: { categoryI
         };
         fetchData();
     }, [productId]);
+
+    // Poll until the manual-review job completes, then refresh reviewed data
+    useEffect(() => {
+        if (!isManualReviewing) return;
+        const interval = setInterval(async () => {
+            try {
+                const res = await fetch('/api/pipeline');
+                const data = await res.json();
+                if (!data.hasActiveJob) {
+                    clearInterval(interval);
+                    setIsManualReviewing(false);
+                    setManualReviewStatus('done');
+                    // Refresh reviewed data
+                    const rRes = await fetch(`/api/pipeline/stage/reviewed?product=${productId}`);
+                    if (rRes.ok) {
+                        const rJson = await rRes.json();
+                        setReviewedData(rJson);
+                    }
+                    // Clear selections (flags were cleared in DB by worker)
+                    setManualReviewRequests({});
+                }
+            } catch {
+                // ignore transient errors
+            }
+        }, 3000);
+        return () => clearInterval(interval);
+    }, [isManualReviewing, productId]);
 
     const handleSaveFeedback = async (issueId: string, description: string) => {
         const state = localExclusions[issueId];
@@ -169,6 +210,48 @@ export function ProductDetailClient({ categoryId, productId, dict }: { categoryI
                                     : productId === 'sqlserver' ? "SQL Server"
                                         : productId;
 
+    const manualReviewCount = Object.values(manualReviewRequests).filter(Boolean).length;
+
+    const toggleManualReview = async (patchId: string, checked: boolean) => {
+        setManualReviewRequests(prev => ({ ...prev, [patchId]: checked }));
+        try {
+            await fetch('/api/pipeline/review-request', {
+                method: 'PATCH',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ issueId: patchId, requested: checked })
+            });
+        } catch (e) {
+            console.error('Failed to update review request flag', e);
+        }
+    };
+
+    const handleRunManualReview = async () => {
+        const issueIds = Object.entries(manualReviewRequests)
+            .filter(([, v]) => v)
+            .map(([k]) => k);
+        if (issueIds.length === 0) return;
+
+        setIsManualReviewing(true);
+        setManualReviewStatus('idle');
+        try {
+            const res = await fetch('/api/pipeline/review-manual', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ issueIds, productId })
+            });
+            if (!res.ok) {
+                const err = await res.json();
+                console.error('Manual review failed to queue:', err);
+                setIsManualReviewing(false);
+                setManualReviewStatus('error');
+            }
+        } catch (e) {
+            console.error('Manual review request error:', e);
+            setIsManualReviewing(false);
+            setManualReviewStatus('error');
+        }
+    };
+
     const filteredPreprocessedData = useMemo(() => {
         if (!preprocessedData) return [];
         const rawData = preprocessedData.data || preprocessedData;
@@ -226,11 +309,32 @@ export function ProductDetailClient({ categoryId, productId, dict }: { categoryI
 
                     <TabsContent value="preprocessed" className="mt-0">
                         <div className="bg-card border border-foreground/10 rounded-xl p-6 shadow-xl">
+                            {manualReviewStatus === 'done' && (
+                                <div className="mb-4 bg-emerald-500/10 border border-emerald-500/20 text-emerald-700 dark:text-emerald-300 px-5 py-3 rounded-xl flex items-center gap-3 animate-in slide-in-from-top-4">
+                                    <CheckCircle2 className="w-5 h-5" />
+                                    <p className="text-sm font-medium">{dict.dashboard.productDetail.manualReviewDone}</p>
+                                </div>
+                            )}
+
                             <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
                                 <div>
                                     <h3 className="text-xl font-light text-foreground mb-2">{dict.dashboard.productDetail.preprocessedTitle}</h3>
                                     <p className="text-foreground/40 text-sm mb-0">{dict.dashboard.productDetail.preprocessedDesc}</p>
                                 </div>
+                                <div className="flex items-center gap-3 flex-wrap justify-end">
+                                    {manualReviewCount > 0 && (
+                                        <button
+                                            onClick={handleRunManualReview}
+                                            disabled={isManualReviewing}
+                                            className="flex items-center gap-2 px-4 py-2 bg-violet-600 hover:bg-violet-500 disabled:bg-zinc-700 disabled:text-zinc-400 text-white font-medium rounded-lg text-sm transition-colors shadow-[0_0_15px_rgba(139,92,246,0.4)] disabled:shadow-none whitespace-nowrap"
+                                        >
+                                            {isManualReviewing ? (
+                                                <><Loader2 className="w-4 h-4 animate-spin" />{dict.dashboard.productDetail.manualReviewRunning}</>
+                                            ) : (
+                                                <><BrainCircuit className="w-4 h-4" />{dict.dashboard.productDetail.runManualReview} ({manualReviewCount}{dict.dashboard.productDetail.selectedForReview})</>
+                                            )}
+                                        </button>
+                                    )}
                                 <div className="relative w-full md:w-72">
                                     <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                                         <Search className="h-4 w-4 text-emerald-500/70" />
@@ -242,6 +346,7 @@ export function ProductDetailClient({ categoryId, productId, dict }: { categoryI
                                         value={preprocessedSearchQuery}
                                         onChange={(e) => setPreprocessedSearchQuery(e.target.value)}
                                     />
+                                </div>
                                 </div>
                             </div>
 
@@ -283,18 +388,21 @@ export function ProductDetailClient({ categoryId, productId, dict }: { categoryI
                                                         <span className={`text-xs px-2.5 py-1 border rounded-full font-mono ${isApproved ? 'bg-blue-500/10 border-blue-500/30 text-blue-600 dark:text-blue-400' : 'bg-muted border-border text-muted-foreground'}`}>
                                                             {patch.vendor || patch.Type || dict.dashboard.productDetail.update}
                                                         </span>
-                                                        <div className="flex items-center space-x-2">
-                                                            <input
-                                                                type="checkbox"
-                                                                checked={localExclusions[patchId]?.excluded !== true}
-                                                                onChange={(e) => toggleExclusion(patchId, !e.target.checked)}
-                                                                id={`request-review-${patchId}`}
-                                                                className="w-4 h-4 rounded border-foreground/20 bg-card/80 text-emerald-500 focus:ring-emerald-500/50 focus:ring-offset-0 disabled:opacity-50"
-                                                            />
-                                                            <label htmlFor={`request-review-${patchId}`} className="text-sm font-medium text-foreground/80 cursor-pointer">
-                                                                {dict.dashboard.productDetail.requestReview}
-                                                            </label>
-                                                        </div>
+                                                        {!isApproved && (
+                                                            <div className="flex items-center space-x-2">
+                                                                <input
+                                                                    type="checkbox"
+                                                                    checked={manualReviewRequests[patchId] === true}
+                                                                    onChange={(e) => toggleManualReview(patchId, e.target.checked)}
+                                                                    id={`request-review-${patchId}`}
+                                                                    disabled={isManualReviewing}
+                                                                    className="w-4 h-4 rounded border-foreground/20 bg-card/80 text-violet-500 focus:ring-violet-500/50 focus:ring-offset-0 disabled:opacity-50 accent-violet-500"
+                                                                />
+                                                                <label htmlFor={`request-review-${patchId}`} className="text-sm font-medium text-foreground/80 cursor-pointer">
+                                                                    {dict.dashboard.productDetail.requestReview}
+                                                                </label>
+                                                            </div>
+                                                        )}
                                                     </div>
                                                 </div>
 

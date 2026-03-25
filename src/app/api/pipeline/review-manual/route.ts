@@ -4,20 +4,27 @@ import { prisma } from '@/lib/db';
 
 /**
  * POST /api/pipeline/review-manual
- * Body: { issueIds: string[] }
- * 
- * Queues a selective AI review job for the given preprocessed patch issueIds.
- * The worker will run OpenClaw LLM only for these specific patches, writing
- * results to ReviewedPatch table.
+ * Body: { issueIds: string[], productId: string }
+ *
+ * Queues a product-aware selective AI review job for the given preprocessed patch issueIds.
+ * The worker runs OpenClaw LLM for these specific patches, upserting results into ReviewedPatch
+ * without deleting existing records for the product.
  */
 export async function POST(request: Request) {
     try {
         const body = await request.json();
-        const { issueIds } = body as { issueIds: string[] };
+        const { issueIds, productId } = body as { issueIds: string[], productId: string };
 
         if (!issueIds || !Array.isArray(issueIds) || issueIds.length === 0) {
             return NextResponse.json(
                 { success: false, error: 'issueIds must be a non-empty array' },
+                { status: 400 }
+            );
+        }
+
+        if (!productId) {
+            return NextResponse.json(
+                { success: false, error: 'productId is required' },
                 { status: 400 }
             );
         }
@@ -34,11 +41,15 @@ export async function POST(request: Request) {
             );
         }
 
-        // Enqueue a selective review job passing the patch data directly
-        const job = await pipelineQueue.add('manual-review', {
+        // Enqueue a product-aware selective review job
+        const jobName = `manual-review-${productId}`;
+        const job = await pipelineQueue.add(jobName, {
             type: 'manual-review',
+            productId,
+            issueIds: patches.map((p: any) => p.issueId),
             patches: patches.map((p: any) => ({
                 id: p.issueId,
+                issueId: p.issueId,
                 vendor: p.vendor,
                 component: p.component,
                 version: p.version,
@@ -46,12 +57,13 @@ export async function POST(request: Request) {
                 description: p.description,
                 url: p.url,
                 releaseDate: p.releaseDate,
+                osVersion: p.osVersion,
             }))
         });
 
         return NextResponse.json({
             success: true,
-            message: `Queued manual AI review for ${patches.length} patches`,
+            message: `Queued manual AI review for ${patches.length} patches (${productId})`,
             jobId: job.id,
             issueIds: patches.map((p: any) => p.issueId)
         });
