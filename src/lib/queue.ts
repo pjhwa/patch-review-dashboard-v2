@@ -528,6 +528,7 @@ async function ingestToDb(
                     where: { issueId },
                     update: {
                         vendor: productCfg.vendorString,
+                        osVersion: item.OsVersion || item.osVersion || null,
                         component: item.Component || productCfg.aiComponentDefault,
                         version: item.Version || '',
                         criticality: item.Criticality || 'Unknown',
@@ -539,6 +540,7 @@ async function ingestToDb(
                     create: {
                         issueId,
                         vendor: productCfg.vendorString,
+                        osVersion: item.OsVersion || item.osVersion || null,
                         component: item.Component || productCfg.aiComponentDefault,
                         version: item.Version || '',
                         criticality: item.Criticality || 'Unknown',
