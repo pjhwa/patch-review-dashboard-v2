@@ -66,8 +66,8 @@ python3 patch_preprocessing.py --days 180
 **What this step does:**
 1. Reads JSON files from `redhat/redhat_data/`, `oracle/oracle_data/`, `ubuntu/ubuntu_data/`
 2. Applies **180-day date filter** (6-month lookback), internally split into two windows:
-   - **Recent window** (0~90 days ago): all Critical-severity kernel patches + all whitelisted non-kernel patches
-   - **Early window** (90~180 days ago): only Critical-severity kernel/kernel-related patches; the latest one per (vendor, component) group
+   - **Recent window** (0~90 days ago): **Critical-severity kernel patches only** + all whitelisted non-kernel patches
+   - **Early window** (90~180 days ago): **Critical or Important severity kernel patches only**; the most recent one per (vendor, component, OS version) group — used as fallback if recent Critical patch does not meet review criteria
 3. Filters against **SYSTEM_CORE_COMPONENTS whitelist** (kernel, filesystem, cluster, systemd, libvirt, etc.)
 4. Aggregates multiple updates for the same component into unified history
 5. Writes results to `PreprocessedPatch` DB table (Prisma upsert)
@@ -75,8 +75,8 @@ python3 patch_preprocessing.py --days 180
 7. Emits `[PREPROCESS_DONE] count=N` log → Dashboard counter updates in real time
 
 **Kernel dual-window output:** Each item in `patches_for_llm_review.json` has a `window_type` field:
-- `"recent"`: patch is from the last 3 months (0~90 days ago)
-- `"early"`: patch is from 3~6 months ago (90~180 days ago); only one per component group, Critical only
+- `"recent"`: patch is from the last 3 months (0~90 days ago); **Critical-severity only**
+- `"early"`: patch is from 3~6 months ago (90~180 days ago); **Critical or Important severity**; one per (vendor, component, OS version) group (most recent only) — fallback candidate
 
 *Goal: Generate `patches_for_llm_review.json` and populate `PreprocessedPatch` DB table. This file contains the filtered, consolidated list of candidates within the target date range.*
 
@@ -88,16 +88,16 @@ python3 patch_preprocessing.py --days 180
 ### Kernel Dual-Window Evaluation (CRITICAL — applies to kernel and kernel-related patches)
 
 Each kernel patch in `patches_for_llm_review.json` has a `window_type` field:
-- `"recent"` — patch from the last 3 months (0~90 days). All Critical-severity kernel patches are included.
-- `"early"` — patch from 3~6 months ago (90~180 days). Only the most recent Critical patch per component is included as a fallback candidate.
+- `"recent"` — patch from the last 3 months (0~90 days). **Critical-severity only.** All patches that passed the Critical threshold are included.
+- `"early"` — patch from 3~6 months ago (90~180 days). **Critical or Important severity.** Only the most recent patch per (vendor, OS version, component) is included as a fallback candidate.
 
 **Evaluation Order for kernel/kernel-related patches (per vendor, per OS version):**
 
-1. **Find the `window_type: "recent"` kernel patch** for this component/OS-version.
+1. **Find the `window_type: "recent"` kernel patch** (Critical-severity) for this OS version.
    - Evaluate it against the Inclusion Criteria (Section 4.1).
-   - If it meets at least one criterion → **Decision: Approve**. Mark any `window_type: "early"` patch for the same component as **Decision: Exclude** (reason: "Recent window patch is sufficient").
-2. **If the `window_type: "recent"` kernel patch does NOT meet any criterion** → **Decision: Exclude** for that patch, then evaluate the `window_type: "early"` patch for the same component.
-   - If the early patch meets at least one Inclusion Criterion → **Decision: Approve** (reason: "Recent window patch insufficient; fallback to early window patch").
+   - If it meets at least one criterion → **Decision: Approve**. Mark any `window_type: "early"` patch for the same OS version/component as **Decision: Exclude** (reason: "Recent Critical patch is sufficient").
+2. **If the `window_type: "recent"` kernel patch does NOT meet any criterion** → **Decision: Exclude** for that patch, then evaluate the `window_type: "early"` patch (Critical or Important) for the same OS version/component.
+   - If the early patch meets at least one Inclusion Criterion → **Decision: Approve** (reason: "Recent Critical patch insufficient; fallback to early Critical/Important patch").
    - If the early patch also does not qualify → **Decision: Exclude** both.
 3. **If there is no `window_type: "recent"` patch** but a `window_type: "early"` patch exists → evaluate the early patch directly against Inclusion Criteria.
 4. **If a specific OS version has no kernel or kernel-related patches** in either window → skip (no output row required for that version).

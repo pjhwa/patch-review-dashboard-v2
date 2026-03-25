@@ -67,17 +67,24 @@ python3 patch_preprocessing.py --vendor ubuntu --days 180
 ### Step 3: Impact Analysis (Actual Agent Review)
 **Action Required:** Read the `patches_for_llm_review_ubuntu.json` file. The Agent must **manually analyze** each candidate's `full_text` and `history` to determine if it meets the **Critical System Impact** criteria.
 
-**Review Date Window (CRITICAL):**
-The preprocessing dataset covers the full 180-day collection window. Apply the following date-based filtering rules during review:
-- **Non-kernel USNs** (openssl, systemd, runc, containerd, openssh, etc.): Include ONLY USNs issued between **180 days ago and 90 days ago**. USNs issued within the most recent 90 days are not yet mature for this review cycle — **exclude them**.
-- **Kernel USNs** (`linux`, `linux-hwe`, `linux-image-*`, and kernel variant packages): Include USNs across the **full 0–180 day window**, including the most recent. Kernel security fixes require immediate attention regardless of age.
+**Kernel Dual-Window Evaluation (CRITICAL — applies to `linux`, `linux-hwe`, `linux-image-*`, and kernel variant packages only):**
+The preprocessing script filters kernel USNs into two windows indicated by the `window_type` field in the JSON:
+- `"recent"` — USN from the last 3 months (0~90 days); **Critical-severity only**
+- `"early"` — USN from 3~6 months ago (90~180 days); **Critical or Important severity**; most recent per (vendor, OS version, component) — fallback candidate
 
-> Example: Today is 2026-03-18.
-> - Non-kernel review window: 2025-09-19 ~ 2025-12-18 (180→90 days ago)
-> - Kernel review window: 2025-09-19 ~ 2026-03-18 (full 180 days)
+**Evaluation Order for kernel USNs (per LTS version: 20.04, 22.04, 24.04):**
+1. Find the `window_type: "recent"` kernel USN for this LTS version.
+   - If it meets at least one Inclusion Criterion (Section 3.1) → **Decision: Approve**. Mark any `window_type: "early"` USN for the same LTS version/component as **Decision: Exclude** (reason: "Recent Critical patch sufficient").
+2. If the recent USN does NOT meet any Inclusion Criterion → **Decision: Exclude** for that USN, then evaluate the `window_type: "early"` USN (Critical or Important) for the same LTS version/component.
+   - If the early USN meets at least one criterion → **Decision: Approve** (reason: "Recent Critical patch insufficient; fallback to early Critical/Important patch").
+   - If the early USN also does not qualify → **Decision: Exclude** both.
+3. If there is no `window_type: "recent"` USN but a `window_type: "early"` USN exists → evaluate the early USN directly.
+4. If an LTS version has no kernel Critical or Important USNs in either window → skip (no output row required).
+
+> **Note:** Non-kernel USNs (`openssl`, `systemd`, `runc`, etc.) always have `window_type: "recent"`. Apply the standard single-window evaluation (Inclusion Criteria) for those.
 
 **Cumulative Recommendation Logic (CRITICAL):**
-If a component has multiple updates within the quarter:
+If a component has multiple updates within the window:
 1. **Identify Critical Versions:** Determine which versions contain *Critical* fixes.
 2. **Recommend Latest CRITICAL Version:** Select the **latest version that is Critical**. Do NOT simply recommend the absolute latest if it is a minor/non-critical update.
 3. **Aggregate Critical Descriptions:** Merge only the critical fix details. Do not include noise from non-critical versions.
@@ -126,8 +133,7 @@ Exclude a patch if:
 - **LTS ONLY**: Only affects non-LTS versions (e.g., Ubuntu 25.10, 24.10). MUST support LTS (24.04, 22.04, 20.04).
   - *Example:* "USN-7906-1 affects only Ubuntu 25.10 → **EXCLUDE**."
 - The patch is already superseded by a newer critical patch for the same component.
-- **Date Window (non-kernel)**: The USN was issued within the last 90 days AND the component is NOT a kernel package (`linux`, `linux-hwe`, `linux-image-*`). These are excluded from the current review cycle.
-- **Exception**: Kernel USNs (`linux`, `linux-hwe`, `linux-azure`, `linux-aws`, `linux-gcp`, `linux-fips`, etc.) issued within the last 90 days are **NOT** excluded — they must be reviewed regardless of age.
+- **Early-window fallback rule**: Do NOT approve a `window_type: "early"` kernel USN without first confirming no `window_type: "recent"` Critical kernel USN exists and meets the Inclusion Criteria for the same LTS version.
 
 ### 3.3 Output Format (JSON Schema)
 Return ONLY a pure JSON array. Each object must have exactly these fields:
@@ -206,5 +212,5 @@ Before submitting your JSON response, verify:
 6. NO USN is included that only affects non-LTS Ubuntu versions.
 7. Each USN produces exactly ONE output object (not one per LTS version).
 8. Descriptions are 1-2 sentences maximum and contain no raw package filenames.
-9. Non-kernel USNs issued within the last 90 days are excluded (date window rule).
-10. Kernel USNs (`linux`, `linux-hwe`, `linux-*` variants) issued within the last 90 days are included (kernel exception).
+9. Kernel `window_type: "recent"` USNs were evaluated first; `window_type: "early"` USNs are only Approved if the recent USN did not meet criteria.
+10. No `window_type: "early"` kernel USN is Approved when a `window_type: "recent"` Critical USN for the same LTS version already meets criteria.

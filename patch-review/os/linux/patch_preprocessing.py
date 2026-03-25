@@ -385,6 +385,13 @@ def is_critical_severity(severity):
         return False
     return "critical" in severity.lower()
 
+def is_critical_or_important_severity(severity):
+    """Returns True if severity is Critical or Important."""
+    if not severity:
+        return False
+    sev_lower = severity.lower()
+    return "critical" in sev_lower or "important" in sev_lower
+
 def preprocess_patches():
     parser = argparse.ArgumentParser(description="Pre-process collected patches for AI review.")
     parser.add_argument('--days', type=int, default=180, help="Total lookback period in days (default: 180). Kernel patches from the first half (early window) are subject to stricter filtering.")
@@ -405,7 +412,9 @@ def preprocess_patches():
     now = datetime.now()
     cutoff_early = now - timedelta(days=args.days)   # 6 months ago (early window start)
     cutoff_recent = now - timedelta(days=90)          # 3 months ago (recent window start)
-    print(f"[PREPROCESS] Kernel dual-window: early={cutoff_early.strftime('%Y-%m-%d')}~{cutoff_recent.strftime('%Y-%m-%d')}, recent={cutoff_recent.strftime('%Y-%m-%d')}~{now.strftime('%Y-%m-%d')}")
+    print(f"[PREPROCESS] Kernel dual-window:")
+    print(f"  Early window ({cutoff_early.strftime('%Y-%m-%d')}~{cutoff_recent.strftime('%Y-%m-%d')}): Critical/Important only — most recent per (vendor, component, OS version)")
+    print(f"  Recent window ({cutoff_recent.strftime('%Y-%m-%d')}~{now.strftime('%Y-%m-%d')}): Critical only — all Critical patches")
     print(f"[PREPROCESS] Non-kernel patches: recent window only ({cutoff_recent.strftime('%Y-%m-%d')} ~ now)")
 
     print("Loading data from directories...")
@@ -673,10 +682,16 @@ def preprocess_patches():
 
         # --- Kernel dual-window rules ---
         if is_kernel_related(p['component']):
-            # Both windows: kernel patches must be Critical severity only
-            if not is_critical_severity(p['severity']):
-                dropped_audit_log.append({ 'Patch ID': p['id'], 'Vendor': p['vendor'], 'Drop Reason': 'Kernel Non-Critical', 'Details': f"Kernel component '{p['component']}' severity '{p['severity']}' is below Critical threshold (window: {p['window_type']})" })
-                continue
+            if p['window_type'] == 'early':
+                # Early window (6m~3m): Critical or Important severity
+                if not is_critical_or_important_severity(p['severity']):
+                    dropped_audit_log.append({ 'Patch ID': p['id'], 'Vendor': p['vendor'], 'Drop Reason': 'Kernel Below Critical/Important', 'Details': f"Kernel component '{p['component']}' severity '{p['severity']}' is below Critical/Important threshold (early window 6m~3m)" })
+                    continue
+            else:
+                # Recent window (0~3m): Critical severity only
+                if not is_critical_severity(p['severity']):
+                    dropped_audit_log.append({ 'Patch ID': p['id'], 'Vendor': p['vendor'], 'Drop Reason': 'Kernel Non-Critical', 'Details': f"Kernel component '{p['component']}' severity '{p['severity']}' is below Critical threshold (recent window 0~3m)" })
+                    continue
         else:
             # Non-kernel patches: only the recent window (last 3 months)
             if p['window_type'] == 'early':
@@ -690,10 +705,11 @@ def preprocess_patches():
     # --- Step 3: Aggregation ---
     grouped = {}
     for p in pruned_list:
-        # Kernel patches: group by (vendor, component, window_type) to keep early/recent separate
+        # Kernel patches: group by (vendor, component, os_version, window_type)
+        #   — keeps early/recent separate AND per-OS-version separate (e.g. RHEL 8 vs RHEL 9)
         # Non-kernel patches: group by (vendor, component) — recent window only
         if is_kernel_related(p['component']):
-            key = (p['vendor'], p['component'], p['window_type'])
+            key = (p['vendor'], p['component'], p['os_version'], p['window_type'])
         else:
             key = (p['vendor'], p['component'])
         if key not in grouped: grouped[key] = []
@@ -728,7 +744,7 @@ def preprocess_patches():
         latest['patch_name_suggestion'] = latest['specific_version'] if latest['specific_version'] else latest['component']
         # Ensure window_type is always present (kernel: 'recent'/'early', non-kernel: 'recent')
         if 'window_type' not in latest:
-            latest['window_type'] = key[2] if len(key) == 3 else 'recent'
+            latest['window_type'] = key[3] if len(key) == 4 else 'recent'
 
         final_candidates.append(latest)
         

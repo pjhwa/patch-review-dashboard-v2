@@ -67,17 +67,24 @@ python3 patch_preprocessing.py --vendor redhat --days 180
 ### Step 3: Impact Analysis (Actual Agent Review)
 **Action Required:** Read the `patches_for_llm_review_redhat.json` file. The Agent must **manually analyze** each candidate's `full_text` and `history` to determine if it meets the **Critical System Impact** criteria.
 
-**Review Date Window (CRITICAL):**
-The preprocessing dataset covers the full 180-day collection window. Apply the following date-based filtering rules during review:
-- **Non-kernel components** (glibc, systemd, openssl, libvirt, pacemaker, etc.): Include ONLY patches issued between **180 days ago and 90 days ago**. Patches issued within the most recent 90 days are not yet mature for this review cycle — **exclude them**.
-- **Kernel patches** (`kernel`, `kernel-uek`, and related kernel components): Include patches across the **full 0–180 day window**, including the most recent. Kernel stability fixes require immediate attention regardless of age.
+**Kernel Dual-Window Evaluation (CRITICAL — applies to `kernel` and kernel-related patches only):**
+The preprocessing script filters kernel patches into two windows indicated by the `window_type` field in the JSON:
+- `"recent"` — patch from the last 3 months (0~90 days); **Critical-severity only**
+- `"early"` — patch from 3~6 months ago (90~180 days); **Critical or Important severity**; most recent per (vendor, OS version, component) — fallback candidate
 
-> Example: Today is 2026-03-18.
-> - Non-kernel review window: 2025-09-19 ~ 2025-12-18 (180→90 days ago)
-> - Kernel review window: 2025-09-19 ~ 2026-03-18 (full 180 days)
+**Evaluation Order for kernel/kernel-related patches (per RHEL major version):**
+1. Find the `window_type: "recent"` kernel patch for this RHEL version.
+   - If it meets at least one Inclusion Criterion (Section 3.1) → **Decision: Approve**. Mark any `window_type: "early"` patch for the same RHEL version/component as **Decision: Exclude** (reason: "Recent Critical patch sufficient").
+2. If the recent patch does NOT meet any Inclusion Criterion → **Decision: Exclude** for that patch, then evaluate the `window_type: "early"` patch (Critical or Important) for the same RHEL version/component.
+   - If the early patch meets at least one criterion → **Decision: Approve** (reason: "Recent Critical patch insufficient; fallback to early Critical/Important patch").
+   - If the early patch also does not qualify → **Decision: Exclude** both.
+3. If there is no `window_type: "recent"` patch but a `window_type: "early"` patch exists → evaluate the early patch directly.
+4. If a RHEL version has no kernel/kernel-related Critical or Important patches in either window → skip (no output row required).
+
+> **Note:** Non-kernel patches (`glibc`, `systemd`, `openssl`, etc.) always have `window_type: "recent"`. Apply the standard single-window evaluation (Inclusion Criteria) for those.
 
 **Cumulative Recommendation Logic (CRITICAL):**
-If a component has multiple updates within the quarter (e.g., kernel-5, kernel-4, kernel-3, kernel-2, kernel-1):
+If a component has multiple updates within the window (e.g., kernel-5, kernel-4, kernel-3, kernel-2, kernel-1):
 1. **Identify Critical Versions:** Determine which versions contain *Critical* fixes (e.g., kernel-3 and kernel-1 are Critical).
 2. **Recommend Latest CRITICAL Version:** Select the **latest version that is Critical** (e.g., **kernel-3**). Do NOT simply recommend the absolute latest if it is a minor/non-critical update.
 3. **Aggregate Critical Descriptions:** In the **Description**, merge only the critical fix details from the selected version and any older critical versions. Do not include noise from non-critical versions.
@@ -121,8 +128,7 @@ Exclude a patch if:
 - It is a "Moderate" security issue (local DoS, info disclosure) with limited impact.
 - The patch is already superseded by a newer critical patch for the same component.
 - It is an RHBA advisory for cosmetic or documentation changes only.
-- **Date Window (non-kernel)**: The patch was issued within the last 90 days AND the component is NOT a kernel-related package. These patches are excluded from the current review cycle.
-- **Exception**: `kernel` and kernel-related packages (`kernel-devel`, `kernel-headers`, etc.) issued within the last 90 days are **NOT** excluded — they must be reviewed regardless of age.
+- **Early-window fallback rule**: Do NOT approve a `window_type: "early"` kernel patch without first confirming no `window_type: "recent"` Critical kernel patch exists and meets the Inclusion Criteria for the same RHEL version.
 
 ### 3.3 Output Format (JSON Schema)
 Return ONLY a pure JSON array. Each object must have exactly these fields:
@@ -190,5 +196,5 @@ Before submitting your JSON response, verify:
 4. `Version` is not "Unknown", not empty, not a placeholder string.
 5. `Vendor` is exactly `"Red Hat"` (case-sensitive).
 6. Descriptions are 1-2 sentences maximum and contain no raw changelog snippets.
-7. Non-kernel patches issued within the last 90 days are excluded (date window rule).
-8. `kernel` and kernel-related patches issued within the last 90 days are included (kernel exception).
+7. Kernel `window_type: "recent"` patches were evaluated first; `window_type: "early"` patches are only Approved if the recent patch did not meet criteria.
+8. No `window_type: "early"` kernel patch is Approved when a `window_type: "recent"` Critical patch for the same RHEL version already meets criteria.
