@@ -93,10 +93,10 @@ AI가 응답하여 invalid JSON 출력 → retry 반복 발생. 실증: `--sessi
 규칙: 배치 attempt 전 cleanup 시 .lock·.jsonl 뿐 아니라 sessions.json도 반드시 삭제
 Why: sessions.json 잔류 시 이전 세션(다른 제품 포함) 컨텍스트로 AI 응답 → invalid JSON 반복
 Apply:
+```
 ```typescript
 const sessionsJsonPath = path.join(sessionsDir, 'sessions.json');
 if (fs.existsSync(sessionsJsonPath)) fs.rmSync(sessionsJsonPath, { force: true });
-```
 ```
 
 ---
