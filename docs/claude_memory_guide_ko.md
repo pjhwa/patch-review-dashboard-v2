@@ -72,6 +72,7 @@ Apply: [1~3줄 + 핵심 코드 스니펫만]
 ```
 
 **개선 전 (~250 단어):**
+
 ```markdown
 ## 교훈 17: openclaw sessions.json 미삭제 → 이전 세션 오염으로 AI 출력 불량
 
@@ -86,6 +87,7 @@ AI가 응답하여 invalid JSON 출력 → retry 반복 발생. 실증: `--sessi
 ```
 
 **개선 후 (~60 단어):**
+
 ```markdown
 ## L17 sessions.json 삭제 필수
 규칙: 배치 attempt 전 cleanup 시 .lock·.jsonl 뿐 아니라 sessions.json도 반드시 삭제
