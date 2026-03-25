@@ -180,6 +180,17 @@ Return ONLY a pure JSON array. Each object must have exactly these fields:
 - **Kernel variants**: Oracle Linux supports both UEK (Unbreakable Enterprise Kernel) and RHCK (Red Hat Compatible Kernel). Both are valid targets.
   - UEK versions: `kernel-uek-*` — Oracle's own kernel with different version numbers from RHCK.
   - RHCK versions: `kernel-*` — mirrors Red Hat kernel versions.
+- **UEK Version Matrix** (OL 배포본 버전별 UEK 릴리즈 매핑):
+
+  | OS | OL Minor Version | UEK Release | UEK Kernel Version |
+  |----|-----------------|-------------|-------------------|
+  | OL8 | 8.1 ~ 8.4 | UEK R6 (UEKR6) | kernel-uek-5.4.17-* |
+  | OL8 | 8.5 ~ 8.10 | UEK R7 (UEKR7) | kernel-uek-5.15.0-* |
+  | OL9 | 9.0 ~ 9.5 | UEK R7 (UEKR7) | kernel-uek-5.15.0-* |
+  | OL9 | 9.6 ~ | UEK 8 (UEKR8) | kernel-uek-6.12.0-* |
+  | OL10 | 10.0 ~ | UEK 8 (UEKR8) | kernel-uek-6.12.0-* |
+
+  > **Important:** OL8은 UEKR6(5.4.x)과 UEKR7(5.15.x) 패치가 모두 수집된다. 두 UEK 시리즈는 **각각 독립적으로 평가**해야 하며, 결과 JSON에 별도 항목으로 출력한다(다른 마이너 버전 환경에 적용). OL9도 UEKR7과 UEKR8 패치가 공존할 수 있으므로 동일하게 처리한다.
 - **OsVersion**: String from `os_version` field (e.g., `"OL8"`, `"OL8, OL9"`). Note: preprocessor uses `OL{N}` format (not "Oracle Linux N").
 
 ## 5. Description Quality Rules

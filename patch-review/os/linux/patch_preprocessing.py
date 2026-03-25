@@ -322,7 +322,7 @@ def get_best_rpm_match(pkgs, comp):
         m = re.match(r'^([a-zA-Z0-9_+-]+?)-([\d][a-zA-Z0-9_+.:-]+)$', stripped)
         if m:
             name, ver = m.group(1), m.group(2)
-            if name == comp or (comp == "kernel-uek" and name == "kernel-uek"):
+            if name == comp or (comp.startswith("kernel-uek") and name == "kernel-uek"):
                 return f"{name}-{ver}"
     
     # pass 2: prefix match

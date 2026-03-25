@@ -4,7 +4,7 @@ echo "🚀 Oracle Collector FULL (BaseOS + UEK + AppStream OL8+) 시작"
 
 declare -A UEK_REPOS
 UEK_REPOS[7]="UEKR6"
-UEK_REPOS[8]="UEKR7"
+UEK_REPOS[8]="UEKR6 UEKR7"
 UEK_REPOS[9]="UEKR7 UEKR8"
 UEK_REPOS[10]="UEKR8"
 
