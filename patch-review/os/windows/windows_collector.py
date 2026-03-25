@@ -767,16 +767,16 @@ def fetch_ms_update(month_year: str):
                     adv["cumulative_update_url"] = ve["kb_url"]
                     break
 
-    # === 6. OS별 모든 KB에서 Known Issues 수집 (누락 방지) ===
+    # === 6. cumulative_update_kb에서만 Known Issues 수집 ===
+    # 전체 kb_articles 대신 누적 업데이트 KB 페이지만 스크래핑한다.
+    # Microsoft KB 페이지는 현재 활성 이슈만 유지하므로 이전 달에 해결된 이슈가 섞이지 않는다.
     fetched_ki = {}  # {kb: [issues]}
-    all_os_kbs = set()
     for os_name in TARGET_OS:
         adv = os_advisories[os_name]
-        all_os_kbs.update(adv.get("kb_articles", set()))
-    for kb in all_os_kbs:
-        if kb not in fetched_ki:
-            print(f"    Known Issues 수집: {kb}...")
-            fetched_ki[kb] = fetch_kb_known_issues(kb)
+        cu_kb = adv.get("cumulative_update_kb", "")
+        if cu_kb and cu_kb not in fetched_ki:
+            print(f"    Known Issues 수집: {cu_kb}...")
+            fetched_ki[cu_kb] = fetch_kb_known_issues(cu_kb)
 
     # === 7. 저장 ===
     for os_name in TARGET_OS:
@@ -784,14 +784,13 @@ def fetch_ms_update(month_year: str):
         if not adv["vulnerabilities"]:
             continue
 
-        # Known Issues: 해당 OS의 모든 KB에서 수집한 Known Issues 병합 (제목 기준 중복 제거)
-        seen_titles = set()
+        # Known Issues: cumulative_update_kb 페이지에서만 수집
+        # (전체 kb_articles 병합 시 이전 달 KB의 해결된 이슈가 섞이는 문제 방지)
+        cu_kb = adv.get("cumulative_update_kb", "")
         merged_ki = []
-        for kb in sorted(adv.get("kb_articles", set())):
-            for ki in fetched_ki.get(kb, []):
-                if ki["title"] not in seen_titles:
-                    seen_titles.add(ki["title"])
-                    merged_ki.append({**ki, "source_kb": kb})
+        if cu_kb:
+            for ki in fetched_ki.get(cu_kb, []):
+                merged_ki.append({**ki, "source_kb": cu_kb})
         adv["known_issues"] = merged_ki
 
         # set -> sorted list
