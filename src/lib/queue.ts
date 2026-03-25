@@ -592,11 +592,41 @@ async function runProductPipeline(job: Job, productCfg: ProductConfig, isAiOnly:
     }
 
     // Step 2: Read patches
+    const isLinux = productCfg.id === 'redhat' || productCfg.id === 'oracle' || productCfg.id === 'ubuntu';
     let patchesRaw: any[] = [];
     try { patchesRaw = JSON.parse(fs.readFileSync(patchesPath, 'utf-8')); } catch (e) { }
 
+    // Step 2.5: Kernel dual-window deduplication (Linux only)
+    // If a recent-window (0~3m) entry exists for the same (vendor, component, os_version),
+    // exclude the early-window (6m~3m) entry — it is superseded by the more current critical patch.
+    if (isLinux && patchesRaw.length > 0) {
+        const KERNEL_PREFIXES = ['kernel', 'linux-image', 'linux-firmware', 'microcode'];
+        const isKernelRelated = (component: string) => {
+            const c = (component || '').toLowerCase();
+            return KERNEL_PREFIXES.some(p => c === p || c.startsWith(p + '-') || c.startsWith(p + '_'));
+        };
+        const recentKernelKeys = new Set<string>();
+        for (const p of patchesRaw) {
+            if (isKernelRelated(p.component) && p.window_type === 'recent') {
+                recentKernelKeys.add(`${p.vendor}|${p.component}|${p.os_version}`);
+            }
+        }
+        if (recentKernelKeys.size > 0) {
+            const before = patchesRaw.length;
+            patchesRaw = patchesRaw.filter((p: any) => {
+                if (isKernelRelated(p.component) && p.window_type === 'early') {
+                    if (recentKernelKeys.has(`${p.vendor}|${p.component}|${p.os_version}`)) return false;
+                }
+                return true;
+            });
+            const removed = before - patchesRaw.length;
+            if (removed > 0) {
+                await job.log(`[${productCfg.logTag}-PIPELINE] Kernel dedup: removed ${removed} early-window entries superseded by recent-window critical patches.`);
+            }
+        }
+    }
+
     // Step 3: AI Review Loop
-    const isLinux = productCfg.id === 'redhat' || productCfg.id === 'oracle' || productCfg.id === 'ubuntu';
     const finalReviewedPatches = await runAiReviewLoop(
         job, productCfg, skillDir, runStream, patchesRaw, isResumeMode, isLinux
     );
