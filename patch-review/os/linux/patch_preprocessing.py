@@ -315,9 +315,36 @@ def get_component_name(vendor, title, summary, full_text, pkgs=None):
         
     return "other"
 
+def _strip_rpm_epoch(ver):
+    """Remove RPM epoch prefix (e.g. '0:5.14.0-...' -> '5.14.0-...')"""
+    return re.sub(r'^\d+:', '', ver)
+
 def get_best_rpm_match(pkgs, comp):
     arch_exts = ['.x86_64', '.aarch64', '.src', '.noarch', '.i686', '.s390x', '.ppc64le']
     best_ver = ""
+
+    # pass 0: prefer .src (SRPMS) package — gives the canonical source package version
+    # This avoids mismatching sub-packages (e.g. kernel-64k-debug-devel) as 'kernel'
+    for pkg in pkgs:
+        if not pkg.endswith('.src'):
+            continue
+        stripped = pkg[:-len('.src')]
+        m = re.match(r'^([a-zA-Z0-9_+-]+?)-([\d][a-zA-Z0-9_+.:~-]+)$', stripped)
+        if m:
+            name, ver = m.group(1), _strip_rpm_epoch(m.group(2))
+            if name == comp or (comp.startswith("kernel-uek") and name == "kernel-uek"):
+                return f"{name}-{ver}"
+    # pass 0b: .src prefix match
+    for pkg in pkgs:
+        if not pkg.endswith('.src'):
+            continue
+        stripped = pkg[:-len('.src')]
+        m = re.match(r'^([a-zA-Z0-9_+-]+?)-([\d][a-zA-Z0-9_+.:~-]+)$', stripped)
+        if m:
+            name, ver = m.group(1), _strip_rpm_epoch(m.group(2))
+            if name.startswith(comp) or comp in name:
+                return f"{name}-{ver}"
+
     # pass 1: exact match
     for pkg in pkgs:
         stripped = pkg
@@ -325,13 +352,13 @@ def get_best_rpm_match(pkgs, comp):
             if stripped.endswith(ext):
                 stripped = stripped[:-len(ext)]
                 break
-        
-        m = re.match(r'^([a-zA-Z0-9_+-]+?)-([\d][a-zA-Z0-9_+.:-]+)$', stripped)
+
+        m = re.match(r'^([a-zA-Z0-9_+-]+?)-([\d][a-zA-Z0-9_+.:~-]+)$', stripped)
         if m:
-            name, ver = m.group(1), m.group(2)
+            name, ver = m.group(1), _strip_rpm_epoch(m.group(2))
             if name == comp or (comp.startswith("kernel-uek") and name == "kernel-uek"):
                 return f"{name}-{ver}"
-    
+
     # pass 2: prefix match
     for pkg in pkgs:
         stripped = pkg
@@ -339,13 +366,13 @@ def get_best_rpm_match(pkgs, comp):
             if stripped.endswith(ext):
                 stripped = stripped[:-len(ext)]
                 break
-                
-        m = re.match(r'^([a-zA-Z0-9_+-]+?)-([\d][a-zA-Z0-9_+.:-]+)$', stripped)
+
+        m = re.match(r'^([a-zA-Z0-9_+-]+?)-([\d][a-zA-Z0-9_+.:~-]+)$', stripped)
         if m:
-            name, ver = m.group(1), m.group(2)
+            name, ver = m.group(1), _strip_rpm_epoch(m.group(2))
             if name.startswith(comp) or comp in name:
                 return f"{name}-{ver}"
-                
+
     # pass 3: just return the first one stripped
     if pkgs:
         stripped = str(pkgs[0])
@@ -353,9 +380,9 @@ def get_best_rpm_match(pkgs, comp):
             if stripped.endswith(ext):
                 stripped = stripped[:-len(ext)]
                 break
-        m = re.match(r'^([a-zA-Z0-9_+-]+?)-([\d][a-zA-Z0-9_+.:-]+)$', stripped)
+        m = re.match(r'^([a-zA-Z0-9_+-]+?)-([\d][a-zA-Z0-9_+.:~-]+)$', stripped)
         if m:
-            return f"{m.group(1)}-{m.group(2)}"
+            return f"{m.group(1)}-{_strip_rpm_epoch(m.group(2))}"
         return stripped
     return best_ver
 
