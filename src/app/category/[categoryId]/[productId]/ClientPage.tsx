@@ -16,6 +16,7 @@ export function ProductDetailClient({ categoryId, productId, dict }: { categoryI
     const [finalizeSuccess, setFinalizeSuccess] = useState(false);
     const [isDone, setIsDone] = useState(false);
     const [preprocessedSearchQuery, setPreprocessedSearchQuery] = useState("");
+    const [reviewedSearchQuery, setReviewedSearchQuery] = useState("");
     const [manualReviewRequests, setManualReviewRequests] = useState<Record<string, boolean>>({});
     const [isManualReviewing, setIsManualReviewing] = useState(false);
     const [manualReviewStatus, setManualReviewStatus] = useState<'idle' | 'done' | 'error'>('idle');
@@ -270,6 +271,19 @@ export function ProductDetailClient({ categoryId, productId, dict }: { categoryI
         });
     }, [preprocessedData, preprocessedSearchQuery]);
 
+    const filteredReviewedData = useMemo(() => {
+        if (!reviewedData?.data || !Array.isArray(reviewedData.data)) return [];
+        if (!reviewedSearchQuery.trim()) return reviewedData.data;
+        const query = reviewedSearchQuery.toLowerCase();
+        return reviewedData.data.filter((patch: any) => {
+            const osVersion = (patch.osVersion || patch.OsVersion || "").toLowerCase();
+            const component = (patch.Component || "").toLowerCase();
+            const version = (patch.Version || patch.version || "").toLowerCase();
+            const description = (patch.Description || patch['Patch Description'] || patch.PatchDescription || "").toLowerCase();
+            return osVersion.includes(query) || component.includes(query) || version.includes(query) || description.includes(query);
+        });
+    }, [reviewedData, reviewedSearchQuery]);
+
     return (
         <div className="space-y-6 animate-in fade-in duration-500">
             <div className="flex items-center gap-4">
@@ -470,12 +484,26 @@ export function ProductDetailClient({ categoryId, productId, dict }: { categoryI
 
                     <TabsContent value="reviewed" className="mt-0 space-y-4">
                         <div className="bg-card border border-foreground/10 rounded-xl p-6 shadow-xl">
-                            <h3 className="text-xl font-light text-foreground mb-2">{dict.dashboard.productDetail.reviewTitle}</h3>
+                            <div className="flex items-center justify-between mb-2 gap-4 flex-wrap">
+                                <h3 className="text-xl font-light text-foreground">{dict.dashboard.productDetail.reviewTitle}</h3>
+                                <div className="relative w-full md:w-72">
+                                    <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                        <Search className="h-4 w-4 text-blue-500/70" />
+                                    </div>
+                                    <input
+                                        type="text"
+                                        className="block w-full pl-10 pr-3 py-2 border border-foreground/10 rounded-lg bg-card/80 text-foreground placeholder:text-foreground/30 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500 sm:text-sm transition-colors"
+                                        placeholder={dict.dashboard.productDetail.searchPlaceholder}
+                                        value={reviewedSearchQuery}
+                                        onChange={(e) => setReviewedSearchQuery(e.target.value)}
+                                    />
+                                </div>
+                            </div>
                             <p className="text-foreground/40 text-sm mb-8">{dict.dashboard.productDetail.reviewDesc}</p>
 
                             {reviewedData?.data && Array.isArray(reviewedData.data) ? (
                                 <div className="space-y-6">
-                                    {reviewedData.data.map((patch: any, idx: number) => {
+                                    {filteredReviewedData.map((patch: any, idx: number) => {
                                         const issueId = patch.IssueID || patch['Issue ID'] || patch.Issue_ID || `${dict.dashboard.productDetail.unknownIssuePrefix}${idx}`;
                                         const isCritical = patch.Criticality?.toLowerCase() === 'critical';
                                         const isExcludedLocally = localExclusions[issueId]?.excluded;
