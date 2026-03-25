@@ -399,6 +399,23 @@ def is_critical_or_important_severity(severity):
     sev_lower = severity.lower()
     return "critical" in sev_lower or "important" in sev_lower
 
+def is_severity_ok_for_window(vendor, severity, window_type):
+    """
+    Vendor-aware severity threshold check for kernel dual-window filtering.
+
+    RedHat always assigns severity (Critical/Important/Moderate/Low) → require explicit threshold.
+    Oracle (ELSA/ELBA) and Ubuntu (USN) frequently omit severity, especially for kernel advisories
+    (UEK errata, USN notices without formal severity ratings).
+    For these vendors, absent severity means 'Unknown' — not Low — so pass through to AI review.
+    """
+    if not severity:
+        # Oracle/Ubuntu: no severity ≠ low severity — AI will assess from full_text and CVEs
+        return vendor in ("Oracle", "Ubuntu")
+    if window_type == 'early':
+        return is_critical_or_important_severity(severity)
+    else:
+        return is_critical_severity(severity)
+
 def extract_ubuntu_pkg_version(packages, component, lts_ver, all_lts_versions):
     """Extract the specific package version for a given Ubuntu LTS version.
 
@@ -765,13 +782,15 @@ def preprocess_patches():
         # --- Kernel dual-window rules ---
         if is_kernel_related(p['component']):
             if p['window_type'] == 'early':
-                # Early window (6m~3m): Critical or Important severity
-                if not is_critical_or_important_severity(p['severity']):
+                # Early window (6m~3m): Critical or Important severity required
+                # Oracle/Ubuntu: absent severity = Unknown (not Low) → pass to AI review
+                if not is_severity_ok_for_window(p['vendor'], p['severity'], 'early'):
                     dropped_audit_log.append({ 'Patch ID': p['id'], 'Vendor': p['vendor'], 'Drop Reason': 'Kernel Below Critical/Important', 'Details': f"Kernel component '{p['component']}' severity '{p['severity']}' is below Critical/Important threshold (early window 6m~3m)" })
                     continue
             else:
                 # Recent window (0~3m): Critical severity only
-                if not is_critical_severity(p['severity']):
+                # Oracle/Ubuntu: absent severity = Unknown (not Low) → pass to AI review
+                if not is_severity_ok_for_window(p['vendor'], p['severity'], 'recent'):
                     dropped_audit_log.append({ 'Patch ID': p['id'], 'Vendor': p['vendor'], 'Drop Reason': 'Kernel Non-Critical', 'Details': f"Kernel component '{p['component']}' severity '{p['severity']}' is below Critical threshold (recent window 0~3m)" })
                     continue
         else:

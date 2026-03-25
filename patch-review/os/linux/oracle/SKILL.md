@@ -70,8 +70,10 @@ python3 patch_preprocessing.py --vendor oracle --days 180
 
 **Kernel Dual-Window Evaluation (CRITICAL — applies to `kernel`, `kernel-uek`, and kernel-related patches only):**
 The preprocessing script filters kernel patches into two windows indicated by the `window_type` field in the JSON:
-- `"recent"` — patch from the last 3 months (0~90 days); **Critical-severity only**
-- `"early"` — patch from 3~6 months ago (90~180 days); **Critical or Important severity**; most recent per (vendor, OS version, component) — fallback candidate
+- `"recent"` — patch from the last 3 months (0~90 days); **Critical-severity only**. Oracle ELSA/ELBA advisories often omit severity — patches with **absent severity** are also included and must be assessed by AI from `full_text` and CVE data.
+- `"early"` — patch from 3~6 months ago (90~180 days); **Critical or Important severity**; most recent per (vendor, OS version, component) — fallback candidate. Oracle advisories with **absent severity** are also included as fallback candidates.
+
+> **Absent severity guidance**: Oracle ELSA/ELBA advisories, especially UEK kernel updates, frequently do not include a formal severity field. A missing `severity` does **not** mean the patch is low-priority. When `severity` is empty, evaluate the patch based on `full_text`, CVE descriptions, and the Inclusion Criteria (Section 3.1). Do NOT default to Exclude solely because severity is absent.
 
 **Evaluation Order for kernel/kernel-related patches (per Oracle Linux major version, both UEK and RHCK):**
 1. Find the `window_type: "recent"` kernel patch for this OL version.
@@ -80,7 +82,7 @@ The preprocessing script filters kernel patches into two windows indicated by th
    - If the early patch meets at least one criterion → **Decision: Approve** (reason: "Recent Critical patch insufficient; fallback to early Critical/Important patch").
    - If the early patch also does not qualify → **Decision: Exclude** both.
 3. If there is no `window_type: "recent"` patch but a `window_type: "early"` patch exists → evaluate the early patch directly.
-4. If an OL version has no kernel/kernel-related Critical or Important patches in either window → skip (no output row required).
+4. If an OL version has no kernel/kernel-related Critical, Important, or Unknown-severity patches in either window → skip (no output row required).
 
 > **Note:** Non-kernel patches (`glibc`, `systemd`, `openssl`, etc.) always have `window_type: "recent"`. Apply the standard single-window evaluation (Inclusion Criteria) for those.
 

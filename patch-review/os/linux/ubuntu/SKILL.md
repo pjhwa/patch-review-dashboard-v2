@@ -69,8 +69,10 @@ python3 patch_preprocessing.py --vendor ubuntu --days 180
 
 **Kernel Dual-Window Evaluation (CRITICAL — applies to `linux`, `linux-hwe`, `linux-image-*`, and kernel variant packages only):**
 The preprocessing script filters kernel USNs into two windows indicated by the `window_type` field in the JSON:
-- `"recent"` — USN from the last 3 months (0~90 days); **Critical-severity only**
-- `"early"` — USN from 3~6 months ago (90~180 days); **Critical or Important severity**; most recent per (vendor, OS version, component) — fallback candidate
+- `"recent"` — USN from the last 3 months (0~90 days); **Critical-severity only**. Ubuntu USN advisories often omit severity — USNs with **absent severity** are also included and must be assessed by AI from `full_text` and CVE data.
+- `"early"` — USN from 3~6 months ago (90~180 days); **Critical or Important severity**; most recent per (vendor, OS version, component) — fallback candidate. USNs with **absent severity** are also included as fallback candidates.
+
+> **Absent severity guidance**: Ubuntu USN advisories frequently do not carry a formal severity label. A missing `severity` does **not** mean the USN is low-priority. When `severity` is empty, evaluate the patch based on `full_text`, CVE list, affected packages, and the Inclusion Criteria (Section 3.1). Do NOT default to Exclude solely because severity is absent.
 
 **Evaluation Order for kernel USNs (per LTS version: 20.04, 22.04, 24.04):**
 1. Find the `window_type: "recent"` kernel USN for this LTS version.
@@ -79,7 +81,7 @@ The preprocessing script filters kernel USNs into two windows indicated by the `
    - If the early USN meets at least one criterion → **Decision: Approve** (reason: "Recent Critical patch insufficient; fallback to early Critical/Important patch").
    - If the early USN also does not qualify → **Decision: Exclude** both.
 3. If there is no `window_type: "recent"` USN but a `window_type: "early"` USN exists → evaluate the early USN directly.
-4. If an LTS version has no kernel Critical or Important USNs in either window → skip (no output row required).
+4. If an LTS version has no kernel Critical, Important, or Unknown-severity USNs in either window → skip (no output row required).
 
 > **Note:** Non-kernel USNs (`openssl`, `systemd`, `runc`, etc.) always have `window_type: "recent"`. Apply the standard single-window evaluation (Inclusion Criteria) for those.
 
