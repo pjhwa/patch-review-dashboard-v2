@@ -516,7 +516,7 @@ async function ingestToDb(
         }
         if (!isResumeMode && !isAiOnly) await job.log(`[${productCfg.logTag}-DB] Preprocessed ${patchesRaw.length} patches ingested.`);
 
-        if (!isResumeMode && !isAiOnly) await prisma.reviewedPatch.deleteMany({ where: { vendor: productCfg.vendorString } });
+        if (!isResumeMode) await prisma.reviewedPatch.deleteMany({ where: { vendor: productCfg.vendorString } });
         for (const item of reviewed) {
             const issueId = item.IssueID || item.id || 'Unknown';
             const isExcluded = (item.Decision || item.decision || '').toLowerCase() === 'exclude';
@@ -599,6 +599,7 @@ async function runProductPipeline(job: Job, productCfg: ProductConfig, isAiOnly:
     // Step 2.5: Kernel dual-window deduplication (Linux only)
     // If a recent-window (0~3m) entry exists for the same (vendor, component, os_version),
     // exclude the early-window (6m~3m) entry — it is superseded by the more current critical patch.
+    const deduplicatedIds = new Set<string>(); // track removed IDs so passthrough skips them
     if (isLinux && patchesRaw.length > 0) {
         const KERNEL_PREFIXES = ['kernel', 'linux-image', 'linux-firmware', 'microcode'];
         const isKernelRelated = (component: string) => {
@@ -615,7 +616,10 @@ async function runProductPipeline(job: Job, productCfg: ProductConfig, isAiOnly:
             const before = patchesRaw.length;
             patchesRaw = patchesRaw.filter((p: any) => {
                 if (isKernelRelated(p.component) && p.window_type === 'early') {
-                    if (recentKernelKeys.has(`${p.vendor}|${p.component}|${p.os_version}`)) return false;
+                    if (recentKernelKeys.has(`${p.vendor}|${p.component}|${p.os_version}`)) {
+                        deduplicatedIds.add((p.id || p.issueId || '').toString());
+                        return false;
+                    }
                 }
                 return true;
             });
@@ -641,7 +645,12 @@ async function runProductPipeline(job: Job, productCfg: ProductConfig, isAiOnly:
     await ingestToDb(job, productCfg, patchesRaw, finalReviewedPatches, isResumeMode, isAiOnly);
 
     // Step 5: Passthrough
-    const aiReviewedIds = new Set(finalReviewedPatches.map((d: any) => (d.IssueID || d.id || '').toString()));
+    // Include deduplicatedIds so passthrough does not re-insert early-window entries that were
+    // intentionally removed by Step 2.5 kernel dedup.
+    const aiReviewedIds = new Set([
+        ...finalReviewedPatches.map((d: any) => (d.IssueID || d.id || '').toString()),
+        ...deduplicatedIds,
+    ]);
     await runPassthrough(job, productCfg, aiReviewedIds);
 
     await job.updateProgress(100);
