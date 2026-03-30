@@ -14,21 +14,21 @@ export async function GET(request: Request) {
         return NextResponse.json({ products: [] });
     }
 
-    // ==================== VIRTUALIZATION / VSPHERE CATEGORY ====================
+    // ==================== VIRTUALIZATION / VSPHERE & NSX CATEGORY ====================
     if (category === 'virtualization') {
         const vsphereSkillDir = path.join(process.env.HOME || '/home/citec', '.openclaw/workspace/skills/patch-review/virtualization/vsphere');
         const vsphereDataDir = path.join(vsphereSkillDir, 'vsphere_data');
 
-        const countVsphereJsonFiles = (dirPath: string): number => {
+        const countFilteredJsonFiles = (dirPath: string, filter: (f: string) => boolean): number => {
             if (fs.existsSync(dirPath)) {
                 try {
-                    return fs.readdirSync(dirPath).filter((f: string) => f.endsWith('.json')).length;
+                    return fs.readdirSync(dirPath).filter(filter).length;
                 } catch { return 0; }
             }
             return 0;
         };
 
-        const vsphereCollected = countVsphereJsonFiles(vsphereDataDir);
+        const vsphereCollected = countFilteredJsonFiles(vsphereDataDir, (f) => f.startsWith('VSPH-') && f.endsWith('.json'));
 
         let vspherePreprocessed = 0;
         let vsphereReviewed = 0;
@@ -49,6 +49,31 @@ export async function GET(request: Request) {
             } catch { vsphereIsReviewCompleted = true; }
         }
 
+        // --- VMware NSX ---
+        const nsxSkillDir = path.join(process.env.HOME || '/home/citec', '.openclaw/workspace/skills/patch-review/virtualization/nsx');
+        const nsxDataDir = path.join(nsxSkillDir, 'nsx_data');
+
+        const nsxCollected = countFilteredJsonFiles(nsxDataDir, (f) => f.startsWith('NSX-') && f.endsWith('.json'));
+
+        let nsxPreprocessed = 0;
+        let nsxReviewed = 0;
+        try {
+            nsxPreprocessed = await prisma.preprocessedPatch.count({ where: { vendor: 'VMware NSX' } });
+            nsxReviewed = await prisma.reviewedPatch.count({ where: { vendor: 'VMware NSX' } });
+        } catch (e) { }
+
+        const nsxFinalCsv = path.join(nsxSkillDir, 'final_approved_patches_nsx.csv');
+        let nsxApproved = 0;
+        let nsxIsReviewCompleted = false;
+        if (fs.existsSync(nsxFinalCsv)) {
+            try {
+                const content = fs.readFileSync(nsxFinalCsv, 'utf-8');
+                const parsed = Papa.parse(content, { header: true, skipEmptyLines: true });
+                nsxApproved = parsed.data ? parsed.data.length : 0;
+                nsxIsReviewCompleted = true;
+            } catch { nsxIsReviewCompleted = true; }
+        }
+
         const virtualizationProducts = [
             {
                 id: 'vsphere',
@@ -56,6 +81,13 @@ export async function GET(request: Request) {
                 stages: { collected: vsphereCollected, preprocessed: vspherePreprocessed, reviewed: vsphereReviewed, approved: vsphereApproved },
                 active: true,
                 isReviewCompleted: vsphereIsReviewCompleted,
+            },
+            {
+                id: 'nsx',
+                name: 'VMware NSX',
+                stages: { collected: nsxCollected, preprocessed: nsxPreprocessed, reviewed: nsxReviewed, approved: nsxApproved },
+                active: true,
+                isReviewCompleted: nsxIsReviewCompleted,
             },
         ];
 

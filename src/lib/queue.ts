@@ -735,6 +735,7 @@ export function startWorker() {
                         job.name === 'run-mariadb-pipeline' ? 'mariadb' :
                         job.name === 'run-pgsql-pipeline' ? 'pgsql' :
                         job.name === 'run-vsphere-pipeline' ? 'vsphere' :
+                        job.name === 'run-nsx-pipeline' ? 'nsx' :
                         job.name === 'run-windows-pipeline' ? 'windows' :
                         job.name === 'run-jboss_eap-pipeline' ? 'jboss_eap' :
                         job.name === 'run-tomcat-pipeline' ? 'tomcat' :
