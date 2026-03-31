@@ -670,6 +670,7 @@ export function ProductDetailClient({ categoryId, productId, dict }: { categoryI
                                                 else if (categoryId === 'database' && productId === 'sqlserver') finalizeEndpoint = '/api/pipeline/sqlserver/finalize';
                                                 else if (categoryId === 'database') finalizeEndpoint = '/api/pipeline/mariadb/finalize';
                                                 else if (productId === 'windows') finalizeEndpoint = '/api/pipeline/windows/finalize';
+                                                else if (categoryId === 'virtualization' && productId === 'nsx') finalizeEndpoint = '/api/pipeline/nsx/finalize';
                                                 else if (categoryId === 'virtualization') finalizeEndpoint = '/api/pipeline/vsphere/finalize';
                                                 const res = await fetch(finalizeEndpoint, {
                                                     method: 'POST',

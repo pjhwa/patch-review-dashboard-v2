@@ -488,7 +488,8 @@ async function runAiReviewLoop(
 
 // AI 리뷰 결과를 DB에 최종 반영한다.
 // isResumeMode / isAiOnly 가 아닐 때만 기존 데이터를 삭제하고 새로 삽입한다.
-// 'Exclude' 결정이거나 criticality가 moderate/medium/low인 패치는 DB에 넣지 않는다.
+// 모든 AI 리뷰된 패치를 DB에 저장한다 (Exclude 포함).
+// Exclude/저심각도 패치도 Summary 탭에서 보여야 하므로 필터링하지 않는다.
 // vsphere는 createMany 대신 개별 create를 사용한다 (배치 삽입 시 스키마 호환 문제).
 async function ingestToDb(
     job: Job,
@@ -519,9 +520,6 @@ async function ingestToDb(
         if (!isResumeMode) await prisma.reviewedPatch.deleteMany({ where: { vendor: productCfg.vendorString } });
         for (const item of reviewed) {
             const issueId = item.IssueID || item.id || 'Unknown';
-            const isExcluded = (item.Decision || item.decision || '').toLowerCase() === 'exclude';
-            const isLowCriticality = ['moderate', 'medium', 'low'].includes((item.Criticality || item.criticality || '').toLowerCase());
-            if (isExcluded || isLowCriticality) continue;
 
             try {
                 await prisma.reviewedPatch.upsert({
